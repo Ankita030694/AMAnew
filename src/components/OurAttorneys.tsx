@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const attorneys = [
   {
-    image: "/attorneys/finance-lawyer.jpg",
+    image: "/shreychad.png",
     title: "Shrey Arora",
     socials: {
       facebook: "#",
@@ -13,7 +13,7 @@ const attorneys = [
     }
   },
   {
-    image: "/attorneys/criminal-defence-lawyer.jpg",
+    image: "/rahul.png",
     title: "Rahul Gour",
     socials: {
       facebook: "#",
@@ -23,8 +23,18 @@ const attorneys = [
     }
   },
   {
-    image: "/attorneys/tax-lawyer.jpg",
+    image: "/ritka.png",
     title: "Ritika Harplani",
+    socials: {
+      facebook: "#",
+      twitter: "#",
+      instagram: "#",
+      telegram: "#"
+    }
+  },
+  {
+    image: "/ad.png",
+    title: "Abhu Dash",
     socials: {
       facebook: "#",
       twitter: "#",

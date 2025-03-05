@@ -55,7 +55,7 @@ export default function Form() {
                     type="text"
                     id="name"
                     placeholder="Your Name"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#6B5B3D] focus:border-[#6B5B3D]"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#6B5B3D] focus:border-[#6B5B3D] placeholder-gray-400"
                   />
                 </div>
                 <div>
@@ -66,7 +66,7 @@ export default function Form() {
                     type="tel"
                     id="phone"
                     placeholder="Your Phone"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#6B5B3D] focus:border-[#6B5B3D]"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#6B5B3D] focus:border-[#6B5B3D] placeholder-gray-400"
                   />
                 </div>
               </div>
@@ -79,7 +79,7 @@ export default function Form() {
                   type="email"
                   id="email"
                   placeholder="Your Email"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#6B5B3D] focus:border-[#6B5B3D]"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#6B5B3D] focus:border-[#6B5B3D] placeholder-gray-400"
                 />
               </div>
 
@@ -89,10 +89,10 @@ export default function Form() {
                 </label>
                 <select
                   id="service"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#6B5B3D] focus:border-[#6B5B3D]"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#6B5B3D] focus:border-[#6B5B3D] placeholder-gray-400"
                 >
                   {services.map((service) => (
-                    <option key={service} value={service}>
+                    <option key={service} value={service} className="text-gray-400">
                       {service}
                     </option>
                   ))}
@@ -107,7 +107,7 @@ export default function Form() {
                   type="text"
                   id="subject"
                   placeholder="Subject"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#6B5B3D] focus:border-[#6B5B3D]"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#6B5B3D] focus:border-[#6B5B3D] placeholder-gray-400"
                 />
               </div>
 
@@ -119,7 +119,7 @@ export default function Form() {
                   id="message"
                   rows={4}
                   placeholder="Message"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#6B5B3D] focus:border-[#6B5B3D]"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#6B5B3D] focus:border-[#6B5B3D] placeholder-gray-400"
                 />
               </div>
 

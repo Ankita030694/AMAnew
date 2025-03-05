@@ -69,7 +69,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="pt-8 border-t border-white/10 text-center text-gray-400 text-sm">
-          ©Copyright Law Firm 2023. Design by Figma.guru
+          ©Copyright AMA. Design by Xerxes
         </div>
       </div>
     </footer>
