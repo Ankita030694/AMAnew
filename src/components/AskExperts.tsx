@@ -54,8 +54,8 @@ export default function AskExperts() {
       />
       <div className="max-w-full">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-serif text-white mb-4 relative z-10">LEGACY EXTENDED</h2>
-          <p className="text-sm tracking-widest uppercase text-white relative z-10">OUR VISION DEFINES OUR ESSENCE</p>
+          <h2 className="text-4xl font-serif text-white mb-4">LEGACY EXTENDED</h2>
+          <p className="text-sm tracking-widest uppercase text-white">OUR VISION DEFINES OUR ESSENCE</p>
         </div>
         
         <div className="relative">
@@ -68,7 +68,11 @@ export default function AskExperts() {
           
           <div 
             ref={scrollContainerRef}
-            className="overflow-x-auto scrollbar-hide"
+            className="overflow-x-auto scrollbar-hide no-scrollbar"
+            style={{
+              scrollbarWidth: 'none',  /* Firefox */
+              msOverflowStyle: 'none',  /* IE and Edge */
+            }}
           >
             <div className="flex space-x-8 min-w-max p-4 relative">
               {/* Timeline Line */}

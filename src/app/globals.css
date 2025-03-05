@@ -26,4 +26,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.bg-brown-600 {
+  background-color: #6B5B3D; /* Adjust this to match your desired shade of brown */
+}
+
 
