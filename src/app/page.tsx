@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import TrustedPartner from "@/components/TrustedPartner";
 import PracticeAreas from "@/components/PracticeAreas";
 import AskExperts from "@/components/AskExperts";
 import OurAttorneys from "@/components/OurAttorneys";
