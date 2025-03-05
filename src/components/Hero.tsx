@@ -26,7 +26,7 @@ export default function Hero() {
         <p className="text-lg md:text-xl text-white max-w-2xl mb-8 drop-shadow-lg">
         AMA Legal Solutions embodies a firm culture rooted in values and principles that prioritize excellence and integrity
         </p>
-        <button className="bg-[#6B5B3D] hover:bg-[#5A4C33] text-white px-8 py-3 rounded shadow-lg">
+        <button className="bg-[#D2A02A] hover:bg-[#5A4C33] text-white px-8 py-3 rounded shadow-lg">
           Make enquiry
         </button>
       </div>

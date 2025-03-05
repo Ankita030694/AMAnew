@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Navbar() {
   return (
@@ -8,16 +9,19 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <svg className="h-8 w-8 text-white" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2L2 19h20L12 2zm0 3l7 14H5l7-14z"/>
-              </svg>
-              <span className="ml-2 text-white text-xl font-semibold">AMA</span>
+              <Image
+                src="/ama6.png"
+                alt="AMA Logo"
+                width={192}
+                height={192}
+                className="h-48 w-48"
+              />
+              {/* <span className="ml-2 text-white text-xl font-semibold">AMA</span> */}
             </Link>
           </div>
-          
           {/* Navigation Links */}
-          <div className="hidden md:block">
-            <div className="flex items-center space-x-8">
+          <div className="hidden md:block w-full" style={{marginLeft: "-170px"}}>
+            <div className="flex items-center justify-center space-x-8">
               <Link href="/" className="text-gray-300 hover:text-white px-3 py-2">
                 Home
               </Link>
@@ -43,4 +47,4 @@ export default function Navbar() {
       </div>
     </nav>
   )
-} 
+}

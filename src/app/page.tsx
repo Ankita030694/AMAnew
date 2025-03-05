@@ -1,12 +1,10 @@
 import Hero from "@/components/Hero";
 import PracticeAreas from "@/components/PracticeAreas";
 import AskExperts from "@/components/AskExperts";
-import OurAttorneys from "@/components/OurAttorneys";
 import LegalExcellence from "@/components/LegalExcellence";
-import Form from "@/components/Form";
 import Clients from "@/components/Clients";
 import TributeCard from '@/components/TributeCard';
-
+import Yt from "@/components/Yt";
 export default function Home() {
   return (
     <main>
@@ -15,9 +13,9 @@ export default function Home() {
       <PracticeAreas />
       <AskExperts />
       <TributeCard />
-      <OurAttorneys />
+      <Yt />
       <LegalExcellence />
-      <Form />
+      {/* <Form /> */}
       {/* Other content */}
     </main>
   );

@@ -9,7 +9,7 @@ const TributeCard = () => {
           alt="R.C. Malik"
           width={200}
           height={200}
-          className="rounded-full border-4 border-[#6B5B3D] w-40 h-40 sm:w-48 sm:h-48 md:w-[200px] md:h-[200px]"
+          className="rounded-full border-4 border-[#6B5B3D] w-40 h-40 sm:w-48 sm:h-48 md:w-[200px] md:h-[260px]"
         />
       </div>
       <div className="flex-1 text-center md:text-left">
@@ -25,7 +25,7 @@ const TributeCard = () => {
             alt="Signature"
             width={120}
             height={60}
-            className="h-10 sm:h-12 w-auto"
+            className="h-10 sm:h-18 w-auto "
           />
         </div>
       </div>
