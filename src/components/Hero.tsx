@@ -4,15 +4,16 @@ export default function Hero() {
   return (
     <div className="relative min-h-screen">
       {/* Background image */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-gray-900">
         <Image
           src="/hero.svg"
           alt="Hero background"
           fill
           quality={100}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 60vw"
-          className="object-cover object-top sm:object-center"
+          className="object-cover object-top sm:object-center opacity-70"
           priority
+          style={{ position: 'absolute' }}
         />
       </div>
 
