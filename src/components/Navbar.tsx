@@ -53,11 +53,11 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-300 hover:text-white"
+              className="text-gray-300 hover:text-white transition-colors duration-200"
               aria-label="Toggle menu"
             >
               <svg
-                className="h-6 w-6"
+                className={`h-6 w-6 transform transition-transform duration-300 ${isMenuOpen ? 'rotate-180' : ''}`}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -83,27 +83,46 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link href="/" className="text-gray-300 hover:text-white block px-3 py-2">
-                Home
+        <div 
+          className={`md:hidden transition-all duration-300 ease-in-out transform ${
+            isMenuOpen 
+              ? 'opacity-100 translate-y-0 max-h-96' 
+              : 'opacity-0 -translate-y-4 max-h-0'
+          } overflow-hidden`}
+        >
+          <div className="px-2 pt-2 pb-3 space-y-1">
+            {[
+              { href: "/", text: "Home" },
+              { href: "/services", text: "Services" },
+              { href: "/about", text: "About us" },
+              { href: "/contact", text: "Contact us" }
+            ].map((link, index) => (
+              <Link 
+                key={link.href}
+                href={link.href}
+                className="text-gray-300 hover:text-white block px-3 py-2 transform transition-all duration-300 hover:translate-x-2"
+                style={{
+                  opacity: isMenuOpen ? 1 : 0,
+                  transform: isMenuOpen ? 'translateX(0)' : 'translateX(-20px)',
+                  transitionDelay: `${index * 100}ms`
+                }}
+              >
+                {link.text}
               </Link>
-              <Link href="/services" className="text-gray-300 hover:text-white block px-3 py-2">
-                Services
-              </Link>
-              <Link href="/about" className="text-gray-300 hover:text-white block px-3 py-2">
-                About us
-              </Link>
-              <Link href="/contact" className="text-gray-300 hover:text-white block px-3 py-2">
-                Contact us
-              </Link>
-              <a href="tel:(257) 388-6895" className="text-gray-300 hover:text-white block px-3 py-2">
-                1234567890
-              </a>
-            </div>
+            ))}
+            <a 
+              href="tel:(257) 388-6895" 
+              className="text-gray-300 hover:text-white block px-3 py-2 transform transition-all duration-300 hover:translate-x-2"
+              style={{
+                opacity: isMenuOpen ? 1 : 0,
+                transform: isMenuOpen ? 'translateX(0)' : 'translateX(-20px)',
+                transitionDelay: '400ms'
+              }}
+            >
+              1234567890
+            </a>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   )
