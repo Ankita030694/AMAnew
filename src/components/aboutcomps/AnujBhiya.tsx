@@ -8,7 +8,7 @@ const AnujBhiya = () => {
         <div className="absolute inset-0 rounded-tr-[100px] -z-10 translate-x-4 translate-y-4" />
         <div className="relative h-full w-full">
           <Image
-            src="/anujbhiya.png"
+            src="/anujbhiya.svg"
             alt="Anuj Anand Malik - Founder of AMA Legal Solutions"
             fill
             className="object-cover object-center rounded-lg p-2"

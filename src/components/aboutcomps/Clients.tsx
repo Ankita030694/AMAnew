@@ -62,6 +62,7 @@ export default function Clients() {
           <h1 className="md:text-3xl font-bold text-center text-[#5A4C33] mb-8 text-2xl">
             OUR AFFILIATIONS
           </h1>
+          <div className="w-24 h-1 bg-[#6B5B3D] mx-auto mb-8"></div>
 
           {/* Desktop View */}
           <div className="hidden md:grid grid-cols-5 gap-4">

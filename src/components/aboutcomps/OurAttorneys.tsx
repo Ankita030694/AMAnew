@@ -7,7 +7,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaTelegram, FaLinkedin } from 'reac
 
 const attorneys = [
   {
-    image: "/shreychad.png",
+    image: "/shreychad.svg",
     title: "Shrey Arora",
     role: "Senior Partner",
     socials: {
@@ -17,7 +17,7 @@ const attorneys = [
     }
   },
   {
-    image: "/rahul.png",
+    image: "/rahul.svg",
     title: "Rahul Gour", 
     role: "Managing Partner",
     socials: {
@@ -27,7 +27,7 @@ const attorneys = [
     }
   },
   {
-    image: "/ritka.png",
+    image: "/ritka.svg",
     title: "Ritika Harplani",
     role: "Legal Associate",
     socials: {
@@ -37,7 +37,7 @@ const attorneys = [
     }
   },
   {
-    image: "/ad.png",
+    image: "/abu.svg",
     title: "Abhu Dash",
     role: "Legal Associate",
     socials: {
