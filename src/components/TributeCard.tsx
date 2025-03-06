@@ -3,13 +3,16 @@ import Image from 'next/image';
 const TributeCard = () => {
   return (
     <div className="bg-white text-[#6B5B3D] p-4 sm:p-8 md:p-12 flex flex-col md:flex-row items-center md:items-start justify-start max-w-7xl mx-auto shadow-lg rounded-lg">
-      <div className="flex-shrink-0 mb-8 md:mb-0 md:mr-12">
+      <div className="flex-shrink-0 mb-8 md:mb-0 md:mr-12 relative">
+        {/* <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 text-[#6B5B3D] text-2xl">
+          ★
+        </div> */}
         <Image
           src="/imagee.png"
           alt="R.C. Malik"
           width={200}
           height={200}
-          className="rounded-full border-4 border-[#6B5B3D] w-40 h-40 sm:w-48 sm:h-48 md:w-[200px] md:h-[260px]"
+          className="border-4 border-[#6B5B3D] w-40 h-48 sm:w-48 sm:h-48 md:w-[200px] md:h-[250px] p-3"
         />
       </div>
       <div className="flex-1 text-center md:text-left">
