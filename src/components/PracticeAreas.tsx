@@ -44,23 +44,23 @@ export default function PracticeAreas() {
           {practiceAreas.map((area, index) => (
             <div 
               key={index}
-              className="group p-8 rounded-lg transition-all duration-300 bg-[#D2A02A] hover:bg-[#5A4C33]"
+              className="group p-1 md:p-3 rounded-lg transition-all duration-300 bg-[#D2A02A] hover:bg-[#5A4C33]"
             >
-              <div className="flex flex-col items-center text-center space-y-4">
-                <div className="w-16 h-16 flex items-center justify-center text-[#ffffff]">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center text-[#ffffff]">
                   <FontAwesomeIcon 
                     icon={area.icon}
-                    className="w-8 h-32"
-                    style={{height: "5rem"}}
+                    className="w-6 h-24 md:w-8 md:h-32"
+                    style={{height: "2rem"}}
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-[#5A4C33] group-hover:text-white">
+                <h3 className="text-lg md:text-xl font-semibold text-[#5A4C33] group-hover:text-white">
                   {area.title}
                 </h3>
-                <p className="text-[#5A4C33] group-hover:text-white">
+                <p className="text-sm md:text-base text-[#5A4C33] group-hover:text-white p-3">
                   Adipiscing nam neque hendrerit nec pellentesque diam a. Varius quisque odio mauris lectus.
                 </p>
-                <button className="text-[#5A4C33] font-medium hover:underline group-hover:text-white">
+                <button className="text-sm md:text-base text-[#5A4C33] font-medium hover:underline group-hover:text-white">
                   Learn More →
                 </button>
               </div>
