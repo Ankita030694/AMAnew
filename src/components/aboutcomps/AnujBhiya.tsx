@@ -26,15 +26,15 @@ const AnujBhiya = () => {
 
         <div className="space-y-4">
           <p className="text-gray-700">
-            I&apos;m a dedicated legal professional and the Founder of AMA LEGAL SOLUTIONS. My passion lies in navigating the complex intersections of law, finance, and business.
+            I am Anuj Anand Malik, a dedicated advocate, legal consultant, and business lawyer in India, and the Founder of AMA Legal Solutions, a top law firm in Gurugram specializing in banking and finance law, corporate law, arbitration, real estate law, and entertainment law.
           </p>
 
           <p className="text-gray-700">
-            I specialize in banking, finance, and arbitration, providing strategic guidance to individuals and corporations to protect their interests in the dynamic economic landscape. In addition to finance, I also create empowering entertainment agreements for creators and handle the intricacies of real estate law. However, my true enthusiasm shines when guiding startups, helping them establish strong legal foundations to thrive in the ever-changing business world.
+            With extensive experience in loan settlements, debt restructuring, corporate compliance, business contracts, dispute resolution, and financial litigation, I provide strategic legal advisory and expert legal services to individuals, startups, and businesses across India, ensuring risk mitigation, regulatory compliance, and financial security. As a member of the Indo-American Chamber of Commerce (IACC), Mumbai Centre for International Arbitration (MCIA), Bar Council of Delhi, and Bar Council of India, I bring a global legal perspective to every case.
           </p>
 
           <p className="text-gray-700">
-            I believe law is fundamental to society, driving innovation and nurturing growth. Let&apos;s connect and work together to navigate legal complexities and contribute to your ongoing success.
+            My passion lies in empowering clients with business-driven legal strategies to navigate India's evolving legal, corporate, and financial landscape. At AMA Legal Solutions, we are committed to providing trusted legal solutions, corporate legal advisory, dispute resolution, and business legal services that support growth, protect assets, and ensure legal clarity.
           </p>
         </div>
       </div>

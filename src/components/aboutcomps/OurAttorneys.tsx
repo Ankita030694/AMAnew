@@ -113,7 +113,7 @@ export default function OurAttorneys() {
   };
 
   return (
-    <div className="bg-white py-24">
+    <div className="bg-white py-6">
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

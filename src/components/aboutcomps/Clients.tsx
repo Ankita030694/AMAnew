@@ -57,13 +57,18 @@ export default function Clients() {
 
   return (
     <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="bg-white rounded-lg shadow-xl -mt-32 md:-mt-40">
+      <div className="bg-white/20 backdrop-blur-sm rounded-lg shadow-xl -mt-32 md:-mt-40">
         <div className="p-8 md:p-8">
           <h1 className="md:text-3xl font-bold text-center text-[#5A4C33] mb-8 text-2xl">
             OUR AFFILIATIONS
           </h1>
-          <div className="w-24 h-1 bg-[#6B5B3D] mx-auto mb-8"></div>
-
+          <div className="relative flex justify-center">
+              <span className="px-4 bg-white text-[#D2A02A]">
+                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 100-16 8 8 0 000 16z"/>
+                </svg>
+              </span>
+            </div>
           {/* Desktop View */}
           <div className="hidden md:grid grid-cols-5 gap-4">
             {clientLogos.map((logo, index) => (
