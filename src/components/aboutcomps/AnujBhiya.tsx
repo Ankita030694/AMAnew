@@ -26,7 +26,7 @@ const AnujBhiya = () => {
 
         <div className="space-y-4">
           <p className="text-gray-700">
-            I'm a dedicated legal professional and the Founder of AMA LEGAL SOLUTIONS. My passion lies in navigating the complex intersections of law, finance, and business.
+            I&apos;m a dedicated legal professional and the Founder of AMA LEGAL SOLUTIONS. My passion lies in navigating the complex intersections of law, finance, and business.
           </p>
 
           <p className="text-gray-700">
@@ -34,7 +34,7 @@ const AnujBhiya = () => {
           </p>
 
           <p className="text-gray-700">
-            I believe law is fundamental to society, driving innovation and nurturing growth. Let's connect and work together to navigate legal complexities and contribute to your ongoing success.
+            I believe law is fundamental to society, driving innovation and nurturing growth. Let&apos;s connect and work together to navigate legal complexities and contribute to your ongoing success.
           </p>
         </div>
       </div>
@@ -42,4 +42,4 @@ const AnujBhiya = () => {
   )
 }
 
-export default AnujBhiya 
+export default AnujBhiya

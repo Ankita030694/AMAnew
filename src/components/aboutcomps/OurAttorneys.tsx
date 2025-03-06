@@ -112,14 +112,6 @@ export default function OurAttorneys() {
     })
   };
 
-  const socialIcons = {
-    facebook: FaFacebook,
-    twitter: FaTwitter,
-    instagram: FaInstagram,
-    telegram: FaTelegram,
-    linkedin: FaLinkedin
-  };
-
   return (
     <div className="bg-white py-24">
       <motion.div 
