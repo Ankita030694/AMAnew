@@ -10,10 +10,18 @@ const AboutInfo = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <h1 className="text-4xl font-bold text-center mb-8 text-[#5A4C33]">
+      <h1 className="text-4xl font-bold text-center mb-2 text-[#5A4C33]">
         ABOUT US
       </h1>
-      <div className="w-24 h-1 bg-[#6B5B3D] mx-auto mb-12 text-center"></div>
+      <div className="relative flex items-center justify-center mb-5">
+            <div className="h-[1px] bg-[#D2A02A] w-24"></div>
+            <span className="px-4 bg-white text-[#D2A02A]">
+              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 100-16 8 8 0 000 16z"/>
+              </svg>
+            </span>
+            <div className="h-[1px] bg-[#D2A02A] w-24"></div>
+          </div>
       <p className="text-lg leading-relaxed mb-6 text-gray-700 text-center px-5">
         Welcome to AMA Legal Solutions – Your Trusted Law Firm in Gurugram,
         India. We take pride in our 35-year legacy of providing expert legal

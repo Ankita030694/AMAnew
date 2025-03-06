@@ -129,7 +129,15 @@ export default function OurAttorneys() {
           <h2 className="text-4xl font-bold text-[#6B5B3D] mb-4">
             OUR ATTORNEYS
           </h2>
-          <div className="w-24 h-1 bg-[#6B5B3D] mx-auto"></div>
+          <div className="relative flex items-center justify-center">
+            <div className="h-[1px] bg-[#D2A02A] w-24"></div>
+            <span className="px-4 bg-white text-[#D2A02A]">
+              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 100-16 8 8 0 000 16z"/>
+              </svg>
+            </span>
+            <div className="h-[1px] bg-[#D2A02A] w-24"></div>
+          </div>
         </motion.div>
         
         <div className="relative">
