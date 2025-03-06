@@ -14,8 +14,7 @@ export default function Footer() {
                 alt="AMA Logo"
                 width={192}
                 height={20}
-                className="w-48 sm:w-auto"
-                style={{marginTop: "-60px"}}
+                className="w-48 sm:w-auto -mt-24 sm:-mt-16"
               />
             </Link>
             <p className="-mt-18 text-center sm:text-left text-base sm:text-sm">
