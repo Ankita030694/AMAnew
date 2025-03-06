@@ -12,11 +12,11 @@ export default function Clients() {
   const clientLogos = [
     { src: "/credsettle.svg", alt: "Client 1" },
     { src: "/billcut1.svg", alt: "Client 2" },
-    { src: "/saga.svg", alt: "Client 3" },
+    { src: "/sl.svg", alt: "Client 3" },
     { src: "/hdfc.svg", alt: "Client 4" },
     { src: "/bcb.svg", alt: "Client 5" },
     { src: "/glob.svg", alt: "Client 6" },
-    { src: "/sl.svg", alt: "Client 7" },
+    { src: "/saga.svg", alt: "Client 7" },
     { src: "/li.svg", alt: "Client 8" },
     { src: "/soct.svg", alt: "Client 9" },
   ];
