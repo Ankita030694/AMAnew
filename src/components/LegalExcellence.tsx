@@ -73,7 +73,7 @@ export default function LegalExcellence() {
   };
 
   return (
-    <div className="relative py-12 md:py-24 overflow-hidden bg-gradient-to-b from-white to-[#F5F2EB]" ref={testimonialsRef}>
+    <div className="relative py-12 overflow-hidden bg-gradient-to-b from-white to-[#F5F2EB]" ref={testimonialsRef}>
       {/* Decorative elements - hidden on mobile */}
       <div className="hidden md:block absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute -top-24 -left-24 w-64 h-64 bg-[#5A4C33] rounded-full opacity-10"></div>
@@ -86,7 +86,7 @@ export default function LegalExcellence() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-8 md:mb-16"
+          className="text-center"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -94,10 +94,10 @@ export default function LegalExcellence() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h2 className="text-sm md:text-base font-semibold text-[#5A4C33] tracking-wide uppercase">Voices of Success</h2>
-            <h1 className="mt-2 text-3xl md:text-4xl lg:text-6xl font-bold text-[#000000] sm:tracking-tight">
+            <h1 className="mt-2 text-4xl md:text-4xl lg:text-4xl font-bold text-[#000000] sm:tracking-tight">
               CLIENT TESTIMONIALS
             </h1>
-            <div className="relative mt-3">
+            <div className="relative">
               <div className="absolute inset-0 flex items-center" aria-hidden="true">
                 <div className="w-full border-t border-[#5A4C33] opacity-20"></div>
               </div>
@@ -109,14 +109,11 @@ export default function LegalExcellence() {
                 </span>
               </div>
             </div>
-            <p className="mt-4 md:mt-5 max-w-xl mx-auto text-base md:text-xl text-gray-600 px-4">
-              Hear from clients who have experienced our commitment to legal excellence and transformative results.
-            </p>
           </motion.div>
         </motion.div>
 
-        <div className="relative mt-8 md:mt-12">
-          <div className="flex justify-center mb-6 md:mb-8 gap-1 md:gap-2">
+        <div className="relative">
+          {/* <div className="flex justify-center mb-6 md:mb-8 gap-1 md:gap-2">
             {testimonials.map((_, idx) => (
               <button
                 key={idx}
@@ -127,7 +124,7 @@ export default function LegalExcellence() {
                 aria-label={`Go to testimonial ${idx + 1}`}
               />
             ))}
-          </div>
+          </div> */}
 
           <div className="relative h-[600px] sm:h-[500px] md:h-[400px]">
             <AnimatePresence mode="wait">
@@ -205,7 +202,7 @@ export default function LegalExcellence() {
             </AnimatePresence>
           </div>
 
-          <div className="flex justify-center mt-6 md:mt-10 space-x-3">
+          <div className="flex justify-center space-x-3">
             <motion.button
               whileHover={{ scale: 1.05, backgroundColor: "#D2A02A" }}
               whileTap={{ scale: 0.95 }}
@@ -226,18 +223,7 @@ export default function LegalExcellence() {
             </motion.button>
           </div>
 
-          <div className="mt-12 md:mt-16 text-center">
-            <motion.a
-              whileHover={{ scale: 1.05, backgroundColor: "#F5F2EB", borderColor: "#5A4C33" }}
-              href="#contact"
-              className="inline-flex items-center px-4 md:px-6 py-2 md:py-3 border border-[#5A4C33] text-sm md:text-base font-medium rounded-md shadow-sm text-[#5A4C33] bg-white hover:bg-[#F5F2EB] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5A4C33] transition-all duration-200"
-            >
-              Contact Our Legal Team
-              <svg className="ml-2 -mr-1 h-4 w-4 md:h-5 md:w-5 text-[#5A4C33]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </motion.a>
-          </div>
+        
         </div>
       </div>
     </div>
