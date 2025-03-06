@@ -40,7 +40,24 @@ export default function PracticeAreas() {
   return (
     <div className="bg-white relative z-20 -mt-32 md:-mt-40 pt-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div className="text-center mb-2">
+          <h2 className="text-4xl font-bold text-[#5A4C33] mb-4">OUR SERVICES</h2>
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-[#D2A02A]"></div>
+            </div>
+            <div className="relative flex justify-center">
+              <span className="px-4 bg-white text-[#D2A02A]">
+                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 100-16 8 8 0 000 16z"/>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
           {practiceAreas.map((area, index) => (
             <div 
               key={index}
