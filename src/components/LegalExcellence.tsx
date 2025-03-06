@@ -10,7 +10,7 @@ const testimonials = [
     name: "Sarah Johnson",
     role: "CEO, TechCorp",
     content: "The legal expertise provided by this team was instrumental in our company's successful merger. Their attention to detail and strategic approach saved us countless hours and potential legal complications.",
-    image: "/anujbhiya.png",
+    image: "/shreychad.png",
     rating: 5,
   },
   {
@@ -18,7 +18,7 @@ const testimonials = [
     name: "David Martinez", 
     role: "Entrepreneur",
     content: "I've worked with many legal teams in my career, but none have demonstrated the level of excellence and dedication I've experienced here. They truly go above and beyond for their clients.",
-    image: "/anujbhiya.png",
+    image: "/rahul.png",
     rating: 5,
   },
   {
@@ -26,7 +26,7 @@ const testimonials = [
     name: "Amanda Chen",
     role: "General Counsel, Fortune 500",
     content: "Their innovative approach to complex legal challenges has repeatedly proven invaluable to our organization. The team combines deep legal knowledge with practical business sense.",
-    image: "/anujbhiya.png",
+    image: "/ritka.png",
     rating: 5,
   },
 ];
