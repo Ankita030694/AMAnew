@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaStar, FaQuoteLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -9,7 +10,7 @@ const testimonials = [
     name: "Sarah Johnson",
     role: "CEO, TechCorp",
     content: "The legal expertise provided by this team was instrumental in our company's successful merger. Their attention to detail and strategic approach saved us countless hours and potential legal complications.",
-    image: "/images/testimonial-1.jpg",
+    image: "/anujbhiya.png",
     rating: 5,
   },
   {
@@ -17,7 +18,7 @@ const testimonials = [
     name: "David Martinez", 
     role: "Entrepreneur",
     content: "I've worked with many legal teams in my career, but none have demonstrated the level of excellence and dedication I've experienced here. They truly go above and beyond for their clients.",
-    image: "/images/testimonial-2.jpg",
+    image: "/anujbhiya.png",
     rating: 5,
   },
   {
@@ -25,7 +26,7 @@ const testimonials = [
     name: "Amanda Chen",
     role: "General Counsel, Fortune 500",
     content: "Their innovative approach to complex legal challenges has repeatedly proven invaluable to our organization. The team combines deep legal knowledge with practical business sense.",
-    image: "/images/testimonial-3.jpg",
+    image: "/anujbhiya.png",
     rating: 5,
   },
 ];
@@ -164,12 +165,15 @@ export default function LegalExcellence() {
                         <div className="w-full lg:w-2/3 p-6 md:p-8 lg:p-12">
                           <div className="flex items-center mb-6">
                             <div className="flex-shrink-0 mr-4">
-                              <img
+                              <Image
                                 className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover border-4 border-[#F5F2EB] shadow"
                                 src={testimonial.image}
                                 alt={testimonial.name}
+                                width={80}
+                                height={80}
                                 onError={(e) => {
-                                  (e.target as HTMLImageElement).src = "https://via.placeholder.com/150";
+                                  // @ts-ignore
+                                  e.target.src = "https://via.placeholder.com/150";
                                 }}
                               />
                             </div>
@@ -181,8 +185,8 @@ export default function LegalExcellence() {
                               </div>
                             </div>
                           </div>
-                          <div className="prose prose-sm md:prose-lg text-gray-700 max-w-none">
-                            <p className="italic text-sm md:text-base">"{testimonial.content}"</p>
+                          <div className="prose prose-lg text-gray-700 max-w-none">
+                            <p className="italic">&ldquo;{testimonial.content}&rdquo;</p>
                           </div>
                           <div className="mt-6 md:mt-8 flex">
                             <motion.div 
