@@ -19,7 +19,15 @@ export default function Clients() {
     { src: "/soct.svg", alt: "Client 9" },
   ];
 
-  const totalSlides = Math.max(0, clientLogos.length - 4);
+  // Adjust total slides based on viewport width
+  const getVisibleSlides = () => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth >= 768 ? 4 : 2; // 4 slides for desktop, 2 for mobile
+    }
+    return 4; // Default to desktop view during SSR
+  };
+
+  const totalSlides = Math.ceil(clientLogos.length / getVisibleSlides()) - 1;
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
@@ -42,7 +50,18 @@ export default function Clients() {
       carouselRef.current.addEventListener('mouseleave', startTimer);
     }
 
-    return () => clearInterval(timer);
+    // Update total slides on window resize
+    const handleResize = () => {
+      const newTotalSlides = Math.ceil(clientLogos.length / getVisibleSlides()) - 1;
+      setCurrentSlide(prev => Math.min(prev, newTotalSlides));
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      clearInterval(timer);
+      window.removeEventListener('resize', handleResize);
+    };
   }, [totalSlides]);
 
   const handlePrev = () => {
@@ -57,7 +76,7 @@ export default function Clients() {
     <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="bg-gray-100 rounded-lg shadow-xl -mt-32 md:-mt-40">
         <div className="p-8 md:p-12">
-          <h1 className="text-3xl font-bold text-center text-[#5A4C33] mb-8">PROVIDING SOLUTIONS TO</h1>
+          <h1 className="md:text-3xl font-bold text-center text-[#5A4C33] mb-8 text-2xl">PROVIDING SOLUTIONS TO</h1>
           <div className="relative" ref={carouselRef}>
             {/* Navigation Buttons */}
             <button
@@ -74,10 +93,10 @@ export default function Clients() {
             <div className="overflow-hidden">
               <div
                 className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentSlide * 25}%)` }}
+                style={{ transform: `translateX(-${currentSlide * (100/getVisibleSlides())}%)` }}
               >
                 {clientLogos.map((logo, index) => (
-                  <div key={index} className="w-1/4 flex-shrink-0 px-4">
+                  <div key={index} className="md:w-1/4 w-1/2 flex-shrink-0 px-4">
                     <div className="aspect-w-3 aspect-h-2">
                       <Image
                         src={logo.src}
