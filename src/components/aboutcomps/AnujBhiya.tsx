@@ -34,7 +34,7 @@ const AnujBhiya = () => {
           </p>
 
           <p className="text-gray-700">
-            My passion lies in empowering clients with business-driven legal strategies to navigate India's evolving legal, corporate, and financial landscape. At AMA Legal Solutions, we are committed to providing trusted legal solutions, corporate legal advisory, dispute resolution, and business legal services that support growth, protect assets, and ensure legal clarity.
+            My passion lies in empowering clients with business-driven legal strategies to navigate India&apos;s evolving legal, corporate, and financial landscape. At AMA Legal Solutions, we are committed to providing trusted legal solutions, corporate legal advisory, dispute resolution, and business legal services that support growth, protect assets, and ensure legal clarity.
           </p>
         </div>
       </div>
