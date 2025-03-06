@@ -9,7 +9,7 @@ const attorneys = [
   {
     image: "/shreychad.svg",
     title: "Shrey Arora",
-    role: "Senior Partner",
+    role: "Senior Associate",
     socials: {
       twitter: "#", 
       instagram: "#",
@@ -19,7 +19,7 @@ const attorneys = [
   {
     image: "/rahul.svg",
     title: "Rahul Gour", 
-    role: "Managing Partner",
+    role: "Associate",
     socials: {
       twitter: "#",
       instagram: "#",
@@ -29,7 +29,7 @@ const attorneys = [
   {
     image: "/ritka.svg",
     title: "Ritika Harplani",
-    role: "Legal Associate",
+    role: "Associate",
     socials: {
       twitter: "#",
       instagram: "#",
@@ -39,7 +39,7 @@ const attorneys = [
   {
     image: "/abu.svg",
     title: "Abhu Dash",
-    role: "Legal Associate",
+    role: "Associate",
     socials: {
       twitter: "#",
       instagram: "#",
