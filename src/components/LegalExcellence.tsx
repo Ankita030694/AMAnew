@@ -166,13 +166,13 @@ export default function LegalExcellence() {
                           <div className="flex items-center mb-6">
                             <div className="flex-shrink-0 mr-4">
                               <Image
-                                className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover border-4 border-[#F5F2EB] shadow"
+                                className="h-20 w-20 rounded-full object-cover border-4 border-[#F5F2EB] shadow"
                                 src={testimonial.image}
                                 alt={testimonial.name}
                                 width={80}
                                 height={80}
                                 onError={(e) => {
-                                  // @ts-ignore
+                                  // @ts-expect-error - Event target type needs assertion
                                   e.target.src = "https://via.placeholder.com/150";
                                 }}
                               />
