@@ -38,10 +38,13 @@ export default function AskExperts() {
   const controls = useAnimation();
 
   useEffect(() => {
+    // Store the current value of the ref
+    const currentScrollContainer = scrollContainerRef.current;
+    
     let lastScrollPosition = 0;
     const handleScroll = () => {
-      if (scrollContainerRef.current) {
-        const currentScrollPosition = scrollContainerRef.current.scrollLeft;
+      if (currentScrollContainer) {
+        const currentScrollPosition = currentScrollContainer.scrollLeft;
         const isScrollingRight = currentScrollPosition > lastScrollPosition;
         
         controls.start({
@@ -65,8 +68,16 @@ export default function AskExperts() {
       }
     };
 
-    scrollContainerRef.current?.addEventListener('scroll', handleScroll);
-    return () => scrollContainerRef.current?.removeEventListener('scroll', handleScroll);
+    if (currentScrollContainer) {
+      currentScrollContainer.addEventListener('scroll', handleScroll);
+    }
+
+    return () => {
+      // Use the stored value in cleanup
+      if (currentScrollContainer) {
+        currentScrollContainer.removeEventListener('scroll', handleScroll);
+      }
+    };
   }, [controls]);
 
   useEffect(() => {
