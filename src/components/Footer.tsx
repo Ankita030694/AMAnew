@@ -18,7 +18,7 @@ export default function Footer() {
                 style={{marginTop: "-60px"}}
               />
             </Link>
-            <p className="-mt-18 text-center sm:text-left">
+            <p className="-mt-18 text-center sm:text-left text-base sm:text-sm">
               Adipiscing nam neque hendrerit nec pellentesque diam a. Varius quisque odio mauris lectus consequat sed.
             </p>
             {/* Social Links */}
@@ -40,8 +40,8 @@ export default function Footer() {
 
           {/* Links */}
           <div className="text-center sm:text-left">
-            <h3 className="text-lg font-semibold mb-6">Links</h3>
-            <ul className="space-y-4">
+            <h3 className="text-xl sm:text-lg font-semibold mb-6">Links</h3>
+            <ul className="space-y-4 text-lg sm:text-sm">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
               <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
@@ -51,8 +51,8 @@ export default function Footer() {
 
           {/* Find Us */}
           <div className="text-center sm:text-left">
-            <h3 className="text-lg font-semibold mb-6">Find Us</h3>
-            <ul className="space-y-4">
+            <h3 className="text-xl sm:text-lg font-semibold mb-6">Find Us</h3>
+            <ul className="space-y-4 text-lg sm:text-sm">
               <li className="break-words">43 W. Wellington Road Fairhope AL 36532</li>
               <li><a href="tel:(257) 388-6895" className="hover:text-white transition-colors">(257) 388-6895</a></li>
               <li><a href="mailto:temmink@outlook.com" className="hover:text-white transition-colors break-words">temmink@outlook.com</a></li>
@@ -61,8 +61,8 @@ export default function Footer() {
 
           {/* Practice Areas */}
           <div className="text-center sm:text-left">
-            <h3 className="text-lg font-semibold mb-6">Practice Areas</h3>
-            <ul className="space-y-4">
+            <h3 className="text-xl sm:text-lg font-semibold mb-6">Practice Areas</h3>
+            <ul className="space-y-4 text-lg sm:text-sm">
               <li><Link href="#" className="hover:text-white transition-colors">Banking and Finance</Link></li>
               <li><Link href="#" className="hover:text-white transition-colors">Business Law</Link></li>
               <li><Link href="#" className="hover:text-white transition-colors">Real Estate</Link></li>
@@ -72,7 +72,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="pt-8 border-t border-white/10 text-center text-sm">
+        <div className="pt-8 border-t border-white/10 text-center text-base sm:text-sm">
           ©Copyright AMA. Design by 
         </div>
       </div>
