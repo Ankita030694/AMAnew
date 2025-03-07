@@ -15,7 +15,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 // Animated counter hook
-const useCounter = (end: number, duration: number = 2) => {
+const useCounter = (end: number, duration = 2) => {
   const [count, setCount] = useState(0);
   const nodeRef = useRef<HTMLDivElement>(null);
   
@@ -60,7 +60,7 @@ const testimonials = [
   {
     id: 2,
     quote: "As a small business owner, having AMA Law handle our corporate matters has been invaluable. Their strategic advice helped us navigate complex regulations while growing our company.",
-    author: "Michael T.",
+    author: "Michael T.", 
     position: "CEO, TechStart Inc."
   },
   {
@@ -87,6 +87,18 @@ export default function Services() {
   // For floating decorative elements
   const floatingY = useTransform(scrollYProgress, [0, 1], [0, -50]);
   const floatingRotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
+
+  const handlePrevTestimonial = () => {
+    setCurrentTestimonial(prev => (prev === 0 ? testimonials.length - 1 : prev - 1));
+  };
+
+  const handleNextTestimonial = () => {
+    setCurrentTestimonial(prev => (prev === testimonials.length - 1 ? 0 : prev + 1));
+  };
+
+  const handleTestimonialSelect = (index: number) => {
+    setCurrentTestimonial(index);
+  };
   
   return (
     <main className="overflow-hidden">
@@ -100,13 +112,16 @@ export default function Services() {
           }}
           className="absolute inset-0"
         >
-          <Image
-            src="/images/services-hero.jpg"
-            alt="Legal Services"
-            fill
-            className="object-cover"
-            priority
-          />
+         <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute w-full h-full object-cover" 
+            style={{ objectFit: 'cover' }}
+          >
+            <source src="/about.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40" />
         </motion.div>
         
@@ -150,7 +165,10 @@ export default function Services() {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="mt-10"
             >
-              <button className="bg-[#D2A02A] text-white px-10 py-4 rounded-lg text-lg font-semibold hover:bg-[#b88a24] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg relative overflow-hidden group">
+              <button 
+                type="button"
+                className="bg-[#D2A02A] text-white px-10 py-4 rounded-lg text-lg font-semibold hover:bg-[#b88a24] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg relative overflow-hidden group"
+              >
                 <span className="relative z-10">Consult Now</span>
                 <span className="absolute top-0 left-0 w-full h-full bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
               </button>
@@ -171,7 +189,7 @@ export default function Services() {
 
       {/* Practice Areas Section with enhanced styling */}
       <div className="bg-gradient-to-b from-[#F9F9F9] to-white relative">
-        <div className="absolute left-0 right-0 h-24 bg-gradient-to-b from-transparent to-[#F9F9F9] -top-24"></div>
+        <div className="absolute left-0 right-0 h-24 bg-gradient-to-b from-transparent to-[#F9F9F9] -top-24" />
         <PracticeAreas />
       </div>
       
@@ -202,8 +220,8 @@ export default function Services() {
       {/* Enhanced Why Choose Us Section */}
       <div className="bg-white py-10 relative">
         {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-32 h-32 bg-[#D2A02A]/5 rounded-br-full"></div>
-        <div className="absolute bottom-0 right-0 w-40 h-40 bg-[#5A4C33]/5 rounded-tl-full"></div>
+        <div className="absolute top-0 left-0 w-32 h-32 bg-[#D2A02A]/5 rounded-br-full" />
+        <div className="absolute bottom-0 right-0 w-40 h-40 bg-[#5A4C33]/5 rounded-tl-full" />
         
         <motion.div 
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
@@ -228,7 +246,7 @@ export default function Services() {
               whileInView={{ width: 96 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-            ></motion.div>
+            />
             <motion.p
               className="max-w-2xl mx-auto mt-6 text-gray-600"
               initial={{ opacity: 0 }}
@@ -278,7 +296,7 @@ export default function Services() {
                   <h3 className="text-xl font-semibold text-[#5A4C33] mb-4 text-center">{item.title}</h3>
                   <p className="text-gray-600 text-center">{item.description}</p>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#D2A02A]/20 to-[#5A4C33]/20 rounded-xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300 z-0"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#D2A02A]/20 to-[#5A4C33]/20 rounded-xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300 z-0" />
               </motion.div>
             ))}
           </div>
@@ -287,8 +305,6 @@ export default function Services() {
       
       {/* Testimonials Carousel */}
       <div className="bg-[#F9F9F9] py-24 relative overflow-hidden">
-        {/* <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white to-transparent"></div> */}
-        
         {/* Decorative elements */}
         <motion.div 
           className="absolute -right-16 top-20 w-80 h-80 rounded-full bg-[#D2A02A]/5"
@@ -296,7 +312,7 @@ export default function Services() {
             y: useTransform(scrollYProgress, [0.5, 1], [100, -100]),
             opacity: useTransform(scrollYProgress, [0.5, 0.7], [0.3, 1])
           }}
-        ></motion.div>
+        />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
@@ -307,7 +323,7 @@ export default function Services() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-bold text-[#5A4C33] mb-4">Client Testimonials</h2>
-            <div className="w-24 h-1 bg-[#D2A02A] mx-auto"></div>
+            <div className="w-24 h-1 bg-[#D2A02A] mx-auto" />
           </motion.div>
           
           <div className="relative max-w-4xl mx-auto">
@@ -320,7 +336,7 @@ export default function Services() {
                 transition={{ duration: 0.5 }}
                 className="bg-white rounded-xl p-8 md:p-12 shadow-xl"
               >
-                <div className="text-4xl text-[#D2A02A] mb-6">"</div>
+                <div className="text-4xl text-[#D2A02A] mb-6">&quot;</div>
                 <p className="text-lg md:text-xl italic text-gray-700 mb-8">
                   {testimonials[currentTestimonial].quote}
                 </p>
@@ -338,7 +354,8 @@ export default function Services() {
             
             <div className="flex justify-center mt-8 space-x-4">
               <button 
-                onClick={() => setCurrentTestimonial(prev => (prev === 0 ? testimonials.length - 1 : prev - 1))}
+                type="button"
+                onClick={handlePrevTestimonial}
                 className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-[#5A4C33] hover:bg-[#D2A02A] hover:text-white transition-colors"
               >
                 <FontAwesomeIcon icon={faChevronLeft} />
@@ -347,13 +364,15 @@ export default function Services() {
                 {testimonials.map((_, i) => (
                   <button
                     key={i}
-                    onClick={() => setCurrentTestimonial(i)}
+                    type="button"
+                    onClick={() => handleTestimonialSelect(i)}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${i === currentTestimonial ? 'bg-[#D2A02A] w-6' : 'bg-gray-300'}`}
                   />
                 ))}
               </div>
               <button 
-                onClick={() => setCurrentTestimonial(prev => (prev === testimonials.length - 1 ? 0 : prev + 1))}
+                type="button"
+                onClick={handleNextTestimonial}
                 className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-[#5A4C33] hover:bg-[#D2A02A] hover:text-white transition-colors"
               >
                 <FontAwesomeIcon icon={faChevronRight} />
@@ -365,7 +384,7 @@ export default function Services() {
 
       {/* Enhanced Call to Action Section */}
       <div className="relative">
-        <div className="absolute inset-0 bg-[#5A4C33] transform skew-y-2 origin-bottom-right"></div>
+        <div className="absolute inset-0 bg-[#5A4C33] transform skew-y-2 origin-bottom-right" />
         <div className="relative bg-[#5A4C33] text-white py-24 z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.h2 
@@ -393,9 +412,12 @@ export default function Services() {
               viewport={{ once: true }}
               className="inline-block"
             >
-              <button className="bg-[#D2A02A] text-white px-10 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-[#5A4C33] transition-all duration-300 group relative overflow-hidden">
+              <button 
+                type="button"
+                className="bg-[#D2A02A] text-white px-10 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-[#5A4C33] transition-all duration-300 group relative overflow-hidden"
+              >
                 <span className="relative z-10">Schedule a Consultation</span>
-                <span className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                <span className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </button>
             </motion.div>
             <motion.div 
@@ -417,4 +439,4 @@ export default function Services() {
       </div>
     </main>
   );
-} 
+}
