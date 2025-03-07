@@ -28,10 +28,10 @@ export default function Home() {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <AnimatedCounter end={2500} label="Cases Won" />
+          <AnimatedCounter end={3000} label="Cases Handled" />
             <AnimatedCounter end={5000} label="Clients Served" />
-            <AnimatedCounter end={35} label="Years Experience" />
-            <AnimatedCounter end={120} label="Awards Received" />
+            <AnimatedCounter end={40} label="Years Experience" />
+            <AnimatedCounter end={20} label="Our Offices" />
           </div>
         </div>
       </div>
