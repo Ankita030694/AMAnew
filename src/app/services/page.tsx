@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import PracticeAreas from "@/components/PracticeAreas";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
