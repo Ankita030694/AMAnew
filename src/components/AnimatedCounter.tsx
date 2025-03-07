@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from "react";
+import Image from 'next/image';
 
 // Animated counter hook
 const useCounter = (end: number, duration = 2) => {
@@ -47,7 +48,14 @@ export default function AnimatedCounter({ end, duration = 2, label }: AnimatedCo
   const { count, nodeRef } = useCounter(end, duration);
   
   return (
-    <div className="p-6" ref={nodeRef}>
+    <div className="relative p-6" ref={nodeRef}>
+      <Image
+        src="/bannerbg.png"
+        alt="Background"
+        fill
+        className="object-cover -z-10"
+        quality={100}
+      />
       <div className="text-5xl font-bold text-[#D2A02A] mb-2">{count}+</div>
       <div className="uppercase tracking-wider text-sm">{label}</div>
     </div>
