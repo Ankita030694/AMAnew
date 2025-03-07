@@ -3,6 +3,7 @@ import AnujBhiya from "@/components/aboutcomps/AnujBhiya";
 import Clients from "@/components/aboutcomps/Clients";
 import Hero from "@/components/aboutcomps/hero";
 import OurAttorneys from "@/components/aboutcomps/OurAttorneys";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 export default function About() {
     return (
@@ -11,6 +12,16 @@ export default function About() {
         <Hero />
         <Clients />
         <AnujBhiya />
+        <div className="bg-[#5A4C33] text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <AnimatedCounter end={2500} label="Cases Won" />
+            <AnimatedCounter end={5000} label="Clients Served" />
+            <AnimatedCounter end={35} label="Years Experience" />
+            <AnimatedCounter end={120} label="Awards Received" />
+          </div>
+        </div>
+      </div>
         <AboutInfo />
         <OurAttorneys />
       </div>
