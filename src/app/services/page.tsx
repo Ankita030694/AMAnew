@@ -12,8 +12,6 @@ import {
   faChevronLeft, 
   faChevronRight 
 } from '@fortawesome/free-solid-svg-icons';
-import AnimatedCounter from "@/components/AnimatedCounter";
-
 // Animated counter hook
 const useCounter = (end: number, duration = 2) => {
   const [count, setCount] = useState(0);
@@ -77,12 +75,6 @@ export default function Services() {
   const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 1.1]);
   
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  
-  // Counter stats
-  const casesWon = useCounter(2500);
-  const clientsServed = useCounter(5000);
-  const yearsExperience = useCounter(35);
-  const awards = useCounter(120);
   
   // For floating decorative elements
   const floatingY = useTransform(scrollYProgress, [0, 1], [0, -50]);
@@ -197,10 +189,22 @@ export default function Services() {
       {/* <div className="bg-[#5A4C33] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <AnimatedCounter end={2500} label="Cases Won" />
-            <AnimatedCounter end={5000} label="Clients Served" />
-            <AnimatedCounter end={35} label="Years Experience" />
-            <AnimatedCounter end={120} label="Awards Received" />
+            <div className="p-6" ref={casesWon.nodeRef}>
+              <div className="text-5xl font-bold text-[#D2A02A] mb-2">{casesWon.count}+</div>
+              <div className="uppercase tracking-wider text-sm">Cases Won</div>
+            </div>
+            <div className="p-6" ref={clientsServed.nodeRef}>
+              <div className="text-5xl font-bold text-[#D2A02A] mb-2">{clientsServed.count}+</div>
+              <div className="uppercase tracking-wider text-sm">Clients Served</div>
+            </div>
+            <div className="p-6" ref={yearsExperience.nodeRef}>
+              <div className="text-5xl font-bold text-[#D2A02A] mb-2">{yearsExperience.count}+</div>
+              <div className="uppercase tracking-wider text-sm">Years Experience</div>
+            </div>
+            <div className="p-6" ref={awards.nodeRef}>
+              <div className="text-5xl font-bold text-[#D2A02A] mb-2">{awards.count}+</div>
+              <div className="uppercase tracking-wider text-sm">Awards Received</div>
+            </div>
           </div>
         </div>
       </div> */}
