@@ -3,43 +3,49 @@ import React from 'react';
 
 const Yt = () => {
   const videoRef = React.useRef(null);
+  const containerRef = React.useRef(null);
   const [isVisible, setIsVisible] = React.useState(false);
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
+        if (videoRef.current) {
+          if (entry.isIntersecting) {
+            videoRef.current.play();
+          } else {
+            videoRef.current.pause();
+          }
+        }
       },
       { threshold: 0.1 }
     );
 
-    if (videoRef.current) {
-      observer.observe(videoRef.current);
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
     }
 
     return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current);
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
       }
     };
   }, []);
 
-  const videoUrl = `https://www.youtube.com/embed/YM8ePJEKoFo?si=isNf0UwUtKZjGEeh&autoplay=${
-    isVisible ? 1 : 0
-  }&mute=1&controls=0&showinfo=0&modestbranding=1`;
-
   return (
-    <div style={{ width: '100%', height: '100vh' }} ref={videoRef}>
-      <iframe
+    <div style={{ width: '100%', height: '100vh' }} ref={containerRef}>
+      <video
+        ref={videoRef}
         width="100%"
         height="100%"
-        src={videoUrl}
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerPolicy="strict-origin-when-cross-origin"
-        allowFullScreen
-      ></iframe>
+        autoPlay={isVisible}
+        muted
+        loop
+        playsInline
+        style={{ objectFit: 'cover' }}
+      >
+        <source src="/about.mp4" type="video/mp4" />
+      </video>
     </div>
   );
 };
