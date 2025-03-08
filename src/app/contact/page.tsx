@@ -77,7 +77,7 @@ const page = () => {
         </svg>
       ),
       title: "Our Address",
-      details: "123 Legal Avenue, Suite 500, New York, NY 10001",
+      details: "Block G, Sushant Lok 2, 2493AP, Gurugram, Haryana 122001",
     },
     {
       icon: (
@@ -86,7 +86,7 @@ const page = () => {
         </svg>
       ),
       title: "Email Us",
-      details: "contact@yourfirmname.com",
+      details: "info@amalegalsolutions.com",
     },
     {
       icon: (
@@ -95,20 +95,20 @@ const page = () => {
         </svg>
       ),
       title: "Call Us",
-      details: "+1 (555) 123-4567",
+      details: "+918700343611",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
-      {/* Animated background elements */}
+    <div className="min-h-screen bg-white relative overflow-hidden">
+      {/* Animated background elements - Simplified animations */}
       <motion.div 
         className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#D2A02A] opacity-5"
         animate={{ 
           x: [0, 30, 0],
           y: [0, -30, 0]
         }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
       />
       <motion.div 
         className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-[#5A4C33] opacity-5"
@@ -116,7 +116,7 @@ const page = () => {
           x: [0, -20, 0],
           y: [0, 20, 0]
         }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
       />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 relative z-10">
@@ -126,9 +126,9 @@ const page = () => {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl font-bold text-white my-4">Contact Us</h1>
+          <h1 className="text-4xl font-bold text-[#000000] mt-20">Contact Us</h1>
           <div className="w-24 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mx-auto"></div>
-          <p className="text-gray-300 mt-6 max-w-2xl mx-auto">
+          <p className="text-[#000000] mt-6 mx-auto text-2xl">
             We're here to help with your legal needs. Reach out to us using any of the methods below.
           </p>
         </motion.div>
@@ -144,25 +144,19 @@ const page = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{ 
-                y: -5,
-                transition: { duration: 0.2 }
+              whileHover={{ y: -5 }}
+              className="border border-[#D2A02A]/20 rounded-lg p-6 text-center shadow-xl"
+              style={{
+                backgroundImage: 'url(./bannerbg.png)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
               }}
-              className="bg-gray-900 border border-[#D2A02A]/20 rounded-lg p-6 text-center shadow-xl"
             >
-              <motion.div 
-                className="text-[#D2A02A] mx-auto mb-4"
-                initial={{ scale: 1 }}
-                whileHover={{ 
-                  scale: 1.1,
-                  rotate: [0, 5, -5, 0],
-                  transition: { duration: 0.5 }
-                }}
-              >
+              <div className="text-[#D2A02A] mx-auto mb-4">
                 {item.icon}
-              </motion.div>
-              <h3 className="text-xl font-semibold text-[#D2A02A] mb-2">{item.title}</h3>
-              <p className="text-gray-300">{item.details}</p>
+              </div>
+              <h3 className="text-3xl font-semibold text-[#D2A02A] mb-2">{item.title}</h3>
+              <p className="text-gray-300 text-xl">{item.details}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -185,11 +179,8 @@ const page = () => {
               referrerPolicy="no-referrer-when-downgrade"
               title="Office Location"
             />
-            <motion.div 
+            <div 
               className="absolute inset-0 pointer-events-none border-[3px] border-[#D2A02A] rounded-lg"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1, duration: 0.5 }}
             />
           </motion.div>
           
@@ -206,16 +197,13 @@ const page = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 className="flex flex-col items-center justify-center h-full py-8"
               >
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1, rotate: [0, 15, 0] }}
-                  transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
+                <div
                   className="w-20 h-20 bg-[#D2A02A]/20 rounded-full flex items-center justify-center mb-6"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-[#D2A02A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                </motion.div>
+                </div>
                 <h3 className="text-2xl font-bold text-[#D2A02A] mb-2">Thank You!</h3>
                 <p className="text-gray-300 text-center">
                   Your message has been received. We'll get back to you shortly.
@@ -223,10 +211,10 @@ const page = () => {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <h2 className="text-2xl font-bold text-[#D2A02A] mb-6">Send Us a Message</h2>
+                <h2 className="text-3xl font-bold text-[#D2A02A] mb-6">Send Us a Message</h2>
                 
                 <div className="relative">
-                  <motion.input
+                  <input
                     type="text"
                     name="name"
                     value={formState.name}
@@ -234,7 +222,7 @@ const page = () => {
                     required
                     onFocus={() => setFocusedField('name')}
                     onBlur={() => setFocusedField(null)}
-                    className="w-full bg-gray-900 text-white px-4 py-3 rounded-md border border-gray-700 focus:outline-none"
+                    className="w-full bg-white text-[#000000] px-4 py-3 rounded-md border border-gray-700 focus:outline-none"
                     placeholder="Your Name"
                   />
                   <motion.div 
@@ -246,7 +234,7 @@ const page = () => {
                 </div>
                 
                 <div className="relative">
-                  <motion.input
+                  <input
                     type="email"
                     name="email"
                     value={formState.email}
@@ -254,7 +242,7 @@ const page = () => {
                     required
                     onFocus={() => setFocusedField('email')}
                     onBlur={() => setFocusedField(null)}
-                    className="w-full bg-gray-900 text-white px-4 py-3 rounded-md border border-gray-700 focus:outline-none"
+                    className="w-full bg-white text-[#000000] px-4 py-3 rounded-md border border-gray-700 focus:outline-none"
                     placeholder="Your Email"
                   />
                   <motion.div 
@@ -266,7 +254,7 @@ const page = () => {
                 </div>
                 
                 <div className="relative">
-                  <motion.input
+                  <input
                     type="tel"
                     name="phone"
                     value={formState.phone}
@@ -274,7 +262,7 @@ const page = () => {
                     required
                     onFocus={() => setFocusedField('phone')}
                     onBlur={() => setFocusedField(null)}
-                    className="w-full bg-gray-900 text-white px-4 py-3 rounded-md border border-gray-700 focus:outline-none"
+                    className="w-full bg-white text-[#000000] px-4 py-3 rounded-md border border-gray-700 focus:outline-none"
                     placeholder="Your Phone Number"
                   />
                   <motion.div 
@@ -286,7 +274,7 @@ const page = () => {
                 </div>
                 
                 <div className="relative">
-                  <motion.textarea
+                  <textarea
                     name="message"
                     value={formState.message}
                     onChange={handleChange}
@@ -294,7 +282,7 @@ const page = () => {
                     onFocus={() => setFocusedField('message')}
                     onBlur={() => setFocusedField(null)}
                     rows={4}
-                    className="w-full bg-gray-900 text-white px-4 py-3 rounded-md border border-gray-700 focus:outline-none"
+                    className="w-full bg-white text-[#000000] px-4 py-3 rounded-md border border-gray-700 focus:outline-none"
                     placeholder="Your Message"
                   />
                   <motion.div 
@@ -323,10 +311,8 @@ const page = () => {
                   ) : (
                     <>
                       <span>Send Message</span>
-                      <motion.div
-                        className="absolute bottom-0 left-0 h-full bg-white opacity-10 w-0"
-                        whileHover={{ width: '100%' }}
-                        transition={{ duration: 0.3 }}
+                      <div
+                        className="absolute bottom-0 left-0 h-full bg-white opacity-10 w-0 group-hover:w-full transition-all duration-300"
                       />
                     </>
                   )}
