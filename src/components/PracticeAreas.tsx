@@ -34,7 +34,7 @@ export default function PracticeAreas() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          Why Choose Us
+          Our Expertise
         </motion.h2>
         <motion.div 
           className="w-24 h-1 bg-[#D2A02A] mx-auto"
@@ -59,32 +59,32 @@ export default function PracticeAreas() {
           {
             icon: faHouse,
             title: "Banking and Finance",
-            description: "Our attorneys bring decades of combined experience across various practice areas."
+            description: "Financial Fraud | Financial Scam | Bnaking Regulatory Compilance | Commercial Banking Issues | Financial Litigation | Frozen Bank Accounts |"
           },
           {
             icon: faScaleBalanced,
-            title: "Family Law",
-            description: "We prioritize understanding your unique needs to deliver tailored legal solutions."
+            title: "Loan Settlement",
+            description: "Credit Card | Personal Loan | Business Loan | Vehicle Loan | Bank Loan Default | NBFC Loan Dispute | RBI Loan Settlement Guidelines |"
           },
           {
             icon: faBuilding,
-            title: "Proven Results",
-            description: "Successfully handled thousands of cases with exceptional results for our clients."
+            title: "Intellectual Property Rights",
+            description: "Trademark Registration | Patent Filing | Copyright Protection | IP Infringement | Brand Protection | Pharmaceutical Patent Attorney |"
           },
           {
             icon: faBuildingColumns,
-            title: "Ethical Practice",
-            description: "We maintain the highest standards of integrity and professional ethics in all our work."
+            title: "Entertainment Law",
+            description: "Media and entertainment | Film Industry | Music Industry Legal Consultant | Digital Media and OTT Platform Legal Advisor |"
           },
           {
             icon: faUsers,
-            title: "Ethical Practice",
-            description: "We maintain the highest standards of integrity and professional ethics in all our work."
+            title: "Real Estate",
+            description: "Property Dispute | RERA Compliance | Property Registration | Land Dispute | Title Verification & Property Due Diligence | Real Estate Fraud |"
           },
           {
             icon: faHouse,
-            title: "Ethical Practice",
-            description: "We maintain the highest standards of integrity and professional ethics in all our work."
+            title: "Criminal Law",
+            description: "Legal Help for FIR & Police Cases | Arrest & Police Interrogation | Cyber Crime & Online Fraud | Money Laundering Case | Bank & Insurance Fraud | Criminal Breach |"
           }
         ].map((item, index) => (
           <motion.div 
@@ -100,7 +100,7 @@ export default function PracticeAreas() {
                 <FontAwesomeIcon icon={item.icon} className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-semibold text-[#5A4C33] mb-4 text-center">{item.title}</h3>
-              <p className="text-gray-600 text-center">{item.description}</p>
+              <p className="text-blue-600 text-center">{item.description}</p>
             </div>
             <div className="absolute inset-0 bg-gradient-to-r from-[#D2A02A]/20 to-[#5A4C33]/20 rounded-xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300 z-0" />
           </motion.div>

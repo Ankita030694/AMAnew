@@ -55,7 +55,7 @@ export default function Home() {
                 name: "Downtown Office",
                 address: "123 Legal Avenue, Downtown",
                 phone: "(555) 123-4567",
-                link: "/locations/delhi"
+                link: "/locations/newdelhi"
               },
               {
                 id: 2,
