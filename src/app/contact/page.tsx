@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-const page = () => {
+const Page = () => {
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -332,4 +332,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
