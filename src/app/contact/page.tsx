@@ -129,7 +129,7 @@ const Page = () => {
           <h1 className="text-4xl font-bold text-[#000000] mt-20">Contact Us</h1>
           <div className="w-24 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mx-auto"></div>
           <p className="text-[#000000] mt-6 mx-auto text-2xl">
-            We're here to help with your legal needs. Reach out to us using any of the methods below.
+            We&apos;re here to help with your legal needs. Reach out to us using any of the methods below.
           </p>
         </motion.div>
         
