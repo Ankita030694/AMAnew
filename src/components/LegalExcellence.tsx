@@ -7,26 +7,26 @@ import Image from "next/image";
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    role: "CEO, TechCorp",
-    content: "The legal expertise provided by this team was instrumental in our company's successful merger. Their attention to detail and strategic approach saved us countless hours and potential legal complications.",
-    image: "/shreychad.png",
-    rating: 5,
+    name: "Manoj Veerakumar",
+    // role: "CEO, TechCorp",
+    content: "Phenomenal services! Turnaround time was half day to get the papers in order, extend a reasonable price, and go for representation the next day to get a favourable result. Truly appreciate the efforts of Mr.Anand & team of AMA Legal solutions. Would strongly recommend them.",
+    image: "/testi1.png",
+    rating: 4.5,
   },
   {
     id: 2,
-    name: "David Martinez", 
-    role: "Entrepreneur",
-    content: "I've worked with many legal teams in my career, but none have demonstrated the level of excellence and dedication I've experienced here. They truly go above and beyond for their clients.",
-    image: "/rahul.png",
+    name: "Sanskar Bansal", 
+    // role: "Entrepreneur",
+    content: "I had the pleasure of consulting with Anand at AMA Legal Solutions recently regarding my financial concerns, and I couldn't be more impressed. Anand took the time to understand my situation thoroughly and provided clear, practical solutions to address my financial challenges.",
+    image: "/testi2.png",
     rating: 5,
   },
   {
     id: 3,
-    name: "Amanda Chen",
-    role: "General Counsel, Fortune 500",
-    content: "Their innovative approach to complex legal challenges has repeatedly proven invaluable to our organization. The team combines deep legal knowledge with practical business sense.",
-    image: "/ritka.png",
+    name: "Pratichi Pradhan",
+    // role: "General Counsel, Fortune 500",
+    content: "I recently worked with AMA Legal solutions, I was impressed with their professionalism and expertise. The team was responsive to my inquiries, and their attention to detail in handling my legal matters was commendable. The services provided were thorough, and I felt confident in their guidance throughout the process.",
+    image: "/testi3.png",
     rating: 5,
   },
 ];
@@ -150,7 +150,7 @@ export default function LegalExcellence() {
                             <FaQuoteLeft className="text-3xl md:text-4xl text-[#C8BEA9] mb-4" />
                             <div className="h-1 w-16 bg-white mb-4"></div>
                             <h3 className="text-lg md:text-xl font-bold">{testimonial.name}</h3>
-                            <p className="text-sm md:text-base text-[#E0D8C7]">{testimonial.role}</p>
+                            {/* <p className="text-sm md:text-base text-[#E0D8C7]">{testimonial.role}</p> */}
                           </div>
                           <div className="mt-4 mb-2">
                             <div className="flex space-x-1">
@@ -176,7 +176,7 @@ export default function LegalExcellence() {
                             </div>
                             <div className="hidden sm:block lg:hidden">
                               <h3 className="text-lg md:text-xl font-medium text-[#000000]">{testimonial.name}</h3>
-                              <p className="text-xs md:text-sm text-gray-500">{testimonial.role}</p>
+                              {/* <p className="text-xs md:text-sm text-gray-500">{testimonial.role}</p> */}
                               <div className="flex mt-1">
                                 {renderStars(testimonial.rating)}
                               </div>
