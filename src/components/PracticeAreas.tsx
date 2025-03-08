@@ -11,32 +11,7 @@ import {
 import { motion } from "framer-motion";
 
 
-const practiceAreas = [
-  {
-    title: "Banking and Finance",
-    icon: faBuildingColumns,
-  },
-  {
-    title: "Family Law", 
-    icon: faUsers,
-  },
-  {
-    title: "Business Law",
-    icon: faBriefcase,
-  },
-  {
-    title: "Real Estate",
-    icon: faHouse,
-  },
-  {
-    title: "Civil Law",
-    icon: faScaleBalanced,
-  },
-  {
-    title: "Corporate Law",
-    icon: faBuilding,
-  },
-]
+
 
 export default function PracticeAreas() {
   return (

@@ -6,7 +6,6 @@ import Clients from "@/components/Clients";
 import TributeCard from "@/components/TributeCard";
 import Yt from "@/components/Yt";
 import AnimatedCounter from "@/components/AnimatedCounter";
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Home() {
@@ -98,7 +97,7 @@ export default function Home() {
                 phone: "(555) 345-6789",
                 link: "/locations/chennai"
               }
-            ].map((location, index) => (
+            ].map((location) => (
               <div 
                 key={location.id}
                 className="group"
