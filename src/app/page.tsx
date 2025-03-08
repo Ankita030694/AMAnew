@@ -6,6 +6,7 @@ import Clients from "@/components/Clients";
 import TributeCard from "@/components/TributeCard";
 import Yt from "@/components/Yt";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Home() {
@@ -36,6 +37,99 @@ export default function Home() {
         </div>
       </div>
       <Yt />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-10">
+          <div 
+            className="text-center"
+          >
+            <h2 className="text-4xl font-bold text-[#5A4C33] mb-4">Our Locations</h2>
+            <div className="w-24 h-1 bg-[#D2A02A] mx-auto" />
+            <p className="max-w-2xl mx-auto mt-6 text-gray-600">
+              With offices strategically located throughout the region, we make expert legal counsel accessible wherever you are.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-6 gap-3">
+            {[
+              {
+                id: 1,
+                image: "/city1.svg", 
+                name: "Downtown Office",
+                address: "123 Legal Avenue, Downtown",
+                phone: "(555) 123-4567",
+                link: "/locations/delhi"
+              },
+              {
+                id: 2,
+                image: "/city2.svg",
+                name: "Westside Branch",
+                address: "456 Justice Blvd, Westside",
+                phone: "(555) 234-5678",
+                link: "/locations/mumbai"
+              },
+              {
+                id: 3,
+                image: "/city3.svg",
+                name: "Suburban Office",
+                address: "789 Counsel Lane, Suburbia",
+                phone: "(555) 345-6789",
+                link: "/locations/kolkata"
+              },
+              {
+                id: 4,
+                image: "/city4.svg",
+                name: "Suburban Office",
+                address: "789 Counsel Lane, Suburbia",
+                phone: "(555) 345-6789",
+                link: "/locations/jaipur"
+              },
+              {
+                id: 5,
+                image: "/city5.svg",
+                name: "Suburban Office",
+                address: "789 Counsel Lane, Suburbia",
+                phone: "(555) 345-6789",
+                link: "/locations/bengaluru"
+              },
+              {
+                id: 6,
+                image: "/city6.svg",
+                name: "Suburban Office",
+                address: "789 Counsel Lane, Suburbia",
+                phone: "(555) 345-6789",
+                link: "/locations/chennai"
+              }
+            ].map((location, index) => (
+              <div 
+                key={location.id}
+                className="group"
+              >
+                <a href={location.link} className="block h-full">
+                  <div className="overflow-hidden rounded-t-xl">
+                    <div className="h-64 overflow-hidden">
+                      <div 
+                        className="h-full w-full bg-no-repeat bg-contain bg-center transform group-hover:scale-110 transition-transform duration-500"
+                        style={{ backgroundImage: `url(${location.image})`}}
+                      />
+                    </div>
+                  </div>
+                  {/* <div className="p-6 bg-white border border-t-0 border-gray-200 rounded-b-xl group-hover:border-[#D2A02A] transition-all duration-300 group-hover:shadow-lg">
+                    <h3 className="text-xl font-semibold text-[#5A4C33] mb-2 group-hover:text-[#D2A02A] transition-colors">
+                      {location.name}
+                    </h3>
+                    <p className="text-gray-600 mb-3">{location.address}</p>
+                    <p className="text-gray-700 font-medium">{location.phone}</p>
+                    <div className="mt-4 flex items-center text-[#D2A02A] font-medium">
+                      <span>Learn more</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </div>
+                  </div> */}
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
       <LegalExcellence />
       {/* <Form /> */}
       {/* Other content */}

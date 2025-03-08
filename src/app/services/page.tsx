@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from "react";
-import PracticeAreas from "@/components/PracticeAreas";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
@@ -12,6 +11,7 @@ import {
   faChevronLeft, 
   faChevronRight 
 } from '@fortawesome/free-solid-svg-icons';
+import Image from "next/image";
 
 // Testimonials data
 const testimonials = [
@@ -61,7 +61,7 @@ export default function Services() {
   return (
     <main className="overflow-hidden">
       {/* Dynamic Hero Section with Parallax */}
-      <div className="relative h-[80vh] min-h-[600px] overflow-hidden">
+      <div className="relative h-[50vh] min-h-[600px] overflow-hidden">
         <motion.div 
           style={{ 
             scale: heroScale,
@@ -80,20 +80,20 @@ export default function Services() {
           >
             <source src="/about.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/80" /> {/* Reduced opacity of the gradient */}
         </motion.div>
         
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white max-w-4xl px-4 z-10">
+          <div className="text-center text-white max-w-4xl px-4 z-10 flex flex-col items-center mt-20">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-5xl md:text-7xl font-bold mb-8 text-shadow-lg relative">
+              <h1 className="text-5xl md:text-7xl font-bold mb-8 text-shadow-lg relative text-center">
                 <span className="inline-block">Our Legal </span>
                 <span className="inline-block relative">
-                  Services
+                  &nbsp;Services
                   <motion.div 
                     className="absolute -bottom-3 left-0 right-0 h-1 bg-[#D2A02A]"
                     initial={{ width: "0%" }}
@@ -105,7 +105,7 @@ export default function Services() {
             </motion.div>
             
             <motion.p 
-              className="text-xl md:text-2xl max-w-3xl mx-auto"
+              className="text-xl md:text-2xl max-w-3xl mx-auto text-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
@@ -146,92 +146,57 @@ export default function Services() {
       </div>
 
       {/* Practice Areas Section with enhanced styling */}
-      <div className="bg-gradient-to-b from-[#F9F9F9] to-white relative">
-        <div className="absolute left-0 right-0 h-24 bg-gradient-to-b from-transparent to-[#F9F9F9] -top-24" />
-        <PracticeAreas />
-      </div>
-      
-      {/* Animated Statistics Section */}
-      {/* <div className="bg-[#5A4C33] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="p-6" ref={casesWon.nodeRef}>
-              <div className="text-5xl font-bold text-[#D2A02A] mb-2">{casesWon.count}+</div>
-              <div className="uppercase tracking-wider text-sm">Cases Won</div>
-            </div>
-            <div className="p-6" ref={clientsServed.nodeRef}>
-              <div className="text-5xl font-bold text-[#D2A02A] mb-2">{clientsServed.count}+</div>
-              <div className="uppercase tracking-wider text-sm">Clients Served</div>
-            </div>
-            <div className="p-6" ref={yearsExperience.nodeRef}>
-              <div className="text-5xl font-bold text-[#D2A02A] mb-2">{yearsExperience.count}+</div>
-              <div className="uppercase tracking-wider text-sm">Years Experience</div>
-            </div>
-            <div className="p-6" ref={awards.nodeRef}>
-              <div className="text-5xl font-bold text-[#D2A02A] mb-2">{awards.count}+</div>
-              <div className="uppercase tracking-wider text-sm">Awards Received</div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
-      {/* Enhanced Why Choose Us Section */}
       <div className="bg-white py-10 relative">
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-32 h-32 bg-[#D2A02A]/5 rounded-br-full" />
         <div className="absolute bottom-0 right-0 w-40 h-40 bg-[#5A4C33]/5 rounded-tl-full" />
         
         <motion.div 
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+          className="max-w-8xl mx-40 px-4 sm:px-6 lg:px-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, margin: "-100px" }}
         >
           <div className="text-center mb-20">
-            <motion.h2 
-              className="text-5xl font-bold text-[#5A4C33] mb-6"
-              initial={{ y: 30, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              Why Choose Us
-            </motion.h2>
-            <motion.div 
-              className="w-24 h-1 bg-[#D2A02A] mx-auto"
-              initial={{ width: 0 }}
-              whileInView={{ width: 96 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-            />
-            <motion.p
-              className="max-w-2xl mx-auto mt-6 text-gray-600"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
-              Our firm combines decades of legal experience with personalized service to deliver exceptional results for all our clients.
-            </motion.p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 icon: faBalanceScale,
-                title: "Expert Team",
+                title: "Banking and Finance",
                 description: "Our attorneys bring decades of combined experience across various practice areas."
               },
               {
                 icon: faHandshake,
-                title: "Client-Focused",
+                title: "Family Law",
                 description: "We prioritize understanding your unique needs to deliver tailored legal solutions."
               },
               {
                 icon: faTrophy,
                 title: "Proven Results",
                 description: "Successfully handled thousands of cases with exceptional results for our clients."
+              },
+              {
+                icon: faCertificate,
+                title: "Ethical Practice",
+                description: "We maintain the highest standards of integrity and professional ethics in all our work."
+              },
+              {
+                icon: faCertificate,
+                title: "Ethical Practice",
+                description: "We maintain the highest standards of integrity and professional ethics in all our work."
+              },
+              {
+                icon: faCertificate,
+                title: "Ethical Practice",
+                description: "We maintain the highest standards of integrity and professional ethics in all our work."
+              },
+              {
+                icon: faCertificate,
+                title: "Ethical Practice",
+                description: "We maintain the highest standards of integrity and professional ethics in all our work."
               },
               {
                 icon: faCertificate,
@@ -260,6 +225,86 @@ export default function Services() {
           </div>
         </motion.div>
       </div>
+      {/* Enhanced Call to Action Section */}
+      <div className="relative">
+        <div className="absolute inset-0">
+          <Image
+            src="/bannerbg.png"
+            alt="Background"
+            fill
+            className="object-cover"
+            quality={100}
+          />
+        </div>
+        <div className="relative text-white py-24 z-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.h2 
+              className="text-4xl md:text-5xl font-bold mb-8"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              Have legal questions? Ask our experts!
+            </motion.h2>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="inline-block"
+            >
+              <button 
+                type="button"
+                className="bg-[#D2A02A] text-white px-10 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-[#5A4C33] transition-all duration-300 group relative overflow-hidden"
+              >
+                <span className="relative z-10">Schedule a Consultation</span>
+                <span className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              </button>
+            </motion.div>
+            <motion.div 
+              className="mt-8 flex justify-center space-x-6"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="text-white/80 hover:text-white transition-colors">
+                <span className="font-medium">Call us:</span> (555) 123-4567
+              </div>
+              <div className="text-white/80 hover:text-white transition-colors">
+                <span className="font-medium">Email:</span> contact@amalaw.com
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Animated Statistics Section */}
+      {/* <div className="bg-[#5A4C33] text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="p-6" ref={casesWon.nodeRef}>
+              <div className="text-5xl font-bold text-[#D2A02A] mb-2">{casesWon.count}+</div>
+              <div className="uppercase tracking-wider text-sm">Cases Won</div>
+            </div>
+            <div className="p-6" ref={clientsServed.nodeRef}>
+              <div className="text-5xl font-bold text-[#D2A02A] mb-2">{clientsServed.count}+</div>
+              <div className="uppercase tracking-wider text-sm">Clients Served</div>
+            </div>
+            <div className="p-6" ref={yearsExperience.nodeRef}>
+              <div className="text-5xl font-bold text-[#D2A02A] mb-2">{yearsExperience.count}+</div>
+              <div className="uppercase tracking-wider text-sm">Years Experience</div>
+            </div>
+            <div className="p-6" ref={awards.nodeRef}>
+              <div className="text-5xl font-bold text-[#D2A02A] mb-2">{awards.count}+</div>
+              <div className="uppercase tracking-wider text-sm">Awards Received</div>
+            </div>
+          </div>
+        </div>
+      </div> */}
+
+
       
       {/* Testimonials Carousel */}
       <div className="bg-[#F9F9F9] py-24 relative overflow-hidden">
@@ -340,61 +385,9 @@ export default function Services() {
         </div>
       </div>
 
-      {/* Enhanced Call to Action Section */}
-      <div className="relative">
-        <div className="absolute inset-0 bg-[#5A4C33] transform skew-y-2 origin-bottom-right" />
-        <div className="relative bg-[#5A4C33] text-white py-24 z-10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.h2 
-              className="text-4xl md:text-5xl font-bold mb-8"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              Ready to Discuss Your Case?
-            </motion.h2>
-            <motion.p 
-              className="text-xl mb-10 max-w-2xl mx-auto"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              Our team is standing by to provide the expert legal guidance you need. Schedule your consultation today.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="inline-block"
-            >
-              <button 
-                type="button"
-                className="bg-[#D2A02A] text-white px-10 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-[#5A4C33] transition-all duration-300 group relative overflow-hidden"
-              >
-                <span className="relative z-10">Schedule a Consultation</span>
-                <span className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-              </button>
-            </motion.div>
-            <motion.div 
-              className="mt-8 flex justify-center space-x-6"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-white/80 hover:text-white transition-colors">
-                <span className="font-medium">Call us:</span> (555) 123-4567
-              </div>
-              <div className="text-white/80 hover:text-white transition-colors">
-                <span className="font-medium">Email:</span> contact@amalaw.com
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </div>
+      
+
+    
     </main>
   );
 }
