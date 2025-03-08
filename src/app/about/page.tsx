@@ -3,6 +3,7 @@ import AnujBhiya from "@/components/aboutcomps/AnujBhiya";
 import Clients from "@/components/aboutcomps/Clients";
 import Hero from "@/components/aboutcomps/hero";
 import OurAttorneys from "@/components/aboutcomps/OurAttorneys";
+import TabbedTimeline from "@/components/aboutcomps/TabbedTimeline";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import Image from "next/image";
 
@@ -33,7 +34,9 @@ export default function About() {
         </div>
       </div>
         <AboutInfo />
+        <TabbedTimeline />
         <OurAttorneys />
+
       </div>
     );
   }

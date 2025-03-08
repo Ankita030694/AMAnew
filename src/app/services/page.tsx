@@ -279,31 +279,6 @@ export default function Services() {
           </div>
         </div>
       </div>
-      
-      {/* Animated Statistics Section */}
-      {/* <div className="bg-[#5A4C33] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="p-6" ref={casesWon.nodeRef}>
-              <div className="text-5xl font-bold text-[#D2A02A] mb-2">{casesWon.count}+</div>
-              <div className="uppercase tracking-wider text-sm">Cases Won</div>
-            </div>
-            <div className="p-6" ref={clientsServed.nodeRef}>
-              <div className="text-5xl font-bold text-[#D2A02A] mb-2">{clientsServed.count}+</div>
-              <div className="uppercase tracking-wider text-sm">Clients Served</div>
-            </div>
-            <div className="p-6" ref={yearsExperience.nodeRef}>
-              <div className="text-5xl font-bold text-[#D2A02A] mb-2">{yearsExperience.count}+</div>
-              <div className="uppercase tracking-wider text-sm">Years Experience</div>
-            </div>
-            <div className="p-6" ref={awards.nodeRef}>
-              <div className="text-5xl font-bold text-[#D2A02A] mb-2">{awards.count}+</div>
-              <div className="uppercase tracking-wider text-sm">Awards Received</div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
 
       
       {/* Testimonials Carousel */}
