@@ -206,7 +206,7 @@ const Page = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-[#D2A02A] mb-2">Thank You!</h3>
                 <p className="text-gray-300 text-center">
-                  Your message has been received. We'll get back to you shortly.
+                  Your message has been received. We&apos;ll get back to you shortly.
                 </p>
               </motion.div>
             ) : (
