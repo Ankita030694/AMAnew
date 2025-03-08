@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#D2A02A] text-[#5A4C33] pt-16 pb-6 text-bold">
+    <footer className="bg-[#D2A02A] text-[#000000] pt-16 pb-6 text-bold">
       <div className="max-w-[80%] mx-auto sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-4">
           {/* Logo and Description */}
