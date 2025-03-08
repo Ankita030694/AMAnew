@@ -81,6 +81,32 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+          {/* Find Us */}
+          <div className="text-center sm:text-left">
+            <h3 className="text-2xl font-semibold mb-6">Find Us</h3>
+            <ul className="space-y-4 text-xl">
+              <li className="break-words">
+                2493AP, Block G, Sushant Lok 2, Sector 57, Gurugram, Haryana
+                122001
+              </li>
+              <li>
+                <a
+                  href="tel:(257) 388-6895"
+                  className="hover:text-white transition-colors"
+                >
+                  +918700343611
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:temmink@outlook.com"
+                  className="hover:text-white transition-colors break-words"
+                >
+                  info@amalegalsolutions.com
+                </a>
+              </li>
+            </ul>
+          </div>
           {/* Practice Areas */}
           <div className="text-center sm:text-left">
             <h3 className="text-2xl font-semibold mb-6">
@@ -119,32 +145,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          {/* Find Us */}
-          <div className="text-center sm:text-left">
-            <h3 className="text-2xl sm:text-lg font-semibold mb-6">Find Us</h3>
-            <ul className="space-y-4 text-xl">
-              <li className="break-words">
-                2493AP, Block G, Sushant Lok 2, Sector 57, Gurugram, Haryana
-                122001
-              </li>
-              <li>
-                <a
-                  href="tel:(257) 388-6895"
-                  className="hover:text-white transition-colors"
-                >
-                  +918700343611
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:temmink@outlook.com"
-                  className="hover:text-white transition-colors break-words"
-                >
-                  info@amalegalsolutions.com
-                </a>
-              </li>
-            </ul>
-          </div>
+          
         </div>
 
         {/* Copyright */}
