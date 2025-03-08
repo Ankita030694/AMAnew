@@ -19,7 +19,7 @@ const TimelineCards = () => {
       id: 'present',
       title: 'Present',
       imageSrc: '/city2.svg',
-      description: "See how we're making a difference today with innovative approaches, technology integration, and client-centered solutions.",
+      description: 'See how we&apos;re making a difference today with innovative approaches, technology integration, and client-centered solutions.',
       link: '/about/present'
     },
     {
@@ -85,7 +85,7 @@ const TimelineCards = () => {
           <h2 className="text-4xl font-bold text-white mb-4">Our Journey Through Time</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mx-auto"></div>
           <p className="text-gray-300 mt-6 max-w-2xl mx-auto">
-            Explore the chapters of our story – from where we began to where we're headed.
+            Explore the chapters of our story – from where we began to where we&apos;re headed.
           </p>
         </motion.div>
         
