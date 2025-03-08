@@ -15,9 +15,9 @@ export default function Footer() {
               <Image
                 src="/ama6.png"
                 alt="AMA Logo"
-                width={192}
+                width={500}
                 height={20}
-                className="w-48 sm:w-auto -mt-24 sm:-mt-16"
+                className="w-64 -mt-20"
               />
             </Link>
             <p className="-mt-18 text-center sm:text-left text-base text-xl">
