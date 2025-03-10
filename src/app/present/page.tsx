@@ -337,7 +337,7 @@ const PresentPage = () => {
                   <div className="text-3xl text-[#D2A02A]">❝</div>
                 </div>
                 <p className="text-gray-300 italic mb-6">
-                  "Their innovative approach and commitment to excellence made all the difference in our case. The team was responsive, thorough, and truly cared about our success."
+                  &quot;Their innovative approach and commitment to excellence made all the difference in our case. The team was responsive, thorough, and truly cared about our success.&quot;
                 </p>
                 <div className="flex items-center">
                   <div className="w-12 h-12 rounded-full bg-[#D2A02A]/20 flex items-center justify-center text-[#D2A02A] font-bold mr-4">

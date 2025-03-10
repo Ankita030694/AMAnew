@@ -196,7 +196,7 @@ const VisionPage = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              "Reimagining Legal Services for a Changing World"
+              &quot;Reimagining Legal Services for a Changing World&quot;
             </motion.h2>
             <motion.div 
               className="w-32 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mx-auto mb-8"
