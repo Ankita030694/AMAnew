@@ -1,62 +1,32 @@
 'use client'
 
-import { useState } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+
+import { motion, useScroll, useTransform } from "framer-motion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faBalanceScale, 
   faCertificate, 
   faHandshake, 
-  faTrophy, 
-  faChevronLeft, 
-  faChevronRight 
+  faTrophy,  
 } from '@fortawesome/free-solid-svg-icons';
 import Image from "next/image";
 
 // Testimonials data
-const testimonials = [
-  {
-    id: 1,
-    quote: "The team at AMA Law provided exceptional guidance during my real estate transaction. Their attention to detail saved me from potential legal issues I hadn't even considered.",
-    author: "Sarah M.",
-    position: "Homeowner"
-  },
-  {
-    id: 2,
-    quote: "As a small business owner, having AMA Law handle our corporate matters has been invaluable. Their strategic advice helped us navigate complex regulations while growing our company.",
-    author: "Michael T.", 
-    position: "CEO, TechStart Inc."
-  },
-  {
-    id: 3,
-    quote: "During my divorce case, the compassion and expertise I received from AMA Law made an incredibly difficult time much more manageable. I couldn't recommend them more highly.",
-    author: "Jennifer K.",
-    position: "Family Law Client"
-  }
-];
 
 export default function Services() {
   const { scrollYProgress } = useScroll();
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 1.1]);
   
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
   
   // For floating decorative elements
   const floatingY = useTransform(scrollYProgress, [0, 1], [0, -50]);
   const floatingRotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
 
-  const handlePrevTestimonial = () => {
-    setCurrentTestimonial(prev => (prev === 0 ? testimonials.length - 1 : prev - 1));
-  };
 
-  const handleNextTestimonial = () => {
-    setCurrentTestimonial(prev => (prev === testimonials.length - 1 ? 0 : prev + 1));
-  };
 
-  const handleTestimonialSelect = (index: number) => {
-    setCurrentTestimonial(index);
-  };
+
   
   return (
     <main className="overflow-hidden">
