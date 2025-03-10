@@ -13,21 +13,21 @@ const TimelineCards = () => {
       title: 'Our History',
       imageSrc: '/city1.svg',
       description: 'Discover the journey that shaped us into the firm we are today. From our humble beginnings to landmark cases that defined our reputation.',
-      link: '/about/history'
+      link: '/ourhistory'
     },
     {
       id: 'present',
       title: 'Present',
       imageSrc: '/city2.svg',
       description: 'See how we&apos;re making a difference today with innovative approaches, technology integration, and client-centered solutions.',
-      link: '/about/present'
+      link: '/present'
     },
     {
       id: 'vision',
       title: 'Our Vision',
       imageSrc: '/city3.svg',
       description: 'Explore our roadmap for the future as we continue to evolve and pioneer new standards in legal excellence.',
-      link: '/about/vision'
+      link: '/ourvision'
     }
   ];
 
