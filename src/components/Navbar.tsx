@@ -6,6 +6,8 @@ import { useState } from 'react'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isBlogsDropdownOpen, setIsBlogsDropdownOpen] = useState(false)
+  const [isMobileBlogsDropdownOpen, setIsMobileBlogsDropdownOpen] = useState(false)
 
   return (
     <nav className="fixed w-full z-50 bg-black/90 backdrop-blur-sm">
@@ -25,7 +27,7 @@ export default function Navbar() {
           </div>
 
           {/* Navigation Links - Desktop */}
-          <div className="hidden md:block w-full" style={{marginLeft: "-170px"}}>
+          <div className="hidden md:block w-full" style={{marginLeft: "-120px"}}>
             <div className="flex items-center justify-center space-x-8">
               <Link href="/" className="text-gray-300 hover:text-white px-3 py-2">
                 Home
@@ -39,12 +41,29 @@ export default function Navbar() {
               <Link href="/contact" className="text-gray-300 hover:text-white px-3 py-2">
                 Contact us
               </Link>
+              <div className="relative">
+                <button 
+                  onClick={() => setIsBlogsDropdownOpen(!isBlogsDropdownOpen)} 
+                  className="text-gray-300 hover:text-white px-3 py-2 flex items-center"
+                >
+                  Blogs
+                  <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {isBlogsDropdownOpen && (
+                  <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10">
+                    <Link href="/blogs" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Blogs</Link>
+                    <Link href="/amalive" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">AMA Live</Link>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 
           {/* Phone Number - Desktop */}
           <div className="hidden md:block">
-            <a href="tel:(257) 388-6895" className="text-white">
+            <a href="tel:1234567890" className="text-white">
               1234567890
             </a>
           </div>
@@ -86,7 +105,7 @@ export default function Navbar() {
         <div 
           className={`md:hidden transition-all duration-300 ease-in-out transform ${
             isMenuOpen 
-              ? 'opacity-100 translate-y-0 max-h-96' 
+              ? 'opacity-100 translate-y-0 max-h-screen' 
               : 'opacity-0 -translate-y-4 max-h-0'
           } overflow-hidden`}
         >
@@ -95,7 +114,7 @@ export default function Navbar() {
               { href: "/", text: "Home" },
               { href: "/services", text: "Services" },
               { href: "/about", text: "About us" },
-              { href: "/contact", text: "Contact us" }
+              { href: "/contact", text: "Contact us" },
             ].map((link, index) => (
               <Link 
                 key={link.href}
@@ -110,13 +129,56 @@ export default function Navbar() {
                 {link.text}
               </Link>
             ))}
+            
+            {/* Blogs dropdown for mobile */}
+            <div className="relative">
+              <button 
+                onClick={() => setIsMobileBlogsDropdownOpen(!isMobileBlogsDropdownOpen)}
+                className="text-gray-300 hover:text-white flex items-center w-full px-3 py-2 transform transition-all duration-300 hover:translate-x-2"
+                style={{
+                  opacity: isMenuOpen ? 1 : 0,
+                  transform: isMenuOpen ? 'translateX(0)' : 'translateX(-20px)',
+                  transitionDelay: '400ms'
+                }}
+              >
+                Blogs
+                <svg 
+                  className={`ml-1 h-4 w-4 transform transition-transform duration-200 ${isMobileBlogsDropdownOpen ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              <div 
+                className={`pl-4 overflow-hidden transition-all duration-200 ${
+                  isMobileBlogsDropdownOpen ? 'max-h-24 opacity-100' : 'max-h-0 opacity-0'
+                }`}
+              >
+                <Link 
+                  href="/blogs"
+                  className="text-gray-300 hover:text-white block px-3 py-2 transform transition-all duration-300 hover:translate-x-2"
+                >
+                  Blogs
+                </Link>
+                <Link 
+                  href="/amalive"
+                  className="text-gray-300 hover:text-white block px-3 py-2 transform transition-all duration-300 hover:translate-x-2"
+                >
+                  AMA Live
+                </Link>
+              </div>
+            </div>
+            
             <a 
-              href="tel:(257) 388-6895" 
+              href="tel:1234567890" 
               className="text-gray-300 hover:text-white block px-3 py-2 transform transition-all duration-300 hover:translate-x-2"
               style={{
                 opacity: isMenuOpen ? 1 : 0,
                 transform: isMenuOpen ? 'translateX(0)' : 'translateX(-20px)',
-                transitionDelay: '400ms'
+                transitionDelay: '500ms'
               }}
             >
               1234567890
