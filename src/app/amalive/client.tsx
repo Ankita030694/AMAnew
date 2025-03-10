@@ -65,6 +65,11 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
   const videosPerPage = 9;
   const [isLoading, setIsLoading] = useState(false);
   
+  // Calculate total pages based on available videos and a minimum value
+  // We add 1 to ensure there's always at least one more page to load
+  const totalPages = Math.max(Math.ceil(videos.length / videosPerPage), 
+    currentPage < 3 ? currentPage + 1 : currentPage);
+  
   // Load more videos when needed
   const loadMoreVideos = useCallback(async (pageNumber: number) => {
     if (videos.length < pageNumber * videosPerPage) {
@@ -95,138 +100,18 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
     // Update current page
     setCurrentPage(pageNumber);
     
-    // Scroll to top when changing pages - using requestAnimationFrame for smoother experience
+    // Scroll to top when changing pages
     requestAnimationFrame(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 200, behavior: 'smooth' });
     });
   }, [loadMoreVideos]);
   
-  // Pagination logic with memoization
-  const { currentVideos, totalPages } = useMemo(() => {
+  // Get current videos for display
+  const currentVideos = useMemo(() => {
     const indexOfLastVideo = currentPage * videosPerPage;
     const indexOfFirstVideo = indexOfLastVideo - videosPerPage;
-    return {
-      currentVideos: videos.slice(indexOfFirstVideo, indexOfLastVideo),
-      totalPages: Math.ceil(videos.length / videosPerPage) || 1 // Ensure at least 1 page
-    };
+    return videos.slice(indexOfFirstVideo, indexOfLastVideo);
   }, [videos, currentPage, videosPerPage]);
-  
-  // Pagination component
-  const PaginationControls = useCallback(() => {
-    if (totalPages <= 1) return null;
-    
-    return (
-      <motion.div 
-        className="flex justify-center items-center space-x-2 mt-8"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
-      >
-        <button
-          onClick={() => paginate(Math.max(1, currentPage - 1))}
-          disabled={currentPage === 1}
-          className={`px-4 py-2 rounded-md ${
-            currentPage === 1
-              ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
-              : 'bg-[#D2A02A] text-white hover:bg-[#B8881E]'
-          } transition-colors`}
-          aria-label="Previous page"
-        >
-          Previous
-        </button>
-        
-        {totalPages <= 5 ? (
-          [...Array(totalPages)].map((_, idx) => (
-            <button
-              key={idx + 1}
-              onClick={() => paginate(idx + 1)}
-              className={`w-10 h-10 rounded-full ${
-                currentPage === idx + 1
-                  ? 'bg-[#D2A02A] text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              } transition-colors`}
-              aria-label={`Page ${idx + 1}`}
-              aria-current={currentPage === idx + 1 ? 'page' : undefined}
-            >
-              {idx + 1}
-            </button>
-          ))
-        ) : (
-          <>
-            <button
-              onClick={() => paginate(1)}
-              className={`w-10 h-10 rounded-full ${
-                currentPage === 1
-                  ? 'bg-[#D2A02A] text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              } transition-colors`}
-              aria-label="Page 1"
-              aria-current={currentPage === 1 ? 'page' : undefined}
-            >
-              1
-            </button>
-            
-            {currentPage > 3 && <span className="px-2" aria-hidden="true">...</span>}
-            
-            {Array.from({ length: 3 }, (_, i) => {
-              const pageNum = Math.min(
-                Math.max(currentPage - 1 + i, 2),
-                totalPages - 1
-              );
-              
-              if (pageNum <= 1 || pageNum >= totalPages) return null;
-              if ((currentPage <= 3 && pageNum > 3) || 
-                  (currentPage >= totalPages - 2 && pageNum < totalPages - 2)) return null;
-              
-              return (
-                <button
-                  key={pageNum}
-                  onClick={() => paginate(pageNum)}
-                  className={`w-10 h-10 rounded-full ${
-                    currentPage === pageNum
-                      ? 'bg-[#D2A02A] text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  } transition-colors`}
-                  aria-label={`Page ${pageNum}`}
-                  aria-current={currentPage === pageNum ? 'page' : undefined}
-                >
-                  {pageNum}
-                </button>
-              );
-            })}
-            
-            {currentPage < totalPages - 2 && <span className="px-2" aria-hidden="true">...</span>}
-            
-            <button
-              onClick={() => paginate(totalPages)}
-              className={`w-10 h-10 rounded-full ${
-                currentPage === totalPages
-                  ? 'bg-[#D2A02A] text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              } transition-colors`}
-              aria-label={`Page ${totalPages}`}
-              aria-current={currentPage === totalPages ? 'page' : undefined}
-            >
-              {totalPages}
-            </button>
-          </>
-        )}
-        
-        <button
-          onClick={() => paginate(Math.min(totalPages, currentPage + 1))}
-          disabled={currentPage === totalPages}
-          className={`px-4 py-2 rounded-md ${
-            currentPage === totalPages
-              ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
-              : 'bg-[#D2A02A] text-white hover:bg-[#B8881E]'
-          } transition-colors`}
-          aria-label="Next page"
-        >
-          Next
-        </button>
-      </motion.div>
-    );
-  }, [currentPage, totalPages, paginate]);
   
   return (
     <div className="bg-transparent">
@@ -323,7 +208,117 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
         )}
         
         {/* Pagination */}
-        <PaginationControls />
+        {totalPages > 1 && (
+          <motion.div 
+            className="flex justify-center items-center space-x-2 mt-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            <button
+              onClick={() => paginate(Math.max(1, currentPage - 1))}
+              disabled={currentPage === 1}
+              className={`px-4 py-2 rounded-md ${
+                currentPage === 1
+                  ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                  : 'bg-[#D2A02A] text-white hover:bg-[#B8881E]'
+              } transition-colors`}
+              aria-label="Previous page"
+            >
+              Previous
+            </button>
+            
+            {totalPages <= 5 ? (
+              [...Array(totalPages)].map((_, idx) => (
+                <button
+                  key={idx + 1}
+                  onClick={() => paginate(idx + 1)}
+                  className={`w-10 h-10 rounded-full ${
+                    currentPage === idx + 1
+                      ? 'bg-[#D2A02A] text-white'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  } transition-colors`}
+                  aria-label={`Page ${idx + 1}`}
+                  aria-current={currentPage === idx + 1 ? 'page' : undefined}
+                >
+                  {idx + 1}
+                </button>
+              ))
+            ) : (
+              <>
+                <button
+                  onClick={() => paginate(1)}
+                  className={`w-10 h-10 rounded-full ${
+                    currentPage === 1
+                      ? 'bg-[#D2A02A] text-white'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  } transition-colors`}
+                  aria-label="Page 1"
+                  aria-current={currentPage === 1 ? 'page' : undefined}
+                >
+                  1
+                </button>
+                
+                {currentPage > 3 && <span className="px-2" aria-hidden="true">...</span>}
+                
+                {Array.from({ length: 3 }, (_, i) => {
+                  const pageNum = Math.min(
+                    Math.max(currentPage - 1 + i, 2),
+                    totalPages - 1
+                  );
+                  
+                  if (pageNum <= 1 || pageNum >= totalPages) return null;
+                  if ((currentPage <= 3 && pageNum > 3) || 
+                      (currentPage >= totalPages - 2 && pageNum < totalPages - 2)) return null;
+                  
+                  return (
+                    <button
+                      key={pageNum}
+                      onClick={() => paginate(pageNum)}
+                      className={`w-10 h-10 rounded-full ${
+                        currentPage === pageNum
+                          ? 'bg-[#D2A02A] text-white'
+                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      } transition-colors`}
+                      aria-label={`Page ${pageNum}`}
+                      aria-current={currentPage === pageNum ? 'page' : undefined}
+                    >
+                      {pageNum}
+                    </button>
+                  );
+                })}
+                
+                {currentPage < totalPages - 2 && <span className="px-2" aria-hidden="true">...</span>}
+                
+                <button
+                  onClick={() => paginate(totalPages)}
+                  className={`w-10 h-10 rounded-full ${
+                    currentPage === totalPages
+                      ? 'bg-[#D2A02A] text-white'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  } transition-colors`}
+                  aria-label={`Page ${totalPages}`}
+                  aria-current={currentPage === totalPages ? 'page' : undefined}
+                >
+                  {totalPages}
+                </button>
+              </>
+            )}
+            
+            <button
+              onClick={() => paginate(Math.min(totalPages, currentPage + 1))}
+              disabled={currentPage === totalPages}
+              className={`px-4 py-2 rounded-md ${
+                currentPage === totalPages
+                  ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                  : 'bg-[#D2A02A] text-white hover:bg-[#B8881E]'
+              } transition-colors`}
+              aria-label="Next page"
+            >
+              Next
+            </button>
+          </motion.div>
+        )}
       </div>
     </div>
   );

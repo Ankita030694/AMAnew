@@ -9,7 +9,17 @@ export default function Navbar() {
   const [isBlogsDropdownOpen, setIsBlogsDropdownOpen] = useState(false)
   const [isMobileBlogsDropdownOpen, setIsMobileBlogsDropdownOpen] = useState(false)
 
+  const blogdropdownhandler = () => {
+    setIsBlogsDropdownOpen(!isBlogsDropdownOpen);
+  }
+
+  const handleLinkClick = () => {
+    setIsBlogsDropdownOpen(false);
+    setIsMenuOpen(false); // Close the mobile menu when a link is clicked
+  }
+
   return (
+    
     <nav className="fixed w-full z-50 bg-black/90 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -29,21 +39,21 @@ export default function Navbar() {
           {/* Navigation Links - Desktop */}
           <div className="hidden md:block w-full" style={{marginLeft: "-120px"}}>
             <div className="flex items-center justify-center space-x-8">
-              <Link href="/" className="text-gray-300 hover:text-white px-3 py-2">
+              <Link href="/" className="text-gray-300 hover:text-white px-3 py-2" onClick={handleLinkClick}>
                 Home
               </Link>
-              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2">
-                Services
-              </Link>
-              <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2">
+              <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2" onClick={handleLinkClick}>
                 About us
               </Link>
-              <Link href="/contact" className="text-gray-300 hover:text-white px-3 py-2">
+              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2" onClick={handleLinkClick}>
+                Services
+              </Link>
+              <Link href="/contact" className="text-gray-300 hover:text-white px-3 py-2" onClick={handleLinkClick}>
                 Contact us
               </Link>
               <div className="relative">
                 <button 
-                  onClick={() => setIsBlogsDropdownOpen(!isBlogsDropdownOpen)} 
+                  onClick={() => blogdropdownhandler()} 
                   className="text-gray-300 hover:text-white px-3 py-2 flex items-center"
                 >
                   Blogs
@@ -53,8 +63,8 @@ export default function Navbar() {
                 </button>
                 {isBlogsDropdownOpen && (
                   <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10">
-                    <Link href="/blogs" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Blogs</Link>
-                    <Link href="/amalive" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">AMA Live</Link>
+                    <Link href="/blogs" className="block px-4 py-2 text-gray-800 hover:bg-gray-200" onClick={handleLinkClick}>Blogs</Link>
+                    <Link href="/amalive" className="block px-4 py-2 text-gray-800 hover:bg-gray-200" onClick={handleLinkClick}>AMA Live</Link>
                   </div>
                 )}
               </div>
@@ -112,14 +122,15 @@ export default function Navbar() {
           <div className="px-2 pt-2 pb-3 space-y-1">
             {[
               { href: "/", text: "Home" },
-              { href: "/services", text: "Services" },
               { href: "/about", text: "About us" },
+              { href: "/services", text: "Services" },
               { href: "/contact", text: "Contact us" },
             ].map((link, index) => (
               <Link 
                 key={link.href}
                 href={link.href}
                 className="text-gray-300 hover:text-white block px-3 py-2 transform transition-all duration-300 hover:translate-x-2"
+                onClick={handleLinkClick}
                 style={{
                   opacity: isMenuOpen ? 1 : 0,
                   transform: isMenuOpen ? 'translateX(0)' : 'translateX(-20px)',
@@ -160,12 +171,14 @@ export default function Navbar() {
                 <Link 
                   href="/blogs"
                   className="text-gray-300 hover:text-white block px-3 py-2 transform transition-all duration-300 hover:translate-x-2"
+                  onClick={handleLinkClick}
                 >
                   Blogs
                 </Link>
                 <Link 
                   href="/amalive"
                   className="text-gray-300 hover:text-white block px-3 py-2 transform transition-all duration-300 hover:translate-x-2"
+                  onClick={handleLinkClick}
                 >
                   AMA Live
                 </Link>

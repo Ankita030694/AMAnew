@@ -37,9 +37,7 @@ export default function Home() {
       </div>
       <Yt />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-10">
-          <div 
-            className="text-center"
-          >
+          <div className="text-center">
             <h2 className="text-4xl font-bold text-[#5A4C33] mb-4">Our Locations</h2>
             <div className="w-24 h-1 bg-[#D2A02A] mx-auto" />
             <p className="max-w-2xl mx-auto mt-6 text-gray-600">
@@ -98,32 +96,21 @@ export default function Home() {
                 link: "/locations/chennai"
               }
             ].map((location) => (
-              <div 
-                key={location.id}
-                className="group"
-              >
+              <div key={location.id} className="group relative">
                 <a href={location.link} className="block h-full">
                   <div className="overflow-hidden rounded-t-xl">
                     <div className="h-64 overflow-hidden">
                       <div 
-                        className="h-full w-full bg-no-repeat bg-contain bg-center transform group-hover:scale-110 transition-transform duration-500"
+                        className="h-full w-full bg-no-repeat bg-contain bg-center transform group-hover:scale-110 transition-transform duration-500 group-hover:filter group-hover:brightness-50"
                         style={{ backgroundImage: `url(${location.image})`}}
                       />
                     </div>
                   </div>
-                  {/* <div className="p-6 bg-white border border-t-0 border-gray-200 rounded-b-xl group-hover:border-[#D2A02A] transition-all duration-300 group-hover:shadow-lg">
-                    <h3 className="text-xl font-semibold text-[#5A4C33] mb-2 group-hover:text-[#D2A02A] transition-colors">
-                      {location.name}
-                    </h3>
-                    <p className="text-gray-600 mb-3">{location.address}</p>
-                    <p className="text-gray-700 font-medium">{location.phone}</p>
-                    <div className="mt-4 flex items-center text-[#D2A02A] font-medium">
-                      <span>Learn more</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </div>
-                  </div> */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button className="bg-[#D2A02A] text-white font-semibold py-2 px-4 rounded">
+                      View More
+                    </button>
+                  </div>
                 </a>
               </div>
             ))}
