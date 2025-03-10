@@ -61,7 +61,7 @@ export default function Services() {
   return (
     <main className="overflow-hidden">
       {/* Dynamic Hero Section with Parallax */}
-      <div className="relative h-[50vh] min-h-[600px] overflow-hidden">
+      <div className="relative h-[50vh] min-h-[500px] overflow-hidden">
         <motion.div 
           style={{ 
             scale: heroScale,
@@ -80,22 +80,22 @@ export default function Services() {
           >
             <source src="/about.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/80" /> {/* Reduced opacity of the gradient */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/80" />
         </motion.div>
         
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white max-w-4xl px-4 z-10 flex flex-col items-center mt-20">
+          <div className="text-center text-white max-w-4xl px-4 z-10 flex flex-col items-center mt-12 md:mt-20">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-5xl md:text-7xl font-bold mb-8 text-shadow-lg relative text-center">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-8 text-shadow-lg relative text-center">
                 <span className="inline-block">Legal </span>
                 <span className="inline-block relative">
                   &nbsp;Services in Jaipur
                   <motion.div 
-                    className="absolute -bottom-3 left-0 right-0 h-1 bg-[#D2A02A]"
+                    className="absolute -bottom-2 md:-bottom-3 left-0 right-0 h-1 bg-[#D2A02A]"
                     initial={{ width: "0%" }}
                     animate={{ width: "100%" }}
                     transition={{ delay: 0.5, duration: 0.8 }}
@@ -105,7 +105,7 @@ export default function Services() {
             </motion.div>
             
             <motion.p 
-              className="text-xl md:text-2xl max-w-3xl mx-auto text-center"
+              className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto text-center px-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
@@ -121,11 +121,11 @@ export default function Services() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="mt-10"
+              className="mt-6 md:mt-10"
             >
               <button 
                 type="button"
-                className="bg-[#D2A02A] text-white px-10 py-4 rounded-lg text-lg font-semibold hover:bg-[#b88a24] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg relative overflow-hidden group"
+                className="bg-[#D2A02A] text-white px-6 sm:px-8 md:px-10 py-3 md:py-4 rounded-lg text-base md:text-lg font-semibold hover:bg-[#b88a24] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg relative overflow-hidden group"
               >
                 <span className="relative z-10">Consult Now</span>
                 <span className="absolute top-0 left-0 w-full h-full bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
@@ -134,7 +134,7 @@ export default function Services() {
           </div>
         </div>
         
-        {/* Floating decorative elements */}
+        {/* Floating decorative elements - only visible on larger screens */}
         <motion.div 
           className="absolute top-20 right-20 w-24 h-24 rounded-full border-4 border-[#D2A02A]/30 hidden md:block"
           style={{ y: floatingY, rotate: floatingRotate }}
@@ -148,20 +148,22 @@ export default function Services() {
       {/* Practice Areas Section with enhanced styling */}
       <div className="bg-white py-10 relative">
         {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-32 h-32 bg-[#D2A02A]/5 rounded-br-full" />
-        <div className="absolute bottom-0 right-0 w-40 h-40 bg-[#5A4C33]/5 rounded-tl-full" />
+        <div className="absolute top-0 left-0 w-20 md:w-32 h-20 md:h-32 bg-[#D2A02A]/5 rounded-br-full" />
+        <div className="absolute bottom-0 right-0 w-24 md:w-40 h-24 md:h-40 bg-[#5A4C33]/5 rounded-tl-full" />
         
         <motion.div 
-          className="max-w-8xl mx-40 px-4 sm:px-6 lg:px-8"
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <div className="text-center mb-20">
+          <div className="text-center mb-12 md:mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#5A4C33] mb-4">Our Practice Areas</h2>
+            <div className="w-24 h-1 bg-[#D2A02A] mx-auto" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {[
               {
                 icon: faBalanceScale,
@@ -185,23 +187,23 @@ export default function Services() {
               },
               {
                 icon: faCertificate,
-                title: "Ethical Practice",
-                description: "We maintain the highest standards of integrity and professional ethics in all our work."
+                title: "Corporate Law",
+                description: "Comprehensive legal support for businesses of all sizes and industries."
               },
               {
                 icon: faCertificate,
-                title: "Ethical Practice",
-                description: "We maintain the highest standards of integrity and professional ethics in all our work."
+                title: "Real Estate",
+                description: "Expert guidance on property transactions, contracts, and regulatory compliance."
               },
               {
                 icon: faCertificate,
-                title: "Ethical Practice",
-                description: "We maintain the highest standards of integrity and professional ethics in all our work."
+                title: "Estate Planning",
+                description: "Protect your assets and provide for your loved ones through detailed estate planning."
               },
               {
                 icon: faCertificate,
-                title: "Ethical Practice",
-                description: "We maintain the highest standards of integrity and professional ethics in all our work."
+                title: "Litigation",
+                description: "Aggressive representation with strategic approaches to complex legal disputes."
               }
             ].map((item, index) => (
               <motion.div 
@@ -209,15 +211,15 @@ export default function Services() {
                 className="relative group"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 * index }}
+                transition={{ duration: 0.5, delay: 0.1 * Math.min(index, 3) }} // Limit delay for mobile performance
                 viewport={{ once: true, margin: "-50px" }}
               >
-                <div className="p-8 rounded-xl border border-gray-200 hover:border-[#D2A02A] transition-all duration-300 h-full group-hover:shadow-lg group-hover:-translate-y-2 bg-white relative z-10">
-                  <div className="w-16 h-16 rounded-full bg-[#5A4C33]/10 flex items-center justify-center text-[#D2A02A] mb-6 group-hover:bg-[#D2A02A] group-hover:text-white transition-all duration-300 mx-auto">
-                    <FontAwesomeIcon icon={item.icon} className="w-8 h-8" />
+                <div className="p-4 md:p-8 rounded-xl border border-gray-200 hover:border-[#D2A02A] transition-all duration-300 h-full group-hover:shadow-lg group-hover:-translate-y-2 bg-white relative z-10">
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#5A4C33]/10 flex items-center justify-center text-[#D2A02A] mb-4 md:mb-6 group-hover:bg-[#D2A02A] group-hover:text-white transition-all duration-300 mx-auto">
+                    <FontAwesomeIcon icon={item.icon} className="w-6 h-6 md:w-8 md:h-8" />
                   </div>
-                  <h3 className="text-xl font-semibold text-[#5A4C33] mb-4 text-center">{item.title}</h3>
-                  <p className="text-gray-600 text-center">{item.description}</p>
+                  <h3 className="text-lg md:text-xl font-semibold text-[#5A4C33] mb-2 md:mb-4 text-center">{item.title}</h3>
+                  <p className="text-sm md:text-base text-gray-600 text-center">{item.description}</p>
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#D2A02A]/20 to-[#5A4C33]/20 rounded-xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300 z-0" />
               </motion.div>
@@ -225,6 +227,7 @@ export default function Services() {
           </div>
         </motion.div>
       </div>
+      
       {/* Enhanced Call to Action Section */}
       <div className="relative">
         <div className="absolute inset-0">
@@ -236,10 +239,10 @@ export default function Services() {
             quality={100}
           />
         </div>
-        <div className="relative text-white py-24 z-10">
+        <div className="relative text-white py-16 md:py-24 z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.h2 
-              className="text-4xl md:text-5xl font-bold mb-8"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -256,14 +259,14 @@ export default function Services() {
             >
               <button 
                 type="button"
-                className="bg-[#D2A02A] text-white px-10 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-[#5A4C33] transition-all duration-300 group relative overflow-hidden"
+                className="bg-[#D2A02A] text-white px-6 sm:px-8 md:px-10 py-3 md:py-4 rounded-lg text-base md:text-lg font-semibold hover:bg-white hover:text-[#5A4C33] transition-all duration-300 group relative overflow-hidden"
               >
                 <span className="relative z-10">Schedule a Consultation</span>
                 <span className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </button>
             </motion.div>
             <motion.div 
-              className="mt-8 flex justify-center space-x-6"
+              className="mt-6 md:mt-8 flex flex-col md:flex-row justify-center md:space-x-6 space-y-2 md:space-y-0"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
@@ -282,10 +285,10 @@ export default function Services() {
 
       
       {/* Testimonials Carousel */}
-      <div className="bg-[#F9F9F9] py-24 relative overflow-hidden">
-        {/* Decorative elements */}
+      <div className="bg-[#F9F9F9] py-16 md:py-24 relative overflow-hidden">
+        {/* Decorative elements - visible only on larger screens */}
         <motion.div 
-          className="absolute -right-16 top-20 w-80 h-80 rounded-full bg-[#D2A02A]/5"
+          className="absolute -right-16 top-20 w-80 h-80 rounded-full bg-[#D2A02A]/5 hidden md:block"
           style={{ 
             y: useTransform(scrollYProgress, [0.5, 1], [100, -100]),
             opacity: useTransform(scrollYProgress, [0.5, 0.7], [0.3, 1])
@@ -294,13 +297,13 @@ export default function Services() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
-            className="text-center mb-16"
+            className="text-center mb-10 md:mb-16"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-[#5A4C33] mb-4">Client Testimonials</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#5A4C33] mb-4">Client Testimonials</h2>
             <div className="w-24 h-1 bg-[#D2A02A] mx-auto" />
           </motion.div>
           
@@ -312,57 +315,53 @@ export default function Services() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5 }}
-                className="bg-white rounded-xl p-8 md:p-12 shadow-xl"
+                className="bg-white rounded-xl p-6 sm:p-8 md:p-12 shadow-xl mx-4 sm:mx-0"
               >
-                <div className="text-4xl text-[#D2A02A] mb-6">&quot;</div>
-                <p className="text-lg md:text-xl italic text-gray-700 mb-8">
+                <div className="text-3xl md:text-4xl text-[#D2A02A] mb-4 md:mb-6">&quot;</div>
+                <p className="text-base md:text-lg lg:text-xl italic text-gray-700 mb-6 md:mb-8">
                   {testimonials[currentTestimonial].quote}
                 </p>
                 <div className="flex items-center justify-center">
-                  <div className="w-12 h-12 bg-[#5A4C33] rounded-full flex items-center justify-center text-white font-bold text-xl">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-[#5A4C33] rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
                     {testimonials[currentTestimonial].author.charAt(0)}
                   </div>
                   <div className="ml-4 text-left">
                     <div className="font-semibold text-[#5A4C33]">{testimonials[currentTestimonial].author}</div>
-                    <div className="text-sm text-gray-500">{testimonials[currentTestimonial].position}</div>
+                    <div className="text-xs md:text-sm text-gray-500">{testimonials[currentTestimonial].position}</div>
                   </div>
                 </div>
               </motion.div>
             </AnimatePresence>
             
-            <div className="flex justify-center mt-8 space-x-4">
+            <div className="flex justify-center mt-6 md:mt-8 space-x-2 md:space-x-4">
               <button 
                 type="button"
                 onClick={handlePrevTestimonial}
-                className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-[#5A4C33] hover:bg-[#D2A02A] hover:text-white transition-colors"
+                className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center text-[#5A4C33] hover:bg-[#D2A02A] hover:text-white transition-colors"
               >
-                <FontAwesomeIcon icon={faChevronLeft} />
+                <FontAwesomeIcon icon={faChevronLeft} className="w-4 h-4 md:w-5 md:h-5" />
               </button>
-              <div className="flex space-x-2 items-center">
+              <div className="flex space-x-1 md:space-x-2 items-center">
                 {testimonials.map((_, i) => (
                   <button
                     key={i}
                     type="button"
                     onClick={() => handleTestimonialSelect(i)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${i === currentTestimonial ? 'bg-[#D2A02A] w-6' : 'bg-gray-300'}`}
+                    className={`w-2 md:w-3 h-2 md:h-3 rounded-full transition-all duration-300 ${i === currentTestimonial ? 'bg-[#D2A02A] w-4 md:w-6' : 'bg-gray-300'}`}
                   />
                 ))}
               </div>
               <button 
                 type="button"
                 onClick={handleNextTestimonial}
-                className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-[#5A4C33] hover:bg-[#D2A02A] hover:text-white transition-colors"
+                className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center text-[#5A4C33] hover:bg-[#D2A02A] hover:text-white transition-colors"
               >
-                <FontAwesomeIcon icon={faChevronRight} />
+                <FontAwesomeIcon icon={faChevronRight} className="w-4 h-4 md:w-5 md:h-5" />
               </button>
             </div>
           </div>
         </div>
       </div>
-
-      
-
-    
     </main>
   );
 }
