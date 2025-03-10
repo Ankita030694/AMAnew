@@ -48,7 +48,7 @@ export default function Footer() {
 
           {/* Links */}
           <div className="text-center sm:text-left">
-            <h3 className="text-2xl font-semibold mb-6">Links</h3>
+            <h3 className="text-2xl font-semibold mb-6">Visit</h3>
             <ul className="space-y-4 text-xl">
               <li>
                 <Link href="/" className="hover:text-white transition-colors">

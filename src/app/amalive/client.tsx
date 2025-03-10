@@ -118,7 +118,7 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
       {/* Banner Section */}
       <div className="relative w-full h-[550px] flex items-center justify-center">
         <Image 
-          src="/amalive.png" 
+          src="/amalive1.png" 
           alt="AMA Live Banner"
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
