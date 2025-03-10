@@ -5,9 +5,14 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faBalanceScale, 
+  faBuilding, 
+  faBuildingColumns, 
   faCertificate, 
   faHandshake, 
-  faTrophy,  
+  faHouse, 
+  faScaleBalanced, 
+  faTrophy,
+  faUsers,  
 } from '@fortawesome/free-solid-svg-icons';
 import Image from "next/image";
 
@@ -136,44 +141,64 @@ export default function Services() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {[
               {
-                icon: faBalanceScale,
+                icon: faHouse,
                 title: "Banking and Finance",
-                description: "Our attorneys bring decades of combined experience across various practice areas."
+                description: "Financial Fraud | Financial Scam | Bnaking Regulatory Compilance | Commercial Banking Issues | Financial Litigation | Frozen Bank Accounts |"
               },
               {
-                icon: faHandshake,
-                title: "Family Law",
-                description: "We prioritize understanding your unique needs to deliver tailored legal solutions."
+                icon: faScaleBalanced,
+                title: "Loan Settlement",
+                description: "Credit Card | Personal Loan | Business Loan | Vehicle Loan | Bank Loan Default | NBFC Loan Dispute | RBI Loan Settlement Guidelines |"
               },
               {
-                icon: faTrophy,
-                title: "Proven Results",
-                description: "Successfully handled thousands of cases with exceptional results for our clients."
+                icon: faBuilding,
+                title: "Intellectual Property Rights",
+                description: "Trademark Registration | Patent Filing | Copyright Protection | IP Infringement | Brand Protection | Pharmaceutical Patent Attorney |"
               },
               {
-                icon: faCertificate,
-                title: "Ethical Practice",
-                description: "We maintain the highest standards of integrity and professional ethics in all our work."
+                icon: faBuildingColumns,
+                title: "Entertainment Law",
+                description: "Media and entertainment | Film Industry | Music Industry Legal Consultant | Digital Media and OTT Platform Legal Advisor |"
               },
               {
-                icon: faCertificate,
-                title: "Corporate Law",
-                description: "Comprehensive legal support for businesses of all sizes and industries."
-              },
-              {
-                icon: faCertificate,
+                icon: faUsers,
                 title: "Real Estate",
-                description: "Expert guidance on property transactions, contracts, and regulatory compliance."
+                description: "Property Dispute | RERA Compliance | Property Registration | Land Dispute | Title Verification & Property Due Diligence | Real Estate Fraud |"
               },
               {
-                icon: faCertificate,
-                title: "Estate Planning",
-                description: "Protect your assets and provide for your loved ones through detailed estate planning."
+                icon: faHouse,
+                title: "Criminal Law",
+                description: "Legal Help for FIR & Police Cases | Arrest & Police Interrogation | Cyber Crime & Online Fraud | Money Laundering Case | Bank & Insurance Fraud | Criminal Breach |"
               },
               {
-                icon: faCertificate,
+                icon: faHouse,
+                title: "Corporate Law",
+                description: "Company Registration | Company Incorporation | Startup Compliance | MSME Registration | Partnership Agreement | Contract Drafting |"
+              },
+              {
+                icon: faHouse,
+                title: "Arbitration Law",
+                description: "Arbitration Agreement Drafting | Arbitration Awards | Arbitral Award | Interim Relief | Banking and finance arbitration |"
+              },
+              {
+                icon: faHouse,
+                title: "IT and Cyber Law",
+                description: "Filing Cybercrime Complaint | FIR for Cyber Fraud | Cybercrime Police Complaint | Defamation on Social Media | Cyber Harassment Legal Remedies |"
+              },
+              {
+                icon: faHouse,
+                title: "Civil Law",
+                description: "Property Dispute | Landlord Tenant Issue | Illegal Possession | Breach of Contract | Agreement Drafting | Specific Performance |"
+              },
+              {
+                icon: faHouse,
+                title: "Drafting",
+                description: "Business Contract | Employment Agreement | Service Agreement | Property Sale Deed | Lease Agreement | NDA Drafting (India & UK) | Legal Notice |"
+              },
+              {
+                icon: faHouse,
                 title: "Litigation",
-                description: "Aggressive representation with strategic approaches to complex legal disputes."
+                description: "Banking & Financial Dispute Litigation | Intellectual Property (IP) Litigation | Real Estate & Construction Litigation | Debt Recovery & Financial Disputes | Criminal Litigation | Civil Litigation |"
               }
             ].map((item, index) => (
               <motion.div 
@@ -189,7 +214,7 @@ export default function Services() {
                     <FontAwesomeIcon icon={item.icon} className="w-6 h-6 md:w-8 md:h-8" />
                   </div>
                   <h3 className="text-lg md:text-xl font-semibold text-[#5A4C33] mb-2 md:mb-4 text-center">{item.title}</h3>
-                  <p className="text-sm md:text-base text-gray-600 text-center">{item.description}</p>
+                  <p className="text-sm md:text-base text-center text-blue-600">{item.description}</p>
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#D2A02A]/20 to-[#5A4C33]/20 rounded-xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300 z-0" />
               </motion.div>
@@ -243,10 +268,13 @@ export default function Services() {
               viewport={{ once: true }}
             >
               <div className="text-white/80 hover:text-white transition-colors">
-                <span className="font-medium">Call us:</span> (555) 123-4567
+                <span className="font-medium">Call us:</span> +918700343611 
+              </div>
+              <div className="border-1">
+
               </div>
               <div className="text-white/80 hover:text-white transition-colors">
-                <span className="font-medium">Email:</span> contact@amalaw.com
+                <span className="font-medium">Email:</span> info@amalegalsolutions.com
               </div>
             </motion.div>
           </div>
