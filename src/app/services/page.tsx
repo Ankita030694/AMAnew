@@ -11,6 +11,7 @@ import {
   faUsers,  
 } from '@fortawesome/free-solid-svg-icons';
 import Image from "next/image";
+import Link from "next/link";
 
 // Testimonials data
 
@@ -139,62 +140,74 @@ export default function Services() {
               {
                 icon: faHouse,
                 title: "Banking and Finance",
-                description: "Financial Fraud | Financial Scam | Bnaking Regulatory Compilance | Commercial Banking Issues | Financial Litigation | Frozen Bank Accounts |"
+                description: "Financial Fraud | Financial Scam | Banking Regulatory Compliance | Commercial Banking Issues | Financial Litigation | Frozen Bank Accounts |",
+                link: "/services/banking"
               },
               {
                 icon: faScaleBalanced,
                 title: "Loan Settlement",
-                description: "Credit Card | Personal Loan | Business Loan | Vehicle Loan | Bank Loan Default | NBFC Loan Dispute | RBI Loan Settlement Guidelines |"
+                description: "Credit Card | Personal Loan | Business Loan | Vehicle Loan | Bank Loan Default | NBFC Loan Dispute | RBI Loan Settlement Guidelines |",
+                link: "/services/loansettlement"
               },
               {
                 icon: faBuilding,
                 title: "Intellectual Property Rights",
-                description: "Trademark Registration | Patent Filing | Copyright Protection | IP Infringement | Brand Protection | Pharmaceutical Patent Attorney |"
+                description: "Trademark Registration | Patent Filing | Copyright Protection | IP Infringement | Brand Protection | Pharmaceutical Patent Attorney |",
+                link: "/services/ipr"
               },
               {
                 icon: faBuildingColumns,
                 title: "Entertainment Law",
-                description: "Media and entertainment | Film Industry | Music Industry Legal Consultant | Digital Media and OTT Platform Legal Advisor |"
+                description: "Media and entertainment | Film Industry | Music Industry Legal Consultant | Digital Media and OTT Platform Legal Advisor |",
+                link: "/services/entertainment"
               },
               {
                 icon: faUsers,
                 title: "Real Estate",
-                description: "Property Dispute | RERA Compliance | Property Registration | Land Dispute | Title Verification & Property Due Diligence | Real Estate Fraud |"
+                description: "Property Dispute | RERA Compliance | Property Registration | Land Dispute | Title Verification & Property Due Diligence | Real Estate Fraud |",
+                link: "/services/realestate"
               },
               {
                 icon: faHouse,
                 title: "Criminal Law",
-                description: "Legal Help for FIR & Police Cases | Arrest & Police Interrogation | Cyber Crime & Online Fraud | Money Laundering Case | Bank & Insurance Fraud | Criminal Breach |"
+                description: "Legal Help for FIR & Police Cases | Arrest & Police Interrogation | Cyber Crime & Online Fraud | Money Laundering Case | Bank & Insurance Fraud | Criminal Breach |",
+                link: "/services/criminal"
               },
               {
                 icon: faHouse,
                 title: "Corporate Law",
-                description: "Company Registration | Company Incorporation | Startup Compliance | MSME Registration | Partnership Agreement | Contract Drafting |"
+                description: "Company Registration | Company Incorporation | Startup Compliance | MSME Registration | Partnership Agreement | Contract Drafting |",
+                link: "/services/corporate"
               },
               {
                 icon: faHouse,
                 title: "Arbitration Law",
-                description: "Arbitration Agreement Drafting | Arbitration Awards | Arbitral Award | Interim Relief | Banking and finance arbitration |"
+                description: "Arbitration Agreement Drafting | Arbitration Awards | Arbitral Award | Interim Relief | Banking and finance arbitration |",
+                link: "/services/arbitration"
               },
               {
                 icon: faHouse,
                 title: "IT and Cyber Law",
-                description: "Filing Cybercrime Complaint | FIR for Cyber Fraud | Cybercrime Police Complaint | Defamation on Social Media | Cyber Harassment Legal Remedies |"
+                description: "Filing Cybercrime Complaint | FIR for Cyber Fraud | Cybercrime Police Complaint | Defamation on Social Media | Cyber Harassment Legal Remedies |",
+                link: "/services/cyber"
               },
               {
                 icon: faHouse,
                 title: "Civil Law",
-                description: "Property Dispute | Landlord Tenant Issue | Illegal Possession | Breach of Contract | Agreement Drafting | Specific Performance |"
+                description: "Property Dispute | Landlord Tenant Issue | Illegal Possession | Breach of Contract | Agreement Drafting | Specific Performance |",
+                link: "/services/civil"
               },
               {
                 icon: faHouse,
                 title: "Drafting",
-                description: "Business Contract | Employment Agreement | Service Agreement | Property Sale Deed | Lease Agreement | NDA Drafting (India & UK) | Legal Notice |"
+                description: "Business Contract | Employment Agreement | Service Agreement | Property Sale Deed | Lease Agreement | NDA Drafting (India & UK) | Legal Notice |",
+                link: "/services/drafting"
               },
               {
                 icon: faHouse,
                 title: "Litigation",
-                description: "Banking & Financial Dispute Litigation | Intellectual Property (IP) Litigation | Real Estate & Construction Litigation | Debt Recovery & Financial Disputes | Criminal Litigation | Civil Litigation |"
+                description: "Banking & Financial Dispute Litigation | Intellectual Property (IP) Litigation | Real Estate & Construction Litigation | Debt Recovery & Financial Disputes | Criminal Litigation | Civil Litigation |",
+                link: "/services/litigation"
               }
             ].map((item, index) => (
               <motion.div 
@@ -205,13 +218,15 @@ export default function Services() {
                 transition={{ duration: 0.5, delay: 0.1 * Math.min(index, 3) }} // Limit delay for mobile performance
                 viewport={{ once: true, margin: "-50px" }}
               >
-                <div className="p-4 md:p-8 rounded-xl border border-gray-200 hover:border-[#D2A02A] transition-all duration-300 h-full group-hover:shadow-lg group-hover:-translate-y-2 bg-white relative z-10">
-                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#5A4C33]/10 flex items-center justify-center text-[#D2A02A] mb-4 md:mb-6 group-hover:bg-[#D2A02A] group-hover:text-white transition-all duration-300 mx-auto">
-                    <FontAwesomeIcon icon={item.icon} className="w-6 h-6 md:w-8 md:h-8" />
+                <Link href={item.link}>
+                  <div className="p-4 md:p-8 rounded-xl border border-gray-200 hover:border-[#D2A02A] transition-all duration-300 h-full group-hover:shadow-lg group-hover:-translate-y-2 bg-white relative z-10">
+                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#5A4C33]/10 flex items-center justify-center text-[#D2A02A] mb-4 md:mb-6 group-hover:bg-[#D2A02A] group-hover:text-white transition-all duration-300 mx-auto">
+                      <FontAwesomeIcon icon={item.icon} className="w-6 h-6 md:w-8 md:h-8" />
+                    </div>
+                    <h3 className="text-lg md:text-xl font-semibold text-[#5A4C33] mb-2 md:mb-4 text-center">{item.title}</h3>
+                    <p className="text-sm md:text-base text-center text-blue-600">{item.description}</p>
                   </div>
-                  <h3 className="text-lg md:text-xl font-semibold text-[#5A4C33] mb-2 md:mb-4 text-center">{item.title}</h3>
-                  <p className="text-sm md:text-base text-center text-blue-600">{item.description}</p>
-                </div>
+                </Link>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#D2A02A]/20 to-[#5A4C33]/20 rounded-xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300 z-0" />
               </motion.div>
             ))}

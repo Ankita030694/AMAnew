@@ -60,32 +60,38 @@ export default function PracticeAreas() {
           {
             icon: faHouse,
             title: "Banking and Finance",
-            description: "Financial Fraud | Financial Scam | Bnaking Regulatory Compilance | Commercial Banking Issues | Financial Litigation | Frozen Bank Accounts |"
+            description: "Financial Fraud | Financial Scam | Banking Regulatory Compliance | Commercial Banking Issues | Financial Litigation | Frozen Bank Accounts |",
+            link: "/services/banking"
           },
           {
             icon: faScaleBalanced,
             title: "Loan Settlement",
-            description: "Credit Card | Personal Loan | Business Loan | Vehicle Loan | Bank Loan Default | NBFC Loan Dispute | RBI Loan Settlement Guidelines |"
+            description: "Credit Card | Personal Loan | Business Loan | Vehicle Loan | Bank Loan Default | NBFC Loan Dispute | RBI Loan Settlement Guidelines |",
+            link: "/services/loansettlement"
           },
           {
             icon: faBuilding,
             title: "Intellectual Property Rights",
-            description: "Trademark Registration | Patent Filing | Copyright Protection | IP Infringement | Brand Protection | Pharmaceutical Patent Attorney |"
+            description: "Trademark Registration | Patent Filing | Copyright Protection | IP Infringement | Brand Protection | Pharmaceutical Patent Attorney |",
+            link: "/services/ipr"
           },
           {
             icon: faBuildingColumns,
             title: "Entertainment Law",
-            description: "Media and entertainment | Film Industry | Music Industry Legal Consultant | Digital Media and OTT Platform Legal Advisor |"
+            description: "Media and entertainment | Film Industry | Music Industry Legal Consultant | Digital Media and OTT Platform Legal Advisor |",
+            link: "/services/entertainment"
           },
           {
             icon: faUsers,
             title: "Real Estate",
-            description: "Property Dispute | RERA Compliance | Property Registration | Land Dispute | Title Verification & Property Due Diligence | Real Estate Fraud |"
+            description: "Property Dispute | RERA Compliance | Property Registration | Land Dispute | Title Verification & Property Due Diligence | Real Estate Fraud |",
+            link: "/services/realestate"
           },
           {
             icon: faHouse,
             title: "Criminal Law",
-            description: "Legal Help for FIR & Police Cases | Arrest & Police Interrogation | Cyber Crime & Online Fraud | Money Laundering Case | Bank & Insurance Fraud | Criminal Breach |"
+            description: "Legal Help for FIR & Police Cases | Arrest & Police Interrogation | Cyber Crime & Online Fraud | Money Laundering Case | Bank & Insurance Fraud | Criminal Breach |",
+            link: "/services/criminal"
           }
         ].map((item, index) => (
           <motion.div 
@@ -96,13 +102,15 @@ export default function PracticeAreas() {
             transition={{ duration: 0.5, delay: 0.1 * index }}
             viewport={{ once: true, margin: "-50px" }}
           >
-            <div className="p-8 rounded-xl border border-gray-200 hover:border-[#D2A02A] transition-all duration-300 h-full group-hover:shadow-lg group-hover:-translate-y-2 bg-white relative z-10">
-              <div className="w-16 h-16 rounded-full bg-[#5A4C33]/10 flex items-center justify-center text-[#D2A02A] mb-6 group-hover:bg-[#D2A02A] group-hover:text-white transition-all duration-300 mx-auto">
-                <FontAwesomeIcon icon={item.icon} className="w-8 h-8" />
+            <Link href={item.link}>
+              <div className="p-8 rounded-xl border border-gray-200 hover:border-[#D2A02A] transition-all duration-300 h-full group-hover:shadow-lg group-hover:-translate-y-2 bg-white relative z-10">
+                <div className="w-16 h-16 rounded-full bg-[#5A4C33]/10 flex items-center justify-center text-[#D2A02A] mb-6 group-hover:bg-[#D2A02A] group-hover:text-white transition-all duration-300 mx-auto">
+                  <FontAwesomeIcon icon={item.icon} className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-semibold text-[#5A4C33] mb-4 text-center">{item.title}</h3>
+                <p className="text-blue-600 text-center">{item.description}</p>
               </div>
-              <h3 className="text-xl font-semibold text-[#5A4C33] mb-4 text-center">{item.title}</h3>
-              <p className="text-blue-600 text-center">{item.description}</p>
-            </div>
+            </Link>
             <div className="absolute inset-0 bg-gradient-to-r from-[#D2A02A]/20 to-[#5A4C33]/20 rounded-xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300 z-0" />
           </motion.div>
         ))}
