@@ -4,14 +4,10 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
-  faBalanceScale, 
   faBuilding, 
-  faBuildingColumns, 
-  faCertificate, 
-  faHandshake, 
+  faBuildingColumns,  
   faHouse, 
   faScaleBalanced, 
-  faTrophy,
   faUsers,  
 } from '@fortawesome/free-solid-svg-icons';
 import Image from "next/image";
