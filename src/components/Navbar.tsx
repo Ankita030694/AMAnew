@@ -56,7 +56,7 @@ export default function Navbar() {
                   onClick={() => blogdropdownhandler()} 
                   className="text-gray-300 hover:text-white px-3 py-2 flex items-center"
                 >
-                  Advocate's Insights
+                  Advocate&apos;s Insights
                   <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
@@ -65,7 +65,7 @@ export default function Navbar() {
                   <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10">
                     <Link href="/blogs" className="block px-4 py-2 text-gray-800 hover:bg-gray-200" onClick={handleLinkClick}>Blogs</Link>
                     <Link href="/amalive" className="block px-4 py-2 text-gray-800 hover:bg-gray-200" onClick={handleLinkClick}>AMA Live</Link>
-                    <Link href="/articles" className="block px-4 py-2 text-gray-800 hover:bg-gray-200" onClick={handleLinkClick}>Articles & Publications</Link>
+                    <Link href="/articles" className="block px-4 py-2 text-gray-800 hover:bg-gray-200" onClick={handleLinkClick}>Articles &amp; Publications</Link>
                   </div>
                 )}
               </div>
@@ -174,7 +174,7 @@ export default function Navbar() {
                   className="text-gray-300 hover:text-white block px-3 py-2 transform transition-all duration-300 hover:translate-x-2"
                   onClick={handleLinkClick}
                 >
-                  Advocate's Insights
+                  Advocate&apos;s Insights
                 </Link>
                 <Link 
                   href="/amalive"
