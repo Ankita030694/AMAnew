@@ -99,7 +99,7 @@ export default function page() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        All Blogs
+        All Articles
       </motion.h1>
       
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
