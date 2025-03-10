@@ -56,7 +56,7 @@ export default function Navbar() {
                   onClick={() => blogdropdownhandler()} 
                   className="text-gray-300 hover:text-white px-3 py-2 flex items-center"
                 >
-                  Blogs
+                  Advocate's Insights
                   <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
@@ -174,7 +174,7 @@ export default function Navbar() {
                   className="text-gray-300 hover:text-white block px-3 py-2 transform transition-all duration-300 hover:translate-x-2"
                   onClick={handleLinkClick}
                 >
-                  Blogs
+                  Advocate's Insights
                 </Link>
                 <Link 
                   href="/amalive"
