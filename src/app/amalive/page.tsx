@@ -373,7 +373,7 @@ export default function AmaLivePage() {
       {/* Banner Section - Optimized with priority and sizes */}
       <div className="relative w-full h-[550px] flex items-center justify-center">
         <Image 
-          src="/amalive1.svg" 
+          src="/amalive.png" 
           alt="AMA Live Banner"
           fill
           sizes="100vw"
@@ -383,7 +383,7 @@ export default function AmaLivePage() {
       </div>
       
       {/* Main Content Container */}
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8 mt-20">
         {/* Page Heading */}
         <motion.div 
           className="mb-12 text-center"
