@@ -8,6 +8,7 @@ import {
   faBuilding
 } from '@fortawesome/free-solid-svg-icons'
 import { motion } from "framer-motion";
+import Link from 'next/link';
 
 
 
@@ -105,6 +106,20 @@ export default function PracticeAreas() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#D2A02A]/20 to-[#5A4C33]/20 rounded-xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300 z-0" />
           </motion.div>
         ))}
+      </div>
+      <div className="flex justify-center mt-8">
+        <Link href="/services">
+          <button className="relative overflow-hidden bg-[#D2A02A] hover:bg-[#5A4C33] text-white px-8 py-3 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out group cursor-pointer">
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#D2A02A]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+              <span className="relative inline-flex items-center">
+                View More
+                <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
+                </svg>
+              </span>
+              <span className="absolute bottom-0 left-0 w-full h-1 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+          </button>
+        </Link>
       </div>
     </motion.div>
   </div>
