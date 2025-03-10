@@ -120,10 +120,10 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
         <Image 
           src="/amalive1.png" 
           alt="AMA Live Banner"
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
           priority
-          className="object-cover mt-15"
+          width={1920}
+          height={1080}
+          className="object-cover"
           fetchPriority="high"
         />
       </div>
