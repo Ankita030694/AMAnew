@@ -5,43 +5,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const HistoryPage = () => {
-  const [activeSection, setActiveSection] = useState<string | null>(null);
 
-  // Timeline data
-  const timeline = [
-    {
-      id: "founding",
-      year: "1985",
-      title: "The Foundation",
-      description:
-        "Our firm was established by Jonathan Miller and Sarah Chen, two visionaries who sought to create a practice built on integrity and excellence.",
-      imageSrc: "/founding.svg",
-    },
-    {
-      id: "expansion",
-      year: "1998",
-      title: "Regional Expansion",
-      description:
-        "After building a strong reputation locally, we expanded our practice to serve clients across the entire state, opening three additional offices.",
-      imageSrc: "/expansion.svg",
-    },
-    {
-      id: "landmark",
-      year: "2007",
-      title: "Landmark Case",
-      description:
-        "Our representation in Wilson v. Evergreen became a defining moment, establishing new precedents and cementing our reputation for handling complex litigation.",
-      imageSrc: "/landmark.svg",
-    },
-    {
-      id: "national",
-      year: "2015",
-      title: "National Recognition",
-      description:
-        "Our dedication to client service and legal excellence earned us recognition among the top 50 law firms nationwide.",
-      imageSrc: "/recognition.svg",
-    },
-  ];
+
 
   // Animation variants
   const containerVariants = {
