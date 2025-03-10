@@ -129,7 +129,7 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
       </div>
       
       {/* Main Content Container */}
-      <div className="container mx-auto px-4 py-8 mt-20">
+      <div className="container mx-auto px-4 py-8">
         {/* Page Heading */}
         <motion.div 
           className="mb-12 text-center"
