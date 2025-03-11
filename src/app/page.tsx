@@ -8,24 +8,11 @@ import TributeCard from "@/components/TributeCard";
 import Yt from "@/components/Yt";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-  
-  // Check if viewing on mobile device
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 640); // 640px is the sm breakpoint
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
   
   const locations = [
     {
