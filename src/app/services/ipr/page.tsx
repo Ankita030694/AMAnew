@@ -215,7 +215,7 @@ export default function page() {
 
         {/* CTA Button */}
         <motion.div
-          className="flex justify-center"
+          className="flex justify-center mb-5"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.8, duration: 0.5 }}
