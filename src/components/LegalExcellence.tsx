@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaStar, FaQuoteLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
 
 const testimonials = [
   {
@@ -223,8 +224,15 @@ export default function LegalExcellence() {
             </motion.button>
           </div>
 
-        
+          <div className="flex justify-center mt-10">
+            <Link href="https://maps.app.goo.gl/NWym1wPL2CTFS9qo8">
+              <button className="bg-[#D2A02A] hover:bg-[#5A4C33] text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-300 inline-flex items-center">
+                Our Reviews
+              </button>
+            </Link>
+          </div>
         </div>
+        
       </div>
     </div>
   );
