@@ -264,11 +264,11 @@ const PresentPage = () => {
           <div className="mt-10 p-6 bg-gradient-to-r from-[#F8F5EC] to-white rounded-lg border-l-4 border-[#D2A02A]">
             <div className="flex items-center gap-4 mb-4">
               <h4 className="text-xl font-bold text-[#5A4C33]">
-                Trusted by Over 1000 Clients
+                Trusted by Over 5000 Clients
               </h4>
             </div>
             <p className="text-[#5A4C33]/80">
-              With a 4.8-star rating, 650+ successful case conclusions, and 300+ legal closures, our track record speaks for itself. At AMA Legal Solutions, we don&apos;t just practice law—we deliver results-driven legal solutions that make a difference.
+              With a 4.8-star rating, 2000+ successful case conclusions, and 1000+ legal closures, our track record speaks for itself. At AMA Legal Solutions, we don&apos;t just practice law—we deliver results-driven legal solutions that make a difference.
             </p>
             <p className="text-[#5A4C33]/80 mt-3">
               Looking for the best law firm in India? Contact us today. Visit us at: www.amalegalsolutions.com
@@ -296,10 +296,10 @@ const PresentPage = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
             {[
-              { label: "Cases Won", value: "95%", icon: "🏆" },
-              { label: "Client Satisfaction", value: "98%", icon: "⭐" },
-              { label: "Legal Professionals", value: "120+", icon: "👩‍⚖️" },
-              { label: "Years Combined Experience", value: "850+", icon: "⏱️" }
+              { label: "Cases Won", value: "95%", icon: "" },
+              { label: "Client Satisfaction", value: "98%", icon: "" },
+              { label: "Legal Professionals", value: "120+", icon: "" },
+              { label: "Years Combined Experience", value: "850+", icon: "" }
             ].map((stat, index) => (
               <motion.div 
                 key={stat.label}
