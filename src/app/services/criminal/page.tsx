@@ -16,7 +16,7 @@ export default function page() {
     <div className="bg-white min-h-screen">
       {/* Banner Section - 1920x550 as specified */}
       <motion.div 
-        className="relative w-full h-[550px] overflow-hidden"
+        className="relative w-full h-[300px] md:h-[550px] overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -30,7 +30,7 @@ export default function page() {
       </motion.div>
 
       {/* Service Description Section */}
-      <div className="container mx-auto px-4 py-16 max-w-4xl">
+      <div className="container mx-auto px-4 max-w-4xl">
         <motion.div 
           className="mb-12"
           initial={{ opacity: 0, y: 30 }}

@@ -65,10 +65,8 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
   const videosPerPage = 9;
   const [isLoading, setIsLoading] = useState(false);
   
-  // Calculate total pages based on available videos and a minimum value
-  // We add 1 to ensure there's always at least one more page to load
-  const totalPages = Math.max(Math.ceil(videos.length / videosPerPage), 
-    currentPage < 3 ? currentPage + 1 : currentPage);
+  // Calculate total pages based on available videos
+  const totalPages = Math.ceil(videos.length / videosPerPage);
   
   // Load more videos when needed
   const loadMoreVideos = useCallback(async (pageNumber: number) => {
@@ -93,18 +91,15 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
   }, [videos.length, videosPerPage]);
   
   // Change page
-  // const paginate = useCallback((pageNumber: number) => {
-  //   // Load more videos if needed
-  //   loadMoreVideos(pageNumber);
+  const paginate = useCallback((pageNumber: number) => {
+    setCurrentPage(pageNumber);
+    loadMoreVideos(pageNumber);
     
-  //   // Update current page
-  //   setCurrentPage(pageNumber);
-    
-  //   // Scroll to top when changing pages
-  //   requestAnimationFrame(() => {
-  //     window.scrollTo({ top: 200, behavior: 'smooth' });
-  //   });
-  // }, [loadMoreVideos]);
+    // Scroll to top when changing pages
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: 200, behavior: 'smooth' });
+    });
+  }, [loadMoreVideos]);
   
   // Get current videos for display
   const currentVideos = useMemo(() => {
@@ -172,28 +167,6 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
                 >
                   {/* YouTube Video */}
                   <YouTubeEmbed videoId={video.videoId} />
-                  
-                  {/* Video Details */}
-                  {/* <div className="p-4">
-                    <div className="flex justify-between items-start mb-2">
-                      <span className="bg-[#D2A02A] text-white text-xs px-2 py-1 rounded">
-                        {video.category}
-                      </span>
-                      <span className="text-xs text-gray-500">
-                        {new Date(video.date).toLocaleDateString('en-US', {
-                          year: 'numeric',
-                          month: 'short',
-                          day: 'numeric'
-                        })}
-                      </span>
-                    </div>
-                    <h3 
-                      className="text-lg font-medium mt-2"
-                      style={{ color: '#5A4C33' }}
-                    >
-                      {video.title}
-                    </h3>
-                  </div> */}
                 </motion.div>
               </motion.div>
             ))}
@@ -208,7 +181,7 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
         )}
         
         {/* Pagination */}
-        {/* {totalPages > 1 && (
+        {totalPages > 1 && (
           <motion.div 
             className="flex justify-center items-center space-x-2 mt-8"
             initial={{ opacity: 0 }}
@@ -228,82 +201,21 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
               Previous
             </button>
             
-            {totalPages <= 5 ? (
-              [...Array(totalPages)].map((_, idx) => (
-                <button
-                  key={idx + 1}
-                  onClick={() => paginate(idx + 1)}
-                  className={`w-10 h-10 rounded-full ${
-                    currentPage === idx + 1
-                      ? 'bg-[#D2A02A] text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  } transition-colors`}
-                  aria-label={`Page ${idx + 1}`}
-                  aria-current={currentPage === idx + 1 ? 'page' : undefined}
-                >
-                  {idx + 1}
-                </button>
-              ))
-            ) : (
-              <>
-                <button
-                  onClick={() => paginate(1)}
-                  className={`w-10 h-10 rounded-full ${
-                    currentPage === 1
-                      ? 'bg-[#D2A02A] text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  } transition-colors`}
-                  aria-label="Page 1"
-                  aria-current={currentPage === 1 ? 'page' : undefined}
-                >
-                  1
-                </button>
-                
-                {currentPage > 3 && <span className="px-2" aria-hidden="true">...</span>}
-                
-                {Array.from({ length: 3 }, (_, i) => {
-                  const pageNum = Math.min(
-                    Math.max(currentPage - 1 + i, 2),
-                    totalPages - 1
-                  );
-                  
-                  if (pageNum <= 1 || pageNum >= totalPages) return null;
-                  if ((currentPage <= 3 && pageNum > 3) || 
-                      (currentPage >= totalPages - 2 && pageNum < totalPages - 2)) return null;
-                  
-                  return (
-                    <button
-                      key={pageNum}
-                      onClick={() => paginate(pageNum)}
-                      className={`w-10 h-10 rounded-full ${
-                        currentPage === pageNum
-                          ? 'bg-[#D2A02A] text-white'
-                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                      } transition-colors`}
-                      aria-label={`Page ${pageNum}`}
-                      aria-current={currentPage === pageNum ? 'page' : undefined}
-                    >
-                      {pageNum}
-                    </button>
-                  );
-                })}
-                
-                {currentPage < totalPages - 2 && <span className="px-2" aria-hidden="true">...</span>}
-                
-                <button
-                  onClick={() => paginate(totalPages)}
-                  className={`w-10 h-10 rounded-full ${
-                    currentPage === totalPages
-                      ? 'bg-[#D2A02A] text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  } transition-colors`}
-                  aria-label={`Page ${totalPages}`}
-                  aria-current={currentPage === totalPages ? 'page' : undefined}
-                >
-                  {totalPages}
-                </button>
-              </>
-            )}
+            {Array.from({ length: totalPages }, (_, idx) => (
+              <button
+                key={idx + 1}
+                onClick={() => paginate(idx + 1)}
+                className={`w-10 h-10 rounded-full ${
+                  currentPage === idx + 1
+                    ? 'bg-[#D2A02A] text-white'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                } transition-colors`}
+                aria-label={`Page ${idx + 1}`}
+                aria-current={currentPage === idx + 1 ? 'page' : undefined}
+              >
+                {idx + 1}
+              </button>
+            ))}
             
             <button
               onClick={() => paginate(Math.min(totalPages, currentPage + 1))}
@@ -318,7 +230,7 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
               Next
             </button>
           </motion.div>
-        )} */}
+        )}
       </div>
     </div>
   );
