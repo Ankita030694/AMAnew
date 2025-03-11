@@ -206,7 +206,7 @@ const HistoryPage = () => {
             </svg>
           </Link>
         </div>
-      </section>
+      </section> 
     </div>
   );
 };
