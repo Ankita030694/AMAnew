@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const TributeCard = () => {
   return (
@@ -31,6 +32,12 @@ const TributeCard = () => {
             className="h-10 sm:h-18 w-auto "
           />
         </div>
+        <Link href="/ourhistory">
+            <button className="bg-[#D2A02A] hover:bg-[#5A4C33] text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-300 inline-flex items-center mt-10">
+              Our History
+
+            </button>
+          </Link>
       </div>
     </div>
   );

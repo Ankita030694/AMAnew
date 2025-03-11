@@ -74,10 +74,10 @@ const HistoryPage = () => {
             style={{ boxShadow: "0 10px 30px rgba(210, 160, 42, 0.15), 0 5px 15px rgba(90, 76, 51, 0.1)" }}
           >
             <Image
-              src="/bannerbg.png"
+              src="/imagee.png"
               alt="Our firm&apos;s history"
               fill
-              className="object-cover"
+              className="object-contain"
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#5a4c33] to-transparent opacity-60" />
