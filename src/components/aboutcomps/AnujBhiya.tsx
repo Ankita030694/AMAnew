@@ -1,4 +1,5 @@
-import Image from 'next/image'
+import Image from 'next/image';
+import { FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 const AnujBhiya = () => {
   return (
@@ -22,6 +23,14 @@ const AnujBhiya = () => {
         <div className="space-y-2">
           <h2 className="text-4xl font-bold text-gray-900">Anuj Anand Malik</h2>
           <p className="text-xl text-gray-600">Founder</p>
+          <div className="flex space-x-4">
+            <a href="https://www.linkedin.com/in/iamanujmalik/" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin className="text-gray-600 hover:text-gray-800" size={24} />
+            </a>
+            <a href="https://www.instagram.com/amalegalsolutions/?hl=en" target="_blank" rel="noopener noreferrer">
+              <FaInstagram className="text-gray-600 hover:text-gray-800" size={24} />
+            </a>
+          </div>
         </div>
 
         <div className="space-y-4">
@@ -39,7 +48,7 @@ const AnujBhiya = () => {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default AnujBhiya
+export default AnujBhiya;
