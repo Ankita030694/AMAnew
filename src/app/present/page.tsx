@@ -3,32 +3,14 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 
 const PresentPage = () => {
   // Animation controls
   const controls = useAnimation();
-  const [ref, inView] = useInView({
-    threshold: 0.2,
-    triggerOnce: true,
-  });
-
+  
   useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    }
-  }, [controls, inView]);
-
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3
-      }
-    }
-  };
+    controls.start('visible');
+  }, [controls]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black to-[#1A1A1A] text-white">
@@ -159,7 +141,7 @@ const PresentPage = () => {
             >
               <h3 className="text-xl font-semibold mb-2">Trusted by Over 1000 Clients – Your Success is Our Commitment</h3>
               <p className="mb-2">
-                With a 4.8-star rating, 650+ successful case conclusions, and 300+ legal closures, our track record speaks for itself. At AMA Legal Solutions, we don't just practice law—we deliver results-driven legal solutions that make a difference.
+                With a 4.8-star rating, 650+ successful case conclusions, and 300+ legal closures, our track record speaks for itself. At AMA Legal Solutions, we don&apos;t just practice law—we deliver results-driven legal solutions that make a difference.
               </p>
               <p className="mb-2">
                 As we continue to grow, our focus remains the same: Providing exceptional legal services in India and internationally while upholding the values of integrity, trust, and excellence.

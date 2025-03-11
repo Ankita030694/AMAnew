@@ -389,7 +389,7 @@ const VisionPage = () => {
           
           <h3 className="text-2xl font-bold text-[#D2A02A] mb-4 mt-10">Vision for the Future</h3>
           <p className="text-gray-300 mb-6">
-            At AMA Legal Solutions, our vision is to become India's most trusted and innovative law firm, delivering world-class legal services with a focus on technology, accessibility, and client empowerment.
+            At AMA Legal Solutions, our vision is to become India&apos;s most trusted and innovative law firm, delivering world-class legal services with a focus on technology, accessibility, and client empowerment.
           </p>
           
           <div className="space-y-6">
@@ -443,7 +443,7 @@ const VisionPage = () => {
             </div>
             <p className="text-gray-300">
               With a 4.8-star rating, 650+ successful case conclusions, and 300+ legal closures, our track record speaks for itself. 
-              At AMA Legal Solutions, we don't just practice law—we deliver results-driven legal solutions that make a difference.
+              At AMA Legal Solutions, we don&apos;t just practice law—we deliver results-driven legal solutions that make a difference.
             </p>
           </div>
         </motion.div>
