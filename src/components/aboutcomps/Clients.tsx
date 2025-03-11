@@ -59,8 +59,8 @@ export default function Clients() {
     <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="bg-white/20 backdrop-blur-sm rounded-lg shadow-xl -mt-32 md:-mt-40">
         <div className="p-8 md:p-8">
-          <h1 className="md:text-3xl font-bold text-center text-[#5A4C33] mb-8 text-2xl">
-            OUR AFFILIATIONS
+          <h1 className="font-bold text-center text-[#5A4C33] mb-8 text-4xl">
+            Our Affiliations
           </h1>
           {/* <div className="relative flex justify-center">
               <span className="px-4 bg-white text-[#D2A02A]">

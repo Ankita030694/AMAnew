@@ -127,7 +127,7 @@ export default function OurAttorneys() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-[#6B5B3D] mb-4">
-            OUR ATTORNEYS
+            Our Attorneys
           </h2>
           <div className="relative flex items-center justify-center">
             <div className="h-[1px] bg-[#D2A02A] w-24"></div>

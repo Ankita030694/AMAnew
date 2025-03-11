@@ -19,7 +19,7 @@ const TimelineCards = () => {
       id: 'present',
       title: 'Present',
       imageSrc: '/present.png',
-      description: 'See how we&apos;re making a difference today with innovative approaches, technology integration, and client-centered solutions.',
+      description: 'See how we are making a difference today with innovative approaches, technology integration, and client-centered solutions.',
       link: '/present'
     },
     {
