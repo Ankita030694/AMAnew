@@ -1,6 +1,9 @@
 'use client'
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight, faMapMarkerAlt, faEnvelope, faPhone, faBriefcase } from '@fortawesome/free-solid-svg-icons';
 
 const Page = () => {
   const [formState, setFormState] = useState({
@@ -70,37 +73,24 @@ const Page = () => {
   
   const contactInfo = [
     {
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-      ),
+      icon: faMapMarkerAlt,
       title: "Our Address",
       details: "Block G, Sushant Lok 2, 2493AP, Gurugram, Haryana 122001",
     },
     {
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-      ),
+      icon: faEnvelope,
       title: "Email Us",
       details: "info@amalegalsolutions.com",
     },
     {
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-        </svg>
-      ),
+      icon: faPhone,
       title: "Call Us",
       details: "+918700343611",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
+    <div className="min-h-screen bg-[#F8F5EC] relative overflow-hidden">
       {/* Animated background elements - Simplified animations */}
       <motion.div 
         className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#D2A02A] opacity-5"
@@ -126,42 +116,16 @@ const Page = () => {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl font-bold text-[#000000] mt-20">Contact Us</h1>
+          <h1 className="text-4xl font-bold text-[#5A4C33] mt-20">Contact Us</h1>
           <div className="w-24 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mx-auto"></div>
-          <p className="text-[#000000] mt-6 mx-auto text-2xl">
+          <p className="text-[#5A4C33] mt-6 mx-auto text-xl max-w-2xl">
             We&apos;re here to help with your legal needs. Reach out to us using any of the methods below.
           </p>
         </motion.div>
         
-        {/* Contact info boxes */}
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {contactInfo.map((item, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              whileHover={{ y: -5 }}
-              className="border border-[#D2A02A]/20 rounded-lg p-6 text-center shadow-xl"
-              style={{
-                backgroundImage: 'url(./bannerbg.png)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
-              }}
-            >
-              <div className="text-[#D2A02A] mx-auto mb-4">
-                {item.icon}
-              </div>
-              <h3 className="text-3xl font-semibold text-[#D2A02A] mb-2">{item.title}</h3>
-              <p className="text-gray-300 text-xl">{item.details}</p>
-            </motion.div>
-          ))}
-        </motion.div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
           {/* Map column */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -189,7 +153,7 @@ const Page = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="bg-black rounded-lg p-8 shadow-xl border border-[#D2A02A]/20 relative"
+            className="bg-white rounded-lg p-8 shadow-xl border-l-4 border-[#D2A02A] relative"
           >
             {submitted ? (
               <motion.div 
@@ -204,14 +168,14 @@ const Page = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-[#D2A02A] mb-2">Thank You!</h3>
-                <p className="text-gray-300 text-center">
+                <h3 className="text-2xl font-bold text-[#5A4C33] mb-2">Thank You!</h3>
+                <p className="text-[#5A4C33]/80 text-center">
                   Your message has been received. We&apos;ll get back to you shortly.
                 </p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <h2 className="text-3xl font-bold text-[#D2A02A] mb-6">Send Us a Message</h2>
+                <h2 className="text-2xl font-bold text-[#5A4C33] mb-6">Send Us a Message</h2>
                 
                 <div className="relative">
                   <input
@@ -222,7 +186,7 @@ const Page = () => {
                     required
                     onFocus={() => setFocusedField('name')}
                     onBlur={() => setFocusedField(null)}
-                    className="w-full bg-white text-[#000000] px-4 py-3 rounded-md border border-gray-700 focus:outline-none"
+                    className="w-full bg-[#F8F5EC] text-[#5A4C33] px-4 py-3 rounded-md border border-gray-300 focus:outline-none"
                     placeholder="Your Name"
                   />
                   <motion.div 
@@ -242,7 +206,7 @@ const Page = () => {
                     required
                     onFocus={() => setFocusedField('email')}
                     onBlur={() => setFocusedField(null)}
-                    className="w-full bg-white text-[#000000] px-4 py-3 rounded-md border border-gray-700 focus:outline-none"
+                    className="w-full bg-[#F8F5EC] text-[#5A4C33] px-4 py-3 rounded-md border border-gray-300 focus:outline-none"
                     placeholder="Your Email"
                   />
                   <motion.div 
@@ -262,7 +226,7 @@ const Page = () => {
                     required
                     onFocus={() => setFocusedField('phone')}
                     onBlur={() => setFocusedField(null)}
-                    className="w-full bg-white text-[#000000] px-4 py-3 rounded-md border border-gray-700 focus:outline-none"
+                    className="w-full bg-[#F8F5EC] text-[#5A4C33] px-4 py-3 rounded-md border border-gray-300 focus:outline-none"
                     placeholder="Your Phone Number"
                   />
                   <motion.div 
@@ -282,7 +246,7 @@ const Page = () => {
                     onFocus={() => setFocusedField('message')}
                     onBlur={() => setFocusedField(null)}
                     rows={4}
-                    className="w-full bg-white text-[#000000] px-4 py-3 rounded-md border border-gray-700 focus:outline-none"
+                    className="w-full bg-[#F8F5EC] text-[#5A4C33] px-4 py-3 rounded-md border border-gray-300 focus:outline-none"
                     placeholder="Your Message"
                   />
                   <motion.div 
@@ -319,14 +283,74 @@ const Page = () => {
                 </motion.button>
               </form>
             )}
-            
-            {/* Corner accents */}
-            <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#D2A02A]"></div>
-            <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#D2A02A]"></div>
-            <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#D2A02A]"></div>
-            <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#D2A02A]"></div>
           </motion.div>
         </div>
+         {/* Contact info boxes */}
+         <motion.div 
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 mt-15"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {contactInfo.map((item, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              whileHover={{ y: -5 }}
+              className="bg-white rounded-lg border-l-4 border-[#D2A02A] overflow-hidden hover:shadow-lg transition-shadow duration-300 p-6"
+            >
+              <div className="flex items-start mb-4">
+                <div className="w-12 h-12 rounded-full bg-[#D2A02A]/20 flex items-center justify-center text-[#D2A02A] mr-4">
+                  <FontAwesomeIcon icon={item.icon} className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-[#5A4C33]">{item.title}</h3>
+              </div>
+              <p className="text-[#5A4C33]/80">{item.details}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+        {/* Work with AMA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.7 }}
+          className="bg-white rounded-lg border-l-4 border-[#D2A02A] overflow-hidden shadow-lg p-8 text-center"
+        >
+          <div className="flex justify-center mb-4">
+            <div className="w-16 h-16 rounded-full bg-[#D2A02A]/20 flex items-center justify-center text-[#D2A02A]">
+              <FontAwesomeIcon icon={faBriefcase} className="w-8 h-8" />
+            </div>
+          </div>
+          
+          <h2 className="text-3xl font-bold text-[#5A4C33] mb-4">Work with AMA</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mx-auto mb-4"></div>
+          
+          <p className="text-[#5A4C33]/80 max-w-2xl mx-auto mb-6 text-lg">
+            Join our team of legal professionals dedicated to providing exceptional service. 
+            We're always looking for talented individuals who share our commitment to excellence.
+          </p>
+          
+          <div className="flex items-center justify-center text-xl font-medium text-[#D2A02A]">
+            <span>career@amalegalsolutions.com</span>
+          </div>
+          
+          <motion.div 
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="mt-6"
+          >
+            <Link href="https://in.linkedin.com/company/ama-legal-solutions" className="inline-flex items-center bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white px-6 py-3 rounded-md font-semibold group">
+              <span className="mr-2">View Opportunities</span>
+              <FontAwesomeIcon
+                icon={faArrowRight}
+                className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
+              />
+            </Link>
+          </motion.div>
+        </motion.div>
+       
+        
       </div>
     </div>
   );
