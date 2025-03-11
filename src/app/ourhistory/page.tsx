@@ -195,79 +195,16 @@ const HistoryPage = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative z-10 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="bg-gradient-to-r from-white to-[#FAF7F0] rounded-xl p-12 border border-[#E6D7B0] shadow-lg"
-            style={{ boxShadow: "0 10px 30px rgba(210, 160, 42, 0.07), 0 5px 15px rgba(90, 76, 51, 0.05)" }}
-          >
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl font-bold text-[#5a4c33] mb-6">
-                Discover Our Present and Future
-              </h2>
-              <p className="text-[#5a4c33]/80 mb-8">
-                Continue exploring our story to see how our rich history has
-                shaped our present practices and future vision.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Link
-                  href="/about/present"
-                  className="px-8 py-3 bg-[#D2A02A] text-white font-bold rounded-lg inline-flex items-center shadow-md hover:bg-[#b18622] transition-colors"
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    className="flex items-center"
-                  >
-                    Explore Our Present
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 ml-2"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      />
-                    </svg>
-                  </motion.div>
-                </Link>
-                <Link
-                  href="/about/vision"
-                  className="px-8 py-3 border-2 border-[#5a4c33] text-[#5a4c33] font-bold rounded-lg inline-flex items-center hover:bg-[#5a4c33]/5 transition-colors"
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    className="flex items-center"
-                  >
-                    Our Vision
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 ml-2"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      />
-                    </svg>
-                  </motion.div>
-                </Link>
-              </div>
-            </div>
-          </motion.div>
+      {/* Navigation links */}
+      <section className="py-12 px-4 max-w-7xl mx-auto border-t border-[#D2A02A]/20 relative z-10">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6">
+          
+          <Link href="/present" className="flex items-center text-[#5A4C33] hover:text-[#D2A02A] transition-colors duration-300">
+            <span>Continue to Present</span>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
         </div>
       </section>
     </div>

@@ -642,7 +642,7 @@ const VisionPage = () => {
       <section className="py-12 px-4 max-w-7xl mx-auto border-t border-[#D2A02A]/20">
         <div className="flex flex-col md:flex-row justify-center items-center gap-6">
           <Link
-            href="/about/present"
+            href="/present"
             className="flex items-center text-[#D2A02A] hover:text-[#5A4C33] transition-colors duration-300"
           >
             <svg
@@ -661,27 +661,7 @@ const VisionPage = () => {
             </svg>
             <span>Back to Present</span>
           </Link>
-          <span className="text-[#5A4C33]/30 mx-4 hidden md:inline">|</span>
-          <Link
-            href="/about"
-            className="flex items-center text-[#D2A02A] hover:text-[#5A4C33] transition-colors duration-300"
-          >
-            <span>View All Chapters</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 ml-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </Link>
+          
         </div>
       </section>
     </div>
