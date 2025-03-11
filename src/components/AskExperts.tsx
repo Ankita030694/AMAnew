@@ -60,7 +60,7 @@ export default function AskExperts() {
       />
       <div className="max-w-full">
         <div className="text-center mb-12 px-4">
-          <h2 className="text-4xl font-serif text-[#D2A02A] mb-4">LEGACY EXTENDED</h2>
+          <h2 className="text-4xl font-serif text-[#D2A02A] mb-4">Legacy Extended</h2>
           <p className="text-sm tracking-widest uppercase text-white">OUR VISION DEFINES OUR ESSENCE</p>
         </div>
         

@@ -94,7 +94,7 @@ export default function PracticeAreas() {
           transition={{ duration: 0.7 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#5A4C33] mb-6 relative inline-block">
+          <h2 className="text-4xl font-bold text-[#5A4C33] mb-6 relative inline-block">
             Our Expertise
             <motion.div 
               className="h-1 bg-[#D2A02A] absolute -bottom-2 left-0 right-0 mx-auto"

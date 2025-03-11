@@ -1,6 +1,5 @@
 'use client'
 
-
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
@@ -12,6 +11,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Testimonials data
 
@@ -20,15 +21,71 @@ export default function Services() {
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 1.1]);
   
-
-  
   // For floating decorative elements
   const floatingY = useTransform(scrollYProgress, [0, 1], [0, -50]);
   const floatingRotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
-
-
-
-
+  
+  // For locations carousel
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const locations = [
+    {
+      id: 1,
+      image: "/city1.svg", 
+      name: "Downtown Office",
+      address: "123 Legal Avenue, Downtown",
+      phone: "(555) 123-4567",
+      link: "/locations/newdelhi"
+    },
+    {
+      id: 2,
+      image: "/city2.svg",
+      name: "Westside Branch",
+      address: "456 Justice Blvd, Westside",
+      phone: "(555) 234-5678",
+      link: "/locations/mumbai"
+    },
+    {
+      id: 3,
+      image: "/city3.svg",
+      name: "Suburban Office",
+      address: "789 Counsel Lane, Suburbia",
+      phone: "(555) 345-6789",
+      link: "/locations/kolkata"
+    },
+    {
+      id: 4,
+      image: "/city4.svg",
+      name: "Suburban Office",
+      address: "789 Counsel Lane, Suburbia",
+      phone: "(555) 345-6789",
+      link: "/locations/jaipur"
+    },
+    {
+      id: 5,
+      image: "/city5.svg",
+      name: "Suburban Office",
+      address: "789 Counsel Lane, Suburbia",
+      phone: "(555) 345-6789",
+      link: "/locations/bengaluru"
+    },
+    {
+      id: 6,
+      image: "/city6.svg",
+      name: "Suburban Office",
+      address: "789 Counsel Lane, Suburbia",
+      phone: "(555) 345-6789",
+      link: "/locations/chennai"
+    }
+  ];
+  
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === locations.length - 1 ? 0 : prev + 1));
+  };
+  
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? locations.length - 1 : prev - 1));
+  };
   
   return (
     <main className="overflow-hidden">
@@ -292,151 +349,50 @@ export default function Services() {
         </div>
       </div>
 
-      
-      {/* Testimonials Carousel */}
-      {/* <div className="bg-[#F9F9F9] py-16 md:py-24 relative overflow-hidden">
-        <motion.div 
-          className="absolute -right-16 top-20 w-80 h-80 rounded-full bg-[#D2A02A]/5 hidden md:block"
-          style={{ 
-            y: useTransform(scrollYProgress, [0.5, 1], [100, -100]),
-            opacity: useTransform(scrollYProgress, [0.5, 0.7], [0.3, 1])
-          }}
-        />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-10">
+        <div className="text-center">
+          <h2 className="text-4xl font-bold text-[#5A4C33] mb-4">Our Locations</h2>
+          <div className="w-24 h-1 bg-[#D2A02A] mx-auto" />
+          <p className="max-w-2xl mx-auto mt-6 text-gray-600">
+            With offices strategically located throughout the region, we make expert legal counsel accessible wherever you are.
+          </p>
+        </div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div 
-            className="text-center mb-10 md:mb-16"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#5A4C33] mb-4">Client Testimonials</h2>
-            <div className="w-24 h-1 bg-[#D2A02A] mx-auto" />
-          </motion.div>
-          
-          <div className="relative max-w-4xl mx-auto">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentTestimonial}
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.5 }}
-                className="bg-white rounded-xl p-6 sm:p-8 md:p-12 shadow-xl mx-4 sm:mx-0"
-              >
-                <div className="text-3xl md:text-4xl text-[#D2A02A] mb-4 md:mb-6">&quot;</div>
-                <p className="text-base md:text-lg lg:text-xl italic text-gray-700 mb-6 md:mb-8">
-                  {testimonials[currentTestimonial].quote}
-                </p>
-                <div className="flex items-center justify-center">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-[#5A4C33] rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
-                    {testimonials[currentTestimonial].author.charAt(0)}
-                  </div>
-                  <div className="ml-4 text-left">
-                    <div className="font-semibold text-[#5A4C33]">{testimonials[currentTestimonial].author}</div>
-                    <div className="text-xs md:text-sm text-gray-500">{testimonials[currentTestimonial].position}</div>
+        {/* Desktop view - visible on md and larger screens */}
+        <div className="hidden md:grid md:grid-cols-6 lg:grid-cols-6 gap-3 mt-8">
+          {locations.map((location) => (
+            <div key={location.id} className="group relative">
+              <a href={location.link} className="block h-full">
+                <div className="overflow-hidden rounded-t-xl">
+                  <div className="h-64 overflow-hidden">
+                    <div 
+                      className="h-full w-full bg-no-repeat bg-contain bg-center transform group-hover:scale-110 transition-transform duration-500 group-hover:filter group-hover:brightness-50"
+                      style={{ backgroundImage: `url(${location.image})`}}
+                    />
                   </div>
                 </div>
-              </motion.div>
-            </AnimatePresence>
-            
-            <div className="flex justify-center mt-6 md:mt-8 space-x-2 md:space-x-4">
-              <button 
-                type="button"
-                onClick={handlePrevTestimonial}
-                className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center text-[#5A4C33] hover:bg-[#D2A02A] hover:text-white transition-colors"
-              >
-                <FontAwesomeIcon icon={faChevronLeft} className="w-4 h-4 md:w-5 md:h-5" />
-              </button>
-              <div className="flex space-x-1 md:space-x-2 items-center">
-                {testimonials.map((_, i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    onClick={() => handleTestimonialSelect(i)}
-                    className={`w-2 md:w-3 h-2 md:h-3 rounded-full transition-all duration-300 ${i === currentTestimonial ? 'bg-[#D2A02A] w-4 md:w-6' : 'bg-gray-300'}`}
-                  />
-                ))}
-              </div>
-              <button 
-                type="button"
-                onClick={handleNextTestimonial}
-                className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center text-[#5A4C33] hover:bg-[#D2A02A] hover:text-white transition-colors"
-              >
-                <FontAwesomeIcon icon={faChevronRight} className="w-4 h-4 md:w-5 md:h-5" />
-              </button>
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <button className="bg-[#D2A02A] text-white font-semibold py-2 px-4 rounded">
+                    View More
+                  </button>
+                </div>
+              </a>
             </div>
-          </div>
+          ))}
         </div>
-      </div> */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-10">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold text-[#5A4C33] mb-4">Our Locations</h2>
-            <div className="w-24 h-1 bg-[#D2A02A] mx-auto" />
-            <p className="max-w-2xl mx-auto mt-6 text-gray-600">
-              With offices strategically located throughout the region, we make expert legal counsel accessible wherever you are.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-6 gap-3">
-            {[
-              {
-                id: 1,
-                image: "/city1.svg", 
-                name: "Downtown Office",
-                address: "123 Legal Avenue, Downtown",
-                phone: "(555) 123-4567",
-                link: "/locations/newdelhi"
-              },
-              {
-                id: 2,
-                image: "/city2.svg",
-                name: "Westside Branch",
-                address: "456 Justice Blvd, Westside",
-                phone: "(555) 234-5678",
-                link: "/locations/mumbai"
-              },
-              {
-                id: 3,
-                image: "/city3.svg",
-                name: "Suburban Office",
-                address: "789 Counsel Lane, Suburbia",
-                phone: "(555) 345-6789",
-                link: "/locations/kolkata"
-              },
-              {
-                id: 4,
-                image: "/city4.svg",
-                name: "Suburban Office",
-                address: "789 Counsel Lane, Suburbia",
-                phone: "(555) 345-6789",
-                link: "/locations/jaipur"
-              },
-              {
-                id: 5,
-                image: "/city5.svg",
-                name: "Suburban Office",
-                address: "789 Counsel Lane, Suburbia",
-                phone: "(555) 345-6789",
-                link: "/locations/bengaluru"
-              },
-              {
-                id: 6,
-                image: "/city6.svg",
-                name: "Suburban Office",
-                address: "789 Counsel Lane, Suburbia",
-                phone: "(555) 345-6789",
-                link: "/locations/chennai"
-              }
-            ].map((location) => (
-              <div key={location.id} className="group relative">
-                <a href={location.link} className="block h-full">
+        
+        {/* Mobile carousel - only visible on smaller screens */}
+        <div className="md:hidden mt-8">
+          <div className="relative">
+            {/* Current slide */}
+            <div className="px-4">
+              <div className="group relative">
+                <a href={locations[currentSlide].link} className="block h-full">
                   <div className="overflow-hidden rounded-t-xl">
-                    <div className="h-64 overflow-hidden">
-                      <div 
+                    <div className="h-48 overflow-hidden">
+                      <div
                         className="h-full w-full bg-no-repeat bg-contain bg-center transform group-hover:scale-110 transition-transform duration-500 group-hover:filter group-hover:brightness-50"
-                        style={{ backgroundImage: `url(${location.image})`}}
+                        style={{ backgroundImage: `url(${locations[currentSlide].image})` }}
                       />
                     </div>
                   </div>
@@ -447,9 +403,40 @@ export default function Services() {
                   </div>
                 </a>
               </div>
-            ))}
+            </div>
+            
+            {/* Carousel controls */}
+            <div className="flex justify-between mt-4">
+              <button 
+                onClick={prevSlide} 
+                className="bg-[#D2A02A] text-white p-2 rounded-full"
+              >
+                <ChevronLeft size={20} />
+              </button>
+              
+              {/* Pagination indicators */}
+              <div className="flex items-center space-x-1">
+                {locations.map((_, index) => (
+                  <div 
+                    key={index}
+                    className={`h-2 w-2 rounded-full cursor-pointer ${
+                      index === currentSlide ? 'bg-[#D2A02A]' : 'bg-gray-300'
+                    }`}
+                    onClick={() => setCurrentSlide(index)}
+                  />
+                ))}
+              </div>
+              
+              <button 
+                onClick={nextSlide} 
+                className="bg-[#D2A02A] text-white p-2 rounded-full"
+              >
+                <ChevronRight size={20} />
+              </button>
+            </div>
           </div>
         </div>
+      </div>
     </main>
   );
 }
