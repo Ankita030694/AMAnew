@@ -30,72 +30,11 @@ const PresentPage = () => {
     }
   };
 
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: { 
-      y: 0, 
-      opacity: 1,
-      transition: { 
-        type: "spring", 
-        stiffness: 100,
-        damping: 12
-      }
-    }
-  };
-
-  // Practice areas
-  const practiceAreas = [
-    {
-      id: "corporate",
-      icon: "👔",
-      title: "Corporate Law",
-      description: "Expert guidance for businesses of all sizes, from formation to governance, mergers, and acquisitions."
-    },
-    {
-      id: "litigation",
-      icon: "⚖️",
-      title: "Litigation",
-      description: "Strategic representation in complex disputes with a proven track record of successful outcomes."
-    },
-    {
-      id: "ip",
-      icon: "💡",
-      title: "Intellectual Property",
-      description: "Protection for your innovations, creative works, and brand identity in the digital age."
-    },
-    {
-      id: "real-estate",
-      icon: "🏢",
-      title: "Real Estate",
-      description: "Comprehensive legal services for property transactions, development, and dispute resolution."
-    },
-    {
-      id: "employment",
-      icon: "👥",
-      title: "Employment Law",
-      description: "Guidance on workplace policies, compliance, and representation in employment disputes."
-    },
-    {
-      id: "estate",
-      icon: "📝",
-      title: "Estate Planning",
-      description: "Personalized strategies for asset protection, succession planning, and wealth preservation."
-    }
-  ];
-
-  // Stats
-  const stats = [
-    { label: "Cases Won", value: "95%", icon: "🏆" },
-    { label: "Client Satisfaction", value: "98%", icon: "⭐" },
-    { label: "Legal Professionals", value: "120+", icon: "👩‍⚖️" },
-    { label: "Years Combined Experience", value: "850+", icon: "⏱️" }
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-black to-[#1A1A1A] text-white">
       {/* Background elements */}
       <motion.div 
-        className="fixed -top-64 -right-64 w-96 h-96 rounded-full bg-[#D2A02A] opacity-10"
+        className="fixed -top-64 -right-64 w-96 h-96 rounded-full bg-[#D2A02A] opacity-10 z-0"
         animate={{ 
           scale: [1, 1.2, 1],
           rotate: [0, 45, 0]
@@ -103,7 +42,7 @@ const PresentPage = () => {
         transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div 
-        className="fixed -bottom-32 -left-32 w-64 h-64 rounded-full bg-[#5A4C33] opacity-10"
+        className="fixed -bottom-32 -left-32 w-64 h-64 rounded-full bg-[#5A4C33] opacity-10 z-0"
         animate={{ 
           scale: [1, 1.3, 1],
           rotate: [0, -30, 0]
@@ -113,12 +52,12 @@ const PresentPage = () => {
 
       {/* Hero Section */}
       <motion.div 
-        className="relative h-96 w-full flex items-center justify-center"
+        className="relative h-auto min-h-96 w-full flex items-center justify-center py-16"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2 }}
       >
-        <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden z-0">
           <Image 
             src="/city2.svg"
             alt="Present Banner"
@@ -126,17 +65,17 @@ const PresentPage = () => {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+          <div className="absolute inset-0 bg-black bg-opacity-80"></div>
         </div>
         
-        <div className="relative z-10 text-center px-4">
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <motion.h1 
-            className="text-5xl md:text-6xl font-bold text-white mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 mt-15"
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            Present
+            AMA Legal Solutions: Transforming Legal Services Across India and Beyond
           </motion.h1>
           <motion.div 
             className="w-32 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mx-auto mb-8"
@@ -144,14 +83,92 @@ const PresentPage = () => {
             animate={{ scaleX: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           ></motion.div>
-          <motion.p 
-            className="text-xl text-gray-300 max-w-3xl mx-auto"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
-          >
-            How we&apos;re making a difference today with innovative approaches, technology integration, and client-centered solutions.
-          </motion.p>
+          
+          <div className="space-y-6">
+            <motion.div 
+              className="text-lg text-gray-300 max-w-3xl mx-auto"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.8 }}
+            >
+              <p className="mb-4">
+                In the modern legal landscape, the demand for trusted legal advisors, expert legal consultation, and strategic legal representation has never been greater. At AMA Legal Solutions, we are leading this transformation by expanding our top-rated law firm beyond Gurugram to major cities, including Delhi, Mumbai, Kolkata, Jaipur, Chennai, and Dubai.
+              </p>
+              <p>
+                Under the leadership of Anuj Anand Malik, AMA Legal Solutions has emerged as a leading law firm in India, offering expert legal services in banking and finance law, corporate law, arbitration, real estate law, and entertainment law. With a strong commitment to integrity, professionalism, and client success, we ensure that individuals, businesses, and corporations receive the best legal representation tailored to their needs.
+              </p>
+            </motion.div>
+            
+            <motion.div 
+              className="text-lg text-gray-300 max-w-3xl mx-auto"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.9, duration: 0.8 }}
+            >
+              <h3 className="text-xl font-semibold mb-2">Why Choose AMA Legal Solutions?</h3>
+              <ul className="list-disc list-outside ml-6 space-y-2">
+                <li>Experienced Legal Team – Our highly qualified lawyers, legal consultants, and advocates bring years of expertise in handling complex legal matters.</li>
+                <li>Comprehensive Legal Services – From business compliance, contract negotiation, and financial litigation to loan settlements, debt restructuring, and dispute resolution, we provide end-to-end legal solutions.</li>
+                <li>National & International Presence – With offices in Delhi, Mumbai, Kolkata, Jaipur, Chennai, and Dubai, we are now accessible to clients across India and the Middle East.</li>
+                <li>Client-Centric Approach – We believe in personalized legal solutions that prioritize client success, ensuring every case is handled with precision and dedication.</li>
+                <li>Global Legal Perspective – As active members of IACC, MCIA, Bar Council of Delhi, and Bar Council of India, we stay ahead of legal advancements to provide cutting-edge legal services.</li>
+              </ul>
+            </motion.div>
+            
+            <motion.div 
+              className="text-lg text-gray-300 max-w-3xl mx-auto"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 1.1, duration: 0.8 }}
+            >
+              <h3 className="text-xl font-semibold mb-2">Expanding Our Legal Expertise Across Multiple Cities</h3>
+              <p className="mb-2">
+                Our expansion into Delhi, Mumbai, Kolkata, Jaipur, Chennai, and Dubai is a significant milestone in our journey. These cities are key business hubs, and having a reputable law firm in these regions allows us to serve a broader client base, including:
+              </p>
+              <ul className="list-disc list-outside ml-6 space-y-2">
+                <li>Corporate Clients & Startups – Business formation, compliance, contract drafting, M&A, dispute resolution.</li>
+                <li>Financial & Banking Sector – Loan settlements, debt recovery, financial disputes, regulatory compliance.</li>
+                <li>Real Estate & Property Law – Property disputes, lease agreements, RERA compliance.</li>
+                <li>Entertainment & Media Law – Legal counsel for production houses, intellectual property rights, contract negotiations.</li>
+                <li>International Legal Matters – Cross-border disputes, arbitration, and international business compliance.</li>
+              </ul>
+            </motion.div>
+            
+            <motion.div 
+              className="text-lg text-gray-300 max-w-3xl mx-auto"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 1.3, duration: 0.8 }}
+            >
+              <h3 className="text-xl font-semibold mb-2">How AMA Legal Solutions is Changing the Legal Industry</h3>
+              <p className="mb-2">
+                In an era where legal services are becoming increasingly digital, we are incorporating technology-driven legal solutions to improve accessibility, efficiency, and results. Our mission is to make legal services in India and beyond more transparent, efficient, and client-friendly.
+              </p>
+              <ul className="list-disc list-outside ml-6 space-y-2">
+                <li>Online Legal Consultation – Clients can now seek legal advice online from our expert lawyers.</li>
+                <li>Quick & Hassle-Free Loan Settlements – Helping individuals manage and settle financial disputes effectively.</li>
+                <li>24/7 Legal Support for Businesses – Ensuring corporate clients stay compliant and protected.</li>
+              </ul>
+            </motion.div>
+            
+            <motion.div 
+              className="text-lg text-gray-300 max-w-3xl mx-auto"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 1.5, duration: 0.8 }}
+            >
+              <h3 className="text-xl font-semibold mb-2">Trusted by Over 1000 Clients – Your Success is Our Commitment</h3>
+              <p className="mb-2">
+                With a 4.8-star rating, 650+ successful case conclusions, and 300+ legal closures, our track record speaks for itself. At AMA Legal Solutions, we don't just practice law—we deliver results-driven legal solutions that make a difference.
+              </p>
+              <p className="mb-2">
+                As we continue to grow, our focus remains the same: Providing exceptional legal services in India and internationally while upholding the values of integrity, trust, and excellence.
+              </p>
+              <p>
+                Looking for the best law firm in India? Contact us today. Visit us at: www.amalegalsolutions.com
+              </p>
+            </motion.div>
+          </div>
         </div>
       </motion.div>
 
@@ -165,7 +182,7 @@ const PresentPage = () => {
           transition={{ duration: 0.7 }}
         >
           <motion.div 
-            className="absolute -top-24 -right-24 w-48 h-48 rounded-full bg-[#D2A02A] opacity-10"
+            className="absolute -top-24 -right-24 w-48 h-48 rounded-full bg-[#D2A02A] opacity-10 z-0"
             animate={{ 
               scale: [1, 1.2, 1],
             }}
@@ -173,7 +190,12 @@ const PresentPage = () => {
           />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
-            {stats.map((stat, index) => (
+            {[
+              { label: "Cases Won", value: "95%", icon: "🏆" },
+              { label: "Client Satisfaction", value: "98%", icon: "⭐" },
+              { label: "Legal Professionals", value: "120+", icon: "👩‍⚖️" },
+              { label: "Years Combined Experience", value: "850+", icon: "⏱️" }
+            ].map((stat, index) => (
               <motion.div 
                 key={stat.label}
                 className="text-center"
@@ -191,174 +213,11 @@ const PresentPage = () => {
         </motion.div>
       </section>
 
-      {/* Practice Areas Section */}
-      <section className="py-20 px-4 max-w-7xl mx-auto">
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          <h2 className="text-4xl font-bold text-white mb-4">Our Practice Areas</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mx-auto"></div>
-          <p className="text-gray-300 mt-6 max-w-2xl mx-auto">
-            We offer comprehensive legal expertise across multiple disciplines to meet all your legal needs.
-          </p>
-        </motion.div>
-
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          animate={controls}
-          ref={ref}
-        >
-          {practiceAreas.map((area) => (
-            <motion.div 
-              key={area.id}
-              variants={itemVariants}
-              whileHover={{ y: -10 }}
-              className="bg-[#0A0A0A] rounded-lg overflow-hidden shadow-xl border border-[#D2A02A]/20 p-8"
-            >
-              <div className="text-4xl mb-4">{area.icon}</div>
-              <h3 className="text-2xl font-bold text-[#D2A02A] mb-3">{area.title}</h3>
-              <div className="w-12 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mb-4"></div>
-              <p className="text-gray-300">{area.description}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-      </section>
-
-      {/* Technology Section */}
-      <section className="py-20 px-4 max-w-7xl mx-auto">
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          <h2 className="text-4xl font-bold text-white mb-4">Technology-Driven Practice</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mx-auto"></div>
-          <p className="text-gray-300 mt-6 max-w-2xl mx-auto">
-            We leverage cutting-edge technology to deliver more efficient, accurate, and accessible legal services.
-          </p>
-        </motion.div>
-
-        <div className="flex flex-col md:flex-row gap-12 items-center">
-          <motion.div 
-            className="w-full md:w-1/2"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <div className="relative h-96 w-full rounded-lg overflow-hidden shadow-xl border border-[#D2A02A]/20">
-              <Image 
-                src="/technology.svg"
-                alt="Legal Technology"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
-            </div>
-          </motion.div>
-          
-          <motion.div 
-            className="w-full md:w-1/2"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <h3 className="text-3xl font-bold text-[#D2A02A] mb-6">Innovation at Every Level</h3>
-            <div className="w-12 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mb-6"></div>
-            
-            <div className="space-y-6">
-              {[
-                {
-                  title: "AI-Powered Legal Research",
-                  description: "Utilizing advanced algorithms to analyze thousands of cases and precedents in minutes, ensuring comprehensive legal strategies."
-                },
-                {
-                  title: "Secure Client Portal",
-                  description: "24/7 access to case documents, communications, and updates through our encrypted client portal."
-                },
-                {
-                  title: "Virtual Consultations",
-                  description: "Flexible meeting options through our secure video conferencing platform, making legal counsel more accessible."
-                }
-              ].map((item, index) => (
-                <motion.div 
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2, duration: 0.5 }}
-                >
-                  <h4 className="text-xl font-bold text-white mb-2">{item.title}</h4>
-                  <p className="text-gray-300">{item.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto bg-gradient-to-r from-[#121212] to-[#1A1A1A] rounded-lg p-10 border border-[#D2A02A]/20 shadow-xl">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <h2 className="text-4xl font-bold text-white mb-4">Client Testimonials</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mx-auto"></div>
-            <p className="text-gray-300 mt-6 max-w-2xl mx-auto">
-              Hear what our clients have to say about their experience working with us.
-            </p>
-          </motion.div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((testimonialNum) => (
-              <motion.div 
-                key={testimonialNum}
-                className="bg-[#0A0A0A] rounded-lg p-6 shadow-lg border border-[#D2A02A]/10"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: testimonialNum * 0.1, duration: 0.5 }}
-              >
-                <div className="flex items-center mb-4">
-                  <div className="text-3xl text-[#D2A02A]">❝</div>
-                </div>
-                <p className="text-gray-300 italic mb-6">
-                  &quot;Their innovative approach and commitment to excellence made all the difference in our case. The team was responsive, thorough, and truly cared about our success.&quot;
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-[#D2A02A]/20 flex items-center justify-center text-[#D2A02A] font-bold mr-4">
-                    {testimonialNum}
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-white">Client Name</h4>
-                    <p className="text-gray-400 text-sm">CEO, Company Name</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 relative z-10">
         <div className="max-w-4xl mx-auto bg-gradient-to-r from-[#121212] to-[#1A1A1A] rounded-lg p-10 border border-[#D2A02A]/20 shadow-xl relative overflow-hidden">
           <motion.div 
-            className="absolute -top-24 -right-24 w-48 h-48 rounded-full bg-[#D2A02A] opacity-10"
+            className="absolute -top-24 -right-24 w-48 h-48 rounded-full bg-[#D2A02A] opacity-10 z-0"
             animate={{ 
               scale: [1, 1.2, 1],
             }}
@@ -385,7 +244,7 @@ const PresentPage = () => {
       </section>
 
       {/* Navigation links */}
-      <section className="py-12 px-4 max-w-7xl mx-auto border-t border-[#D2A02A]/20">
+      <section className="py-12 px-4 max-w-7xl mx-auto border-t border-[#D2A02A]/20 relative z-10">
         <div className="flex flex-col md:flex-row justify-center items-center gap-6">
           <Link href="/about/history" className="flex items-center text-[#D2A02A] hover:text-[#B58A24] transition-colors duration-300">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">

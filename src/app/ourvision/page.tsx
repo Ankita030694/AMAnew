@@ -82,9 +82,8 @@ const VisionPage = () => {
       description: "Contributing to the development of the next generation of legal professionals through mentorship and educational initiatives."
     }
   ];
-
-  // Strategic goals
-  const strategicGoals = [
+   // Strategic goals
+   const strategicGoals = [
     {
       year: "2026",
       title: "Digital Transformation",
@@ -106,6 +105,7 @@ const VisionPage = () => {
       description: "Recognized as the top firm for innovation and client satisfaction in our primary practice areas."
     }
   ];
+
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black to-[#1A1A1A] text-white">
@@ -172,7 +172,7 @@ const VisionPage = () => {
       </motion.div>
 
       {/* Vision Statement Section */}
-      <section className="py-20 px-4">
+      <section className=" px-4">
         <motion.div 
           className="max-w-7xl mx-auto bg-gradient-to-r from-[#121212] to-[#1A1A1A] rounded-lg p-10 border border-[#D2A02A]/20 shadow-xl relative overflow-hidden"
           initial={{ opacity: 0, y: 20 }}
@@ -257,8 +257,63 @@ const VisionPage = () => {
         </motion.div>
       </section>
 
-      {/* Strategic Roadmap Section */}
-      <section className="py-20 px-4 max-w-7xl mx-auto">
+       {/* Strategic Roadmap Section */}
+       <section className="py-20 px-4 max-w-7xl mx-auto">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <h2 className="text-4xl font-bold text-white mb-4">Strategic Roadmap</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mx-auto"></div>
+            <p className="text-gray-300 mt-6 max-w-2xl mx-auto">
+              Our planned milestones on the journey to realizing our vision.
+            </p>
+          </motion.div>
+
+          <div className="relative">
+            {/* Vertical line */}
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[#D2A02A] to-[#5A4C33] transform -translate-x-1/2"></div>
+            
+            {/* Timeline items */}
+            {strategicGoals.map((goal, index) => (
+              <div key={goal.year} className="relative z-10 mb-16 last:mb-0">
+                <div className={`flex flex-col md:flex-row items-center md:items-start gap-8 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+                  {/* Year circle */}
+                  <motion.div 
+                    className="absolute left-4 md:left-1/2 w-8 h-8 bg-[#D2A02A] rounded-full flex items-center justify-center transform -translate-x-1/2 border-4 border-black"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2, duration: 0.5 }}
+                  >
+                  </motion.div>
+                  
+                  {/* Content */}
+                  <motion.div 
+                    className={`ml-12 md:ml-0 w-full md:w-5/12 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}
+                    initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7 }}
+                  >
+                    <div className="bg-[#0A0A0A] rounded-lg p-6 shadow-xl border border-[#D2A02A]/20">
+                      <h3 className="text-3xl font-bold text-[#D2A02A] mb-2">{goal.year}</h3>
+                      <h4 className="text-xl font-bold text-white mb-3">{goal.title}</h4>
+                      <div className={`w-12 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mb-4 ${index % 2 === 0 ? 'ml-auto' : ''}`}></div>
+                      <p className="text-gray-300">{goal.description}</p>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+       {/* Strategic Roadmap Section - REPLACED WITH NEW CONTENT */}
+       <section className="py-20 px-4 max-w-7xl mx-auto">
         <motion.div 
           className="text-center mb-16"
           initial={{ opacity: 0, y: -20 }}
@@ -269,113 +324,129 @@ const VisionPage = () => {
           <h2 className="text-4xl font-bold text-white mb-4">Strategic Roadmap</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mx-auto"></div>
           <p className="text-gray-300 mt-6 max-w-2xl mx-auto">
-            Our planned milestones on the journey to realizing our vision.
+            Our vision for the future as we continue to transform legal services across India and beyond.
           </p>
         </motion.div>
 
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[#D2A02A] to-[#5A4C33] transform -translate-x-1/2"></div>
+        <motion.div 
+          className="bg-[#0A0A0A] rounded-lg p-8 shadow-xl border border-[#D2A02A]/20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <h3 className="text-2xl font-bold text-[#D2A02A] mb-4">Expanding Our Legal Expertise Across Multiple Cities</h3>
+          <p className="text-gray-300 mb-6">
+            Our expansion into Delhi, Mumbai, Kolkata, Jaipur, Chennai, and Dubai is a significant milestone in our journey. 
+            These cities are key business hubs, and having a reputable law firm in these regions allows us to serve a broader client base.
+          </p>
           
-          {/* Timeline items */}
-          {strategicGoals.map((goal, index) => (
-            <div key={goal.year} className="relative z-10 mb-16 last:mb-0">
-              <div className={`flex flex-col md:flex-row items-center md:items-start gap-8 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-                {/* Year circle */}
-                <motion.div 
-                  className="absolute left-4 md:left-1/2 w-8 h-8 bg-[#D2A02A] rounded-full flex items-center justify-center transform -translate-x-1/2 border-4 border-black"
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2, duration: 0.5 }}
-                >
-                </motion.div>
-                
-                {/* Content */}
-                <motion.div 
-                  className={`ml-12 md:ml-0 w-full md:w-5/12 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.7 }}
-                >
-                  <div className="bg-[#0A0A0A] rounded-lg p-6 shadow-xl border border-[#D2A02A]/20">
-                    <h3 className="text-3xl font-bold text-[#D2A02A] mb-2">{goal.year}</h3>
-                    <h4 className="text-xl font-bold text-white mb-3">{goal.title}</h4>
-                    <div className={`w-12 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mb-4 ${index % 2 === 0 ? 'ml-auto' : ''}`}></div>
-                    <p className="text-gray-300">{goal.description}</p>
-                  </div>
-                </motion.div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Innovation Lab Section */}
-      <section className="py-20 px-4 max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row gap-12 items-center">
-          <motion.div 
-            className="w-full md:w-1/2"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <h3 className="text-3xl font-bold text-[#D2A02A] mb-6">Innovation Lab</h3>
-            <div className="w-12 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mb-6"></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <motion.div 
+              className="bg-[#121212] p-6 rounded-lg border border-[#D2A02A]/10"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+            >
+              <h4 className="text-xl font-bold text-white mb-3">Corporate Clients & Startups</h4>
+              <p className="text-gray-300">Business formation, compliance, contract drafting, M&A, dispute resolution.</p>
+            </motion.div>
             
-            <p className="text-gray-300 mb-6">
-              Our dedicated Innovation Lab acts as an incubator for groundbreaking legal technologies and service models. Here, our team of legal experts, developers, and design thinkers collaborate to create solutions that address the evolving needs of our clients.
+            <motion.div 
+              className="bg-[#121212] p-6 rounded-lg border border-[#D2A02A]/10"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            >
+              <h4 className="text-xl font-bold text-white mb-3">Financial & Banking Sector</h4>
+              <p className="text-gray-300">Loan settlements, debt recovery, financial disputes, regulatory compliance.</p>
+            </motion.div>
+            
+            <motion.div 
+              className="bg-[#121212] p-6 rounded-lg border border-[#D2A02A]/10"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+            >
+              <h4 className="text-xl font-bold text-white mb-3">Real Estate & Property Law</h4>
+              <p className="text-gray-300">Property disputes, lease agreements, RERA compliance.</p>
+            </motion.div>
+            
+            <motion.div 
+              className="bg-[#121212] p-6 rounded-lg border border-[#D2A02A]/10"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+            >
+              <h4 className="text-xl font-bold text-white mb-3">Entertainment & Media Law</h4>
+              <p className="text-gray-300">Legal counsel for production houses, intellectual property rights, contract negotiations.</p>
+            </motion.div>
+          </div>
+          
+          <h3 className="text-2xl font-bold text-[#D2A02A] mb-4 mt-10">Vision for the Future</h3>
+          <p className="text-gray-300 mb-6">
+            At AMA Legal Solutions, our vision is to become India's most trusted and innovative law firm, delivering world-class legal services with a focus on technology, accessibility, and client empowerment.
+          </p>
+          
+          <div className="space-y-6">
+            {[
+              {
+                title: "Global Expansion",
+                description: "Expand our presence to more national and international locations, ensuring global legal support for businesses and individuals."
+              },
+              {
+                title: "AI-Driven Solutions",
+                description: "Develop AI-driven legal solutions that simplify legal processes, making them more efficient and cost-effective."
+              },
+              {
+                title: "Legal Education",
+                description: "Establish a dedicated legal research and training institute to nurture the next generation of lawyers and legal professionals."
+              },
+              {
+                title: "Corporate Advisory",
+                description: "Strengthen our corporate legal advisory services to help businesses navigate regulatory challenges with ease."
+              },
+              {
+                title: "Policy Advocacy",
+                description: "Advocate for policy reforms and legal awareness to create a more transparent and just legal system."
+              }
+            ].map((goal, index) => (
+              <motion.div 
+                key={index}
+                className="flex gap-4"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 + (index * 0.1), duration: 0.5 }}
+              >
+                <div className="mt-1 text-[#D2A02A]">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold text-white mb-1">{goal.title}</h4>
+                  <p className="text-gray-300">{goal.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          
+          <div className="mt-10 p-6 bg-gradient-to-r from-[#D2A02A]/20 to-transparent rounded-lg">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="text-3xl">⭐</div>
+              <h4 className="text-xl font-bold text-white">Trusted by Over 1000 Clients</h4>
+            </div>
+            <p className="text-gray-300">
+              With a 4.8-star rating, 650+ successful case conclusions, and 300+ legal closures, our track record speaks for itself. 
+              At AMA Legal Solutions, we don't just practice law—we deliver results-driven legal solutions that make a difference.
             </p>
-            
-            <div className="space-y-6">
-              {[
-                {
-                  title: "Legal Tech Development",
-                  description: "Creating proprietary tools that streamline complex legal processes and enhance client outcomes."
-                },
-                {
-                  title: "Service Design",
-                  description: "Reimagining the client experience through human-centered design methodologies."
-                },
-                {
-                  title: "Strategic Partnerships",
-                  description: "Collaborating with leading technology providers and academic institutions to push the boundaries of legal innovation."
-                }
-              ].map((item, index) => (
-                <motion.div 
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2, duration: 0.5 }}
-                >
-                  <h4 className="text-xl font-bold text-white mb-2">{item.title}</h4>
-                  <p className="text-gray-300">{item.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-          
-          <motion.div 
-            className="w-full md:w-1/2"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <div className="relative h-96 w-full rounded-lg overflow-hidden shadow-xl border border-[#D2A02A]/20">
-              <Image 
-                src="/technology.svg"
-                alt="Innovation Lab"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
-            </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </section>
 
       {/* Community Impact Section */}
