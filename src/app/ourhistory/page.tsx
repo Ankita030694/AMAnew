@@ -75,7 +75,7 @@ const HistoryPage = () => {
           >
             <Image
               src="/bannerbg.png"
-              alt="Our firm's history"
+              alt="Our firm&apos;s history"
               fill
               className="object-cover"
               priority
@@ -115,7 +115,7 @@ const HistoryPage = () => {
 
             From <strong>1982 to 2016</strong>, R.C. Malik built a strong legal practice, earning the respect of clients and peers alike. His commitment to ethical advocacy and meticulous legal counsel helped numerous individuals and businesses navigate complex legal challenges.<br /><br />
 
-            As time evolved, so did our mission. In <strong>2014</strong>, <strong>Anuj Anand Malik</strong>, carrying forward his grandfather's vision, embarked on a journey to modernize and expand the firm. With a fresh perspective and a dynamic approach, he integrated contemporary legal strategies while preserving the core values that had defined the firm for decades. Between <strong>2014 and 2019</strong>, Anuj Anand Malik worked tirelessly to bridge traditional legal principles with innovative solutions, ensuring that clients received the most effective representation in an ever-evolving legal landscape.<br /><br />
+            As time evolved, so did our mission. In <strong>2014</strong>, <strong>Anuj Anand Malik</strong>, carrying forward his grandfather&apos;s vision, embarked on a journey to modernize and expand the firm. With a fresh perspective and a dynamic approach, he integrated contemporary legal strategies while preserving the core values that had defined the firm for decades. Between <strong>2014 and 2019</strong>, Anuj Anand Malik worked tirelessly to bridge traditional legal principles with innovative solutions, ensuring that clients received the most effective representation in an ever-evolving legal landscape.<br /><br />
 
             By <strong className="text-[#D2A02A]">2020</strong>, AMA Legal Solutions had solidified its reputation as a forward-thinking law firm, adept at handling intricate legal matters with precision and expertise. The firm expanded its specialization in <strong>banking and finance law, corporate law, arbitration, real estate law, and entertainment law</strong>, offering strategic and client-centric legal solutions.<br /><br />
 
@@ -123,7 +123,7 @@ const HistoryPage = () => {
 
             With memberships in the <strong>Indo-American Chamber of Commerce (IACC), Mumbai Centre for International Arbitration (MCIA), Bar Council of Delhi, and Bar Council of India</strong>, we bring a global legal perspective to our practice, staying ahead of legal advancements to serve our clients effectively.<br /><br />
 
-            Our journey from a visionary founding to a premier law firm in <strong>Gurugram, India</strong> is a testament to our dedication, perseverance, and the trust our clients place in us. At <strong className="text-[#D2A02A]">AMA Legal Solutions</strong>, we don't just practice law—we uphold a legacy.<br /><br />
+            Our journey from a visionary founding to a premier law firm in <strong>Gurugram, India</strong> is a testament to our dedication, perseverance, and the trust our clients place in us. At <strong className="text-[#D2A02A]">AMA Legal Solutions</strong>, we don&apos;t just practice law—we uphold a legacy.<br /><br />
 
             📍 Visit us at: <a href="http://www.amalegalsolutions.com" className="text-[#D2A02A] hover:text-[#5a4c33] font-semibold underline">www.amalegalsolutions.com</a>
           </p>
@@ -173,7 +173,7 @@ const HistoryPage = () => {
                 title: "Client Focus",
                 icon: "🤝",
                 description:
-                  "Our clients' interests and needs are at the center of everything we do.",
+                  "Our clients&apos; interests and needs are at the center of everything we do.",
               },
             ].map((value, index) => (
               <motion.div
