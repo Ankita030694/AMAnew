@@ -8,6 +8,7 @@ import {
   faHouse, 
   faScaleBalanced, 
   faUsers,  
+  faArrowRight
 } from '@fortawesome/free-solid-svg-icons';
 import Image from "next/image";
 import Link from "next/link";
@@ -119,7 +120,7 @@ export default function Services() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-8 text-shadow-lg relative text-center">
+              <h1 className="text-5xl font-bold mb-4 md:mb-8 text-shadow-lg relative text-center">
                 <span className="inline-block">Our Legal </span>
                 <span className="inline-block relative">
                   &nbsp;Services
@@ -175,122 +176,134 @@ export default function Services() {
       </div>
 
       {/* Practice Areas Section with enhanced styling */}
-      <div className="bg-white py-10 relative">
-        {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-20 md:w-32 h-20 md:h-32 bg-[#D2A02A]/5 rounded-br-full" />
-        <div className="absolute bottom-0 right-0 w-24 md:w-40 h-24 md:h-40 bg-[#5A4C33]/5 rounded-tl-full" />
-        
-        <motion.div 
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <div className="text-center mb-12 md:mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#5A4C33] mb-4">Our Practice Areas</h2>
-            <div className="w-24 h-1 bg-[#D2A02A] mx-auto" />
-          </div>
+     {/* Practice Areas Section with enhanced styling */}
+<div className="bg-white py-10 relative">
+  {/* Decorative elements */}
+  <div className="absolute top-0 left-0 w-20 md:w-32 h-20 md:h-32 bg-[#D2A02A]/5 rounded-br-full" />
+  <div className="absolute bottom-0 right-0 w-24 md:w-40 h-24 md:h-40 bg-[#5A4C33]/5 rounded-tl-full" />
+  
+  <motion.div 
+    className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true, margin: "-100px" }}
+  >
+    <div className="text-center mb-12 md:mb-20">
+      <h2 className="text-4xl font-bold text-[#5A4C33] mb-4">Our Expertise</h2>
+      <div className="w-24 h-1 bg-[#D2A02A] mx-auto" />
+    </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-            {[
-              {
-                icon: faHouse,
-                title: "Banking and Finance",
-                description: "Financial Fraud | Financial Scam | Banking Regulatory Compliance | Commercial Banking Issues | Financial Litigation | Frozen Bank Accounts |",
-                link: "/services/banking"
-              },
-              {
-                icon: faScaleBalanced,
-                title: "Loan Settlement",
-                description: "Credit Card | Personal Loan | Business Loan | Vehicle Loan | Bank Loan Default | NBFC Loan Dispute | RBI Loan Settlement Guidelines |",
-                link: "/services/loansettlement"
-              },
-              {
-                icon: faBuilding,
-                title: "Intellectual Property Rights",
-                description: "Trademark Registration | Patent Filing | Copyright Protection | IP Infringement | Brand Protection | Pharmaceutical Patent Attorney |",
-                link: "/services/ipr"
-              },
-              {
-                icon: faBuildingColumns,
-                title: "Entertainment Law",
-                description: "Media and entertainment | Film Industry | Music Industry Legal Consultant | Digital Media and OTT Platform Legal Advisor |",
-                link: "/services/entertainment"
-              },
-              {
-                icon: faUsers,
-                title: "Real Estate",
-                description: "Property Dispute | RERA Compliance | Property Registration | Land Dispute | Title Verification & Property Due Diligence | Real Estate Fraud |",
-                link: "/services/realestate"
-              },
-              {
-                icon: faHouse,
-                title: "Criminal Law",
-                description: "Legal Help for FIR & Police Cases | Arrest & Police Interrogation | Cyber Crime & Online Fraud | Money Laundering Case | Bank & Insurance Fraud | Criminal Breach |",
-                link: "/services/criminal"
-              },
-              {
-                icon: faHouse,
-                title: "Corporate Law",
-                description: "Company Registration | Company Incorporation | Startup Compliance | MSME Registration | Partnership Agreement | Contract Drafting |",
-                link: "/services/corporate"
-              },
-              {
-                icon: faHouse,
-                title: "Arbitration Law",
-                description: "Arbitration Agreement Drafting | Arbitration Awards | Arbitral Award | Interim Relief | Banking and finance arbitration |",
-                link: "/services/arbitration"
-              },
-              {
-                icon: faHouse,
-                title: "IT and Cyber Law",
-                description: "Filing Cybercrime Complaint | FIR for Cyber Fraud | Cybercrime Police Complaint | Defamation on Social Media | Cyber Harassment Legal Remedies |",
-                link: "/services/cyber"
-              },
-              {
-                icon: faHouse,
-                title: "Civil Law",
-                description: "Property Dispute | Landlord Tenant Issue | Illegal Possession | Breach of Contract | Agreement Drafting | Specific Performance |",
-                link: "/services/civil"
-              },
-              {
-                icon: faHouse,
-                title: "Drafting",
-                description: "Business Contract | Employment Agreement | Service Agreement | Property Sale Deed | Lease Agreement | NDA Drafting (India & UK) | Legal Notice |",
-                link: "/services/drafting"
-              },
-              {
-                icon: faHouse,
-                title: "Litigation",
-                description: "Banking & Financial Dispute Litigation | Intellectual Property (IP) Litigation | Real Estate & Construction Litigation | Debt Recovery & Financial Disputes | Criminal Litigation | Civil Litigation |",
-                link: "/services/litigation"
-              }
-            ].map((item, index) => (
-              <motion.div 
-                key={index} 
-                className="relative group"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 * Math.min(index, 3) }} // Limit delay for mobile performance
-                viewport={{ once: true, margin: "-50px" }}
-              >
-                <Link href={item.link}>
-                  <div className="p-4 md:p-8 rounded-xl border border-gray-200 hover:border-[#D2A02A] transition-all duration-300 h-full group-hover:shadow-lg group-hover:-translate-y-2 bg-white relative z-10">
-                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#5A4C33]/10 flex items-center justify-center text-[#D2A02A] mb-4 md:mb-6 group-hover:bg-[#D2A02A] group-hover:text-white transition-all duration-300 mx-auto">
-                      <FontAwesomeIcon icon={item.icon} className="w-6 h-6 md:w-8 md:h-8" />
-                    </div>
-                    <h3 className="text-lg md:text-xl font-semibold text-[#5A4C33] mb-2 md:mb-4 text-center">{item.title}</h3>
-                    <p className="text-sm md:text-base text-center text-blue-600">{item.description}</p>
-                  </div>
-                </Link>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#D2A02A]/20 to-[#5A4C33]/20 rounded-xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300 z-0" />
-              </motion.div>
-            ))}
-          </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+      {[
+        {
+          icon: faHouse,
+          title: "Banking and Finance",
+          description: "Financial Fraud | Financial Scam | Banking Regulatory Compliance | Commercial Banking Issues | Financial Litigation | Frozen Bank Accounts |",
+          link: "/services/banking"
+        },
+        {
+          icon: faScaleBalanced,
+          title: "Loan Settlement",
+          description: "Credit Card | Personal Loan | Business Loan | Vehicle Loan | Bank Loan Default | NBFC Loan Dispute | RBI Loan Settlement Guidelines |",
+          link: "/services/loansettlement"
+        },
+        {
+          icon: faBuilding,
+          title: "Intellectual Property Rights",
+          description: "Trademark Registration | Patent Filing | Copyright Protection | IP Infringement | Brand Protection | Pharmaceutical Patent Attorney |",
+          link: "/services/ipr"
+        },
+        {
+          icon: faBuildingColumns,
+          title: "Entertainment Law",
+          description: "Media and entertainment | Film Industry | Music Industry Legal Consultant | Digital Media and OTT Platform Legal Advisor |",
+          link: "/services/entertainment"
+        },
+        {
+          icon: faUsers,
+          title: "Real Estate",
+          description: "Property Dispute | RERA Compliance | Property Registration | Land Dispute | Title Verification & Property Due Diligence | Real Estate Fraud |",
+          link: "/services/realestate"
+        },
+        {
+          icon: faHouse,
+          title: "Criminal Law",
+          description: "Legal Help for FIR & Police Cases | Arrest & Police Interrogation | Cyber Crime & Online Fraud | Money Laundering Case | Bank & Insurance Fraud | Criminal Breach |",
+          link: "/services/criminal"
+        },
+        {
+          icon: faHouse,
+          title: "Corporate Law",
+          description: "Company Registration | Company Incorporation | Startup Compliance | MSME Registration | Partnership Agreement | Contract Drafting |",
+          link: "/services/corporate"
+        },
+        {
+          icon: faHouse,
+          title: "Arbitration Law",
+          description: "Arbitration Agreement Drafting | Arbitration Awards | Arbitral Award | Interim Relief | Banking and finance arbitration |",
+          link: "/services/arbitration"
+        },
+        {
+          icon: faHouse,
+          title: "IT and Cyber Law",
+          description: "Filing Cybercrime Complaint | FIR for Cyber Fraud | Cybercrime Police Complaint | Defamation on Social Media | Cyber Harassment Legal Remedies |",
+          link: "/services/cyber"
+        },
+        {
+          icon: faHouse,
+          title: "Civil Law",
+          description: "Property Dispute | Landlord Tenant Issue | Illegal Possession | Breach of Contract | Agreement Drafting | Specific Performance |",
+          link: "/services/civil"
+        },
+        {
+          icon: faHouse,
+          title: "Drafting",
+          description: "Business Contract | Employment Agreement | Service Agreement | Property Sale Deed | Lease Agreement | NDA Drafting (India & UK) | Legal Notice |",
+          link: "/services/drafting"
+        },
+        {
+          icon: faHouse,
+          title: "Litigation",
+          description: "Banking & Financial Dispute Litigation | Intellectual Property (IP) Litigation | Real Estate & Construction Litigation | Debt Recovery & Financial Disputes | Criminal Litigation | Civil Litigation |",
+          link: "/services/litigation"
+        }
+      ].map((item, index) => (
+        <motion.div
+          key={index}
+          className="bg-[#F8F5EC] rounded-lg border-l-4 border-[#D2A02A] overflow-hidden hover:shadow-lg transition-shadow duration-300"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ delay: 0.1 * index, duration: 0.5 }}
+        >
+          <Link href={item.link} className="block h-full">
+            <div className="p-6 relative">
+              <div className="flex items-start mb-4">
+                <div className="w-12 h-12 rounded-full bg-[#D2A02A]/20 flex items-center justify-center text-[#D2A02A] mr-4">
+                  <FontAwesomeIcon icon={item.icon} className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-[#5A4C33]">{item.title}</h3>
+              </div>
+              <p className="text-[#5A4C33]/80 ">
+                {item.description}
+              </p>
+              <div className="mt-4 flex justify-end">
+                <div className="inline-flex items-center text-[#D2A02A] font-medium group">
+                  <span className="mr-2">Learn More</span>
+                  <FontAwesomeIcon
+                    icon={faArrowRight}
+                    className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
+                  />
+                </div>
+              </div>
+            </div>
+          </Link>
         </motion.div>
-      </div>
-      
+      ))}
+    </div>
+  </motion.div>
+</div>
       {/* Enhanced Call to Action Section */}
       <div className="relative">
         <div className="absolute inset-0">
@@ -349,7 +362,7 @@ export default function Services() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-10 mb-10">
         <div className="text-center">
           <h2 className="text-4xl font-bold text-[#5A4C33] mb-4">Our Locations</h2>
           <div className="w-24 h-1 bg-[#D2A02A] mx-auto" />
