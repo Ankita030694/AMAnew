@@ -83,7 +83,7 @@ export default function Footer() {
                   href="/blogs"
                   className="hover:text-white transition-colors"
                 >
-                  Advocate&apos;s Insights
+                  Blogs
                 </Link>
               </li>
             </ul>

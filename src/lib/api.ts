@@ -14,96 +14,74 @@ export interface Video {
     {
       id: 1,
       title: 'Employee Benefits Explained',
-      videoId: 'dQw4w9WgXcQ',
+      videoId: '36mrxbArr4I',
       category: 'Benefits',
       date: '2025-02-15'
     },
     {
       id: 2,
       title: 'Health Insurance Coverage',
-      videoId: 'dQw4w9WgXcQ',
+      videoId: 'YM8ePJEKoFo',
       category: 'Insurance',
       date: '2025-02-12'
     },
     {
-        id: 2,
+        id: 3,
         title: 'Health Insurance Coverage',
-        videoId: 'dQw4w9WgXcQ',
+        videoId: 'zGcdOfF1N1U',
         category: 'Insurance',
         date: '2025-02-12'
       },
       {
-        id: 2,
+        id: 4,
         title: 'Health Insurance Coverage',
-        videoId: 'dQw4w9WgXcQ',
+        videoId: 'Y9Ll3AtJXvw',
         category: 'Insurance',
         date: '2025-02-12'
       },
       {
-        id: 2,
+        id: 5,
         title: 'Health Insurance Coverage',
-        videoId: 'dQw4w9WgXcQ',
+        videoId: 'Qr2DOYeHpys',
         category: 'Insurance',
         date: '2025-02-12'
       },
       {
-        id: 2,
+        id: 6,
         title: 'Health Insurance Coverage',
-        videoId: 'dQw4w9WgXcQ',
+        videoId: '3tGGVpSRGs0',
         category: 'Insurance',
         date: '2025-02-12'
       },
       {
-        id: 2,
+        id: 7,
         title: 'Health Insurance Coverage',
-        videoId: 'dQw4w9WgXcQ',
+        videoId: 'JLOh3J33h5o',
         category: 'Insurance',
         date: '2025-02-12'
       },
       {
-        id: 2,
+        id: 8,
         title: 'Health Insurance Coverage',
-        videoId: 'dQw4w9WgXcQ',
+        videoId: 'Ctom5iv6ElU',
         category: 'Insurance',
         date: '2025-02-12'
       },
       {
-        id: 2,
+        id: 9,
         title: 'Health Insurance Coverage',
-        videoId: 'dQw4w9WgXcQ',
+        videoId: 'zGcdOfF1N1U',
         category: 'Insurance',
         date: '2025-02-12'
       },
       {
-        id: 2,
+        id: 10,
         title: 'Health Insurance Coverage',
-        videoId: 'dQw4w9WgXcQ',
+        videoId: 'zGcdOfF1N1U',
         category: 'Insurance',
         date: '2025-02-12'
       },
-      {
-        id: 2,
-        title: 'Health Insurance Coverage',
-        videoId: 'dQw4w9WgXcQ',
-        category: 'Insurance',
-        date: '2025-02-12'
-      },
-      {
-        id: 2,
-        title: 'Health Insurance Coverage',
-        videoId: 'dQw4w9WgXcQ',
-        category: 'Insurance',
-        date: '2025-02-12'
-      },
-    // Include all your videos here
-    // ...
-    {
-      id: 18,
-      title: 'Managing Healthcare Costs',
-      videoId: 'dQw4w9WgXcQ',
-      category: 'Financial',
-      date: '2024-12-28'
-    }
+     
   ];
   
   /**

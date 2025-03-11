@@ -93,18 +93,18 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
   }, [videos.length, videosPerPage]);
   
   // Change page
-  const paginate = useCallback((pageNumber: number) => {
-    // Load more videos if needed
-    loadMoreVideos(pageNumber);
+  // const paginate = useCallback((pageNumber: number) => {
+  //   // Load more videos if needed
+  //   loadMoreVideos(pageNumber);
     
-    // Update current page
-    setCurrentPage(pageNumber);
+  //   // Update current page
+  //   setCurrentPage(pageNumber);
     
-    // Scroll to top when changing pages
-    requestAnimationFrame(() => {
-      window.scrollTo({ top: 200, behavior: 'smooth' });
-    });
-  }, [loadMoreVideos]);
+  //   // Scroll to top when changing pages
+  //   requestAnimationFrame(() => {
+  //     window.scrollTo({ top: 200, behavior: 'smooth' });
+  //   });
+  // }, [loadMoreVideos]);
   
   // Get current videos for display
   const currentVideos = useMemo(() => {
@@ -116,7 +116,7 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
   return (
     <div className="bg-transparent">
       {/* Banner Section */}
-      <div className="relative w-full h-[550px] flex items-center justify-center">
+      <div className="relative w-full h-[300px] md:h-[550px] flex items-center justify-center">
         <Image 
           src="/amalive1.png" 
           alt="AMA Live Banner"
@@ -129,7 +129,7 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
       </div>
       
       {/* Main Content Container */}
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4">
         {/* Page Heading */}
         <motion.div 
           className="mb-12 text-center"
@@ -174,7 +174,7 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
                   <YouTubeEmbed videoId={video.videoId} />
                   
                   {/* Video Details */}
-                  <div className="p-4">
+                  {/* <div className="p-4">
                     <div className="flex justify-between items-start mb-2">
                       <span className="bg-[#D2A02A] text-white text-xs px-2 py-1 rounded">
                         {video.category}
@@ -193,7 +193,7 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
                     >
                       {video.title}
                     </h3>
-                  </div>
+                  </div> */}
                 </motion.div>
               </motion.div>
             ))}
@@ -208,7 +208,7 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
         )}
         
         {/* Pagination */}
-        {totalPages > 1 && (
+        {/* {totalPages > 1 && (
           <motion.div 
             className="flex justify-center items-center space-x-2 mt-8"
             initial={{ opacity: 0 }}
@@ -318,7 +318,7 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
               Next
             </button>
           </motion.div>
-        )}
+        )} */}
       </div>
     </div>
   );
