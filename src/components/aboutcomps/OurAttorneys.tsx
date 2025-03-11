@@ -11,9 +11,8 @@ const attorneys = [
     title: "Shrey Arora",
     role: "Senior Associate",
     socials: {
-      twitter: "#", 
-      instagram: "#",
-      linkedin: "#"
+      instagram: "https://www.instagram.com/amalegalsolutions/?hl=en",
+      linkedin: "https://in.linkedin.com/company/ama-legal-solutions"
     }
   },
   {
@@ -21,9 +20,8 @@ const attorneys = [
     title: "Rahul Gour", 
     role: "Associate",
     socials: {
-      twitter: "#",
-      instagram: "#",
-      linkedin: "#"
+      instagram: "https://www.instagram.com/amalegalsolutions/?hl=en",
+      linkedin: "https://in.linkedin.com/company/ama-legal-solutions"
     }
   },
   {
@@ -31,9 +29,8 @@ const attorneys = [
     title: "Ritika Harplani",
     role: "Associate",
     socials: {
-      twitter: "#",
-      instagram: "#",
-      linkedin: "#"
+      instagram: "https://www.instagram.com/amalegalsolutions/?hl=en",
+      linkedin: "https://in.linkedin.com/company/ama-legal-solutions"
     }
   },
   {
@@ -41,9 +38,8 @@ const attorneys = [
     title: "Abhu Dash",
     role: "Associate",
     socials: {
-      twitter: "#",
-      instagram: "#",
-      linkedin: "#"
+      instagram: "https://www.instagram.com/amalegalsolutions/?hl=en",
+      linkedin: "https://in.linkedin.com/company/ama-legal-solutions"
     }
   }
 ];
@@ -278,7 +274,7 @@ const AttorneyCard = ({ attorney }: { attorney: typeof attorneys[0] & { position
             >
               <Link 
                 href={url}
-                className="w-10 h-10 rounded-full bg-white border border-[#6B5B3D] flex items-center justify-center hover:bg-[#6B5B3D] hover:text-white transition-colors duration-300"
+                className="w-10 h-10 rounded-full bg-[#6B5B3D] border border-[#6B5B3D] flex items-center justify-center hover:bg-[#6B5B3D] hover:text-white transition-colors duration-300"
               >
                 <Icon className="w-5 h-5" />
               </Link>
