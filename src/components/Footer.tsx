@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-
 export default function Footer() {
   return (
     <footer className="bg-[#D2A02A] text-[#000000] pt-16 pb-6 text-bold">
@@ -21,7 +20,8 @@ export default function Footer() {
               />
             </Link>
             <p className="-mt-18 text-center sm:text-left text-base text-xl">
-            Committed to delivering exceptional legal services guided by values, expertise, and client satisfaction. 
+              Committed to delivering exceptional legal services guided by
+              values, expertise, and client satisfaction.
             </p>
             {/* Social Links */}
             <div className="flex space-x-4 justify-center sm:justify-start">
@@ -45,7 +45,6 @@ export default function Footer() {
               </Link>
             </div>
           </div>
-
           {/* Links */}
           <div className="text-center sm:text-left">
             <h3 className="text-2xl font-semibold mb-6">Visit</h3>
@@ -53,14 +52,6 @@ export default function Footer() {
               <li>
                 <Link href="/" className="hover:text-white transition-colors">
                   Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="hover:text-white transition-colors"
-                >
-                  Services
                 </Link>
               </li>
               <li>
@@ -73,10 +64,26 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/services"
+                  className="hover:text-white transition-colors"
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contact"
                   className="hover:text-white transition-colors"
                 >
                   Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blogs"
+                  className="hover:text-white transition-colors"
+                >
+                  Advocate's Insights
                 </Link>
               </li>
             </ul>
@@ -109,45 +116,41 @@ export default function Footer() {
           </div>
           {/* Practice Areas */}
           <div className="text-center sm:text-left">
-            <h3 className="text-2xl font-semibold mb-6">
-              Practice Areas
-            </h3>
+            <h3 className="text-2xl font-semibold mb-6">Our Expertise</h3>
             <ul className="space-y-4 text-lg text-xl">
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/services/banking" className="hover:text-white transition-colors">
                   Banking and Finance
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/services/loansettlement" className="hover:text-white transition-colors">
                   Loan Settlement
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/services/ipr" className="hover:text-white transition-colors">
                   Intellectual Property Rights
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/services/entertainment" className="hover:text-white transition-colors">
                   Entertainment Law
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/services/realestate" className="hover:text-white transition-colors">
                   Real Estate
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href="/services/criminal" className="hover:text-white transition-colors">
                   Criminal Law
                 </Link>
               </li>
             </ul>
           </div>
-          
         </div>
-
         {/* Copyright */}
         <div className="pt-8 border-t border-white/10 text-center text-base sm:text-sm">
           ©Copyright AMA. All Rights Reserved.

@@ -62,13 +62,13 @@ export default function Clients() {
           <h1 className="md:text-3xl font-bold text-center text-[#5A4C33] mb-8 text-2xl">
             OUR AFFILIATIONS
           </h1>
-          <div className="relative flex justify-center">
+          {/* <div className="relative flex justify-center">
               <span className="px-4 bg-white text-[#D2A02A]">
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 100-16 8 8 0 000 16z"/>
                 </svg>
               </span>
-            </div>
+            </div> */}
           {/* Desktop View */}
           <div className="hidden md:grid grid-cols-5 gap-4">
             {clientLogos.map((logo, index) => (
@@ -111,8 +111,8 @@ export default function Clients() {
 
             <div className="overflow-hidden">
               <div
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                className="flex transition-transform duration-500 ease-in-out mt-10"
+                style={{ transform: `translateX(-${currentSlide * 50}%)` }}
               >
                 {clientLogos.map((logo, index) => (
                   <div key={index} className="w-1/2 flex-shrink-0 px-4">

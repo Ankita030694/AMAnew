@@ -73,11 +73,11 @@ export default function Navbar() {
           </div>
 
           {/* Phone Number - Desktop */}
-          <div className="hidden md:block">
+          {/* <div className="hidden md:block">
             <a href="tel:1234567890" className="text-white">
               1234567890
             </a>
-          </div>
+          </div> */}
 
           {/* Hamburger Menu Button - Mobile */}
           <div className="md:hidden">
@@ -142,7 +142,7 @@ export default function Navbar() {
               </Link>
             ))}
             
-            {/* Blogs dropdown for mobile */}
+            {/* Advocate's Insights dropdown for mobile */}
             <div className="relative">
               <button 
                 onClick={() => setIsMobileBlogsDropdownOpen(!isMobileBlogsDropdownOpen)}
@@ -153,7 +153,7 @@ export default function Navbar() {
                   transitionDelay: '400ms'
                 }}
               >
-                Blogs
+                Advocate&apos;s Insights
                 <svg 
                   className={`ml-1 h-4 w-4 transform transition-transform duration-200 ${isMobileBlogsDropdownOpen ? 'rotate-180' : ''}`} 
                   fill="none" 
@@ -166,7 +166,7 @@ export default function Navbar() {
               
               <div 
                 className={`pl-4 overflow-hidden transition-all duration-200 ${
-                  isMobileBlogsDropdownOpen ? 'max-h-24 opacity-100' : 'max-h-0 opacity-0'
+                  isMobileBlogsDropdownOpen ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
                 <Link 
@@ -174,7 +174,7 @@ export default function Navbar() {
                   className="text-gray-300 hover:text-white block px-3 py-2 transform transition-all duration-300 hover:translate-x-2"
                   onClick={handleLinkClick}
                 >
-                  Advocate&apos;s Insights
+                  Blogs
                 </Link>
                 <Link 
                   href="/amalive"
@@ -183,10 +183,17 @@ export default function Navbar() {
                 >
                   AMA Live
                 </Link>
+                <Link 
+                  href="/articles"
+                  className="text-gray-300 hover:text-white block px-3 py-2 transform transition-all duration-300 hover:translate-x-2"
+                  onClick={handleLinkClick}
+                >
+                  Articles &amp; Publications
+                </Link>
               </div>
             </div>
             
-            <a 
+            {/* <a 
               href="tel:1234567890" 
               className="text-gray-300 hover:text-white block px-3 py-2 transform transition-all duration-300 hover:translate-x-2"
               style={{
@@ -196,7 +203,7 @@ export default function Navbar() {
               }}
             >
               1234567890
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
