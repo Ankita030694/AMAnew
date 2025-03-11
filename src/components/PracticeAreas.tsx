@@ -94,7 +94,6 @@ export default function PracticeAreas() {
           transition={{ duration: 0.7 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <span className="inline-block px-4 py-1 rounded-full bg-[#D2A02A]/10 text-[#5A4C33] font-medium text-sm mb-4">PRACTICE AREAS</span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#5A4C33] mb-6 relative inline-block">
             Our Expertise
             <motion.div 

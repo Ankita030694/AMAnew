@@ -63,67 +63,67 @@ const PresentPage = () => {
             In the modern legal landscape, the demand for trusted legal advisors, expert legal consultation, and strategic legal representation has never been greater. At AMA Legal Solutions, we are leading this transformation by expanding our top-rated law firm beyond Gurugram to major cities, including Delhi, Mumbai, Kolkata, Jaipur, Chennai, and Dubai. Under the leadership of Anuj Anand Malik, AMA Legal Solutions has emerged as a leading law firm in India, offering expert legal services in banking and finance law, corporate law, arbitration, real estate law, and entertainment law.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <motion.div
-              className="bg-[#F8F5EC] p-6 rounded-lg border-l-4 border-[#D2A02A]"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-            >
-              <h4 className="text-xl font-bold text-[#5A4C33] mb-3">
-                Experienced Legal Team
-              </h4>
-              <p className="text-[#5A4C33]/80">
-                Our highly qualified lawyers, legal consultants, and advocates bring years of expertise in handling complex legal matters.
-              </p>
-            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <motion.div
+                className="bg-[#F8F5EC] p-6 rounded-lg border-l-4 border-[#D2A02A]"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+              >
+                <h4 className="text-xl font-bold text-[#5A4C33] mb-3">
+                  Experienced Legal Team
+                </h4>
+                <p className="text-[#5A4C33]/80">
+                  Our highly qualified lawyers, legal consultants, and advocates bring years of expertise in handling complex legal matters.
+                </p>
+              </motion.div>
 
-            <motion.div
-              className="bg-[#F8F5EC] p-6 rounded-lg border-l-4 border-[#D2A02A]"
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-            >
-              <h4 className="text-xl font-bold text-[#5A4C33] mb-3">
-                Comprehensive Legal Services
-              </h4>
-              <p className="text-[#5A4C33]/80">
-                From business compliance to financial litigation and dispute resolution, we provide end-to-end legal solutions.
-              </p>
-            </motion.div>
+              <motion.div
+                className="bg-[#F8F5EC] p-6 rounded-lg border-l-4 border-[#D2A02A]"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+              >
+                <h4 className="text-xl font-bold text-[#5A4C33] mb-3">
+                  Comprehensive Legal Services
+                </h4>
+                <p className="text-[#5A4C33]/80">
+                  From business compliance to financial litigation and dispute resolution, we provide end-to-end legal solutions.
+                </p>
+              </motion.div>
 
-            <motion.div
-              className="bg-[#F8F5EC] p-6 rounded-lg border-l-4 border-[#D2A02A]"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-            >
-              <h4 className="text-xl font-bold text-[#5A4C33] mb-3">
-                National & International Presence
-              </h4>
-              <p className="text-[#5A4C33]/80">
-                With offices in Delhi, Mumbai, Kolkata, Jaipur, Chennai, and Dubai, accessible to clients across India and the Middle East.
-              </p>
-            </motion.div>
+              <motion.div
+                className="bg-[#F8F5EC] p-6 rounded-lg border-l-4 border-[#D2A02A]"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+              >
+                <h4 className="text-xl font-bold text-[#5A4C33] mb-3">
+                  National & International Presence
+                </h4>
+                <p className="text-[#5A4C33]/80">
+                  With offices in Delhi, Mumbai, Kolkata, Jaipur, Chennai, and Dubai, accessible to clients across India and the Middle East.
+                </p>
+              </motion.div>
 
-            <motion.div
-              className="bg-[#F8F5EC] p-6 rounded-lg border-l-4 border-[#D2A02A]"
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-            >
-              <h4 className="text-xl font-bold text-[#5A4C33] mb-3">
-                Client-Centric Approach
-              </h4>
-              <p className="text-[#5A4C33]/80">
-                We believe in personalized legal solutions that prioritize client success, ensuring every case is handled with precision.
-              </p>
-            </motion.div>
-          </div>
+              <motion.div
+                className="bg-[#F8F5EC] p-6 rounded-lg border-l-4 border-[#D2A02A]"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+              >
+                <h4 className="text-xl font-bold text-[#5A4C33] mb-3">
+                  Client-Centric Approach
+                </h4>
+                <p className="text-[#5A4C33]/80">
+                  We believe in personalized legal solutions that prioritize client success, ensuring every case is handled with precision.
+                </p>
+              </motion.div>
+            </div>
 
           <h3 className="text-2xl font-bold text-[#D2A02A] mb-4 mt-10">
             Expanding Our Legal Expertise
