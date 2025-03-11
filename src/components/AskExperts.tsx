@@ -1,7 +1,6 @@
 'use client'
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import Image from 'next/image';
-import { motion, useAnimation, useInView } from 'framer-motion';
 
 const timelineData = [
   {
@@ -32,103 +31,26 @@ const timelineData = [
 ];
 
 export default function AskExperts() {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.2 });
-  const controls = useAnimation();
-
-  useEffect(() => {
-    // Store the current value of the ref
-    const currentScrollContainer = scrollContainerRef.current;
-    
-    let lastScrollPosition = 0;
-    const handleScroll = () => {
-      if (currentScrollContainer) {
-        const currentScrollPosition = currentScrollContainer.scrollLeft;
-        const isScrollingRight = currentScrollPosition > lastScrollPosition;
-        
-        controls.start({
-          opacity: 1,
-          x: 0,
-          transition: {
-            type: "spring",
-            stiffness: 100,
-            damping: 20
-          }
-        });
-
-        timelineData.forEach((_, index) => {
-          const delay = isScrollingRight ? index * 0.1 : (timelineData.length - index) * 0.1;
-          controls.start(`visible${index}`, {
-            delay
-          });
-        });
-
-        lastScrollPosition = currentScrollPosition;
-      }
-    };
-
-    if (currentScrollContainer) {
-      currentScrollContainer.addEventListener('scroll', handleScroll);
-    }
-
-    return () => {
-      // Use the stored value in cleanup
-      if (currentScrollContainer) {
-        currentScrollContainer.removeEventListener('scroll', handleScroll);
-      }
-    };
-  }, [controls]);
-
-  useEffect(() => {
-    if (isInView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [isInView, controls]);
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
-      const scrollAmount = 300;
-      scrollContainerRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
+      // Calculate scroll amount based on container width for better mobile experience
+      const scrollAmount = scrollContainerRef.current.clientWidth * 0.75;
+      const currentPosition = scrollContainerRef.current.scrollLeft;
+      const targetPosition = direction === 'left' 
+        ? Math.max(0, currentPosition - scrollAmount)
+        : currentPosition + scrollAmount;
+      
+      scrollContainerRef.current.scrollTo({
+        left: targetPosition,
         behavior: 'smooth'
       });
     }
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0, x: -100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { x: -50, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100
-      }
-    }
-  };
-
   return (
-    <motion.div 
-      className="relative py-12"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-    >
+    <div className="relative py-12">
       <Image
         src="/bannerbg.png"
         alt="Background"
@@ -137,135 +59,83 @@ export default function AskExperts() {
         quality={100}
       />
       <div className="max-w-full">
-        <motion.div 
-          className="text-center mb-12"
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
+        <div className="text-center mb-12 px-4">
           <h2 className="text-4xl font-serif text-[#D2A02A] mb-4">LEGACY EXTENDED</h2>
           <p className="text-sm tracking-widest uppercase text-white">OUR VISION DEFINES OUR ESSENCE</p>
-        </motion.div>
+        </div>
         
         <div className="relative">
-          <motion.button 
+          <button 
             onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/20 p-2 rounded-full shadow-lg text-white"
-            whileHover={{ scale: 1.1, backgroundColor: "rgba(255,255,255,0.3)" }}
-            whileTap={{ scale: 0.9 }}
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/20 p-2 rounded-full shadow-lg text-white"
+            aria-label="Scroll left"
           >
             ←
-          </motion.button>
+          </button>
           
           <div 
             ref={scrollContainerRef}
-            className="overflow-x-auto scrollbar-hide no-scrollbar"
+            className="overflow-x-auto scrollbar-hide snap-x snap-mandatory"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch',
             }}
           >
-            <motion.div 
-              ref={ref}
-              variants={containerVariants}
-              initial="hidden"
-              animate={controls}
-              className="flex space-x-8 min-w-max p-4 relative"
-            >
-              <motion.div 
-                className="absolute left-0 right-0 top-1/2 h-0.5 bg-white"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
-              />
-              
+            {/* This is the fixed horizontal line that spans the full container */}
+            <div className="absolute left-0 right-0 top-1/2 h-0.5 bg-white z-0" />
+            
+            <div className="flex relative px-4">
               {timelineData.map((item, index) => (
-                <motion.div 
+                <div 
                   key={index}
-                  variants={itemVariants}
-                  custom={index}
-                  className="flex flex-col items-center w-80 relative"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+                  className="flex flex-col items-center min-w-64 w-80 max-w-full px-3 snap-start relative flex-shrink-0"
                 >
                   {index % 2 === 0 ? (
                     <>
-                      <motion.div 
-                        className="flex flex-col items-center mb-16"
-                        initial={{ opacity: 0, y: -20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false, amount: 0.5 }}
-                        transition={{ delay: index * 0.2 }}
-                      >
-                        <h3 className="text-xl font-medium mb-4 text-white">
+                      <div className="flex flex-col items-center mb-16 w-full">
+                        <h3 className="text-xl font-medium mb-4 text-white text-center">
                           {item.title}
                         </h3>
                         <p className="text-white text-center leading-relaxed">
                           {item.description}
                         </p>
-                      </motion.div>
-                      <motion.div 
-                        className="absolute top-1/2 -translate-y-1/2 w-2 h-2 bg-white transform rotate-45"
-                        animate={{ rotate: [45, 225, 45], scale: [1, 1.2, 1] }}
-                        transition={{ duration: 3, repeat: Infinity }}
-                      />
-                      <motion.div 
-                        className="text-3xl font-serif text-[#D2A02A] mt-16"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false, amount: 0.5 }}
-                        transition={{ delay: index * 0.3 }}
-                      >
+                      </div>
+                      <div className="absolute top-1/2 -translate-y-1/2 w-2 h-2 bg-white transform rotate-45 z-10" />
+                      <div className="text-3xl font-serif text-[#D2A02A] mt-16 text-center">
                         {item.year}
-                      </motion.div>
+                      </div>
                     </>
                   ) : (
                     <>
-                      <motion.div 
-                        className="text-3xl font-serif text-[#D2A02A] mb-16"
-                        initial={{ opacity: 0, y: -20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false, amount: 0.5 }}
-                        transition={{ delay: index * 0.3 }}
-                      >
+                      <div className="text-3xl font-serif text-[#D2A02A] mb-16 text-center">
                         {item.year}
-                      </motion.div>
-                      <motion.div 
-                        className="absolute top-1/2 -translate-y-1/2 w-2 h-2 bg-white transform rotate-45"
-                        animate={{ rotate: [45, 225, 45], scale: [1, 1.2, 1] }}
-                        transition={{ duration: 3, repeat: Infinity }}
-                      />
-                      <motion.div 
-                        className="flex flex-col items-center mt-16"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false, amount: 0.5 }}
-                        transition={{ delay: index * 0.1 }}
-                      >
-                        <h3 className="text-xl font-medium mb-4 text-white">
+                      </div>
+                      <div className="absolute top-1/2 -translate-y-1/2 w-2 h-2 bg-white transform rotate-45 z-10" />
+                      <div className="flex flex-col items-center mt-16 w-full">
+                        <h3 className="text-xl font-medium mb-4 text-white text-center">
                           {item.title}
                         </h3>
                         <p className="text-white text-center leading-relaxed">
                           {item.description}
                         </p>
-                      </motion.div>
+                      </div>
                     </>
                   )}
-                </motion.div>
+                </div>
               ))}
-            </motion.div>
+            </div>
           </div>
 
-          <motion.button 
+          <button 
             onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/20 p-2 rounded-full shadow-lg text-white"
-            whileHover={{ scale: 1.1, backgroundColor: "rgba(255,255,255,0.3)" }}
-            whileTap={{ scale: 0.9 }}
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/20 p-2 rounded-full shadow-lg text-white"
+            aria-label="Scroll right"
           >
             →
-          </motion.button>
+          </button>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

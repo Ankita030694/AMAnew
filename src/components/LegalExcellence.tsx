@@ -202,7 +202,7 @@ export default function LegalExcellence() {
             </AnimatePresence>
           </div>
 
-          <div className="flex justify-center space-x-3">
+          <div className="flex justify-center space-x-3 mt-10">
             <motion.button
               whileHover={{ scale: 1.05, backgroundColor: "#D2A02A" }}
               whileTap={{ scale: 0.95 }}
