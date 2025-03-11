@@ -153,13 +153,15 @@ export default function Services() {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="mt-6 md:mt-10"
             >
-              <button 
-                type="button"
-                className="bg-[#D2A02A] text-white px-6 sm:px-8 md:px-10 py-3 md:py-4 rounded-lg text-base md:text-lg font-semibold hover:bg-[#b88a24] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg relative overflow-hidden group"
-              >
-                <span className="relative z-10">Consult Now</span>
-                <span className="absolute top-0 left-0 w-full h-full bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
-              </button>
+              <Link href="/contact">
+                <button 
+                  type="button"
+                  className="bg-[#D2A02A] text-white px-6 sm:px-8 md:px-10 py-3 md:py-4 rounded-lg text-base md:text-lg font-semibold hover:bg-[#b88a24] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg relative overflow-hidden group cursor-pointer"
+                >
+                  <span className="relative z-10">Consult Now</span>
+                  <span className="absolute top-0 left-0 w-full h-full bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
+                </button>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -333,13 +335,15 @@ export default function Services() {
               viewport={{ once: true }}
               className="inline-block"
             >
-              <button 
-                type="button"
-                className="bg-[#D2A02A] text-white px-6 sm:px-8 md:px-10 py-3 md:py-4 rounded-lg text-base md:text-lg font-semibold hover:bg-white hover:text-[#5A4C33] transition-all duration-300 group relative overflow-hidden"
-              >
-                <span className="relative z-10">Schedule a Consultation</span>
-                <span className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-              </button>
+              <Link href="/contact">
+                <button 
+                  type="button"
+                  className="bg-[#D2A02A] text-white px-6 sm:px-8 md:px-10 py-3 md:py-4 rounded-lg text-base md:text-lg font-semibold hover:bg-white hover:text-[#5A4C33] transition-all duration-300 group relative overflow-hidden cursor-pointer"
+                >
+                  <span className="relative z-10">Schedule a Consultation</span>
+                  <span className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                </button>
+              </Link>
             </motion.div>
             <motion.div 
               className="mt-6 md:mt-8 flex flex-col md:flex-row justify-center md:space-x-6 space-y-2 md:space-y-0"
