@@ -80,7 +80,7 @@ export default function Clients() {
       <div className="bg-gray-100 rounded-lg shadow-xl -mt-32 md:-mt-40">
         <div className="p-8 md:p-12">
           <h1 className="md:text-4xl font-bold text-center text-[#5A4C33] mb-8 text-2xl">
-            PROVIDING SOLUTIONS TO
+            Providing Solutions To
           </h1>
           <div
             className="relative"
