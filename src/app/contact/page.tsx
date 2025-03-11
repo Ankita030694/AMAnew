@@ -328,7 +328,7 @@ const Page = () => {
           
           <p className="text-[#5A4C33]/80 max-w-2xl mx-auto mb-6 text-lg">
             Join our team of legal professionals dedicated to providing exceptional service. 
-            We're always looking for talented individuals who share our commitment to excellence.
+            We are always looking for talented individuals who share our commitment to excellence.
           </p>
           
           <div className="flex items-center justify-center text-xl font-medium text-[#D2A02A]">
