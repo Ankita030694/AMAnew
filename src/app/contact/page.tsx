@@ -64,8 +64,8 @@ const Page = () => {
   const handlePayUClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault(); // Prevent default navigation
     
-    // First save the form data
-    const formValid = await validateAndSaveForm();
+    // First save the form data - we don't need to capture the return value
+    await validateAndSaveForm();
     
     // Then redirect to PayU payment page regardless of form validity
     window.location.href = 'https://pmny.in/DIMRKGkGQz6L';
