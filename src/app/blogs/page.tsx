@@ -147,12 +147,7 @@ export default function Page() {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <img 
-                    src="/images/spotlight-icon.svg" 
-                    alt="Spotlight" 
-                    width={20} 
-                    height={20} 
-                  />
+                  
                   <h2 className="text-xl font-medium" style={{ color: '#5A4C33' }}>Spotlight</h2>
                 </motion.div>
                 
@@ -191,10 +186,7 @@ export default function Page() {
                 transition={{ delay: 0.3 }}
               >
                 <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-full bg-[#D2A02A] flex items-center justify-center">
-                    <span className="text-white text-xs">A</span>
-                  </div>
-                  <h2 className="text-xl font-medium" style={{ color: '#5A4C33' }}>Articles</h2>
+                  <h2 className="text-xl font-medium" style={{ color: '#5A4C33' }}>Blogs</h2>
                 </div>
                 
                 <Link href="/blogs">
@@ -237,7 +229,7 @@ export default function Page() {
                           </div>
                         </div>
                         
-                        <div className="p-4">
+                        <div className="p-4 relative bg-white">
                           <h3 className="text-lg font-medium mb-2" style={{ color: '#5A4C33' }}>
                             {article.title}
                           </h3>

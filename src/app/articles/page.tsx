@@ -147,12 +147,6 @@ export default function Page() {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <img 
-                    src="/images/spotlight-icon.svg" 
-                    alt="Spotlight" 
-                    width={20} 
-                    height={20} 
-                  />
                   <h2 className="text-xl font-medium" style={{ color: '#5A4C33' }}>Spotlight</h2>
                 </motion.div>
                 
@@ -163,14 +157,14 @@ export default function Page() {
                     initial="initial"
                     whileHover="hover"
                   >
-                    <div className="relative h-48 md:h-64">
+                    <div className="relative h-48 md:h-81">
                       <img src={spotlightArticle.image} alt={spotlightArticle.title} />
                       <div className="absolute bottom-3 right-3 bg-white rounded px-2 py-1 text-xs uppercase text-blue-600">
                         {spotlightArticle.date}
                       </div>
                     </div>
                     
-                    <div className="p-4">
+                    <div className="p-4 relative bg-white">
                       <h3 className="text-xl font-medium mb-2" style={{ color: '#5A4C33' }}>
                         {spotlightArticle.title}
                       </h3>
@@ -196,15 +190,6 @@ export default function Page() {
                   </div>
                   <h2 className="text-xl font-medium" style={{ color: '#5A4C33' }}>Articles</h2>
                 </div>
-                
-                <Link href="/articles">
-                  <span className="text-sm text-gray-500 flex items-center">
-                    Read More
-                    <svg width="16" height="16" viewBox="0 0 24 24" className="ml-1">
-                      <path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                    </svg>
-                  </span>
-                </Link>
               </motion.div>
               
               <motion.div 
@@ -231,12 +216,12 @@ export default function Page() {
                             alt={article.title}
                             className="object-cover"
                           />
-                          <div className="absolute bottom-3 right-3 bg-white rounded px-2 py-1 text-xs uppercase">
+                          <div className="absolute bottom-3 right-3 bg-white rounded px-2 py-1 text-xs uppercase text-blue-600">
                             {article.date}
                           </div>
                         </div>
                         
-                        <div className="p-4">
+                        <div className="p-4 relative bg-white">
                           <h3 className="text-lg font-medium mb-2" style={{ color: '#5A4C33' }}>
                             {article.title}
                           </h3>
