@@ -170,7 +170,7 @@ export default function Page() {
                         {spotlightArticle.title}
                       </h3>
                       <p className="text-sm text-blue-600 mb-1">{spotlightArticle.subtitle}</p>
-                      <p className="text-sm text-blue-600">{spotlightArticle.description}</p>
+                      <p className="text-sm text-gray-600">{spotlightArticle.description}</p>
                     </div>
                   </motion.div>
                 </Link>
@@ -224,7 +224,7 @@ export default function Page() {
                             alt={article.title}
                             className="object-cover"
                           />
-                          <div className="absolute bottom-3 right-3 bg-white rounded px-2 py-1 text-xs uppercase">
+                          <div className="absolute bottom-3 right-3 bg-white rounded px-2 py-1 text-xs uppercase text-blue-600">
                             {article.date}
                           </div>
                         </div>
@@ -233,7 +233,7 @@ export default function Page() {
                           <h3 className="text-lg font-medium mb-2" style={{ color: '#5A4C33' }}>
                             {article.title}
                           </h3>
-                          <p className="text-sm text-gray-600 mb-2">{article.subtitle}</p>
+                          <p className="text-sm mb-2 text-blue-600">{article.subtitle}</p>
                           <p className="text-sm text-gray-500">{article.description}</p>
                         </div>
                       </motion.div>
