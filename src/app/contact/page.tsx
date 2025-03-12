@@ -26,15 +26,21 @@ const Page = () => {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  // Create a function that handles validation and form saving
+  const validateAndSaveForm = async () => {
+    // Check if form is valid
+    if (!formState.name || !formState.email || !formState.phone || !formState.message) {
+      return false; // Form is not valid
+    }
+    
     setIsSubmitting(true);
     
     try {
       // Save formState to Firestore collection "form"
       await addDoc(collection(db, "form"), formState);
       setSubmitted(true);
-      // Optionally, reset the form after 3 seconds
+      
+      // Reset form after delay
       setTimeout(() => {
         setSubmitted(false);
         setFormState({
@@ -44,11 +50,25 @@ const Page = () => {
           message: '',
         });
       }, 3000);
+      
+      return true; // Form submission successful
     } catch (error) {
       console.error("Error adding document: ", error);
+      return false; // Form submission failed
     } finally {
       setIsSubmitting(false);
     }
+  };
+  
+  // Handle PayU button click
+  const handlePayUClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault(); // Prevent default navigation
+    
+    // First save the form data
+    const formValid = await validateAndSaveForm();
+    
+    // Then redirect to PayU payment page regardless of form validity
+    window.location.href = 'https://pmny.in/DIMRKGkGQz6L';
   };
 
   // Animation variants
@@ -162,12 +182,21 @@ const Page = () => {
                   </svg>
                 </div>
                 <h3 className="text-2xl font-bold text-[#5A4C33] mb-2">Thank You!</h3>
-                <p className="text-[#5A4C33]/80 text-center">
+                <p className="text-[#5A4C33]/80 text-center mb-6">
                   Your message has been received. We&apos;ll get back to you shortly.
                 </p>
+                
+                <div className="mt-4">
+                  <a 
+                    href='https://pmny.in/DIMRKGkGQz6L'
+                    className="block w-full bg-[#E19100] text-white text-center font-extrabold py-3 px-6 rounded hover:bg-[#d08600] transition-colors duration-300"
+                  >
+                    Send Message
+                  </a>
+                </div>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={(e) => e.preventDefault()} id="contactForm" className="space-y-6">
                 <h2 className="text-2xl font-bold text-[#5A4C33] mb-6">Send Us a Message</h2>
                 
                 <div className="relative">
@@ -250,28 +279,23 @@ const Page = () => {
                   />
                 </div>
                 
-                <motion.button
-                  type="submit"
-                  disabled={isSubmitting}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white py-3 rounded-md font-semibold relative overflow-hidden group"
-                >
-                  {isSubmitting ? (
-                    <span className="flex items-center justify-center">
-                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                      Sending...
-                    </span>
-                  ) : (
-                    <>
-                      <span>Send Message</span>
-                      <div className="absolute bottom-0 left-0 h-full bg-white opacity-10 w-0 group-hover:w-full transition-all duration-300" />
-                    </>
-                  )}
-                </motion.button>
+                <div className="mt-6">
+                  <a 
+                    href='https://pmny.in/DIMRKGkGQz6L'
+                    onClick={handlePayUClick}
+                    className="block w-full bg-[#E19100] text-white text-center font-extrabold py-3 rounded hover:bg-[#d08600] transition-colors duration-300 flex items-center justify-center"
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center justify-center">
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Processing...
+                      </span>
+                    ) : "Send Message"}
+                  </a>
+                </div>
               </form>
             )}
           </motion.div>
