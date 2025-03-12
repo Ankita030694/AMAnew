@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock, faEnvelope, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../lib/firebase'; // adjust the path as needed
-
+import { FirebaseError } from "firebase/app";
 const LoginPage = () => {
   const [animationState, setAnimationState] = useState('initial'); // initial, welcome, form
   const [loginData, setLoginData] = useState({
@@ -51,17 +51,21 @@ const LoginPage = () => {
       await signInWithEmailAndPassword(auth, loginData.email, loginData.password);
       // Redirect to the admin dashboard on successful login
       router.push('/admin/dashboard');
-    } catch (err: any) {
-      // Handle login errors based on error codes from Firebase Auth
-      if (err.code === 'auth/invalid-email' || err.code === 'auth/user-not-found') {
-        setError('Invalid email address');
-      } else if (err.code === 'auth/wrong-password') {
-        setError('Incorrect password');
-      } else {
-        setError('Login failed. Please try again.');
-      }
-      console.error("Login error:", err);
-    } finally {
+    } catch (err: unknown) {
+        if (err instanceof FirebaseError) {
+          if (err.code === 'auth/invalid-email' || err.code === 'auth/user-not-found') {
+            setError('Invalid email address');
+          } else if (err.code === 'auth/wrong-password') {
+            setError('Incorrect password');
+          } else {
+            setError('Login failed. Please try again.');
+          }
+        } else {
+          setError('An unknown error occurred.');
+        }
+      
+        console.error("Login error:", err);
+      } finally {
       setIsSubmitting(false);
     }
   };

@@ -17,6 +17,12 @@ interface TableData {
   message: string;
 }
 
+interface FirebaseError {
+  code: string;
+  message: string;
+  // Add other properties as needed
+}
+
 const AdminDashboard = () => {
   const [animationState, setAnimationState] = useState('initial'); // initial, welcome, dashboard
   const [activeTab, setActiveTab] = useState('home');
@@ -60,7 +66,8 @@ const AdminDashboard = () => {
         });
         setTableData(data);
       } catch (error) {
-        console.error("Error fetching Firebase data:", error);
+        const firebaseError = error as FirebaseError; // Type assertion
+        console.error("Error fetching Firebase data:", firebaseError);
       }
     };
 

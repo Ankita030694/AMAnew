@@ -18,14 +18,14 @@ interface TableData {
 }
 
 // Define Blog interface
-interface Blog {
-  id: string;
-  title: string;
-  content: string;
-  author: string;
-  publishDate: string;
-  category: string;
-}
+// interface Blog {
+//   id: string;
+//   title: string;
+//   content: string;
+//   author: string;
+//   publishDate: string;
+//   category: string;
+// }
 
 const ArticlesDashboard = () => {
   const [animationState, setAnimationState] = useState('initial'); // initial, welcome, dashboard
