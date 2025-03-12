@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faMapMarkerAlt, faEnvelope, faPhone, faBriefcase } from '@fortawesome/free-solid-svg-icons';
+import { collection, addDoc } from '../../lib/firebase';
+import { db } from '../../lib/firebase'; // adjust the path as needed
 
 const Page = () => {
   const [formState, setFormState] = useState({
@@ -24,16 +26,15 @@ const Page = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // Save formState to Firestore collection "form"
+      await addDoc(collection(db, "form"), formState);
       setSubmitted(true);
-      
-      // Reset form
+      // Optionally, reset the form after 3 seconds
       setTimeout(() => {
         setSubmitted(false);
         setFormState({
@@ -43,9 +44,13 @@ const Page = () => {
           message: '',
         });
       }, 3000);
-    }, 1500);
+    } catch (error) {
+      console.error("Error adding document: ", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
-  
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -91,21 +96,15 @@ const Page = () => {
 
   return (
     <div className="min-h-screen bg-[#F8F5EC] relative overflow-hidden">
-      {/* Animated background elements - Simplified animations */}
+      {/* Animated background elements */}
       <motion.div 
         className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#D2A02A] opacity-5"
-        animate={{ 
-          x: [0, 30, 0],
-          y: [0, -30, 0]
-        }}
+        animate={{ x: [0, 30, 0], y: [0, -30, 0] }}
         transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
       />
       <motion.div 
         className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-[#5A4C33] opacity-5"
-        animate={{ 
-          x: [0, -20, 0],
-          y: [0, 20, 0]
-        }}
+        animate={{ x: [0, -20, 0], y: [0, 20, 0] }}
         transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
       />
       
@@ -122,8 +121,6 @@ const Page = () => {
             We&apos;re here to help with your legal needs. Reach out to us using any of the methods below.
           </p>
         </motion.div>
-        
-        
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
           {/* Map column */}
@@ -143,9 +140,7 @@ const Page = () => {
               referrerPolicy="no-referrer-when-downgrade"
               title="Office Location"
             />
-            <div 
-              className="absolute inset-0 pointer-events-none border-[3px] border-[#D2A02A] rounded-lg"
-            />
+            <div className="absolute inset-0 pointer-events-none border-[3px] border-[#D2A02A] rounded-lg" />
           </motion.div>
           
           {/* Form column */}
@@ -161,9 +156,7 @@ const Page = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 className="flex flex-col items-center justify-center h-full py-8"
               >
-                <div
-                  className="w-20 h-20 bg-[#D2A02A]/20 rounded-full flex items-center justify-center mb-6"
-                >
+                <div className="w-20 h-20 bg-[#D2A02A]/20 rounded-full flex items-center justify-center mb-6">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-[#D2A02A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
@@ -275,9 +268,7 @@ const Page = () => {
                   ) : (
                     <>
                       <span>Send Message</span>
-                      <div
-                        className="absolute bottom-0 left-0 h-full bg-white opacity-10 w-0 group-hover:w-full transition-all duration-300"
-                      />
+                      <div className="absolute bottom-0 left-0 h-full bg-white opacity-10 w-0 group-hover:w-full transition-all duration-300" />
                     </>
                   )}
                 </motion.button>
@@ -285,8 +276,8 @@ const Page = () => {
             )}
           </motion.div>
         </div>
-         {/* Contact info boxes */}
-         <motion.div 
+        {/* Contact info boxes */}
+        <motion.div 
           className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 mt-15"
           variants={containerVariants}
           initial="hidden"
@@ -349,8 +340,6 @@ const Page = () => {
             </Link>
           </motion.div>
         </motion.div>
-       
-        
       </div>
     </div>
   );
