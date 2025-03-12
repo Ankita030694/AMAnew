@@ -34,6 +34,16 @@ const hoverVariants = {
   }
 };
 
+// Function to generate a slug from a title
+const generateSlug = (title: string): string => {
+  return title
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '') // Remove special characters
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .replace(/-+/g, '-') // Replace multiple hyphens with single hyphen
+    .trim(); // Remove leading/trailing spaces or hyphens
+};
+
 // Define the Blog interface
 interface Blog {
   id: string;
@@ -45,6 +55,7 @@ interface Blog {
   created: number;
   metaTitle?: string;
   metaDescription?: string;
+  slug?: string; // Add slug to the interface
 }
 
 // Helper function to truncate text to a specific number of words
@@ -69,16 +80,20 @@ export default function Page() {
         
         const blogsData = querySnapshot.docs.map(doc => {
           const data = doc.data();
+          const title = data.title || '';
+          const slug = generateSlug(title);
+          
           return {
             id: doc.id,
-            title: data.title || '',
+            title: title,
             subtitle: data.subtitle || '',
             description: truncateWords(data.description || '', 20),
             date: data.date || '',
             image: data.image || '',
             created: data.created || Date.now(),
             metaTitle: data.metaTitle || '',
-            metaDescription: data.metaDescription || ''
+            metaDescription: data.metaDescription || '',
+            slug: slug // Add the generated slug
           };
         });
         
@@ -141,25 +156,25 @@ export default function Page() {
                   <h2 className="text-xl font-medium" style={{ color: '#5A4C33' }}>Spotlight</h2>
                 </motion.div>
                 
-                <Link href={`/blogs/${spotlightArticle.id}`}>
+                <Link href={`/blogs/${spotlightArticle.slug}`}>
                   <motion.div 
                     className="rounded-xl overflow-hidden border border-gray-100"
                     variants={hoverVariants}
                     initial="initial"
                     whileHover="hover"
                   >
-                    <div className="relative h-48 md:h-64">
+                    <div className="relative h-48 md:h-81">
                       <img src={spotlightArticle.image} alt={spotlightArticle.title} />
                       <div className="absolute bottom-3 right-3 bg-white rounded px-2 py-1 text-xs uppercase text-blue-600">
                         {spotlightArticle.date}
                       </div>
                     </div>
                     
-                    <div className="p-4">
-                      <h3 className="text-xl font-medium mb-2" style={{ color: '#5A4C33' }}>
+                    <div className="relative bg-white p-4"> {/* Added pt-2 to create space between image and text */}
+                      <h3 className="text-xl font-medium mb-1" style={{ color: '#5A4C33' }}>
                         {spotlightArticle.title}
                       </h3>
-                      <p className="text-sm text-blue-600 mb-2">{spotlightArticle.subtitle}</p>
+                      <p className="text-sm text-blue-600 mb-1">{spotlightArticle.subtitle}</p>
                       <p className="text-sm text-blue-600">{spotlightArticle.description}</p>
                     </div>
                   </motion.div>
@@ -203,12 +218,13 @@ export default function Page() {
                     key={article.id}
                     variants={itemVariants}
                   >
-                    <Link href={`/blogs/${article.id}`}>
+                    <Link href={`/blogs/${article.slug}`}>
                       <motion.div 
                         className="rounded-xl overflow-hidden border border-gray-100 h-full"
                         variants={hoverVariants}
                         initial="initial"
                         whileHover="hover"
+                        
                       >
                         <div className="relative h-40">
                           <img 
@@ -262,7 +278,7 @@ export default function Page() {
                     key={article.id}
                     variants={itemVariants}
                   >
-                    <Link href={`/blogs/${article.id}`}>
+                    <Link href={`/blogs/${article.slug}`}>
                       <motion.div 
                         className="flex gap-4 p-2 rounded-lg" 
                         variants={hoverVariants}
