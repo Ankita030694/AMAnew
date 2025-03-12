@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faMapMarkerAlt, faEnvelope, faPhone, faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import { collection, addDoc } from '../../lib/firebase';
 import { db } from '../../lib/firebase'; // adjust the path as needed
-
+import payu from '../../../public/payu.png'
 const Page = () => {
   const [formState, setFormState] = useState({
     name: '',
@@ -295,6 +295,9 @@ const Page = () => {
                       </span>
                     ) : "Send Message"}
                   </a>
+                </div>
+                <div className="mt-2 flex justify-center">
+                 <img src={payu.src} alt="payu" className='w-36' />
                 </div>
               </form>
             )}
