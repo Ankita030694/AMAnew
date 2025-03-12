@@ -108,7 +108,7 @@ export default function BlogPostPage() {
       <div className="min-h-screen bg-gradient-to-b from-white to-amber-50 p-8 flex flex-col items-center justify-center">
         <div className="text-center max-w-2xl mx-auto p-8 bg-white rounded-lg shadow-lg">
           <h1 className="text-3xl font-bold text-[#5A4C33] mb-4">Article Not Found</h1>
-          <p className="text-black mb-6">We couldn't find the blog post you're looking for.</p>
+          <p className="text-black mb-6">We could not find the blog post you are looking for.</p>
           <Link href="/blog" className="bg-[#D2A02A] text-black px-6 py-2 rounded-md hover:bg-[#5A4C33] hover:text-white transition-all">
             Return to Blog
           </Link>
