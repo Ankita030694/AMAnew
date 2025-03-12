@@ -15,15 +15,6 @@ const TiptapEditor = dynamic(() => import('./TiptapEditor'), {
   loading: () => <p>Loading Editor...</p>,
 });
 
-// Define the TableData interface
-interface TableData {
-  id: string;
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-}
-
 // Define Blog interface with updated structure
 interface Blog {
   id?: string;
@@ -40,7 +31,6 @@ interface Blog {
 const BlogsDashboard = () => {
   const [animationState, setAnimationState] = useState('initial'); // initial, welcome, dashboard
   const [activeTab, setActiveTab] = useState('blogs');
-  const [tableData, setTableData] = useState<TableData[]>([]);
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [showBlogForm, setShowBlogForm] = useState(false);
   const [formMode, setFormMode] = useState<'add' | 'edit'>('add');
@@ -93,28 +83,8 @@ const BlogsDashboard = () => {
     }
   };
 
-  // Fetch Firebase data from the "form" collection
+  // Fetch blogs data
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, 'form'));
-        const data = querySnapshot.docs.map(doc => {
-          const docData = doc.data();
-          return {
-            id: doc.id,
-            name: docData.name || '-',
-            email: docData.email || '-',
-            message: docData.message || '-',
-            phone: docData.phone || '-'
-          };
-        });
-        setTableData(data);
-      } catch (error) {
-        console.error("Error fetching Firebase data:", error);
-      }
-    };
-
-    // Fetch blogs data
     const fetchBlogs = async () => {
       try {
         const querySnapshot = await getDocs(collection(db, 'blogs'));
@@ -138,7 +108,6 @@ const BlogsDashboard = () => {
       }
     };
 
-    fetchData();
     fetchBlogs();
   }, []);
 
