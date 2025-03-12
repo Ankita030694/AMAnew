@@ -103,6 +103,8 @@ const AdminDashboard = () => {
         router.push('/admin/users')
     }else if (itemId === 'amalive'){
         router.push('/admin/amalive')
+    }else{
+        setActiveTab(itemId);
     }
   };
   return (
