@@ -2,41 +2,47 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus } from '@fortawesome/free-solid-svg-icons';
-import { collection, getDocs, addDoc } from 'firebase/firestore';
+import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc } from 'firebase/firestore';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { db, auth } from '../../../lib/firebase'; // adjust the path as needed
 import { useRouter } from 'next/navigation';
+import dynamic from 'next/dynamic';
 
-// Define the TableData interface
-interface TableData {
-  id: string;
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
+// Dynamically import Tiptap editor with client-side rendering only
+const TiptapEditor = dynamic(() => import('./TiptapEditor'), { 
+  ssr: false,
+  loading: () => <p>Loading Editor...</p>,
+});
+
+// Define Article interface with updated structure
+interface Blog {
+  id?: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  date: string;
+  image: string;
+  created: number;
+  metaTitle?: string;
+  metaDescription?: string;
 }
-
-// Define Blog interface
-// interface Blog {
-//   id: string;
-//   title: string;
-//   content: string;
-//   author: string;
-//   publishDate: string;
-//   category: string;
-// }
 
 const ArticlesDashboard = () => {
   const [animationState, setAnimationState] = useState('initial'); // initial, welcome, dashboard
   const [activeTab, setActiveTab] = useState('articles');
-  const [tableData, setTableData] = useState<TableData[]>([]); // Specify the type here
+  const [blogs, setBlogs] = useState<Blog[]>([]);
   const [showBlogForm, setShowBlogForm] = useState(false);
-  const [newBlog, setNewBlog] = useState({
+  const [formMode, setFormMode] = useState<'add' | 'edit'>('add');
+  const [newBlog, setNewBlog] = useState<Blog>({
     title: '',
-    content: '',
-    author: '',
-    category: '',
+    subtitle: '',
+    description: '',
+    date: new Date().toISOString().split('T')[0], // Format as YYYY-MM-DD
+    image: '',
+    created: Date.now(),
+    metaTitle: '',
+    metaDescription: ''
   });
   const router = useRouter();
 
@@ -66,39 +72,43 @@ const ArticlesDashboard = () => {
       router.push('/admin/blogs');
     } else if (itemId === 'articles') {
       router.push('/admin/articles');
-    } else if (itemId === 'home'){
-        router.push('/admin/dashboard')
-    }else if (itemId === 'users'){
-        router.push('/admin/users')
-    }else if (itemId === 'amalive'){
-        router.push('/admin/amalive')
-    }else{
-        setActiveTab(itemId);
+    } else if (itemId === 'home') {
+      router.push('/admin/dashboard');
+    } else if (itemId === 'users') {
+      router.push('/admin/users');
+    } else if (itemId === 'amalive') {
+      router.push('/admin/amalive');
+    } else {
+      setActiveTab(itemId);
     }
   };
 
-  // Fetch Firebase data from the "form" collection
+  // Fetch blogs data
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchBlogs = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, 'form'));
+        const querySnapshot = await getDocs(collection(db, 'articles'));
         const data = querySnapshot.docs.map(doc => {
           const docData = doc.data();
           return {
             id: doc.id,
-            name: docData.name || '-',
-            email: docData.email || '-',
-            message: docData.message || '-',
-            phone: docData.phone || '-'
+            title: docData.title || '',
+            subtitle: docData.subtitle || '',
+            description: docData.description || '',
+            date: docData.date || '',
+            image: docData.image || '',
+            created: docData.created || Date.now(),
+            metaTitle: docData.metaTitle || '',
+            metaDescription: docData.metaDescription || ''
           };
         });
-        setTableData(data);
+        setBlogs(data);
       } catch (error) {
-        console.error("Error fetching Firebase data:", error);
+        console.error("Error fetching blogs data:", error);
       }
     };
 
-    fetchData();
+    fetchBlogs();
   }, []);
 
   // Handle animation sequence
@@ -119,7 +129,7 @@ const ArticlesDashboard = () => {
   }, []);
 
   // Handle blog form input changes
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setNewBlog(prevState => ({
       ...prevState,
@@ -127,33 +137,105 @@ const ArticlesDashboard = () => {
     }));
   };
 
-  // Handle blog form submission
+  // Handle Tiptap editor content changes
+  const handleEditorChange = (content: string) => {
+    setNewBlog(prevState => ({
+      ...prevState,
+      description: content
+    }));
+  };
+
+  // Handle blog form submission (Create or Update)
   const handleSubmitBlog = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      // Add timestamp
-      const blogWithDate = {
+      // Add timestamp and format the date
+      const blogWithMetadata = {
         ...newBlog,
-        publishDate: new Date().toISOString(),
+        created: formMode === 'add' ? Date.now() : newBlog.created,
+        date: new Date(newBlog.date).toISOString().split('T')[0] // Ensure date is in YYYY-MM-DD format
       };
       
-      // Add to Firestore (collection "articles")
-      await addDoc(collection(db, 'articles'), blogWithDate);
+      if (formMode === 'add') {
+        // Add to Firestore
+        await addDoc(collection(db, 'articles'), blogWithMetadata);
+      } else {
+        // Update existing document
+        if (newBlog.id) {
+          const blogRef = doc(db, 'articles', newBlog.id);
+          await updateDoc(blogRef, blogWithMetadata);
+        }
+      }
       
       // Reset form and show table
-      setNewBlog({
-        title: '',
-        content: '',
-        author: '',
-        category: '',
-      });
-      setShowBlogForm(false);
+      resetForm();
       
-      // You would typically fetch the updated articles here
+      // Fetch the updated blogs
+      const querySnapshot = await getDocs(collection(db, 'articles'));
+      const updatedBlogs = querySnapshot.docs.map(doc => {
+        const docData = doc.data();
+        return {
+          id: doc.id,
+          title: docData.title || '',
+          subtitle: docData.subtitle || '',
+          description: docData.description || '',
+          date: docData.date || '',
+          image: docData.image || '',
+          created: docData.created || Date.now(),
+          metaTitle: docData.metaTitle || '',
+          metaDescription: docData.metaDescription || ''
+        };
+      });
+      setBlogs(updatedBlogs);
       
     } catch (error) {
-      console.error("Error adding blog:", error);
+      console.error("Error processing blog:", error);
     }
+  };
+
+  // Handle blog edit
+  const handleEdit = (blog: Blog) => {
+    setNewBlog(blog);
+    setFormMode('edit');
+    setShowBlogForm(true);
+  };
+
+  // Handle blog delete
+  const handleDelete = async (id: string | undefined) => {
+    if (!id) return;
+    
+    if (window.confirm('Are you sure you want to delete this article?')) {
+      try {
+        // Delete document from Firestore
+        await deleteDoc(doc(db, 'blogs', id));
+        
+        // Update local state
+        setBlogs(prevBlogs => prevBlogs.filter(blog => blog.id !== id));
+      } catch (error) {
+        console.error("Error deleting article:", error);
+      }
+    }
+  };
+
+  // Reset form state
+  const resetForm = () => {
+    setNewBlog({
+      title: '',
+      subtitle: '',
+      description: '',
+      date: new Date().toISOString().split('T')[0],
+      image: '',
+      created: Date.now(),
+      metaTitle: '',
+      metaDescription: ''
+    });
+    setFormMode('add');
+    setShowBlogForm(false);
+  };
+
+  // Cancel form handler
+  const handleCancelForm = () => {
+    resetForm();
   };
 
   return (
@@ -276,21 +358,30 @@ const ArticlesDashboard = () => {
           >
             {/* Header with Add Article Button */}
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-xl font-semibold text-[#5A4C33]">Article Management</h2>
+              <h2 className="text-xl font-semibold text-[#5A4C33]">
+                {showBlogForm ? (formMode === 'add' ? 'Create New Article' : 'Edit Article') : 'Article Management'}
+              </h2>
               <motion.button
-                onClick={() => setShowBlogForm(!showBlogForm)}
+                onClick={() => {
+                  if (showBlogForm) {
+                    resetForm();
+                  } else {
+                    setFormMode('add');
+                    setShowBlogForm(true);
+                  }
+                }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center px-4 py-2 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white rounded-md font-medium"
               >
-                <FontAwesomeIcon icon={faPlus} className="mr-2" />
-                {showBlogForm ? 'View Articles' : 'Add Articles'}
+                <FontAwesomeIcon icon={showBlogForm ? faChartLine : faPlus} className="mr-2" />
+                {showBlogForm ? 'View Articles' : 'Add Article'}
               </motion.button>
             </div>
 
             {/* Conditional Rendering: Show either Data Table or Article Form */}
             {showBlogForm ? (
-              // Article Creation Form
+              // Article Creation/Edit Form with Updated Fields and Tiptap Editor
               <AnimatePresence mode="wait">
                 <motion.form
                   initial={{ opacity: 0, y: 20 }}
@@ -300,71 +391,112 @@ const ArticlesDashboard = () => {
                   onSubmit={handleSubmitBlog}
                   className="space-y-6"
                 >
-                  <div>
-                    <label htmlFor="title" className="block text-sm font-medium text-[#5A4C33] mb-1">Article Title</label>
-                    <input
-                      type="text"
-                      id="title"
-                      name="title"
-                      value={newBlog.title}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                      placeholder="Enter article title"
-                    />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="title" className="block text-sm font-medium text-[#5A4C33] mb-1">Article Title</label>
+                      <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        value={newBlog.title}
+                        onChange={handleInputChange}
+                        required
+                        className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
+                        placeholder="Enter article title"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="subtitle" className="block text-sm font-medium text-[#5A4C33] mb-1">Subtitle/SEO Keywords</label>
+                      <input
+                        type="text"
+                        id="subtitle"
+                        name="subtitle"
+                        value={newBlog.subtitle}
+                        onChange={handleInputChange}
+                        required
+                        className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
+                        placeholder="Enter subtitle or SEO keywords"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="metaTitle" className="block text-sm font-medium text-[#5A4C33] mb-1">Meta Title</label>
+                      <input
+                        type="text"
+                        id="metaTitle"
+                        name="metaTitle"
+                        value={newBlog.metaTitle || ''}
+                        onChange={handleInputChange}
+                        className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
+                        placeholder="Enter meta title for SEO"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="date" className="block text-sm font-medium text-[#5A4C33] mb-1">Publication Date</label>
+                      <input
+                        type="date"
+                        id="date"
+                        name="date"
+                        value={newBlog.date}
+                        onChange={handleInputChange}
+                        required
+                        className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="image" className="block text-sm font-medium text-[#5A4C33] mb-1">Image URL</label>
+                      <input
+                        type="text"
+                        id="image"
+                        name="image"
+                        value={newBlog.image}
+                        onChange={handleInputChange}
+                        required
+                        className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
+                        placeholder="Enter image URL"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="metaDescription" className="block text-sm font-medium text-[#5A4C33] mb-1">Meta Description</label>
+                      <input
+                        type="text"
+                        id="metaDescription"
+                        name="metaDescription"
+                        value={newBlog.metaDescription || ''}
+                        onChange={handleInputChange}
+                        className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
+                        placeholder="Enter meta description for SEO"
+                      />
+                    </div>
                   </div>
                   
                   <div>
-                    <label htmlFor="category" className="block text-sm font-medium text-[#5A4C33] mb-1">Category</label>
-                    <select
-                      id="category"
-                      name="category"
-                      value={newBlog.category}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                    >
-                      <option value="">Select a category</option>
-                      <option value="Technology">Technology</option>
-                      <option value="Lifestyle">Lifestyle</option>
-                      <option value="Health">Health</option>
-                      <option value="Finance">Finance</option>
-                      <option value="Travel">Travel</option>
-                    </select>
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="author" className="block text-sm font-medium text-[#5A4C33] mb-1">Author</label>
-                    <input
-                      type="text"
-                      id="author"
-                      name="author"
-                      value={newBlog.author}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                      placeholder="Enter author name"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="content" className="block text-sm font-medium text-[#5A4C33] mb-1">Article Content</label>
-                    <textarea
-                      id="content"
-                      name="content"
-                      value={newBlog.content}
-                      onChange={handleInputChange}
-                      required
-                      rows={10}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                      placeholder="Write your article content here..."
-                    ></textarea>
+                    <label htmlFor="description" className="block text-sm font-medium text-[#5A4C33] mb-1">Article Content</label>
+                    {/* Tiptap Editor Integration */}
+                    <div className="border border-gray-300 rounded-md">
+                      {typeof window !== 'undefined' && (
+                        <TiptapEditor
+                          content={newBlog.description}
+                          onChange={handleEditorChange}
+                          className="bg-white text-black min-h-[10px]"
+                        />
+                      )}
+                    </div>
+                    <p className="mt-1 text-xs text-gray-500">Use the toolbar above to format your content.</p>
                   </div>
                   
                   <div className="flex justify-end space-x-3">
                     <motion.button
                       type="button"
-                      onClick={() => setShowBlogForm(false)}
+                      onClick={handleCancelForm}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md font-medium"
@@ -377,13 +509,13 @@ const ArticlesDashboard = () => {
                       whileTap={{ scale: 0.95 }}
                       className="px-4 py-2 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white rounded-md font-medium"
                     >
-                      Publish Article
+                      {formMode === 'add' ? 'Publish Article' : 'Update Article'}
                     </motion.button>
                   </div>
                 </motion.form>
               </AnimatePresence>
             ) : (
-              // Data Table
+              // Articles Table
               <AnimatePresence mode="wait">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -395,47 +527,60 @@ const ArticlesDashboard = () => {
                   <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-[#F0EAD6]">
                       <tr>
-                        {['ID', 'Name', 'Email', 'Number', 'Message', 'Actions'].map((header, index) => (
-                          <th key={index} className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">
-                            {header}
-                          </th>
-                        ))}
+                        <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Title</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Subtitle</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Date</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Created</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Actions</th>
                       </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
-                      {tableData.map((row) => (
-                        <tr key={row.id} className="hover:bg-[#F8F5EC] transition-colors duration-150">
-                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#5A4C33]">{row.id}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.name}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.email}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.phone}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.message}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
-                            <div className="flex space-x-2">
-                              <motion.button
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.9 }}
-                                className="px-3 py-1 bg-blue-500 text-white rounded-md text-xs"
-                              >
-                                Edit
-                              </motion.button>
-                              <motion.button
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.9 }}
-                                className="px-3 py-1 bg-red-500 text-white rounded-md text-xs"
-                              >
-                                Delete
-                              </motion.button>
-                            </div>
+                      {blogs.length > 0 ? (
+                        blogs.map((blog) => (
+                          <tr key={blog.id} className="hover:bg-[#F8F5EC] transition-colors duration-150">
+                            <td className="px-6 py-4 text-sm font-medium text-[#5A4C33] max-w-xs truncate">{blog.title}</td>
+                            <td className="px-6 py-4 text-sm text-[#5A4C33] max-w-xs truncate">{blog.subtitle}</td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{blog.date}</td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
+                              {new Date(blog.created).toLocaleString()}
+                            </td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
+                              <div className="flex space-x-2">
+                                <motion.button
+                                  onClick={() => handleEdit(blog)}
+                                  whileHover={{ scale: 1.1 }}
+                                  whileTap={{ scale: 0.9 }}
+                                  className="px-3 py-1 bg-blue-500 text-white rounded-md text-xs flex items-center"
+                                >
+                                  <FontAwesomeIcon icon={faEdit} className="mr-1" />
+                                  Edit
+                                </motion.button>
+                                <motion.button
+                                  onClick={() => handleDelete(blog.id)}
+                                  whileHover={{ scale: 1.1 }}
+                                  whileTap={{ scale: 0.9 }}
+                                  className="px-3 py-1 bg-red-500 text-white rounded-md text-xs flex items-center"
+                                >
+                                  <FontAwesomeIcon icon={faTrash} className="mr-1" />
+                                  Delete
+                                </motion.button>
+                              </div>
+                            </td>
+                          </tr>
+                        ))
+                      ) : (
+                        <tr>
+                          <td colSpan={5} className="px-6 py-4 text-center text-sm text-gray-500">
+                            No articles found. Click Add Article to create a new article.
                           </td>
                         </tr>
-                      ))}
+                      )}
                     </tbody>
                   </table>
 
                   <div className="mt-4 flex justify-between items-center">
                     <div className="text-sm text-[#5A4C33]">
-                      Showing <span className="font-medium">1</span> to <span className="font-medium">{tableData.length}</span> of <span className="font-medium">{tableData.length}</span> results
+                      Showing <span className="font-medium">1</span> to <span className="font-medium">{blogs.length}</span> of <span className="font-medium">{blogs.length}</span> results
                     </div>
                     <div className="flex space-x-2">
                       <motion.button

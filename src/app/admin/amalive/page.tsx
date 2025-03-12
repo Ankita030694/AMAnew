@@ -8,13 +8,12 @@ import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { db, auth } from '../../../lib/firebase'; // adjust the path as needed
 import { useRouter } from 'next/navigation';
 
-// Define the TableData interface
+// Update the interface for AMA Live data
 interface TableData {
   id: string;
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
+  videoId: string;
+  title: string;
+  description?: string;
 }
 
 // Define Blog interface
@@ -32,11 +31,10 @@ const BlogsDashboard = () => {
   const [activeTab, setActiveTab] = useState('amalive');
   const [tableData, setTableData] = useState<TableData[]>([]);
   const [showBlogForm, setShowBlogForm] = useState(false);
-  const [newBlog, setNewBlog] = useState({
+  const [newVideo, setNewVideo] = useState({
+    videoId: '',
     title: '',
-    content: '',
-    author: '',
-    category: '',
+    description: ''
   });
   const router = useRouter();
 
@@ -77,21 +75,17 @@ const BlogsDashboard = () => {
     }
   };
 
-  // Fetch Firebase data from the "form" collection
+  // Update the fetch data function to use 'amalive' collection
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, 'form'));
-        const data = querySnapshot.docs.map(doc => {
-          const docData = doc.data();
-          return {
-            id: doc.id,
-            name: docData.name || '-',
-            email: docData.email || '-',
-            message: docData.message || '-',
-            phone: docData.phone || '-'
-          };
-        });
+        const querySnapshot = await getDocs(collection(db, 'amalive'));
+        const data = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          videoId: doc.data().videoId || '-',
+          title: doc.data().title || '-',
+          description: doc.data().description || '-'
+        }));
         setTableData(data);
       } catch (error) {
         console.error("Error fetching Firebase data:", error);
@@ -118,41 +112,24 @@ const BlogsDashboard = () => {
     return () => clearTimeout(welcomeTimer);
   }, []);
 
-  // Handle blog form input changes
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setNewBlog(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
-
-  // Handle blog form submission
-  const handleSubmitBlog = async (e: React.FormEvent) => {
+  // Handle form submission for new video
+  const handleSubmitVideo = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      // Add timestamp
-      const blogWithDate = {
-        ...newBlog,
-        publishDate: new Date().toISOString(),
-      };
+      await addDoc(collection(db, 'amalive'), {
+        ...newVideo,
+        timestamp: new Date().toISOString(),
+      });
       
-      // Add to Firestore
-      await addDoc(collection(db, 'blogs'), blogWithDate);
-      
-      // Reset form and show table
-      setNewBlog({
+      setNewVideo({
+        videoId: '',
         title: '',
-        content: '',
-        author: '',
-        category: '',
+        description: ''
       });
       setShowBlogForm(false);
       
-      // You would typically fetch the updated blogs here
-      
     } catch (error) {
-      console.error("Error adding blog:", error);
+      console.error("Error adding video:", error);
     }
   };
 
@@ -284,83 +261,62 @@ const BlogsDashboard = () => {
                 className="flex items-center px-4 py-2 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white rounded-md font-medium"
               >
                 <FontAwesomeIcon icon={faPlus} className="mr-2" />
-                {showBlogForm ? 'View Blogs' : 'Add Blog'}
+                {showBlogForm ? 'View Videos' : 'Add Video'}
               </motion.button>
             </div>
 
             {/* Conditional Rendering: Show either Data Table or Blog Form */}
             {showBlogForm ? (
-              // Blog Creation Form
               <AnimatePresence mode="wait">
                 <motion.form
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  onSubmit={handleSubmitBlog}
+                  onSubmit={handleSubmitVideo}
                   className="space-y-6"
                 >
                   <div>
-                    <label htmlFor="title" className="block text-sm font-medium text-[#5A4C33] mb-1">Blog Title</label>
+                    <label htmlFor="videoId" className="block text-sm font-medium text-[#5A4C33] mb-1">YouTube Video ID</label>
+                    <input
+                      type="text"
+                      id="videoId"
+                      name="videoId"
+                      value={newVideo.videoId}
+                      onChange={(e) => setNewVideo(prev => ({ ...prev, videoId: e.target.value }))}
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
+                      placeholder="Enter YouTube video ID"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="title" className="block text-sm font-medium text-[#5A4C33] mb-1">Video Title</label>
                     <input
                       type="text"
                       id="title"
                       name="title"
-                      value={newBlog.title}
-                      onChange={handleInputChange}
+                      value={newVideo.title}
+                      onChange={(e) => setNewVideo(prev => ({ ...prev, title: e.target.value }))}
                       required
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                      placeholder="Enter blog title"
+                      placeholder="Enter video title"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="category" className="block text-sm font-medium text-[#5A4C33] mb-1">Category</label>
-                    <select
-                      id="category"
-                      name="category"
-                      value={newBlog.category}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                    >
-                      <option value="">Select a category</option>
-                      <option value="Technology">Technology</option>
-                      <option value="Lifestyle">Lifestyle</option>
-                      <option value="Health">Health</option>
-                      <option value="Finance">Finance</option>
-                      <option value="Travel">Travel</option>
-                    </select>
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="author" className="block text-sm font-medium text-[#5A4C33] mb-1">Author</label>
-                    <input
-                      type="text"
-                      id="author"
-                      name="author"
-                      value={newBlog.author}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                      placeholder="Enter author name"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="content" className="block text-sm font-medium text-[#5A4C33] mb-1">Blog Content</label>
+                    <label htmlFor="description" className="block text-sm font-medium text-[#5A4C33] mb-1">Description</label>
                     <textarea
-                      id="content"
-                      name="content"
-                      value={newBlog.content}
-                      onChange={handleInputChange}
-                      required
-                      rows={10}
+                      id="description"
+                      name="description"
+                      value={newVideo.description}
+                      onChange={(e) => setNewVideo(prev => ({ ...prev, description: e.target.value }))}
+                      rows={4}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                      placeholder="Write your blog content here..."
+                      placeholder="Enter video description"
                     ></textarea>
                   </div>
-                  
+
                   <div className="flex justify-end space-x-3">
                     <motion.button
                       type="button"
@@ -377,13 +333,12 @@ const BlogsDashboard = () => {
                       whileTap={{ scale: 0.95 }}
                       className="px-4 py-2 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white rounded-md font-medium"
                     >
-                      Publish Blog
+                      Add Video
                     </motion.button>
                   </div>
                 </motion.form>
               </AnimatePresence>
             ) : (
-              // Data Table
               <AnimatePresence mode="wait">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -395,7 +350,7 @@ const BlogsDashboard = () => {
                   <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-[#F0EAD6]">
                       <tr>
-                        {['ID', 'Name', 'Email', 'Number', 'Message', 'Actions'].map((header, index) => (
+                        {['ID', 'Video', 'Title', 'Description', 'Actions'].map((header, index) => (
                           <th key={index} className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">
                             {header}
                           </th>
@@ -406,19 +361,21 @@ const BlogsDashboard = () => {
                       {tableData.map((row) => (
                         <tr key={row.id} className="hover:bg-[#F8F5EC] transition-colors duration-150">
                           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#5A4C33]">{row.id}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.name}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.email}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.phone}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.message}</td>
+                          <td className="px-6 py-4">
+                            <iframe
+                              width="200"
+                              height="113"
+                              src={`https://www.youtube.com/embed/${row.videoId}`}
+                              title={row.title}
+                              frameBorder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            ></iframe>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.title}</td>
+                          <td className="px-6 py-4 text-sm text-[#5A4C33]">{row.description}</td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
                             <div className="flex space-x-2">
-                              <motion.button
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.9 }}
-                                className="px-3 py-1 bg-blue-500 text-white rounded-md text-xs"
-                              >
-                                Edit
-                              </motion.button>
                               <motion.button
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.9 }}
