@@ -207,7 +207,7 @@ const ArticlesDashboard = () => {
     if (window.confirm('Are you sure you want to delete this article?')) {
       try {
         // Delete document from Firestore
-        await deleteDoc(doc(db, 'blogs', id));
+        await deleteDoc(doc(db, 'articles', id));
         
         // Update local state
         setBlogs(prevBlogs => prevBlogs.filter(blog => blog.id !== id));

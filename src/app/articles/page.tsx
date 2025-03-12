@@ -34,6 +34,16 @@ const hoverVariants = {
   }
 };
 
+// Function to generate a slug from a title
+const generateSlug = (title: string): string => {
+  return title
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '') // Remove special characters
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .replace(/-+/g, '-') // Replace multiple hyphens with single hyphen
+    .trim(); // Remove leading/trailing spaces or hyphens
+};
+
 // Define the Article interface
 interface Article {
   id: string;
@@ -45,6 +55,7 @@ interface Article {
   created: number;
   metaTitle?: string;
   metaDescription?: string;
+  slug?: string; // Add slug to the interface
 }
 
 // Helper function to truncate text to a specific number of words
@@ -69,16 +80,20 @@ export default function Page() {
         
         const articlesData = querySnapshot.docs.map(doc => {
           const data = doc.data();
+          const title = data.title || '';
+          const slug = generateSlug(title);
+          
           return {
             id: doc.id,
-            title: data.title || '',
+            title: title,
             subtitle: data.subtitle || '',
             description: truncateWords(data.description || '', 20),
             date: data.date || '',
             image: data.image || '',
             created: data.created || Date.now(),
             metaTitle: data.metaTitle || '',
-            metaDescription: data.metaDescription || ''
+            metaDescription: data.metaDescription || '',
+            slug: slug // Add the generated slug
           };
         });
         
@@ -141,7 +156,7 @@ export default function Page() {
                   <h2 className="text-xl font-medium" style={{ color: '#5A4C33' }}>Spotlight</h2>
                 </motion.div>
                 
-                <Link href={`/articles/${spotlightArticle.id}`}>
+                <Link href={`/articles/${spotlightArticle.slug}`}>
                   <motion.div 
                     className="rounded-xl overflow-hidden border border-gray-100"
                     variants={hoverVariants}
@@ -203,7 +218,7 @@ export default function Page() {
                     key={article.id}
                     variants={itemVariants}
                   >
-                    <Link href={`/articles/${article.id}`}>
+                    <Link href={`/articles/${article.slug}`}>
                       <motion.div 
                         className="rounded-xl overflow-hidden border border-gray-100 h-full"
                         variants={hoverVariants}
@@ -262,7 +277,7 @@ export default function Page() {
                     key={article.id}
                     variants={itemVariants}
                   >
-                    <Link href={`/articles/${article.id}`}>
+                    <Link href={`/articles/${article.slug}`}>
                       <motion.div 
                         className="flex gap-4 p-2 rounded-lg" 
                         variants={hoverVariants}
