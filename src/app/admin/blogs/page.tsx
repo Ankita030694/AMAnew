@@ -68,8 +68,10 @@ const BlogsDashboard = () => {
       router.push('/admin/articles');
     } else if (itemId === 'home'){
         router.push('/admin/dashboard')
-    }else {
-      setActiveTab(itemId);
+    }else if (itemId === 'users'){
+        router.push('/admin/users')
+    }else if (itemId === 'amalive'){
+        router.push('/admin/amalive')
     }
   };
 

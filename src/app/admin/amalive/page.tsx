@@ -27,10 +27,10 @@ interface TableData {
 //   category: string;
 // }
 
-const ArticlesDashboard = () => {
+const BlogsDashboard = () => {
   const [animationState, setAnimationState] = useState('initial'); // initial, welcome, dashboard
-  const [activeTab, setActiveTab] = useState('articles');
-  const [tableData, setTableData] = useState<TableData[]>([]); // Specify the type here
+  const [activeTab, setActiveTab] = useState('amalive');
+  const [tableData, setTableData] = useState<TableData[]>([]);
   const [showBlogForm, setShowBlogForm] = useState(false);
   const [newBlog, setNewBlog] = useState({
     title: '',
@@ -135,8 +135,8 @@ const ArticlesDashboard = () => {
         publishDate: new Date().toISOString(),
       };
       
-      // Add to Firestore (collection "articles")
-      await addDoc(collection(db, 'articles'), blogWithDate);
+      // Add to Firestore
+      await addDoc(collection(db, 'blogs'), blogWithDate);
       
       // Reset form and show table
       setNewBlog({
@@ -147,7 +147,7 @@ const ArticlesDashboard = () => {
       });
       setShowBlogForm(false);
       
-      // You would typically fetch the updated articles here
+      // You would typically fetch the updated blogs here
       
     } catch (error) {
       console.error("Error adding blog:", error);
@@ -227,7 +227,7 @@ const ArticlesDashboard = () => {
           {/* Dashboard Header */}
           <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-[#D2A02A] mb-6 flex justify-between items-center">
             <div>
-              <h1 className="text-3xl font-bold text-[#5A4C33]">Articles Dashboard</h1>
+              <h1 className="text-3xl font-bold text-[#5A4C33]">Blogs Dashboard</h1>
               <div className="w-32 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mt-2"></div>
             </div>
             {/* Logout Button */}
@@ -272,9 +272,9 @@ const ArticlesDashboard = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-white rounded-lg p-6 shadow-md"
           >
-            {/* Header with Add Article Button */}
+            {/* Header with Add Blog Button */}
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-xl font-semibold text-[#5A4C33]">Article Management</h2>
+              <h2 className="text-xl font-semibold text-[#5A4C33]">Blog Management</h2>
               <motion.button
                 onClick={() => setShowBlogForm(!showBlogForm)}
                 whileHover={{ scale: 1.05 }}
@@ -282,13 +282,13 @@ const ArticlesDashboard = () => {
                 className="flex items-center px-4 py-2 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white rounded-md font-medium"
               >
                 <FontAwesomeIcon icon={faPlus} className="mr-2" />
-                {showBlogForm ? 'View Articles' : 'Add Articles'}
+                {showBlogForm ? 'View Blogs' : 'Add Blog'}
               </motion.button>
             </div>
 
-            {/* Conditional Rendering: Show either Data Table or Article Form */}
+            {/* Conditional Rendering: Show either Data Table or Blog Form */}
             {showBlogForm ? (
-              // Article Creation Form
+              // Blog Creation Form
               <AnimatePresence mode="wait">
                 <motion.form
                   initial={{ opacity: 0, y: 20 }}
@@ -299,7 +299,7 @@ const ArticlesDashboard = () => {
                   className="space-y-6"
                 >
                   <div>
-                    <label htmlFor="title" className="block text-sm font-medium text-[#5A4C33] mb-1">Article Title</label>
+                    <label htmlFor="title" className="block text-sm font-medium text-[#5A4C33] mb-1">Blog Title</label>
                     <input
                       type="text"
                       id="title"
@@ -308,7 +308,7 @@ const ArticlesDashboard = () => {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                      placeholder="Enter article title"
+                      placeholder="Enter blog title"
                     />
                   </div>
                   
@@ -346,7 +346,7 @@ const ArticlesDashboard = () => {
                   </div>
                   
                   <div>
-                    <label htmlFor="content" className="block text-sm font-medium text-[#5A4C33] mb-1">Article Content</label>
+                    <label htmlFor="content" className="block text-sm font-medium text-[#5A4C33] mb-1">Blog Content</label>
                     <textarea
                       id="content"
                       name="content"
@@ -355,7 +355,7 @@ const ArticlesDashboard = () => {
                       required
                       rows={10}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                      placeholder="Write your article content here..."
+                      placeholder="Write your blog content here..."
                     ></textarea>
                   </div>
                   
@@ -375,7 +375,7 @@ const ArticlesDashboard = () => {
                       whileTap={{ scale: 0.95 }}
                       className="px-4 py-2 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white rounded-md font-medium"
                     >
-                      Publish Article
+                      Publish Blog
                     </motion.button>
                   </div>
                 </motion.form>
@@ -464,4 +464,4 @@ const ArticlesDashboard = () => {
   );
 };
 
-export default ArticlesDashboard;
+export default BlogsDashboard;

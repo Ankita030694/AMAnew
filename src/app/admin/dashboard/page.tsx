@@ -93,15 +93,18 @@ const AdminDashboard = () => {
 
   // Navigation handler: Redirect for Blogs and Articles
   const handleNavigation = (itemId: string) => {
-    if (itemId === 'analytics') {
+    if (itemId === 'blogs') {
       router.push('/admin/blogs');
-    } else if (itemId === 'reports') {
+    } else if (itemId === 'articles') {
       router.push('/admin/articles');
-    } else {
-      setActiveTab(itemId);
+    } else if (itemId === 'home'){
+        router.push('/admin/dashboard')
+    }else if (itemId === 'users'){
+        router.push('/admin/users')
+    }else if (itemId === 'amalive'){
+        router.push('/admin/amalive')
     }
   };
-
   return (
     <div className="min-h-screen overflow-hidden relative">
       {/* Black background that fades out */}
