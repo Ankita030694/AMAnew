@@ -40,7 +40,7 @@ interface Blog {
 const BlogsDashboard = () => {
   const [animationState, setAnimationState] = useState('initial'); // initial, welcome, dashboard
   const [activeTab, setActiveTab] = useState('blogs');
-  const [tableData, setTableData] = useState<TableData[]>([]);
+//   const [tableData, setTableData] = useState<TableData[]>([]);
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [showBlogForm, setShowBlogForm] = useState(false);
   const [formMode, setFormMode] = useState<'add' | 'edit'>('add');
@@ -108,7 +108,7 @@ const BlogsDashboard = () => {
             phone: docData.phone || '-'
           };
         });
-        setTableData(data);
+        // setTableData(data);
       } catch (error) {
         console.error("Error fetching Firebase data:", error);
       }
@@ -602,7 +602,7 @@ const BlogsDashboard = () => {
                       ) : (
                         <tr>
                           <td colSpan={5} className="px-6 py-4 text-center text-sm text-gray-500">
-                            No blogs found. Click "Add Blog" to create a new blog.
+                            No blogs found. Click Add Blog to create a new blog.
                           </td>
                         </tr>
                       )}
