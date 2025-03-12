@@ -3,41 +3,39 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus } from '@fortawesome/free-solid-svg-icons';
-import { collection, getDocs, addDoc } from 'firebase/firestore';
+import { collection, getDocs, addDoc, doc, deleteDoc, updateDoc } from 'firebase/firestore';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { db, auth } from '../../../lib/firebase'; // adjust the path as needed
 import { useRouter } from 'next/navigation';
 
-// Define the TableData interface
+// Define the TableData interface for users
 interface TableData {
   id: string;
   name: string;
   email: string;
-  phone: string;
-  message: string;
+  password: string;
+  image: string;
+  role: string;
+  position: string;
 }
 
-// Define Blog interface
-// interface Blog {
-//   id: string;
-//   title: string;
-//   content: string;
-//   author: string;
-//   publishDate: string;
-//   category: string;
-// }
-
-const BlogsDashboard = () => {
+const UsersDashboard = () => {
   const [animationState, setAnimationState] = useState('initial'); // initial, welcome, dashboard
   const [activeTab, setActiveTab] = useState('users');
   const [tableData, setTableData] = useState<TableData[]>([]);
-  const [showBlogForm, setShowBlogForm] = useState(false);
-  const [newBlog, setNewBlog] = useState({
-    title: '',
-    content: '',
-    author: '',
-    category: '',
+  const [showUserForm, setShowUserForm] = useState(false);
+  const [isEditMode, setIsEditMode] = useState(false);
+  const [currentUserId, setCurrentUserId] = useState('');
+  const [newUser, setNewUser] = useState({
+    name: '',
+    email: '',
+    password: '',
+    image: '',
+    role: '',
+    position: '',
   });
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [userToDelete, setUserToDelete] = useState<string | null>(null);
   const router = useRouter();
 
   // Check if user is logged in; if not, redirect to login page
@@ -77,27 +75,29 @@ const BlogsDashboard = () => {
     }
   };
 
-  // Fetch Firebase data from the "form" collection
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, 'form'));
-        const data = querySnapshot.docs.map(doc => {
-          const docData = doc.data();
-          return {
-            id: doc.id,
-            name: docData.name || '-',
-            email: docData.email || '-',
-            message: docData.message || '-',
-            phone: docData.phone || '-'
-          };
-        });
-        setTableData(data);
-      } catch (error) {
-        console.error("Error fetching Firebase data:", error);
-      }
-    };
+  // Fetch Firebase data from the "users" collection
+  const fetchData = async () => {
+    try {
+      const querySnapshot = await getDocs(collection(db, 'users'));
+      const data = querySnapshot.docs.map(doc => {
+        const docData = doc.data();
+        return {
+          id: doc.id,
+          name: docData.name || '-',
+          email: docData.email || '-',
+          password: docData.password || '-',
+          image: docData.image || '-',
+          role: docData.role || '-',
+          position: docData.position || '-'
+        };
+      });
+      setTableData(data);
+    } catch (error) {
+      console.error("Error fetching Firebase data:", error);
+    }
+  };
 
+  useEffect(() => {
     fetchData();
   }, []);
 
@@ -118,42 +118,91 @@ const BlogsDashboard = () => {
     return () => clearTimeout(welcomeTimer);
   }, []);
 
-  // Handle blog form input changes
+  // Handle user form input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setNewBlog(prevState => ({
+    setNewUser(prevState => ({
       ...prevState,
       [name]: value
     }));
   };
 
-  // Handle blog form submission
-  const handleSubmitBlog = async (e: React.FormEvent) => {
+  // Handle user form submission (Create or Update)
+  const handleSubmitUser = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      // Add timestamp
-      const blogWithDate = {
-        ...newBlog,
-        publishDate: new Date().toISOString(),
-      };
-      
-      // Add to Firestore
-      await addDoc(collection(db, 'blogs'), blogWithDate);
+      if (isEditMode) {
+        // Update existing user
+        const userRef = doc(db, 'users', currentUserId);
+        await updateDoc(userRef, newUser);
+        setIsEditMode(false);
+        setCurrentUserId('');
+      } else {
+        // Add new user
+        await addDoc(collection(db, 'users'), newUser);
+      }
       
       // Reset form and show table
-      setNewBlog({
-        title: '',
-        content: '',
-        author: '',
-        category: '',
+      setNewUser({
+        name: '',
+        email: '',
+        password: '',
+        image: '',
+        role: '',
+        position: '',
       });
-      setShowBlogForm(false);
+      setShowUserForm(false);
       
-      // You would typically fetch the updated blogs here
+      // Fetch the updated users
+      await fetchData();
       
     } catch (error) {
-      console.error("Error adding blog:", error);
+      console.error("Error managing user:", error);
     }
+  };
+
+  // Handle edit button click
+  const handleEditUser = (user: TableData) => {
+    setIsEditMode(true);
+    setCurrentUserId(user.id);
+    setNewUser({
+      name: user.name !== '-' ? user.name : '',
+      email: user.email !== '-' ? user.email : '',
+      password: user.password !== '-' ? user.password : '',
+      image: user.image !== '-' ? user.image : '',
+      role: user.role !== '-' ? user.role : '',
+      position: user.position !== '-' ? user.position : '',
+    });
+    setShowUserForm(true);
+  };
+
+  // Handle delete confirmation
+  const handleConfirmDelete = async () => {
+    if (userToDelete) {
+      try {
+        await deleteDoc(doc(db, 'users', userToDelete));
+        setShowDeleteModal(false);
+        setUserToDelete(null);
+        await fetchData();
+      } catch (error) {
+        console.error("Error deleting user:", error);
+      }
+    }
+  };
+
+  // Cancel edit mode
+  const handleCancelEdit = () => {
+    setIsEditMode(false);
+    setCurrentUserId('');
+    setNewUser({
+      name: '',
+      email: '',
+      password: '',
+      image: '',
+      role: '',
+      position: '',
+    });
+    setShowUserForm(false);
   };
 
   return (
@@ -205,6 +254,46 @@ const BlogsDashboard = () => {
         )}
       </AnimatePresence>
 
+      {/* Delete Confirmation Modal */}
+      <AnimatePresence>
+        {showDeleteModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="bg-white rounded-lg p-6 max-w-md"
+            >
+              <h3 className="text-xl font-bold text-[#5A4C33] mb-4">Confirm Deletion</h3>
+              <p className="text-gray-600 mb-6">Are you sure you want to delete this user? This action cannot be undone.</p>
+              <div className="flex justify-end space-x-3">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setShowDeleteModal(false)}
+                  className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md font-medium"
+                >
+                  Cancel
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={handleConfirmDelete}
+                  className="px-4 py-2 bg-red-500 text-white rounded-md font-medium"
+                >
+                  Delete
+                </motion.button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Main Dashboard */}
       <motion.div 
         className="min-h-screen bg-[#F8F5EC] flex flex-col mt-20"
@@ -229,7 +318,7 @@ const BlogsDashboard = () => {
           {/* Dashboard Header */}
           <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-[#D2A02A] mb-6 flex justify-between items-center">
             <div>
-              <h1 className="text-3xl font-bold text-[#5A4C33]">Blogs Dashboard</h1>
+              <h1 className="text-3xl font-bold text-[#5A4C33]">Users Dashboard</h1>
               <div className="w-32 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mt-2"></div>
             </div>
             {/* Logout Button */}
@@ -274,97 +363,127 @@ const BlogsDashboard = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-white rounded-lg p-6 shadow-md"
           >
-            {/* Header with Add Blog Button */}
+            {/* Header with Add User Button */}
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-xl font-semibold text-[#5A4C33]">Blog Management</h2>
+              <h2 className="text-xl font-semibold text-[#5A4C33]">
+                {isEditMode ? 'Edit User' : showUserForm ? 'Add New User' : 'User Management'}
+              </h2>
               <motion.button
-                onClick={() => setShowBlogForm(!showBlogForm)}
+                onClick={() => {
+                  if (isEditMode) {
+                    handleCancelEdit();
+                  } else {
+                    setShowUserForm(!showUserForm);
+                  }
+                }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center px-4 py-2 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white rounded-md font-medium"
               >
                 <FontAwesomeIcon icon={faPlus} className="mr-2" />
-                {showBlogForm ? 'View Blogs' : 'Add Blog'}
+                {isEditMode ? 'Cancel Edit' : showUserForm ? 'View Users' : 'Add User'}
               </motion.button>
             </div>
 
-            {/* Conditional Rendering: Show either Data Table or Blog Form */}
-            {showBlogForm ? (
-              // Blog Creation Form
+            {/* Conditional Rendering: Show either Data Table or User Form */}
+            {showUserForm ? (
+              // User Creation/Edit Form
               <AnimatePresence mode="wait">
                 <motion.form
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  onSubmit={handleSubmitBlog}
+                  onSubmit={handleSubmitUser}
                   className="space-y-6"
                 >
                   <div>
-                    <label htmlFor="title" className="block text-sm font-medium text-[#5A4C33] mb-1">Blog Title</label>
+                    <label htmlFor="name" className="block text-sm font-medium text-[#5A4C33] mb-1">Name</label>
                     <input
                       type="text"
-                      id="title"
-                      name="title"
-                      value={newBlog.title}
+                      id="name"
+                      name="name"
+                      value={newUser.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                      placeholder="Enter blog title"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent text-black"
+                      placeholder="Enter user's name"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="category" className="block text-sm font-medium text-[#5A4C33] mb-1">Category</label>
-                    <select
-                      id="category"
-                      name="category"
-                      value={newBlog.category}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                    >
-                      <option value="">Select a category</option>
-                      <option value="Technology">Technology</option>
-                      <option value="Lifestyle">Lifestyle</option>
-                      <option value="Health">Health</option>
-                      <option value="Finance">Finance</option>
-                      <option value="Travel">Travel</option>
-                    </select>
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="author" className="block text-sm font-medium text-[#5A4C33] mb-1">Author</label>
+                    <label htmlFor="email" className="block text-sm font-medium text-[#5A4C33] mb-1">Email</label>
                     <input
-                      type="text"
-                      id="author"
-                      name="author"
-                      value={newBlog.author}
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={newUser.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                      placeholder="Enter author name"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent text-black"
+                      placeholder="Enter user's email"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="content" className="block text-sm font-medium text-[#5A4C33] mb-1">Blog Content</label>
-                    <textarea
-                      id="content"
-                      name="content"
-                      value={newBlog.content}
+                    <label htmlFor="password" className="block text-sm font-medium text-[#5A4C33] mb-1">Password</label>
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      value={newUser.password}
+                      onChange={handleInputChange}
+                      required={!isEditMode} // Not required during edit unless changing
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent text-black"
+                      placeholder={isEditMode ? "Leave blank to keep current password" : "Enter user's password"}
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="image" className="block text-sm font-medium text-[#5A4C33] mb-1">Image URL</label>
+                    <input
+                      type="text"
+                      id="image"
+                      name="image"
+                      value={newUser.image}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent text-black"
+                      placeholder="Enter image URL"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="role" className="block text-sm font-medium text-[#5A4C33] mb-1">Role</label>
+                    <input
+                      type="text"
+                      id="role"
+                      name="role"
+                      value={newUser.role}
                       onChange={handleInputChange}
                       required
-                      rows={10}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                      placeholder="Write your blog content here..."
-                    ></textarea>
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent text-black"
+                      placeholder="Enter user's role"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="position" className="block text-sm font-medium text-[#5A4C33] mb-1">Position</label>
+                    <input
+                      type="text"
+                      id="position"
+                      name="position"
+                      value={newUser.position}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent text-black"
+                      placeholder="Enter user's position"
+                    />
                   </div>
                   
                   <div className="flex justify-end space-x-3">
                     <motion.button
                       type="button"
-                      onClick={() => setShowBlogForm(false)}
+                      onClick={handleCancelEdit}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md font-medium"
@@ -375,9 +494,11 @@ const BlogsDashboard = () => {
                       type="submit"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="px-4 py-2 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white rounded-md font-medium"
+                      className={`px-4 py-2 ${isEditMode 
+                        ? 'bg-blue-500' 
+                        : 'bg-gradient-to-r from-[#D2A02A] to-[#5A4C33]'} text-white rounded-md font-medium`}
                     >
-                      Publish Blog
+                      {isEditMode ? 'Update User' : 'Add User'}
                     </motion.button>
                   </div>
                 </motion.form>
@@ -395,7 +516,7 @@ const BlogsDashboard = () => {
                   <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-[#F0EAD6]">
                       <tr>
-                        {['ID', 'Name', 'Email', 'Number', 'Message', 'Actions'].map((header, index) => (
+                        {['ID', 'Name', 'Email', 'Password', 'Image', 'Role', 'Position', 'Actions'].map((header, index) => (
                           <th key={index} className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">
                             {header}
                           </th>
@@ -408,13 +529,24 @@ const BlogsDashboard = () => {
                           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#5A4C33]">{row.id}</td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.name}</td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.email}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.phone}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.message}</td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
+                            {row.password !== '-' ? '•••••••••' : '-'}
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
+                            {row.image !== '-' ? (
+                              <img src={row.image} alt={row.name} className="h-10 w-10 rounded-full object-cover" />
+                            ) : (
+                              '-'
+                            )}
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.role}</td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.position}</td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
                             <div className="flex space-x-2">
                               <motion.button
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.9 }}
+                                onClick={() => handleEditUser(row)}
                                 className="px-3 py-1 bg-blue-500 text-white rounded-md text-xs"
                               >
                                 Edit
@@ -422,6 +554,10 @@ const BlogsDashboard = () => {
                               <motion.button
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.9 }}
+                                onClick={() => {
+                                  setUserToDelete(row.id);
+                                  setShowDeleteModal(true);
+                                }}
                                 className="px-3 py-1 bg-red-500 text-white rounded-md text-xs"
                               >
                                 Delete
@@ -466,4 +602,4 @@ const BlogsDashboard = () => {
   );
 };
 
-export default BlogsDashboard;
+export default UsersDashboard;
