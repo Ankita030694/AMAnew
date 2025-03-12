@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect, } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -40,7 +40,7 @@ interface Blog {
 const BlogsDashboard = () => {
   const [animationState, setAnimationState] = useState('initial'); // initial, welcome, dashboard
   const [activeTab, setActiveTab] = useState('blogs');
-//   const [tableData, setTableData] = useState<TableData[]>([]);
+  const [tableData, setTableData] = useState<TableData[]>([]);
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [showBlogForm, setShowBlogForm] = useState(false);
   const [formMode, setFormMode] = useState<'add' | 'edit'>('add');
@@ -82,14 +82,14 @@ const BlogsDashboard = () => {
       router.push('/admin/blogs');
     } else if (itemId === 'articles') {
       router.push('/admin/articles');
-    } else if (itemId === 'home'){
-        router.push('/admin/dashboard')
-    } else if (itemId === 'users'){
-        router.push('/admin/users')
-    } else if (itemId === 'amalive'){
-        router.push('/admin/amalive')
+    } else if (itemId === 'home') {
+      router.push('/admin/dashboard');
+    } else if (itemId === 'users') {
+      router.push('/admin/users');
+    } else if (itemId === 'amalive') {
+      router.push('/admin/amalive');
     } else {
-        setActiveTab(itemId);
+      setActiveTab(itemId);
     }
   };
 
@@ -108,7 +108,7 @@ const BlogsDashboard = () => {
             phone: docData.phone || '-'
           };
         });
-        // setTableData(data);
+        setTableData(data);
       } catch (error) {
         console.error("Error fetching Firebase data:", error);
       }
