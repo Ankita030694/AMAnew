@@ -7,8 +7,16 @@ import { faArrowRight, faMapMarkerAlt, faEnvelope, faPhone, faBriefcase } from '
 import { collection, addDoc } from '../../lib/firebase';
 import { db } from '../../lib/firebase'; // adjust the path as needed
 import payu from '../../../public/payu.png'
+
 const Page = () => {
   const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+  
+  const [errors, setErrors] = useState({
     name: '',
     email: '',
     phone: '',
@@ -19,17 +27,82 @@ const Page = () => {
   const [submitted, setSubmitted] = useState(false);
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
+  // Validation functions
+  const validateName = (name: string) => {
+    const nameRegex = /^[A-Za-z\s]+$/;
+    if (!name) return "Name is required";
+    if (!nameRegex.test(name)) return "Name should contain only alphabets and spaces";
+    return "";
+  };
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email) return "Email is required";
+    if (!emailRegex.test(email)) return "Please enter a valid email address";
+    if (!email.includes('.com')) return "Email must include .com";
+    return "";
+  };
+
+  const validatePhone = (phone: string) => {
+    const phoneRegex = /^\d{10}$/;
+    if (!phone) return "Phone number is required";
+    if (!phoneRegex.test(phone)) return "Phone number must be exactly 10 digits";
+    return "";
+  };
+
+  const validateMessage = (message: string) => {
+    if (!message) return "Message is required";
+    return "";
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    
+    let newValue = value;
+    
+    // Filter input based on field type
+    if (name === 'name') {
+      // Remove any non-alphabetic characters except spaces
+      newValue = value.replace(/[^A-Za-z\s]/g, '');
+    } else if (name === 'phone') {
+      // Remove any non-numeric characters
+      newValue = value.replace(/[^0-9]/g, '');
+    }
+    
+    // Update form state
     setFormState({
       ...formState,
-      [e.target.name]: e.target.value,
+      [name]: newValue,
     });
+    
+    // Clear error when user starts typing
+    setErrors({
+      ...errors,
+      [name]: '',
+    });
+  };
+
+  // Validate all fields
+  const validateForm = () => {
+    const nameError = validateName(formState.name);
+    const emailError = validateEmail(formState.email);
+    const phoneError = validatePhone(formState.phone);
+    const messageError = validateMessage(formState.message);
+    
+    setErrors({
+      name: nameError,
+      email: emailError,
+      phone: phoneError,
+      message: messageError,
+    });
+    
+    return !(nameError || emailError || phoneError || messageError);
   };
 
   // Create a function that handles validation and form saving
   const validateAndSaveForm = async () => {
     // Check if form is valid
-    if (!formState.name || !formState.email || !formState.phone || !formState.message) {
+    if (!validateForm()) {
       return false; // Form is not valid
     }
     
@@ -65,10 +138,12 @@ const Page = () => {
     e.preventDefault(); // Prevent default navigation
     
     // First save the form data - we don't need to capture the return value
-    await validateAndSaveForm();
+    const isValid = await validateAndSaveForm();
     
-    // Then redirect to PayU payment page regardless of form validity
-    window.location.href = 'https://pmny.in/DIMRKGkGQz6L';
+    // Then redirect to PayU payment page only if form is valid
+    if (isValid) {
+      window.location.href = 'https://pmny.in/DIMRKGkGQz6L';
+    }
   };
 
   // Animation variants
@@ -207,16 +282,20 @@ const Page = () => {
                     onChange={handleChange}
                     required
                     onFocus={() => setFocusedField('name')}
-                    onBlur={() => setFocusedField(null)}
-                    className="w-full bg-[#F8F5EC] text-[#5A4C33] px-4 py-3 rounded-md border border-gray-300 focus:outline-none"
+                    onBlur={() => {
+                      setFocusedField(null);
+                      setErrors({...errors, name: validateName(formState.name)});
+                    }}
+                    className={`w-full bg-[#F8F5EC] text-[#5A4C33] px-4 py-3 rounded-md border ${errors.name ? 'border-red-500' : 'border-gray-300'} focus:outline-none`}
                     placeholder="Your Name"
                   />
                   <motion.div 
-                    className="absolute bottom-0 left-0 h-[2px] bg-[#D2A02A]"
+                    className={`absolute bottom-0 left-0 h-[2px] ${errors.name ? 'bg-red-500' : 'bg-[#D2A02A]'}`}
                     initial={{ width: 0 }}
                     animate={{ width: focusedField === 'name' ? '100%' : 0 }}
                     transition={{ duration: 0.3 }}
                   />
+                  {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                 </div>
                 
                 <div className="relative">
@@ -227,16 +306,20 @@ const Page = () => {
                     onChange={handleChange}
                     required
                     onFocus={() => setFocusedField('email')}
-                    onBlur={() => setFocusedField(null)}
-                    className="w-full bg-[#F8F5EC] text-[#5A4C33] px-4 py-3 rounded-md border border-gray-300 focus:outline-none"
+                    onBlur={() => {
+                      setFocusedField(null);
+                      setErrors({...errors, email: validateEmail(formState.email)});
+                    }}
+                    className={`w-full bg-[#F8F5EC] text-[#5A4C33] px-4 py-3 rounded-md border ${errors.email ? 'border-red-500' : 'border-gray-300'} focus:outline-none`}
                     placeholder="Your Email"
                   />
                   <motion.div 
-                    className="absolute bottom-0 left-0 h-[2px] bg-[#D2A02A]"
+                    className={`absolute bottom-0 left-0 h-[2px] ${errors.email ? 'bg-red-500' : 'bg-[#D2A02A]'}`}
                     initial={{ width: 0 }}
                     animate={{ width: focusedField === 'email' ? '100%' : 0 }}
                     transition={{ duration: 0.3 }}
                   />
+                  {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                 </div>
                 
                 <div className="relative">
@@ -247,16 +330,21 @@ const Page = () => {
                     onChange={handleChange}
                     required
                     onFocus={() => setFocusedField('phone')}
-                    onBlur={() => setFocusedField(null)}
-                    className="w-full bg-[#F8F5EC] text-[#5A4C33] px-4 py-3 rounded-md border border-gray-300 focus:outline-none"
+                    onBlur={() => {
+                      setFocusedField(null);
+                      setErrors({...errors, phone: validatePhone(formState.phone)});
+                    }}
+                    className={`w-full bg-[#F8F5EC] text-[#5A4C33] px-4 py-3 rounded-md border ${errors.phone ? 'border-red-500' : 'border-gray-300'} focus:outline-none`}
                     placeholder="Your Phone Number"
+                    maxLength={10}
                   />
                   <motion.div 
-                    className="absolute bottom-0 left-0 h-[2px] bg-[#D2A02A]"
+                    className={`absolute bottom-0 left-0 h-[2px] ${errors.phone ? 'bg-red-500' : 'bg-[#D2A02A]'}`}
                     initial={{ width: 0 }}
                     animate={{ width: focusedField === 'phone' ? '100%' : 0 }}
                     transition={{ duration: 0.3 }}
                   />
+                  {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
                 </div>
                 
                 <div className="relative">
@@ -266,17 +354,21 @@ const Page = () => {
                     onChange={handleChange}
                     required
                     onFocus={() => setFocusedField('message')}
-                    onBlur={() => setFocusedField(null)}
+                    onBlur={() => {
+                      setFocusedField(null);
+                      setErrors({...errors, message: validateMessage(formState.message)});
+                    }}
                     rows={4}
-                    className="w-full bg-[#F8F5EC] text-[#5A4C33] px-4 py-3 rounded-md border border-gray-300 focus:outline-none"
+                    className={`w-full bg-[#F8F5EC] text-[#5A4C33] px-4 py-3 rounded-md border ${errors.message ? 'border-red-500' : 'border-gray-300'} focus:outline-none`}
                     placeholder="Your Message"
                   />
                   <motion.div 
-                    className="absolute bottom-0 left-0 h-[2px] bg-[#D2A02A]"
+                    className={`absolute bottom-0 left-0 h-[2px] ${errors.message ? 'bg-red-500' : 'bg-[#D2A02A]'}`}
                     initial={{ width: 0 }}
                     animate={{ width: focusedField === 'message' ? '100%' : 0 }}
                     transition={{ duration: 0.3 }}
                   />
+                  {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
                 </div>
                 
                 <div className="mt-6">
