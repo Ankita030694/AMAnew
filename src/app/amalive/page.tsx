@@ -5,8 +5,8 @@ import { getVideos } from '@/lib/api';
 
 
 export const metadata = {
-  title: 'AMA Legal Solutions: Providing Legal Services Globally',
-  description: 'Learn more about our company and team',
+  title: 'AMA Live | Legal Video Sessions in Gurugram',
+  description: 'Watch our latest video sessions discussing employee benefits, insurance, wellness, and other legal topics, presented by AMA Legal Solutions in Gurugram',
 }
 // This is a Server Component that fetches data
 export default async function AmaLivePage() {

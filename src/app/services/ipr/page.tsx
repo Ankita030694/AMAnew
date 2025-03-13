@@ -1,7 +1,10 @@
-"use client";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
+
+export const metadata = {
+  title: 'Loan Settlement Experts | Reduce Debt Legally',
+  description: 'Watch our latest video sessions discussing employee benefits, insurance, wellness, and other legal topics, presented by AMA Legal Solutions in GurugramStruggling with loan repayment? AMA Legal Solutions provides professional loan settlement services to help you negotiate and resolve debt legally',
+}
 export default function page() {
   // Sample service data (replace with your actual content)
   const service = {
@@ -16,27 +19,17 @@ export default function page() {
   return (
     <div className="bg-white min-h-screen">
       {/* Banner Section - 1920x550 as specified */}
-      <motion.div
-        className="relative w-full h-[300px] md:h-[550px] overflow-hidden"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <motion.img
+      <div className="relative w-full h-[300px] md:h-[550px] overflow-hidden">
+        <img
           src={service.bannerImage}
           alt={service.title}
           className="w-full h-full object-contain"
         />
-      </motion.div>
+      </div>
 
       {/* Service Description Section */}
       <div className="container mx-auto px-4 max-w-4xl">
-        <motion.div
-          className="mb-12"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
-        >
+        <div className="mb-12">
           <p className="text-[#5A4C33] text-lg leading-relaxed mb-8">
             <strong>
               Intellectual Property Rights (IPR) – Protect Your Innovation with
@@ -49,9 +42,9 @@ export default function page() {
             </strong>
             <br />
             <br />
-            In today’s competitive world, protecting intellectual property (IP)
+            In today's competitive world, protecting intellectual property (IP)
             is crucial for businesses, startups, creators, and innovators.
-            Whether it’s a trademark, patent, copyright, or design, safeguarding
+            Whether it's a trademark, patent, copyright, or design, safeguarding
             your intellectual assets ensures that your brand, inventions, and
             creative works remain legally protected against unauthorized use or
             infringement.
@@ -209,19 +202,11 @@ export default function page() {
             <br />
             📍 <strong>Office Location: Sector-57, Gurugram</strong>
           </p>
-
           {/* Feature Highlights */}
-        </motion.div>
+        </div>
 
         {/* CTA Button */}
-        <motion.div
-          className="flex justify-center mb-5"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.8, duration: 0.5 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
+        <div className="flex justify-center mb-5">
           <Link href={service.buttonLink}>
             <div
               className="inline-block bg-[#D2A02A] text-white px-8 py-4 rounded-md font-medium 
@@ -230,7 +215,7 @@ export default function page() {
               {service.buttonText}
             </div>
           </Link>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
