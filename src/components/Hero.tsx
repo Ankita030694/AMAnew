@@ -1,18 +1,18 @@
 'use client';
 import Link from "next/link";
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 export default function Hero() {
-  // const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   // Load video after component mounts to improve initial page load
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setIsVideoLoaded(true);
-  //   }, 100);
-  //   return () => clearTimeout(timer);
-  // }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVideoLoaded(true);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="relative min-h-screen">
@@ -29,7 +29,7 @@ export default function Hero() {
       </div>
 
       {/* Video background - loaded after initial render */}
-      {/* {isVideoLoaded && (
+      {isVideoLoaded && (
         <div className="absolute inset-0 bg-gray-900">
           <video
             autoPlay
@@ -42,7 +42,7 @@ export default function Hero() {
             <source src="/intro.webm" type="video/webm" />
           </video>
         </div>
-      )} */}
+      )}
 
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/50" />
