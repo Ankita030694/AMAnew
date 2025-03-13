@@ -24,7 +24,7 @@ export default function Hero() {
       
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4">
-        <h1 className="text-4xl md:text-6xl font-bold text-white max-w-4xl mb-6 drop-shadow-lg">
+        <h1 className="text-4xl font-bold text-white mb-6">
           EMPOWERING LEGAL EXPERTISE
         </h1>
         <p className="text-lg md:text-xl text-white max-w-2xl mb-8 drop-shadow-lg">
