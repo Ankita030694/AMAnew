@@ -40,7 +40,7 @@ export default function page() {
             </strong>
             <br />
             <br />
-            In today's digital era, cybersecurity, data privacy, and online
+            In today&apos;s digital era, cybersecurity, data privacy, and online
             fraud have become major concerns for businesses and individuals.
             Cyber law governs digital transactions, cyber fraud, data breaches,
             hacking, and online defamation, making it essential to have expert

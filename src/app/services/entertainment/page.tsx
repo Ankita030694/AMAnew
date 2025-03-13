@@ -45,7 +45,7 @@ export default function page() {
             The entertainment industry is evolving rapidly, and legal protection
             is essential for artists, filmmakers, musicians, influencers,
             content creators, production houses, and media companies. Whether
-            it's contract negotiations, intellectual property protection,
+            it&apos;s contract negotiations, intellectual property protection,
             licensing deals, or dispute resolution, expert legal assistance
             ensures that your rights and creative work remain safeguarded.
             <br />

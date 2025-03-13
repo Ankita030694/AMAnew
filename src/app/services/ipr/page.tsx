@@ -42,9 +42,9 @@ export default function page() {
             </strong>
             <br />
             <br />
-            In today's competitive world, protecting intellectual property (IP)
+            In today&apos;s competitive world, protecting intellectual property (IP)
             is crucial for businesses, startups, creators, and innovators.
-            Whether it's a trademark, patent, copyright, or design, safeguarding
+            Whether it&apos;s a trademark, patent, copyright, or design, safeguarding
             your intellectual assets ensures that your brand, inventions, and
             creative works remain legally protected against unauthorized use or
             infringement.
