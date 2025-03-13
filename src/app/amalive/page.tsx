@@ -3,6 +3,11 @@ import { Suspense } from 'react';
 import AmaLiveClient from './client';
 import { getVideos } from '@/lib/api';
 
+
+export const metadata = {
+  title: 'AMA Legal Solutions: Providing Legal Services Globally',
+  description: 'Learn more about our company and team',
+}
 // This is a Server Component that fetches data
 export default async function AmaLivePage() {
   // Fetch data on the server

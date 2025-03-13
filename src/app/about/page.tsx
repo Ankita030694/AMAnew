@@ -6,7 +6,10 @@ import OurAttorneys from "@/components/aboutcomps/OurAttorneys";
 import TabbedTimeline from "@/components/aboutcomps/TabbedTimeline";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import Image from "next/image";
-
+export const metadata = {
+  title: 'About AMA Legal Solutions: Experienced Law Firm in Gurugram',
+  description: 'Learn about AMA Legal Solutions legacy and expertise in providing exceptional legal services across various domains in Gurugram, India.',
+}
 export default function About() {
     return (
       
