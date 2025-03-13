@@ -13,7 +13,7 @@ export default function Hero() {
     }, 100);
     return () => clearTimeout(timer);
   }, []);
-
+ 
   return (
     <div className="relative min-h-screen">
       {/* Static background image that loads immediately */}
