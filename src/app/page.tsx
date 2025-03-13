@@ -5,7 +5,7 @@ import AskExperts from "@/components/AskExperts";
 import LegalExcellence from "@/components/LegalExcellence";
 import Clients from "@/components/Clients";
 import TributeCard from "@/components/TributeCard";
-// import Yt from "@/components/Yt";
+import Yt from "@/components/Yt";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import Image from "next/image";
 import { useState } from "react";
@@ -99,7 +99,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* <Yt /> */}
+      <Yt />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-10">
         <div className="text-center">
           <h2 className="text-4xl font-bold text-[#5A4C33] mb-4">
