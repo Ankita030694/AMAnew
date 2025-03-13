@@ -27,7 +27,7 @@ export default function Hero() {
         <h1 className="text-4xl font-bold text-white mb-6">
           EMPOWERING LEGAL EXPERTISE
         </h1>
-        <p className="text-lg md:text-xl text-white max-w-2xl mb-8 drop-shadow-lg">
+        <p className="text-lg text-white mb-8">
         AMA Legal Solutions embodies a firm culture rooted in values and principles that prioritize excellence and integrity
         </p>
         <Link href="/contact">
