@@ -45,6 +45,14 @@ const BlogsDashboard = () => {
     metaDescription: ''
   });
   const router = useRouter();
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10; // Set the number of items per page
+
+  // Calculate the total number of pages
+  const totalPages = Math.ceil(blogs.length / itemsPerPage);
+
+  // Get the current blogs to display based on the current page
+  const currentBlogs = blogs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   // Check if user is logged in; if not, redirect to login page
   useEffect(() => {
@@ -236,6 +244,19 @@ const BlogsDashboard = () => {
   // Cancel form handler
   const handleCancelForm = () => {
     resetForm();
+  };
+
+  // Handle pagination
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(prevPage => prevPage + 1);
+    }
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(prevPage => prevPage - 1);
+    }
   };
 
   return (
@@ -529,18 +550,18 @@ const BlogsDashboard = () => {
                       <tr>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Title</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Subtitle</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Date</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Image</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Created</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Actions</th>
                       </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
-                      {blogs.length > 0 ? (
-                        blogs.map((blog) => (
+                      {currentBlogs.length > 0 ? (
+                        currentBlogs.map((blog) => (
                           <tr key={blog.id} className="hover:bg-[#F8F5EC] transition-colors duration-150">
                             <td className="px-6 py-4 text-sm font-medium text-[#5A4C33] max-w-xs truncate">{blog.title}</td>
                             <td className="px-6 py-4 text-sm text-[#5A4C33] max-w-xs truncate">{blog.subtitle}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{blog.date}</td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]"><img src={blog.image} alt="" className="w-20 h-20 rounded-full" /></td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
                               {new Date(blog.created).toLocaleString()}
                             </td>
@@ -580,22 +601,24 @@ const BlogsDashboard = () => {
 
                   <div className="mt-4 flex justify-between items-center">
                     <div className="text-sm text-[#5A4C33]">
-                      Showing <span className="font-medium">1</span> to <span className="font-medium">{blogs.length}</span> of <span className="font-medium">{blogs.length}</span> results
+                      Showing <span className="font-medium">{(currentPage - 1) * itemsPerPage + 1}</span> to <span className="font-medium">{Math.min(currentPage * itemsPerPage, blogs.length)}</span> of <span className="font-medium">{blogs.length}</span> results
                     </div>
                     <div className="flex space-x-2">
                       <motion.button
+                        onClick={handlePreviousPage}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="px-3 py-1 bg-[#F0EAD6] text-[#5A4C33] rounded-md text-sm"
-                        disabled
+                        disabled={currentPage === 1}
                       >
                         Previous
                       </motion.button>
                       <motion.button
+                        onClick={handleNextPage}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="px-3 py-1 bg-[#F0EAD6] text-[#5A4C33] rounded-md text-sm"
-                        disabled
+                        disabled={currentPage === totalPages}
                       >
                         Next
                       </motion.button>

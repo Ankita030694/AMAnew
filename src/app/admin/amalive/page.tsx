@@ -7,6 +7,8 @@ import { collection, getDocs, addDoc } from 'firebase/firestore';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { db, auth } from '../../../lib/firebase'; // adjust the path as needed
 import { useRouter } from 'next/navigation';
+import { usePermissions } from '../../../hooks/usePermissions';
+import toast from 'react-hot-toast';
 
 // Update the interface for AMA Live data
 interface TableData {
@@ -38,15 +40,8 @@ const BlogsDashboard = () => {
   });
   const router = useRouter();
 
-  // Check if user is logged in; if not, redirect to login page
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (!user) {
-        router.push('/login');
-      }
-    });
-    return () => unsubscribe();
-  }, [router]);
+  // Use the permissions hook - admin required
+  const { isAuthorized, isLoading } = usePermissions('admin');
 
   // Logout handler using Firebase Auth
   const handleLogout = async () => {
@@ -132,6 +127,18 @@ const BlogsDashboard = () => {
       console.error("Error adding video:", error);
     }
   };
+
+  // Show loading state
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#F8F5EC]">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-[#D2A02A] border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <p className="mt-4 text-[#5A4C33] font-medium">Loading...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen overflow-hidden relative">

@@ -11,7 +11,7 @@ interface Blog {
   title: string;
   description: string;
   date: string;
-  image?: string;
+  image?: string; 
   subtitle?: string;
   created?: number;
   metaTitle?: string;

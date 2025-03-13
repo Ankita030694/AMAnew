@@ -529,7 +529,7 @@ const ArticlesDashboard = () => {
                       <tr>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Title</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Subtitle</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Date</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Image</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Created</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Actions</th>
                       </tr>
@@ -540,7 +540,7 @@ const ArticlesDashboard = () => {
                           <tr key={blog.id} className="hover:bg-[#F8F5EC] transition-colors duration-150">
                             <td className="px-6 py-4 text-sm font-medium text-[#5A4C33] max-w-xs truncate">{blog.title}</td>
                             <td className="px-6 py-4 text-sm text-[#5A4C33] max-w-xs truncate">{blog.subtitle}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{blog.date}</td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]"><img src={blog.image} className="w-20 h-20 rounded-full" alt="" /></td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
                               {new Date(blog.created).toLocaleString()}
                             </td>
