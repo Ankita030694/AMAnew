@@ -7,8 +7,6 @@ import { faLock, faEnvelope, faArrowRight } from '@fortawesome/free-solid-svg-ic
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../lib/firebase'; // adjust the path as needed
 import { FirebaseError } from "firebase/app";
-import { collection, query, where, getDocs } from 'firebase/firestore';
-import { db } from '../../lib/firebase'; // Make sure db is exported from your firebase.js
 
 const LoginPage = () => {
   const [animationState, setAnimationState] = useState('initial'); // initial, welcome, form

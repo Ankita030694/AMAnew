@@ -4,11 +4,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { collection, getDocs, addDoc } from 'firebase/firestore';
-import { signOut, onAuthStateChanged } from 'firebase/auth';
+import { signOut } from 'firebase/auth';
 import { db, auth } from '../../../lib/firebase'; // adjust the path as needed
 import { useRouter } from 'next/navigation';
 import { usePermissions } from '../../../hooks/usePermissions';
-import toast from 'react-hot-toast';
 
 // Update the interface for AMA Live data
 interface TableData {
@@ -41,7 +40,7 @@ const BlogsDashboard = () => {
   const router = useRouter();
 
   // Use the permissions hook - admin required
-  const { isAuthorized, isLoading } = usePermissions('admin');
+  const { isLoading } = usePermissions('admin');
 
   // Logout handler using Firebase Auth
   const handleLogout = async () => {
