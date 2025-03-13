@@ -10,10 +10,12 @@ export default function Hero() {
           loop
           muted
           playsInline
-          className="absolute w-full h-full object-cover opacity-40" 
+          preload="auto"
+          className="absolute w-full h-full object-cover opacity-40"
           style={{ objectFit: 'cover' }}
         >
-          <source src="/intro.mp4" type="video/mp4" />
+          {/* Provide WebM format for better compression */}
+          <source src="/intro.webm" type="video/webm" />
         </video>
       </div>
 
