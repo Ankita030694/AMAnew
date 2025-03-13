@@ -1,23 +1,48 @@
+'use client';
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Hero() {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
+  // Load video after component mounts to improve initial page load
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVideoLoaded(true);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="relative min-h-screen">
-      {/* Background video */}
+      {/* Static background image that loads immediately */}
       <div className="absolute inset-0 bg-gray-900">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="absolute w-full h-full object-cover opacity-40"
-          style={{ objectFit: 'cover' }}
-        >
-          {/* Provide WebM format for better compression */}
-          <source src="/intro.webm" type="video/webm" />
-        </video>
+        <Image
+          src="/bannerbg.png" // Create a compressed static image as placeholder
+          alt="Legal background"
+          fill
+          priority
+          className="object-cover opacity-40"
+          sizes="100vw"
+        />
       </div>
+
+      {/* Video background - loaded after initial render */}
+      {isVideoLoaded && (
+        <div className="absolute inset-0 bg-gray-900">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute w-full h-full object-cover opacity-40"
+            style={{ objectFit: 'cover' }}
+          >
+            <source src="/intro.webm" type="video/webm" />
+          </video>
+        </div>
+      )}
 
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/50" />
@@ -28,7 +53,7 @@ export default function Hero() {
           EMPOWERING LEGAL EXPERTISE
         </h1>
         <p className="text-lg text-white mb-8">
-        AMA Legal Solutions embodies a firm culture rooted in values and principles that prioritize excellence and integrity
+          AMA Legal Solutions embodies a firm culture rooted in values and principles that prioritize excellence and integrity
         </p>
         <Link href="/contact">
           <button className="relative overflow-hidden bg-[#D2A02A] hover:bg-[#5A4C33] text-white px-8 py-3 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out group">
@@ -44,5 +69,5 @@ export default function Hero() {
         </Link>
       </div>
     </div>
-  )
+  );
 }
