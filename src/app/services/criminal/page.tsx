@@ -8,7 +8,7 @@ export default function page() {
   // Sample service data (replace with your actual content)
   const service = {
     title: "Professional Consultation",
-    bannerImage: "/services/8.png", // Replace with your actual image path
+    bannerImage: "/services/7.png", // Replace with your actual image path
     description:
       "Our professional consultation service provides expert guidance tailored to your specific needs. We work closely with you to understand your requirements and deliver solutions that exceed your expectations. Our team of experienced consultants brings years of industry knowledge to help you navigate complex challenges and achieve your goals.",
     buttonText: "Get Started",

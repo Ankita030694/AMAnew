@@ -1,7 +1,9 @@
-"use client";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
+export const metadata = {
+  title: 'Corporate Legal Services | Business Law Experts',
+  description: 'Get professional legal support for business contracts, corporate compliance, mergers & acquisitions, and company disputes at AMA Legal Solutions',
+}
 export default function page() {
   // Sample service data (replace with your actual content)
   const service = {
@@ -16,196 +18,171 @@ export default function page() {
   return (
     <div className="bg-white min-h-screen">
       {/* Banner Section - 1920x550 as specified */}
-      <motion.div
-        className="relative w-full h-[300px] md:h-[550px] overflow-hidden"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <motion.img
+      <div className="relative w-full h-[300px] md:h-[550px] overflow-hidden">
+        <img
           src={service.bannerImage}
           alt={service.title}
           className="w-full h-full object-contain"
         />
-      </motion.div>
+      </div>
 
       {/* Service Description Section */}
       <div className="container mx-auto px-4 max-w-4xl">
-        <motion.div
-          className="mb-12"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
-        >
+        <div className="mb-12">
           <p className="text-[#5A4C33] text-lg leading-relaxed mb-8">
             <strong>
-              Criminal Law Services – Expert Legal Defense & Representation
+              Corporate Law Services – Expert Legal Solutions for Businesses &amp; Startups
             </strong>
             <br />
             <br />
             <strong>
-              Protecting Your Legal Rights with Experienced Criminal Lawyers
+              Comprehensive Legal Support for Companies, Startups &amp; Entrepreneurs
             </strong>
             <br />
             <br />
-            Being involved in a criminal case can be stressful and
-            life-changing. Whether you are facing false accusations, criminal
-            charges, or need bail assistance, having a skilled criminal defense
-            lawyer is crucial to protect your rights and ensure a fair trial.
+            Navigating the complexities of corporate law requires expert legal guidance. Whether you are starting a business, handling contracts, resolving disputes, or ensuring compliance, having a trusted corporate lawyer is essential for risk mitigation and smooth business operations.
             <br />
             <br />
-            At AMA Legal Solutions, we provide strong legal representation for
-            individuals facing criminal charges, ensuring a strategic defense,
-            bail assistance, and trial advocacy. Our experienced criminal
-            lawyers in Gurugram handle all types of criminal cases, from
-            financial crimes to serious offenses.
+            At AMA Legal Solutions, we specialize in corporate and commercial law, providing tailored legal solutions for companies, startups, investors, and business owners. Our expertise ensures that your business remains legally compliant, protected, and prepared for growth.
             <br />
             <br />
-            <strong>Our Criminal Law Services:</strong>
+            <strong>Our Corporate Law Services:</strong>
             <br />
             <br />
-            <strong>1. Bail & Anticipatory Bail Assistance</strong>
+            <strong>1. Business Incorporation &amp; Startup Legal Services</strong>
             <br />
-            Quick and effective bail representation is crucial in criminal
-            cases. We help with:
+            Starting a business requires proper legal structuring. We assist with:
             <br />
-            • Regular Bail & Anticipatory Bail Applications
+            • Company registration (Private Limited, LLP, OPC, Partnership, Sole Proprietorship)
             <br />
-            • High Court & Supreme Court Bail Matters
+            • Drafting MOA, AOA, and shareholder agreements
             <br />
-            • FIR Quashing & Preventing Arrests
+            • Startup legal compliance (DPIIT registration, MSME certification)
             <br />
-            • Legal Consultation Before Arrest
+            • Tax and regulatory advisory for new businesses
             <br />
             <br />
-            <strong>2. Criminal Trial Defense & Representation</strong>
+            <strong>2. Corporate Compliance &amp; Regulatory Advisory</strong>
             <br />
-            We provide strong legal defense in courts for:
+            Every business must comply with legal regulations. We help with:
             <br />
-            • Theft, Fraud, & Financial Crimes
+            • Companies Act &amp; LLP Act compliance
             <br />
-            • White-Collar Crimes & Corporate Fraud
+            • RBI, SEBI, and FEMA compliance for foreign investments
             <br />
-            • Cheating, Forgery, and Misrepresentation Cases
+            • Annual filings, statutory audits, and board resolutions
             <br />
-            • Cyber Crimes & Online Fraud
+            • Corporate governance advisory for ethical business practices
             <br />
             <br />
-            <strong>3. Serious Offenses & Defense Litigation</strong>
+            <strong>3. Contract Drafting &amp; Agreement Review</strong>
             <br />
-            If facing serious allegations, expert legal representation is
-            critical. We defend clients against:
+            Well-drafted contracts protect businesses from legal risks. We specialize in:
             <br />
-            • Murder & Attempt to Murder (IPC 302, 307)
+            • Shareholder &amp; partnership agreements
             <br />
-            • Sexual Offenses & POCSO Cases
+            • Vendor &amp; supplier contracts
             <br />
-            • Domestic Violence & Dowry Cases (Section 498A IPC)
+            • Employment contracts &amp; HR policies
             <br />
-            • Drug-Related Offenses (NDPS Act)
+            • Franchise, joint venture, and licensing agreements
             <br />
             <br />
-            <strong>4. Quashing of FIR & Criminal Complaints</strong>
+            <strong>4. Mergers &amp; Acquisitions (M&amp;A) and Corporate Restructuring</strong>
             <br />
-            We help clients get false or malicious FIRs quashed through:
+            Business expansion and restructuring require strategic legal planning. We offer:
             <br />
-            • Filing Quashing Petitions in High Court
+            • Mergers, acquisitions, and demergers advisory
             <br />
-            • Challenging False Allegations & Harassment
+            • Due diligence for business acquisitions
             <br />
-            • Criminal Writ Petitions for Rights Protection
+            • Drafting &amp; negotiation of share purchase agreements (SPA)
             <br />
+            • Corporate restructuring &amp; liquidation
             <br />
-            <strong>5. White-Collar Crimes & Financial Offenses</strong>
             <br />
-            Corporate professionals and businesses may face fraud and financial
-            crime allegations. We provide legal defense in:
+            <strong>5. Intellectual Property (IP) Protection for Businesses</strong>
             <br />
-            • Money Laundering (PMLA Act) Cases
+            Protecting your business assets is crucial. We help with:
             <br />
-            • Corporate & Banking Fraud Cases
+            • Trademark registration &amp; brand protection
             <br />
-            • Breach of Trust & Embezzlement Defense
+            • Copyright &amp; patent filing for innovations
             <br />
-            • Income Tax & GST-Related Offenses
+            • IP licensing and infringement litigation
             <br />
+            • Trade secret &amp; confidentiality agreements
             <br />
-            <strong>6. Cyber Crime Defense & Legal Assistance</strong>
             <br />
-            With the rise in digital fraud and cyber offenses, we provide legal
-            support for:
+            <strong>6. Business Dispute Resolution &amp; Corporate Litigation</strong>
             <br />
-            • Online Fraud & Financial Cyber Crimes
+            Legal disputes can disrupt business operations. We provide:
             <br />
-            • Identity Theft & Phishing Cases
+            • Arbitration &amp; mediation for commercial disputes
             <br />
-            • Cyber Defamation & Social Media Harassment
+            • Contract enforcement &amp; breach of agreement cases
             <br />
-            • Hacking & Data Theft Cases
+            • Corporate fraud &amp; misrepresentation litigation
             <br />
+            • Representation in NCLT, High Courts &amp; Supreme Court
             <br />
-            <strong>7. Domestic Violence & Matrimonial Criminal Cases</strong>
             <br />
-            Criminal disputes often arise in matrimonial conflicts. We handle:
+            <strong>7. Employment &amp; Labor Law Compliance</strong>
             <br />
-            • 498A IPC (Dowry Harassment) Defense
+            Employee-related legal compliance is essential for businesses. We assist with:
             <br />
-            • False Allegations in Domestic Violence Cases
+            • Employment contracts &amp; termination policies
             <br />
-            • Divorce-Related Criminal Proceedings
+            • POSH (Prevention of Sexual Harassment) compliance
             <br />
-            • Protection of Women & Children in Criminal Cases
+            • Labour law disputes &amp; employee grievance handling
             <br />
+            • ESI, PF, and wage law compliance
             <br />
-            <strong>8. Criminal Appeals & High Court Representation</strong>
             <br />
-            For those seeking relief in higher courts, we provide:
+            <strong>8. Foreign Direct Investment (FDI) &amp; Cross-Border Transactions</strong>
             <br />
-            • Filing Appeals & Revisions in High Court & Supreme Court
+            For businesses dealing with international transactions, we provide:
             <br />
-            • Challenging Wrongful Convictions
+            • Foreign Direct Investment (FDI) approvals
             <br />
-            • Legal Representation in Sessions & High Courts
+            • FEMA compliance for cross-border trade
             <br />
+            • Joint venture &amp; foreign subsidiary setup in India
             <br />
-            <strong>Who Can Benefit from Our Criminal Law Services?</strong>
+            • International contract drafting &amp; legal due diligence
             <br />
             <br />
-            • Individuals facing criminal charges
+            <strong>Who Can Benefit from Our Corporate Law Services?</strong>
             <br />
-            • Businesses & professionals involved in corporate crimes
             <br />
-            • Victims of false accusations seeking defense
+            • Startups &amp; entrepreneurs looking for business incorporation &amp; compliance
             <br />
-            • Families dealing with domestic violence allegations
+            • Companies &amp; large corporations seeking legal risk management
             <br />
-            • Cybercrime victims and accused individuals
+            • Investors &amp; venture capital firms requiring due diligence &amp; agreements
             <br />
+            • E-commerce &amp; technology businesses needing legal protection
             <br />
-            <strong>
-              Why Choose AMA Legal Solutions for Criminal Defense?
-            </strong>
+            • Manufacturing &amp; service-based industries requiring labor law compliance
             <br />
-            <br />• <strong>Experienced Criminal Lawyers</strong> – Specialized
-            in criminal defense, bail, and trial advocacy.
-            <br />• <strong>Quick Legal Assistance</strong> – 24/7 support for
-            urgent bail applications and legal advice.
-            <br />• <strong>Strategic Defense Approach</strong> – Strong legal
-            arguments for FIR quashing, anticipatory bail, and trial
-            representation.
-            <br />• <strong>High Court & Supreme Court Representation</strong> –
-            Handling complex cases at higher judicial levels.
-            <br />• <strong>Confidential & Professional Legal Support</strong> –
-            Ensuring client privacy and protection of legal rights.
             <br />
+            <strong>Why Choose AMA Legal Solutions for Corporate Law?</strong>
             <br />
-            <strong>
-              Facing Criminal Charges? Get Expert Legal Help Today
-            </strong>
             <br />
+            • Experienced Corporate Lawyers – Experts in business laws, contracts, and regulatory compliance.
             <br />
-            If you need a criminal lawyer in Gurugram for bail, defense, or FIR
-            quashing, contact AMA Legal Solutions now.
+            • Custom Legal Strategies – Tailored solutions for startups, MSMEs, and large corporations.
+            <br />
+            • End-to-End Legal Support – From company registration to dispute resolution, we cover all corporate legal matters.
+            <br />
+            • Trusted by Businesses Across India – A strong track record in corporate compliance, mergers, and litigation.
+            <br />
+            <br />
+            <strong>Need Expert Corporate Legal Assistance? Contact Us Today</strong>
+            <br />
+            <br />
+            If you need a corporate lawyer in Gurugram for business incorporation, contract drafting, or legal compliance, get in touch with AMA Legal Solutions now.
             <br />
             <br />
             📞 Call us at <strong>+91-8700343611</strong>
@@ -220,19 +197,10 @@ export default function page() {
             <br />
             📍 <strong>Office Location: Sector-57, Gurugram</strong>
           </p>
-
-          {/* Feature Highlights */}
-        </motion.div>
+        </div>
 
         {/* CTA Button */}
-        <motion.div
-          className="flex justify-center mb-5"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.8, duration: 0.5 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
+        <div className="flex justify-center mb-5">
           <Link href={service.buttonLink}>
             <div
               className="inline-block bg-[#D2A02A] text-white px-8 py-4 rounded-md font-medium 
@@ -241,7 +209,7 @@ export default function page() {
               {service.buttonText}
             </div>
           </Link>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
