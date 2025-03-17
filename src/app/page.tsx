@@ -12,6 +12,9 @@ import Locations from "@/components/locations";
 export const metadata = {
   title: 'AMA Legal Solutions | Top Legal Experts in India',
   description: 'Offering expert legal services in banking, finance, corporate law, and more. AMA Legal Solutions is your trusted law firm in Gurugram, Haryana, India.',
+  alternates: {
+    canonical: 'https://amalegalsolutions.com/', // Add your canonical URL here
+  },
 }
 export default function Home() {
   return (
