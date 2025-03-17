@@ -12,15 +12,10 @@ const generateSlug = (title: string): string => {
     .trim();
 };
 
-// Type for generateMetadata params
-type Props = {
-  params: { slug: string }
-}
-
-// Dynamic metadata generation
+// Dynamic metadata generation - fix the parameter typing
 export async function generateMetadata(
-  { params }: Props,
- parent: ResolvingMetadata
+  { params }: { params: { slug: string } },
+  parent: ResolvingMetadata
 ): Promise<Metadata> {
   const slug = params.slug;
   
