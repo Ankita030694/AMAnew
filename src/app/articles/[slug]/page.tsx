@@ -12,11 +12,15 @@ const generateSlug = (title: string): string => {
     .trim();
 };
 
-// Dynamic metadata generation using proper Next.js types
+// Type for generateMetadata params
+type Props = {
+  params: { slug: string }
+}
+
+// Dynamic metadata generation
 export async function generateMetadata(
-  { params }: { params: { slug: string } },
-  // @ts-ignore
-  _parent: ResolvingMetadata
+  { params }: Props,
+ parent: ResolvingMetadata
 ): Promise<Metadata> {
   const slug = params.slug;
   
