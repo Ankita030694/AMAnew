@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-
 export const metadata = {
-  title: 'Entertainment Law & Media Contracts | AMA Legal Solutions',
-  description: 'Protect your creative rights with expert legal support in entertainment law, media contracts, copyright, and licensing. Get legal advice from industry professionals',
-}
+  title: "Entertainment Law & Media Contracts | AMA Legal Solutions",
+  description:
+    "Protect your creative rights with expert legal support in entertainment law, media contracts, copyright, and licensing. Get legal advice from industry professionals",
+};
 export default function page() {
   // Sample service data (replace with your actual content)
   const service = {
@@ -30,11 +30,11 @@ export default function page() {
       {/* Service Description Section */}
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="mb-12">
+          <h1 className="text-4xl font-bold text-center mb-8 text-black">
+            Entertainment Law Services – Legal Protection for Artists, Creators
+            & Media Businesses
+          </h1>
           <p className="text-[#5A4C33] text-lg leading-relaxed mb-8">
-            <strong>
-              Entertainment Law Services – Legal Protection for Artists,
-              Creators & Media Businesses
-            </strong>
             <br />
             <br />
             <strong>

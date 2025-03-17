@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-
 export const metadata = {
-  title: 'Real Estate Legal Solutions | AMA Legal Solutions',
-  description: 'Need legal help in property transactions, land disputes, or real estate compliance? AMA Legal Solutions provides expert guidance for individuals & businesses',
-}
+  title: "Real Estate Legal Solutions | AMA Legal Solutions",
+  description:
+    "Need legal help in property transactions, land disputes, or real estate compliance? AMA Legal Solutions provides expert guidance for individuals & businesses",
+};
 export default function page() {
   // Sample service data (replace with your actual content)
   const service = {
@@ -30,11 +30,11 @@ export default function page() {
       {/* Service Description Section */}
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="mb-12">
+          <h1 className="text-4xl font-bold text-center mb-8 text-black">
+            Real Estate Legal Services – Trusted Legal Support for Property
+            Transactions & Disputes
+          </h1>
           <p className="text-[#5A4C33] text-lg leading-relaxed mb-8">
-            <strong>
-              Real Estate Legal Services – Trusted Legal Support for Property
-              Transactions & Disputes
-            </strong>
             <br />
             <br />
             <strong>

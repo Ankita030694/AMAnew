@@ -29,11 +29,11 @@ export default function page() {
       {/* Service Description Section */}
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="mb-12">
+        <h1 className="text-4xl font-bold text-center mb-8 text-black">
+        Expert Legal Drafting Services – Precision & Compliance in Every
+        Document
+          </h1>
           <p className="text-[#5A4C33] text-lg leading-relaxed mb-8">
-            <strong>
-              Expert Legal Drafting Services – Precision & Compliance in Every
-              Document
-            </strong>
             <br />
             <br />
             <strong>

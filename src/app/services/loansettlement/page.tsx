@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-
 export const metadata = {
-  title: 'Loan Settlement Experts | Reduce Debt Legally',
-  description: 'Struggling with loan repayment? AMA Legal Solutions provides professional loan settlement services to help you negotiate and resolve debt legally',
-}
+  title: "Loan Settlement Experts | Reduce Debt Legally",
+  description:
+    "Struggling with loan repayment? AMA Legal Solutions provides professional loan settlement services to help you negotiate and resolve debt legally",
+};
 export default function page() {
   // Sample service data (replace with your actual content)
   const service = {
@@ -30,11 +30,11 @@ export default function page() {
       {/* Service Description Section */}
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="mb-12">
+          <h1 className="text-4xl font-bold text-center mb-8 text-black">
+            Loan Settlement Services – Expert Legal Assistance to Reduce Your
+            Debt Burden
+          </h1>
           <p className="text-[#5A4C33] text-lg leading-relaxed mb-8">
-            <strong>
-              Loan Settlement Services – Expert Legal Assistance to Reduce Your
-              Debt Burden
-            </strong>
             <br />
             <br />
             Struggling with Loan Repayments? Get Legal Help for Loan Settlement

@@ -30,11 +30,11 @@ export default function page() {
       {/* Service Description Section */}
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="mb-12">
-          <p className="text-[#5A4C33] text-lg leading-relaxed mb-8">
-            <strong>
-              Intellectual Property Rights (IPR) – Protect Your Innovation with
+        <h1 className="text-4xl font-bold text-center mb-8 text-black">
+        Intellectual Property Rights (IPR) – Protect Your Innovation with
               Expert Legal Assistance
-            </strong>
+          </h1>
+          <p className="text-[#5A4C33] text-lg leading-relaxed mb-8">
             <br />
             <br />
             <strong>
