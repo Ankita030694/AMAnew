@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Our Vision | The Future of Legal Services at AMA Legal Solutions',
+  title: 'Our Vision | Future of Legal Services at AMA Legal',
   description: 'Learn about AMA Legal Solutions commitment to innovation, integrity, and client-focused legal solutions as we pave the way for the future of legal services',
 }
 
