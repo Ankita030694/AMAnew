@@ -31,8 +31,7 @@ export default function page() {
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="mb-12">
           <h1 className="text-4xl font-bold text-center mb-8 text-black">
-            Loan Settlement Services – Expert Legal Assistance to Reduce Your
-            Debt Burden
+          Loan Settlement Services | Expert Help to Reduce Debt Burden
           </h1>
           <p className="text-[#5A4C33] text-lg leading-relaxed mb-8">
             <br />

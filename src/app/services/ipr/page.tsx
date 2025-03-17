@@ -31,8 +31,7 @@ export default function page() {
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="mb-12">
         <h1 className="text-4xl font-bold text-center mb-8 text-black">
-        Intellectual Property Rights (IPR) – Protect Your Innovation with
-              Expert Legal Assistance
+        Intellectual Property Rights | Protect Your Innovation Legally
           </h1>
           <p className="text-[#5A4C33] text-lg leading-relaxed mb-8">
             <br />

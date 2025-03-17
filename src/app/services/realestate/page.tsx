@@ -31,8 +31,7 @@ export default function page() {
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="mb-12">
           <h1 className="text-4xl font-bold text-center mb-8 text-black">
-            Real Estate Legal Services – Trusted Legal Support for Property
-            Transactions & Disputes
+          Real Estate Legal Services | Support for Transactions & Disputes
           </h1>
           <p className="text-[#5A4C33] text-lg leading-relaxed mb-8">
             <br />
