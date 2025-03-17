@@ -1,6 +1,6 @@
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../../lib/firebase';
-import { Metadata, ResolvingMetadata } from 'next';
+import { Metadata } from 'next';
 
 // Generate a slug function (same as in your other components)
 const generateSlug = (title: string): string => {
