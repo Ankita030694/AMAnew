@@ -1,6 +1,6 @@
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../../lib/firebase';
-import { Metadata } from 'next';
+import { Metadata, ResolvingMetadata } from 'next';
 
 // Generate a slug function (same as in your other components)
 const generateSlug = (title: string): string => {
@@ -12,12 +12,11 @@ const generateSlug = (title: string): string => {
     .trim();
 };
 
-// Dynamic metadata generation
-export async function generateMetadata({
-  params
-}: {
-  params: { slug: string }
-}): Promise<Metadata> {
+// Dynamic metadata generation using proper Next.js types
+export async function generateMetadata(
+  { params }: { params: { slug: string } },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
   const slug = params.slug;
   
   // Default metadata in case we can't find the blog
@@ -26,7 +25,7 @@ export async function generateMetadata({
   
   try {
     // Fetch blogs from Firebase
-    const blogsCollection = collection(db, 'articles');
+    const blogsCollection = collection(db, 'blogs');
     const querySnapshot = await getDocs(blogsCollection);
     
     // Find the matching blog by slug
