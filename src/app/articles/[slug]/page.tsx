@@ -14,10 +14,10 @@ const generateSlug = (title: string): string => {
 
 // Dynamic metadata generation - fix the parameter typing
 export async function generateMetadata(
-  { params }: { params: { slug: string } },
+  props: { params: { slug: string } },
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const slug = params.slug;
+  const slug = props.params.slug;
   
   // Default metadata in case we can't find the blog
   let title = 'Blog Post | AMA Legal Solutions';
