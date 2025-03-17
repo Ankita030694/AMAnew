@@ -21,9 +21,8 @@ type Props = {
 export async function generateMetadata(
   { params }: Props
 ): Promise<Metadata> {
-  // Await the params object
-  const resolvedParams = await params;
-  const slug = resolvedParams.slug;
+  // Don't await params - it's already a resolved object
+  const slug = params.slug;
   
   // Default metadata in case we can't find the blog
   let title = 'Blog Post | AMA Legal Solutions';
