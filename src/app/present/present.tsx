@@ -40,9 +40,9 @@ const PresentPage = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-4xl font-bold text-[#5A4C33] mb-4">
+          <h1 className="text-4xl font-bold text-[#5A4C33] mb-4">
             AMA Legal Solutions
-          </h2>
+          </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mx-auto"></div>
           <p className="text-[#5A4C33]/80 mt-6 max-w-2xl mx-auto">
             Transforming Legal Services Across India and Beyond

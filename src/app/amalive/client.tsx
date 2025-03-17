@@ -132,12 +132,12 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.1 }}
         >
-          <h2 
+          <h1 
             className="text-2xl md:text-3xl font-medium"
             style={{ color: '#5A4C33' }}
           >
             Watch Our Latest Video Sessions
-          </h2>
+          </h1>
           <p className="text-gray-600 mt-2">
             Explore in-depth discussions about employee benefits, insurance, and wellness
           </p>
