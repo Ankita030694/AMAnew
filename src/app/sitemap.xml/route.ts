@@ -23,6 +23,7 @@ export async function GET(): Promise<Response> {
     '/locations/kolkata', 
     '/locations/mumbai',
     '/locations/newdelhi',
+    '/services',
     '/services/arbitration',
     '/services/banking',
     '/services/civil',
@@ -35,6 +36,9 @@ export async function GET(): Promise<Response> {
     '/services/litigation',
     '/services/loansettlement',
     '/services/realestate',
+    '/ourhistory',
+    '/present',
+    '/ourvision',
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
