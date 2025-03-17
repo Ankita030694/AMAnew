@@ -13,9 +13,9 @@ const generateSlug = (title: string): string => {
 };
 
 // Dynamic metadata generation using proper Next.js types
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function generateMetadata(
   { params }: { params: { slug: string } },
+  // @ts-ignore
   _parent: ResolvingMetadata
 ): Promise<Metadata> {
   const slug = params.slug;
