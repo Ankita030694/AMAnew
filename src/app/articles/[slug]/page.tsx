@@ -26,7 +26,7 @@ export async function generateMetadata(
 
   try {
     // Fetch blogs from Firebase
-    const blogsCollection = collection(db, "blogs")
+    const blogsCollection = collection(db, "articles")
     const querySnapshot = await getDocs(blogsCollection)
 
     // Find the matching blog by slug
@@ -43,7 +43,7 @@ export async function generateMetadata(
       }
     }
   } catch (error) {
-    console.error("Error fetching blog metadata:", error)
+    console.error("Error fetching article metadata:", error)
   }
 
   return {
