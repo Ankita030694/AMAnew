@@ -2,8 +2,8 @@ import Link from "next/link";
 
 
 export const metadata = {
-  title: 'Loan Settlement Experts | Reduce Debt Legally',
-  description: 'Watch our latest video sessions discussing employee benefits, insurance, wellness, and other legal topics, presented by AMA Legal Solutions in GurugramStruggling with loan repayment? AMA Legal Solutions provides professional loan settlement services to help you negotiate and resolve debt legally',
+  title: 'IPR & Trademark Protection | AMA Legal Solutions',
+  description: 'Safeguard your intellectual property with AMA Legal Solutions. We offer trademark registration, copyright protection, and patent filing services',
 }
 export default function page() {
   // Sample service data (replace with your actual content)
