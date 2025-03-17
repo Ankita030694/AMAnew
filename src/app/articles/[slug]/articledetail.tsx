@@ -18,8 +18,12 @@ interface Article {
   metaDescription?: string;
 }
 
-export default function ArticlePostPage() {
-  const { slug } = useParams();
+// Define props interface
+interface ArticleDetailProps {
+  slug: string;
+}
+
+const ArticleDetail: React.FC<ArticleDetailProps> = ({ slug }) => {
   const [blog, setBlog] = useState<Article | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentUrl, setCurrentUrl] = useState('');
@@ -223,4 +227,6 @@ export default function ArticlePostPage() {
       </div>
     </div>
   );
-}
+};
+
+export default ArticleDetail;
