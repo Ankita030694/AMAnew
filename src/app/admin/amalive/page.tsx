@@ -28,7 +28,6 @@ interface TableData {
 // }
 
 const BlogsDashboard = () => {
-  const [animationState, setAnimationState] = useState('initial'); // initial, welcome, dashboard
   const [activeTab, setActiveTab] = useState('amalive');
   const [tableData, setTableData] = useState<TableData[]>([]);
   const [showBlogForm, setShowBlogForm] = useState(false);
@@ -89,22 +88,7 @@ const BlogsDashboard = () => {
     fetchData();
   }, []);
 
-  // Handle animation sequence
-  useEffect(() => {
-    // Start with black screen
-    const welcomeTimer = setTimeout(() => {
-      setAnimationState('welcome'); // Show Hello Anuj Bhiya
 
-      // After showing welcome, transition to dashboard
-      const dashboardTimer = setTimeout(() => {
-        setAnimationState('dashboard');
-      }, 1500); // 1.5 seconds as requested
-
-      return () => clearTimeout(dashboardTimer);
-    }, 500);
-
-    return () => clearTimeout(welcomeTimer);
-  }, []);
 
   // Handle form submission for new video
   const handleSubmitVideo = async (e: React.FormEvent) => {
@@ -141,58 +125,11 @@ const BlogsDashboard = () => {
 
   return (
     <div className="min-h-screen overflow-hidden relative">
-      {/* Black background that fades out */}
-      <AnimatePresence>
-        {animationState === 'initial' && (
-          <motion.div
-            key="black-background"
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.5 }}
-            className="absolute inset-0 bg-black z-50"
-          />
-        )}
-      </AnimatePresence>
-
-      {/* Welcome message that fades in and out */}
-      <AnimatePresence>
-        {animationState === 'welcome' && (
-          <motion.div
-            key="welcome-message"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.7 }}
-            className="absolute inset-0 flex items-center justify-center z-40 bg-[#F8F5EC]"
-          >
-            <motion.div
-              className="text-center"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ 
-                duration: 0.8,
-                ease: [0.34, 1.56, 0.64, 1] // Spring-like ease
-              }}
-            >
-              <h1 className="text-5xl font-bold text-[#5A4C33]">
-                Hello Anuj Bhiya
-              </h1>
-              <motion.div 
-                className="w-48 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mx-auto mt-4"
-                initial={{ width: 0 }}
-                animate={{ width: "12rem" }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* Main Dashboard */}
       <motion.div 
         className="min-h-screen bg-[#F8F5EC] flex flex-col mt-20"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: animationState === 'dashboard' ? 1 : 0 }}
+        initial={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
       >
         {/* Decorative background elements */}
