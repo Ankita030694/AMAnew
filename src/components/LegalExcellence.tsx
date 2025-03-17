@@ -95,9 +95,9 @@ export default function LegalExcellence() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h2 className="text-sm md:text-base font-semibold text-[#5A4C33] tracking-wide uppercase">Voices of Success</h2>
-            <h1 className="mt-2 text-4xl font-bold text-[#000000] sm:tracking-tight">
+            <h2 className="mt-2 text-4xl font-bold text-[#000000] sm:tracking-tight">
               Client Testimonials
-            </h1>
+            </h2>
             <div className="relative mt-5 mb-10">
               <div className="absolute inset-0 flex items-center" aria-hidden="true">
                 <div className="w-full border-t border-[#5A4C33] opacity-20"></div>

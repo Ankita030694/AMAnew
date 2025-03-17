@@ -79,9 +79,9 @@ export default function Clients() {
     <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="bg-gray-100 rounded-lg shadow-xl -mt-32 md:-mt-40">
         <div className="p-8 md:p-12">
-          <h1 className="font-bold text-center text-[#5A4C33] mb-8 text-4xl">
+          <h2 className="font-bold text-center text-[#5A4C33] mb-8 text-4xl">
             Providing Solutions To
-          </h1>
+          </h2>
           <div
             className="relative"
             ref={carouselRef}

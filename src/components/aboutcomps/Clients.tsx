@@ -60,7 +60,7 @@ export default function Clients() {
       <div className="bg-white/20 backdrop-blur-sm rounded-lg shadow-xl -mt-32 md:-mt-40">
         <div className="p-8 md:p-8">
           <h1 className="font-bold text-center text-[#5A4C33] mb-8 text-4xl">
-            Our Affiliations
+            About Us
           </h1>
           {/* <div className="relative flex justify-center">
               <span className="px-4 bg-white text-[#D2A02A]">

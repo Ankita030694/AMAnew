@@ -17,7 +17,7 @@ const TributeCard = () => {
         />
       </div>
       <div className="flex-1 text-center md:text-left">
-        <h1 className="text-4xl font-bold tracking-wide">Late Adv. R.C. Malik</h1>
+        <h2 className="text-4xl font-bold tracking-wide">Late Adv. R.C. Malik</h2>
         <h2 className="text-lg sm:text-xl mt-4 text-gray-700 font-medium">Ex-Comptroller and Auditor General of India</h2>
         <h3 className="text-base sm:text-lg text-gray-700">Director General of Audit (Central-Receipt)</h3>
         <p className="mt-6 text-gray-600 leading-relaxed max-w-3xl text-sm sm:text-base">
