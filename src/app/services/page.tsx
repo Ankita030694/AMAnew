@@ -15,6 +15,9 @@ import Locations from "@/components/locations";
 export const metadata = {
   title: 'Legal Services in Gurugram | AMA Legal Solutions',
   description: 'Explore our comprehensive legal services, including banking and finance law, loan settlements, intellectual property rights, and more in India,UK & Dubai.',
+  alternates: {
+    canonical: 'https://amalegalsolutions.com/services', // Add your canonical URL here
+  },
 }
 export default function Services() {
   // Removed client-side hooks and animations
