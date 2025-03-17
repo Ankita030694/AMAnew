@@ -12,16 +12,12 @@ const generateSlug = (title: string): string => {
     .trim();
 };
 
-// Type for generateMetadata params
-type Props = {
-  params: { slug: string }
-}
-
 // Dynamic metadata generation
-export async function generateMetadata(
-  { params }: Props
-): Promise<Metadata> {
-  // Don't await params - it's already a resolved object
+export async function generateMetadata({
+  params
+}: {
+  params: { slug: string }
+}): Promise<Metadata> {
   const slug = params.slug;
   
   // Default metadata in case we can't find the blog
