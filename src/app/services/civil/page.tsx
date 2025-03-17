@@ -4,6 +4,9 @@ export const metadata = {
   title: "Civil Law Services in Gurugram | AMA Legal Solutions",
   description:
     "Protect your legal rights with expert civil law services from AMA Legal Solutions, offering solutions for individuals and businesses in Gurugram, Haryana.",
+    alternates: {
+    canonical: 'https://amalegalsolutions.com/services/civil', // Add your canonical URL here
+  },
 };
 export default function page() {
   // Sample service data (replace with your actual content)

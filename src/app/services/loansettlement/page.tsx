@@ -4,6 +4,9 @@ export const metadata = {
   title: "Loan Settlement Experts | Reduce Debt Legally",
   description:
     "Struggling with loan repayment? AMA Legal Solutions provides professional loan settlement services to help you negotiate and resolve debt legally",
+    alternates: {
+    canonical: 'https://amalegalsolutions.com/services/loansettlement', // Add your canonical URL here
+  },
 };
 export default function page() {
   // Sample service data (replace with your actual content)

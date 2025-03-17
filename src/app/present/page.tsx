@@ -1,6 +1,9 @@
 export const metadata = {
   title: 'AMA Legal Solutions | Leading Legal Firm in India',
   description: 'Discover how AMA Legal Solutions is shaping the present with cutting-edge legal solutions in banking, finance, corporate law, and more across India',
+  alternates: {
+    canonical: 'https://amalegalsolutions.com/present', // Add your canonical URL here
+  },
 }
 
 // Then import and use your client component:

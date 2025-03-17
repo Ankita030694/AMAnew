@@ -3,6 +3,9 @@ import Link from "next/link";
 export const metadata = {
   title: 'Corporate Legal Services | Business Law Experts',
   description: 'Get professional legal support for business contracts, corporate compliance, mergers & acquisitions, and company disputes at AMA Legal Solutions',
+  alternates: {
+    canonical: 'https://amalegalsolutions.com/services/corporate', // Add your canonical URL here
+  },
 }
 export default function page() {
   // Sample service data (replace with your actual content)

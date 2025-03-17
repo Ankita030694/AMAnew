@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata = {
   title: 'Litigation & Legal Representation | AMA Legal Solutions',
   description: 'Strong legal representation in court matters. AMA Legal Solutions offers expert litigation services for civil, criminal, corporate, and arbitration cases',
+  alternates: {
+    canonical: 'https://amalegalsolutions.com/services/litigation', // Add your canonical URL here
+  },
 }
 export default function page() {
   // Sample service data (replace with your actual content)

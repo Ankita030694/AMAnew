@@ -3,6 +3,9 @@ import Link from "next/link";
 export const metadata = {
   title: 'Legal Drafting & Documentation | AMA Legal Solutions',
   description: 'Need precise legal documents? Our experts provide drafting services for contracts, agreements, legal notices, and more. Get legally sound documents today',
+  alternates: {
+    canonical: 'https://amalegalsolutions.com/services/drafting', // Add your canonical URL here
+  },
 }
 export default function page() {
   // Sample service data (replace with your actual content)

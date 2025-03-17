@@ -4,6 +4,9 @@ export const metadata = {
   title: "Real Estate Legal Solutions | AMA Legal Solutions",
   description:
     "Need legal help in property transactions, land disputes, or real estate compliance? AMA Legal Solutions provides expert guidance for individuals & businesses",
+    alternates: {
+    canonical: 'https://amalegalsolutions.com/services/realestate', // Add your canonical URL here
+  },
 };
 export default function page() {
   // Sample service data (replace with your actual content)

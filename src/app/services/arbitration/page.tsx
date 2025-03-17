@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata = {
   title: 'Arbitration & Dispute Resolution | AMA Legal Solutions',
   description: 'Resolve disputes efficiently with expert arbitration services. AMA Legal Solutions offers alternative dispute resolution for businesses and individuals',
+  alternates: {
+    canonical: 'https://amalegalsolutions.com/services/arbitration', // Add your canonical URL here
+  },
 }
 export default function page() {
   // Sample service data (replace with your actual content)

@@ -7,6 +7,9 @@ import { getVideos } from '@/lib/api';
 export const metadata = {
   title: 'AMA Live | Legal Video Sessions in Gurugram',
   description: 'Watch our latest video sessions discussing employee benefits, insurance, wellness, and other legal topics, presented by AMA Legal Solutions in Gurugram',
+  alternates: {
+    canonical: 'https://amalegalsolutions.com/amalive', // Add your canonical URL here
+  },
 }
 // This is a Server Component that fetches data
 export default async function AmaLivePage() {

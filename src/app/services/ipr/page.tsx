@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata = {
   title: 'IPR & Trademark Protection | AMA Legal Solutions',
   description: 'Safeguard your intellectual property with AMA Legal Solutions. We offer trademark registration, copyright protection, and patent filing services',
+  alternates: {
+    canonical: 'https://amalegalsolutions.com/services/ipr', // Add your canonical URL here
+  },
 }
 export default function page() {
   // Sample service data (replace with your actual content)

@@ -4,6 +4,9 @@ export const metadata = {
   title: "Entertainment Law & Media Contracts | AMA Legal Solutions",
   description:
     "Protect your creative rights with expert legal support in entertainment law, media contracts, copyright, and licensing. Get legal advice from industry professionals",
+    alternates: {
+    canonical: 'https://amalegalsolutions.com/services/entertainment', // Add your canonical URL here
+  },
 };
 export default function page() {
   // Sample service data (replace with your actual content)

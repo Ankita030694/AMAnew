@@ -3,6 +3,9 @@ import Link from "next/link";
 export const metadata = {
   title: 'IT & Cyber Law Services in Gurugram | AMA Legal Solutions',
   description: 'Safeguard your digital interests with AMA Legal Solutions IT and cyber law services, addressing cybercrime',
+  alternates: {
+    canonical: 'https://amalegalsolutions.com/services/cyber', // Add your canonical URL here
+  },
 }
 export default function page() {
   // Sample service data (replace with your actual content)

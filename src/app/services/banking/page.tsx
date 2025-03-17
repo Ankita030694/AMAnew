@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata = {
   title: 'Expert Banking Law Services | AMA Legal Solutions',
   description: 'Get expert legal assistance in banking and finance law, covering regulatory compliance, banking disputes, and loan settlements with AMA Legal Solutions',
+  alternates: {
+    canonical: 'https://amalegalsolutions.com/services/banking', // Add your canonical URL here
+  },
 }
 export default function page() {
   // Sample service data (replace with your actual content)

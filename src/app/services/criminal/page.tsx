@@ -3,6 +3,9 @@ import Link from "next/link";
 export const metadata = {
   title: 'Criminal Defense Lawyers | AMA Legal Solutions',
   description: 'Defend your rights with experienced criminal lawyers at AMA Legal Solutions. Get expert legal representation in criminal cases, bail matters, and litigation',
+  alternates: {
+    canonical: 'https://amalegalsolutions.com/services/criminal', // Add your canonical URL here
+  },
 }
 export default function page() {
   // Sample service data (replace with your actual content)
