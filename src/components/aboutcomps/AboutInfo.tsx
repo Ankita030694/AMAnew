@@ -10,9 +10,9 @@ const AboutInfo = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <h1 className="text-4xl font-bold text-center mb-2 text-[#5A4C33]">
-        About Us
-      </h1>
+      <h2 className="text-4xl font-bold text-center mb-2 text-[#5A4C33]">
+        Introduction
+      </h2>
       <div className="relative flex items-center justify-center mb-5">
             <div className="h-[1px] bg-[#D2A02A] w-24"></div>
             <span className="px-4 bg-white text-[#D2A02A]">
