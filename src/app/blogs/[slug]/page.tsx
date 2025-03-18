@@ -13,12 +13,12 @@ const generateSlug = (title: string): string => {
     .trim();
 };
 
-// Dynamic metadata generation - updated to handle Promise-based params
+// Fixed params type - removed Promise wrapper
 export async function generateMetadata(
-  props: { params: Promise<{ slug: string }> },
+  { params }: { params: { slug: string } },
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const { slug } = await props.params;
+  const { slug } = params;
 
   // Default metadata in case we can't find the blog
   let title = "Blog Post | AMA Legal Solutions";
@@ -55,18 +55,21 @@ export async function generateMetadata(
     description,
     alternates: {
       canonical: `${baseUrl}/blogs/${slug}`
+    },
+    // Ensure proper canonical URL format
+    openGraph: {
+      url: `${baseUrl}/blogs/${slug}`
     }
   };
 }
 
-// Updated Page component to handle Promise-based params
+// Fixed Page component - removed Promise wrapper from params
 export default async function Page({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }) {
-  const resolvedParams = await params;
-  const slug = resolvedParams.slug;
+  const { slug } = params;
   
   // Get the title from Firebase for the H1 tag
   let pageTitle = "Latest Insights from AMA Legal Solutions";
