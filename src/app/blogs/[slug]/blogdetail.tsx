@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../../lib/firebase';
-import { useParams } from 'next/navigation';
 import Link from 'next/link';
 
 // Define the Blog interface
@@ -18,8 +17,12 @@ interface Blog {
   metaDescription?: string;
 }
 
-export default function BlogPostPage() {
-  const { slug } = useParams();
+// Add this interface for props
+interface BlogDetailProps {
+  slug: string;
+}
+
+export default function ArticleDetail({ slug }: BlogDetailProps) {
   const [blog, setBlog] = useState<Blog | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentUrl, setCurrentUrl] = useState('');
@@ -122,9 +125,7 @@ export default function BlogPostPage() {
       {/* Header Banner */}
       <div className="w-full bg-[#5A4C33] text-center py-16">
         <div className="container mx-auto px-4 mt-20">
-          <h1 className='anything'>
-            anything
-          </h1>
+         
           <h1 className="text-4xl md:text-5xl font-bold text-[#D2A02A] mb-2">
             {blog.title}
           </h1>
