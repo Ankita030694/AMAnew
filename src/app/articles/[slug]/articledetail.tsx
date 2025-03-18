@@ -49,8 +49,8 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ slug }) => {
             .replace(/\s+/g, '-')
             .replace(/-+/g, '-')
             .trim();
-            
-          if (blogSlug === slug) {
+            const truncatedTitle = blogSlug.slice(0, 30);
+          if (truncatedTitle === slug) {
             foundArticle = {
               id: doc.id,
               ...data

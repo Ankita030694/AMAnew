@@ -5,7 +5,8 @@ import ArticleDetail from "./articledetail";
 
 // Generate a slug function (same as in your other components)
 const generateSlug = (title: string): string => {
-  return title
+  const truncatedTitle = title.slice(0, 30);
+  return truncatedTitle
     .toLowerCase()
     .replace(/[^\w\s-]/g, "")
     .replace(/\s+/g, "-")

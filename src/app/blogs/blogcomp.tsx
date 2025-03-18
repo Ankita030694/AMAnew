@@ -36,7 +36,8 @@ const hoverVariants = {
 
 // Function to generate a slug from a title
 const generateSlug = (title: string): string => {
-  return title
+  const truncatedTitle = title.slice(0, 30);
+  return truncatedTitle
     .toLowerCase()
     .replace(/[^\w\s-]/g, '') // Remove special characters
     .replace(/\s+/g, '-') // Replace spaces with hyphens

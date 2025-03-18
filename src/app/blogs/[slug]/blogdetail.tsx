@@ -48,8 +48,9 @@ export default function ArticleDetail({ slug }: BlogDetailProps) {
             .replace(/\s+/g, '-')
             .replace(/-+/g, '-')
             .trim();
+          const truncatedTitle = blogSlug.slice(0, 30);
             
-          if (blogSlug === slug) {
+          if (truncatedTitle === slug) {
             foundBlog = {
               id: doc.id,
               ...data
