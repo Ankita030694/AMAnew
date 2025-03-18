@@ -25,7 +25,7 @@ export async function generateMetadata(
   let description =
     "Read our latest insights and articles at AMA Legal Solutions";
     // Base URL for canonical link - replace with your actual domain
-  const baseUrl = "https://amalegalsolutions.com"; // Update this with your domain
+  const baseUrl = "https://www.amalegalsolutions.com"; // Update this with your domain
 
 
   try {
