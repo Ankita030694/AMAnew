@@ -63,14 +63,16 @@ export async function generateMetadata(
   };
 }
 
-// Use the correct type definition that Next.js expects
-interface PageProps {
-  params: { slug: string };
+// Handle the unusual Promise-wrapped params type
+type PageProps = {
+  params: { slug: string } & Promise<any>;
   searchParams?: Record<string, string | string[]>;
-}
+};
 
-export default async function Page(props: PageProps) {
-  const { slug } = props.params;
+export default async function Page(props: any) {
+  // Cast to get the correct typing
+  const { params } = props as { params: { slug: string } };
+  const { slug } = params;
   
   // Get the title from Firebase for the H1 tag
   let pageTitle = "Latest Insights from AMA Legal Solutions";
