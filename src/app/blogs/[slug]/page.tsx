@@ -24,6 +24,9 @@ export async function generateMetadata(
   let title = "Blog Post | AMA Legal Solutions";
   let description =
     "Read our latest insights and articles at AMA Legal Solutions";
+  
+  // Base URL for canonical link - replace with your actual domain
+  const baseUrl = "https://amalegalsolutions.com"; // Update this with your domain
 
   try {
     // Fetch blogs from Firebase
@@ -50,6 +53,9 @@ export async function generateMetadata(
   return {
     title,
     description,
+    alternates: {
+      canonical: `${baseUrl}/blogs/${slug}`
+    }
   };
 }
 
