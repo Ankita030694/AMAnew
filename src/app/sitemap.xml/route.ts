@@ -121,7 +121,8 @@ async function fetchAllArticles() {
 
 // Utility function to convert title to slug (same as used in your app)
 function convertToSlug(title: string) {
-  return title
+  const truncatedTitle = title.slice(0, 30);
+  return truncatedTitle
     .toLowerCase()
     .replace(/[^\w\s-]/g, '')
     .replace(/\s+/g, '-')
