@@ -559,8 +559,7 @@ const ContactComp = () => {
             Legal Solutions is the place for you. We welcome applications from
             dedicated individuals who are eager to make an impact in the legal
             field. To explore career opportunities with us, submit your resume
-            at Career@amalegalsolutions.com or visit our office in Sector-57,
-            Gurugram. Let's build a future of legal excellence together!
+            at 
           </p>
 
           <div className="flex items-center justify-center text-xl font-medium text-[#D2A02A]">
