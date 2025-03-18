@@ -63,13 +63,14 @@ export async function generateMetadata(
   };
 }
 
-// Fixed Page component - removed Promise wrapper from params
-export default async function Page({
-  params,
-}: {
+// Use the correct type definition that Next.js expects
+interface PageProps {
   params: { slug: string };
-}) {
-  const { slug } = params;
+  searchParams?: Record<string, string | string[]>;
+}
+
+export default async function Page(props: PageProps) {
+  const { slug } = props.params;
   
   // Get the title from Firebase for the H1 tag
   let pageTitle = "Latest Insights from AMA Legal Solutions";
