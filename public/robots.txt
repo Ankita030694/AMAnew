@@ -1,4 +1,6 @@
 User-agent: *
 Disallow: /admin/
 Allow: /
+Allow: /blog/
+Allow: /articles/
 Sitemap: https://www.amalegalsolutions.com/sitemap.xml
