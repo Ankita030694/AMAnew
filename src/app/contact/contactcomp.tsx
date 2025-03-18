@@ -11,6 +11,7 @@ import {
   faBriefcase,
 } from "@fortawesome/free-solid-svg-icons";
 import { collection, addDoc } from "../../lib/firebase";
+import { serverTimestamp } from "firebase/firestore";
 import { db } from "../../lib/firebase"; // adjust the path as needed
 import payu from "../../../public/payu.png";
 
@@ -119,8 +120,11 @@ const ContactComp = () => {
     setIsSubmitting(true);
 
     try {
-      // Save formState to Firestore collection "form"
-      await addDoc(collection(db, "form"), formState);
+      // Save formState to Firestore collection "form" with timestamp
+      await addDoc(collection(db, "form"), {
+        ...formState,
+        timestamp: serverTimestamp() // Add server timestamp
+      });
       setSubmitted(true);
 
       // Reset form after delay
@@ -546,7 +550,7 @@ const ContactComp = () => {
             environment and have a keen eye for detail, we would love to hear
             from you. At AMA, we foster a culture of teamwork, innovation, and
             professional development. We understand that the legal industry is
-            constantly evolving, and we invest in our team’s growth by providing
+            constantly evolving, and we invest in our team's growth by providing
             training, resources, and opportunities to work on challenging cases.
             Our firm values work-life balance, ensuring that our professionals
             can maintain high performance without compromising personal
@@ -556,7 +560,7 @@ const ContactComp = () => {
             dedicated individuals who are eager to make an impact in the legal
             field. To explore career opportunities with us, submit your resume
             at Career@amalegalsolutions.com or visit our office in Sector-57,
-            Gurugram. Let’s build a future of legal excellence together!
+            Gurugram. Let's build a future of legal excellence together!
           </p>
 
           <div className="flex items-center justify-center text-xl font-medium text-[#D2A02A]">

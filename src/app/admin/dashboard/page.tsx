@@ -15,6 +15,8 @@ interface TableData {
   email: string;
   phone: string;
   message: string;
+  timestamp: string;
+  originalTimestamp: any;
 }
 
 interface FirebaseError {
@@ -55,14 +57,41 @@ const AdminDashboard = () => {
         const querySnapshot = await getDocs(collection(db, 'form'));
         const data = querySnapshot.docs.map(doc => {
           const docData = doc.data();
+          
+          // Store original timestamp for sorting
+          const originalTimestamp = docData.timestamp;
+          
+          // Format timestamp (if it exists) or provide a fallback
+          let timestamp = '-';
+          if (docData.timestamp) {
+            // Handle Firestore timestamp
+            timestamp = docData.timestamp.toDate ? 
+              docData.timestamp.toDate().toLocaleString() : 
+              docData.timestamp;
+          }
+          
           return {
             id: doc.id,
             name: docData.name || '-',
             email: docData.email || '-',
             message: docData.message || '-',
-            phone: docData.phone || '-'
+            phone: docData.phone || '-',
+            timestamp: timestamp,
+            originalTimestamp: originalTimestamp // Keep original for sorting
           };
         });
+
+        // Sort data by timestamp in descending order (newest first)
+        data.sort((a, b) => {
+          if (!a.originalTimestamp) return 1;
+          if (!b.originalTimestamp) return -1;
+          
+          const timeA = a.originalTimestamp.toDate ? a.originalTimestamp.toDate().getTime() : 0;
+          const timeB = b.originalTimestamp.toDate ? b.originalTimestamp.toDate().getTime() : 0;
+          
+          return timeB - timeA; // Descending order
+        });
+        
         setTableData(data);
       } catch (error) {
         const firebaseError = error as FirebaseError; // Type assertion
@@ -206,7 +235,7 @@ const AdminDashboard = () => {
               <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-[#F0EAD6]">
                   <tr>
-                    {['ID', 'Name', 'Email', 'Number', 'Message', 'Actions'].map((header, index) => (
+                    {['Date & Time', 'Name', 'Email', 'Number', 'Message', 'Actions'].map((header, index) => (
                       <th key={index} className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">
                         {header}
                       </th>
@@ -216,7 +245,7 @@ const AdminDashboard = () => {
                 <tbody className="bg-white divide-y divide-gray-200">
                   {tableData.map((row) => (
                     <tr key={row.id} className="hover:bg-[#F8F5EC] transition-colors duration-150">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#5A4C33]">{row.id}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#5A4C33]">{row.timestamp}</td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.name}</td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.email}</td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.phone}</td>
