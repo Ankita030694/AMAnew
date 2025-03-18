@@ -87,7 +87,7 @@ export default async function Page({
 
   return (
     <>
-      <h1 className="sr-only">{pageTitle} | AMA Legal Insights</h1>
+      <h1 className="sr-only">AMA Legal Insights</h1>
       <ArticleDetail slug={slug} />
     </>
   );
