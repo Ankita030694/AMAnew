@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUsers, faChartLine, faClipboardList, faCog } from '@fortawesome/free-solid-svg-icons';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { db, auth } from '../../../lib/firebase'; // adjust the path as needed
 import { useRouter } from 'next/navigation';
@@ -106,6 +106,30 @@ const AdminDashboard = () => {
         setActiveTab(itemId);
     }
   };
+
+  // Handle document deletion
+  const handleDelete = async (id: string) => {
+    try {
+      // Delete the document from Firestore
+      if (confirm('Are you sure you want to delete this entry?')) {
+        await deleteDoc(doc(db, 'form', id));
+        
+      // Update the local state by filtering out the deleted document
+      setTableData(tableData.filter(item => item.id !== id));
+      
+      // Optional: Show a success message
+      alert('Entry deleted successfully');
+    } else {
+      alert('Entry not deleted');
+    }
+    } catch (error) {
+      const firebaseError = error as FirebaseError;
+      console.error("Error deleting document:", firebaseError);
+      // Optional: Show an error message
+      alert('Failed to delete entry: ' + firebaseError.message);
+    }
+  };
+
   return (
     <div className="min-h-screen overflow-hidden relative">
      
@@ -202,13 +226,7 @@ const AdminDashboard = () => {
                           <motion.button
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
-                            className="px-3 py-1 bg-blue-500 text-white rounded-md text-xs"
-                          >
-                            Edit
-                          </motion.button>
-                          <motion.button
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
+                            onClick={() => handleDelete(row.id)}
                             className="px-3 py-1 bg-red-500 text-white rounded-md text-xs"
                           >
                             Delete
