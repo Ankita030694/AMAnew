@@ -5,7 +5,13 @@ import Link from "next/link";
 
 
 // Testimonials data
-
+export const metadata = {
+  title: 'Terms and Conditions | AMA Legal Solutions',
+  description: 'Read the Terms and Conditions of AMA Legal Solutions. Understand our legal services, client obligations, fees, confidentiality, and governing law.',
+  alternates: {
+    canonical: 'https://amalegalsolutions.com/termscondition', // Add your canonical URL here
+  },
+}
 export default function Services() {
   const { scrollYProgress } = useScroll();
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);

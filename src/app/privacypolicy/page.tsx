@@ -5,7 +5,13 @@ import Link from "next/link";
 
 
 // Testimonials data
-
+export const metadata = {
+  title: 'Privacy Policy | AMA Legal Solutions',
+  description: 'Read AMA Legal Solutions Privacy Policy to understand how we collect, use, and protect your personal information. Learn about data security, rights, and disclosures',
+  alternates: {
+    canonical: 'https://amalegalsolutions.com/privacypolicy', // Add your canonical URL here
+  },
+}
 export default function Services() {
   const { scrollYProgress } = useScroll();
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
