@@ -112,6 +112,22 @@ export default function Footer() {
                   info@amalegalsolutions.com
                 </a>
               </li>
+              <li>
+                <a
+                  href="/termscondition"
+                  className="hover:text-white transition-colors break-words"
+                >
+                  Terms & Conditions
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/privacypolicy"
+                  className="hover:text-white transition-colors break-words"
+                >
+                  Privacy Policy
+                </a>
+              </li>
             </ul>
           </div>
           {/* Practice Areas */}
