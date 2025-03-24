@@ -35,17 +35,6 @@ const hoverVariants = {
   }
 };
 
-// Function to generate a slug from a title
-const generateSlug = (title: string): string => {
-  const truncatedTitle = title.slice(0, 30);
-  return truncatedTitle
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, '') // Remove special characters
-    .replace(/\s+/g, '-') // Replace spaces with hyphens
-    .replace(/-+/g, '-') // Replace multiple hyphens with single hyphen
-    .trim(); // Remove leading/trailing spaces or hyphens
-};
-
 // Define the Article interface
 interface Article {
   id: string;
@@ -57,7 +46,7 @@ interface Article {
   created: number;
   metaTitle?: string;
   metaDescription?: string;
-  slug?: string; // Add slug to the interface
+  slug?: string; // Existing slug field in the interface
 }
 
 // Helper function to truncate text to a specific number of words
@@ -83,7 +72,6 @@ export default function Page() {
         const articlesData = querySnapshot.docs.map(doc => {
           const data = doc.data();
           const title = data.title || '';
-          const slug = generateSlug(title);
           
           return {
             id: doc.id,
@@ -95,7 +83,7 @@ export default function Page() {
             created: data.created || Date.now(),
             metaTitle: data.metaTitle || '',
             metaDescription: data.metaDescription || '',
-            slug: slug // Add the generated slug
+            slug: data.slug || '' // Use slug from the database instead of generating it
           };
         });
         

@@ -26,6 +26,7 @@ interface Blog {
   created: number;
   metaTitle?: string;
   metaDescription?: string;
+  slug: string;
 }
 
 const ArticlesDashboard = () => {
@@ -41,7 +42,8 @@ const ArticlesDashboard = () => {
     image: '',
     created: Date.now(),
     metaTitle: '',
-    metaDescription: ''
+    metaDescription: '',
+    slug: ''
   });
   const router = useRouter();
 
@@ -98,7 +100,8 @@ const ArticlesDashboard = () => {
             image: docData.image || '',
             created: docData.created || Date.now(),
             metaTitle: docData.metaTitle || '',
-            metaDescription: docData.metaDescription || ''
+            metaDescription: docData.metaDescription || '',
+            slug: docData.slug || ''
           };
         });
         setBlogs(data);
@@ -109,8 +112,6 @@ const ArticlesDashboard = () => {
 
     fetchBlogs();
   }, []);
-
-
 
   // Handle blog form input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -167,7 +168,8 @@ const ArticlesDashboard = () => {
           image: docData.image || '',
           created: docData.created || Date.now(),
           metaTitle: docData.metaTitle || '',
-          metaDescription: docData.metaDescription || ''
+          metaDescription: docData.metaDescription || '',
+          slug: docData.slug || ''
         };
       });
       setBlogs(updatedBlogs);
@@ -211,7 +213,8 @@ const ArticlesDashboard = () => {
       image: '',
       created: Date.now(),
       metaTitle: '',
-      metaDescription: ''
+      metaDescription: '',
+      slug: ''
     });
     setFormMode('add');
     setShowBlogForm(false);
@@ -220,6 +223,22 @@ const ArticlesDashboard = () => {
   // Cancel form handler
   const handleCancelForm = () => {
     resetForm();
+  };
+
+  // Handle title change to auto-generate slug
+  const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const title = e.target.value;
+    const generatedSlug = title
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, '') // Remove special chars
+      .replace(/\s+/g, '-') // Replace spaces with hyphens
+      .replace(/-+/g, '-'); // Replace multiple hyphens with single hyphen
+    
+    setNewBlog(prevState => ({
+      ...prevState,
+      title,
+      slug: generatedSlug
+    }));
   };
 
   return (
@@ -336,14 +355,33 @@ const ArticlesDashboard = () => {
                         id="title"
                         name="title"
                         value={newBlog.title}
-                        onChange={handleInputChange}
+                        onChange={handleTitleChange}
                         required
                         className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
                         placeholder="Enter article title"
                       />
                     </div>
                     
+                   
                     <div>
+                      <label htmlFor="slug" className="block text-sm font-medium text-[#5A4C33] mb-1">URL Slug</label>
+                      <input
+                        type="text"
+                        id="slug"
+                        name="slug"
+                        value={newBlog.slug}
+                        onChange={handleInputChange}
+                        required
+                        className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
+                        placeholder="url-friendly-slug"
+                      />
+                      <p className="mt-1 text-xs text-gray-500">Auto-generated from title. You can edit it if needed.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                  <div>
                       <label htmlFor="subtitle" className="block text-sm font-medium text-[#5A4C33] mb-1">Subtitle/SEO Keywords</label>
                       <input
                         type="text"
@@ -356,9 +394,6 @@ const ArticlesDashboard = () => {
                         placeholder="Enter subtitle or SEO keywords"
                       />
                     </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="metaTitle" className="block text-sm font-medium text-[#5A4C33] mb-1">Meta Title</label>
                       <input
@@ -371,7 +406,9 @@ const ArticlesDashboard = () => {
                         placeholder="Enter meta title for SEO"
                       />
                     </div>
-                    
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="date" className="block text-sm font-medium text-[#5A4C33] mb-1">Publication Date</label>
                       <input
@@ -384,9 +421,7 @@ const ArticlesDashboard = () => {
                         className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
                       />
                     </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
                     <div>
                       <label htmlFor="image" className="block text-sm font-medium text-[#5A4C33] mb-1">Image URL</label>
                       <input
@@ -400,7 +435,9 @@ const ArticlesDashboard = () => {
                         placeholder="Enter image URL"
                       />
                     </div>
-                    
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="metaDescription" className="block text-sm font-medium text-[#5A4C33] mb-1">Meta Description</label>
                       <input

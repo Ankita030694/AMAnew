@@ -39,18 +39,11 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ slug }) => {
         const querySnapshot = await getDocs(articlesCollection);
         let foundArticle = null;
         
-        // Generate slug for each blog and compare
+        // Use slug field from database instead of generating from title
         querySnapshot.docs.forEach(doc => {
           const data = doc.data();
-          const title = data.title || '';
-          const blogSlug = title
-            .toLowerCase()
-            .replace(/[^\w\s-]/g, '')
-            .replace(/\s+/g, '-')
-            .replace(/-+/g, '-')
-            .trim();
-            const truncatedTitle = blogSlug.slice(0, 30);
-          if (truncatedTitle === slug) {
+          // Check if the document has a slug field that matches
+          if (data.slug === slug) {
             foundArticle = {
               id: doc.id,
               ...data
