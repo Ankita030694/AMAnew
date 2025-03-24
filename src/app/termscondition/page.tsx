@@ -20,7 +20,7 @@ export default function Services() {
             muted
             playsInline
             className="absolute w-full h-full object-cover"
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "cover"  }}
           >
             <source src="/about.mp4" type="video/mp4" />
           </video>
@@ -30,10 +30,10 @@ export default function Services() {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white max-w-4xl px-4 z-10 flex flex-col items-center mt-12 md:mt-20">
             <div>
-              <h1 className="text-5xl font-bold mb-4 md:mb-8 text-shadow-lg relative text-center">
+              <h1 className="text-5xl font-bold mb-4 md:mb-8 text-shadow-lg relative text-center ">
                 <span className="inline-block">Terms & Conditions </span>
               </h1>
-            </div>
+            </div> 
 
             <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto text-center px-4">
               Review Our Terms and Conditions
