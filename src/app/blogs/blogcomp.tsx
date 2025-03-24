@@ -34,15 +34,13 @@ const hoverVariants = {
   }
 };
 
-// Function to generate a slug from a title
-const generateSlug = (title: string): string => {
-  const truncatedTitle = title.slice(0, 30);
-  return truncatedTitle
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, '') // Remove special characters
-    .replace(/\s+/g, '-') // Replace spaces with hyphens
-    .replace(/-+/g, '-') // Replace multiple hyphens with single hyphen
-    .trim(); // Remove leading/trailing spaces or hyphens
+// Helper function to truncate text to a specific number of words
+const truncateWords = (text: string, wordCount: number) => {
+  // Remove HTML tags
+  const strippedText = text.replace(/<[^>]*>/g, ' ');
+  const words = strippedText.split(/\s+/);
+  if (words.length <= wordCount) return strippedText;
+  return words.slice(0, wordCount).join(' ') + '...';
 };
 
 // Define the Blog interface
@@ -56,17 +54,8 @@ interface Blog {
   created: number;
   metaTitle?: string;
   metaDescription?: string;
-  slug?: string; // Add slug to the interface
+  slug: string; // Changed from optional to required
 }
-
-// Helper function to truncate text to a specific number of words
-const truncateWords = (text: string, wordCount: number) => {
-  // Remove HTML tags
-  const strippedText = text.replace(/<[^>]*>/g, ' ');
-  const words = strippedText.split(/\s+/);
-  if (words.length <= wordCount) return strippedText;
-  return words.slice(0, wordCount).join(' ') + '...';
-};
 
 export default function Page() {
   const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -81,12 +70,10 @@ export default function Page() {
         
         const blogsData = querySnapshot.docs.map(doc => {
           const data = doc.data();
-          const title = data.title || '';
-          const slug = generateSlug(title);
           
           return {
             id: doc.id,
-            title: title,
+            title: data.title || '',
             subtitle: data.subtitle || '',
             description: truncateWords(data.description || '', 20),
             date: data.date || '',
@@ -94,7 +81,7 @@ export default function Page() {
             created: data.created || Date.now(),
             metaTitle: data.metaTitle || '',
             metaDescription: data.metaDescription || '',
-            slug: slug // Add the generated slug
+            slug: data.slug || '' // Use slug directly from database
           };
         });
         

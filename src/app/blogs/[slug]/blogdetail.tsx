@@ -15,6 +15,7 @@ interface Blog {
   created?: number;
   metaTitle?: string;
   metaDescription?: string;
+  slug: string;
 }
 
 // Add this interface for props
@@ -33,24 +34,15 @@ export default function ArticleDetail({ slug }: BlogDetailProps) {
     
     const fetchBlogBySlug = async () => {
       try {
-        // First generate slugs and find matching document
+        // Fetch blogs and find the one with matching slug from the database
         const blogsCollection = collection(db, 'blogs');
         const querySnapshot = await getDocs(blogsCollection);
         let foundBlog = null;
         
-        // Generate slug for each blog and compare
+        // Find blog with matching slug directly from database
         querySnapshot.docs.forEach(doc => {
           const data = doc.data();
-          const title = data.title || '';
-          const blogSlug = title
-            .toLowerCase()
-            .replace(/[^\w\s-]/g, '')
-            .replace(/\s+/g, '-')
-            .replace(/-+/g, '-')
-            .trim();
-          const truncatedTitle = blogSlug.slice(0, 30);
-            
-          if (truncatedTitle === slug) {
+          if (data.slug === slug) {
             foundBlog = {
               id: doc.id,
               ...data

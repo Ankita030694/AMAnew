@@ -26,6 +26,7 @@ interface Blog {
   created: number;
   metaTitle?: string;
   metaDescription?: string;
+  slug: string; // New slug field for URLs
 }
 
 const BlogsDashboard = () => {
@@ -41,7 +42,8 @@ const BlogsDashboard = () => {
     image: '',
     created: Date.now(),
     metaTitle: '',
-    metaDescription: ''
+    metaDescription: '',
+    slug: '' // Initialize the slug field
   });
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
@@ -106,7 +108,8 @@ const BlogsDashboard = () => {
             image: docData.image || '',
             created: docData.created || Date.now(),
             metaTitle: docData.metaTitle || '',
-            metaDescription: docData.metaDescription || ''
+            metaDescription: docData.metaDescription || '',
+            slug: docData.slug || '' // Get the slug from database
           };
         });
         setBlogs(data);
@@ -135,13 +138,32 @@ const BlogsDashboard = () => {
   //   return () => clearTimeout(welcomeTimer);
   // }, []);
 
+  // Add a helper function to generate slug from title
+  const generateSlug = (title: string) => {
+    return title.toLowerCase()
+      .replace(/[^\w\s-]/g, '') // Remove special characters
+      .replace(/\s+/g, '-') // Replace spaces with hyphens
+      .replace(/--+/g, '-') // Replace multiple hyphens with single hyphen
+      .trim(); // Trim spaces from start and end
+  };
+
   // Handle blog form input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setNewBlog(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
+    setNewBlog(prevState => {
+      // If title field is changed, auto-generate slug (only if slug is empty or user hasn't modified it)
+      if (name === 'title' && (!prevState.slug || prevState.slug === generateSlug(prevState.title))) {
+        return {
+          ...prevState,
+          [name]: value,
+          slug: generateSlug(value)
+        };
+      }
+      return {
+        ...prevState,
+        [name]: value
+      };
+    });
   };
 
   // Handle Tiptap editor content changes
@@ -190,7 +212,8 @@ const BlogsDashboard = () => {
           image: docData.image || '',
           created: docData.created || Date.now(),
           metaTitle: docData.metaTitle || '',
-          metaDescription: docData.metaDescription || ''
+          metaDescription: docData.metaDescription || '',
+          slug: docData.slug || '' // Get the slug from database
         };
       });
       setBlogs(updatedBlogs);
@@ -234,7 +257,8 @@ const BlogsDashboard = () => {
       image: '',
       created: Date.now(),
       metaTitle: '',
-      metaDescription: ''
+      metaDescription: '',
+      slug: '' // Reset slug field
     });
     setFormMode('add');
     setShowBlogForm(false);
@@ -380,6 +404,23 @@ const BlogsDashboard = () => {
                     </div>
                     
                     <div>
+                      <label htmlFor="slug" className="block text-sm font-medium text-[#5A4C33] mb-1">URL Slug</label>
+                      <input
+                        type="text"
+                        id="slug"
+                        name="slug"
+                        value={newBlog.slug}
+                        onChange={handleInputChange}
+                        required
+                        className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
+                        placeholder="url-friendly-blog-name"
+                      />
+                      <p className="mt-1 text-xs text-gray-500">Will be used in the URL: /blog/{newBlog.slug}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
                       <label htmlFor="subtitle" className="block text-sm font-medium text-[#5A4C33] mb-1">Subtitle/SEO Keywords</label>
                       <input
                         type="text"
@@ -392,9 +433,7 @@ const BlogsDashboard = () => {
                         placeholder="Enter subtitle or SEO keywords"
                       />
                     </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
                     <div>
                       <label htmlFor="metaTitle" className="block text-sm font-medium text-[#5A4C33] mb-1">Meta Title</label>
                       <input
@@ -407,7 +446,9 @@ const BlogsDashboard = () => {
                         placeholder="Enter meta title for SEO"
                       />
                     </div>
-                    
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="date" className="block text-sm font-medium text-[#5A4C33] mb-1">Publication Date</label>
                       <input
@@ -420,9 +461,7 @@ const BlogsDashboard = () => {
                         className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
                       />
                     </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
                     <div>
                       <label htmlFor="image" className="block text-sm font-medium text-[#5A4C33] mb-1">Image URL</label>
                       <input
@@ -436,7 +475,9 @@ const BlogsDashboard = () => {
                         placeholder="Enter image URL"
                       />
                     </div>
-                    
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="metaDescription" className="block text-sm font-medium text-[#5A4C33] mb-1">Meta Description</label>
                       <input
