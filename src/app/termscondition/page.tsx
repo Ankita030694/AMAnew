@@ -1,10 +1,5 @@
-"use client";
-
-import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 
-
-// Testimonials data
 export const metadata = {
   title: 'Terms and Conditions | AMA Legal Solutions',
   description: 'Read the Terms and Conditions of AMA Legal Solutions. Understand our legal services, client obligations, fees, confidentiality, and governing law.',
@@ -12,27 +7,13 @@ export const metadata = {
     canonical: 'https://amalegalsolutions.com/termscondition', // Add your canonical URL here
   },
 }
+
 export default function Services() {
-  const { scrollYProgress } = useScroll();
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 1.1]);
-
-  // For floating decorative elements
-  const floatingY = useTransform(scrollYProgress, [0, 1], [0, -50]);
-  const floatingRotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
-
   return (
     <main className="overflow-hidden">
-      {/* Dynamic Hero Section with Parallax */}
+      {/* Hero Section */}
       <div className="relative h-[50vh] min-h-[500px] overflow-hidden">
-        <motion.div
-          style={{
-            scale: heroScale,
-            opacity: heroOpacity,
-            y: useTransform(scrollYProgress, [0, 0.5], [0, 100]),
-          }}
-          className="absolute inset-0"
-        >
+        <div className="absolute inset-0">
           <video
             autoPlay
             loop
@@ -44,35 +25,21 @@ export default function Services() {
             <source src="/about.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/80" />
-        </motion.div>
+        </div>
 
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white max-w-4xl px-4 z-10 flex flex-col items-center mt-12 md:mt-20">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
+            <div>
               <h1 className="text-5xl font-bold mb-4 md:mb-8 text-shadow-lg relative text-center">
                 <span className="inline-block">Terms & Conditions </span>
               </h1>
-            </motion.div>
+            </div>
 
-            <motion.p
-              className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto text-center px-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-            >
+            <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto text-center px-4">
               Review Our Terms and Conditions
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="mt-6 md:mt-10"
-            >
+            <div className="mt-6 md:mt-10">
               <Link href="/contact">
                 <button
                   type="button"
@@ -82,32 +49,14 @@ export default function Services() {
                   <span className="absolute top-0 left-0 w-full h-full bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
                 </button>
               </Link>
-            </motion.div>
+            </div>
           </div>
         </div>
-
-        {/* Floating decorative elements - only visible on larger screens */}
-        <motion.div
-          className="absolute top-20 right-20 w-24 h-24 rounded-full border-4 border-[#D2A02A]/30 hidden md:block"
-          style={{ y: floatingY, rotate: floatingRotate }}
-        />
-        <motion.div
-          className="absolute bottom-40 left-20 w-16 h-16 bg-[#5A4C33]/10 rounded-lg hidden md:block"
-          style={{
-            y: useTransform(scrollYProgress, [0, 1], [0, 30]),
-            rotate: useTransform(scrollYProgress, [0, 1], [0, -180]),
-          }}
-        />
       </div>
 
       {/* Terms & Conditions Content Section */}
       <section className="max-w-5xl mx-auto px-4 py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-12"
-        >
+        <div className="space-y-12">
           {/* 1. Introduction */}
           <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100">
             <h2 className="text-2xl font-bold text-[#5A4C33] mb-4">1. Introduction</h2>
@@ -248,7 +197,7 @@ export default function Services() {
               <span className="text-[#D2A02A] mr-2">📧</span> Email: <a href="mailto:Info@amalegalsolutions.com" className="text-[#D2A02A] hover:underline ml-2">Info@amalegalsolutions.com</a>
             </p>
           </div>
-        </motion.div>
+        </div>
       </section>
     </main>
   );
