@@ -229,7 +229,7 @@ export default function Navbar() {
                 }`}
               >
                 <Link
-                  href="/blogs"
+                  href="/blog"
                   className="text-gray-300 hover:text-white block px-3 py-2 transform transition-all duration-300 hover:translate-x-2"
                   onClick={handleLinkClick}
                 >
