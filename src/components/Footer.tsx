@@ -80,7 +80,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/blogs"
+                  href="/blog"
                   className="hover:text-white transition-colors"
                 >
                   Blogs

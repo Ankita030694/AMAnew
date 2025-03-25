@@ -500,7 +500,7 @@ const BlogsDashboard = () => {
                         <TiptapEditor
                           content={newBlog.description}
                           onChange={handleEditorChange}
-                          className="bg-white text-black min-h-[10px]"
+                          className="bg-white text-black min-h-[300px]"
                         />
                       )}
                     </div>

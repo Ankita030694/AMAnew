@@ -92,7 +92,7 @@ export default function Navbar() {
                 {isBlogsDropdownOpen && (
                   <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10">
                     <Link
-                      href="/blogs"
+                      href="/blog"
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
                       onClick={handleLinkClick}
                     >

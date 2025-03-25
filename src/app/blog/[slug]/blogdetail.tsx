@@ -153,9 +153,47 @@ export default function ArticleDetail({ slug }: BlogDetailProps) {
           {/* Article Content */}
           <div className="p-6 md:p-8">
             <div 
-              className="prose max-w-none text-black" 
+              className="prose prose-sm sm:prose lg:prose-lg max-w-none text-black tiptap-content" 
               dangerouslySetInnerHTML={{ __html: blog.description }}
             />
+            
+            {/* Add this style block to handle Tiptap specific styling */}
+            <style jsx global>{`
+              .tiptap-content h1 { font-size: 2em; font-weight: bold; margin-top: 0.67em; margin-bottom: 0.67em; }
+              .tiptap-content h2 { font-size: 1.5em; font-weight: bold; margin-top: 0.83em; margin-bottom: 0.83em; }
+              .tiptap-content h3 { font-size: 1.17em; font-weight: bold; margin-top: 1em; margin-bottom: 1em; }
+              .tiptap-content h4 { font-size: 1em; font-weight: bold; margin-top: 1.33em; margin-bottom: 1.33em; }
+              .tiptap-content h5 { font-size: 0.83em; font-weight: bold; margin-top: 1.67em; margin-bottom: 1.67em; }
+              .tiptap-content h6 { font-size: 0.67em; font-weight: bold; margin-top: 2.33em; margin-bottom: 2.33em; }
+              
+              .tiptap-content p { margin: 1em 0; }
+              .tiptap-content a { color: #3B82F6; text-decoration: underline; }
+              .tiptap-content blockquote { border-left: 4px solid #D2A02A; margin-left: 0; padding-left: 1em; font-style: italic; }
+              .tiptap-content pre { background-color: #f5f5f5; padding: 0.5em; border-radius: 0.3em; font-family: monospace; overflow-x: auto; }
+              .tiptap-content code { background-color: rgba(#616161, 0.1); color: #616161; }
+              
+              .tiptap-content table { border-collapse: collapse; margin: 0; overflow: hidden; table-layout: fixed; width: 100%; margin: 1em 0; }
+              .tiptap-content table td, .tiptap-content table th { border: 2px solid #ced4da; box-sizing: border-box; min-width: 1em; padding: 3px 5px; position: relative; vertical-align: top; }
+              .tiptap-content table th { background-color: #f8f9fa; font-weight: bold; text-align: left; }
+              
+              .tiptap-content ul, .tiptap-content ol { padding-left: 1.5em; margin: 1em 0; }
+              .tiptap-content li { margin: 0.5em 0; }
+              .tiptap-content hr { border: none; border-top: 2px solid #ced4da; margin: 1em 0; }
+              .tiptap-content img { max-width: 100%; height: auto; }
+              
+              /* Text alignment classes */
+              .tiptap-content .text-left { text-align: left; }
+              .tiptap-content .text-center { text-align: center; }
+              .tiptap-content .text-right { text-align: right; }
+              .tiptap-content .text-justify { text-align: justify; }
+              
+              /* Subscript and superscript */
+              .tiptap-content sub { vertical-align: sub; font-size: smaller; }
+              .tiptap-content sup { vertical-align: super; font-size: smaller; }
+              
+              /* Highlighted text */
+              .tiptap-content mark { background-color: #fef3c7; padding: 0.1em 0.2em; border-radius: 0.2em; }
+            `}</style>
             
             {/* Share & Tags Section */}
             <div className="mt-12 pt-6 border-t border-gray-200">

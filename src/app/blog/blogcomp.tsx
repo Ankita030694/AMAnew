@@ -139,7 +139,7 @@ export default function Page() {
                   <h2 className="text-xl font-medium" style={{ color: '#5A4C33' }}>Spotlight</h2>
                 </motion.div>
                 
-                <Link href={`/blogs/${spotlightArticle.slug}`}>
+                <Link href={`/blog/${spotlightArticle.slug}`}>
                   <motion.div 
                     className="rounded-xl overflow-hidden border border-gray-100"
                     variants={hoverVariants}
@@ -177,7 +177,7 @@ export default function Page() {
                   <h2 className="text-xl font-medium" style={{ color: '#5A4C33' }}>Blogs</h2>
                 </div>
                 
-                <Link href="/blogs">
+                <Link href="/blog">
                   <span className="text-sm text-gray-500 flex items-center">
                     Read More
                     <svg width="16" height="16" viewBox="0 0 24 24" className="ml-1">
@@ -198,7 +198,7 @@ export default function Page() {
                     key={article.id}
                     variants={itemVariants}
                   >
-                    <Link href={`/blogs/${article.slug}`}>
+                    <Link href={`/blog/${article.slug}`}>
                       <motion.div 
                         className="rounded-xl overflow-hidden border border-gray-100 h-full"
                         variants={hoverVariants}
@@ -258,7 +258,7 @@ export default function Page() {
                     key={article.id}
                     variants={itemVariants}
                   >
-                    <Link href={`/blogs/${article.slug}`}>
+                    <Link href={`/blog/${article.slug}`}>
                       <motion.div 
                         className="flex gap-4 p-2 rounded-lg" 
                         variants={hoverVariants}
