@@ -10,5 +10,7 @@ export const metadata = {
 import BlogPage from './blogcomp';
 
 export default function Page() {
-  return <BlogPage />;
+  return <header className='bg-[#F5F2EB]'>
+    <BlogPage />
+  </header>;
 }
