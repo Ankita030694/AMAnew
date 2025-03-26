@@ -14,7 +14,7 @@ export async function GET(): Promise<Response> {
     '',
     '/about',
     '/contact',
-    '/blogs',
+    '/blog',
     '/articles',
     '/amalive',
     '/locations/bengaluru',
@@ -48,7 +48,7 @@ export async function GET(): Promise<Response> {
   
   // Build dynamic blog routes
   const blogRoutes = blogs.map(blog => ({
-    url: `${baseUrl}/blogs/${blog.slug}`,
+    url: `${baseUrl}/blog/${blog.slug}`,
     lastModified: new Date(blog.created || Date.now()).toISOString(),
     changeFrequency: 'monthly',
     priority: 0.7
@@ -93,7 +93,7 @@ async function fetchAllBlogs() {
     return querySnapshot.docs.map(doc => {
       const data = doc.data()
       return {
-        slug: convertToSlug(data.title),
+        slug: data.slug,
         created: data.created || Date.now()
       }
     })
@@ -109,7 +109,7 @@ async function fetchAllArticles() {
     return querySnapshot.docs.map(doc => {
       const data = doc.data()
       return {
-        slug: convertToSlug(data.title),
+        slug: data.slug,
         created: data.created || Date.now()
       }
     })
