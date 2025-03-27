@@ -15,6 +15,13 @@ const TiptapEditor = dynamic(() => import('./TiptapEditor'), {
   loading: () => <p>Loading Editor...</p>,
 });
 
+// Define FAQ interface
+interface FAQ {
+  id?: string;
+  question: string;
+  answer: string;
+}
+
 // Define Article interface with updated structure
 interface Blog {
   id?: string;
@@ -27,6 +34,7 @@ interface Blog {
   metaTitle?: string;
   metaDescription?: string;
   slug: string;
+  faqs?: FAQ[]; // New field for FAQs
 }
 
 const ArticlesDashboard = () => {
@@ -43,7 +51,8 @@ const ArticlesDashboard = () => {
     created: Date.now(),
     metaTitle: '',
     metaDescription: '',
-    slug: ''
+    slug: '',
+    faqs: [] // Initialize empty FAQs array
   });
   const router = useRouter();
 
@@ -101,7 +110,8 @@ const ArticlesDashboard = () => {
             created: docData.created || Date.now(),
             metaTitle: docData.metaTitle || '',
             metaDescription: docData.metaDescription || '',
-            slug: docData.slug || ''
+            slug: docData.slug || '',
+            faqs: docData.faqs || []
           };
         });
         setBlogs(data);
@@ -130,6 +140,37 @@ const ArticlesDashboard = () => {
     }));
   };
 
+  // Add FAQ to the article
+  const addFaq = () => {
+    setNewBlog(prevState => ({
+      ...prevState,
+      faqs: [...(prevState.faqs || []), { question: '', answer: '' }]
+    }));
+  };
+
+  // Remove FAQ from the article
+  const removeFaq = (index: number) => {
+    setNewBlog(prevState => ({
+      ...prevState,
+      faqs: (prevState.faqs || []).filter((_, i) => i !== index)
+    }));
+  };
+
+  // Handle FAQ input changes
+  const handleFaqChange = (index: number, field: 'question' | 'answer', value: string) => {
+    setNewBlog(prevState => {
+      const updatedFaqs = [...(prevState.faqs || [])];
+      updatedFaqs[index] = { 
+        ...updatedFaqs[index], 
+        [field]: value 
+      };
+      return {
+        ...prevState,
+        faqs: updatedFaqs
+      };
+    });
+  };
+
   // Handle blog form submission (Create or Update)
   const handleSubmitBlog = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -141,14 +182,39 @@ const ArticlesDashboard = () => {
         date: new Date(newBlog.date).toISOString().split('T')[0] // Ensure date is in YYYY-MM-DD format
       };
       
+      // Remove faqs from the main document since we'll store them in a subcollection
+      const { faqs, ...blogData } = blogWithMetadata;
+      
+      let blogId = newBlog.id;
+      
       if (formMode === 'add') {
         // Add to Firestore
-        await addDoc(collection(db, 'articles'), blogWithMetadata);
+        const docRef = await addDoc(collection(db, 'articles'), blogData);
+        blogId = docRef.id;
       } else {
         // Update existing document
-        if (newBlog.id) {
-          const blogRef = doc(db, 'articles', newBlog.id);
-          await updateDoc(blogRef, blogWithMetadata);
+        if (blogId) {
+          const blogRef = doc(db, 'articles', blogId);
+          await updateDoc(blogRef, blogData);
+        }
+      }
+      
+      // Add FAQs to subcollection
+      if (blogId && faqs && faqs.length > 0) {
+        // First delete existing FAQs if updating
+        if (formMode === 'edit') {
+          const faqsSnapshot = await getDocs(collection(db, 'articles', blogId, 'faqs'));
+          for (const doc of faqsSnapshot.docs) {
+            await deleteDoc(doc.ref);
+          }
+        }
+        
+        // Add all FAQs to subcollection
+        for (const faq of faqs) {
+          await addDoc(collection(db, 'articles', blogId, 'faqs'), {
+            question: faq.question,
+            answer: faq.answer
+          });
         }
       }
       
@@ -169,7 +235,8 @@ const ArticlesDashboard = () => {
           created: docData.created || Date.now(),
           metaTitle: docData.metaTitle || '',
           metaDescription: docData.metaDescription || '',
-          slug: docData.slug || ''
+          slug: docData.slug || '',
+          faqs: [] // Initialize empty faqs array
         };
       });
       setBlogs(updatedBlogs);
@@ -179,11 +246,26 @@ const ArticlesDashboard = () => {
     }
   };
 
-  // Handle blog edit
-  const handleEdit = (blog: Blog) => {
-    setNewBlog(blog);
-    setFormMode('edit');
-    setShowBlogForm(true);
+  // Handle blog edit - needs to also fetch FAQs from subcollection
+  const handleEdit = async (blog: Blog) => {
+    try {
+      // Fetch FAQs for this article
+      const faqsSnapshot = await getDocs(collection(db, 'articles', blog.id!, 'faqs'));
+      const faqs = faqsSnapshot.docs.map(doc => ({
+        id: doc.id,
+        question: doc.data().question || '',
+        answer: doc.data().answer || ''
+      }));
+      
+      setNewBlog({...blog, faqs});
+      setFormMode('edit');
+      setShowBlogForm(true);
+    } catch (error) {
+      console.error("Error fetching FAQs:", error);
+      setNewBlog(blog);
+      setFormMode('edit');
+      setShowBlogForm(true);
+    }
   };
 
   // Handle blog delete
@@ -214,7 +296,8 @@ const ArticlesDashboard = () => {
       created: Date.now(),
       metaTitle: '',
       metaDescription: '',
-      slug: ''
+      slug: '',
+      faqs: [] // Reset FAQs array
     });
     setFormMode('add');
     setShowBlogForm(false);
@@ -451,7 +534,62 @@ const ArticlesDashboard = () => {
                       />
                     </div>
                   </div>
-                  
+                   {/* Add the FAQ section before the form submit buttons */}
+                   <div>
+                    <label className="block text-sm font-medium text-[#5A4C33] mb-1">FAQs</label>
+                    <div className="border border-gray-300 rounded-md p-4 bg-gray-50">
+                      {/* Display existing FAQs */}
+                      {(newBlog.faqs || []).map((faq, index) => (
+                        <div key={index} className="mb-4 p-4 bg-white rounded-md shadow-sm">
+                          <div className="flex justify-between items-center mb-2">
+                            <h3 className="text-sm font-medium text-[#5A4C33]">FAQ #{index + 1}</h3>
+                            <motion.button
+                              type="button"
+                              onClick={() => removeFaq(index)}
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                              className="px-2 py-1 bg-red-500 text-white text-xs rounded-md"
+                            >
+                              Remove
+                            </motion.button>
+                          </div>
+                          <div className="mb-2">
+                            <label className="block text-xs font-medium text-[#5A4C33] mb-1">Question</label>
+                            <input
+                              type="text"
+                              value={faq.question}
+                              onChange={(e) => handleFaqChange(index, 'question', e.target.value)}
+                              className="text-black w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
+                              placeholder="Enter FAQ question"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-xs font-medium text-[#5A4C33] mb-1">Answer</label>
+                            <textarea
+                              value={faq.answer}
+                              onChange={(e) => handleFaqChange(index, 'answer', e.target.value)}
+                              rows={3}
+                              className="text-black w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
+                              placeholder="Enter FAQ answer"
+                            />
+                          </div>
+                        </div>
+                      ))}
+                      
+                      {/* Add FAQ button */}
+                      <motion.button
+                        type="button"
+                        onClick={addFaq}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="mt-2 px-4 py-2 bg-[#D2A02A] text-white rounded-md text-sm font-medium flex items-center"
+                      >
+                        <FontAwesomeIcon icon={faPlus} className="mr-2" />
+                        Add FAQ
+                      </motion.button>
+                      <p className="mt-2 text-xs text-gray-500">Add frequently asked questions related to this article.</p>
+                    </div>
+                  </div>
                   <div>
                     <label htmlFor="description" className="block text-sm font-medium text-[#5A4C33] mb-1">Article Content</label>
                     {/* Tiptap Editor Integration */}
@@ -466,6 +604,8 @@ const ArticlesDashboard = () => {
                     </div>
                     <p className="mt-1 text-xs text-gray-500">Use the toolbar above to format your content.</p>
                   </div>
+                  
+                 
                   
                   <div className="flex justify-end space-x-3">
                     <motion.button

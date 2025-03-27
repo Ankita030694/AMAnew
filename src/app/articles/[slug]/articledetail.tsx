@@ -16,6 +16,14 @@ interface Article {
   created?: number;
   metaTitle?: string;
   metaDescription?: string;
+  faqs?: FAQ[];
+}
+
+// Define FAQ interface
+interface FAQ {
+  id: string;
+  question: string;
+  answer: string;
 }
 
 // Define props interface
@@ -27,6 +35,8 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ slug }) => {
   const [blog, setBlog] = useState<Article | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentUrl, setCurrentUrl] = useState('');
+  const [faqs, setFaqs] = useState<FAQ[]>([]);
+  const [expandedFaqs, setExpandedFaqs] = useState<string[]>([]);
 
   useEffect(() => {
     // Set the current URL when component mounts (client-side only)
@@ -38,6 +48,7 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ slug }) => {
         const articlesCollection = collection(db, 'articles');
         const querySnapshot = await getDocs(articlesCollection);
         let foundArticle = null;
+        let articleId = '';
         
         // Use slug field from database instead of generating from title
         querySnapshot.docs.forEach(doc => {
@@ -48,10 +59,23 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ slug }) => {
               id: doc.id,
               ...data
             };
+            articleId = doc.id;
           }
         });
         
         setBlog(foundArticle);
+        
+        // If article found, fetch its FAQs from subcollection
+        if (articleId) {
+          const faqsSnapshot = await getDocs(collection(db, 'articles', articleId, 'faqs'));
+          const faqsData = faqsSnapshot.docs.map(doc => ({
+            id: doc.id,
+            question: doc.data().question || '',
+            answer: doc.data().answer || ''
+          }));
+          setFaqs(faqsData);
+        }
+        
         setLoading(false);
       } catch (error) {
         console.error("Error fetching article:", error);
@@ -63,6 +87,15 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ slug }) => {
       fetchArticleBySlug();
     }
   }, [slug]);
+
+  // Toggle FAQ expansion
+  const toggleFaq = (faqId: string) => {
+    setExpandedFaqs(prev => 
+      prev.includes(faqId)
+        ? prev.filter(id => id !== faqId)
+        : [...prev, faqId]
+    );
+  };
 
   // Function to handle social media sharing
   const handleShare = (platform: string) => {
@@ -232,22 +265,44 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ slug }) => {
           </div>
         </div>
         
-        {/* Author Bio Section */}
-        {/* <div className="max-w-3xl mx-auto mt-8 bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="p-6 flex flex-col md:flex-row gap-6">
-            <div className="w-24 h-24 rounded-full bg-[#5A4C33] flex items-center justify-center">
-              <span className="text-2xl font-bold text-[#D2A02A]">AB</span>
+        {/* FAQs Section */}
+        {faqs.length > 0 && (
+          <div className="max-w-3xl mx-auto mt-8 bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="px-6 py-5 border-b border-gray-200 bg-[#5A4C33]">
+              <h2 className="text-2xl font-bold text-[#D2A02A]">Frequently Asked Questions</h2>
             </div>
-            <div className="flex-1">
-              <h3 className="text-xl font-bold text-black mb-2">About the Author</h3>
-              <p className="text-black mb-4">Expert writer with over a decade of experience in the industry. Passionate about sharing insights and knowledge through thoughtful articles.</p>
-              <div className="flex space-x-4">
-                <a href="#" className="text-[#D2A02A] hover:text-[#5A4C33] font-medium">More Articles</a>
-                <a href="#" className="text-[#D2A02A] hover:text-[#5A4C33] font-medium">Website</a>
+            <div className="p-6">
+              <div className="divide-y divide-gray-200">
+                {faqs.map((faq) => (
+                  <div key={faq.id} className="py-4">
+                    <button
+                      onClick={() => toggleFaq(faq.id)}
+                      className="flex justify-between items-center w-full text-left font-medium text-black hover:text-[#D2A02A] focus:outline-none transition-colors"
+                    >
+                      <span>{faq.question}</span>
+                      <span className="ml-6 flex-shrink-0">
+                        {expandedFaqs.includes(faq.id) ? (
+                          <svg className="h-5 w-5 text-[#D2A02A]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clipRule="evenodd" />
+                          </svg>
+                        ) : (
+                          <svg className="h-5 w-5 text-[#D2A02A]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clipRule="evenodd" />
+                          </svg>
+                        )}
+                      </span>
+                    </button>
+                    {expandedFaqs.includes(faq.id) && (
+                      <div className="mt-2 pr-12">
+                        <p className="text-base text-black">{faq.answer}</p>
+                      </div>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-        </div> */}
+        )}
         
         {/* Contact Button */}
         <div className="max-w-3xl mx-auto mt-12 text-center">

@@ -16,6 +16,14 @@ interface Blog {
   metaTitle?: string;
   metaDescription?: string;
   slug: string;
+  faqs?: FAQ[];
+}
+
+// Add FAQ interface
+interface FAQ {
+  id: string;
+  question: string;
+  answer: string;
 }
 
 // Add this interface for props
@@ -27,6 +35,8 @@ export default function ArticleDetail({ slug }: BlogDetailProps) {
   const [blog, setBlog] = useState<Blog | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentUrl, setCurrentUrl] = useState('');
+  const [faqs, setFaqs] = useState<FAQ[]>([]);
+  const [expandedFaqs, setExpandedFaqs] = useState<string[]>([]);
 
   useEffect(() => {
     // Set the current URL when component mounts (client-side only)
@@ -38,6 +48,7 @@ export default function ArticleDetail({ slug }: BlogDetailProps) {
         const blogsCollection = collection(db, 'blogs');
         const querySnapshot = await getDocs(blogsCollection);
         let foundBlog = null;
+        let blogId = '';
         
         // Find blog with matching slug directly from database
         querySnapshot.docs.forEach(doc => {
@@ -47,10 +58,23 @@ export default function ArticleDetail({ slug }: BlogDetailProps) {
               id: doc.id,
               ...data
             };
+            blogId = doc.id;
           }
         });
         
         setBlog(foundBlog);
+        
+        // If blog found, fetch its FAQs from subcollection
+        if (blogId) {
+          const faqsSnapshot = await getDocs(collection(db, 'blogs', blogId, 'faqs'));
+          const faqsData = faqsSnapshot.docs.map(doc => ({
+            id: doc.id,
+            question: doc.data().question || '',
+            answer: doc.data().answer || ''
+          }));
+          setFaqs(faqsData);
+        }
+        
         setLoading(false);
       } catch (error) {
         console.error("Error fetching blog:", error);
@@ -62,6 +86,15 @@ export default function ArticleDetail({ slug }: BlogDetailProps) {
       fetchBlogBySlug();
     }
   }, [slug]);
+
+  // Toggle FAQ expansion
+  const toggleFaq = (faqId: string) => {
+    setExpandedFaqs(prev => 
+      prev.includes(faqId)
+        ? prev.filter(id => id !== faqId)
+        : [...prev, faqId]
+    );
+  };
 
   // Function to handle social media sharing
   const handleShare = (platform: string) => {
@@ -231,6 +264,45 @@ export default function ArticleDetail({ slug }: BlogDetailProps) {
             </div>
           </div>
         </div>
+        
+        {/* FAQs Section - Add this new section */}
+        {faqs.length > 0 && (
+          <div className="max-w-3xl mx-auto mt-8 bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="px-6 py-5 border-b border-gray-200 bg-[#5A4C33]">
+              <h2 className="text-2xl font-bold text-[#D2A02A]">Frequently Asked Questions</h2>
+            </div>
+            <div className="p-6">
+              <div className="divide-y divide-gray-200">
+                {faqs.map((faq) => (
+                  <div key={faq.id} className="py-4">
+                    <button
+                      onClick={() => toggleFaq(faq.id)}
+                      className="flex justify-between items-center w-full text-left font-medium text-black hover:text-[#D2A02A] focus:outline-none transition-colors"
+                    >
+                      <span>{faq.question}</span>
+                      <span className="ml-6 flex-shrink-0">
+                        {expandedFaqs.includes(faq.id) ? (
+                          <svg className="h-5 w-5 text-[#D2A02A]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clipRule="evenodd" />
+                          </svg>
+                        ) : (
+                          <svg className="h-5 w-5 text-[#D2A02A]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clipRule="evenodd" />
+                          </svg>
+                        )}
+                      </span>
+                    </button>
+                    {expandedFaqs.includes(faq.id) && (
+                      <div className="mt-2 pr-12">
+                        <p className="text-base text-black">{faq.answer}</p>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
         
         {/* Author Bio Section */}
         {/* <div className="max-w-3xl mx-auto mt-8 bg-white rounded-lg shadow-lg overflow-hidden">
