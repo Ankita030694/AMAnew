@@ -305,9 +305,9 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ slug }) => {
         )}
         
         {/* Contact Button */}
-        <div className="max-w-3xl mx-auto mt-12 text-center">
-          <Link href="/contact" className="inline-block bg-[#D2A02A] text-black font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-[#5A4C33] hover:text-white transition-all transform hover:-translate-y-1">
-            Get in Touch With Us
+        <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[999]">
+          <Link href="/contact" className="inline-block bg-[#D2A02A] text-black font-bold px-4 py-2 md:px-6 md:py-3 text-sm md:text-base rounded-full shadow-xl hover:bg-[#5A4C33] hover:text-white transition-all">
+            Get in Touch
           </Link>
         </div>
       </div>
