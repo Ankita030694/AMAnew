@@ -34,13 +34,11 @@ export async function generateMetadata(
     const blogsCollection = collection(db, "blogs");
     const querySnapshot = await getDocs(blogsCollection);
 
-    // Find the matching blog by slug
+    // Find the matching blog by slug - using slug field directly
     for (const doc of querySnapshot.docs) {
       const data = doc.data();
-      const blogTitle = data.title || "";
-      const blogSlug = generateSlug(blogTitle);
-
-      if (blogSlug === slug) {
+      // Use the slug field directly instead of generating from title
+      if (data.slug === slug) {
         // Use metaTitle and metaDescription if available, otherwise fallback to title
         title = data.metaTitle || data.title || title;
         description = data.metaDescription || description;
@@ -77,13 +75,11 @@ export default async function Page({
     const blogsCollection = collection(db, "blogs");
     const querySnapshot = await getDocs(blogsCollection);
 
-    // Find the matching blog by slug
+    // Find the matching blog by slug - using slug field directly
     for (const doc of querySnapshot.docs) {
       const data = doc.data();
-      const blogTitle = data.title || "";
-      const blogSlug = generateSlug(blogTitle);
-
-      if (blogSlug === slug) {
+      // Use the slug field directly instead of generating from title
+      if (data.slug === slug) {
         pageTitle = data.title || pageTitle;
         break;
       }
