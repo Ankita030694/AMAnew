@@ -19,7 +19,8 @@ export default function About() {
       <div>
         <Hero />
         <Clients />
-        <AnujBhiya />
+        <AboutInfo />
+
         <div className="text-white py-10 relative">
         <div className="absolute inset-0">
           <Image
@@ -39,7 +40,8 @@ export default function About() {
           </div>
         </div>
       </div>
-        <AboutInfo />
+        <AnujBhiya />
+
         <TabbedTimeline />
         <OurAttorneys />
 
