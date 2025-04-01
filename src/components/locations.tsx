@@ -72,8 +72,7 @@ export default function Locations() {
         </h2>
         <div className="w-24 h-1 bg-[#D2A02A] mx-auto" />
         <p className="max-w-2xl mx-auto mt-6 text-gray-600">
-          With offices strategically located throughout the region, we make
-          expert legal counsel accessible wherever you are.
+        AMA Legal Solutions is a trusted law firm in India. It is headquartered in Gurugram with offices strategically located throughout the region, including as a law firm in Delhi, Mumbai, Bangalore, and Chennai. We make legal services accessible in India wherever you are.
         </p>
       </div>
 

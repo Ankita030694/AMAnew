@@ -111,7 +111,7 @@ export default function PracticeAreas() {
             transition={{ duration: 0.5, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            Our firm combines decades of legal experience with personalized service to deliver exceptional results for all our clients.
+            Our firm combines decades of legal experience with personalized service to deliver exceptional results for all our clients. AMA focuses on providing strategic, result-driven legal advisory services that protect our client's rights and support their growth and success.
           </motion.p>
         </motion.div>
 

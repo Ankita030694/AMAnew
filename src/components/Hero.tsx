@@ -50,10 +50,10 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4">
         <h1 className="text-4xl font-bold text-white mb-6">
-          EMPOWERING LEGAL EXPERTISE
+        Empowering Legal Expertise with Trusted Law Firm In India
         </h1>
         <p className="text-lg text-white mb-8">
-          AMA Legal Solutions embodies a firm culture rooted in values and principles that prioritize excellence and integrity
+        AMA Legal Solutions embodies a culture rooted in values and principles that prioritize excellence, integrity, and client satisfaction. <br />
         </p>
         <Link href="/contact">
           <button className="relative overflow-hidden bg-[#D2A02A] hover:bg-[#5A4C33] text-white px-8 py-3 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out group">
