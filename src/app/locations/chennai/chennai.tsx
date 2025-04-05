@@ -120,10 +120,10 @@ export default function Services() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-5xl font-bold mb-4 md:mb-8 text-shadow-lg relative text-center">
-                <span className="inline-block">Legal </span>
+              <h1 className="text-3xl font-bold mb-4 md:mb-8 text-shadow-lg relative text-center">
+                <span className="inline-block"></span>
                 <span className="inline-block relative">
-                  &nbsp;Services In Chennai
+                  &nbsp;Trusted Law Firm in Chennai for Legal Advisory Services
                   <motion.div 
                     className="absolute -bottom-2 md:-bottom-3 left-0 right-0 h-1 bg-[#D2A02A]"
                     initial={{ width: "0%" }}
@@ -135,12 +135,12 @@ export default function Services() {
             </motion.div>
             
             <motion.p 
-              className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto text-center px-4"
+              className="text-lg sm:text-xl md:text-xl max-w-3xl mx-auto text-center px-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              Comprehensive legal solutions tailored to your needs with 
+              A trusted law firm in Chennai with years of experience, we offer expert legal advisory, loan settlement, property dispute resolution, and civil legal support. Helping individuals and families across Chennai with effective legal solutions.
               <span className="relative font-semibold px-2">
                 <span className="relative z-10">decades of expertise</span>
                 <span className="absolute inset-0 bg-[#D2A02A]/20 -skew-x-6 rounded z-0" />

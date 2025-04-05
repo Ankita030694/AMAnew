@@ -120,10 +120,10 @@ export default function Services() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-5xl font-bold mb-4 md:mb-8 text-shadow-lg relative text-center">
-                <span className="inline-block">Legal </span>
+              <h1 className="text-4xl font-bold mb-4 md:mb-8 text-shadow-lg relative text-center">
+                <span className="inline-block"> </span>
                 <span className="inline-block relative">
-                  &nbsp;Services In Kolkata
+                  &nbsp;Trusted Law Firm in Kolkata for Legal Consultant
                   <motion.div 
                     className="absolute -bottom-2 md:-bottom-3 left-0 right-0 h-1 bg-[#D2A02A]"
                     initial={{ width: "0%" }}
@@ -135,14 +135,14 @@ export default function Services() {
             </motion.div>
             
             <motion.p 
-              className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto text-center px-4"
+              className="text-lg sm:text-xl md:text-xl max-w-3xl mx-auto text-center px-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              Comprehensive legal solutions tailored to your needs with 
+              A well-established law firm based in Kolkata, we provide corporate compliance, contract drafting, regulatory advisory, and financial litigation. Our expert lawyers offer strategic legal solutions tailored to the needs of businesses, professionals, and growing startups
               <span className="relative font-semibold px-2">
-                <span className="relative z-10">decades of expertise</span>
+                <span className="relative z-10"></span>
                 <span className="absolute inset-0 bg-[#D2A02A]/20 -skew-x-6 rounded z-0" />
               </span>
             </motion.p>

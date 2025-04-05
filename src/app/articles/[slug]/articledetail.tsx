@@ -37,7 +37,7 @@ interface ArticleDetailProps {
 const authorBios = {
   "Anuj Anand Malik": {
     name: "Anuj Anand Malik",
-    description: "Advocate, Legal Consultant, and Founder of AMA Legal Solutions. Expert in loan settlements, corporate compliance, and business contracts with over 10 years of experience in legal practice.",
+    description: "Anuj Anand Malik, Founder of AMA Legal Solutions, is a trusted advocate, loan settlement expert, legal advisor, and banking lawyer. With over a decade of experience in loan settlement, corporate law, financial disputes, and compliance, he leads a result-driven law firm based in India that helps individuals, startups, and businesses achieve legal and financial stability. As a member of the Bar Council of India, Bar Council of Delhi, MCIA, and IACC, Anuj delivers trusted, business-focused legal solutions backed by professional credibility.",
     image: "/anujbhiya.svg",
     linkedInUrl: "https://www.linkedin.com/in/iamanujmalik/"
   },
