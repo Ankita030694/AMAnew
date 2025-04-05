@@ -18,6 +18,7 @@ interface Blog {
   metaDescription?: string;
   slug: string;
   faqs?: FAQ[];
+  author?: string;
 }
 
 // Add FAQ interface
@@ -31,6 +32,34 @@ interface FAQ {
 interface BlogDetailProps {
   slug: string;
 }
+
+// Define author bios
+const authorBios = {
+  "Anuj Anand Malik": {
+    name: "Anuj Anand Malik",
+    description: "Advocate, Legal Consultant, and Founder of AMA Legal Solutions. Expert in loan settlements, corporate compliance, and business contracts with over 10 years of experience in legal practice.",
+    image: "/anujbhiya.svg",
+    linkedInUrl: "https://www.linkedin.com/in/iamanujmalik/"
+  },
+  "Shrey Arora": {
+    name: "Shrey Arora",
+    description: "Legal professional specializing in corporate law and regulatory compliance. Brings a strategic approach to legal advisory with extensive experience in contract negotiation and business law.",
+    image: "/shreychad.svg",
+    linkedInUrl: "https://www.linkedin.com/in/shrey-arora-b0487b67/"
+  },
+  "Research Team AMA": {
+    name: "Research Team AMA",
+    description: "A dedicated team of legal researchers and analysts at AMA Legal Solutions who specialize in producing in-depth content on emerging legal trends, regulatory developments, and practical legal guidance.",
+    image: "/team-research.svg",
+    linkedInUrl: "https://www.linkedin.com/company/ama-legal-solutions/"
+  },
+  "Advocate Team AMA": {
+    name: "Advocate Team AMA",
+    description: "An experienced group of advocates and legal practitioners at AMA Legal Solutions who provide specialized insights on litigation strategies, case studies, and practical legal procedures.",
+    image: "/team-advocate.svg",
+    linkedInUrl: "https://www.linkedin.com/company/ama-legal-solutions/"
+  }
+};
 
 export default function ArticleDetail({ slug }: BlogDetailProps) {
   const [blog, setBlog] = useState<Blog | null>(null);
@@ -305,39 +334,53 @@ export default function ArticleDetail({ slug }: BlogDetailProps) {
           </div>
         )}
         
-        {/* Author Bio Section */}
-        <div className="max-w-3xl mx-auto mt-8 bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="p-6 flex flex-col md:flex-row gap-6">
-            <div className="relative w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
-              <Image 
-                src="/anujbhiya.svg"
-                alt="Anuj Anand Malik"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="flex-1">
-              <h3 className="text-xl font-bold text-black mb-2">Anuj Anand Malik</h3>
-              <p className="text-black mb-4">Advocate, Legal Consultant, and Founder of AMA Legal Solutions. Expert in loan settlements, corporate compliance, and business contracts.</p>
-              <div className="flex space-x-4">
-                <Link href="/author" className="bg-[#D2A02A] text-black px-4 py-1.5 rounded hover:bg-[#5A4C33] hover:text-white transition-colors text-sm font-medium">
-                  View Full Profile
-                </Link>
-                <a 
-                  href="https://www.linkedin.com/in/iamanujmalik/" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="flex items-center text-[#5A4C33] hover:text-[#D2A02A] font-medium transition-colors"
+        {/* Author Bio Section - Conditionally rendered based on author */}
+        {blog.author && (
+          <div className="max-w-3xl mx-auto mt-8 bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="p-6 flex flex-col md:flex-row gap-6">
+              <div className="relative w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
+                <Image 
+                  src={authorBios[blog.author as keyof typeof authorBios]?.image || "/default-author.svg"}
+                  alt={blog.author}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex-1">
+                <Link 
+                  href={blog.author === "Anuj Anand Malik" ? "/author" : 
+                        blog.author === "Shrey Arora" ? "/authorsec" : "/about"}
+                  className="hover:text-[#D2A02A] transition-colors"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                  </svg>
-                  LinkedIn
-                </a>
+                  <h3 className="text-xl font-bold text-black mb-2">{blog.author}</h3>
+                </Link>
+                <p className="text-black mb-4">
+                  {authorBios[blog.author as keyof typeof authorBios]?.description || 
+                    "Legal expert at AMA Legal Solutions specializing in providing comprehensive legal advice and solutions."}
+                </p>
+                <div className="flex space-x-4">
+                  <Link 
+                    href={blog.author === "Anuj Anand Malik" ? "/author" : 
+                          blog.author === "Shrey Arora" ? "/authorsec" : "/about"} 
+                    className="bg-[#D2A02A] text-black px-4 py-1.5 rounded hover:bg-[#5A4C33] hover:text-white transition-colors text-sm font-medium">
+                    View Profile
+                  </Link>
+                  <a 
+                    href={authorBios[blog.author as keyof typeof authorBios]?.linkedInUrl || "https://www.linkedin.com/company/ama-legal-solutions/"}
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center text-[#5A4C33] hover:text-[#D2A02A] font-medium transition-colors"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    LinkedIn
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
         
         {/* Fixed Contact Button - Visible on all devices with enhanced visibility */}
         <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[999]">

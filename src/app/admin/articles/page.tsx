@@ -35,6 +35,7 @@ interface Blog {
   metaDescription?: string;
   slug: string;
   faqs?: FAQ[]; // New field for FAQs
+  author: string; // New author field
 }
 
 const ArticlesDashboard = () => {
@@ -52,7 +53,8 @@ const ArticlesDashboard = () => {
     metaTitle: '',
     metaDescription: '',
     slug: '',
-    faqs: [] // Initialize empty FAQs array
+    faqs: [], // Initialize empty FAQs array
+    author: 'Research Team AMA' // Default author
   });
   const router = useRouter();
 
@@ -111,7 +113,8 @@ const ArticlesDashboard = () => {
             metaTitle: docData.metaTitle || '',
             metaDescription: docData.metaDescription || '',
             slug: docData.slug || '',
-            faqs: docData.faqs || []
+            faqs: docData.faqs || [],
+            author: docData.author || 'Research Team AMA' // Get author or set default
           };
         });
         setBlogs(data);
@@ -124,7 +127,7 @@ const ArticlesDashboard = () => {
   }, []);
 
   // Handle blog form input changes
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setNewBlog(prevState => ({
       ...prevState,
@@ -236,7 +239,8 @@ const ArticlesDashboard = () => {
           metaTitle: docData.metaTitle || '',
           metaDescription: docData.metaDescription || '',
           slug: docData.slug || '',
-          faqs: [] // Initialize empty faqs array
+          faqs: [], // Initialize empty faqs array
+          author: docData.author || 'Research Team AMA' // Get author or set default
         };
       });
       setBlogs(updatedBlogs);
@@ -297,7 +301,8 @@ const ArticlesDashboard = () => {
       metaTitle: '',
       metaDescription: '',
       slug: '',
-      faqs: [] // Reset FAQs array
+      faqs: [], // Reset FAQs array
+      author: 'Research Team AMA' // Default author
     });
     setFormMode('add');
     setShowBlogForm(false);
@@ -533,6 +538,23 @@ const ArticlesDashboard = () => {
                         placeholder="Enter meta description for SEO"
                       />
                     </div>
+                    
+                    <div>
+                      <label htmlFor="author" className="block text-sm font-medium text-[#5A4C33] mb-1">Author</label>
+                      <select
+                        id="author"
+                        name="author"
+                        value={newBlog.author}
+                        onChange={handleInputChange}
+                        required
+                        className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
+                      >
+                        <option value="Anuj Anand Malik">Anuj Anand Malik</option>
+                        <option value="Shrey Arora">Shrey Arora</option>
+                        <option value="Research Team AMA">Research Team AMA</option>
+                        <option value="Advocate Team AMA">Advocate Team AMA</option>
+                      </select>
+                    </div>
                   </div>
                    {/* Add the FAQ section before the form submit buttons */}
                    <div>
@@ -644,6 +666,7 @@ const ArticlesDashboard = () => {
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Title</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Subtitle</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Image</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Author</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Created</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Actions</th>
                       </tr>
@@ -655,6 +678,7 @@ const ArticlesDashboard = () => {
                             <td className="px-6 py-4 text-sm font-medium text-[#5A4C33] max-w-xs truncate">{blog.title}</td>
                             <td className="px-6 py-4 text-sm text-[#5A4C33] max-w-xs truncate">{blog.subtitle}</td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]"><img src={blog.image} className="w-20 h-20 rounded-full" alt="" /></td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{blog.author}</td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
                               {new Date(blog.created).toLocaleString()}
                             </td>

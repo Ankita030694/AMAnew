@@ -35,6 +35,7 @@ interface Blog {
   metaDescription?: string;
   slug: string; // New slug field for URLs
   faqs?: FAQ[]; // New field for FAQs
+  author: string; // New author field
 }
 
 const BlogsDashboard = () => {
@@ -52,7 +53,8 @@ const BlogsDashboard = () => {
     metaTitle: '',
     metaDescription: '',
     slug: '', // Initialize the slug field
-    faqs: [] // Initialize empty FAQs array
+    faqs: [], // Initialize empty FAQs array
+    author: 'Team AMA' // Default author
   });
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
@@ -119,7 +121,8 @@ const BlogsDashboard = () => {
             metaTitle: docData.metaTitle || '',
             metaDescription: docData.metaDescription || '',
             slug: docData.slug || '', // Get the slug from database
-            faqs: docData.faqs || [] // Get the faqs from database
+            faqs: docData.faqs || [], // Get the faqs from database
+            author: docData.author || 'Team AMA' // Get author from database or set default
           };
         });
         setBlogs(data);
@@ -158,7 +161,7 @@ const BlogsDashboard = () => {
   };
 
   // Handle blog form input changes
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setNewBlog(prevState => {
       // If title field is changed, auto-generate slug (only if slug is empty or user hasn't modified it)
@@ -280,7 +283,8 @@ const BlogsDashboard = () => {
           metaTitle: docData.metaTitle || '',
           metaDescription: docData.metaDescription || '',
           slug: docData.slug || '', // Get the slug from database
-          faqs: [] // Initialize empty faqs array
+          faqs: [], // Initialize empty faqs array
+          author: docData.author || 'Team AMA' // Get author from database or set default
         };
       });
       setBlogs(updatedBlogs);
@@ -341,7 +345,8 @@ const BlogsDashboard = () => {
       metaTitle: '',
       metaDescription: '',
       slug: '', // Reset slug field
-      faqs: [] // Reset FAQs array
+      faqs: [], // Reset FAQs array
+      author: 'Team AMA' // Reset author to default
     });
     setFormMode('add');
     setShowBlogForm(false);
@@ -572,6 +577,23 @@ const BlogsDashboard = () => {
                         className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
                         placeholder="Enter meta description for SEO"
                       />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="author" className="block text-sm font-medium text-[#5A4C33] mb-1">Author</label>
+                      <select
+                        id="author"
+                        name="author"
+                        value={newBlog.author}
+                        onChange={handleInputChange}
+                        required
+                        className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
+                      >
+                        <option value="Anuj Anand Malik">Anuj Anand Malik</option>
+                        <option value="Shrey Arora">Shrey Arora</option>
+                        <option value="Research Team AMA">Research Team AMA</option>
+                        <option value="Advocate Team AMA">Advocate Team AMA</option>
+                      </select>
                     </div>
                   </div>
                   
