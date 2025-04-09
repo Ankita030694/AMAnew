@@ -128,7 +128,7 @@ export default function Services() {
                     className="absolute -bottom-2 md:-bottom-3 left-0 right-0 h-1 bg-[#D2A02A]"
                     initial={{ width: "0%" }}
                     animate={{ width: "100%" }}
-                    transition={{ delay: 0.5, duration: 0.8 }}
+                    transition={{ delay: 0.5, duration: 0.8 }} 
                   />
                 </span>
               </h1>
