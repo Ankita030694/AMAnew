@@ -46,18 +46,6 @@ const authorBios = {
     description: "Legal professional specializing in corporate law and regulatory compliance. Brings a strategic approach to legal advisory with extensive experience in contract negotiation and business law.",
     image: "/shreychad.svg",
     linkedInUrl: "https://www.linkedin.com/in/shrey-arora-b0487b67/"
-  },
-  "Research Team AMA": {
-    name: "Research Team AMA",
-    description: "A dedicated team of legal researchers and analysts at AMA Legal Solutions who specialize in producing in-depth content on emerging legal trends, regulatory developments, and practical legal guidance.",
-    image: "/team-research.svg",
-    linkedInUrl: "https://www.linkedin.com/company/ama-legal-solutions/"
-  },
-  "Advocate Team AMA": {
-    name: "Advocate Team AMA",
-    description: "An experienced group of advocates and legal practitioners at AMA Legal Solutions who provide specialized insights on litigation strategies, case studies, and practical legal procedures.",
-    image: "/team-advocate.svg",
-    linkedInUrl: "https://www.linkedin.com/company/ama-legal-solutions/"
   }
 };
 
@@ -348,8 +336,8 @@ export default function ArticleDetail({ slug }: BlogDetailProps) {
               </div>
               <div className="flex-1">
                 <Link 
-                  href={blog.author === "Anuj Anand Malik" ? "/author" : 
-                        blog.author === "Shrey Arora" ? "/authorsec" : "/about"}
+                  href={blog.author === "Anuj Anand Malik" ? "/author/anuj-anand-malik" : 
+                        blog.author === "Shrey Arora" ? "/author/shrey-arora" : "/about"}
                   className="hover:text-[#D2A02A] transition-colors"
                 >
                   <h3 className="text-xl font-bold text-black mb-2">{blog.author}</h3>
@@ -360,8 +348,8 @@ export default function ArticleDetail({ slug }: BlogDetailProps) {
                 </p>
                 <div className="flex space-x-4">
                   <Link 
-                    href={blog.author === "Anuj Anand Malik" ? "/author" : 
-                          blog.author === "Shrey Arora" ? "/authorsec" : "/about"} 
+                    href={blog.author === "Anuj Anand Malik" ? "/author/anuj-anand-malik" : 
+                          blog.author === "Shrey Arora" ? "/author/shrey-arora" : "/about"} 
                     className="bg-[#D2A02A] text-black px-4 py-1.5 rounded hover:bg-[#5A4C33] hover:text-white transition-colors text-sm font-medium">
                     View Profile
                   </Link>
