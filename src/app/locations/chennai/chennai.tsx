@@ -129,7 +129,7 @@ export default function Services() {
                     initial={{ width: "0%" }}
                     animate={{ width: "100%" }}
                     transition={{ delay: 0.5, duration: 0.8 }} 
-                  />
+                  /> 
                 </span>
               </h1>
             </motion.div>
