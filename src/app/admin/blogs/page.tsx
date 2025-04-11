@@ -54,7 +54,7 @@ const BlogsDashboard = () => {
     metaDescription: '',
     slug: '', // Initialize the slug field
     faqs: [], // Initialize empty FAQs array
-    author: 'Team AMA' // Default author
+    author: 'Anuj Anand Malik' // Default author changed from 'Team AMA'
   });
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
@@ -122,7 +122,7 @@ const BlogsDashboard = () => {
             metaDescription: docData.metaDescription || '',
             slug: docData.slug || '', // Get the slug from database
             faqs: docData.faqs || [], // Get the faqs from database
-            author: docData.author || 'Team AMA' // Get author from database or set default
+            author: docData.author || 'Anuj Anand Malik' // Default author changed from 'Team AMA'
           };
         });
         setBlogs(data);
@@ -284,7 +284,7 @@ const BlogsDashboard = () => {
           metaDescription: docData.metaDescription || '',
           slug: docData.slug || '', // Get the slug from database
           faqs: [], // Initialize empty faqs array
-          author: docData.author || 'Team AMA' // Get author from database or set default
+          author: docData.author || 'Anuj Anand Malik' // Default author changed from 'Team AMA'
         };
       });
       setBlogs(updatedBlogs);
@@ -346,7 +346,7 @@ const BlogsDashboard = () => {
       metaDescription: '',
       slug: '', // Reset slug field
       faqs: [], // Reset FAQs array
-      author: 'Team AMA' // Reset author to default
+      author: 'Anuj Anand Malik' // Default author changed from 'Team AMA'
     });
     setFormMode('add');
     setShowBlogForm(false);
@@ -591,8 +591,6 @@ const BlogsDashboard = () => {
                       >
                         <option value="Anuj Anand Malik">Anuj Anand Malik</option>
                         <option value="Shrey Arora">Shrey Arora</option>
-                        <option value="Research Team AMA">Research Team AMA</option>
-                        <option value="Advocate Team AMA">Advocate Team AMA</option>
                       </select>
                     </div>
                   </div>
