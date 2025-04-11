@@ -348,8 +348,8 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ slug }) => {
                </div>
                <div className="flex-1">
                  <Link 
-                   href={blog.author === "Anuj Anand Malik" ? "/author" : 
-                         blog.author === "Shrey Arora" ? "/authorsec" : "/about"}
+                   href={blog.author === "Anuj Anand Malik" ? "/author/anuj-anand-malik" : 
+                         blog.author === "Shrey Arora" ? "/author/shrey-arora" : "/about"}
                    className="hover:text-[#D2A02A] transition-colors"
                  >
                    <h3 className="text-xl font-bold text-black mb-2">{blog.author}</h3>
@@ -360,8 +360,8 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ slug }) => {
                  </p>
                  <div className="flex space-x-4">
                    <Link 
-                     href={blog.author === "Anuj Anand Malik" ? "/author" : 
-                           blog.author === "Shrey Arora" ? "/authorsec" : "/about"} 
+                     href={blog.author === "Anuj Anand Malik" ? "/author/anuj-anand-malik" : 
+                           blog.author === "Shrey Arora" ? "/author/shrey-arora" : "/about"} 
                      className="bg-[#D2A02A] text-black px-4 py-1.5 rounded hover:bg-[#5A4C33] hover:text-white transition-colors text-sm font-medium">
                      View Profile
                    </Link>
@@ -397,7 +397,7 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ slug }) => {
                  </Link>
                  <p className="text-black mb-4">Advocate, Legal Consultant, and Founder of AMA Legal Solutions. Expert in loan settlements, corporate compliance, and business contracts.</p>
                  <div className="flex space-x-4">
-                   <Link href="/author" className="bg-[#D2A02A] text-black px-4 py-1.5 rounded hover:bg-[#5A4C33] hover:text-white transition-colors text-sm font-medium">
+                   <Link href="/author/anuj-anand-malik" className="bg-[#D2A02A] text-black px-4 py-1.5 rounded hover:bg-[#5A4C33] hover:text-white transition-colors text-sm font-medium">
                      View Profile
                    </Link>
                    <a 

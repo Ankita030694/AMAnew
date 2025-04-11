@@ -54,7 +54,7 @@ const ArticlesDashboard = () => {
     metaDescription: '',
     slug: '',
     faqs: [], // Initialize empty FAQs array
-    author: 'Research Team AMA' // Default author
+    author: 'Anuj Anand Malik' // Default author
   });
   const router = useRouter();
 
@@ -114,7 +114,7 @@ const ArticlesDashboard = () => {
             metaDescription: docData.metaDescription || '',
             slug: docData.slug || '',
             faqs: docData.faqs || [],
-            author: docData.author || 'Research Team AMA' // Get author or set default
+            author: docData.author || 'Anuj Anand Malik' // Default author
           };
         });
         setBlogs(data);
@@ -240,7 +240,7 @@ const ArticlesDashboard = () => {
           metaDescription: docData.metaDescription || '',
           slug: docData.slug || '',
           faqs: [], // Initialize empty faqs array
-          author: docData.author || 'Research Team AMA' // Get author or set default
+          author: docData.author || 'Anuj Anand Malik' // Default author
         };
       });
       setBlogs(updatedBlogs);
@@ -302,7 +302,7 @@ const ArticlesDashboard = () => {
       metaDescription: '',
       slug: '',
       faqs: [], // Reset FAQs array
-      author: 'Research Team AMA' // Default author
+      author: 'Anuj Anand Malik' // Default author
     });
     setFormMode('add');
     setShowBlogForm(false);
@@ -551,8 +551,6 @@ const ArticlesDashboard = () => {
                       >
                         <option value="Anuj Anand Malik">Anuj Anand Malik</option>
                         <option value="Shrey Arora">Shrey Arora</option>
-                        <option value="Research Team AMA">Research Team AMA</option>
-                        <option value="Advocate Team AMA">Advocate Team AMA</option>
                       </select>
                     </div>
                   </div>
