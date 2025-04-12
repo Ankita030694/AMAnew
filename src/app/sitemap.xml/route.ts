@@ -39,6 +39,8 @@ export async function GET(): Promise<Response> {
     '/ourhistory',
     '/present',
     '/ourvision',
+    '/author/anuj-anand-malik',
+    '/author/shrey-arora'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
