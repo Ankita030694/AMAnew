@@ -33,7 +33,7 @@ export async function GET(): Promise<Response> {
     '/services/drafting',
     '/services/entertainment',
     '/services/ipr',
-    '/services/litigation',
+    '/services/litigation', 
     '/services/loansettlement',
     '/services/realestate',
     '/ourhistory',
