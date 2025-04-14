@@ -1,8 +1,8 @@
 // app/ama-live/page.tsx
 import { Suspense } from 'react';
 import AmaLiveClient from './client';
-import { getVideos } from '@/lib/api';
-
+import { db } from '@/lib/firebase'; // Import Firebase db
+import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore';
 
 export const metadata = {
   title: 'AMA Live | Legal Video Sessions in Gurugram',
@@ -11,10 +11,59 @@ export const metadata = {
     canonical: 'https://amalegalsolutions.com/amalive', // Add your canonical URL here
   },
 }
+
+// Function to fetch videos from Firebase
+async function fetchVideosFromFirebase(page = 1, pageSize = 9) {
+  try {
+    const videosRef = collection(db, 'amalive');
+    const videosQuery = query(
+      videosRef,
+      orderBy('timestamp', 'desc'),
+      limit(pageSize)
+    );
+    
+    const querySnapshot = await getDocs(videosQuery);
+    const videos = querySnapshot.docs.map(doc => {
+      const data = doc.data();
+      // Handle timestamp formatting safely
+      let dateStr = new Date().toISOString().split('T')[0]; // Default to today
+      
+      if (data.timestamp) {
+        // Check if timestamp is a Firebase timestamp or a string
+        if (typeof data.timestamp.toDate === 'function') {
+          // Firebase Timestamp object
+          dateStr = data.timestamp.toDate().toISOString().split('T')[0];
+        } else if (typeof data.timestamp === 'string') {
+          // Regular timestamp string
+          dateStr = new Date(data.timestamp).toISOString().split('T')[0];
+        } else if (data.timestamp instanceof Date) {
+          // JavaScript Date object
+          dateStr = data.timestamp.toISOString().split('T')[0];
+        }
+      }
+      
+      return {
+        id: doc.id,
+        description: data.description || '',
+        timestamp: data.timestamp,
+        title: data.title || 'Untitled',
+        videoId: data.videoId || '',
+        category: data.category || 'General',
+        date: dateStr,
+      };
+    });
+    
+    return videos;
+  } catch (error) {
+    console.error('Error fetching videos from Firebase:', error);
+    return [];
+  }
+}
+
 // This is a Server Component that fetches data
 export default async function AmaLivePage() {
-  // Fetch data on the server
-  const initialVideos = await getVideos(1, 9);
+  // Fetch data from Firebase
+  const initialVideos = await fetchVideosFromFirebase(1, 9);
   
   return (
     <Suspense fallback={<VideosSkeleton />}>
