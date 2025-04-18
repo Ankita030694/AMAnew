@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus } from '@fortawesome/free-solid-svg-icons';
-import { collection, getDocs, addDoc } from 'firebase/firestore';
+import { collection, getDocs, addDoc, deleteDoc, doc, updateDoc } from 'firebase/firestore';
 import { signOut } from 'firebase/auth';
 import { db, auth } from '../../../lib/firebase'; // adjust the path as needed
 import { useRouter } from 'next/navigation';
@@ -36,6 +36,7 @@ const BlogsDashboard = () => {
     title: '',
     description: ''
   });
+  const [editingVideo, setEditingVideo] = useState<TableData | null>(null);
   const router = useRouter();
 
   // Use the permissions hook - admin required
@@ -88,26 +89,67 @@ const BlogsDashboard = () => {
     fetchData();
   }, []);
 
+  // Add these new functions after the existing handlers
+  const handleDelete = async (id: string) => {
+    // Show confirmation dialog
+    const isConfirmed = window.confirm('Are you sure you want to delete this video? This action cannot be undone.');
+    
+    if (isConfirmed) {
+      try {
+        await deleteDoc(doc(db, 'amalive', id));
+        // Update the table data by filtering out the deleted item
+        setTableData(prev => prev.filter(item => item.id !== id));
+      } catch (error) {
+        console.error("Error deleting video:", error);
+      }
+    }
+  };
 
+  const handleEdit = (video: TableData) => {
+    setEditingVideo(video);
+    setNewVideo({
+      videoId: video.videoId,
+      title: video.title,
+      description: video.description || ''
+    });
+    setShowBlogForm(true);
+  };
 
-  // Handle form submission for new video
   const handleSubmitVideo = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await addDoc(collection(db, 'amalive'), {
-        ...newVideo,
-        timestamp: new Date().toISOString(),
-      });
+      if (editingVideo) {
+        // Update existing video
+        await updateDoc(doc(db, 'amalive', editingVideo.id), {
+          ...newVideo,
+          updatedAt: new Date().toISOString(),
+        });
+        
+        // Update the table data
+        setTableData(prev => prev.map(item => 
+          item.id === editingVideo.id 
+            ? { ...item, ...newVideo }
+            : item
+        ));
+      } else {
+        // Add new video (existing functionality)
+        await addDoc(collection(db, 'amalive'), {
+          ...newVideo,
+          timestamp: new Date().toISOString(),
+        });
+      }
       
+      // Reset form
       setNewVideo({
         videoId: '',
         title: '',
         description: ''
       });
+      setEditingVideo(null);
       setShowBlogForm(false);
       
     } catch (error) {
-      console.error("Error adding video:", error);
+      console.error("Error saving video:", error);
     }
   };
 
@@ -196,7 +238,9 @@ const BlogsDashboard = () => {
           >
             {/* Header with Add Blog Button */}
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-xl font-semibold text-[#5A4C33]">Blog Management</h2>
+              <h2 className="text-xl font-semibold text-[#5A4C33]">
+                {editingVideo ? 'Edit Video' : 'Add New Video'}
+              </h2>
               <motion.button
                 onClick={() => setShowBlogForm(!showBlogForm)}
                 whileHover={{ scale: 1.05 }}
@@ -322,6 +366,15 @@ const BlogsDashboard = () => {
                               <motion.button
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.9 }}
+                                onClick={() => handleEdit(row)}
+                                className="px-3 py-1 bg-blue-500 text-white rounded-md text-xs"
+                              >
+                                Edit
+                              </motion.button>
+                              <motion.button
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
+                                onClick={() => handleDelete(row.id)}
                                 className="px-3 py-1 bg-red-500 text-white rounded-md text-xs"
                               >
                                 Delete
