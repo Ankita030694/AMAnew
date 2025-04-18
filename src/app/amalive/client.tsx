@@ -89,7 +89,7 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
         setIsLoading(true);
         setError(null);
         
-        const videosRef = collection(db, 'videos');
+        const videosRef = collection(db, 'amalive');
         let videosQuery;
         
         if (pageNumber > 1 && lastDoc) {
