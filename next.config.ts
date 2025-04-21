@@ -9,6 +9,24 @@ const nextConfig: NextConfig = {
   swcMinify: true,
   experimental: {
     optimizeCss: true,
+    serverActions: {},
+    urlImports: true,
+  },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
+  },
+  webpack: (config, { dev, isServer }) => {
+    if (dev && !isServer) {
+      const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+      config.plugins.push(
+        new BundleAnalyzerPlugin({
+          analyzerMode: 'server',
+          analyzerPort: 8888,
+          openAnalyzer: false,
+        })
+      );
+    }
+    return config;
   },
   async redirects() {
     return [
