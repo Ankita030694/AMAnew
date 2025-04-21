@@ -27,6 +27,7 @@
     "@tiptap/extension-underline": "^2.11.5",
     "@tiptap/react": "^2.11.5",
     "@tiptap/starter-kit": "^2.11.5",
+    "critters": "^0.0.23",
     "firebase": "^11.4.0",
     "framer-motion": "^12.4.10",
     "lowlight": "^3.3.0",
