@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  swcMinify: true,
+  experimental: {
+    optimizeCss: true,
+  },
   async redirects() {
     return [
       {
