@@ -666,6 +666,14 @@ const BlogsDashboard = () => {
                     <p className="mt-1 text-xs text-gray-500">Use the toolbar above to format your content.</p>
                   </div>
                   
+                  <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-md">
+                    <h3 className="text-sm font-medium text-blue-800 mb-1">RSS Feed Information</h3>
+                    <p className="text-xs text-blue-600">
+                      Your blog will be automatically added to the RSS feed at <strong>{process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://www.amalegalsolutions.com'}/api/rss</strong> 
+                      which syncs with LinkedIn's RSS automation feature.
+                    </p>
+                  </div>
+                  
                   <div className="flex justify-end space-x-3">
                     <motion.button
                       type="button"
