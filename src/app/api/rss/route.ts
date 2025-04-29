@@ -49,8 +49,10 @@ export async function GET() {
       
       // Create a clean excerpt from the HTML content (first 150 chars)
       let excerpt = blog.description
-        .replace(/<[^>]*>/g, '') // Remove HTML tags
-        .substring(0, 150);
+        ? blog.description
+            .replace(/<[^>]*>/g, '') // Remove HTML tags
+            .substring(0, 150)
+        : '';
       
       if (excerpt.length === 150) {
         excerpt += '...';
@@ -58,13 +60,13 @@ export async function GET() {
       
       rssXml += `
     <item>
-      <title>${escapeXml(blog.title)}</title>
+      <title>${escapeXml(blog.title || '')}</title>
       <link>${blogUrl}</link>
       <guid>${blogUrl}</guid>
       <pubDate>${pubDate}</pubDate>
       <description>${escapeXml(excerpt)}</description>
-      <content:encoded><![CDATA[${blog.description}]]></content:encoded>
-      <dc:creator>${escapeXml(blog.author)}</dc:creator>
+      <content:encoded><![CDATA[${blog.description || ''}]]></content:encoded>
+      <dc:creator>${escapeXml(blog.author || 'AMA Legal Solutions')}</dc:creator>
       ${blog.image ? `<enclosure url="${escapeXml(blog.image)}" type="image/jpeg" />` : ''}
     </item>`;
     });
