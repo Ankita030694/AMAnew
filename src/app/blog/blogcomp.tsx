@@ -123,7 +123,14 @@ export default function Page() {
   const currentBlogs = regularArticles.slice(indexOfFirstBlog, indexOfLastBlog);
   const totalPages = Math.ceil(regularArticles.length / blogsPerPage);
 
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+    // Scroll to top when page changes
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
   
   return (
     <div className="container mx-auto px-4 py-8 bg-white">
@@ -294,7 +301,7 @@ export default function Page() {
               transition={{ delay: 0.4 }}
             >
               <div className="flex items-center gap-2 mb-4">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#D2A02A" stroke="#D2A02A" strokeWidth="1.5">
                   <path d="M12 2L14.39 8.26L21 9.27L16.5 14.14L17.77 21L12 17.77L6.23 21L7.5 14.14L3 9.27L9.61 8.26L12 2z" />
                 </svg>
                 <h2 className="text-xl font-medium" style={{ color: '#5A4C33' }}>Trending</h2>
