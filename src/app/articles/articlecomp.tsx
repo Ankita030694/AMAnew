@@ -98,11 +98,23 @@ export default function Page() {
     fetchArticles();
   }, []);
 
+  // Helper function to shuffle array (Fisher-Yates algorithm)
+  const shuffleArray = (array: any[]) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
   // Get spotlight article (most recent)
   const spotlightArticle = articles.length > 0 ? articles[0] : null;
   
-  // Get trending articles (next 3 most recent)
-  const trendingArticles = articles.length > 1 ? articles.slice(1, 4) : [];
+  // Get trending articles (8 random articles)
+  const trendingArticles = articles.length > 1 
+    ? shuffleArray([...articles]).slice(0, 8)
+    : [];
   
   // Get regular articles (excluding spotlight)
   const regularArticles = articles.length > 0 ? articles.slice(1) : [];

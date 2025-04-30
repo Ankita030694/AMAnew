@@ -60,6 +60,8 @@ interface Blog {
 export default function Page() {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const blogsPerPage = 8;
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -96,14 +98,32 @@ export default function Page() {
     fetchBlogs();
   }, []);
 
+  // Helper function to shuffle array (Fisher-Yates algorithm)
+  const shuffleArray = (array: Blog[]) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
   // Get spotlight article (most recent)
   const spotlightArticle = blogs.length > 0 ? blogs[0] : null;
   
-  // Get trending articles (next 3 most recent)
-  const trendingArticles = blogs.length > 1 ? blogs.slice(1, 4) : [];
+  // Get trending articles (all blogs in random order)
+  const trendingArticles = blogs.length > 1 ? shuffleArray(blogs) : [];
   
   // Get regular articles (excluding spotlight)
   const regularArticles = blogs.length > 0 ? blogs.slice(1) : [];
+  
+  // Pagination logic for regular articles
+  const indexOfLastBlog = currentPage * blogsPerPage;
+  const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
+  const currentBlogs = regularArticles.slice(indexOfFirstBlog, indexOfLastBlog);
+  const totalPages = Math.ceil(regularArticles.length / blogsPerPage);
+
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
   
   return (
     <div className="container mx-auto px-4 py-8 bg-white">
@@ -193,7 +213,7 @@ export default function Page() {
                 initial="hidden"
                 animate="visible"
               >
-                {regularArticles.map((article) => (
+                {currentBlogs.map((article) => (
                   <motion.div 
                     key={article.id}
                     variants={itemVariants}
@@ -229,6 +249,39 @@ export default function Page() {
                   </motion.div>
                 ))}
               </motion.div>
+
+              {/* Pagination Controls */}
+              {totalPages > 1 && (
+                <div className="flex justify-center mt-8">
+                  <nav className="flex items-center gap-2">
+                    <button 
+                      onClick={() => paginate(currentPage - 1)}
+                      disabled={currentPage === 1}
+                      className={`px-3 py-1 rounded ${currentPage === 1 ? 'bg-gray-200 text-gray-500' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
+                    >
+                      Previous
+                    </button>
+                    
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(number => (
+                      <button
+                        key={number}
+                        onClick={() => paginate(number)}
+                        className={`px-3 py-1 rounded ${currentPage === number ? 'bg-[#5A4C33] text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
+                      >
+                        {number}
+                      </button>
+                    ))}
+                    
+                    <button 
+                      onClick={() => paginate(currentPage + 1)}
+                      disabled={currentPage === totalPages}
+                      className={`px-3 py-1 rounded ${currentPage === totalPages ? 'bg-gray-200 text-gray-500' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
+                    >
+                      Next
+                    </button>
+                  </nav>
+                </div>
+              )}
             </div>
           </div>
           
