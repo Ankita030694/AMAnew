@@ -59,6 +59,8 @@ const BlogsDashboard = () => {
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10; // Set the number of items per page
+  const [rssDebugInfo, setRssDebugInfo] = useState<string>('');
+  const [isLoadingRss, setIsLoadingRss] = useState(false);
 
   // Calculate the total number of pages
   const totalPages = Math.ceil(blogs.length / itemsPerPage);
@@ -367,6 +369,62 @@ const BlogsDashboard = () => {
   const handlePreviousPage = () => {
     if (currentPage > 1) {
       setCurrentPage(prevPage => prevPage - 1);
+    }
+  };
+
+  // Add a function to test the RSS feed
+  const testRssFeed = async () => {
+    try {
+      setIsLoadingRss(true);
+      console.log('Testing RSS feed...');
+      
+      // Fetch the RSS feed
+      const response = await fetch('/api/rss');
+      console.log('RSS feed response status:', response.status);
+      
+      if (!response.ok) {
+        throw new Error(`RSS feed returned status: ${response.status}`);
+      }
+      
+      // Get the XML content
+      const xml = await response.text();
+      console.log('RSS feed XML length:', xml.length);
+      
+      // Basic validation checks
+      const isValidXml = xml.includes('<?xml version="1.0"') && 
+                        xml.includes('<rss version="2.0"') &&
+                        xml.includes('</rss>');
+      
+      console.log('Is valid XML structure:', isValidXml);
+      
+      // Count items in feed
+      const itemCount = (xml.match(/<item>/g) || []).length;
+      console.log('Number of items in feed:', itemCount);
+      
+      // Check for common issues
+      const hasEmptyTitles = xml.includes('<title></title>');
+      const hasEmptyLinks = xml.includes('<link></link>');
+      const hasMalformedDates = xml.includes('<pubDate>Invalid Date</pubDate>');
+      
+      console.log('Feed has empty titles:', hasEmptyTitles);
+      console.log('Feed has empty links:', hasEmptyLinks);
+      console.log('Feed has malformed dates:', hasMalformedDates);
+      
+      // Set debug info
+      setRssDebugInfo(
+        `RSS Feed Status: ${response.status === 200 ? '✅ OK' : '❌ Error'}\n` +
+        `Valid XML Structure: ${isValidXml ? '✅ Yes' : '❌ No'}\n` +
+        `Items in Feed: ${itemCount}\n` +
+        `Empty Titles: ${hasEmptyTitles ? '❌ Yes' : '✅ No'}\n` +
+        `Empty Links: ${hasEmptyLinks ? '❌ Yes' : '✅ No'}\n` +
+        `Malformed Dates: ${hasMalformedDates ? '❌ Yes' : '✅ No'}\n\n` +
+        `Sample XML (first 500 chars):\n${xml.substring(0, 500)}...`
+      );
+    } catch (error) {
+      console.error('Error testing RSS feed:', error);
+      setRssDebugInfo(`Error testing RSS feed: ${error instanceof Error ? error.message : String(error)}`);
+    } finally {
+      setIsLoadingRss(false);
     }
   };
 
@@ -786,6 +844,60 @@ const BlogsDashboard = () => {
                   </div>
                 </motion.div>
               </AnimatePresence>
+            )}
+
+            {/* RSS Feed Debug Panel - Add this at the end of the content section */}
+            {!showBlogForm && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="mt-8 p-4 border border-blue-200 rounded-md bg-blue-50"
+              >
+                <div className="flex justify-between items-center mb-3">
+                  <h3 className="text-md font-semibold text-blue-700">RSS Feed Diagnostics</h3>
+                  <motion.button
+                    onClick={testRssFeed}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    disabled={isLoadingRss}
+                    className="px-3 py-1 bg-blue-600 text-white text-sm rounded-md flex items-center"
+                  >
+                    {isLoadingRss ? 'Testing...' : 'Test RSS Feed'}
+                  </motion.button>
+                </div>
+                
+                <div className="flex mb-2">
+                  <a 
+                    href="/api/rss" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline text-sm mr-4"
+                  >
+                    View RSS Feed
+                  </a>
+                  <a 
+                    href="https://validator.w3.org/feed/check.cgi?url=https://www.amalegalsolutions.com/api/rss" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline text-sm"
+                  >
+                    Validate with W3C Feed Validator
+                  </a>
+                </div>
+                
+                {rssDebugInfo && (
+                  <div className="mt-3">
+                    <pre className="bg-blue-100 p-3 rounded-md text-xs text-blue-800 overflow-x-auto whitespace-pre-wrap">
+                      {rssDebugInfo}
+                    </pre>
+                  </div>
+                )}
+                
+                <p className="mt-3 text-xs text-blue-600">
+                  <strong>Tip:</strong> RSS feeds should be valid XML with proper entity escaping for special characters. 
+                  Make sure all required fields (title, link, description, pubDate) are present for each item.
+                </p>
+              </motion.div>
             )}
           </motion.div>
         </div>

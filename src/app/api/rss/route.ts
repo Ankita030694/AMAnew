@@ -44,7 +44,7 @@ export async function GET() {
 
     // Add items for each blog
     blogs.forEach(blog => {
-      const pubDate = new Date(blog.created).toUTCString();
+      const pubDate = blog.created ? new Date(blog.created).toUTCString() : new Date().toUTCString();
       const blogUrl = `${websiteUrl}/blog/${blog.slug}`;
       
       // Create a clean excerpt from the HTML content (first 150 chars)
@@ -67,7 +67,8 @@ export async function GET() {
       <description>${escapeXml(excerpt)}</description>
       <content:encoded><![CDATA[${blog.description || ''}]]></content:encoded>
       <dc:creator>${escapeXml(blog.author || 'AMA Legal Solutions')}</dc:creator>
-      ${blog.image ? `<enclosure url="${escapeXml(blog.image)}" type="image/jpeg" />` : ''}
+      ${blog.image && blog.image.trim() !== '' ? 
+        `<enclosure url="${escapeXml(blog.image)}" type="image/jpeg" length="0" />` : ''}
     </item>`;
     });
 
@@ -85,6 +86,9 @@ export async function GET() {
     });
   } catch (error) {
     console.error('Error generating RSS feed:', error);
+    if (error instanceof Error) {
+      console.error('Error details:', error.message);
+    }
     return NextResponse.json(
       { error: 'Failed to generate RSS feed' },
       { status: 500 }
