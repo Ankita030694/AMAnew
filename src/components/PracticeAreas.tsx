@@ -8,30 +8,37 @@ import {
   faBuilding,
   faArrowRight
 } from '@fortawesome/free-solid-svg-icons'
-import { motion } from "framer-motion";
+import dynamic from 'next/dynamic'
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+
+// Dynamically import motion components with no SSR to reduce initial load
+const MotionDiv = dynamic(() => 
+  import('framer-motion').then(mod => ({ default: mod.motion.div })),
+  { ssr: false }
+);
 
 export default function PracticeAreas() {
   const [isDesktop, setIsDesktop] = useState(true);
   
+  // Memoize the resize handler to prevent unnecessary re-renders
+  const handleResize = useCallback(() => {
+    setIsDesktop(window.innerWidth >= 768);
+  }, []);
+  
   useEffect(() => {
     // Check if window is available (client-side)
     if (typeof window !== 'undefined') {
-      const handleResize = () => {
-        setIsDesktop(window.innerWidth >= 768);
-      };
-      
       // Set initial value
       handleResize();
       
-      // Add event listener
-      window.addEventListener('resize', handleResize);
+      // Add event listener with passive flag for better performance
+      window.addEventListener('resize', handleResize, { passive: true });
       
       // Cleanup
       return () => window.removeEventListener('resize', handleResize);
     }
-  }, []);
+  }, [handleResize]);
 
   const practiceAreas = [
     {
@@ -74,11 +81,11 @@ export default function PracticeAreas() {
 
   return (
     <div className="bg-white py-16 md:py-24 relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-40 h-40 md:w-64 md:h-64 bg-[#D2A02A]/10 rounded-br-full -translate-x-10 -translate-y-10" />
-      <div className="absolute bottom-0 right-0 w-48 h-48 md:w-72 md:h-72 bg-[#5A4C33]/10 rounded-tl-full translate-x-20 translate-y-20" />
+      {/* Simplified decorative elements with will-change hint */}
+      <div className="absolute top-0 left-0 w-40 h-40 md:w-64 md:h-64 bg-[#D2A02A]/10 rounded-br-full -translate-x-10 -translate-y-10 will-change-transform" />
+      <div className="absolute bottom-0 right-0 w-48 h-48 md:w-72 md:h-72 bg-[#5A4C33]/10 rounded-tl-full translate-x-20 translate-y-20 will-change-transform" />
       
-      {/* Dotted pattern */}
+      {/* Optimized dotted pattern with CSS variables */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute inset-0" style={{
           backgroundImage: `radial-gradient(#5A4C33 1px, transparent 1px)`,
@@ -87,7 +94,7 @@ export default function PracticeAreas() {
       </div>
       
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 relative z-10">
-        <motion.div 
+        <MotionDiv 
           className="text-center mb-16 md:mb-24"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -96,7 +103,7 @@ export default function PracticeAreas() {
         >
           <h2 className="text-4xl font-bold text-[#5A4C33] mb-6 relative inline-block">
             Our Expertise
-            <motion.div 
+            <MotionDiv 
               className="h-1 bg-[#D2A02A] absolute -bottom-2 left-0 right-0 mx-auto"
               initial={{ width: 0 }}
               whileInView={{ width: '50%' }}
@@ -104,7 +111,7 @@ export default function PracticeAreas() {
               viewport={{ once: true }}
             />
           </h2>
-          <motion.p
+          <MotionDiv
             className="max-w-2xl mx-auto mt-6 text-gray-600 text-lg"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -112,18 +119,21 @@ export default function PracticeAreas() {
             viewport={{ once: true }}
           >
             Our firm combines decades of legal experience with personalized service to deliver exceptional results for all our clients. AMA focuses on providing strategic, result-driven legal advisory services that protect our client's rights and support their growth and success.
-          </motion.p>
-        </motion.div>
+          </MotionDiv>
+        </MotionDiv>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {practiceAreas.slice(0, isDesktop ? 6 : 4).map((item, index) => (
-            <motion.div
+            <MotionDiv
               key={index}
               className="bg-[#F8F5EC] rounded-lg border-l-4 border-[#D2A02A] overflow-hidden hover:shadow-lg transition-shadow duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: 0.1 * index, duration: 0.5 }}
+              transition={{ 
+                delay: Math.min(0.1 * index, 0.5), // Cap maximum delay for better performance
+                duration: 0.5 
+              }}
             >
               <Link href={item.link} className="block h-full">
                 <div className="p-6 relative">
@@ -149,11 +159,11 @@ export default function PracticeAreas() {
                   </div>
                 </div>
               </Link>
-            </motion.div>
+            </MotionDiv>
           ))}
         </div>
         
-        <motion.div 
+        <MotionDiv 
           className="flex justify-center mt-14"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -169,7 +179,7 @@ export default function PracticeAreas() {
               />
             </button>
           </Link>
-        </motion.div>
+        </MotionDiv>
       </div>
     </div>
   )

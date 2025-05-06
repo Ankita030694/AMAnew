@@ -1,13 +1,14 @@
 'use client';
 
 import Image from 'next/image';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
 export default function Clients() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [visibleSlides, setVisibleSlides] = useState(4); // Default to desktop view
+  const [visibleSlides, setVisibleSlides] = useState(4);
   const carouselRef = useRef<HTMLDivElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const isVisibleRef = useRef(false);
 
   const clientLogos = [
     { src: "/credsettle.svg", alt: "Client 1" },
@@ -22,57 +23,90 @@ export default function Clients() {
   ];
 
   // Determine how many logos should be visible based on viewport width
-  const getVisibleSlides = () => {
+  const getVisibleSlides = useCallback(() => {
     if (typeof window !== 'undefined') {
       return window.innerWidth >= 768 ? 4 : 2;
     }
     return 4;
-  };
-
-  // Update visibleSlides (and adjust currentSlide if needed) on resize
-  useEffect(() => {
-    const updateVisibleSlides = () => {
-      const newVisible = getVisibleSlides();
-      setVisibleSlides(newVisible);
-      const maxSlideIndex = clientLogos.length - newVisible;
-      setCurrentSlide((prev) => Math.min(prev, maxSlideIndex));
-    };
-
-    updateVisibleSlides();
-    window.addEventListener('resize', updateVisibleSlides);
-    return () => window.removeEventListener('resize', updateVisibleSlides);
   }, []);
 
-  // Calculate the maximum slide index so that the final logo is reached
+  // Debounced resize handler
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+    
+    const handleResize = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        const newVisible = getVisibleSlides();
+        setVisibleSlides(newVisible);
+        const maxSlideIndex = clientLogos.length - newVisible;
+        setCurrentSlide((prev) => Math.min(prev, maxSlideIndex));
+      }, 200); // 200ms debounce
+    };
+
+    handleResize(); // Initial call
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(timeoutId);
+    };
+  }, [getVisibleSlides, clientLogos.length]);
+
+  // Calculate the maximum slide index
   const maxSlideIndex = clientLogos.length - visibleSlides;
 
-  // Start and stop the auto-slide timer using a ref
-  const startTimer = () => {
-    if (intervalRef.current === null) {
+  // Intersection Observer to detect if component is visible
+  useEffect(() => {
+    if (!carouselRef.current || typeof IntersectionObserver !== 'function') return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        isVisibleRef.current = entries[0].isIntersecting;
+        if (isVisibleRef.current) {
+          startTimer();
+        } else {
+          stopTimer();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(carouselRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  // Start and stop the auto-slide timer
+  const startTimer = useCallback(() => {
+    if (intervalRef.current === null && isVisibleRef.current) {
       intervalRef.current = setInterval(() => {
         setCurrentSlide((prev) => (prev >= maxSlideIndex ? 0 : prev + 1));
-      }, 2000);
+      }, 3000); // Increased to 3000ms for better performance
     }
-  };
+  }, [maxSlideIndex]);
 
-  const stopTimer = () => {
+  const stopTimer = useCallback(() => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
       intervalRef.current = null;
     }
-  };
+  }, []);
 
+  // Clean up timer on unmount and when maxSlideIndex changes
   useEffect(() => {
     startTimer();
     return () => stopTimer();
-  }, [maxSlideIndex]);
+  }, [maxSlideIndex, startTimer, stopTimer]);
 
   const handlePrev = () => {
+    stopTimer();
     setCurrentSlide((prev) => (prev === 0 ? maxSlideIndex : prev - 1));
+    setTimeout(startTimer, 1000);
   };
 
   const handleNext = () => {
+    stopTimer();
     setCurrentSlide((prev) => (prev >= maxSlideIndex ? 0 : prev + 1));
+    setTimeout(startTimer, 1000);
   };
 
   return (
@@ -100,6 +134,8 @@ export default function Clients() {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                width="24"
+                height="24"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
@@ -108,8 +144,11 @@ export default function Clients() {
             {/* Logos Container */}
             <div className="overflow-hidden">
               <div
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentSlide * (100 / visibleSlides)}%)` }}
+                className="flex will-change-transform"
+                style={{ 
+                  transform: `translateX(-${currentSlide * (100 / visibleSlides)}%)`,
+                  transition: 'transform 500ms ease-in-out'
+                }}
               >
                 {clientLogos.map((logo, index) => (
                   <div key={index} className="md:w-1/4 w-1/2 flex-shrink-0 px-4">
@@ -120,6 +159,7 @@ export default function Clients() {
                         width={200}
                         height={100}
                         className="object-contain"
+                        loading={index < visibleSlides ? "eager" : "lazy"}
                       />
                     </div>
                   </div>
@@ -138,6 +178,8 @@ export default function Clients() {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                width="24"
+                height="24"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
