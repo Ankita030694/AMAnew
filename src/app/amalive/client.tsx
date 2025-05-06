@@ -71,8 +71,20 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
 
   // Debug logging
   useEffect(() => {
-    console.log("Initial videos:", initialVideos);
-    console.log("Current videos state:", videos);
+    console.log("Client: Initial videos received:", initialVideos.length);
+    console.log("Client: Current videos state:", videos.length);
+    
+    // Debug Firebase connection
+    try {
+      console.log("Client: Firebase db reference exists:", !!db);
+      
+      // Check if we're actually connected to Firebase
+      const checkRef = collection(db, 'amalive');
+      console.log("Client: Firebase collection reference created successfully");
+    } catch (err) {
+      console.error("Client: Error checking Firebase connection:", err);
+      setError(`Firebase connection error: ${err instanceof Error ? err.message : String(err)}`);
+    }
   }, [initialVideos, videos]);
 
   // Calculate total pages based on available videos
@@ -86,6 +98,7 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
       }
       
       try {
+        console.log("Client: Loading more videos for page", pageNumber);
         setIsLoading(true);
         setError(null);
         
@@ -109,10 +122,12 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
           );
         }
         
+        console.log("Client: Executing Firebase query");
         const querySnapshot = await getDocs(videosQuery);
+        console.log("Client: Query completed, docs count:", querySnapshot.docs.length);
         
         if (querySnapshot.empty) {
-          console.log('No more videos to load');
+          console.log('Client: No more videos to load');
           setIsLoading(false);
           return;
         }
@@ -120,19 +135,33 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
         // Set the last document for pagination
         setLastDoc(querySnapshot.docs[querySnapshot.docs.length - 1]);
         
-        const newVideos = querySnapshot.docs.map(doc => ({
-          id: doc.id,
-          description: doc.data().description || '',
-          timestamp: doc.data().timestamp,
-          title: doc.data().title || 'Untitled Video',
-          videoId: doc.data().videoId || '',
-          category: doc.data().category || 'General',
-          date: doc.data().timestamp ? 
-            new Date(doc.data().timestamp.toDate()).toISOString().split('T')[0] : 
-            new Date().toISOString().split('T')[0],
-        }));
+        const newVideos = querySnapshot.docs.map(doc => {
+          const data = doc.data();
+          // Convert timestamp to a readable date string
+          let dateStr = new Date().toISOString().split('T')[0]; // Default
+          
+          try {
+            if (data.timestamp && typeof data.timestamp.toDate === 'function') {
+              dateStr = data.timestamp.toDate().toISOString().split('T')[0];
+            } else if (data.timestamp) {
+              dateStr = new Date(data.timestamp).toISOString().split('T')[0];
+            }
+          } catch (err) {
+            console.error("Date conversion error:", err);
+          }
+          
+          return {
+            id: doc.id,
+            description: data.description || '',
+            timestamp: data.timestamp,
+            title: data.title || 'Untitled Video',
+            videoId: data.videoId || '',
+            category: data.category || 'General',
+            date: dateStr,
+          };
+        });
         
-        console.log('Fetched videos from Firebase:', newVideos);
+        console.log('Client: Fetched videos from Firebase:', newVideos.length);
         
         if (pageNumber === 1) {
           setVideos(newVideos);
@@ -147,8 +176,9 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
         
         setIsLoading(false);
       } catch (error) {
-        console.error("Error loading videos from Firebase:", error);
-        setError("Failed to load videos. Please try again later.");
+        console.error("Client: Error loading videos from Firebase:", error);
+        const errorDetails = error instanceof Error ? error.message : String(error);
+        setError(`Failed to load videos: ${errorDetails}`);
         setIsLoading(false);
       }
     },

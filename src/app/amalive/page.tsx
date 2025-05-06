@@ -15,6 +15,7 @@ export const metadata = {
 // Function to fetch videos from Firebase
 async function fetchVideosFromFirebase(page = 1, pageSize = 9) {
   try {
+    console.log('Server: Attempting to fetch videos from Firebase');
     const videosRef = collection(db, 'amalive');
     const videosQuery = query(
       videosRef,
@@ -23,6 +24,8 @@ async function fetchVideosFromFirebase(page = 1, pageSize = 9) {
     );
     
     const querySnapshot = await getDocs(videosQuery);
+    console.log('Server: Firebase query completed, docs count:', querySnapshot.docs.length);
+    
     const videos = querySnapshot.docs.map(doc => {
       const data = doc.data();
       // Handle timestamp formatting safely
@@ -53,9 +56,13 @@ async function fetchVideosFromFirebase(page = 1, pageSize = 9) {
       };
     });
     
+    console.log('Server: Processed videos data:', videos.length);
     return videos;
   } catch (error) {
     console.error('Error fetching videos from Firebase:', error);
+    // Include more detailed error information
+    const errorDetails = error instanceof Error ? error.message : String(error);
+    console.error('Error details:', errorDetails);
     return [];
   }
 }
@@ -63,13 +70,29 @@ async function fetchVideosFromFirebase(page = 1, pageSize = 9) {
 // This is a Server Component that fetches data
 export default async function AmaLivePage() {
   // Fetch data from Firebase
-  const initialVideos = await fetchVideosFromFirebase(1, 9);
-  
-  return (
-    <Suspense fallback={<VideosSkeleton />}>
-      <AmaLiveClient initialVideos={initialVideos} />
-    </Suspense>
-  );
+  try {
+    const initialVideos = await fetchVideosFromFirebase(1, 9);
+    console.log('Server: Fetched initial videos:', initialVideos.length);
+    
+    return (
+      <Suspense fallback={<VideosSkeleton />}>
+        <AmaLiveClient initialVideos={initialVideos} />
+      </Suspense>
+    );
+  } catch (error) {
+    console.error('Server: Error in AmaLivePage component:', error);
+    // Return an error state that will be visible
+    return (
+      <div className="container mx-auto px-4 py-8 mt-20">
+        <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-md">
+          <h2 className="text-lg font-medium mb-2">Error loading videos</h2>
+          <p>There was a problem loading the video content. Please try again later.</p>
+          <p className="text-sm mt-2">Error details: {error instanceof Error ? error.message : String(error)}</p>
+        </div>
+        <AmaLiveClient initialVideos={[]} />
+      </div>
+    );
+  }
 }
 
 // Simple skeleton loader component
