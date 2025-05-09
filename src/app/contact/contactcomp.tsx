@@ -189,7 +189,7 @@ const ContactComp = () => {
     {
       icon: faMapMarkerAlt,
       title: "Our Address",
-      details: "Block G, Sushant Lok 2, 2493AP, Gurugram, Haryana 122001",
+      details: "2493AP, Block G, Sushant Lok 2, Sector 57, Gurugram, Haryana 122001",
     },
     {
       icon: faEnvelope,

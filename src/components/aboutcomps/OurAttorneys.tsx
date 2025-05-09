@@ -149,7 +149,7 @@ export default function OurAttorneys() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#6B5B3D] mb-4">
-              Our Attorneys
+              Our Expert Lawyers
             </h2>
             <p className="text-gray-600">No attorneys found.</p>
           </div>
