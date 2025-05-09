@@ -86,7 +86,7 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
       setError(`Firebase connection error: ${err instanceof Error ? err.message : String(err)}`);
     }
   }, [initialVideos, videos]);
-
+ 
   // Calculate total pages based on available videos
   const totalPages = Math.ceil(videos.length / videosPerPage);
 
