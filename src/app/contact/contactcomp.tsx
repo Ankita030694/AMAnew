@@ -243,7 +243,7 @@ const ContactComp = () => {
             className="h-[500px] rounded-lg overflow-hidden shadow-xl border border-[#D2A02A]/20 relative"
           >
             <iframe
-              src="https://maps.google.com/maps?q=AMA+LEGAL+SOLUTIONS%2C+2493AP%2C+Block+G%2C+Sushant+Lok+2%2C+Sector+57%2C+Gurugram%2C+Haryana+122001&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.786864055198!2d77.0878512!3d28.425687399999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8b74fa3c4bce8f29%3A0x9c0cf35a3104b12e!2sAMA%20LEGAL%20SOLUTIONS!5e0!3m2!1sen!2sin!4v1746705994547!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}
