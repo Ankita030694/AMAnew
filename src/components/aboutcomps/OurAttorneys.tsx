@@ -131,7 +131,7 @@ export default function OurAttorneys() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#6B5B3D] mb-4">
-              Our Attorneys
+              Our Expert Lawyers
             </h2>
             <div className="flex items-center justify-center">
               <div className="h-8 w-8 border-4 border-[#D2A02A] border-t-transparent rounded-full animate-spin mx-auto"></div>
