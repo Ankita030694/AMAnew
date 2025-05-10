@@ -7,7 +7,7 @@ export async function GET(): Promise<Response> {
   const blogs = await fetchAllBlogs()
   const articles = await fetchAllArticles()
   
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://amalegalsolutions.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.amalegalsolutions.com'
   
   // Build static routes
   const staticRoutes = [
