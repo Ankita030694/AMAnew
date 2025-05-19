@@ -1,0 +1,6 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#f0ead6" />
+  <rect x="160" y="120" width="80" height="60" fill="#d2a02a" />
+  <text x="200" y="210" font-family="Arial" font-size="16" text-anchor="middle" fill="#5a4c33">Image unavailable</text>
+  <text x="200" y="240" font-family="Arial" font-size="12" text-anchor="middle" fill="#5a4c33">AMA Legal Solutions</text>
+</svg> 

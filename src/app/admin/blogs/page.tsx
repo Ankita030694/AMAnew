@@ -1,11 +1,12 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faEdit, faTrash, faUpload } from '@fortawesome/free-solid-svg-icons';
 import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc } from 'firebase/firestore';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
-import { db, auth } from '../../../lib/firebase'; // adjust the path as needed
+import { db, auth, storage } from '../../../lib/firebase'; // adjust the path as needed
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
 
@@ -61,6 +62,10 @@ const BlogsDashboard = () => {
   const itemsPerPage = 10; // Set the number of items per page
   const [rssDebugInfo, setRssDebugInfo] = useState<string>('');
   const [isLoadingRss, setIsLoadingRss] = useState(false);
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [imagePreview, setImagePreview] = useState<string>('');
+  const [isUploading, setIsUploading] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Calculate the total number of pages
   const totalPages = Math.ceil(blogs.length / itemsPerPage);
@@ -220,13 +225,118 @@ const BlogsDashboard = () => {
     });
   };
 
-  // Handle blog form submission (Create or Update)
+  // Handle file input change for image upload
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setImageFile(file);
+      
+      // Create a preview URL for the selected image
+      const reader = new FileReader();
+      reader.onload = () => {
+        setImagePreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  // Updated function with fallback to direct upload
+  const uploadImage = async (): Promise<string> => {
+    if (!imageFile) return newBlog.image; // Return existing image URL if no new file selected
+    
+    try {
+      setIsUploading(true);
+      console.log('Starting image upload process...');
+      
+      // Create form data
+      const formData = new FormData();
+      formData.append('file', imageFile);
+      console.log(`Preparing file: ${imageFile.name}, size: ${imageFile.size} bytes`);
+      
+      // First test if API routes are working with a simpler endpoint
+      try {
+        console.log('Testing API route functionality...');
+        const testResponse = await fetch('/api/test-upload', {
+          method: 'GET',
+        });
+        
+        console.log(`Test API response status: ${testResponse.status}`);
+        const testData = await testResponse.json();
+        console.log('Test API response:', testData);
+        
+        if (!testResponse.ok) {
+          throw new Error('API routes are not functioning correctly');
+        }
+      } catch (testError) {
+        console.error('API test failed:', testError);
+        // Continue anyway - the test might fail but uploads might still work
+      }
+      
+      // Try the primary Firebase Storage upload method
+      try {
+        const response = await fetch('/api/upload', {
+          method: 'POST',
+          body: formData,
+        });
+        
+        console.log(`Upload API response status: ${response.status}`);
+        
+        const data = await response.json();
+        console.log('Upload API response data:', data);
+        
+        if (response.ok && data.url) {
+          console.log(`Image uploaded successfully to Firebase. URL: ${data.url}`);
+          return data.url;
+        }
+        
+        throw new Error(data.details || data.error || 'Failed to upload to Firebase Storage');
+      } catch (firebaseError) {
+        console.error("Firebase upload failed, trying direct upload:", firebaseError);
+        
+        // If Firebase upload fails, try the direct upload alternative
+        try {
+          const directResponse = await fetch('/api/direct-upload', {
+            method: 'POST',
+            body: formData,
+          });
+          
+          console.log(`Direct upload API response status: ${directResponse.status}`);
+          
+          const directData = await directResponse.json();
+          console.log('Direct upload API response data:', directData);
+          
+          if (directResponse.ok && directData.url) {
+            console.log(`Image uploaded successfully via direct method. URL: ${directData.url}`);
+            alert('Image uploaded to local server instead of Firebase due to CORS issues.');
+            return directData.url;
+          }
+          
+          throw new Error(directData.details || directData.error || 'Failed to upload with direct method');
+        } catch (directError) {
+          console.error("Direct upload also failed:", directError);
+          throw new Error('All upload methods failed');
+        }
+      }
+    } catch (error) {
+      console.error("Error uploading image:", error);
+      alert(`Failed to upload image: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      return newBlog.image; // Return existing image URL on error
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
+  // Modified handleSubmitBlog to include image upload
   const handleSubmitBlog = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+      // Upload image first if a file was selected
+      const imageUrl = await uploadImage();
+      
       // Add timestamp and format the date
       const blogWithMetadata = {
         ...newBlog,
+        image: imageUrl, // Use the Firebase Storage URL
         created: formMode === 'add' ? Date.now() : newBlog.created,
         date: new Date(newBlog.date).toISOString().split('T')[0] // Ensure date is in YYYY-MM-DD format
       };
@@ -296,7 +406,7 @@ const BlogsDashboard = () => {
     }
   };
 
-  // Handle blog edit - needs to also fetch FAQs from subcollection
+  // Modified handleEdit to include image preview
   const handleEdit = async (blog: Blog) => {
     try {
       // Fetch FAQs for this blog
@@ -310,11 +420,14 @@ const BlogsDashboard = () => {
       setNewBlog({...blog, faqs});
       setFormMode('edit');
       setShowBlogForm(true);
+      setImagePreview(blog.image); // Set the existing image as preview
+      setImageFile(null); // Reset the file input
     } catch (error) {
       console.error("Error fetching FAQs:", error);
       setNewBlog(blog);
       setFormMode('edit');
       setShowBlogForm(true);
+      setImagePreview(blog.image); // Set the existing image as preview
     }
   };
 
@@ -335,7 +448,7 @@ const BlogsDashboard = () => {
     }
   };
 
-  // Reset form state
+  // Modified resetForm to also reset image state
   const resetForm = () => {
     setNewBlog({
       title: '',
@@ -350,6 +463,8 @@ const BlogsDashboard = () => {
       faqs: [], // Reset FAQs array
       author: 'Anuj Anand Malik' // Default author changed from 'Team AMA'
     });
+    setImageFile(null);
+    setImagePreview('');
     setFormMode('add');
     setShowBlogForm(false);
   };
@@ -426,6 +541,30 @@ const BlogsDashboard = () => {
     } finally {
       setIsLoadingRss(false);
     }
+  };
+
+  // Helper function to format image URLs correctly
+  const getImageUrl = (url: string): string => {
+    if (!url) return '';
+    
+    // Handle local uploads (starting with /uploads/)
+    if (url.startsWith('/uploads/')) {
+      // Ensure URL is properly formatted
+      return url;
+    }
+    
+    // Firebase Storage URLs or other external URLs
+    return url;
+  };
+  
+  // Image error handler
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const target = e.target as HTMLImageElement;
+    console.log('Image failed to load:', target.src);
+    
+    // Set a default placeholder
+    target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFNUU3RUIiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiM5Q0EzQUYiPk5vIEltYWdlPC90ZXh0Pjwvc3ZnPg==';
+    target.onerror = null; // Prevent infinite error loops
   };
 
   return (
@@ -609,17 +748,53 @@ const BlogsDashboard = () => {
                     </div>
                     
                     <div>
-                      <label htmlFor="image" className="block text-sm font-medium text-[#5A4C33] mb-1">Image URL</label>
-                      <input
-                        type="text"
-                        id="image"
-                        name="image"
-                        value={newBlog.image}
-                        onChange={handleInputChange}
-                        required
-                        className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                        placeholder="Enter image URL"
-                      />
+                      <label htmlFor="image" className="block text-sm font-medium text-[#5A4C33] mb-1">Blog Image</label>
+                      <div className="flex flex-col space-y-2">
+                        <div className="flex items-center">
+                          <input
+                            type="text"
+                            id="image"
+                            name="image"
+                            value={newBlog.image}
+                            onChange={handleInputChange}
+                            className="text-black w-full px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
+                            placeholder="Enter image URL or upload"
+                            disabled={isUploading}
+                          />
+                          <motion.button
+                            type="button"
+                            onClick={() => fileInputRef.current?.click()}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="px-4 py-2 bg-[#D2A02A] text-white rounded-r-md"
+                            disabled={isUploading}
+                          >
+                            <FontAwesomeIcon icon={faUpload} />
+                          </motion.button>
+                        </div>
+                        <input
+                          ref={fileInputRef}
+                          type="file"
+                          accept="image/*"
+                          onChange={handleFileChange}
+                          className="hidden"
+                        />
+                        {imagePreview && (
+                          <div className="mt-2">
+                            <p className="text-xs text-gray-500 mb-1">Image Preview:</p>
+                            <img 
+                              src={imagePreview} 
+                              alt="Preview" 
+                              className="h-32 object-cover rounded-md border border-gray-300"
+                              onError={handleImageError}
+                            />
+                          </div>
+                        )}
+                        {isUploading && (
+                          <p className="text-sm text-blue-600">Uploading image... Please wait.</p>
+                        )}
+                        <p className="text-xs text-gray-500">Upload an image or provide an image URL. Recommended size: 1200×630 pixels.</p>
+                      </div>
                     </div>
                   </div>
                   
@@ -779,7 +954,32 @@ const BlogsDashboard = () => {
                           <tr key={blog.id} className="hover:bg-[#F8F5EC] transition-colors duration-150">
                             <td className="px-6 py-4 text-sm font-medium text-[#5A4C33] max-w-xs truncate">{blog.title}</td>
                             <td className="px-6 py-4 text-sm text-[#5A4C33] max-w-xs truncate">{blog.subtitle}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]"><img src={blog.image} alt="" className="w-20 h-20 rounded-full" /></td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
+                              {blog.image ? (
+                                <div className="relative">
+                                  <img 
+                                    src={getImageUrl(blog.image)} 
+                                    alt={blog.title || 'Blog image'} 
+                                    className="w-20 h-20 rounded-full object-cover" 
+                                    onError={handleImageError}
+                                  />
+                                  {blog.image.startsWith('/uploads/') && (
+                                    <span className="absolute -top-1 -right-1 bg-blue-500 text-white text-xs rounded-full px-1 py-0.5" title="Stored locally">
+                                      Local
+                                    </span>
+                                  )}
+                                  {blog.image.includes('firebasestorage.googleapis.com') && (
+                                    <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-xs rounded-full px-1 py-0.5" title="Stored in Firebase">
+                                      Firebase
+                                    </span>
+                                  )}
+                                </div>
+                              ) : (
+                                <div className="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center">
+                                  <span className="text-gray-400 text-xs">No image</span>
+                                </div>
+                              )}
+                            </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
                               {new Date(blog.created).toLocaleString()}
                             </td>
