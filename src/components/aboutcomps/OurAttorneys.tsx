@@ -4,8 +4,6 @@ import Link from 'next/link'
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaFacebook, FaTwitter, FaInstagram, FaTelegram, FaLinkedin } from 'react-icons/fa'
-import { collection, getDocs, query, where } from 'firebase/firestore'
-import { db } from '../../lib/firebase'
 
 // Define the attorney type
 type Attorney = {
@@ -19,49 +17,43 @@ type Attorney = {
 };
 
 export default function OurAttorneys() {
-  const [attorneys, setAttorneys] = useState<Attorney[]>([]);
+  // Static attorney data
+  const attorneys: Attorney[] = [
+    {
+      id: '1',
+      image: '/rahul.svg',
+      title: 'Rahul Singh',
+      role: 'Associate',
+      socials: {
+        instagram: "https://www.instagram.com/amalegalsolutions/?hl=en",
+        linkedin: "https://in.linkedin.com/company/ama-legal-solutions"
+      }
+    },
+    {
+      id: '2',
+      image: '/shreychad.svg',
+      title: 'Shrey Chad',
+      role: 'Senior Associate',
+      socials: {
+        instagram: "https://www.instagram.com/amalegalsolutions/?hl=en",
+        linkedin: "https://in.linkedin.com/company/ama-legal-solutions"
+      }
+    },
+    {
+      id: '3',
+      image: '/abu.svg',
+      title: 'Abu Khan',
+      role: 'Associate',
+      socials: {
+        instagram: "https://www.instagram.com/amalegalsolutions/?hl=en",
+        linkedin: "https://in.linkedin.com/company/ama-legal-solutions"
+      }
+    }
+  ];
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [loading, setLoading] = useState(true);
-
-  // Fetch attorneys from Firestore
-  useEffect(() => {
-    const fetchAttorneys = async () => {
-      try {
-        // Create a query to get users with role "advocate" or "attorney"
-        // You can adjust this query based on how you identify attorneys in your database
-        const usersRef = collection(db, 'users');
-        const q = query(usersRef, where('role', 'in', ['advocate', 'admin']));
-        const querySnapshot = await getDocs(q);
-        
-        const fetchedAttorneys: Attorney[] = [];
-        
-        querySnapshot.forEach((doc) => {
-          const data = doc.data();
-          fetchedAttorneys.push({
-            id: doc.id,
-            image: data.image || '/placeholder.svg', // Fallback image
-            title: data.name || 'Attorney',
-            role: data.position || 'Associate',
-            socials: {
-              // You can map these from your database if available
-              instagram: data.instagram || "https://www.instagram.com/amalegalsolutions/?hl=en",
-              linkedin: data.linkedin || "https://in.linkedin.com/company/ama-legal-solutions"
-            }
-          });
-        });
-        
-        setAttorneys(fetchedAttorneys);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching attorneys:", error);
-        setLoading(false);
-      }
-    };
-
-    fetchAttorneys();
-  }, []);
 
   const startAutoPlay = useCallback(() => {
     const interval = setInterval(() => {
@@ -123,40 +115,6 @@ export default function OurAttorneys() {
       opacity: 0
     })
   };
-
-  // Show loading state
-  if (loading) {
-    return (
-      <div className="bg-white py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#6B5B3D] mb-4">
-              Our Expert Lawyers
-            </h2>
-            <div className="flex items-center justify-center">
-              <div className="h-8 w-8 border-4 border-[#D2A02A] border-t-transparent rounded-full animate-spin mx-auto"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // If no attorneys found
-  if (attorneys.length === 0 && !loading) {
-    return (
-      <div className="bg-white py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#6B5B3D] mb-4">
-              Our Expert Lawyers
-            </h2>
-            <p className="text-gray-600">No attorneys found.</p>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="bg-white py-6">
