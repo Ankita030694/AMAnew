@@ -231,9 +231,9 @@ const BlogsDashboard = () => {
     if (!file) return;
     
     // Check file size (limit to 2MB)
-    const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
+    const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
     if (file.size > MAX_FILE_SIZE) {
-      alert("Image is too large. Maximum size is 2MB.");
+      alert("Image is too large. Maximum size is 10MB.");
       return;
     }
     

@@ -1,11 +1,12 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faEdit, faTrash, faUpload } from '@fortawesome/free-solid-svg-icons';
 import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc } from 'firebase/firestore';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
-import { db, auth } from '../../../lib/firebase'; // adjust the path as needed
+import { db, auth, storage } from '../../../lib/firebase'; // adjust the path as needed
 import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
 
@@ -56,6 +57,10 @@ const ArticlesDashboard = () => {
     faqs: [], // Initialize empty FAQs array
     author: 'Anuj Anand Malik' // Default author
   });
+  const [uploading, setUploading] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
 
   // Check if user is logged in; if not, redirect to login page
@@ -329,6 +334,145 @@ const ArticlesDashboard = () => {
     }));
   };
 
+  // Handle file upload to Firebase Storage
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    
+    // Check file size (limit to 2MB)
+    const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+    if (file.size > MAX_FILE_SIZE) {
+      alert("Image is too large. Maximum size is 10MB.");
+      return;
+    }
+    
+    try {
+      setUploading(true);
+      setUploadProgress(0);
+      
+      // Create a reference to the file in Firebase Storage
+      const storageRef = ref(storage, `article-images/${Date.now()}_${file.name}`);
+      
+      // Create a local preview of the image
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setImagePreview(event.target?.result as string);
+      };
+      reader.readAsDataURL(file);
+      
+      // Compress the image before uploading if it's an image
+      let fileToUpload = file;
+      if (file.type.startsWith('image/')) {
+        fileToUpload = await compressImage(file);
+      }
+      
+      // Upload with retry logic
+      const maxRetries = 3;
+      let retryCount = 0;
+      let uploadSuccessful = false;
+      
+      while (retryCount < maxRetries && !uploadSuccessful) {
+        try {
+          // Upload the file
+          const snapshot = await uploadBytes(storageRef, fileToUpload);
+          
+          // Get the download URL and update the blog state
+          const downloadURL = await getDownloadURL(snapshot.ref);
+          setNewBlog(prevState => ({
+            ...prevState,
+            image: downloadURL
+          }));
+          
+          uploadSuccessful = true;
+          setUploadProgress(100);
+        } catch (err) {
+          console.error(`Upload attempt ${retryCount + 1} failed:`, err);
+          retryCount++;
+          
+          if (retryCount >= maxRetries) {
+            throw new Error(`Failed after ${maxRetries} attempts: ${err instanceof Error ? err.message : String(err)}`);
+          }
+          
+          // Wait before retrying (exponential backoff)
+          await new Promise(resolve => setTimeout(resolve, 1000 * Math.pow(2, retryCount)));
+        }
+      }
+    } catch (error) {
+      console.error("Error uploading image:", error);
+      alert(`Failed to upload image: ${error instanceof Error ? error.message : "Please check your internet connection and try again."}`);
+    } finally {
+      setUploading(false);
+    }
+  };
+  
+  // Helper function to compress images
+  const compressImage = (file: File): Promise<File> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = (event) => {
+        const img = new Image();
+        img.src = event.target?.result as string;
+        
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          let width = img.width;
+          let height = img.height;
+          
+          // Calculate new dimensions while maintaining aspect ratio
+          const MAX_WIDTH = 1200;
+          const MAX_HEIGHT = 1200;
+          
+          if (width > height) {
+            if (width > MAX_WIDTH) {
+              height = Math.round(height * (MAX_WIDTH / width));
+              width = MAX_WIDTH;
+            }
+          } else {
+            if (height > MAX_HEIGHT) {
+              width = Math.round(width * (MAX_HEIGHT / height));
+              height = MAX_HEIGHT;
+            }
+          }
+          
+          canvas.width = width;
+          canvas.height = height;
+          
+          const ctx = canvas.getContext('2d');
+          ctx?.drawImage(img, 0, 0, width, height);
+          
+          // Convert to blob with reduced quality
+          canvas.toBlob(
+            (blob) => {
+              if (!blob) {
+                reject(new Error('Canvas to Blob conversion failed'));
+                return;
+              }
+              
+              // Create a new file from the blob
+              const compressedFile = new File([blob], file.name, {
+                type: 'image/jpeg',
+                lastModified: Date.now(),
+              });
+              
+              resolve(compressedFile);
+            },
+            'image/jpeg',
+            0.7 // Quality (0.7 = 70%)
+          );
+        };
+        
+        img.onerror = () => {
+          reject(new Error('Error loading image for compression'));
+        };
+      };
+      
+      reader.onerror = () => {
+        reject(new Error('Error reading file for compression'));
+      };
+    });
+  };
+
   return (
     <div className="min-h-screen overflow-hidden relative">
 
@@ -511,17 +655,57 @@ const ArticlesDashboard = () => {
                     </div>
                     
                     <div>
-                      <label htmlFor="image" className="block text-sm font-medium text-[#5A4C33] mb-1">Image URL</label>
-                      <input
-                        type="text"
-                        id="image"
-                        name="image"
-                        value={newBlog.image}
-                        onChange={handleInputChange}
-                        required
-                        className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                        placeholder="Enter image URL"
-                      />
+                      <label htmlFor="image" className="block text-sm font-medium text-[#5A4C33] mb-1">Article Image</label>
+                      <div className="flex flex-col space-y-2">
+                        <div className="flex items-center space-x-2">
+                          <input
+                            type="file"
+                            id="image-upload"
+                            ref={fileInputRef}
+                            accept="image/*"
+                            onChange={handleFileUpload}
+                            className="hidden"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => fileInputRef.current?.click()}
+                            className="px-4 py-2 bg-[#F0EAD6] text-[#5A4C33] rounded-md text-sm font-medium flex items-center"
+                          >
+                            <FontAwesomeIcon icon={faUpload} className="mr-2" />
+                            {uploading ? 'Uploading...' : 'Choose Image'}
+                          </button>
+                          {newBlog.image && (
+                            <span className="text-xs text-green-600">Image uploaded successfully</span>
+                          )}
+                        </div>
+                        
+                        {uploading && (
+                          <div className="w-full bg-gray-200 rounded-full h-2.5">
+                            <div 
+                              className="bg-[#D2A02A] h-2.5 rounded-full" 
+                              style={{ width: `${uploadProgress}%` }}
+                            ></div>
+                          </div>
+                        )}
+                        
+                        {/* Image preview */}
+                        {(imagePreview || newBlog.image) && (
+                          <div className="mt-2">
+                            <img 
+                              src={imagePreview || newBlog.image} 
+                              alt="Article image preview" 
+                              className="w-32 h-32 object-cover rounded-md border border-gray-300"
+                            />
+                          </div>
+                        )}
+                        
+                        <input
+                          type="hidden"
+                          id="image"
+                          name="image"
+                          value={newBlog.image}
+                        />
+                      </div>
                     </div>
                   </div>
                   
