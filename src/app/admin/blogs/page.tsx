@@ -4,10 +4,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faEdit, faTrash, faUpload } from '@fortawesome/free-solid-svg-icons';
 import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc } from 'firebase/firestore';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { db, auth, storage } from '../../../lib/firebase'; // adjust the path as needed
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation'; 
 import dynamic from 'next/dynamic';
 
 // Dynamically import Tiptap editor with client-side rendering only
@@ -57,15 +57,15 @@ const BlogsDashboard = () => {
     faqs: [], // Initialize empty FAQs array
     author: 'Anuj Anand Malik' // Default author changed from 'Team AMA'
   });
+  const [uploading, setUploading] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10; // Set the number of items per page
   const [rssDebugInfo, setRssDebugInfo] = useState<string>('');
   const [isLoadingRss, setIsLoadingRss] = useState(false);
-  const [imageFile, setImageFile] = useState<File | null>(null);
-  const [imagePreview, setImagePreview] = useState<string>('');
-  const [isUploading, setIsUploading] = useState(false);
-  const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Calculate the total number of pages
   const totalPages = Math.ceil(blogs.length / itemsPerPage);
@@ -225,118 +225,152 @@ const BlogsDashboard = () => {
     });
   };
 
-  // Handle file input change for image upload
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  // Handle file upload to Firebase Storage
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    if (file) {
-      setImageFile(file);
-      
-      // Create a preview URL for the selected image
-      const reader = new FileReader();
-      reader.onload = () => {
-        setImagePreview(reader.result as string);
-      };
-      reader.readAsDataURL(file);
+    if (!file) return;
+    
+    // Check file size (limit to 2MB)
+    const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
+    if (file.size > MAX_FILE_SIZE) {
+      alert("Image is too large. Maximum size is 2MB.");
+      return;
     }
-  };
-
-  // Updated function with fallback to direct upload
-  const uploadImage = async (): Promise<string> => {
-    if (!imageFile) return newBlog.image; // Return existing image URL if no new file selected
     
     try {
-      setIsUploading(true);
-      console.log('Starting image upload process...');
+      setUploading(true);
+      setUploadProgress(0);
       
-      // Create form data
-      const formData = new FormData();
-      formData.append('file', imageFile);
-      console.log(`Preparing file: ${imageFile.name}, size: ${imageFile.size} bytes`);
+      // Create a reference to the file in Firebase Storage
+      const storageRef = ref(storage, `blog-images/${Date.now()}_${file.name}`);
       
-      // First test if API routes are working with a simpler endpoint
-      try {
-        console.log('Testing API route functionality...');
-        const testResponse = await fetch('/api/test-upload', {
-          method: 'GET',
-        });
-        
-        console.log(`Test API response status: ${testResponse.status}`);
-        const testData = await testResponse.json();
-        console.log('Test API response:', testData);
-        
-        if (!testResponse.ok) {
-          throw new Error('API routes are not functioning correctly');
-        }
-      } catch (testError) {
-        console.error('API test failed:', testError);
-        // Continue anyway - the test might fail but uploads might still work
+      // Create a local preview of the image
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setImagePreview(event.target?.result as string);
+      };
+      reader.readAsDataURL(file);
+      
+      // Compress the image before uploading if it's an image
+      let fileToUpload = file;
+      if (file.type.startsWith('image/')) {
+        fileToUpload = await compressImage(file);
       }
       
-      // Try the primary Firebase Storage upload method
-      try {
-        const response = await fetch('/api/upload', {
-          method: 'POST',
-          body: formData,
-        });
-        
-        console.log(`Upload API response status: ${response.status}`);
-        
-        const data = await response.json();
-        console.log('Upload API response data:', data);
-        
-        if (response.ok && data.url) {
-          console.log(`Image uploaded successfully to Firebase. URL: ${data.url}`);
-          return data.url;
-        }
-        
-        throw new Error(data.details || data.error || 'Failed to upload to Firebase Storage');
-      } catch (firebaseError) {
-        console.error("Firebase upload failed, trying direct upload:", firebaseError);
-        
-        // If Firebase upload fails, try the direct upload alternative
+      // Upload with retry logic
+      const maxRetries = 3;
+      let retryCount = 0;
+      let uploadSuccessful = false;
+      
+      while (retryCount < maxRetries && !uploadSuccessful) {
         try {
-          const directResponse = await fetch('/api/direct-upload', {
-            method: 'POST',
-            body: formData,
-          });
+          // Upload the file
+          const snapshot = await uploadBytes(storageRef, fileToUpload);
           
-          console.log(`Direct upload API response status: ${directResponse.status}`);
+          // Get the download URL and update the blog state
+          const downloadURL = await getDownloadURL(snapshot.ref);
+          setNewBlog(prevState => ({
+            ...prevState,
+            image: downloadURL
+          }));
           
-          const directData = await directResponse.json();
-          console.log('Direct upload API response data:', directData);
+          uploadSuccessful = true;
+          setUploadProgress(100);
+        } catch (err) {
+          console.error(`Upload attempt ${retryCount + 1} failed:`, err);
+          retryCount++;
           
-          if (directResponse.ok && directData.url) {
-            console.log(`Image uploaded successfully via direct method. URL: ${directData.url}`);
-            alert('Image uploaded to local server instead of Firebase due to CORS issues.');
-            return directData.url;
+          if (retryCount >= maxRetries) {
+            throw new Error(`Failed after ${maxRetries} attempts: ${err instanceof Error ? err.message : String(err)}`);
           }
           
-          throw new Error(directData.details || directData.error || 'Failed to upload with direct method');
-        } catch (directError) {
-          console.error("Direct upload also failed:", directError);
-          throw new Error('All upload methods failed');
+          // Wait before retrying (exponential backoff)
+          await new Promise(resolve => setTimeout(resolve, 1000 * Math.pow(2, retryCount)));
         }
       }
     } catch (error) {
       console.error("Error uploading image:", error);
-      alert(`Failed to upload image: ${error instanceof Error ? error.message : 'Unknown error'}`);
-      return newBlog.image; // Return existing image URL on error
+      alert(`Failed to upload image: ${error instanceof Error ? error.message : "Please check your internet connection and try again."}`);
     } finally {
-      setIsUploading(false);
+      setUploading(false);
     }
   };
+  
+  // Helper function to compress images
+  const compressImage = (file: File): Promise<File> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = (event) => {
+        const img = new Image();
+        img.src = event.target?.result as string;
+        
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          let width = img.width;
+          let height = img.height;
+          
+          // Calculate new dimensions while maintaining aspect ratio
+          const MAX_WIDTH = 1200;
+          const MAX_HEIGHT = 1200;
+          
+          if (width > height) {
+            if (width > MAX_WIDTH) {
+              height = Math.round(height * (MAX_WIDTH / width));
+              width = MAX_WIDTH;
+            }
+          } else {
+            if (height > MAX_HEIGHT) {
+              width = Math.round(width * (MAX_HEIGHT / height));
+              height = MAX_HEIGHT;
+            }
+          }
+          
+          canvas.width = width;
+          canvas.height = height;
+          
+          const ctx = canvas.getContext('2d');
+          ctx?.drawImage(img, 0, 0, width, height);
+          
+          // Convert to blob with reduced quality
+          canvas.toBlob(
+            (blob) => {
+              if (!blob) {
+                reject(new Error('Canvas to Blob conversion failed'));
+                return;
+              }
+              
+              // Create a new file from the blob
+              const compressedFile = new File([blob], file.name, {
+                type: 'image/jpeg',
+                lastModified: Date.now(),
+              });
+              
+              resolve(compressedFile);
+            },
+            'image/jpeg',
+            0.7 // Quality (0.7 = 70%)
+          );
+        };
+        
+        img.onerror = () => {
+          reject(new Error('Error loading image for compression'));
+        };
+      };
+      
+      reader.onerror = () => {
+        reject(new Error('Error reading file for compression'));
+      };
+    });
+  };
 
-  // Modified handleSubmitBlog to include image upload
+  // Handle blog form submission (Create or Update)
   const handleSubmitBlog = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      // Upload image first if a file was selected
-      const imageUrl = await uploadImage();
-      
       // Add timestamp and format the date
       const blogWithMetadata = {
         ...newBlog,
-        image: imageUrl, // Use the Firebase Storage URL
         created: formMode === 'add' ? Date.now() : newBlog.created,
         date: new Date(newBlog.date).toISOString().split('T')[0] // Ensure date is in YYYY-MM-DD format
       };
@@ -406,7 +440,7 @@ const BlogsDashboard = () => {
     }
   };
 
-  // Modified handleEdit to include image preview
+  // Handle blog edit - needs to also fetch FAQs from subcollection
   const handleEdit = async (blog: Blog) => {
     try {
       // Fetch FAQs for this blog
@@ -420,14 +454,11 @@ const BlogsDashboard = () => {
       setNewBlog({...blog, faqs});
       setFormMode('edit');
       setShowBlogForm(true);
-      setImagePreview(blog.image); // Set the existing image as preview
-      setImageFile(null); // Reset the file input
     } catch (error) {
       console.error("Error fetching FAQs:", error);
       setNewBlog(blog);
       setFormMode('edit');
       setShowBlogForm(true);
-      setImagePreview(blog.image); // Set the existing image as preview
     }
   };
 
@@ -448,7 +479,7 @@ const BlogsDashboard = () => {
     }
   };
 
-  // Modified resetForm to also reset image state
+  // Reset form state
   const resetForm = () => {
     setNewBlog({
       title: '',
@@ -463,8 +494,6 @@ const BlogsDashboard = () => {
       faqs: [], // Reset FAQs array
       author: 'Anuj Anand Malik' // Default author changed from 'Team AMA'
     });
-    setImageFile(null);
-    setImagePreview('');
     setFormMode('add');
     setShowBlogForm(false);
   };
@@ -541,30 +570,6 @@ const BlogsDashboard = () => {
     } finally {
       setIsLoadingRss(false);
     }
-  };
-
-  // Helper function to format image URLs correctly
-  const getImageUrl = (url: string): string => {
-    if (!url) return '';
-    
-    // Handle local uploads (starting with /uploads/)
-    if (url.startsWith('/uploads/')) {
-      // Ensure URL is properly formatted
-      return url;
-    }
-    
-    // Firebase Storage URLs or other external URLs
-    return url;
-  };
-  
-  // Image error handler
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    const target = e.target as HTMLImageElement;
-    console.log('Image failed to load:', target.src);
-    
-    // Set a default placeholder
-    target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFNUU3RUIiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiM5Q0EzQUYiPk5vIEltYWdlPC90ZXh0Pjwvc3ZnPg==';
-    target.onerror = null; // Prevent infinite error loops
   };
 
   return (
@@ -750,50 +755,54 @@ const BlogsDashboard = () => {
                     <div>
                       <label htmlFor="image" className="block text-sm font-medium text-[#5A4C33] mb-1">Blog Image</label>
                       <div className="flex flex-col space-y-2">
-                        <div className="flex items-center">
+                        <div className="flex items-center space-x-2">
                           <input
-                            type="text"
-                            id="image"
-                            name="image"
-                            value={newBlog.image}
-                            onChange={handleInputChange}
-                            className="text-black w-full px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                            placeholder="Enter image URL or upload"
-                            disabled={isUploading}
+                            type="file"
+                            id="image-upload"
+                            ref={fileInputRef}
+                            accept="image/*"
+                            onChange={handleFileUpload}
+                            className="hidden"
                           />
-                          <motion.button
+                          <button
                             type="button"
                             onClick={() => fileInputRef.current?.click()}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="px-4 py-2 bg-[#D2A02A] text-white rounded-r-md"
-                            disabled={isUploading}
+                            className="px-4 py-2 bg-[#F0EAD6] text-[#5A4C33] rounded-md text-sm font-medium flex items-center"
                           >
-                            <FontAwesomeIcon icon={faUpload} />
-                          </motion.button>
+                            <FontAwesomeIcon icon={faUpload} className="mr-2" />
+                            {uploading ? 'Uploading...' : 'Choose Image'}
+                          </button>
+                          {newBlog.image && (
+                            <span className="text-xs text-green-600">Image uploaded successfully</span>
+                          )}
                         </div>
-                        <input
-                          ref={fileInputRef}
-                          type="file"
-                          accept="image/*"
-                          onChange={handleFileChange}
-                          className="hidden"
-                        />
-                        {imagePreview && (
+                        
+                        {uploading && (
+                          <div className="w-full bg-gray-200 rounded-full h-2.5">
+                            <div 
+                              className="bg-[#D2A02A] h-2.5 rounded-full" 
+                              style={{ width: `${uploadProgress}%` }}
+                            ></div>
+                          </div>
+                        )}
+                        
+                        {/* Image preview */}
+                        {(imagePreview || newBlog.image) && (
                           <div className="mt-2">
-                            <p className="text-xs text-gray-500 mb-1">Image Preview:</p>
                             <img 
-                              src={imagePreview} 
-                              alt="Preview" 
-                              className="h-32 object-cover rounded-md border border-gray-300"
-                              onError={handleImageError}
+                              src={imagePreview || newBlog.image} 
+                              alt="Blog image preview" 
+                              className="w-32 h-32 object-cover rounded-md border border-gray-300"
                             />
                           </div>
                         )}
-                        {isUploading && (
-                          <p className="text-sm text-blue-600">Uploading image... Please wait.</p>
-                        )}
-                        <p className="text-xs text-gray-500">Upload an image or provide an image URL. Recommended size: 1200×630 pixels.</p>
+                        
+                        <input
+                          type="hidden"
+                          id="image"
+                          name="image"
+                          value={newBlog.image}
+                        />
                       </div>
                     </div>
                   </div>
@@ -954,32 +963,7 @@ const BlogsDashboard = () => {
                           <tr key={blog.id} className="hover:bg-[#F8F5EC] transition-colors duration-150">
                             <td className="px-6 py-4 text-sm font-medium text-[#5A4C33] max-w-xs truncate">{blog.title}</td>
                             <td className="px-6 py-4 text-sm text-[#5A4C33] max-w-xs truncate">{blog.subtitle}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
-                              {blog.image ? (
-                                <div className="relative">
-                                  <img 
-                                    src={getImageUrl(blog.image)} 
-                                    alt={blog.title || 'Blog image'} 
-                                    className="w-20 h-20 rounded-full object-cover" 
-                                    onError={handleImageError}
-                                  />
-                                  {blog.image.startsWith('/uploads/') && (
-                                    <span className="absolute -top-1 -right-1 bg-blue-500 text-white text-xs rounded-full px-1 py-0.5" title="Stored locally">
-                                      Local
-                                    </span>
-                                  )}
-                                  {blog.image.includes('firebasestorage.googleapis.com') && (
-                                    <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-xs rounded-full px-1 py-0.5" title="Stored in Firebase">
-                                      Firebase
-                                    </span>
-                                  )}
-                                </div>
-                              ) : (
-                                <div className="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center">
-                                  <span className="text-gray-400 text-xs">No image</span>
-                                </div>
-                              )}
-                            </td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]"><img src={blog.image} alt="" className="w-20 h-20 rounded-full" /></td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
                               {new Date(blog.created).toLocaleString()}
                             </td>

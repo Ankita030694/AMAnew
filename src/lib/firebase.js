@@ -9,7 +9,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyCn8LHNtSycWOnhxlYn51Gblwt_fqF6yE8",
   authDomain: "amalegalsolutionss.firebaseapp.com",
   projectId: "amalegalsolutionss",
-  storageBucket: "amalegalsolutionss.appspot.com",
+  storageBucket: "amalegalsolutionss.firebasestorage.app",
   messagingSenderId: "235592681981",
   appId: "1:235592681981:web:91bb26b058753a175d7194",
   measurementId: "G-3087BV48LQ",
