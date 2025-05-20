@@ -22,7 +22,7 @@ export default function OurAttorneys() {
     {
       id: '1',
       image: '/rahul.svg',
-      title: 'Rahul Singh',
+      title: 'Rahul Gour',
       role: 'Associate',
       socials: {
         instagram: "https://www.instagram.com/amalegalsolutions/?hl=en",
@@ -32,7 +32,7 @@ export default function OurAttorneys() {
     {
       id: '2',
       image: '/shreychad.svg',
-      title: 'Shrey Chad',
+      title: 'Shrey Arora',
       role: 'Senior Associate',
       socials: {
         instagram: "https://www.instagram.com/amalegalsolutions/?hl=en",
@@ -42,7 +42,7 @@ export default function OurAttorneys() {
     {
       id: '3',
       image: '/abu.svg',
-      title: 'Abu Khan',
+      title: 'Abu Dash',
       role: 'Associate',
       socials: {
         instagram: "https://www.instagram.com/amalegalsolutions/?hl=en",
