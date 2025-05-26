@@ -3,8 +3,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faEdit, faTrash, faUpload } from '@fortawesome/free-solid-svg-icons';
-import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc } from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, getDoc } from 'firebase/firestore';
+import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { db, auth, storage } from '../../../lib/firebase'; // adjust the path as needed
 import { useRouter } from 'next/navigation';
@@ -283,6 +283,44 @@ const ArticlesDashboard = () => {
     
     if (window.confirm('Are you sure you want to delete this article?')) {
       try {
+        // Get the article content first to extract image URLs
+        const articleDoc = await getDoc(doc(db, 'articles', id));
+        const articleData = articleDoc.data();
+        
+        if (articleData) {
+          // Extract all image URLs from the article content
+          const content = articleData.description || '';
+          const imgRegex = /<img[^>]+src="([^">]+)"/g;
+          const imageUrls = new Set();
+          let match;
+          
+          while ((match = imgRegex.exec(content)) !== null) {
+            imageUrls.add(match[1]);
+          }
+          
+          // Get all article_images documents
+          const imagesSnapshot = await getDocs(collection(db, 'article_images'));
+          const unusedImages = imagesSnapshot.docs.filter(doc => {
+            const imageData = doc.data();
+            return imageUrls.has(imageData.url);
+          });
+          
+          // Delete unused images from Storage and Firestore
+          for (const imageDoc of unusedImages) {
+            const imageData = imageDoc.data();
+            try {
+              // Delete from Storage
+              const imageRef = ref(storage, imageData.path);
+              await deleteObject(imageRef);
+              
+              // Delete from Firestore
+              await deleteDoc(imageDoc.ref);
+            } catch (error) {
+              console.error(`Error deleting image ${imageData.filename}:`, error);
+            }
+          }
+        }
+        
         // Delete document from Firestore
         await deleteDoc(doc(db, 'articles', id));
         

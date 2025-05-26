@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Image from '@tiptap/extension-image';
@@ -17,7 +17,77 @@ import Subscript from '@tiptap/extension-subscript';
 import Superscript from '@tiptap/extension-superscript';
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
 import { common, createLowlight } from 'lowlight';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { storage } from '../../../lib/firebase';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../../../lib/firebase';
 const lowlight = createLowlight(common);
+
+// Add image compression helper function
+const compressImage = (file: File): Promise<File> => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = (event) => {
+      const img = document.createElement('img');
+      img.src = event.target?.result as string;
+      
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        let width = img.width;
+        let height = img.height;
+        
+        // Calculate new dimensions while maintaining aspect ratio
+        const MAX_WIDTH = 1200;
+        const MAX_HEIGHT = 1200;
+        
+        if (width > height) {
+          if (width > MAX_WIDTH) {
+            height = Math.round(height * (MAX_WIDTH / width));
+            width = MAX_WIDTH;
+          }
+        } else {
+          if (height > MAX_HEIGHT) {
+            width = Math.round(width * (MAX_HEIGHT / height));
+            height = MAX_HEIGHT;
+          }
+        }
+        
+        canvas.width = width;
+        canvas.height = height;
+        
+        const ctx = canvas.getContext('2d');
+        ctx?.drawImage(img, 0, 0, width, height);
+        
+        canvas.toBlob(
+          (blob) => {
+            if (!blob) {
+              reject(new Error('Canvas to Blob conversion failed'));
+              return;
+            }
+            
+            const compressedFile = new File([blob], file.name, {
+              type: 'image/jpeg',
+              lastModified: Date.now(),
+            });
+            
+            resolve(compressedFile);
+          },
+          'image/jpeg',
+          0.7
+        );
+      };
+      
+      img.onerror = () => {
+        reject(new Error('Error loading image for compression'));
+      };
+    };
+    
+    reader.onerror = () => {
+      reject(new Error('Error reading file for compression'));
+    };
+  });
+};
 
 interface TiptapEditorProps {
   content: string;
@@ -27,6 +97,9 @@ interface TiptapEditorProps {
 
 // MenuBar component
 const MenuBar = ({ editor }: { editor: any }) => {
+  const [uploading, setUploading] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
   if (!editor) {
     return null;
   }
@@ -44,6 +117,80 @@ const MenuBar = ({ editor }: { editor: any }) => {
     { name: 'Purple', value: '#8B5CF6' },
     { name: 'Pink', value: '#EC4899' },
   ];
+
+  // Handle image upload to Firebase Storage
+  const handleImageUpload = async (file: File) => {
+    try {
+      setUploading(true);
+      
+      // Check file size (limit to 10MB)
+      const MAX_FILE_SIZE = 10 * 1024 * 1024;
+      if (file.size > MAX_FILE_SIZE) {
+        alert("Image is too large. Maximum size is 10MB.");
+        return;
+      }
+
+      // Compress the image if it's an image file
+      let fileToUpload = file;
+      if (file.type.startsWith('image/')) {
+        fileToUpload = await compressImage(file);
+      }
+
+      // Create a unique filename with timestamp
+      const timestamp = Date.now();
+      const filename = `${timestamp}_${file.name}`;
+
+      // Create a reference to the file in Firebase Storage
+      const storageRef = ref(storage, `article-content-images/${filename}`);
+      
+      // Upload with retry logic
+      const maxRetries = 3;
+      let retryCount = 0;
+      let uploadSuccessful = false;
+      let downloadURL = '';
+      
+      while (retryCount < maxRetries && !uploadSuccessful) {
+        try {
+          // Upload the file
+          const snapshot = await uploadBytes(storageRef, fileToUpload);
+          
+          // Get the download URL
+          downloadURL = await getDownloadURL(snapshot.ref);
+          
+          // Store image reference in Firestore
+          await addDoc(collection(db, 'article_images'), {
+            filename,
+            url: downloadURL,
+            path: `article-content-images/${filename}`,
+            uploadedAt: timestamp,
+            fileSize: fileToUpload.size,
+            type: fileToUpload.type,
+            inUse: true // Flag to track if image is being used
+          });
+          
+          // Insert the image into the editor
+          editor.chain().focus().setImage({ src: downloadURL, alt: file.name }).run();
+          
+          uploadSuccessful = true;
+        } catch (err) {
+          console.error(`Upload attempt ${retryCount + 1} failed:`, err);
+          retryCount++;
+          
+          if (retryCount >= maxRetries) {
+            throw new Error(`Failed after ${maxRetries} attempts`);
+          }
+          
+          // Wait before retrying (exponential backoff)
+          await new Promise(resolve => setTimeout(resolve, 1000 * Math.pow(2, retryCount)));
+        }
+      }
+    } catch (error) {
+      console.error("Error uploading image:", error);
+      alert("Failed to upload image. Please try again.");
+    } finally {
+      setUploading(false);
+    }
+  };
 
   return (
     <div className="border-b border-gray-300 p-2 flex flex-wrap gap-1 bg-gray-50">
@@ -306,15 +453,15 @@ const MenuBar = ({ editor }: { editor: any }) => {
         <button
           type="button"
           onClick={() => {
-            const url = window.prompt('Enter the image URL');
-            if (url) {
-              editor.chain().focus().setImage({ src: url, alt: 'Image' }).run();
+            if (uploading) return;
+            if (fileInputRef.current) {
+              fileInputRef.current.click();
             }
           }}
           className="p-1 px-2 rounded hover:bg-gray-200"
           title="Image"
         >
-          🖼️
+          {uploading ? 'Uploading...' : '🖼️'}
         </button>
       </div>
 
@@ -415,6 +562,20 @@ const MenuBar = ({ editor }: { editor: any }) => {
           Clear
         </button>
       </div>
+
+      {/* Add file input for image upload */}
+      <input
+        type="file"
+        ref={fileInputRef}
+        className="hidden"
+        accept="image/*"
+        onChange={(e) => {
+          const file = e.target.files?.[0];
+          if (file) {
+            handleImageUpload(file);
+          }
+        }}
+      />
     </div>
   );
 };
