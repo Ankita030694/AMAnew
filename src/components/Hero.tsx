@@ -74,14 +74,16 @@ export default function Hero() {
           }`}
           aria-hidden="true"
         >
-          <iframe
+          <video
             src="https://firebasestorage.googleapis.com/v0/b/amalegalsolutionss.firebasestorage.app/o/herovid%2Fintro123.mp4?alt=media&token=374afe6b-2712-4e8b-9669-2936ad1e8c4f"
             className="absolute w-full h-full object-cover opacity-40"
-            onLoad={handleVideoLoaded}
+            onLoadedData={handleVideoLoaded}
+            autoPlay
+            muted
+            loop
+            playsInline
             style={{ objectFit: 'cover' }}
-            allow="autoplay"
-            frameBorder="0"
-          ></iframe>
+          />
         </div>
       )}
 
