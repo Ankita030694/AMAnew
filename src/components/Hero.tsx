@@ -74,19 +74,14 @@ export default function Hero() {
           }`}
           aria-hidden="true"
         >
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
+          <iframe
+            src="https://streamable.com/e/el86ws?autoplay=1&nocontrols=1&muted=1&loop=1"
             className="absolute w-full h-full object-cover opacity-40"
-            onLoadedData={handleVideoLoaded}
+            onLoad={handleVideoLoaded}
             style={{ objectFit: 'cover' }}
-          >
-            <source src="/intro123.mp4" type="video/mp4" />
-            <source src="/intro123.mp4" type="video/webm" />
-          </video>
+            allow="autoplay"
+            frameBorder="0"
+          ></iframe>
         </div>
       )}
 
