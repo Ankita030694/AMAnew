@@ -458,7 +458,7 @@ const BlogsDashboard = () => {
       console.error("Error fetching FAQs:", error);
       setNewBlog(blog);
       setFormMode('edit');
-      setShowBlogForm(true);
+      setShowBlogForm(true); 
     }
   };
 
