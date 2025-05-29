@@ -55,6 +55,17 @@ export default function ArticleDetail({ slug }: BlogDetailProps) {
   const [currentUrl, setCurrentUrl] = useState('');
   const [faqs, setFaqs] = useState<FAQ[]>([]);
   const [expandedFaqs, setExpandedFaqs] = useState<string[]>([]);
+  const [relatedBlogs, setRelatedBlogs] = useState<Blog[]>([]);
+
+  // Helper function to shuffle array (Fisher-Yates algorithm)
+  const shuffleArray = (array: Blog[]) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
 
   useEffect(() => {
     // Set the current URL when component mounts (client-side only)
@@ -67,20 +78,30 @@ export default function ArticleDetail({ slug }: BlogDetailProps) {
         const querySnapshot = await getDocs(blogsCollection);
         let foundBlog = null;
         let blogId = '';
+        let allBlogs: Blog[] = [];
         
         // Find blog with matching slug directly from database
         querySnapshot.docs.forEach(doc => {
           const data = doc.data();
+          const blogData = {
+            id: doc.id,
+            ...data
+          } as Blog;
+          
+          allBlogs.push(blogData);
+          
           if (data.slug === slug) {
-            foundBlog = {
-              id: doc.id,
-              ...data
-            };
+            foundBlog = blogData;
             blogId = doc.id;
           }
         });
         
         setBlog(foundBlog);
+        
+        // Set 3 random related blogs (excluding the current blog)
+        const otherBlogs = allBlogs.filter(b => b.id !== blogId);
+        const randomBlogs = shuffleArray(otherBlogs).slice(0, 3);
+        setRelatedBlogs(randomBlogs);
         
         // If blog found, fetch its FAQs from subcollection
         if (blogId) {
@@ -370,7 +391,46 @@ export default function ArticleDetail({ slug }: BlogDetailProps) {
           </div>
         )}
         
-        {/* Fixed Contact Button - Visible on all devices with enhanced visibility */}
+        {/* Add Related Blogs Section before the Fixed Contact Button */}
+        {relatedBlogs.length > 0 && (
+          <div className="max-w-3xl mx-auto mt-8">
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="px-6 py-5 border-b border-gray-200 bg-[#5A4C33]">
+                <h2 className="text-2xl font-bold text-[#D2A02A]">Related Articles</h2>
+              </div>
+              <div className="p-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {relatedBlogs.map((article) => (
+                    <Link key={article.id} href={`/blog/${article.slug}`}>
+                      <div className="rounded-xl overflow-hidden border border-gray-100 h-full hover:shadow-lg transition-shadow duration-300">
+                        <div className="relative h-40">
+                          <img 
+                            src={article.image}
+                            alt={article.title}
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute bottom-3 right-3 bg-white rounded px-2 py-1 text-xs uppercase text-blue-600">
+                            {article.date}
+                          </div>
+                        </div>
+                        <div className="p-4 relative bg-white">
+                          <h3 className="text-lg font-medium mb-2" style={{ color: '#5A4C33' }}>
+                            {article.title}
+                          </h3>
+                          {article.subtitle && (
+                            <p className="text-sm mb-2 text-blue-600">{article.subtitle}</p>
+                          )}
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+        
+        {/* Fixed Contact Button */}
         <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[999]">
           <Link href="/contact" className="inline-block bg-[#D2A02A] text-black font-bold px-4 py-2 md:px-6 md:py-3 text-sm md:text-base rounded-full shadow-xl hover:bg-[#5A4C33] hover:text-white transition-all">
             Get in Touch
