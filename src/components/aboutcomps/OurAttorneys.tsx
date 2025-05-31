@@ -39,16 +39,6 @@ export default function OurAttorneys() {
         linkedin: "https://in.linkedin.com/company/ama-legal-solutions"
       }
     },
-    {
-      id: '3',
-      image: '/abu.svg',
-      title: 'Abu Dash',
-      role: 'Associate',
-      socials: {
-        instagram: "https://www.instagram.com/amalegalsolutions/?hl=en",
-        linkedin: "https://in.linkedin.com/company/ama-legal-solutions"
-      }
-    }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
