@@ -19,6 +19,17 @@ type Attorney = {
 export default function OurAttorneys() {
   // Static attorney data
   const attorneys: Attorney[] = [
+   
+    {
+      id: '2',
+      image: '/shreychad.svg',
+      title: 'Shrey Arora',
+      role: 'Senior Associate',
+      socials: {
+        instagram: "https://www.instagram.com/amalegalsolutions/?hl=en",
+        linkedin: "https://in.linkedin.com/company/ama-legal-solutions"
+      }
+    },
     {
       id: '1',
       image: '/rahul.svg',
@@ -30,15 +41,77 @@ export default function OurAttorneys() {
       }
     },
     {
-      id: '2',
-      image: '/shreychad.svg',
-      title: 'Shrey Arora',
-      role: 'Senior Associate',
+      id: '6',
+      image: '/9.png',
+      title: 'Shruti Parashar',
+      role: 'Associate',
       socials: {
         instagram: "https://www.instagram.com/amalegalsolutions/?hl=en",
         linkedin: "https://in.linkedin.com/company/ama-legal-solutions"
       }
     },
+    {
+      id: '3',
+      image: '/6.png',
+      title: 'Sourav Sagar',
+      role: 'Junior Associate',
+      socials: {
+        instagram: "https://www.instagram.com/amalegalsolutions/?hl=en",
+        linkedin: "https://in.linkedin.com/company/ama-legal-solutions"
+      }
+    },
+    {
+      id: '4',
+      image: '/7.png',
+      title: 'Ashish Jhangra',
+      role: 'Head of Business Development',
+      socials: {
+        instagram: "https://www.instagram.com/amalegalsolutions/?hl=en",
+        linkedin: "https://in.linkedin.com/company/ama-legal-solutions"
+      }
+    },
+    {
+      id: '5',
+      image: '/8.png',
+      title: 'Laxman Rai',
+      role: 'Head of Business Development',
+      socials: {
+        instagram: "https://www.instagram.com/amalegalsolutions/?hl=en",
+        linkedin: "https://in.linkedin.com/company/ama-legal-solutions"
+      }
+    },
+ 
+    {
+      id: '7',
+      image: '/11.png',
+      title: 'Priya Kumari',
+      role: 'Business Development Associate',
+      socials: {
+        instagram: "https://www.instagram.com/amalegalsolutions/?hl=en",
+        linkedin: "https://in.linkedin.com/company/ama-legal-solutions"
+      }
+    },
+    {
+      id: '9',
+      image: '/12.png',
+      title: 'Vidhi Singh',
+      role: 'Business Development Associate',
+      socials: {
+        instagram: "https://www.instagram.com/amalegalsolutions/?hl=en",
+        linkedin: "https://in.linkedin.com/company/ama-legal-solutions"
+      }
+    },
+    {
+      id: '8',
+      image: '/10.png',
+      title: 'Nikhil Kumar',
+      role: 'Business Development Associate',
+      socials: {
+        instagram: "https://www.instagram.com/amalegalsolutions/?hl=en",
+        linkedin: "https://in.linkedin.com/company/ama-legal-solutions"
+      }
+    },
+
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -121,7 +194,7 @@ export default function OurAttorneys() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-[#6B5B3D] mb-4">
-            Our Expert Lawyers
+            Our Team
           </h2>
           <div className="relative flex items-center justify-center">
             <div className="h-[1px] bg-[#D2A02A] w-24"></div>
