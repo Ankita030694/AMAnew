@@ -127,12 +127,14 @@ const BlogsDashboard = () => {
             created: docData.created || Date.now(),
             metaTitle: docData.metaTitle || '',
             metaDescription: docData.metaDescription || '',
-            slug: docData.slug || '', // Get the slug from database
-            faqs: docData.faqs || [], // Get the faqs from database
-            author: docData.author || 'Anuj Anand Malik' // Default author changed from 'Team AMA'
+            slug: docData.slug || '',
+            faqs: docData.faqs || [],
+            author: docData.author || 'Anuj Anand Malik'
           };
         });
-        setBlogs(data);
+        // Sort blogs by created timestamp in descending order (newest first)
+        const sortedData = data.sort((a, b) => b.created - a.created);
+        setBlogs(sortedData);
       } catch (error) {
         console.error("Error fetching blogs data:", error);
       }
