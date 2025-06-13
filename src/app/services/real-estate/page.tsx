@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Real Estate Legal Solutions | AMA Legal Solutions",
+  title: "Best Real Estate Law Firm in India",
   description:
-    "Need legal help in property transactions, land disputes, or real estate compliance? AMA Legal Solutions provides expert guidance for individuals & businesses",
-    alternates: {
-    canonical: 'https://amalegalsolutions.com/services/realestate', // Add your canonical URL here
+    "Trusted real estate law firm in India offering expert legal solutions across the property lifecycle — from acquisition to dispute resolution.",
+  alternates: {
+    canonical: 'https://amalegalsolutions.com/services/real-estate',
   },
 };
 export default function page() {
@@ -34,14 +34,17 @@ export default function page() {
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="mb-12">
           <h1 className="text-4xl font-bold text-center mb-8 text-black">
-          Real Estate Legal Services | Support for Transactions & Disputes
+            Top Real Estate Lawyers in Gurugram & Delhi | Property Legal Services
           </h1>
           <p className="text-[#5A4C33] text-lg leading-relaxed mb-8">
             <br />
             <br />
             <strong>
-              Expert Real Estate Lawyers for Property Transactions & Litigation
+              Expert Real Estate Lawyers & Property Attorneys in Gurugram & Delhi
             </strong>
+            <br />
+            <br />
+            Looking for experienced real estate lawyers near you? Our team of property attorneys in Gurugram and Delhi provides comprehensive legal services for all your real estate needs. Whether you're searching for "real estate lawyers near me" or need top property lawyers in Delhi, AMA Legal Solutions offers expert guidance for property transactions, disputes, and compliance.
             <br />
             <br />
             Buying, selling, or leasing real estate involves complex legal

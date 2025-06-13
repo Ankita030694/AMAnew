@@ -2,10 +2,10 @@ import Link from "next/link";
 
 
 export const metadata = {
-  title: 'IPR & Trademark Protection | AMA Legal Solutions',
-  description: 'Safeguard your intellectual property with AMA Legal Solutions. We offer trademark registration, copyright protection, and patent filing services',
+  title: 'AMA Legal Solutions: Intellectual Property Law in India | IPR Law Services',
+  description: 'Protect your ideas with leading intellectual property law services in India. AMA Legal Solutions offers expert IPR law services across industries.',
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/ipr', // Add your canonical URL here
+    canonical: 'https://amalegalsolutions.com/services/intellectual-property-rights', // Add your canonical URL here
   },
 }
 export default function page() {
@@ -34,13 +34,13 @@ export default function page() {
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="mb-12">
         <h1 className="text-4xl font-bold text-center mb-8 text-black">
-        Intellectual Property Rights | Protect Your Innovation Legally
-          </h1>
+          Intellectual Property Rights | Protect Your Innovation Legally with IPR Law Services
+        </h1>
           <p className="text-[#5A4C33] text-lg leading-relaxed mb-8">
             <br />
             <br />
             <strong>
-              Secure Your Intellectual Property with AMA Legal Solutions
+              Secure Your Intellectual Property with AMA Legal Solutions, Experts in Intellectual Property Law in India
             </strong>
             <br />
             <br />
@@ -55,6 +55,7 @@ export default function page() {
             At AMA Legal Solutions, we offer comprehensive Intellectual Property
             Rights (IPR) services to help individuals and businesses register,
             enforce, and defend their IP rights in India and internationally.
+            Our IPR law services are designed to provide you with the best legal support.
             <br />
             <br />
             <strong>Our Intellectual Property Legal Services:</strong>

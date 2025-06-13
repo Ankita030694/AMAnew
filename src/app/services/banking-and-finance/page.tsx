@@ -2,10 +2,10 @@ import Link from "next/link";
 
 
 export const metadata = {
-  title: 'Expert Banking Law Services | AMA Legal Solutions',
-  description: 'Get expert legal assistance in banking and finance law, covering regulatory compliance, banking disputes, and loan settlements with AMA Legal Solutions',
+  title: 'Top Banking and Finance Lawyers in India',
+  description: 'Need expert banking and finance lawyers? AMA Legal Solutions provides trusted legal advice on loan disputes, financial regulations, and corporate finance matters.',
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/banking', // Add your canonical URL here
+    canonical: 'https://amalegalsolutions.com/services/banking-and-finance', // Add your canonical URL here
   },
 }
 export default function page() {

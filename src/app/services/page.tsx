@@ -5,7 +5,7 @@ import {
   faHouse, 
   faScaleBalanced, 
   faUsers,  
-  faArrowRight
+  faArrowRight  
 } from '@fortawesome/free-solid-svg-icons';
 import Image from "next/image";
 import Link from "next/link";
@@ -95,19 +95,19 @@ export default function Services() {
                 icon: faHouse,
                 title: "Banking and Finance",
                 description: "Financial Fraud | Financial Scam | Banking Regulatory Compliance | Commercial Banking Issues | Financial Litigation | Frozen Bank Accounts |",
-                link: "/services/banking"
+                link: "/services/banking-and-finance"
               },
               {
                 icon: faScaleBalanced,
                 title: "Loan Settlement",
                 description: "Credit Card | Personal Loan | Business Loan | Vehicle Loan | Bank Loan Default | NBFC Loan Dispute | RBI Loan Settlement Guidelines |",
-                link: "/services/loansettlement"
+                  link: "/services/loansettlement"
               },
               {
                 icon: faBuilding,
                 title: "Intellectual Property Rights",
                 description: "Trademark Registration | Patent Filing | Copyright Protection | IP Infringement | Brand Protection | Pharmaceutical Patent Attorney |",
-                link: "/services/ipr"
+                link: "/services/intellectual-property-rights"
               },
               {
                 icon: faBuildingColumns,
@@ -119,13 +119,13 @@ export default function Services() {
                 icon: faUsers,
                 title: "Real Estate",
                 description: "Property Dispute | RERA Compliance | Property Registration | Land Dispute | Title Verification & Property Due Diligence | Real Estate Fraud |",
-                link: "/services/realestate"
+                link: "/services/real-estate"
               },
               {
                 icon: faHouse,
                 title: "Criminal Law",
                 description: "Legal Help for FIR & Police Cases | Arrest & Police Interrogation | Cyber Crime & Online Fraud | Money Laundering Case | Bank & Insurance Fraud | Criminal Breach |",
-                link: "/services/criminal"
+                link: "/services/criminal-law"
               },
               {
                 icon: faHouse,

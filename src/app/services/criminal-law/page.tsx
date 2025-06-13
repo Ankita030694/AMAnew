@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: 'Criminal Defense Lawyers | AMA Legal Solutions',
-  description: 'Defend your rights with experienced criminal lawyers at AMA Legal Solutions. Get expert legal representation in criminal cases, bail matters, and litigation',
+  title: 'Top criminal law firms in India',
+  description: 'Looking for trusted criminal law firms in india? AMA Legal Solutions offers legal defense for bail, trial, and criminal litigation. Consult today!',
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/criminal', // Add your canonical URL here
+    canonical: 'https://amalegalsolutions.com/services/criminal-law', // Add your canonical URL here
   },
 }
 export default function page() {
