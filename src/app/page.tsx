@@ -1,13 +1,32 @@
 import Hero from "@/components/Hero";
 import PracticeAreas from "@/components/PracticeAreas";
-import AskExperts from "@/components/AskExperts";
-import LegalExcellence from "@/components/LegalExcellence";
 import Clients from "@/components/Clients";
 import TributeCard from "@/components/TributeCard";
-import Yt from "@/components/Yt";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import Image from "next/image";
-import Locations from "@/components/locations";
+import dynamic from "next/dynamic";
+
+// Lazy load components that are not immediately visible
+const AskExperts = dynamic(() => import("@/components/AskExperts"), {
+  loading: () => <div className="h-96 bg-gray-100 animate-pulse" />,
+  ssr: true,
+});
+
+const LegalExcellence = dynamic(() => import("@/components/LegalExcellence"), {
+  loading: () => <div className="h-96 bg-gray-100 animate-pulse" />,
+  ssr: true,
+});
+
+const Yt = dynamic(() => import("@/components/Yt"), {
+  loading: () => <div className="h-96 bg-black animate-pulse flex items-center justify-center">
+    <div className="text-white">Loading video...</div>
+  </div>,
+});
+
+const Locations = dynamic(() => import("@/components/locations"), {
+  loading: () => <div className="h-64 bg-gray-100 animate-pulse" />,
+  ssr: true,
+});
 
 export const metadata = {
   title: 'AMA Legal Solutions: Top Law Firm in India',
@@ -16,6 +35,7 @@ export const metadata = {
     canonical: 'https://amalegalsolutions.com/', // Add your canonical URL here
   },
 }
+
 export default function Home() {
   return (
     <main>
@@ -31,7 +51,8 @@ export default function Home() {
             alt="Background"
             fill
             className="object-cover"
-            quality={100}
+            quality={90}
+            loading="lazy"
           />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">

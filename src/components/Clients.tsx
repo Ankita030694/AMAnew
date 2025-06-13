@@ -6,9 +6,9 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 export default function Clients() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [visibleSlides, setVisibleSlides] = useState(4);
-  const carouselRef = useRef<HTMLDivElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const isVisibleRef = useRef(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const clientLogos = [
     { src: "/credsettle.svg", alt: "Client 1" },
@@ -22,92 +22,74 @@ export default function Clients() {
     { src: "/soct.svg", alt: "Client 9" },
   ];
 
-  // Determine how many logos should be visible based on viewport width
-  const getVisibleSlides = useCallback(() => {
-    if (typeof window !== 'undefined') {
-      return window.innerWidth >= 768 ? 4 : 2;
-    }
-    return 4;
-  }, []);
+  // Simplified visible slides calculation
+  const updateVisibleSlides = useCallback(() => {
+    if (typeof window === 'undefined') return;
+    const newVisible = window.innerWidth >= 768 ? 4 : 2;
+    setVisibleSlides(newVisible);
+    setCurrentSlide(prev => Math.min(prev, clientLogos.length - newVisible));
+  }, [clientLogos.length]);
 
-  // Debounced resize handler
+  // Optimized resize handler with debouncing
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
     
     const handleResize = () => {
       clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        const newVisible = getVisibleSlides();
-        setVisibleSlides(newVisible);
-        const maxSlideIndex = clientLogos.length - newVisible;
-        setCurrentSlide((prev) => Math.min(prev, maxSlideIndex));
-      }, 200); // 200ms debounce
+      timeoutId = setTimeout(updateVisibleSlides, 150);
     };
 
-    handleResize(); // Initial call
-    window.addEventListener('resize', handleResize);
+    updateVisibleSlides(); // Initial call
+    window.addEventListener('resize', handleResize, { passive: true });
+    
     return () => {
       window.removeEventListener('resize', handleResize);
       clearTimeout(timeoutId);
     };
-  }, [getVisibleSlides, clientLogos.length]);
+  }, [updateVisibleSlides]);
 
-  // Calculate the maximum slide index
   const maxSlideIndex = clientLogos.length - visibleSlides;
 
-  // Intersection Observer to detect if component is visible
+  // Simplified intersection observer
   useEffect(() => {
-    if (!carouselRef.current || typeof IntersectionObserver !== 'function') return;
+    if (!containerRef.current) return;
 
     const observer = new IntersectionObserver(
-      (entries) => {
-        isVisibleRef.current = entries[0].isIntersecting;
-        if (isVisibleRef.current) {
-          startTimer();
-        } else {
-          stopTimer();
-        }
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
       },
       { threshold: 0.1 }
     );
 
-    observer.observe(carouselRef.current);
+    observer.observe(containerRef.current);
     return () => observer.disconnect();
   }, []);
 
-  // Start and stop the auto-slide timer
-  const startTimer = useCallback(() => {
-    if (intervalRef.current === null && isVisibleRef.current) {
+  // Auto-slide functionality
+  useEffect(() => {
+    const startAutoSlide = () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+      
       intervalRef.current = setInterval(() => {
-        setCurrentSlide((prev) => (prev >= maxSlideIndex ? 0 : prev + 1));
-      }, 3000); // Increased to 3000ms for better performance
-    }
+        if (isVisibleRef.current) {
+          setCurrentSlide(prev => (prev >= maxSlideIndex ? 0 : prev + 1));
+        }
+      }, 3000);
+    };
+
+    startAutoSlide();
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
   }, [maxSlideIndex]);
 
-  const stopTimer = useCallback(() => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
-    }
-  }, []);
+  const handlePrev = useCallback(() => {
+    setCurrentSlide(prev => (prev === 0 ? maxSlideIndex : prev - 1));
+  }, [maxSlideIndex]);
 
-  // Clean up timer on unmount and when maxSlideIndex changes
-  useEffect(() => {
-    startTimer();
-    return () => stopTimer();
-  }, [maxSlideIndex, startTimer, stopTimer]);
-
-  const handlePrev = () => {
-    stopTimer();
-    setCurrentSlide((prev) => (prev === 0 ? maxSlideIndex : prev - 1));
-    setTimeout(startTimer, 1000);
-  };
-
-  const handleNext = () => {
-    stopTimer();
-    setCurrentSlide((prev) => (prev >= maxSlideIndex ? 0 : prev + 1));
-    setTimeout(startTimer, 1000);
-  };
+  const handleNext = useCallback(() => {
+    setCurrentSlide(prev => (prev >= maxSlideIndex ? 0 : prev + 1));
+  }, [maxSlideIndex]);
 
   return (
     <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -116,12 +98,7 @@ export default function Clients() {
           <h2 className="font-bold text-center text-[#5A4C33] mb-8 text-4xl">
             Providing Solutions To
           </h2>
-          <div
-            className="relative"
-            ref={carouselRef}
-            onMouseEnter={stopTimer}
-            onMouseLeave={startTimer}
-          >
+          <div className="relative" ref={containerRef}>
             {/* Navigation Buttons */}
             <button
               onClick={handlePrev}
@@ -129,7 +106,6 @@ export default function Clients() {
               aria-label="Previous slide"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 text-gray-600"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -144,10 +120,9 @@ export default function Clients() {
             {/* Logos Container */}
             <div className="overflow-hidden">
               <div
-                className="flex will-change-transform"
+                className="flex transition-transform duration-500 ease-in-out"
                 style={{ 
-                  transform: `translateX(-${currentSlide * (100 / visibleSlides)}%)`,
-                  transition: 'transform 500ms ease-in-out'
+                  transform: `translateX(-${currentSlide * (100 / visibleSlides)}%)`
                 }}
               >
                 {clientLogos.map((logo, index) => (
@@ -160,6 +135,7 @@ export default function Clients() {
                         height={100}
                         className="object-contain"
                         loading={index < visibleSlides ? "eager" : "lazy"}
+                        priority={index < visibleSlides}
                       />
                     </div>
                   </div>
@@ -173,7 +149,6 @@ export default function Clients() {
               aria-label="Next slide"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 text-gray-600"
                 fill="none"
                 viewBox="0 0 24 24"

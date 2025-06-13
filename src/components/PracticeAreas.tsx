@@ -8,15 +8,50 @@ import {
   faBuilding,
   faArrowRight
 } from '@fortawesome/free-solid-svg-icons'
-import dynamic from 'next/dynamic'
 import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
 
-// Dynamically import motion components with no SSR to reduce initial load
-const MotionDiv = dynamic(() => 
-  import('framer-motion').then(mod => ({ default: mod.motion.div })),
-  { ssr: false }
-);
+// Simplified dynamic import with better performance
+const MotionDiv = ({ 
+  children, 
+  className, 
+  initial, 
+  whileInView, 
+  viewport, 
+  transition, 
+  ...props 
+}: any) => {
+  const [isInView, setIsInView] = useState(false);
+  
+  useEffect(() => {
+    // Simple intersection observer without heavy motion library initially
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: viewport?.threshold || 0.1 }
+    );
+    
+    const element = document.getElementById(props.id);
+    if (element) observer.observe(element);
+    
+    return () => observer.disconnect();
+  }, [viewport?.threshold, props.id]);
+  
+  return (
+    <div 
+      {...props}
+      className={`${className} transition-all duration-700 ${
+        isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+      }`}
+    >
+      {children}
+    </div>
+  );
+};
 
 export default function PracticeAreas() {
   const [isDesktop, setIsDesktop] = useState(true);
@@ -81,11 +116,11 @@ export default function PracticeAreas() {
 
   return (
     <div className="bg-white py-16 md:py-24 relative overflow-hidden">
-      {/* Simplified decorative elements with will-change hint */}
-      <div className="absolute top-0 left-0 w-40 h-40 md:w-64 md:h-64 bg-[#D2A02A]/10 rounded-br-full -translate-x-10 -translate-y-10 will-change-transform" />
-      <div className="absolute bottom-0 right-0 w-48 h-48 md:w-72 md:h-72 bg-[#5A4C33]/10 rounded-tl-full translate-x-20 translate-y-20 will-change-transform" />
+      {/* Simplified decorative elements */}
+      <div className="absolute top-0 left-0 w-40 h-40 md:w-64 md:h-64 bg-[#D2A02A]/10 rounded-br-full -translate-x-10 -translate-y-10" />
+      <div className="absolute bottom-0 right-0 w-48 h-48 md:w-72 md:h-72 bg-[#5A4C33]/10 rounded-tl-full translate-x-20 translate-y-20" />
       
-      {/* Optimized dotted pattern with CSS variables */}
+      {/* Optimized dotted pattern */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute inset-0" style={{
           backgroundImage: `radial-gradient(#5A4C33 1px, transparent 1px)`,
@@ -95,45 +130,24 @@ export default function PracticeAreas() {
       
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 relative z-10">
         <MotionDiv 
+          id="practice-header"
           className="text-center mb-16 md:mb-24"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true, margin: "-100px" }}
         >
           <h2 className="text-4xl font-bold text-[#5A4C33] mb-6 relative inline-block">
             Our Expertise
-            <MotionDiv 
-              className="h-1 bg-[#D2A02A] absolute -bottom-2 left-0 right-0 mx-auto"
-              initial={{ width: 0 }}
-              whileInView={{ width: '50%' }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-            />
+            <div className="h-1 bg-[#D2A02A] absolute -bottom-2 left-1/4 right-1/4 mx-auto" />
           </h2>
-          <MotionDiv
-            className="max-w-2xl mx-auto mt-6 text-gray-600 text-lg"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            viewport={{ once: true }}
-          >
+          <div className="max-w-2xl mx-auto mt-6 text-gray-600 text-lg">
             Our firm combines decades of legal experience with personalized service to deliver exceptional results for all our clients. AMA focuses on providing strategic, result-driven legal advisory services that protect our client's rights and support their growth and success.
-          </MotionDiv>
+          </div>
         </MotionDiv>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {practiceAreas.slice(0, isDesktop ? 6 : 4).map((item, index) => (
             <MotionDiv
               key={index}
+              id={`practice-area-${index}`}
               className="bg-[#F8F5EC] rounded-lg border-l-4 border-[#D2A02A] overflow-hidden hover:shadow-lg transition-shadow duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ 
-                delay: Math.min(0.1 * index, 0.5), // Cap maximum delay for better performance
-                duration: 0.5 
-              }}
             >
               <Link href={item.link} className="block h-full">
                 <div className="p-6 relative">
@@ -164,11 +178,8 @@ export default function PracticeAreas() {
         </div>
         
         <MotionDiv 
+          id="practice-cta"
           className="flex justify-center mt-14"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.7 }}
-          viewport={{ once: true }}
         >
           <Link href="/services">
             <button className="bg-[#D2A02A] hover:bg-[#5A4C33] text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-300 inline-flex items-center">
