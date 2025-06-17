@@ -62,7 +62,7 @@ export default function Home() {
             <AnimatedCounter end={40} label="Years Experience" />
             <AnimatedCounter end={20} label="Our Offices" />
           </div>
-        </div>
+        </div> 
       </div>
       <Yt />
       <Locations />
