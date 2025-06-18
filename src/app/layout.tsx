@@ -13,10 +13,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "AMA Legal Solutions",
+  title: "AMA Legal Solutions | Top Law Firm in India",
   description: "Top-rated law firm in India specializing in corporate, real estate, and entertainment law. Contact us for legal consultation and representation.",
   openGraph: {
-    title: "AMA Legal Solutions",
+    title: "AMA Legal Solutions | Top Law Firm in India",
     description: "Legal solutions for your needs",
     images: [
       {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AMA Legal Solutions",
+    title: "AMA Legal Solutions | Top Law Firm in India",
     description: "Legal solutions for your business needs",
     images: ["/future.png"],
   },
