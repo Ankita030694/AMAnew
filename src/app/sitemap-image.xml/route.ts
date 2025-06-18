@@ -8,6 +8,16 @@ interface ImageItem {
   pageUrl?: string;
 }
 
+// Helper function to escape XML special characters
+function escapeXml(unsafe: string): string {
+  return unsafe
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
 export async function GET(): Promise<Response> {
   const blogs = await fetchAllBlogs()
   const articles = await fetchAllArticles()
@@ -57,11 +67,11 @@ export async function GET(): Promise<Response> {
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   ${allImages.map(image => `
     <url>
-      <loc>${image.pageUrl || baseUrl}</loc>
+      <loc>${escapeXml(image.pageUrl || baseUrl)}</loc>
       <image:image>
-        <image:loc>${image.url}</image:loc>
-        <image:caption>${image.caption}</image:caption>
-        <image:title>${image.title}</image:title>
+        <image:loc>${escapeXml(image.url)}</image:loc>
+        <image:caption>${escapeXml(image.caption)}</image:caption>
+        <image:title>${escapeXml(image.title)}</image:title>
       </image:image>
     </url>
   `).join('')}
