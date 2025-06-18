@@ -26,7 +26,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center">
             <div className="flex-shrink-0">
               <Image
-                src="/ama6.png"
+                src="/ama-legal-solutions-logo.png"
                 alt="AMA Logo"
                 width={192}
                 height={192}
