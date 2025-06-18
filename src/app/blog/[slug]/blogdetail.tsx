@@ -213,11 +213,35 @@ export default function ArticleDetail({ slug }: BlogDetailProps) {
           
           {/* Feature Image */}
           {blog.image && (
-            <div className="w-full">
-              <img
+            <div className="relative w-full h-[400px] mb-8">
+              <Image
                 src={blog.image}
-                alt={blog.title}
-                className="w-full h-96 object-cover"
+                alt={`${blog.title} - AMA Legal Solutions`}
+                fill
+                priority
+                className="object-cover rounded-lg"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                quality={90}
+                loading="eager"
+                title={blog.title}
+                onLoad={(e) => {
+                  // Add image to structured data when loaded
+                  const img = e.target as HTMLImageElement;
+                  const structuredData = {
+                    "@context": "https://schema.org",
+                    "@type": "ImageObject",
+                    "contentUrl": img.src,
+                    "name": blog.title,
+                    "description": blog.subtitle || blog.description,
+                    "caption": blog.title,
+                    "representativeOfPage": true
+                  };
+                  // Add to page's structured data
+                  const script = document.createElement('script');
+                  script.type = 'application/ld+json';
+                  script.text = JSON.stringify(structuredData);
+                  document.head.appendChild(script);
+                }}
               />
             </div>
           )}

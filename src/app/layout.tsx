@@ -78,6 +78,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
         {/* End Google Tag Manager */}
+        <Script
+          id="image-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "AMA Legal Solutions",
+              "url": "https://www.amalegalsolutions.com",
+              "logo": "https://www.amalegalsolutions.com/future.png",
+              "image": [
+                "https://www.amalegalsolutions.com/future.png",
+                "https://www.amalegalsolutions.com/bannerbg.png"
+              ]
+            })
+          }}
+        />
       </head>
       <body className={inter.className}>
         {/* Google Tag Manager (noscript) */}

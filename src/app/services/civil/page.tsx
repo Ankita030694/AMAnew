@@ -12,7 +12,7 @@ export default function page() {
   // Sample service data (replace with your actual content)
   const service = {
     title: "Professional Consultation",
-    bannerImage: "/services/11.png", // Replace with your actual image path
+    bannerImage: "/services/11.png",
     description:
       "Our professional consultation service provides expert guidance tailored to your specific needs. We work closely with you to understand your requirements and deliver solutions that exceed your expectations. Our team of experienced consultants brings years of industry knowledge to help you navigate complex challenges and achieve your goals.",
     buttonText: "Get Started",
@@ -25,8 +25,12 @@ export default function page() {
       <div className="relative w-full h-[300px] md:h-[550px] overflow-hidden">
         <img
           src={service.bannerImage}
-          alt={service.title}
+          alt={`${service.title} - AMA Legal Solutions`}
+          title={`${service.title} - AMA Legal Solutions`}
           className="w-full h-full object-contain"
+          loading="eager"
+          width={1920}
+          height={550}
         />
       </div>
 
@@ -221,16 +225,32 @@ export default function page() {
 
         {/* CTA Button */}
         <div className="flex justify-center mb-5">
-          <Link href={service.buttonLink}>
-            <div
-              className="inline-block bg-[#D2A02A] text-white px-8 py-4 rounded-md font-medium 
-                text-lg cursor-pointer hover:bg-[#5A4C33] transition-colors duration-300"
-            >
-              {service.buttonText}
-            </div>
+          <Link
+            href={service.buttonLink}
+            className="inline-block bg-[#D2A02A] text-white px-8 py-3 rounded-md hover:bg-[#B88A1A] transition-colors duration-300"
+          >
+            {service.buttonText}
           </Link>
         </div>
       </div>
+
+      {/* Structured Data for Image */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ImageObject",
+            "contentUrl": `https://www.amalegalsolutions.com${service.bannerImage}`,
+            "name": service.title,
+            "description": service.description,
+            "license": "https://www.amalegalsolutions.com",
+            "acquireLicensePage": "https://www.amalegalsolutions.com",
+            "creditText": "AMA Legal Solutions",
+            "copyrightNotice": "© AMA Legal Solutions. All rights reserved."
+          })
+        }}
+      />
     </div>
   );
 }

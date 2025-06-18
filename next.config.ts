@@ -29,6 +29,13 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
+    domains: ['www.amalegalsolutions.com'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    formats: ['image/webp'],
+    minimumCacheTTL: 60,
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   // Fix webpack configuration
   webpack: (config) => {
@@ -45,6 +52,19 @@ const nextConfig: NextConfig = {
         source: "/blogs",
         destination: "/blog",
         permanent: true,
+      },
+    ];
+  },
+  async headers() {
+    return [
+      {
+        source: '/:all*(svg|jpg|png)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
       },
     ];
   },
