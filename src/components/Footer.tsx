@@ -12,7 +12,7 @@ export default function Footer() {
               className="flex items-center justify-center sm:justify-start"
             >
               <Image
-                src="/ama6.png"
+                src="/ama-legal-solutions-logo.png"
                 alt="AMA Logo"
                 width={500}
                 height={20}
