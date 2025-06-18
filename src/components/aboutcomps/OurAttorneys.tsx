@@ -340,7 +340,7 @@ const AttorneyCard = ({ attorney }: { attorney: Attorney & { position: number } 
       </h3>
       <p className="text-gray-600 mb-4">{attorney.role}</p>
       
-      <div className="flex space-x-4">
+      {/* <div className="flex space-x-4">
         {Object.entries(attorney.socials).map(([platform, url]) => {
           const Icon = socialIcons[platform as keyof typeof socialIcons];
           return (
@@ -358,7 +358,7 @@ const AttorneyCard = ({ attorney }: { attorney: Attorney & { position: number } 
             </motion.div>
           );
         })}
-      </div>
+      </div> */}
     </>
   );
 };
