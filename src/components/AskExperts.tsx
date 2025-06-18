@@ -93,7 +93,7 @@ export default function AskExperts() {
                 >
                   {index % 2 === 0 ? (
                     <>
-                      <div className="flex flex-col items-center mb-16 w-full">
+                      <div className="flex flex-col items-center mb-20 w-full">
                         <h3 className="text-xl font-medium mb-4 text-white text-center">
                           {item.title}
                         </h3>
@@ -102,17 +102,17 @@ export default function AskExperts() {
                         </p>
                       </div>
                       <div className="absolute top-1/2 -translate-y-1/2 w-2 h-2 bg-white transform rotate-45 z-10" />
-                      <div className="text-3xl font-serif text-[#D2A02A] mt-16 text-center">
+                      <div className="text-3xl font-serif text-[#D2A02A] mt-20 text-center">
                         {item.year}
                       </div>
                     </>
                   ) : (
                     <>
-                      <div className="text-3xl font-serif text-[#D2A02A] mb-16 text-center">
+                      <div className="text-3xl font-serif text-[#D2A02A] mb-20 text-center">
                         {item.year}
                       </div>
                       <div className="absolute top-1/2 -translate-y-1/2 w-2 h-2 bg-white transform rotate-45 z-10" />
-                      <div className="flex flex-col items-center mt-16 w-full">
+                      <div className="flex flex-col items-center mt-20 w-full">
                         <h3 className="text-xl font-medium mb-4 text-white text-center">
                           {item.title}
                         </h3>
