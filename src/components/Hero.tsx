@@ -40,11 +40,7 @@ export default function Hero() {
       (nav.deviceMemory ?? 4) > 2;
     
     if (isGoodConnection && isGoodDevice) {
-      // Delay video loading until after critical content is rendered
-      const timer = setTimeout(() => {
-        setShouldLoadVideo(true);
-      }, 1000); // Increased delay to prioritize LCP
-      return () => clearTimeout(timer);
+      setShouldLoadVideo(true); // Increased delay to prioritize LCP
     }
   }, []);
   
@@ -92,7 +88,7 @@ export default function Hero() {
             aria-hidden="true"
           >
             <video
-              src="https://firebasestorage.googleapis.com/v0/b/amalegalsolutionss.firebasestorage.app/o/herovid%2Fintro123.mp4?alt=media&token=374afe6b-2712-4e8b-9669-2936ad1e8c4f"
+              src="/intro123.webm"
               className="absolute w-full h-full object-cover opacity-40"
               onLoadedData={handleVideoLoaded}
               autoPlay
