@@ -25,17 +25,17 @@ export async function GET(): Promise<Response> {
     '/locations/newdelhi',
     '/services',
     '/services/arbitration',
-    '/services/banking',
+    '/services/banking-and-finance',
     '/services/civil',
     '/services/corporate',
-    '/services/criminal',
+    '/services/criminal-law',
     '/services/cyber',
     '/services/drafting',
     '/services/entertainment',
-    '/services/ipr',
+    '/services/intellectual-property-rights',
     '/services/litigation', 
     '/services/loansettlement',
-    '/services/realestate',
+    '/services/real-estate',
     '/ourhistory',
     '/present',
     '/ourvision',
@@ -119,15 +119,4 @@ async function fetchAllArticles() {
     console.error('Error fetching articles:', error)
     return []
   }
-}
-
-// Utility function to convert title to slug (same as used in your app)
-function convertToSlug(title: string) {
-  const truncatedTitle = title.slice(0, 30);
-  return truncatedTitle
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .trim()
 }
