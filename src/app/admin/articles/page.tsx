@@ -122,7 +122,9 @@ const ArticlesDashboard = () => {
             author: docData.author || 'Anuj Anand Malik' // Default author
           };
         });
-        setBlogs(data);
+        // Sort blogs by date in descending order (newest first)
+        const sortedData = data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+        setBlogs(sortedData);
       } catch (error) {
         console.error("Error fetching blogs data:", error);
       }
@@ -248,7 +250,9 @@ const ArticlesDashboard = () => {
           author: docData.author || 'Anuj Anand Malik' // Default author
         };
       });
-      setBlogs(updatedBlogs);
+      // Sort blogs by date in descending order (newest first)
+      const sortedUpdatedBlogs = updatedBlogs.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+      setBlogs(sortedUpdatedBlogs);
       
     } catch (error) {
       console.error("Error processing blog:", error);
@@ -883,11 +887,11 @@ const ArticlesDashboard = () => {
                   <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-[#F0EAD6]">
                       <tr>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Date</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Title</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Subtitle</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Image</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Author</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Created</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Actions</th>
                       </tr>
                     </thead>
@@ -895,13 +899,11 @@ const ArticlesDashboard = () => {
                       {blogs.length > 0 ? (
                         blogs.map((blog) => (
                           <tr key={blog.id} className="hover:bg-[#F8F5EC] transition-colors duration-150">
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{new Date(blog.date).toLocaleDateString()}</td>
                             <td className="px-6 py-4 text-sm font-medium text-[#5A4C33] max-w-xs truncate">{blog.title}</td>
                             <td className="px-6 py-4 text-sm text-[#5A4C33] max-w-xs truncate">{blog.subtitle}</td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]"><img src={blog.image} className="w-20 h-20 rounded-full" alt="" /></td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{blog.author}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
-                              {new Date(blog.created).toLocaleString()}
-                            </td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{blog.author}</td> 
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
                               <div className="flex space-x-2">
                                 <motion.button
@@ -928,7 +930,7 @@ const ArticlesDashboard = () => {
                         ))
                       ) : (
                         <tr>
-                          <td colSpan={5} className="px-6 py-4 text-center text-sm text-gray-500">
+                          <td colSpan={7} className="px-6 py-4 text-center text-sm text-gray-500">
                             No articles found. Click Add Article to create a new article.
                           </td>
                         </tr>

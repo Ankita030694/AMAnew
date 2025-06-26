@@ -132,8 +132,12 @@ const BlogsDashboard = () => {
             author: docData.author || 'Anuj Anand Malik'
           };
         });
-        // Sort blogs by created timestamp in descending order (newest first)
-        const sortedData = data.sort((a, b) => b.created - a.created);
+        // Sort blogs by date in descending order (newest first)
+        const sortedData = data.sort((a, b) => {
+          const dateA = new Date(a.date).getTime();
+          const dateB = new Date(b.date).getTime();
+          return dateB - dateA;
+        });
         setBlogs(sortedData);
       } catch (error) {
         console.error("Error fetching blogs data:", error);
@@ -990,10 +994,10 @@ const BlogsDashboard = () => {
                   <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-[#F0EAD6]">
                       <tr>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Date</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Title</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Subtitle</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Image</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Created</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Actions</th>
                       </tr>
                     </thead>
@@ -1001,12 +1005,10 @@ const BlogsDashboard = () => {
                       {currentBlogs.length > 0 ? (
                         currentBlogs.map((blog) => (
                           <tr key={blog.id} className="hover:bg-[#F8F5EC] transition-colors duration-150">
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{new Date(blog.date).toLocaleDateString()}</td>
                             <td className="px-6 py-4 text-sm font-medium text-[#5A4C33] max-w-xs truncate">{blog.title}</td>
                             <td className="px-6 py-4 text-sm text-[#5A4C33] max-w-xs truncate">{blog.subtitle}</td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]"><img src={blog.image} alt="" className="w-20 h-20 rounded-full" /></td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
-                              {new Date(blog.created).toLocaleString()}
-                            </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
                               <div className="flex space-x-2">
                                 <motion.button
@@ -1033,7 +1035,7 @@ const BlogsDashboard = () => {
                         ))
                       ) : (
                         <tr>
-                          <td colSpan={5} className="px-6 py-4 text-center text-sm text-gray-500">
+                          <td colSpan={6} className="px-6 py-4 text-center text-sm text-gray-500">
                             No blogs found. Click Add Blog to create a new blog.
                           </td>
                         </tr>
