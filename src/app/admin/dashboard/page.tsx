@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUsers, faChartLine, faClipboardList, faCog } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUsers, faChartLine, faClipboardList, faCog, faEye, faTrash, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { db, auth } from '../../../lib/firebase'; // adjust the path as needed
@@ -28,6 +28,9 @@ interface FirebaseError {
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('home');
   const [tableData, setTableData] = useState<TableData[]>([]);
+  const [selectedLead, setSelectedLead] = useState<TableData | null>(null);
+  const [showViewModal, setShowViewModal] = useState(false);
+  const [isDeleting, setIsDeleting] = useState<string | null>(null);
   const router = useRouter();
 
   // Check if user is logged in; if not, redirect to login page
@@ -102,23 +105,6 @@ const AdminDashboard = () => {
     fetchData();
   }, []);
 
-  // Handle animation sequence
-  // useEffect(() => {
-  //   // Start with black screen
-  //   const welcomeTimer = setTimeout(() => {
-  //     setAnimationState('welcome'); // Show Hello Anuj Bhiya
-
-  //     // After showing welcome, transition to dashboard
-  //     const dashboardTimer = setTimeout(() => {
-  //       setAnimationState('dashboard');
-  //     }, 1500); // 1.5 seconds as requested
-
-  //     return () => clearTimeout(dashboardTimer);
-  //   }, 500);
-
-  //   return () => clearTimeout(welcomeTimer);
-  // }, []);
-
   // Navigation handler: Redirect for Blogs and Articles
   const handleNavigation = (itemId: string) => {
     if (itemId === 'blogs') {
@@ -136,33 +122,56 @@ const AdminDashboard = () => {
     }
   };
 
-  // Handle document deletion
-  const handleDelete = async (id: string) => {
-    try {
-      // Delete the document from Firestore
-      if (confirm('Are you sure you want to delete this entry?')) {
+  // Handle row click to open view modal
+  const handleRowClick = (lead: TableData) => {
+    setSelectedLead(lead);
+    setShowViewModal(true);
+  };
+
+  // Close view modal
+  const closeViewModal = () => {
+    setShowViewModal(false);
+    setSelectedLead(null);
+  };
+
+  // Handle document deletion with enhanced confirmation
+  const handleDelete = async (id: string, e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent row click when clicking delete button
+    
+    if (isDeleting === id) return; // Prevent multiple clicks
+    
+    const lead = tableData.find(item => item.id === id);
+    const confirmMessage = `Are you sure you want to delete the lead for "${lead?.name}"?\n\nThis action cannot be undone.`;
+    
+    if (confirm(confirmMessage)) {
+      setIsDeleting(id);
+      try {
+        // Delete the document from Firestore
         await deleteDoc(doc(db, 'form', id));
         
-      // Update the local state by filtering out the deleted document
-      setTableData(tableData.filter(item => item.id !== id));
-      
-      // Optional: Show a success message
-      alert('Entry deleted successfully');
-    } else {
-      alert('Entry not deleted');
+        // Update the local state by filtering out the deleted document
+        setTableData(prevData => prevData.filter(item => item.id !== id));
+        
+        // Show success message
+        alert('Lead deleted successfully!');
+      } catch (error) {
+        const firebaseError = error as FirebaseError;
+        console.error("Error deleting document:", firebaseError);
+        alert('Failed to delete lead: ' + firebaseError.message);
+      } finally {
+        setIsDeleting(null);
+      }
     }
-    } catch (error) {
-      const firebaseError = error as FirebaseError;
-      console.error("Error deleting document:", firebaseError);
-      // Optional: Show an error message
-      alert('Failed to delete entry: ' + firebaseError.message);
-    }
+  };
+
+  // Truncate text for table display
+  const truncateText = (text: string, maxLength: number = 50) => {
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength) + '...';
   };
 
   return (
     <div className="min-h-screen overflow-hidden relative">
-     
-
       {/* Main Dashboard */}
       <motion.div 
         className="min-h-screen bg-[#F8F5EC] flex flex-col mt-20"
@@ -235,30 +244,63 @@ const AdminDashboard = () => {
               <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-[#F0EAD6]">
                   <tr>
-                    {['Date & Time', 'Name', 'Email', 'Number', 'Message', 'Actions'].map((header, index) => (
-                      <th key={index} className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">
-                        {header}
-                      </th>
-                    ))}
+                    <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider w-32">
+                      Date & Time
+                    </th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider w-24">
+                      Name
+                    </th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider w-32">
+                      Email
+                    </th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider w-24">
+                      Phone
+                    </th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">
+                      Message
+                    </th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider w-20">
+                      Actions
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
                   {tableData.map((row) => (
-                    <tr key={row.id} className="hover:bg-[#F8F5EC] transition-colors duration-150">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#5A4C33]">{row.timestamp}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.name}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.email}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.phone}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.message}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
+                    <tr 
+                      key={row.id} 
+                      className="hover:bg-[#F8F5EC] transition-colors duration-150 cursor-pointer"
+                      onClick={() => handleRowClick(row)}
+                    >
+                      <td className="px-4 py-4 text-sm font-medium text-[#5A4C33]">
+                        {truncateText(row.timestamp, 20)}
+                      </td>
+                      <td className="px-4 py-4 text-sm text-[#5A4C33]">
+                        {truncateText(row.name, 20)}
+                      </td>
+                      <td className="px-4 py-4 text-sm text-[#5A4C33]">
+                        {truncateText(row.email, 25)}
+                      </td>
+                      <td className="px-4 py-4 text-sm text-[#5A4C33]">
+                        {truncateText(row.phone, 15)}
+                      </td>
+                      <td className="px-4 py-4 text-sm text-[#5A4C33]">
+                        {truncateText(row.message, 40)}
+                      </td>
+                      <td className="px-4 py-4 text-sm text-[#5A4C33]">
                         <div className="flex space-x-2">
                           <motion.button
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
-                            onClick={() => handleDelete(row.id)}
-                            className="px-3 py-1 bg-red-500 text-white rounded-md text-xs"
+                            onClick={(e) => handleDelete(row.id, e)}
+                            disabled={isDeleting === row.id}
+                            className={`px-3 py-1 text-white rounded-md text-xs flex items-center space-x-1 ${
+                              isDeleting === row.id 
+                                ? 'bg-gray-400 cursor-not-allowed' 
+                                : 'bg-red-500 hover:bg-red-600'
+                            }`}
                           >
-                            Delete
+                            <FontAwesomeIcon icon={faTrash} className="text-xs" />
+                            <span>{isDeleting === row.id ? 'Deleting...' : 'Delete'}</span>
                           </motion.button>
                         </div>
                       </td>
@@ -294,6 +336,102 @@ const AdminDashboard = () => {
           </motion.div>
         </div>
       </motion.div>
+
+      {/* View Modal */}
+      {showViewModal && selectedLead && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+          onClick={closeViewModal}
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex justify-between items-center p-6 border-b border-gray-200">
+              <h2 className="text-2xl font-bold text-[#5A4C33]">Lead Details</h2>
+              <button
+                onClick={closeViewModal}
+                className="text-gray-500 hover:text-gray-700 transition-colors"
+              >
+                <FontAwesomeIcon icon={faTimes} className="text-xl" />
+              </button>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6 space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                  <div className="p-3 bg-gray-50 rounded-md text-[#5A4C33]">
+                    {selectedLead.name}
+                  </div>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                  <div className="p-3 bg-gray-50 rounded-md text-[#5A4C33]">
+                    {selectedLead.email}
+                  </div>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                  <div className="p-3 bg-gray-50 rounded-md text-[#5A4C33]">
+                    {selectedLead.phone}
+                  </div>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Date & Time</label>
+                  <div className="p-3 bg-gray-50 rounded-md text-[#5A4C33]">
+                    {selectedLead.timestamp}
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                <div className="p-4 bg-gray-50 rounded-md text-[#5A4C33] whitespace-pre-wrap min-h-[100px]">
+                  {selectedLead.message}
+                </div>
+              </div>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="flex justify-end space-x-3 p-6 border-t border-gray-200">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={closeViewModal}
+                className="px-4 py-2 bg-gray-300 text-gray-700 rounded-md font-medium"
+              >
+                Close
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={(e) => handleDelete(selectedLead.id, e)}
+                disabled={isDeleting === selectedLead.id}
+                className={`px-4 py-2 text-white rounded-md font-medium flex items-center space-x-2 ${
+                  isDeleting === selectedLead.id 
+                    ? 'bg-gray-400 cursor-not-allowed' 
+                    : 'bg-red-500 hover:bg-red-600'
+                }`}
+              >
+                <FontAwesomeIcon icon={faTrash} />
+                <span>{isDeleting === selectedLead.id ? 'Deleting...' : 'Delete Lead'}</span>
+              </motion.button>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </div>
   );
 };
