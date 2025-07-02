@@ -179,11 +179,6 @@ export default function Footer() {
             <p className="text-base font-medium text-[#1a1a1a]">
               © {new Date().getFullYear()} AMA Legal Solutions. All Rights Reserved.
             </p>
-            <div className="flex items-center space-x-2 text-sm text-[#2a2a2a]">
-              <span>Crafted with</span>
-              <i className="fas fa-heart text-red-600 animate-pulse"></i>
-              <span>for excellence</span>
-            </div>
           </div>
         </div>
       </div>
