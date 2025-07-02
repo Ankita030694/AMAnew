@@ -14,6 +14,9 @@ export async function generateMetadata(
   let title = "Article | AMA Legal Solutions";
   let description =
     "Read our latest insights and articles at AMA Legal Solutions";
+  let image = "";
+  let author = "AMA Legal Solutions";
+
   // Base URL for canonical link - replace with your actual domain
   const baseUrl = "https://www.amalegalsolutions.com"; // Update this with your domain
 
@@ -30,6 +33,8 @@ export async function generateMetadata(
         // Use metaTitle and metaDescription if available, otherwise fallback to title
         title = data.metaTitle || data.title || title;
         description = data.metaDescription || description;
+        image = data.image || "";
+        author = data.author || author;
         break;
       }
     }
@@ -37,12 +42,37 @@ export async function generateMetadata(
     console.error("Error fetching article metadata:", error);
   }
 
+  const articleUrl = `${baseUrl}/articles/${slug}`;
+
   return {
     title,
     description,
     alternates: {
-      canonical: `${baseUrl}/articles/${slug}`
-    }
+      canonical: articleUrl,
+    },
+    openGraph: {
+      title,
+      description,
+      url: articleUrl,
+      siteName: "AMA Legal Solutions",
+      type: "article",
+      images: image ? [
+        {
+          url: image,
+          width: 1200,
+          height: 630,
+          alt: title,
+        }
+      ] : [],
+      authors: [author],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: image ? [image] : [],
+      creator: "@amalegalsolutions", // Replace with your actual Twitter handle
+    },
   };
 }
 
