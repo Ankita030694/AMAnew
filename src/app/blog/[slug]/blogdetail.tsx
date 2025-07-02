@@ -57,6 +57,70 @@ export default function ArticleDetail({ slug }: BlogDetailProps) {
   const [expandedFaqs, setExpandedFaqs] = useState<string[]>([]);
   const [relatedBlogs, setRelatedBlogs] = useState<Blog[]>([]);
 
+  // Helper function to get a random blog from related blogs
+  const getRandomBlog = () => {
+    if (relatedBlogs.length === 0) return null;
+    const randomIndex = Math.floor(Math.random() * relatedBlogs.length);
+    return relatedBlogs[randomIndex];
+  };
+
+  // Helper function to get different random blogs for each subtitle segment
+  const getRandomBlogsForSegments = (segmentCount: number) => {
+    if (relatedBlogs.length === 0) return [];
+    const shuffledBlogs = shuffleArray(relatedBlogs);
+    const result = [];
+    for (let i = 0; i < segmentCount; i++) {
+      result.push(shuffledBlogs[i % shuffledBlogs.length]);
+    }
+    return result;
+  };
+
+  // Helper function to render clickable subtitle segments
+  const renderClickableSubtitle = (subtitle: string) => {
+    const segments = subtitle.split('|').map(segment => segment.trim()).filter(segment => segment.length > 0);
+    
+    // If no related blogs are loaded yet, show blue text without links
+    if (relatedBlogs.length === 0) {
+      return (
+        <div className="text-lg md:text-xl lg:text-2xl">
+          {segments.map((segment, index) => (
+            <span key={index}>
+              <span className="text-blue-400">{segment}</span>
+              {index < segments.length - 1 && (
+                <span className="text-white mx-2">|</span>
+              )}
+            </span>
+          ))}
+        </div>
+      );
+    }
+    
+    const randomBlogs = getRandomBlogsForSegments(segments.length);
+    
+    return (
+      <div className="text-lg md:text-xl lg:text-2xl">
+        {segments.map((segment, index) => (
+          <span key={index}>
+            {randomBlogs[index] ? (
+              <Link 
+                href={`/blog/${randomBlogs[index].slug}`}
+                className="text-blue-400 hover:text-blue-300 transition-colors duration-300 cursor-pointer border-b border-transparent hover:border-blue-300"
+                title={`Click to read: ${randomBlogs[index].title}`}
+              >
+                {segment}
+              </Link>
+            ) : (
+              <span className="text-blue-400">{segment}</span>
+            )}
+            {index < segments.length - 1 && (
+              <span className="text-white mx-2">|</span>
+            )}
+          </span>
+        ))}
+      </div>
+    );
+  };
+
   // Helper function to shuffle array (Fisher-Yates algorithm)
   const shuffleArray = (array: Blog[]) => {
     const shuffled = [...array];
@@ -200,188 +264,236 @@ export default function ArticleDetail({ slug }: BlogDetailProps) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-amber-50">
       {/* Header Banner */}
-      <div className="w-full bg-[#5A4C33] text-center py-16">
-        <div className="container mx-auto px-4 mt-20">
-         
-          <h1 className="text-4xl md:text-5xl font-bold text-[#D2A02A] mb-2">
+      <div className="w-full bg-[#5A4C33] text-center py-12 md:py-16 lg:py-20">
+        <div className="container mx-auto px-4 mt-16 md:mt-20 lg:mt-24 max-w-6xl">
+          <h1 className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold text-[#D2A02A] mb-2 md:mb-4 lg:mb-6 leading-tight">
             {blog.title}
           </h1>
           {blog.subtitle && (
-            <p className="text-white text-xl mt-2">{blog.subtitle}</p>
+            <div className="mt-2 md:mt-4 lg:mt-6 max-w-4xl mx-auto">
+              {renderClickableSubtitle(blog.subtitle)}
+            </div>
           )}
-          <div className="flex justify-center items-center mt-4">
-            <div className="bg-[#D2A02A] h-1 w-24 rounded-full"></div>
+          <div className="flex justify-center items-center mt-4 md:mt-6 lg:mt-8">
+            <div className="bg-[#D2A02A] h-1 w-24 md:w-32 lg:w-40 rounded-full"></div>
           </div>
         </div>
       </div>
       
-      {/* Main Content */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-          {/* Article Metadata */}
-          <div className="border-b border-gray-200 px-6 py-4 bg-amber-50">
-            <p className="text-black italic">Published on: <span className="font-medium">{blog.date}</span></p>
-          </div>
+      {/* Main Content Container - Enhanced for desktop */}
+      <div className="container mx-auto px-4 py-8 md:py-12 lg:py-16 max-w-7xl">
+        <div className="flex flex-col lg:flex-row lg:gap-8 xl:gap-12">
           
-          {/* Feature Image */}
-          {blog.image && (
-            <div className="relative w-full h-[400px] mb-8">
-              <Image
-                src={blog.image}
-                alt={`${blog.title} - AMA Legal Solutions`}
-                fill
-                priority
-                className="object-cover rounded-lg"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-                quality={90}
-                loading="eager"
-                title={blog.title}
-                onLoad={(e) => {
-                  // Add image to structured data when loaded
-                  const img = e.target as HTMLImageElement;
-                  const structuredData = {
-                    "@context": "https://schema.org",
-                    "@type": "ImageObject",
-                    "contentUrl": img.src,
-                    "name": blog.title,
-                    "description": blog.subtitle || blog.description,
-                    "caption": blog.title,
-                    "representativeOfPage": true
-                  };
-                  // Add to page's structured data
-                  const script = document.createElement('script');
-                  script.type = 'application/ld+json';
-                  script.text = JSON.stringify(structuredData);
-                  document.head.appendChild(script);
-                }}
-              />
-            </div>
-          )}
-          
-          {/* Article Content */}
-          <div className="p-6 md:p-8">
-            <div 
-              className="prose prose-sm sm:prose lg:prose-lg max-w-none text-black tiptap-content" 
-              dangerouslySetInnerHTML={{ __html: blog.description }}
-            />
-            
-            {/* Add this style block to handle Tiptap specific styling */}
-            <style jsx global>{`
-              .tiptap-content h1 { font-size: 2em; font-weight: bold; margin-top: 0.67em; margin-bottom: 0.67em; }
-              .tiptap-content h2 { font-size: 1.5em; font-weight: bold; margin-top: 0.83em; margin-bottom: 0.83em; }
-              .tiptap-content h3 { font-size: 1.17em; font-weight: bold; margin-top: 1em; margin-bottom: 1em; }
-              .tiptap-content h4 { font-size: 1em; font-weight: bold; margin-top: 1.33em; margin-bottom: 1.33em; }
-              .tiptap-content h5 { font-size: 0.83em; font-weight: bold; margin-top: 1.67em; margin-bottom: 1.67em; }
-              .tiptap-content h6 { font-size: 0.67em; font-weight: bold; margin-top: 2.33em; margin-bottom: 2.33em; }
+          {/* Main Article Content */}
+          <div className="lg:w-2/3 xl:w-3/4">
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
+              {/* Article Metadata */}
+              <div className="border-b border-gray-200 px-4 md:px-6 lg:px-8 py-4 md:py-5 bg-amber-50">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                  <p className="text-black italic text-sm md:text-base">
+                    Published on: <span className="font-medium">{blog.date}</span>
+                  </p>
+                  {blog.author && (
+                    <p className="text-black text-sm md:text-base">
+                      By: <span className="font-medium text-[#5A4C33]">{blog.author}</span>
+                    </p>
+                  )}
+                </div>
+              </div>
               
-              .tiptap-content p { margin: 1em 0; }
-              .tiptap-content a { color: #3B82F6; text-decoration: underline; }
-              .tiptap-content blockquote { border-left: 4px solid #D2A02A; margin-left: 0; padding-left: 1em; font-style: italic; }
-              .tiptap-content pre { background-color: #f5f5f5; padding: 0.5em; border-radius: 0.3em; font-family: monospace; overflow-x: auto; }
-              .tiptap-content code { background-color: rgba(#616161, 0.1); color: #616161; }
+              {/* Feature Image */}
+              {blog.image && (
+                <div className="relative w-full h-[250px] md:h-[400px] lg:h-[500px] xl:h-[600px] mb-6 md:mb-8">
+                  <Image
+                    src={blog.image}
+                    alt={`${blog.title} - AMA Legal Solutions`}
+                    fill
+                    priority
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 65vw, 50vw"
+                    quality={90}
+                    loading="eager"
+                    title={blog.title}
+                    onLoad={(e) => {
+                      // Add image to structured data when loaded
+                      const img = e.target as HTMLImageElement;
+                      const structuredData = {
+                        "@context": "https://schema.org",
+                        "@type": "ImageObject",
+                        "contentUrl": img.src,
+                        "name": blog.title,
+                        "description": blog.subtitle || blog.description,
+                        "caption": blog.title,
+                        "representativeOfPage": true
+                      };
+                      // Add to page's structured data
+                      const script = document.createElement('script');
+                      script.type = 'application/ld+json';
+                      script.text = JSON.stringify(structuredData);
+                      document.head.appendChild(script);
+                    }}
+                  />
+                </div>
+              )}
               
-              .tiptap-content table { border-collapse: collapse; margin: 0; overflow: hidden; table-layout: fixed; width: 100%; margin: 1em 0; }
-              .tiptap-content table td, .tiptap-content table th { border: 2px solid #ced4da; box-sizing: border-box; min-width: 1em; padding: 3px 5px; position: relative; vertical-align: top; }
-              .tiptap-content table th { background-color: #f8f9fa; font-weight: bold; text-align: left; }
-              
-              .tiptap-content ul, .tiptap-content ol { padding-left: 1.5em; margin: 1em 0; }
-              .tiptap-content li { margin: 0.5em 0; }
-              .tiptap-content hr { border: none; border-top: 2px solid #ced4da; margin: 1em 0; }
-              .tiptap-content img { max-width: 100%; height: auto; }
-              
-              /* Text alignment classes */
-              .tiptap-content .text-left { text-align: left; }
-              .tiptap-content .text-center { text-align: center; }
-              .tiptap-content .text-right { text-align: right; }
-              .tiptap-content .text-justify { text-align: justify; }
-              
-              /* Subscript and superscript */
-              .tiptap-content sub { vertical-align: sub; font-size: smaller; }
-              .tiptap-content sup { vertical-align: super; font-size: smaller; }
-              
-              /* Highlighted text */
-              .tiptap-content mark { background-color: #fef3c7; padding: 0.1em 0.2em; border-radius: 0.2em; }
-            `}</style>
-            
-            {/* Share & Tags Section */}
-            <div className="mt-12 pt-6 border-t border-gray-200">
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <div className="flex items-center space-x-4">
-                  <span className="text-black font-medium">Share:</span>
-                  <button 
-                    onClick={() => handleShare('facebook')}
-                    className="w-8 h-8 rounded-full bg-[#5A4C33] text-white flex items-center justify-center hover:bg-[#D2A02A] transition-colors"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
-                  </button>
-                  <button 
-                    onClick={() => handleShare('twitter')}
-                    className="w-8 h-8 rounded-full bg-[#5A4C33] text-white flex items-center justify-center hover:bg-[#D2A02A] transition-colors"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-                    </svg>
-                  </button>
-                  <button 
-                    onClick={() => handleShare('linkedin')}
-                    className="w-8 h-8 rounded-full bg-[#5A4C33] text-white flex items-center justify-center hover:bg-[#D2A02A] transition-colors"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                      <rect x="2" y="9" width="4" height="12"></rect>
-                      <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                  </button>
+              {/* Article Content */}
+              <div className="p-4 md:p-6 lg:p-8 xl:p-10">
+                <div 
+                  className="prose prose-sm md:prose lg:prose-lg xl:prose-xl max-w-none text-black tiptap-content" 
+                  dangerouslySetInnerHTML={{ __html: blog.description }}
+                />
+                
+                {/* Add this style block to handle Tiptap specific styling */}
+                <style jsx global>{`
+                  .tiptap-content h1 { font-size: 2em; font-weight: bold; margin-top: 0.67em; margin-bottom: 0.67em; }
+                  .tiptap-content h2 { font-size: 1.5em; font-weight: bold; margin-top: 0.83em; margin-bottom: 0.83em; }
+                  .tiptap-content h3 { font-size: 1.17em; font-weight: bold; margin-top: 1em; margin-bottom: 1em; }
+                  .tiptap-content h4 { font-size: 1em; font-weight: bold; margin-top: 1.33em; margin-bottom: 1.33em; }
+                  .tiptap-content h5 { font-size: 0.83em; font-weight: bold; margin-top: 1.67em; margin-bottom: 1.67em; }
+                  .tiptap-content h6 { font-size: 0.67em; font-weight: bold; margin-top: 2.33em; margin-bottom: 2.33em; }
+                  
+                  .tiptap-content p { margin: 1em 0; line-height: 1.7; }
+                  .tiptap-content a { color: #3B82F6; text-decoration: underline; }
+                  .tiptap-content blockquote { border-left: 4px solid #D2A02A; margin-left: 0; padding-left: 1em; font-style: italic; background-color: #fef3c7; padding: 1em; border-radius: 0.5em; }
+                  .tiptap-content pre { background-color: #f5f5f5; padding: 1em; border-radius: 0.5em; font-family: monospace; overflow-x: auto; }
+                  .tiptap-content code { background-color: rgba(#616161, 0.1); color: #616161; padding: 0.2em 0.4em; border-radius: 0.3em; }
+                  
+                  .tiptap-content table { border-collapse: collapse; margin: 1.5em 0; overflow: hidden; table-layout: fixed; width: 100%; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border-radius: 0.5em; }
+                  .tiptap-content table td, .tiptap-content table th { border: 2px solid #ced4da; box-sizing: border-box; min-width: 1em; padding: 8px 12px; position: relative; vertical-align: top; }
+                  .tiptap-content table th { background-color: #5A4C33; color: white; font-weight: bold; text-align: left; }
+                  
+                  .tiptap-content ul, .tiptap-content ol { padding-left: 1.5em; margin: 1.5em 0; }
+                  .tiptap-content li { margin: 0.5em 0; line-height: 1.6; }
+                  .tiptap-content hr { border: none; border-top: 2px solid #ced4da; margin: 2em 0; }
+                  .tiptap-content img { max-width: 100%; height: auto; border-radius: 0.5em; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+                  
+                  /* Text alignment classes */
+                  .tiptap-content .text-left { text-align: left; }
+                  .tiptap-content .text-center { text-align: center; }
+                  .tiptap-content .text-right { text-align: right; }
+                  .tiptap-content .text-justify { text-align: justify; }
+                  
+                  /* Subscript and superscript */
+                  .tiptap-content sub { vertical-align: sub; font-size: smaller; }
+                  .tiptap-content sup { vertical-align: super; font-size: smaller; }
+                  
+                  /* Highlighted text */
+                  .tiptap-content mark { background-color: #fef3c7; padding: 0.1em 0.2em; border-radius: 0.2em; }
+                  
+                  /* Enhanced responsive typography for desktop */
+                  @media (min-width: 1024px) {
+                    .tiptap-content h1 { font-size: 2.5em; }
+                    .tiptap-content h2 { font-size: 2em; }
+                    .tiptap-content h3 { font-size: 1.5em; }
+                    .tiptap-content p { font-size: 1.1em; line-height: 1.8; }
+                    .tiptap-content li { font-size: 1.1em; }
+                  }
+                `}</style>
+                
+                {/* Share Section - Enhanced for desktop */}
+                <div className="mt-8 md:mt-12 lg:mt-16 pt-6 md:pt-8 border-t border-gray-200">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-6">
+                    <div className="flex items-center space-x-4 md:space-x-6">
+                      <span className="text-black font-medium text-lg">Share this article:</span>
+                      <div className="flex space-x-3 md:space-x-4">
+                        <button 
+                          onClick={() => handleShare('facebook')}
+                          className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#5A4C33] text-white flex items-center justify-center hover:bg-[#D2A02A] hover:scale-110 transition-all duration-300 shadow-lg"
+                          title="Share on Facebook"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                          </svg>
+                        </button>
+                        <button 
+                          onClick={() => handleShare('twitter')}
+                          className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#5A4C33] text-white flex items-center justify-center hover:bg-[#D2A02A] hover:scale-110 transition-all duration-300 shadow-lg"
+                          title="Share on Twitter"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                          </svg>
+                        </button>
+                        <button 
+                          onClick={() => handleShare('linkedin')}
+                          className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#5A4C33] text-white flex items-center justify-center hover:bg-[#D2A02A] hover:scale-110 transition-all duration-300 shadow-lg"
+                          title="Share on LinkedIn"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          
+          {/* Sidebar for desktop - Author & Quick Links */}
+          <div className="lg:w-1/3 xl:w-1/4 space-y-6 lg:space-y-8">
+            {/* Author Bio Sidebar for Desktop */}
+            {blog.author && (
+              <div className="hidden lg:block bg-white rounded-lg shadow-lg overflow-hidden sticky top-8">
+                <div className="bg-[#5A4C33] px-6 py-4">
+                  <h3 className="text-xl font-bold text-[#D2A02A]">About the Author</h3>
+                </div>
+                <div className="p-6">
+                  <div className="text-center mb-4">
+                    <div className="relative w-20 h-20 mx-auto rounded-full overflow-hidden mb-4">
+                      <Image 
+                        src={authorBios[blog.author as keyof typeof authorBios]?.image || "/default-author.svg"}
+                        alt={blog.author}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <Link 
+                      href={blog.author === "Anuj Anand Malik" ? "/author/anuj-anand-malik" : 
+                            blog.author === "Shrey Arora" ? "/author/shrey-arora" : "/about"}
+                      className="hover:text-[#D2A02A] transition-colors"
+                    >
+                      <h4 className="text-lg font-bold text-black mb-2">{blog.author}</h4>
+                    </Link>
+                  </div>
+                  <p className="text-sm text-black leading-relaxed mb-4">
+                    {authorBios[blog.author as keyof typeof authorBios]?.description.substring(0, 120) + "..." || 
+                      "Legal expert at AMA Legal Solutions."}
+                  </p>
+                  <div className="flex flex-col space-y-2">
+                    <Link 
+                      href={blog.author === "Anuj Anand Malik" ? "/author/anuj-anand-malik" : 
+                            blog.author === "Shrey Arora" ? "/author/shrey-arora" : "/about"} 
+                      className="bg-[#D2A02A] text-black px-4 py-2 rounded text-center hover:bg-[#5A4C33] hover:text-white transition-colors text-sm font-medium">
+                      View Full Profile
+                    </Link>
+                    <a 
+                      href={authorBios[blog.author as keyof typeof authorBios]?.linkedInUrl || "https://www.linkedin.com/company/ama-legal-solutions/"}
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex items-center justify-center text-[#5A4C33] hover:text-[#D2A02A] font-medium transition-colors text-sm"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                      </svg>
+                      Connect on LinkedIn
+                    </a>
+                  </div>
+                </div>
+              </div>
+            )}
+            
+            {/* Quick Navigation for Related Articles */}
+           
+          </div>
         </div>
         
-        {/* FAQs Section - Add this new section */}
-        {faqs.length > 0 && (
-          <div className="max-w-3xl mx-auto mt-8 bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="px-6 py-5 border-b border-gray-200 bg-[#5A4C33]">
-              <h2 className="text-2xl font-bold text-[#D2A02A]">Frequently Asked Questions</h2>
-            </div>
-            <div className="p-6">
-              <div className="divide-y divide-gray-200">
-                {faqs.map((faq) => (
-                  <div key={faq.id} className="py-4">
-                    <button
-                      onClick={() => toggleFaq(faq.id)}
-                      className="flex justify-between items-center w-full text-left font-medium text-black hover:text-[#D2A02A] focus:outline-none transition-colors"
-                    >
-                      <span>{faq.question}</span>
-                      <span className="ml-6 flex-shrink-0">
-                        {expandedFaqs.includes(faq.id) ? (
-                          <svg className="h-5 w-5 text-[#D2A02A]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fillRule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clipRule="evenodd" />
-                          </svg>
-                        ) : (
-                          <svg className="h-5 w-5 text-[#D2A02A]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fillRule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clipRule="evenodd" />
-                          </svg>
-                        )}
-                      </span>
-                    </button>
-                    {expandedFaqs.includes(faq.id) && (
-                      <div className="mt-2 pr-12">
-                        <p className="text-base text-black">{faq.answer}</p>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-        
-        {/* Author Bio Section - Conditionally rendered based on author */}
+        {/* Mobile Author Bio - Hidden on desktop */}
         {blog.author && (
-          <div className="max-w-3xl mx-auto mt-8 bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="lg:hidden max-w-3xl mx-auto mt-8 bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="p-6 flex flex-col md:flex-row gap-6">
               <div className="relative w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
                 <Image 
@@ -427,35 +539,80 @@ export default function ArticleDetail({ slug }: BlogDetailProps) {
           </div>
         )}
         
-        {/* Add Related Blogs Section before the Fixed Contact Button */}
-        {relatedBlogs.length > 0 && (
-          <div className="max-w-3xl mx-auto mt-8">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="px-6 py-5 border-b border-gray-200 bg-[#5A4C33]">
-                <h2 className="text-2xl font-bold text-[#D2A02A]">Related Articles</h2>
+        {/* FAQs Section - Enhanced for desktop */}
+        {faqs.length > 0 && (
+          <div className="max-w-6xl mx-auto mt-8 lg:mt-12 bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="px-4 md:px-6 lg:px-8 py-5 md:py-6 border-b border-gray-200 bg-[#5A4C33]">
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#D2A02A]">Frequently Asked Questions</h2>
+            </div>
+            <div className="p-4 md:p-6 lg:p-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+                {faqs.map((faq, index) => (
+                  <div key={faq.id} className="border border-gray-200 rounded-lg overflow-hidden">
+                    <button
+                      onClick={() => toggleFaq(faq.id)}
+                      className="flex justify-between items-center w-full text-left p-4 md:p-5 font-medium text-black hover:text-[#D2A02A] hover:bg-amber-50 focus:outline-none transition-all duration-300"
+                    >
+                      <span className="text-sm md:text-base lg:text-lg pr-4">{faq.question}</span>
+                      <span className="flex-shrink-0">
+                        {expandedFaqs.includes(faq.id) ? (
+                          <svg className="h-5 w-5 md:h-6 md:w-6 text-[#D2A02A] transform rotate-180 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                          </svg>
+                        ) : (
+                          <svg className="h-5 w-5 md:h-6 md:w-6 text-[#D2A02A] transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                          </svg>
+                        )}
+                      </span>
+                    </button>
+                    {expandedFaqs.includes(faq.id) && (
+                      <div className="px-4 md:px-5 pb-4 md:pb-5 border-t border-gray-100">
+                        <p className="text-sm md:text-base text-black leading-relaxed mt-3">{faq.answer}</p>
+                      </div>
+                    )}
+                  </div>
+                ))}
               </div>
-              <div className="p-6">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            </div>
+          </div>
+        )}
+        
+        {/* Related Blogs Section - Enhanced for desktop */}
+        {relatedBlogs.length > 0 && (
+          <div className="max-w-6xl mx-auto mt-8 lg:mt-12">
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="px-4 md:px-6 lg:px-8 py-5 md:py-6 border-b border-gray-200 bg-[#5A4C33]">
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#D2A02A]">Related Articles</h2>
+              </div>
+              <div className="p-4 md:p-6 lg:p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                   {relatedBlogs.map((article) => (
                     <Link key={article.id} href={`/blog/${article.slug}`}>
-                      <div className="rounded-xl overflow-hidden border border-gray-100 h-full hover:shadow-lg transition-shadow duration-300">
-                        <div className="relative h-40">
+                      <div className="group rounded-xl overflow-hidden border border-gray-100 h-full hover:shadow-xl hover:border-[#D2A02A] transition-all duration-300 transform hover:-translate-y-1">
+                        <div className="relative h-48 lg:h-52 overflow-hidden">
                           <img 
                             src={article.image}
                             alt={article.title}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                           />
-                          <div className="absolute bottom-3 right-3 bg-white rounded px-2 py-1 text-xs uppercase text-blue-600">
+                          <div className="absolute bottom-3 right-3 bg-white/90 backdrop-blur-sm rounded px-2 py-1 text-xs uppercase text-[#5A4C33] font-semibold">
                             {article.date}
                           </div>
                         </div>
-                        <div className="p-4 relative bg-white">
-                          <h3 className="text-lg font-medium mb-2" style={{ color: '#5A4C33' }}>
+                        <div className="p-4 lg:p-6 relative bg-white">
+                          <h3 className="text-base md:text-lg lg:text-xl font-semibold mb-2 lg:mb-3 group-hover:text-[#D2A02A] transition-colors duration-300 line-clamp-2" style={{ color: '#5A4C33' }}>
                             {article.title}
                           </h3>
                           {article.subtitle && (
-                            <p className="text-sm mb-2 text-blue-600">{article.subtitle}</p>
+                            <p className="text-xs md:text-sm lg:text-base mb-2 text-blue-600 line-clamp-2">{article.subtitle}</p>
                           )}
+                          <div className="flex items-center text-[#D2A02A] group-hover:text-[#5A4C33] transition-colors duration-300">
+                            <span className="text-sm font-medium">Read more</span>
+                            <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </Link>
@@ -466,10 +623,13 @@ export default function ArticleDetail({ slug }: BlogDetailProps) {
           </div>
         )}
         
-        {/* Fixed Contact Button */}
-        <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[999]">
-          <Link href="/contact" className="inline-block bg-[#D2A02A] text-black font-bold px-4 py-2 md:px-6 md:py-3 text-sm md:text-base rounded-full shadow-xl hover:bg-[#5A4C33] hover:text-white transition-all">
-            Get in Touch
+        {/* Fixed Contact Button - Enhanced for desktop */}
+        <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 lg:bottom-8 lg:right-8 z-[999]">
+          <Link href="/contact" className="group inline-flex items-center bg-[#D2A02A] text-black font-bold px-3 py-2 md:px-4 md:py-2 lg:px-6 lg:py-3 text-sm md:text-base lg:text-lg rounded-full shadow-2xl hover:bg-[#5A4C33] hover:text-white hover:scale-105 transition-all duration-300">
+            <span>Get in Touch</span>
+            <svg className="w-4 h-4 md:w-5 md:h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
           </Link>
         </div>
       </div>
