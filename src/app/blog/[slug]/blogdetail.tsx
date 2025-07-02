@@ -71,6 +71,11 @@ export default function ArticleDetail({ slug }: BlogDetailProps) {
     // Set the current URL when component mounts (client-side only)
     setCurrentUrl(window.location.href);
     
+    // Add scroll restoration prevention
+    if (typeof window !== 'undefined' && 'scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    
     const fetchBlogBySlug = async () => {
       try {
         // Fetch blogs and find the one with matching slug from the database
@@ -124,6 +129,13 @@ export default function ArticleDetail({ slug }: BlogDetailProps) {
     if (slug) {
       fetchBlogBySlug();
     }
+    
+    // Cleanup: restore scroll restoration when component unmounts
+    return () => {
+      if (typeof window !== 'undefined' && 'scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'auto';
+      }
+    };
   }, [slug]);
 
   // Toggle FAQ expansion

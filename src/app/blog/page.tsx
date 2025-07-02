@@ -8,9 +8,14 @@ export const metadata = {
 
 // Then import and use your client component:
 import BlogPage from './blogcomp';
+import { Suspense } from 'react';
 
 export default function Page() {
-  return <header className='bg-[#F5F2EB]'>
-    <BlogPage />
-  </header>;
+  return (
+    <header className='bg-[#F5F2EB]'>
+      <Suspense fallback={<div>Loading...</div>}>
+        <BlogPage />
+      </Suspense>
+    </header>
+  );
 }

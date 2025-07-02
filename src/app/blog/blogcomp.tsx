@@ -1,9 +1,10 @@
 'use client'
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../../lib/firebase'; // Make sure you have this file set up with your Firebase config
+import { useSearchParams, useRouter } from 'next/navigation';
 
 // Define animations
 const containerVariants = {
@@ -60,8 +61,116 @@ interface Blog {
 export default function Page() {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [paginationLoading, setPaginationLoading] = useState(false);
+  const [scrollLocked, setScrollLocked] = useState(true); // Add scroll lock state
+  
+  // URL state management
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const [currentPage, setCurrentPage] = useState(() => {
+    const pageParam = searchParams.get('page');
+    return pageParam ? parseInt(pageParam, 10) : 1;
+  });
+  
   const blogsPerPage = 8;
+
+  // Add scroll to top on component mount (when navigating back from detail page)
+  useEffect(() => {
+    // Disable browser scroll restoration
+    if (typeof window !== 'undefined' && 'scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    
+    // Scroll to top immediately when component mounts
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    
+    // Prevent any scrolling for the first 2 seconds
+    const preventScroll = (e: Event) => {
+      if (scrollLocked) {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      }
+    };
+    
+    window.addEventListener('scroll', preventScroll, { passive: false });
+    
+    // Release scroll lock after 2 seconds
+    const lockTimeout = setTimeout(() => {
+      setScrollLocked(false);
+      window.removeEventListener('scroll', preventScroll);
+    }, 2000);
+    
+    // Handle browser back/forward navigation
+    const handlePopState = () => {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      }, 0);
+    };
+    
+    // Listen for browser navigation
+    window.addEventListener('popstate', handlePopState);
+    
+    // Also handle page visibility change (when user returns to tab)
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        setTimeout(() => {
+          window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        }, 0);
+      }
+    };
+    
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    
+    // Handle focus events (when user clicks back to tab/window)
+    const handleFocus = () => {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      }, 0);
+    };
+    
+    window.addEventListener('focus', handleFocus);
+    
+    // Additional scroll to top after a short delay to override any async scroll restoration
+    const timeoutId = setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }, 100);
+    
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', preventScroll);
+      window.removeEventListener('popstate', handlePopState);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('focus', handleFocus);
+      clearTimeout(timeoutId);
+      clearTimeout(lockTimeout);
+      setScrollLocked(false);
+      
+      // Re-enable scroll restoration when leaving the component
+      if (typeof window !== 'undefined' && 'scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'auto';
+      }
+    };
+  }, [scrollLocked]);
+
+  // Update URL when page changes
+  const updateURL = (page: number) => {
+    const params = new URLSearchParams(searchParams);
+    if (page === 1) {
+      params.delete('page');
+    } else {
+      params.set('page', page.toString());
+    }
+    const newUrl = params.toString() ? `?${params.toString()}` : '';
+    router.push(`/blog${newUrl}`, { scroll: false });
+  };
+
+  // Sync state with URL changes
+  useEffect(() => {
+    const pageParam = searchParams.get('page');
+    const newPage = pageParam ? parseInt(pageParam, 10) : 1;
+    if (newPage !== currentPage && newPage > 0) {
+      setCurrentPage(newPage);
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -89,9 +198,19 @@ export default function Page() {
         
         setBlogs(blogsData);
         setLoading(false);
+        
+        // Ensure scroll to top after blogs are loaded
+        setTimeout(() => {
+          window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        }, 0);
       } catch (error) {
         console.error("Error fetching blogs:", error);
         setLoading(false);
+        
+        // Ensure scroll to top even on error
+        setTimeout(() => {
+          window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        }, 0);
       }
     };
 
@@ -111,8 +230,8 @@ export default function Page() {
   // Get spotlight article (most recent)
   const spotlightArticle = blogs.length > 0 ? blogs[0] : null;
   
-  // Get trending articles (all blogs in random order)
-  const trendingArticles = blogs.length > 1 ? shuffleArray(blogs) : [];
+  // Get trending articles (all blogs in random order, limited to 20)
+  const trendingArticles = blogs.length > 1 ? shuffleArray(blogs).slice(0, 20) : [];
   
   // Get regular articles (excluding spotlight)
   const regularArticles = blogs.length > 0 ? blogs.slice(1) : [];
@@ -123,13 +242,64 @@ export default function Page() {
   const currentBlogs = regularArticles.slice(indexOfFirstBlog, indexOfLastBlog);
   const totalPages = Math.ceil(regularArticles.length / blogsPerPage);
 
-  const paginate = (pageNumber: number) => {
+  // Smart pagination - show limited page numbers with ellipsis
+  const getPageNumbers = () => {
+    const maxVisiblePages = 7;
+    const mobileMaxPages = 5;
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    const maxPages = isMobile ? mobileMaxPages : maxVisiblePages;
+
+    if (totalPages <= maxPages) {
+      return Array.from({ length: totalPages }, (_, i) => i + 1);
+    }
+
+    const halfVisible = Math.floor(maxPages / 2);
+    
+    if (currentPage <= halfVisible + 1) {
+      return [...Array.from({ length: maxPages - 2 }, (_, i) => i + 1), '...', totalPages];
+    }
+    
+    if (currentPage >= totalPages - halfVisible) {
+      return [1, '...', ...Array.from({ length: maxPages - 2 }, (_, i) => totalPages - (maxPages - 3) + i)];
+    }
+    
+    return [
+      1,
+      '...',
+      ...Array.from({ length: 3 }, (_, i) => currentPage - 1 + i),
+      '...',
+      totalPages
+    ];
+  };
+
+  const paginate = async (pageNumber: number) => {
+    if (pageNumber === currentPage || pageNumber < 1 || pageNumber > totalPages) return;
+    
+    setPaginationLoading(true);
     setCurrentPage(pageNumber);
-    // Scroll to top when page changes
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+    updateURL(pageNumber);
+    
+    // Smooth scroll to content area
+    setTimeout(() => {
+      const blogSection = document.querySelector('[data-blog-content]');
+      if (blogSection) {
+        blogSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+      setPaginationLoading(false);
+    }, 100);
+  };
+
+  // Handle keyboard navigation
+  const handleKeyDown = (event: React.KeyboardEvent, pageNumber: number | string) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      if (typeof pageNumber === 'number') {
+        paginate(pageNumber);
+      }
+    }
   };
   
   return (
@@ -147,10 +317,13 @@ export default function Page() {
       
       {loading ? (
         <div className="flex justify-center items-center h-64">
-          <p className="text-lg">Loading blogs...</p>
+          <div className="flex flex-col items-center space-y-4">
+            <div className="w-8 h-8 border-4 border-[#D2A02A] border-t-transparent rounded-full animate-spin"></div>
+            <p className="text-lg text-gray-600">Loading blogs...</p>
+          </div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8" data-blog-content>
           {/* Main Content (2/3 width on large screens) */}
           <div className="lg:col-span-2">
             {/* Spotlight Section */}
@@ -201,7 +374,13 @@ export default function Page() {
                 transition={{ delay: 0.3 }}
               >
                 <div className="flex items-center gap-2">
-                  <h2 className="text-xl font-medium" style={{ color: '#5A4C33' }}>Blogs</h2>
+                  <h2 className="text-xl font-medium" style={{ color: '#5A4C33' }}>
+                    Blogs {regularArticles.length > 0 && (
+                      <span className="text-sm text-gray-500 font-normal">
+                        ({regularArticles.length} articles)
+                      </span>
+                    )}
+                  </h2>
                 </div>
                 
                 <Link href="/blog">
@@ -214,80 +393,184 @@ export default function Page() {
                 </Link>
               </motion.div>
               
-              <motion.div 
-                className="grid grid-cols-1 md:grid-cols-2 gap-6"
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-              >
-                {currentBlogs.map((article) => (
-                  <motion.div 
-                    key={article.id}
-                    variants={itemVariants}
-                  >
-                    <Link href={`/blog/${article.slug}`}>
-                      <motion.div 
-                        className="rounded-xl overflow-hidden border border-gray-100 h-full"
-                        variants={hoverVariants}
-                        initial="initial"
-                        whileHover="hover"
-                        
-                      >
-                        <div className="relative h-40">
-                          <img 
-                            src={article.image}
-                            alt={article.title}
-                            className="object-cover"
-                          />
-                          <div className="absolute bottom-3 right-3 bg-white rounded px-2 py-1 text-xs uppercase text-blue-600">
-                            {article.date}
+              {/* Loading overlay for pagination */}
+              <div className="relative">
+                {paginationLoading && (
+                  <div className="absolute inset-0 bg-white bg-opacity-75 flex items-center justify-center z-10 rounded-xl">
+                    <div className="w-6 h-6 border-2 border-[#D2A02A] border-t-transparent rounded-full animate-spin"></div>
+                  </div>
+                )}
+                
+                <motion.div 
+                  className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                  key={currentPage} // Re-animate when page changes
+                >
+                  {currentBlogs.map((article) => (
+                    <motion.div 
+                      key={article.id}
+                      variants={itemVariants}
+                    >
+                      <Link href={`/blog/${article.slug}`}>
+                        <motion.div 
+                          className="rounded-xl overflow-hidden border border-gray-100 h-full"
+                          variants={hoverVariants}
+                          initial="initial"
+                          whileHover="hover"
+                          
+                        >
+                          <div className="relative h-40">
+                            <img 
+                              src={article.image}
+                              alt={article.title}
+                              className="object-cover"
+                            />
+                            <div className="absolute bottom-3 right-3 bg-white rounded px-2 py-1 text-xs uppercase text-blue-600">
+                              {article.date}
+                            </div>
                           </div>
-                        </div>
-                        
-                        <div className="p-4 relative bg-white">
-                          <h3 className="text-lg font-medium mb-2" style={{ color: '#5A4C33' }}>
-                            {article.title}
-                          </h3>
-                          <p className="text-sm mb-2 text-blue-600">{article.subtitle}</p>
-                          <p className="text-sm text-gray-500">{article.description}</p>
-                        </div>
-                      </motion.div>
-                    </Link>
-                  </motion.div>
-                ))}
-              </motion.div>
+                          
+                          <div className="p-4 relative bg-white">
+                            <h3 className="text-lg font-medium mb-2" style={{ color: '#5A4C33' }}>
+                              {article.title}
+                            </h3>
+                            <p className="text-sm mb-2 text-blue-600">{article.subtitle}</p>
+                            <p className="text-sm text-gray-500">{article.description}</p>
+                          </div>
+                        </motion.div>
+                      </Link>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </div>
 
-              {/* Pagination Controls */}
+              {/* Enhanced Pagination Controls */}
               {totalPages > 1 && (
-                <div className="flex justify-center mt-8">
-                  <nav className="flex items-center gap-2">
+                <motion.div 
+                  className="mt-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  {/* Pagination Info */}
+                  <div className="text-center mb-4 text-sm text-gray-600">
+                    Showing {indexOfFirstBlog + 1} to {Math.min(indexOfLastBlog, regularArticles.length)} of {regularArticles.length} articles
+                  </div>
+                  
+                  {/* Pagination Controls */}
+                  <nav 
+                    className="flex flex-wrap justify-center items-center gap-1 sm:gap-2"
+                    role="navigation"
+                    aria-label="Blog pagination"
+                  >
+                    {/* First Page Button (mobile hidden) */}
+                    {currentPage > 3 && totalPages > 7 && (
+                      <>
+                        <button
+                          onClick={() => paginate(1)}
+                          className="hidden sm:flex px-3 py-2 rounded text-sm bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+                          aria-label="Go to first page"
+                        >
+                          First
+                        </button>
+                        <span className="hidden sm:block text-gray-400">...</span>
+                      </>
+                    )}
+                    
+                    {/* Previous Button */}
                     <button 
                       onClick={() => paginate(currentPage - 1)}
                       disabled={currentPage === 1}
-                      className={`px-3 py-1 rounded ${currentPage === 1 ? 'bg-gray-200 text-gray-500' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
+                      className={`px-3 py-2 rounded text-sm transition-colors ${
+                        currentPage === 1 
+                          ? 'bg-gray-200 text-gray-400 cursor-not-allowed' 
+                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      }`}
+                      aria-label="Go to previous page"
                     >
-                      Previous
+                      <span className="hidden sm:inline">Previous</span>
+                      <span className="sm:hidden">←</span>
                     </button>
                     
-                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(number => (
-                      <button
-                        key={number}
-                        onClick={() => paginate(number)}
-                        className={`px-3 py-1 rounded ${currentPage === number ? 'bg-[#5A4C33] text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
-                      >
-                        {number}
-                      </button>
+                    {/* Page Numbers */}
+                    {getPageNumbers().map((number, index) => (
+                      <React.Fragment key={index}>
+                        {number === '...' ? (
+                          <span className="px-2 py-2 text-gray-400" aria-hidden="true">...</span>
+                        ) : (
+                          <button
+                            onClick={() => paginate(number as number)}
+                            onKeyDown={(e) => handleKeyDown(e, number)}
+                            className={`w-10 h-10 rounded text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:ring-opacity-50 ${
+                              currentPage === number 
+                                ? 'bg-[#5A4C33] text-white shadow-md' 
+                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                            }`}
+                            aria-label={`Go to page ${number}`}
+                            aria-current={currentPage === number ? 'page' : undefined}
+                          >
+                            {number}
+                          </button>
+                        )}
+                      </React.Fragment>
                     ))}
                     
+                    {/* Next Button */}
                     <button 
                       onClick={() => paginate(currentPage + 1)}
                       disabled={currentPage === totalPages}
-                      className={`px-3 py-1 rounded ${currentPage === totalPages ? 'bg-gray-200 text-gray-500' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
+                      className={`px-3 py-2 rounded text-sm transition-colors ${
+                        currentPage === totalPages 
+                          ? 'bg-gray-200 text-gray-400 cursor-not-allowed' 
+                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      }`}
+                      aria-label="Go to next page"
                     >
-                      Next
+                      <span className="hidden sm:inline">Next</span>
+                      <span className="sm:hidden">→</span>
                     </button>
+                    
+                    {/* Last Page Button (mobile hidden) */}
+                    {currentPage < totalPages - 2 && totalPages > 7 && (
+                      <>
+                        <span className="hidden sm:block text-gray-400">...</span>
+                        <button
+                          onClick={() => paginate(totalPages)}
+                          className="hidden sm:flex px-3 py-2 rounded text-sm bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+                          aria-label="Go to last page"
+                        >
+                          Last
+                        </button>
+                      </>
+                    )}
                   </nav>
-                </div>
+                  
+                  {/* Quick Jump (desktop only) */}
+                  {totalPages > 10 && (
+                    <div className="hidden lg:flex justify-center mt-4">
+                      <div className="flex items-center gap-2 text-sm text-gray-600">
+                        <span>Jump to page:</span>
+                        <input
+                          type="number"
+                          min="1"
+                          max={totalPages}
+                          value={currentPage}
+                          onChange={(e) => {
+                            const page = parseInt(e.target.value, 10);
+                            if (page >= 1 && page <= totalPages) {
+                              paginate(page);
+                            }
+                          }}
+                          className="w-16 px-2 py-1 border border-gray-300 rounded text-center focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:ring-opacity-50"
+                          aria-label="Jump to specific page"
+                        />
+                        <span>of {totalPages}</span>
+                      </div>
+                    </div>
+                  )}
+                </motion.div>
               )}
             </div>
           </div>
