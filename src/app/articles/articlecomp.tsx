@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../../lib/firebase'; // Make sure you have this file set up with your Firebase config
+import Image from 'next/image';
 
 
 // Define animations
@@ -160,7 +161,16 @@ export default function Page() {
                     whileHover="hover"
                   >
                     <div className="relative h-48 md:h-81">
-                      <img src={spotlightArticle.image} alt={spotlightArticle.title} />
+                      <Image
+                        src={spotlightArticle.image}
+                        alt={`${spotlightArticle.title} - AMA Legal Solutions | Legal Articles India`}
+                        width={400}
+                        height={250}
+                        className="w-full h-48 object-cover rounded-t-lg"
+                        loading="lazy"
+                        quality={85}
+                        title={`${spotlightArticle.title} | AMA Legal Solutions Article`}
+                      />
                       <div className="absolute bottom-3 right-3 bg-white rounded px-2 py-1 text-xs uppercase text-blue-600">
                         {spotlightArticle.date}
                       </div>
@@ -213,10 +223,15 @@ export default function Page() {
                         whileHover="hover"
                       >
                         <div className="relative h-40">
-                          <img 
+                          <Image
                             src={article.image}
-                            alt={article.title}
-                            className="object-cover"
+                            alt={`${article.title} - AMA Legal Solutions | Legal Articles India`}
+                            width={400}
+                            height={250}
+                            className="w-full h-48 object-cover rounded-t-lg"
+                            loading="lazy"
+                            quality={85}
+                            title={`${article.title} | AMA Legal Solutions Article`}
                           />
                           <div className="absolute bottom-3 right-3 bg-white rounded px-2 py-1 text-xs uppercase text-blue-600">
                             {article.date}
@@ -272,10 +287,15 @@ export default function Page() {
                         whileHover="hover"
                       >
                         <div className="flex-shrink-0 w-20 h-20 relative rounded-lg overflow-hidden">
-                          <img 
+                          <Image
                             src={article.image}
-                            alt={article.title}
-                            className="object-cover"
+                            alt={`${article.title} - AMA Legal Solutions | Legal Articles India`}
+                            width={400}
+                            height={250}
+                            className="w-full h-48 object-cover rounded-t-lg"
+                            loading="lazy"
+                            quality={85}
+                            title={`${article.title} | AMA Legal Solutions Article`}
                           />
                         </div>
                         
