@@ -69,61 +69,6 @@ const nextConfig: NextConfig = {
         destination: '/privacy-policy',
         permanent: true,
       },
-      {
-        source: '/services/realestate',
-        destination: '/services/real-estate',
-        permanent: true,
-      },
-      {
-        source: '/services/bankingandfinance',
-        destination: '/services/banking-and-finance',
-        permanent: true,
-      },
-      {
-        source: '/services/civil',
-        destination: '/services/civil',
-        permanent: true,
-      },
-      {
-        source: '/services/corporate',
-        destination: '/services/corporate',
-        permanent: true,
-      },
-      {
-        source: '/services/criminal',
-        destination: '/services/criminal-law',
-        permanent: true,
-      },
-      {
-        source: '/services/cyber',
-        destination: '/services/cyber',
-        permanent: true,
-      },
-      {
-        source: '/services/drafting',
-        destination: '/services/drafting',
-        permanent: true,
-      },
-      {
-        source: '/services/entertainment',
-        destination: '/services/entertainment',
-        permanent: true,
-      },
-      {
-        source: '/services/ipr',
-        destination: '/services/intellectual-property-rights',
-        permanent: true,
-      },
-      {
-        source: '/services/litigation',
-        destination: '/services/litigation',
-        permanent: true,
-      },
-      {
-        source: '/services/loansettlement',
-        destination: '/services/loan-settlement',
-        permanent: true,
-      },
     ];  
   },
   async headers() {
