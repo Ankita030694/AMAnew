@@ -160,13 +160,13 @@ export default function Page() {
                     initial="initial"
                     whileHover="hover"
                   >
-                    <div className="relative h-48 md:h-81">
+                    <div className="relative h-64 md:h-80">
                       <Image
                         src={spotlightArticle.image}
                         alt={`${spotlightArticle.title} - AMA Legal Solutions | Legal Articles India`}
                         width={400}
                         height={250}
-                        className="w-full h-48 object-cover rounded-t-lg"
+                        className="w-full h-full object-cover rounded-t-lg"
                         loading="lazy"
                         quality={85}
                         title={`${spotlightArticle.title} | AMA Legal Solutions Article`}
@@ -222,13 +222,13 @@ export default function Page() {
                         initial="initial"
                         whileHover="hover"
                       >
-                        <div className="relative h-40">
+                        <div className="relative h-48">
                           <Image
                             src={article.image}
                             alt={`${article.title} - AMA Legal Solutions | Legal Articles India`}
                             width={400}
                             height={250}
-                            className="w-full h-48 object-cover rounded-t-lg"
+                            className="w-full h-full object-cover rounded-t-lg"
                             loading="lazy"
                             quality={85}
                             title={`${article.title} | AMA Legal Solutions Article`}
@@ -290,9 +290,9 @@ export default function Page() {
                           <Image
                             src={article.image}
                             alt={`${article.title} - AMA Legal Solutions | Legal Articles India`}
-                            width={400}
-                            height={250}
-                            className="w-full h-48 object-cover rounded-t-lg"
+                            width={80}
+                            height={80}
+                            className="w-full h-full object-cover"
                             loading="lazy"
                             quality={85}
                             title={`${article.title} | AMA Legal Solutions Article`}
