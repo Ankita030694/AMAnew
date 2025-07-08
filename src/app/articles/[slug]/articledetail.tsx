@@ -18,7 +18,7 @@ interface Article {
   metaTitle?: string;
   metaDescription?: string;
   faqs?: FAQ[];
-  author?: string;
+  author?: string; 
   slug: string;
 }
 
