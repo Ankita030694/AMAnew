@@ -123,6 +123,12 @@ const MenuBar = ({ editor }: { editor: any }) => {
     try {
       setUploading(true);
       
+      // Check if storage is available
+      if (!storage) {
+        alert("Storage service is not available. Please try again later.");
+        return;
+      }
+      
       // Check file size (limit to 10MB)
       const MAX_FILE_SIZE = 10 * 1024 * 1024;
       if (file.size > MAX_FILE_SIZE) {
