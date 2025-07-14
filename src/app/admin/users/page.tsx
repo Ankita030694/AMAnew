@@ -2,21 +2,20 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faUpload, faUser } from '@fortawesome/free-solid-svg-icons';
 import { collection, getDocs, addDoc, doc, deleteDoc, updateDoc } from 'firebase/firestore';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
-import { db, auth } from '../../../lib/firebase'; // adjust the path as needed
+import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
+import { db, auth, storage } from '../../../lib/firebase'; // adjust the path as needed
 import { useRouter } from 'next/navigation';
 
 // Define the TableData interface for users
 interface TableData {
   id: string;
   name: string;
-  email: string;
-  password: string;
-  image: string;
-  role: string;
   position: string;
+  role: string;
+  image: string;
 }
 
 const UsersDashboard = () => {
@@ -27,14 +26,15 @@ const UsersDashboard = () => {
   const [currentUserId, setCurrentUserId] = useState('');
   const [newUser, setNewUser] = useState({
     name: '',
-    email: '',
-    password: '',
-    image: '',
-    role: '',
     position: '',
+    role: '',
+    image: '',
   });
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [userToDelete, setUserToDelete] = useState<string | null>(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [uploading, setUploading] = useState(false);
+  const [previewUrl, setPreviewUrl] = useState<string>('');
   const router = useRouter();
 
   // Check if user is logged in; if not, redirect to login page
@@ -83,11 +83,9 @@ const UsersDashboard = () => {
         return {
           id: doc.id,
           name: docData.name || '-',
-          email: docData.email || '-',
-          password: docData.password || '-',
-          image: docData.image || '-',
+          position: docData.position || '-',
           role: docData.role || '-',
-          position: docData.position || '-'
+          image: docData.image || '' // Assuming 'image' field exists
         };
       });
       setTableData(data);
@@ -100,8 +98,6 @@ const UsersDashboard = () => {
     fetchData();
   }, []);
 
-
-
   // Handle user form input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -111,30 +107,83 @@ const UsersDashboard = () => {
     }));
   };
 
+  // Handle file selection
+  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setSelectedFile(file);
+      // Create preview URL
+      const url = URL.createObjectURL(file);
+      setPreviewUrl(url);
+    }
+  };
+
+  // Upload file to Firebase Storage
+  const uploadImage = async (file: File): Promise<string> => {
+    const fileName = `${Date.now()}_${file.name}`;
+    const storageRef = ref(storage!, `users/${fileName}`);
+    
+    const snapshot = await uploadBytes(storageRef, file);
+    const downloadURL = await getDownloadURL(snapshot.ref);
+    
+    return downloadURL;
+  };
+
+  // Delete old image from Firebase Storage
+  const deleteOldImage = async (imageUrl: string) => {
+    try {
+      if (imageUrl && imageUrl.includes('firebase')) {
+        const imageRef = ref(storage!, imageUrl);
+        await deleteObject(imageRef);
+      }
+    } catch (error) {
+      console.error('Error deleting old image:', error);
+    }
+  };
+
   // Handle user form submission (Create or Update)
   const handleSubmitUser = async (e: React.FormEvent) => {
     e.preventDefault();
+    setUploading(true);
+    
     try {
+      let imageUrl = newUser.image;
+      
+      // Upload new image if selected
+      if (selectedFile) {
+        imageUrl = await uploadImage(selectedFile);
+        
+        // Delete old image if updating
+        if (isEditMode && newUser.image) {
+          await deleteOldImage(newUser.image);
+        }
+      }
+      
+      const userData = {
+        ...newUser,
+        image: imageUrl
+      };
+      
       if (isEditMode) {
         // Update existing user
         const userRef = doc(db, 'users', currentUserId);
-        await updateDoc(userRef, newUser);
+        await updateDoc(userRef, userData);
         setIsEditMode(false);
         setCurrentUserId('');
       } else {
         // Add new user
-        await addDoc(collection(db, 'users'), newUser);
+        await addDoc(collection(db, 'users'), userData);
       }
       
       // Reset form and show table
       setNewUser({
         name: '',
-        email: '',
-        password: '',
-        image: '',
-        role: '',
         position: '',
+        role: '',
+        image: '',
       });
+      setSelectedFile(null);
+      setPreviewUrl('');
       setShowUserForm(false);
       
       // Fetch the updated users
@@ -142,6 +191,8 @@ const UsersDashboard = () => {
       
     } catch (error) {
       console.error("Error managing user:", error);
+    } finally {
+      setUploading(false);
     }
   };
 
@@ -151,12 +202,11 @@ const UsersDashboard = () => {
     setCurrentUserId(user.id);
     setNewUser({
       name: user.name !== '-' ? user.name : '',
-      email: user.email !== '-' ? user.email : '',
-      password: user.password !== '-' ? user.password : '',
-      image: user.image !== '-' ? user.image : '',
-      role: user.role !== '-' ? user.role : '',
       position: user.position !== '-' ? user.position : '',
+      role: user.role !== '-' ? user.role : '',
+      image: user.image || '',
     });
+    setPreviewUrl(user.image || '');
     setShowUserForm(true);
   };
 
@@ -164,6 +214,12 @@ const UsersDashboard = () => {
   const handleConfirmDelete = async () => {
     if (userToDelete) {
       try {
+        // Get user data to delete associated image
+        const userToDeleteData = tableData.find(user => user.id === userToDelete);
+        if (userToDeleteData?.image) {
+          await deleteOldImage(userToDeleteData.image);
+        }
+        
         await deleteDoc(doc(db, 'users', userToDelete));
         setShowDeleteModal(false);
         setUserToDelete(null);
@@ -180,12 +236,12 @@ const UsersDashboard = () => {
     setCurrentUserId('');
     setNewUser({
       name: '',
-      email: '',
-      password: '',
-      image: '',
-      role: '',
       position: '',
+      role: '',
+      image: '',
     });
+    setSelectedFile(null);
+    setPreviewUrl('');
     setShowUserForm(false);
   };
 
@@ -349,61 +405,6 @@ const UsersDashboard = () => {
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-[#5A4C33] mb-1">Email</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={newUser.email}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent text-black"
-                      placeholder="Enter user's email"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="password" className="block text-sm font-medium text-[#5A4C33] mb-1">Password</label>
-                    <input
-                      type="password"
-                      id="password"
-                      name="password"
-                      value={newUser.password}
-                      onChange={handleInputChange}
-                      required={!isEditMode} // Not required during edit unless changing
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent text-black"
-                      placeholder={isEditMode ? "Leave blank to keep current password" : "Enter user's password"}
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="image" className="block text-sm font-medium text-[#5A4C33] mb-1">Image URL</label>
-                    <input
-                      type="text"
-                      id="image"
-                      name="image"
-                      value={newUser.image}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent text-black"
-                      placeholder="Enter image URL"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="role" className="block text-sm font-medium text-[#5A4C33] mb-1">Role</label>
-                    <input
-                      type="text"
-                      id="role"
-                      name="role"
-                      value={newUser.role}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent text-black"
-                      placeholder="Enter user's role"
-                    />
-                  </div>
-                  
-                  <div>
                     <label htmlFor="position" className="block text-sm font-medium text-[#5A4C33] mb-1">Position</label>
                     <input
                       type="text"
@@ -415,6 +416,71 @@ const UsersDashboard = () => {
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent text-black"
                       placeholder="Enter user's position"
                     />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="image" className="block text-sm font-medium text-[#5A4C33] mb-1">Profile Image</label>
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-center w-full">
+                        <label htmlFor="image-upload" className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+                          <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                            <FontAwesomeIcon icon={faUpload} className="w-8 h-8 mb-3 text-gray-400" />
+                            <p className="mb-2 text-sm text-gray-500">
+                              <span className="font-semibold">Click to upload</span> or drag and drop
+                            </p>
+                            <p className="text-xs text-gray-500">PNG, JPG, JPEG (MAX. 5MB)</p>
+                          </div>
+                          <input
+                            id="image-upload"
+                            type="file"
+                            accept="image/*"
+                            onChange={handleFileSelect}
+                            className="hidden"
+                          />
+                        </label>
+                      </div>
+                      
+                      {previewUrl && (
+                        <div className="flex justify-center">
+                          <div className="relative">
+                            <img 
+                              src={previewUrl} 
+                              alt="Preview" 
+                              className="h-32 w-32 rounded-lg object-cover border-2 border-gray-200"
+                            />
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setSelectedFile(null);
+                                setPreviewUrl('');
+                                if (previewUrl && previewUrl.startsWith('blob:')) {
+                                  URL.revokeObjectURL(previewUrl);
+                                }
+                              }}
+                              className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs hover:bg-red-600"
+                            >
+                              ×
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="role" className="block text-sm font-medium text-[#5A4C33] mb-1">Role</label>
+                    <select
+                      id="role"
+                      name="role"
+                      value={newUser.role}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent text-black"
+                    >
+                      <option value="">Select Role</option>
+                      <option value="lawyer">Lawyer</option>
+                      <option value="business_development">Business Development</option>
+                    </select>
                   </div>
                   
                   <div className="flex justify-end space-x-3">
@@ -433,9 +499,20 @@ const UsersDashboard = () => {
                       whileTap={{ scale: 0.95 }}
                       className={`px-4 py-2 ${isEditMode 
                         ? 'bg-blue-500' 
-                        : 'bg-gradient-to-r from-[#D2A02A] to-[#5A4C33]'} text-white rounded-md font-medium`}
+                        : 'bg-gradient-to-r from-[#D2A02A] to-[#5A4C33]'} text-white rounded-md font-medium flex items-center`}
+                      disabled={uploading}
                     >
-                      {isEditMode ? 'Update User' : 'Add User'}
+                      {uploading ? (
+                        <>
+                          <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Uploading...
+                        </>
+                      ) : (
+                        isEditMode ? 'Update User' : 'Add User'
+                      )}
                     </motion.button>
                   </div>
                 </motion.form>
@@ -453,7 +530,7 @@ const UsersDashboard = () => {
                   <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-[#F0EAD6]">
                       <tr>
-                        {['ID', 'Name', 'Email', 'Password', 'Image', 'Role', 'Position', 'Actions'].map((header, index) => (
+                        {['ID', 'Image', 'Name', 'Position', 'Role', 'Actions'].map((header, index) => (
                           <th key={index} className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">
                             {header}
                           </th>
@@ -464,20 +541,16 @@ const UsersDashboard = () => {
                       {tableData.map((row) => (
                         <tr key={row.id} className="hover:bg-[#F8F5EC] transition-colors duration-150">
                           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#5A4C33]">{row.id}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.name}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.email}</td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
-                            {row.password !== '-' ? '•••••••••' : '-'}
-                          </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
-                            {row.image !== '-' ? (
+                            {row.image ? (
                               <img src={row.image} alt={row.name} className="h-10 w-10 rounded-full object-cover" />
                             ) : (
-                              '-'
+                              <FontAwesomeIcon icon={faUser} className="h-5 w-5 text-gray-500" />
                             )}
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.role}</td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.name}</td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.position}</td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.role}</td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
                             <div className="flex space-x-2">
                               <motion.button

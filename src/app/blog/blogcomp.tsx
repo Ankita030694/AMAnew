@@ -45,6 +45,36 @@ const truncateWords = (text: string, wordCount: number) => {
   return words.slice(0, wordCount).join(' ') + '...';
 };
 
+// Helper function to validate and provide fallback for images
+const getValidImageSrc = (imageSrc: string | undefined | null): string => {
+  if (!imageSrc || imageSrc.trim() === '') {
+    return '/images/placeholder-blog.jpg'; // Fallback image
+  }
+  
+  // If it's a Firebase Storage URL, add error handling
+  if (imageSrc.includes('firebasestorage.googleapis.com') || imageSrc.includes('firebasestorage.app')) {
+    // Add token refresh parameter to handle permission issues
+    const url = new URL(imageSrc);
+    url.searchParams.set('alt', 'media');
+    return url.toString();
+  }
+  
+  return imageSrc;
+};
+
+// Helper function to check if image src is valid
+const hasValidImage = (imageSrc: string | undefined | null): boolean => {
+  return !!(imageSrc && imageSrc.trim() !== '');
+};
+
+// Add new function to handle image loading errors
+const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+  const target = e.target as HTMLImageElement;
+  if (target.src !== '/images/placeholder-blog.jpg') {
+    target.src = '/images/placeholder-blog.jpg';
+  }
+};
+
 // Define the Blog interface
 interface Blog {
   id: string;
@@ -348,16 +378,28 @@ export default function Page() {
                     whileHover="hover"
                   >
                     <div className="relative h-64 md:h-80">
-                      <Image
-                        src={spotlightArticle.image}
-                        alt={`${spotlightArticle.title} - AMA Legal Solutions | Legal Insights India`}
-                        width={400}
-                        height={250}
-                        className="w-full h-full object-cover rounded-t-lg"
-                        loading="lazy"
-                        quality={85}
-                        title={`${spotlightArticle.title} | AMA Legal Solutions Blog`}
-                      />
+                      {hasValidImage(spotlightArticle.image) ? (
+                        <Image
+                          src={getValidImageSrc(spotlightArticle.image)}
+                          alt={`${spotlightArticle.title} - AMA Legal Solutions | Legal Insights India`}
+                          width={400}
+                          height={250}
+                          className="w-full h-full object-cover rounded-t-lg"
+                          loading="lazy"
+                          quality={85}
+                          title={`${spotlightArticle.title} | AMA Legal Solutions Blog`}
+                          onError={handleImageError}
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gray-200 flex items-center justify-center rounded-t-lg">
+                          <div className="text-center">
+                            <svg className="w-16 h-16 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <p className="text-gray-400 text-sm">No image available</p>
+                          </div>
+                        </div>
+                      )}
                       <div className="absolute bottom-3 right-3 bg-white rounded px-2 py-1 text-xs uppercase text-blue-600">
                         {spotlightArticle.date}
                       </div>
@@ -432,16 +474,28 @@ export default function Page() {
                           
                         >
                           <div className="relative h-48">
-                            <Image
-                              src={article.image}
-                              alt={`${article.title} - AMA Legal Solutions | Legal Insights India`}
-                              width={400}
-                              height={250}
-                              className="w-full h-full object-cover rounded-t-lg"
-                              loading="lazy"
-                              quality={85}
-                              title={`${article.title} | AMA Legal Solutions Blog`}
-                            />
+                            {hasValidImage(article.image) ? (
+                              <Image
+                                src={getValidImageSrc(article.image)}
+                                alt={`${article.title} - AMA Legal Solutions | Legal Insights India`}
+                                width={400}
+                                height={250}
+                                className="w-full h-full object-cover rounded-t-lg"
+                                loading="lazy"
+                                quality={85}
+                                title={`${article.title} | AMA Legal Solutions Blog`}
+                                onError={handleImageError}
+                              />
+                            ) : (
+                              <div className="w-full h-full bg-gray-200 flex items-center justify-center rounded-t-lg">
+                                <div className="text-center">
+                                  <svg className="w-12 h-12 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                  </svg>
+                                  <p className="text-gray-400 text-xs">No image</p>
+                                </div>
+                              </div>
+                            )}
                             <div className="absolute bottom-3 right-3 bg-white rounded px-2 py-1 text-xs uppercase text-blue-600">
                               {article.date}
                             </div>
@@ -624,13 +678,22 @@ export default function Page() {
                         whileHover="hover"
                       >
                         <div className="flex-shrink-0 w-20 h-20 relative rounded-lg overflow-hidden">
-                          <Image 
-                            src={article.image}
-                            alt={`${article.title} - AMA Legal Solutions | Legal Insights India`}
-                            width={80}
-                            height={80}
-                            className="object-cover"
-                          />
+                          {hasValidImage(article.image) ? (
+                            <Image 
+                              src={getValidImageSrc(article.image)}
+                              alt={`${article.title} - AMA Legal Solutions | Legal Insights India`}
+                              width={80}
+                              height={80}
+                              className="object-cover"
+                              onError={handleImageError}
+                            />
+                          ) : (
+                            <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                              <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                              </svg>
+                            </div>
+                          )}
                         </div>
                         
                         <div>

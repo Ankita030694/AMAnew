@@ -1,8 +1,9 @@
-// lib/firebase.js
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
-import { getStorage } from "firebase/storage";
+// lib/firebase.ts
+import { initializeApp, FirebaseApp } from "firebase/app";
+import { getFirestore, collection, addDoc, Firestore } from "firebase/firestore";
+import { getAuth, Auth } from "firebase/auth";
+import { getStorage, FirebaseStorage } from "firebase/storage";
+import { Analytics } from "firebase/analytics";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -16,10 +17,12 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app: FirebaseApp = initializeApp(firebaseConfig);
 
 // Initialize services with error handling
-let db, auth, storage;
+let db: Firestore;
+let auth: Auth;
+let storage: FirebaseStorage | null;
 
 try {
   db = getFirestore(app);
@@ -34,7 +37,7 @@ try {
 }
 
 // Dynamically load Firebase Analytics on the client side
-let analytics = null;
+let analytics: Analytics | null = null;
 if (typeof window !== "undefined") {
   import("firebase/analytics")
     .then(({ getAnalytics }) => {
@@ -44,6 +47,6 @@ if (typeof window !== "undefined") {
 }
 
 // Helper function to check if storage is available
-export const isStorageAvailable = () => storage !== null;
+export const isStorageAvailable = (): boolean => storage !== null;
 
-export { app, analytics, db, auth, storage, collection, addDoc };
+export { app, analytics, db, auth, storage, collection, addDoc }; 
