@@ -212,9 +212,6 @@ export default function OurAttorneys() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mb-16"
           >
-            <h3 className="text-2xl font-bold text-[#6B5B3D] mb-8 text-center">
-              Legal Team
-            </h3>
             <div className="relative">
               <div className="overflow-hidden">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto px-4 md:px-8 lg:px-12">
@@ -324,9 +321,6 @@ export default function OurAttorneys() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="mb-8"
           >
-            <h3 className="text-2xl font-bold text-[#6B5B3D] mb-8 text-center">
-              Business Development Team
-            </h3>
             <div className="relative">
               <div className="overflow-hidden">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto px-4 md:px-8 lg:px-12">

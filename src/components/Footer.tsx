@@ -107,9 +107,14 @@ export default function Footer() {
                     <div className="w-6 h-6 bg-white/20 rounded-lg flex items-center justify-center mt-0.5 flex-shrink-0">
                       <i className="fas fa-map-marker-alt text-sm"></i>
                     </div>
-                    <span className="text-lg leading-relaxed text-[#2a2a2a] font-medium">
+                    <a
+                      href="https://www.google.com/maps/place/AMA+LEGAL+SOLUTIONS/@28.4256874,77.0878512,17z/data=!3m1!4b1!4m6!3m5!1s0x8b74fa3c4bce8f29:0x9c0cf35a3104b12e!2sAMA+LEGAL+SOLUTIONS!8m2!3d28.4256874!4d77.0878512"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lg leading-relaxed text-[#2a2a2a] font-medium hover:text-[#1a1a1a] transition-colors duration-300"
+                    >
                       2493AP, Block G, Sushant Lok 2, Sector 57, Gurugram, Haryana 122001
-                    </span>
+                    </a>
                   </li>
                   <li className="flex items-center space-x-3">
                     <div className="w-6 h-6 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -127,10 +132,10 @@ export default function Footer() {
                       <i className="fas fa-envelope text-sm"></i>
                     </div>
                     <a
-                      href="mailto:info@amalegalsolutions.com"
+                      href="mailto:notify@amalegalsolutions.com"
                       className="text-lg font-medium text-[#2a2a2a] hover:text-[#1a1a1a] transition-colors duration-300 break-all"
                     >
-                      info@amalegalsolutions.com
+                      notify@amalegalsolutions.com
                     </a>
                   </li>
                 </ul>

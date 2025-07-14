@@ -194,7 +194,7 @@ const ContactComp = () => {
     {
       icon: faEnvelope,
       title: "Email Us",
-      details: "info@amalegalsolutions.com",
+      details: "notify@amalegalsolutions.com",
     },
     {
       icon: faPhone,
