@@ -121,7 +121,7 @@ const UsersDashboard = () => {
   // Upload file to Firebase Storage
   const uploadImage = async (file: File): Promise<string> => {
     const fileName = `${Date.now()}_${file.name}`;
-    const storageRef = ref(storage!, `users/${fileName}`);
+    const storageRef = ref(storage, `users/${fileName}`);
     
     const snapshot = await uploadBytes(storageRef, file);
     const downloadURL = await getDownloadURL(snapshot.ref);
@@ -133,7 +133,7 @@ const UsersDashboard = () => {
   const deleteOldImage = async (imageUrl: string) => {
     try {
       if (imageUrl && imageUrl.includes('firebase')) {
-        const imageRef = ref(storage!, imageUrl);
+        const imageRef = ref(storage, imageUrl);
         await deleteObject(imageRef);
       }
     } catch (error) {

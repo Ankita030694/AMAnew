@@ -10,7 +10,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyCn8LHNtSycWOnhxlYn51Gblwt_fqF6yE8",
   authDomain: "amalegalsolutionss.firebaseapp.com",
   projectId: "amalegalsolutionss",
-  storageBucket: "amalegalsolutionss.firebasestorage.app",
+  storageBucket: "amalegalsolutionss.appspot.com",
   messagingSenderId: "235592681981",
   appId: "1:235592681981:web:91bb26b058753a175d7194",
   measurementId: "G-3087BV48LQ",
@@ -22,7 +22,7 @@ const app: FirebaseApp = initializeApp(firebaseConfig);
 // Initialize services with error handling
 let db: Firestore;
 let auth: Auth;
-let storage: FirebaseStorage | null;
+let storage: FirebaseStorage;
 
 try {
   db = getFirestore(app);
@@ -33,7 +33,8 @@ try {
   // Fallback - still export db and auth even if storage fails
   db = getFirestore(app);
   auth = getAuth(app);
-  storage = null; // Set to null if storage initialization fails
+  // Re-throw the error for storage since it's critical
+  throw new Error(`Failed to initialize Firebase Storage: ${error}`);
 }
 
 // Dynamically load Firebase Analytics on the client side

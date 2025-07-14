@@ -248,7 +248,7 @@ const BlogsDashboard = () => {
       setUploadProgress(0);
       
       // Create a reference to the file in Firebase Storage
-      const storageRef = ref(storage!, `blog-images/${Date.now()}_${file.name}`);
+      const storageRef = ref(storage, `blog-images/${Date.now()}_${file.name}`);
       
       // Create a local preview of the image
       const reader = new FileReader();
@@ -501,7 +501,7 @@ const BlogsDashboard = () => {
             const imageData = imageDoc.data();
             try {
               // Delete from Storage
-              const imageRef = ref(storage!, imageData.path);
+              const imageRef = ref(storage, imageData.path);
               await deleteObject(imageRef);
               
               // Delete from Firestore
