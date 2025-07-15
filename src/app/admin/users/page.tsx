@@ -480,6 +480,7 @@ const UsersDashboard = () => {
                       <option value="">Select Role</option>
                       <option value="lawyer">Lawyer</option>
                       <option value="business_development">Business Development</option>
+                      <option value="tech">Tech</option>
                     </select>
                   </div>
                   

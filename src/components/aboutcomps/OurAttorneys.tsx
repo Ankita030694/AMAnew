@@ -23,12 +23,16 @@ type Attorney = {
 export default function OurAttorneys() {
   const [lawyers, setLawyers] = useState<Attorney[]>([]);
   const [businessDev, setBusinessDev] = useState<Attorney[]>([]);
+  const [tech, setTech] = useState<Attorney[]>([]);
   const [currentLawyerIndex, setCurrentLawyerIndex] = useState(0);
   const [currentBusinessIndex, setCurrentBusinessIndex] = useState(0);
+  const [currentTechIndex, setCurrentTechIndex] = useState(0);
   const [lawyerDirection, setLawyerDirection] = useState(0);
   const [businessDirection, setBusinessDirection] = useState(0);
+  const [techDirection, setTechDirection] = useState(0);
   const [isLawyerAnimating, setIsLawyerAnimating] = useState(false);
   const [isBusinessAnimating, setIsBusinessAnimating] = useState(false);
+  const [isTechAnimating, setIsTechAnimating] = useState(false);
   const [loading, setLoading] = useState(true);
 
   // Fetch users from Firestore
@@ -51,12 +55,14 @@ export default function OurAttorneys() {
         };
       });
 
-      // Separate lawyers and business development executives
+      // Separate lawyers, business development executives, and tech team
       const lawyerUsers = users.filter(user => user.role === 'lawyer');
       const businessUsers = users.filter(user => user.role === 'business_development');
+      const techUsers = users.filter(user => user.role === 'tech');
 
       setLawyers(lawyerUsers);
       setBusinessDev(businessUsers);
+      setTech(techUsers);
       setLoading(false);
     } catch (error) {
       console.error('Error fetching users:', error);
@@ -92,15 +98,29 @@ export default function OurAttorneys() {
     return interval;
   }, [isBusinessAnimating, businessDev.length]);
 
+  // Auto-play for tech
+  const startTechAutoPlay = useCallback(() => {
+    const interval = setInterval(() => {
+      if (!isTechAnimating && tech.length > 0) {
+        setTechDirection(1);
+        setCurrentTechIndex((prevIndex) => (prevIndex + 1) % tech.length);
+      }
+    }, 5000);
+
+    return interval;
+  }, [isTechAnimating, tech.length]);
+
   useEffect(() => {
     const lawyerInterval = startLawyerAutoPlay();
     const businessInterval = startBusinessAutoPlay();
+    const techInterval = startTechAutoPlay();
     
     return () => {
       clearInterval(lawyerInterval);
       clearInterval(businessInterval);
+      clearInterval(techInterval);
     };
-  }, [startLawyerAutoPlay, startBusinessAutoPlay]);
+  }, [startLawyerAutoPlay, startBusinessAutoPlay, startTechAutoPlay]);
 
   // Navigation functions for lawyers
   const nextLawyerSlide = useCallback(() => {
@@ -422,8 +442,127 @@ export default function OurAttorneys() {
           </motion.div>
         )}
 
+        {/* Tech Section */}
+        {tech.length > 0 && (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="mb-8"
+          >
+            <div className="relative">
+              <div className="overflow-hidden">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto px-4 md:px-8 lg:px-12">
+                  {getVisibleAttorneys(tech, currentTechIndex).map((attorney, index) => (
+                    <div key={`tech-${attorney.id}-${index}`} className="relative">
+                      {index === 0 ? (
+                        <AnimatePresence initial={false} mode="wait" onExitComplete={() => setIsTechAnimating(false)}>
+                          <motion.div 
+                            key={`tech-${currentTechIndex}-first`}
+                            custom={techDirection}
+                            variants={slideVariants}
+                            initial="enter"
+                            animate="center"
+                            exit="exit"
+                            onAnimationStart={() => setIsTechAnimating(true)}
+                            onAnimationComplete={() => setIsTechAnimating(false)}
+                            transition={{
+                              x: { 
+                                type: "spring", 
+                                stiffness: 200,
+                                damping: 25,
+                                duration: 0.8
+                              },
+                              opacity: { duration: 0.5 }
+                            }}
+                            className="flex flex-col items-center"
+                          >
+                            <AttorneyCard attorney={attorney} />
+                          </motion.div>
+                        </AnimatePresence>
+                      ) : (
+                        <motion.div 
+                          initial={{ opacity: 1 }}
+                          animate={{ opacity: 1 }}
+                          className="flex flex-col items-center"
+                        >
+                          <AttorneyCard attorney={attorney} />
+                        </motion.div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {tech.length > 3 && (
+                <>
+                  <div className="absolute inset-y-0 left-0 flex items-center">
+                    <motion.button 
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      onClick={() => {
+                        if (!isTechAnimating) {
+                          setTechDirection(-1);
+                          setCurrentTechIndex((prevIndex) => (prevIndex - 1 + tech.length) % tech.length);
+                        }
+                      }}
+                      disabled={isTechAnimating}
+                      className="p-3 rounded-full bg-[#6B5B3D] text-white shadow-lg transform -translate-x-1/2 hover:bg-[#5A4C33] transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </motion.button>
+                  </div>
+
+                  <div className="absolute inset-y-0 right-0 flex items-center">
+                    <motion.button
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      onClick={() => {
+                        if (!isTechAnimating) {
+                          setTechDirection(1);
+                          setCurrentTechIndex((prevIndex) => (prevIndex + 1) % tech.length);
+                        }
+                      }}
+                      disabled={isTechAnimating}
+                      className="p-3 rounded-full bg-[#6B5B3D] text-white shadow-lg transform translate-x-1/2 hover:bg-[#5A4C33] transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </motion.button>
+                  </div>
+                </>
+              )}
+
+              {tech.length > 1 && (
+                <div className="flex justify-center mt-8 space-x-2">
+                  {tech.map((_, index) => (
+                    <motion.button
+                      key={`tech-dot-${index}`}
+                      whileHover={{ scale: 1.2 }}
+                      whileTap={{ scale: 0.9 }}
+                      onClick={() => {
+                        if (!isTechAnimating) {
+                          setTechDirection(index > currentTechIndex ? 1 : -1);
+                          setCurrentTechIndex(index);
+                        }
+                      }}
+                      className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                        index === currentTechIndex ? 'bg-[#6B5B3D]' : 'bg-gray-300 hover:bg-[#6B5B3D]/50'
+                      }`}
+                      disabled={isTechAnimating}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          </motion.div>
+        )}
+
         {/* Show message if no users found */}
-        {lawyers.length === 0 && businessDev.length === 0 && !loading && (
+        {lawyers.length === 0 && businessDev.length === 0 && tech.length === 0 && !loading && (
           <div className="text-center py-12">
             <p className="text-gray-600 text-lg">No team members found. Please check back later.</p>
           </div>
