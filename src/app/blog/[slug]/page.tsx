@@ -168,10 +168,10 @@ export default async function Page({
               please refrain from using our services. For legal assistance or
               inquiries, please contact us at{" "}
               <a
-                href="mailto:Info@amalegalsolutions.com"
+                href="mailto:notify@amalegalsolutions.com"
                 className="text-[#D2A02A] hover:underline"
               >
-                Info@amalegalsolutions.com
+                notify@amalegalsolutions.com
               </a>
             </p>
           </div>
