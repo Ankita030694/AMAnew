@@ -85,7 +85,7 @@ export default function Services() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-20">
-            <h2 className="text-4xl font-bold text-[#5A4C33] mb-4">Our Expertise</h2>
+            <h1 className="text-4xl font-bold text-[#5A4C33] mb-4">Our Expertise</h1>
             <div className="w-24 h-1 bg-[#D2A02A] mx-auto" />
           </div>
 
