@@ -1,8 +1,8 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState, useEffect, useCallback } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 import { FaFacebook, FaTwitter, FaInstagram, FaTelegram, FaLinkedin } from 'react-icons/fa'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../../lib/firebase'
@@ -21,18 +21,7 @@ type Attorney = {
 };
 
 export default function OurAttorneys() {
-  const [lawyers, setLawyers] = useState<Attorney[]>([]);
-  const [businessDev, setBusinessDev] = useState<Attorney[]>([]);
-  const [tech, setTech] = useState<Attorney[]>([]);
-  const [currentLawyerIndex, setCurrentLawyerIndex] = useState(0);
-  const [currentBusinessIndex, setCurrentBusinessIndex] = useState(0);
-  const [currentTechIndex, setCurrentTechIndex] = useState(0);
-  const [lawyerDirection, setLawyerDirection] = useState(0);
-  const [businessDirection, setBusinessDirection] = useState(0);
-  const [techDirection, setTechDirection] = useState(0);
-  const [isLawyerAnimating, setIsLawyerAnimating] = useState(false);
-  const [isBusinessAnimating, setIsBusinessAnimating] = useState(false);
-  const [isTechAnimating, setIsTechAnimating] = useState(false);
+  const [allTeamMembers, setAllTeamMembers] = useState<Attorney[]>([]);
   const [loading, setLoading] = useState(true);
 
   // Fetch users from Firestore
@@ -55,14 +44,37 @@ export default function OurAttorneys() {
         };
       });
 
-      // Separate lawyers, business development executives, and tech team
+      // Separate and order team members: Lawyers, Tech, Business Development
       const lawyerUsers = users.filter(user => user.role === 'lawyer');
-      const businessUsers = users.filter(user => user.role === 'business_development');
       const techUsers = users.filter(user => user.role === 'tech');
+      const businessUsers = users.filter(user => user.role === 'business_development');
 
-      setLawyers(lawyerUsers);
-      setBusinessDev(businessUsers);
-      setTech(techUsers);
+      // Sort each group to put "Senior" positions first
+      const sortBySeniority = (a: any, b: any) => {
+        const aPosition = a.position.toLowerCase();
+        const bPosition = b.position.toLowerCase();
+        
+        const getPositionPriority = (position: string) => {
+          if (position.includes('head')) return 1;
+          if (position.includes('senior')) return 2;
+          if (position.includes('junior')) return 4;
+          return 3; // other positions
+        };
+        
+        const aPriority = getPositionPriority(aPosition);
+        const bPriority = getPositionPriority(bPosition);
+        
+        return aPriority - bPriority;
+      };
+
+      lawyerUsers.sort(sortBySeniority);
+      techUsers.sort(sortBySeniority);
+      businessUsers.sort(sortBySeniority);
+
+      // Combine in the desired order
+      const orderedTeamMembers = [...lawyerUsers, ...techUsers, ...businessUsers];
+      
+      setAllTeamMembers(orderedTeamMembers);
       setLoading(false);
     } catch (error) {
       console.error('Error fetching users:', error);
@@ -73,115 +85,6 @@ export default function OurAttorneys() {
   useEffect(() => {
     fetchUsers();
   }, []);
-
-  // Auto-play for lawyers
-  const startLawyerAutoPlay = useCallback(() => {
-    const interval = setInterval(() => {
-      if (!isLawyerAnimating && lawyers.length > 0) {
-        setLawyerDirection(1);
-        setCurrentLawyerIndex((prevIndex) => (prevIndex + 1) % lawyers.length);
-      }
-    }, 5000);
-
-    return interval;
-  }, [isLawyerAnimating, lawyers.length]);
-
-  // Auto-play for business development
-  const startBusinessAutoPlay = useCallback(() => {
-    const interval = setInterval(() => {
-      if (!isBusinessAnimating && businessDev.length > 0) {
-        setBusinessDirection(1);
-        setCurrentBusinessIndex((prevIndex) => (prevIndex + 1) % businessDev.length);
-      }
-    }, 5000);
-
-    return interval;
-  }, [isBusinessAnimating, businessDev.length]);
-
-  // Auto-play for tech
-  const startTechAutoPlay = useCallback(() => {
-    const interval = setInterval(() => {
-      if (!isTechAnimating && tech.length > 0) {
-        setTechDirection(1);
-        setCurrentTechIndex((prevIndex) => (prevIndex + 1) % tech.length);
-      }
-    }, 5000);
-
-    return interval;
-  }, [isTechAnimating, tech.length]);
-
-  useEffect(() => {
-    const lawyerInterval = startLawyerAutoPlay();
-    const businessInterval = startBusinessAutoPlay();
-    const techInterval = startTechAutoPlay();
-    
-    return () => {
-      clearInterval(lawyerInterval);
-      clearInterval(businessInterval);
-      clearInterval(techInterval);
-    };
-  }, [startLawyerAutoPlay, startBusinessAutoPlay, startTechAutoPlay]);
-
-  // Navigation functions for lawyers
-  const nextLawyerSlide = useCallback(() => {
-    if (!isLawyerAnimating && lawyers.length > 0) {
-      setLawyerDirection(1);
-      setCurrentLawyerIndex((prevIndex) => (prevIndex + 1) % lawyers.length);
-    }
-  }, [isLawyerAnimating, lawyers.length]);
-
-  const prevLawyerSlide = useCallback(() => {
-    if (!isLawyerAnimating && lawyers.length > 0) {
-      setLawyerDirection(-1);
-      setCurrentLawyerIndex((prevIndex) => (prevIndex - 1 + lawyers.length) % lawyers.length);
-    }
-  }, [isLawyerAnimating, lawyers.length]);
-
-  // Navigation functions for business development
-  const nextBusinessSlide = useCallback(() => {
-    if (!isBusinessAnimating && businessDev.length > 0) {
-      setBusinessDirection(1);
-      setCurrentBusinessIndex((prevIndex) => (prevIndex + 1) % businessDev.length);
-    }
-  }, [isBusinessAnimating, businessDev.length]);
-
-  const prevBusinessSlide = useCallback(() => {
-    if (!isBusinessAnimating && businessDev.length > 0) {
-      setBusinessDirection(-1);
-      setCurrentBusinessIndex((prevIndex) => (prevIndex - 1 + businessDev.length) % businessDev.length);
-    }
-  }, [isBusinessAnimating, businessDev.length]);
-
-  const getVisibleAttorneys = useCallback((attorneys: Attorney[], currentIndex: number) => {
-    const visibleAttorneys = [];
-    if (attorneys.length === 0) return [];
-    
-    for (let i = 0; i < Math.min(3, attorneys.length); i++) {
-      const index = (currentIndex + i) % attorneys.length;
-      visibleAttorneys.push({
-        ...attorneys[index],
-        arrayPosition: i
-      });
-    }
-    return visibleAttorneys;
-  }, []);
-
-  const slideVariants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 500 : -500,
-      opacity: 0
-    }),
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1
-    },
-    exit: (direction: number) => ({
-      zIndex: 0,
-      x: direction < 0 ? 500 : -500,
-      opacity: 0
-    })
-  };
 
   if (loading) {
     return (
@@ -224,345 +127,27 @@ export default function OurAttorneys() {
           </div>
         </motion.div>
 
-        {/* Lawyers Section */}
-        {lawyers.length > 0 && (
+        {/* All Team Members */}
+        {allTeamMembers.length > 0 ? (
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mb-16"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center"
           >
-            <div className="relative">
-              <div className="overflow-hidden">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto px-4 md:px-8 lg:px-12">
-                  {getVisibleAttorneys(lawyers, currentLawyerIndex).map((attorney, index) => (
-                    <div key={`lawyer-${attorney.id}-${index}`} className="relative">
-                      {index === 0 ? (
-                        <AnimatePresence initial={false} mode="wait" onExitComplete={() => setIsLawyerAnimating(false)}>
-                          <motion.div 
-                            key={`lawyer-${currentLawyerIndex}-first`}
-                            custom={lawyerDirection}
-                            variants={slideVariants}
-                            initial="enter"
-                            animate="center"
-                            exit="exit"
-                            onAnimationStart={() => setIsLawyerAnimating(true)}
-                            onAnimationComplete={() => setIsLawyerAnimating(false)}
-                            transition={{
-                              x: { 
-                                type: "spring", 
-                                stiffness: 200,
-                                damping: 25,
-                                duration: 0.8
-                              },
-                              opacity: { duration: 0.5 }
-                            }}
-                            className="flex flex-col items-center"
-                          >
-                            <AttorneyCard attorney={attorney} />
-                          </motion.div>
-                        </AnimatePresence>
-                      ) : (
-                        <motion.div 
-                          initial={{ opacity: 1 }}
-                          animate={{ opacity: 1 }}
-                          className="flex flex-col items-center"
-                        >
-                          <AttorneyCard attorney={attorney} />
-                        </motion.div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {lawyers.length > 3 && (
-                <>
-                  <div className="absolute inset-y-0 left-0 flex items-center">
-                    <motion.button 
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      onClick={prevLawyerSlide}
-                      disabled={isLawyerAnimating}
-                      className="p-3 rounded-full bg-[#6B5B3D] text-white shadow-lg transform -translate-x-1/2 hover:bg-[#5A4C33] transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                      </svg>
-                    </motion.button>
-                  </div>
-
-                  <div className="absolute inset-y-0 right-0 flex items-center">
-                    <motion.button
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      onClick={nextLawyerSlide}
-                      disabled={isLawyerAnimating}
-                      className="p-3 rounded-full bg-[#6B5B3D] text-white shadow-lg transform translate-x-1/2 hover:bg-[#5A4C33] transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </motion.button>
-                  </div>
-                </>
-              )}
-
-              {lawyers.length > 1 && (
-                <div className="flex justify-center mt-8 space-x-2">
-                  {lawyers.map((_, index) => (
-                    <motion.button
-                      key={`lawyer-dot-${index}`}
-                      whileHover={{ scale: 1.2 }}
-                      whileTap={{ scale: 0.9 }}
-                      onClick={() => {
-                        if (!isLawyerAnimating) {
-                          setLawyerDirection(index > currentLawyerIndex ? 1 : -1);
-                          setCurrentLawyerIndex(index);
-                        }
-                      }}
-                      className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                        index === currentLawyerIndex ? 'bg-[#6B5B3D]' : 'bg-gray-300 hover:bg-[#6B5B3D]/50'
-                      }`}
-                      disabled={isLawyerAnimating}
-                    />
-                  ))}
-                </div>
-              )}
-            </div>
+            {allTeamMembers.map((attorney, index) => (
+              <motion.div
+                key={`team-member-${attorney.id}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 * index }}
+                className="flex flex-col items-center"
+              >
+                <AttorneyCard attorney={attorney} />
+              </motion.div>
+            ))}
           </motion.div>
-        )}
-
-        {/* Business Development Section */}
-        {businessDev.length > 0 && (
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="mb-8"
-          >
-            <div className="relative">
-              <div className="overflow-hidden">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto px-4 md:px-8 lg:px-12">
-                  {getVisibleAttorneys(businessDev, currentBusinessIndex).map((attorney, index) => (
-                    <div key={`business-${attorney.id}-${index}`} className="relative">
-                      {index === 0 ? (
-                        <AnimatePresence initial={false} mode="wait" onExitComplete={() => setIsBusinessAnimating(false)}>
-                          <motion.div 
-                            key={`business-${currentBusinessIndex}-first`}
-                            custom={businessDirection}
-                            variants={slideVariants}
-                            initial="enter"
-                            animate="center"
-                            exit="exit"
-                            onAnimationStart={() => setIsBusinessAnimating(true)}
-                            onAnimationComplete={() => setIsBusinessAnimating(false)}
-                            transition={{
-                              x: { 
-                                type: "spring", 
-                                stiffness: 200,
-                                damping: 25,
-                                duration: 0.8
-                              },
-                              opacity: { duration: 0.5 }
-                            }}
-                            className="flex flex-col items-center"
-                          >
-                            <AttorneyCard attorney={attorney} />
-                          </motion.div>
-                        </AnimatePresence>
-                      ) : (
-                        <motion.div 
-                          initial={{ opacity: 1 }}
-                          animate={{ opacity: 1 }}
-                          className="flex flex-col items-center"
-                        >
-                          <AttorneyCard attorney={attorney} />
-                        </motion.div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {businessDev.length > 3 && (
-                <>
-                  <div className="absolute inset-y-0 left-0 flex items-center">
-                    <motion.button 
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      onClick={prevBusinessSlide}
-                      disabled={isBusinessAnimating}
-                      className="p-3 rounded-full bg-[#6B5B3D] text-white shadow-lg transform -translate-x-1/2 hover:bg-[#5A4C33] transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                      </svg>
-                    </motion.button>
-                  </div>
-
-                  <div className="absolute inset-y-0 right-0 flex items-center">
-                    <motion.button
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      onClick={nextBusinessSlide}
-                      disabled={isBusinessAnimating}
-                      className="p-3 rounded-full bg-[#6B5B3D] text-white shadow-lg transform translate-x-1/2 hover:bg-[#5A4C33] transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </motion.button>
-                  </div>
-                </>
-              )}
-
-              {businessDev.length > 1 && (
-                <div className="flex justify-center mt-8 space-x-2">
-                  {businessDev.map((_, index) => (
-                    <motion.button
-                      key={`business-dot-${index}`}
-                      whileHover={{ scale: 1.2 }}
-                      whileTap={{ scale: 0.9 }}
-                      onClick={() => {
-                        if (!isBusinessAnimating) {
-                          setBusinessDirection(index > currentBusinessIndex ? 1 : -1);
-                          setCurrentBusinessIndex(index);
-                        }
-                      }}
-                      className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                        index === currentBusinessIndex ? 'bg-[#6B5B3D]' : 'bg-gray-300 hover:bg-[#6B5B3D]/50'
-                      }`}
-                      disabled={isBusinessAnimating}
-                    />
-                  ))}
-                </div>
-              )}
-            </div>
-          </motion.div>
-        )}
-
-        {/* Tech Section */}
-        {tech.length > 0 && (
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="mb-8"
-          >
-            <div className="relative">
-              <div className="overflow-hidden">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto px-4 md:px-8 lg:px-12">
-                  {getVisibleAttorneys(tech, currentTechIndex).map((attorney, index) => (
-                    <div key={`tech-${attorney.id}-${index}`} className="relative">
-                      {index === 0 ? (
-                        <AnimatePresence initial={false} mode="wait" onExitComplete={() => setIsTechAnimating(false)}>
-                          <motion.div 
-                            key={`tech-${currentTechIndex}-first`}
-                            custom={techDirection}
-                            variants={slideVariants}
-                            initial="enter"
-                            animate="center"
-                            exit="exit"
-                            onAnimationStart={() => setIsTechAnimating(true)}
-                            onAnimationComplete={() => setIsTechAnimating(false)}
-                            transition={{
-                              x: { 
-                                type: "spring", 
-                                stiffness: 200,
-                                damping: 25,
-                                duration: 0.8
-                              },
-                              opacity: { duration: 0.5 }
-                            }}
-                            className="flex flex-col items-center"
-                          >
-                            <AttorneyCard attorney={attorney} />
-                          </motion.div>
-                        </AnimatePresence>
-                      ) : (
-                        <motion.div 
-                          initial={{ opacity: 1 }}
-                          animate={{ opacity: 1 }}
-                          className="flex flex-col items-center"
-                        >
-                          <AttorneyCard attorney={attorney} />
-                        </motion.div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {tech.length > 3 && (
-                <>
-                  <div className="absolute inset-y-0 left-0 flex items-center">
-                    <motion.button 
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      onClick={() => {
-                        if (!isTechAnimating) {
-                          setTechDirection(-1);
-                          setCurrentTechIndex((prevIndex) => (prevIndex - 1 + tech.length) % tech.length);
-                        }
-                      }}
-                      disabled={isTechAnimating}
-                      className="p-3 rounded-full bg-[#6B5B3D] text-white shadow-lg transform -translate-x-1/2 hover:bg-[#5A4C33] transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                      </svg>
-                    </motion.button>
-                  </div>
-
-                  <div className="absolute inset-y-0 right-0 flex items-center">
-                    <motion.button
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      onClick={() => {
-                        if (!isTechAnimating) {
-                          setTechDirection(1);
-                          setCurrentTechIndex((prevIndex) => (prevIndex + 1) % tech.length);
-                        }
-                      }}
-                      disabled={isTechAnimating}
-                      className="p-3 rounded-full bg-[#6B5B3D] text-white shadow-lg transform translate-x-1/2 hover:bg-[#5A4C33] transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </motion.button>
-                  </div>
-                </>
-              )}
-
-              {tech.length > 1 && (
-                <div className="flex justify-center mt-8 space-x-2">
-                  {tech.map((_, index) => (
-                    <motion.button
-                      key={`tech-dot-${index}`}
-                      whileHover={{ scale: 1.2 }}
-                      whileTap={{ scale: 0.9 }}
-                      onClick={() => {
-                        if (!isTechAnimating) {
-                          setTechDirection(index > currentTechIndex ? 1 : -1);
-                          setCurrentTechIndex(index);
-                        }
-                      }}
-                      className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                        index === currentTechIndex ? 'bg-[#6B5B3D]' : 'bg-gray-300 hover:bg-[#6B5B3D]/50'
-                      }`}
-                      disabled={isTechAnimating}
-                    />
-                  ))}
-                </div>
-              )}
-            </div>
-          </motion.div>
-        )}
-
-        {/* Show message if no users found */}
-        {lawyers.length === 0 && businessDev.length === 0 && tech.length === 0 && !loading && (
+        ) : (
           <div className="text-center py-12">
             <p className="text-gray-600 text-lg">No team members found. Please check back later.</p>
           </div>
@@ -572,7 +157,7 @@ export default function OurAttorneys() {
   );
 }
 
-const AttorneyCard = ({ attorney }: { attorney: Attorney & { arrayPosition: number } }) => {
+const AttorneyCard = ({ attorney }: { attorney: Attorney }) => {
   const socialIcons = {
     facebook: FaFacebook,
     twitter: FaTwitter,
