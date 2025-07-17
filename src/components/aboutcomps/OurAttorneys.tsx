@@ -15,6 +15,7 @@ type Attorney = {
   role: string;
   position: string;
   email: string;
+  sort: number;
   socials: {
     [key: string]: string;
   };
@@ -37,6 +38,7 @@ export default function OurAttorneys() {
           role: data.role || '',
           position: data.position || '',
           email: data.email || '',
+          sort: data.sort || 0,
           socials: {
             instagram: "https://www.instagram.com/amalegalsolutions/?hl=en",
             linkedin: "https://in.linkedin.com/company/ama-legal-solutions"
@@ -44,37 +46,10 @@ export default function OurAttorneys() {
         };
       });
 
-      // Separate and order team members: Lawyers, Tech, Business Development
-      const lawyerUsers = users.filter(user => user.role === 'lawyer');
-      const techUsers = users.filter(user => user.role === 'tech');
-      const businessUsers = users.filter(user => user.role === 'business_development');
-
-      // Sort each group to put "Senior" positions first
-      const sortBySeniority = (a: any, b: any) => {
-        const aPosition = a.position.toLowerCase();
-        const bPosition = b.position.toLowerCase();
-        
-        const getPositionPriority = (position: string) => {
-          if (position.includes('head')) return 1;
-          if (position.includes('senior')) return 2;
-          if (position.includes('junior')) return 4;
-          return 3; // other positions
-        };
-        
-        const aPriority = getPositionPriority(aPosition);
-        const bPriority = getPositionPriority(bPosition);
-        
-        return aPriority - bPriority;
-      };
-
-      lawyerUsers.sort(sortBySeniority);
-      techUsers.sort(sortBySeniority);
-      businessUsers.sort(sortBySeniority);
-
-      // Combine in the desired order
-      const orderedTeamMembers = [...lawyerUsers, ...techUsers, ...businessUsers];
+      // Sort users by the sort field in ascending order
+      const sortedUsers = users.sort((a, b) => a.sort - b.sort);
       
-      setAllTeamMembers(orderedTeamMembers);
+      setAllTeamMembers(sortedUsers);
       setLoading(false);
     } catch (error) {
       console.error('Error fetching users:', error);

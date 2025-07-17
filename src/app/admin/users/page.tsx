@@ -16,6 +16,7 @@ interface TableData {
   position: string;
   role: string;
   image: string;
+  sort: number;
 }
 
 const UsersDashboard = () => {
@@ -29,6 +30,7 @@ const UsersDashboard = () => {
     position: '',
     role: '',
     image: '',
+    sort: 0,
   });
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [userToDelete, setUserToDelete] = useState<string | null>(null);
@@ -85,7 +87,8 @@ const UsersDashboard = () => {
           name: docData.name || '-',
           position: docData.position || '-',
           role: docData.role || '-',
-          image: docData.image || '' // Assuming 'image' field exists
+          image: docData.image || '', // Assuming 'image' field exists
+          sort: docData.sort || 0
         };
       });
       setTableData(data);
@@ -103,7 +106,7 @@ const UsersDashboard = () => {
     const { name, value } = e.target;
     setNewUser(prevState => ({
       ...prevState,
-      [name]: value
+      [name]: name === 'sort' ? parseInt(value) || 0 : value
     }));
   };
 
@@ -181,6 +184,7 @@ const UsersDashboard = () => {
         position: '',
         role: '',
         image: '',
+        sort: 0,
       });
       setSelectedFile(null);
       setPreviewUrl('');
@@ -205,6 +209,7 @@ const UsersDashboard = () => {
       position: user.position !== '-' ? user.position : '',
       role: user.role !== '-' ? user.role : '',
       image: user.image || '',
+      sort: user.sort || 0,
     });
     setPreviewUrl(user.image || '');
     setShowUserForm(true);
@@ -239,6 +244,7 @@ const UsersDashboard = () => {
       position: '',
       role: '',
       image: '',
+      sort: 0,
     });
     setSelectedFile(null);
     setPreviewUrl('');
@@ -483,6 +489,21 @@ const UsersDashboard = () => {
                       <option value="tech">Tech</option>
                     </select>
                   </div>
+
+                  <div>
+                    <label htmlFor="sort" className="block text-sm font-medium text-[#5A4C33] mb-1">Sort Order</label>
+                    <input
+                      type="number"
+                      id="sort"
+                      name="sort"
+                      value={newUser.sort}
+                      onChange={handleInputChange}
+                      min="0"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent text-black"
+                      placeholder="Enter sort order (0, 1, 2, etc.)"
+                    />
+                    <p className="text-sm text-gray-500 mt-1">Lower numbers will appear first on the website</p>
+                  </div>
                   
                   <div className="flex justify-end space-x-3">
                     <motion.button
@@ -531,7 +552,7 @@ const UsersDashboard = () => {
                   <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-[#F0EAD6]">
                       <tr>
-                        {['ID', 'Image', 'Name', 'Position', 'Role', 'Actions'].map((header, index) => (
+                        {['ID', 'Image', 'Name', 'Position', 'Role', 'Sort', 'Actions'].map((header, index) => (
                           <th key={index} className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">
                             {header}
                           </th>
@@ -552,6 +573,7 @@ const UsersDashboard = () => {
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.name}</td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.position}</td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.role}</td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.sort}</td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
                             <div className="flex space-x-2">
                               <motion.button
