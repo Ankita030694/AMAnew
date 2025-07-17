@@ -2,12 +2,31 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faUpload, faUser } from '@fortawesome/free-solid-svg-icons';
-import { collection, getDocs, addDoc, doc, deleteDoc, updateDoc } from 'firebase/firestore';
+import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faUpload, faUser, faGripVertical } from '@fortawesome/free-solid-svg-icons';
+import { collection, getDocs, addDoc, doc, deleteDoc, updateDoc, writeBatch } from 'firebase/firestore';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
 import { db, auth, storage } from '../../../lib/firebase'; // adjust the path as needed
 import { useRouter } from 'next/navigation';
+import {
+  DndContext,
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+  DragEndEvent,
+} from '@dnd-kit/core';
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  verticalListSortingStrategy,
+  useSortable,
+} from '@dnd-kit/sortable';
+import {
+  CSS,
+} from '@dnd-kit/utilities';
 
 // Define the TableData interface for users
 interface TableData {
@@ -37,6 +56,7 @@ const UsersDashboard = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [uploading, setUploading] = useState(false);
   const [previewUrl, setPreviewUrl] = useState<string>('');
+  const [isUpdatingOrder, setIsUpdatingOrder] = useState(false);
   const router = useRouter();
 
   // Check if user is logged in; if not, redirect to login page
@@ -91,7 +111,10 @@ const UsersDashboard = () => {
           sort: docData.sort || 0
         };
       });
-      setTableData(data);
+      
+      // Sort by sort field to maintain order
+      const sortedData = data.sort((a, b) => a.sort - b.sort);
+      setTableData(sortedData);
     } catch (error) {
       console.error("Error fetching Firebase data:", error);
     }
@@ -251,6 +274,55 @@ const UsersDashboard = () => {
     setShowUserForm(false);
   };
 
+  // Handle drag end event to reorder users
+  const handleDragEnd = async (event: DragEndEvent) => {
+    const { active, over } = event;
+
+    if (active.id !== over?.id) {
+      setIsUpdatingOrder(true);
+      const oldIndex = tableData.findIndex((user) => user.id === active.id);
+      const newIndex = tableData.findIndex((user) => user.id === over?.id);
+
+      const newTableData = arrayMove(tableData, oldIndex, newIndex);
+      
+      // Update local state immediately for better UX
+      setTableData(newTableData);
+
+      // Update sort values in database
+      try {
+        const batch = writeBatch(db);
+        
+        newTableData.forEach((user, index) => {
+          const userRef = doc(db, 'users', user.id);
+          batch.update(userRef, { sort: index + 1 });
+        });
+
+        await batch.commit();
+        console.log('Sort order updated successfully');
+        
+        // Optional: Show success message
+        setTimeout(() => {
+          console.log('Order saved to database');
+        }, 500);
+        
+      } catch (error) {
+        console.error('Error updating sort order:', error);
+        // Revert local state if database update fails
+        await fetchData();
+      } finally {
+        setIsUpdatingOrder(false);
+      }
+    }
+  };
+
+  // Configure sensors for drag and drop
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
+
   return (
     <div className="min-h-screen overflow-hidden relative">
 
@@ -364,9 +436,26 @@ const UsersDashboard = () => {
           >
             {/* Header with Add User Button */}
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-xl font-semibold text-[#5A4C33]">
-                {isEditMode ? 'Edit User' : showUserForm ? 'Add New User' : 'User Management'}
-              </h2>
+              <div>
+                <h2 className="text-xl font-semibold text-[#5A4C33]">
+                  {isEditMode ? 'Edit User' : showUserForm ? 'Add New User' : 'User Management'}
+                </h2>
+                {!showUserForm && !isEditMode && (
+                  <p className="text-sm text-gray-600 mt-1">
+                    <FontAwesomeIcon icon={faGripVertical} className="mr-1" />
+                    Drag and drop rows to reorder users. Changes are saved automatically.
+                    {isUpdatingOrder && (
+                      <span className="ml-2 text-blue-600">
+                        <svg className="animate-spin -ml-1 mr-1 h-3 w-3 text-blue-600 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Saving order...
+                      </span>
+                    )}
+                  </p>
+                )}
+              </div>
               <motion.button
                 onClick={() => {
                   if (isEditMode) {
@@ -549,58 +638,42 @@ const UsersDashboard = () => {
                   transition={{ duration: 0.3 }}
                   className="overflow-x-auto"
                 >
-                  <table className="min-w-full divide-y divide-gray-200">
-                    <thead className="bg-[#F0EAD6]">
-                      <tr>
-                        {['ID', 'Image', 'Name', 'Position', 'Role', 'Sort', 'Actions'].map((header, index) => (
-                          <th key={index} className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">
-                            {header}
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody className="bg-white divide-y divide-gray-200">
-                      {tableData.map((row) => (
-                        <tr key={row.id} className="hover:bg-[#F8F5EC] transition-colors duration-150">
-                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#5A4C33]">{row.id}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
-                            {row.image ? (
-                              <img src={row.image} alt={row.name} className="h-10 w-10 rounded-full object-cover" />
-                            ) : (
-                              <FontAwesomeIcon icon={faUser} className="h-5 w-5 text-gray-500" />
-                            )}
-                          </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.name}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.position}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.role}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{row.sort}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
-                            <div className="flex space-x-2">
-                              <motion.button
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.9 }}
-                                onClick={() => handleEditUser(row)}
-                                className="px-3 py-1 bg-blue-500 text-white rounded-md text-xs"
-                              >
-                                Edit
-                              </motion.button>
-                              <motion.button
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.9 }}
-                                onClick={() => {
-                                  setUserToDelete(row.id);
-                                  setShowDeleteModal(true);
-                                }}
-                                className="px-3 py-1 bg-red-500 text-white rounded-md text-xs"
-                              >
-                                Delete
-                              </motion.button>
-                            </div>
-                          </td>
+                  <DndContext
+                    sensors={sensors}
+                    collisionDetection={closestCenter}
+                    onDragEnd={handleDragEnd}
+                  >
+                    <table className="min-w-full divide-y divide-gray-200">
+                      <thead className="bg-[#F0EAD6]">
+                        <tr>
+                          {['ID', 'Image', 'Name', 'Position', 'Role', 'Sort', 'Actions'].map((header, index) => (
+                            <th key={index} className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">
+                              {header}
+                            </th>
+                          ))}
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                      </thead>
+                      <tbody className="bg-white divide-y divide-gray-200">
+                        <SortableContext 
+                          items={tableData.map(user => user.id)}
+                          strategy={verticalListSortingStrategy}
+                        >
+                          {tableData.map((row) => (
+                            <SortableTableRow
+                              key={row.id}
+                              user={row}
+                              onEdit={handleEditUser}
+                              onDelete={(id) => {
+                                setUserToDelete(id);
+                                setShowDeleteModal(true);
+                              }}
+                              isUpdating={isUpdatingOrder}
+                            />
+                          ))}
+                        </SortableContext>
+                      </tbody>
+                    </table>
+                  </DndContext>
 
                   <div className="mt-4 flex justify-between items-center">
                     <div className="text-sm text-[#5A4C33]">
@@ -632,6 +705,85 @@ const UsersDashboard = () => {
         </div>
       </motion.div>
     </div>
+  );
+};
+
+// Sortable Row Component
+const SortableTableRow = ({ user, onEdit, onDelete, isUpdating }: { 
+  user: TableData, 
+  onEdit: (user: TableData) => void, 
+  onDelete: (id: string) => void,
+  isUpdating?: boolean 
+}) => {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ 
+    id: user.id,
+    disabled: isUpdating 
+  });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+  };
+
+  return (
+    <tr 
+      ref={setNodeRef} 
+      style={style} 
+      className={`hover:bg-[#F8F5EC] transition-colors duration-150 ${isDragging ? 'bg-gray-100' : ''}`}
+    >
+      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#5A4C33]">
+        <div className="flex items-center">
+          <button
+            {...attributes}
+            {...listeners}
+            disabled={isUpdating}
+            className={`mr-2 ${isUpdating ? 'cursor-not-allowed text-gray-300' : 'cursor-grab active:cursor-grabbing text-gray-400 hover:text-gray-600'}`}
+          >
+            <FontAwesomeIcon icon={faGripVertical} />
+          </button>
+          {user.id}
+        </div>
+      </td>
+      <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
+        {user.image ? (
+          <img src={user.image} alt={user.name} className="h-10 w-10 rounded-full object-cover" />
+        ) : (
+          <FontAwesomeIcon icon={faUser} className="h-5 w-5 text-gray-500" />
+        )}
+      </td>
+      <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{user.name}</td>
+      <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{user.position}</td>
+      <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{user.role}</td>
+      <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{user.sort}</td>
+      <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
+        <div className="flex space-x-2">
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => onEdit(user)}
+            className="px-3 py-1 bg-blue-500 text-white rounded-md text-xs"
+          >
+            Edit
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => onDelete(user.id)}
+            className="px-3 py-1 bg-red-500 text-white rounded-md text-xs"
+          >
+            Delete
+          </motion.button>
+        </div>
+      </td>
+    </tr>
   );
 };
 
