@@ -101,7 +101,7 @@ export default function Services() {
                 icon: faScaleBalanced,
                 title: "Loan Settlement",
                 description: "Credit Card | Personal Loan | Business Loan | Vehicle Loan | Bank Loan Default | NBFC Loan Dispute | RBI Loan Settlement Guidelines |",
-                  link: "/services/loansettlement"
+                  link: "/services/loan-settlement"
               },
               {
                 icon: faBuilding,

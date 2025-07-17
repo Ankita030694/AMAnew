@@ -23,10 +23,10 @@ const AboutInfo = () => {
             <div className="h-[1px] bg-[#D2A02A] w-24"></div>
           </div>
       <p className="text-lg leading-relaxed mb-6 text-gray-700 text-center">
-        Welcome to AMA Legal Solutions – Your Trusted Law Firm in Gurugram,
-        India. We take pride in our 35-year legacy of providing expert legal
+        Welcome to AMA Legal Solutions, Your Trusted Law Firm in Gurugram,
+        India. We take pride in our 35 year legacy of providing expert legal
         services in India, built on integrity, professionalism, and excellence.
-        As a top-rated law firm in Gurugram, we specialize in banking and
+        As a top rated law firm in Gurugram, we specialize in banking and
         finance law, corporate law, arbitration, real estate law, and
         entertainment law, offering strategic legal solutions tailored to the
         unique needs of individuals, businesses, and startups.
@@ -42,7 +42,7 @@ const AboutInfo = () => {
         What sets us apart is our personalized approach. We believe that every
         legal matter is unique, requiring customized legal strategies that
         prioritize your best interests. At AMA Legal Solutions, you are not just
-        a case number—you are our priority, and we are committed to delivering
+        a case number you are our priority, and we are committed to delivering
         top-tier legal representation with a strong emphasis on ethics and
         professionalism.
       </p>
