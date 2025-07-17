@@ -41,6 +41,9 @@ interface TableData {
 const UsersDashboard = () => {
   const [activeTab, setActiveTab] = useState('users');
   const [tableData, setTableData] = useState<TableData[]>([]);
+  const [lawyerUsers, setLawyerUsers] = useState<TableData[]>([]);
+  const [techUsers, setTechUsers] = useState<TableData[]>([]);
+  const [businessUsers, setBusinessUsers] = useState<TableData[]>([]);
   const [showUserForm, setShowUserForm] = useState(false);
   const [isEditMode, setIsEditMode] = useState(false);
   const [currentUserId, setCurrentUserId] = useState('');
@@ -115,6 +118,15 @@ const UsersDashboard = () => {
       // Sort by sort field to maintain order
       const sortedData = data.sort((a, b) => a.sort - b.sort);
       setTableData(sortedData);
+
+      // Group users by role
+      const lawyers = sortedData.filter(user => user.role === 'lawyer').sort((a, b) => a.sort - b.sort);
+      const tech = sortedData.filter(user => user.role === 'tech').sort((a, b) => a.sort - b.sort);
+      const business = sortedData.filter(user => user.role === 'business_development').sort((a, b) => a.sort - b.sort);
+
+      setLawyerUsers(lawyers);
+      setTechUsers(tech);
+      setBusinessUsers(business);
     } catch (error) {
       console.error("Error fetching Firebase data:", error);
     }
@@ -274,36 +286,54 @@ const UsersDashboard = () => {
     setShowUserForm(false);
   };
 
-  // Handle drag end event to reorder users
-  const handleDragEnd = async (event: DragEndEvent) => {
+  // Handle drag end event to reorder users within their role
+  const handleDragEnd = async (event: DragEndEvent, role: string) => {
     const { active, over } = event;
 
     if (active.id !== over?.id) {
       setIsUpdatingOrder(true);
-      const oldIndex = tableData.findIndex((user) => user.id === active.id);
-      const newIndex = tableData.findIndex((user) => user.id === over?.id);
+      
+      let currentUsers: TableData[] = [];
+      let setUsers: (users: TableData[]) => void = () => {};
+      
+      // Determine which role section we're working with
+      switch (role) {
+        case 'lawyer':
+          currentUsers = [...lawyerUsers];
+          setUsers = setLawyerUsers;
+          break;
+        case 'tech':
+          currentUsers = [...techUsers];
+          setUsers = setTechUsers;
+          break;
+        case 'business_development':
+          currentUsers = [...businessUsers];
+          setUsers = setBusinessUsers;
+          break;
+      }
 
-      const newTableData = arrayMove(tableData, oldIndex, newIndex);
+      const oldIndex = currentUsers.findIndex((user) => user.id === active.id);
+      const newIndex = currentUsers.findIndex((user) => user.id === over?.id);
+
+      const newUsersOrder = arrayMove(currentUsers, oldIndex, newIndex);
       
       // Update local state immediately for better UX
-      setTableData(newTableData);
+      setUsers(newUsersOrder);
 
-      // Update sort values in database
+      // Update sort values in database for this role only
       try {
         const batch = writeBatch(db);
         
-        newTableData.forEach((user, index) => {
+        newUsersOrder.forEach((user, index) => {
           const userRef = doc(db, 'users', user.id);
           batch.update(userRef, { sort: index + 1 });
         });
 
         await batch.commit();
-        console.log('Sort order updated successfully');
+        console.log(`Sort order updated successfully for ${role}`);
         
-        // Optional: Show success message
-        setTimeout(() => {
-          console.log('Order saved to database');
-        }, 500);
+        // Refresh all data to ensure consistency
+        await fetchData();
         
       } catch (error) {
         console.error('Error updating sort order:', error);
@@ -591,7 +621,7 @@ const UsersDashboard = () => {
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent text-black"
                       placeholder="Enter sort order (0, 1, 2, etc.)"
                     />
-                    <p className="text-sm text-gray-500 mt-1">Lower numbers will appear first on the website</p>
+                    <p className="text-sm text-gray-500 mt-1">Lower numbers will appear first within the role section</p>
                   </div>
                   
                   <div className="flex justify-end space-x-3">
@@ -629,75 +659,56 @@ const UsersDashboard = () => {
                 </motion.form>
               </AnimatePresence>
             ) : (
-              // Data Table
+              // Role-based Sections
               <AnimatePresence mode="wait">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="overflow-x-auto"
+                  className="space-y-8"
                 >
-                  <DndContext
-                    sensors={sensors}
-                    collisionDetection={closestCenter}
+                  {/* Lawyers Section */}
+                  <RoleSection
+                    title="Lawyers"
+                    users={lawyerUsers}
+                    role="lawyer"
                     onDragEnd={handleDragEnd}
-                  >
-                    <table className="min-w-full divide-y divide-gray-200">
-                      <thead className="bg-[#F0EAD6]">
-                        <tr>
-                          {['ID', 'Image', 'Name', 'Position', 'Role', 'Sort', 'Actions'].map((header, index) => (
-                            <th key={index} className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">
-                              {header}
-                            </th>
-                          ))}
-                        </tr>
-                      </thead>
-                      <tbody className="bg-white divide-y divide-gray-200">
-                        <SortableContext 
-                          items={tableData.map(user => user.id)}
-                          strategy={verticalListSortingStrategy}
-                        >
-                          {tableData.map((row) => (
-                            <SortableTableRow
-                              key={row.id}
-                              user={row}
-                              onEdit={handleEditUser}
-                              onDelete={(id) => {
-                                setUserToDelete(id);
-                                setShowDeleteModal(true);
-                              }}
-                              isUpdating={isUpdatingOrder}
-                            />
-                          ))}
-                        </SortableContext>
-                      </tbody>
-                    </table>
-                  </DndContext>
+                    onEdit={handleEditUser}
+                    onDelete={(id) => {
+                      setUserToDelete(id);
+                      setShowDeleteModal(true);
+                    }}
+                    isUpdating={isUpdatingOrder}
+                  />
 
-                  <div className="mt-4 flex justify-between items-center">
-                    <div className="text-sm text-[#5A4C33]">
-                      Showing <span className="font-medium">1</span> to <span className="font-medium">{tableData.length}</span> of <span className="font-medium">{tableData.length}</span> results
-                    </div>
-                    <div className="flex space-x-2">
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="px-3 py-1 bg-[#F0EAD6] text-[#5A4C33] rounded-md text-sm"
-                        disabled
-                      >
-                        Previous
-                      </motion.button>
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="px-3 py-1 bg-[#F0EAD6] text-[#5A4C33] rounded-md text-sm"
-                        disabled
-                      >
-                        Next
-                      </motion.button>
-                    </div>
-                  </div>
+                  {/* Tech Section */}
+                  <RoleSection
+                    title="Tech Team"
+                    users={techUsers}
+                    role="tech"
+                    onDragEnd={handleDragEnd}
+                    onEdit={handleEditUser}
+                    onDelete={(id) => {
+                      setUserToDelete(id);
+                      setShowDeleteModal(true);
+                    }}
+                    isUpdating={isUpdatingOrder}
+                  />
+
+                  {/* Business Development Section */}
+                  <RoleSection
+                    title="Business Development"
+                    users={businessUsers}
+                    role="business_development"
+                    onDragEnd={handleDragEnd}
+                    onEdit={handleEditUser}
+                    onDelete={(id) => {
+                      setUserToDelete(id);
+                      setShowDeleteModal(true);
+                    }}
+                    isUpdating={isUpdatingOrder}
+                  />
                 </motion.div>
               </AnimatePresence>
             )}
@@ -761,7 +772,6 @@ const SortableTableRow = ({ user, onEdit, onDelete, isUpdating }: {
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{user.name}</td>
       <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{user.position}</td>
-      <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{user.role}</td>
       <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{user.sort}</td>
       <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
         <div className="flex space-x-2">
@@ -784,6 +794,92 @@ const SortableTableRow = ({ user, onEdit, onDelete, isUpdating }: {
         </div>
       </td>
     </tr>
+  );
+};
+
+// Role Section Component
+const RoleSection = ({ 
+  title, 
+  users, 
+  role, 
+  onDragEnd, 
+  onEdit, 
+  onDelete, 
+  isUpdating 
+}: {
+  title: string;
+  users: TableData[];
+  role: string;
+  onDragEnd: (event: DragEndEvent, role: string) => void;
+  onEdit: (user: TableData) => void;
+  onDelete: (id: string) => void;
+  isUpdating: boolean;
+}) => {
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
+
+  return (
+    <div className="bg-gray-50 rounded-lg p-6">
+      <div className="flex items-center justify-between mb-4">
+        <h3 className="text-lg font-semibold text-[#5A4C33] flex items-center">
+          {title}
+          <span className="ml-2 bg-[#D2A02A] text-white text-sm px-2 py-1 rounded-full">
+            {users.length}
+          </span>
+        </h3>
+        <p className="text-sm text-gray-600">
+          <FontAwesomeIcon icon={faGripVertical} className="mr-1" />
+          Drag to reorder within {title.toLowerCase()}
+        </p>
+      </div>
+
+      {users.length > 0 ? (
+        <div className="overflow-x-auto">
+          <DndContext
+            sensors={sensors}
+            collisionDetection={closestCenter}
+            onDragEnd={(event) => onDragEnd(event, role)}
+          >
+            <table className="min-w-full divide-y divide-gray-200 bg-white rounded-lg shadow-sm">
+              <thead className="bg-[#F0EAD6]">
+                <tr>
+                  {['ID', 'Image', 'Name', 'Position', 'Sort', 'Actions'].map((header, index) => (
+                    <th key={index} className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">
+                      {header}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="bg-white divide-y divide-gray-200">
+                <SortableContext 
+                  items={users.map(user => user.id)}
+                  strategy={verticalListSortingStrategy}
+                >
+                  {users.map((user) => (
+                    <SortableTableRow
+                      key={user.id}
+                      user={user}
+                      onEdit={onEdit}
+                      onDelete={onDelete}
+                      isUpdating={isUpdating}
+                    />
+                  ))}
+                </SortableContext>
+              </tbody>
+            </table>
+          </DndContext>
+        </div>
+      ) : (
+        <div className="text-center py-8 bg-white rounded-lg">
+          <FontAwesomeIcon icon={faUser} className="h-12 w-12 text-gray-300 mb-4" />
+          <p className="text-gray-500">No {title.toLowerCase()} added yet</p>
+        </div>
+      )}
+    </div>
   );
 };
 

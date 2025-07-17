@@ -22,7 +22,7 @@ type Attorney = {
 };
 
 export default function OurAttorneys() {
-  const [allTeamMembers, setAllTeamMembers] = useState<Attorney[]>([]);
+  const [allMembers, setAllMembers] = useState<Attorney[]>([]);
   const [loading, setLoading] = useState(true);
 
   // Fetch users from Firestore
@@ -46,10 +46,26 @@ export default function OurAttorneys() {
         };
       });
 
-      // Sort users by the sort field in ascending order
-      const sortedUsers = users.sort((a, b) => a.sort - b.sort);
-      
-      setAllTeamMembers(sortedUsers);
+      // Define role priority for sorting
+      const rolePriority = {
+        'lawyer': 1,
+        'tech': 2,
+        'business_development': 3
+      };
+
+      // Sort all users by role priority first, then by sort field within each role
+      const sortedUsers = users.sort((a, b) => {
+        const aPriority = rolePriority[a.role as keyof typeof rolePriority] || 999;
+        const bPriority = rolePriority[b.role as keyof typeof rolePriority] || 999;
+        
+        if (aPriority !== bPriority) {
+          return aPriority - bPriority;
+        }
+        
+        return a.sort - b.sort;
+      });
+
+      setAllMembers(sortedUsers);
       setLoading(false);
     } catch (error) {
       console.error('Error fetching users:', error);
@@ -103,24 +119,26 @@ export default function OurAttorneys() {
         </motion.div>
 
         {/* All Team Members */}
-        {allTeamMembers.length > 0 ? (
-          <motion.div 
+        {allMembers.length > 0 ? (
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center"
+            className="mb-16"
           >
-            {allTeamMembers.map((attorney, index) => (
-              <motion.div
-                key={`team-member-${attorney.id}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
-                className="flex flex-col items-center"
-              >
-                <AttorneyCard attorney={attorney} />
-              </motion.div>
-            ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+              {allMembers.map((attorney, index) => (
+                <motion.div
+                  key={attorney.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 + 0.1 * index }}
+                  className="flex flex-col items-center"
+                >
+                  <AttorneyCard attorney={attorney} />
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         ) : (
           <div className="text-center py-12">
