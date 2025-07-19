@@ -671,8 +671,39 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange, classNam
     .ProseMirror table { border-collapse: collapse; margin: 0; overflow: hidden; table-layout: fixed; width: 100%; }
     .ProseMirror table td, .ProseMirror table th { border: 2px solid #ced4da; box-sizing: border-box; min-width: 1em; padding: 3px 5px; position: relative; vertical-align: top; }
     .ProseMirror table th { background-color: #f8f9fa; font-weight: bold; text-align: left; }
-    .ProseMirror ul, .ProseMirror ol { padding-left: 1.5em; }
-    .ProseMirror li { margin: 0.5em 0; }
+    
+    /* List styles - Fixed to show bullets and numbers */
+    .ProseMirror ul { 
+      list-style-type: disc; 
+      padding-left: 1.5em; 
+      margin: 1em 0;
+    }
+    .ProseMirror ol { 
+      list-style-type: decimal; 
+      padding-left: 1.5em; 
+      margin: 1em 0;
+    }
+    .ProseMirror li { 
+      margin: 0.5em 0; 
+      display: list-item;
+    }
+    .ProseMirror ul ul { 
+      list-style-type: circle; 
+      margin: 0.5em 0;
+    }
+    .ProseMirror ul ul ul { 
+      list-style-type: square; 
+      margin: 0.5em 0;
+    }
+    .ProseMirror ol ol { 
+      list-style-type: lower-alpha; 
+      margin: 0.5em 0;
+    }
+    .ProseMirror ol ol ol { 
+      list-style-type: lower-roman; 
+      margin: 0.5em 0;
+    }
+    
     .ProseMirror hr { border: none; border-top: 2px solid #ced4da; margin: 1em 0; }
     .ProseMirror img { max-width: 100%; height: auto; }
     
