@@ -362,8 +362,40 @@ export default function ArticleDetail({ slug }: BlogDetailProps) {
                   .tiptap-content table td, .tiptap-content table th { border: 2px solid #ced4da; box-sizing: border-box; min-width: 1em; padding: 6px 10px; position: relative; vertical-align: top; font-size: 0.9em; }
                   .tiptap-content table th { background-color: #5A4C33; color: white; font-weight: bold; text-align: left; }
                   
-                  .tiptap-content ul, .tiptap-content ol { padding-left: 1.2em; margin: 1.2em 0; }
-                  .tiptap-content li { margin: 0.4em 0; line-height: 1.5; font-size: 0.95em; }
+                  /* List styles - Fixed to show bullets and numbers */
+                  .tiptap-content ul { 
+                    list-style-type: disc; 
+                    padding-left: 1.5em; 
+                    margin: 1.2em 0;
+                  }
+                  .tiptap-content ol { 
+                    list-style-type: decimal; 
+                    padding-left: 1.5em; 
+                    margin: 1.2em 0;
+                  }
+                  .tiptap-content li { 
+                    margin: 0.4em 0; 
+                    line-height: 1.5; 
+                    font-size: 0.95em;
+                    display: list-item;
+                  }
+                  .tiptap-content ul ul { 
+                    list-style-type: circle; 
+                    margin: 0.5em 0;
+                  }
+                  .tiptap-content ul ul ul { 
+                    list-style-type: square; 
+                    margin: 0.5em 0;
+                  }
+                  .tiptap-content ol ol { 
+                    list-style-type: lower-alpha; 
+                    margin: 0.5em 0;
+                  }
+                  .tiptap-content ol ol ol { 
+                    list-style-type: lower-roman; 
+                    margin: 0.5em 0;
+                  }
+                  
                   .tiptap-content hr { border: none; border-top: 2px solid #ced4da; margin: 1.5em 0; }
                   .tiptap-content img { max-width: 100%; height: auto; border-radius: 0.4em; box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.1); }
                   
