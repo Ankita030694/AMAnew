@@ -17,22 +17,34 @@ export const metadata: Metadata = {
   description: "Top-rated law firm in India specializing in corporate, real estate, and entertainment law. Contact us for legal consultation and representation.",
   openGraph: {
     title: "AMA Legal Solutions | Top Law Firm in India",
-    description: "Legal solutions for your needs",
+    description: "Top-rated law firm in India specializing in corporate, real estate, and entertainment law. Contact us for legal consultation and representation.",
+    url: "https://www.amalegalsolutions.com",
+    siteName: "AMA Legal Solutions",
     images: [
       {
-        url: "/future.png",
+        url: "https://www.amalegalsolutions.com/future.png",
         width: 1200,
         height: 630,
-        alt: "AMA Legal Solutions Logo",
+        alt: "AMA Legal Solutions - Top Law Firm in India",
+        type: "image/png",
       },
     ],
+    locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "AMA Legal Solutions | Top Law Firm in India",
-    description: "Legal solutions for your business needs",
-    images: ["/future.png"],
+    description: "Top-rated law firm in India specializing in corporate, real estate, and entertainment law. Contact us for legal consultation and representation.",
+    images: ["https://www.amalegalsolutions.com/future.png"],
+    creator: "@amalegalsolutions",
+    site: "@amalegalsolutions",
+  },
+  other: {
+    "og:image:width": "1200",
+    "og:image:height": "630",
+    "og:image:type": "image/png",
+    "og:image:alt": "AMA Legal Solutions - Top Law Firm in India",
   },
 };
 
@@ -57,6 +69,18 @@ export default function RootLayout({
         {/* Performance hints */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        
+        {/* Additional Open Graph meta tags for better link sharing */}
+        <meta property="og:image" content="https://www.amalegalsolutions.com/future.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:alt" content="AMA Legal Solutions - Top Law Firm in India" />
+        
+        {/* Twitter Card meta tags */}
+        <meta name="twitter:image" content="https://www.amalegalsolutions.com/future.png" />
+        <meta name="twitter:image:alt" content="AMA Legal Solutions - Top Law Firm in India" />
+        
         <link
           rel="alternate" 
           type="application/rss+xml" 
