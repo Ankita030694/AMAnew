@@ -70,7 +70,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/loansettlement',
+        source: '/services/loansettlement',
         destination: '/services/loan-settlement',
         permanent: true,
       },
