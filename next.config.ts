@@ -69,6 +69,11 @@ const nextConfig: NextConfig = {
         destination: '/privacy-policy',
         permanent: true,
       },
+      {
+        source: '/loansettlement',
+        destination: '/services/loan-settlement',
+        permanent: true,
+      },
     ];  
   },
   async headers() {
