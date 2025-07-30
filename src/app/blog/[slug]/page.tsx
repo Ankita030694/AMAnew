@@ -1,20 +1,52 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, where, limit } from "firebase/firestore";
 import { db } from "../../../lib/firebase";
 import type { Metadata, ResolvingMetadata } from "next";
 import ArticleDetail from "./blogdetail";
 
-// Generate a slug function (same as in your other components)
-const generateSlug = (title: string): string => {
-  const truncatedTitle = title.slice(0, 30);
-  return truncatedTitle
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, "")
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-")
-    .trim();
-};
+// Cache for blog data to avoid redundant Firebase calls
+const blogCache = new Map<string, any>();
+const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
-// Dynamic metadata generation - updated to handle Promise-based params
+// Helper function to get cached blog data
+async function getCachedBlog(slug: string) {
+  const cacheKey = `blog-${slug}`;
+  const cached = blogCache.get(cacheKey);
+  
+  if (cached && Date.now() - cached.timestamp < CACHE_DURATION) {
+    return cached.data;
+  }
+  
+  try {
+    // Use a more efficient query to get only the specific blog
+    const blogsCollection = collection(db, "blogs");
+    const blogQuery = query(blogsCollection, where("slug", "==", slug), limit(1));
+    const querySnapshot = await getDocs(blogQuery);
+    
+    if (!querySnapshot.empty) {
+      const doc = querySnapshot.docs[0];
+      const data = doc.data();
+      const blogData = {
+        id: doc.id,
+        ...data
+      };
+      
+      // Cache the result
+      blogCache.set(cacheKey, {
+        data: blogData,
+        timestamp: Date.now()
+      });
+      
+      return blogData;
+    }
+    
+    return null;
+  } catch (error) {
+    console.error("Error fetching blog:", error);
+    return null;
+  }
+}
+
+// Dynamic metadata generation - optimized with caching
 export async function generateMetadata(
   props: { params: Promise<{ slug: string }> },
   parent: ResolvingMetadata
@@ -23,31 +55,21 @@ export async function generateMetadata(
 
   // Default metadata in case we can't find the blog
   let title = "Blog Post | AMA Legal Solutions";
-  let description =
-    "Read our latest insights and articles at AMA Legal Solutions";
+  let description = "Read our latest insights and articles at AMA Legal Solutions";
   let image = "";
   let author = "AMA Legal Solutions";
 
-  // Base URL for canonical link - replace with your actual domain
-  const baseUrl = "https://amalegalsolutions.com"; // Update this with your domain
+  // Base URL for canonical link
+  const baseUrl = "https://amalegalsolutions.com";
 
   try {
-    // Fetch blogs from Firebase
-    const blogsCollection = collection(db, "blogs");
-    const querySnapshot = await getDocs(blogsCollection);
-
-    // Find the matching blog by slug - using slug field directly
-    for (const doc of querySnapshot.docs) {
-      const data = doc.data();
-      // Use the slug field directly instead of generating from title
-      if (data.slug === slug) {
-        // Use metaTitle and metaDescription if available, otherwise fallback to title
-        title = data.metaTitle || data.title || title;
-        description = data.metaDescription || description;
-        image = data.image || "";
-        author = data.author || author;
-        break;
-      }
+    const blogData = await getCachedBlog(slug);
+    
+    if (blogData) {
+      title = blogData.metaTitle || blogData.title || title;
+      description = blogData.metaDescription || description;
+      image = blogData.image || "";
+      author = blogData.author || author;
     }
   } catch (error) {
     console.error("Error fetching article metadata:", error);
@@ -82,12 +104,12 @@ export async function generateMetadata(
       title,
       description,
       images: image ? [image] : [],
-      creator: "@amalegalsolutions", // Replace with your actual Twitter handle
+      creator: "@amalegalsolutions",
     },
   };
 }
 
-// Updated Page component to handle Promise-based params
+// Optimized Page component
 export default async function Page({
   params,
 }: {
@@ -96,22 +118,13 @@ export default async function Page({
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
 
-  // Get the title from Firebase for the H1 tag
+  // Get the title from cached blog data
   let pageTitle = "Latest Insights from AMA Legal Solutions";
 
   try {
-    // Fetch blogs from Firebase
-    const blogsCollection = collection(db, "blogs");
-    const querySnapshot = await getDocs(blogsCollection);
-
-    // Find the matching blog by slug - using slug field directly
-    for (const doc of querySnapshot.docs) {
-      const data = doc.data();
-      // Use the slug field directly instead of generating from title
-      if (data.slug === slug) {
-        pageTitle = data.title || pageTitle;
-        break;
-      }
+    const blogData = await getCachedBlog(slug);
+    if (blogData) {
+      pageTitle = blogData.title || pageTitle;
     }
   } catch (error) {
     console.error("Error fetching article title:", error);
