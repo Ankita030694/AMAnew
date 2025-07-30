@@ -1,222 +1,426 @@
 import Link from "next/link";
+import Script from "next/script";
+
+// FAQ data for rendering
+const faqs = [
+  {
+    question: "What types of entertainment law services do you provide?",
+    answer: "We provide comprehensive entertainment law services including contract drafting for artists, production agreements, copyright protection, licensing deals, talent management contracts, film financing, and entertainment dispute resolution. Our entertainment lawyers handle all aspects of media and entertainment law."
+  },
+  {
+    question: "How can you help with entertainment contracts?",
+    answer: "Our entertainment lawyers can draft, review, and negotiate contracts for artists, producers, studios, and media companies. We ensure fair terms, protect intellectual property rights, and include necessary legal protections for all parties involved in entertainment projects."
+  },
+  {
+    question: "Do you handle copyright and intellectual property for entertainment?",
+    answer: "Yes, we specialize in entertainment intellectual property including copyright registration, licensing agreements, trademark protection for entertainment brands, and IP dispute resolution. Our lawyers ensure your creative works and entertainment assets are fully protected."
+  },
+  {
+    question: "Can you help with film and media production legal matters?",
+    answer: "Absolutely. We handle all legal aspects of film and media production including production agreements, location contracts, talent releases, distribution deals, and compliance with entertainment regulations. Our expertise covers both traditional and digital media production."
+  }
+];
+
+// FAQ Schema Markup for SEO
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
 
 export const metadata = {
-  title: "Entertainment Law & Media Contracts | AMA Legal Solutions",
+  title: "Entertainment Lawyers in India | Media & Entertainment Law – AMA Legal Solutions",
   description:
-    "Protect your creative rights with expert legal support in entertainment law, media contracts, copyright, and licensing. Get legal advice from industry professionals",
-    alternates: {
-    canonical: 'https://amalegalsolutions.com/services/entertainment', // Add your canonical URL here
+    "Expert entertainment lawyers in India. AMA Legal Solutions provides entertainment contracts, copyright protection, media law, and entertainment dispute resolution. Book your consultation now.",
+  alternates: {
+    canonical: 'https://amalegalsolutions.com/services/entertainment',
   },
 };
+
 export default function page() {
   // Sample service data (replace with your actual content)
   const service = {
-    title: "Professional Consultation",
+    title: "Entertainment Law Legal Services",
     bannerImage: "/services/5.png", // Replace with your actual image path
     description:
-      "Our professional consultation service provides expert guidance tailored to your specific needs. We work closely with you to understand your requirements and deliver solutions that exceed your expectations. Our team of experienced consultants brings years of industry knowledge to help you navigate complex challenges and achieve your goals.",
+      "Our entertainment law legal services provide comprehensive support for all media and entertainment legal matters. We work closely with you to understand your entertainment needs and deliver effective legal solutions.",
     buttonText: "Get Started",
     buttonLink: "/contact",
   };
 
   return (
-    <div className="bg-white min-h-screen">
-      {/* Banner Section - 1920x550 as specified */}
-      <div className="relative w-full h-[300px] md:h-[550px] overflow-hidden">
-        <img
-          src={service.bannerImage}
-          alt={service.title}
-          className="w-full h-full object-contain"
-        />
-      </div>
-
-      {/* Service Description Section */}
-      <div className="container mx-auto px-4 max-w-4xl">
-        <div className="mb-12">
-          <h1 className="text-4xl font-bold text-center mb-8 text-black">
-          Entertainment Law | Legal Protection for Artists & Media
-          </h1>
-          <p className="text-[#5A4C33] text-lg leading-relaxed mb-8">
-            <br />
-            <br />
-            <strong>
-              Legal Solutions for the Entertainment & Media Industry
-            </strong>
-            <br />
-            <br />
-            The entertainment industry is evolving rapidly, and legal protection
-            is essential for artists, filmmakers, musicians, influencers,
-            content creators, production houses, and media companies. Whether
-            it&apos;s contract negotiations, intellectual property protection,
-            licensing deals, or dispute resolution, expert legal assistance
-            ensures that your rights and creative work remain safeguarded.
-            <br />
-            <br />
-            At AMA Legal Solutions, we provide comprehensive entertainment law
-            services to protect the legal and commercial interests of
-            professionals and businesses in the film, music, television, digital
-            media, and performing arts sectors.
-            <br />
-            <br />
-            <strong>Our Entertainment Law Services:</strong>
-            <br />
-            <br />
-            <strong>1. Contract Drafting & Negotiation</strong>
-            <br />
-            Contracts are the backbone of any entertainment deal. We assist
-            with:
-            <br />
-            • Artist and talent agreements
-            <br />
-            • Film production contracts
-            <br />
-            • Music licensing and distribution agreements
-            <br />
-            • Brand endorsement and influencer contracts
-            <br />
-            • Publishing and distribution deals
-            <br />
-            <br />
-            <strong>2. Intellectual Property Rights (IPR) Protection</strong>
-            <br />
-            Creative works need strong legal protection to prevent unauthorized
-            use. We specialize in:
-            <br />
-            • Copyright registration for films, music, scripts, and content
-            <br />
-            • Trademark protection for artists, brands, and production houses
-            <br />
-            • Patent and design protection for innovative media technology
-            <br />
-            • Legal action against content piracy and copyright infringement
-            <br />
-            <br />
-            <strong>3. Film & Music Industry Legal Compliance</strong>
-            <br />
-            The entertainment industry is subject to complex regulations. We
-            provide:
-            <br />
-            • Censorship and content regulation compliance (CBFC certification,
-            IT laws, media laws)
-            <br />
-            • Music royalties and licensing compliance with IPRS & PPL
-            regulations
-            <br />
-            • OTT platform regulations and digital content compliance
-            <br />
-            <br />
-            <strong>4. Influencer & Social Media Law</strong>
-            <br />
-            With the rise of digital media, influencers, and content creators,
-            legal support is crucial to:
-            <br />
-            • Draft brand collaboration agreements
-            <br />
-            • Protect content rights and licensing
-            <br />
-            • Ensure compliance with advertising and endorsement laws
-            <br />
-            • Resolve disputes with brands and platforms
-            <br />
-            <br />
-            <strong>5. Defamation & Media Law Protection</strong>
-            <br />
-            Reputation is everything in entertainment. We handle:
-            <br />
-            • Defamation lawsuits for celebrities, artists, and brands
-            <br />
-            • Media disputes and unauthorized publications
-            <br />
-            • Social media harassment and legal remedies
-            <br />
-            <br />
-            <strong>6. Dispute Resolution & Litigation</strong>
-            <br />
-            We provide legal representation for:
-            <br />
-            • Contract breaches in entertainment deals
-            <br />
-            • Music and film copyright infringement cases
-            <br />
-            • Royalties and revenue disputes
-            <br />
-            • Alternative Dispute Resolution (ADR) for media conflicts
-            <br />
-            <br />
-            <strong>
-              Who Can Benefit from Our Entertainment Law Services?
-            </strong>
-            <br />
-            <br />
-            • Film production houses & OTT platforms
-            <br />
-            • Musicians, composers, and record labels
-            <br />
-            • Actors, directors, and scriptwriters
-            <br />
-            • Social media influencers & digital content creators
-            <br />
-            • Event organizers and talent management agencies
-            <br />
-            • Gaming and e-sports professionals
-            <br />
-            <br />
-            <strong>Why Choose AMA Legal Solutions?</strong>
-            <br />
-            <br />• <strong>Industry Expertise</strong> – Legal specialists with
-            deep knowledge of media, entertainment, and intellectual property
-            laws.
-            <br />• <strong>Tailored Legal Solutions</strong> – We offer
-            customized legal strategies for artists, creators, and media
-            businesses.
-            <br />• <strong>Strong Contract Negotiation & Drafting</strong> – We
-            ensure fair and legally sound agreements for all parties.
-            <br />• <strong>Effective Dispute Resolution & Litigation</strong> –
-            Protecting clients from contract breaches, content misuse, and
-            defamation.
-            <br />• <strong>Confidentiality & Legal Protection</strong> –
-            Ensuring that your rights, content, and business interests remain
-            protected.
-            <br />
-            <br />
-            <strong>
-              Need Legal Assistance in Entertainment Law? Contact Us Today
-            </strong>
-            <br />
-            <br />
-            If you are in the entertainment industry and require legal support
-            for contracts, copyright protection, disputes, or media regulations,
-            AMA Legal Solutions is here to help.
-            <br />
-            <br />
-            📞 Call us at <strong>+91-8700343611</strong>
-            <br />
-            🌐 Visit:{" "}
-            <a
-              href="http://www.amalegalsolutions.com"
-              className="text-blue-600 underline"
-            >
-              www.amalegalsolutions.com
-            </a>
-            <br />
-            📍 <strong>Office Location: Sector-57, Gurugram</strong>
-          </p>
-
-          {/* Feature Highlights */}
+    <>
+      {/* FAQ Schema Markup - Using Next.js Script component for proper SSR */}
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
+      
+      <div className="bg-white min-h-screen">
+        {/* Banner Section */}
+        <div className="relative w-full h-[300px] md:h-[550px] overflow-hidden">
+          <img
+            src={service.bannerImage}
+            alt={service.title}
+            className="w-full h-full object-contain"
+          />
         </div>
 
-        {/* CTA Button */}
-        <div className="flex justify-center mb-5">
-          <Link href={service.buttonLink}>
-            <div
-              className="inline-block bg-[#D2A02A] text-white px-8 py-4 rounded-md font-medium 
-                text-lg cursor-pointer hover:bg-[#5A4C33] transition-colors duration-300"
-            >
-              {service.buttonText}
+        {/* Main Content Container */}
+        <div className="container mx-auto px-4 max-w-6xl py-16">
+          
+          {/* Hero Section */}
+          <div className="text-center mb-20">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
+              Expert <span className="text-[#D2A02A]">Entertainment Law</span> Services in India
+            </h1>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Need legal support for entertainment and media projects? Get professional entertainment law services for contracts, copyright protection, and media legal matters with our experienced entertainment lawyers.
+            </p>
+          </div>
+
+          {/* Introduction Section */}
+          <section className="mb-20">
+            <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8 md:p-12">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                Comprehensive Entertainment & Media Law Services
+              </h2>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                The entertainment and media industry involves complex legal considerations that require specialized expertise. Whether you're an artist, producer, studio, or media company, having expert entertainment law guidance is crucial for protecting your creative and commercial interests.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                At AMA Legal Solutions, we specialize in <strong>entertainment law</strong>, providing comprehensive legal services for entertainment contracts, copyright protection, media law, and entertainment dispute resolution. Our expert <strong>entertainment lawyers in India</strong> ensure your creative and commercial interests are fully protected.
+              </p>
             </div>
-          </Link>
+          </section>
+
+          {/* Services Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+              Our Entertainment Law Legal Services
+            </h2>
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  We provide comprehensive <strong>entertainment law services</strong> covering all aspects of media and entertainment legal matters, from contract drafting to intellectual property protection. Our expertise spans individual artists to major media companies.
+                </p>
+                <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                  <p className="text-blue-800 font-medium">
+                    Our expert <strong>entertainment lawyers</strong> ensure you get the best possible legal representation while protecting your creative and commercial interests throughout the process.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-white shadow-xl rounded-2xl p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Key Services</h3>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">✓</span>
+                    Entertainment contracts & agreements
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">✓</span>
+                    Copyright & intellectual property
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">✓</span>
+                    Media law & production legal
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">✓</span>
+                    Entertainment dispute resolution
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* Service Categories Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+              Our Entertainment Law Expertise
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="text-center mb-4">
+                  <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto">
+                    <span className="text-2xl">📄</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Entertainment Contracts</h3>
+                <p className="text-gray-600 text-center">
+                  <strong>Entertainment contracts</strong> including artist agreements, production contracts, licensing deals, and talent management agreements with fair terms and legal protections.
+                </p>
+              </div>
+              
+              <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="text-center mb-4">
+                  <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto">
+                    <span className="text-2xl">©️</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Copyright Protection</h3>
+                <p className="text-gray-600 text-center">
+                  <strong>Copyright protection</strong> for entertainment works including music, films, scripts, and digital content with licensing and enforcement services.
+                </p>
+              </div>
+              
+              <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="text-center mb-4">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+                    <span className="text-2xl">🎬</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Media Production</h3>
+                <p className="text-gray-600 text-center">
+                  <strong>Media production</strong> legal services including film financing, distribution agreements, and compliance with entertainment regulations and media laws.
+                </p>
+              </div>
+              
+              <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="text-center mb-4">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
+                    <span className="text-2xl">⚖️</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Entertainment Disputes</h3>
+                <p className="text-gray-600 text-center">
+                  <strong>Entertainment disputes</strong> resolution including contract disputes, copyright infringement, and media law litigation with expert representation.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* How We Help Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+              How AMA Legal Solutions Helps with Entertainment Law
+            </h2>
+            
+            <div className="space-y-8">
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">1. Contract Drafting & Negotiation</h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  We provide comprehensive contract services for entertainment projects:
+                </p>
+                <ul className="text-gray-700 space-y-2 ml-6">
+                  <li>• Drafting artist and talent agreements</li>
+                  <li>• Negotiating production and distribution contracts</li>
+                  <li>• Creating licensing and merchandising agreements</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">2. Intellectual Property Protection</h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Our experienced entertainment lawyers provide complete IP protection:
+                </p>
+                <ul className="text-gray-700 space-y-2 ml-6">
+                  <li>• Copyright registration and protection</li>
+                  <li>• Trademark protection for entertainment brands</li>
+                  <li>• IP licensing and enforcement strategies</li>
+                  <li>• Digital rights management and protection</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">3. Media Law & Compliance</h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Comprehensive media law and compliance services including:
+                </p>
+                <ul className="text-gray-700 space-y-2 ml-6">
+                  <li>• Film and media production legal support</li>
+                  <li>• Entertainment industry compliance</li>
+                  <li>• Digital media and streaming regulations</li>
+                  <li>• Entertainment dispute resolution and litigation</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* Benefits Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+              Benefits of Choosing Our Entertainment Lawyers
+            </h2>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">🎭</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Industry Expertise</h3>
+                <p className="text-gray-600">
+                  Deep understanding of entertainment industry practices, trends, and legal requirements.
+                </p>
+              </div>
+              
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">📄</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Contract Excellence</h3>
+                <p className="text-gray-600">
+                  Expert contract drafting and negotiation ensuring fair terms and legal protection.
+                </p>
+              </div>
+              
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">©️</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">IP Protection</h3>
+                <p className="text-gray-600">
+                  Comprehensive intellectual property protection for creative works and entertainment assets.
+                </p>
+              </div>
+              
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">⚡</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Fast Response</h3>
+                <p className="text-gray-600">
+                  Quick response to entertainment legal matters with efficient contract and IP services.
+                </p>
+              </div>
+              
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">🤝</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Creative Support</h3>
+                <p className="text-gray-600">
+                  Supportive approach to creative projects with legal solutions that enable artistic expression.
+                </p>
+              </div>
+              
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">📊</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Proven Track Record</h3>
+                <p className="text-gray-600">
+                  Successful track record in entertainment law with numerous satisfied clients and projects.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Process Section */}
+          <section className="mb-20">
+            <div className="bg-gray-900 rounded-2xl p-8 md:p-12 text-white">
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+                Our Proven 4-Step Entertainment Law Process
+              </h2>
+              <div className="grid md:grid-cols-4 gap-8">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-xl font-bold">1</span>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Project Assessment</h3>
+                  <p className="text-gray-300">Comprehensive evaluation of entertainment project and legal requirements</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-xl font-bold">2</span>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Legal Strategy</h3>
+                  <p className="text-gray-300">Develop comprehensive legal strategy and contract framework</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-xl font-bold">3</span>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Implementation</h3>
+                  <p className="text-gray-300">Draft contracts, protect IP, and ensure legal compliance</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-xl font-bold">4</span>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Ongoing Support</h3>
+                  <p className="text-gray-300">Provide ongoing legal support and dispute resolution</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQs Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+              FAQs on Entertainment Law Services
+            </h2>
+            <div className="space-y-6">
+              {faqs.map((faq, index) => (
+                <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{faq.question}</h3>
+                  <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 text-center">
+              <p className="text-lg text-gray-700 mb-4">
+                Have more questions about entertainment law services?
+              </p>
+              <Link href="/contact" className="text-[#D2A02A] font-semibold hover:underline">
+                Contact our entertainment lawyers for expert advice →
+              </Link>
+            </div>
+          </section>
+
+          {/* Contact CTA Section */}
+          <section className="text-center bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] rounded-2xl p-12 text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Need Expert Entertainment Law Assistance?
+            </h2>
+            <p className="text-xl mb-8 opacity-90">
+              Get professional entertainment law services and protect your creative interests today.
+            </p>
+            
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">📞</span>
+                <div>
+                  <p className="font-semibold">Call Now</p>
+                  <p className="text-lg">+91-8700343611</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">🌐</span>
+                <div>
+                  <p className="font-semibold">Visit Online</p>
+                  <a href="http://www.amalegalsolutions.com" className="text-lg hover:underline">
+                    www.amalegalsolutions.com
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">📍</span>
+                <div>
+                  <p className="font-semibold">Office Location</p>
+                  <p className="text-lg">Sector-57, Gurugram</p>
+                </div>
+              </div>
+            </div>
+            
+            <Link href={service.buttonLink}>
+              <div className="inline-block bg-white text-[#D2A02A] px-12 py-4 rounded-full font-bold text-lg cursor-pointer hover:bg-gray-100 transition-colors duration-300 shadow-lg">
+                {service.buttonText}
+              </div>
+            </Link>
+          </section>
         </div>
       </div>
-    </div>
+    </>
   );
 }

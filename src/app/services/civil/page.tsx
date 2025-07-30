@@ -1,256 +1,426 @@
 import Link from "next/link";
+import Script from "next/script";
+
+// FAQ data for rendering
+const faqs = [
+  {
+    question: "What types of civil law cases do you handle?",
+    answer: "We handle all types of civil law cases including contract disputes, property disputes, family law matters, consumer complaints, civil litigation, debt recovery, and civil rights cases. Our civil lawyers provide comprehensive legal solutions for all civil legal matters."
+  },
+  {
+    question: "How long does a civil case typically take to resolve?",
+    answer: "Civil case duration varies depending on complexity. Simple cases may resolve in 6-12 months, while complex litigation can take 2-5 years. We work efficiently to achieve the best possible outcome while minimizing delays through strategic legal approaches."
+  },
+  {
+    question: "Can you help with out-of-court settlements?",
+    answer: "Yes, we specialize in alternative dispute resolution including mediation, arbitration, and out-of-court settlements. Our civil lawyers can negotiate favorable settlements that save time and costs while achieving your legal objectives."
+  },
+  {
+    question: "What should I do if I receive a civil court notice?",
+    answer: "Contact our civil lawyers immediately. We'll review the notice, assess your legal position, and guide you on the appropriate response. Early legal intervention often leads to better outcomes and can prevent escalation of disputes."
+  }
+];
+
+// FAQ Schema Markup for SEO
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
 
 export const metadata = {
-  title: "Civil Law Services in Gurugram | AMA Legal Solutions",
+  title: "Civil Law Lawyers in India | Civil Litigation & Dispute Resolution – AMA Legal Solutions",
   description:
-    "Protect your legal rights with expert civil law services from AMA Legal Solutions, offering solutions for individuals and businesses in Gurugram, Haryana.",
-    alternates: {
-    canonical: 'https://amalegalsolutions.com/services/civil', // Add your canonical URL here
+    "Expert civil law lawyers in India. AMA Legal Solutions provides civil litigation, contract disputes, property cases, and civil rights representation. Book your consultation now.",
+  alternates: {
+    canonical: 'https://amalegalsolutions.com/services/civil',
   },
 };
+
 export default function page() {
   // Sample service data (replace with your actual content)
   const service = {
-    title: "Professional Consultation",
-    bannerImage: "/services/11.png",
+    title: "Civil Law Legal Services",
+    bannerImage: "/services/11.png", // Replace with your actual image path
     description:
-      "Our professional consultation service provides expert guidance tailored to your specific needs. We work closely with you to understand your requirements and deliver solutions that exceed your expectations. Our team of experienced consultants brings years of industry knowledge to help you navigate complex challenges and achieve your goals.",
+      "Our civil law legal services provide comprehensive support for all civil legal matters. We work closely with you to understand your civil law needs and deliver effective legal solutions.",
     buttonText: "Get Started",
     buttonLink: "/contact",
   };
 
   return (
-    <div className="bg-white min-h-screen">
-      {/* Banner Section - 1920x550 as specified */}
-      <div className="relative w-full h-[300px] md:h-[550px] overflow-hidden">
-        <img
-          src={service.bannerImage}
-          alt={`${service.title} - AMA Legal Solutions`}
-          title={`${service.title} - AMA Legal Solutions`}
-          className="w-full h-full object-contain"
-          loading="eager"
-          width={1920}
-          height={550}
-        />
-      </div>
-
-      {/* Service Description Section */}
-      <div className="container mx-auto px-4 max-w-4xl">
-        <div className="mb-12">
-          <h1 className="text-4xl font-bold text-center mb-8 text-black">
-          Expert Civil Law Services | Legal Solutions for All
-          </h1>
-          <p className="text-[#5A4C33] text-lg leading-relaxed mb-8">
-            <br />
-            <br />
-            <strong>
-              Protecting Your Legal Rights with Experienced Civil Lawyers
-            </strong>
-            <br />
-            <br />
-            Civil law governs disputes between individuals, businesses, and
-            organizations involving contracts, property, financial matters, and
-            personal rights. Whether you need legal assistance with a breach of
-            contract, property disputes, consumer rights, debt recovery, or
-            defamation cases, our team of expert civil lawyers at{" "}
-            <strong>AMA Legal Solutions</strong> provides reliable legal
-            representation and advisory services to help you achieve a fair
-            resolution.
-            <br />
-            <br />
-            <strong>Our Civil Law Services:</strong>
-            <br />
-            <br />
-            <strong>1. Contractual & Commercial Disputes</strong>
-            <br />
-            We handle legal disputes arising from contracts and commercial
-            agreements, including:
-            <br />
-            • Breach of contract & non-performance claims
-            <br />
-            • Partnership & business disputes
-            <br />
-            • Service & supply agreement violations
-            <br />
-            • Employment contract disputes
-            <br />
-            • Franchise & licensing agreement conflicts
-            <br />
-            <br />
-            <strong>2. Property & Real Estate Disputes</strong>
-            <br />
-            We assist clients in property-related civil disputes, ensuring their
-            rights are protected in:
-            <br />
-            • Title disputes & property ownership conflicts
-            <br />
-            • Landlord-tenant disputes & eviction matters
-            <br />
-            • Illegal possession & encroachment cases
-            <br />
-            • Real estate fraud & misrepresentation cases
-            <br />
-            • Partition & inheritance disputes
-            <br />
-            <br />
-            <strong>3. Consumer Protection & Product Liability</strong>
-            <br />
-            Consumers have rights under the Consumer Protection Act, 2019, and
-            we help individuals and businesses in:
-            <br />
-            • Filing consumer complaints against defective products & services
-            <br />
-            • Misleading advertisements & unfair trade practices
-            <br />
-            • E-commerce fraud & online transaction disputes
-            <br />
-            • Medical negligence & professional malpractice claims
-            <br />
-            <br />
-            <strong>4. Debt Recovery & Financial Disputes</strong>
-            <br />
-            We represent clients in financial disputes and debt recovery cases,
-            including:
-            <br />
-            • Loan default & non-payment cases
-            <br />
-            • Cheque bounce & dishonor of negotiable instruments
-            <br />
-            • Money recovery suits under CPC & NI Act
-            <br />
-            • Banking & financial fraud litigation
-            <br />
-            <br />
-            <strong>5. Defamation, Libel & Slander Cases</strong>
-            <br />
-            If you or your business has been affected by false accusations or
-            reputational damage, we provide legal support in:
-            <br />
-            • Civil defamation cases under IPC & IT Act
-            <br />
-            • Online defamation & cyber libel cases
-            <br />
-            • Takedown notices for defamatory content
-            <br />
-            • Compensation claims for reputational damage
-            <br />
-            <br />
-            <strong>6. Succession, Wills & Estate Planning</strong>
-            <br />
-            Ensuring a smooth transfer of assets and legal clarity on
-            inheritance matters is crucial. We provide:
-            <br />
-            • Drafting & execution of wills
-            <br />
-            • Probate & succession certificate matters
-            <br />
-            • Disputes in inheritance & family property division
-            <br />
-            • Trust formation & estate planning advisory
-            <br />
-            <br />
-            <strong>
-              7. Civil Litigation & Alternative Dispute Resolution (ADR)
-            </strong>
-            <br />
-            We provide legal representation for civil suits, arbitration,
-            mediation, and negotiation, including:
-            <br />
-            • Filing & defending civil suits in courts
-            <br />
-            • Negotiation & mediation for faster settlements
-            <br />
-            • Arbitration for business & commercial disputes
-            <br />
-            • Legal representation in tribunals & consumer forums
-            <br />
-            <br />
-            <strong>Who Can Benefit from Our Civil Law Services?</strong>
-            <br />
-            <br />
-            • Individuals facing property, inheritance, or consumer disputes
-            <br />
-            • Businesses & corporations dealing with contract breaches &
-            financial disputes
-            <br />
-            • Startups & entrepreneurs needing legal protection for business
-            contracts
-            <br />
-            • Homebuyers & real estate investors dealing with fraud or property
-            disputes
-            <br />
-            • Individuals & professionals facing defamation or reputation damage
-            cases
-            <br />
-            <br />
-            <strong>
-              Why Choose AMA Legal Solutions for Civil Law Matters?
-            </strong>
-            <br />
-            <br />• <strong>Experienced Civil Lawyers</strong> – Specialized in
-            contract, property, and financial disputes.
-            <br />• <strong>Personalized Legal Solutions</strong> – Tailored
-            legal strategies for individuals & businesses.
-            <br />• <strong>Cost-Effective & Efficient</strong> – Quick dispute
-            resolution through litigation & ADR.
-            <br />• <strong>Comprehensive Legal Support</strong> – Handling
-            everything from case filing to final settlement.
-            <br />• <strong>Strong Legal Representation</strong> – Expertise in
-            District Courts, High Court & Tribunals.
-            <br />
-            <br />
-            <strong>Need Civil Law Legal Assistance? Contact Us Today</strong>
-            <br />
-            <br />
-            If you need a civil lawyer in Gurugram for property disputes,
-            contract litigation, consumer protection, or debt recovery, contact{" "}
-            <strong>AMA Legal Solutions</strong> now.
-            <br />
-            <br />
-            📞 Call us at <strong>+91-8700343611</strong>
-            <br />
-            🌐 Visit:{" "}
-            <a
-              href="http://www.amalegalsolutions.com"
-              className="text-blue-600 underline"
-            >
-              www.amalegalsolutions.com
-            </a>
-            <br />
-            📍 <strong>Office Location: Sector-57, Gurugram</strong>
-          </p>
-
-          {/* Feature Highlights */}
-        </div>
-
-        {/* CTA Button */}
-        <div className="flex justify-center mb-5">
-          <Link
-            href={service.buttonLink}
-            className="inline-block bg-[#D2A02A] text-white px-8 py-3 rounded-md hover:bg-[#B88A1A] transition-colors duration-300"
-          >
-            {service.buttonText}
-          </Link>
-        </div>
-      </div>
-
-      {/* Structured Data for Image */}
-      <script
+    <>
+      {/* FAQ Schema Markup - Using Next.js Script component for proper SSR */}
+      <Script
+        id="faq-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ImageObject",
-            "contentUrl": `https://www.amalegalsolutions.com${service.bannerImage}`,
-            "name": service.title,
-            "description": service.description,
-            "license": "https://www.amalegalsolutions.com",
-            "acquireLicensePage": "https://www.amalegalsolutions.com",
-            "creditText": "AMA Legal Solutions",
-            "copyrightNotice": "© AMA Legal Solutions. All rights reserved."
-          })
+          __html: JSON.stringify(faqSchema),
         }}
       />
-    </div>
+      
+      <div className="bg-white min-h-screen">
+        {/* Banner Section */}
+        <div className="relative w-full h-[300px] md:h-[550px] overflow-hidden">
+          <img
+            src={service.bannerImage}
+            alt={service.title}
+            className="w-full h-full object-contain"
+          />
+        </div>
+
+        {/* Main Content Container */}
+        <div className="container mx-auto px-4 max-w-6xl py-16">
+          
+          {/* Hero Section */}
+          <div className="text-center mb-20">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
+              Expert <span className="text-[#D2A02A]">Civil Law</span> Services in India
+            </h1>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Facing civil disputes or legal conflicts? Get professional legal help for civil litigation, contract disputes, and civil rights matters with our experienced civil lawyers.
+            </p>
+          </div>
+
+          {/* Introduction Section */}
+          <section className="mb-20">
+            <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8 md:p-12">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                Comprehensive Civil Law & Dispute Resolution
+              </h2>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                Civil law encompasses a wide range of legal matters affecting individuals and businesses in their daily lives. Whether you're dealing with contract disputes, property conflicts, family matters, or civil rights issues, having expert legal guidance is crucial.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                At AMA Legal Solutions, we specialize in <strong>civil law</strong>, providing comprehensive legal services for civil litigation, dispute resolution, contract matters, and civil rights protection. Our expert <strong>civil lawyers in India</strong> ensure your legal interests are fully protected.
+              </p>
+            </div>
+          </section>
+
+          {/* Services Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+              Our Civil Law Legal Services
+            </h2>
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  We provide comprehensive <strong>civil law services</strong> covering all aspects of civil legal matters, from initial consultation to final resolution. Our expertise spans individual disputes to complex corporate civil litigation.
+                </p>
+                <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                  <p className="text-blue-800 font-medium">
+                    Our expert <strong>civil lawyers</strong> ensure you get the best possible legal representation while protecting your interests throughout the civil litigation process.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-white shadow-xl rounded-2xl p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Key Services</h3>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">✓</span>
+                    Civil litigation & dispute resolution
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">✓</span>
+                    Contract disputes & enforcement
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">✓</span>
+                    Property disputes & civil rights
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">✓</span>
+                    Family law & consumer disputes
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* Service Categories Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+              Our Civil Law Expertise
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="text-center mb-4">
+                  <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto">
+                    <span className="text-2xl">⚖️</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Civil Litigation</h3>
+                <p className="text-gray-600 text-center">
+                  <strong>Civil litigation</strong> services including lawsuit filing, court representation, evidence presentation, and legal arguments in civil courts and tribunals.
+                </p>
+              </div>
+              
+              <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="text-center mb-4">
+                  <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto">
+                    <span className="text-2xl">📄</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Contract Disputes</h3>
+                <p className="text-gray-600 text-center">
+                  <strong>Contract disputes</strong> resolution including breach of contract, contract enforcement, and commercial agreement litigation with expert legal representation.
+                </p>
+              </div>
+              
+              <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="text-center mb-4">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+                    <span className="text-2xl">🏠</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Property Disputes</h3>
+                <p className="text-gray-600 text-center">
+                  <strong>Property disputes</strong> resolution including ownership conflicts, boundary disputes, possession matters, and property rights litigation.
+                </p>
+              </div>
+              
+              <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="text-center mb-4">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
+                    <span className="text-2xl">👥</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Civil Rights</h3>
+                <p className="text-gray-600 text-center">
+                  <strong>Civil rights</strong> protection including constitutional rights, discrimination cases, and civil liberties litigation with expert legal advocacy.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* How We Help Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+              How AMA Legal Solutions Helps with Civil Law Matters
+            </h2>
+            
+            <div className="space-y-8">
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">1. Case Assessment & Legal Strategy</h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  We conduct comprehensive case assessment and develop effective legal strategies:
+                </p>
+                <ul className="text-gray-700 space-y-2 ml-6">
+                  <li>• Analyzing legal documents and evidence</li>
+                  <li>• Evaluating legal options and potential outcomes</li>
+                  <li>• Developing strategic approaches for dispute resolution</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">2. Civil Litigation & Court Representation</h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Our experienced civil lawyers provide complete litigation support:
+                </p>
+                <ul className="text-gray-700 space-y-2 ml-6">
+                  <li>• Filing lawsuits and legal petitions</li>
+                  <li>• Representing clients in civil courts and tribunals</li>
+                  <li>• Presenting evidence and making legal arguments</li>
+                  <li>• Negotiating settlements and alternative dispute resolution</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">3. Dispute Resolution & Enforcement</h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Comprehensive dispute resolution and enforcement services including:
+                </p>
+                <ul className="text-gray-700 space-y-2 ml-6">
+                  <li>• Mediation and arbitration for civil disputes</li>
+                  <li>• Enforcement of court judgments and settlements</li>
+                  <li>• Appeal and review proceedings</li>
+                  <li>• Ongoing legal protection and compliance monitoring</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* Benefits Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+              Benefits of Choosing Our Civil Lawyers
+            </h2>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">⚖️</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Expert Litigation</h3>
+                <p className="text-gray-600">
+                  Specialized civil litigation expertise with deep understanding of civil laws and court procedures.
+                </p>
+              </div>
+              
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">🤝</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Dispute Resolution</h3>
+                <p className="text-gray-600">
+                  Effective dispute resolution through negotiation, mediation, arbitration, and litigation when necessary.
+                </p>
+              </div>
+              
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">📊</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Proven Track Record</h3>
+                <p className="text-gray-600">
+                  Successful track record in civil litigation with numerous favorable judgments and settlements.
+                </p>
+              </div>
+              
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">🎯</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Strategic Approach</h3>
+                <p className="text-gray-600">
+                  Strategic legal approach tailored to your specific civil law matter and desired outcomes.
+                </p>
+              </div>
+              
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">⚡</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Efficient Resolution</h3>
+                <p className="text-gray-600">
+                  Efficient case handling with timely resolution and cost-effective legal representation.
+                </p>
+              </div>
+              
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">🛡️</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Rights Protection</h3>
+                <p className="text-gray-600">
+                  Strong focus on protecting your civil rights and legal interests throughout the process.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Process Section */}
+          <section className="mb-20">
+            <div className="bg-gray-900 rounded-2xl p-8 md:p-12 text-white">
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+                Our Proven 4-Step Civil Law Process
+              </h2>
+              <div className="grid md:grid-cols-4 gap-8">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-xl font-bold">1</span>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Case Assessment</h3>
+                  <p className="text-gray-300">Comprehensive case evaluation and legal strategy development</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-xl font-bold">2</span>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Legal Action</h3>
+                  <p className="text-gray-300">File lawsuits, represent in court, and pursue legal remedies</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-xl font-bold">3</span>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Resolution</h3>
+                  <p className="text-gray-300">Negotiate settlements or achieve favorable court judgments</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-xl font-bold">4</span>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Enforcement</h3>
+                  <p className="text-gray-300">Enforce judgments and ensure compliance with legal outcomes</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQs Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+              FAQs on Civil Law Services
+            </h2>
+            <div className="space-y-6">
+              {faqs.map((faq, index) => (
+                <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{faq.question}</h3>
+                  <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 text-center">
+              <p className="text-lg text-gray-700 mb-4">
+                Have more questions about civil law services?
+              </p>
+              <Link href="/contact" className="text-[#D2A02A] font-semibold hover:underline">
+                Contact our civil lawyers for expert advice →
+              </Link>
+            </div>
+          </section>
+
+          {/* Contact CTA Section */}
+          <section className="text-center bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] rounded-2xl p-12 text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Need Expert Civil Law Assistance?
+            </h2>
+            <p className="text-xl mb-8 opacity-90">
+              Get professional legal help for civil disputes and litigation matters today.
+            </p>
+            
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">📞</span>
+                <div>
+                  <p className="font-semibold">Call Now</p>
+                  <p className="text-lg">+91-8700343611</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">🌐</span>
+                <div>
+                  <p className="font-semibold">Visit Online</p>
+                  <a href="http://www.amalegalsolutions.com" className="text-lg hover:underline">
+                    www.amalegalsolutions.com
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">📍</span>
+                <div>
+                  <p className="font-semibold">Office Location</p>
+                  <p className="text-lg">Sector-57, Gurugram</p>
+                </div>
+              </div>
+            </div>
+            
+            <Link href={service.buttonLink}>
+              <div className="inline-block bg-white text-[#D2A02A] px-12 py-4 rounded-full font-bold text-lg cursor-pointer hover:bg-gray-100 transition-colors duration-300 shadow-lg">
+                {service.buttonText}
+              </div>
+            </Link>
+          </section>
+        </div>
+      </div>
+    </>
   );
 }
