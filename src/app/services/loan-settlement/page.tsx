@@ -21,23 +21,7 @@ const faqs = [
   }
 ];
 
-// FAQ Schema Markup for SEO
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "name": "Loan Settlement Services FAQs",
-  "description": "Frequently asked questions about loan settlement, debt settlement, and EMI default help in India",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
-};
-
-// WebPage Schema for additional SEO
+// WebPage Schema with FAQ content for SEO
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -46,6 +30,8 @@ const webPageSchema = {
   "url": "https://amalegalsolutions.com/services/loansettlement",
   "mainEntity": {
     "@type": "FAQPage",
+    "name": "Loan Settlement Services FAQs",
+    "description": "Frequently asked questions about loan settlement, debt settlement, and EMI default help in India",
     "mainEntity": faqs.map(faq => ({
       "@type": "Question",
       "name": faq.question,
@@ -80,16 +66,9 @@ export default function page() {
   return (
     <>
       {/* FAQ Schema Markup - Using Next.js Script component for proper SSR */}
-      <Script
-        id="loan-settlement-faq-schema"
-        type="application/ld+json"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
-        }}
-      />
+      {/* Removed duplicate FAQPage schema */}
       
-      {/* WebPage Schema Markup */}
+      {/* WebPage Schema Markup with FAQ content */}
       <Script
         id="loan-settlement-webpage-schema"
         type="application/ld+json"
