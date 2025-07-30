@@ -25,6 +25,8 @@ const faqs = [
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "name": "Arbitration Services FAQs",
+  "description": "Frequently asked questions about arbitration services, alternative dispute resolution, and arbitration legal services in India",
   "mainEntity": faqs.map(faq => ({
     "@type": "Question",
     "name": faq.question,
@@ -33,6 +35,26 @@ const faqSchema = {
       "text": faq.answer
     }
   }))
+};
+
+// WebPage Schema for additional SEO
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Arbitration Legal Services in India",
+  "description": "Expert arbitration lawyers in India. AMA Legal Solutions provides arbitration services, arbitral awards, interim relief, and international arbitration representation.",
+  "url": "https://amalegalsolutions.com/services/arbitration",
+  "mainEntity": {
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  }
 };
 
 export const metadata = {
@@ -59,10 +81,21 @@ export default function page() {
     <>
       {/* FAQ Schema Markup - Using Next.js Script component for proper SSR */}
       <Script
-        id="faq-schema"
+        id="arbitration-faq-schema"
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(faqSchema),
+        }}
+      />
+      
+      {/* WebPage Schema Markup */}
+      <Script
+        id="arbitration-webpage-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(webPageSchema),
         }}
       />
       

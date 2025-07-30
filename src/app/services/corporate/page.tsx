@@ -25,6 +25,8 @@ const faqs = [
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "name": "Corporate Law Services FAQs",
+  "description": "Frequently asked questions about corporate law services, company registration, and business legal services in India",
   "mainEntity": faqs.map(faq => ({
     "@type": "Question",
     "name": faq.question,
@@ -33,6 +35,26 @@ const faqSchema = {
       "text": faq.answer
     }
   }))
+};
+
+// WebPage Schema for additional SEO
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Corporate Law Legal Services in India",
+  "description": "Expert corporate lawyers in India. AMA Legal Solutions provides company registration, incorporation, startup compliance, and corporate legal services.",
+  "url": "https://amalegalsolutions.com/services/corporate",
+  "mainEntity": {
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  }
 };
 
 export const metadata = {
@@ -59,10 +81,21 @@ export default function page() {
     <>
       {/* FAQ Schema Markup - Using Next.js Script component for proper SSR */}
       <Script
-        id="faq-schema"
+        id="corporate-faq-schema"
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(faqSchema),
+        }}
+      />
+      
+      {/* WebPage Schema Markup */}
+      <Script
+        id="corporate-webpage-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(webPageSchema),
         }}
       />
       

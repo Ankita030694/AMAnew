@@ -25,6 +25,8 @@ const faqs = [
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "name": "Loan Settlement Services FAQs",
+  "description": "Frequently asked questions about loan settlement, debt settlement, and EMI default help in India",
   "mainEntity": faqs.map(faq => ({
     "@type": "Question",
     "name": faq.question,
@@ -33,6 +35,26 @@ const faqSchema = {
       "text": faq.answer
     }
   }))
+};
+
+// WebPage Schema for additional SEO
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Loan Settlement Legal Services in India",
+  "description": "Need expert help with loan settlement in India? AMA Legal Solutions offers legal support to negotiate and settle personal loans, credit card debts, and EMI defaults.",
+  "url": "https://amalegalsolutions.com/services/loansettlement",
+  "mainEntity": {
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  }
 };
 
 export const metadata = {
@@ -59,10 +81,21 @@ export default function page() {
     <>
       {/* FAQ Schema Markup - Using Next.js Script component for proper SSR */}
       <Script
-        id="faq-schema"
+        id="loan-settlement-faq-schema"
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(faqSchema),
+        }}
+      />
+      
+      {/* WebPage Schema Markup */}
+      <Script
+        id="loan-settlement-webpage-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(webPageSchema),
         }}
       />
       
