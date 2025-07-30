@@ -4,35 +4,43 @@ import Script from "next/script";
 // FAQ data for rendering
 const faqs = [
   {
-    question: "What types of litigation cases do you handle?",
-    answer: "We handle all types of litigation cases including civil litigation, commercial disputes, corporate litigation, property disputes, contract litigation, family law cases, and appellate matters. Our litigation lawyers provide comprehensive legal representation in all courts and tribunals."
+    question: "What types of litigation services do you provide?",
+    answer: "We provide comprehensive litigation services including civil litigation, commercial litigation, criminal litigation, appellate litigation, and alternative dispute resolution. Our litigation lawyers handle all aspects of legal proceedings."
   },
   {
-    question: "How long does litigation typically take?",
-    answer: "Litigation duration varies significantly based on case complexity and court procedures. Simple cases may resolve in 6-12 months, while complex litigation can take 2-5 years. We work efficiently to achieve the best possible outcome while minimizing delays."
+    question: "How do you approach complex litigation cases?",
+    answer: "We approach complex litigation with thorough case analysis, strategic planning, evidence gathering, and expert representation. Our litigation lawyers develop comprehensive strategies to achieve the best possible outcomes for our clients."
   },
   {
-    question: "Do you provide appellate services?",
-    answer: "Yes, we provide comprehensive appellate services including filing appeals, drafting appellate briefs, and representing clients in High Courts and Supreme Court. Our litigation lawyers have extensive experience in appellate advocacy and complex legal arguments."
+    question: "Can you handle appellate litigation?",
+    answer: "Yes, we specialize in appellate litigation including High Court appeals, Supreme Court appeals, and revision petitions with expertise in appellate procedures and complex legal arguments."
   },
   {
-    question: "Can you help with out-of-court settlements during litigation?",
-    answer: "Absolutely. We specialize in negotiating favorable settlements during litigation proceedings. Our litigation lawyers can explore settlement options, mediation, and alternative dispute resolution to achieve faster and more cost-effective resolutions."
+    question: "Do you provide alternative dispute resolution services?",
+    answer: "Absolutely. We provide alternative dispute resolution services including mediation, arbitration, and negotiation to resolve disputes efficiently and cost-effectively outside of traditional court proceedings."
   }
 ];
 
-// FAQ Schema Markup for SEO
-const faqSchema = {
+// WebPage Schema with FAQ content for SEO
+const webPageSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
+  "@type": "WebPage",
+  "name": "Litigation Legal Services in India",
+  "description": "Expert litigation lawyers in India. AMA Legal Solutions provides civil litigation, commercial litigation, and appellate litigation services.",
+  "url": "https://amalegalsolutions.com/services/litigation",
+  "mainEntity": {
+    "@type": "FAQPage",
+    "name": "Litigation Services FAQs",
+    "description": "Frequently asked questions about litigation services, civil litigation, and legal proceedings in India",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  }
 };
 
 export const metadata = {
@@ -57,12 +65,13 @@ export default function page() {
 
   return (
     <>
-      {/* FAQ Schema Markup - Using Next.js Script component for proper SSR */}
+      {/* WebPage Schema Markup with FAQ content */}
       <Script
-        id="faq-schema"
+        id="litigation-webpage-schema"
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
+          __html: JSON.stringify(webPageSchema),
         }}
       />
       

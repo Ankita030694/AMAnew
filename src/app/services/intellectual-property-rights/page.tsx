@@ -4,35 +4,43 @@ import Script from "next/script";
 // FAQ data for rendering
 const faqs = [
   {
-    question: "What types of intellectual property can you help protect?",
-    answer: "We provide comprehensive IP protection services including trademark registration, patent filing, copyright protection, design registration, and geographical indication protection. Our IP lawyers handle all aspects of intellectual property rights in India and internationally."
+    question: "What types of intellectual property services do you provide?",
+    answer: "We provide comprehensive intellectual property services including trademark registration, patent filing, copyright protection, design registration, IP litigation, and IP portfolio management. Our IP lawyers handle all aspects of intellectual property law."
   },
   {
     question: "How long does trademark registration take in India?",
-    answer: "Trademark registration typically takes 18-24 months in India, though we can expedite the process in certain cases. Our IP lawyers ensure proper documentation and follow-up to minimize delays and maximize protection."
+    answer: "Trademark registration typically takes 18-24 months in India, including the examination and opposition period. Our IP lawyers ensure proper documentation and follow-up to expedite the process."
   },
   {
-    question: "Can you help with international IP protection?",
-    answer: "Yes, we provide international IP protection services including PCT patent applications, Madrid Protocol trademark filings, and copyright protection across multiple jurisdictions. Our global network ensures comprehensive IP coverage."
+    question: "Can you help with patent filing and prosecution?",
+    answer: "Yes, we specialize in patent filing, prosecution, and litigation including patent searches, drafting patent applications, responding to office actions, and representing clients in patent disputes."
   },
   {
-    question: "What should I do if someone infringes my IP rights?",
-    answer: "Contact our IP lawyers immediately. We'll assess the infringement, send cease and desist notices, and take appropriate legal action including filing lawsuits, seeking injunctions, and claiming damages for IP violations."
+    question: "Do you handle copyright infringement cases?",
+    answer: "Absolutely. We handle copyright infringement cases, copyright registration, licensing agreements, and represent clients in copyright disputes with expertise in copyright laws and regulations."
   }
 ];
 
-// FAQ Schema Markup for SEO
-const faqSchema = {
+// WebPage Schema with FAQ content for SEO
+const webPageSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
+  "@type": "WebPage",
+  "name": "Intellectual Property Rights Legal Services in India",
+  "description": "Expert intellectual property lawyers in India. AMA Legal Solutions provides IP services, trademark registration, patent filing, and copyright protection.",
+  "url": "https://amalegalsolutions.com/services/intellectual-property-rights",
+  "mainEntity": {
+    "@type": "FAQPage",
+    "name": "Intellectual Property Services FAQs",
+    "description": "Frequently asked questions about intellectual property services, trademark registration, and IP protection in India",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  }
 };
 
 export const metadata = {
@@ -57,12 +65,13 @@ export default function page() {
 
   return (
     <>
-      {/* FAQ Schema Markup - Using Next.js Script component for proper SSR */}
+      {/* WebPage Schema Markup with FAQ content */}
       <Script
-        id="faq-schema"
+        id="ip-rights-webpage-schema"
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
+          __html: JSON.stringify(webPageSchema),
         }}
       />
       

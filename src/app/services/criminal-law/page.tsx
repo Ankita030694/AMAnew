@@ -4,35 +4,43 @@ import Script from "next/script";
 // FAQ data for rendering
 const faqs = [
   {
-    question: "What types of criminal cases do you handle?",
-    answer: "We handle all types of criminal cases including FIR & police cases, cyber crimes, fraud cases, money laundering, assault cases, property crimes, and white-collar crimes. Our criminal lawyers provide comprehensive legal defense and representation."
+    question: "What types of criminal law services do you provide?",
+    answer: "We provide comprehensive criminal law services including criminal defense, bail applications, criminal litigation, white-collar crime defense, cybercrime cases, and criminal appeals. Our criminal lawyers handle all aspects of criminal law."
   },
   {
-    question: "Can you help if I've been arrested or received a police notice?",
-    answer: "Yes, we provide immediate assistance for arrests and police notices. Our criminal lawyers can help with bail applications, police interrogation protection, legal representation during custody, and ensuring your rights are protected throughout the process."
+    question: "How quickly can you help with bail applications?",
+    answer: "We provide immediate assistance with bail applications including anticipatory bail, regular bail, and interim bail. Our criminal lawyers work efficiently to secure bail and protect your rights throughout the legal process."
   },
   {
-    question: "How do you handle cyber crime cases?",
-    answer: "We specialize in cyber crime defense including online fraud, social media defamation, cyber harassment, and digital evidence cases. Our cyber crime lawyers understand both technical and legal aspects to provide effective defense strategies."
+    question: "Can you handle white-collar crime cases?",
+    answer: "Yes, we specialize in white-collar crime defense including fraud cases, corruption charges, economic offenses, and corporate crime defense with expertise in complex criminal investigations and proceedings."
   },
   {
-    question: "What should I do if I'm falsely accused of a crime?",
-    answer: "Contact our criminal lawyers immediately. We'll assess the case, gather evidence, prepare a strong defense strategy, and represent you in court. Early legal intervention is crucial for false accusation cases to prevent escalation."
+    question: "Do you provide criminal appeal services?",
+    answer: "Absolutely. We handle criminal appeals, revision petitions, and represent clients in higher courts including High Court and Supreme Court appeals with expertise in criminal appellate procedures."
   }
 ];
 
-// FAQ Schema Markup for SEO
-const faqSchema = {
+// WebPage Schema with FAQ content for SEO
+const webPageSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
+  "@type": "WebPage",
+  "name": "Criminal Law Legal Services in India",
+  "description": "Expert criminal lawyers in India. AMA Legal Solutions provides criminal defense, bail applications, and criminal litigation services.",
+  "url": "https://amalegalsolutions.com/services/criminal-law",
+  "mainEntity": {
+    "@type": "FAQPage",
+    "name": "Criminal Law Services FAQs",
+    "description": "Frequently asked questions about criminal law services, criminal defense, and criminal litigation in India",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  }
 };
 
 export const metadata = {
@@ -57,12 +65,13 @@ export default function page() {
 
   return (
     <>
-      {/* FAQ Schema Markup - Using Next.js Script component for proper SSR */}
+      {/* WebPage Schema Markup with FAQ content */}
       <Script
-        id="faq-schema"
+        id="criminal-law-webpage-schema"
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
+          __html: JSON.stringify(webPageSchema),
         }}
       />
       

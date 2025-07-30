@@ -4,35 +4,43 @@ import Script from "next/script";
 // FAQ data for rendering
 const faqs = [
   {
-    question: "What types of real estate legal issues can you help with?",
-    answer: "We handle all types of real estate legal matters including property disputes, RERA compliance, property registration, land disputes, title verification, real estate fraud, landlord-tenant issues, and construction litigation. Our real estate lawyers provide comprehensive legal solutions."
+    question: "What types of real estate legal services do you provide?",
+    answer: "We provide comprehensive real estate legal services including property registration, title verification, real estate contracts, property disputes, RERA compliance, and real estate litigation. Our real estate lawyers handle all aspects of property law."
   },
   {
-    question: "How can you help with property disputes?",
-    answer: "Our real estate lawyers can help resolve property disputes through negotiation, mediation, arbitration, or litigation. We handle boundary disputes, ownership conflicts, possession issues, and title disputes with expert legal representation and strategic solutions."
+    question: "How important is title verification before buying property?",
+    answer: "Title verification is crucial before buying any property. Our real estate lawyers conduct thorough title searches to ensure clear ownership, identify encumbrances, and protect you from future legal disputes and property claims."
   },
   {
-    question: "Do you provide RERA compliance services?",
-    answer: "Yes, we provide comprehensive RERA compliance services for real estate developers and agents. This includes registration assistance, compliance audits, documentation, and representation before RERA authorities to ensure full regulatory compliance."
+    question: "Can you help with RERA compliance for builders?",
+    answer: "Yes, we specialize in RERA compliance including project registration, disclosure requirements, compliance audits, and representing builders in RERA proceedings to ensure adherence to real estate regulations."
   },
   {
-    question: "Can you help with property registration and documentation?",
-    answer: "Absolutely. We provide complete property registration services including title verification, due diligence, document preparation, registration assistance, and ensuring proper legal documentation for all property transactions."
+    question: "Do you handle property dispute resolution?",
+    answer: "Absolutely. We handle property disputes, boundary conflicts, ownership disputes, tenancy issues, and represent clients in real estate litigation with expertise in property laws and regulations."
   }
 ];
 
-// FAQ Schema Markup for SEO
-const faqSchema = {
+// WebPage Schema with FAQ content for SEO
+const webPageSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
+  "@type": "WebPage",
+  "name": "Real Estate Legal Services in India",
+  "description": "Expert real estate lawyers in India. AMA Legal Solutions provides property law services, title verification, RERA compliance, and real estate dispute resolution.",
+  "url": "https://amalegalsolutions.com/services/real-estate",
+  "mainEntity": {
+    "@type": "FAQPage",
+    "name": "Real Estate Services FAQs",
+    "description": "Frequently asked questions about real estate legal services, property law, and real estate transactions in India",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  }
 };
 
 export const metadata = {
@@ -57,12 +65,13 @@ export default function page() {
 
   return (
     <>
-      {/* FAQ Schema Markup - Using Next.js Script component for proper SSR */}
+      {/* WebPage Schema Markup with FAQ content */}
       <Script
-        id="faq-schema"
+        id="real-estate-webpage-schema"
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
+          __html: JSON.stringify(webPageSchema),
         }}
       />
       

@@ -5,34 +5,42 @@ import Script from "next/script";
 const faqs = [
   {
     question: "What types of entertainment law services do you provide?",
-    answer: "We provide comprehensive entertainment law services including contract drafting for artists, production agreements, copyright protection, licensing deals, talent management contracts, film financing, and entertainment dispute resolution. Our entertainment lawyers handle all aspects of media and entertainment law."
+    answer: "We provide comprehensive entertainment law services including media law, film production contracts, music licensing, celebrity rights, entertainment contracts, and intellectual property protection. Our entertainment lawyers handle all aspects of media and entertainment law."
   },
   {
-    question: "How can you help with entertainment contracts?",
-    answer: "Our entertainment lawyers can draft, review, and negotiate contracts for artists, producers, studios, and media companies. We ensure fair terms, protect intellectual property rights, and include necessary legal protections for all parties involved in entertainment projects."
+    question: "Can you help with film production legal matters?",
+    answer: "Yes, we specialize in film production legal matters including production contracts, distribution agreements, licensing deals, and intellectual property protection for filmmakers and production companies."
   },
   {
-    question: "Do you handle copyright and intellectual property for entertainment?",
-    answer: "Yes, we specialize in entertainment intellectual property including copyright registration, licensing agreements, trademark protection for entertainment brands, and IP dispute resolution. Our lawyers ensure your creative works and entertainment assets are fully protected."
+    question: "Do you handle music industry legal services?",
+    answer: "Absolutely. We handle music industry legal services including music licensing, copyright protection, recording contracts, performance agreements, and representing artists and music companies in legal matters."
   },
   {
-    question: "Can you help with film and media production legal matters?",
-    answer: "Absolutely. We handle all legal aspects of film and media production including production agreements, location contracts, talent releases, distribution deals, and compliance with entertainment regulations. Our expertise covers both traditional and digital media production."
+    question: "How do you protect celebrity rights and image?",
+    answer: "We protect celebrity rights and image through trademark registration, publicity rights protection, endorsement agreements, and legal representation in cases involving unauthorized use of celebrity likeness or brand."
   }
 ];
 
-// FAQ Schema Markup for SEO
-const faqSchema = {
+// WebPage Schema with FAQ content for SEO
+const webPageSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
+  "@type": "WebPage",
+  "name": "Entertainment Law Legal Services in India",
+  "description": "Expert entertainment lawyers in India. AMA Legal Solutions provides media law, film production contracts, and entertainment legal services.",
+  "url": "https://amalegalsolutions.com/services/entertainment",
+  "mainEntity": {
+    "@type": "FAQPage",
+    "name": "Entertainment Law Services FAQs",
+    "description": "Frequently asked questions about entertainment law services, media law, and entertainment contracts in India",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  }
 };
 
 export const metadata = {
@@ -57,12 +65,13 @@ export default function page() {
 
   return (
     <>
-      {/* FAQ Schema Markup - Using Next.js Script component for proper SSR */}
+      {/* WebPage Schema Markup with FAQ content */}
       <Script
-        id="faq-schema"
+        id="entertainment-webpage-schema"
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
+          __html: JSON.stringify(webPageSchema),
         }}
       />
       

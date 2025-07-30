@@ -4,35 +4,43 @@ import Script from "next/script";
 // FAQ data for rendering
 const faqs = [
   {
-    question: "What types of civil law cases do you handle?",
-    answer: "We handle all types of civil law cases including contract disputes, property disputes, family law matters, consumer complaints, civil litigation, debt recovery, and civil rights cases. Our civil lawyers provide comprehensive legal solutions for all civil legal matters."
+    question: "What types of civil law services do you provide?",
+    answer: "We provide comprehensive civil law services including civil litigation, contract disputes, property disputes, family law matters, civil appeals, and alternative dispute resolution. Our civil lawyers handle all aspects of civil law."
   },
   {
-    question: "How long does a civil case typically take to resolve?",
-    answer: "Civil case duration varies depending on complexity. Simple cases may resolve in 6-12 months, while complex litigation can take 2-5 years. We work efficiently to achieve the best possible outcome while minimizing delays through strategic legal approaches."
+    question: "How do you handle civil litigation cases?",
+    answer: "We handle civil litigation including contract disputes, property matters, family law cases, and civil appeals. Our civil lawyers provide expert representation in courts and tribunals with strategic legal solutions."
   },
   {
-    question: "Can you help with out-of-court settlements?",
-    answer: "Yes, we specialize in alternative dispute resolution including mediation, arbitration, and out-of-court settlements. Our civil lawyers can negotiate favorable settlements that save time and costs while achieving your legal objectives."
+    question: "Can you help with contract dispute resolution?",
+    answer: "Yes, we specialize in contract dispute resolution including contract drafting, breach of contract cases, contract enforcement, and representing clients in contract-related litigation and arbitration."
   },
   {
-    question: "What should I do if I receive a civil court notice?",
-    answer: "Contact our civil lawyers immediately. We'll review the notice, assess your legal position, and guide you on the appropriate response. Early legal intervention often leads to better outcomes and can prevent escalation of disputes."
+    question: "Do you provide family law services?",
+    answer: "Absolutely. We provide family law services including divorce cases, child custody matters, property disputes, and family mediation with expertise in family laws and domestic relations."
   }
 ];
 
-// FAQ Schema Markup for SEO
-const faqSchema = {
+// WebPage Schema with FAQ content for SEO
+const webPageSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
+  "@type": "WebPage",
+  "name": "Civil Law Legal Services in India",
+  "description": "Expert civil lawyers in India. AMA Legal Solutions provides civil litigation, contract disputes, and family law services.",
+  "url": "https://amalegalsolutions.com/services/civil",
+  "mainEntity": {
+    "@type": "FAQPage",
+    "name": "Civil Law Services FAQs",
+    "description": "Frequently asked questions about civil law services, civil litigation, and contract disputes in India",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  }
 };
 
 export const metadata = {
@@ -57,12 +65,13 @@ export default function page() {
 
   return (
     <>
-      {/* FAQ Schema Markup - Using Next.js Script component for proper SSR */}
+      {/* WebPage Schema Markup with FAQ content */}
       <Script
-        id="faq-schema"
+        id="civil-law-webpage-schema"
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
+          __html: JSON.stringify(webPageSchema),
         }}
       />
       

@@ -4,35 +4,43 @@ import Script from "next/script";
 // FAQ data for rendering
 const faqs = [
   {
-    question: "What types of banking disputes can you help with?",
-    answer: "We handle all types of banking disputes including loan defaults, cheque bounce cases, banking fraud, corporate financial disputes, debt recovery issues, and investment fraud cases. Our expert banking lawyers provide comprehensive legal solutions."
+    question: "What types of banking and finance legal services do you provide?",
+    answer: "We provide comprehensive banking and finance legal services including loan documentation, regulatory compliance, banking disputes, financial contracts, RBI compliance, and banking litigation. Our banking lawyers handle all aspects of financial law."
   },
   {
-    question: "How long does it take to resolve a banking dispute?",
-    answer: "The timeline varies depending on the complexity of the case. Simple disputes may resolve in 3-6 months, while complex litigation can take 1-2 years. We work efficiently to achieve the best possible outcome in the shortest time."
+    question: "Can you help with banking regulatory compliance?",
+    answer: "Yes, we specialize in banking regulatory compliance including RBI guidelines, banking regulations, compliance audits, and regulatory filings. Our experts ensure your banking operations meet all legal requirements."
   },
   {
-    question: "Can you help with frozen bank accounts?",
-    answer: "Yes, we specialize in helping clients with frozen bank accounts due to legal notices, fraud allegations, or regulatory issues. Our banking lawyers can file appropriate petitions and represent you in court to unfreeze your accounts."
+    question: "Do you handle banking disputes and litigation?",
+    answer: "Absolutely. We handle banking disputes, loan recovery cases, banking litigation, and represent clients in banking-related legal proceedings with expertise in banking laws and regulations."
   },
   {
-    question: "What should I do if I receive a legal notice from a bank?",
-    answer: "Don't panic. Contact our banking dispute lawyers immediately. We'll review the notice, assess your legal position, and guide you on the appropriate response. Early legal intervention often leads to better outcomes."
+    question: "What banking documentation services do you offer?",
+    answer: "We offer comprehensive banking documentation services including loan agreements, security documents, banking contracts, compliance documentation, and regulatory filings for banks and financial institutions."
   }
 ];
 
-// FAQ Schema Markup for SEO
-const faqSchema = {
+// WebPage Schema with FAQ content for SEO
+const webPageSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
+  "@type": "WebPage",
+  "name": "Banking and Finance Legal Services in India",
+  "description": "Expert banking and finance lawyers in India. AMA Legal Solutions provides banking legal services, regulatory compliance, and financial law expertise.",
+  "url": "https://amalegalsolutions.com/services/banking-and-finance",
+  "mainEntity": {
+    "@type": "FAQPage",
+    "name": "Banking and Finance Services FAQs",
+    "description": "Frequently asked questions about banking and finance legal services, regulatory compliance, and financial law in India",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  }
 };
 
 export const metadata = {
@@ -57,12 +65,13 @@ export default function page() {
 
   return (
     <>
-      {/* FAQ Schema Markup - Using Next.js Script component for proper SSR */}
+      {/* WebPage Schema Markup with FAQ content */}
       <Script
-        id="faq-schema"
+        id="banking-finance-webpage-schema"
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
+          __html: JSON.stringify(webPageSchema),
         }}
       />
       

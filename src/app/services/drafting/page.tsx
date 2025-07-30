@@ -4,35 +4,43 @@ import Script from "next/script";
 // FAQ data for rendering
 const faqs = [
   {
-    question: "What types of legal documents do you draft?",
-    answer: "We draft all types of legal documents including contracts, agreements, legal notices, petitions, affidavits, wills, power of attorney, business documents, and compliance documents. Our legal drafting experts ensure accuracy and legal validity in all documents."
+    question: "What types of legal drafting services do you provide?",
+    answer: "We provide comprehensive legal drafting services including contract drafting, agreement preparation, legal documents, corporate documentation, and legal notices. Our drafting lawyers handle all aspects of legal document preparation."
   },
   {
-    question: "How long does it take to draft a legal document?",
-    answer: "Document drafting time varies based on complexity. Simple documents may take 1-2 days, while complex contracts can take 1-2 weeks. We ensure thorough review and accuracy while meeting your timeline requirements."
+    question: "How important is proper legal document drafting?",
+    answer: "Proper legal document drafting is crucial for protecting your interests and avoiding future disputes. Our drafting lawyers ensure documents are legally sound, comprehensive, and enforceable in courts of law."
   },
   {
-    question: "Do you provide document review and modification services?",
-    answer: "Yes, we provide comprehensive document review, modification, and amendment services. Our legal drafting experts can review existing documents, suggest improvements, and modify them to better protect your legal interests."
+    question: "Can you help with contract drafting and review?",
+    answer: "Yes, we specialize in contract drafting and review including business contracts, employment agreements, service contracts, partnership agreements, and vendor contracts with expertise in contract law and best practices."
   },
   {
-    question: "Can you help with international document drafting?",
-    answer: "Absolutely. We provide international document drafting services including cross-border contracts, international agreements, and documents requiring compliance with multiple jurisdictions. Our expertise covers various legal systems and requirements."
+    question: "Do you provide corporate documentation services?",
+    answer: "Absolutely. We provide corporate documentation services including board resolutions, shareholder agreements, corporate policies, and compliance documentation with expertise in corporate laws and regulations."
   }
 ];
 
-// FAQ Schema Markup for SEO
-const faqSchema = {
+// WebPage Schema with FAQ content for SEO
+const webPageSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
+  "@type": "WebPage",
+  "name": "Legal Drafting Services in India",
+  "description": "Expert legal drafting services in India. AMA Legal Solutions provides contract drafting, legal documentation, and agreement preparation services.",
+  "url": "https://amalegalsolutions.com/services/drafting",
+  "mainEntity": {
+    "@type": "FAQPage",
+    "name": "Legal Drafting Services FAQs",
+    "description": "Frequently asked questions about legal drafting services, contract drafting, and legal documentation in India",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  }
 };
 
 export const metadata = {
@@ -57,12 +65,13 @@ export default function page() {
 
   return (
     <>
-      {/* FAQ Schema Markup - Using Next.js Script component for proper SSR */}
+      {/* WebPage Schema Markup with FAQ content */}
       <Script
-        id="faq-schema"
+        id="drafting-webpage-schema"
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
+          __html: JSON.stringify(webPageSchema),
         }}
       />
       

@@ -4,35 +4,43 @@ import Script from "next/script";
 // FAQ data for rendering
 const faqs = [
   {
-    question: "What types of cyber law cases do you handle?",
-    answer: "We handle all types of cyber law cases including cyber fraud, data protection violations, online defamation, cyber stalking, hacking cases, digital evidence, cryptocurrency fraud, and IT Act compliance. Our cyber lawyers provide comprehensive legal solutions for digital crimes."
+    question: "What types of cyber law services do you provide?",
+    answer: "We provide comprehensive cyber law services including cybercrime defense, data protection compliance, IT Act compliance, cyber fraud cases, digital evidence handling, and cyber litigation. Our cyber lawyers handle all aspects of cyber law."
   },
   {
-    question: "How can you help with cyber fraud cases?",
-    answer: "Our cyber lawyers can help victims of cyber fraud by filing complaints with cyber crime cells, representing clients in court, recovering stolen funds, and providing legal protection. We also help businesses implement cyber security compliance and handle data breach incidents."
+    question: "Can you help with cybercrime defense cases?",
+    answer: "Yes, we specialize in cybercrime defense including online fraud, cyber harassment, data theft, hacking cases, and digital evidence disputes with expertise in cyber laws and digital forensics."
   },
   {
-    question: "Do you provide data protection and privacy law services?",
-    answer: "Yes, we provide comprehensive data protection services including GDPR compliance, data privacy audits, breach notification assistance, and representation in data protection disputes. Our lawyers ensure your business meets all data protection requirements."
+    question: "Do you provide data protection compliance services?",
+    answer: "Absolutely. We provide data protection compliance services including GDPR compliance, data privacy audits, privacy policy drafting, and ensuring adherence to data protection regulations and laws."
   },
   {
-    question: "Can you help with online defamation and social media cases?",
-    answer: "Absolutely. We handle online defamation cases, social media disputes, fake news complaints, and digital reputation management. Our cyber lawyers can file complaints, seek injunctions, and represent clients in cyber crime cases and civil litigation."
+    question: "How do you handle digital evidence in cyber cases?",
+    answer: "We handle digital evidence collection, preservation, and presentation in cyber cases. Our cyber lawyers work with digital forensics experts to ensure proper handling of electronic evidence in legal proceedings."
   }
 ];
 
-// FAQ Schema Markup for SEO
-const faqSchema = {
+// WebPage Schema with FAQ content for SEO
+const webPageSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
+  "@type": "WebPage",
+  "name": "Cyber Law Legal Services in India",
+  "description": "Expert cyber lawyers in India. AMA Legal Solutions provides cybercrime defense, data protection compliance, and cyber law services.",
+  "url": "https://amalegalsolutions.com/services/cyber",
+  "mainEntity": {
+    "@type": "FAQPage",
+    "name": "Cyber Law Services FAQs",
+    "description": "Frequently asked questions about cyber law services, cybercrime defense, and data protection in India",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  }
 };
 
 export const metadata = {
@@ -57,12 +65,13 @@ export default function page() {
 
   return (
     <>
-      {/* FAQ Schema Markup - Using Next.js Script component for proper SSR */}
+      {/* WebPage Schema Markup with FAQ content */}
       <Script
-        id="faq-schema"
+        id="cyber-law-webpage-schema"
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
+          __html: JSON.stringify(webPageSchema),
         }}
       />
       
