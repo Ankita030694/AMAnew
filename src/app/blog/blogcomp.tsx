@@ -6,6 +6,7 @@ import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../../lib/firebase'; // Make sure you have this file set up with your Firebase config
 import { useSearchParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
+import Script from 'next/script';
 
 // Define animations
 const containerVariants = {
@@ -94,6 +95,7 @@ export default function Page() {
   const [loading, setLoading] = useState(true);
   const [paginationLoading, setPaginationLoading] = useState(false);
   const [scrollLocked, setScrollLocked] = useState(true); // Add scroll lock state
+  const [webPageSchema, setWebPageSchema] = useState<any>(null); // Add schema state
   
   // URL state management
   const searchParams = useSearchParams();
@@ -104,6 +106,58 @@ export default function Page() {
   });
   
   const blogsPerPage = 8;
+
+  // Function to generate dynamic FAQ schema based on blogs data
+  const generateBlogFaqSchema = (blogsData: Blog[]) => {
+    // Create FAQ questions based on blog content
+    const blogFaqs = [
+      {
+        question: "What legal topics does AMA Legal Solutions cover in their blog?",
+        answer: `Our blog covers a comprehensive range of legal topics including ${blogsData.slice(0, 5).map(blog => blog.title.toLowerCase()).join(', ')} and more. We provide insights on current legal developments, case studies, and practical legal advice for individuals and businesses in India.`
+      },
+      {
+        question: "How often is the blog updated with new content?",
+        answer: `We regularly update our blog with fresh, relevant legal content. Currently featuring ${blogsData.length} articles covering various legal topics. Our team of experienced lawyers and legal experts publish articles on current legal developments, case law updates, regulatory changes, and practical legal guidance.`
+      },
+      {
+        question: "Can I use the information from the blog as legal advice?",
+        answer: "While our blog provides valuable legal insights and information, it should not be considered as formal legal advice. The content is for general informational purposes only. For specific legal matters, we strongly recommend consulting with our qualified legal professionals who can provide personalized advice based on your unique circumstances and applicable laws."
+      },
+      {
+        question: "How can I contact AMA Legal Solutions for legal consultation?",
+        answer: "You can contact AMA Legal Solutions for legal consultation through multiple channels. Visit our website at www.amalegalsolutions.com, email us at Info@amalegalsolutions.com, or call our office directly. Our experienced legal team is available to discuss your legal needs and provide professional legal services tailored to your requirements."
+      },
+      {
+        question: "Do you provide legal services across all major cities in India?",
+        answer: "Yes, AMA Legal Solutions provides legal services across major cities in India. Our network of experienced lawyers and legal professionals allows us to serve clients nationwide. We offer both in-person consultations and remote legal services, ensuring accessibility and convenience for our clients regardless of their location."
+      },
+      {
+        question: "What types of legal documents can AMA Legal Solutions help me with?",
+        answer: "AMA Legal Solutions can help you with a wide range of legal documents including contracts, agreements, legal notices, corporate documentation, property documents, intellectual property filings, and various other legal instruments. Our drafting services ensure that your documents are legally sound, comprehensive, and enforceable in courts of law."
+      }
+    ];
+
+    return {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Legal Blog - AMA Legal Solutions | Legal Insights & Articles India",
+      "description": `Stay informed with the latest legal insights, case studies, and legal developments in India. AMA Legal Solutions blog provides expert legal articles on ${blogsData.slice(0, 3).map(blog => blog.title.toLowerCase()).join(', ')} and more.`,
+      "url": "https://amalegalsolutions.com/blog",
+      "mainEntity": {
+        "@type": "FAQPage",
+        "name": "Legal Blog FAQs",
+        "description": "Frequently asked questions about AMA Legal Solutions blog, legal articles, and legal services in India",
+        "mainEntity": blogFaqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      }
+    };
+  };
 
   // Add scroll to top on component mount (when navigating back from detail page)
   useEffect(() => {
@@ -229,6 +283,7 @@ export default function Page() {
         
         setBlogs(blogsData);
         setLoading(false);
+        setWebPageSchema(generateBlogFaqSchema(blogsData)); // Generate schema after blogs are loaded
         
         // Ensure scroll to top after blogs are loaded
         setTimeout(() => {
@@ -335,6 +390,17 @@ export default function Page() {
   
   return (
     <div className="container mx-auto px-4 py-8 bg-white">
+      {/* Schema.org FAQ Markup for SEO */}
+      {webPageSchema && (
+        <Script
+          id="blog-faq-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(webPageSchema)
+          }}
+        />
+      )}
+      
       {/* Page Title */}
       <motion.h1 
         className="text-4xl md:text-5xl text-center font-serif mb-8 mt-20"
