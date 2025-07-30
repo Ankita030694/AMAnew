@@ -92,10 +92,12 @@ interface Blog {
 
 export default function Page() {
   const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [filteredBlogs, setFilteredBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
   const [paginationLoading, setPaginationLoading] = useState(false);
   const [scrollLocked, setScrollLocked] = useState(true); // Add scroll lock state
   const [webPageSchema, setWebPageSchema] = useState<any>(null); // Add schema state
+  const [searchQuery, setSearchQuery] = useState(''); // Add search query state
   
   // URL state management
   const searchParams = useSearchParams();
@@ -106,6 +108,35 @@ export default function Page() {
   });
   
   const blogsPerPage = 8;
+
+  // Search functionality
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+    setCurrentPage(1); // Reset to first page when searching
+    
+    if (!query.trim()) {
+      setFilteredBlogs(blogs);
+      return;
+    }
+    
+    const searchTerm = query.toLowerCase().trim();
+    const filtered = blogs.filter(blog => 
+      blog.title.toLowerCase().includes(searchTerm) ||
+      blog.subtitle.toLowerCase().includes(searchTerm) ||
+      blog.description.toLowerCase().includes(searchTerm)
+    );
+    
+    setFilteredBlogs(filtered);
+  };
+
+  // Debounced search to improve performance
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      handleSearch(searchQuery);
+    }, 300);
+
+    return () => clearTimeout(timeoutId);
+  }, [searchQuery, blogs]);
 
   // Function to generate dynamic FAQ schema based on blogs data
   const generateBlogFaqSchema = (blogsData: Blog[]) => {
@@ -282,6 +313,7 @@ export default function Page() {
         });
         
         setBlogs(blogsData);
+        setFilteredBlogs(blogsData); // Initialize filtered blogs with all blogs
         setLoading(false);
         setWebPageSchema(generateBlogFaqSchema(blogsData)); // Generate schema after blogs are loaded
         
@@ -313,14 +345,14 @@ export default function Page() {
     return shuffled;
   };
 
-  // Get spotlight article (most recent)
-  const spotlightArticle = blogs.length > 0 ? blogs[0] : null;
+  // Get spotlight article (most recent from filtered results)
+  const spotlightArticle = filteredBlogs.length > 0 ? filteredBlogs[0] : null;
   
-  // Get trending articles (all blogs in random order, limited to 20)
-  const trendingArticles = blogs.length > 1 ? shuffleArray(blogs).slice(0, 20) : [];
+  // Get trending articles (all filtered blogs in random order, limited to 20)
+  const trendingArticles = filteredBlogs.length > 1 ? shuffleArray(filteredBlogs).slice(0, 20) : [];
   
   // Get regular articles (excluding spotlight)
-  const regularArticles = blogs.length > 0 ? blogs.slice(1) : [];
+  const regularArticles = filteredBlogs.length > 0 ? filteredBlogs.slice(1) : [];
   
   // Pagination logic for regular articles
   const indexOfLastBlog = currentPage * blogsPerPage;
@@ -411,6 +443,59 @@ export default function Page() {
       >
         Blog
       </motion.h1>
+
+      {/* Search Bar */}
+      <motion.div 
+        className="max-w-2xl mx-auto mb-8"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+      >
+        <div className="relative">
+          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <input
+            type="text"
+            placeholder="Search blogs by title, subtitle, or content..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="text-black block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-[#D2A02A] focus:border-[#D2A02A] transition-colors"
+            aria-label="Search blogs"
+          />
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery('')}
+              className="absolute inset-y-0 right-0 pr-3 flex items-center"
+              aria-label="Clear search"
+            >
+              <svg className="h-5 w-5 text-gray-400 hover:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          )}
+        </div>
+        
+        {/* Search Results Info */}
+        {searchQuery && (
+          <motion.div 
+            className="mt-3 text-center text-sm text-gray-600"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.1 }}
+          >
+            {filteredBlogs.length === 0 ? (
+              <p>No blogs found matching "<span className="font-medium">{searchQuery}</span>"</p>
+            ) : filteredBlogs.length === blogs.length ? (
+              <p>Showing all {blogs.length} blogs</p>
+            ) : (
+              <p>Found {filteredBlogs.length} blog{filteredBlogs.length !== 1 ? 's' : ''} matching "<span className="font-medium">{searchQuery}</span>"</p>
+            )}
+          </motion.div>
+        )}
+      </motion.div>
       
       {loading ? (
         <div className="flex justify-center items-center h-64">
@@ -423,7 +508,7 @@ export default function Page() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8" data-blog-content>
           {/* Main Content (2/3 width on large screens) */}
           <div className="lg:col-span-2">
-            {/* Spotlight Section */}
+            {/* Spotlight Section - Only show if there are search results */}
             {spotlightArticle && (
               <div className="mb-12">
                 <motion.div
@@ -433,7 +518,9 @@ export default function Page() {
                   transition={{ delay: 0.2 }}
                 >
                   
-                  <h2 className="text-xl font-medium" style={{ color: '#5A4C33' }}>Spotlight</h2>
+                  <h2 className="text-xl font-medium" style={{ color: '#5A4C33' }}>
+                    {searchQuery ? 'Search Result' : 'Spotlight'}
+                  </h2>
                 </motion.div>
                 
                 <Link href={`/blog/${spotlightArticle.slug}`}>
@@ -493,7 +580,7 @@ export default function Page() {
               >
                 <div className="flex items-center gap-2">
                   <h2 className="text-xl font-medium" style={{ color: '#5A4C33' }}>
-                    Blogs {regularArticles.length > 0 && (
+                    {searchQuery ? 'Search Results' : 'Blogs'} {regularArticles.length > 0 && (
                       <span className="text-sm text-gray-500 font-normal">
                         ({regularArticles.length} articles)
                       </span>
@@ -501,15 +588,39 @@ export default function Page() {
                   </h2>
                 </div>
                 
-                <Link href="/blog">
-                  <span className="text-sm text-gray-500 flex items-center">
-                    Read More
-                    <svg width="16" height="16" viewBox="0 0 24 24" className="ml-1">
-                      <path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                    </svg>
-                  </span>
-                </Link>
+                {!searchQuery && (
+                  <Link href="/blog">
+                    <span className="text-sm text-gray-500 flex items-center">
+                      Read More
+                      <svg width="16" height="16" viewBox="0 0 24 24" className="ml-1">
+                        <path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                      </svg>
+                    </span>
+                  </Link>
+                )}
               </motion.div>
+              
+              {/* No Results Message */}
+              {searchQuery && filteredBlogs.length === 0 && (
+                <motion.div 
+                  className="text-center py-12"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <svg className="w-16 h-16 mx-auto text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.47-.881-6.08-2.33" />
+                  </svg>
+                  <h3 className="text-lg font-medium text-gray-600 mb-2">No blogs found</h3>
+                  <p className="text-gray-500 mb-4">Try adjusting your search terms or browse all our blogs</p>
+                  <button
+                    onClick={() => setSearchQuery('')}
+                    className="px-4 py-2 bg-[#5A4C33] text-white rounded-lg hover:bg-[#4A3C23] transition-colors"
+                  >
+                    Clear Search
+                  </button>
+                </motion.div>
+              )}
               
               {/* Loading overlay for pagination */}
               <div className="relative">
@@ -581,8 +692,8 @@ export default function Page() {
                 </motion.div>
               </div>
 
-              {/* Enhanced Pagination Controls */}
-              {totalPages > 1 && (
+              {/* Enhanced Pagination Controls - Only show if there are results */}
+              {totalPages > 1 && filteredBlogs.length > 0 && (
                 <motion.div 
                   className="mt-8"
                   initial={{ opacity: 0, y: 20 }}
@@ -722,7 +833,9 @@ export default function Page() {
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="#D2A02A" stroke="#D2A02A" strokeWidth="1.5">
                   <path d="M12 2L14.39 8.26L21 9.27L16.5 14.14L17.77 21L12 17.77L6.23 21L7.5 14.14L3 9.27L9.61 8.26L12 2z" />
                 </svg>
-                <h2 className="text-xl font-medium" style={{ color: '#5A4C33' }}>Trending</h2>
+                <h2 className="text-xl font-medium" style={{ color: '#5A4C33' }}>
+                  {searchQuery ? 'Related' : 'Trending'}
+                </h2>
               </div>
               
               <motion.div 
