@@ -1,239 +1,426 @@
 import Link from "next/link";
+import Script from "next/script";
+
+// FAQ data for rendering
+const faqs = [
+  {
+    question: "What types of real estate legal issues can you help with?",
+    answer: "We handle all types of real estate legal matters including property disputes, RERA compliance, property registration, land disputes, title verification, real estate fraud, landlord-tenant issues, and construction litigation. Our real estate lawyers provide comprehensive legal solutions."
+  },
+  {
+    question: "How can you help with property disputes?",
+    answer: "Our real estate lawyers can help resolve property disputes through negotiation, mediation, arbitration, or litigation. We handle boundary disputes, ownership conflicts, possession issues, and title disputes with expert legal representation and strategic solutions."
+  },
+  {
+    question: "Do you provide RERA compliance services?",
+    answer: "Yes, we provide comprehensive RERA compliance services for real estate developers and agents. This includes registration assistance, compliance audits, documentation, and representation before RERA authorities to ensure full regulatory compliance."
+  },
+  {
+    question: "Can you help with property registration and documentation?",
+    answer: "Absolutely. We provide complete property registration services including title verification, due diligence, document preparation, registration assistance, and ensuring proper legal documentation for all property transactions."
+  }
+];
+
+// FAQ Schema Markup for SEO
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
 
 export const metadata = {
-  title: "Best Real Estate Law Firm in India",
+  title: "Real Estate Lawyers in India | Property Dispute & RERA Compliance – AMA Legal Solutions",
   description:
-    "Trusted real estate law firm in India offering expert legal solutions across the property lifecycle — from acquisition to dispute resolution.",
+    "Expert real estate lawyers in India. AMA Legal Solutions provides property dispute resolution, RERA compliance, property registration, and real estate litigation services. Book your consultation now.",
   alternates: {
     canonical: 'https://amalegalsolutions.com/services/real-estate',
   },
 };
+
 export default function page() {
   // Sample service data (replace with your actual content)
   const service = {
-    title: "Professional Consultation",
+    title: "Real Estate Legal Services",
     bannerImage: "/services/6.png", // Replace with your actual image path
     description:
-      "Our professional consultation service provides expert guidance tailored to your specific needs. We work closely with you to understand your requirements and deliver solutions that exceed your expectations. Our team of experienced consultants brings years of industry knowledge to help you navigate complex challenges and achieve your goals.",
+      "Our real estate legal services provide comprehensive support for all property-related legal matters. We work closely with you to understand your real estate needs and deliver effective legal solutions.",
     buttonText: "Get Started",
     buttonLink: "/contact",
   };
 
   return (
-    <div className="bg-white min-h-screen">
-      {/* Banner Section - 1920x550 as specified */}
-      <div className="relative w-full h-[300px] md:h-[550px] overflow-hidden">
-        <img
-          src={service.bannerImage}
-          alt={service.title}
-          className="w-full h-full object-contain"
-        />
-      </div>
-
-      {/* Service Description Section */}
-      <div className="container mx-auto px-4 max-w-4xl">
-        <div className="mb-12">
-          <h1 className="text-4xl font-bold text-center mb-8 text-black">
-            Top Real Estate Lawyers in Gurugram & Delhi | Property Legal Services
-          </h1>
-          <p className="text-[#5A4C33] text-lg leading-relaxed mb-8">
-            <br />
-            <br />
-            <strong>
-              Expert Real Estate Lawyers & Property Attorneys in Gurugram & Delhi
-            </strong>
-            <br />
-            <br />
-            Looking for experienced real estate lawyers near you? Our team of property attorneys in Gurugram and Delhi provides comprehensive legal services for all your real estate needs. Whether you're searching for "real estate lawyers near me" or need top property lawyers in Delhi, AMA Legal Solutions offers expert guidance for property transactions, disputes, and compliance.
-            <br />
-            <br />
-            Buying, selling, or leasing real estate involves complex legal
-            procedures that require expert guidance. Whether you are a
-            homebuyer, property investor, builder, developer, landlord, or
-            tenant, having a knowledgeable real estate lawyer ensures secure
-            transactions, contract compliance, and protection from disputes.
-            <br />
-            <br />
-            At AMA Legal Solutions, we offer comprehensive real estate legal
-            services to help individuals, businesses, and investors navigate
-            property transactions, title verifications, lease agreements, land
-            disputes, and regulatory compliance across India.
-            <br />
-            <br />
-            <strong>Our Real Estate Legal Services:</strong>
-            <br />
-            <br />
-            <strong>1. Property Due Diligence & Title Verification</strong>
-            <br />
-            Before investing in real estate, it is crucial to verify property
-            ownership and legal status. We assist with:
-            <br />
-            • Title verification and ownership checks
-            <br />
-            • Encumbrance certificate verification
-            <br />
-            • Legal due diligence for property purchases
-            <br />
-            • RERA compliance checks for under-construction projects
-            <br />
-            <br />
-            <strong>2. Property Documentation & Agreement Drafting</strong>
-            <br />
-            Proper documentation ensures smooth real estate transactions. We
-            specialize in:
-            <br />
-            • Sale deed and purchase agreements
-            <br />
-            • Lease and rental agreements
-            <br />
-            • Gift deed and power of attorney (POA) drafting
-            <br />
-            • Property registration and stamp duty consultation
-            <br />
-            <br />
-            <strong>3. Real Estate Dispute Resolution & Litigation</strong>
-            <br />
-            Real estate disputes can be costly and stressful. Our legal experts
-            handle:
-            <br />
-            • Title disputes and ownership claims
-            <br />
-            • Landlord-tenant disputes
-            <br />
-            • Property fraud and misrepresentation cases
-            <br />
-            • RERA complaints and builder-buyer disputes
-            <br />
-            • Illegal possession and eviction cases
-            <br />
-            <br />
-            <strong>4. RERA Compliance & Builder-Buyer Disputes</strong>
-            <br />
-            The Real Estate (Regulation and Development) Act (RERA) protects
-            homebuyers and regulates builders. We provide:
-            <br />
-            • Legal assistance in RERA complaints
-            <br />
-            • Representation in RERA tribunals for delayed possession claims
-            <br />
-            • Refund and compensation claims against builders
-            <br />
-            • Legal compliance for real estate developers
-            <br />
-            <br />
-            <strong>5. Land & Property Acquisition Laws</strong>
-            <br />
-            Whether you are acquiring land for personal use or commercial
-            projects, we help with:
-            <br />
-            • Legal guidance on land acquisition laws
-            <br />
-            • Compensation claims for land acquisition
-            <br />
-            • Agricultural land conversion to residential/commercial use
-            <br />
-            • Transfer of development rights (TDR) advisory
-            <br />
-            <br />
-            <strong>6. Commercial & Residential Lease Agreements</strong>
-            <br />
-            A well-drafted lease agreement prevents disputes between landlords
-            and tenants. We offer:
-            <br />
-            • Residential rental agreements
-            <br />
-            • Commercial lease drafting and negotiation
-            <br />
-            • Lease disputes and eviction procedures
-            <br />
-            • Tenant rights and legal protection
-            <br />
-            <br />
-            <strong>7. Construction & Infrastructure Law</strong>
-            <br />
-            For builders and developers, legal compliance is essential. We
-            assist with:
-            <br />
-            • Contract drafting for construction projects
-            <br />
-            • Real estate joint ventures and partnerships
-            <br />
-            • Dispute resolution in construction contracts
-            <br />
-            • Approvals and licenses for real estate projects
-            <br />
-            <br />
-            <strong>
-              Who Can Benefit from Our Real Estate Legal Services?
-            </strong>
-            <br />
-            <br />
-            • Homebuyers & property investors
-            <br />
-            • Builders & real estate developers
-            <br />
-            • Landlords & tenants
-            <br />
-            • Commercial property owners & businesses
-            <br />
-            • Housing societies & RWAs
-            <br />
-            • Banks & financial institutions dealing with real estate loans
-            <br />
-            <br />
-            <strong>
-              Why Choose AMA Legal Solutions for Real Estate Legal Services?
-            </strong>
-            <br />
-            <br />• <strong>Experienced Real Estate Lawyers</strong> – Our team
-            specializes in property transactions, land laws, and real estate
-            litigation.
-            <br />• <strong>RERA & Property Law Expertise</strong> – We help
-            clients navigate builder-buyer agreements, delayed possession
-            issues, and legal claims.
-            <br />• <strong>End-to-End Legal Support</strong> – From title
-            verification to dispute resolution, we cover all real estate legal
-            matters.
-            <br />• <strong>Transparent & Client-Focused Approach</strong> – We
-            ensure clarity, compliance, and legal security in property dealings.
-            <br />
-            <br />
-            <strong>Need Legal Help in Real Estate? Contact Us Today</strong>
-            <br />
-            <br />
-            If you need expert legal assistance for property transactions, real
-            estate disputes, or RERA compliance, AMA Legal Solutions is here to
-            help.
-            <br />
-            <br />
-            📞 Call us at <strong>+91-8700343611</strong>
-            <br />
-            🌐 Visit:{" "}
-            <a
-              href="http://www.amalegalsolutions.com"
-              className="text-blue-600 underline"
-            >
-              www.amalegalsolutions.com
-            </a>
-            <br />
-            📍 <strong>Office Location: Sector-57, Gurugram</strong>
-          </p>
-
-          {/* Feature Highlights */}
+    <>
+      {/* FAQ Schema Markup - Using Next.js Script component for proper SSR */}
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
+      
+      <div className="bg-white min-h-screen">
+        {/* Banner Section */}
+        <div className="relative w-full h-[300px] md:h-[550px] overflow-hidden">
+          <img
+            src={service.bannerImage}
+            alt={service.title}
+            className="w-full h-full object-contain"
+          />
         </div>
 
-        {/* CTA Button */}
-        <div className="flex justify-center mb-5">
-          <Link href={service.buttonLink}>
-            <div
-              className="inline-block bg-[#D2A02A] text-white px-8 py-4 rounded-md font-medium 
-                text-lg cursor-pointer hover:bg-[#5A4C33] transition-colors duration-300 mb-10"
-            >
-              {service.buttonText}
+        {/* Main Content Container */}
+        <div className="container mx-auto px-4 max-w-6xl py-16">
+          
+          {/* Hero Section */}
+          <div className="text-center mb-20">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
+              Expert <span className="text-[#D2A02A]">Real Estate</span> Legal Solutions in India
+            </h1>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Facing property disputes or real estate legal issues? Get professional legal help for property matters, RERA compliance, and real estate litigation with our experienced lawyers.
+            </p>
+          </div>
+
+          {/* Introduction Section */}
+          <section className="mb-20">
+            <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8 md:p-12">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                Comprehensive Real Estate Legal Services
+              </h2>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                Real estate transactions and property matters involve complex legal considerations that require expert legal guidance. Whether you're buying, selling, developing, or facing property disputes, having the right legal experts by your side is crucial for protecting your interests.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                At AMA Legal Solutions, we specialize in <strong>real estate law</strong>, providing comprehensive legal services for property disputes, RERA compliance, property registration, and real estate litigation. Our expert <strong>real estate lawyers in India</strong> ensure your property interests are fully protected.
+              </p>
             </div>
-          </Link>
+          </section>
+
+          {/* Services Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+              Our Real Estate Legal Services
+            </h2>
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  We provide comprehensive <strong>real estate legal services</strong> covering all aspects of property law, from transaction support to dispute resolution. Our expertise spans residential, commercial, and industrial real estate matters.
+                </p>
+                <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                  <p className="text-blue-800 font-medium">
+                    Our expert <strong>real estate lawyers</strong> ensure you get the best possible legal representation while protecting your property interests throughout the process.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-white shadow-xl rounded-2xl p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Key Services</h3>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">✓</span>
+                    Property dispute resolution
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">✓</span>
+                    RERA compliance & registration
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">✓</span>
+                    Property registration & documentation
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">✓</span>
+                    Real estate litigation & arbitration
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* Service Categories Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+              Our Real Estate Legal Expertise
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="text-center mb-4">
+                  <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto">
+                    <span className="text-2xl">🏠</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Property Disputes</h3>
+                <p className="text-gray-600 text-center">
+                  Resolution of <strong>property disputes</strong> including boundary conflicts, ownership issues, possession disputes, and title verification with expert legal representation.
+                </p>
+              </div>
+              
+              <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="text-center mb-4">
+                  <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto">
+                    <span className="text-2xl">📋</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">RERA Compliance</h3>
+                <p className="text-gray-600 text-center">
+                  <strong>RERA compliance</strong> services for developers and agents including registration, documentation, and representation before RERA authorities.
+                </p>
+              </div>
+              
+              <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="text-center mb-4">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+                    <span className="text-2xl">📄</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Property Registration</h3>
+                <p className="text-gray-600 text-center">
+                  <strong>Property registration</strong> and documentation services including title verification, due diligence, and legal documentation for all transactions.
+                </p>
+              </div>
+              
+              <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="text-center mb-4">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
+                    <span className="text-2xl">⚖️</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Real Estate Litigation</h3>
+                <p className="text-gray-600 text-center">
+                  <strong>Real estate litigation</strong> services including construction disputes, landlord-tenant matters, and property fraud cases with expert representation.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* How We Help Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+              How AMA Legal Solutions Helps with Real Estate Matters
+            </h2>
+            
+            <div className="space-y-8">
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">1. Property Assessment & Legal Due Diligence</h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  We conduct comprehensive property assessment and legal due diligence:
+                </p>
+                <ul className="text-gray-700 space-y-2 ml-6">
+                  <li>• Title verification and chain of ownership analysis</li>
+                  <li>• Property documentation review and validation</li>
+                  <li>• Legal compliance assessment and risk evaluation</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">2. Transaction Support & Documentation</h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Our experienced real estate lawyers provide complete transaction support:
+                </p>
+                <ul className="text-gray-700 space-y-2 ml-6">
+                  <li>• Drafting and reviewing property agreements and contracts</li>
+                  <li>• Facilitating property registration and documentation</li>
+                  <li>• Ensuring RERA compliance for developers and agents</li>
+                  <li>• Managing stamp duty and registration formalities</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">3. Dispute Resolution & Litigation</h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Comprehensive dispute resolution and litigation services including:
+                </p>
+                <ul className="text-gray-700 space-y-2 ml-6">
+                  <li>• Property dispute resolution through negotiation and mediation</li>
+                  <li>• Real estate litigation in civil courts and tribunals</li>
+                  <li>• Construction dispute resolution and arbitration</li>
+                  <li>• Landlord-tenant dispute resolution and representation</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* Benefits Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+              Benefits of Choosing Our Real Estate Lawyers
+            </h2>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">🏗️</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Specialized Expertise</h3>
+                <p className="text-gray-600">
+                  Expert lawyers specialized in real estate laws, property regulations, and RERA compliance with deep industry knowledge.
+                </p>
+              </div>
+              
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">🔍</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Thorough Due Diligence</h3>
+                <p className="text-gray-600">
+                  Comprehensive property due diligence including title verification, documentation review, and risk assessment.
+                </p>
+              </div>
+              
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">🤝</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Dispute Resolution</h3>
+                <p className="text-gray-600">
+                  Effective dispute resolution through negotiation, mediation, arbitration, and litigation when necessary.
+                </p>
+              </div>
+              
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">📋</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">RERA Compliance</h3>
+                <p className="text-gray-600">
+                  Complete RERA compliance services ensuring developers and agents meet all regulatory requirements.
+                </p>
+              </div>
+              
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">⚡</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Fast Processing</h3>
+                <p className="text-gray-600">
+                  Efficient property registration and documentation with minimal delays and maximum legal protection.
+                </p>
+              </div>
+              
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">🛡️</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Risk Protection</h3>
+                <p className="text-gray-600">
+                  Comprehensive risk assessment and legal protection to safeguard your property interests and investments.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Process Section */}
+          <section className="mb-20">
+            <div className="bg-gray-900 rounded-2xl p-8 md:p-12 text-white">
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+                Our Proven 4-Step Real Estate Process
+              </h2>
+              <div className="grid md:grid-cols-4 gap-8">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-xl font-bold">1</span>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Property Assessment</h3>
+                  <p className="text-gray-300">Comprehensive property evaluation and legal due diligence</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-xl font-bold">2</span>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Legal Strategy</h3>
+                  <p className="text-gray-300">Develop comprehensive legal strategy and documentation</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-xl font-bold">3</span>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Transaction Support</h3>
+                  <p className="text-gray-300">Provide complete transaction support and registration assistance</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-xl font-bold">4</span>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Ongoing Protection</h3>
+                  <p className="text-gray-300">Ensure ongoing legal protection and dispute resolution</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQs Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+              FAQs on Real Estate Legal Services
+            </h2>
+            <div className="space-y-6">
+              {faqs.map((faq, index) => (
+                <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{faq.question}</h3>
+                  <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 text-center">
+              <p className="text-lg text-gray-700 mb-4">
+                Have more questions about real estate legal services?
+              </p>
+              <Link href="/contact" className="text-[#D2A02A] font-semibold hover:underline">
+                Contact our real estate lawyers for expert advice →
+              </Link>
+            </div>
+          </section>
+
+          {/* Contact CTA Section */}
+          <section className="text-center bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] rounded-2xl p-12 text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Need Expert Real Estate Legal Assistance?
+            </h2>
+            <p className="text-xl mb-8 opacity-90">
+              Get professional legal help for property matters and real estate disputes today.
+            </p>
+            
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">📞</span>
+                <div>
+                  <p className="font-semibold">Call Now</p>
+                  <p className="text-lg">+91-8700343611</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">🌐</span>
+                <div>
+                  <p className="font-semibold">Visit Online</p>
+                  <a href="http://www.amalegalsolutions.com" className="text-lg hover:underline">
+                    www.amalegalsolutions.com
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">📍</span>
+                <div>
+                  <p className="font-semibold">Office Location</p>
+                  <p className="text-lg">Sector-57, Gurugram</p>
+                </div>
+              </div>
+            </div>
+            
+            <Link href={service.buttonLink}>
+              <div className="inline-block bg-white text-[#D2A02A] px-12 py-4 rounded-full font-bold text-lg cursor-pointer hover:bg-gray-100 transition-colors duration-300 shadow-lg">
+                {service.buttonText}
+              </div>
+            </Link>
+          </section>
         </div>
       </div>
-    </div>
+    </>
   );
 }

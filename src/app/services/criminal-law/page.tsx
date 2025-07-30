@@ -1,236 +1,426 @@
 import Link from "next/link";
+import Script from "next/script";
+
+// FAQ data for rendering
+const faqs = [
+  {
+    question: "What types of criminal cases do you handle?",
+    answer: "We handle all types of criminal cases including FIR & police cases, cyber crimes, fraud cases, money laundering, assault cases, property crimes, and white-collar crimes. Our criminal lawyers provide comprehensive legal defense and representation."
+  },
+  {
+    question: "Can you help if I've been arrested or received a police notice?",
+    answer: "Yes, we provide immediate assistance for arrests and police notices. Our criminal lawyers can help with bail applications, police interrogation protection, legal representation during custody, and ensuring your rights are protected throughout the process."
+  },
+  {
+    question: "How do you handle cyber crime cases?",
+    answer: "We specialize in cyber crime defense including online fraud, social media defamation, cyber harassment, and digital evidence cases. Our cyber crime lawyers understand both technical and legal aspects to provide effective defense strategies."
+  },
+  {
+    question: "What should I do if I'm falsely accused of a crime?",
+    answer: "Contact our criminal lawyers immediately. We'll assess the case, gather evidence, prepare a strong defense strategy, and represent you in court. Early legal intervention is crucial for false accusation cases to prevent escalation."
+  }
+];
+
+// FAQ Schema Markup for SEO
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
 
 export const metadata = {
-  title: 'Top criminal law firms in India',
-  description: 'Looking for trusted criminal law firms in india? AMA Legal Solutions offers legal defense for bail, trial, and criminal litigation. Consult today!',
+  title: "Criminal Lawyers in India | FIR & Cyber Crime Defense – AMA Legal Solutions",
+  description:
+    "Expert criminal lawyers in India. AMA Legal Solutions provides criminal defense, FIR assistance, cyber crime protection, and police case representation. Book your consultation now.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/criminal-law', // Add your canonical URL here
+    canonical: 'https://amalegalsolutions.com/services/criminal-law',
   },
-}
+};
+
 export default function page() {
   // Sample service data (replace with your actual content)
   const service = {
-    title: "Professional Consultation",
+    title: "Criminal Law Legal Services",
     bannerImage: "/services/7.png", // Replace with your actual image path
     description:
-      "Our professional consultation service provides expert guidance tailored to your specific needs. We work closely with you to understand your requirements and deliver solutions that exceed your expectations. Our team of experienced consultants brings years of industry knowledge to help you navigate complex challenges and achieve your goals.",
+      "Our criminal law legal services provide comprehensive defense and representation for all types of criminal cases. We work closely with you to understand your situation and deliver effective legal solutions.",
     buttonText: "Get Started",
     buttonLink: "/contact",
   };
 
   return (
-    <div className="bg-white min-h-screen">
-      {/* Banner Section - 1920x550 as specified */}
-      <div className="relative w-full h-[300px] md:h-[550px] overflow-hidden">
-        <img
-          src={service.bannerImage}
-          alt={service.title}
-          className="w-full h-full object-contain"
-        />
-      </div>
-
-      {/* Service Description Section */}
-      <div className="container mx-auto px-4 max-w-4xl">
-        <div className="mb-12">
-          <h1 className="text-4xl font-bold text-center mb-8 text-black">
-          Criminal Law Services – Expert Legal Defense & Representation
-          </h1>
-          <p className="text-[#5A4C33] text-lg leading-relaxed mb-8">
-            <br />
-            <br />
-            <strong>
-              Protecting Your Legal Rights with Experienced Criminal Lawyers
-            </strong>
-            <br />
-            <br />
-            Being involved in a criminal case can be stressful and
-            life-changing. Whether you are facing false accusations, criminal
-            charges, or need bail assistance, having a skilled criminal defense
-            lawyer is crucial to protect your rights and ensure a fair trial.
-            <br />
-            <br />
-            At AMA Legal Solutions, we provide strong legal representation for
-            individuals facing criminal charges, ensuring a strategic defense,
-            bail assistance, and trial advocacy. Our experienced criminal
-            lawyers in Gurugram handle all types of criminal cases, from
-            financial crimes to serious offenses.
-            <br />
-            <br />
-            <strong>Our Criminal Law Services:</strong>
-            <br />
-            <br />
-            <strong>1. Bail & Anticipatory Bail Assistance</strong>
-            <br />
-            Quick and effective bail representation is crucial in criminal
-            cases. We help with:
-            <br />
-            • Regular Bail & Anticipatory Bail Applications
-            <br />
-            • High Court & Supreme Court Bail Matters
-            <br />
-            • FIR Quashing & Preventing Arrests
-            <br />
-            • Legal Consultation Before Arrest
-            <br />
-            <br />
-            <strong>2. Criminal Trial Defense & Representation</strong>
-            <br />
-            We provide strong legal defense in courts for:
-            <br />
-            • Theft, Fraud, & Financial Crimes
-            <br />
-            • White-Collar Crimes & Corporate Fraud
-            <br />
-            • Cheating, Forgery, and Misrepresentation Cases
-            <br />
-            • Cyber Crimes & Online Fraud
-            <br />
-            <br />
-            <strong>3. Serious Offenses & Defense Litigation</strong>
-            <br />
-            If facing serious allegations, expert legal representation is
-            critical. We defend clients against:
-            <br />
-            • Murder & Attempt to Murder (IPC 302, 307)
-            <br />
-            • Sexual Offenses & POCSO Cases
-            <br />
-            • Domestic Violence & Dowry Cases (Section 498A IPC)
-            <br />
-            • Drug-Related Offenses (NDPS Act)
-            <br />
-            <br />
-            <strong>4. Quashing of FIR & Criminal Complaints</strong>
-            <br />
-            We help clients get false or malicious FIRs quashed through:
-            <br />
-            • Filing Quashing Petitions in High Court
-            <br />
-            • Challenging False Allegations & Harassment
-            <br />
-            • Criminal Writ Petitions for Rights Protection
-            <br />
-            <br />
-            <strong>5. White-Collar Crimes & Financial Offenses</strong>
-            <br />
-            Corporate professionals and businesses may face fraud and financial
-            crime allegations. We provide legal defense in:
-            <br />
-            • Money Laundering (PMLA Act) Cases
-            <br />
-            • Corporate & Banking Fraud Cases
-            <br />
-            • Breach of Trust & Embezzlement Defense
-            <br />
-            • Income Tax & GST-Related Offenses
-            <br />
-            <br />
-            <strong>6. Cyber Crime Defense & Legal Assistance</strong>
-            <br />
-            With the rise in digital fraud and cyber offenses, we provide legal
-            support for:
-            <br />
-            • Online Fraud & Financial Cyber Crimes
-            <br />
-            • Identity Theft & Phishing Cases
-            <br />
-            • Cyber Defamation & Social Media Harassment
-            <br />
-            • Hacking & Data Theft Cases
-            <br />
-            <br />
-            <strong>7. Domestic Violence & Matrimonial Criminal Cases</strong>
-            <br />
-            Criminal disputes often arise in matrimonial conflicts. We handle:
-            <br />
-            • 498A IPC (Dowry Harassment) Defense
-            <br />
-            • False Allegations in Domestic Violence Cases
-            <br />
-            • Divorce-Related Criminal Proceedings
-            <br />
-            • Protection of Women & Children in Criminal Cases
-            <br />
-            <br />
-            <strong>8. Criminal Appeals & High Court Representation</strong>
-            <br />
-            For those seeking relief in higher courts, we provide:
-            <br />
-            • Filing Appeals & Revisions in High Court & Supreme Court
-            <br />
-            • Challenging Wrongful Convictions
-            <br />
-            • Legal Representation in Sessions & High Courts
-            <br />
-            <br />
-            <strong>Who Can Benefit from Our Criminal Law Services?</strong>
-            <br />
-            <br />
-            • Individuals facing criminal charges
-            <br />
-            • Businesses & professionals involved in corporate crimes
-            <br />
-            • Victims of false accusations seeking defense
-            <br />
-            • Families dealing with domestic violence allegations
-            <br />
-            • Cybercrime victims and accused individuals
-            <br />
-            <br />
-            <strong>
-              Why Choose AMA Legal Solutions for Criminal Defense?
-            </strong>
-            <br />
-            <br />• <strong>Experienced Criminal Lawyers</strong> – Specialized
-            in criminal defense, bail, and trial advocacy.
-            <br />• <strong>Quick Legal Assistance</strong> – 24/7 support for
-            urgent bail applications and legal advice.
-            <br />• <strong>Strategic Defense Approach</strong> – Strong legal
-            arguments for FIR quashing, anticipatory bail, and trial
-            representation.
-            <br />• <strong>High Court & Supreme Court Representation</strong> –
-            Handling complex cases at higher judicial levels.
-            <br />• <strong>Confidential & Professional Legal Support</strong> –
-            Ensuring client privacy and protection of legal rights.
-            <br />
-            <br />
-            <strong>
-              Facing Criminal Charges? Get Expert Legal Help Today
-            </strong>
-            <br />
-            <br />
-            If you need a criminal lawyer in Gurugram for bail, defense, or FIR
-            quashing, contact AMA Legal Solutions now.
-            <br />
-            <br />
-            📞 Call us at <strong>+91-8700343611</strong>
-            <br />
-            🌐 Visit:{" "}
-            <a
-              href="http://www.amalegalsolutions.com"
-              className="text-blue-600 underline"
-            >
-              www.amalegalsolutions.com
-            </a>
-            <br />
-            📍 <strong>Office Location: Sector-57, Gurugram</strong>
-          </p>
-
-          {/* Feature Highlights */}
+    <>
+      {/* FAQ Schema Markup - Using Next.js Script component for proper SSR */}
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
+      
+      <div className="bg-white min-h-screen">
+        {/* Banner Section */}
+        <div className="relative w-full h-[300px] md:h-[550px] overflow-hidden">
+          <img
+            src={service.bannerImage}
+            alt={service.title}
+            className="w-full h-full object-contain"
+          />
         </div>
 
-        {/* CTA Button */}
-        <div className="flex justify-center mb-5">
-          <Link href={service.buttonLink}>
-            <div
-              className="inline-block bg-[#D2A02A] text-white px-8 py-4 rounded-md font-medium 
-                text-lg cursor-pointer hover:bg-[#5A4C33] transition-colors duration-300"
-            >
-              {service.buttonText}
+        {/* Main Content Container */}
+        <div className="container mx-auto px-4 max-w-6xl py-16">
+          
+          {/* Hero Section */}
+          <div className="text-center mb-20">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
+              Expert <span className="text-[#D2A02A]">Criminal Law</span> Defense in India
+            </h1>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Facing criminal charges or police cases? Get professional legal help for criminal defense, FIR assistance, and cyber crime protection with our experienced criminal lawyers.
+            </p>
+          </div>
+
+          {/* Introduction Section */}
+          <section className="mb-20">
+            <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8 md:p-12">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                Comprehensive Criminal Defense Services
+              </h2>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                Criminal charges can have serious consequences on your life, career, and future. Whether you're facing false accusations, police cases, or criminal charges, having the right legal representation is crucial for protecting your rights and securing the best possible outcome.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                At AMA Legal Solutions, we specialize in <strong>criminal law</strong>, providing comprehensive legal services for criminal defense, FIR assistance, cyber crime protection, and police case representation. Our expert <strong>criminal lawyers in India</strong> ensure your rights are protected throughout the legal process.
+              </p>
             </div>
-          </Link>
+          </section>
+
+          {/* Services Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+              Our Criminal Law Legal Services
+            </h2>
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  We provide comprehensive <strong>criminal law services</strong> covering all aspects of criminal defense, from initial police contact to final court proceedings. Our expertise spans traditional criminal cases to modern cyber crimes.
+                </p>
+                <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                  <p className="text-blue-800 font-medium">
+                    Our expert <strong>criminal lawyers</strong> ensure you get the best possible legal defense while protecting your constitutional rights throughout the criminal justice process.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-white shadow-xl rounded-2xl p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Key Services</h3>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">✓</span>
+                    FIR & police case assistance
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">✓</span>
+                    Cyber crime defense
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">✓</span>
+                    Bail applications & custody protection
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">✓</span>
+                    Criminal litigation & defense
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* Service Categories Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+              Our Criminal Law Expertise
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="text-center mb-4">
+                  <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto">
+                    <span className="text-2xl">🚔</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">FIR & Police Cases</h3>
+                <p className="text-gray-600 text-center">
+                  <strong>FIR assistance</strong> and police case representation including legal notices, interrogation protection, and police investigation guidance.
+                </p>
+              </div>
+              
+              <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="text-center mb-4">
+                  <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto">
+                    <span className="text-2xl">💻</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Cyber Crime Defense</h3>
+                <p className="text-gray-600 text-center">
+                  <strong>Cyber crime defense</strong> including online fraud, social media defamation, cyber harassment, and digital evidence cases.
+                </p>
+              </div>
+              
+              <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="text-center mb-4">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+                    <span className="text-2xl">🔓</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Bail & Custody</h3>
+                <p className="text-gray-600 text-center">
+                  <strong>Bail applications</strong> and custody protection services including anticipatory bail, regular bail, and police custody representation.
+                </p>
+              </div>
+              
+              <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="text-center mb-4">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
+                    <span className="text-2xl">⚖️</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Criminal Litigation</h3>
+                <p className="text-gray-600 text-center">
+                  <strong>Criminal litigation</strong> and defense services including trial representation, evidence analysis, and appellate advocacy.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* How We Help Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+              How AMA Legal Solutions Helps with Criminal Cases
+            </h2>
+            
+            <div className="space-y-8">
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">1. Immediate Legal Assistance & Rights Protection</h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  We provide immediate legal assistance when you're facing criminal charges:
+                </p>
+                <ul className="text-gray-700 space-y-2 ml-6">
+                  <li>• 24/7 emergency legal support for arrests and police custody</li>
+                  <li>• Protection of constitutional rights during police interrogation</li>
+                  <li>• Legal guidance for FIR filing and police investigation</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">2. Strategic Defense & Evidence Analysis</h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Our experienced criminal lawyers develop comprehensive defense strategies:
+                </p>
+                <ul className="text-gray-700 space-y-2 ml-6">
+                  <li>• Thorough case analysis and evidence evaluation</li>
+                  <li>• Witness preparation and cross-examination strategies</li>
+                  <li>• Legal research and precedent analysis</li>
+                  <li>• Alternative defense theories and approaches</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">3. Court Representation & Advocacy</h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Complete court representation and advocacy including:
+                </p>
+                <ul className="text-gray-700 space-y-2 ml-6">
+                  <li>• Bail applications and custody hearings</li>
+                  <li>• Trial representation in criminal courts</li>
+                  <li>• Appellate advocacy in higher courts</li>
+                  <li>• Plea bargaining and settlement negotiations</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* Benefits Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+              Benefits of Choosing Our Criminal Lawyers
+            </h2>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">⚡</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">24/7 Emergency Support</h3>
+                <p className="text-gray-600">
+                  Round-the-clock legal assistance for arrests, police custody, and emergency criminal situations.
+                </p>
+              </div>
+              
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">🎯</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Specialized Expertise</h3>
+                <p className="text-gray-600">
+                  Expert lawyers specialized in criminal laws, cyber crimes, and police procedures with deep legal knowledge.
+                </p>
+              </div>
+              
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">🛡️</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Rights Protection</h3>
+                <p className="text-gray-600">
+                  Comprehensive protection of your constitutional rights throughout the criminal justice process.
+                </p>
+              </div>
+              
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">🔍</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Evidence Analysis</h3>
+                <p className="text-gray-600">
+                  Thorough evidence analysis and investigation to build strong defense strategies for your case.
+                </p>
+              </div>
+              
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">💻</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Cyber Crime Specialists</h3>
+                <p className="text-gray-600">
+                  Specialized expertise in cyber crime defense with understanding of both technical and legal aspects.
+                </p>
+              </div>
+              
+              <div className="text-center p-6">
+                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">📊</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Proven Track Record</h3>
+                <p className="text-gray-600">
+                  Successful track record in criminal defense with numerous acquittals and favorable settlements.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Process Section */}
+          <section className="mb-20">
+            <div className="bg-gray-900 rounded-2xl p-8 md:p-12 text-white">
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+                Our Proven 4-Step Criminal Defense Process
+              </h2>
+              <div className="grid md:grid-cols-4 gap-8">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-xl font-bold">1</span>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Immediate Response</h3>
+                  <p className="text-gray-300">24/7 emergency legal assistance and rights protection</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-xl font-bold">2</span>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Case Analysis</h3>
+                  <p className="text-gray-300">Comprehensive case evaluation and evidence analysis</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-xl font-bold">3</span>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Defense Strategy</h3>
+                  <p className="text-gray-300">Develop strong defense strategy and legal representation</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-xl font-bold">4</span>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Court Advocacy</h3>
+                  <p className="text-gray-300">Expert court representation and advocacy for best outcome</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQs Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+              FAQs on Criminal Law Services
+            </h2>
+            <div className="space-y-6">
+              {faqs.map((faq, index) => (
+                <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{faq.question}</h3>
+                  <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 text-center">
+              <p className="text-lg text-gray-700 mb-4">
+                Have more questions about criminal law services?
+              </p>
+              <Link href="/contact" className="text-[#D2A02A] font-semibold hover:underline">
+                Contact our criminal lawyers for expert advice →
+              </Link>
+            </div>
+          </section>
+
+          {/* Contact CTA Section */}
+          <section className="text-center bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] rounded-2xl p-12 text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Need Expert Criminal Defense?
+            </h2>
+            <p className="text-xl mb-8 opacity-90">
+              Get professional legal help for criminal cases and protect your rights today.
+            </p>
+            
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">📞</span>
+                <div>
+                  <p className="font-semibold">Call Now</p>
+                  <p className="text-lg">+91-8700343611</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">🌐</span>
+                <div>
+                  <p className="font-semibold">Visit Online</p>
+                  <a href="http://www.amalegalsolutions.com" className="text-lg hover:underline">
+                    www.amalegalsolutions.com
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">📍</span>
+                <div>
+                  <p className="font-semibold">Office Location</p>
+                  <p className="text-lg">Sector-57, Gurugram</p>
+                </div>
+              </div>
+            </div>
+            
+            <Link href={service.buttonLink}>
+              <div className="inline-block bg-white text-[#D2A02A] px-12 py-4 rounded-full font-bold text-lg cursor-pointer hover:bg-gray-100 transition-colors duration-300 shadow-lg">
+                {service.buttonText}
+              </div>
+            </Link>
+          </section>
         </div>
       </div>
-    </div>
+    </>
   );
 }
