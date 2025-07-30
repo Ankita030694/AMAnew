@@ -31,7 +31,7 @@ const faqSchema = {
     "@type": "Question",
     "name": faq.question,
     "acceptedAnswer": {
-      "@type": "Answer",
+      "@type": "Answer", 
       "text": faq.answer
     }
   }))
