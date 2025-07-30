@@ -3,50 +3,39 @@ import { db } from "../../../lib/firebase";
 import type { Metadata, ResolvingMetadata } from "next";
 import ArticleDetail from "./blogdetail";
 
-// Cache for blog data to avoid redundant Firebase calls
+// Cache for blog data to avoid repeated Firebase queries
 const blogCache = new Map<string, any>();
-const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
-// Helper function to get cached blog data
-async function getCachedBlog(slug: string) {
-  const cacheKey = `blog-${slug}`;
-  const cached = blogCache.get(cacheKey);
-  
-  if (cached && Date.now() - cached.timestamp < CACHE_DURATION) {
-    return cached.data;
+// Optimized function to fetch blog by slug
+async function getBlogBySlug(slug: string) {
+  // Check cache first
+  if (blogCache.has(slug)) {
+    return blogCache.get(slug);
   }
-  
+
   try {
-    // Use a more efficient query to get only the specific blog
+    // Use where clause to query only the specific blog
     const blogsCollection = collection(db, "blogs");
-    const blogQuery = query(blogsCollection, where("slug", "==", slug), limit(1));
-    const querySnapshot = await getDocs(blogQuery);
-    
+    const q = query(blogsCollection, where("slug", "==", slug), limit(1));
+    const querySnapshot = await getDocs(q);
+
     if (!querySnapshot.empty) {
       const doc = querySnapshot.docs[0];
-      const data = doc.data();
-      const blogData = {
-        id: doc.id,
-        ...data
-      };
+      const data = { id: doc.id, ...doc.data() };
       
       // Cache the result
-      blogCache.set(cacheKey, {
-        data: blogData,
-        timestamp: Date.now()
-      });
-      
-      return blogData;
+      blogCache.set(slug, data);
+      return data;
     }
     
     return null;
   } catch (error) {
-    console.error("Error fetching blog:", error);
+    console.error("Error fetching blog by slug:", error);
     return null;
   }
 }
 
-// Dynamic metadata generation - optimized with caching
+// Dynamic metadata generation - optimized with proper querying
 export async function generateMetadata(
   props: { params: Promise<{ slug: string }> },
   parent: ResolvingMetadata
@@ -63,7 +52,8 @@ export async function generateMetadata(
   const baseUrl = "https://amalegalsolutions.com";
 
   try {
-    const blogData = await getCachedBlog(slug);
+    // Use optimized function to fetch blog data
+    const blogData = await getBlogBySlug(slug);
     
     if (blogData) {
       title = blogData.metaTitle || blogData.title || title;
@@ -109,7 +99,7 @@ export async function generateMetadata(
   };
 }
 
-// Optimized Page component
+// Updated Page component - optimized
 export default async function Page({
   params,
 }: {
@@ -118,11 +108,11 @@ export default async function Page({
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
 
-  // Get the title from cached blog data
+  // Get the title from Firebase for the H1 tag - use cached data if available
   let pageTitle = "Latest Insights from AMA Legal Solutions";
 
   try {
-    const blogData = await getCachedBlog(slug);
+    const blogData = await getBlogBySlug(slug);
     if (blogData) {
       pageTitle = blogData.title || pageTitle;
     }

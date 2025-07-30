@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState, useCallback, useMemo, memo } from 'react';
+import { useEffect, useState, useCallback, memo } from 'react';
 import { collection, getDocs, query, where, limit, orderBy } from 'firebase/firestore';
 import { db } from '../../../lib/firebase';
 import Link from 'next/link';
@@ -34,9 +34,18 @@ interface BlogDetailProps {
 }
 
 // Cache for blog data and related blogs
-const blogCache = new Map<string, any>();
-const relatedBlogsCache = new Map<string, any>();
-const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+const blogCache = new Map<string, Blog>();
+const relatedBlogsCache = new Map<string, Blog[]>();
+
+// Helper function to shuffle array (Fisher-Yates algorithm)
+const shuffleArray = (array: Blog[]) => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
 
 // Define author bios
 const authorBios = {
@@ -54,236 +63,86 @@ const authorBios = {
   }
 };
 
-// Helper function to get cached blog data
-const getCachedBlog = async (slug: string): Promise<Blog | null> => {
-  const cacheKey = `blog-${slug}`;
-  const cached = blogCache.get(cacheKey);
-  
-  if (cached && Date.now() - cached.timestamp < CACHE_DURATION) {
-    return cached.data;
+// Optimized function to fetch blog by slug
+const fetchBlogBySlug = async (slug: string): Promise<Blog | null> => {
+  // Check cache first
+  if (blogCache.has(slug)) {
+    return blogCache.get(slug)!;
   }
-  
+
   try {
-    // Use a more efficient query to get only the specific blog
-    const blogsCollection = collection(db, "blogs");
-    const blogQuery = query(blogsCollection, where("slug", "==", slug), limit(1));
-    const querySnapshot = await getDocs(blogQuery);
-    
+    const blogsCollection = collection(db, 'blogs');
+    const q = query(blogsCollection, where('slug', '==', slug), limit(1));
+    const querySnapshot = await getDocs(q);
+
     if (!querySnapshot.empty) {
       const doc = querySnapshot.docs[0];
-      const data = doc.data();
-      const blogData = {
-        id: doc.id,
-        ...data
-      } as Blog;
+      const blogData = { id: doc.id, ...doc.data() } as Blog;
       
       // Cache the result
-      blogCache.set(cacheKey, {
-        data: blogData,
-        timestamp: Date.now()
-      });
-      
+      blogCache.set(slug, blogData);
       return blogData;
     }
     
     return null;
   } catch (error) {
-    console.error("Error fetching blog:", error);
+    console.error("Error fetching blog by slug:", error);
     return null;
   }
 };
 
-// Helper function to get cached related blogs
-const getCachedRelatedBlogs = async (excludeId: string): Promise<Blog[]> => {
-  const cacheKey = `related-blogs-${excludeId}`;
-  const cached = relatedBlogsCache.get(cacheKey);
+// Optimized function to fetch related blogs
+const fetchRelatedBlogs = async (excludeId: string): Promise<Blog[]> => {
+  const cacheKey = `related_${excludeId}`;
   
-  if (cached && Date.now() - cached.timestamp < CACHE_DURATION) {
-    return cached.data;
+  // Check cache first
+  if (relatedBlogsCache.has(cacheKey)) {
+    return relatedBlogsCache.get(cacheKey)!;
   }
-  
+
   try {
-    // Get a limited number of recent blogs for better performance
-    const blogsCollection = collection(db, "blogs");
-    const relatedQuery = query(
+    const blogsCollection = collection(db, 'blogs');
+    const q = query(
       blogsCollection, 
-      orderBy("created", "desc"), 
-      limit(10)
+      orderBy('created', 'desc'), 
+      limit(10) // Limit to 10 for better performance
     );
-    const querySnapshot = await getDocs(relatedQuery);
+    const querySnapshot = await getDocs(q);
     
     const allBlogs = querySnapshot.docs.map(doc => ({
       id: doc.id,
       ...doc.data()
     })) as Blog[];
     
-    // Filter out the current blog and get 3 random ones
-    const otherBlogs = allBlogs.filter(b => b.id !== excludeId);
-    const shuffledBlogs = shuffleArray(otherBlogs);
-    const relatedBlogs = shuffledBlogs.slice(0, 3);
+    // Filter out current blog and get 3 random ones
+    const otherBlogs = allBlogs.filter(blog => blog.id !== excludeId);
+    const randomBlogs = shuffleArray(otherBlogs).slice(0, 3);
     
     // Cache the result
-    relatedBlogsCache.set(cacheKey, {
-      data: relatedBlogs,
-      timestamp: Date.now()
-    });
-    
-    return relatedBlogs;
+    relatedBlogsCache.set(cacheKey, randomBlogs);
+    return randomBlogs;
   } catch (error) {
     console.error("Error fetching related blogs:", error);
     return [];
   }
 };
 
-// Helper function to shuffle array (Fisher-Yates algorithm)
-const shuffleArray = (array: Blog[]) => {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+// Optimized function to fetch FAQs
+const fetchFAQs = async (blogId: string): Promise<FAQ[]> => {
+  try {
+    const faqsSnapshot = await getDocs(collection(db, 'blogs', blogId, 'faqs'));
+    return faqsSnapshot.docs.map(doc => ({
+      id: doc.id,
+      question: doc.data().question || '',
+      answer: doc.data().answer || ''
+    }));
+  } catch (error) {
+    console.error("Error fetching FAQs:", error);
+    return [];
   }
-  return shuffled;
 };
 
-// Memoized Related Blog Component
-const RelatedBlogItem = memo(({ blog }: { blog: Blog }) => (
-  <Link href={`/blog/${blog.slug}`}>
-    <div className="flex space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
-      <div className="flex-shrink-0 w-16 h-16 relative rounded-lg overflow-hidden">
-        {blog.image ? (
-          <Image
-            src={blog.image}
-            alt={blog.title}
-            width={64}
-            height={64}
-            className="object-cover"
-            loading="lazy"
-          />
-        ) : (
-          <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-            <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-            </svg>
-          </div>
-        )}
-      </div>
-      <div className="flex-1 min-w-0">
-        <h4 className="text-sm font-medium text-[#5A4C33] line-clamp-2">
-          {blog.title}
-        </h4>
-        <p className="text-xs text-gray-500 mt-1">{blog.date}</p>
-      </div>
-    </div>
-  </Link>
-));
-
-RelatedBlogItem.displayName = 'RelatedBlogItem';
-
-// Memoized FAQ Item Component
-const FAQItem = memo(({ faq, isExpanded, onToggle }: { 
-  faq: FAQ; 
-  isExpanded: boolean; 
-  onToggle: () => void; 
-}) => (
-  <div className="border border-gray-200 rounded-lg">
-    <button
-      onClick={onToggle}
-      className="w-full px-4 py-3 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
-    >
-      <span className="font-medium text-[#5A4C33]">{faq.question}</span>
-      <svg
-        className={`w-5 h-5 text-gray-500 transition-transform ${
-          isExpanded ? 'rotate-180' : ''
-        }`}
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-      </svg>
-    </button>
-    {isExpanded && (
-      <div className="px-4 pb-3 text-gray-600">
-        {faq.answer}
-      </div>
-    )}
-  </div>
-));
-
-FAQItem.displayName = 'FAQItem';
-
-// Loading Skeleton Component
-const LoadingSkeleton = memo(() => (
-  <div className="min-h-screen bg-gradient-to-b from-white to-amber-50">
-    {/* Header Skeleton */}
-    <div className="w-full bg-[#5A4C33] text-center py-8 md:py-12">
-      <div className="container mx-auto px-4 mt-12 md:mt-16 max-w-4xl">
-        <div className="h-8 md:h-12 bg-[#D2A02A] rounded animate-pulse mb-4"></div>
-        <div className="h-4 md:h-6 bg-[#D2A02A] rounded animate-pulse mb-4 w-3/4 mx-auto"></div>
-        <div className="h-1 w-20 md:w-24 bg-[#D2A02A] rounded-full mx-auto"></div>
-      </div>
-    </div>
-    
-    {/* Content Skeleton */}
-    <div className="container mx-auto px-4 py-6 md:py-8 max-w-5xl">
-      <div className="flex flex-col lg:flex-row lg:gap-6">
-        {/* Main Content Skeleton */}
-        <div className="flex-1 lg:pr-6">
-          <div className="space-y-4">
-            <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
-            <div className="h-4 bg-gray-200 rounded animate-pulse w-5/6"></div>
-            <div className="h-4 bg-gray-200 rounded animate-pulse w-4/6"></div>
-            <div className="h-4 bg-gray-200 rounded animate-pulse w-3/4"></div>
-            <div className="h-4 bg-gray-200 rounded animate-pulse w-5/6"></div>
-          </div>
-        </div>
-        
-        {/* Sidebar Skeleton */}
-        <div className="lg:w-80 mt-8 lg:mt-0">
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-            <div className="h-6 bg-gray-200 rounded animate-pulse mb-4"></div>
-            <div className="space-y-3">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="flex space-x-3">
-                  <div className="w-16 h-16 bg-gray-200 rounded animate-pulse"></div>
-                  <div className="flex-1 space-y-2">
-                    <div className="h-3 bg-gray-200 rounded animate-pulse"></div>
-                    <div className="h-2 bg-gray-200 rounded animate-pulse w-1/2"></div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-));
-
-LoadingSkeleton.displayName = 'LoadingSkeleton';
-
-// Optimized Image Component
-const OptimizedImage = memo(({ src, alt, className, priority = false }: {
-  src: string;
-  alt: string;
-  className: string;
-  priority?: boolean;
-}) => (
-  <Image
-    src={src}
-    alt={alt}
-    fill
-    className={className}
-    priority={priority}
-    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-    quality={85}
-    loading={priority ? 'eager' : 'lazy'}
-  />
-));
-
-OptimizedImage.displayName = 'OptimizedImage';
-
-function ArticleDetail({ slug }: BlogDetailProps) {
+const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
   const [blog, setBlog] = useState<Blog | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentUrl, setCurrentUrl] = useState('');
@@ -291,13 +150,14 @@ function ArticleDetail({ slug }: BlogDetailProps) {
   const [expandedFaqs, setExpandedFaqs] = useState<string[]>([]);
   const [relatedBlogs, setRelatedBlogs] = useState<Blog[]>([]);
 
-  // Memoized helper functions to avoid recreating on every render
+  // Helper function to get a random blog from related blogs
   const getRandomBlog = useCallback(() => {
     if (relatedBlogs.length === 0) return null;
     const randomIndex = Math.floor(Math.random() * relatedBlogs.length);
     return relatedBlogs[randomIndex];
   }, [relatedBlogs]);
 
+  // Helper function to get different random blogs for each subtitle segment
   const getRandomBlogsForSegments = useCallback((segmentCount: number) => {
     if (relatedBlogs.length === 0) return [];
     const shuffledBlogs = shuffleArray(relatedBlogs);
@@ -346,60 +206,45 @@ function ArticleDetail({ slug }: BlogDetailProps) {
     );
   }, [relatedBlogs, getRandomBlogsForSegments]);
 
-  // Memoize author bio to avoid recalculation
-  const authorBio = useMemo(() => {
-    return blog?.author ? authorBios[blog.author as keyof typeof authorBios] : null;
-  }, [blog?.author]);
-
-  // Optimized data fetching with caching
   useEffect(() => {
+    // Set current URL for sharing
+    setCurrentUrl(window.location.href);
+    
     // Disable browser scroll restoration for better UX
     if (typeof window !== 'undefined' && 'scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
     }
     
-    const fetchBlogData = async () => {
+    const loadBlogData = async () => {
       try {
         setLoading(true);
         
-        // Fetch the main blog data using cache
-        const blogData = await getCachedBlog(slug);
+        // Fetch blog data using optimized function
+        const blogData = await fetchBlogBySlug(slug);
         
         if (blogData) {
           setBlog(blogData);
           
-          // Fetch related blogs in parallel
-          const relatedBlogsData = await getCachedRelatedBlogs(blogData.id);
-          setRelatedBlogs(relatedBlogsData);
+          // Fetch related blogs and FAQs in parallel
+          const [relatedBlogsData, faqsData] = await Promise.all([
+            fetchRelatedBlogs(blogData.id),
+            fetchFAQs(blogData.id)
+          ]);
           
-          // Fetch FAQs only if blog exists
-          try {
-            const faqsSnapshot = await getDocs(collection(db, 'blogs', blogData.id, 'faqs'));
-            const faqsData = faqsSnapshot.docs.map(doc => ({
-              id: doc.id,
-              question: doc.data().question || '',
-              answer: doc.data().answer || ''
-            }));
-            setFaqs(faqsData);
-          } catch (faqError) {
-            console.error("Error fetching FAQs:", faqError);
-            setFaqs([]);
-          }
+          setRelatedBlogs(relatedBlogsData);
+          setFaqs(faqsData);
         }
         
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching blog data:", error);
+        console.error("Error loading blog data:", error);
         setLoading(false);
       }
     };
     
     if (slug) {
-      fetchBlogData();
+      loadBlogData();
     }
-    
-    // Set current URL for sharing
-    setCurrentUrl(window.location.href);
     
     // Cleanup: restore scroll restoration when component unmounts
     return () => {
@@ -410,16 +255,16 @@ function ArticleDetail({ slug }: BlogDetailProps) {
   }, [slug]);
 
   // Toggle FAQ expansion
-  const toggleFaq = useCallback((faqId: string) => {
+  const toggleFaq = (faqId: string) => {
     setExpandedFaqs(prev => 
       prev.includes(faqId)
         ? prev.filter(id => id !== faqId)
         : [...prev, faqId]
     );
-  }, []);
+  };
 
   // Function to handle social media sharing
-  const handleShare = useCallback((platform: string) => {
+  const handleShare = (platform: string) => {
     const title = blog?.title || 'Check out this blog post';
     let shareUrl = '';
 
@@ -439,26 +284,29 @@ function ArticleDetail({ slug }: BlogDetailProps) {
 
     // Open in a new window
     window.open(shareUrl, '_blank', 'width=600,height=400');
-  }, [blog?.title, currentUrl]);
+  };
 
   if (loading) {
-    return <LoadingSkeleton />;
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-white to-amber-50 flex items-center justify-center">
+        <div className="p-6 rounded-lg shadow-lg bg-white">
+          <div className="flex items-center space-x-3">
+            <div className="w-6 h-6 border-t-4 border-r-4 border-[#D2A02A] rounded-full animate-spin"></div>
+            <p className="text-black font-medium text-sm">Loading your Blog...</p>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   if (!blog) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-white to-amber-50 flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-800 mb-4">Article Not Found</h1>
-          <p className="text-gray-600 mb-6">The article you're looking for doesn't exist or has been removed.</p>
-          <Link 
-            href="/blog" 
-            className="inline-flex items-center px-6 py-3 bg-[#5A4C33] text-white rounded-lg hover:bg-[#4A3C23] transition-colors"
-          >
-            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            Back to Blog
+      <div className="min-h-screen bg-gradient-to-b from-white to-amber-50 p-6 flex flex-col items-center justify-center">
+        <div className="text-center max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg">
+          <h1 className="text-2xl font-bold text-[#5A4C33] mb-3">Article Not Found</h1>
+          <p className="text-black mb-4 text-sm">We could not find the blog post you are looking for.</p>
+          <Link href="/blog" className="bg-[#D2A02A] text-black px-4 py-2 rounded-md hover:bg-[#5A4C33] hover:text-white transition-all text-sm">
+            Return to Blog
           </Link>
         </div>
       </div>
@@ -487,146 +335,387 @@ function ArticleDetail({ slug }: BlogDetailProps) {
       {/* Main Content Container */}
       <div className="container mx-auto px-4 py-6 md:py-8 max-w-5xl">
         <div className="flex flex-col lg:flex-row lg:gap-6">
-          {/* Main Content */}
-          <div className="flex-1 lg:pr-6">
-            {/* Article Image */}
-            {blog.image && (
-              <div className="relative w-full h-[200px] md:h-[300px] lg:h-[350px] mb-4 md:mb-6">
-                <OptimizedImage 
-                  src={blog.image}
-                  alt={`${blog.title} - AMA Legal Solutions`}
-                  className="object-cover"
-                  priority={true}
-                />
-              </div>
-            )}
-            
-            {/* Article Content */}
-            <article className="prose prose-lg max-w-none mb-8">
-              <div 
-                className="text-gray-800 leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: blog.description }}
-              />
-            </article>
-
-            {/* Author Bio */}
-            {authorBio && (
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-8">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <Image
-                      src={authorBio.image}
-                      alt={authorBio.name}
-                      width={80}
-                      height={80}
-                      className="rounded-full"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-[#5A4C33] mb-2">
-                      {authorBio.name}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-3">
-                      {authorBio.description}
+          
+          {/* Main Article Content */}
+          <div className="lg:w-2/3">
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-6">
+              {/* Article Metadata */}
+              <div className="border-b border-gray-200 px-4 md:px-5 py-3 bg-amber-50">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                  <p className="text-black italic text-sm">
+                    Published on: <span className="font-medium">{blog.date}</span>
+                  </p>
+                  {blog.author && (
+                    <p className="text-black text-sm">
+                      By: <span className="font-medium text-[#5A4C33]">{blog.author}</span>
                     </p>
-                    <a
-                      href={authorBio.linkedInUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-[#D2A02A] hover:text-[#5A4C33] transition-colors"
+                  )}
+                </div>
+              </div>
+              
+              {/* Feature Image */}
+              {blog.image && (
+                <div className="relative w-full h-[200px] md:h-[300px] lg:h-[350px] mb-4 md:mb-6">
+                  <Image
+                    src={blog.image}
+                    alt={`${blog.title} - AMA Legal Solutions`}
+                    fill
+                    priority
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 65vw, 50vw"
+                    quality={90}
+                    loading="eager"
+                    title={blog.title}
+                    onLoad={(e) => {
+                      // Add image to structured data when loaded
+                      const img = e.target as HTMLImageElement;
+                      const structuredData = {
+                        "@context": "https://schema.org",
+                        "@type": "ImageObject",
+                        "contentUrl": img.src,
+                        "name": blog.title,
+                        "description": blog.subtitle || blog.description,
+                        "caption": blog.title,
+                        "representativeOfPage": true
+                      };
+                      // Add to page's structured data
+                      const script = document.createElement('script');
+                      script.type = 'application/ld+json';
+                      script.text = JSON.stringify(structuredData);
+                      document.head.appendChild(script);
+                    }}
+                  />
+                </div>
+              )}
+              
+              {/* Article Content */}
+              <div className="p-4 md:p-6 lg:p-7">
+                <div 
+                  className="prose prose-sm md:prose lg:prose-lg max-w-none text-black tiptap-content" 
+                  dangerouslySetInnerHTML={{ __html: blog.description }}
+                />
+                
+                {/* Add this style block to handle Tiptap specific styling */}
+                <style jsx global>{`
+                  .tiptap-content h1 { font-size: 1.75em; font-weight: bold; margin-top: 0.6em; margin-bottom: 0.6em; }
+                  .tiptap-content h2 { font-size: 1.4em; font-weight: bold; margin-top: 0.75em; margin-bottom: 0.75em; }
+                  .tiptap-content h3 { font-size: 1.15em; font-weight: bold; margin-top: 0.9em; margin-bottom: 0.9em; }
+                  .tiptap-content h4 { font-size: 1em; font-weight: bold; margin-top: 1.2em; margin-bottom: 1.2em; }
+                  .tiptap-content h5 { font-size: 0.9em; font-weight: bold; margin-top: 1.5em; margin-bottom: 1.5em; }
+                  .tiptap-content h6 { font-size: 0.75em; font-weight: bold; margin-top: 2em; margin-bottom: 2em; }
+                  
+                  .tiptap-content p { margin: 0.8em 0; line-height: 1.6; font-size: 0.95em; }
+                  .tiptap-content a { color: #3B82F6; text-decoration: underline; }
+                  .tiptap-content blockquote { border-left: 4px solid #D2A02A; margin-left: 0; padding-left: 0.8em; font-style: italic; background-color: #fef3c7; padding: 0.8em; border-radius: 0.4em; }
+                  .tiptap-content pre { background-color: #f5f5f5; padding: 0.8em; border-radius: 0.4em; font-family: monospace; overflow-x: auto; font-size: 0.85em; }
+                  .tiptap-content code { background-color: rgba(#616161, 0.1); color: #616161; padding: 0.15em 0.3em; border-radius: 0.25em; font-size: 0.9em; }
+                  
+                  .tiptap-content table { border-collapse: collapse; margin: 1.2em 0; overflow: hidden; table-layout: fixed; width: 100%; box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.1); border-radius: 0.4em; }
+                  .tiptap-content table td, .tiptap-content table th { border: 2px solid #ced4da; box-sizing: border-box; min-width: 1em; padding: 6px 10px; position: relative; vertical-align: top; font-size: 0.9em; }
+                  .tiptap-content table th { background-color: #5A4C33; color: white; font-weight: bold; text-align: left; }
+                  
+                  /* List styles - Fixed to show bullets and numbers */
+                  .tiptap-content ul { 
+                    list-style-type: disc; 
+                    padding-left: 1.5em; 
+                    margin: 1.2em 0;
+                  }
+                  .tiptap-content ol { 
+                    list-style-type: decimal; 
+                    padding-left: 1.5em; 
+                    margin: 1.2em 0;
+                  }
+                  .tiptap-content li { 
+                    margin: 0.4em 0; 
+                    line-height: 1.5; 
+                    font-size: 0.95em;
+                    display: list-item;
+                  }
+                  .tiptap-content ul ul { 
+                    list-style-type: circle; 
+                    margin: 0.5em 0;
+                  }
+                  .tiptap-content ul ul ul { 
+                    list-style-type: square; 
+                    margin: 0.5em 0;
+                  }
+                  .tiptap-content ol ol { 
+                    list-style-type: lower-alpha; 
+                    margin: 0.5em 0;
+                  }
+                  .tiptap-content ol ol ol { 
+                    list-style-type: lower-roman; 
+                    margin: 0.5em 0;
+                  }
+                  
+                  .tiptap-content hr { border: none; border-top: 2px solid #ced4da; margin: 1.5em 0; }
+                  .tiptap-content img { max-width: 100%; height: auto; border-radius: 0.4em; box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.1); }
+                  
+                  /* Text alignment classes */
+                  .tiptap-content .text-left { text-align: left; }
+                  .tiptap-content .text-center { text-align: center; }
+                  .tiptap-content .text-right { text-align: right; }
+                  .tiptap-content .text-justify { text-align: justify; }
+                  
+                  /* Subscript and superscript */
+                  .tiptap-content sub { vertical-align: sub; font-size: smaller; }
+                  .tiptap-content sup { vertical-align: super; font-size: smaller; }
+                  
+                  /* Highlighted text */
+                  .tiptap-content mark { background-color: #fef3c7; padding: 0.1em 0.2em; border-radius: 0.2em; }
+                  
+                  /* Responsive adjustments */
+                  @media (min-width: 1024px) {
+                    .tiptap-content h1 { font-size: 2em; }
+                    .tiptap-content h2 { font-size: 1.6em; }
+                    .tiptap-content h3 { font-size: 1.3em; }
+                    .tiptap-content p { font-size: 1em; line-height: 1.7; }
+                    .tiptap-content li { font-size: 1em; }
+                  }
+                `}</style>
+                
+                {/* Share Section */}
+                <div className="mt-6 md:mt-8 pt-4 md:pt-6 border-t border-gray-200">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-4">
+                    <div className="flex items-center space-x-3 md:space-x-4">
+                      <span className="text-black font-medium">Share this article:</span>
+                      <div className="flex space-x-2 md:space-x-3">
+                        <button 
+                          onClick={() => handleShare('facebook')}
+                          className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#5A4C33] text-white flex items-center justify-center hover:bg-[#D2A02A] hover:scale-110 transition-all duration-300 shadow-lg"
+                          title="Share on Facebook"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                          </svg>
+                        </button>
+                        <button 
+                          onClick={() => handleShare('twitter')}
+                          className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#5A4C33] text-white flex items-center justify-center hover:bg-[#D2A02A] hover:scale-110 transition-all duration-300 shadow-lg"
+                          title="Share on Twitter"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                          </svg>
+                        </button>
+                        <button 
+                          onClick={() => handleShare('linkedin')}
+                          className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#5A4C33] text-white flex items-center justify-center hover:bg-[#D2A02A] hover:scale-110 transition-all duration-300 shadow-lg"
+                          title="Share on LinkedIn"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Sidebar for desktop - Author & Quick Links */}
+          <div className="lg:w-1/3 space-y-4 lg:space-y-5">
+            {/* Author Bio Sidebar for Desktop */}
+            {blog.author && (
+              <div className="hidden lg:block bg-white rounded-lg shadow-lg overflow-hidden sticky top-6">
+                <div className="bg-[#5A4C33] px-4 py-3">
+                  <h3 className="text-lg font-bold text-[#D2A02A]">About the Author</h3>
+                </div>
+                <div className="p-4">
+                  <div className="text-center mb-3">
+                    <div className="relative w-16 h-16 mx-auto rounded-full overflow-hidden mb-3">
+                      <Image 
+                        src={authorBios[blog.author as keyof typeof authorBios]?.image || "/default-author.svg"}
+                        alt={blog.author}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <Link 
+                      href={blog.author === "Anuj Anand Malik" ? "/author/anuj-anand-malik" : 
+                            blog.author === "Shrey Arora" ? "/author/shrey-arora" : "/about"}
+                      className="hover:text-[#D2A02A] transition-colors"
                     >
-                      <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      <h4 className="text-base font-bold text-black mb-2">{blog.author}</h4>
+                    </Link>
+                  </div>
+                  <p className="text-xs text-black leading-relaxed mb-3">
+                    {authorBios[blog.author as keyof typeof authorBios]?.description.substring(0, 100) + "..." || 
+                      "Legal expert at AMA Legal Solutions."}
+                  </p>
+                  <div className="flex flex-col space-y-2">
+                    <Link 
+                      href={blog.author === "Anuj Anand Malik" ? "/author/anuj-anand-malik" : 
+                            blog.author === "Shrey Arora" ? "/author/shrey-arora" : "/about"} 
+                      className="bg-[#D2A02A] text-black px-3 py-1.5 rounded text-center hover:bg-[#5A4C33] hover:text-white transition-colors text-xs font-medium">
+                      View Full Profile
+                    </Link>
+                    <a 
+                      href={authorBios[blog.author as keyof typeof authorBios]?.linkedInUrl || "https://www.linkedin.com/company/ama-legal-solutions/"}
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex items-center justify-center text-[#5A4C33] hover:text-[#D2A02A] font-medium transition-colors text-xs"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                       </svg>
-                      View on LinkedIn
+                      Connect on LinkedIn
                     </a>
                   </div>
                 </div>
               </div>
             )}
-
-            {/* Social Share */}
-            <div className="flex items-center space-x-4 mb-8">
-              <span className="text-gray-600 font-medium">Share this article:</span>
-              <button
-                onClick={() => handleShare('facebook')}
-                className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                aria-label="Share on Facebook"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                </svg>
-              </button>
-              <button
-                onClick={() => handleShare('twitter')}
-                className="p-2 bg-blue-400 text-white rounded-lg hover:bg-blue-500 transition-colors"
-                aria-label="Share on Twitter"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                </svg>
-              </button>
-              <button
-                onClick={() => handleShare('linkedin')}
-                className="p-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors"
-                aria-label="Share on LinkedIn"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </button>
+          </div>
+        </div>
+        
+        {/* Mobile Author Bio - Hidden on desktop */}
+        {blog.author && (
+          <div className="lg:hidden max-w-3xl mx-auto mt-6 bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="p-4 flex flex-col md:flex-row gap-4">
+              <div className="relative w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
+                <Image 
+                  src={authorBios[blog.author as keyof typeof authorBios]?.image || "/default-author.svg"}
+                  alt={blog.author}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex-1">
+                <Link 
+                  href={blog.author === "Anuj Anand Malik" ? "/author/anuj-anand-malik" : 
+                        blog.author === "Shrey Arora" ? "/author/shrey-arora" : "/about"}
+                  className="hover:text-[#D2A02A] transition-colors"
+                >
+                  <h3 className="text-lg font-bold text-black mb-2">{blog.author}</h3>
+                </Link>
+                <p className="text-black mb-3 text-sm">
+                  {authorBios[blog.author as keyof typeof authorBios]?.description || 
+                    "Legal expert at AMA Legal Solutions specializing in providing comprehensive legal advice and solutions."}
+                </p>
+                <div className="flex space-x-3">
+                  <Link 
+                    href={blog.author === "Anuj Anand Malik" ? "/author/anuj-anand-malik" : 
+                          blog.author === "Shrey Arora" ? "/author/shrey-arora" : "/about"} 
+                    className="bg-[#D2A02A] text-black px-3 py-1 rounded hover:bg-[#5A4C33] hover:text-white transition-colors text-sm font-medium">
+                    View Profile
+                  </Link>
+                  <a 
+                    href={authorBios[blog.author as keyof typeof authorBios]?.linkedInUrl || "https://www.linkedin.com/company/ama-legal-solutions/"}
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center text-[#5A4C33] hover:text-[#D2A02A] font-medium transition-colors text-sm"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
             </div>
-
-            {/* FAQs Section */}
-            {faqs.length > 0 && (
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-                <h2 className="text-2xl font-bold text-[#5A4C33] mb-6">Frequently Asked Questions</h2>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-5">
-                  {faqs.map((faq, index) => (
-                    <FAQItem 
-                      key={faq.id} 
-                      faq={faq} 
-                      isExpanded={expandedFaqs.includes(faq.id)} 
-                      onToggle={() => toggleFaq(faq.id)} 
-                    />
+          </div>
+        )}
+        
+        {/* FAQs Section */}
+        {faqs.length > 0 && (
+          <div className="max-w-4xl mx-auto mt-6 lg:mt-8 bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="px-4 md:px-5 py-4 border-b border-gray-200 bg-[#5A4C33]">
+              <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-[#D2A02A]">Frequently Asked Questions</h2>
+            </div>
+            <div className="p-4 md:p-5 lg:p-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-5">
+                {faqs.map((faq, index) => (
+                  <div key={faq.id} className="border border-gray-200 rounded-lg overflow-hidden">
+                    <button
+                      onClick={() => toggleFaq(faq.id)}
+                      className="flex justify-between items-center w-full text-left p-3 md:p-4 font-medium text-black hover:text-[#D2A02A] hover:bg-amber-50 focus:outline-none transition-all duration-300"
+                    >
+                      <span className="text-sm md:text-base pr-3">{faq.question}</span>
+                      <span className="flex-shrink-0">
+                        {expandedFaqs.includes(faq.id) ? (
+                          <svg className="h-4 w-4 md:h-5 md:w-5 text-[#D2A02A] transform rotate-180 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                          </svg>
+                        ) : (
+                          <svg className="h-4 w-4 md:h-5 md:w-5 text-[#D2A02A] transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                          </svg>
+                        )}
+                      </span>
+                    </button>
+                    {expandedFaqs.includes(faq.id) && (
+                      <div className="px-3 md:px-4 pb-3 md:pb-4 border-t border-gray-100">
+                        <p className="text-xs md:text-sm text-black leading-relaxed mt-2">{faq.answer}</p>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+        
+        {/* Related Blogs Section */}
+        {relatedBlogs.length > 0 && (
+          <div className="max-w-4xl mx-auto mt-6 lg:mt-8">
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="px-4 md:px-5 py-4 border-b border-gray-200 bg-[#5A4C33]">
+                <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-[#D2A02A]">Related Articles</h2>
+              </div>
+              <div className="p-4 md:p-5 lg:p-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+                  {relatedBlogs.map((article) => (
+                    <Link key={article.id} href={`/blog/${article.slug}`}>
+                      <div className="group rounded-lg overflow-hidden border border-gray-100 h-full hover:shadow-lg hover:border-[#D2A02A] transition-all duration-300 transform hover:-translate-y-1">
+                        <div className="relative h-36 lg:h-40 overflow-hidden">
+                          <img 
+                            src={article.image}
+                            alt={article.title}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          />
+                          <div className="absolute bottom-2 right-2 bg-white/90 backdrop-blur-sm rounded px-1.5 py-0.5 text-xs uppercase text-[#5A4C33] font-semibold">
+                            {article.date}
+                          </div>
+                        </div>
+                        <div className="p-3 lg:p-4 relative bg-white">
+                          <h3 className="text-sm md:text-base font-semibold mb-1 lg:mb-2 group-hover:text-[#D2A02A] transition-colors duration-300 line-clamp-2" style={{ color: '#5A4C33' }}>
+                            {article.title}
+                          </h3>
+                          {article.subtitle && (
+                            <p className="text-xs md:text-sm mb-2 text-blue-600 line-clamp-2">{article.subtitle}</p>
+                          )}
+                          <div className="flex items-center text-[#D2A02A] group-hover:text-[#5A4C33] transition-colors duration-300">
+                            <span className="text-xs font-medium">Read more</span>
+                            <svg className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
                   ))}
                 </div>
               </div>
-            )}
-          </div>
-
-          {/* Sidebar */}
-          <div className="lg:w-80 mt-8 lg:mt-0">
-            {/* Related Articles */}
-            {relatedBlogs.length > 0 && (
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-8">
-                <h3 className="text-xl font-bold text-[#5A4C33] mb-4">Related Articles</h3>
-                <div className="space-y-4">
-                  {relatedBlogs.map((relatedBlog) => (
-                    <RelatedBlogItem key={relatedBlog.id} blog={relatedBlog} />
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Back to Blog */}
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-              <Link 
-                href="/blog" 
-                className="inline-flex items-center justify-center w-full px-6 py-3 bg-[#5A4C33] text-white rounded-lg hover:bg-[#4A3C23] transition-colors"
-              >
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                </svg>
-                Back to Blog
-              </Link>
             </div>
           </div>
+        )}
+        
+        {/* Fixed Contact Button */}
+        <div className="fixed bottom-3 right-3 md:bottom-4 md:right-4 z-[999]">
+          <Link href="/contact" className="group inline-flex items-center bg-[#D2A02A] text-black font-bold px-3 py-2 md:px-4 md:py-2 text-sm md:text-base rounded-full shadow-2xl hover:bg-[#5A4C33] hover:text-white hover:scale-105 transition-all duration-300">
+            <span>Get in Touch</span>
+            <svg className="w-3 h-3 md:w-4 md:h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+          </Link>
         </div>
       </div>
     </div>
   );
-}
+});
 
-export default memo(ArticleDetail);
+export default ArticleDetail;
