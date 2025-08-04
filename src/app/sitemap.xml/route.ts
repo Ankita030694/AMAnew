@@ -34,7 +34,7 @@ export async function GET(): Promise<Response> {
     '/services/entertainment',
     '/services/intellectual-property-rights',
     '/services/litigation', 
-    '/services/loansettlement',
+    '/services/loan-settlement',
     '/services/real-estate',
     '/ourhistory',
     '/present',
