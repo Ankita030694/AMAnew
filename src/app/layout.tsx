@@ -81,6 +81,16 @@ export default function RootLayout({
         <meta name="twitter:image" content="https://www.amalegalsolutions.com/future.png" />
         <meta name="twitter:image:alt" content="AMA Legal Solutions - Top Law Firm in India" />
         
+        {/* Social Media Profile Links */}
+        <meta property="og:see_also" content="https://www.facebook.com/amalegalsolutions/" />
+        <meta property="og:see_also" content="https://www.instagram.com/amalegalsolutions/" />
+        <meta property="og:see_also" content="https://in.linkedin.com/company/ama-legal-solutions" />
+        
+        {/* Additional Social Media Meta Tags */}
+        <meta name="facebook:page_id" content="amalegalsolutions" />
+        <meta name="instagram:username" content="amalegalsolutions" />
+        <meta name="linkedin:company" content="ama-legal-solutions" />
+        
         <link
           rel="alternate" 
           type="application/rss+xml" 
@@ -115,8 +125,61 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               "image": [
                 "https://www.amalegalsolutions.com/future.png",
                 "https://www.amalegalsolutions.com/bannerbg.png"
-              ]
+              ],
+              "sameAs": [
+                "https://www.facebook.com/amalegalsolutions/",
+                "https://www.instagram.com/amalegalsolutions/",
+                "https://in.linkedin.com/company/ama-legal-solutions"
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91-8700343611",
+                "contactType": "customer service",
+                "areaServed": "IN",
+                "availableLanguage": "English"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "IN",
+                "addressLocality": "India"
+              }
             })
+          }}
+        />
+        <Script
+          id="social-media-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "AMA Legal Solutions",
+                "url": "https://www.amalegalsolutions.com",
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": "https://www.amalegalsolutions.com/search?q={search_term_string}",
+                  "query-input": "required name=search_term_string"
+                }
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "LegalService",
+                "name": "AMA Legal Solutions",
+                "description": "Top-rated law firm in India specializing in corporate, real estate, and entertainment law",
+                "url": "https://www.amalegalsolutions.com",
+                "sameAs": [
+                  "https://www.facebook.com/amalegalsolutions/",
+                  "https://www.instagram.com/amalegalsolutions/",
+                  "https://in.linkedin.com/company/ama-legal-solutions"
+                ],
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "India"
+                },
+                "serviceType": ["Corporate Law", "Real Estate Law", "Entertainment Law", "Legal Consultation"]
+              }
+            ])
           }}
         />
       </head>
