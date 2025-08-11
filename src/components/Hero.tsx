@@ -27,7 +27,7 @@ export default function Hero() {
 
       {/* Content - server rendered for better LCP */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4">
-        <h1 className="text-4xl font-bold text-white mb-6 max-w-4xl leading-tight">
+        <h1 className="text-4xl font-bold text-white mb-6 max-w-4xl">
           Empowering Legal Expertise with Trusted Law Firm In India
         </h1>
         <p className="text-lg text-white mb-8 max-w-3xl leading-relaxed">
