@@ -1,7 +1,7 @@
 import Image from "next/image";
-import HeroClientVideo from "./HeroClientVideo";
+import HeroClientVideo from "@/components/HeroClientVideo";
 
-export default function Hero() {
+export default function HeroServer() {
   return (
     <>
       {/* Preload critical hero image */}
@@ -54,4 +54,4 @@ export default function Hero() {
       </div>
     </>
   );
-}
+} 
