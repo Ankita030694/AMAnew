@@ -113,73 +113,54 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
         {/* End Google Tag Manager */}
         <Script
-          id="image-structured-data"
+          id="attorney-structured-data"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
+              "@type": "Attorney",
               "name": "AMA Legal Solutions",
-              "url": "https://www.amalegalsolutions.com",
-              "logo": "https://www.amalegalsolutions.com/future.png",
-              "image": [
-                "https://www.amalegalsolutions.com/future.png",
-                "https://www.amalegalsolutions.com/bannerbg.png"
-              ],
-              "sameAs": [
-                "https://www.facebook.com/amalegalsolutions/",
-                "https://www.instagram.com/amalegalsolutions/",
-                "https://in.linkedin.com/company/ama-legal-solutions"
-              ],
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+91-8700343611",
-                "contactType": "customer service",
-                "areaServed": "IN",
-                "availableLanguage": "English"
-              },
+              "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
+              "@id": "",
+              "url": "https://www.amalegalsolutions.com/",
+              "telephone": "8700343611",
               "address": {
                 "@type": "PostalAddress",
-                "addressCountry": "IN",
-                "addressLocality": "India"
+                "streetAddress": "2493AP, Block G, Sushant Lok 2, Sector 57,",
+                "addressLocality": "Gurugram",
+                "postalCode": "122001",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 28.4256874,
+                "longitude": 77.0872075
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday"
+                ],
+                "opens": "10:00",
+                "closes": "18:00"
+              },
+              "sameAs": [
+                "https://www.youtube.com/@amalegalsolution",
+                "https://www.instagram.com/amalegalsolutions/",
+                "https://www.linkedin.com/company/ama-legal-solutions/"
+              ],
+              "department": {
+                "@type": "LegalService",
+                "name": "",
+                "image": "",
+                "telephone": ""
               }
             })
-          }}
-        />
-        <Script
-          id="social-media-structured-data"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
-              {
-                "@context": "https://schema.org",
-                "@type": "WebSite",
-                "name": "AMA Legal Solutions",
-                "url": "https://www.amalegalsolutions.com",
-                "potentialAction": {
-                  "@type": "SearchAction",
-                  "target": "https://www.amalegalsolutions.com/search?q={search_term_string}",
-                  "query-input": "required name=search_term_string"
-                }
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "LegalService",
-                "name": "AMA Legal Solutions",
-                "description": "Top-rated law firm in India specializing in corporate, real estate, and entertainment law",
-                "url": "https://www.amalegalsolutions.com",
-                "sameAs": [
-                  "https://www.facebook.com/amalegalsolutions/",
-                  "https://www.instagram.com/amalegalsolutions/",
-                  "https://in.linkedin.com/company/ama-legal-solutions"
-                ],
-                "areaServed": {
-                  "@type": "Country",
-                  "name": "India"
-                },
-                "serviceType": ["Corporate Law", "Real Estate Law", "Entertainment Law", "Legal Consultation"]
-              }
-            ])
           }}
         />
       </head>
