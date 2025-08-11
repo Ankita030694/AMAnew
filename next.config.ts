@@ -74,6 +74,11 @@ const nextConfig: NextConfig = {
         destination: '/services/loan-settlement',
         permanent: true,
       },
+      {
+        source: '/services/realestate',
+        destination: '/services/real-estate',
+        permanent: true,
+      },
     ];  
   },
   async headers() {

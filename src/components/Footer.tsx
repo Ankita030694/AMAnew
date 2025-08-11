@@ -153,12 +153,12 @@ export default function Footer() {
                 </h3>
                 <ul className="space-y-4">
                   {[
-                    { href: "/services/banking", label: "Banking and Finance" },
+                    { href: "/services/banking-and-finance", label: "Banking and Finance" },
                     { href: "/services/loansettlement", label: "Loan Settlement" },
-                    { href: "/services/ipr", label: "Intellectual Property Rights" },
-                    { href: "/services/entertainment", label: "Entertainment Law" },
-                    { href: "/services/realestate", label: "Real Estate" },
-                    { href: "/services/criminal", label: "Criminal Law" }
+                    { href: "/services/intellectual-property-rights", label: "Intellectual Property Rights" },
+                    { href: "/services/entertainment-law", label: "Entertainment Law" },
+                    { href: "/services/real-estate", label: "Real Estate" },
+                    { href: "/services/criminal-law", label: "Criminal Law" }
                   ].map((service) => (
                     <li key={service.href}>
                       <Link
