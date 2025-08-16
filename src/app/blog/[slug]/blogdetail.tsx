@@ -150,6 +150,126 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
   const [expandedFaqs, setExpandedFaqs] = useState<string[]>([]);
   const [relatedBlogs, setRelatedBlogs] = useState<Blog[]>([]);
 
+  // Generate FAQ Schema for Google
+  const generateFAQSchema = useCallback((blogFaqs: FAQ[], blogData: Blog) => {
+    if (blogFaqs.length === 0) return null;
+
+    return {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "name": `${blogData.title} - Frequently Asked Questions`,
+      "description": `Frequently asked questions about ${blogData.title}`,
+      "url": `https://amalegalsolutions.com/blog/${blogData.slug}`,
+      "mainEntity": blogFaqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    };
+  }, []);
+
+  // Generate comprehensive Article Schema with FAQ
+  const generateArticleSchema = useCallback((blogData: Blog, blogFaqs: FAQ[]) => {
+    const baseSchema: any = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": blogData.title,
+      "name": blogData.title,
+      "description": blogData.metaDescription || blogData.subtitle || blogData.description.replace(/<[^>]*>/g, '').substring(0, 160),
+      "url": `https://amalegalsolutions.com/blog/${blogData.slug}`,
+      "datePublished": blogData.date,
+      "dateModified": blogData.date,
+      "author": {
+        "@type": "Person",
+        "name": blogData.author || "AMA Legal Solutions",
+        "url": blogData.author === "Anuj Anand Malik" ? "https://amalegalsolutions.com/author/anuj-anand-malik" : 
+              blogData.author === "Shrey Arora" ? "https://amalegalsolutions.com/author/shrey-arora" : 
+              "https://amalegalsolutions.com/about"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "AMA Legal Solutions",
+        "url": "https://amalegalsolutions.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://amalegalsolutions.com/logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://amalegalsolutions.com/blog/${blogData.slug}`
+      },
+      "keywords": blogData.metaTitle || blogData.title,
+      "articleSection": "Legal Advice",
+      "inLanguage": "en-IN"
+    };
+
+    // Add image if available
+    if (blogData.image) {
+      baseSchema.image = {
+        "@type": "ImageObject",
+        "url": blogData.image,
+        "caption": blogData.title
+      };
+    }
+
+    // Add FAQ as part of the article if available
+    if (blogFaqs.length > 0) {
+      baseSchema.mainEntity = {
+        "@type": "FAQPage",
+        "mainEntity": blogFaqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      };
+    }
+
+    return baseSchema;
+  }, []);
+
+  // Inject FAQ Schema into document head
+  const injectFAQSchema = useCallback((schema: any) => {
+    if (!schema) return;
+
+    // Remove any existing FAQ schema
+    const existingSchema = document.querySelector('script[data-faq-schema]');
+    if (existingSchema) {
+      existingSchema.remove();
+    }
+
+    // Add new FAQ schema
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.setAttribute('data-faq-schema', 'true');
+    script.text = JSON.stringify(schema);
+    document.head.appendChild(script);
+  }, []);
+
+  // Inject Article Schema into document head
+  const injectArticleSchema = useCallback((schema: any) => {
+    if (!schema) return;
+
+    // Remove any existing article schema
+    const existingSchema = document.querySelector('script[data-article-schema]');
+    if (existingSchema) {
+      existingSchema.remove();
+    }
+
+    // Add new article schema
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.setAttribute('data-article-schema', 'true');
+    script.text = JSON.stringify(schema);
+    document.head.appendChild(script);
+  }, []);
+
   // Helper function to get a random blog from related blogs
   const getRandomBlog = useCallback(() => {
     if (relatedBlogs.length === 0) return null;
@@ -233,6 +353,14 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
           
           setRelatedBlogs(relatedBlogsData);
           setFaqs(faqsData);
+
+          // Generate and inject FAQ schema
+          const faqSchema = generateFAQSchema(faqsData, blogData);
+          injectFAQSchema(faqSchema);
+
+          // Generate and inject Article schema
+          const articleSchema = generateArticleSchema(blogData, faqsData);
+          injectArticleSchema(articleSchema);
         }
         
         setLoading(false);
@@ -251,8 +379,19 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
       if (typeof window !== 'undefined' && 'scrollRestoration' in window.history) {
         window.history.scrollRestoration = 'auto';
       }
+      
+      // Clean up schemas
+      const faqSchemaElement = document.querySelector('script[data-faq-schema]');
+      if (faqSchemaElement) {
+        faqSchemaElement.remove();
+      }
+      
+      const articleSchemaElement = document.querySelector('script[data-article-schema]');
+      if (articleSchemaElement) {
+        articleSchemaElement.remove();
+      }
     };
-  }, [slug]);
+  }, [slug, generateFAQSchema, injectFAQSchema, generateArticleSchema, injectArticleSchema]);
 
   // Toggle FAQ expansion
   const toggleFaq = (faqId: string) => {
@@ -622,19 +761,19 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
         
         {/* FAQs Section */}
         {faqs.length > 0 && (
-          <div className="max-w-4xl mx-auto mt-6 lg:mt-8 bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="max-w-4xl mx-auto mt-6 lg:mt-8 bg-white rounded-lg shadow-lg overflow-hidden" itemScope itemType="https://schema.org/FAQPage">
             <div className="px-4 md:px-5 py-4 border-b border-gray-200 bg-[#5A4C33]">
               <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-[#D2A02A]">Frequently Asked Questions</h2>
             </div>
             <div className="p-4 md:p-5 lg:p-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-5">
                 {faqs.map((faq, index) => (
-                  <div key={faq.id} className="border border-gray-200 rounded-lg overflow-hidden">
+                  <div key={faq.id} className="border border-gray-200 rounded-lg overflow-hidden" itemScope itemType="https://schema.org/Question" itemProp="mainEntity">
                     <button
                       onClick={() => toggleFaq(faq.id)}
                       className="flex justify-between items-center w-full text-left p-3 md:p-4 font-medium text-black hover:text-[#D2A02A] hover:bg-amber-50 focus:outline-none transition-all duration-300"
                     >
-                      <span className="text-sm md:text-base pr-3">{faq.question}</span>
+                      <span className="text-sm md:text-base pr-3" itemProp="name">{faq.question}</span>
                       <span className="flex-shrink-0">
                         {expandedFaqs.includes(faq.id) ? (
                           <svg className="h-4 w-4 md:h-5 md:w-5 text-[#D2A02A] transform rotate-180 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -648,8 +787,8 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
                       </span>
                     </button>
                     {expandedFaqs.includes(faq.id) && (
-                      <div className="px-3 md:px-4 pb-3 md:pb-4 border-t border-gray-100">
-                        <p className="text-xs md:text-sm text-black leading-relaxed mt-2">{faq.answer}</p>
+                      <div className="px-3 md:px-4 pb-3 md:pb-4 border-t border-gray-100" itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+                        <p className="text-xs md:text-sm text-black leading-relaxed mt-2" itemProp="text">{faq.answer}</p>
                       </div>
                     )}
                   </div>
