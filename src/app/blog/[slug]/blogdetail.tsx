@@ -156,7 +156,7 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
 
     return {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
+      "@type": "BlogFAQPage",
       "name": `${blogData.title} - Frequently Asked Questions`,
       "description": `Frequently asked questions about ${blogData.title}`,
       "url": `https://amalegalsolutions.com/blog/${blogData.slug}`,
@@ -219,7 +219,7 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
     // Add FAQ as part of the article if available
     if (blogFaqs.length > 0) {
       baseSchema.mainEntity = {
-        "@type": "FAQPage",
+        "@type": "BlogFAQPage",
         "mainEntity": blogFaqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,

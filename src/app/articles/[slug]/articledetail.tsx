@@ -76,7 +76,7 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: ArticleDetailProps) 
 
     return {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
+      "@type": "ArticleFAQPage",
       "name": `${articleData.title} - Frequently Asked Questions`,
       "description": `Frequently asked questions about ${articleData.title}`,
       "url": `https://amalegalsolutions.com/articles/${articleData.slug}`,
@@ -139,7 +139,7 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: ArticleDetailProps) 
     // Add FAQ as part of the article if available
     if (articleFaqs.length > 0) {
       baseSchema.mainEntity = {
-        "@type": "FAQPage",
+        "@type": "ArticleFAQPage",
         "mainEntity": articleFaqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,
