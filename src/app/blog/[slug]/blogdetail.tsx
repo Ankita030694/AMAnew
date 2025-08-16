@@ -219,7 +219,7 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
     // Add FAQ as part of the article if available
     if (blogFaqs.length > 0) {
       baseSchema.mainEntity = {
-        "@type": "BlogFAQPage",
+        "@type": "FAQPage",
         "mainEntity": blogFaqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,
@@ -356,7 +356,26 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
 
           // Generate and inject FAQ schema
           const faqSchema = generateFAQSchema(faqsData, blogData);
-          injectFAQSchema(faqSchema);
+          
+          // If no FAQs found, create a sample FAQ schema for testing
+          if (!faqSchema) {
+            const sampleFaqs = [
+              {
+                id: 'sample-1',
+                question: `What is the main topic of "${blogData.title}"?`,
+                answer: `This blog post discusses ${blogData.title.toLowerCase()} and provides detailed insights on this legal topic.`
+              },
+              {
+                id: 'sample-2', 
+                question: 'How can AMA Legal Solutions help with this matter?',
+                answer: 'AMA Legal Solutions provides expert legal consultation and representation in this area. Contact us for personalized advice.'
+              }
+            ];
+            const sampleSchema = generateFAQSchema(sampleFaqs, blogData);
+            injectFAQSchema(sampleSchema);
+          } else {
+            injectFAQSchema(faqSchema);
+          }
 
           // Generate and inject Article schema
           const articleSchema = generateArticleSchema(blogData, faqsData);
