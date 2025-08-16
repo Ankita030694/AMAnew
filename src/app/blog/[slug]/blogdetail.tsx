@@ -156,7 +156,7 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
 
     return {
       "@context": "https://schema.org",
-      "@type": "BlogFAQPage",
+      "@type": "FAQPage",
       "name": `${blogData.title} - Frequently Asked Questions`,
       "description": `Frequently asked questions about ${blogData.title}`,
       "url": `https://amalegalsolutions.com/blog/${blogData.slug}`,
