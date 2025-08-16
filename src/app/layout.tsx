@@ -121,9 +121,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               "@type": "Attorney",
               "name": "AMA Legal Solutions",
               "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
-              "@id": "",
+              "@id": "https://www.amalegalsolutions.com/",
               "url": "https://www.amalegalsolutions.com/",
               "telephone": "8700343611",
+              "priceRange": "$$",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "2493AP, Block G, Sushant Lok 2, Sector 57,",
@@ -156,10 +157,78 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               ],
               "department": {
                 "@type": "LegalService",
-                "name": "",
-                "image": "",
-                "telephone": ""
+                "name": "AMA Legal Solutions - Legal Services",
+                "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
+                "telephone": "8700343611",
+                "priceRange": "$$",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "2493AP, Block G, Sushant Lok 2, Sector 57,",
+                  "addressLocality": "Gurugram",
+                  "postalCode": "122001",
+                  "addressCountry": "IN"
+                }
               }
+            })
+          }}
+        />
+        <Script
+          id="faq-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What legal services does AMA Legal Solutions provide?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AMA Legal Solutions specializes in corporate law, real estate law, entertainment law, contract drafting, legal consultation, litigation support, and comprehensive legal representation for individuals and businesses across India."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How can I schedule a consultation with AMA Legal Solutions?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can schedule a consultation by calling us at 8700343611, visiting our office at Block G, Sushant Lok 2, Sector 57, Gurugram, or contacting us through our website contact form. We offer both in-person and virtual consultations."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What are AMA Legal Solutions' office hours?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our office is open Monday through Saturday from 10:00 AM to 6:00 PM. We are closed on Sundays. For urgent legal matters, please call our main number and we will arrange emergency consultation if needed."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Does AMA Legal Solutions handle cases across India?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, AMA Legal Solutions handles legal matters across India. While our main office is located in Gurugram, we represent clients in various states and provide legal services nationwide through our network of legal professionals."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What should I bring to my first consultation?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Please bring all relevant documents related to your legal matter, including contracts, correspondence, court papers, identification documents, and any previous legal advice you may have received. This helps us provide the most accurate assessment of your case."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How are legal fees structured at AMA Legal Solutions?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our fee structure varies depending on the type and complexity of the legal matter. We offer transparent pricing with options for hourly rates, fixed fees for specific services, and contingency arrangements where applicable. We discuss all fees upfront during your initial consultation."
+                  }
+                }
+              ]
             })
           }}
         />
@@ -177,22 +246,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
         {children}
         <Footer />
         <Toaster position="top-right" />
-        <Script 
-          strategy="afterInteractive" 
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
-        />
-        <Script
-          id="gtag-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}');
-            `,
-          }}
-        />
+        {process.env.NEXT_PUBLIC_GA_TRACKING_ID && (
+          <>
+            <Script 
+              strategy="afterInteractive" 
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
+            />
+            <Script
+              id="gtag-init"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}');
+                `,
+              }}
+            />
+          </>
+        )}
       </body>
     </html>
   );
