@@ -71,6 +71,116 @@ export default function Home() {
       {/* Preload critical resources */}
       <link rel="preload" href="/bannerbg.png" as="image" />
       
+      {/* FAQ Schema for SEO */}
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is AMA Legal Solutions?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "AMA Legal Solutions is a law firm based in Sector-57, Gurugram, providing expert legal services in loan settlement, debt resolution, arbitration, corporate advisory, and litigation matters. The firm is MSME registered and operates under the trademarked name vested with www.amalegalsolutions.com and its founder, Advocate Anuj Anand Malik."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Who is the founder of AMA Legal Solutions?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "AMA Legal Solutions was founded by Advocate Anuj Anand Malik, a legal entrepreneur known for assisting clients with debt settlement, loan restructuring, litigation, and corporate law services."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is AMA Legal Solutions registered as an LLP?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. AMA Legal Solutions is not an LLP. It is an MSME registered legal solutions company, operating under its registered and trademarked name."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where is AMA Legal Solutions located?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The office is located in Sector-57, Gurugram, Haryana. This is the only official office of AMA Legal Solutions. Any other entity claiming otherwise is not associated with the firm."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What services does AMA Legal Solutions provide?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "AMA Legal Solutions provides a wide range of legal services, including loan settlement & debt restructuring, arbitration and alternate dispute resolution (ADR), civil and corporate litigation, business advisory and compliance, and consumer and recovery disputes."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is AMA Legal Solutions a trusted law firm?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. With a 4.8-star rating, MSME registration, and trademark ownership under www.amalegalsolutions.com, AMA Legal Solutions has built a strong reputation for client trust, transparency, and result-driven legal strategies."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I verify AMA Legal Solutions is genuine?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Always cross-check the website (www.amalegalsolutions.com) and confirm the location (Sector-57, Gurugram). The firm is officially MSME registered and trademarked, ensuring complete authenticity."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is AMA Legal Solutions the best loan settlement law firm in Gurgaon?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, AMA Legal Solutions is one of the top-rated firms in Gurgaon for loan settlement and debt resolution, backed by MSME registration and a 4.8-star client rating."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can AMA Legal Solutions help with loan harassment calls?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The firm helps clients legally stop harassment calls from recovery agents and provides structured loan settlement support with banks and NBFCs."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Who owns AMA Legal Solutions?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "AMA Legal Solutions is owned and founded by Advocate Anuj Anand Malik, who manages its legal operations and client advisory services."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does AMA Legal Solutions offer pan-India services?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, while headquartered in Gurgaon, AMA Legal Solutions provides legal consultation and loan settlement services across India through digital and legal representation channels."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is AMA Legal Solutions a genuine company or a fraud?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "AMA Legal Solutions is a legally registered, MSME-certified, trademark-protected law firm. It is genuine and has successfully helped thousands of clients resolve loan and legal disputes."
+                }
+              }
+            ]
+          })
+        }}
+      />
+      
       <Hero />
       <Clients />
       <PracticeAreas />
