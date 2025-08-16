@@ -115,6 +115,7 @@ export default async function Page({
   let blogData = null;
   let faqs: any[] = [];
   let faqSchema = null;
+  let articleSchema = null;
 
   try {
     blogData = await getBlogBySlug(slug);
@@ -122,6 +123,7 @@ export default async function Page({
       pageTitle = blogData.title || pageTitle;
       faqs = await getBlogFAQs(blogData.id) || [];
       faqSchema = generateFAQSchema(faqs, blogData);
+      articleSchema = generateArticleSchema(blogData, faqs);
     }
   } catch (error) {
     console.error("Error fetching blog data:", error);
@@ -136,6 +138,18 @@ export default async function Page({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(faqSchema)
+          }}
+          strategy="beforeInteractive"
+        />
+      )}
+      
+      {/* Server-side rendered Article Schema */}
+      {articleSchema && (
+        <Script
+          id="blog-article-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(articleSchema)
           }}
           strategy="beforeInteractive"
         />
@@ -246,4 +260,67 @@ function generateFAQSchema(faqs: any[], blogData: any) {
       }
     }))
   };
+}
+
+// Function to generate article schema
+function generateArticleSchema(blogData: any, faqs: any[]) {
+  const baseSchema: any = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": blogData.title,
+    "name": blogData.title,
+    "description": blogData.metaDescription || blogData.subtitle || blogData.description?.replace(/<[^>]*>/g, '').substring(0, 160) || '',
+    "url": `https://amalegalsolutions.com/blog/${blogData.slug}`,
+    "datePublished": blogData.date,
+    "dateModified": blogData.date,
+    "author": {
+      "@type": "Person",
+      "name": blogData.author || "AMA Legal Solutions",
+      "url": blogData.author === "Anuj Anand Malik" ? "https://amalegalsolutions.com/author/anuj-anand-malik" : 
+            blogData.author === "Shrey Arora" ? "https://amalegalsolutions.com/author/shrey-arora" : 
+            "https://amalegalsolutions.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AMA Legal Solutions",
+      "url": "https://amalegalsolutions.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://amalegalsolutions.com/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://amalegalsolutions.com/blog/${blogData.slug}`
+    },
+    "keywords": blogData.metaTitle || blogData.title,
+    "articleSection": "Legal Advice",
+    "inLanguage": "en-IN"
+  };
+
+  // Add image if available
+  if (blogData.image) {
+    baseSchema.image = {
+      "@type": "ImageObject",
+      "url": blogData.image,
+      "caption": blogData.title
+    };
+  }
+
+  // Add FAQ as part of the article if available
+  if (faqs.length > 0) {
+    baseSchema.mainEntity = {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer.replace(/<[^>]*>/g, '') // Strip HTML tags
+        }
+      }))
+    };
+  }
+
+  return baseSchema;
 }

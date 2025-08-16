@@ -150,126 +150,6 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
   const [expandedFaqs, setExpandedFaqs] = useState<string[]>([]);
   const [relatedBlogs, setRelatedBlogs] = useState<Blog[]>([]);
 
-  // Generate FAQ Schema for Google
-  const generateFAQSchema = useCallback((blogFaqs: FAQ[], blogData: Blog) => {
-    if (blogFaqs.length === 0) return null;
-
-    return {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "name": `${blogData.title} - Frequently Asked Questions`,
-      "description": `Frequently asked questions about ${blogData.title}`,
-      "url": `https://amalegalsolutions.com/blog/${blogData.slug}`,
-      "mainEntity": blogFaqs.map(faq => ({
-        "@type": "Question",
-        "name": faq.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.answer
-        }
-      }))
-    };
-  }, []);
-
-  // Generate comprehensive Article Schema with FAQ
-  const generateArticleSchema = useCallback((blogData: Blog, blogFaqs: FAQ[]) => {
-    const baseSchema: any = {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": blogData.title,
-      "name": blogData.title,
-      "description": blogData.metaDescription || blogData.subtitle || blogData.description.replace(/<[^>]*>/g, '').substring(0, 160),
-      "url": `https://amalegalsolutions.com/blog/${blogData.slug}`,
-      "datePublished": blogData.date,
-      "dateModified": blogData.date,
-      "author": {
-        "@type": "Person",
-        "name": blogData.author || "AMA Legal Solutions",
-        "url": blogData.author === "Anuj Anand Malik" ? "https://amalegalsolutions.com/author/anuj-anand-malik" : 
-              blogData.author === "Shrey Arora" ? "https://amalegalsolutions.com/author/shrey-arora" : 
-              "https://amalegalsolutions.com/about"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "AMA Legal Solutions",
-        "url": "https://amalegalsolutions.com",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://amalegalsolutions.com/logo.png"
-        }
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": `https://amalegalsolutions.com/blog/${blogData.slug}`
-      },
-      "keywords": blogData.metaTitle || blogData.title,
-      "articleSection": "Legal Advice",
-      "inLanguage": "en-IN"
-    };
-
-    // Add image if available
-    if (blogData.image) {
-      baseSchema.image = {
-        "@type": "ImageObject",
-        "url": blogData.image,
-        "caption": blogData.title
-      };
-    }
-
-    // Add FAQ as part of the article if available
-    if (blogFaqs.length > 0) {
-      baseSchema.mainEntity = {
-        "@type": "FAQPage",
-        "mainEntity": blogFaqs.map(faq => ({
-          "@type": "Question",
-          "name": faq.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": faq.answer
-          }
-        }))
-      };
-    }
-
-    return baseSchema;
-  }, []);
-
-  // Inject FAQ Schema into document head
-  const injectFAQSchema = useCallback((schema: any) => {
-    if (!schema) return;
-
-    // Remove any existing FAQ schema
-    const existingSchema = document.querySelector('script[data-faq-schema]');
-    if (existingSchema) {
-      existingSchema.remove();
-    }
-
-    // Add new FAQ schema
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.setAttribute('data-faq-schema', 'true');
-    script.text = JSON.stringify(schema);
-    document.head.appendChild(script);
-  }, []);
-
-  // Inject Article Schema into document head
-  const injectArticleSchema = useCallback((schema: any) => {
-    if (!schema) return;
-
-    // Remove any existing article schema
-    const existingSchema = document.querySelector('script[data-article-schema]');
-    if (existingSchema) {
-      existingSchema.remove();
-    }
-
-    // Add new article schema
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.setAttribute('data-article-schema', 'true');
-    script.text = JSON.stringify(schema);
-    document.head.appendChild(script);
-  }, []);
-
   // Helper function to get a random blog from related blogs
   const getRandomBlog = useCallback(() => {
     if (relatedBlogs.length === 0) return null;
@@ -354,10 +234,7 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
           setRelatedBlogs(relatedBlogsData);
           setFaqs(faqsData);
 
-          // Note: FAQ schema is now handled server-side in page.tsx
-          // Generate and inject Article schema
-          const articleSchema = generateArticleSchema(blogData, faqsData);
-          injectArticleSchema(articleSchema);
+          // Note: Both FAQ and Article schemas are now handled server-side in page.tsx
         }
         
         setLoading(false);
@@ -377,13 +254,9 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
         window.history.scrollRestoration = 'auto';
       }
       
-      // Clean up article schema (FAQ schema is now server-side)
-      const articleSchemaElement = document.querySelector('script[data-article-schema]');
-      if (articleSchemaElement) {
-        articleSchemaElement.remove();
-      }
+      // All schemas are now handled server-side
     };
-  }, [slug, generateFAQSchema, injectFAQSchema, generateArticleSchema, injectArticleSchema]);
+  }, [slug]);
 
   // Toggle FAQ expansion
   const toggleFaq = (faqId: string) => {
