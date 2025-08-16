@@ -307,20 +307,6 @@ function generateArticleSchema(blogData: any, faqs: any[]) {
     };
   }
 
-  // Add FAQ as part of the article if available
-  if (faqs.length > 0) {
-    baseSchema.mainEntity = {
-      "@type": "FAQPage",
-      "mainEntity": faqs.map(faq => ({
-        "@type": "Question",
-        "name": faq.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.answer.replace(/<[^>]*>/g, '') // Strip HTML tags
-        }
-      }))
-    };
-  }
-
+  // Note: FAQ schema is handled separately, not embedded in article
   return baseSchema;
 }

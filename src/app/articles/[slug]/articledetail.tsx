@@ -136,21 +136,7 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: ArticleDetailProps) 
       };
     }
 
-    // Add FAQ as part of the article if available
-    if (articleFaqs.length > 0) {
-      baseSchema.mainEntity = {
-        "@type": "FAQPage",
-        "mainEntity": articleFaqs.map(faq => ({
-          "@type": "Question",
-          "name": faq.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": faq.answer
-          }
-        }))
-      };
-    }
-
+    // Note: FAQ schema is handled separately, not embedded in article
     return baseSchema;
   }, []);
 
