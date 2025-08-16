@@ -1,8 +1,7 @@
 'use client'
-import { useEffect, useState, useCallback, memo } from 'react';
+import { useEffect, useState, memo } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../../lib/firebase';
-import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -70,111 +69,7 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: ArticleDetailProps) 
   const [expandedFaqs, setExpandedFaqs] = useState<string[]>([]);
   const [relatedArticles, setRelatedArticles] = useState<Article[]>([]);
 
-  // Generate FAQ Schema for Google
-  const generateFAQSchema = useCallback((articleFaqs: FAQ[], articleData: Article) => {
-    if (articleFaqs.length === 0) return null;
 
-    return {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "name": `${articleData.title} - Frequently Asked Questions`,
-      "description": `Frequently asked questions about ${articleData.title}`,
-      "url": `https://amalegalsolutions.com/articles/${articleData.slug}`,
-      "mainEntity": articleFaqs.map(faq => ({
-        "@type": "Question",
-        "name": faq.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.answer
-        }
-      }))
-    };
-  }, []);
-
-  // Generate comprehensive Article Schema with FAQ
-  const generateArticleSchema = useCallback((articleData: Article, articleFaqs: FAQ[]) => {
-    const baseSchema: any = {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": articleData.title,
-      "name": articleData.title,
-      "description": articleData.metaDescription || articleData.subtitle || articleData.description.replace(/<[^>]*>/g, '').substring(0, 160),
-      "url": `https://amalegalsolutions.com/articles/${articleData.slug}`,
-      "datePublished": articleData.date,
-      "dateModified": articleData.date,
-      "author": {
-        "@type": "Person",
-        "name": articleData.author || "AMA Legal Solutions",
-        "url": articleData.author === "Anuj Anand Malik" ? "https://amalegalsolutions.com/author/anuj-anand-malik" : 
-              articleData.author === "Shrey Arora" ? "https://amalegalsolutions.com/author/shrey-arora" : 
-              "https://amalegalsolutions.com/about"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "AMA Legal Solutions",
-        "url": "https://amalegalsolutions.com",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://amalegalsolutions.com/logo.png"
-        }
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": `https://amalegalsolutions.com/articles/${articleData.slug}`
-      },
-      "keywords": articleData.metaTitle || articleData.title,
-      "articleSection": "Legal Articles",
-      "inLanguage": "en-IN"
-    };
-
-    // Add image if available
-    if (articleData.image) {
-      baseSchema.image = {
-        "@type": "ImageObject",
-        "url": articleData.image,
-        "caption": articleData.title
-      };
-    }
-
-    // Note: FAQ schema is handled separately, not embedded in article
-    return baseSchema;
-  }, []);
-
-  // Inject FAQ Schema into document head
-  const injectFAQSchema = useCallback((schema: any) => {
-    if (!schema) return;
-
-    // Remove any existing FAQ schema
-    const existingSchema = document.querySelector('script[data-faq-schema]');
-    if (existingSchema) {
-      existingSchema.remove();
-    }
-
-    // Add new FAQ schema
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.setAttribute('data-faq-schema', 'true');
-    script.text = JSON.stringify(schema);
-    document.head.appendChild(script);
-  }, []);
-
-  // Inject Article Schema into document head
-  const injectArticleSchema = useCallback((schema: any) => {
-    if (!schema) return;
-
-    // Remove any existing article schema
-    const existingSchema = document.querySelector('script[data-article-schema]');
-    if (existingSchema) {
-      existingSchema.remove();
-    }
-
-    // Add new article schema
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.setAttribute('data-article-schema', 'true');
-    script.text = JSON.stringify(schema);
-    document.head.appendChild(script);
-  }, []);
 
   // Helper function to get a random article from related articles
   const getRandomArticle = () => {
@@ -261,7 +156,9 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: ArticleDetailProps) 
     
     const fetchArticleBySlug = async () => {
       try {
-        // First generate slugs and find matching document
+        setLoading(true);
+        
+        // Fetch all articles to find the matching one and get related articles
         const articlesCollection = collection(db, 'articles');
         const querySnapshot = await getDocs(articlesCollection);
         let foundArticle = null;
@@ -302,16 +199,7 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: ArticleDetailProps) 
           }));
           setFaqs(faqsData);
 
-          // Generate and inject schemas if article and FAQs are available
-          if (foundArticle) {
-            // Generate and inject FAQ schema
-            const faqSchema = generateFAQSchema(faqsData, foundArticle);
-            injectFAQSchema(faqSchema);
-
-            // Generate and inject Article schema
-            const articleSchema = generateArticleSchema(foundArticle, faqsData);
-            injectArticleSchema(articleSchema);
-          }
+          // Note: Both FAQ and Article schemas are now handled server-side in page.tsx
         }
         
         setLoading(false);
@@ -331,18 +219,9 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: ArticleDetailProps) 
         window.history.scrollRestoration = 'auto';
       }
       
-      // Clean up schemas
-      const faqSchemaElement = document.querySelector('script[data-faq-schema]');
-      if (faqSchemaElement) {
-        faqSchemaElement.remove();
-      }
-      
-      const articleSchemaElement = document.querySelector('script[data-article-schema]');
-      if (articleSchemaElement) {
-        articleSchemaElement.remove();
-      }
+      // All schemas are now handled server-side
     };
-  }, [slug, generateFAQSchema, injectFAQSchema, generateArticleSchema, injectArticleSchema]);
+  }, [slug]);
 
   // Toggle FAQ expansion
   const toggleFaq = (faqId: string) => {
