@@ -2,9 +2,11 @@ import { collection, getDocs, query, where, limit } from "firebase/firestore";
 import { db } from "../../../lib/firebase";
 import type { Metadata, ResolvingMetadata } from "next";
 import ArticleDetail from "./blogdetail";
+import Script from "next/script";
 
 // Cache for blog data to avoid repeated Firebase queries
 const blogCache = new Map<string, any>();
+const faqCache = new Map<string, any[]>();
 
 // Optimized function to fetch blog by slug
 async function getBlogBySlug(slug: string) {
@@ -108,20 +110,37 @@ export default async function Page({
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
 
-  // Get the title from Firebase for the H1 tag - use cached data if available
+  // Get the blog data and FAQs server-side
   let pageTitle = "Latest Insights from AMA Legal Solutions";
+  let blogData = null;
+  let faqs: any[] = [];
+  let faqSchema = null;
 
   try {
-    const blogData = await getBlogBySlug(slug);
+    blogData = await getBlogBySlug(slug);
     if (blogData) {
       pageTitle = blogData.title || pageTitle;
+      faqs = await getBlogFAQs(blogData.id) || [];
+      faqSchema = generateFAQSchema(faqs, blogData);
     }
   } catch (error) {
-    console.error("Error fetching article title:", error);
+    console.error("Error fetching blog data:", error);
   }
 
   return (
     <>
+      {/* Server-side rendered FAQ Schema */}
+      {faqSchema && (
+        <Script
+          id="blog-faq-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema)
+          }}
+          strategy="beforeInteractive"
+        />
+      )}
+      
       <header>
         <h1 className="sr-only">AMA Legal Insights</h1>
         <ArticleDetail slug={slug} />
@@ -182,4 +201,49 @@ export default async function Page({
       </header>
     </>
   );
+}
+
+// Function to fetch FAQs server-side
+async function getBlogFAQs(blogId: string) {
+  // Check cache first
+  if (faqCache.has(blogId)) {
+    return faqCache.get(blogId);
+  }
+
+  try {
+    const faqsSnapshot = await getDocs(collection(db, 'blogs', blogId, 'faqs'));
+    const faqs = faqsSnapshot.docs.map(doc => ({
+      id: doc.id,
+      question: doc.data().question || '',
+      answer: doc.data().answer || ''
+    }));
+    
+    // Cache the result
+    faqCache.set(blogId, faqs);
+    return faqs;
+  } catch (error) {
+    console.error("Error fetching FAQs:", error);
+    return [];
+  }
+}
+
+// Function to generate FAQ schema
+function generateFAQSchema(faqs: any[], blogData: any) {
+  if (faqs.length === 0) return null;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "name": `${blogData.title} - Frequently Asked Questions`,
+    "description": `Frequently asked questions about ${blogData.title}`,
+    "url": `https://amalegalsolutions.com/blog/${blogData.slug}`,
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer.replace(/<[^>]*>/g, '') // Strip HTML tags
+      }
+    }))
+  };
 }

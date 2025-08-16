@@ -354,29 +354,7 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
           setRelatedBlogs(relatedBlogsData);
           setFaqs(faqsData);
 
-          // Generate and inject FAQ schema
-          const faqSchema = generateFAQSchema(faqsData, blogData);
-          
-          // If no FAQs found, create a sample FAQ schema for testing
-          if (!faqSchema) {
-            const sampleFaqs = [
-              {
-                id: 'sample-1',
-                question: `What is the main topic of "${blogData.title}"?`,
-                answer: `This blog post discusses ${blogData.title.toLowerCase()} and provides detailed insights on this legal topic.`
-              },
-              {
-                id: 'sample-2', 
-                question: 'How can AMA Legal Solutions help with this matter?',
-                answer: 'AMA Legal Solutions provides expert legal consultation and representation in this area. Contact us for personalized advice.'
-              }
-            ];
-            const sampleSchema = generateFAQSchema(sampleFaqs, blogData);
-            injectFAQSchema(sampleSchema);
-          } else {
-            injectFAQSchema(faqSchema);
-          }
-
+          // Note: FAQ schema is now handled server-side in page.tsx
           // Generate and inject Article schema
           const articleSchema = generateArticleSchema(blogData, faqsData);
           injectArticleSchema(articleSchema);
@@ -399,12 +377,7 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
         window.history.scrollRestoration = 'auto';
       }
       
-      // Clean up schemas
-      const faqSchemaElement = document.querySelector('script[data-faq-schema]');
-      if (faqSchemaElement) {
-        faqSchemaElement.remove();
-      }
-      
+      // Clean up article schema (FAQ schema is now server-side)
       const articleSchemaElement = document.querySelector('script[data-article-schema]');
       if (articleSchemaElement) {
         articleSchemaElement.remove();
