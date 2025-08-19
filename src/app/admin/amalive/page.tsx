@@ -37,6 +37,7 @@ const BlogsDashboard = () => {
     description: ''
   });
   const [editingVideo, setEditingVideo] = useState<TableData | null>(null);
+  const [isRefreshing, setIsRefreshing] = useState(false);
   const router = useRouter();
 
   // Use the permissions hook - admin required
@@ -71,21 +72,6 @@ const BlogsDashboard = () => {
 
   // Update the fetch data function to use 'amalive' collection
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, 'amalive'));
-        const data = querySnapshot.docs.map(doc => ({
-          id: doc.id,
-          videoId: doc.data().videoId || '-',
-          title: doc.data().title || '-',
-          description: doc.data().description || '-'
-        }));
-        setTableData(data);
-      } catch (error) {
-        console.error("Error fetching Firebase data:", error);
-      }
-    };
-
     fetchData();
   }, []);
 
@@ -99,8 +85,11 @@ const BlogsDashboard = () => {
         await deleteDoc(doc(db, 'amalive', id));
         // Update the table data by filtering out the deleted item
         setTableData(prev => prev.filter(item => item.id !== id));
+        console.log('Video deleted successfully');
+        alert('Video deleted successfully!');
       } catch (error) {
         console.error("Error deleting video:", error);
+        alert('Error deleting video. Please try again.');
       }
     }
   };
@@ -115,8 +104,35 @@ const BlogsDashboard = () => {
     setShowBlogForm(true);
   };
 
+  // Function to fetch data from Firebase
+  const fetchData = async () => {
+    try {
+      setIsRefreshing(true);
+      const querySnapshot = await getDocs(collection(db, 'amalive'));
+      const data = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        videoId: doc.data().videoId || '-',
+        title: doc.data().title || '-',
+        description: doc.data().description || '-'
+      }));
+      setTableData(data);
+      console.log('Data fetched successfully:', data.length, 'videos');
+    } catch (error) {
+      console.error("Error fetching Firebase data:", error);
+      alert('Error fetching videos. Please refresh the page.');
+    } finally {
+      setIsRefreshing(false);
+    }
+  };
+
   const handleSubmitVideo = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!newVideo.videoId.trim()) {
+      alert('Please enter a valid YouTube Video ID');
+      return;
+    }
+    
     try {
       if (editingVideo) {
         // Update existing video
@@ -131,12 +147,19 @@ const BlogsDashboard = () => {
             ? { ...item, ...newVideo }
             : item
         ));
+        console.log('Video updated successfully');
+        alert('Video updated successfully!');
       } else {
-        // Add new video (existing functionality)
+        // Add new video
         await addDoc(collection(db, 'amalive'), {
           ...newVideo,
           timestamp: new Date().toISOString(),
         });
+        
+        // Refresh the table data to show the new video
+        await fetchData();
+        console.log('Video added successfully');
+        alert('Video added successfully!');
       }
       
       // Reset form
@@ -150,6 +173,7 @@ const BlogsDashboard = () => {
       
     } catch (error) {
       console.error("Error saving video:", error);
+      alert('Error saving video. Please try again.');
     }
   };
 
@@ -241,15 +265,35 @@ const BlogsDashboard = () => {
               <h2 className="text-xl font-semibold text-[#5A4C33]">
                 {editingVideo ? 'Edit Video' : 'Add New Video'}
               </h2>
-              <motion.button
-                onClick={() => setShowBlogForm(!showBlogForm)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center px-4 py-2 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white rounded-md font-medium"
-              >
-                <FontAwesomeIcon icon={faPlus} className="mr-2" />
-                {showBlogForm ? 'View Videos' : 'Add Video'}
-              </motion.button>
+              <div className="flex space-x-2">
+                <motion.button
+                  onClick={fetchData}
+                  disabled={isRefreshing}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`flex items-center px-4 py-2 rounded-md font-medium ${
+                    isRefreshing 
+                      ? 'bg-gray-300 text-gray-500 cursor-not-allowed' 
+                      : 'bg-gray-500 text-white hover:bg-gray-600'
+                  }`}
+                >
+                  {isRefreshing ? (
+                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
+                  ) : (
+                    <FontAwesomeIcon icon={faCog} className="mr-2" />
+                  )}
+                  {isRefreshing ? 'Refreshing...' : 'Refresh'}
+                </motion.button>
+                <motion.button
+                  onClick={() => setShowBlogForm(!showBlogForm)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex items-center px-4 py-2 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white rounded-md font-medium"
+                >
+                  <FontAwesomeIcon icon={faPlus} className="mr-2" />
+                  {showBlogForm ? 'View Videos' : 'Add Video'}
+                </motion.button>
+              </div>
             </div>
 
             {/* Conditional Rendering: Show either Data Table or Blog Form */}
