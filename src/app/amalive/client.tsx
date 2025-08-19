@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import { db } from "@/lib/firebase";
-import { collection, getDocs, query, orderBy, limit, startAfter, Timestamp, DocumentData } from "firebase/firestore";
+import { collection, getDocs, query, orderBy, Timestamp, DocumentData } from "firebase/firestore";
 
 // Define the Video type for your client component
 interface Video {
@@ -62,17 +62,14 @@ const YouTubeEmbed = dynamic(() => import("./YouTubeEmbed"), {
 export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
   // State to store videos data
   const [videos, setVideos] = useState<Video[]>(initialVideos || []);
-  // Pagination state
-  const [currentPage, setCurrentPage] = useState(1);
-  const videosPerPage = 9;
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [lastDoc, setLastDoc] = useState<DocumentData | null>(null);
 
   // Debug logging
   useEffect(() => {
     console.log("Client: Initial videos received:", initialVideos.length);
     console.log("Client: Current videos state:", videos.length);
+    console.log("Client: Videos data:", videos);
     
     // Debug Firebase connection
     try {
@@ -87,131 +84,72 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
     }
   }, [initialVideos, videos]);
  
-  // Calculate total pages based on available videos
-  const totalPages = Math.ceil(videos.length / videosPerPage);
-
-  // Load more videos from Firebase when needed
-  const loadMoreVideos = useCallback(
-    async (pageNumber: number) => {
-      if (pageNumber === 1 && videos.length >= videosPerPage) {
-        return; // First page is already loaded
+  // Load all videos from Firebase if initialVideos is empty
+  const loadAllVideos = useCallback(async () => {
+    try {
+      console.log("Client: Loading all videos from Firebase");
+      setIsLoading(true);
+      setError(null);
+      
+      const videosRef = collection(db, 'amalive');
+      const videosQuery = query(
+        videosRef,
+        orderBy('timestamp', 'desc')
+      );
+      
+      console.log("Client: Executing Firebase query");
+      const querySnapshot = await getDocs(videosQuery);
+      console.log("Client: Query completed, docs count:", querySnapshot.docs.length);
+      
+      if (querySnapshot.empty) {
+        console.log('Client: No videos found in database');
+        setIsLoading(false);
+        return;
       }
       
-      try {
-        console.log("Client: Loading more videos for page", pageNumber);
-        setIsLoading(true);
-        setError(null);
+      const newVideos = querySnapshot.docs.map(doc => {
+        const data = doc.data();
+        // Convert timestamp to a readable date string
+        let dateStr = new Date().toISOString().split('T')[0]; // Default
         
-        const videosRef = collection(db, 'amalive');
-        let videosQuery;
-        
-        if (pageNumber > 1 && lastDoc) {
-          // For pagination, get the next batch starting after the last document
-          videosQuery = query(
-            videosRef,
-            orderBy('timestamp', 'desc'),
-            startAfter(lastDoc),
-            limit(videosPerPage)
-          );
-        } else {
-          // First page or fallback
-          videosQuery = query(
-            videosRef,
-            orderBy('timestamp', 'desc'),
-            limit(pageNumber * videosPerPage)
-          );
-        }
-        
-        console.log("Client: Executing Firebase query");
-        const querySnapshot = await getDocs(videosQuery);
-        console.log("Client: Query completed, docs count:", querySnapshot.docs.length);
-        
-        if (querySnapshot.empty) {
-          console.log('Client: No more videos to load');
-          setIsLoading(false);
-          return;
-        }
-        
-        // Set the last document for pagination
-        setLastDoc(querySnapshot.docs[querySnapshot.docs.length - 1]);
-        
-        const newVideos = querySnapshot.docs.map(doc => {
-          const data = doc.data();
-          // Convert timestamp to a readable date string
-          let dateStr = new Date().toISOString().split('T')[0]; // Default
-          
-          try {
-            if (data.timestamp && typeof data.timestamp.toDate === 'function') {
-              dateStr = data.timestamp.toDate().toISOString().split('T')[0];
-            } else if (data.timestamp) {
-              dateStr = new Date(data.timestamp).toISOString().split('T')[0];
-            }
-          } catch (err) {
-            console.error("Date conversion error:", err);
+        try {
+          if (data.timestamp && typeof data.timestamp.toDate === 'function') {
+            dateStr = data.timestamp.toDate().toISOString().split('T')[0];
+          } else if (data.timestamp) {
+            dateStr = new Date(data.timestamp).toISOString().split('T')[0];
           }
-          
-          return {
-            id: doc.id,
-            description: data.description || '',
-            timestamp: data.timestamp,
-            title: data.title || 'Untitled Video',
-            videoId: data.videoId || '',
-            category: data.category || 'General',
-            date: dateStr,
-          };
-        });
-        
-        console.log('Client: Fetched videos from Firebase:', newVideos.length);
-        
-        if (pageNumber === 1) {
-          setVideos(newVideos);
-        } else {
-          setVideos((prev: Video[]) => {
-            // Filter out duplicates by id
-            const existingIds = new Set(prev.map((v) => v.id));
-            const filteredNew = newVideos.filter((v) => !existingIds.has(v.id));
-            return [...prev, ...filteredNew];
-          });
+        } catch (err) {
+          console.error("Date conversion error:", err);
         }
         
-        setIsLoading(false);
-      } catch (error) {
-        console.error("Client: Error loading videos from Firebase:", error);
-        const errorDetails = error instanceof Error ? error.message : String(error);
-        setError(`Failed to load videos: ${errorDetails}`);
-        setIsLoading(false);
-      }
-    },
-    [lastDoc, videos.length]
-  );
+        return {
+          id: doc.id,
+          description: data.description || '',
+          timestamp: data.timestamp,
+          title: data.title || 'Untitled Video',
+          videoId: data.videoId || '',
+          category: data.category || 'General',
+          date: dateStr,
+        };
+      });
+      
+      console.log('Client: Fetched videos from Firebase:', newVideos.length);
+      setVideos(newVideos);
+      setIsLoading(false);
+    } catch (error) {
+      console.error("Client: Error loading videos from Firebase:", error);
+      const errorDetails = error instanceof Error ? error.message : String(error);
+      setError(`Failed to load videos: ${errorDetails}`);
+      setIsLoading(false);
+    }
+  }, []);
 
   // Try to load videos if initialVideos is empty
   useEffect(() => {
     if (initialVideos.length === 0) {
-      loadMoreVideos(1);
+      loadAllVideos();
     }
-  }, [initialVideos.length, loadMoreVideos]);
-
-  // Change page
-  const paginate = useCallback(
-    (pageNumber: number) => {
-      setCurrentPage(pageNumber);
-      loadMoreVideos(pageNumber);
-
-      // Scroll to top when changing pages
-      requestAnimationFrame(() => {
-        window.scrollTo({ top: 200, behavior: "smooth" });
-      });
-    },
-    [loadMoreVideos]
-  );
-
-  // Get current videos for display
-  const currentVideos = useMemo(() => {
-    const indexOfLastVideo = currentPage * videosPerPage;
-    const indexOfFirstVideo = indexOfLastVideo - videosPerPage;
-    return videos.slice(indexOfFirstVideo, indexOfLastVideo);
-  }, [videos, currentPage, videosPerPage]);
+  }, [initialVideos.length, loadAllVideos]);
 
   return (
     <div className="bg-transparent">
@@ -270,14 +208,13 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
         {/* Videos Grid */}
         <AnimatePresence mode="wait">
           <motion.div
-            key={`videos-page-${currentPage}`}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
             exit={{ opacity: 0 }}
           >
-            {currentVideos.map((video) => (
+            {videos.map((video) => (
               <motion.div key={video.id} variants={itemVariants} layout>
                 <motion.div
                   className="rounded-xl overflow-hidden border border-gray-100 h-full"
@@ -288,16 +225,7 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
                   {/* YouTube Video */}
                   <YouTubeEmbed videoId={video.videoId} />
                   
-                  {/* Video Info */}
-                  {/* <div className="p-4">
-                    <h3 className="font-medium text-lg mb-2">{video.title}</h3>
-                    <p className="text-sm text-gray-600 line-clamp-2">{video.description}</p>
-                    {video.date && (
-                      <p className="text-xs text-gray-500 mt-2">
-                        {new Date(video.date).toISOString().split('T')[0].replace(/-/g, '/')}
-                      </p>
-                    )}
-                  </div> */}
+                  {/* Video Info - Removed */}
                 </motion.div>
               </motion.div>
             ))}
@@ -309,58 +237,6 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
           <div className="flex justify-center mb-8">
             <div className="w-8 h-8 border-4 border-[#D2A02A] border-t-transparent rounded-full animate-spin"></div>
           </div>
-        )}
-
-        {/* Pagination */}
-        {totalPages > 1 && (
-          <motion.div
-            className="flex justify-center items-center space-x-2 mt-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            <button
-              onClick={() => paginate(Math.max(1, currentPage - 1))}
-              disabled={currentPage === 1}
-              className={`px-4 py-2 rounded-md ${
-                currentPage === 1
-                  ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-                  : "bg-[#D2A02A] text-white hover:bg-[#B8881E]"
-              } transition-colors`}
-              aria-label="Previous page"
-            >
-              Previous
-            </button>
-
-            {Array.from({ length: totalPages }, (_, idx) => (
-              <button
-                key={idx + 1}
-                onClick={() => paginate(idx + 1)}
-                className={`w-10 h-10 rounded-full ${
-                  currentPage === idx + 1
-                    ? "bg-[#D2A02A] text-white"
-                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                } transition-colors`}
-                aria-label={`Page ${idx + 1}`}
-                aria-current={currentPage === idx + 1 ? "page" : undefined}
-              >
-                {idx + 1}
-              </button>
-            ))}
-
-            <button
-              onClick={() => paginate(Math.min(totalPages, currentPage + 1))}
-              disabled={currentPage === totalPages}
-              className={`px-4 py-2 rounded-md ${
-                currentPage === totalPages
-                  ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-                  : "bg-[#D2A02A] text-white hover:bg-[#B8881E]"
-              } transition-colors`}
-              aria-label="Next page"
-            >
-              Next
-            </button>
-          </motion.div>
         )}
 
         {/* Styled Disclaimer Section */}

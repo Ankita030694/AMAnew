@@ -2,7 +2,7 @@
 import { Suspense } from 'react';
 import AmaLiveClient from './client';
 import { db } from '@/lib/firebase'; // Import Firebase db
-import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore';
+import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 
 export const metadata = {
   title: 'AMA Live | Legal Video Sessions in Gurugram',
@@ -13,14 +13,13 @@ export const metadata = {
 }
 
 // Function to fetch videos from Firebase
-async function fetchVideosFromFirebase(page = 1, pageSize = 9) {
+async function fetchVideosFromFirebase() {
   try {
-    console.log('Server: Attempting to fetch videos from Firebase');
+    console.log('Server: Attempting to fetch all videos from Firebase');
     const videosRef = collection(db, 'amalive');
     const videosQuery = query(
       videosRef,
-      orderBy('timestamp', 'desc'),
-      limit(pageSize)
+      orderBy('timestamp', 'desc')
     );
     
     const querySnapshot = await getDocs(videosQuery);
@@ -71,7 +70,7 @@ async function fetchVideosFromFirebase(page = 1, pageSize = 9) {
 export default async function AmaLivePage() {
   // Fetch data from Firebase
   try {
-    const initialVideos = await fetchVideosFromFirebase(1, 9);
+    const initialVideos = await fetchVideosFromFirebase();
     console.log('Server: Fetched initial videos:', initialVideos.length);
     
     return (
