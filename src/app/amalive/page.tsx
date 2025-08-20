@@ -17,12 +17,21 @@ async function fetchVideosFromFirebase() {
   try {
     console.log('Server: Attempting to fetch all videos from Firebase');
     const videosRef = collection(db, 'amalive');
-    const videosQuery = query(
-      videosRef,
-      orderBy('timestamp', 'desc')
-    );
     
-    const querySnapshot = await getDocs(videosQuery);
+    // Try to query with timestamp ordering first, fallback to no ordering if it fails
+    let querySnapshot;
+    try {
+      const videosQuery = query(
+        videosRef,
+        orderBy('timestamp', 'desc')
+      );
+      querySnapshot = await getDocs(videosQuery);
+    } catch (orderError) {
+      console.log('Server: Timestamp ordering failed, fetching without order:', orderError);
+      // Fallback: fetch without ordering
+      querySnapshot = await getDocs(videosRef);
+    }
+    
     console.log('Server: Firebase query completed, docs count:', querySnapshot.docs.length);
     
     const videos = querySnapshot.docs.map(doc => {

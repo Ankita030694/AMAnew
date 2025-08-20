@@ -92,13 +92,21 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
       setError(null);
       
       const videosRef = collection(db, 'amalive');
-      const videosQuery = query(
-        videosRef,
-        orderBy('timestamp', 'desc')
-      );
       
-      console.log("Client: Executing Firebase query");
-      const querySnapshot = await getDocs(videosQuery);
+      // Try to query with timestamp ordering first, fallback to no ordering if it fails
+      let querySnapshot;
+      try {
+        const videosQuery = query(
+          videosRef,
+          orderBy('timestamp', 'desc')
+        );
+        querySnapshot = await getDocs(videosQuery);
+      } catch (orderError) {
+        console.log("Client: Timestamp ordering failed, fetching without order:", orderError);
+        // Fallback: fetch without ordering
+        querySnapshot = await getDocs(videosRef);
+      }
+      
       console.log("Client: Query completed, docs count:", querySnapshot.docs.length);
       
       if (querySnapshot.empty) {
@@ -134,6 +142,7 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
       });
       
       console.log('Client: Fetched videos from Firebase:', newVideos.length);
+      console.log('Client: Videos data:', newVideos);
       setVideos(newVideos);
       setIsLoading(false);
     } catch (error) {
@@ -194,6 +203,25 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
           </div>
         )}
 
+        {/* Debug information */}
+        {false && (
+          <div className="bg-blue-50 border border-blue-200 text-blue-700 px-4 py-3 rounded-md mb-6">
+            <h4 className="font-medium mb-2">Debug Info:</h4>
+            <p>Initial videos count: {initialVideos.length}</p>
+            <p>Current videos count: {videos.length}</p>
+            <p>Loading: {isLoading.toString()}</p>
+            <p>Error: {error || 'None'}</p>
+            {videos.length > 0 && (
+              <div className="mt-2">
+                <p className="font-medium">Videos data:</p>
+                <pre className="text-xs bg-blue-100 p-2 rounded mt-1 overflow-auto">
+                  {JSON.stringify(videos, null, 2)}
+                </pre>
+              </div>
+            )}
+          </div>
+        )}
+
         {/* No videos message */}
         {!isLoading && videos.length === 0 && !error && (
           <div className="text-center py-12 bg-gray-50 rounded-xl border border-gray-100">
@@ -225,7 +253,7 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
                   {/* YouTube Video */}
                   <YouTubeEmbed videoId={video.videoId} />
                   
-                  {/* Video Info - Removed */}
+                  
                 </motion.div>
               </motion.div>
             ))}

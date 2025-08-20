@@ -321,7 +321,7 @@ const BlogsDashboard = () => {
                     />
                   </div>
                   
-                  {/* <div>
+                  <div>
                     <label htmlFor="title" className="block text-sm font-medium text-[#5A4C33] mb-1">Video Title</label>
                     <input
                       type="text"
@@ -329,9 +329,8 @@ const BlogsDashboard = () => {
                       name="title"
                       value={newVideo.title}
                       onChange={(e) => setNewVideo(prev => ({ ...prev, title: e.target.value }))}
-                      required
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                      placeholder="Enter video title"
+                      placeholder="Enter video title (optional)"
                     />
                   </div>
                   
@@ -346,7 +345,7 @@ const BlogsDashboard = () => {
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
                       placeholder="Enter video description"
                     ></textarea>
-                  </div> */}
+                  </div>
 
                   <div className="flex justify-end space-x-3">
                     <motion.button
