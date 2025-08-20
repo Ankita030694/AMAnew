@@ -155,10 +155,9 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
 
   // Try to load videos if initialVideos is empty
   useEffect(() => {
-    if (initialVideos.length === 0) {
-      loadAllVideos();
-    }
-  }, [initialVideos.length, loadAllVideos]);
+    // Always load videos from Firebase on mount
+    loadAllVideos();
+  }, [loadAllVideos]);
 
   return (
     <div className="bg-transparent">
