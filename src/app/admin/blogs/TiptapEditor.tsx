@@ -193,7 +193,7 @@ const MenuBar = ({ editor }: { editor: any }) => {
   };
 
   return (
-    <div className="border-b border-gray-300 p-2 flex flex-wrap gap-1 bg-gray-50">
+    <div className="sticky top-0 z-10 border-b border-gray-300 p-2 flex flex-wrap gap-1 bg-gray-50">
       {/* Text Formatting */}
       <div className="flex gap-1 mr-2">
         <button
@@ -728,12 +728,13 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange, classNam
 
   // Return the editor content with the MenuBar
   return (
-    <div className={className}>
+    <div className={`${className} relative`}>
       <style jsx global>{editorStyles}</style>
       {isMounted && editor && (
-        <>
+        <div className="flex flex-col h-full">
           <MenuBar editor={editor} />
-          <EditorContent 
+          <div className="overflow-y-auto flex-1">
+            <EditorContent 
             editor={editor} 
             onDrop={(event) => {
               if (event.dataTransfer?.files.length) {
@@ -770,7 +771,8 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange, classNam
               return false;
             }}
           />
-        </>
+          </div>
+        </div>
       )}
     </div>
   );

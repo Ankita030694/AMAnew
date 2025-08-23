@@ -940,12 +940,12 @@ const BlogsDashboard = () => {
                   <div>
                     <label htmlFor="description" className="block text-sm font-medium text-[#5A4C33] mb-1">Blog Content</label>
                     {/* Tiptap Editor Integration */}
-                    <div className="border border-gray-300 rounded-md">
+                    <div className="border border-gray-300 rounded-md overflow-hidden">
                       {typeof window !== 'undefined' && (
                         <TiptapEditor
                           content={newBlog.description}
                           onChange={handleEditorChange}
-                          className="bg-white text-black min-h-[300px]"
+                          className="bg-white text-black h-[500px]"
                         />
                       )}
                     </div>
