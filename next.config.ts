@@ -79,6 +79,11 @@ const nextConfig: NextConfig = {
         destination: '/services/real-estate',
         permanent: true,
       },
+      {
+        source: '/services/ipr',
+        destination: '/services/intellectual-property-rights',
+        permanent: true,
+      },
     ];  
   },
   async headers() {
