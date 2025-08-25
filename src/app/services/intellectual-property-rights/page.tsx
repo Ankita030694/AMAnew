@@ -48,7 +48,7 @@ export const metadata = {
   description:
     "Expert intellectual property rights lawyers in India. AMA Legal Solutions provides trademark registration, patent filing, copyright protection, and IP litigation services. Book your consultation now.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/intellectual-property-rights',
+    canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights',
   },
 };
 

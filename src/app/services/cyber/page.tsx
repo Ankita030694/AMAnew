@@ -48,7 +48,7 @@ export const metadata = {
   description:
     "Expert cyber law lawyers in India. AMA Legal Solutions provides cyber crime defense, data protection, online fraud cases, and IT Act compliance services. Book your consultation now.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/cyber',
+    canonical: 'https://www.amalegalsolutions.com/services/cyber',
   },
 };
 

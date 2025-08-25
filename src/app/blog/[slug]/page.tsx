@@ -51,7 +51,7 @@ export async function generateMetadata(
   let author = "AMA Legal Solutions";
 
   // Base URL for canonical link
-  const baseUrl = "https://amalegalsolutions.com";
+  const baseUrl = "https://www.amalegalsolutions.com";
 
   try {
     // Use optimized function to fetch blog data
@@ -250,7 +250,7 @@ function generateFAQSchema(faqs: any[], blogData: any) {
     "@type": "FAQPage",
     "name": `${blogData.title} - Frequently Asked Questions`,
     "description": `Frequently asked questions about ${blogData.title}`,
-    "url": `https://amalegalsolutions.com/blog/${blogData.slug}`,
+    "url": `https://www.amalegalsolutions.com/blog/${blogData.slug}`,
     "mainEntity": faqs.map(faq => ({
       "@type": "Question",
       "name": faq.question,
@@ -264,34 +264,38 @@ function generateFAQSchema(faqs: any[], blogData: any) {
 
 // Function to generate article schema
 function generateArticleSchema(blogData: any, faqs: any[]) {
+  // Convert date to ISO format if it exists, otherwise use current date
+  const publishedDate = blogData.date ? new Date(blogData.date).toISOString() : new Date().toISOString();
+  const modifiedDate = new Date().toISOString(); // Always use current date as modified
+  
   const baseSchema: any = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": blogData.title,
     "name": blogData.title,
     "description": blogData.metaDescription || blogData.subtitle || blogData.description?.replace(/<[^>]*>/g, '').substring(0, 160) || '',
-    "url": `https://amalegalsolutions.com/blog/${blogData.slug}`,
-    "datePublished": blogData.date,
-    "dateModified": blogData.date,
+    "url": `https://www.amalegalsolutions.com/blog/${blogData.slug}`,
+    "datePublished": publishedDate,
+    "dateModified": modifiedDate,
     "author": {
       "@type": "Person",
       "name": blogData.author || "AMA Legal Solutions",
-      "url": blogData.author === "Anuj Anand Malik" ? "https://amalegalsolutions.com/author/anuj-anand-malik" : 
-            blogData.author === "Shrey Arora" ? "https://amalegalsolutions.com/author/shrey-arora" : 
-            "https://amalegalsolutions.com/about"
+      "url": blogData.author === "Anuj Anand Malik" ? "https://www.amalegalsolutions.com/author/anuj-anand-malik" : 
+            blogData.author === "Shrey Arora" ? "https://www.amalegalsolutions.com/author/shrey-arora" : 
+            "https://www.amalegalsolutions.com/about"
     },
     "publisher": {
       "@type": "Organization",
       "name": "AMA Legal Solutions",
-      "url": "https://amalegalsolutions.com",
+      "url": "https://www.amalegalsolutions.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://amalegalsolutions.com/logo.png"
+        "url": "https://www.amalegalsolutions.com/logo.png"
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://amalegalsolutions.com/blog/${blogData.slug}`
+      "@id": `https://www.amalegalsolutions.com/blog/${blogData.slug}`
     },
     "keywords": blogData.metaTitle || blogData.title,
     "articleSection": "Legal Advice",

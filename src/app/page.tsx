@@ -6,6 +6,7 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import Script from "next/script";
+import { generateDateMeta } from "@/lib/seo";
 
 // Lazy load components that are not immediately visible with better loading states
 const AskExperts = dynamic(() => import("@/components/AskExperts"), {
@@ -47,13 +48,13 @@ export const metadata = {
   title: 'AMA Legal Solutions: Top Law Firm in India',
   description: 'AMA Legal Solutions is a trusted law firm in India offering legal consultation, dispute resolution, and advisory services in finance, corporate law, and more',
   alternates: {
-    canonical: 'https://amalegalsolutions.com/',
+    canonical: 'https://www.amalegalsolutions.com/',
   },
   // Add Open Graph metadata for better social sharing
   openGraph: {
     title: 'AMA Legal Solutions: Top Law Firm in India',
     description: 'AMA Legal Solutions is a trusted law firm in India offering legal consultation, dispute resolution, and advisory services in finance, corporate law, and more',
-    url: 'https://amalegalsolutions.com/',
+    url: 'https://www.amalegalsolutions.com/',
     siteName: 'AMA Legal Solutions',
     type: 'website',
   },
@@ -63,6 +64,10 @@ export const metadata = {
     title: 'AMA Legal Solutions: Top Law Firm in India',
     description: 'AMA Legal Solutions is a trusted law firm in India offering legal consultation, dispute resolution, and advisory services in finance, corporate law, and more',
   },
+  // Add published and modified dates for better SEO
+  other: {
+    ...generateDateMeta(),
+  },
 }
 
 export default function Home() {
@@ -70,6 +75,27 @@ export default function Home() {
     <main>
       {/* Preload critical resources */}
       <link rel="preload" href="/bannerbg.png" as="image" />
+      
+      {/* Website Schema with dates for SEO */}
+      <Script
+        id="website-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "AMA Legal Solutions",
+            "url": "https://www.amalegalsolutions.com/",
+            "description": "Top-rated law firm in India specializing in corporate, real estate, and entertainment law",
+            "dateModified": new Date().toISOString(),
+            "publisher": {
+              "@type": "Organization",
+              "name": "AMA Legal Solutions",
+              "url": "https://www.amalegalsolutions.com/"
+            }
+          })
+        }}
+      />
       
       {/* FAQ Schema for SEO */}
       <Script
@@ -214,6 +240,18 @@ export default function Home() {
       <Locations />
       <LegalExcellence />
       {/* <Form /> */}
+      
+      {/* Last updated timestamp for SEO */}
+      <div className="text-center py-4 text-gray-500 text-sm">
+        <time dateTime={new Date().toISOString()}>
+          Last updated: {new Date().toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+          })}
+        </time>
+      </div>
+      
       {/* Other content */}
     
     </main>

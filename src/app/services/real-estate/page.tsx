@@ -48,7 +48,7 @@ export const metadata = {
   description:
     "Expert real estate lawyers in India. AMA Legal Solutions provides property dispute resolution, RERA compliance, property registration, and real estate litigation services. Book your consultation now.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/real-estate',
+    canonical: 'https://www.amalegalsolutions.com/services/real-estate',
   },
 };
 

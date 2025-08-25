@@ -48,7 +48,7 @@ export const metadata = {
   description:
     "Expert criminal lawyers in India. AMA Legal Solutions provides criminal defense, FIR assistance, cyber crime protection, and police case representation. Book your consultation now.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/criminal-law',
+    canonical: 'https://www.amalegalsolutions.com/services/criminal-law',
   },
 };
 

@@ -48,7 +48,7 @@ export const metadata = {
   description:
     "Expert arbitration lawyers in India. AMA Legal Solutions provides arbitration services, arbitral awards, interim relief, and international arbitration representation. Book your consultation now.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/arbitration',
+    canonical: 'https://www.amalegalsolutions.com/services/arbitration',
   },
 };
 

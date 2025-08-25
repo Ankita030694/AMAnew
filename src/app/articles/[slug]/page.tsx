@@ -51,7 +51,7 @@ export async function generateMetadata(
   let author = "AMA Legal Solutions";
 
   // Base URL for canonical link
-  const baseUrl = "https://amalegalsolutions.com";
+  const baseUrl = "https://www.amalegalsolutions.com";
 
   try {
     // Use optimized function to fetch article data
@@ -250,7 +250,7 @@ function generateFAQSchema(faqs: any[], articleData: any) {
     "@type": "FAQPage",
     "name": `${articleData.title} - Frequently Asked Questions`,
     "description": `Frequently asked questions about ${articleData.title}`,
-    "url": `https://amalegalsolutions.com/articles/${articleData.slug}`,
+    "url": `https://www.amalegalsolutions.com/articles/${articleData.slug}`,
     "mainEntity": faqs.map(faq => ({
       "@type": "Question",
       "name": faq.question,
@@ -264,34 +264,38 @@ function generateFAQSchema(faqs: any[], articleData: any) {
 
 // Function to generate article schema
 function generateArticleSchema(articleData: any, faqs: any[]) {
+  // Convert date to ISO format if it exists, otherwise use current date
+  const publishedDate = articleData.date ? new Date(articleData.date).toISOString() : new Date().toISOString();
+  const modifiedDate = new Date().toISOString(); // Always use current date as modified
+  
   const baseSchema: any = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": articleData.title,
     "name": articleData.title,
     "description": articleData.metaDescription || articleData.subtitle || articleData.description?.replace(/<[^>]*>/g, '').substring(0, 160) || '',
-    "url": `https://amalegalsolutions.com/articles/${articleData.slug}`,
-    "datePublished": articleData.date,
-    "dateModified": articleData.date,
+    "url": `https://www.amalegalsolutions.com/articles/${articleData.slug}`,
+    "datePublished": publishedDate,
+    "dateModified": modifiedDate,
     "author": {
       "@type": "Person",
       "name": articleData.author || "AMA Legal Solutions",
-      "url": articleData.author === "Anuj Anand Malik" ? "https://amalegalsolutions.com/author/anuj-anand-malik" : 
-            articleData.author === "Shrey Arora" ? "https://amalegalsolutions.com/author/shrey-arora" : 
-            "https://amalegalsolutions.com/about"
+      "url": articleData.author === "Anuj Anand Malik" ? "https://www.amalegalsolutions.com/author/anuj-anand-malik" : 
+            articleData.author === "Shrey Arora" ? "https://www.amalegalsolutions.com/author/shrey-arora" : 
+            "https://www.amalegalsolutions.com/about"
     },
     "publisher": {
       "@type": "Organization",
       "name": "AMA Legal Solutions",
-      "url": "https://amalegalsolutions.com",
+      "url": "https://www.amalegalsolutions.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://amalegalsolutions.com/logo.png"
+        "url": "https://www.amalegalsolutions.com/logo.png"
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://amalegalsolutions.com/articles/${articleData.slug}`
+      "@id": `https://www.amalegalsolutions.com/articles/${articleData.slug}`
     },
     "keywords": articleData.metaTitle || articleData.title,
     "articleSection": "Legal Articles",
