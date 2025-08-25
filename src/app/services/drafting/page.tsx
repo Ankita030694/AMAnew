@@ -48,7 +48,7 @@ export const metadata = {
   description:
     "Expert legal document drafting services in India. AMA Legal Solutions provides contract drafting, agreement preparation, legal notices, and document review services. Book your consultation now.",
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/services/drafting',
+    canonical: 'https://amalegalsolutions.com/services/drafting',
   },
 };
 

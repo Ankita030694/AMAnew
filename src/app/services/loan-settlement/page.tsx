@@ -48,7 +48,7 @@ export const metadata = {
   description:
     "Need expert help with loan settlement in India? AMA Legal Solutions offers legal support to negotiate and settle personal loans, credit card debts, and EMI defaults. Book your consultation now.",
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement',
+    canonical: 'https://amalegalsolutions.com/services/loansettlement',
   },
 };
 

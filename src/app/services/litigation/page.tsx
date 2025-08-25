@@ -48,7 +48,7 @@ export const metadata = {
   description:
     "Expert litigation lawyers in India. AMA Legal Solutions provides civil litigation, commercial disputes, appellate services, and court representation. Book your consultation now.",
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/services/litigation',
+    canonical: 'https://amalegalsolutions.com/services/litigation',
   },
 };
 

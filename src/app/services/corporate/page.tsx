@@ -48,7 +48,7 @@ export const metadata = {
   description:
     "Expert corporate lawyers in India. AMA Legal Solutions provides company registration, incorporation, startup compliance, and corporate legal services. Book your consultation now.",
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/services/corporate',
+    canonical: 'https://amalegalsolutions.com/services/corporate',
   },
 };
 

@@ -48,7 +48,7 @@ export const metadata = {
   description:
     "Expert civil law lawyers in India. AMA Legal Solutions provides civil litigation, contract disputes, property cases, and civil rights representation. Book your consultation now.",
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/services/civil',
+    canonical: 'https://amalegalsolutions.com/services/civil',
   },
 };
 

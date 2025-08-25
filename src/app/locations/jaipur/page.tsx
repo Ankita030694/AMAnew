@@ -2,7 +2,7 @@ export const metadata = {
   title: 'Legal Services in Jaipur | AMA Legal Solutions',
   description: 'Access comprehensive legal solutions in Jaipur with AMA Legal Solutions, offering expertise in banking, finance, and more, tailored to your needs.',
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/locations/jaipur', // Add your canonical URL here
+    canonical: 'https://amalegalsolutions.com/locations/jaipur', // Add your canonical URL here
   },
 }
 

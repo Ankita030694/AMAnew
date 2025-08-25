@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
 import Script from 'next/script'
-import { generateRobotsMeta, generateCanonicalUrl, generateDateMeta } from "@/lib/seo";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -16,10 +15,6 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "AMA Legal Solutions | Top Law Firm in India",
   description: "Top-rated law firm in India specializing in corporate, real estate, and entertainment law. Contact us for legal consultation and representation.",
-  alternates: {
-    canonical: generateCanonicalUrl('/'),
-  },
-  robots: generateRobotsMeta(),
   openGraph: {
     title: "AMA Legal Solutions | Top Law Firm in India",
     description: "Top-rated law firm in India specializing in corporate, real estate, and entertainment law. Contact us for legal consultation and representation.",
@@ -50,7 +45,6 @@ export const metadata: Metadata = {
     "og:image:height": "630",
     "og:image:type": "image/png",
     "og:image:alt": "AMA Legal Solutions - Top Law Firm in India",
-    ...generateDateMeta(),
   },
 };
 
@@ -68,11 +62,6 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
-        {/* Hreflang for international SEO */}
-        <link rel="alternate" href="https://www.amalegalsolutions.com/" hrefLang="en" />
-        <link rel="alternate" href="https://www.amalegalsolutions.com/" hrefLang="en-IN" />
-        <link rel="alternate" href="https://www.amalegalsolutions.com/" hrefLang="x-default" />
         
         {/* Critical resource preloads */}
         <link rel="preload" href="/bannerbg.png" as="image" type="image/png" />

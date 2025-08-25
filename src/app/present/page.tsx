@@ -2,7 +2,7 @@ export const metadata = {
   title: 'AMA Legal Solutions | Leading Legal Firm in India',
   description: 'Discover how AMA Legal Solutions is shaping the present with cutting-edge legal solutions in banking, finance, corporate law, and more across India',
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/present', // Add your canonical URL here
+    canonical: 'https://amalegalsolutions.com/present', // Add your canonical URL here
   },
 }
 

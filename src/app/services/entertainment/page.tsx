@@ -48,7 +48,7 @@ export const metadata = {
   description:
     "Expert entertainment lawyers in India. AMA Legal Solutions provides entertainment contracts, copyright protection, media law, and entertainment dispute resolution. Book your consultation now.",
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/services/entertainment',
+    canonical: 'https://amalegalsolutions.com/services/entertainment',
   },
 };
 

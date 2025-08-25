@@ -48,7 +48,7 @@ export const metadata = {
   description:
     "Need expert banking and finance lawyers? AMA Legal Solutions provides trusted legal advice on loan disputes, financial regulations, and corporate finance matters. Book your consultation now.",
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/services/banking-and-finance',
+    canonical: 'https://amalegalsolutions.com/services/banking-and-finance',
   },
 };
 
