@@ -15,6 +15,17 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "AMA Legal Solutions | Top Law Firm in India",
   description: "Top-rated law firm in India specializing in corporate, real estate, and entertainment law. Contact us for legal consultation and representation.",
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '16x16 32x32 48x48', type: 'image/x-icon' },
+      { url: '/favicon.svg', type: 'image/svg+xml' }
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
+    ],
+    shortcut: '/favicon.ico'
+  },
+  manifest: '/manifest.json',
   openGraph: {
     title: "AMA Legal Solutions | Top Law Firm in India",
     description: "Top-rated law firm in India specializing in corporate, real estate, and entertainment law. Contact us for legal consultation and representation.",
@@ -56,6 +67,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Favicon and Touch Icons */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#1a365d" />
+        <meta name="msapplication-TileColor" content="#1a365d" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+        
         {/* Critical performance optimization hints */}
         <link rel="dns-prefetch" href="//www.youtube.com" />
         <link rel="dns-prefetch" href="//firebasestorage.googleapis.com" />
