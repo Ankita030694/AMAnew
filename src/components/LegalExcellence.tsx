@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { FaChevronLeft, FaChevronRight, FaPlay, FaPause, FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import Link from "next/link";
 
@@ -66,25 +66,127 @@ const testimonialVideos = [
   },
 ];
 
+// Video cache to store loaded video elements
+const videoCache = new Map<string, HTMLVideoElement>();
+
+// Optimized video component with caching
+const OptimizedVideo = ({ 
+  src, 
+  className, 
+  onLoadedData, 
+  videoRef, 
+  ...props 
+}: {
+  src: string;
+  className: string;
+  onLoadedData?: (e: React.SyntheticEvent<HTMLVideoElement>) => void;
+  videoRef?: (el: HTMLVideoElement | null) => void;
+  [key: string]: any;
+}) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [error, setError] = useState(false);
+  const videoElementRef = useRef<HTMLVideoElement | null>(null);
+
+  const handleVideoRef = useCallback((el: HTMLVideoElement | null) => {
+    videoElementRef.current = el;
+    if (videoRef) videoRef(el);
+  }, [videoRef]);
+
+  const handleLoadingComplete = useCallback((e: React.SyntheticEvent<HTMLVideoElement>) => {
+    setIsLoaded(true);
+    setError(false);
+    if (onLoadedData) onLoadedData(e);
+  }, [onLoadedData]);
+
+  const handleError = useCallback(() => {
+    setError(true);
+    setIsLoaded(false);
+  }, []);
+
+  // Reset loading state when src changes
+  useEffect(() => {
+    setIsLoaded(false);
+    setError(false);
+  }, [src]);
+
+  // Check if video is already loaded (for cached videos)
+  useEffect(() => {
+    const video = videoElementRef.current;
+    if (video && video.readyState >= 2) { // HAVE_CURRENT_DATA or higher
+      setIsLoaded(true);
+      setError(false);
+    }
+  }, [src]);
+
+  return (
+    <div className="relative w-full h-full">
+      <video
+        ref={handleVideoRef}
+        className={`${className} transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+        src={src}
+        onLoadedData={handleLoadingComplete}
+        onLoadedMetadata={handleLoadingComplete}
+        onCanPlay={handleLoadingComplete}
+        onError={handleError}
+        {...props}
+      />
+      {!isLoaded && !error && (
+        <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">
+          <div className="w-12 h-12 border-4 border-[#D2A02A] border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      )}
+      {error && (
+        <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
+          <div className="text-gray-500 text-sm">Failed to load video</div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 export default function LegalExcellence() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isInView, setIsInView] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
+  const [videosLoaded, setVideosLoaded] = useState<Set<number>>(new Set());
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
+  // Preload videos when component becomes visible
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => setIsInView(entry.isIntersecting),
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          // Preload all videos when component becomes visible
+          testimonialVideos.forEach((video, index) => {
+            if (!videosLoaded.has(index)) {
+              const videoElement = document.createElement('video');
+              videoElement.src = video.videoSrc;
+              videoElement.preload = 'metadata';
+              videoElement.load();
+              videoElement.addEventListener('loadeddata', () => {
+                setVideosLoaded(prev => new Set([...prev, index]));
+              });
+              videoCache.set(video.videoSrc, videoElement);
+            }
+          });
+        }
+      },
       { threshold: 0.1 }
     );
 
     if (containerRef.current) observer.observe(containerRef.current);
     return () => observer.disconnect();
-  }, []);
+  }, [videosLoaded]);
 
-  // Removed auto-navigation - user controls only
+  // Memoize current video sources to prevent unnecessary re-renders
+  const currentVideoSources = useMemo(() => ({
+    prev: testimonialVideos[activeIndex === 0 ? testimonialVideos.length - 1 : activeIndex - 1].videoSrc,
+    current: testimonialVideos[activeIndex].videoSrc,
+    next: testimonialVideos[(activeIndex + 1) % testimonialVideos.length].videoSrc,
+  }), [activeIndex]);
 
   // Handle video state based on active index
   useEffect(() => {
@@ -172,34 +274,33 @@ export default function LegalExcellence() {
                 {/* Left Video (Previous) */}
                 <div className="hidden lg:flex flex-1 justify-end">
                   <div className="relative w-48 h-72 rounded-xl overflow-hidden shadow-lg">
-                    <video
+                    <OptimizedVideo
                       key={`prev-${activeIndex}`}
-                      className="w-full h-full object-cover filter blur-sm opacity-70"
-                      src={testimonialVideos[activeIndex === 0 ? testimonialVideos.length - 1 : activeIndex - 1].videoSrc}
+                      className="w-full h-full object-cover filter opacity-70"
+                      src={currentVideoSources.prev}
                       muted={true}
                       loop
                       playsInline
-                      preload="auto"
+                      preload="metadata"
                       autoPlay={false}
                       onLoadedData={(e) => {
                         const video = e.target as HTMLVideoElement;
                         video.currentTime = 1; // Show first frame
                       }}
                     />
-
                   </div>
                 </div>
 
                 {/* Center Video (Current) */}
                 <div className="flex-shrink-0">
                   <div className="relative w-80 md:w-96 h-96 md:h-[480px] rounded-xl overflow-hidden shadow-2xl bg-white">
-                    <video
+                    <OptimizedVideo
                       key={`center-${activeIndex}`}
-                      ref={(el) => {
+                      videoRef={(el) => {
                         videoRefs.current[activeIndex] = el;
                       }}
                       className="w-full h-full object-cover"
-                      src={testimonialVideos[activeIndex].videoSrc}
+                      src={currentVideoSources.current}
                       muted={isMuted}
                       loop
                       playsInline
@@ -240,14 +341,14 @@ export default function LegalExcellence() {
                 {/* Right Video (Next) */}
                 <div className="hidden lg:flex flex-1 justify-start">
                   <div className="relative w-48 h-72 rounded-xl overflow-hidden shadow-lg">
-                    <video
+                    <OptimizedVideo
                       key={`next-${activeIndex}`}
-                      className="w-full h-full object-cover filter blur-sm opacity-70"
-                      src={testimonialVideos[(activeIndex + 1) % testimonialVideos.length].videoSrc}
+                      className="w-full h-full object-cover filter opacity-70"
+                      src={currentVideoSources.next}
                       muted={true}
                       loop
                       playsInline
-                      preload="auto"
+                      preload="metadata"
                       autoPlay={false}
                       onLoadedData={(e) => {
                         const video = e.target as HTMLVideoElement;
