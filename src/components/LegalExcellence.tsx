@@ -145,10 +145,9 @@ const OptimizedVideo = ({
 };
 
 export default function LegalExcellence() {
-  const [activeIndex, setActiveIndex] = useState(0);
   const [isInView, setIsInView] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
+  const [playingVideos, setPlayingVideos] = useState<Set<number>>(new Set());
+  const [unmutedVideo, setUnmutedVideo] = useState<number | null>(null);
   const [videosLoaded, setVideosLoaded] = useState<Set<number>>(new Set());
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
@@ -181,65 +180,49 @@ export default function LegalExcellence() {
     return () => observer.disconnect();
   }, [videosLoaded]);
 
-  // Memoize current video sources to prevent unnecessary re-renders
-  const currentVideoSources = useMemo(() => ({
-    prev: testimonialVideos[activeIndex === 0 ? testimonialVideos.length - 1 : activeIndex - 1].videoSrc,
-    current: testimonialVideos[activeIndex].videoSrc,
-    next: testimonialVideos[(activeIndex + 1) % testimonialVideos.length].videoSrc,
-  }), [activeIndex]);
-
-  // Handle video state based on active index
-  useEffect(() => {
+  // Handle video mute/unmute - only one video can be unmuted at a time
+  const toggleVideoMute = useCallback((videoIndex: number) => {
     videoRefs.current.forEach((video, index) => {
       if (video) {
-        if (index === activeIndex) {
-          // Auto-unmute when navigated to
-          video.muted = false;
-          setIsMuted(false);
-          // Don't autoplay - user needs to click play
-          setIsPlaying(false);
+        if (index === videoIndex) {
+          // If this video is currently unmuted, mute it
+          if (unmutedVideo === videoIndex) {
+            video.muted = true;
+            setUnmutedVideo(null);
+          } else {
+            // Unmute this video and mute all others
+            video.muted = false;
+            setUnmutedVideo(videoIndex);
+          }
         } else {
-          video.pause();
-          video.currentTime = 0;
+          // Mute all other videos
           video.muted = true;
         }
       }
     });
-  }, [activeIndex]);
+  }, [unmutedVideo]);
 
-  const togglePlayPause = useCallback(() => {
-    const currentVideo = videoRefs.current[activeIndex];
-    if (currentVideo) {
-      if (isPlaying) {
-        currentVideo.pause();
-        setIsPlaying(false);
+  const toggleVideoPlayPause = useCallback((videoIndex: number) => {
+    const video = videoRefs.current[videoIndex];
+    if (video) {
+      if (playingVideos.has(videoIndex)) {
+        video.pause();
+        setPlayingVideos(prev => {
+          const newSet = new Set(prev);
+          newSet.delete(videoIndex);
+          return newSet;
+        });
       } else {
-        currentVideo.play().catch(() => {
+        video.play().catch(() => {
           // Handle play restrictions
         });
-        setIsPlaying(true);
+        setPlayingVideos(prev => new Set([...prev, videoIndex]));
       }
     }
-  }, [activeIndex, isPlaying]);
-
-  const toggleMute = useCallback(() => {
-    const currentVideo = videoRefs.current[activeIndex];
-    if (currentVideo) {
-      currentVideo.muted = !currentVideo.muted;
-      setIsMuted(currentVideo.muted);
-    }
-  }, [activeIndex]);
-
-  const handlePrev = useCallback(() => {
-    setActiveIndex((current) => (current === 0 ? testimonialVideos.length - 1 : current - 1));
-  }, []);
-
-  const handleNext = useCallback(() => {
-    setActiveIndex((current) => (current + 1) % testimonialVideos.length);
-  }, []);
+  }, [playingVideos]);
 
   return (
-    <div className="relative py-12 overflow-hidden bg-gradient-to-b from-white to-[#F5F2EB]" ref={containerRef}>
+    <div className="relative py-8 overflow-hidden bg-gradient-to-b from-white to-[#F5F2EB]" ref={containerRef}>
       {/* Simplified decorative elements */}
       <div className="hidden md:block absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute -top-24 -left-24 w-64 h-64 bg-[#5A4C33] rounded-full opacity-10"></div>
@@ -248,12 +231,12 @@ export default function LegalExcellence() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-        <FadeInDiv className="text-center">
+        <FadeInDiv className="text-center mb-8">
           <h2 className="text-sm md:text-base font-semibold text-[#5A4C33] tracking-wide uppercase">Voices of Success</h2>
-          <h2 className="mt-2 text-4xl font-bold text-[#000000] sm:tracking-tight">
+          <h2 className="mt-2 text-3xl md:text-4xl font-bold text-[#000000] sm:tracking-tight">
             Client Testimonials
           </h2>
-          <div className="relative mt-5 mb-10">
+          <div className="relative mt-4 mb-6">
             <div className="absolute inset-0 flex items-center" aria-hidden="true">
               <div className="w-full border-t border-[#5A4C33] opacity-20"></div>
             </div>
@@ -267,125 +250,73 @@ export default function LegalExcellence() {
           </div>
         </FadeInDiv>
 
-        <div className="relative">
-          <div className="relative h-[500px] md:h-[600px]">
-            <div className="flex items-center justify-center h-full">
-              <div className="flex items-center space-x-4 md:space-x-8 w-full max-w-6xl px-4">
-                {/* Left Video (Previous) */}
-                <div className="hidden lg:flex flex-1 justify-end">
-                  <div className="relative w-48 h-72 rounded-xl overflow-hidden shadow-lg">
-                    <OptimizedVideo
-                      key={`prev-${activeIndex}`}
-                      className="w-full h-full object-cover filter opacity-70"
-                      src={currentVideoSources.prev}
-                      muted={true}
-                      loop
-                      playsInline
-                      preload="metadata"
-                      autoPlay={false}
-                      onLoadedData={(e) => {
-                        const video = e.target as HTMLVideoElement;
-                        video.currentTime = 1; // Show first frame
-                      }}
-                    />
-                  </div>
+        {/* Videos in a single row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          {testimonialVideos.map((video, index) => (
+            <div key={video.id} className="relative">
+              <div 
+                className="relative w-full aspect-[9/16] rounded-lg overflow-hidden shadow-lg bg-white cursor-pointer"
+                onClick={() => toggleVideoPlayPause(index)}
+              >
+                <OptimizedVideo
+                  videoRef={(el) => {
+                    videoRefs.current[index] = el;
+                  }}
+                  className="w-full h-full object-cover"
+                  src={video.videoSrc}
+                  muted={unmutedVideo !== index}
+                  loop
+                  playsInline
+                  controls={false}
+                  preload="metadata"
+                />
+                
+                {/* Video Controls */}
+                <div className="absolute bottom-3 left-3 right-3 flex justify-between items-center">
+                  {/* Play/Pause Button */}
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation(); // Prevent triggering the video click
+                      toggleVideoPlayPause(index);
+                    }}
+                    className="bg-black bg-opacity-60 hover:bg-opacity-80 text-white p-2 rounded-full transition-all duration-200 hover:scale-110"
+                  >
+                    {playingVideos.has(index) ? (
+                      <FaPause className="h-3 w-3" />
+                    ) : (
+                      <FaPlay className="h-3 w-3 ml-0.5" />
+                    )}
+                  </button>
+
+                  {/* Mute/Unmute Button */}
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation(); // Prevent triggering the video click
+                      toggleVideoMute(index);
+                    }}
+                    className="bg-black bg-opacity-60 hover:bg-opacity-80 text-white p-2 rounded-full transition-all duration-200 hover:scale-110"
+                  >
+                    {unmutedVideo === index ? (
+                      <FaVolumeUp className="h-3 w-3" />
+                    ) : (
+                      <FaVolumeMute className="h-3 w-3" />
+                    )}
+                  </button>
                 </div>
 
-                {/* Center Video (Current) */}
-                <div className="flex-shrink-0">
-                  <div className="relative w-80 md:w-96 h-96 md:h-[480px] rounded-xl overflow-hidden shadow-2xl bg-white">
-                    <OptimizedVideo
-                      key={`center-${activeIndex}`}
-                      videoRef={(el) => {
-                        videoRefs.current[activeIndex] = el;
-                      }}
-                      className="w-full h-full object-cover"
-                      src={currentVideoSources.current}
-                      muted={isMuted}
-                      loop
-                      playsInline
-                      controls={false}
-                      preload="auto"
-                    />
-                    
-                    {/* Play/Pause Button - Bottom Left */}
-                    <div className="absolute bottom-4 left-4">
-                      <button
-                        onClick={togglePlayPause}
-                        className="bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-3 rounded-full transition-all duration-200 hover:scale-110"
-                      >
-                        {isPlaying ? (
-                          <FaPause className="h-5 w-5" />
-                        ) : (
-                          <FaPlay className="h-5 w-5 ml-0.5" />
-                        )}
-                      </button>
-                    </div>
-
-                    {/* Mute/Unmute Button - Bottom Right */}
-                    <div className="absolute bottom-4 right-4">
-                      <button
-                        onClick={toggleMute}
-                        className="bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-3 rounded-full transition-all duration-200 hover:scale-110"
-                      >
-                        {isMuted ? (
-                          <FaVolumeMute className="h-5 w-5" />
-                        ) : (
-                          <FaVolumeUp className="h-5 w-5" />
-                        )}
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right Video (Next) */}
-                <div className="hidden lg:flex flex-1 justify-start">
-                  <div className="relative w-48 h-72 rounded-xl overflow-hidden shadow-lg">
-                    <OptimizedVideo
-                      key={`next-${activeIndex}`}
-                      className="w-full h-full object-cover filter opacity-70"
-                      src={currentVideoSources.next}
-                      muted={true}
-                      loop
-                      playsInline
-                      preload="metadata"
-                      autoPlay={false}
-                      onLoadedData={(e) => {
-                        const video = e.target as HTMLVideoElement;
-                        video.currentTime = 1; // Show first frame
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-opacity-20"></div>
-                  </div>
-                </div>
+                
               </div>
             </div>
-          </div>
+          ))}
+        </div>
 
-          <div className="flex justify-center space-x-3 mt-10">
-            <button
-              onClick={handlePrev}
-              className="px-3 md:px-5 py-2 md:py-3 flex items-center justify-center space-x-2 border border-transparent text-sm md:text-base font-medium rounded-lg shadow-sm text-white bg-[#D2A02A] hover:bg-[#4A3C23] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5A4C33] transition-all duration-200"
-            >
-              <FaChevronLeft className="h-3 w-3 md:h-4 md:w-4" />
-              <span className="hidden md:inline">Previous</span>
+        {/* Reviews Button */}
+        <div className="flex justify-center mt-8">
+          <Link href="https://maps.app.goo.gl/NWym1wPL2CTFS9qo8">
+            <button className="bg-[#D2A02A] hover:bg-[#5A4C33] text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300 inline-flex items-center">
+              Our Reviews
             </button>
-            <button
-              onClick={handleNext}
-              className="px-3 md:px-5 py-2 md:py-3 flex items-center justify-center space-x-2 border border-transparent text-sm md:text-base font-medium rounded-lg shadow-sm text-white bg-[#D2A02A] hover:bg-[#4A3C23] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5A4C33] transition-all duration-200"
-            >
-              <span className="hidden md:inline">Next</span>
-              <FaChevronRight className="h-3 w-3 md:h-4 md:w-4" />
-            </button>
-          </div>
-
-          <div className="flex justify-center mt-10">
-            <Link href="https://maps.app.goo.gl/NWym1wPL2CTFS9qo8">
-              <button className="bg-[#D2A02A] hover:bg-[#5A4C33] text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-300 inline-flex items-center">
-                Our Reviews
-              </button>
-            </Link>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
