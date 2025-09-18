@@ -152,7 +152,7 @@ export default function LegalExcellence() {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
-  // Preload videos when component becomes visible
+  // Preload and auto-play videos when component becomes visible
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -167,6 +167,14 @@ export default function LegalExcellence() {
               videoElement.load();
               videoElement.addEventListener('loadeddata', () => {
                 setVideosLoaded(prev => new Set([...prev, index]));
+                // Auto-play the video when loaded (muted by default)
+                const actualVideo = videoRefs.current[index];
+                if (actualVideo) {
+                  actualVideo.play().catch(() => {
+                    // Handle auto-play restrictions
+                  });
+                  setPlayingVideos(prev => new Set([...prev, index]));
+                }
               });
               videoCache.set(video.videoSrc, videoElement);
             }
@@ -221,6 +229,17 @@ export default function LegalExcellence() {
     }
   }, [playingVideos]);
 
+  // Handle video click - unmute the selected video (videos auto-play)
+  const handleVideoClick = useCallback((videoIndex: number) => {
+    // Unmute this video and mute all others
+    videoRefs.current.forEach((video, index) => {
+      if (video) {
+        video.muted = index !== videoIndex;
+      }
+    });
+    setUnmutedVideo(videoIndex);
+  }, []);
+
   return (
     <div className="relative py-8 overflow-hidden bg-gradient-to-b from-white to-[#F5F2EB]" ref={containerRef}>
       {/* Simplified decorative elements */}
@@ -256,7 +275,7 @@ export default function LegalExcellence() {
             <div key={video.id} className="relative">
               <div 
                 className="relative w-full aspect-[9/16] rounded-lg overflow-hidden shadow-lg bg-white cursor-pointer"
-                onClick={() => toggleVideoPlayPause(index)}
+                onClick={() => handleVideoClick(index)}
               >
                 <OptimizedVideo
                   videoRef={(el) => {
@@ -265,10 +284,21 @@ export default function LegalExcellence() {
                   className="w-full h-full object-cover"
                   src={video.videoSrc}
                   muted={unmutedVideo !== index}
+                  autoPlay
                   loop
                   playsInline
                   controls={false}
                   preload="metadata"
+                  onLoadedData={() => {
+                    // Auto-play when video is loaded
+                    const video = videoRefs.current[index];
+                    if (video) {
+                      video.play().catch(() => {
+                        // Handle auto-play restrictions
+                      });
+                      setPlayingVideos(prev => new Set([...prev, index]));
+                    }
+                  }}
                 />
                 
                 {/* Video Controls */}
