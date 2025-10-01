@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../../lib/firebase'; // Make sure you have this file set up with your Firebase config
 import { useSearchParams, useRouter } from 'next/navigation';
-import Image from 'next/image';
+import OptimizedImage from '@/components/OptimizedImage';
 import Script from 'next/script';
 
 // Define animations
@@ -52,12 +52,24 @@ const getValidImageSrc = (imageSrc: string | undefined | null): string => {
     return '/images/placeholder-blog.jpg'; // Fallback image
   }
   
-  // If it's a Firebase Storage URL, add error handling
+  // If it's a Firebase Storage URL, ensure proper parameters
   if (imageSrc.includes('firebasestorage.googleapis.com') || imageSrc.includes('firebasestorage.app')) {
-    // Add token refresh parameter to handle permission issues
-    const url = new URL(imageSrc);
-    url.searchParams.set('alt', 'media');
-    return url.toString();
+    try {
+      const url = new URL(imageSrc);
+      
+      // Only add alt=media if it doesn't already exist
+      if (!url.searchParams.has('alt')) {
+        url.searchParams.set('alt', 'media');
+      }
+      
+      // Add cache busting parameter for production token refresh issues
+      url.searchParams.set('t', Date.now().toString());
+      
+      return url.toString();
+    } catch (error) {
+      console.error('Error processing Firebase Storage URL:', error);
+      return imageSrc; // Return original if URL parsing fails
+    }
   }
   
   return imageSrc;
@@ -532,8 +544,8 @@ export default function Page() {
                   >
                     <div className="relative h-64 md:h-80">
                       {hasValidImage(spotlightArticle.image) ? (
-                        <Image
-                          src={getValidImageSrc(spotlightArticle.image)}
+                        <OptimizedImage
+                          src={spotlightArticle.image || ''}
                           alt={`${spotlightArticle.title} - AMA Legal Solutions | Legal Insights India`}
                           width={400}
                           height={250}
@@ -541,7 +553,6 @@ export default function Page() {
                           loading="lazy"
                           quality={85}
                           title={`${spotlightArticle.title} | AMA Legal Solutions Blog`}
-                          onError={handleImageError}
                         />
                       ) : (
                         <div className="w-full h-full bg-gray-200 flex items-center justify-center rounded-t-lg">
@@ -652,8 +663,8 @@ export default function Page() {
                         >
                           <div className="relative h-48">
                             {hasValidImage(article.image) ? (
-                              <Image
-                                src={getValidImageSrc(article.image)}
+                              <OptimizedImage
+                                src={article.image || ''}
                                 alt={`${article.title} - AMA Legal Solutions | Legal Insights India`}
                                 width={400}
                                 height={250}
@@ -661,7 +672,6 @@ export default function Page() {
                                 loading="lazy"
                                 quality={85}
                                 title={`${article.title} | AMA Legal Solutions Blog`}
-                                onError={handleImageError}
                               />
                             ) : (
                               <div className="w-full h-full bg-gray-200 flex items-center justify-center rounded-t-lg">
@@ -858,13 +868,12 @@ export default function Page() {
                       >
                         <div className="flex-shrink-0 w-20 h-20 relative rounded-lg overflow-hidden">
                           {hasValidImage(article.image) ? (
-                            <Image 
-                              src={getValidImageSrc(article.image)}
+                            <OptimizedImage 
+                              src={article.image || ''}
                               alt={`${article.title} - AMA Legal Solutions | Legal Insights India`}
                               width={80}
                               height={80}
                               className="object-cover"
-                              onError={handleImageError}
                             />
                           ) : (
                             <div className="w-full h-full bg-gray-200 flex items-center justify-center">
