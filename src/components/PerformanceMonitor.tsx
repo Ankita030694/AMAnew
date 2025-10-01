@@ -15,7 +15,7 @@ export default function PerformanceMonitor() {
           console.log('Page Load Performance:', {
             domContentLoaded: navEntry.domContentLoadedEventEnd - navEntry.domContentLoadedEventStart,
             loadComplete: navEntry.loadEventEnd - navEntry.loadEventStart,
-            totalTime: navEntry.loadEventEnd - navEntry.navigationStart
+            totalTime: navEntry.duration
           });
         }
       }
