@@ -11,10 +11,11 @@ export default function PerformanceMonitor() {
     const observer = new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
         if (entry.entryType === 'navigation') {
+          const navEntry = entry as PerformanceNavigationTiming;
           console.log('Page Load Performance:', {
-            domContentLoaded: entry.domContentLoadedEventEnd - entry.domContentLoadedEventStart,
-            loadComplete: entry.loadEventEnd - entry.loadEventStart,
-            totalTime: entry.loadEventEnd - entry.navigationStart
+            domContentLoaded: navEntry.domContentLoadedEventEnd - navEntry.domContentLoadedEventStart,
+            loadComplete: navEntry.loadEventEnd - navEntry.loadEventStart,
+            totalTime: navEntry.loadEventEnd - navEntry.navigationStart
           });
         }
       }
@@ -26,10 +27,11 @@ export default function PerformanceMonitor() {
     const resourceObserver = new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
         if (entry.duration > 1000) { // Log resources that take more than 1 second
+          const resourceEntry = entry as PerformanceResourceTiming;
           console.log('Slow Resource:', {
-            name: entry.name,
-            duration: entry.duration,
-            type: entry.initiatorType
+            name: resourceEntry.name,
+            duration: resourceEntry.duration,
+            type: resourceEntry.initiatorType
           });
         }
       }
