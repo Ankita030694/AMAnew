@@ -3,7 +3,6 @@ import { useEffect, useState, useCallback, memo } from 'react';
 import { collection, getDocs, query, where, limit, orderBy } from 'firebase/firestore';
 import { db } from '../../../lib/firebase';
 import Link from 'next/link';
-import Image from 'next/image';
 
 // Define the Blog interface
 interface Blog {
@@ -360,14 +359,10 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
               {/* Feature Image */}
               {blog.image && (
                 <div className="relative w-full h-[200px] md:h-[300px] lg:h-[350px] mb-4 md:mb-6">
-                  <Image
+                  <img
                     src={blog.image}
                     alt={`${blog.title} - AMA Legal Solutions`}
-                    fill
-                    priority
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 65vw, 50vw"
-                    quality={90}
+                    className="w-full h-full object-cover"
                     loading="eager"
                     title={blog.title}
                     onLoad={(e) => {
@@ -532,11 +527,10 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
                 <div className="p-4">
                   <div className="text-center mb-3">
                     <div className="relative w-16 h-16 mx-auto rounded-full overflow-hidden mb-3">
-                      <Image 
+                      <img 
                         src={authorBios[blog.author as keyof typeof authorBios]?.image || "/default-author.svg"}
                         alt={blog.author}
-                        fill
-                        className="object-cover"
+                        className="w-full h-full object-cover"
                       />
                     </div>
                     <Link 
@@ -581,11 +575,10 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
           <div className="lg:hidden max-w-3xl mx-auto mt-6 bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="p-4 flex flex-col md:flex-row gap-4">
               <div className="relative w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
-                <Image 
+                <img 
                   src={authorBios[blog.author as keyof typeof authorBios]?.image || "/default-author.svg"}
                   alt={blog.author}
-                  fill
-                  className="object-cover"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="flex-1">
