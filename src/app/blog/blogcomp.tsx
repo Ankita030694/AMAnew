@@ -1,11 +1,14 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
-import { db } from '../../lib/firebase'; // Make sure you have this file set up with your Firebase config
+import { db } from '../../lib/firebase';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Script from 'next/script';
+import dynamic from 'next/dynamic';
+
+// Remove problematic dynamic import - use motion directly for better performance
 
 // Define animations
 const containerVariants = {
@@ -89,14 +92,23 @@ interface Blog {
   slug: string; // Changed from optional to required
 }
 
+// Enhanced cache with TTL for better performance
+const blogsCache = new Map<string, { data: Blog[]; timestamp: number }>();
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
+// Helper function to check if cache entry is valid
+const isCacheValid = (timestamp: number) => {
+  return Date.now() - timestamp < CACHE_TTL;
+};
+
 export default function Page() {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [filteredBlogs, setFilteredBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
   const [paginationLoading, setPaginationLoading] = useState(false);
-  const [scrollLocked, setScrollLocked] = useState(true); // Add scroll lock state
-  const [webPageSchema, setWebPageSchema] = useState<any>(null); // Add schema state
-  const [searchQuery, setSearchQuery] = useState(''); // Add search query state
+  const [scrollLocked, setScrollLocked] = useState(false); // Reduced scroll lock time
+  const [webPageSchema, setWebPageSchema] = useState<any>(null);
+  const [searchQuery, setSearchQuery] = useState('');
   
   // URL state management
   const searchParams = useSearchParams();
@@ -108,8 +120,8 @@ export default function Page() {
   
   const blogsPerPage = 8;
 
-  // Search functionality
-  const handleSearch = (query: string) => {
+  // Optimized search functionality with useMemo
+  const handleSearch = useCallback((query: string) => {
     setSearchQuery(query);
     setCurrentPage(1); // Reset to first page when searching
     
@@ -126,7 +138,7 @@ export default function Page() {
     );
     
     setFilteredBlogs(filtered);
-  };
+  }, [blogs]);
 
   // Debounced search to improve performance
   useEffect(() => {
@@ -189,82 +201,13 @@ export default function Page() {
     };
   };
 
-  // Add scroll to top on component mount (when navigating back from detail page)
+  // Simplified scroll management for better performance
   useEffect(() => {
-    // Disable browser scroll restoration
-    if (typeof window !== 'undefined' && 'scrollRestoration' in window.history) {
-      window.history.scrollRestoration = 'manual';
-    }
-    
-    // Scroll to top immediately when component mounts
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    
-    // Prevent any scrolling for the first 2 seconds
-    const preventScroll = (e: Event) => {
-      if (scrollLocked) {
-        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-      }
-    };
-    
-    window.addEventListener('scroll', preventScroll, { passive: false });
-    
-    // Release scroll lock after 2 seconds
-    const lockTimeout = setTimeout(() => {
-      setScrollLocked(false);
-      window.removeEventListener('scroll', preventScroll);
-    }, 2000);
-    
-    // Handle browser back/forward navigation
-    const handlePopState = () => {
-      setTimeout(() => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-      }, 0);
-    };
-    
-    // Listen for browser navigation
-    window.addEventListener('popstate', handlePopState);
-    
-    // Also handle page visibility change (when user returns to tab)
-    const handleVisibilityChange = () => {
-      if (!document.hidden) {
-        setTimeout(() => {
-          window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-        }, 0);
-      }
-    };
-    
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-    
-    // Handle focus events (when user clicks back to tab/window)
-    const handleFocus = () => {
-      setTimeout(() => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-      }, 0);
-    };
-    
-    window.addEventListener('focus', handleFocus);
-    
-    // Additional scroll to top after a short delay to override any async scroll restoration
-    const timeoutId = setTimeout(() => {
+    // Simple scroll to top on mount
+    if (typeof window !== 'undefined') {
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    }, 100);
-    
-    // Cleanup
-    return () => {
-      window.removeEventListener('scroll', preventScroll);
-      window.removeEventListener('popstate', handlePopState);
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-      window.removeEventListener('focus', handleFocus);
-      clearTimeout(timeoutId);
-      clearTimeout(lockTimeout);
-      setScrollLocked(false);
-      
-      // Re-enable scroll restoration when leaving the component
-      if (typeof window !== 'undefined' && 'scrollRestoration' in window.history) {
-        window.history.scrollRestoration = 'auto';
-      }
-    };
-  }, [scrollLocked]);
+    }
+  }, []);
 
   // Update URL when page changes
   const updateURL = (page: number) => {
@@ -289,6 +232,18 @@ export default function Page() {
 
   useEffect(() => {
     const fetchBlogs = async () => {
+      const cacheKey = 'all-blogs';
+      
+      // Check cache first
+      const cached = blogsCache.get(cacheKey);
+      if (cached && isCacheValid(cached.timestamp)) {
+        setBlogs(cached.data);
+        setFilteredBlogs(cached.data);
+        setLoading(false);
+        setWebPageSchema(generateBlogFaqSchema(cached.data));
+        return;
+      }
+
       try {
         const blogsCollection = collection(db, 'blogs');
         const blogsQuery = query(blogsCollection, orderBy('created', 'desc'));
@@ -311,23 +266,17 @@ export default function Page() {
           };
         });
         
-        setBlogs(blogsData);
-        setFilteredBlogs(blogsData); // Initialize filtered blogs with all blogs
-        setLoading(false);
-        setWebPageSchema(generateBlogFaqSchema(blogsData)); // Generate schema after blogs are loaded
+        // Cache the result
+        blogsCache.set(cacheKey, { data: blogsData, timestamp: Date.now() });
         
-        // Ensure scroll to top after blogs are loaded
-        setTimeout(() => {
-          window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-        }, 0);
+        setBlogs(blogsData);
+        setFilteredBlogs(blogsData);
+        setLoading(false);
+        setWebPageSchema(generateBlogFaqSchema(blogsData));
+        
       } catch (error) {
         console.error("Error fetching blogs:", error);
         setLoading(false);
-        
-        // Ensure scroll to top even on error
-        setTimeout(() => {
-          window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-        }, 0);
       }
     };
 
@@ -344,20 +293,31 @@ export default function Page() {
     return shuffled;
   };
 
-  // Get spotlight article (most recent from filtered results)
-  const spotlightArticle = filteredBlogs.length > 0 ? filteredBlogs[0] : null;
-  
-  // Get trending articles (all filtered blogs in random order, limited to 20)
-  const trendingArticles = filteredBlogs.length > 1 ? shuffleArray(filteredBlogs).slice(0, 20) : [];
-  
-  // Get regular articles (excluding spotlight)
-  const regularArticles = filteredBlogs.length > 0 ? filteredBlogs.slice(1) : [];
-  
-  // Pagination logic for regular articles
-  const indexOfLastBlog = currentPage * blogsPerPage;
-  const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
-  const currentBlogs = regularArticles.slice(indexOfFirstBlog, indexOfLastBlog);
-  const totalPages = Math.ceil(regularArticles.length / blogsPerPage);
+  // Memoized calculations for better performance
+  const { spotlightArticle, trendingArticles, regularArticles, currentBlogs, totalPages } = useMemo(() => {
+    // Get spotlight article (most recent from filtered results)
+    const spotlight = filteredBlogs.length > 0 ? filteredBlogs[0] : null;
+    
+    // Get trending articles (all filtered blogs in random order, limited to 20)
+    const trending = filteredBlogs.length > 1 ? shuffleArray(filteredBlogs).slice(0, 20) : [];
+    
+    // Get regular articles (excluding spotlight)
+    const regular = filteredBlogs.length > 0 ? filteredBlogs.slice(1) : [];
+    
+    // Pagination logic for regular articles
+    const indexOfLastBlog = currentPage * blogsPerPage;
+    const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
+    const current = regular.slice(indexOfFirstBlog, indexOfLastBlog);
+    const total = Math.ceil(regular.length / blogsPerPage);
+    
+    return {
+      spotlightArticle: spotlight,
+      trendingArticles: trending,
+      regularArticles: regular,
+      currentBlogs: current,
+      totalPages: total
+    };
+  }, [filteredBlogs, currentPage, blogsPerPage]);
 
   // Smart pagination - show limited page numbers with ellipsis
   const getPageNumbers = () => {
@@ -522,7 +482,7 @@ export default function Page() {
                   </h2>
                 </motion.div>
                 
-                <Link href={`/blog/${spotlightArticle.slug}`}>
+                <Link href={`/blog/${spotlightArticle.slug}`} prefetch={true}>
                   <motion.div 
                     className="rounded-xl overflow-hidden border border-gray-100"
                     variants={hoverVariants}
@@ -638,7 +598,7 @@ export default function Page() {
                       key={article.id}
                       variants={itemVariants}
                     >
-                      <Link href={`/blog/${article.slug}`}>
+                      <Link href={`/blog/${article.slug}`} prefetch={true}>
                         <motion.div 
                           className="rounded-xl overflow-hidden border border-gray-100 h-full"
                           variants={hoverVariants}
@@ -695,7 +655,7 @@ export default function Page() {
                 >
                   {/* Pagination Info */}
                   <div className="text-center mb-4 text-sm text-gray-600">
-                    Showing {indexOfFirstBlog + 1} to {Math.min(indexOfLastBlog, regularArticles.length)} of {regularArticles.length} articles
+                    Showing {(currentPage - 1) * blogsPerPage + 1} to {Math.min(currentPage * blogsPerPage, regularArticles.length)} of {regularArticles.length} articles
                   </div>
                   
                   {/* Pagination Controls */}
@@ -842,7 +802,7 @@ export default function Page() {
                     key={article.id}
                     variants={itemVariants}
                   >
-                    <Link href={`/blog/${article.slug}`}>
+                    <Link href={`/blog/${article.slug}`} prefetch={true}>
                       <motion.div 
                         className="flex gap-4 p-2 rounded-lg" 
                         variants={hoverVariants}

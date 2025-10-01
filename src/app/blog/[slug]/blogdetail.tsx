@@ -1,8 +1,15 @@
 'use client'
-import { useEffect, useState, useCallback, memo } from 'react';
+import { useEffect, useState, useCallback, memo, Suspense } from 'react';
 import { collection, getDocs, query, where, limit, orderBy } from 'firebase/firestore';
 import { db } from '../../../lib/firebase';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+
+// Lazy load heavy components
+const LazyImage = dynamic(() => import('next/image'), { 
+  ssr: false,
+  loading: () => <div className="w-full h-full bg-gray-200 animate-pulse rounded-lg" />
+});
 
 // Define the Blog interface
 interface Blog {
@@ -32,9 +39,15 @@ interface BlogDetailProps {
   slug: string;
 }
 
-// Cache for blog data and related blogs
-const blogCache = new Map<string, Blog>();
-const relatedBlogsCache = new Map<string, Blog[]>();
+// Enhanced cache with TTL for better performance
+const blogCache = new Map<string, { data: Blog; timestamp: number }>();
+const relatedBlogsCache = new Map<string, { data: Blog[]; timestamp: number }>();
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
+// Helper function to check if cache entry is valid
+const isCacheValid = (timestamp: number) => {
+  return Date.now() - timestamp < CACHE_TTL;
+};
 
 // Helper function to shuffle array (Fisher-Yates algorithm)
 const shuffleArray = (array: Blog[]) => {
@@ -62,11 +75,12 @@ const authorBios = {
   }
 };
 
-// Optimized function to fetch blog by slug
+// Optimized function to fetch blog by slug with enhanced caching
 const fetchBlogBySlug = async (slug: string): Promise<Blog | null> => {
-  // Check cache first
-  if (blogCache.has(slug)) {
-    return blogCache.get(slug)!;
+  // Check cache first with TTL validation
+  const cached = blogCache.get(slug);
+  if (cached && isCacheValid(cached.timestamp)) {
+    return cached.data;
   }
 
   try {
@@ -78,8 +92,8 @@ const fetchBlogBySlug = async (slug: string): Promise<Blog | null> => {
       const doc = querySnapshot.docs[0];
       const blogData = { id: doc.id, ...doc.data() } as Blog;
       
-      // Cache the result
-      blogCache.set(slug, blogData);
+      // Cache the result with timestamp
+      blogCache.set(slug, { data: blogData, timestamp: Date.now() });
       return blogData;
     }
     
@@ -90,13 +104,14 @@ const fetchBlogBySlug = async (slug: string): Promise<Blog | null> => {
   }
 };
 
-// Optimized function to fetch related blogs
+// Optimized function to fetch related blogs with enhanced caching
 const fetchRelatedBlogs = async (excludeId: string): Promise<Blog[]> => {
   const cacheKey = `related_${excludeId}`;
   
-  // Check cache first
-  if (relatedBlogsCache.has(cacheKey)) {
-    return relatedBlogsCache.get(cacheKey)!;
+  // Check cache first with TTL validation
+  const cached = relatedBlogsCache.get(cacheKey);
+  if (cached && isCacheValid(cached.timestamp)) {
+    return cached.data;
   }
 
   try {
@@ -117,8 +132,8 @@ const fetchRelatedBlogs = async (excludeId: string): Promise<Blog[]> => {
     const otherBlogs = allBlogs.filter(blog => blog.id !== excludeId);
     const randomBlogs = shuffleArray(otherBlogs).slice(0, 3);
     
-    // Cache the result
-    relatedBlogsCache.set(cacheKey, randomBlogs);
+    // Cache the result with timestamp
+    relatedBlogsCache.set(cacheKey, { data: randomBlogs, timestamp: Date.now() });
     return randomBlogs;
   } catch (error) {
     console.error("Error fetching related blogs:", error);
@@ -193,7 +208,7 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
       <div className="text-base md:text-lg">
         {segments.map((segment, index) => (
           <span key={index}>
-            <Link href={`/blog/${randomBlogs[index]?.slug}`} className="text-blue-400 hover:text-blue-300 transition-colors">
+            <Link href={`/blog/${randomBlogs[index]?.slug}`} className="text-blue-400 hover:text-blue-300 transition-colors" prefetch={true}>
               {segment}
             </Link>
             {index < segments.length - 1 && (
@@ -291,11 +306,40 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-white to-amber-50 flex items-center justify-center">
-        <div className="p-6 rounded-lg shadow-lg bg-white">
-          <div className="flex items-center space-x-3">
-            <div className="w-6 h-6 border-t-4 border-r-4 border-[#D2A02A] rounded-full animate-spin"></div>
-            <p className="text-black font-medium text-sm">Loading your Blog...</p>
+      <div className="min-h-screen bg-gradient-to-b from-white to-amber-50">
+        {/* Skeleton Header */}
+        <div className="w-full bg-[#5A4C33] text-center py-8 md:py-12">
+          <div className="container mx-auto px-4 mt-12 md:mt-16 max-w-4xl">
+            <div className="h-8 md:h-12 bg-gray-300 rounded-lg mb-4 animate-pulse"></div>
+            <div className="h-4 md:h-6 bg-gray-300 rounded-lg mb-4 animate-pulse"></div>
+            <div className="bg-gray-300 h-1 w-20 md:w-24 rounded-full mx-auto animate-pulse"></div>
+          </div>
+        </div>
+        
+        {/* Skeleton Content */}
+        <div className="container mx-auto px-4 py-6 md:py-8 max-w-5xl">
+          <div className="flex flex-col lg:flex-row lg:gap-6">
+            <div className="lg:w-2/3">
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-6">
+                <div className="h-48 md:h-64 bg-gray-200 animate-pulse"></div>
+                <div className="p-4 md:p-6 lg:p-7">
+                  <div className="space-y-3">
+                    <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+                    <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+                    <div className="h-4 bg-gray-200 rounded w-3/4 animate-pulse"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="lg:w-1/3">
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div className="p-4">
+                  <div className="h-4 bg-gray-200 rounded mb-3 animate-pulse"></div>
+                  <div className="h-3 bg-gray-200 rounded mb-2 animate-pulse"></div>
+                  <div className="h-3 bg-gray-200 rounded w-2/3 animate-pulse"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -356,7 +400,7 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
                 </div>
               </div>
               
-              {/* Feature Image */}
+              {/* Feature Image with optimized loading */}
               {blog.image && (
                 <div className="relative w-full h-[200px] md:h-[300px] lg:h-[350px] mb-4 md:mb-6">
                   <img
@@ -365,24 +409,13 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
                     className="w-full h-full object-cover"
                     loading="eager"
                     title={blog.title}
+                    decoding="async"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 66vw, 50vw"
                     onLoad={(e) => {
-                      // Add image to structured data when loaded
                       const img = e.target as HTMLImageElement;
-                      const structuredData = {
-                        "@context": "https://schema.org",
-                        "@type": "ImageObject",
-                        "contentUrl": img.src,
-                        "name": blog.title,
-                        "description": blog.subtitle || blog.description,
-                        "caption": blog.title,
-                        "representativeOfPage": true
-                      };
-                      // Add to page's structured data
-                      const script = document.createElement('script');
-                      script.type = 'application/ld+json';
-                      script.text = JSON.stringify(structuredData);
-                      document.head.appendChild(script);
+                      img.style.opacity = '1';
                     }}
+                    style={{ opacity: 0, transition: 'opacity 0.3s ease' }}
                   />
                 </div>
               )}
@@ -666,7 +699,7 @@ const ArticleDetail = memo(function ArticleDetail({ slug }: BlogDetailProps) {
               <div className="p-4 md:p-5 lg:p-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
                   {relatedBlogs.map((article) => (
-                    <Link key={article.id} href={`/blog/${article.slug}`}>
+                    <Link key={article.id} href={`/blog/${article.slug}`} prefetch={true}>
                       <div className="group rounded-lg overflow-hidden border border-gray-100 h-full hover:shadow-lg hover:border-[#D2A02A] transition-all duration-300 transform hover:-translate-y-1">
                         <div className="relative h-36 lg:h-40 overflow-hidden">
                           <img 

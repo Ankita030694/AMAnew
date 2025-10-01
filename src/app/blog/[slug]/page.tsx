@@ -1,18 +1,27 @@
-import { collection, getDocs, query, where, limit } from "firebase/firestore";
+import { collection, getDocs, query, where, limit, orderBy } from "firebase/firestore";
 import { db } from "../../../lib/firebase";
 import type { Metadata, ResolvingMetadata } from "next";
 import ArticleDetail from "./blogdetail";
 import Script from "next/script";
+import { unstable_cache } from 'next/cache';
+import PerformanceMonitor from '../../../components/PerformanceMonitor';
 
-// Cache for blog data to avoid repeated Firebase queries
-const blogCache = new Map<string, any>();
-const faqCache = new Map<string, any[]>();
+// Enhanced cache with TTL (Time To Live)
+const blogCache = new Map<string, { data: any; timestamp: number }>();
+const faqCache = new Map<string, { data: any[]; timestamp: number }>();
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 
-// Optimized function to fetch blog by slug
-async function getBlogBySlug(slug: string) {
-  // Check cache first
-  if (blogCache.has(slug)) {
-    return blogCache.get(slug);
+// Helper function to check if cache entry is valid
+const isCacheValid = (timestamp: number) => {
+  return Date.now() - timestamp < CACHE_TTL;
+};
+
+// Optimized function to fetch blog by slug with enhanced caching
+const getBlogBySlug = unstable_cache(async (slug: string) => {
+  // Check cache first with TTL validation
+  const cached = blogCache.get(slug);
+  if (cached && isCacheValid(cached.timestamp)) {
+    return cached.data;
   }
 
   try {
@@ -25,8 +34,8 @@ async function getBlogBySlug(slug: string) {
       const doc = querySnapshot.docs[0];
       const data = { id: doc.id, ...doc.data() };
       
-      // Cache the result
-      blogCache.set(slug, data);
+      // Cache the result with timestamp
+      blogCache.set(slug, { data, timestamp: Date.now() });
       return data;
     }
     
@@ -35,7 +44,10 @@ async function getBlogBySlug(slug: string) {
     console.error("Error fetching blog by slug:", error);
     return null;
   }
-}
+}, ['blog-by-slug'], { 
+  revalidate: 300, // 5 minutes
+  tags: ['blogs']
+});
 
 // Dynamic metadata generation - optimized with proper querying
 export async function generateMetadata(
@@ -131,6 +143,7 @@ export default async function Page({
 
   return (
     <>
+      <PerformanceMonitor />
       {/* Server-side rendered FAQ Schema */}
       {faqSchema && (
         <Script
@@ -217,11 +230,12 @@ export default async function Page({
   );
 }
 
-// Function to fetch FAQs server-side
-async function getBlogFAQs(blogId: string) {
-  // Check cache first
-  if (faqCache.has(blogId)) {
-    return faqCache.get(blogId);
+// Function to fetch FAQs server-side with enhanced caching
+const getBlogFAQs = unstable_cache(async (blogId: string) => {
+  // Check cache first with TTL validation
+  const cached = faqCache.get(blogId);
+  if (cached && isCacheValid(cached.timestamp)) {
+    return cached.data;
   }
 
   try {
@@ -232,14 +246,17 @@ async function getBlogFAQs(blogId: string) {
       answer: doc.data().answer || ''
     }));
     
-    // Cache the result
-    faqCache.set(blogId, faqs);
+    // Cache the result with timestamp
+    faqCache.set(blogId, { data: faqs, timestamp: Date.now() });
     return faqs;
   } catch (error) {
     console.error("Error fetching FAQs:", error);
     return [];
   }
-}
+}, ['blog-faqs'], {
+  revalidate: 300, // 5 minutes
+  tags: ['faqs']
+});
 
 // Function to generate FAQ schema
 function generateFAQSchema(faqs: any[], blogData: any) {
