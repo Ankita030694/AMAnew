@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../../lib/firebase'; // Make sure you have this file set up with your Firebase config
 import { useSearchParams, useRouter } from 'next/navigation';
-import Image from 'next/image';
 import Script from 'next/script';
 
 // Define animations
@@ -532,14 +531,11 @@ export default function Page() {
                   >
                     <div className="relative h-64 md:h-80">
                       {hasValidImage(spotlightArticle.image) ? (
-                        <Image
+                        <img
                           src={getValidImageSrc(spotlightArticle.image)}
                           alt={`${spotlightArticle.title} - AMA Legal Solutions | Legal Insights India`}
-                          width={400}
-                          height={250}
                           className="w-full h-full object-cover rounded-t-lg"
                           loading="lazy"
-                          quality={85}
                           title={`${spotlightArticle.title} | AMA Legal Solutions Blog`}
                           onError={handleImageError}
                         />
@@ -652,14 +648,11 @@ export default function Page() {
                         >
                           <div className="relative h-48">
                             {hasValidImage(article.image) ? (
-                              <Image
+                              <img
                                 src={getValidImageSrc(article.image)}
                                 alt={`${article.title} - AMA Legal Solutions | Legal Insights India`}
-                                width={400}
-                                height={250}
                                 className="w-full h-full object-cover rounded-t-lg"
                                 loading="lazy"
-                                quality={85}
                                 title={`${article.title} | AMA Legal Solutions Blog`}
                                 onError={handleImageError}
                               />
@@ -858,12 +851,10 @@ export default function Page() {
                       >
                         <div className="flex-shrink-0 w-20 h-20 relative rounded-lg overflow-hidden">
                           {hasValidImage(article.image) ? (
-                            <Image 
+                            <img 
                               src={getValidImageSrc(article.image)}
                               alt={`${article.title} - AMA Legal Solutions | Legal Insights India`}
-                              width={80}
-                              height={80}
-                              className="object-cover"
+                              className="w-full h-full object-cover"
                               onError={handleImageError}
                             />
                           ) : (
