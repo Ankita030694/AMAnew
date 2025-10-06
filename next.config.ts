@@ -140,6 +140,11 @@ const nextConfig: NextConfig = {
         destination: '/services/intellectual-property-rights',
         permanent: true,
       },
+      {
+        source: '/blog/get-loanmukt-in-180-days-loan-settlement-',
+        destination: '/blog/get-loan-mukt-in-180-days-loan-settlement-',
+        permanent: true,
+      },
     ];  
   },
   async headers() {
