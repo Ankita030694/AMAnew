@@ -384,8 +384,8 @@ function generateWebPageSchema(content: any) {
   };
 }
 
-export default function ArbitrationSlugPage({ params }: { params: { slug: string } }) {
-  const slug = params.slug;
+export default async function ArbitrationSlugPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const content = stateContent[slug as keyof typeof stateContent] || unionTerritoryContent[slug as keyof typeof unionTerritoryContent];
   
   if (!content) {
