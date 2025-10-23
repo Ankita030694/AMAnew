@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Script from "next/script";
+import GenericStatesGrid from "@/components/GenericStatesGrid";
 
 // FAQ data for rendering
 const faqs = [
@@ -429,6 +430,8 @@ export default function page() {
               </div>
             </Link>
           </section>
+
+          <GenericStatesGrid serviceName="Corporate Law" servicePath="corporate" />
         </div>
       </div>
     </>

@@ -48,6 +48,9 @@ export async function GET(): Promise<Response> {
     priority: route === '' ? 1.0 : 0.8
   }))
   
+  // Build service slug routes
+  const serviceSlugRoutes = generateServiceSlugRoutes(baseUrl)
+  
   // Build dynamic blog routes
   const blogRoutes = blogs.map(blog => ({
     url: `${baseUrl}/blog/${blog.slug}`,
@@ -65,7 +68,7 @@ export async function GET(): Promise<Response> {
   }))
   
   // Combine all routes
-  const allRoutes = [...staticRoutes, ...blogRoutes, ...articleRoutes]
+  const allRoutes = [...staticRoutes, ...serviceSlugRoutes, ...blogRoutes, ...articleRoutes]
   
   // Generate XML
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -119,4 +122,81 @@ async function fetchAllArticles() {
     console.error('Error fetching articles:', error)
     return []
   }
+}
+
+// Generate service slug routes for all states and union territories
+function generateServiceSlugRoutes(baseUrl: string) {
+  const services = [
+    'arbitration',
+    'banking-and-finance', 
+    'civil',
+    'corporate',
+    'criminal-law',
+    'cyber',
+    'drafting',
+    'entertainment',
+    'intellectual-property-rights',
+    'litigation',
+    'loan-settlement',
+    'real-estate'
+  ]
+  
+  const states = [
+    'andhra-pradesh',
+    'arunachal-pradesh',
+    'assam',
+    'bihar',
+    'chhattisgarh',
+    'goa',
+    'gujarat',
+    'haryana',
+    'himachal-pradesh',
+    'jharkhand',
+    'karnataka',
+    'kerala',
+    'madhya-pradesh',
+    'maharashtra',
+    'manipur',
+    'meghalaya',
+    'mizoram',
+    'nagaland',
+    'odisha',
+    'punjab',
+    'rajasthan',
+    'sikkim',
+    'tamil-nadu',
+    'telangana',
+    'tripura',
+    'uttar-pradesh',
+    'uttarakhand',
+    'west-bengal'
+  ]
+  
+  const unionTerritories = [
+    'andaman-and-nicobar',
+    'chandigarh',
+    'daman-and-diu',
+    'delhi',
+    'jammu-and-kashmir',
+    'ladakh',
+    'lakshadweep',
+    'puducherry'
+  ]
+  
+  const allSlugs = [...states, ...unionTerritories]
+  
+  const serviceSlugRoutes = []
+  
+  for (const service of services) {
+    for (const slug of allSlugs) {
+      serviceSlugRoutes.push({
+        url: `${baseUrl}/services/${service}/${slug}`,
+        lastModified: new Date().toISOString(),
+        changeFrequency: 'monthly',
+        priority: 0.6
+      })
+    }
+  }
+  
+  return serviceSlugRoutes
 }
