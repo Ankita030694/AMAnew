@@ -167,7 +167,7 @@ export default function Page() {
       },
       {
         question: "How can I contact AMA Legal Solutions for legal consultation?",
-        answer: "You can contact AMA Legal Solutions for legal consultation through multiple channels. Visit our website at www.amalegalsolutions.com, email us at Info@amalegalsolutions.com, or call our office directly. Our experienced legal team is available to discuss your legal needs and provide professional legal services tailored to your requirements."
+        answer: "You can contact AMA Legal Solutions for legal consultation through multiple channels. Visit our website at www.amalegalsolutions.com, email us at notify@amalegalsolutions.com, or call our office directly. Our experienced legal team is available to discuss your legal needs and provide professional legal services tailored to your requirements."
       },
       {
         question: "Do you provide legal services across all major cities in India?",
@@ -876,7 +876,7 @@ export default function Page() {
             </p>
             <p className="font-medium">
               By using this website, you acknowledge and agree to this disclaimer. If you do not agree with any part of this notice, please refrain from using our
-              services. For legal assistance or inquiries, please contact us at <a href="mailto:Info@amalegalsolutions.com" className="text-[#D2A02A] hover:underline">Info@amalegalsolutions.com</a>
+              services. For legal assistance or inquiries, please contact us at <a href="mailto:notify@amalegalsolutions.com" className="text-[#D2A02A] hover:underline">notify@amalegalsolutions.com</a>
             </p>
           </div>
         </motion.div>
