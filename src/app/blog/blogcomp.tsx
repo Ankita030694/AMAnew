@@ -400,7 +400,7 @@ export default function Page() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Blog
+        Legal Blogs | Expert Opinions by AMA Legal Solutions
       </motion.h1>
 
       {/* Search Bar */}

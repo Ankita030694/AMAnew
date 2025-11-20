@@ -156,7 +156,7 @@ export default function Footer() {
                     { href: "/services/banking-and-finance", label: "Banking and Finance" },
                     { href: "/services/loansettlement", label: "Loan Settlement" },
                     { href: "/services/intellectual-property-rights", label: "Intellectual Property Rights" },
-                    { href: "/services/entertainment-law", label: "Entertainment Law" },
+                    { href: "/services/entertainment", label: "Entertainment Law" },
                     { href: "/services/real-estate", label: "Real Estate" },
                     { href: "/services/criminal-law", label: "Criminal Law" }
                   ].map((service) => (

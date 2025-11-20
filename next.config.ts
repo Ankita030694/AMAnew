@@ -141,6 +141,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/services/entertainment-law',
+        destination: '/services/entertainment',
+        permanent: true,
+      },
+      {
         source: '/blog/get-loanmukt-in-180-days-loan-settlement-',
         destination: '/blog/get-loan-mukt-in-180-days-loan-settlement-',
         permanent: true,

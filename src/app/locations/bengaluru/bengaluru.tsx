@@ -123,7 +123,7 @@ export default function Services() {
               <h1 className="text-3xl font-bold mb-4 md:mb-8 text-shadow-lg relative text-center">
                 <span className="inline-block"></span>
                 <span className="inline-block relative">
-                  &nbsp;Trusted Law Firm in Bengaluru for Corporate & Legal Services
+                  &nbsp;Legal Services in Bengaluru | Corporate & Litigation Experts
                   <motion.div 
                     className="absolute -bottom-2 md:-bottom-3 left-0 right-0 h-1 bg-[#D2A02A]"
                     initial={{ width: "0%" }}
