@@ -393,15 +393,12 @@ export default function Page() {
       )}
       
       {/* Page Title */}
-      <motion.h1 
+      <h1 
         className="text-4xl md:text-5xl text-center font-serif mb-8 mt-20"
         style={{ color: '#5A4C33' }}
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
       >
         Legal Blogs | Expert Opinions by AMA Legal Solutions
-      </motion.h1>
+      </h1>
 
       {/* Search Bar */}
       <motion.div 
