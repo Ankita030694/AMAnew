@@ -22,11 +22,12 @@ const BlogLoading = () => (
 
 export default function Page() {
   return (
-    <header className='bg-[#F5F2EB]'>
+    <main className='bg-[#F5F2EB]'>
       <PerformanceMonitor />
+      
       <Suspense fallback={<BlogLoading />}>
         <BlogPage />
       </Suspense>
-    </header>
+    </main>
   );
 }

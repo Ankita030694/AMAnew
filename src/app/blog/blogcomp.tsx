@@ -396,6 +396,7 @@ export default function Page() {
       <h1 
         className="text-4xl md:text-5xl text-center font-serif mb-8 mt-20"
         style={{ color: '#5A4C33' }}
+        id="blog-page-title"
       >
         Legal Blogs | Expert Opinions by AMA Legal Solutions
       </h1>
