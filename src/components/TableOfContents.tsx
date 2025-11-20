@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface TableOfContentsProps {
   sections: Array<{
@@ -11,6 +11,8 @@ interface TableOfContentsProps {
 
 export default function TableOfContents({ sections }: TableOfContentsProps) {
   const [activeSection, setActiveSection] = useState<string>("");
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const buttonRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({});
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +33,28 @@ export default function TableOfContents({ sections }: TableOfContentsProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [sections]);
 
+  // Scroll active button into view
+  useEffect(() => {
+    if (activeSection && scrollContainerRef.current && buttonRefs.current[activeSection]) {
+      const container = scrollContainerRef.current;
+      const button = buttonRefs.current[activeSection];
+
+      if (button) {
+        const containerWidth = container.offsetWidth;
+        const buttonLeft = button.offsetLeft;
+        const buttonWidth = button.offsetWidth;
+
+        // Calculate scroll position to center the button
+        const scrollLeft = buttonLeft - containerWidth / 2 + buttonWidth / 2;
+
+        container.scrollTo({
+          left: scrollLeft,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, [activeSection]);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -46,13 +70,19 @@ export default function TableOfContents({ sections }: TableOfContentsProps) {
   return (
     <div className="bg-white border-b border-gray-200 sticky top-20 z-30 shadow-sm">
       <div className="container mx-auto px-4 max-w-6xl">
-        <div className="flex items-center justify-center py-3 overflow-x-auto">
-          <div className="flex items-center space-x-1 md:space-x-4">
+        <div 
+          ref={scrollContainerRef}
+          className="flex items-center py-3 overflow-x-auto no-scrollbar scroll-smooth"
+        >
+          <div className="flex items-center space-x-1 md:space-x-4 mx-auto">
             {sections.map((section) => (
               <button
                 key={section.id}
+                ref={(el) => {
+                  buttonRefs.current[section.id] = el;
+                }}
                 onClick={() => scrollToSection(section.id)}
-                className={`px-3 py-2 text-sm font-medium rounded-full whitespace-nowrap transition-all duration-200 ${
+                className={`px-3 py-2 text-sm font-medium rounded-full whitespace-nowrap transition-all duration-200 flex-shrink-0 ${
                   activeSection === section.id
                     ? "bg-[#D2A02A] text-white shadow-md"
                     : "text-gray-600 hover:text-[#D2A02A] hover:bg-gray-50"
