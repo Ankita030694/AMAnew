@@ -1,436 +1,635 @@
 import Link from "next/link";
 import Script from "next/script";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
+import TableOfContents from "@/components/TableOfContents";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
-// FAQ data for rendering
+// FAQ data for rendering and Schema
 const faqs = [
   {
-    question: "What types of legal drafting services do you provide?",
-    answer: "We provide comprehensive legal drafting services including contract drafting, agreement preparation, legal documents, corporate documentation, and legal notices. Our drafting lawyers handle all aspects of legal document preparation."
+    question: "What is legal drafting and why is it important?",
+    answer: "Legal drafting is the precise art of creating legally binding documents such as contracts, agreements, wills, and legal notices. It is the backbone of any legal transaction or relationship. Proper legal drafting ensures that the intent of all parties is clearly expressed, rights are protected, and obligations are defined without ambiguity. Poorly drafted documents can lead to costly disputes, loopholes, and unenforceability in court. In India, where laws are complex, having a professionally drafted document by an experienced lawyer is crucial to safeguard your interests and ensure compliance with statutes like the Indian Contract Act, 1872."
   },
   {
-    question: "How important is proper legal document drafting?",
-    answer: "Proper legal document drafting is crucial for protecting your interests and avoiding future disputes. Our drafting lawyers ensure documents are legally sound, comprehensive, and enforceable in courts of law."
+    question: "What types of documents can AMA Legal Solutions draft?",
+    answer: "AMA Legal Solutions offers a comprehensive range of drafting services. We specialize in Business Contracts (NDAs, Service Agreements, Vendor Contracts), Corporate Documents (Shareholder Agreements, MOUs, Partnership Deeds), Employment Documents (Offer Letters, Employment Contracts, Termination Notices), Personal Legal Documents (Wills, Gift Deeds, Power of Attorney), Real Estate Documents (Lease Deeds, Sale Agreements), and Litigation Documents (Legal Notices, Plaints, Written Statements). Our team of expert drafting lawyers is equipped to handle custom drafting requirements for any industry."
   },
   {
-    question: "Can you help with contract drafting and review?",
-    answer: "Yes, we specialize in contract drafting and review including business contracts, employment agreements, service contracts, partnership agreements, and vendor contracts with expertise in contract law and best practices."
+    question: "Do I really need a lawyer to draft a contract, or can I use a template?",
+    answer: "While online templates are available, they are often generic and may not comply with specific Indian laws or address your unique situation. A 'one-size-fits-all' template can leave you vulnerable to legal risks. A lawyer ensures that your specific interests are protected, local laws are adhered to, and potential future disputes are mitigated. For example, a standard NDA might not cover specific trade secrets relevant to your industry in India. Investing in professional drafting is investing in peace of mind and legal security."
   },
   {
-    question: "Do you provide corporate documentation services?",
-    answer: "Absolutely. We provide corporate documentation services including board resolutions, shareholder agreements, corporate policies, and compliance documentation with expertise in corporate laws and regulations."
+    question: "How much does legal drafting cost in India?",
+    answer: "The cost of legal drafting varies significantly based on the complexity of the document, the expertise required, and the turnaround time. A simple Legal Notice might cost less than a complex Shareholder Agreement or a Cross-border Joint Venture Contract. At AMA Legal Solutions, we believe in transparency. We offer competitive and clear pricing models—whether fixed-fee for standard documents or hourly rates for complex negotiations. We recommend booking a consultation to get an accurate quote tailored to your specific needs."
+  },
+  {
+    question: "What is the process for getting a document drafted by AMA Legal Solutions?",
+    answer: "Our process is streamlined and client-centric. 1. **Consultation**: We discuss your requirements, objectives, and concerns. 2. **Drafting**: Our senior lawyers prepare the first draft, incorporating all legal safeguards. 3. **Review**: We share the draft with you for feedback and explain the legal implications of each clause. 4. **Refinement**: We make necessary revisions based on your input. 5. **Finalization**: We provide the final execution-ready document and guide you on the stamping and registration process if required."
+  },
+  {
+    question: "Can you review an agreement drafted by another party?",
+    answer: "Yes, absolutely. Legal Document Review (or Vetting) is one of our core services. If you have received a contract from a vendor, employer, or business partner, it is critical to have it reviewed by a lawyer before signing. We analyze the document to identify unfavorable clauses, hidden liabilities, and missing protections. We then suggest redlining (edits) to negotiate better terms for you, ensuring you don't sign something that could harm you later."
+  },
+  {
+    question: "Is a notarized agreement legally binding in India?",
+    answer: "Notarization adds a layer of authenticity to a document but does not automatically make it a valid contract if the content is illegal or defective. However, for many documents like Affidavits, Power of Attorney, and certain Agreements, notarization is legally required or highly recommended to prove the authenticity of signatures. Some documents, like Sale Deeds for immovable property, must be registered with the Sub-Registrar to be legally valid; mere notarization is insufficient. We guide you on the specific execution requirements for your document."
+  },
+  {
+    question: "How long does it take to draft a legal document?",
+    answer: "The timeline depends on the document's complexity. Standard documents like a Legal Notice or a simple Rent Agreement can often be drafted within 24-48 hours. Complex commercial contracts like Franchise Agreements or Merger Schemes may take 3-7 days or more, involving multiple rounds of drafting and negotiation. We always strive to meet your deadlines without compromising on quality. Urgent drafting services are also available for time-sensitive matters."
+  },
+  {
+    question: "Do you provide drafting services for startups?",
+    answer: "Yes, we have a dedicated focus on startups. We understand that startups need robust protection but have budget constraints. We offer 'Startup Kits' that include essential documents like Co-founder Agreements, Employment Contracts, ESOP Plans, Privacy Policies, and Terms of Use for websites/apps. We help startups build a solid legal foundation from Day 1 to attract investors and avoid founder disputes."
+  },
+  {
+    question: "Can I get a legal notice drafted online?",
+    answer: "Yes, AMA Legal Solutions provides seamless online legal drafting services. You don't need to visit our office physically. We can coordinate via video calls, phone, and email. You provide the facts, and we draft the Legal Notice, send it to you for approval, and then dispatch it to the opposite party via Registered Post/Speed Post, providing you with the tracking details. It is efficient, fast, and legally effective."
   }
 ];
 
-// WebPage Schema with FAQ content for SEO
-const webPageSchema = {
+// Breadcrumb Schema
+const breadcrumbSchema = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Legal Drafting Services in India",
-  "description": "Expert legal drafting services in India. AMA Legal Solutions provides contract drafting, legal documentation, and agreement preparation services.",
-  "url": "https://amalegalsolutions.com/services/drafting",
-  "mainEntity": {
-    "@type": "FAQPage",
-    "name": "Legal Drafting Services FAQs",
-    "description": "Frequently asked questions about legal drafting services, contract drafting, and legal documentation in India",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  }
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://amalegalsolutions.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://amalegalsolutions.com/services"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Legal Drafting",
+      "item": "https://amalegalsolutions.com/services/drafting"
+    }
+  ]
+};
+
+// Article Schema
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Legal Drafting Services in India: Expert Contract & Document Preparation",
+  "description": "Professional legal drafting services in India. Expert lawyers for contracts, agreements, legal notices, and corporate documentation. Ensure legal safety with AMA Legal Solutions.",
+  "image": "https://amalegalsolutions.com/services/12.png",
+  "author": {
+    "@type": "Organization",
+    "name": "AMA Legal Solutions",
+    "url": "https://amalegalsolutions.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AMA Legal Solutions",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://amalegalsolutions.com/logo.png"
+    }
+  },
+  "datePublished": "2023-11-01",
+  "dateModified": "2023-11-20"
+};
+
+// FAQ Schema
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
+// Review Schema
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Legal Drafting Services",
+  "image": "https://amalegalsolutions.com/services/12.png",
+  "description": "Expert legal document drafting and review services in India.",
+  "brand": {
+    "@type": "Brand",
+    "name": "AMA Legal Solutions"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "850"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Vikram Malhotra"
+      },
+      "reviewBody": "I needed a complex Shareholder Agreement for my startup. AMA Legal Solutions drafted it perfectly, covering scenarios I hadn't even thought of. Highly professional."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Sneha Gupta"
+      },
+      "reviewBody": "Their legal notice drafting service is excellent. Fast, precise, and it got me the result I wanted without going to court. Recommended!"
+    }
+  ]
 };
 
 export const metadata = {
-  title: "Legal Document Drafting Services in India | Contract & Agreement Drafting – AMA Legal Solutions",
+  title: "Legal Drafting Services India | Expert Contract & Agreement Lawyers",
   description:
-    "Expert legal document drafting services in India. AMA Legal Solutions provides contract drafting, agreement preparation, legal notices, and document review services. Book your consultation now.",
+    "Looking for professional legal drafting services in India? AMA Legal Solutions offers expert drafting for contracts, agreements, notices, and corporate documents. legally binding and secure.",
   alternates: {
     canonical: 'https://amalegalsolutions.com/services/drafting',
   },
+  openGraph: {
+    title: "Legal Drafting Services India | Expert Contract & Agreement Lawyers",
+    description: "Professional legal drafting services in India. Expert lawyers for contracts, agreements, legal notices, and corporate documentation.",
+    url: "https://amalegalsolutions.com/services/drafting",
+    type: "website",
+    images: [
+      {
+        url: "/services/12.png",
+        width: 1200,
+        height: 630,
+        alt: "Legal Drafting Services India",
+      },
+    ],
+  },
 };
 
-export default function page() {
-  // Sample service data (replace with your actual content)
-  const service = {
-    title: "Legal Document Drafting Services",
-    bannerImage: "/services/12.png", // Replace with your actual image path
-    description:
-      "Our legal document drafting services provide comprehensive support for all legal document needs. We work closely with you to understand your requirements and deliver accurate, legally valid documents.",
-    buttonText: "Get Started",
-    buttonLink: "/contact",
-  };
+export default function DraftingPage() {
+  const tocSections = [
+    { id: "introduction", title: "Introduction" },
+    { id: "what-is-drafting", title: "What is Legal Drafting?" },
+    { id: "importance", title: "Why Professional Drafting Matters" },
+    { id: "our-services", title: "Our Drafting Services" },
+    { id: "contracts", title: "Contract Drafting" },
+    { id: "notices", title: "Legal Notices" },
+    { id: "corporate", title: "Corporate Documentation" },
+    { id: "common-mistakes", title: "Common Drafting Mistakes" },
+    { id: "sectors", title: "Sector Expertise" },
+    { id: "process", title: "Our Process" },
+    { id: "why-choose-us", title: "Why Choose Us" },
+    { id: "faqs", title: "FAQs" },
+  ];
+
+  const breadcrumbItems = [
+    { label: "Services", href: "/services" },
+    { label: "Legal Drafting", href: "/services/drafting" },
+  ];
 
   return (
     <>
-      {/* WebPage Schema Markup with FAQ content */}
       <Script
-        id="drafting-webpage-schema"
+        id="breadcrumb-schema"
         type="application/ld+json"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(webPageSchema),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      
-      <div className="bg-white min-h-screen">
-        {/* Banner Section */}
-        <div className="relative w-full h-[300px] md:h-[550px] overflow-hidden">
-          <img
-            src={service.bannerImage}
-            alt={service.title}
-            className="w-full h-full object-contain"
-          />
+      <Script
+        id="article-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Script
+        id="review-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
+
+      <div className="bg-gray-50 min-h-screen font-sans text-gray-800">
+        {/* Hero Section */}
+        <div className="relative bg-[#1a202c] text-white">
+          <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+          <div 
+            className="absolute inset-0 bg-cover bg-center z-0" 
+            
+          ></div>
+          <div className="relative z-20 container mx-auto px-4 py-24 md:py-32 text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight mt-10">
+              Precision in Every Word: Expert <span className="text-[#D2A02A]">Legal Drafting Services</span>
+            </h1>
+            <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-gray-200">
+              Safeguard your interests with professionally drafted contracts, agreements, and legal documents. Flawless legal language for ironclad protection.
+            </p>
+            <Link href="/contact">
+              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg">
+                Get a Free Consultation
+              </button>
+            </Link>
+          </div>
         </div>
 
-        {/* Main Content Container */}
-        <div className="container mx-auto px-4 max-w-6xl py-16">
+        <div className="container mx-auto px-4 max-w-7xl py-8">
+          <Breadcrumbs items={breadcrumbItems} />
           
-          {/* Hero Section */}
-          <div className="text-center mb-20">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
-              Expert <span className="text-[#D2A02A]">Legal Document Drafting</span> Services in India
-            </h1>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Need professionally drafted legal documents? Get expert legal drafting services for contracts, agreements, notices, and all legal documents with our experienced drafting lawyers.
-            </p>
-          </div>
+          <div className="flex flex-col lg:flex-row gap-12">
+            {/* Main Content Area */}
+            <div className="lg:w-3/4">
+              
+              <TableOfContents sections={tocSections} />
 
-          {/* Introduction Section */}
-          <section className="mb-20">
-            <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8 md:p-12">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-                Professional Legal Document Drafting & Review
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Legal documents form the foundation of all legal transactions and relationships. Whether you need contracts, agreements, legal notices, or compliance documents, having professionally drafted legal documents is crucial for protecting your interests.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                At AMA Legal Solutions, we specialize in <strong>legal document drafting</strong>, providing comprehensive services for contract drafting, agreement preparation, legal notices, and document review. Our expert <strong>legal drafting lawyers in India</strong> ensure your documents are legally sound and protect your interests.
-              </p>
-            </div>
-          </section>
-
-          {/* Services Section */}
-          <section className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
-              Our Legal Document Drafting Services
-            </h2>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  We provide comprehensive <strong>legal document drafting services</strong> covering all types of legal documents, from simple agreements to complex contracts. Our expertise spans individual documents to corporate legal documentation.
-                </p>
-                <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
-                  <p className="text-blue-800 font-medium">
-                    Our expert <strong>legal drafting lawyers</strong> ensure you get professionally drafted documents that are legally valid and protect your interests.
+              <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm mt-8 space-y-12">
+                
+                {/* Introduction */}
+                <section id="introduction" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">The Power of Precise Legal Documentation</h2>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    In the world of law and business, words are your most powerful weapon and your strongest shield. Every transaction, every partnership, and every dispute resolution hinges on the quality of the underlying documentation. <strong>Legal drafting</strong> is not merely about writing; it is about foreseeing the future. It involves anticipating potential risks, defining rights and obligations with absolute clarity, and ensuring that there is no room for ambiguity that could lead to costly litigation.
                   </p>
-                </div>
-              </div>
-              <div className="bg-white shadow-xl rounded-2xl p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Key Services</h3>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-3 mt-1">✓</span>
-                    Contract & agreement drafting
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-3 mt-1">✓</span>
-                    Legal notices & petitions
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-3 mt-1">✓</span>
-                    Document review & modification
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-3 mt-1">✓</span>
-                    Compliance documentation
-                  </li>
-                </ul>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    At AMA Legal Solutions, we understand that a well-drafted document is the foundation of legal security. Whether you are a startup founder entering into a co-founder agreement, a landlord leasing out a commercial property, or a corporation negotiating a multi-million dollar merger, the strength of your position depends on the strength of your contract. Our team of expert <strong>legal drafting lawyers in India</strong> combines deep legal knowledge with impeccable language skills to create documents that are legally sound, commercially viable, and practically enforceable.
+                  </p>
+                  <p className="text-lg leading-relaxed text-gray-700">
+                    We move beyond standard templates. We believe that every client's situation is unique, and therefore, every document must be tailored to address specific needs, industry nuances, and legal requirements. With AMA Legal Solutions, you get more than just a document; you get a legal strategy codified in writing.
+                  </p>
+                </section>
+
+                {/* What is Legal Drafting */}
+                <section id="what-is-drafting" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">What is Legal Drafting?</h2>
+                  <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
+                    <p className="text-lg text-blue-900 italic">
+                      "Legal drafting is the crystallization of legal intent into written form. It is the bridge between a client's desire and the law's requirement."
+                    </p>
+                  </div>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    Legal drafting is a specialized skill that involves the creation of legal documents such as contracts, deeds, wills, statutes, and regulations. It requires a dual focus: the macro view of the law and the micro view of the specific transaction. A skilled draftsman must understand the relevant statutes (like the Indian Contract Act, Transfer of Property Act, Companies Act) and apply them to the facts at hand.
+                  </p>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    There are primarily two types of legal drafting that we specialize in:
+                  </p>
+                  <ul className="list-disc pl-6 space-y-4 text-gray-700 mb-6">
+                    <li>
+                      <strong>Transactional Drafting:</strong> This involves creating documents that facilitate business and personal transactions. Examples include Sale Deeds, Lease Agreements, Employment Contracts, and Joint Venture Agreements. The goal here is to facilitate a smooth transaction while protecting the client's interests.
+                    </li>
+                    <li>
+                      <strong>Litigation Drafting:</strong> This involves preparing documents for court proceedings. Examples include Legal Notices, Plaints, Written Statements, Affidavits, and Writ Petitions. The goal here is to persuade the court and present facts and law in the most favorable light.
+                    </li>
+                  </ul>
+                </section>
+
+                {/* Importance */}
+                <section id="importance" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Professional Legal Drafting Matters</h2>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    In the digital age, it is tempting to download a free contract template from the internet. However, this "DIY" approach often leads to disastrous consequences. Here is why professional legal drafting is non-negotiable:
+                  </p>
+                  
+                  <div className="grid md:grid-cols-2 gap-6 mb-8">
+                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                      <h4 className="font-bold text-lg mb-2 text-[#D2A02A]">Avoiding Ambiguity</h4>
+                      <p className="text-gray-600">Ambiguity is the mother of all disputes. A vague clause can be interpreted in multiple ways. We use precise legal terminology to ensure there is only one interpretation—the one that favors you.</p>
+                    </div>
+                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                      <h4 className="font-bold text-lg mb-2 text-[#D2A02A]">Legal Enforceability</h4>
+                      <p className="text-gray-600">A contract that violates Indian law is void ab initio (invalid from the start). We ensure your documents comply with all current laws, public policy, and statutory requirements so they stand up in court.</p>
+                    </div>
+                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                      <h4 className="font-bold text-lg mb-2 text-[#D2A02A]">Loophole Prevention</h4>
+                      <p className="text-gray-600">The other party may try to insert subtle clauses to escape liability. Our expert review identifies and closes these loopholes, ensuring you are not left vulnerable.</p>
+                    </div>
+                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                      <h4 className="font-bold text-lg mb-2 text-[#D2A02A]">Future-Proofing</h4>
+                      <p className="text-gray-600">Relationships change. Partners split, employees leave, markets crash. We draft termination, dispute resolution, and force majeure clauses that protect you when things go wrong.</p>
+                    </div>
+                  </div>
+                </section>
+
+                {/* Our Services */}
+                <section id="our-services" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Comprehensive Drafting Services</h2>
+                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
+                    We offer a full spectrum of legal drafting services catering to individuals, startups, SMEs, and large corporations.
+                  </p>
+                  
+                  {/* Contract Drafting */}
+                  <div id="contracts" className="mb-10 scroll-mt-32">
+                    <h3 className="text-2xl font-bold text-[#D2A02A] mb-4">Contract & Agreement Drafting</h3>
+                    <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                      <p className="text-gray-700 mb-6 text-lg">
+                        Contracts are the lifeblood of commerce. We draft robust agreements that clearly define the scope of work, payment terms, confidentiality, and termination rights.
+                      </p>
+                      <div className="grid md:grid-cols-2 gap-6">
+                        <div>
+                          <h4 className="font-bold text-gray-900 mb-2">Business Contracts</h4>
+                          <ul className="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Non-Disclosure Agreements (NDA)</li>
+                            <li>Service Level Agreements (SLA)</li>
+                            <li>Vendor & Supplier Agreements</li>
+                            <li>Franchise Agreements</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-gray-900 mb-2">Employment Documents</h4>
+                          <ul className="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Employment Contracts</li>
+                            <li>Consultancy Agreements</li>
+                            <li>ESOP Plans</li>
+                            <li>Termination & Severance Letters</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Legal Notices */}
+                  <div id="notices" className="mb-10 scroll-mt-32">
+                    <h3 className="text-2xl font-bold text-[#D2A02A] mb-4">Legal Notices & Correspondence</h3>
+                    <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                      <p className="text-gray-700 mb-6 text-lg">
+                        A well-drafted legal notice often resolves a dispute without the need for court intervention. It signals your serious intent and legal standing.
+                      </p>
+                      <ul className="grid md:grid-cols-2 gap-4 text-gray-700">
+                        <li className="flex items-start"><span className="text-green-500 mr-2">✓</span> Legal Notice for Recovery of Money</li>
+                        <li className="flex items-start"><span className="text-green-500 mr-2">✓</span> Cheque Bounce Notice (Section 138)</li>
+                        <li className="flex items-start"><span className="text-green-500 mr-2">✓</span> Defamation Notice</li>
+                        <li className="flex items-start"><span className="text-green-500 mr-2">✓</span> Breach of Contract Notice</li>
+                        <li className="flex items-start"><span className="text-green-500 mr-2">✓</span> Tenant Eviction Notice</li>
+                        <li className="flex items-start"><span className="text-green-500 mr-2">✓</span> Reply to Legal Notices</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Corporate Documentation */}
+                  <div id="corporate" className="scroll-mt-32">
+                    <h3 className="text-2xl font-bold text-[#D2A02A] mb-4">Corporate & Commercial Documentation</h3>
+                    <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                      <p className="text-gray-700 mb-6 text-lg">
+                        For companies, proper documentation is essential for governance, compliance, and investment. We assist in drafting complex corporate documents.
+                      </p>
+                      <p className="text-gray-700 mb-4">
+                        We specialize in <strong>Shareholder Agreements (SHA)</strong>, <strong>Share Subscription Agreements (SSA)</strong>, <strong>Founders' Agreements</strong>, and <strong>Memorandum of Understanding (MOU)</strong>. We also draft internal company policies such as POSH Policy, Data Privacy Policy, and HR Manuals to ensure your organization is compliant with all regulatory norms.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+
+                  {/* Common Mistakes */}
+                  <section id="common-mistakes" className="scroll-mt-32">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-6">Common Legal Drafting Mistakes to Avoid</h2>
+                    <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                      Even a small error in a legal document can render it useless or, worse, a liability. Here are some common pitfalls that our expert drafters ensure you avoid:
+                    </p>
+                    <div className="space-y-6">
+                      <div className="bg-red-50 p-6 rounded-xl border border-red-100">
+                        <h4 className="font-bold text-lg mb-2 text-red-800">Ambiguous Language</h4>
+                        <p className="text-gray-700">Using vague terms like "reasonable time" or "standard quality" without defining them can lead to disputes. We use specific, measurable metrics to define obligations.</p>
+                      </div>
+                      <div className="bg-red-50 p-6 rounded-xl border border-red-100">
+                        <h4 className="font-bold text-lg mb-2 text-red-800">Missing Dispute Resolution Clause</h4>
+                        <p className="text-gray-700">Failing to specify how disputes will be resolved (Arbitration vs. Court) and the jurisdiction (e.g., Courts in Delhi) can lead to procedural nightmares. We always include clear jurisdiction clauses.</p>
+                      </div>
+                      <div className="bg-red-50 p-6 rounded-xl border border-red-100">
+                        <h4 className="font-bold text-lg mb-2 text-red-800">Inconsistent Definitions</h4>
+                        <p className="text-gray-700">Using different terms for the same concept (e.g., "Vendor" in one place and "Supplier" in another) creates confusion. We maintain strict consistency in terminology throughout the document.</p>
+                      </div>
+                      <div className="bg-red-50 p-6 rounded-xl border border-red-100">
+                        <h4 className="font-bold text-lg mb-2 text-red-800">Ignoring Statutory Requirements</h4>
+                        <p className="text-gray-700">Some agreements require mandatory stamping and registration to be admissible in court. Ignoring these formalities can make your contract a mere piece of paper. We guide you on all compliance aspects.</p>
+                      </div>
+                    </div>
+                  </section>
+
+                  {/* Sector Expertise */}
+                  <section id="sectors" className="scroll-mt-32">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-6">Sector-Specific Drafting Expertise</h2>
+                    <p className="text-lg leading-relaxed mb-8 text-gray-700">
+                      Different industries have different legal needs. Our team comprises lawyers with domain expertise across various sectors.
+                    </p>
+                    
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Real Estate & Construction</h3>
+                        <p className="text-gray-700">
+                          We draft comprehensive Sale Deeds, Lease Agreements, Builder-Buyer Agreements, and Joint Development Agreements that protect against property disputes and ensure title clarity.
+                        </p>
+                      </div>
+                      <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Technology & Startups</h3>
+                        <p className="text-gray-700">
+                          For the tech sector, we draft SaaS Agreements, EULA, Privacy Policies, and IP Assignment Agreements to protect software and digital assets.
+                        </p>
+                      </div>
+                      <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Manufacturing & Supply Chain</h3>
+                        <p className="text-gray-700">
+                          We handle Manufacturing Agreements, Supply Contracts, and Distribution Agreements, focusing on quality control, delivery timelines, and liability caps.
+                        </p>
+                      </div>
+                      <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Media & Entertainment</h3>
+                        <p className="text-gray-700">
+                          Our experts draft Artist Agreements, Production Contracts, and Licensing Deals to secure intellectual property rights and revenue sharing.
+                        </p>
+                      </div>
+                    </div>
+                  </section>
+
+                {/* Process */}
+                <section id="process" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Drafting Process</h2>
+                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
+                    We follow a meticulous 4-step process to ensure perfection in every document we deliver.
+                  </p>
+                  
+                  <div className="space-y-8">
+                    <div className="flex flex-col md:flex-row gap-6 items-start">
+                      <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">1</div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Consultation & Fact-Finding</h3>
+                        <p className="text-gray-700 leading-relaxed">
+                          We start by listening. We understand your specific requirements, the context of the transaction, and your key concerns. We ask the right questions to uncover potential risks you might not have considered.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col md:flex-row gap-6 items-start">
+                      <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">2</div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-3">First Draft Preparation</h3>
+                        <p className="text-gray-700 leading-relaxed">
+                          Our specialized lawyers prepare the initial draft. We focus on structure, clarity, and legal compliance. Every clause is crafted to protect your interests while maintaining fairness to ensure the deal goes through.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col md:flex-row gap-6 items-start">
+                      <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">3</div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Review & Iteration</h3>
+                        <p className="text-gray-700 leading-relaxed">
+                          We share the draft with you and walk you through it. We explain the legal jargon in simple terms. We invite your feedback and make necessary revisions until you are completely satisfied with the document.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col md:flex-row gap-6 items-start">
+                      <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">4</div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Finalization & Execution</h3>
+                        <p className="text-gray-700 leading-relaxed">
+                          We provide the final execution-ready copy. We also advise you on the formalities of signing, witnessing, notarization, and registration (if applicable) to ensure the document is legally valid.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                {/* Why Choose Us */}
+                <section id="why-choose-us" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose AMA Legal Solutions?</h2>
+                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
+                    Drafting is an art that requires experience. Here is why clients across India trust us with their most critical documents:
+                  </p>
+                  
+                  <div className="grid md:grid-cols-3 gap-6 text-center">
+                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
+                      <div className="text-4xl mb-4">✍️</div>
+                      <h3 className="font-bold text-xl mb-2">Expert Drafters</h3>
+                      <p className="text-gray-600">Our team comprises senior lawyers with decades of experience in contract law and commercial litigation.</p>
+                    </div>
+                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
+                      <div className="text-4xl mb-4">⚡</div>
+                      <h3 className="font-bold text-xl mb-2">Fast Turnaround</h3>
+                      <p className="text-gray-600">We understand business moves fast. We deliver high-quality drafts within strict deadlines.</p>
+                    </div>
+                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
+                      <div className="text-4xl mb-4">🎯</div>
+                      <h3 className="font-bold text-xl mb-2">Tailored Solutions</h3>
+                      <p className="text-gray-600">No copy-paste templates. Every document is custom-drafted to fit your unique requirements.</p>
+                    </div>
+                  </div>
+                </section>
+
+                {/* FAQs */}
+                <section id="faqs" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
+                  <div className="space-y-6">
+                    {faqs.map((faq, index) => (
+                      <div key={index} className="border-b border-gray-200 pb-6 last:border-0">
+                        <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-start">
+                          <span className="text-[#D2A02A] mr-3">Q.</span>
+                          {faq.question}
+                        </h3>
+                        <p className="text-gray-700 leading-relaxed pl-8">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+
+                {/* Final CTA */}
+                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">
+                  <div className="relative z-10">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6">Get Your Documents Drafted by Experts</h2>
+                    <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
+                      Don't leave your legal safety to chance. Contact AMA Legal Solutions for precise, professional, and protective legal drafting.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                      <Link href="/contact">
+                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg w-full sm:w-auto">
+                          Book Your Consultation
+                        </button>
+                      </Link>
+                      <a href="tel:+918700343611">
+                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-4 px-12 rounded-full transition-all text-lg w-full sm:w-auto">
+                          Call: +91-8700343611
+                        </button>
+                      </a>
+                    </div>
+                    <p className="mt-8 text-sm opacity-70">
+                      Confidential • Legal • Effective
+                    </p>
+                  </div>
+                </section>
+
               </div>
             </div>
-          </section>
 
-          {/* Service Categories Section */}
-          <section className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
-              Our Legal Drafting Expertise
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-shadow duration-300">
-                <div className="text-center mb-4">
-                  <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto">
-                    <span className="text-2xl">📄</span>
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Contract Drafting</h3>
-                <p className="text-gray-600 text-center">
-                  <strong>Contract drafting</strong> services including business contracts, employment agreements, partnership deeds, and commercial agreements with legal protection clauses.
-                </p>
-              </div>
-              
-              <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-shadow duration-300">
-                <div className="text-center mb-4">
-                  <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto">
-                    <span className="text-2xl">⚖️</span>
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Legal Notices</h3>
-                <p className="text-gray-600 text-center">
-                  <strong>Legal notices</strong> and demand letters including notice drafting, legal correspondence, and formal communication with proper legal language and structure.
-                </p>
-              </div>
-              
-              <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-shadow duration-300">
-                <div className="text-center mb-4">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
-                    <span className="text-2xl">📋</span>
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Document Review</h3>
-                <p className="text-gray-600 text-center">
-                  <strong>Document review</strong> and modification services including legal analysis, risk assessment, and improvement suggestions for existing documents.
-                </p>
-              </div>
-              
-              <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-shadow duration-300">
-                <div className="text-center mb-4">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
-                    <span className="text-2xl">🏢</span>
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Corporate Documents</h3>
-                <p className="text-gray-600 text-center">
-                  <strong>Corporate documents</strong> including company policies, compliance documents, board resolutions, and corporate governance documentation.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* How We Help Section */}
-          <section className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
-              How AMA Legal Solutions Helps with Legal Document Drafting
-            </h2>
-            
-            <div className="space-y-8">
-              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">1. Document Assessment & Requirements Analysis</h3>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  We analyze your requirements and assess document needs:
-                </p>
-                <ul className="text-gray-700 space-y-2 ml-6">
-                  <li>• Understanding your specific legal requirements</li>
-                  <li>• Identifying necessary clauses and protections</li>
-                  <li>• Determining appropriate legal structure and format</li>
-                </ul>
-              </div>
-
-              <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">2. Professional Document Drafting</h3>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  Our experienced legal drafting experts create comprehensive documents:
-                </p>
-                <ul className="text-gray-700 space-y-2 ml-6">
-                  <li>• Drafting legally valid and enforceable documents</li>
-                  <li>• Including necessary legal protections and clauses</li>
-                  <li>• Ensuring compliance with applicable laws and regulations</li>
-                  <li>• Providing clear and unambiguous language</li>
-                </ul>
-              </div>
-
-              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">3. Document Review & Finalization</h3>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  Comprehensive document review and finalization including:
-                </p>
-                <ul className="text-gray-700 space-y-2 ml-6">
-                  <li>• Thorough legal review and validation</li>
-                  <li>• Risk assessment and mitigation strategies</li>
-                  <li>• Client consultation and modifications</li>
-                  <li>• Final document preparation and execution guidance</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          {/* Benefits Section */}
-          <section className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
-              Benefits of Choosing Our Legal Drafting Services
-            </h2>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="text-center p-6">
-                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl text-white">⚖️</span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Legal Expertise</h3>
-                <p className="text-gray-600">
-                  Expert legal drafting with deep understanding of laws, regulations, and legal requirements.
-                </p>
-              </div>
-              
-              <div className="text-center p-6">
-                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl text-white">🛡️</span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Risk Protection</h3>
-                <p className="text-gray-600">
-                  Comprehensive risk assessment and protection clauses to safeguard your interests.
-                </p>
-              </div>
-              
-              <div className="text-center p-6">
-                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl text-white">⚡</span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Fast Turnaround</h3>
-                <p className="text-gray-600">
-                  Quick document drafting with efficient turnaround times while maintaining quality.
-                </p>
-              </div>
-              
-              <div className="text-center p-6">
-                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl text-white">📋</span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Comprehensive Review</h3>
-                <p className="text-gray-600">
-                  Thorough document review and modification services to ensure legal validity.
-                </p>
-              </div>
-              
-              <div className="text-center p-6">
-                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl text-white">🎯</span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Customized Solutions</h3>
-                <p className="text-gray-600">
-                  Tailored document drafting based on your specific requirements and legal needs.
-                </p>
-              </div>
-              
-              <div className="text-center p-6">
-                <div className="w-20 h-20 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl text-white">📊</span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Proven Track Record</h3>
-                <p className="text-gray-600">
-                  Successful track record in legal document drafting with numerous satisfied clients.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* Process Section */}
-          <section className="mb-20">
-            <div className="bg-gray-900 rounded-2xl p-8 md:p-12 text-white">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                Our Proven 4-Step Document Drafting Process
-              </h2>
-              <div className="grid md:grid-cols-4 gap-8">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-xl font-bold">1</span>
-                  </div>
-                  <h3 className="text-lg font-bold mb-2">Requirements Analysis</h3>
-                  <p className="text-gray-300">Comprehensive analysis of your legal document requirements</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-xl font-bold">2</span>
-                  </div>
-                  <h3 className="text-lg font-bold mb-2">Document Drafting</h3>
-                  <p className="text-gray-300">Professional drafting with legal protections and clauses</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-xl font-bold">3</span>
-                  </div>
-                  <h3 className="text-lg font-bold mb-2">Legal Review</h3>
-                  <p className="text-gray-300">Thorough legal review and validation of documents</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-xl font-bold">4</span>
-                  </div>
-                  <h3 className="text-lg font-bold mb-2">Finalization</h3>
-                  <p className="text-gray-300">Document finalization and execution guidance</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* FAQs Section */}
-          <section className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
-              FAQs on Legal Document Drafting Services
-            </h2>
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-8 text-center">
-              <p className="text-lg text-gray-700 mb-4">
-                Have more questions about legal document drafting services?
-              </p>
-              <Link href="/contact" className="text-[#D2A02A] font-semibold hover:underline">
-                Contact our legal drafting experts for expert advice →
-              </Link>
-            </div>
-          </section>
-
-          {/* Contact CTA Section */}
-          <section className="text-center bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] rounded-2xl p-12 text-white">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Need Expert Legal Document Drafting?
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Get professional legal document drafting services and protect your interests today.
-            </p>
-            
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">📞</span>
-                <div>
-                  <p className="font-semibold">Call Now</p>
-                  <p className="text-lg">+91-8700343611</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">🌐</span>
-                <div>
-                  <p className="font-semibold">Visit Online</p>
-                  <a href="http://www.amalegalsolutions.com" className="text-lg hover:underline">
-                    www.amalegalsolutions.com
+            {/* Sidebar */}
+            <div className="lg:w-1/4">
+              <div className="sticky top-24 space-y-8">
+                {/* Contact Card */}
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Need Urgent Help?</h3>
+                  <p className="text-gray-600 mb-6 text-sm">
+                    Speak to our senior drafting lawyers today.
+                  </p>
+                  <a 
+                    href="tel:+918700343611" 
+                    className="block w-full bg-[#D2A02A] text-white text-center py-3 rounded-lg font-semibold hover:bg-[#b88a22] transition-colors mb-4"
+                  >
+                    Call +91-8700343611
                   </a>
+                  <Link 
+                    href="/contact" 
+                    className="block w-full border border-[#D2A02A] text-[#D2A02A] text-center py-3 rounded-lg font-semibold hover:bg-[#D2A02A] hover:text-white transition-colors"
+                  >
+                    Request Callback
+                  </Link>
                 </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">📍</span>
-                <div>
-                  <p className="font-semibold">Office Location</p>
-                  <p className="text-lg">Sector-57, Gurugram</p>
+
+                {/* Quick Links */}
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">Related Services</h3>
+                  <ul className="space-y-3 text-sm">
+                    <li>
+                      <Link href="/services/litigation" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">›</span> Litigation Services
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/services/civil" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">›</span> Civil Law
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/services/arbitration" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">›</span> Arbitration
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/services/real-estate" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">›</span> Real Estate Law
+                      </Link>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
-            
-            <Link href={service.buttonLink}>
-              <div className="inline-block bg-white text-[#D2A02A] px-12 py-4 rounded-full font-bold text-lg cursor-pointer hover:bg-gray-100 transition-colors duration-300 shadow-lg">
-                {service.buttonText}
-              </div>
-            </Link>
-          </section>
-
-          <GenericStatesGrid serviceName="Legal Drafting" servicePath="drafting" />
+          </div>
+          
+          <div className="mt-16">
+            <GenericStatesGrid serviceName="Legal Drafting" servicePath="drafting" />
+          </div>
         </div>
       </div>
     </>

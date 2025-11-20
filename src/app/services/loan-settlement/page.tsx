@@ -615,23 +615,23 @@ export default function LoanSettlementPage() {
                   <h3 className="text-lg font-bold text-gray-900 mb-4">Related Services</h3>
                   <ul className="space-y-3 text-sm">
                     <li>
+                      <Link href="/services/banking-and-finance" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">›</span> Banking & Finance
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/services/civil" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">›</span> Civil Litigation
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/services/arbitration" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">›</span> Arbitration
+                      </Link>
+                    </li>
+                    <li>
                       <Link href="/services/cheque-bounce-lawyer" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
                         <span className="mr-2">›</span> Cheque Bounce Cases
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/services/legal-notice" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Reply to Legal Notice
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/services/consumer-complaint" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Consumer Complaints
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/services/nclt" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Insolvency (NCLT)
                       </Link>
                     </li>
                   </ul>
