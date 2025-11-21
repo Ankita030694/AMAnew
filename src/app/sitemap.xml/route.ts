@@ -6,9 +6,9 @@ import { collection, getDocs } from 'firebase/firestore'
 export async function GET(): Promise<Response> {
   const blogs = await fetchAllBlogs()
   const articles = await fetchAllArticles()
-  
+
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.amalegalsolutions.com'
-  
+
   // Build static routes
   const staticRoutes = [
     '',
@@ -20,7 +20,7 @@ export async function GET(): Promise<Response> {
     '/locations/bengaluru',
     '/locations/chennai',
     '/locations/jaipur',
-    '/locations/kolkata', 
+    '/locations/kolkata',
     '/locations/mumbai',
     '/locations/newdelhi',
     '/services',
@@ -33,24 +33,32 @@ export async function GET(): Promise<Response> {
     '/services/drafting',
     '/services/entertainment',
     '/services/intellectual-property-rights',
-    '/services/litigation', 
+    '/services/litigation',
     '/services/loan-settlement',
     '/services/real-estate',
     '/ourhistory',
     '/present',
     '/ourvision',
+    '/privacy-policy',
+    '/terms-and-conditions',
     '/author/anuj-anand-malik',
-    '/author/shrey-arora'
+    '/author/shrey-arora',
+    // Specific Loan Settlement State Pages
+    '/services/loan-settlement/AndhraPradesh',
+    '/services/loan-settlement/Delhi',
+    '/services/loan-settlement/Maharashtra',
+    '/services/loan-settlement/Telangana',
+    '/services/loan-settlement/UttarPradesh'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
     changeFrequency: 'weekly',
     priority: route === '' ? 1.0 : 0.8
   }))
-  
+
   // Build service slug routes
   const serviceSlugRoutes = generateServiceSlugRoutes(baseUrl)
-  
+
   // Build dynamic blog routes
   const blogRoutes = blogs.map(blog => ({
     url: `${baseUrl}/blog/${blog.slug}`,
@@ -58,7 +66,7 @@ export async function GET(): Promise<Response> {
     changeFrequency: 'monthly',
     priority: 0.7
   }))
-  
+
   // Build dynamic article routes
   const articleRoutes = articles.map(article => ({
     url: `${baseUrl}/articles/${article.slug}`,
@@ -66,10 +74,10 @@ export async function GET(): Promise<Response> {
     changeFrequency: 'monthly',
     priority: 0.7
   }))
-  
+
   // Combine all routes
   const allRoutes = [...staticRoutes, ...serviceSlugRoutes, ...blogRoutes, ...articleRoutes]
-  
+
   // Generate XML
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -82,7 +90,7 @@ export async function GET(): Promise<Response> {
     </url>
   `).join('')}
 </urlset>`
-  
+
   return new Response(xml, {
     headers: {
       'Content-Type': 'application/xml',
@@ -128,7 +136,7 @@ async function fetchAllArticles() {
 function generateServiceSlugRoutes(baseUrl: string) {
   const services = [
     'arbitration',
-    'banking-and-finance', 
+    'banking-and-finance',
     'civil',
     'corporate',
     'criminal-law',
@@ -140,7 +148,7 @@ function generateServiceSlugRoutes(baseUrl: string) {
     'loan-settlement',
     'real-estate'
   ]
-  
+
   const states = [
     'andhra-pradesh',
     'arunachal-pradesh',
@@ -171,7 +179,7 @@ function generateServiceSlugRoutes(baseUrl: string) {
     'uttarakhand',
     'west-bengal'
   ]
-  
+
   const unionTerritories = [
     'andaman-and-nicobar',
     'chandigarh',
@@ -182,11 +190,11 @@ function generateServiceSlugRoutes(baseUrl: string) {
     'lakshadweep',
     'puducherry'
   ]
-  
+
   const allSlugs = [...states, ...unionTerritories]
-  
+
   const serviceSlugRoutes = []
-  
+
   for (const service of services) {
     for (const slug of allSlugs) {
       serviceSlugRoutes.push({
@@ -197,6 +205,6 @@ function generateServiceSlugRoutes(baseUrl: string) {
       })
     }
   }
-  
+
   return serviceSlugRoutes
 }

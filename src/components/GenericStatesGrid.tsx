@@ -5,9 +5,10 @@ import { useRouter } from 'next/navigation';
 interface GenericStatesGridProps {
   serviceName: string;
   servicePath: string;
+  customSlugs?: Record<string, string>;
 }
 
-export default function GenericStatesGrid({ serviceName, servicePath }: GenericStatesGridProps) {
+export default function GenericStatesGrid({ serviceName, servicePath, customSlugs }: GenericStatesGridProps) {
   const router = useRouter();
   const states = [
     "Andhra Pradesh",
@@ -60,6 +61,10 @@ export default function GenericStatesGrid({ serviceName, servicePath }: GenericS
 
   // Function to handle state/territory click
   const handleLocationClick = (location: string) => {
+    if (customSlugs && customSlugs[location]) {
+      router.push(`/services/${servicePath}/${customSlugs[location]}`);
+      return;
+    }
     const slug = createSlug(location);
     router.push(`/services/${servicePath}/${slug}`);
   };

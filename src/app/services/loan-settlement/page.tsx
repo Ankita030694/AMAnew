@@ -641,7 +641,17 @@ export default function LoanSettlementPage() {
           </div>
           
           <div className="mt-16">
-            <GenericStatesGrid serviceName="Loan Settlement" servicePath="loan-settlement" />
+            <GenericStatesGrid 
+              serviceName="Loan Settlement" 
+              servicePath="loan-settlement" 
+              customSlugs={{
+                "Andhra Pradesh": "AndhraPradesh",
+                "Uttar Pradesh": "UttarPradesh",
+                "Maharashtra": "Maharashtra",
+                "Delhi": "Delhi",
+                "Telangana": "Telangana"
+              }}
+            />
           </div>
         </div>
       </div>
