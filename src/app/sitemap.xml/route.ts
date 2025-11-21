@@ -71,7 +71,12 @@ export async function GET(): Promise<Response> {
     '/services/loan-settlement/himachal-pradesh',
     '/services/loan-settlement/madhya-pradesh',
     '/services/loan-settlement/tamil-nadu',
-    '/services/loan-settlement/west-bengal'
+    '/services/loan-settlement/west-bengal',
+    '/services/loan-settlement/SBI',
+    '/services/loan-settlement/HDFC',
+    '/services/loan-settlement/IDFC',
+    'services/loan-settlement/ICICI',
+    'services/loan-settlement/kotak-mahindra'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
