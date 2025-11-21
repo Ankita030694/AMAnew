@@ -45,10 +45,33 @@ export async function GET(): Promise<Response> {
     '/author/shrey-arora',
     // Specific Loan Settlement State Pages
     '/services/loan-settlement/AndhraPradesh',
+    '/services/loan-settlement/Assam',
+    '/services/loan-settlement/Bihar',
+    '/services/loan-settlement/Chhattisgarh',
     '/services/loan-settlement/Delhi',
+    '/services/loan-settlement/Goa',
+    '/services/loan-settlement/Gujarat',
+    '/services/loan-settlement/Haryana',
+    '/services/loan-settlement/Jharkhand',
+    '/services/loan-settlement/Kerala',
     '/services/loan-settlement/Maharashtra',
+    '/services/loan-settlement/Manipur',
+    '/services/loan-settlement/Meghalaya',
+    '/services/loan-settlement/Mizoram',
+    '/services/loan-settlement/Odisha',
+    '/services/loan-settlement/Puducherry',
+    '/services/loan-settlement/Punjab',
+    '/services/loan-settlement/Rajasthan',
+    '/services/loan-settlement/Sikkim',
     '/services/loan-settlement/Telangana',
-    '/services/loan-settlement/UttarPradesh'
+    '/services/loan-settlement/Tripura',
+    '/services/loan-settlement/UttarPradesh',
+    '/services/loan-settlement/Uttrakhand',
+    '/services/loan-settlement/arunachal-pradesh',
+    '/services/loan-settlement/himachal-pradesh',
+    '/services/loan-settlement/madhya-pradesh',
+    '/services/loan-settlement/tamil-nadu',
+    '/services/loan-settlement/west-bengal'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
@@ -145,7 +168,7 @@ function generateServiceSlugRoutes(baseUrl: string) {
     'entertainment',
     'intellectual-property-rights',
     'litigation',
-    'loan-settlement',
+    // 'loan-settlement', // Removed as it now has specific pages
     'real-estate'
   ]
 

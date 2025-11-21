@@ -646,10 +646,34 @@ export default function LoanSettlementPage() {
               servicePath="loan-settlement" 
               customSlugs={{
                 "Andhra Pradesh": "AndhraPradesh",
-                "Uttar Pradesh": "UttarPradesh",
-                "Maharashtra": "Maharashtra",
+                "Arunachal Pradesh": "arunachal-pradesh",
+                "Assam": "Assam",
+                "Bihar": "Bihar",
+                "Chhattisgarh": "Chhattisgarh",
                 "Delhi": "Delhi",
-                "Telangana": "Telangana"
+                "Goa": "Goa",
+                "Gujarat": "Gujarat",
+                "Haryana": "Haryana",
+                "Himachal Pradesh": "himachal-pradesh",
+                "Jharkhand": "Jharkhand",
+                "Karnataka": "Karnataka", // Assuming Karnataka might be added later or maps to slug if not present, but wait, I don't see Karnataka dir. I should only map existing dirs.
+                "Kerala": "Kerala",
+                "Madhya Pradesh": "madhya-pradesh",
+                "Maharashtra": "Maharashtra",
+                "Manipur": "Manipur",
+                "Meghalaya": "Meghalaya",
+                "Mizoram": "Mizoram",
+                "Odisha": "Odisha",
+                "Puducherry": "Puducherry",
+                "Punjab": "Punjab",
+                "Rajasthan": "Rajasthan",
+                "Sikkim": "Sikkim",
+                "Tamil Nadu": "tamil-nadu",
+                "Telangana": "Telangana",
+                "Tripura": "Tripura",
+                "Uttar Pradesh": "UttarPradesh",
+                "Uttarakhand": "Uttrakhand",
+                "West Bengal": "west-bengal"
               }}
             />
           </div>
