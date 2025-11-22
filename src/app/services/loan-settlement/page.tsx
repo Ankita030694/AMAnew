@@ -640,6 +640,52 @@ export default function LoanSettlementPage() {
             </div>
           </div>
           
+          {/* Banks Grid */}
+          <div className="mt-16">
+            <section className="my-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+                We settle loans from the following banks
+              </h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+                <Link 
+                  href="/services/loan-settlement/sbi-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">SBI</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/hdfc-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">HDFC</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/icici-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">ICICI</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/kotak-mahindra"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Kotak Mahindra</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/idfc-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">IDFC</span>
+                </Link>
+              </div>
+              <div className="mt-8 text-center">
+                <p className="text-lg text-gray-700">
+                  Our loan settlement services are available for all major banks in India
+                </p>
+              </div>
+            </section>
+          </div>
+
           <div className="mt-16">
             <GenericStatesGrid 
               serviceName="Loan Settlement" 
