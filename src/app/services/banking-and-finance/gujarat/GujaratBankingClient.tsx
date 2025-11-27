@@ -302,7 +302,7 @@ const GujaratBankingClient = () => {
                     <ul className="space-y-2">
                       <li>• Bank FD Receipt (for NOF)</li>
                       <li>• Education Certificates</li>
-                      <li>• CIBIL Reports (Score > 750)</li>
+                      <li>• CIBIL Reports (Score &gt; 750)</li>
                       <li>• Business Plan / Projected Financials</li>
                     </ul>
                   </div>

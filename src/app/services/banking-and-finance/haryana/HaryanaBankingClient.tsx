@@ -186,7 +186,7 @@ const HaryanaBankingClient = () => {
                       <tr>
                         <td className="p-4 border-b font-semibold text-[#D2A02A]">3. RBI Application</td>
                         <td className="p-4 border-b text-gray-700">
-                          File online via COSMOS. Upload director profiles (CIBIL score > 750 preferred).
+                          File online via COSMOS. Upload director profiles (CIBIL score &gt; 750 preferred).
                         </td>
                       </tr>
                       <tr>

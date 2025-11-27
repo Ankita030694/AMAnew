@@ -245,7 +245,7 @@ const KarnatakaBankingClient = () => {
                   <div className="p-6 bg-gray-50 rounded-xl">
                     <h3 className="font-bold text-xl text-gray-900 mb-2">SARFAESI Action</h3>
                     <p className="text-gray-700">
-                      We handle the complete process: 13(2) Notice -> 13(4) Possession -> CMM/DM Application for physical possession. In Bengaluru Urban, getting the CMM order for physical possession is a critical step we specialize in.
+                      We handle the complete process: 13(2) Notice -&gt; 13(4) Possession -&gt; CMM/DM Application for physical possession. In Bengaluru Urban, getting the CMM order for physical possession is a critical step we specialize in.
                     </p>
                   </div>
                   <div className="p-6 bg-gray-50 rounded-xl">
