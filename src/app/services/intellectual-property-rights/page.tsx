@@ -725,7 +725,30 @@ export default function IntellectualPropertyPage() {
           </div>
           
           <div className="mt-16">
-            <GenericStatesGrid serviceName="Trademark Registration" servicePath="intellectual-property-rights" />
+            <GenericStatesGrid 
+              serviceName="Trademark Registration" 
+              servicePath="intellectual-property-rights"
+              overrideStates={[
+                "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", 
+                "Gujarat", "Jharkhand", "Kerala", "Madhya Pradesh", "Maharashtra", 
+                "Manipur", "Mizoram", "Odisha", "Punjab", "Rajasthan", "Tamil Nadu", 
+                "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"
+              ]}
+              overrideUnionTerritories={[
+                "Chandigarh", "Delhi", "Jammu and Kashmir", "Puducherry"
+              ]}
+              customSlugs={{
+                "Tamil Nadu": "TamilNadu",
+                "Uttar Pradesh": "UttarPradesh",
+                "Puducherry": "pudducherry",
+                "Delhi": "Delhi",
+                "Gujarat": "Gujarat",
+                "Maharashtra": "Maharashtra",
+                "Punjab": "Punjab",
+                "Rajasthan": "Rajasthan",
+                "Kerala": "kerala"
+              }}
+            />
           </div>
         </div>
       </div>

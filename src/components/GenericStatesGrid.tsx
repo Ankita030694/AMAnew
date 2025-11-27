@@ -6,11 +6,19 @@ interface GenericStatesGridProps {
   serviceName: string;
   servicePath: string;
   customSlugs?: Record<string, string>;
+  overrideStates?: string[];
+  overrideUnionTerritories?: string[];
 }
 
-export default function GenericStatesGrid({ serviceName, servicePath, customSlugs }: GenericStatesGridProps) {
+export default function GenericStatesGrid({ 
+  serviceName, 
+  servicePath, 
+  customSlugs,
+  overrideStates,
+  overrideUnionTerritories
+}: GenericStatesGridProps) {
   const router = useRouter();
-  const states = [
+  const states = overrideStates || [
     "Andhra Pradesh",
     "Arunachal Pradesh", 
     "Assam",
@@ -41,7 +49,7 @@ export default function GenericStatesGrid({ serviceName, servicePath, customSlug
     "West Bengal"
   ];
 
-  const unionTerritories = [
+  const unionTerritories = overrideUnionTerritories || [
     "Andaman and Nicobar",
     "Chandigarh",
     "Daman and Diu",
