@@ -260,7 +260,7 @@ const ArunachalPradeshBankingClient = () => {
                   DRT Guwahati & Debt Recovery
                 </h2>
                 <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                  There is no DRT in Arunachal Pradesh. All recovery cases for debts > ₹20 Lakhs fall under the jurisdiction of the <strong>Debt Recovery Tribunal (DRT) in Guwahati</strong>.
+                  There is no DRT in Arunachal Pradesh. All recovery cases for debts &gt; ₹20 Lakhs fall under the jurisdiction of the <strong>Debt Recovery Tribunal (DRT) in Guwahati</strong>.
                 </p>
                 <div className="grid md:grid-cols-2 gap-6 mb-8">
                   <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
