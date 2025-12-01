@@ -594,11 +594,7 @@ export default function ChhattisgarhLoanSettlementPage() {
                         <span className="mr-2">›</span> Arbitration
                       </Link>
                     </li>
-                    <li>
-                      <Link href="/services/cheque-bounce-lawyer" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Cheque Bounce Cases
-                      </Link>
-                    </li>
+                    
                   </ul>
                 </div>
               </div>

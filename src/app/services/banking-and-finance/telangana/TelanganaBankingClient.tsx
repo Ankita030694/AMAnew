@@ -595,21 +595,9 @@ export default function TelanganaBankingClient() {
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                   <h3 className="text-lg font-bold text-gray-900 mb-4">Related Services</h3>
                   <ul className="space-y-3 text-sm">
-                    <li>
-                      <Link href="/services/company-registration" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Company Registration
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/services/trademark-registration" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Trademark Registration
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/services/gst-registration" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> GST Registration
-                      </Link>
-                    </li>
+                    
+                    
+                    
                     <li>
                       <Link href="/services/loan-settlement" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
                         <span className="mr-2">›</span> Loan Settlement

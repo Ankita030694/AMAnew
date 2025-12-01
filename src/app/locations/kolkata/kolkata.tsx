@@ -232,7 +232,7 @@ export default function Services() {
           icon: faHouse,
           title: "Criminal Law",
           description: "Legal Help for FIR & Police Cases | Arrest & Police Interrogation | Cyber Crime & Online Fraud | Money Laundering Case | Bank & Insurance Fraud | Criminal Breach |",
-          link: "/services/criminal"
+          link: "/services/criminal-law"
         },
         {
           icon: faHouse,

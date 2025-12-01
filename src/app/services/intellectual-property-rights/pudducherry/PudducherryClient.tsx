@@ -409,26 +409,10 @@ export default function PudducherryClient() {
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                   <h3 className="text-lg font-bold text-gray-900 mb-4">Related Services</h3>
                   <ul className="space-y-3 text-sm">
-                    <li>
-                      <Link href="/services/company-registration" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Company Registration
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/services/startup-india-registration" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Startup India Registration
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/services/gst-registration" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> GST Registration
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/services/legal-notices" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Legal Notices
-                      </Link>
-                    </li>
+                    
+                    
+                    
+                    
                   </ul>
                 </div>
               </div>

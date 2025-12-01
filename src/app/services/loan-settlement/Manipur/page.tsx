@@ -516,11 +516,7 @@ export default function ManipurLoanSettlementPage() {
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                   <h3 className="text-lg font-bold text-gray-900 mb-4">Related Services</h3>
                   <ul className="space-y-3 text-sm">
-                    <li>
-                      <Link href="/services/cheque-bounce-lawyer" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Cheque Bounce
-                      </Link>
-                    </li>
+                    
                     <li>
                       <Link href="/services/arbitration" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
                         <span className="mr-2">›</span> Arbitration

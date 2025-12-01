@@ -456,14 +456,7 @@ const ChhattisgarhBankingClient = () => {
                       <span className="mr-2">›</span> Banking & Finance
                     </Link>
                   </li>
-                  <li>
-                    <Link
-                      href="/services/startup-registration"
-                      className="text-gray-600 hover:text-[#D2A02A] flex items-center"
-                    >
-                      <span className="mr-2">›</span> Startup Registration
-                    </Link>
-                  </li>
+                  
                   <li>
                     <Link
                       href="/services/loan-settlement"
@@ -472,22 +465,8 @@ const ChhattisgarhBankingClient = () => {
                       <span className="mr-2">›</span> Loan Settlement
                     </Link>
                   </li>
-                  <li>
-                    <Link
-                      href="/services/cheque-bounce-lawyer"
-                      className="text-gray-600 hover:text-[#D2A02A] flex items-center"
-                    >
-                      <span className="mr-2">›</span> Cheque Bounce
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/services/company-registration"
-                      className="text-gray-600 hover:text-[#D2A02A] flex items-center"
-                    >
-                      <span className="mr-2">›</span> Company Registration
-                    </Link>
-                  </li>
+                  
+                  
                 </ul>
               </div>
             </div>
