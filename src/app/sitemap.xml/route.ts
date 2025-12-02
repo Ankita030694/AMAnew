@@ -81,6 +81,8 @@ export async function GET(): Promise<Response> {
     '/services/loan-settlement/Noida',
     '/services/loan-settlement/pune',
     '/services/loan-settlement/Surat',
+    '/services/loan-settlement/what-is-loan-settlement',
+    '/services/loan-settlement/lok-adalat',
     // Bank Specific Pages
     '/services/loan-settlement/sbi-bank',
     '/services/loan-settlement/hdfc-bank',

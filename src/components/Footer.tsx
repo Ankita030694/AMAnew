@@ -154,7 +154,9 @@ export default function Footer() {
                 <ul className="space-y-4">
                   {[
                     { href: "/services/banking-and-finance", label: "Banking and Finance" },
-                    { href: "/services/loansettlement", label: "Loan Settlement" },
+                    { href: "/services/loan-settlement", label: "Loan Settlement" },
+                    { href: "/services/loan-settlement/lok-adalat", label: "Lok Adalat Settlement" },
+                    { href: "/services/loan-settlement/what-is-loan-settlement", label: "What is Loan Settlement?" },
                     { href: "/services/intellectual-property-rights", label: "Intellectual Property Rights" },
                     { href: "/services/entertainment", label: "Entertainment Law" },
                     { href: "/services/real-estate", label: "Real Estate" },
