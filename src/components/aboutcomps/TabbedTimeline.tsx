@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 const TimelineCards = () => {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
@@ -32,7 +32,7 @@ const TimelineCards = () => {
   ];
 
   // Animation variants
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -42,7 +42,7 @@ const TimelineCards = () => {
     }
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { y: 50, opacity: 0 },
     visible: { 
       y: 0, 

@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
 import { useSearchParams, useRouter } from 'next/navigation';
@@ -11,7 +11,7 @@ import dynamic from 'next/dynamic';
 // Remove problematic dynamic import - use motion directly for better performance
 
 // Define animations
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: { 
     opacity: 1,
@@ -21,7 +21,7 @@ const containerVariants = {
   }
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { y: 20, opacity: 0 },
   visible: { 
     y: 0, 
@@ -30,7 +30,7 @@ const itemVariants = {
   }
 };
 
-const hoverVariants = {
+const hoverVariants: Variants = {
   initial: { scale: 1 },
   hover: { 
     scale: 1.03,

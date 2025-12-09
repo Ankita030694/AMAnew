@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const VisionPage = () => {
@@ -20,7 +20,7 @@ const VisionPage = () => {
   }, [controls, inView]);
 
   // Animation variants
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -30,7 +30,7 @@ const VisionPage = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 50, opacity: 0 },
     visible: {
       y: 0,

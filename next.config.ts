@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
+const nextConfig = {
   eslint: {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.
@@ -99,10 +99,7 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-  // Fix webpack configuration
-  webpack: (config) => {
-    return config;
-  },
+
   async redirects() {
     return [
       {
@@ -150,7 +147,7 @@ const nextConfig: NextConfig = {
         destination: '/blog/get-loan-mukt-in-180-days-loan-settlement-',
         permanent: true,
       },
-    ];  
+    ];
   },
   async headers() {
     return [
