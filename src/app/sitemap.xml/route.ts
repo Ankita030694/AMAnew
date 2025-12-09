@@ -98,6 +98,7 @@ export async function GET(): Promise<Response> {
     '/services/loan-settlement/rbl-bank',
     '/services/loan-settlement/yes-bank',
     'services/loan-settlement/bajaj-finserv',
+    'services/loan-settlement/axis-bank',
     '/services/debt-consolidation',
     // Specific Banking and Finance State Pages
     '/services/banking-and-finance/andhra-pradesh',
