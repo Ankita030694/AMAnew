@@ -5,6 +5,7 @@ import FaqSection from "./FaqSection";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUniversity, FaGavel, FaBalanceScale, FaUserTie, FaPhoneSlash } from "react-icons/fa";
+import { faqs } from "./faqs";
 
 // Breadcrumb Schema
 const breadcrumbSchema = {
@@ -106,6 +107,20 @@ const reviewSchema = {
   ]
 };
 
+// FAQ Schema
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
 export const metadata = {
   title: "Fibe Loan Settlement Process | EarlySalary Loan Settlement Letter Format",
   description:
@@ -161,6 +176,11 @@ export default function FibeLoanSettlementPage() {
         id="article-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Script
         id="review-schema"
