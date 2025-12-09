@@ -3,10 +3,7 @@
 import React from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-const FaqSection = () => {
-  const [openIndex, setOpenIndex] = React.useState<number | null>(0);
-
-  const faqs = [
+export const faqs = [
     {
       question: "Does Bajaj Finserv accept loan settlement?",
       answer:
@@ -38,6 +35,9 @@ const FaqSection = () => {
         "Once a settlement amount is agreed upon verbally, you must insist on an official Settlement Letter from Bajaj Finserv on their letterhead. This letter should clearly state the settlement amount, payment due date, and that no further dues will remain after this payment. Do not make any payment without this letter.",
     },
   ];
+
+const FaqSection = () => {
+  const [openIndex, setOpenIndex] = React.useState<number | null>(0);
 
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);

@@ -2,7 +2,7 @@ import Link from "next/link";
 import Script from "next/script";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import FaqSection from "./FaqSection";
+import FaqSection, { faqs } from "./FaqSection";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUniversity, FaGavel, FaBalanceScale, FaUserTie } from "react-icons/fa";
 
@@ -84,6 +84,19 @@ const articleSchema = {
   "dateModified": "2023-11-24"
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
 const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
@@ -147,6 +160,11 @@ export default function BajajFinservLoanSettlementPage() {
         id="article-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Script
         id="review-schema"
