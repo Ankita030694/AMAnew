@@ -97,6 +97,7 @@ export async function GET(): Promise<Response> {
     '/services/loan-settlement/pnb-bank',
     '/services/loan-settlement/rbl-bank',
     '/services/loan-settlement/yes-bank',
+    '/services/loan-settlement/debt-consolidation',
     // Specific Banking and Finance State Pages
     '/services/banking-and-finance/andhra-pradesh',
     '/services/banking-and-finance/arunachal-pradesh',
