@@ -850,6 +850,12 @@ export default function LoanSettlementPage() {
                 >
                   <span className="text-gray-800 font-medium text-sm leading-tight block">Axis Bank</span>
                 </Link>
+                <Link 
+                  href="/services/loan-settlement/kisetsu-saison-finance"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Kisetsu Saison Finance</span>
+                </Link>
               </div>
               <div className="mt-8 text-center">
                 <p className="text-lg text-gray-700">
