@@ -43,6 +43,14 @@ const Locations = dynamic(() => import("@/components/locations"), {
   ssr: true,
 });
 
+const AppShowcase = dynamic(() => import("@/components/AppShowcase"), {
+  loading: () => (
+    <div className="h-96 bg-gray-900 animate-pulse flex items-center justify-center">
+      <div className="text-white">Loading app showcase...</div>
+    </div>
+  ),
+});
+
 export const metadata = {
   title: 'AMA Legal Solutions: Top Law Firm in India',
   description: 'AMA Legal Solutions is a trusted law firm in India offering legal consultation, dispute resolution, and advisory services in finance, corporate law, and more',
@@ -213,6 +221,7 @@ export default function Home() {
       <Yt />
       <Locations />
       <LegalExcellence />
+      <AppShowcase />
       {/* <Form /> */}
       {/* Other content */}
     

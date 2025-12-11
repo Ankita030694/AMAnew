@@ -30,4 +30,12 @@ body {
   background-color: #6B5B3D; /* Adjust this to match your desired shade of brown */
 }
 
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
 
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
