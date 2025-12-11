@@ -20,6 +20,7 @@ export default function Clients() {
     { src: "/saga.svg", alt: "Client 7" },
     { src: "/li.svg", alt: "Client 8" },
     { src: "/soct.svg", alt: "Client 9" },
+    { src: "/partner3.png", alt: "Client 10" },
   ];
 
   // Simplified visible slides calculation
@@ -127,7 +128,7 @@ export default function Clients() {
               >
                 {clientLogos.map((logo, index) => (
                   <div key={index} className="md:w-1/4 w-1/2 flex-shrink-0 px-4">
-                    <div className="aspect-w-3 aspect-h-2">
+                    <div className={`${logo.src === "/partner3.png" ? "w-[200px] h-[200px] bg-black flex items-center justify-center mx-auto" : "aspect-w-3 aspect-h-2"}`}>
                       <Image
                         src={logo.src}
                         alt={logo.alt}
