@@ -163,6 +163,8 @@ export default function AppShowcase() {
                   height={280}
                   className="w-full h-auto drop-shadow-2xl"
                   priority
+                  unoptimized
+                  loading="eager"
                 />
               </div>
               
