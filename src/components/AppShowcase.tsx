@@ -69,7 +69,7 @@ export default function AppShowcase() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
           {/* Text Content - Left Side */}
-          <FadeInDiv id="app-content" className="space-y-6 text-center lg:text-left order-2 lg:order-1">
+          <FadeInDiv id="app-content" className="space-y-6 text-center lg:text-left">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-[#5A4C33] mb-4 relative inline-block">
                 Get Legal Clarity Instantly
@@ -149,7 +149,7 @@ export default function AppShowcase() {
           </FadeInDiv>
 
           {/* Image Content - Right Side */}
-          <FadeInDiv id="app-image" delay={200} className="relative flex justify-center lg:justify-end order-1 lg:order-2">
+          <FadeInDiv id="app-image" delay={200} className="relative flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[280px] mx-auto">
               {/* Subtle Glow Effects */}
               <div className="absolute inset-0 bg-gradient-to-tr from-[#D2A02A]/10 to-[#5A4C33]/10 rounded-3xl blur-3xl transform scale-110 animate-float" />

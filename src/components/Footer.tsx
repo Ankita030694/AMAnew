@@ -49,7 +49,7 @@ export default function Footer() {
                     <i className="fab fa-facebook-f text-lg group-hover:scale-110 transition-transform duration-300"></i>
                   </Link>
                   <Link
-                    href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.instagram.com/amalegalsolutions/%3Fhl%3Den&ved=2ahUKEwjGiZGYv_qLAxVSyzgGHesQLlsQFnoECCEQAQ&usg=AOvVaw3XAY8vcpLwCWkAQkv3NZFA"
+                    href="https://www.instagram.com/amalegalsolutions/?hl=en"
                     className="group w-12 h-12 bg-white/15 backdrop-blur-sm rounded-xl border border-white/30 flex items-center justify-center hover:bg-white/25 hover:border-white/50 transition-all duration-300 hover:scale-110 hover:shadow-lg"
                   >
                     <i className="fab fa-instagram text-lg group-hover:scale-110 transition-transform duration-300"></i>
@@ -59,6 +59,12 @@ export default function Footer() {
                     className="group w-12 h-12 bg-white/15 backdrop-blur-sm rounded-xl border border-white/30 flex items-center justify-center hover:bg-white/25 hover:border-white/50 transition-all duration-300 hover:scale-110 hover:shadow-lg"
                   >
                     <i className="fab fa-linkedin text-lg group-hover:scale-110 transition-transform duration-300"></i>
+                  </Link>
+                  <Link
+                    href="https://www.youtube.com/@amalegalsolution"
+                    className="group w-12 h-12 bg-white/15 backdrop-blur-sm rounded-xl border border-white/30 flex items-center justify-center hover:bg-white/25 hover:border-white/50 transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                  >
+                    <i className="fab fa-youtube text-lg group-hover:scale-110 transition-transform duration-300"></i>
                   </Link>
                 </div>
                 

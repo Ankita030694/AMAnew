@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import HeroSection2 from "@/components/HeroSection2";
 import PracticeAreas from "@/components/PracticeAreas";
 import Clients from "@/components/Clients";
 import TributeCard from "@/components/TributeCard";
@@ -189,7 +190,7 @@ export default function Home() {
         }}
       />
       
-      <Hero />
+      <HeroSection2 />
       <Clients />
       <PracticeAreas />
       <AskExperts />

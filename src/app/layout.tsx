@@ -14,7 +14,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "AMA Legal Solutions | Top Law Firm in India",
-  description: "Top-rated law firm in India specializing in corporate, real estate, and entertainment law. Contact us for legal consultation and representation.",
+  description: "Top-rated Indian law firm for corporate, real estate, and entertainment law. Contact us for expert legal consultation.",
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '16x16 32x32 48x48', type: 'image/x-icon' },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   openGraph: {
     title: "AMA Legal Solutions | Top Law Firm in India",
-    description: "Top-rated law firm in India specializing in corporate, real estate, and entertainment law. Contact us for legal consultation and representation.",
+    description: "Top-rated Indian law firm for corporate, real estate, and entertainment law. Contact us for expert legal consultation.",
     url: "https://www.amalegalsolutions.com",
     siteName: "AMA Legal Solutions",
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "AMA Legal Solutions | Top Law Firm in India",
-    description: "Top-rated law firm in India specializing in corporate, real estate, and entertainment law. Contact us for legal consultation and representation.",
+    description: "Top-rated Indian law firm for corporate, real estate, and entertainment law. Contact us for expert legal consultation.",
     images: ["https://www.amalegalsolutions.com/future.png"],
     creator: "@amalegalsolutions",
     site: "@amalegalsolutions",
