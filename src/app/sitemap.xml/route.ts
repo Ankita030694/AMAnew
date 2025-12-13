@@ -98,6 +98,7 @@ export async function GET(): Promise<Response> {
     '/services/loan-settlement/rbl-bank',
     '/services/loan-settlement/yes-bank',
     '/services/loan-settlement/bajaj-finserv',
+    '/services/loan-settlement/bank-of-baroda',
     '/services/loan-settlement/axis-bank',
     '/services/loan-settlement/kisetsu-saison-finance',
     '/services/loan-settlement/indusind-bank',

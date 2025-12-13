@@ -58,21 +58,7 @@ const HeroSection2 = () => {
           </Link> */}
         </div>
 
-        {/* Image */}
-        <div 
-          className="relative max-w-[400px] md:max-w-[350px]"
-          
-        >
-          <Image
-            src="/app_creative.png"
-            alt="AMA Legal Solutions App"
-            width={1400}
-            height={1400}
-            className="drop-shadow-2xl"
-            priority
-          />
-        </div>
-
+       
       </div>
 
       {/* Gradient effect at intersection with Clients section */}
