@@ -7,16 +7,18 @@ interface TableOfContentsProps {
     id: string;
     title: string;
   }>;
+  orientation?: 'horizontal' | 'vertical';
 }
 
-export default function TableOfContents({ sections }: TableOfContentsProps) {
+export default function TableOfContents({ sections, orientation = "horizontal" }: TableOfContentsProps) {
   const [activeSection, setActiveSection] = useState<string>("");
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const buttonRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({});
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 150; // Offset for navbar + table of contents
+      const offset = orientation === "vertical" ? 100 : 150;
+      const scrollPosition = window.scrollY + offset;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const element = document.getElementById(sections[i].id);
@@ -31,11 +33,11 @@ export default function TableOfContents({ sections }: TableOfContentsProps) {
     handleScroll(); // Check initial position
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [sections]);
+  }, [sections, orientation]);
 
-  // Scroll active button into view
+  // Scroll active button into view (only for horizontal)
   useEffect(() => {
-    if (activeSection && scrollContainerRef.current && buttonRefs.current[activeSection]) {
+    if (orientation === "horizontal" && activeSection && scrollContainerRef.current && buttonRefs.current[activeSection]) {
       const container = scrollContainerRef.current;
       const button = buttonRefs.current[activeSection];
 
@@ -53,12 +55,12 @@ export default function TableOfContents({ sections }: TableOfContentsProps) {
         });
       }
     }
-  }, [activeSection]);
+  }, [activeSection, orientation]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = 120; // Account for navbar + table of contents height
+      const offset = orientation === "vertical" ? 100 : 120; // Account for navbar
       const elementPosition = element.offsetTop - offset;
       window.scrollTo({
         top: elementPosition,
@@ -66,6 +68,26 @@ export default function TableOfContents({ sections }: TableOfContentsProps) {
       });
     }
   };
+
+  if (orientation === "vertical") {
+    return (
+      <nav className="flex flex-col space-y-1">
+        {sections.map((section) => (
+          <button
+            key={section.id}
+            onClick={() => scrollToSection(section.id)}
+            className={`text-left px-4 py-3 text-sm font-medium rounded-r-lg transition-all duration-200 border-l-4 ${
+              activeSection === section.id
+                ? "bg-gray-50 border-[#D2A02A] text-[#D2A02A]"
+                : "border-transparent text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+            }`}
+          >
+            {section.title}
+          </button>
+        ))}
+      </nav>
+    );
+  }
 
   return (
     <div className="bg-white border-b border-gray-200 sticky top-20 z-30 shadow-sm">
