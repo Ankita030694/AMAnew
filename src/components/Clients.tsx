@@ -94,9 +94,9 @@ export default function Clients() {
 
   return (
     <div className="relative z-30 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="bg-gray-100 rounded-lg shadow-xl -mt-32 md:-mt-20">
+      <div className="bg-gray-100 rounded-lg shadow-xl md:-mt-10">
         <div className="p-8 md:p-12">
-          <h2 className="font-bold text-center text-[#5A4C33] mb-8 text-4xl">
+          <h2 className="font-bold text-center text-[#5A4C33] mb-8 text-[20px] sm:text-[20px] text-[25px]">
             Providing Solutions To
           </h2>
           <div className="relative" ref={containerRef}>

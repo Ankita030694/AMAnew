@@ -175,7 +175,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               "sameAs": [
                 "https://www.youtube.com/@amalegalsolution",
                 "https://www.instagram.com/amalegalsolutions/",
-                "https://www.linkedin.com/company/ama-legal-solutions/"
+                "https://www.linkedin.com/company/ama-legal-solutions/",
+                "https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions",
+                "https://apps.apple.com/in/app/ama-legal-solutions/id6755156186"
               ],
               "department": {
                 "@type": "LegalService",

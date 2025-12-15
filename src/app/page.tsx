@@ -190,7 +190,7 @@ export default function Home() {
         }}
       />
       
-      <Hero />
+      <HeroSection2 />
       <Clients />
       <PracticeAreas />
       <AskExperts />
