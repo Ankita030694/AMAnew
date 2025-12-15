@@ -108,7 +108,7 @@ const reviewSchema = {
         "@type": "Person",
         "name": "Ramesh T."
       },
-      "reviewBody": "My apple orchard in Kotkhai suffered huge losses due to hail. I couldn't pay my KCC loan. AMA Legal helped me negotiate with the bank and saved my land from auction."
+      "reviewBody": "My apple orchard in Kotkhai suffered huge losses due to hail. I couldn't pay my KCC loan. AMA Legal Solutions helped me negotiate with the bank and saved my land from auction."
     },
     {
       "@type": "Review",
@@ -504,7 +504,7 @@ export default function HimachalLoanSettlementPage() {
                     <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
                       <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
                       <p className="text-gray-700 italic mb-4 relative z-10">
-                        "My apple orchard in Kotkhai suffered huge losses due to hail. I couldn't pay my KCC loan. AMA Legal helped me negotiate with the bank and saved my land from auction."
+                        "My apple orchard in Kotkhai suffered huge losses due to hail. I couldn't pay my KCC loan. AMA Legal Solutions helped me negotiate with the bank and saved my land from auction."
                       </p>
                       <div className="flex items-center">
                         <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">R</div>

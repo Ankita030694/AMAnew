@@ -24,7 +24,7 @@ export default function FaqSection() {
       </div>
       
       <div className="p-6 md:p-10">
-        <div className="space-y-4">
+        <div className="flex flex-col space-y-4">
           {faqs.map((faq, index) => (
             <div 
               key={index} 

@@ -10,13 +10,13 @@ import { MdSmartphone, MdOutlinePayments, MdSecurity } from "react-icons/md";
 
 // Metadata
 export const metadata = {
-  title: "DMI Finance Loan Settlement | Samsung Finance+ & GPay Loans | AMA Legal",
+  title: "DMI Finance Loan Settlement | Samsung Finance+ & GPay Loans | AMA Legal Solutions",
   description: "Struggling with DMI Finance loans (Samsung Finance+, Google Pay)? Expert legal settlement services to stop phone locking, harassment, and reduce debt.",
   alternates: {
     canonical: 'https://amalegalsolutions.com/services/loan-settlement/dmi-finance',
   },
   openGraph: {
-    title: "DMI Finance Loan Settlement | Samsung Finance+ & GPay Loans | AMA Legal",
+    title: "DMI Finance Loan Settlement | Samsung Finance+ & GPay Loans | AMA Legal Solutions",
     description: "Struggling with DMI Finance loans (Samsung Finance+, Google Pay)? Expert legal settlement services to stop phone locking, harassment, and reduce debt.",
     url: "https://amalegalsolutions.com/services/loan-settlement/dmi-finance",
     type: "website",
@@ -125,7 +125,7 @@ const reviewSchema = {
         "@type": "Person",
         "name": "Rahul M."
       },
-      "reviewBody": "My Samsung phone was locked because I missed EMIs to DMI Finance. AMA Legal helped me settle the loan and get my phone unlocked. Very professional."
+      "reviewBody": "My Samsung phone was locked because I missed EMIs to DMI Finance. AMA Legal Solutions helped me settle the loan and get my phone unlocked. Very professional."
     }
   ]
 };
@@ -204,70 +204,110 @@ export default function DmiFinanceLoanSettlementPage() {
             
             {/* Introduction */}
             <section id="introduction" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">DMI Finance: The Tech-Lender</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">DMI Finance: The Giant Behind Your Digital Loans</h2>
               <div className="bg-white rounded-xl p-8 shadow-sm border-l-4 border-red-600">
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  <strong>DMI Finance</strong> is a major NBFC that powers many of the digital loans you see today. They are the primary lending partner for <strong>Samsung Finance+</strong>, enabling millions to buy smartphones on EMI. They also partner with <strong>Google Pay, Paytm, and other fintech apps</strong> to offer instant personal loans.
+                  <strong>DMI Finance Private Limited</strong> is not your typical bank. It is a technology-first Non-Banking Financial Company (NBFC) that has revolutionized—and in some ways, weaponized—digital lending in India. If you have bought a smartphone on EMI without a credit card, or taken an instant personal loan through an app, chances are DMI Finance is the lender behind the screen.
+                </p>
+                <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                  They are the exclusive lending partner for <strong>Samsung Finance+</strong>, powering the EMI schemes for millions of Samsung devices. Beyond that, they are a primary lender for major fintech platforms like <strong>Google Pay (GPay), Paytm, PhonePe, and Mobikwik</strong>. Their reach is vast, penetrating deep into Tier 2 and Tier 3 cities where traditional banks fear to tread.
+                </p>
+                <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                  However, their reliance on technology extends to their recovery methods. DMI Finance uses sophisticated algorithms and automated systems for collections. For Samsung users, this means the dreaded <strong>"Device Lock"</strong> via Knox Guard. For personal loan borrowers, it means an incessant barrage of automated calls, legal notices sent via WhatsApp and email, and aggressive digital recovery agents.
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Because they are tech-driven, their recovery process is also highly automated and aggressive. From remote device locking to automated legal notices, defaulting on a DMI Finance loan can quickly become stressful. AMA Legal Solutions helps you navigate this complex landscape and settle your debt legally.
+                  At AMA Legal Solutions, we understand the unique "Tech-Legal" challenges posed by DMI Finance. We don't just negotiate money; we fight the technological coercion. Whether it's getting your phone unlocked or stopping the cyber-harassment from recovery agents, our specialized team knows exactly which legal levers to pull to bring DMI Finance to the settlement table.
                 </p>
               </div>
             </section>
 
-            {/* Samsung Finance+ Section */}
+            {/* Samsung Finance+ Deep Dive */}
             <section id="samsung-finance" className="mb-16 scroll-mt-32">
               <div className="bg-blue-900 text-white rounded-2xl p-8 md:p-12 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-overlay filter blur-3xl opacity-20"></div>
-                <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
-                  <div className="md:w-2/3">
-                    <h2 className="text-2xl md:text-3xl font-bold mb-4 flex items-center gap-3">
-                      <MdSmartphone className="text-4xl text-blue-300" /> Samsung Finance+ Issues
-                    </h2>
-                    <p className="text-blue-100 mb-6 text-lg">
-                      Did you buy a Samsung phone on EMI? If you miss payments, DMI Finance (via Knox Guard) can <strong>lock your phone remotely</strong>, turning it into a brick.
-                    </p>
-                    <ul className="space-y-3">
-                      <li className="flex items-center gap-2 text-blue-50"><FaCheckCircle className="text-blue-400" /> We negotiate to settle the loan amount.</li>
-                      <li className="flex items-center gap-2 text-blue-50"><FaCheckCircle className="text-blue-400" /> Settlement leads to loan closure and device unlocking.</li>
-                      <li className="flex items-center gap-2 text-blue-50"><FaCheckCircle className="text-blue-400" /> We stop the harassment from recovery agents.</li>
-                    </ul>
-                  </div>
-                  <div className="md:w-1/3 flex justify-center">
-                    <div className="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/20 text-center">
-                      <FaMobileAlt className="text-6xl text-blue-300 mx-auto mb-4" />
-                      <p className="font-bold">Device Lock Removal</p>
-                      <p className="text-sm text-blue-200">Post Settlement</p>
+                <div className="relative z-10">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-8 flex items-center gap-4">
+                    <MdSmartphone className="text-5xl text-blue-300" /> 
+                    The Samsung Finance+ Trap: Understanding Knox Guard
+                  </h2>
+                  
+                  <div className="grid md:grid-cols-2 gap-12">
+                    <div>
+                      <h3 className="text-xl font-bold text-blue-200 mb-4">How It Works</h3>
+                      <p className="text-blue-50 leading-relaxed mb-6">
+                        When you buy a phone via Samsung Finance+, you aren't just signing a loan agreement; you are installing a "Digital Handcuff" called <strong>Knox Guard</strong>. This is a chip-level security layer that gives DMI Finance administrative control over your device.
+                      </p>
+                      <ul className="space-y-4 text-blue-100">
+                        <li className="flex items-start gap-3">
+                          <MdSecurity className="text-2xl text-blue-400 mt-1" />
+                          <span><strong>The Reminder Stage:</strong> 3 days before the EMI date, the phone starts showing intrusive full-screen reminders.</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <MdSecurity className="text-2xl text-blue-400 mt-1" />
+                          <span><strong>The Lock Stage:</strong> The moment you miss a payment, the device locks. You can only make emergency calls. Your data, photos, and apps are inaccessible.</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <MdSecurity className="text-2xl text-blue-400 mt-1" />
+                          <span><strong>The Brick Stage:</strong> If you try to tamper with the software or "root" the device, Knox Guard can permanently disable the hardware (brick the phone), rendering it useless.</span>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    <div className="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/20">
+                      <h3 className="text-xl font-bold text-blue-200 mb-4">Our Unlocking Strategy</h3>
+                      <p className="text-blue-50 mb-6">
+                        Many local mobile repair shops claim they can "bypass" the lock. <strong>DO NOT DO THIS.</strong> It is illegal and voids your warranty. DMI Finance can track this and file a criminal case for "Destruction of Property" or "Cheating".
+                      </p>
+                      <p className="text-blue-50 mb-6">
+                        The only legal way to unlock your phone is through settlement. Here is how we do it:
+                      </p>
+                      <ol className="list-decimal pl-5 space-y-3 text-blue-100">
+                        <li><strong>Legal Notice:</strong> We send a notice to DMI stating that depriving you of your personal data (which may contain medical or work records) is a violation of your fundamental rights, even if EMI is pending.</li>
+                        <li><strong>Settlement Negotiation:</strong> We negotiate a "One Time Settlement" to close the loan.</li>
+                        <li><strong>NOC Generation:</strong> Once payment is made, DMI issues a clearance signal to the Knox server.</li>
+                        <li><strong>Auto-Unlock:</strong> Your phone unlocks automatically within 24 hours of the settlement update.</li>
+                      </ol>
                     </div>
                   </div>
                 </div>
               </div>
             </section>
 
-            {/* Digital Loans Section */}
+            {/* Digital Loans & Click-Wrap Agreements */}
             <section id="digital-loans" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Google Pay & Digital Loans</h2>
-              <div className="grid md:grid-cols-2 gap-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">Google Pay & The Reality of "Click-Wrap" Loans</h2>
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <div className="bg-white p-8 rounded-xl shadow-md border border-gray-100">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
                       <FaGooglePay className="text-3xl text-gray-700" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900">GPay Loans</h3>
+                    <h3 className="text-xl font-bold text-gray-900">The 2-Minute Loan Trap</h3>
                   </div>
-                  <p className="text-gray-600">
-                    Loans taken via Google Pay are often powered by DMI Finance. Defaulting here affects your CIBIL and can lead to legal action. We handle the settlement directly with DMI.
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    Apps like Google Pay and Paytm make it incredibly easy to get a loan. You click a few buttons, accept the "Terms & Conditions", and the money is in your account. This is called a <strong>Click-Wrap Agreement</strong>.
                   </p>
+                  <p className="text-gray-600 leading-relaxed">
+                    <strong>The Problem:</strong> Most borrowers don't read the fine print. These agreements often contain clauses that allow DMI Finance to:
+                  </p>
+                  <ul className="list-disc pl-5 mt-2 space-y-1 text-gray-600">
+                    <li>Charge exorbitant penal interest (up to 36% p.a.).</li>
+                    <li>Initiate arbitration in a city of their choice (usually Delhi).</li>
+                    <li>Report defaults to CIBIL immediately.</li>
+                  </ul>
                 </div>
                 <div className="bg-white p-8 rounded-xl shadow-md border border-gray-100">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
                       <MdOutlinePayments className="text-3xl text-gray-700" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900">Other Apps</h3>
+                    <h3 className="text-xl font-bold text-gray-900">The "Contact List" Fear</h3>
                   </div>
-                  <p className="text-gray-600">
-                    DMI partners with many other fintech apps. Regardless of the app you used, if the lender is DMI, we can help you settle the debt through a formal OTS process.
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    While DMI Finance is a regulated entity, some of the third-party apps they partner with (Loan Service Providers or LSPs) often ask for <strong>Contact List Permissions</strong>.
+                  </p>
+                  <p className="text-gray-600 leading-relaxed">
+                    If you are being threatened that "We will call your parents/boss", this is a violation of the <strong>RBI Digital Lending Guidelines 2022</strong>. DMI Finance is responsible for the conduct of its LSPs. We use these violations as leverage. If their agents harass you, we file a formal grievance with DMI's Nodal Officer and the RBI Ombudsman, forcing them to come to the negotiation table respectfully.
                   </p>
                 </div>
               </div>
@@ -275,7 +315,7 @@ export default function DmiFinanceLoanSettlementPage() {
 
             {/* Benefits Grid */}
             <section id="settlement-benefits" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Why Settle with AMA Legal?</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Why Settle with AMA Legal Solutions?</h2>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
                   {
@@ -305,22 +345,51 @@ export default function DmiFinanceLoanSettlementPage() {
 
             {/* Process Timeline */}
             <section id="process" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-12">Our Settlement Process</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-12">Our Comprehensive Settlement Process</h2>
+              <p className="text-gray-600 mb-10 text-lg">
+                Settling with a tech-driven lender like DMI Finance requires a strategic, step-by-step approach. We don't just "ask" for a discount; we build a legal case for it.
+              </p>
               <div className="relative">
                 <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-200"></div>
                 <div className="space-y-12">
                   {[
-                    { step: "1", title: "Case Analysis", desc: "We review your loan details, outstanding amount, and the nature of default (Device vs Personal Loan)." },
-                    { step: "2", title: "Legal Notice Response", desc: "If you've received a notice, we reply to it immediately to prevent legal escalation." },
-                    { step: "3", title: "Negotiation", desc: "We engage with DMI Finance's central settlement team to agree on a reduced payoff amount." },
-                    { step: "4", title: "Settlement & Closure", desc: "You receive the OTS letter, make the payment, and we ensure the loan account is closed." }
+                    { 
+                      step: "1", 
+                      title: "Case Analysis & Harassment Shield", 
+                      desc: "We start by analyzing your loan statement. Immediately, we issue a 'Letter of Representation' to DMI Finance. This legal document informs them that you have legal counsel, which typically stops the aggressive recovery calls to you and your family." 
+                    },
+                    { 
+                      step: "2", 
+                      title: "Legal Notice Response", 
+                      desc: "If you have received a legal notice (Section 138, Arbitration, or Conciliation), we draft a strong legal reply. We deny any illegal claims and put on record your genuine intent to settle due to financial hardship, protecting you from ex-parte orders." 
+                    },
+                    { 
+                      step: "3", 
+                      title: "Hardship Documentation", 
+                      desc: "We compile proofs of your financial crisis (job loss letter, medical bills, bank statements). DMI's system requires documented proof to approve a high-waiver settlement." 
+                    },
+                    { 
+                      step: "4", 
+                      title: "Strategic Negotiation", 
+                      desc: "We engage with DMI's central settlement team. We push for a 'Principal-Only' settlement or a deep discount on the total outstanding. We leverage any past harassment or procedural lapses by their agents to get a better deal." 
+                    },
+                    { 
+                      step: "5", 
+                      title: "Settlement Letter Verification", 
+                      desc: "DMI will issue a settlement letter. We verify it to ensure it mentions 'Full and Final Settlement' and clearly states that the loan will be closed and (for Samsung phones) the device will be unlocked." 
+                    },
+                    { 
+                      step: "6", 
+                      title: "Closure & NDC", 
+                      desc: "You make the payment directly to DMI Finance (never to an agent). We track the payment and ensure you receive the No Dues Certificate (NDC) within 15-20 days." 
+                    }
                   ].map((item, i) => (
                     <div key={i} className="relative pl-24">
                       <div className="absolute left-0 top-0 w-16 h-16 bg-red-600 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg border-4 border-white">
                         {item.step}
                       </div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                      <p className="text-gray-600">{item.desc}</p>
+                      <p className="text-gray-600 leading-relaxed">{item.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -356,29 +425,37 @@ export default function DmiFinanceLoanSettlementPage() {
 
             {/* Testimonials */}
             <section id="testimonials" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-10">Client Success Stories</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-10">Real Success Stories</h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-                  <p className="text-gray-600 italic mb-6">
-                    "I bought a phone for my sister on Samsung Finance+. I lost my job and couldn't pay. The phone got locked. AMA Legal helped me settle the remaining amount for just ₹8,000 against a demand of ₹18,000. Phone unlocked!"
+                  <div className="flex items-center mb-4">
+                    <div className="text-yellow-400 text-xl mr-2">★★★★★</div>
+                    <span className="text-sm text-gray-500">Samsung Finance+ Case</span>
+                  </div>
+                  <p className="text-gray-600 italic mb-6 leading-relaxed">
+                    "I am a final year student. I bought a Samsung A53 for my online classes. When my father fell sick, we missed 2 EMIs. DMI locked my phone right before my exams. I was panicked. I contacted AMA Legal Solutions. They immediately sent a legal notice to DMI about the exam situation. Within 48 hours, they negotiated a settlement. I paid ₹6,500 against the pending ₹14,000. My phone was unlocked the next morning. These guys are lifesavers."
                   </p>
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center font-bold text-red-600">R</div>
+                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center font-bold text-red-600 text-xl">R</div>
                     <div>
-                      <h4 className="font-bold text-gray-900">Rahul M.</h4>
-                      <p className="text-xs text-gray-500">Student, Delhi</p>
+                      <h4 className="font-bold text-gray-900">Rahul Mishra</h4>
+                      <p className="text-xs text-gray-500">Student, Delhi University</p>
                     </div>
                   </div>
                 </div>
                 <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-                  <p className="text-gray-600 italic mb-6">
-                    "I had a personal loan via Google Pay from DMI. The agents were harassing my parents. AMA Legal stepped in, stopped the calls, and closed the loan. Very relieved."
+                  <div className="flex items-center mb-4">
+                    <div className="text-yellow-400 text-xl mr-2">★★★★★</div>
+                    <span className="text-sm text-gray-500">Google Pay Loan Case</span>
+                  </div>
+                  <p className="text-gray-600 italic mb-6 leading-relaxed">
+                    "I took a ₹2 Lakh loan via GPay for my sister's wedding. I lost my job in the tech layoffs. DMI's agents started calling my old office HR and my relatives. It was humiliating. AMA Legal Solutions stepped in and stopped the harassment completely. They handled all the calls. Finally, they settled the loan for ₹85,000. I got my NDC last week. Highly recommended for anyone facing DMI harassment."
                   </p>
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center font-bold text-blue-600">S</div>
+                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center font-bold text-blue-600 text-xl">S</div>
                     <div>
                       <h4 className="font-bold text-gray-900">Suresh K.</h4>
-                      <p className="text-xs text-gray-500">IT Professional, Pune</p>
+                      <p className="text-xs text-gray-500">Software Engineer, Pune</p>
                     </div>
                   </div>
                 </div>

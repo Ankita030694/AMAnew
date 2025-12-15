@@ -5,7 +5,24 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 import { faqs } from "./faqs";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
-import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUniversity, FaGavel, FaBalanceScale, FaUserTie, FaChartLine, FaMobileAlt, FaLaptopCode, FaWhatsapp } from "react-icons/fa";
+import { 
+  FaCheckCircle, 
+  FaShieldAlt, 
+  FaHandHoldingUsd, 
+  FaFileContract, 
+  FaUniversity, 
+  FaGavel, 
+  FaBalanceScale, 
+  FaUserTie, 
+  FaChartLine, 
+  FaMobileAlt, 
+  FaLaptopCode, 
+  FaWhatsapp,
+  FaExclamationTriangle,
+  FaPhoneSlash,
+  FaEnvelopeOpenText,
+  FaUserLock
+} from "react-icons/fa";
 
 // Metadata
 export const metadata = {
@@ -133,6 +150,7 @@ export default function PayUFinanceLoanSettlementPage() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "lazypay-settlement", title: "LazyPay BNPL Settlement" },
+    { id: "harassment-tactics", title: "Recovery & Harassment" },
     { id: "understanding-settlement", title: "What is PayU OTS?" },
     { id: "eligibility", title: "Eligibility Criteria" },
     { id: "settlement-process", title: "Digital Settlement Process" },
@@ -183,14 +201,14 @@ export default function PayUFinanceLoanSettlementPage() {
              </svg>
           </div>
           <div className="relative z-10 container mx-auto px-4 py-24 md:py-32 text-center">
-            <div className="inline-block bg-[#A5D6A7] text-[#002124] text-xs font-bold px-3 py-1 rounded-full mb-6 tracking-wide uppercase">
+            <div className="inline-block bg-[#A5D6A7] text-[#002124] text-xs font-bold px-3 py-1 rounded-full mb-6 tracking-wide uppercase shadow-lg">
               Digital Debt Relief
             </div>
-            <h1 className="text-4xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
+            <h1 className="text-4xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight drop-shadow-md">
               Settle Your <span className="text-[#A5D6A7]">LazyPay / PayU</span> <br className="hidden md:block" /> Loan Digitally
             </h1>
-            <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-green-50 font-light">
-              Expert legal help for BNPL and Instant Personal Loans. Stop automated calls and settle for a reduced amount.
+            <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-green-50 font-light leading-relaxed">
+              Expert legal help for BNPL and Instant Personal Loans. Stop automated calls, handle digital arbitration, and settle for a reduced amount.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
@@ -211,99 +229,154 @@ export default function PayUFinanceLoanSettlementPage() {
           <Breadcrumbs items={breadcrumbItems} />
         </div>
 
-        <div className="relative">
-          <TableOfContents sections={tocSections} />
-
-          {/* Introduction Section */}
-          <div id="introduction" className="container mx-auto px-4 py-12 max-w-4xl text-center scroll-mt-32">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              Struggling with LazyPay or PayU Finance Debt?
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              PayU Finance is a major player in the Indian fintech space, best known for its consumer brand <strong>LazyPay</strong>. They offer "Buy Now Pay Later" (BNPL) services and instant personal loans (XpressLoans) through a completely digital interface. While the borrowing process is seamless, the recovery process can be aggressive and automated.
-            </p>
-            <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              If you have defaulted on your LazyPay dues, you might be facing a barrage of automated calls, WhatsApp messages, and emails threatening legal action. Since these are digital loans, the legal notices often come via email, citing "Online Arbitration".
-            </p>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              At AMA Legal Solutions, we specialize in <strong>Fintech Loan Settlements</strong>. We understand the digital lending ecosystem and how to negotiate with PayU's central teams to secure a fair <strong>One Time Settlement (OTS)</strong>, stopping the digital harassment instantly.
-            </p>
+        <div className="relative flex flex-col lg:flex-row gap-10 container mx-auto px-4">
+          {/* Sidebar for Desktop */}
+          <div className="hidden lg:block w-1/4">
+             <div className="sticky top-24">
+               <TableOfContents sections={tocSections} orientation="vertical" />
+             </div>
           </div>
 
-          {/* LazyPay Specific Section - Unique */}
-          <div id="lazypay-settlement" className="bg-[#f1f8e9] py-20 scroll-mt-32">
-            <div className="container mx-auto px-4 max-w-6xl">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                  <h2 className="text-3xl font-bold mb-6 text-[#002124]">LazyPay BNPL Settlement</h2>
+          {/* Main Content */}
+          <div className="w-full lg:w-3/4">
+            
+            {/* Introduction Section */}
+            <div id="introduction" className="mb-16 scroll-mt-32">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+                Struggling with LazyPay or PayU Finance Debt?
+              </h2>
+              <div className="prose prose-lg text-gray-600 max-w-none">
+                <p className="mb-6">
+                  PayU Finance is a dominant force in the Indian fintech landscape, primarily known for its consumer brand <strong>LazyPay</strong>. They have revolutionized credit with "Buy Now Pay Later" (BNPL) services and instant personal loans known as "XpressLoans". These financial products are designed for speed and convenience, often disbursed within minutes through a completely digital interface.
+                </p>
+                <p className="mb-6">
+                  However, the ease of borrowing often leads to a debt trap. When repayment becomes difficult, the digital nature of these loans turns into a nightmare. Borrowers are often subjected to a barrage of automated calls, aggressive WhatsApp messages, and emails threatening legal action. Since these are digital loans, the legal notices often come via email, citing "Online Arbitration" or "Conciliation" proceedings.
+                </p>
+                <p>
+                  At <strong>AMA Legal Solutions</strong>, we specialize in <strong>Fintech Loan Settlements</strong>. We possess a deep understanding of the digital lending ecosystem and the specific algorithms used by lenders like PayU. We negotiate directly with PayU's central recovery teams to secure a fair <strong>One Time Settlement (OTS)</strong>, effectively stopping the digital harassment and helping you close your debt permanently.
+                </p>
+              </div>
+            </div>
+
+            {/* LazyPay Specific Section - Unique */}
+            <div id="lazypay-settlement" className="bg-[#f1f8e9] p-8 md:p-12 rounded-3xl mb-16 scroll-mt-32 border border-green-100">
+              <div className="flex flex-col md:flex-row gap-10 items-start">
+                <div className="flex-1">
+                  <h2 className="text-3xl font-bold mb-6 text-[#002124] flex items-center">
+                    <FaMobileAlt className="mr-3 text-[#A5D6A7]" />
+                    LazyPay BNPL Settlement
+                  </h2>
                   <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                    LazyPay's BNPL model encourages small, frequent borrowing. However, when you miss payments, the late fees stack up rapidly, often exceeding the principal amount.
+                    LazyPay's BNPL model encourages small, frequent borrowing for food delivery, cab rides, and online shopping. While convenient, missing a single repayment cycle can be disastrous. The late fees stack up rapidly, often exceeding the principal amount within a few months.
                   </p>
                   <ul className="space-y-4">
                     <li className="flex items-start">
-                      <FaMobileAlt className="text-[#002124] mt-1 mr-3 flex-shrink-0 text-xl" />
-                      <span className="text-gray-700"><strong>Aggregated Debt:</strong> We consolidate all your small BNPL transactions into one single settlement amount.</span>
+                      <FaCheckCircle className="text-[#002124] mt-1 mr-3 flex-shrink-0" />
+                      <span className="text-gray-700"><strong>Aggregated Debt Settlement:</strong> We consolidate all your small BNPL transactions into one single settlement amount, preventing multiple recovery attempts.</span>
                     </li>
                     <li className="flex items-start">
-                      <FaWhatsapp className="text-[#002124] mt-1 mr-3 flex-shrink-0 text-xl" />
-                      <span className="text-gray-700"><strong>Stop WhatsApp Harassment:</strong> We legally demand the cessation of threatening messages to you and your contacts.</span>
+                      <FaCheckCircle className="text-[#002124] mt-1 mr-3 flex-shrink-0" />
+                      <span className="text-gray-700"><strong>Stop WhatsApp Harassment:</strong> We legally demand the cessation of threatening messages to you and your contacts, citing privacy laws.</span>
                     </li>
                     <li className="flex items-start">
-                      <FaLaptopCode className="text-[#002124] mt-1 mr-3 flex-shrink-0 text-xl" />
+                      <FaCheckCircle className="text-[#002124] mt-1 mr-3 flex-shrink-0" />
                       <span className="text-gray-700"><strong>App Unblocking:</strong> While the account is closed, we ensure the "Overdue" status is removed from your profile after settlement.</span>
                     </li>
                   </ul>
                 </div>
-                <div className="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-[#002124]">
+                <div className="w-full md:w-1/3 bg-white p-6 rounded-2xl shadow-lg border-t-4 border-[#002124]">
                   <h3 className="text-xl font-bold mb-4 text-[#002124]">The "XpressLoan" Trap</h3>
-                  <p className="text-gray-600 mb-4">
-                    LazyPay often converts BNPL limits into larger "XpressLoans". These have high interest rates (up to 36%).
+                  <p className="text-gray-600 mb-4 text-sm">
+                    LazyPay often converts BNPL limits into larger "XpressLoans". These have high interest rates (up to 36% or more).
                   </p>
                   <div className="bg-green-50 p-4 rounded-lg border border-green-100">
-                    <h4 className="font-bold text-green-800 mb-2">Our Solution:</h4>
-                    <p className="text-sm text-green-700">
+                    <h4 className="font-bold text-green-800 mb-2 text-sm">Our Solution:</h4>
+                    <p className="text-xs text-green-700 leading-relaxed">
                       We treat XpressLoans as standard unsecured personal loans. We negotiate to waive off the exorbitant interest and settle on the principal component, often achieving <strong>40-50% savings</strong>.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* What is OTS - Card Layout */}
-          <div id="understanding-settlement" className="container mx-auto px-4 py-20 max-w-6xl scroll-mt-32">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-[#002124] mb-4">What is PayU Finance OTS?</h2>
-              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                One Time Settlement (OTS) with PayU Finance is a formal agreement to close your loan account for a reduced amount. Given the high volume of small-ticket loans, PayU is often willing to settle to clear their books of bad debt.
+            {/* Recovery & Harassment Section */}
+            <div id="harassment-tactics" className="mb-16 scroll-mt-32">
+              <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
+                <FaExclamationTriangle className="text-red-500 mr-3" />
+                Recovery & Harassment Tactics
+              </h2>
+              <p className="text-lg text-gray-600 mb-8">
+                PayU Finance and LazyPay rely heavily on digital recovery methods. Understanding these tactics is the first step to stopping them.
               </p>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+                  <h3 className="text-xl font-bold text-[#002124] mb-3 flex items-center">
+                    <FaPhoneSlash className="mr-2" /> Automated Calling
+                  </h3>
+                  <p className="text-gray-600">
+                    You may receive 20-30 calls a day from automated dialers (IVR). These calls are often relentless and can disrupt your daily life and work.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+                  <h3 className="text-xl font-bold text-[#002124] mb-3 flex items-center">
+                    <FaWhatsapp className="mr-2" /> WhatsApp Bombardment
+                  </h3>
+                  <p className="text-gray-600">
+                    Recovery agents often send threatening messages via WhatsApp, sometimes using unofficial numbers to bypass spam filters.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+                  <h3 className="text-xl font-bold text-[#002124] mb-3 flex items-center">
+                    <FaUserLock className="mr-2" /> Contact Shaming
+                  </h3>
+                  <p className="text-gray-600">
+                    In some cases, agents may threaten to call your contacts or references provided during the app signup, which is a violation of RBI guidelines.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+                  <h3 className="text-xl font-bold text-[#002124] mb-3 flex items-center">
+                    <FaEnvelopeOpenText className="mr-2" /> Legal Notices
+                  </h3>
+                  <p className="text-gray-600">
+                    You will receive legal notices via email threatening arbitration or criminal action under Section 25 of the Payment and Settlement Systems Act.
+                  </p>
+                </div>
+              </div>
             </div>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-xl shadow-lg border-b-4 border-[#A5D6A7]">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Late Fee Waiver</h3>
-                <p className="text-gray-600">
-                  BNPL products rely heavily on late fees. In a settlement, we get 100% of these fees waived.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg border-b-4 border-[#A5D6A7]">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Online Closure</h3>
-                <p className="text-gray-600">
-                  The entire process is digital. You receive the settlement letter and NDC via email, ensuring a verifiable paper trail.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg border-b-4 border-[#A5D6A7]">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Legal Immunity</h3>
-                <p className="text-gray-600">
-                  Settlement protects you from future legal actions like online arbitration awards or civil suits.
-                </p>
-              </div>
-            </div>
-          </div>
 
-          {/* Eligibility Criteria */}
-          <div id="eligibility" className="bg-gray-50 py-20 scroll-mt-32">
-            <div className="container mx-auto px-4 max-w-5xl">
+            {/* What is OTS - Card Layout */}
+            <div id="understanding-settlement" className="mb-16 scroll-mt-32">
+              <div className="text-center mb-10">
+                <h2 className="text-3xl font-bold text-[#002124] mb-4">What is PayU Finance OTS?</h2>
+                <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                  One Time Settlement (OTS) with PayU Finance is a formal agreement to close your loan account for a reduced amount. Given the high volume of small-ticket loans, PayU is often willing to settle to clear their books of bad debt.
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="bg-white p-6 rounded-xl shadow-lg border-b-4 border-[#A5D6A7]">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Late Fee Waiver</h3>
+                  <p className="text-gray-600">
+                    BNPL products rely heavily on late fees. In a settlement, we get 100% of these fees waived.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-lg border-b-4 border-[#A5D6A7]">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Online Closure</h3>
+                  <p className="text-gray-600">
+                    The entire process is digital. You receive the settlement letter and NDC via email, ensuring a verifiable paper trail.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-lg border-b-4 border-[#A5D6A7]">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Legal Immunity</h3>
+                  <p className="text-gray-600">
+                    Settlement protects you from future legal actions like online arbitration awards or civil suits.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Eligibility Criteria */}
+            <div id="eligibility" className="bg-gray-50 p-8 md:p-12 rounded-3xl mb-16 scroll-mt-32">
               <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Who is Eligible for Settlement?</h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="bg-white p-8 rounded-xl shadow-md border border-gray-100">
@@ -344,33 +417,31 @@ export default function PayUFinanceLoanSettlementPage() {
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Process Section */}
-          <div id="settlement-process" className="container mx-auto px-4 py-20 max-w-4xl scroll-mt-32">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">
-              Our Digital Settlement Process
-            </h2>
-            <div className="relative border-l-4 border-[#002124] ml-6 md:ml-12 space-y-12">
-              {[
-                { title: "Digital Onboarding", desc: "Sign up with us online. No physical visits required." },
-                { title: "Stop Harassment", desc: "We issue a legal notice to PayU to route all calls to us." },
-                { title: "Central Negotiation", desc: "We email PayU's central collections team directly, bypassing local agents." },
-                { title: "Offer Verification", desc: "We verify the settlement offer link/email to ensure it's genuine." },
-                { title: "Closure", desc: "You make the payment online, and we track the NDC issuance." }
-              ].map((item, index) => (
-                <div key={index} className="relative pl-8 md:pl-12">
-                  <div className="absolute -left-[14px] top-0 w-6 h-6 bg-[#A5D6A7] rounded-full border-4 border-white shadow-sm"></div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-600">{item.desc}</p>
-                </div>
-              ))}
+            {/* Process Section */}
+            <div id="settlement-process" className="mb-16 scroll-mt-32">
+              <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">
+                Our Digital Settlement Process
+              </h2>
+              <div className="relative border-l-4 border-[#002124] ml-6 md:ml-12 space-y-12">
+                {[
+                  { title: "Digital Onboarding", desc: "Sign up with us online. No physical visits required. We analyze your loan details and harassment level." },
+                  { title: "Legal Notice & Representation", desc: "We issue a legal notice to PayU Finance to stop harassment and route all communication to our legal team." },
+                  { title: "Central Negotiation", desc: "We bypass local recovery agents and email PayU's central collections team directly to negotiate a settlement." },
+                  { title: "Offer Verification", desc: "We verify the settlement offer link/email to ensure it's genuine and not a phishing attempt by recovery agents." },
+                  { title: "Closure & NDC", desc: "You make the payment online directly to PayU, and we track the issuance of the No Dues Certificate." }
+                ].map((item, index) => (
+                  <div key={index} className="relative pl-8 md:pl-12">
+                    <div className="absolute -left-[14px] top-0 w-6 h-6 bg-[#A5D6A7] rounded-full border-4 border-white shadow-sm"></div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                    <p className="text-gray-600">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Required Documents */}
-          <div id="documents-required" className="bg-[#002124] text-white py-20 scroll-mt-32">
-            <div className="container mx-auto px-4 max-w-5xl">
+            {/* Required Documents */}
+            <div id="documents-required" className="bg-[#002124] text-white p-8 md:p-12 rounded-3xl mb-16 scroll-mt-32">
               <h2 className="text-3xl font-bold text-center mb-12">Documents Required</h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="bg-white/10 p-8 rounded-xl backdrop-blur-sm border border-white/20">
@@ -391,33 +462,35 @@ export default function PayUFinanceLoanSettlementPage() {
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Legal Rights Section - Digital Arbitration */}
-          <div id="legal-rights" className="container mx-auto px-4 py-20 max-w-5xl scroll-mt-32">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Understanding Digital Arbitration</h2>
-            <p className="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-              PayU Finance uses "Online Dispute Resolution" (ODR). This is a fast-track legal process.
-            </p>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-                <h3 className="text-xl font-bold text-[#002124] mb-3">The Risk</h3>
-                <p className="text-gray-600 mb-4">
-                  You receive an email to join a video hearing. If you ignore it, the arbitrator passes an award against you. This award is enforceable like a court decree.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-                <h3 className="text-xl font-bold text-[#002124] mb-3">Our Defense</h3>
-                <p className="text-gray-600 mb-4">
-                  We represent you in these online hearings. We argue your financial hardship and challenge the interest calculations, pushing the arbitrator to facilitate a settlement instead of a decree.
-                </p>
+            {/* Legal Rights Section - Digital Arbitration */}
+            <div id="legal-rights" className="mb-16 scroll-mt-32">
+              <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Understanding Digital Arbitration</h2>
+              <p className="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+                PayU Finance uses "Online Dispute Resolution" (ODR). This is a fast-track legal process where a neutral arbitrator decides the case online.
+              </p>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                  <h3 className="text-xl font-bold text-[#002124] mb-3 flex items-center">
+                    <FaGavel className="mr-2" /> The Risk
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    You receive an email to join a video hearing. If you ignore it, the arbitrator passes an award against you. This award is enforceable like a court decree and can lead to execution proceedings.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                  <h3 className="text-xl font-bold text-[#002124] mb-3 flex items-center">
+                    <FaShieldAlt className="mr-2" /> Our Defense
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    We represent you in these online hearings. We argue your financial hardship, challenge the interest calculations, and push the arbitrator to facilitate a settlement instead of passing a decree against you.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Restructuring vs Settlement */}
-          <div id="consequences" className="bg-gray-50 py-20 scroll-mt-32">
-            <div className="container mx-auto px-4 max-w-5xl">
+            {/* Restructuring vs Settlement */}
+            <div id="consequences" className="bg-gray-50 p-8 md:p-12 rounded-3xl mb-16 scroll-mt-32">
               <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Restructuring vs. Settlement</h2>
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse bg-white shadow-lg rounded-lg overflow-hidden">
@@ -448,84 +521,82 @@ export default function PayUFinanceLoanSettlementPage() {
                 </table>
               </div>
             </div>
-          </div>
 
-          {/* CIBIL Impact */}
-          <div id="cibil-impact" className="container mx-auto px-4 py-20 max-w-4xl scroll-mt-32 text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">CIBIL Score Reality</h2>
-            <p className="text-lg text-gray-600 mb-8">
-              A "Settled" status on a BNPL loan will drop your score. However, many people ignore BNPL defaults thinking they are "small". This is a mistake. A default stays for 7 years. A settlement stops the damage. We help you rebuild your score post-settlement.
-            </p>
-          </div>
-
-          {/* Why Choose Us */}
-          <div id="why-choose-us" className="bg-white py-20 scroll-mt-32">
-            <div className="container mx-auto px-4 max-w-6xl text-center">
-              <h2 className="text-3xl font-bold text-gray-900 mb-12">Why Choose AMA Legal Solutions?</h2>
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="bg-gray-50 p-8 rounded-xl shadow-md">
-                  <FaLaptopCode className="text-5xl text-[#002124] mx-auto mb-6" />
-                  <h3 className="text-xl font-bold mb-3">Fintech Experts</h3>
-                  <p className="text-gray-600">We understand the algorithms and digital processes of lenders like PayU and LazyPay.</p>
-                </div>
-                <div className="bg-gray-50 p-8 rounded-xl shadow-md">
-                  <FaShieldAlt className="text-5xl text-[#002124] mx-auto mb-6" />
-                  <h3 className="text-xl font-bold mb-3">Anti-Harassment</h3>
-                  <p className="text-gray-600">We take strict legal action against aggressive digital recovery agents and tele-callers.</p>
-                </div>
-                <div className="bg-gray-50 p-8 rounded-xl shadow-md">
-                  <FaGavel className="text-5xl text-[#002124] mx-auto mb-6" />
-                  <h3 className="text-xl font-bold mb-3">ODR Defense</h3>
-                  <p className="text-gray-600">We are one of the few firms that actively represent clients in Online Dispute Resolution hearings.</p>
-                </div>
-              </div>
+            {/* CIBIL Impact */}
+            <div id="cibil-impact" className="mb-16 scroll-mt-32 text-center">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">CIBIL Score Reality</h2>
+              <p className="text-lg text-gray-600 mb-8 max-w-4xl mx-auto">
+                A "Settled" status on a BNPL loan will drop your score. However, many people ignore BNPL defaults thinking they are "small". This is a mistake. A default stays for 7 years and prevents you from getting future loans. A settlement stops the damage. We help you rebuild your score post-settlement.
+              </p>
             </div>
-          </div>
 
-          {/* Testimonials Section */}
-          <div id="testimonials" className="container mx-auto px-4 py-20 max-w-6xl scroll-mt-32">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Success Stories</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 relative">
-                <div className="text-6xl text-green-100 absolute top-4 left-4">"</div>
-                <p className="text-gray-700 italic mb-6 relative z-10 leading-relaxed">
-                  "I had a LazyPay bill of ₹45,000 that ballooned to ₹80,000 with late fees. AMA Legal Solutions settled it for ₹30,000. The relief was instant."
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-[#002124] rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
-                    R
+            {/* Why Choose Us */}
+            <div id="why-choose-us" className="bg-white mb-16 scroll-mt-32">
+              <div className="text-center">
+                <h2 className="text-3xl font-bold text-gray-900 mb-12">Why Choose AMA Legal Solutions?</h2>
+                <div className="grid md:grid-cols-3 gap-8">
+                  <div className="bg-gray-50 p-8 rounded-xl shadow-md">
+                    <FaLaptopCode className="text-5xl text-[#002124] mx-auto mb-6" />
+                    <h3 className="text-xl font-bold mb-3">Fintech Experts</h3>
+                    <p className="text-gray-600">We understand the algorithms and digital processes of lenders like PayU and LazyPay.</p>
                   </div>
-                  <div>
-                    <p className="font-bold text-gray-900">Rahul Sharma</p>
-                    <p className="text-sm text-gray-500">Student, Delhi</p>
+                  <div className="bg-gray-50 p-8 rounded-xl shadow-md">
+                    <FaShieldAlt className="text-5xl text-[#002124] mx-auto mb-6" />
+                    <h3 className="text-xl font-bold mb-3">Anti-Harassment</h3>
+                    <p className="text-gray-600">We take strict legal action against aggressive digital recovery agents and tele-callers.</p>
                   </div>
-                </div>
-              </div>
-              <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 relative">
-                <div className="text-6xl text-green-100 absolute top-4 left-4">"</div>
-                <p className="text-gray-700 italic mb-6 relative z-10 leading-relaxed">
-                  "I took an XpressLoan and lost my job. The online arbitration notice scared me. AMA Legal attended the hearing online and got me a settlement plan."
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-[#A5D6A7] rounded-full flex items-center justify-center text-[#002124] font-bold text-xl mr-4">
-                    P
-                  </div>
-                  <div>
-                    <p className="font-bold text-gray-900">Priya Singh</p>
-                    <p className="text-sm text-gray-500">Software Engineer, Bangalore</p>
+                  <div className="bg-gray-50 p-8 rounded-xl shadow-md">
+                    <FaGavel className="text-5xl text-[#002124] mx-auto mb-6" />
+                    <h3 className="text-xl font-bold mb-3">ODR Defense</h3>
+                    <p className="text-gray-600">We are one of the few firms that actively represent clients in Online Dispute Resolution hearings.</p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* FAQ Section */}
-          <div id="faqs" className="container mx-auto px-4 py-20 max-w-4xl scroll-mt-32">
-            <FaqSection />
-          </div>
+            {/* Testimonials Section */}
+            <div id="testimonials" className="mb-16 scroll-mt-32">
+              <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Success Stories</h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 relative">
+                  <div className="text-6xl text-green-100 absolute top-4 left-4">"</div>
+                  <p className="text-gray-700 italic mb-6 relative z-10 leading-relaxed">
+                    "I had a LazyPay bill of ₹45,000 that ballooned to ₹80,000 with late fees. AMA Legal Solutions settled it for ₹30,000. The relief was instant."
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-[#002124] rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                      R
+                    </div>
+                    <div>
+                      <p className="font-bold text-gray-900">Rahul Sharma</p>
+                      <p className="text-sm text-gray-500">Student, Delhi</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 relative">
+                  <div className="text-6xl text-green-100 absolute top-4 left-4">"</div>
+                  <p className="text-gray-700 italic mb-6 relative z-10 leading-relaxed">
+                    "I took an XpressLoan and lost my job. The online arbitration notice scared me. AMA Legal Solutions attended the hearing online and got me a settlement plan."
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-[#A5D6A7] rounded-full flex items-center justify-center text-[#002124] font-bold text-xl mr-4">
+                      P
+                    </div>
+                    <div>
+                      <p className="font-bold text-gray-900">Priya Singh</p>
+                      <p className="text-sm text-gray-500">Software Engineer, Bangalore</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          {/* Final CTA */}
-          <div className="container mx-auto px-4 pb-20">
+            {/* FAQ Section */}
+            <div id="faqs" className="mb-16 scroll-mt-32">
+              <FaqSection />
+            </div>
+
+            {/* Final CTA */}
             <div className="bg-[#002124] rounded-3xl p-10 md:p-16 text-center text-white shadow-2xl">
               <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Close Your LazyPay Debt?</h2>
               <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
@@ -544,12 +615,12 @@ export default function PayUFinanceLoanSettlementPage() {
                 </a>
               </div>
             </div>
-          </div>
 
+          </div>
         </div>
         
         {/* States Grid */}
-        <div className="container mx-auto px-4 pb-10">
+        <div className="container mx-auto px-4 pb-10 mt-16">
           <GenericStatesGrid 
             serviceName="Loan Settlement" 
             servicePath="loan-settlement" 

@@ -16,7 +16,7 @@ export const faqs = [
         answer: "The discount depends on the type of loan (secured vs. unsecured), the duration of default, and your financial hardship. For unsecured loans, waivers can range from 40-60%. For secured loans, the waiver is generally lower but focuses on stopping asset seizure."
     },
     {
-        question: "Will Piramal Finance stop calling me after I hire AMA Legal?",
+        question: "Will Piramal Finance stop calling me after I hire AMA Legal Solutions?",
         answer: "Yes. Once we take over your case, we send a legal representation letter to Piramal Finance. This formally informs them that we are representing you, and they are legally required to direct all future communication and collection efforts to us."
     },
     {

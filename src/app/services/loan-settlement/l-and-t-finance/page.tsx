@@ -10,13 +10,13 @@ import { MdAgriculture, MdMoneyOff } from "react-icons/md";
 
 // Metadata
 export const metadata = {
-  title: "L&T Finance Loan Settlement | Two-Wheeler & Tractor Loan OTS | AMA Legal",
+  title: "L&T Finance Loan Settlement | Two-Wheeler & Tractor Loan OTS | AMA Legal Solutions",
   description: "Unable to repay L&T Finance loan? Expert legal help for settling Two-Wheeler, Tractor, and Microfinance loans. Stop repossession and legal action.",
   alternates: {
     canonical: 'https://amalegalsolutions.com/services/loan-settlement/l-and-t-finance',
   },
   openGraph: {
-    title: "L&T Finance Loan Settlement | Two-Wheeler & Tractor Loan OTS | AMA Legal",
+    title: "L&T Finance Loan Settlement | Two-Wheeler & Tractor Loan OTS | AMA Legal Solutions",
     description: "Unable to repay L&T Finance loan? Expert legal help for settling Two-Wheeler, Tractor, and Microfinance loans. Stop repossession and legal action.",
     url: "https://amalegalsolutions.com/services/loan-settlement/l-and-t-finance",
     type: "website",
@@ -125,7 +125,7 @@ const reviewSchema = {
         "@type": "Person",
         "name": "Ramesh Kumar"
       },
-      "reviewBody": "My tractor loan was in default due to bad harvest. L&T agents were threatening to seize it. AMA Legal helped me restructure the loan and stop the seizure. Very helpful for farmers."
+      "reviewBody": "My tractor loan was in default due to bad harvest. L&T agents were threatening to seize it. AMA Legal Solutions helped me restructure the loan and stop the seizure. Very helpful for farmers."
     }
   ]
 };
@@ -138,7 +138,7 @@ export default function LandTFinanceLoanSettlementPage() {
     { id: "micro-loans", title: "Microfinance Loans" },
     { id: "legal-actions", title: "Legal Actions (Arbitration)" },
     { id: "ots-process", title: "One Time Settlement (OTS)" },
-    { id: "why-hire-us", title: "Why Hire AMA Legal?" },
+    { id: "why-hire-us", title: "Why Hire AMA Legal Solutions?" },
     { id: "process-steps", title: "Our Settlement Process" },
     { id: "rbi-rights", title: "Your Rights (RBI)" },
     { id: "cibil-score", title: "CIBIL Score Impact" },
@@ -511,7 +511,7 @@ export default function LandTFinanceLoanSettlementPage() {
                     <div className="text-[#0277BD] text-xl mr-2">★★★★★</div>
                   </div>
                   <p className="text-gray-600 italic mb-6 leading-relaxed">
-                    "My tractor loan was in default due to bad harvest. L&T agents were threatening to seize it. AMA Legal helped me restructure the loan and stop the seizure. Very helpful for farmers."
+                    "My tractor loan was in default due to bad harvest. L&T agents were threatening to seize it. AMA Legal Solutions helped me restructure the loan and stop the seizure. Very helpful for farmers."
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600 text-xl">R</div>
@@ -526,7 +526,7 @@ export default function LandTFinanceLoanSettlementPage() {
                     <div className="text-[#0277BD] text-xl mr-2">★★★★★</div>
                   </div>
                   <p className="text-gray-600 italic mb-6 leading-relaxed">
-                    "I had a two-wheeler loan and lost my job. I couldn't pay the EMIs. AMA Legal negotiated a settlement for me, and I paid a lump sum to close the loan. The bike is safe with me."
+                    "I had a two-wheeler loan and lost my job. I couldn't pay the EMIs. AMA Legal Solutions negotiated a settlement for me, and I paid a lump sum to close the loan. The bike is safe with me."
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600 text-xl">A</div>

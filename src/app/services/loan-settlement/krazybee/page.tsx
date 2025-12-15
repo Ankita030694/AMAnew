@@ -217,16 +217,16 @@ export default function KrazyBeeLoanSettlementPage() {
           {/* Introduction Section */}
           <div id="introduction" className="container mx-auto px-4 py-12 max-w-4xl text-center scroll-mt-32">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              Trapped in a KrazyBee / KreditBee Loan?
+              Trapped in a KrazyBee / KreditBee Loan Cycle?
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              <strong>KrazyBee Services Pvt. Ltd.</strong> is a well-known NBFC that primarily lends through the popular <strong>KreditBee</strong> app. They target students, young professionals, and first-time borrowers with small-ticket loans. While the money comes easy, the repayment terms can be harsh. High processing fees, short tenures, and aggressive recovery tactics often trap young borrowers in a cycle of debt.
+              <strong>KrazyBee Services Pvt. Ltd.</strong> is a prominent Non-Banking Financial Company (NBFC) that powers the widely used <strong>KreditBee</strong> lending app. They specialize in offering instant personal loans to students, young professionals, and first-time borrowers. While the accessibility is a boon, the high interest rates, processing fees, and short repayment tenures can quickly turn a small loan into a massive financial burden.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              If you are a student who can't pay back due to lack of pocket money, or a professional who lost their job, you might be facing threats of calls to your parents, college, or workplace. This is illegal.
+              Many borrowers find themselves borrowing from one app to pay another, falling into a debt trap. If you are a student facing threats of calls to your parents or college authorities, or a salaried professional worried about your reputation at work, you need to know that <strong>harassment is illegal</strong>.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed">
-              At AMA Legal Solutions, we protect young borrowers. We intervene to stop the harassment and negotiate a <strong>One Time Settlement (OTS)</strong> with KrazyBee, allowing you to close the loan for a fair amount and move on with your career.
+              At AMA Legal Solutions, we specialize in handling digital lending cases. We intervene to stop the harassment, handle the legal notices, and negotiate a <strong>One Time Settlement (OTS)</strong> with KrazyBee. Our goal is to help you close the loan for a fair, affordable amount so you can restart your financial journey.
             </p>
           </div>
 
@@ -235,22 +235,22 @@ export default function KrazyBeeLoanSettlementPage() {
             <div className="container mx-auto px-4 max-w-6xl">
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                  <h2 className="text-3xl font-bold mb-6 text-[#F57C00]">The KreditBee Connection</h2>
+                  <h2 className="text-3xl font-bold mb-6 text-[#F57C00]">The KreditBee Connection & RBI Guidelines</h2>
                   <p className="text-lg text-gray-700 mb-6 leading-relaxed">
                     Many borrowers are confused: "I took a loan from KreditBee, why is KrazyBee sending me notices?"
                   </p>
                   <ul className="space-y-4">
                     <li className="flex items-start">
                       <FaMobileAlt className="text-[#0D47A1] mt-1 mr-3 flex-shrink-0 text-xl" />
-                      <span className="text-gray-700"><strong>The App vs. The Lender:</strong> KreditBee is just the app (the platform). KrazyBee is the RBI-registered lender that actually gave you the money.</span>
+                      <span className="text-gray-700"><strong>The App vs. The Lender:</strong> KreditBee is the digital platform (LSP - Loan Service Provider), while KrazyBee is the RBI-registered NBFC that actually lends the money. Your legal liability is towards KrazyBee.</span>
                     </li>
                     <li className="flex items-start">
                       <FaFileContract className="text-[#0D47A1] mt-1 mr-3 flex-shrink-0 text-xl" />
-                      <span className="text-gray-700"><strong>Legal Liability:</strong> Your loan agreement is with KrazyBee. Any legal notice or CIBIL reporting comes from them.</span>
+                      <span className="text-gray-700"><strong>Digital Lending Guidelines:</strong> Under RBI's new Digital Lending Guidelines, all loan disbursals and repayments must happen directly between the borrower's and the RE's (Regulated Entity) bank accounts. This transparency helps us in tracking the exact principal vs. interest paid.</span>
                     </li>
                     <li className="flex items-start">
                       <FaWhatsapp className="text-[#0D47A1] mt-1 mr-3 flex-shrink-0 text-xl" />
-                      <span className="text-gray-700"><strong>Recovery Tactics:</strong> They use digital recovery agents who often cross the line. We know how to handle them.</span>
+                      <span className="text-gray-700"><strong>Data Privacy:</strong> Lenders cannot access your contact list or gallery. If they have, it is a serious violation of Google's policy and RBI rules. We use these violations to strengthen your case for settlement.</span>
                     </li>
                   </ul>
                 </div>
@@ -409,27 +409,27 @@ export default function KrazyBeeLoanSettlementPage() {
 
           {/* Legal Rights Section - Harassment */}
           <div id="legal-rights" className="container mx-auto px-4 py-20 max-w-5xl scroll-mt-32">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Stop the Harassment</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Stop the Harassment: Know Your Rights</h2>
             <p className="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-              Recovery agents often cross the line with young borrowers. Know your rights.
+              Recovery agents often cross the line with young borrowers, using fear and shame as tools. It is crucial to know that you have legal protection.
             </p>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-                <h3 className="text-xl font-bold text-[#F57C00] mb-3">Contact List Access</h3>
+                <h3 className="text-xl font-bold text-[#F57C00] mb-3">Contact List Access & Shaming</h3>
                 <p className="text-gray-600 mb-4">
-                  Calling your friends or relatives to shame you is a violation of RBI's Fair Practice Code and your privacy rights.
+                  Calling your friends, relatives, or colleagues to shame you ("Loan Shaming") is a strict violation of RBI's Fair Practice Code and data privacy laws.
                 </p>
                 <p className="text-gray-900 font-semibold">
-                  <strong>Our Action:</strong> We file complaints with the RBI Ombudsman and send legal notices to stop this immediately.
+                  <strong>Our Action:</strong> We file formal complaints with the RBI Ombudsman and Cyber Crime portal if necessary, and send a legal notice to the lender to cease these activities immediately.
                 </p>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-                <h3 className="text-xl font-bold text-[#F57C00] mb-3">Threats & Abuse</h3>
+                <h3 className="text-xl font-bold text-[#F57C00] mb-3">Threats & Abusive Language</h3>
                 <p className="text-gray-600 mb-4">
-                  Agents cannot use abusive language or threaten physical harm.
+                  Agents cannot use abusive language, threaten physical harm, or claim they will "send police" to your home. These are scare tactics.
                 </p>
                 <p className="text-gray-900 font-semibold">
-                  <strong>Our Action:</strong> We record these calls and use them as leverage during negotiation to get a better settlement deal.
+                  <strong>Our Action:</strong> We advise you to record these calls. We use these recordings as evidence to file grievances and use them as leverage during the settlement negotiation to get a better deal.
                 </p>
               </div>
             </div>
@@ -485,18 +485,18 @@ export default function KrazyBeeLoanSettlementPage() {
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="bg-gray-50 p-8 rounded-xl shadow-md">
                   <FaUserGraduate className="text-5xl text-[#F57C00] mx-auto mb-6" />
-                  <h3 className="text-xl font-bold mb-3">Student Friendly</h3>
-                  <p className="text-gray-600">We understand student budgets and offer affordable service fees for student loan cases.</p>
+                  <h3 className="text-xl font-bold mb-3">Student & Youth Focused</h3>
+                  <p className="text-gray-600">We understand the unique pressure on students and young professionals. Our approach is empathetic, confidential, and budget-friendly.</p>
                 </div>
                 <div className="bg-gray-50 p-8 rounded-xl shadow-md">
                   <FaShieldAlt className="text-5xl text-[#F57C00] mx-auto mb-6" />
-                  <h3 className="text-xl font-bold mb-3">Harassment Protection</h3>
-                  <p className="text-gray-600">We take strict legal action against agents calling your parents or college friends.</p>
+                  <h3 className="text-xl font-bold mb-3">Anti-Harassment Shield</h3>
+                  <p className="text-gray-600">We take immediate legal steps to stop calls to your parents, college, or workplace, protecting your reputation while we negotiate.</p>
                 </div>
                 <div className="bg-gray-50 p-8 rounded-xl shadow-md">
                   <FaGavel className="text-5xl text-[#F57C00] mx-auto mb-6" />
-                  <h3 className="text-xl font-bold mb-3">Legal Expertise</h3>
-                  <p className="text-gray-600">We deal with KrazyBee's legal team directly, ensuring a proper legal closure of your loan.</p>
+                  <h3 className="text-xl font-bold mb-3">Proven Track Record</h3>
+                  <p className="text-gray-600">We have successfully settled hundreds of KrazyBee cases, often achieving waivers of 50% or more on the outstanding amount.</p>
                 </div>
               </div>
             </div>
@@ -509,7 +509,7 @@ export default function KrazyBeeLoanSettlementPage() {
               <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 relative">
                 <div className="text-6xl text-orange-100 absolute top-4 left-4">"</div>
                 <p className="text-gray-700 italic mb-6 relative z-10 leading-relaxed">
-                  "I took a ₹10,000 loan in college. It became ₹22,000 with late fees. They were calling my father. AMA Legal stopped the calls and settled it for ₹12,000."
+                  "I took a ₹10,000 loan in college. It became ₹22,000 with late fees. They were calling my father. AMA Legal Solutions stopped the calls and settled it for ₹12,000."
                 </p>
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-[#0D47A1] rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
@@ -524,7 +524,7 @@ export default function KrazyBeeLoanSettlementPage() {
               <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 relative">
                 <div className="text-6xl text-orange-100 absolute top-4 left-4">"</div>
                 <p className="text-gray-700 italic mb-6 relative z-10 leading-relaxed">
-                  "I lost my job and couldn't pay my KreditBee EMI. The agents were abusive. AMA Legal handled them professionally and closed my loan."
+                  "I lost my job and couldn't pay my KreditBee EMI. The agents were abusive. AMA Legal Solutions handled them professionally and closed my loan."
                 </p>
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-[#F57C00] rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">

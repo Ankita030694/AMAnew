@@ -10,13 +10,13 @@ import { MdCreditScore, MdMoneyOff, MdWarning } from "react-icons/md";
 
 // Metadata
 export const metadata = {
-  title: "American Express Settlement | Amex Credit Card OTS | AMA Legal",
+  title: "American Express Settlement | Amex Credit Card OTS | AMA Legal Solutions",
   description: "Struggling with American Express (Amex) debt? Expert legal help for settling Charge Cards and Credit Cards. Stop arbitration and legal notices.",
   alternates: {
     canonical: 'https://amalegalsolutions.com/services/loan-settlement/american-express',
   },
   openGraph: {
-    title: "American Express Settlement | Amex Credit Card OTS | AMA Legal",
+    title: "American Express Settlement | Amex Credit Card OTS | AMA Legal Solutions",
     description: "Struggling with American Express (Amex) debt? Expert legal help for settling Charge Cards and Credit Cards. Stop arbitration and legal notices.",
     url: "https://amalegalsolutions.com/services/loan-settlement/american-express",
     type: "website",
@@ -125,7 +125,7 @@ const reviewSchema = {
         "@type": "Person",
         "name": "Siddharth Malhotra"
       },
-      "reviewBody": "I had a massive outstanding on my Amex Platinum Charge Card. The legal team at AMA Legal handled the arbitration and settled the debt for 40% of the value. Truly professional."
+      "reviewBody": "I had a massive outstanding on my Amex Platinum Charge Card. The legal team at AMA Legal Solutions handled the arbitration and settled the debt for 40% of the value. Truly professional."
     }
   ]
 };
@@ -138,7 +138,7 @@ export default function AmericanExpressSettlementPage() {
     { id: "legal-actions", title: "Legal Actions (Arbitration)" },
     { id: "harassment", title: "Recovery & Harassment" },
     { id: "ots-process", title: "One Time Settlement (OTS)" },
-    { id: "why-hire-us", title: "Why Hire AMA Legal?" },
+    { id: "why-hire-us", title: "Why Hire AMA Legal Solutions?" },
     { id: "process-steps", title: "Our Settlement Process" },
     { id: "rbi-rights", title: "Your Rights (RBI)" },
     { id: "cibil-score", title: "CIBIL & Future Credit" },
@@ -367,7 +367,7 @@ export default function AmericanExpressSettlementPage() {
                   <FaShieldAlt className="text-5xl text-[#006FCF] mb-4" />
                   <h3 className="font-bold text-lg mb-4">We Stop the Calls</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    "I was receiving 20 calls a day from Amex agents. It was affecting my business. AMA Legal sent a notice of representation, and the calls stopped immediately. We then negotiated a settlement peacefully."
+                    "I was receiving 20 calls a day from Amex agents. It was affecting my business. AMA Legal Solutions sent a notice of representation, and the calls stopped immediately. We then negotiated a settlement peacefully."
                   </p>
                   <p className="text-right text-xs font-bold mt-4">- A Satisfied Client</p>
                 </div>
@@ -535,7 +535,7 @@ export default function AmericanExpressSettlementPage() {
                     <div className="text-[#006FCF] text-xl mr-2">★★★★★</div>
                   </div>
                   <p className="text-gray-600 italic mb-6 leading-relaxed">
-                    "I had a massive outstanding on my Amex Platinum Charge Card due to a business failure. The legal team at AMA Legal handled the arbitration and settled the debt for 40% of the value. Truly professional."
+                    "I had a massive outstanding on my Amex Platinum Charge Card due to a business failure. The legal team at AMA Legal Solutions handled the arbitration and settled the debt for 40% of the value. Truly professional."
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600 text-xl">S</div>
@@ -550,7 +550,7 @@ export default function AmericanExpressSettlementPage() {
                     <div className="text-[#006FCF] text-xl mr-2">★★★★★</div>
                   </div>
                   <p className="text-gray-600 italic mb-6 leading-relaxed">
-                    "Amex agents were visiting my office. It was embarrassing. AMA Legal intervened, stopped the visits, and helped me close the card with a one-time payment. I can finally focus on my work."
+                    "Amex agents were visiting my office. It was embarrassing. AMA Legal Solutions intervened, stopped the visits, and helped me close the card with a one-time payment. I can finally focus on my work."
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600 text-xl">R</div>

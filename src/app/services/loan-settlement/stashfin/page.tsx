@@ -10,13 +10,13 @@ import { MdCreditScore, MdMoneyOff } from "react-icons/md";
 
 // Metadata
 export const metadata = {
-  title: "Stashfin Loan Settlement | Credit Line OTS | AMA Legal",
+  title: "Stashfin Loan Settlement | Credit Line OTS | AMA Legal Solutions",
   description: "Struggling with Stashfin (Akara Capital) loan repayment? Expert legal help for settling credit lines and personal loans. Stop harassment and legal notices.",
   alternates: {
     canonical: 'https://amalegalsolutions.com/services/loan-settlement/stashfin',
   },
   openGraph: {
-    title: "Stashfin Loan Settlement | Credit Line OTS | AMA Legal",
+    title: "Stashfin Loan Settlement | Credit Line OTS | AMA Legal Solutions",
     description: "Struggling with Stashfin (Akara Capital) loan repayment? Expert legal help for settling credit lines and personal loans. Stop harassment and legal notices.",
     url: "https://amalegalsolutions.com/services/loan-settlement/stashfin",
     type: "website",
@@ -125,7 +125,7 @@ const reviewSchema = {
         "@type": "Person",
         "name": "Vikram Singh"
       },
-      "reviewBody": "I was stuck in a debt trap with Stashfin credit line. The interest was piling up. AMA Legal helped me close the loan with a 50% waiver. Very professional team."
+      "reviewBody": "I was stuck in a debt trap with Stashfin credit line. The interest was piling up. AMA Legal Solutions helped me close the loan with a 50% waiver. Very professional team."
     }
   ]
 };
@@ -137,7 +137,7 @@ export default function StashfinLoanSettlementPage() {
     { id: "harassment", title: "Stop Harassment" },
     { id: "legal-actions", title: "Legal Actions (138/Arbitration)" },
     { id: "ots-process", title: "One Time Settlement (OTS)" },
-    { id: "why-hire-us", title: "Why Hire AMA Legal?" },
+    { id: "why-hire-us", title: "Why Hire AMA Legal Solutions?" },
     { id: "process-steps", title: "Our Settlement Process" },
     { id: "rbi-rights", title: "Your Rights (RBI)" },
     { id: "cibil-score", title: "CIBIL Score Impact" },
@@ -233,18 +233,18 @@ export default function StashfinLoanSettlementPage() {
             
             {/* Introduction */}
             <section id="introduction" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Overview: Stashfin & Akara Capital</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">About Stashfin (Akara Capital)</h2>
               <div className="bg-gray-50 rounded-2xl p-8 border-l-4 border-[#D32F2F] mb-8">
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  <strong>Stashfin</strong> is a popular digital lending platform in India, known for offering credit lines and personal loans. The lending partner (NBFC) behind Stashfin is primarily <strong>Akara Capital Advisors Pvt Ltd</strong>.
+                  <strong>Stashfin</strong> is one of India's leading digital lending platforms, offering credit lines and personal loans. The primary NBFC partner behind Stashfin is <strong>Akara Capital Advisors Pvt Ltd</strong>. Unlike a traditional personal loan where you get a lump sum, Stashfin often provides a "Credit Line Card" which functions similarly to a credit card.
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  While this flexibility is marketed as a benefit, it often leads borrowers into a debt trap. The interest rates on the utilized amount can be extremely high (often 36-48% annually), and the "Minimum Amount Due" option can keep you in debt indefinitely. Defaulting on Stashfin payments can trigger aggressive recovery actions, including legal notices for Section 138 (Cheque Bounce) and arbitration proceedings.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Stashfin provides a credit line card that works like a credit card. While convenient, the interest rates can be extremely high, often exceeding 30-40% annually. Defaulting on these payments can lead to a debt spiral, aggressive collection calls, and legal notices.
+                  If you are struggling with Stashfin dues, <strong>AMA Legal Solutions</strong> can help. We specialize in negotiating One Time Settlements (OTS) with Akara Capital, stopping harassment, and handling legal complications to help you become debt-free.
                 </p>
               </div>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                If you are unable to pay your Stashfin dues, <strong>AMA Legal Solutions</strong> can help. We intervene to stop the harassment and negotiate a formal One Time Settlement (OTS) with Akara Capital, allowing you to close the loan for a reduced amount.
-              </p>
             </section>
 
             {/* Credit Line Trap */}
@@ -253,20 +253,24 @@ export default function StashfinLoanSettlementPage() {
                 <MdCreditScore className="text-4xl text-[#D32F2F]" />
                 <h2 className="text-3xl font-bold text-gray-900">The Credit Line Debt Trap</h2>
               </div>
-              <p className="text-gray-700 mb-6">
-                Unlike a standard personal loan with fixed EMIs, a credit line can be deceptive.
+              <p className="text-gray-700 mb-8 text-lg">
+                Stashfin's credit line model is designed to maximize interest earnings for the lender. Here is why it is dangerous if not managed carefully:
               </p>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">Hidden Charges</h3>
-                  <p className="text-gray-600">
-                    Users often face processing fees on every withdrawal, high late payment penalties, and interest on the utilized amount that compounds daily.
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
+                  <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                    <FaMoneyBillWave className="text-red-600" /> The Minimum Due Illusion
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Like credit cards, Stashfin allows you to pay a "Minimum Amount Due" (MAD). However, this payment mostly covers the interest for that month. The principal amount remains largely unpaid, and interest continues to compound on it. You could pay the minimum due for years and still owe the entire original amount.
                   </p>
                 </div>
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">Minimum Due Trap</h3>
-                  <p className="text-gray-600">
-                    Paying only the minimum due keeps the account active but barely reduces the principal, keeping you in debt for years.
+                <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
+                  <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                    <FaExclamationTriangle className="text-red-600" /> Hidden Charges & Penalties
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Every time you withdraw money or swipe the card, a processing fee may apply. If you miss a payment, the penalties are severe: late payment charges, bounce charges for e-mandates, and penal interest. These can quickly inflate your debt by 50-100% within a few months of default.
                   </p>
                 </div>
               </div>
@@ -299,23 +303,36 @@ export default function StashfinLoanSettlementPage() {
 
             {/* Legal Actions */}
             <section id="legal-actions" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Legal Consequences of Default</h2>
-              <div className="space-y-6">
-                <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
-                    <FaExclamationTriangle className="text-red-600" /> Section 138 (Cheque Bounce)
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">Legal Actions by Akara Capital</h2>
+              <p className="text-gray-700 mb-8 text-lg">
+                Stashfin (Akara Capital) takes legal compliance seriously and uses specific legal tools to recover dues. Ignoring these can escalate the situation.
+              </p>
+              <div className="space-y-8">
+                <div className="bg-white p-8 rounded-xl shadow-sm border-l-4 border-red-600">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                    <FaExclamationTriangle className="text-red-600" /> Section 138 & Section 25
                   </h3>
-                  <p className="text-gray-700">
-                    If you have given post-dated cheques or set up an e-mandate (NACH) that bounces, Stashfin can file a criminal case under Section 138 of the NI Act or Section 25 of the PASSA. This is a serious matter requiring legal representation.
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    If your repayment cheques bounce or your NACH (auto-debit) fails due to insufficient funds, Akara Capital can file a criminal complaint against you.
                   </p>
+                  <ul className="space-y-3 text-gray-600 mb-4">
+                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 mt-2 bg-red-600 rounded-full"></div> <strong>The Law:</strong> Section 138 of the Negotiable Instruments Act and Section 25 of the Payment and Settlement Systems Act treat this as a criminal offense punishable by up to 2 years in jail or twice the amount of the cheque/mandate.</li>
+                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 mt-2 bg-red-600 rounded-full"></div> <strong>The Process:</strong> You will first receive a Legal Notice giving you 15 days to pay. If you don't, a case is filed in court.</li>
+                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 mt-2 bg-red-600 rounded-full"></div> <strong>Our Defense:</strong> We respond to the legal notice immediately to prevent the case filing. If a case is already filed, we represent you in court, apply for bail if needed, and negotiate a settlement to withdraw the case.</li>
+                  </ul>
                 </div>
-                <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
-                    <FaGavel className="text-gray-700" /> Arbitration
+
+                <div className="bg-white p-8 rounded-xl shadow-sm border-l-4 border-[#D32F2F]">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                    <FaGavel className="text-[#D32F2F]" /> Arbitration Proceedings
                   </h3>
-                  <p className="text-gray-700">
-                    The loan agreement usually contains an arbitration clause. They may appoint an arbitrator to pass an award for the recovery of dues. We can represent you in these proceedings to contest the claim and seek a settlement.
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    Stashfin loans include an arbitration clause. This allows them to appoint a private judge (arbitrator) to decide the matter without going to a civil court.
                   </p>
+                  <ul className="space-y-3 text-gray-600">
+                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 mt-2 bg-[#D32F2F] rounded-full"></div> <strong>The Risk:</strong> Arbitrators often pass awards quickly in favor of the lender if the borrower does not participate. This award can then be executed to attach your bank accounts or assets.</li>
+                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 mt-2 bg-[#D32F2F] rounded-full"></div> <strong>Our Strategy:</strong> We actively participate in the arbitration proceedings. We challenge the jurisdiction, the appointment of the arbitrator, and the calculation of dues. This legal pressure often forces them to agree to a reasonable OTS.</li>
+                  </ul>
                 </div>
               </div>
             </section>
@@ -377,28 +394,32 @@ export default function StashfinLoanSettlementPage() {
 
             {/* Process Steps */}
             <section id="process-steps" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-12">Our Settlement Process</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-12">Our Settlement Roadmap</h2>
               <div className="relative border-l-4 border-[#D32F2F] ml-6 md:ml-12 space-y-12">
                 {[
                   { 
-                    title: "1. Consultation", 
-                    desc: "We review your loan details, outstanding amount, and financial hardship proofs." 
+                    title: "Step 1: Financial Assessment", 
+                    desc: "We analyze your Stashfin statement to understand the principal utilized versus the interest and penalty components. We also assess your current financial ability to pay." 
                   },
                   { 
-                    title: "2. Legal Notice", 
-                    desc: "We send a legal notice to Stashfin/Akara Capital informing them of your representation." 
+                    title: "Step 2: Legal Intervention", 
+                    desc: "We issue a formal notice to Akara Capital/Stashfin, informing them that you have legal representation. This is the first step to stopping direct harassment." 
                   },
                   { 
-                    title: "3. Negotiation", 
-                    desc: "We negotiate with the bank's settlement team for a reduced payoff amount." 
+                    title: "Step 3: Handling Legal Notices", 
+                    desc: "If you have received a Section 138 notice or arbitration notice, we draft a strong legal reply denying liability for illegal charges and offering a settlement." 
                   },
                   { 
-                    title: "4. Agreement", 
-                    desc: "We verify the settlement letter to ensuring all terms are favorable and clear." 
+                    title: "Step 4: Hardship Negotiation", 
+                    desc: "We negotiate with the bank's recovery team. We present your financial hardship (job loss, medical emergency, etc.) to justify a waiver of interest and penalties." 
                   },
                   { 
-                    title: "5. Payment & NDC", 
-                    desc: "You make the payment to the official account, and we ensure the loan is closed." 
+                    title: "Step 5: Settlement Agreement", 
+                    desc: "We secure a formal Settlement Letter from Akara Capital. We verify that the amount, due date, and closure terms are correct and that there are no hidden clauses." 
+                  },
+                  { 
+                    title: "Step 6: Payment & Closure", 
+                    desc: "You pay the agreed settlement amount directly to the lender. We then ensure you receive the No Dues Certificate (NDC) and that the loan is closed in your credit report." 
                   }
                 ].map((item, index) => (
                   <div key={index} className="relative pl-8 md:pl-12">
@@ -480,14 +501,16 @@ export default function StashfinLoanSettlementPage() {
 
             {/* Testimonials */}
             <section id="testimonials" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-10">Client Success Stories</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-10">Real Success Stories</h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-[#D32F2F]">
                   <div className="flex items-center mb-4">
                     <div className="text-[#D32F2F] text-xl mr-2">★★★★★</div>
+                    <span className="text-sm text-gray-500">Settled Credit Line</span>
                   </div>
+                  <h4 className="font-bold text-lg mb-3">Escaped the Debt Trap</h4>
                   <p className="text-gray-600 italic mb-6 leading-relaxed">
-                    "I was stuck in a debt trap with Stashfin credit line. The interest was piling up. AMA Legal helped me close the loan with a 50% waiver. Very professional team."
+                    "I had a Stashfin credit line of ₹1 Lakh. I used ₹80,000 but due to job loss, I could only pay the minimum due. After a year, I still owed ₹95,000! AMA Legal Solutions analyzed my statement and showed how the interest was eating my payments. They negotiated a settlement of ₹45,000 with Akara Capital. I am finally free."
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600 text-xl">V</div>
@@ -500,9 +523,11 @@ export default function StashfinLoanSettlementPage() {
                 <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-[#D32F2F]">
                   <div className="flex items-center mb-4">
                     <div className="text-[#D32F2F] text-xl mr-2">★★★★★</div>
+                    <span className="text-sm text-gray-500">Stopped Harassment</span>
                   </div>
+                  <h4 className="font-bold text-lg mb-3">Legal Notice Worked</h4>
                   <p className="text-gray-600 italic mb-6 leading-relaxed">
-                    "Agents were harassing my parents. I contacted AMA Legal, and they stopped the calls within 48 hours. The settlement process was smooth and transparent."
+                    "Recovery agents were calling my parents and threatening to come home. I was under severe stress. I contacted AMA Legal Solutions, and they sent a legal notice to Stashfin the same day. The calls stopped within 48 hours. They handled the entire negotiation, and I didn't have to speak to any agent again."
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600 text-xl">P</div>

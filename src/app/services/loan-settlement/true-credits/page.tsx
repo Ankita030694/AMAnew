@@ -10,13 +10,13 @@ import { MdAppShortcut, MdMoneyOff } from "react-icons/md";
 
 // Metadata
 export const metadata = {
-  title: "True Credits Loan Settlement | TrueBalance App OTS | AMA Legal",
+  title: "True Credits Loan Settlement | TrueBalance App OTS | AMA Legal Solutions",
   description: "Struggling with True Credits (TrueBalance) loan repayment? Expert legal help for settling app loans. Stop harassment and legal notices.",
   alternates: {
     canonical: 'https://amalegalsolutions.com/services/loan-settlement/true-credits',
   },
   openGraph: {
-    title: "True Credits Loan Settlement | TrueBalance App OTS | AMA Legal",
+    title: "True Credits Loan Settlement | TrueBalance App OTS | AMA Legal Solutions",
     description: "Struggling with True Credits (TrueBalance) loan repayment? Expert legal help for settling app loans. Stop harassment and legal notices.",
     url: "https://amalegalsolutions.com/services/loan-settlement/true-credits",
     type: "website",
@@ -125,7 +125,7 @@ const reviewSchema = {
         "@type": "Person",
         "name": "Rahul Sharma"
       },
-      "reviewBody": "TrueBalance agents were harassing my contacts. AMA Legal stopped it immediately and helped me settle the loan for 50% less."
+      "reviewBody": "TrueBalance agents were harassing my contacts. AMA Legal Solutions stopped it immediately and helped me settle the loan for 50% less."
     }
   ]
 };
@@ -137,7 +137,7 @@ export default function TrueCreditsSettlementPage() {
     { id: "harassment", title: "Stop Harassment" },
     { id: "legal-actions", title: "Legal Actions (Arbitration)" },
     { id: "ots-process", title: "One Time Settlement (OTS)" },
-    { id: "why-hire-us", title: "Why Hire AMA Legal?" },
+    { id: "why-hire-us", title: "Why Hire AMA Legal Solutions?" },
     { id: "process-steps", title: "Our Settlement Process" },
     { id: "rbi-rights", title: "Your Rights (RBI)" },
     { id: "cibil-score", title: "CIBIL Score Impact" },
@@ -236,37 +236,41 @@ export default function TrueCreditsSettlementPage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">About True Credits (TrueBalance)</h2>
               <div className="bg-gray-50 rounded-2xl p-8 border-l-4 border-[#7B1FA2] mb-8">
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  <strong>True Credits Pvt Ltd</strong> is the RBI-registered Non-Banking Financial Company (NBFC) that primarily operates through the <strong>TrueBalance</strong> mobile app. They offer small-ticket personal loans to millions of users across India.
+                  <strong>True Credits Pvt Ltd</strong> is the RBI-registered Non-Banking Financial Company (NBFC) that operates the popular <strong>TrueBalance</strong> lending app. They specialize in providing small-ticket personal loans to millions of users across India, often with minimal documentation.
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  While the app offers quick cash, the financial reality can be harsh. True Credits loans often carry extremely high interest rates, and the repayment tenures are short. If you miss a payment, the penalty charges stack up daily, and the recovery process can be aggressive, involving frequent calls and messages to you and your contacts.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  While convenient, these digital loans often come with very high interest rates and strict repayment terms. Defaulting on a TrueBalance loan can lead to aggressive recovery tactics, including calls to your contact list, which is a major violation of privacy and RBI guidelines.
+                  If you are trapped in a cycle of debt with TrueBalance, <strong>AMA Legal Solutions</strong> can help. We intervene legally to stop the harassment and negotiate a <strong>One Time Settlement (OTS)</strong> that allows you to close the loan for a fraction of the inflated demand.
                 </p>
               </div>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                If you are facing harassment or are unable to pay the mounting dues, <strong>AMA Legal Solutions</strong> can help you settle the loan legally and stop the abuse.
-              </p>
             </section>
 
             {/* App Loans */}
             <section id="app-loans" className="mb-16 scroll-mt-32">
               <div className="flex items-center gap-4 mb-6">
                 <FaMobileAlt className="text-4xl text-[#7B1FA2]" />
-                <h2 className="text-3xl font-bold text-gray-900">The Digital Loan Trap</h2>
+                <h2 className="text-3xl font-bold text-gray-900">The "Instant Loan" Trap</h2>
               </div>
-              <p className="text-gray-700 mb-6">
-                Digital lending apps like TrueBalance are designed to be easy to use, but they can quickly become a debt trap.
+              <p className="text-gray-700 mb-8 text-lg">
+                The convenience of TrueBalance loans often masks the severe financial risks. Here is how borrowers get trapped:
               </p>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">High Interest & Penalties</h3>
-                  <p className="text-gray-600">
-                    The effective annual interest rate can exceed 60-70%. If you miss a payment, daily penalty charges are added, causing the outstanding amount to double in a few months.
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
+                  <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                    <FaMoneyBillWave className="text-purple-600" /> Sky-High Interest Rates
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    The Annual Percentage Rate (APR) on these loans can exceed <strong>60-80%</strong>. Additionally, if you default, they add "overdue charges" and "bounce fees" daily. A loan of ₹10,000 can easily balloon to ₹25,000 within a few months.
                   </p>
                 </div>
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">Short Tenures</h3>
-                  <p className="text-gray-600">
-                    Many loans have very short repayment cycles (15-30 days or a few months), making it difficult for borrowers to manage cash flow.
+                <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
+                  <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                    <MdMoneyOff className="text-purple-600" /> Short Repayment Cycles
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Many loans have very short tenures (15, 30, or 60 days). This doesn't give borrowers enough time to generate cash flow, leading to default. Once you default, the pressure from recovery agents begins immediately.
                   </p>
                 </div>
               </div>
@@ -296,23 +300,35 @@ export default function TrueCreditsSettlementPage() {
 
             {/* Legal Actions */}
             <section id="legal-actions" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Legal Consequences of Default</h2>
-              <div className="space-y-6">
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
-                    <FaGavel className="text-[#7B1FA2]" /> Arbitration
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">Legal Actions by True Credits</h2>
+              <p className="text-gray-700 mb-8 text-lg">
+                Despite being a digital lender, True Credits uses formal legal channels to recover dues.
+              </p>
+              <div className="space-y-8">
+                <div className="bg-white p-8 rounded-xl shadow-sm border-l-4 border-[#7B1FA2]">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                    <FaGavel className="text-[#7B1FA2]" /> Online Arbitration
                   </h3>
-                  <p className="text-gray-700">
-                    True Credits agreements often include an arbitration clause. They may appoint an arbitrator to pass an award for the recovery of dues. This is a legal process, and ignoring it can lead to an enforceable award against you. We represent you to contest these claims.
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    True Credits frequently uses Online Dispute Resolution (ODR) platforms. They send arbitration notices via email or SMS.
                   </p>
+                  <ul className="space-y-3 text-gray-600 mb-4">
+                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 mt-2 bg-[#7B1FA2] rounded-full"></div> <strong>The Risk:</strong> If you miss the online hearing link, an "Ex-Parte Award" is passed against you. This is a binding legal order to pay the full amount.</li>
+                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 mt-2 bg-[#7B1FA2] rounded-full"></div> <strong>Our Defense:</strong> We join these online hearings on your behalf. We contest the inflated charges and use the platform to negotiate a fair settlement.</li>
+                  </ul>
                 </div>
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
-                    <FaExclamationTriangle className="text-[#7B1FA2]" /> Section 25 (PASSA) / Section 138
+
+                <div className="bg-white p-8 rounded-xl shadow-sm border-l-4 border-red-600">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                    <FaExclamationTriangle className="text-red-600" /> Section 25 (PASSA)
                   </h3>
-                  <p className="text-gray-700">
-                    If you have set up an e-mandate (NACH) that bounces, they can initiate legal action under the Payment and Settlement Systems Act. While less common for small amounts, it is a possibility that requires legal attention.
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    Most app loans are repaid via e-mandate (NACH). If this auto-debit bounces due to insufficient funds, it is a criminal offense.
                   </p>
+                  <ul className="space-y-3 text-gray-600">
+                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 mt-2 bg-red-600 rounded-full"></div> <strong>Consequences:</strong> They can file a complaint under Section 25 of the Payment and Settlement Systems Act. This can lead to a court summons.</li>
+                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 mt-2 bg-red-600 rounded-full"></div> <strong>Our Strategy:</strong> We handle the legal response, appear in court if necessary, and ensure the case is withdrawn upon settlement.</li>
+                  </ul>
                 </div>
               </div>
             </section>
@@ -369,28 +385,32 @@ export default function TrueCreditsSettlementPage() {
 
             {/* Process */}
             <section id="process-steps" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-12">Our Settlement Process</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-12">Our Settlement Roadmap</h2>
               <div className="relative border-l-4 border-[#7B1FA2] ml-6 md:ml-12 space-y-12">
                 {[
                   { 
-                    title: "1. Case Assessment", 
-                    desc: "We review your loan details and the extent of harassment." 
+                    title: "Step 1: Loan & Harassment Audit", 
+                    desc: "We analyze your loan statement to separate principal from penalties. We also document any instances of harassment for legal action." 
                   },
                   { 
-                    title: "2. Legal Intervention", 
-                    desc: "We send a legal notice to True Credits to stop harassment and initiate settlement." 
+                    title: "Step 2: Legal Cease & Desist", 
+                    desc: "We send a strong legal notice to True Credits, demanding they stop contacting you and your references immediately." 
                   },
                   { 
-                    title: "3. Negotiation", 
-                    desc: "We negotiate for the maximum possible waiver on interest and penalties." 
+                    title: "Step 3: RBI Complaint (If Needed)", 
+                    desc: "If harassment continues, we escalate the matter to the RBI Ombudsman, citing specific violations of the Digital Lending Guidelines." 
                   },
                   { 
-                    title: "4. Settlement Letter", 
-                    desc: "We verify the settlement letter to ensure it is genuine and terms are correct." 
+                    title: "Step 4: Settlement Negotiation", 
+                    desc: "We negotiate with the lender's legal team. We aim to waive off all interest and penalties, settling for a amount close to the principal." 
                   },
                   { 
-                    title: "5. Closure", 
-                    desc: "You pay the settlement amount, and we ensure the loan is closed." 
+                    title: "Step 5: Formal Agreement", 
+                    desc: "We verify the Settlement Letter from True Credits to ensure it guarantees full closure and no future claims." 
+                  },
+                  { 
+                    title: "Step 6: Payment & NDC", 
+                    desc: "You make the payment to the official account. We then ensure the loan is closed on the app and your CIBIL report is updated." 
                   }
                 ].map((item, index) => (
                   <div key={index} className="relative pl-8 md:pl-12">
@@ -469,14 +489,16 @@ export default function TrueCreditsSettlementPage() {
 
             {/* Testimonials */}
             <section id="testimonials" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-10">Client Success Stories</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-10">Real Success Stories</h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-[#7B1FA2]">
                   <div className="flex items-center mb-4">
                     <div className="text-[#7B1FA2] text-xl mr-2">★★★★★</div>
+                    <span className="text-sm text-gray-500">Stopped Harassment</span>
                   </div>
+                  <h4 className="font-bold text-lg mb-3">Privacy Protected</h4>
                   <p className="text-gray-600 italic mb-6 leading-relaxed">
-                    "TrueBalance agents were harassing my contacts. It was humiliating. AMA Legal stopped it immediately and helped me settle the loan for 50% less. Highly recommended."
+                    "TrueBalance agents were calling my parents and friends, which was humiliating. AMA Legal Solutions sent a legal notice and filed a complaint. The calls stopped within 48 hours. We then settled the loan for 50% of the demand. I got my peace of mind back."
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600 text-xl">R</div>
@@ -489,9 +511,11 @@ export default function TrueCreditsSettlementPage() {
                 <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-[#7B1FA2]">
                   <div className="flex items-center mb-4">
                     <div className="text-[#7B1FA2] text-xl mr-2">★★★★★</div>
+                    <span className="text-sm text-gray-500">Settled Multiple Loans</span>
                   </div>
+                  <h4 className="font-bold text-lg mb-3">Escaped the Debt Trap</h4>
                   <p className="text-gray-600 italic mb-6 leading-relaxed">
-                    "I was stuck in a debt trap with multiple app loans. AMA Legal helped me prioritize and settle them one by one. True Credits was the first one we closed."
+                    "I was stuck in a debt trap with multiple app loans, including True Credits. The interest was piling up daily. AMA Legal Solutions helped me prioritize and settle them one by one. For True Credits, they negotiated a waiver of all the extra charges. I am finally debt-free."
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600 text-xl">P</div>

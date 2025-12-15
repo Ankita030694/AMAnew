@@ -108,7 +108,7 @@ const reviewSchema = {
         "@type": "Person",
         "name": "Dipankar B."
       },
-      "reviewBody": "I run a small shop in Guwahati. The floods destroyed my stock, and I couldn't pay my loan. AMA Legal helped me get a moratorium and then settle the loan for a much lower amount."
+      "reviewBody": "I run a small shop in Guwahati. The floods destroyed my stock, and I couldn't pay my loan. AMA Legal Solutions helped me get a moratorium and then settle the loan for a much lower amount."
     },
     {
       "@type": "Review",
@@ -504,7 +504,7 @@ export default function AssamLoanSettlementPage() {
                     <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
                       <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
                       <p className="text-gray-700 italic mb-4 relative z-10">
-                        "I run a small shop in Guwahati. The floods destroyed my stock, and I couldn't pay my loan. AMA Legal helped me get a moratorium and then settle the loan for a much lower amount."
+                        "I run a small shop in Guwahati. The floods destroyed my stock, and I couldn't pay my loan. AMA Legal Solutions helped me get a moratorium and then settle the loan for a much lower amount."
                       </p>
                       <div className="flex items-center">
                         <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">D</div>

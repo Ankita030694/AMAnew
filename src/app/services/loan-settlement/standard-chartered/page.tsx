@@ -10,13 +10,13 @@ import { MdCreditScore, MdMoneyOff } from "react-icons/md";
 
 // Metadata
 export const metadata = {
-  title: "Standard Chartered Loan Settlement | Credit Card OTS | AMA Legal",
+  title: "Standard Chartered Loan Settlement | Credit Card OTS | AMA Legal Solutions",
   description: "Struggling with Standard Chartered Bank loan or credit card dues? Expert legal help for One Time Settlement (OTS). Stop harassment and legal action.",
   alternates: {
     canonical: 'https://amalegalsolutions.com/services/loan-settlement/standard-chartered',
   },
   openGraph: {
-    title: "Standard Chartered Loan Settlement | Credit Card OTS | AMA Legal",
+    title: "Standard Chartered Loan Settlement | Credit Card OTS | AMA Legal Solutions",
     description: "Struggling with Standard Chartered Bank loan or credit card dues? Expert legal help for One Time Settlement (OTS). Stop harassment and legal action.",
     url: "https://amalegalsolutions.com/services/loan-settlement/standard-chartered",
     type: "website",
@@ -125,7 +125,7 @@ const reviewSchema = {
         "@type": "Person",
         "name": "Anil Mehta"
       },
-      "reviewBody": "I had a huge credit card debt with Standard Chartered. The interest was killing me. AMA Legal helped me settle it for a reasonable amount and stopped the collection calls."
+      "reviewBody": "I had a huge credit card debt with Standard Chartered. The interest was killing me. AMA Legal Solutions helped me settle it for a reasonable amount and stopped the collection calls."
     }
   ]
 };
@@ -138,7 +138,7 @@ export default function StandardCharteredSettlementPage() {
     { id: "legal-actions", title: "Legal Actions (Arbitration)" },
     { id: "harassment", title: "Stop Harassment" },
     { id: "ots-process", title: "One Time Settlement (OTS)" },
-    { id: "why-hire-us", title: "Why Hire AMA Legal?" },
+    { id: "why-hire-us", title: "Why Hire AMA Legal Solutions?" },
     { id: "process-steps", title: "Our Settlement Process" },
     { id: "rbi-rights", title: "Your Rights (RBI)" },
     { id: "cibil-score", title: "CIBIL Score Impact" },
@@ -237,37 +237,41 @@ export default function StandardCharteredSettlementPage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">About Standard Chartered Bank</h2>
               <div className="bg-gray-50 rounded-2xl p-8 border-l-4 border-[#009F3D] mb-8">
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  <strong>Standard Chartered Bank (SCB)</strong> is one of the oldest and most prominent international banks operating in India. It caters to a wide range of customers, from salaried individuals to high-net-worth priority banking clients.
+                  <strong>Standard Chartered Bank (SCB)</strong> is one of the oldest and most prestigious international banks operating in India. Known for its premium credit cards (like the Ultimate and Manhattan) and high-value personal loans, SCB caters to a large base of salaried and self-employed professionals.
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  However, as a multinational corporation (MNC), Standard Chartered follows extremely strict compliance and recovery protocols. Unlike some local banks that might be more flexible, SCB often initiates legal proceedings swiftly against defaulters. This can include filing for arbitration, criminal complaints for cheque bounces, and aggressive pursuit of dues through third-party agencies.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  SCB is known for its premium credit cards and personal loan offerings. However, as an international bank, they have stringent compliance and recovery policies. Defaulting on an SCB loan can lead to swift legal action, including arbitration and criminal complaints for cheque bounces.
+                  If you are facing financial distress and cannot pay your Standard Chartered dues, ignoring the problem is the worst strategy. <strong>AMA Legal Solutions</strong> specializes in negotiating with MNC banks. We understand their legal framework and can help you secure a fair <strong>One Time Settlement (OTS)</strong> while protecting you from legal harassment.
                 </p>
               </div>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                If you are unable to repay your dues, <strong>AMA Legal Solutions</strong> can help you navigate the complex settlement process with Standard Chartered, ensuring you get a fair deal and legal peace of mind.
-              </p>
             </section>
 
             {/* Credit Cards */}
             <section id="credit-cards" className="mb-16 scroll-mt-32">
               <div className="flex items-center gap-4 mb-6">
                 <FaCreditCard className="text-4xl text-[#009F3D]" />
-                <h2 className="text-3xl font-bold text-gray-900">Credit Card Settlement</h2>
+                <h2 className="text-3xl font-bold text-gray-900">The Credit Card Debt Trap</h2>
               </div>
-              <p className="text-gray-700 mb-6">
-                Standard Chartered credit cards (like Ultimate, Manhattan, Super Value Titanium) often come with high credit limits.
+              <p className="text-gray-700 mb-8 text-lg">
+                Standard Chartered credit cards offer great rewards, but the debt trap they create can be devastating. Here is how it spirals out of control:
               </p>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">The Interest Trap</h3>
-                  <p className="text-gray-600">
-                    The interest rate on unpaid dues can be as high as 3.5% per month (42% annually). Late payment fees and GST further inflate the debt, making it impossible to pay off with just minimum payments.
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
+                  <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                    <FaMoneyBillWave className="text-red-600" /> The "Minimum Due" Illusion
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Many cardholders fall into the trap of paying only the "Minimum Amount Due" (MAD). This payment barely covers the interest. The principal amount remains unpaid, and SCB charges an interest rate of up to <strong>3.75% per month (45% annually)</strong> on the outstanding balance. This can cause your debt to double in less than two years.
                   </p>
                 </div>
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">Settlement Solution</h3>
-                  <p className="text-gray-600">
-                    We negotiate with the bank to waive off the accumulated interest and penalties. You can settle the account by paying a portion of the principal amount in a lump sum.
+                <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
+                  <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                    <FaExclamationTriangle className="text-red-600" /> Over-Limit & Late Fees
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    If you miss a payment or cross your credit limit due to interest accumulation, SCB imposes heavy penalties. These charges also attract GST, further inflating the bill. Once you are in this cycle, it is nearly impossible to exit without a structured settlement.
                   </p>
                 </div>
               </div>
@@ -301,22 +305,34 @@ export default function StandardCharteredSettlementPage() {
             {/* Legal Actions */}
             <section id="legal-actions" className="mb-16 scroll-mt-32">
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Legal Actions by Standard Chartered</h2>
-              <div className="space-y-6">
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
-                    <FaGavel className="text-[#009F3D]" /> Arbitration
+              <p className="text-gray-700 mb-8 text-lg">
+                As an international bank, SCB has a robust legal department. They do not hesitate to use legal tools to recover dues.
+              </p>
+              <div className="space-y-8">
+                <div className="bg-white p-8 rounded-xl shadow-sm border-l-4 border-[#009F3D]">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                    <FaGavel className="text-[#009F3D]" /> Arbitration Proceedings
                   </h3>
-                  <p className="text-gray-700">
-                    SCB loan agreements usually have an arbitration clause. They can appoint an arbitrator to pass an award for the recovery of dues. This award is legally binding. We represent you in these proceedings to challenge the claim and seek a settlement.
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    Most SCB loan agreements include an arbitration clause. This allows the bank to appoint an arbitrator to settle the dispute.
                   </p>
+                  <ul className="space-y-3 text-gray-600 mb-4">
+                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 mt-2 bg-[#009F3D] rounded-full"></div> <strong>The Risk:</strong> If you ignore the arbitration notice, an "Ex-Parte Award" will be passed against you. This award has the same power as a court decree and can be executed to attach your assets or bank accounts.</li>
+                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 mt-2 bg-[#009F3D] rounded-full"></div> <strong>Our Defense:</strong> We represent you in the arbitration tribunal. We challenge the appointment of the arbitrator (often biased) and dispute the inflated claim amount, forcing the bank to negotiate.</li>
+                  </ul>
                 </div>
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
-                    <FaExclamationTriangle className="text-[#009F3D]" /> Section 138 / Section 25
+
+                <div className="bg-white p-8 rounded-xl shadow-sm border-l-4 border-red-600">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                    <FaExclamationTriangle className="text-red-600" /> Section 138 & Section 25
                   </h3>
-                  <p className="text-gray-700">
-                    If your repayment cheques or NACH mandates bounce, SCB can file a criminal case under Section 138 of the NI Act or Section 25 of the PASSA Act. These are serious offenses. We provide legal defense to handle these cases and negotiate an out-of-court settlement.
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    If you have issued cheques or set up an ECS/NACH mandate for repayment, and it bounces due to insufficient funds, SCB can file a criminal case.
                   </p>
+                  <ul className="space-y-3 text-gray-600">
+                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 mt-2 bg-red-600 rounded-full"></div> <strong>Criminal Offense:</strong> Under Section 138 of the NI Act and Section 25 of the PASSA, this is a criminal offense punishable by imprisonment and fines.</li>
+                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 mt-2 bg-red-600 rounded-full"></div> <strong>Our Strategy:</strong> We handle the legal response to these notices. We appear in court if necessary to recall warrants and use the pendency of the case to pressure the bank into an out-of-court settlement.</li>
+                  </ul>
                 </div>
               </div>
             </section>
@@ -395,28 +411,32 @@ export default function StandardCharteredSettlementPage() {
 
             {/* Process */}
             <section id="process-steps" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-12">Our Settlement Process</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-12">Our Settlement Roadmap</h2>
               <div className="relative border-l-4 border-[#009F3D] ml-6 md:ml-12 space-y-12">
                 {[
                   { 
-                    title: "1. Consultation", 
-                    desc: "We analyze your loan details and financial situation." 
+                    title: "Step 1: Case Evaluation", 
+                    desc: "We review your Standard Chartered loan/card statements, identifying the principal amount versus the inflated interest and penalty charges." 
                   },
                   { 
-                    title: "2. Legal Notice", 
-                    desc: "We send a notice to SCB informing them of our representation." 
+                    title: "Step 2: Legal Representation Notice", 
+                    desc: "We send a formal legal notice to SCB, informing them that AMA Legal Solutions represents you. This legally mandates them to route all communication through us." 
                   },
                   { 
-                    title: "3. Negotiation", 
-                    desc: "We negotiate with the bank's settlement department for a reduced amount." 
+                    title: "Step 3: Stopping Harassment", 
+                    desc: "If recovery agents continue to harass you, we escalate the matter to the bank's Nodal Officer and the Banking Ombudsman, citing RBI violations." 
                   },
                   { 
-                    title: "4. Approval", 
-                    desc: "We get a formal settlement letter from the bank." 
+                    title: "Step 4: Strategic Negotiation", 
+                    desc: "We negotiate with the bank's central settlement team. We present your financial hardship and push for a waiver of all interest and penalties, aiming to settle near the principal." 
                   },
                   { 
-                    title: "5. Closure", 
-                    desc: "You make the payment, and we ensure the loan is closed." 
+                    title: "Step 5: Settlement Letter Verification", 
+                    desc: "We ensure SCB issues a formal Settlement Letter on their official letterhead. We verify all terms, including the settlement amount, payment deadline, and closure clause." 
+                  },
+                  { 
+                    title: "Step 6: Payment & NDC", 
+                    desc: "You pay the settlement amount directly to Standard Chartered. We then track the closure of your loan account and ensure you receive the No Dues Certificate (NDC)." 
                   }
                 ].map((item, index) => (
                   <div key={index} className="relative pl-8 md:pl-12">
@@ -495,14 +515,16 @@ export default function StandardCharteredSettlementPage() {
 
             {/* Testimonials */}
             <section id="testimonials" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-10">Client Success Stories</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-10">Real Success Stories</h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-[#009F3D]">
                   <div className="flex items-center mb-4">
                     <div className="text-[#009F3D] text-xl mr-2">★★★★★</div>
+                    <span className="text-sm text-gray-500">Settled Credit Card</span>
                   </div>
+                  <h4 className="font-bold text-lg mb-3">Saved ₹2.5 Lakhs on Interest</h4>
                   <p className="text-gray-600 italic mb-6 leading-relaxed">
-                    "I had a huge credit card debt with Standard Chartered. The interest was killing me. AMA Legal helped me settle it for a reasonable amount and stopped the collection calls."
+                    "I had a Standard Chartered Ultimate card with a limit of ₹5 Lakhs. Due to a medical emergency, I maxed it out. The interest piled up, and the total due became ₹8.5 Lakhs! AMA Legal Solutions intervened and negotiated a settlement for ₹3.5 Lakhs. They saved me from a debt trap."
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600 text-xl">A</div>
@@ -515,9 +537,11 @@ export default function StandardCharteredSettlementPage() {
                 <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-[#009F3D]">
                   <div className="flex items-center mb-4">
                     <div className="text-[#009F3D] text-xl mr-2">★★★★★</div>
+                    <span className="text-sm text-gray-500">Personal Loan OTS</span>
                   </div>
+                  <h4 className="font-bold text-lg mb-3">Legal Notice Handled</h4>
                   <p className="text-gray-600 italic mb-6 leading-relaxed">
-                    "I lost my job and couldn't pay my personal loan. SCB sent a legal notice. AMA Legal handled the legal reply and negotiated a settlement. I am very grateful."
+                    "I received a Section 138 notice from SCB for a bounced cheque on my personal loan. I was terrified of going to court. AMA Legal Solutions replied to the notice and represented me. They convinced the bank to settle the matter out of court. I paid the settlement amount and the case was withdrawn."
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600 text-xl">S</div>

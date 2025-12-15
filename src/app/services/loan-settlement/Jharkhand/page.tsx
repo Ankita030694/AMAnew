@@ -120,7 +120,7 @@ const reviewSchema = {
         "@type": "Person",
         "name": "Sunita K."
       },
-      "reviewBody": "Microfinance agents were harassing our women's group in the village. AMA Legal helped us file a complaint and settle the debt peacefully. They are true protectors."
+      "reviewBody": "Microfinance agents were harassing our women's group in the village. AMA Legal Solutions helped us file a complaint and settle the debt peacefully. They are true protectors."
     }
   ]
 };
@@ -508,7 +508,7 @@ export default function JharkhandLoanSettlementPage() {
                     <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
                       <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
                       <p className="text-gray-700 italic mb-4 relative z-10">
-                        "Microfinance agents were harassing our women's group in the village. AMA Legal helped us file a complaint and settle the debt peacefully. They are true protectors."
+                        "Microfinance agents were harassing our women's group in the village. AMA Legal Solutions helped us file a complaint and settle the debt peacefully. They are true protectors."
                       </p>
                       <div className="flex items-center">
                         <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">S</div>

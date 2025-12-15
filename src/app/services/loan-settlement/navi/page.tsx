@@ -89,7 +89,7 @@ const reviewSchema = {
         "@type": "Person",
         "name": "Rahul Sharma"
       },
-      "reviewBody": "Navi agents were calling my parents. AMA Legal sent a notice and the calls stopped within 48 hours. Settled my 5 Lakh loan for 2.2 Lakhs."
+      "reviewBody": "Navi agents were calling my parents. AMA Legal Solutions sent a notice and the calls stopped within 48 hours. Settled my 5 Lakh loan for 2.2 Lakhs."
     },
     {
       "@type": "Review",

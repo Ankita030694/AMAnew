@@ -5,7 +5,24 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 import { faqs } from "./faqs";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
-import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUniversity, FaGavel, FaBalanceScale, FaUserTie, FaChartLine, FaPlane, FaTractor, FaMobileAlt, FaGlobeAmericas } from "react-icons/fa";
+import { 
+  FaCheckCircle, 
+  FaShieldAlt, 
+  FaHandHoldingUsd, 
+  FaFileContract, 
+  FaUniversity, 
+  FaGavel, 
+  FaBalanceScale, 
+  FaUserTie, 
+  FaChartLine, 
+  FaPlane, 
+  FaTractor, 
+  FaMobileAlt, 
+  FaGlobeAmericas,
+  FaHome,
+  FaPassport,
+  FaUserInjured
+} from "react-icons/fa";
 
 // Metadata
 export const metadata = {
@@ -184,13 +201,13 @@ export default function FederalBankLoanSettlementPage() {
              </svg>
           </div>
           <div className="relative z-10 container mx-auto px-4 py-24 md:py-32 text-center">
-            <div className="inline-block bg-white text-[#00488E] text-xs font-bold px-3 py-1 rounded-full mb-6 tracking-wide uppercase">
+            <div className="inline-block bg-white text-[#00488E] text-xs font-bold px-3 py-1 rounded-full mb-6 tracking-wide uppercase shadow-lg">
               Your Perfect Settlement Partner
             </div>
-            <h1 className="text-4xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
+            <h1 className="text-4xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight drop-shadow-md">
               Settle Your <span className="text-[#F7A800]">Federal Bank Loan</span> <br className="hidden md:block" /> With Confidence
             </h1>
-            <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-blue-50 font-light">
+            <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-blue-50 font-light leading-relaxed">
               Specialized legal help for NRIs, Farmers, and Business Owners. Resolve your debt remotely without harassment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -212,44 +229,56 @@ export default function FederalBankLoanSettlementPage() {
           <Breadcrumbs items={breadcrumbItems} />
         </div>
 
-        <div className="relative">
-          <TableOfContents sections={tocSections} />
-
-          {/* Introduction Section */}
-          <div id="introduction" className="container mx-auto px-4 py-12 max-w-4xl text-center scroll-mt-32">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              Facing Debt Issues with Federal Bank?
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              Federal Bank is a prominent private sector bank with a strong presence in South India and a massive NRI customer base. While they are known for their customer-friendly "Perfect Banking Partner" approach, their debt recovery process is stringent and systematic. They utilize tools like <strong>SARFAESI</strong> for secured loans and <strong>Arbitration</strong> for unsecured debts.
-            </p>
-            <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              Whether you are an <strong>NRI</strong> facing job loss abroad, a <strong>farmer</strong> dealing with crop failure, or a <strong>business owner</strong> with cash flow issues, defaulting on a Federal Bank loan can be stressful. The fear of legal action, travel restrictions (for NRIs), or asset attachment is real.
-            </p>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              At AMA Legal Solutions, we bridge the gap. We understand Federal Bank's specific policies for different customer segments. We negotiate legally to secure a <strong>One Time Settlement (OTS)</strong> that allows you to clear your debt for a reduced amount and move on with your life.
-            </p>
+        <div className="relative flex flex-col lg:flex-row gap-10 container mx-auto px-4">
+          {/* Sidebar for Desktop */}
+          <div className="hidden lg:block w-1/4">
+             <div className="sticky top-24">
+               <TableOfContents sections={tocSections} orientation="vertical" />
+             </div>
           </div>
 
-          {/* NRI Loans - Unique Section */}
-          <div id="nri-loans" className="bg-[#f8fafc] py-20 scroll-mt-32">
-            <div className="container mx-auto px-4 max-w-6xl">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div>
+          {/* Main Content */}
+          <div className="w-full lg:w-3/4">
+            
+            {/* Introduction Section */}
+            <div id="introduction" className="mb-16 scroll-mt-32">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+                Facing Debt Issues with Federal Bank?
+              </h2>
+              <div className="prose prose-lg text-gray-600 max-w-none">
+                <p className="mb-6">
+                  Federal Bank is a prominent private sector bank with a strong presence in South India and a massive NRI customer base. While they are known for their customer-friendly "Perfect Banking Partner" approach, their debt recovery process is stringent and systematic. They utilize tools like <strong>SARFAESI</strong> for secured loans and <strong>Arbitration</strong> for unsecured debts.
+                </p>
+                <p className="mb-6">
+                  Whether you are an <strong>NRI</strong> facing job loss abroad, a <strong>farmer</strong> dealing with crop failure, or a <strong>business owner</strong> with cash flow issues, defaulting on a Federal Bank loan can be stressful. The fear of legal action, travel restrictions (for NRIs), or asset attachment is real.
+                </p>
+                <p>
+                  At <strong>AMA Legal Solutions</strong>, we bridge the gap. We understand Federal Bank's specific policies for different customer segments. We negotiate legally to secure a <strong>One Time Settlement (OTS)</strong> that allows you to clear your debt for a reduced amount and move on with your life.
+                </p>
+              </div>
+            </div>
+
+            {/* NRI Loans - Unique Section */}
+            <div id="nri-loans" className="bg-[#f8fafc] p-8 md:p-12 rounded-3xl mb-16 scroll-mt-32 border border-blue-100">
+              <div className="flex flex-col md:flex-row gap-10 items-start">
+                <div className="flex-1">
                   <div className="inline-block bg-[#00488E] text-white text-xs font-bold px-3 py-1 rounded-full mb-4">
                     Specialized Service
                   </div>
-                  <h2 className="text-3xl font-bold mb-6 text-gray-900">NRI Loan Settlement</h2>
+                  <h2 className="text-3xl font-bold mb-6 text-gray-900 flex items-center">
+                    <FaPlane className="mr-3 text-[#00488E]" />
+                    NRI Loan Settlement
+                  </h2>
                   <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                     A significant portion of Federal Bank's portfolio consists of NRI loans. We understand the unique panic NRIs face when they default:
                   </p>
                   <ul className="space-y-4">
                     <li className="flex items-start">
-                      <FaPlane className="text-[#F7A800] mt-1 mr-3 flex-shrink-0 text-xl" />
+                      <FaGlobeAmericas className="text-[#F7A800] mt-1 mr-3 flex-shrink-0 text-xl" />
                       <span className="text-gray-700"><strong>Remote Processing:</strong> You do not need to fly to India. We handle everything via Power of Attorney or digital authorization.</span>
                     </li>
                     <li className="flex items-start">
-                      <FaGlobeAmericas className="text-[#F7A800] mt-1 mr-3 flex-shrink-0 text-xl" />
+                      <FaPassport className="text-[#F7A800] mt-1 mr-3 flex-shrink-0 text-xl" />
                       <span className="text-gray-700"><strong>Immigration Protection:</strong> We ensure civil disputes don't escalate into criminal cases that could affect your visa or travel.</span>
                     </li>
                     <li className="flex items-start">
@@ -258,94 +287,90 @@ export default function FederalBankLoanSettlementPage() {
                     </li>
                   </ul>
                 </div>
-                <div className="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-[#F7A800]">
+                <div className="w-full md:w-1/3 bg-white p-6 rounded-2xl shadow-xl border-t-4 border-[#F7A800]">
                   <h3 className="text-xl font-bold mb-4 text-[#00488E]">Case Study: NRI in Dubai</h3>
-                  <p className="text-gray-600 mb-4 italic">
+                  <p className="text-gray-600 mb-4 italic text-sm">
                     "Client X, working in Dubai, lost his job and couldn't pay his personal loan in Kerala. Federal Bank started calling his elderly parents in India."
                   </p>
                   <div className="space-y-3">
                     <div className="flex items-center bg-blue-50 p-3 rounded-lg">
-                      <div className="w-8 h-8 bg-[#00488E] rounded-full flex items-center justify-center text-white font-bold mr-3">1</div>
-                      <p className="text-sm font-medium text-gray-800">We issued a legal notice to stop harassment of parents.</p>
+                      <div className="w-8 h-8 bg-[#00488E] rounded-full flex items-center justify-center text-white font-bold mr-3 flex-shrink-0">1</div>
+                      <p className="text-xs font-medium text-gray-800">We issued a legal notice to stop harassment of parents.</p>
                     </div>
                     <div className="flex items-center bg-blue-50 p-3 rounded-lg">
-                      <div className="w-8 h-8 bg-[#00488E] rounded-full flex items-center justify-center text-white font-bold mr-3">2</div>
-                      <p className="text-sm font-medium text-gray-800">We proved his job loss with termination letters.</p>
+                      <div className="w-8 h-8 bg-[#00488E] rounded-full flex items-center justify-center text-white font-bold mr-3 flex-shrink-0">2</div>
+                      <p className="text-xs font-medium text-gray-800">We proved his job loss with termination letters.</p>
                     </div>
                     <div className="flex items-center bg-blue-50 p-3 rounded-lg">
-                      <div className="w-8 h-8 bg-[#00488E] rounded-full flex items-center justify-center text-white font-bold mr-3">3</div>
-                      <p className="text-sm font-medium text-gray-800">Settled the ₹15L loan for ₹6.5L (43%).</p>
+                      <div className="w-8 h-8 bg-[#00488E] rounded-full flex items-center justify-center text-white font-bold mr-3 flex-shrink-0">3</div>
+                      <p className="text-xs font-medium text-gray-800">Settled the ₹15L loan for ₹6.5L (43%).</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Agricultural Loans - Unique Section */}
-          <div id="agri-loans" className="bg-[#00488E] text-white py-20 scroll-mt-32">
-            <div className="container mx-auto px-4 max-w-6xl">
-              <h2 className="text-3xl font-bold text-center mb-12">Agricultural & Kisan Credit Card (KCC) Loans</h2>
+            {/* Agricultural Loans - Unique Section */}
+            <div id="agri-loans" className="bg-[#00488E] text-white p-8 md:p-12 rounded-3xl mb-16 scroll-mt-32">
+              <h2 className="text-3xl font-bold text-center mb-12 flex items-center justify-center">
+                <FaTractor className="mr-3 text-[#F7A800]" />
+                Agricultural & KCC Loans
+              </h2>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="bg-white/10 p-8 rounded-xl backdrop-blur-sm border border-white/20">
-                  <FaTractor className="text-5xl text-[#F7A800] mb-6" />
-                  <h3 className="text-xl font-bold mb-3">Kisan Credit Card (KCC)</h3>
+                  <h3 className="text-xl font-bold mb-3 text-[#F7A800]">Kisan Credit Card (KCC)</h3>
                   <p className="text-white/80">
                     KCC loans are meant for cultivation. If crops fail due to weather or pests, you are eligible for relief. We help you prove "Agricultural Distress" to get interest waivers.
                   </p>
                 </div>
                 <div className="bg-white/10 p-8 rounded-xl backdrop-blur-sm border border-white/20">
-                  <FaShieldAlt className="text-5xl text-[#F7A800] mb-6" />
-                  <h3 className="text-xl font-bold mb-3">Agri-Gold Loans</h3>
+                  <h3 className="text-xl font-bold mb-3 text-[#F7A800]">Agri-Gold Loans</h3>
                   <p className="text-white/80">
                     Gold pledged for agricultural purposes has lower interest rates. If you default, the auction risk is high. We negotiate to give you time to sell the gold yourself at market rate.
                   </p>
                 </div>
                 <div className="bg-white/10 p-8 rounded-xl backdrop-blur-sm border border-white/20">
-                  <FaHandHoldingUsd className="text-5xl text-[#F7A800] mb-6" />
-                  <h3 className="text-xl font-bold mb-3">Rinn Mukti Schemes</h3>
+                  <h3 className="text-xl font-bold mb-3 text-[#F7A800]">Rinn Mukti Schemes</h3>
                   <p className="text-white/80">
                     Federal Bank occasionally launches special OTS schemes for farmers. We stay updated on these internal circulars to get you the best deal when available.
                   </p>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* What is OTS - Card Layout */}
-          <div id="understanding-settlement" className="container mx-auto px-4 py-20 max-w-6xl scroll-mt-32">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-[#00488E] mb-4">What is Federal Bank One Time Settlement (OTS)?</h2>
-              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                OTS is a legal agreement where Federal Bank accepts a reduced amount to close a loan account that has turned into a Non-Performing Asset (NPA). This is a win-win: you get debt free, and the bank cleans up its balance sheet.
-              </p>
+            {/* What is OTS - Card Layout */}
+            <div id="understanding-settlement" className="mb-16 scroll-mt-32">
+              <div className="text-center mb-10">
+                <h2 className="text-3xl font-bold text-[#00488E] mb-4">What is Federal Bank One Time Settlement (OTS)?</h2>
+                <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                  OTS is a legal agreement where Federal Bank accepts a reduced amount to close a loan account that has turned into a Non-Performing Asset (NPA). This is a win-win: you get debt free, and the bank cleans up its balance sheet.
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="bg-white p-6 rounded-xl shadow-lg border-b-4 border-[#F7A800]">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Principal Reduction</h3>
+                  <p className="text-gray-600">
+                    For unsecured loans (Personal, Business), we can often negotiate a reduction in the principal amount itself, not just the interest.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-lg border-b-4 border-[#F7A800]">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Interest Waiver</h3>
+                  <p className="text-gray-600">
+                    Penal interest, late fees, and accumulated interest are almost always waived off in a successful settlement.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-lg border-b-4 border-[#F7A800]">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Legal Closure</h3>
+                  <p className="text-gray-600">
+                    The settlement ensures that all legal proceedings (Civil Suits, DRT cases, Section 138 cases) are withdrawn by the bank.
+                  </p>
+                </div>
+              </div>
             </div>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-xl shadow-lg border-b-4 border-[#F7A800]">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Principal Reduction</h3>
-                <p className="text-gray-600">
-                  For unsecured loans (Personal, Business), we can often negotiate a reduction in the principal amount itself, not just the interest.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg border-b-4 border-[#F7A800]">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Interest Waiver</h3>
-                <p className="text-gray-600">
-                  Penal interest, late fees, and accumulated interest are almost always waived off in a successful settlement.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg border-b-4 border-[#F7A800]">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Legal Closure</h3>
-                <p className="text-gray-600">
-                  The settlement ensures that all legal proceedings (Civil Suits, DRT cases, Section 138 cases) are withdrawn by the bank.
-                </p>
-              </div>
-            </div>
-          </div>
 
-          {/* Eligibility Criteria */}
-          <div id="eligibility" className="bg-[#f8fafc] py-20 scroll-mt-32">
-            <div className="container mx-auto px-4 max-w-5xl">
+            {/* Eligibility Criteria */}
+            <div id="eligibility" className="bg-gray-50 p-8 md:p-12 rounded-3xl mb-16 scroll-mt-32">
               <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Who is Eligible for Settlement?</h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="bg-white p-8 rounded-xl shadow-md border border-gray-100">
@@ -386,89 +411,89 @@ export default function FederalBankLoanSettlementPage() {
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Process Section */}
-          <div id="settlement-process" className="container mx-auto px-4 py-20 max-w-4xl scroll-mt-32">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">
-              Our Settlement Process
-            </h2>
-            <div className="relative border-l-4 border-[#00488E] ml-6 md:ml-12 space-y-12">
-              {[
-                { title: "Consultation & Analysis", desc: "We analyze your loan type (NRI/Agri/Personal) and legal status." },
-                { title: "Authorization", desc: "You authorize us to represent you. For NRIs, this is done digitally." },
-                { title: "Proposal Submission", desc: "We submit a formal OTS proposal to the Regional/Zonal office." },
-                { title: "Negotiation", desc: "We negotiate with the bank's credit committee for the best possible waiver." },
-                { title: "Closure", desc: "You pay the settlement amount, and we ensure the No Dues Certificate is issued." }
-              ].map((item, index) => (
-                <div key={index} className="relative pl-8 md:pl-12">
-                  <div className="absolute -left-[14px] top-0 w-6 h-6 bg-[#F7A800] rounded-full border-4 border-white shadow-sm"></div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-600">{item.desc}</p>
-                </div>
-              ))}
+            {/* Process Section */}
+            <div id="settlement-process" className="mb-16 scroll-mt-32">
+              <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">
+                Our Settlement Process
+              </h2>
+              <div className="relative border-l-4 border-[#00488E] ml-6 md:ml-12 space-y-12">
+                {[
+                  { title: "Consultation & Analysis", desc: "We analyze your loan type (NRI/Agri/Personal) and legal status to determine the best settlement strategy." },
+                  { title: "Authorization", desc: "You authorize us to represent you. For NRIs, this is done digitally via email or Power of Attorney." },
+                  { title: "Proposal Submission", desc: "We submit a formal OTS proposal to the Regional or Zonal office, bypassing local branch delays." },
+                  { title: "Negotiation", desc: "We negotiate with the bank's credit committee for the best possible waiver, often involving multiple rounds." },
+                  { title: "Closure & NDC", desc: "You pay the settlement amount directly to the bank, and we ensure the No Dues Certificate is issued promptly." }
+                ].map((item, index) => (
+                  <div key={index} className="relative pl-8 md:pl-12">
+                    <div className="absolute -left-[14px] top-0 w-6 h-6 bg-[#F7A800] rounded-full border-4 border-white shadow-sm"></div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                    <p className="text-gray-600">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Required Documents */}
-          <div id="documents-required" className="bg-gray-50 py-20 scroll-mt-32">
-            <div className="container mx-auto px-4 max-w-5xl">
+            {/* Required Documents */}
+            <div id="documents-required" className="bg-gray-50 p-8 md:p-12 rounded-3xl mb-16 scroll-mt-32">
               <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Documents Required</h2>
               <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-200">
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
                     <h3 className="text-lg font-bold text-[#00488E] mb-4 border-b pb-2">General Documents</h3>
                     <ul className="space-y-2 text-gray-700">
-                      <li>• PAN Card & Aadhaar Card</li>
-                      <li>• Loan Account Statement</li>
-                      <li>• Bank Statements (last 6 months)</li>
+                      <li className="flex items-center"><FaCheckCircle className="mr-2 text-[#00488E]"/> PAN Card & Aadhaar Card</li>
+                      <li className="flex items-center"><FaCheckCircle className="mr-2 text-[#00488E]"/> Loan Account Statement</li>
+                      <li className="flex items-center"><FaCheckCircle className="mr-2 text-[#00488E]"/> Bank Statements (last 6 months)</li>
                     </ul>
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-[#00488E] mb-4 border-b pb-2">Specific Proofs</h3>
                     <ul className="space-y-2 text-gray-700">
-                      <li>• <strong>NRI:</strong> Passport copy, Visa termination letter.</li>
-                      <li>• <strong>Agri:</strong> Land records, proof of crop loss.</li>
-                      <li>• <strong>Business:</strong> GST returns, closure proof.</li>
-                      <li>• <strong>Medical:</strong> Doctor's certificate/bills.</li>
+                      <li className="flex items-center"><FaCheckCircle className="mr-2 text-[#00488E]"/> <strong>NRI:</strong> Passport copy, Visa termination letter.</li>
+                      <li className="flex items-center"><FaCheckCircle className="mr-2 text-[#00488E]"/> <strong>Agri:</strong> Land records, proof of crop loss.</li>
+                      <li className="flex items-center"><FaCheckCircle className="mr-2 text-[#00488E]"/> <strong>Business:</strong> GST returns, closure proof.</li>
+                      <li className="flex items-center"><FaCheckCircle className="mr-2 text-[#00488E]"/> <strong>Medical:</strong> Doctor's certificate/bills.</li>
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Legal Rights Section */}
-          <div id="legal-rights" className="container mx-auto px-4 py-20 max-w-5xl scroll-mt-32">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Legal Rights & Actions</h2>
-            <p className="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-              Federal Bank follows due process. Understanding their tools helps us defend you better.
-            </p>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-                <h3 className="text-xl font-bold text-[#00488E] mb-3">SARFAESI Act (Secured Loans)</h3>
-                <p className="text-gray-600 mb-4">
-                  For Home/LAP loans, they can issue a 13(2) notice. If unpaid for 60 days, they can take possession.
-                </p>
-                <p className="text-gray-900 font-semibold">
-                  <strong>Our Defense:</strong> We file objections to the notice, buying you time to negotiate or sell the asset yourself.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-                <h3 className="text-xl font-bold text-[#00488E] mb-3">Arbitration & DRT</h3>
-                <p className="text-gray-600 mb-4">
-                  For larger loans (&gt;20 Lakhs), they move to the Debt Recovery Tribunal (DRT). For smaller ones, they use Arbitration.
-                </p>
-                <p className="text-gray-900 font-semibold">
-                  <strong>Our Defense:</strong> We represent you in these forums to prove hardship and push for a settlement decree.
-                </p>
+            {/* Legal Rights Section */}
+            <div id="legal-rights" className="mb-16 scroll-mt-32">
+              <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Legal Rights & Actions</h2>
+              <p className="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+                Federal Bank follows due process. Understanding their tools helps us defend you better.
+              </p>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                  <h3 className="text-xl font-bold text-[#00488E] mb-3 flex items-center">
+                    <FaHome className="mr-2" /> SARFAESI Act (Secured Loans)
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    For Home/LAP loans, they can issue a 13(2) notice. If unpaid for 60 days, they can take possession.
+                  </p>
+                  <p className="text-gray-900 font-semibold bg-blue-50 p-3 rounded-lg text-sm">
+                    <strong>Our Defense:</strong> We file objections to the notice, buying you time to negotiate or sell the asset yourself.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                  <h3 className="text-xl font-bold text-[#00488E] mb-3 flex items-center">
+                    <FaGavel className="mr-2" /> Arbitration & DRT
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    For larger loans (&gt;20 Lakhs), they move to the Debt Recovery Tribunal (DRT). For smaller ones, they use Arbitration.
+                  </p>
+                  <p className="text-gray-900 font-semibold bg-blue-50 p-3 rounded-lg text-sm">
+                    <strong>Our Defense:</strong> We represent you in these forums to prove hardship and push for a settlement decree.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Restructuring vs Settlement */}
-          <div id="consequences" className="bg-[#00488E] text-white py-20 scroll-mt-32">
-            <div className="container mx-auto px-4 max-w-5xl">
+            {/* Restructuring vs Settlement */}
+            <div id="consequences" className="bg-[#00488E] text-white p-8 md:p-12 rounded-3xl mb-16 scroll-mt-32">
               <h2 className="text-3xl font-bold text-center mb-12">Restructuring vs. Settlement</h2>
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse bg-white/10 shadow-lg rounded-lg overflow-hidden text-white">
@@ -499,84 +524,82 @@ export default function FederalBankLoanSettlementPage() {
                 </table>
               </div>
             </div>
-          </div>
 
-          {/* CIBIL Impact */}
-          <div id="cibil-impact" className="container mx-auto px-4 py-20 max-w-4xl scroll-mt-32 text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">CIBIL Score Reality</h2>
-            <p className="text-lg text-gray-600 mb-8">
-              Settlement will reflect as "Settled" in your CIBIL report, dropping your score. However, this is a temporary setback. It stops the monthly "DPD" (Days Past Due) reporting which is far worse. We guide you on how to rebuild your score post-settlement.
-            </p>
-          </div>
-
-          {/* Why Choose Us */}
-          <div id="why-choose-us" className="bg-gray-50 py-20 scroll-mt-32">
-            <div className="container mx-auto px-4 max-w-6xl text-center">
-              <h2 className="text-3xl font-bold text-gray-900 mb-12">Why Choose AMA Legal Solutions?</h2>
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="bg-white p-8 rounded-xl shadow-md">
-                  <FaPlane className="text-5xl text-[#00488E] mx-auto mb-6" />
-                  <h3 className="text-xl font-bold mb-3">NRI Specialists</h3>
-                  <p className="text-gray-600">We have a dedicated team for handling NRI cases remotely, understanding the time zone and legal nuances.</p>
-                </div>
-                <div className="bg-white p-8 rounded-xl shadow-md">
-                  <FaTractor className="text-5xl text-[#00488E] mx-auto mb-6" />
-                  <h3 className="text-xl font-bold mb-3">Agri-Loan Experts</h3>
-                  <p className="text-gray-600">We know how to leverage government schemes and bank policies for farmers' relief.</p>
-                </div>
-                <div className="bg-white p-8 rounded-xl shadow-md">
-                  <FaGavel className="text-5xl text-[#00488E] mx-auto mb-6" />
-                  <h3 className="text-xl font-bold mb-3">Legal Defense</h3>
-                  <p className="text-gray-600">We don't just negotiate; we provide legal protection against harassment and court cases.</p>
-                </div>
-              </div>
+            {/* CIBIL Impact */}
+            <div id="cibil-impact" className="mb-16 scroll-mt-32 text-center">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">CIBIL Score Reality</h2>
+              <p className="text-lg text-gray-600 mb-8 max-w-4xl mx-auto">
+                Settlement will reflect as "Settled" in your CIBIL report, dropping your score. However, this is a temporary setback. It stops the monthly "DPD" (Days Past Due) reporting which is far worse. We guide you on how to rebuild your score post-settlement.
+              </p>
             </div>
-          </div>
 
-          {/* Testimonials Section */}
-          <div id="testimonials" className="container mx-auto px-4 py-20 max-w-6xl scroll-mt-32">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Success Stories</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 relative">
-                <div className="text-6xl text-blue-100 absolute top-4 left-4">"</div>
-                <p className="text-gray-700 italic mb-6 relative z-10 leading-relaxed">
-                  "I was stuck in Dubai with no job and a loan in Kerala. AMA Legal Solutions handled everything. I settled my 10 Lakh loan for 4.5 Lakhs without flying back."
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-[#00488E] rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
-                    M
+            {/* Why Choose Us */}
+            <div id="why-choose-us" className="bg-white mb-16 scroll-mt-32">
+              <div className="text-center">
+                <h2 className="text-3xl font-bold text-gray-900 mb-12">Why Choose AMA Legal Solutions?</h2>
+                <div className="grid md:grid-cols-3 gap-8">
+                  <div className="bg-gray-50 p-8 rounded-xl shadow-md">
+                    <FaPlane className="text-5xl text-[#00488E] mx-auto mb-6" />
+                    <h3 className="text-xl font-bold mb-3">NRI Specialists</h3>
+                    <p className="text-gray-600">We have a dedicated team for handling NRI cases remotely, understanding the time zone and legal nuances.</p>
                   </div>
-                  <div>
-                    <p className="font-bold text-gray-900">Mathew Thomas</p>
-                    <p className="text-sm text-gray-500">Ex-NRI, Dubai</p>
+                  <div className="bg-gray-50 p-8 rounded-xl shadow-md">
+                    <FaTractor className="text-5xl text-[#00488E] mx-auto mb-6" />
+                    <h3 className="text-xl font-bold mb-3">Agri-Loan Experts</h3>
+                    <p className="text-gray-600">We know how to leverage government schemes and bank policies for farmers' relief.</p>
                   </div>
-                </div>
-              </div>
-              <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 relative">
-                <div className="text-6xl text-blue-100 absolute top-4 left-4">"</div>
-                <p className="text-gray-700 italic mb-6 relative z-10 leading-relaxed">
-                  "My KCC loan was a burden after the floods. The bank was not listening. AMA Legal helped me prove my crop loss and got a huge interest waiver."
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-[#F7A800] rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
-                    R
-                  </div>
-                  <div>
-                    <p className="font-bold text-gray-900">Ramesh K.</p>
-                    <p className="text-sm text-gray-500">Farmer, Palakkad</p>
+                  <div className="bg-gray-50 p-8 rounded-xl shadow-md">
+                    <FaGavel className="text-5xl text-[#00488E] mx-auto mb-6" />
+                    <h3 className="text-xl font-bold mb-3">Legal Defense</h3>
+                    <p className="text-gray-600">We don't just negotiate; we provide legal protection against harassment and court cases.</p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* FAQ Section */}
-          <div id="faqs" className="container mx-auto px-4 py-20 max-w-4xl scroll-mt-32">
-            <FaqSection />
-          </div>
+            {/* Testimonials Section */}
+            <div id="testimonials" className="mb-16 scroll-mt-32">
+              <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Success Stories</h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 relative">
+                  <div className="text-6xl text-blue-100 absolute top-4 left-4">"</div>
+                  <p className="text-gray-700 italic mb-6 relative z-10 leading-relaxed">
+                    "I was stuck in Dubai with no job and a loan in Kerala. AMA Legal Solutions handled everything. I settled my 10 Lakh loan for 4.5 Lakhs without flying back."
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-[#00488E] rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                      M
+                    </div>
+                    <div>
+                      <p className="font-bold text-gray-900">Mathew Thomas</p>
+                      <p className="text-sm text-gray-500">Ex-NRI, Dubai</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 relative">
+                  <div className="text-6xl text-blue-100 absolute top-4 left-4">"</div>
+                  <p className="text-gray-700 italic mb-6 relative z-10 leading-relaxed">
+                    "My KCC loan was a burden after the floods. The bank was not listening. AMA Legal Solutions helped me prove my crop loss and got a huge interest waiver."
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-[#F7A800] rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                      R
+                    </div>
+                    <div>
+                      <p className="font-bold text-gray-900">Ramesh K.</p>
+                      <p className="text-sm text-gray-500">Farmer, Palakkad</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          {/* Final CTA */}
-          <div className="container mx-auto px-4 pb-20">
+            {/* FAQ Section */}
+            <div id="faqs" className="mb-16 scroll-mt-32">
+              <FaqSection />
+            </div>
+
+            {/* Final CTA */}
             <div className="bg-[#00488E] rounded-3xl p-10 md:p-16 text-center text-white shadow-2xl">
               <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Close Your Federal Bank Loan?</h2>
               <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
@@ -595,12 +618,12 @@ export default function FederalBankLoanSettlementPage() {
                 </a>
               </div>
             </div>
-          </div>
 
+          </div>
         </div>
         
         {/* States Grid */}
-        <div className="container mx-auto px-4 pb-10">
+        <div className="container mx-auto px-4 pb-10 mt-16">
           <GenericStatesGrid 
             serviceName="Loan Settlement" 
             servicePath="loan-settlement" 

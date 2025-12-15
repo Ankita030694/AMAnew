@@ -220,13 +220,13 @@ export default function AuSmallFinanceLoanSettlementPage() {
               Facing Issues with AU Small Finance Bank Loan Repayment?
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              <strong>AU Small Finance Bank</strong> is a prominent player in the Indian banking sector, known for its vehicle loans, small business loans, and personal banking services. However, financial instability can strike anyone. If you are struggling to pay your EMIs due to job loss, business failure, or medical emergencies, you are not alone.
+              <strong>AU Small Finance Bank</strong> is a major player in the Indian banking sector, widely used by small business owners, transporters, and individuals for vehicle and personal loans. However, economic downturns, business losses, or personal emergencies can disrupt your repayment schedule.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              Defaulting on a loan can lead to aggressive recovery tactics, including frequent calls, home visits, and even threats of vehicle seizure. Ignoring the problem will only lead to legal complications like arbitration or SARFAESI notices.
+              Defaulting on an AU Bank loan can be particularly stressful because of their aggressive approach towards <strong>vehicle repossession</strong> and <strong>arbitration proceedings</strong>. Ignoring the problem often leads to the bank seizing your commercial vehicle (your livelihood) or obtaining a legal award against you.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed">
-              At AMA Legal Solutions, we specialize in negotiating with banks like AU Small Finance Bank. We help you secure a <strong>One Time Settlement (OTS)</strong> that is affordable and legally binding, allowing you to clear your debt and regain your peace of mind.
+              At AMA Legal Solutions, we understand the stakes. We specialize in negotiating with AU Small Finance Bank to stop vehicle seizure, handle arbitration notices, and secure a <strong>One Time Settlement (OTS)</strong>. We aim to protect your assets and help you close the debt legally and affordably.
             </p>
           </div>
 
@@ -239,21 +239,21 @@ export default function AuSmallFinanceLoanSettlementPage() {
                   <FaCar className="text-5xl text-[#FFD700] mb-6" />
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Vehicle Loans</h3>
                   <p className="text-gray-600">
-                    Commercial or personal vehicle loans. We help prevent seizure and settle the outstanding amount.
+                    Commercial (Trucks, Taxis) or personal cars. We intervene to <strong>prevent seizure</strong> or negotiate release if already seized, followed by a settlement.
                   </p>
                 </div>
                 <div className="bg-white p-8 rounded-xl shadow-md border-t-4 border-[#6A1B9A] hover:shadow-xl transition-shadow">
                   <FaUserTie className="text-5xl text-[#FFD700] mb-6" />
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Personal Loans</h3>
                   <p className="text-gray-600">
-                    Unsecured personal loans taken for medical, wedding, or other personal needs.
+                    Unsecured personal loans taken for medical, wedding, or other needs. We help reduce the burden of high interest and late fees.
                   </p>
                 </div>
                 <div className="bg-white p-8 rounded-xl shadow-md border-t-4 border-[#6A1B9A] hover:shadow-xl transition-shadow">
                   <FaStore className="text-5xl text-[#FFD700] mb-6" />
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Business Loans</h3>
                   <p className="text-gray-600">
-                    Small business loans (MSME) or working capital loans that have turned into NPAs.
+                    MSME or working capital loans. If your business is down, we help you close the loan without losing your collateral (if any) through strategic negotiation.
                   </p>
                 </div>
               </div>
@@ -405,30 +405,30 @@ export default function AuSmallFinanceLoanSettlementPage() {
             </div>
           </div>
 
-          {/* Consequences of Default */}
+          {/* Consequences of Default & Legal Notices */}
           <div id="consequences" className="bg-gray-50 py-20 scroll-mt-32">
             <div className="container mx-auto px-4 max-w-5xl">
-              <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Consequences of Ignoring Debt</h2>
+              <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Understanding Legal Notices from AU Bank</h2>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="bg-white p-6 rounded-xl shadow-md border-t-4 border-red-500">
-                  <FaGavel className="text-4xl text-red-500 mb-4" />
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Legal Action</h3>
+                  <FaBalanceScale className="text-4xl text-red-500 mb-4" />
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Arbitration Notice</h3>
                   <p className="text-gray-600">
-                    Civil suits, SARFAESI action (for secured loans), and Section 138 cases for cheque bounce.
+                    AU Bank frequently uses arbitration clauses. This means a private judge (Arbitrator) is appointed to decide the case. <strong>Do not ignore this.</strong> An arbitration award is as powerful as a court decree.
                   </p>
                 </div>
                 <div className="bg-white p-6 rounded-xl shadow-md border-t-4 border-red-500">
-                  <FaBalanceScale className="text-4xl text-red-500 mb-4" />
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Arbitration</h3>
+                  <FaGavel className="text-4xl text-red-500 mb-4" />
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Section 138 (Cheque Bounce)</h3>
                   <p className="text-gray-600">
-                    The bank may initiate arbitration proceedings, leading to an award against you which can be executed as a court decree.
+                    If your EMI cheque or NACH bounces, they may file a criminal case under Section 138. This is a bailable offense but requires immediate legal attention to avoid an arrest warrant.
                   </p>
                 </div>
                 <div className="bg-white p-6 rounded-xl shadow-md border-t-4 border-red-500">
                   <FaCar className="text-4xl text-red-500 mb-4" />
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Asset Seizure</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Vehicle Repossession</h3>
                   <p className="text-gray-600">
-                    For secured loans, your pledged assets (car, property) can be seized and auctioned to recover dues.
+                    For vehicle loans, they may send agents to seize your vehicle. While they have rights, they must follow due process. We help you negotiate to stop the sale of your vehicle.
                   </p>
                 </div>
               </div>
@@ -450,18 +450,18 @@ export default function AuSmallFinanceLoanSettlementPage() {
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="bg-gray-50 p-8 rounded-xl shadow-md">
                   <FaUniversity className="text-5xl text-[#6A1B9A] mx-auto mb-6" />
-                  <h3 className="text-xl font-bold mb-3">Bank Negotiation Experts</h3>
-                  <p className="text-gray-600">We have extensive experience dealing with AU Small Finance Bank's recovery and legal teams.</p>
+                  <h3 className="text-xl font-bold mb-3">Arbitration Defense</h3>
+                  <p className="text-gray-600">We have a specialized legal team to represent you in arbitration proceedings initiated by AU Bank, ensuring your side is heard.</p>
                 </div>
                 <div className="bg-gray-50 p-8 rounded-xl shadow-md">
-                  <FaShieldAlt className="text-5xl text-[#6A1B9A] mx-auto mb-6" />
-                  <h3 className="text-xl font-bold mb-3">Legal Protection</h3>
-                  <p className="text-gray-600">We handle all legal notices and represent you in arbitration or court if necessary.</p>
+                  <FaCar className="text-5xl text-[#6A1B9A] mx-auto mb-6" />
+                  <h3 className="text-xl font-bold mb-3">Vehicle Protection</h3>
+                  <p className="text-gray-600">We know the legal tactics to delay or prevent vehicle auctions, giving you time to arrange for a settlement.</p>
                 </div>
                 <div className="bg-gray-50 p-8 rounded-xl shadow-md">
                   <FaHandHoldingUsd className="text-5xl text-[#6A1B9A] mx-auto mb-6" />
-                  <h3 className="text-xl font-bold mb-3">Maximum Savings</h3>
-                  <p className="text-gray-600">Our goal is to get you the maximum possible waiver on interest and penalties.</p>
+                  <h3 className="text-xl font-bold mb-3">Proven Negotiation</h3>
+                  <p className="text-gray-600">We deal directly with the bank's regional and central settlement teams to get you the best possible waiver on interest and penalties.</p>
                 </div>
               </div>
             </div>
@@ -474,7 +474,7 @@ export default function AuSmallFinanceLoanSettlementPage() {
               <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 relative">
                 <div className="text-6xl text-purple-100 absolute top-4 left-4">"</div>
                 <p className="text-gray-700 italic mb-6 relative z-10 leading-relaxed">
-                  "I had a commercial vehicle loan with AU Bank. Due to lack of business, I couldn't pay. They were about to seize my truck. AMA Legal helped me settle the loan and save my livelihood."
+                  "I had a commercial vehicle loan with AU Bank. Due to lack of business, I couldn't pay. They were about to seize my truck. AMA Legal Solutions helped me settle the loan and save my livelihood."
                 </p>
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-[#6A1B9A] rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">

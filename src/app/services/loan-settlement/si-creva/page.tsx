@@ -10,13 +10,13 @@ import { MdAppSettingsAlt, MdMoneyOff } from "react-icons/md";
 
 // Metadata
 export const metadata = {
-  title: "Si Creva Loan Settlement | Kissht & Ring App Loan OTS | AMA Legal",
+  title: "Si Creva Loan Settlement | Kissht & Ring App Loan OTS | AMA Legal Solutions",
   description: "Unable to repay Si Creva (Kissht/Ring) loan? Stop harassment and legal threats. Expert legal help for One Time Settlement (OTS) of digital loans.",
   alternates: {
     canonical: 'https://amalegalsolutions.com/services/loan-settlement/si-creva',
   },
   openGraph: {
-    title: "Si Creva Loan Settlement | Kissht & Ring App Loan OTS | AMA Legal",
+    title: "Si Creva Loan Settlement | Kissht & Ring App Loan OTS | AMA Legal Solutions",
     description: "Unable to repay Si Creva (Kissht/Ring) loan? Stop harassment and legal threats. Expert legal help for One Time Settlement (OTS) of digital loans.",
     url: "https://amalegalsolutions.com/services/loan-settlement/si-creva",
     type: "website",
@@ -125,7 +125,7 @@ const reviewSchema = {
         "@type": "Person",
         "name": "Rahul Verma"
       },
-      "reviewBody": "I was harassed by Kissht agents for months. AMA Legal stopped the calls and settled my loan with Si Creva for just the principal amount. Lifesavers!"
+      "reviewBody": "I was harassed by Kissht agents for months. AMA Legal Solutions stopped the calls and settled my loan with Si Creva for just the principal amount. Lifesavers!"
     }
   ]
 };
@@ -479,7 +479,7 @@ export default function SiCrevaLoanSettlementPage() {
                     <div className="text-[#00695C] text-xl mr-2">★★★★★</div>
                   </div>
                   <p className="text-gray-600 italic mb-6 leading-relaxed">
-                    "I took a small loan from Kissht which ballooned to ₹50,000 due to penalties. Agents were calling my office colleagues. AMA Legal stopped the calls and settled the loan for ₹20,000. I am so relieved."
+                    "I took a small loan from Kissht which ballooned to ₹50,000 due to penalties. Agents were calling my office colleagues. AMA Legal Solutions stopped the calls and settled the loan for ₹20,000. I am so relieved."
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600 text-xl">R</div>
@@ -494,7 +494,7 @@ export default function SiCrevaLoanSettlementPage() {
                     <div className="text-[#00695C] text-xl mr-2">★★★★★</div>
                   </div>
                   <p className="text-gray-600 italic mb-6 leading-relaxed">
-                    "Ring app agents were threatening me with a police case. I was scared. The lawyers at AMA Legal explained that it's a civil matter and handled the settlement professionally. Highly recommended."
+                    "Ring app agents were threatening me with a police case. I was scared. The lawyers at AMA Legal Solutions explained that it's a civil matter and handled the settlement professionally. Highly recommended."
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600 text-xl">S</div>

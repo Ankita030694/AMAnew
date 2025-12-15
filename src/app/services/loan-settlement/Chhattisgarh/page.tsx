@@ -108,7 +108,7 @@ const reviewSchema = {
         "@type": "Person",
         "name": "Rajesh S."
       },
-      "reviewBody": "I am a farmer in Durg. My crop failed and I couldn't pay my KCC loan. The bank was pressuring me. AMA Legal helped me settle the loan with a huge waiver. They saved my land."
+      "reviewBody": "I am a farmer in Durg. My crop failed and I couldn't pay my KCC loan. The bank was pressuring me. AMA Legal Solutions helped me settle the loan with a huge waiver. They saved my land."
     },
     {
       "@type": "Review",
@@ -495,7 +495,7 @@ export default function ChhattisgarhLoanSettlementPage() {
                     <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
                       <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
                       <p className="text-gray-700 italic mb-4 relative z-10">
-                        "I am a farmer in Durg. My crop failed and I couldn't pay my KCC loan. The bank was pressuring me. AMA Legal helped me settle the loan with a huge waiver. They saved my land."
+                        "I am a farmer in Durg. My crop failed and I couldn't pay my KCC loan. The bank was pressuring me. AMA Legal Solutions helped me settle the loan with a huge waiver. They saved my land."
                       </p>
                       <div className="flex items-center">
                         <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">R</div>

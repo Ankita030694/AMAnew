@@ -120,7 +120,7 @@ const reviewSchema = {
         "@type": "Person",
         "name": "Sanjukta D."
       },
-      "reviewBody": "Our SHG in Puri was unable to pay due to Cyclone Fani losses. The bank was harassing us. AMA Legal helped us restructure the loan and get a waiver on interest."
+      "reviewBody": "Our SHG in Puri was unable to pay due to Cyclone Fani losses. The bank was harassing us. AMA Legal Solutions helped us restructure the loan and get a waiver on interest."
     }
   ]
 };
@@ -508,7 +508,7 @@ export default function OdishaLoanSettlementPage() {
                     <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
                       <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
                       <p className="text-gray-700 italic mb-4 relative z-10">
-                        "Our SHG in Puri was unable to pay due to Cyclone Fani losses. The bank was harassing us. AMA Legal helped us restructure the loan and get a waiver on interest."
+                        "Our SHG in Puri was unable to pay due to Cyclone Fani losses. The bank was harassing us. AMA Legal Solutions helped us restructure the loan and get a waiver on interest."
                       </p>
                       <div className="flex items-center">
                         <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">S</div>

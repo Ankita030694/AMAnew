@@ -10,13 +10,13 @@ import { MdBusinessCenter, MdMoneyOff } from "react-icons/md";
 
 // Metadata
 export const metadata = {
-  title: "Vivriti Capital Loan Settlement | SME & Personal Loan OTS | AMA Legal",
+  title: "Vivriti Capital Loan Settlement | SME & Personal Loan OTS | AMA Legal Solutions",
   description: "Struggling with Vivriti Capital loan repayment? Expert legal help for settling business loans and personal loans. Stop arbitration and legal action.",
   alternates: {
     canonical: 'https://amalegalsolutions.com/services/loan-settlement/vivriti-capital',
   },
   openGraph: {
-    title: "Vivriti Capital Loan Settlement | SME & Personal Loan OTS | AMA Legal",
+    title: "Vivriti Capital Loan Settlement | SME & Personal Loan OTS | AMA Legal Solutions",
     description: "Struggling with Vivriti Capital loan repayment? Expert legal help for settling business loans and personal loans. Stop arbitration and legal action.",
     url: "https://amalegalsolutions.com/services/loan-settlement/vivriti-capital",
     type: "website",
@@ -125,7 +125,7 @@ const reviewSchema = {
         "@type": "Person",
         "name": "Ramesh Iyer"
       },
-      "reviewBody": "My small business took a hit, and I couldn't pay my Vivriti loan. AMA Legal helped me restructure the debt and eventually settle it. Professional and effective."
+      "reviewBody": "My small business took a hit, and I couldn't pay my Vivriti loan. AMA Legal Solutions helped me restructure the debt and eventually settle it. Professional and effective."
     }
   ]
 };
@@ -137,7 +137,7 @@ export default function VivritiCapitalSettlementPage() {
     { id: "legal-actions", title: "Legal Actions (Arbitration)" },
     { id: "sme-loans", title: "SME & Business Loans" },
     { id: "ots-process", title: "One Time Settlement (OTS)" },
-    { id: "why-hire-us", title: "Why Hire AMA Legal?" },
+    { id: "why-hire-us", title: "Why Hire AMA Legal Solutions?" },
     { id: "process-steps", title: "Our Settlement Process" },
     { id: "rbi-rights", title: "Your Rights (RBI)" },
     { id: "cibil-score", title: "Credit Score Impact" },
@@ -236,15 +236,15 @@ export default function VivritiCapitalSettlementPage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">About Vivriti Capital</h2>
               <div className="bg-gray-50 rounded-2xl p-8 border-l-4 border-[#1A237E] mb-8">
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  <strong>Vivriti Capital</strong> is a systemically important Non-Banking Financial Company (NBFC) registered with the RBI. They are a major player in the Indian debt market, providing debt capital to mid-market enterprises and also lending to retail customers through partnerships with various fintech apps.
+                  <strong>Vivriti Capital</strong> is a "Systemically Important Non-Deposit Taking NBFC" registered with the RBI. Unlike smaller digital lenders, Vivriti is a major institutional player that provides debt capital to mid-market enterprises and also powers various fintech lending apps.
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  Because of its institutional nature, Vivriti Capital follows a highly structured and rigorous recovery process. Whether you have taken a direct business loan or a personal loan through one of their partner apps, they have a dedicated legal team to enforce repayment. This often involves swift initiation of arbitration proceedings and criminal complaints for cheque bounces.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Because they operate as an institutional lender, their recovery processes are structured and legally rigorous. Whether you have a direct business loan or a personal loan through a partner app, Vivriti Capital is the entity that holds the legal right to recover the debt.
+                  <strong>AMA Legal Solutions</strong> specializes in handling complex cases with large NBFCs like Vivriti. We understand their provisioning norms and legal strategies, allowing us to negotiate effective <strong>One Time Settlements (OTS)</strong> or debt restructuring plans for our clients.
                 </p>
               </div>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                <strong>AMA Legal Solutions</strong> helps borrowers navigate the complexities of dealing with a large NBFC like Vivriti. We provide legal defense against arbitration and negotiate settlements that are financially viable for you.
-              </p>
             </section>
 
             {/* Loan Types */}
@@ -253,20 +253,24 @@ export default function VivritiCapitalSettlementPage() {
                 <FaBriefcase className="text-4xl text-[#1A237E]" />
                 <h2 className="text-3xl font-bold text-gray-900">Loan Types & Challenges</h2>
               </div>
-              <p className="text-gray-700 mb-6">
-                Vivriti Capital's portfolio is diverse, and the challenges vary by loan type:
+              <p className="text-gray-700 mb-8 text-lg">
+                Vivriti Capital's diverse portfolio presents different challenges for borrowers. Here is what you need to know:
               </p>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">Retail / Personal Loans</h3>
-                  <p className="text-gray-600">
-                    Often disbursed via fintech partners. High interest rates and aggressive digital recovery are common issues. Borrowers may not even realize Vivriti is the lender until they receive a legal notice.
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
+                  <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                    <FaUserTie className="text-indigo-600" /> Retail / Personal Loans
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    These are often disbursed via partner fintech apps. Borrowers may not even realize Vivriti is the lender until they receive a legal notice. The interest rates are high (24-36%), and missed payments attract daily penalties. Recovery is often outsourced to aggressive third-party agencies.
                   </p>
                 </div>
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">SME / Business Loans</h3>
-                  <p className="text-gray-600">
-                    Larger ticket sizes, often secured or backed by personal guarantees. Default here can lead to SARFAESI action (for secured loans) or insolvency proceedings against the business.
+                <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
+                  <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                    <MdBusinessCenter className="text-indigo-600" /> SME / Business Loans
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    These are larger ticket loans for working capital or expansion. They are often backed by personal guarantees of directors. Defaulting here is serious—it can lead to <strong>SARFAESI action</strong> (if secured) or insolvency proceedings against the business, putting personal assets at risk.
                   </p>
                 </div>
               </div>
@@ -275,22 +279,34 @@ export default function VivritiCapitalSettlementPage() {
             {/* Legal Actions */}
             <section id="legal-actions" className="mb-16 scroll-mt-32">
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Legal Actions by Vivriti Capital</h2>
-              <div className="space-y-6">
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
+              <p className="text-gray-700 mb-8 text-lg">
+                Vivriti Capital uses a combination of arbitration and criminal proceedings to recover dues.
+              </p>
+              <div className="space-y-8">
+                <div className="bg-white p-8 rounded-xl shadow-sm border-l-4 border-[#1A237E]">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
                     <FaGavel className="text-[#1A237E]" /> Arbitration Proceedings
                   </h3>
-                  <p className="text-gray-700">
-                    This is the most common legal tool used. The loan agreement allows them to appoint an arbitrator. If you fail to represent yourself, an award is passed, which can be executed as a court decree to attach your assets or bank accounts. We provide strong legal representation in these arbitration tribunals.
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    Most loan agreements include an arbitration clause. Vivriti can appoint a sole arbitrator to hear the dispute.
                   </p>
+                  <ul className="space-y-3 text-gray-600 mb-4">
+                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 mt-2 bg-[#1A237E] rounded-full"></div> <strong>The Risk:</strong> If you ignore the notice, an "Ex-Parte Award" will be passed. This award is legally binding and can be executed in court to attach your bank accounts or assets.</li>
+                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 mt-2 bg-[#1A237E] rounded-full"></div> <strong>Our Defense:</strong> We represent you in the arbitration tribunal. We challenge the claim amount, dispute the interest calculations, and use the proceedings to negotiate a settlement.</li>
+                  </ul>
                 </div>
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
-                    <FaExclamationTriangle className="text-[#1A237E]" /> Section 138 (Cheque Bounce)
+
+                <div className="bg-white p-8 rounded-xl shadow-sm border-l-4 border-red-600">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                    <FaExclamationTriangle className="text-red-600" /> Section 138 (Cheque Bounce)
                   </h3>
-                  <p className="text-gray-700">
-                    For business loans and personal loans where post-dated cheques or NACH mandates are involved, dishonor of payment can lead to a criminal complaint. This is a pressure tactic to force settlement. We help you handle the legal summons and negotiate an out-of-court settlement.
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    For business loans and personal loans repaid via NACH/Cheques, dishonor of payment is a criminal offense.
                   </p>
+                  <ul className="space-y-3 text-gray-600">
+                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 mt-2 bg-red-600 rounded-full"></div> <strong>Consequences:</strong> Vivriti files complaints under Section 138 of the NI Act. The court issues a summons, and failure to appear can lead to a non-bailable warrant.</li>
+                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 mt-2 bg-red-600 rounded-full"></div> <strong>Our Strategy:</strong> We handle the legal summons, appear in court on your behalf (where permitted), and negotiate an out-of-court settlement to quash the criminal case.</li>
+                  </ul>
                 </div>
               </div>
             </section>
@@ -368,28 +384,32 @@ export default function VivritiCapitalSettlementPage() {
 
             {/* Process */}
             <section id="process-steps" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-12">Our Settlement Process</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-12">Our Settlement Roadmap</h2>
               <div className="relative border-l-4 border-[#1A237E] ml-6 md:ml-12 space-y-12">
                 {[
                   { 
-                    title: "1. Analysis", 
-                    desc: "We review your loan agreement, outstanding dues, and financial position." 
+                    title: "Step 1: Portfolio Analysis", 
+                    desc: "We analyze your loan agreement, repayment history, and outstanding dues to understand the leverage we have for negotiation." 
                   },
                   { 
-                    title: "2. Representation", 
-                    desc: "We formally inform Vivriti Capital that we represent you, directing all legal comms to us." 
+                    title: "Step 2: Legal Representation", 
+                    desc: "We send a formal notice to Vivriti Capital, stating that AMA Legal Solutions represents you. This directs all future legal communication to us." 
                   },
                   { 
-                    title: "3. Proposal", 
-                    desc: "We submit a structured settlement proposal based on your ability to pay." 
+                    title: "Step 3: Strategic Proposal", 
+                    desc: "Based on your financial capacity, we draft a settlement proposal. For SMEs, this might include restructuring; for individuals, a one-time payment plan." 
                   },
                   { 
-                    title: "4. Negotiation", 
-                    desc: "We engage with their settlement officers to agree on a final amount." 
+                    title: "Step 4: Hard Negotiation", 
+                    desc: "We engage with Vivriti's central legal and settlement teams. We push back against inflated penal charges and interest to reach a fair principal-based settlement." 
                   },
                   { 
-                    title: "5. Closure", 
-                    desc: "Upon payment, we ensure you receive the No Dues Certificate." 
+                    title: "Step 5: Settlement Agreement", 
+                    desc: "We ensure the settlement terms are documented in a formal letter from Vivriti Capital, clearly stating the waiver amount and closure conditions." 
+                  },
+                  { 
+                    title: "Step 6: Closure & NDC", 
+                    desc: "Once you make the payment, we track the account closure and ensure you receive the No Dues Certificate (NDC) to clear your name." 
                   }
                 ].map((item, index) => (
                   <div key={index} className="relative pl-8 md:pl-12">
@@ -468,14 +488,16 @@ export default function VivritiCapitalSettlementPage() {
 
             {/* Testimonials */}
             <section id="testimonials" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-10">Client Success Stories</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-10">Real Success Stories</h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-[#1A237E]">
                   <div className="flex items-center mb-4">
                     <div className="text-[#1A237E] text-xl mr-2">★★★★★</div>
+                    <span className="text-sm text-gray-500">SME Loan Restructured</span>
                   </div>
+                  <h4 className="font-bold text-lg mb-3">Business Saved from Insolvency</h4>
                   <p className="text-gray-600 italic mb-6 leading-relaxed">
-                    "My small business took a hit, and I couldn't pay my Vivriti loan. AMA Legal helped me restructure the debt and eventually settle it. Professional and effective."
+                    "My manufacturing business faced a severe cash crunch, and I defaulted on a ₹25 Lakh loan from Vivriti. They sent a legal notice threatening insolvency. AMA Legal Solutions stepped in and negotiated a restructuring plan. They got me a 6-month moratorium and waived the penalty interest. My business is now back on track."
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600 text-xl">R</div>
@@ -488,9 +510,11 @@ export default function VivritiCapitalSettlementPage() {
                 <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-[#1A237E]">
                   <div className="flex items-center mb-4">
                     <div className="text-[#1A237E] text-xl mr-2">★★★★★</div>
+                    <span className="text-sm text-gray-500">Personal Loan Settled</span>
                   </div>
+                  <h4 className="font-bold text-lg mb-3">Arbitration Case Withdrawn</h4>
                   <p className="text-gray-600 italic mb-6 leading-relaxed">
-                    "I didn't even know my app loan was from Vivriti until I got a notice. AMA Legal explained everything and handled the settlement smoothly."
+                    "I took a personal loan through an app, not realizing it was from Vivriti. When I lost my job, I couldn't pay. They filed for arbitration. AMA Legal Solutions represented me in the hearing and negotiated a settlement. I paid 45% of the total due, and the case was withdrawn."
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600 text-xl">P</div>

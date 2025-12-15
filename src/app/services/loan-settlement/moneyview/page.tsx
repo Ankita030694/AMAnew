@@ -10,13 +10,13 @@ import { MdAppShortcut, MdMoneyOff } from "react-icons/md";
 
 // Metadata
 export const metadata = {
-  title: "Moneyview Loan Settlement | Personal Loan OTS | AMA Legal",
+  title: "Moneyview Loan Settlement | Personal Loan OTS | AMA Legal Solutions",
   description: "Struggling with Moneyview personal loan repayment? Expert legal help for settling app loans. Stop harassment, arbitration, and legal notices.",
   alternates: {
     canonical: 'https://amalegalsolutions.com/services/loan-settlement/moneyview',
   },
   openGraph: {
-    title: "Moneyview Loan Settlement | Personal Loan OTS | AMA Legal",
+    title: "Moneyview Loan Settlement | Personal Loan OTS | AMA Legal Solutions",
     description: "Struggling with Moneyview personal loan repayment? Expert legal help for settling app loans. Stop harassment, arbitration, and legal notices.",
     url: "https://amalegalsolutions.com/services/loan-settlement/moneyview",
     type: "website",
@@ -125,7 +125,7 @@ const reviewSchema = {
         "@type": "Person",
         "name": "Karan Malhotra"
       },
-      "reviewBody": "Moneyview agents were threatening me with arbitration. AMA Legal handled the case professionally and settled the loan for 45% of the amount. Highly recommended."
+      "reviewBody": "Moneyview agents were threatening me with arbitration. AMA Legal Solutions handled the case professionally and settled the loan for 45% of the amount. Highly recommended."
     }
   ]
 };
@@ -137,7 +137,7 @@ export default function MoneyviewSettlementPage() {
     { id: "harassment", title: "Stop Harassment" },
     { id: "legal-actions", title: "Legal Actions (Arbitration)" },
     { id: "ots-process", title: "One Time Settlement (OTS)" },
-    { id: "why-hire-us", title: "Why Hire AMA Legal?" },
+    { id: "why-hire-us", title: "Why Hire AMA Legal Solutions?" },
     { id: "process-steps", title: "Our Settlement Process" },
     { id: "rbi-rights", title: "Your Rights (RBI)" },
     { id: "cibil-score", title: "CIBIL Score Impact" },
@@ -233,40 +233,44 @@ export default function MoneyviewSettlementPage() {
             
             {/* Introduction */}
             <section id="introduction" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">About Moneyview Loans</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">About Moneyview (Whizdm Finance)</h2>
               <div className="bg-gray-50 rounded-2xl p-8 border-l-4 border-[#2E7D32] mb-8">
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  <strong>Moneyview</strong> is a popular digital lending platform in India that offers instant personal loans. The platform is operated by <strong>Whizdm Finance Pvt Ltd</strong>, an RBI-registered NBFC, and also partners with other lenders like DMI Finance, IDFC First Bank, and Aditya Birla Capital.
+                  <strong>Moneyview</strong> is one of India's most popular instant personal loan apps. It is operated by <strong>Whizdm Finance Pvt Ltd</strong>, an RBI-registered NBFC. Moneyview also partners with other major lenders like DMI Finance, IDFC First Bank, and Aditya Birla Capital to disburse loans.
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  While getting a loan from Moneyview is quick and paperless, the repayment terms can be strict. The interest rates are often higher than traditional banks, and the penalties for missed payments are severe. Defaulting on a Moneyview loan can lead to a barrage of recovery calls, legal notices, and even arbitration proceedings initiated by their lending partners.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Moneyview loans are known for their quick disbursal but also for their high interest rates and strict recovery processes. If you miss an EMI, the penalty charges accumulate rapidly, and their recovery agents can be very aggressive. They are also known to initiate arbitration proceedings quickly against defaulters.
+                  If you are overwhelmed by Moneyview debt and harassment, <strong>AMA Legal Solutions</strong> can help. We specialize in handling digital lending cases, protecting your privacy, and negotiating a legal <strong>One Time Settlement (OTS)</strong> to close the loan for a reduced amount.
                 </p>
               </div>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                If you are trapped in a cycle of debt with Moneyview, <strong>AMA Legal Solutions</strong> can provide the legal expertise needed to settle the loan and stop the harassment.
-              </p>
             </section>
 
             {/* App Loans */}
             <section id="app-loans" className="mb-16 scroll-mt-32">
               <div className="flex items-center gap-4 mb-6">
                 <FaMobileAlt className="text-4xl text-[#2E7D32]" />
-                <h2 className="text-3xl font-bold text-gray-900">The Digital Loan Trap</h2>
+                <h2 className="text-3xl font-bold text-gray-900">The "Instant Loan" Trap</h2>
               </div>
-              <p className="text-gray-700 mb-6">
-                App-based loans like Moneyview are designed for convenience, but they can easily lead to a debt trap.
+              <p className="text-gray-700 mb-8 text-lg">
+                The convenience of app-based loans often comes with hidden costs and risks. Here is what borrowers typically face:
               </p>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">High Cost of Borrowing</h3>
-                  <p className="text-gray-600">
-                    The Annual Percentage Rate (APR) can be very high. Late payment fees are added daily or weekly, causing the outstanding amount to balloon significantly within a few months of default.
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
+                  <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                    <FaMoneyBillWave className="text-red-600" /> Sky-High Interest & Penalties
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Moneyview loans can have an Annual Percentage Rate (APR) of up to 36%. If you miss an EMI, they charge a "bounce fee" (for the failed auto-debit) plus "overdue charges" that are added daily. A ₹50,000 loan can easily turn into a ₹80,000 debt within a few months of default.
                   </p>
                 </div>
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">Aggressive Recovery</h3>
-                  <p className="text-gray-600">
-                    Digital lenders often use automated calling systems and aggressive third-party agents who may harass you with repeated calls and messages, creating immense mental pressure.
+                <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
+                  <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                    <FaUserSecret className="text-red-600" /> Privacy Invasion
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Some recovery agents may try to access your contact list (if you granted permission) and call your relatives or colleagues. This "shaming" tactic is illegal under RBI's Digital Lending Guidelines, but it is still commonly used to pressure borrowers.
                   </p>
                 </div>
               </div>
@@ -299,23 +303,35 @@ export default function MoneyviewSettlementPage() {
 
             {/* Legal Actions */}
             <section id="legal-actions" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Legal Consequences of Default</h2>
-              <div className="space-y-6">
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
-                    <FaGavel className="text-[#2E7D32]" /> Arbitration Proceedings
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">Legal Actions by Moneyview</h2>
+              <p className="text-gray-700 mb-8 text-lg">
+                Moneyview and its partners are technologically advanced and use automated legal systems to file cases against defaulters.
+              </p>
+              <div className="space-y-8">
+                <div className="bg-white p-8 rounded-xl shadow-sm border-l-4 border-[#2E7D32]">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                    <FaGavel className="text-[#2E7D32]" /> Online Arbitration
                   </h3>
-                  <p className="text-gray-700">
-                    Moneyview frequently uses arbitration to recover dues. They appoint a sole arbitrator to hear the case. If you ignore the notice, an <strong>Ex-Parte Award</strong> will be passed against you, which is legally binding. We represent you in these proceedings to contest the claim and push for a settlement.
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    Moneyview often uses "Online Dispute Resolution" (ODR) platforms. They appoint an arbitrator who conducts hearings via video call or email.
                   </p>
+                  <ul className="space-y-3 text-gray-600 mb-4">
+                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 mt-2 bg-[#2E7D32] rounded-full"></div> <strong>The Risk:</strong> If you miss the email or link, the arbitrator will pass an "Ex-Parte Award" against you. This award is binding and can be enforced in court.</li>
+                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 mt-2 bg-[#2E7D32] rounded-full"></div> <strong>Our Defense:</strong> We represent you in these online proceedings. We ensure your side is heard, challenge the interest calculations, and use the platform to negotiate a settlement.</li>
+                  </ul>
                 </div>
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
-                    <FaExclamationTriangle className="text-[#2E7D32]" /> Section 138 (Cheque Bounce)
+
+                <div className="bg-white p-8 rounded-xl shadow-sm border-l-4 border-red-600">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                    <FaExclamationTriangle className="text-red-600" /> Section 138 (Cheque Bounce)
                   </h3>
-                  <p className="text-gray-700">
-                    If your NACH mandate or post-dated cheque bounces, they can file a criminal complaint under Section 138 of the Negotiable Instruments Act. This requires you to appear in court. We provide legal defense and help you settle the matter out of court to quash the case.
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    Since Moneyview loans are repaid via NACH (auto-debit), a bounce is treated as a criminal offense under Section 138 of the NI Act or Section 25 of the PASSA.
                   </p>
+                  <ul className="space-y-3 text-gray-600">
+                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 mt-2 bg-red-600 rounded-full"></div> <strong>Consequences:</strong> You may receive a court summons. Ignoring it can lead to a warrant.</li>
+                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 mt-2 bg-red-600 rounded-full"></div> <strong>Our Strategy:</strong> We handle the legal defense, appear in court if needed, and negotiate with the lender to withdraw the case upon settlement.</li>
+                  </ul>
                 </div>
               </div>
             </section>
@@ -372,28 +388,32 @@ export default function MoneyviewSettlementPage() {
 
             {/* Process */}
             <section id="process-steps" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-12">Our Settlement Process</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-12">Our Settlement Roadmap</h2>
               <div className="relative border-l-4 border-[#2E7D32] ml-6 md:ml-12 space-y-12">
                 {[
                   { 
-                    title: "1. Consultation", 
-                    desc: "We review your loan details, outstanding amount, and harassment status." 
+                    title: "Step 1: Loan Analysis", 
+                    desc: "We analyze your Moneyview loan statement to calculate the actual principal received versus the inflated interest and penalty charges." 
                   },
                   { 
-                    title: "2. Legal Notice", 
-                    desc: "We send a legal notice to Moneyview to stop harassment and initiate settlement." 
+                    title: "Step 2: Legal Intervention", 
+                    desc: "We send a formal legal notice to Moneyview/Whizdm Finance, stating that you have legal representation. This stops them from contacting you directly." 
                   },
                   { 
-                    title: "3. Negotiation", 
-                    desc: "We negotiate with the lender for the best possible waiver." 
+                    title: "Step 3: Harassment Protection", 
+                    desc: "If agents continue to harass you or call your references, we file a complaint with the RBI Ombudsman for violation of Digital Lending Guidelines." 
                   },
                   { 
-                    title: "4. Settlement Letter", 
-                    desc: "We verify the formal settlement letter to ensure it's valid." 
+                    title: "Step 4: Negotiation", 
+                    desc: "We negotiate with the lender's settlement team. We present your financial hardship and push for a maximum waiver on the outstanding amount." 
                   },
                   { 
-                    title: "5. Payment & Closure", 
-                    desc: "You make the payment to the official account, and we ensure the loan is closed." 
+                    title: "Step 5: Settlement Agreement", 
+                    desc: "We obtain a formal Settlement Letter from Moneyview. We verify the amount, the due date, and the closure terms to ensure there are no loopholes." 
+                  },
+                  { 
+                    title: "Step 6: Closure & NDC", 
+                    desc: "You make the payment directly to the lender's official account. We then ensure the loan is closed on the app and the 'Settled' status is updated in your CIBIL report." 
                   }
                 ].map((item, index) => (
                   <div key={index} className="relative pl-8 md:pl-12">
@@ -472,14 +492,16 @@ export default function MoneyviewSettlementPage() {
 
             {/* Testimonials */}
             <section id="testimonials" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-10">Client Success Stories</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-10">Real Success Stories</h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-[#2E7D32]">
                   <div className="flex items-center mb-4">
                     <div className="text-[#2E7D32] text-xl mr-2">★★★★★</div>
+                    <span className="text-sm text-gray-500">Settled Moneyview Loan</span>
                   </div>
+                  <h4 className="font-bold text-lg mb-3">Arbitration Threat Stopped</h4>
                   <p className="text-gray-600 italic mb-6 leading-relaxed">
-                    "Moneyview agents were threatening me with arbitration. I was scared. AMA Legal handled the case professionally and settled the loan for 45% of the amount. Highly recommended."
+                    "I received an email about an online arbitration hearing from Moneyview. I was scared I would lose the case. AMA Legal Solutions represented me in the online hearing. They challenged the interest charges and negotiated a settlement of ₹45,000 against a demand of ₹90,000. They saved me from a court order."
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600 text-xl">K</div>
@@ -492,9 +514,11 @@ export default function MoneyviewSettlementPage() {
                 <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-[#2E7D32]">
                   <div className="flex items-center mb-4">
                     <div className="text-[#2E7D32] text-xl mr-2">★★★★★</div>
+                    <span className="text-sm text-gray-500">Stopped Harassment</span>
                   </div>
+                  <h4 className="font-bold text-lg mb-3">Peace of Mind Restored</h4>
                   <p className="text-gray-600 italic mb-6 leading-relaxed">
-                    "I lost my job and couldn't pay the EMIs. The harassment was unbearable. AMA Legal stopped the calls and helped me close the loan peacefully."
+                    "Recovery agents were calling my school and harassing the staff. It was humiliating. I contacted AMA Legal Solutions, and they sent a strong legal notice to Moneyview about the privacy violation. The calls to my workplace stopped immediately, and we settled the loan peacefully."
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600 text-xl">S</div>

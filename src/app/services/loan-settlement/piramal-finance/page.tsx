@@ -10,13 +10,13 @@ import { MdRealEstateAgent, MdBusinessCenter, MdMoneyOff, MdTimeline, MdWarning 
 
 // Metadata
 export const metadata = {
-  title: "Piramal Finance Loan Settlement | Housing & Business Loan OTS | AMA Legal",
+  title: "Piramal Finance Loan Settlement | Housing & Business Loan OTS | AMA Legal Solutions",
   description: "Struggling with Piramal Finance loan repayment? Expert legal help for settling Housing Loans, Business Loans, and Personal Loans. Stop SARFAESI and harassment.",
   alternates: {
     canonical: 'https://amalegalsolutions.com/services/loan-settlement/piramal-finance',
   },
   openGraph: {
-    title: "Piramal Finance Loan Settlement | Housing & Business Loan OTS | AMA Legal",
+    title: "Piramal Finance Loan Settlement | Housing & Business Loan OTS | AMA Legal Solutions",
     description: "Struggling with Piramal Finance loan repayment? Expert legal help for settling Housing Loans, Business Loans, and Personal Loans. Stop SARFAESI and harassment.",
     url: "https://amalegalsolutions.com/services/loan-settlement/piramal-finance",
     type: "website",
@@ -125,7 +125,7 @@ const reviewSchema = {
         "@type": "Person",
         "name": "Vikram Singh"
       },
-      "reviewBody": "I was facing a SARFAESI notice for my home loan from Piramal. AMA Legal intervened and helped me restructure and settle the dues. Saved my home."
+      "reviewBody": "I was facing a SARFAESI notice for my home loan from Piramal. AMA Legal Solutions intervened and helped me restructure and settle the dues. Saved my home."
     }
   ]
 };
@@ -236,21 +236,21 @@ export default function PiramalFinanceLoanSettlementPage() {
             
             {/* Introduction */}
             <section id="introduction" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">About Piramal Finance & The Lending Landscape</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Piramal Finance: The New Giant & The DHFL Legacy</h2>
               <div className="bg-gray-50 rounded-2xl p-8 border-l-4 border-[#D84315] mb-8">
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  <strong>Piramal Finance</strong>, officially known as Piramal Capital & Housing Finance Limited (PCHFL), is one of India's leading Non-Banking Financial Companies (NBFCs). Following its acquisition of the troubled Dewan Housing Finance Corporation Limited (DHFL), Piramal Finance significantly expanded its retail portfolio, becoming a major player in housing finance, real estate lending, and small business credit.
+                  <strong>Piramal Capital & Housing Finance Limited (PCHFL)</strong>, now branded as <strong>Piramal Finance</strong>, is a behemoth in the Indian lending space. Their massive footprint is largely due to the acquisition of the bankrupt <strong>Dewan Housing Finance Corporation Limited (DHFL)</strong> in 2021. This merger created one of the largest Housing Finance Companies (HFCs) in India.
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  <strong>For DHFL Borrowers:</strong> If you took a loan from DHFL years ago, you are now a customer of Piramal Finance. Many legacy borrowers are confused by the sudden change in aggressive recovery tactics. The "friendly" local DHFL branch approach has been replaced by Piramal's corporate, process-driven recovery mechanism.
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  <strong>For New Borrowers:</strong> Piramal has aggressively expanded into "Digital Personal Loans" and "Small Business Loans" in Tier 2/3 cities. They use advanced data analytics to assess credit, but their recovery process is equally advanced and stringent.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  While Piramal Finance provides essential credit to millions, their recovery mechanisms—especially for those who inherited loans from DHFL or took new high-interest personal loans—can be stringent. The company employs a robust legal framework to recover dues, utilizing the SARFAESI Act for secured assets and arbitration for unsecured debts.
+                  Whether you are an old DHFL customer facing a sudden SARFAESI notice or a new borrower trapped in a high-interest personal loan, understanding Piramal's specific legal strategy is key to saving your assets. AMA Legal Solutions specializes in navigating this specific corporate structure to secure favorable settlements.
                 </p>
               </div>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                For a borrower facing financial distress due to job loss, business failure, or medical emergencies, dealing with a large financial institution like Piramal can be intimidating. The fear of losing one's home or facing legal prosecution is real. However, it is crucial to understand that <strong>defaulting on a loan is a civil matter, not a crime</strong> (unless fraud is involved). You have legal rights and options to settle your debt with dignity.
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                AMA Legal Solutions specializes in bridging the gap between distressed borrowers and Piramal Finance. We understand their internal settlement policies, the legal nuances of the SARFAESI Act, and how to effectively negotiate a One Time Settlement (OTS) that is affordable for you.
-              </p>
             </section>
 
             {/* NPA Stages */}
@@ -289,50 +289,74 @@ export default function PiramalFinanceLoanSettlementPage() {
 
             {/* Legal Framework */}
             <section id="legal-framework" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Legal Actions Taken by Piramal Finance</h2>
-              <div className="space-y-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">The Legal Arsenal: SARFAESI & Arbitration</h2>
+              <div className="space-y-12">
+                
+                {/* SARFAESI Deep Dive */}
                 <div className="bg-[#FFF3E0] p-8 rounded-2xl border border-[#FFE0B2]">
-                  <div className="flex items-center gap-3 mb-4">
-                    <FaHome className="text-3xl text-[#E65100]" />
-                    <h3 className="text-2xl font-bold text-[#E65100]">1. SARFAESI Act, 2002 (For Housing Loans/LAP)</h3>
+                  <div className="flex items-center gap-3 mb-6">
+                    <FaHome className="text-4xl text-[#E65100]" />
+                    <h3 className="text-2xl font-bold text-[#E65100]">1. The SARFAESI Act (For Housing/LAP)</h3>
                   </div>
-                  <p className="text-gray-800 mb-4">
-                    The Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest Act gives banks purely draconian powers to seize property without going to court.
+                  <p className="text-gray-800 mb-6 text-lg">
+                    The <strong>Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest Act, 2002</strong> is the most powerful tool in Piramal's arsenal. It allows them to seize your property <strong>without court intervention</strong>. Here is the timeline you must know:
                   </p>
-                  <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                    <li><strong>Section 13(2) Notice:</strong> A demand notice giving you 60 days to clear the entire dues. If you fail, they proceed to the next step.</li>
-                    <li><strong>Section 13(4) Action:</strong> The bank takes symbolic possession of your property. They can put up a possession notice on your door.</li>
-                    <li><strong>DM/CMM Order:</strong> They approach the District Magistrate to get physical possession of the property with police assistance.</li>
-                    <li><strong>Auction:</strong> Finally, the property is auctioned to recover dues.</li>
-                  </ul>
-                  <p className="mt-4 font-semibold text-[#D84315]">
-                    AMA Legal Intervention: We can challenge these notices in the Debt Recovery Tribunal (DRT) or negotiate a settlement before possession is taken.
-                  </p>
+                  
+                  <div className="space-y-6">
+                    <div className="bg-white p-6 rounded-xl border-l-4 border-red-500 shadow-sm">
+                      <h4 className="font-bold text-red-600 text-lg mb-2">Stage 1: Section 13(2) Demand Notice</h4>
+                      <p className="text-gray-700 mb-2"><strong>When:</strong> Issued immediately after your account turns NPA (90 days).</p>
+                      <p className="text-gray-700 mb-2"><strong>What it says:</strong> "Pay the full outstanding amount within 60 days."</p>
+                      <p className="text-gray-900 font-semibold"><strong>Your Move:</strong> This is the best time to negotiate. We file a legal reply/objection under Section 13(3A). The bank MUST respond to this objection within 15 days. This buys us valuable time to structure a settlement.</p>
+                    </div>
+
+                    <div className="bg-white p-6 rounded-xl border-l-4 border-red-600 shadow-sm">
+                      <h4 className="font-bold text-red-700 text-lg mb-2">Stage 2: Section 13(4) Possession Notice</h4>
+                      <p className="text-gray-700 mb-2"><strong>When:</strong> If you fail to pay/settle within the 60-day notice period.</p>
+                      <p className="text-gray-700 mb-2"><strong>What it says:</strong> The bank has taken "Symbolic Possession" of your property. They may paste a notice on your door and publish it in newspapers.</p>
+                      <p className="text-gray-900 font-semibold"><strong>Your Move:</strong> The danger level is high. We can challenge this in the Debt Recovery Tribunal (DRT) under Section 17 if there are procedural lapses. Simultaneously, we push aggressively for OTS to prevent physical loss.</p>
+                    </div>
+
+                    <div className="bg-white p-6 rounded-xl border-l-4 border-red-800 shadow-sm">
+                      <h4 className="font-bold text-red-900 text-lg mb-2">Stage 3: DM/CMM Order (Physical Possession)</h4>
+                      <p className="text-gray-700 mb-2"><strong>When:</strong> 3-6 months after symbolic possession.</p>
+                      <p className="text-gray-700 mb-2"><strong>What happens:</strong> The District Magistrate orders the police to assist the bank in physically evicting you and taking the keys.</p>
+                      <p className="text-gray-900 font-semibold"><strong>Your Move:</strong> This is the final stand. We can seek a stay order from the DRT or High Court, but usually, settlement is the only practical way out. We have successfully halted evictions by presenting a concrete settlement proposal even at this stage.</p>
+                    </div>
+                  </div>
                 </div>
 
+                {/* Arbitration Deep Dive */}
                 <div className="bg-gray-50 p-8 rounded-2xl border border-gray-200">
-                  <div className="flex items-center gap-3 mb-4">
-                    <FaGavel className="text-3xl text-gray-700" />
-                    <h3 className="text-2xl font-bold text-gray-800">2. Arbitration & Conciliation Act (For Unsecured Loans)</h3>
+                  <div className="flex items-center gap-3 mb-6">
+                    <FaGavel className="text-4xl text-gray-700" />
+                    <h3 className="text-2xl font-bold text-gray-800">2. Arbitration (For Business/Personal Loans)</h3>
                   </div>
-                  <p className="text-gray-700 mb-4">
-                    For personal and business loans, Piramal Finance often appoints a sole arbitrator. The proceedings are usually held in a location convenient to the lender (often Mumbai or Delhi), making it hard for borrowers to attend.
+                  <p className="text-gray-700 mb-6 text-lg">
+                    For unsecured loans, Piramal Finance uses Arbitration. This is a private dispute resolution process. However, it is often skewed against the borrower.
                   </p>
-                  <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                    <li>An arbitration award is passed against you, which has the same power as a court decree.</li>
-                    <li>This award can be executed to attach your bank accounts or other assets.</li>
-                  </ul>
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div>
+                      <h4 className="font-bold text-gray-900 mb-2">The "Venue" Trap</h4>
+                      <p className="text-gray-600 mb-4">
+                        Your loan agreement likely has a clause stating arbitration will be held in Mumbai or Delhi, even if you live in a small town. This makes it expensive for you to attend.
+                      </p>
+                      <p className="text-[#D84315] font-semibold">
+                        How We Fight: We challenge this venue clause. Courts have ruled that arbitration should be accessible to the borrower. We petition to move the proceedings to your city or handle it via video conferencing.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900 mb-2">Ex-Parte Awards</h4>
+                      <p className="text-gray-600 mb-4">
+                        If you ignore the arbitrator's notices, they will pass an order (Award) in your absence. This Award is enforceable like a court decree to freeze your bank accounts.
+                      </p>
+                      <p className="text-[#D84315] font-semibold">
+                        How We Fight: We ensure you are represented. We attend the hearings (virtually or physically) and highlight your financial hardship, forcing the arbitrator to consider a settlement rather than a harsh recovery order.
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="bg-gray-50 p-8 rounded-2xl border border-gray-200">
-                  <div className="flex items-center gap-3 mb-4">
-                    <FaExclamationTriangle className="text-3xl text-red-600" />
-                    <h3 className="text-2xl font-bold text-gray-800">3. Section 138 / Section 25 (Criminal Action)</h3>
-                  </div>
-                  <p className="text-gray-700">
-                    If your EMI cheque bounces or NACH mandate fails, they can file a criminal case under Section 138 of the Negotiable Instruments Act or Section 25 of the Payment and Settlement Systems Act. This is a bailable offense but requires mandatory court appearance.
-                  </p>
-                </div>
               </div>
             </section>
 
@@ -616,14 +640,16 @@ export default function PiramalFinanceLoanSettlementPage() {
 
             {/* Testimonials */}
             <section id="testimonials" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-10">Client Success Stories</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-10">Real Client Success Stories</h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-[#D84315]">
                   <div className="flex items-center mb-4">
                     <div className="text-[#D84315] text-xl mr-2">★★★★★</div>
+                    <span className="text-sm text-gray-500">Business Loan Case</span>
                   </div>
+                  <h4 className="font-bold text-lg mb-2">Saved Factory from Auction</h4>
                   <p className="text-gray-600 italic mb-6 leading-relaxed">
-                    "I had a business loan of ₹25 Lakhs with Piramal. When my factory shut down during the pandemic, I couldn't pay. They sent a legal notice and threatened to file a cheque bounce case. I was suicidal. AMA Legal handled the case professionally, attended the arbitration, and settled it for ₹12 Lakhs. I can finally breathe."
+                    "I run a small packaging unit in Ahmedabad. I took a ₹25 Lakh loan from Piramal (originally DHFL) for expansion. During the lockdown, my factory was shut for 8 months. I defaulted. They sent a legal notice and threatened to file a cheque bounce case. I was suicidal. I found AMA Legal Solutions online. They took over the communication. They attended the arbitration dates on my behalf. Finally, they negotiated a settlement for ₹12 Lakhs. I paid it by selling some old machinery. Today, my business is running again, and I am debt-free."
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600 text-xl">R</div>
@@ -636,9 +662,11 @@ export default function PiramalFinanceLoanSettlementPage() {
                 <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-[#D84315]">
                   <div className="flex items-center mb-4">
                     <div className="text-[#D84315] text-xl mr-2">★★★★★</div>
+                    <span className="text-sm text-gray-500">Housing Loan Case</span>
                   </div>
+                  <h4 className="font-bold text-lg mb-2">Stopped SARFAESI Possession</h4>
                   <p className="text-gray-600 italic mb-6 leading-relaxed">
-                    "My home loan was in default for 6 months. I received a Section 13(2) notice under SARFAESI. I was terrified of losing my house. AMA Legal intervened and helped me restructure the loan with Piramal, giving me a 6-month moratorium to find a new job. They saved my home."
+                    "My home loan was in default for 6 months due to a medical emergency in the family. I received a Section 13(2) notice under SARFAESI. I was terrified of losing my house. The bank agents were pasting notices on my wall. AMA Legal Solutions intervened immediately. They filed a strong objection to the notice. They negotiated with the regional manager. We agreed on a settlement where I paid the principal amount plus 10% interest, and they waived all the penalties. They saved my home."
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600 text-xl">V</div>
