@@ -307,6 +307,8 @@ function generateFAQSchema(faqs: any[], blogData: any) {
 }
 
 function generateArticleSchema(blogData: any, faqs: any[], reviews: any[]) {
+  const isOrganizationAuthor = !blogData.author || blogData.author === "AMA Legal Solutions";
+  
   const baseSchema: any = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -317,7 +319,7 @@ function generateArticleSchema(blogData: any, faqs: any[], reviews: any[]) {
     "datePublished": blogData.date,
     "dateModified": blogData.date,
     "author": {
-      "@type": "Person",
+      "@type": isOrganizationAuthor ? "Organization" : "Person",
       "name": blogData.author || "AMA Legal Solutions",
       "url": blogData.author === "Anuj Anand Malik" ? "https://amalegalsolutions.com/author/anuj-anand-malik" : 
             blogData.author === "Shrey Arora" ? "https://amalegalsolutions.com/author/shrey-arora" : 
@@ -349,20 +351,6 @@ function generateArticleSchema(blogData: any, faqs: any[], reviews: any[]) {
     };
   }
 
-  // Add AggregateRating if reviews exist
-  if (reviews.length > 0) {
-    const totalRating = reviews.reduce((acc: number, review: any) => acc + review.rating, 0);
-    const avgRating = (totalRating / reviews.length).toFixed(1);
-    
-    baseSchema.aggregateRating = {
-      "@type": "AggregateRating",
-      "ratingValue": avgRating,
-      "reviewCount": reviews.length,
-      "bestRating": "5",
-      "worstRating": "1"
-    };
-  }
-
   return baseSchema;
 }
 
@@ -374,12 +362,12 @@ function generateReviewSchema(reviews: any[], blogData: any) {
 
   return {
     "@context": "https://schema.org",
-    "@type": "Product", // Google recommends Product or LocalBusiness for aggregate ratings
+    "@type": "Service",
     "name": blogData.title,
     "image": blogData.image || "https://amalegalsolutions.com/logo.png",
     "description": blogData.metaDescription || blogData.subtitle,
-    "brand": {
-      "@type": "Brand",
+    "provider": {
+      "@type": "Organization",
       "name": "AMA Legal Solutions"
     },
     "aggregateRating": {
