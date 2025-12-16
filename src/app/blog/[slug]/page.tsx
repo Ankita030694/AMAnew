@@ -1,7 +1,7 @@
 import { collection, getDocs, query, where, limit, orderBy } from "firebase/firestore";
 import { db } from "../../../lib/firebase";
 import type { Metadata, ResolvingMetadata } from "next";
-import ArticleDetail from "./blogdetail";
+import ArticleDetail, { Blog, FAQ, Review } from "./blogdetail";
 import Script from "next/script";
 import { unstable_cache } from 'next/cache';
 import PerformanceMonitor from '../../../components/PerformanceMonitor';
@@ -9,6 +9,7 @@ import PerformanceMonitor from '../../../components/PerformanceMonitor';
 // Enhanced cache with TTL (Time To Live)
 const blogCache = new Map<string, { data: any; timestamp: number }>();
 const faqCache = new Map<string, { data: any[]; timestamp: number }>();
+const reviewCache = new Map<string, { data: any[]; timestamp: number }>();
 const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 
 // Helper function to check if cache entry is valid
@@ -25,7 +26,6 @@ const getBlogBySlug = unstable_cache(async (slug: string) => {
   }
 
   try {
-    // Use where clause to query only the specific blog
     const blogsCollection = collection(db, "blogs");
     const q = query(blogsCollection, where("slug", "==", slug), limit(1));
     const querySnapshot = await getDocs(q);
@@ -49,24 +49,98 @@ const getBlogBySlug = unstable_cache(async (slug: string) => {
   tags: ['blogs']
 });
 
-// Dynamic metadata generation - optimized with proper querying
+// Function to fetch FAQs server-side with enhanced caching
+const getBlogFAQs = unstable_cache(async (blogId: string) => {
+  const cached = faqCache.get(blogId);
+  if (cached && isCacheValid(cached.timestamp)) {
+    return cached.data;
+  }
+
+  try {
+    const faqsSnapshot = await getDocs(collection(db, 'blogs', blogId, 'faqs'));
+    const faqs = faqsSnapshot.docs.map(doc => ({
+      id: doc.id,
+      question: doc.data().question || '',
+      answer: doc.data().answer || ''
+    }));
+    
+    faqCache.set(blogId, { data: faqs, timestamp: Date.now() });
+    return faqs;
+  } catch (error) {
+    console.error("Error fetching FAQs:", error);
+    return [];
+  }
+}, ['blog-faqs'], {
+  revalidate: 300,
+  tags: ['faqs']
+});
+
+// Function to fetch Reviews server-side
+const getBlogReviews = unstable_cache(async (blogId: string) => {
+  const cached = reviewCache.get(blogId);
+  if (cached && isCacheValid(cached.timestamp)) {
+    return cached.data;
+  }
+
+  try {
+    const reviewsSnapshot = await getDocs(collection(db, 'blogs', blogId, 'reviews'));
+    const reviews = reviewsSnapshot.docs.map(doc => ({
+      id: doc.id,
+      name: doc.data().name || '',
+      rating: doc.data().rating || 5,
+      review: doc.data().review || ''
+    }));
+    
+    reviewCache.set(blogId, { data: reviews, timestamp: Date.now() });
+    return reviews;
+  } catch (error) {
+    console.error("Error fetching Reviews:", error);
+    return [];
+  }
+}, ['blog-reviews'], {
+  revalidate: 300,
+  tags: ['reviews']
+});
+
+// Function to fetch Related Blogs
+const getRelatedBlogs = async (excludeId: string) => {
+  try {
+    const blogsCollection = collection(db, 'blogs');
+    const q = query(
+      blogsCollection, 
+      orderBy('created', 'desc'), 
+      limit(6) // Fetch a few more to filter
+    );
+    const querySnapshot = await getDocs(q);
+    
+    const allBlogs = querySnapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    })) as Blog[];
+    
+    // Filter out current blog and take top 3
+    return allBlogs.filter(blog => blog.id !== excludeId).slice(0, 3);
+  } catch (error) {
+    console.error("Error fetching related blogs:", error);
+    return [];
+  }
+};
+
+// Dynamic metadata generation
 export async function generateMetadata(
   props: { params: Promise<{ slug: string }> },
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const { slug } = await props.params;
 
-  // Default metadata in case we can't find the blog
   let title = "Blog Post | AMA Legal Solutions";
   let description = "Read our latest insights and articles at AMA Legal Solutions";
   let image = "";
   let author = "AMA Legal Solutions";
 
-  // Base URL for canonical link
   const baseUrl = "https://amalegalsolutions.com";
 
   try {
-    // Use optimized function to fetch blog data
     const blogData = await getBlogBySlug(slug);
     
     if (blogData) {
@@ -113,7 +187,7 @@ export async function generateMetadata(
   };
 }
 
-// Updated Page component - optimized
+// Updated Page component
 export default async function Page({
   params,
 }: {
@@ -122,143 +196,96 @@ export default async function Page({
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
 
-  // Get the blog data and FAQs server-side
-  let pageTitle = "Latest Insights from AMA Legal Solutions";
   let blogData = null;
-  let faqs: any[] = [];
+  let faqs: FAQ[] = [];
+  let reviews: Review[] = [];
+  let relatedBlogs: Blog[] = [];
+  
   let faqSchema = null;
   let articleSchema = null;
+  let reviewSchema = null;
+  let breadcrumbSchema = null;
 
   try {
     blogData = await getBlogBySlug(slug);
     if (blogData) {
-      pageTitle = blogData.title || pageTitle;
-      faqs = await getBlogFAQs(blogData.id) || [];
+      // Fetch related data in parallel
+      const [fetchedFaqs, fetchedReviews, fetchedRelated] = await Promise.all([
+        getBlogFAQs(blogData.id),
+        getBlogReviews(blogData.id),
+        getRelatedBlogs(blogData.id)
+      ]);
+
+      faqs = fetchedFaqs;
+      reviews = fetchedReviews;
+      relatedBlogs = fetchedRelated;
+
+      // Generate Schemas
       faqSchema = generateFAQSchema(faqs, blogData);
-      articleSchema = generateArticleSchema(blogData, faqs);
+      articleSchema = generateArticleSchema(blogData, faqs, reviews);
+      reviewSchema = generateReviewSchema(reviews, blogData);
+      breadcrumbSchema = generateBreadcrumbSchema(blogData);
     }
   } catch (error) {
     console.error("Error fetching blog data:", error);
   }
 
+  if (!blogData) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-900">Article Not Found</h1>
+          <p className="text-gray-600 mt-2">The article you are looking for does not exist.</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <>
       <PerformanceMonitor />
-      {/* Server-side rendered FAQ Schema */}
+      {/* Schemas */}
       {faqSchema && (
         <Script
           id="blog-faq-schema"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqSchema)
-          }}
-          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
-      
-      {/* Server-side rendered Article Schema */}
       {articleSchema && (
         <Script
           id="blog-article-schema"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(articleSchema)
-          }}
-          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        />
+      )}
+      {reviewSchema && (
+        <Script
+          id="blog-review-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+        />
+      )}
+      {breadcrumbSchema && (
+        <Script
+          id="blog-breadcrumb-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
       )}
       
-      <header>
-        <h1 className="sr-only">AMA Legal Insights</h1>
-        <ArticleDetail slug={slug} />
-        {/* Styled Disclaimer Section */}
-        <div className="my-12 px-6 py-8 bg-gray-50 rounded-xl border border-gray-200 shadow-sm text-center">
-          <h3 className="text-[#5A4C33] text-xl font-medium mb-4 text-center">
-            Disclaimer
-          </h3>
-          <div className="text-gray-700 text-sm leading-relaxed space-y-4">
-            <p>
-              The information provided on this website www.amalegalsolutions.com
-              is for general informational purposes only and should not be
-              considered legal, financial, or professional advice. While we
-              strive to ensure that the content is accurate and up to date, we
-              do not guarantee the completeness, reliability, or accuracy of any
-              information.
-            </p>
-            <p>
-              Any reliance you place on the information provided is strictly at
-              your own risk. AMA Legal Solutions, its founders, employees, or
-              affiliates shall be held liable for any losses, damages, or legal
-              consequences arising from the use of this website or any linked
-              resources.
-            </p>
-            <p>
-              The content on this website does not establish a client-attorney
-              relationship. If you require legal or financial assistance, we
-              strongly recommend consulting with a qualified professional. Any
-              discussions, consultations, or assessments provided through this
-              website or related services are for preliminary guidance only.
-            </p>
-            <p>
-              Our services are subject to applicable laws and regulations, and
-              results may vary depending on individual circumstances. We do not
-              guarantee specific outcomes for loan settlements, debt
-              negotiations, or legal proceedings.
-            </p>
-            <p>
-              Additionally, this website may contain links to third-party
-              websites for additional information or reference. We do not
-              endorse or assume responsibility for the content, privacy
-              policies, or practices of these external websites.
-            </p>
-            <p className="font-medium">
-              By using this website, you acknowledge and agree to this
-              disclaimer. If you do not agree with any part of this notice,
-              please refrain from using our services. For legal assistance or
-              inquiries, please contact us at{" "}
-              <a
-                href="mailto:notify@amalegalsolutions.com"
-                className="text-[#D2A02A] hover:underline"
-              >
-                notify@amalegalsolutions.com
-              </a>
-            </p>
-          </div>
-        </div>
-      </header>
+      <ArticleDetail 
+        blog={blogData as Blog} 
+        faqs={faqs} 
+        reviews={reviews} 
+        relatedBlogs={relatedBlogs}
+      />
     </>
   );
 }
 
-// Function to fetch FAQs server-side with enhanced caching
-const getBlogFAQs = unstable_cache(async (blogId: string) => {
-  // Check cache first with TTL validation
-  const cached = faqCache.get(blogId);
-  if (cached && isCacheValid(cached.timestamp)) {
-    return cached.data;
-  }
+// Schema Generators
 
-  try {
-    const faqsSnapshot = await getDocs(collection(db, 'blogs', blogId, 'faqs'));
-    const faqs = faqsSnapshot.docs.map(doc => ({
-      id: doc.id,
-      question: doc.data().question || '',
-      answer: doc.data().answer || ''
-    }));
-    
-    // Cache the result with timestamp
-    faqCache.set(blogId, { data: faqs, timestamp: Date.now() });
-    return faqs;
-  } catch (error) {
-    console.error("Error fetching FAQs:", error);
-    return [];
-  }
-}, ['blog-faqs'], {
-  revalidate: 300, // 5 minutes
-  tags: ['faqs']
-});
-
-// Function to generate FAQ schema
 function generateFAQSchema(faqs: any[], blogData: any) {
   if (faqs.length === 0) return null;
 
@@ -273,14 +300,13 @@ function generateFAQSchema(faqs: any[], blogData: any) {
       "name": faq.question,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": faq.answer.replace(/<[^>]*>/g, '') // Strip HTML tags
+        "text": faq.answer.replace(/<[^>]*>/g, '')
       }
     }))
   };
 }
 
-// Function to generate article schema
-function generateArticleSchema(blogData: any, faqs: any[]) {
+function generateArticleSchema(blogData: any, faqs: any[], reviews: any[]) {
   const baseSchema: any = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -315,7 +341,6 @@ function generateArticleSchema(blogData: any, faqs: any[]) {
     "inLanguage": "en-IN"
   };
 
-  // Add image if available
   if (blogData.image) {
     baseSchema.image = {
       "@type": "ImageObject",
@@ -324,6 +349,82 @@ function generateArticleSchema(blogData: any, faqs: any[]) {
     };
   }
 
-  // Note: FAQ schema is handled separately, not embedded in article
+  // Add AggregateRating if reviews exist
+  if (reviews.length > 0) {
+    const totalRating = reviews.reduce((acc: number, review: any) => acc + review.rating, 0);
+    const avgRating = (totalRating / reviews.length).toFixed(1);
+    
+    baseSchema.aggregateRating = {
+      "@type": "AggregateRating",
+      "ratingValue": avgRating,
+      "reviewCount": reviews.length,
+      "bestRating": "5",
+      "worstRating": "1"
+    };
+  }
+
   return baseSchema;
+}
+
+function generateReviewSchema(reviews: any[], blogData: any) {
+  if (reviews.length === 0) return null;
+
+  const totalRating = reviews.reduce((acc: number, review: any) => acc + review.rating, 0);
+  const avgRating = (totalRating / reviews.length).toFixed(1);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product", // Google recommends Product or LocalBusiness for aggregate ratings
+    "name": blogData.title,
+    "image": blogData.image || "https://amalegalsolutions.com/logo.png",
+    "description": blogData.metaDescription || blogData.subtitle,
+    "brand": {
+      "@type": "Brand",
+      "name": "AMA Legal Solutions"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": avgRating,
+      "reviewCount": reviews.length
+    },
+    "review": reviews.map(review => ({
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": review.rating.toString()
+      },
+      "author": {
+        "@type": "Person",
+        "name": review.name
+      },
+      "reviewBody": review.review
+    }))
+  };
+}
+
+function generateBreadcrumbSchema(blogData: any) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://amalegalsolutions.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://amalegalsolutions.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": blogData.title,
+        "item": `https://amalegalsolutions.com/blog/${blogData.slug}`
+      }
+    ]
+  };
 }

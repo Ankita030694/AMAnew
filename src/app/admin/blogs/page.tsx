@@ -36,7 +36,16 @@ interface Blog {
   metaDescription?: string;
   slug: string; // New slug field for URLs
   faqs?: FAQ[]; // New field for FAQs
+  reviews?: Review[]; // New field for Reviews
   author: string; // New author field
+}
+
+// Define Review interface
+interface Review {
+  id?: string;
+  name: string;
+  rating: number;
+  review: string;
 }
 
 const BlogsDashboard = () => {
@@ -55,6 +64,7 @@ const BlogsDashboard = () => {
     metaDescription: '',
     slug: '', // Initialize the slug field
     faqs: [], // Initialize empty FAQs array
+    reviews: [], // Initialize empty Reviews array
     author: 'Anuj Anand Malik' // Default author changed from 'Team AMA'
   });
   const [uploading, setUploading] = useState(false);
@@ -129,6 +139,7 @@ const BlogsDashboard = () => {
             metaDescription: docData.metaDescription || '',
             slug: docData.slug || '',
             faqs: docData.faqs || [],
+            reviews: docData.reviews || [],
             author: docData.author || 'Anuj Anand Malik'
           };
         });
@@ -227,6 +238,37 @@ const BlogsDashboard = () => {
       return {
         ...prevState,
         faqs: updatedFaqs
+      };
+    });
+  };
+
+  // Add Review to the blog
+  const addReview = () => {
+    setNewBlog(prevState => ({
+      ...prevState,
+      reviews: [...(prevState.reviews || []), { name: '', rating: 5, review: '' }]
+    }));
+  };
+
+  // Remove Review from the blog
+  const removeReview = (index: number) => {
+    setNewBlog(prevState => ({
+      ...prevState,
+      reviews: (prevState.reviews || []).filter((_, i) => i !== index)
+    }));
+  };
+
+  // Handle Review input changes
+  const handleReviewChange = (index: number, field: keyof Review, value: string | number) => {
+    setNewBlog(prevState => {
+      const updatedReviews = [...(prevState.reviews || [])];
+      updatedReviews[index] = { 
+        ...updatedReviews[index], 
+        [field]: value 
+      };
+      return {
+        ...prevState,
+        reviews: updatedReviews
       };
     });
   };
@@ -381,8 +423,8 @@ const BlogsDashboard = () => {
         date: new Date(newBlog.date).toISOString().split('T')[0] // Ensure date is in YYYY-MM-DD format
       };
       
-      // Remove faqs from the main document since we'll store them in a subcollection
-      const { faqs, ...blogData } = blogWithMetadata;
+      // Remove faqs and reviews from the main document since we'll store them in subcollections
+      const { faqs, reviews, ...blogData } = blogWithMetadata;
       
       let blogId = newBlog.id;
       
@@ -416,6 +458,26 @@ const BlogsDashboard = () => {
           });
         }
       }
+
+      // Add Reviews to subcollection
+      if (blogId && reviews && reviews.length > 0) {
+        // First delete existing Reviews if updating
+        if (formMode === 'edit') {
+          const reviewsSnapshot = await getDocs(collection(db, 'blogs', blogId, 'reviews'));
+          for (const doc of reviewsSnapshot.docs) {
+            await deleteDoc(doc.ref);
+          }
+        }
+        
+        // Add all Reviews to subcollection
+        for (const review of reviews) {
+          await addDoc(collection(db, 'blogs', blogId, 'reviews'), {
+            name: review.name,
+            rating: review.rating,
+            review: review.review
+          });
+        }
+      }
       
       // Reset form and show table
       resetForm();
@@ -436,6 +498,7 @@ const BlogsDashboard = () => {
           metaDescription: docData.metaDescription || '',
           slug: docData.slug || '', // Get the slug from database
           faqs: [], // Initialize empty faqs array
+          reviews: [], // Initialize empty reviews array
           author: docData.author || 'Anuj Anand Malik' // Default author changed from 'Team AMA'
         };
       });
@@ -457,7 +520,16 @@ const BlogsDashboard = () => {
         answer: doc.data().answer || ''
       }));
       
-      setNewBlog({...blog, faqs});
+      // Fetch Reviews for this blog
+      const reviewsSnapshot = await getDocs(collection(db, 'blogs', blog.id!, 'reviews'));
+      const reviews = reviewsSnapshot.docs.map(doc => ({
+        id: doc.id,
+        name: doc.data().name || '',
+        rating: doc.data().rating || 5,
+        review: doc.data().review || ''
+      }));
+      
+      setNewBlog({...blog, faqs, reviews});
       setFormMode('edit');
       setShowBlogForm(true);
     } catch (error) {
@@ -536,6 +608,7 @@ const BlogsDashboard = () => {
       metaDescription: '',
       slug: '', // Reset slug field
       faqs: [], // Reset FAQs array
+      reviews: [], // Reset Reviews array
       author: 'Anuj Anand Malik' // Default author changed from 'Team AMA'
     });
     setFormMode('add');
@@ -934,6 +1007,71 @@ const BlogsDashboard = () => {
                         Add FAQ
                       </motion.button>
                       <p className="mt-2 text-xs text-gray-500">Add frequently asked questions related to this blog post.</p>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-[#5A4C33] mb-1">Review Snippets</label>
+                    <div className="border border-gray-300 rounded-md p-4 bg-gray-50">
+                      {/* Display existing Reviews */}
+                      {(newBlog.reviews || []).map((review, index) => (
+                        <div key={index} className="mb-4 p-4 bg-white rounded-md shadow-sm relative">
+                          <button
+                            type="button"
+                            onClick={() => removeReview(index)}
+                            className="absolute top-2 right-2 text-red-500 hover:text-red-700"
+                          >
+                            <FontAwesomeIcon icon={faTrash} />
+                          </button>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+                            <div>
+                              <label className="block text-xs font-medium text-[#5A4C33] mb-1">Reviewer Name</label>
+                              <input
+                                type="text"
+                                value={review.name}
+                                onChange={(e) => handleReviewChange(index, 'name', e.target.value)}
+                                className="text-black w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
+                                placeholder="Name"
+                              />
+                            </div>
+                            <div>
+                              <label className="block text-xs font-medium text-[#5A4C33] mb-1">Rating</label>
+                              <select
+                                value={review.rating}
+                                onChange={(e) => handleReviewChange(index, 'rating', parseInt(e.target.value))}
+                                className="text-black w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
+                              >
+                                {[1, 2, 3, 4, 5].map(num => (
+                                  <option key={num} value={num}>{num} Stars</option>
+                                ))}
+                              </select>
+                            </div>
+                          </div>
+                          <div>
+                            <label className="block text-xs font-medium text-[#5A4C33] mb-1">Review Text</label>
+                            <textarea
+                              value={review.review}
+                              onChange={(e) => handleReviewChange(index, 'review', e.target.value)}
+                              rows={2}
+                              className="text-black w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
+                              placeholder="Enter review text"
+                            />
+                          </div>
+                        </div>
+                      ))}
+                      
+                      {/* Add Review button */}
+                      <motion.button
+                        type="button"
+                        onClick={addReview}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="mt-2 px-4 py-2 bg-[#D2A02A] text-white rounded-md text-sm font-medium flex items-center"
+                      >
+                        <FontAwesomeIcon icon={faPlus} className="mr-2" />
+                        Add Review
+                      </motion.button>
+                      <p className="mt-2 text-xs text-gray-500">Add client reviews to display on the blog page.</p>
                     </div>
                   </div>
                   
