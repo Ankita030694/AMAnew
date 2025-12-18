@@ -201,10 +201,7 @@ export default async function Page({
   let reviews: Review[] = [];
   let relatedBlogs: Blog[] = [];
   
-  let faqSchema = null;
-  let articleSchema = null;
-  let reviewSchema = null;
-  let breadcrumbSchema = null;
+  let combinedSchema = null;
 
   try {
     blogData = await getBlogBySlug(slug);
@@ -220,11 +217,8 @@ export default async function Page({
       reviews = fetchedReviews;
       relatedBlogs = fetchedRelated;
 
-      // Generate Schemas
-      faqSchema = generateFAQSchema(faqs, blogData);
-      articleSchema = generateArticleSchema(blogData, faqs, reviews);
-      reviewSchema = generateReviewSchema(reviews, blogData);
-      breadcrumbSchema = generateBreadcrumbSchema(blogData);
+      // Generate Combined Schema
+      combinedSchema = generateCombinedSchema(blogData, faqs, reviews);
     }
   } catch (error) {
     console.error("Error fetching blog data:", error);
@@ -244,35 +238,15 @@ export default async function Page({
   return (
     <>
       <PerformanceMonitor />
-      {/* Schemas */}
-      {faqSchema && (
+      {/* Combined Schema */}
+      {combinedSchema && (
         <Script
-          id="blog-faq-schema"
+          id="blog-combined-schema"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema) }}
         />
       )}
-      {articleSchema && (
-        <Script
-          id="blog-article-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-        />
-      )}
-      {reviewSchema && (
-        <Script
-          id="blog-review-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-        />
-      )}
-      {breadcrumbSchema && (
-        <Script
-          id="blog-breadcrumb-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-        />
-      )}
+
       
       <ArticleDetail 
         blog={blogData as Blog} 
@@ -284,135 +258,138 @@ export default async function Page({
   );
 }
 
-// Schema Generators
-
-function generateFAQSchema(faqs: any[], blogData: any) {
-  if (faqs.length === 0) return null;
-
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "name": `${blogData.title} - Frequently Asked Questions`,
-    "description": `Frequently asked questions about ${blogData.title}`,
-    "url": `https://amalegalsolutions.com/blog/${blogData.slug}`,
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer.replace(/<[^>]*>/g, '')
-      }
-    }))
-  };
-}
-
-function generateArticleSchema(blogData: any, faqs: any[], reviews: any[]) {
+function generateCombinedSchema(blogData: any, faqs: any[], reviews: any[]) {
+  const baseUrl = "https://amalegalsolutions.com";
+  const blogUrl = `${baseUrl}/blog/${blogData.slug}`;
   const isOrganizationAuthor = !blogData.author || blogData.author === "AMA Legal Solutions";
-  
-  const baseSchema: any = {
-    "@context": "https://schema.org",
+
+  const graph = [];
+
+  // 1. Article Schema
+  const articleSchema: any = {
     "@type": "BlogPosting",
-    "headline": blogData.title,
-    "name": blogData.title,
-    "description": blogData.metaDescription || blogData.subtitle || blogData.description?.replace(/<[^>]*>/g, '').substring(0, 160) || '',
-    "url": `https://amalegalsolutions.com/blog/${blogData.slug}`,
-    "datePublished": blogData.date,
-    "dateModified": blogData.date,
+    "@id": `${blogUrl}#article`,
+    "isPartOf": { "@id": blogUrl },
     "author": {
       "@type": isOrganizationAuthor ? "Organization" : "Person",
       "name": blogData.author || "AMA Legal Solutions",
-      "url": blogData.author === "Anuj Anand Malik" ? "https://amalegalsolutions.com/author/anuj-anand-malik" : 
-            blogData.author === "Shrey Arora" ? "https://amalegalsolutions.com/author/shrey-arora" : 
-            "https://amalegalsolutions.com/about"
+      "url": blogData.author === "Anuj Anand Malik" ? `${baseUrl}/author/anuj-anand-malik` : 
+            blogData.author === "Shrey Arora" ? `${baseUrl}/author/shrey-arora` : 
+            `${baseUrl}/about`
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "AMA Legal Solutions",
-      "url": "https://amalegalsolutions.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://amalegalsolutions.com/logo.png"
-      }
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `https://amalegalsolutions.com/blog/${blogData.slug}`
-    },
-    "keywords": blogData.metaTitle || blogData.title,
-    "articleSection": "Legal Advice",
-    "inLanguage": "en-IN"
-  };
-
-  if (blogData.image) {
-    baseSchema.image = {
+    "headline": blogData.title,
+    "datePublished": blogData.date,
+    "dateModified": blogData.date,
+    "mainEntityOfPage": { "@id": blogUrl },
+    "publisher": { "@id": `${baseUrl}/#organization` },
+    "image": blogData.image ? {
       "@type": "ImageObject",
       "url": blogData.image,
       "caption": blogData.title
-    };
-  }
-
-  return baseSchema;
-}
-
-function generateReviewSchema(reviews: any[], blogData: any) {
-  if (reviews.length === 0) return null;
-
-  const totalRating = reviews.reduce((acc: number, review: any) => acc + review.rating, 0);
-  const avgRating = (totalRating / reviews.length).toFixed(1);
-
-  return {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": blogData.title,
-    "image": blogData.image || "https://amalegalsolutions.com/logo.png",
-    "description": blogData.metaDescription || blogData.subtitle,
-    "provider": {
-      "@type": "Organization",
-      "name": "AMA Legal Solutions"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": avgRating,
-      "reviewCount": reviews.length
-    },
-    "review": reviews.map(review => ({
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": review.rating.toString()
-      },
-      "author": {
-        "@type": "Person",
-        "name": review.name
-      },
-      "reviewBody": review.review
-    }))
+    } : undefined,
+    "keywords": blogData.metaTitle || blogData.title,
+    "articleSection": "Legal Advice",
+    "inLanguage": "en-IN",
+    "description": blogData.metaDescription || blogData.subtitle || blogData.description?.replace(/<[^>]*>/g, '').substring(0, 160) || ''
   };
-}
+  graph.push(articleSchema);
 
-function generateBreadcrumbSchema(blogData: any) {
-  return {
-    "@context": "https://schema.org",
+  // 2. Organization Schema
+  graph.push({
+    "@type": "Organization",
+    "@id": `${baseUrl}/#organization`,
+    "name": "AMA Legal Solutions",
+    "url": baseUrl,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${baseUrl}/logo.png`
+    }
+  });
+
+  // 3. Breadcrumb Schema
+  graph.push({
     "@type": "BreadcrumbList",
+    "@id": `${blogUrl}#breadcrumb`,
     "itemListElement": [
       {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://amalegalsolutions.com"
+        "item": baseUrl
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Blog",
-        "item": "https://amalegalsolutions.com/blog"
+        "item": `${baseUrl}/blog`
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": blogData.title,
-        "item": `https://amalegalsolutions.com/blog/${blogData.slug}`
+        "item": blogUrl
       }
     ]
+  });
+
+  // 4. FAQ Schema (if present)
+  if (faqs.length > 0) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${blogUrl}#faq`,
+      "name": `${blogData.title} - Frequently Asked Questions`,
+      "description": `Frequently asked questions about ${blogData.title}`,
+      "url": blogUrl,
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer.replace(/<[^>]*>/g, '')
+        }
+      }))
+    });
+  }
+
+  // 5. Review/Product Schema (if present)
+  if (reviews.length > 0) {
+    const totalRating = reviews.reduce((acc: number, review: any) => acc + review.rating, 0);
+    const avgRating = (totalRating / reviews.length).toFixed(1);
+
+    graph.push({
+      "@type": "Product",
+      "@id": `${blogUrl}#product`,
+      "name": blogData.title,
+      "image": blogData.image || `${baseUrl}/logo.png`,
+      "description": blogData.metaDescription || blogData.subtitle,
+      "brand": { "@id": `${baseUrl}/#organization` },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": avgRating,
+        "reviewCount": reviews.length,
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": reviews.map(review => ({
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": review.rating.toString(),
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "author": {
+          "@type": "Person",
+          "name": review.name
+        },
+        "reviewBody": review.review
+      }))
+    });
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": graph
   };
 }
+
