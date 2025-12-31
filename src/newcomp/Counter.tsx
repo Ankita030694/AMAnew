@@ -97,7 +97,7 @@ const Counter = () => {
 
         {/* Stats */}
         <div className="flex items-center justify-between w-full md:w-auto md:gap-16">
-          {stats.map((stat, index) => (
+          {stats.map((stat, index) => ( 
             <StatCounter key={index} label={stat.label} value={stat.value} />
           ))}
         </div>
