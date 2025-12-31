@@ -230,7 +230,7 @@ export default function Services() {
               <div className="border-1">
               </div>
               <div className="text-white/80 hover:text-white transition-colors">
-                <span className="font-medium">Email:</span> info@amalegalsolutions.com
+                <span className="font-medium">Email:</span> proposals@amalegalsolutions.com
               </div>
             </div>
           </div>
