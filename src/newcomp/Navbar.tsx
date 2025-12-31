@@ -179,7 +179,7 @@ const Navbar = () => {
             <div className="md:hidden">
                 <Link href="/" className="block" onClick={() => setIsMobileMenuOpen(false)}>
                     <Image
-                    src="/logo/ama.svg"
+                    src="/newAssets/logo/ama.svg"
                     alt="AMA Legal Solutions"
                     width={180}
                     height={40}
@@ -460,7 +460,7 @@ const Navbar = () => {
                    <div className="flex justify-center items-center gap-4">
                          <Link href="https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions" target="_blank">
                             <Image 
-                                src="/appstore.svg" 
+                                src="/newAssets/appstore.svg" 
                                 alt="App Store" 
                                 width={120} 
                                 height={36} 
@@ -469,7 +469,7 @@ const Navbar = () => {
                         </Link>
                         <Link href="https://apps.apple.com/in/app/ama-legal-solutions/id6755156186" target="_blank">
                             <Image 
-                                src="/playstore.svg" 
+                                src="/newAssets/playstore.svg" 
                                 alt="Play Store" 
                                 width={120} 
                                 height={36} 
