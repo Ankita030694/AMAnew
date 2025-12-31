@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import HomeHidden from "@/components/HomeHidden";
 import { Toaster } from "react-hot-toast";
 import Script from 'next/script'
 
@@ -10,6 +12,33 @@ const inter = Inter({
   subsets: ["latin"],
   display: 'swap', // Optimize font loading
   preload: true,
+});
+
+const polySans = localFont({
+  src: [
+    {
+      path: '../../public/newAssets/font/polysanstrial-slim.otf',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../../public/newAssets/font/polysanstrial-neutral.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/newAssets/font/polysanstrial-median.otf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../public/newAssets/font/polysanstrial-bulky.otf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-polysans',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -197,7 +226,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} ${polySans.variable}`}>
         {/* Google Tag Manager (noscript) */}
         <noscript
           dangerouslySetInnerHTML={{
@@ -206,9 +235,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
           }}
         />
         {/* End Google Tag Manager (noscript) */}
-        <Navbar />
+        <HomeHidden>
+          <Navbar />
+        </HomeHidden>
         {children}
-        <Footer />
+        <HomeHidden>
+          <Footer />
+        </HomeHidden>
         <Toaster position="top-right" />
         {process.env.NEXT_PUBLIC_GA_TRACKING_ID && (
           <>
