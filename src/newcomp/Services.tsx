@@ -66,71 +66,79 @@ const Services = () => {
         {/* Right Column - 2x2 Grid */}
         <div className="grid grid-cols-2 gap-3 lg:gap-6">
           {/* Box 1 - Loan Settlement */}
-          <Link href="/services/loan-settlement" className="p-3 lg:p-4 rounded-[25px] bg-gradient-to-t from-white to-white shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] flex flex-col justify-end items-start text-left gap-2 lg:gap-4 h-full min-h-[200px] lg:min-h-[300px] hover:scale-[1.02] transition-transform duration-300">
-            <Handshake className="w-8 h-8 text-[#30261C]" />
-            <h3 
-              className="text-[#30261C] text-[16px] lg:text-2xl font-normal leading-[1.2] lg:leading-[30px] tracking-[0.6px]"
-              style={{ fontFamily: "var(--font-polysans)" }}
-            >
-              Loan Settlement
-            </h3>
-            <p 
-              className="text-[rgba(48,38,28,0.65)] text-[12px] lg:text-sm font-light leading-[1.4] lg:leading-[25px] tracking-[0.4px]"
-              style={{ fontFamily: "var(--font-polysans)" }}
-            >
-               Credit Card | Personal Loan | Business Loan | Vehicle Loan | Bank Loan Default | NBFC Loan Dispute | RBI Loan Settlement Guidelines |
-            </p>
+          <Link href="/services/loan-settlement" className="p-3 lg:p-4 rounded-[25px] bg-gradient-to-t from-white to-white shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] flex flex-col justify-between items-start text-left gap-2 lg:gap-4 h-full min-h-[200px] lg:min-h-[300px] hover:scale-[1.02] transition-transform duration-300">
+            <Handshake className="w-11 h-11 text-[#30261C]" />
+            <div>
+              <h3 
+                className="text-[#30261C] text-[16px] lg:text-2xl font-normal leading-[1.2] lg:leading-[30px] tracking-[0.6px]"
+                style={{ fontFamily: "var(--font-polysans)" }}
+              >
+                Loan Settlement
+              </h3>
+              <p 
+                className="text-[rgba(48,38,28,0.65)] text-[12px] lg:text-sm font-light leading-[1.4] lg:leading-[25px] tracking-[0.4px]"
+                style={{ fontFamily: "var(--font-polysans)" }}
+              >
+                 Credit Card | Personal Loan | Business Loan | Vehicle Loan | Bank Loan Default | NBFC Loan Dispute | RBI Loan Settlement Guidelines |
+              </p>
+            </div>
           </Link>
 
           {/* Box 2 - Intellectual Property Rights */}
-          <Link href="/services/intellectual-property-rights" className="p-3 lg:p-5 rounded-[25px] bg-[linear-gradient(180deg,#FFF_-47.71%,#D29E0D_199.6%)] shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] flex flex-col justify-end items-start text-left gap-2 lg:gap-4 h-full min-h-[200px] lg:min-h-[300px] hover:scale-[1.02] transition-transform duration-300">
-             <Lightbulb className="w-8 h-8 text-[#30261C]" />
-             <h3 
-              className="text-[#30261C] text-[16px] lg:text-2xl font-normal leading-[1.2] lg:leading-[30px] tracking-[0.6px]"
-              style={{ fontFamily: "var(--font-polysans)" }}
-             >
-               Intellectual Property Rights
-             </h3>
-            <p 
-              className="text-[rgba(48,38,28,0.65)] text-[12px] lg:text-sm font-light leading-[1.4] lg:leading-[25px] tracking-[0.4px]"
-              style={{ fontFamily: "var(--font-polysans)" }}
-            >
-              Trademark Registration | Copyright Protection | Patent Filing | Brand Protection | IPR Litigation
-            </p>
+          <Link href="/services/intellectual-property-rights" className="p-3 lg:p-5 rounded-[25px] bg-[linear-gradient(180deg,#FFF_-47.71%,#D29E0D_199.6%)] shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] flex flex-col justify-between items-start text-left gap-2 lg:gap-4 h-full min-h-[200px] lg:min-h-[300px] hover:scale-[1.02] transition-transform duration-300">
+             <Lightbulb className="w-11 h-11 text-[#30261C]" />
+             <div>
+               <h3 
+                className="text-[#30261C] text-[16px] lg:text-2xl font-normal leading-[1.2] lg:leading-[30px] tracking-[0.6px]"
+                style={{ fontFamily: "var(--font-polysans)" }}
+               >
+                 Intellectual Property Rights
+               </h3>
+              <p 
+                className="text-[rgba(48,38,28,0.65)] text-[12px] lg:text-sm font-light leading-[1.4] lg:leading-[25px] tracking-[0.4px]"
+                style={{ fontFamily: "var(--font-polysans)" }}
+              >
+                Trademark Registration | Copyright Protection | Patent Filing | Brand Protection | IPR Litigation
+              </p>
+             </div>
           </Link>
 
            {/* Box 3 - Corporate Law */}
-           <Link href="/services/corporate" className="p-3 lg:p-5 rounded-[25px] bg-[linear-gradient(180deg,#FFF_-47.71%,#D29E0D_199.6%)] shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] flex flex-col justify-end items-start text-left gap-2 lg:gap-4 h-full min-h-[200px] lg:min-h-[300px] hover:scale-[1.02] transition-transform duration-300">
-             <Building2 className="w-8 h-8 text-[#30261C]" />
-             <h3 
-              className="text-[#30261C] text-[16px] lg:text-2xl font-normal leading-[1.2] lg:leading-[30px] tracking-[0.6px]"
-              style={{ fontFamily: "var(--font-polysans)" }}
-             >
-               Corporate Law
-             </h3>
-            <p 
-              className="text-[rgba(48,38,28,0.65)] text-[12px] lg:text-sm font-light leading-[1.4] lg:leading-[25px] tracking-[0.4px]"
-              style={{ fontFamily: "var(--font-polysans)" }}
-            >
-              Company Incorporation | Compliance | Mergers & Acquisitions | Corporate Litigation | Contract Drafting
-            </p>
+           <Link href="/services/corporate" className="p-3 lg:p-5 rounded-[25px] bg-[linear-gradient(180deg,#FFF_-47.71%,#D29E0D_199.6%)] shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] flex flex-col justify-between items-start text-left gap-2 lg:gap-4 h-full min-h-[200px] lg:min-h-[300px] hover:scale-[1.02] transition-transform duration-300">
+             <Building2 className="w-11 h-11 text-[#30261C]" />
+             <div>
+               <h3 
+                className="text-[#30261C] text-[16px] lg:text-2xl font-normal leading-[1.2] lg:leading-[30px] tracking-[0.6px]"
+                style={{ fontFamily: "var(--font-polysans)" }}
+               >
+                 Corporate Law
+               </h3>
+              <p 
+                className="text-[rgba(48,38,28,0.65)] text-[12px] lg:text-sm font-light leading-[1.4] lg:leading-[25px] tracking-[0.4px]"
+                style={{ fontFamily: "var(--font-polysans)" }}
+              >
+                Company Incorporation | Compliance | Mergers & Acquisitions | Corporate Litigation | Contract Drafting
+              </p>
+             </div>
           </Link>
 
           {/* Box 4 - Banking and Finance */}
-          <Link href="/services/banking-and-finance" className="p-3 lg:p-5 rounded-[25px] bg-gradient-to-t from-white to-white shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] flex flex-col justify-end items-start text-left gap-2 lg:gap-4 h-full min-h-[200px] lg:min-h-[300px] hover:scale-[1.02] transition-transform duration-300">
-             <Landmark className="w-8 h-8 text-[#30261C]" />
-             <h3 
-              className="text-[#30261C] text-[16px] lg:text-2xl font-normal leading-[1.2] lg:leading-[30px] tracking-[0.6px]"
-              style={{ fontFamily: "var(--font-polysans)" }}
-             >
-               Banking & Finance
-             </h3>
-            <p 
-              className="text-[rgba(48,38,28,0.65)] text-[12px] lg:text-sm font-light leading-[1.4] lg:leading-[25px] tracking-[0.4px]"
-              style={{ fontFamily: "var(--font-polysans)" }}
-            >
-                  Financial Fraud | Financial Scam | Banking Regulatory Compliance | Commercial Banking Issues | Financial Litigation
-            </p>
+          <Link href="/services/banking-and-finance" className="p-3 lg:p-5 rounded-[25px] bg-gradient-to-t from-white to-white shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] flex flex-col justify-between items-start text-left gap-2 lg:gap-4 h-full min-h-[200px] lg:min-h-[300px] hover:scale-[1.02] transition-transform duration-300">
+             <Landmark className="w-11 h-11 text-[#30261C]" />
+             <div>
+               <h3 
+                className="text-[#30261C] text-[16px] lg:text-2xl font-normal leading-[1.2] lg:leading-[30px] tracking-[0.6px]"
+                style={{ fontFamily: "var(--font-polysans)" }}
+               >
+                 Banking & Finance
+               </h3>
+              <p 
+                className="text-[rgba(48,38,28,0.65)] text-[12px] lg:text-sm font-light leading-[1.4] lg:leading-[25px] tracking-[0.4px]"
+                style={{ fontFamily: "var(--font-polysans)" }}
+              >
+                    Financial Fraud | Financial Scam | Banking Regulatory Compliance | Commercial Banking Issues | Financial Litigation
+              </p>
+             </div>
           </Link>
         </div>
         </div>

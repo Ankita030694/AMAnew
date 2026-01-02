@@ -214,40 +214,36 @@ const ContactComp = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full h-full">
                   
                   {/* Left Column: Email & Call */}
-                  <div className="flex flex-col gap-4">
+                  <div className="flex flex-col gap-2">
                     {/* Email Box */}
                     <Link 
                       href="mailto:notify@amalegalsolutions.com"
-                      className="flex-1 p-5 rounded-[25px] border border-white/20 transition-transform hover:-translate-y-1"
+                      className="flex-1 p-2 rounded-[25px] border border-white/20 transition-transform hover:-translate-y-1"
                       style={{
                         background: "rgba(255, 255, 255, 0.15)",
                         boxShadow: "3px 4px 30.5px 0 rgba(0, 0, 0, 0.05)",
                         backdropFilter: "blur(2px)",
                       }}
                     >
-                      <div className="flex flex-col h-full justify-between gap-3">
-                        <div>
-                          <h3 className="text-base font-semibold text-[#30261C] mb-0.5">Email Us</h3>
-                          <p className="text-[#30261C]/80 text-sm break-all">notify@amalegalsolutions.com</p>
-                        </div>
+                      <div className="flex flex-col h-full justify-between">
+                        <h3 className="text-base font-semibold text-[#30261C] mb-0.5 pl-3">Email Us</h3>
+                        <p className="text-[#30261C]/80 text-sm break-all pl-3">notify@amalegalsolutions.com</p>
                       </div>
                     </Link>
 
                     {/* Call Box */}
                     <Link
                       href="tel:+918700343611" 
-                      className="flex-1 p-5 rounded-[25px] border border-white/20 transition-transform hover:-translate-y-1"
+                      className="flex-1 p-2 rounded-[25px] border border-white/20 transition-transform hover:-translate-y-1"
                       style={{
                         background: "rgba(255, 255, 255, 0.15)",
                         boxShadow: "3px 4px 30.5px 0 rgba(0, 0, 0, 0.05)",
                         backdropFilter: "blur(2px)",
                       }}
                     >
-                      <div className="flex flex-col h-full justify-between gap-3">
-                        <div>
-                          <h3 className="text-base font-semibold text-[#30261C] mb-0.5">Call Us</h3>
-                          <p className="text-[#30261C]/80 text-sm">+91 87003 43611</p>
-                        </div>
+                      <div className="flex flex-col h-full justify-between">
+                        <h3 className="text-base font-semibold text-[#30261C] mb-0.5 pl-3">Call Us</h3>
+                        <p className="text-[#30261C]/80 text-sm pl-3">+91 87003 43611</p>
                       </div>
                     </Link>
                   </div>
@@ -256,7 +252,7 @@ const ContactComp = () => {
                   <Link
                     href="https://maps.app.goo.gl/C11eKgqm46oUwdio9"
                     target="_blank"
-                    className="p-5 rounded-[25px] border border-white/20 transition-transform hover:-translate-y-1 h-full"
+                    className="p-2 rounded-[25px] border border-white/20 transition-transform hover:-translate-y-1 h-full"
                     style={{
                       borderRadius: "25px",
                       background: "linear-gradient(180deg, #FFF -47.71%, #D29E0D 199.6%), rgba(255, 255, 255, 0.15)",
@@ -264,13 +260,11 @@ const ContactComp = () => {
                       backdropFilter: "blur(2px)",
                     }}
                   >
-                     <div className="flex flex-col justify-between h-full gap-4">
-                      <div>
-                        <h3 className="text-base font-semibold text-[#30261C] mb-0.5">Our Address</h3>
-                        <p className="text-[#30261C]/80 text-base leading-relaxed">
+                     <div className="flex flex-col justify-between h-full">
+                        <h3 className="text-base font-semibold text-[#30261C] mb-0.5 pl-3">Our Address</h3>
+                        <p className="text-[#30261C]/80 text-base leading-relaxed pl-3">
                           2493AP, Block G, Sushant Lok 2, Sector 57, Gurugram, Haryana 122001
                         </p>
-                      </div>
                     </div>
                   </Link>
                 </div>
@@ -278,8 +272,8 @@ const ContactComp = () => {
           </div>
 
           {/* Right Section - Form */}
-          <div className="w-full lg:w-[480px] flex-shrink-0 relative">
-            <div className="bg-white rounded-2xl p-8 shadow-xl border border-[#D2A02A]/10 sticky top-[120px]">
+          <div className="w-full lg:w-[480px] flex-shrink-0 relative flex flex-col">
+            <div className="bg-white rounded-2xl p-8 shadow-xl border border-[#D2A02A]/10 h-auto flex-1">
               {submitted ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
                   <div className="w-20 h-20 bg-[#D2A02A]/20 rounded-full flex items-center justify-center mb-6">

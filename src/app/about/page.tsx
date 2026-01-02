@@ -1,11 +1,16 @@
-import AboutInfo from "@/components/aboutcomps/AboutInfo";
-import AnujBhiya from "@/components/aboutcomps/AnujBhiya";
-import Clients from "@/components/aboutcomps/Clients";
-import Hero from "@/components/aboutcomps/hero";
-import OurAttorneys from "@/components/aboutcomps/OurAttorneys";
-import TabbedTimeline from "@/components/aboutcomps/TabbedTimeline";
-import AnimatedCounter from "@/components/AnimatedCounter";
-import Image from "next/image";
+// import AboutInfo from "@/components/aboutcomps/AboutInfo";
+// import AnujBhiya from "@/components/aboutcomps/AnujBhiya";
+// import Clients from "@/components/aboutcomps/Clients";
+// import Hero from "@/components/aboutcomps/hero";
+// import OurAttorneys from "@/components/aboutcomps/OurAttorneys";
+// import TabbedTimeline from "@/components/aboutcomps/TabbedTimeline";
+// import AnimatedCounter from "@/components/AnimatedCounter";
+// import Image from "next/image";
+
+import Navbar from "@/newcomp/Navbar";
+import Footer from "@/newcomp/Footer";
+import AboutUsRevamp from "@/newcomp/AboutUsRevamp";
+
 export const metadata = {
   title: 'About AMA Legal Solutions: Experienced Law Firm in Gurugram',
   description: 'Learn about AMA Legal Solutions legacy and expertise in providing exceptional legal services across various domains in Gurugram, India.',
@@ -15,7 +20,12 @@ export const metadata = {
 }
 export default function About() {
     return (
-      
+      <>
+        <Navbar />
+        <AboutUsRevamp />
+        <Footer />
+      </>
+      /*
       <div>
         <Hero />
         <Clients />
@@ -46,6 +56,6 @@ export default function About() {
         <OurAttorneys />
 
       </div>
+      */
     );
   }
-  
