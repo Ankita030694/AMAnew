@@ -168,38 +168,38 @@ const AboutUsRevamp = () => {
                </Link>
 
                {/* New 4 Logos */}
-               <div className="relative w-full max-w-[120px] md:max-w-[160px] lg:max-w-[400px] h-[60px] lg:h-[100px] hover:opacity-80 transition-opacity">
+               <Link href="#" className="relative w-full max-w-[120px] md:max-w-[160px] lg:max-w-[400px] h-[60px] lg:h-[100px] hover:opacity-80 transition-opacity">
                  <Image
                    src="/newAssets/circle1.png"
                    alt="Affiliation 2"
                    fill
                    className="object-contain"
                  />
-               </div>
-               <div className="relative w-full max-w-[120px] md:max-w-[160px] lg:max-w-[400px] h-[60px] lg:h-[100px] hover:opacity-80 transition-opacity">
+               </Link>
+               <Link href="#" className="relative w-full max-w-[120px] md:max-w-[160px] lg:max-w-[400px] h-[60px] lg:h-[100px] hover:opacity-80 transition-opacity">
                  <Image
                    src="/newAssets/circle2.png"
                    alt="Affiliation 3"
                    fill
                    className="object-contain"
                  />
-               </div>
-               <div className="relative w-full max-w-[120px] md:max-w-[160px] lg:max-w-[400px] h-[60px] lg:h-[100px] hover:opacity-80 transition-opacity">
+               </Link>
+               <Link href="#" className="relative w-full max-w-[120px] md:max-w-[160px] lg:max-w-[400px] h-[60px] lg:h-[100px] hover:opacity-80 transition-opacity">
                  <Image
                    src="/newAssets/circle3.png"
                    alt="Affiliation 4"
                    fill
                    className="object-contain"
                  />
-               </div>
-               <div className="relative w-full max-w-[120px] md:max-w-[160px] lg:max-w-[400px] h-[60px] lg:h-[100px] hover:opacity-80 transition-opacity">
+               </Link>
+               <Link href="#" className="relative w-full max-w-[120px] md:max-w-[160px] lg:max-w-[400px] h-[60px] lg:h-[100px] hover:opacity-80 transition-opacity">
                  <Image
                    src="/newAssets/circle4.png"
                    alt="Affiliation 5"
                    fill
                    className="object-contain"
                  />
-               </div>
+               </Link>
             </div>
          </div>
       </section>
@@ -589,7 +589,7 @@ const AboutUsRevamp = () => {
               <div className="relative w-[280px] md:w-[200px] h-[43px] flex-shrink-0">
                 <Link
                   href="/contact"
-                  className="absolute left-0 top-[4px] w-full h-[35px] md:h-[39px] flex items-center justify-center gap-[8px] rounded-[47px] border-2 border-[#D29E0D] bg-[#30261C] px-[20px] hover:bg-[#3a2f20] transition-colors"
+                  className="absolute left-0 top-[4px] w-full h-[35px] md:h-[39px] flex items-center justify-center gap-[8px] rounded-[47px] border-2 border-[#D29E0D] bg-[#30261C] px-[20px] hover:bg-[#3a2f20] transition-colors z-20 relative"
                 >
                   <span 
                     className="text-[#EAE6DB] text-[14px] md:text-[16px] font-light"
@@ -653,7 +653,7 @@ const AboutUsRevamp = () => {
             <div className="relative w-[280px] md:w-[320px] h-[43px] flex-shrink-0">
               <Link
                 href="mailto:career@amalegalsolutions.com"
-                className="absolute left-0 top-[4px] w-full h-[35px] md:h-[39px] flex items-center justify-center gap-[8px] rounded-[47px] border-2 border-[#D29E0D] bg-[#30261C] px-[20px] hover:bg-[#3a2f20] transition-colors"
+                className="absolute left-0 top-[4px] w-full h-[35px] md:h-[39px] flex items-center justify-center gap-[8px] rounded-[47px] border-2 border-[#D29E0D] bg-[#30261C] px-[20px] hover:bg-[#3a2f20] transition-colors z-20 relative"
               >
                 <span 
                   className="text-[#EAE6DB] text-[14px] md:text-[16px] font-light"
