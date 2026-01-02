@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 export default function HomeHidden({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
-  if (pathname === "/") {
+  if (pathname === "/" || pathname === "/contact") {
     return null;
   }
 
