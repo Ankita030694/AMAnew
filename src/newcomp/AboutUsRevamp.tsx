@@ -229,13 +229,14 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
               <div className="hidden md:block absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[16px] h-full bg-white/60 z-10" />
 
               {/* Left Content (Image) - Swapped Position */}
-              <div className="hidden md:block absolute bottom-0 left-0 h-[530px] z-20 pointer-events-none w-[50%]">
+              <div className="hidden md:block absolute bottom-0 left-0 h-[530px] z-[25] pointer-events-none w-[50%]">
                  <div className="relative w-full h-full"> 
                     <Image
                       src="/newAssets/bhiya.png"
                       alt="Anuj Anand Malik"
                       fill
-                      className="object-contain object-bottom"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover object-bottom"
                       priority
                     />
                  </div>
