@@ -171,7 +171,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
                {/* New 4 Logos */}
                <Link href="#" className="relative w-full max-w-[120px] md:max-w-[160px] lg:max-w-[400px] h-[60px] lg:h-[100px] hover:opacity-80 transition-opacity">
                  <Image
-                   src="/newAssets/circle1.png"
+                   src="/newAssets/affiliation-logo-2.png"
                    alt="Affiliation 2"
                    fill
                    className="object-contain"
@@ -179,7 +179,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
                </Link>
                <Link href="#" className="relative w-full max-w-[120px] md:max-w-[160px] lg:max-w-[400px] h-[60px] lg:h-[100px] hover:opacity-80 transition-opacity">
                  <Image
-                   src="/newAssets/circle2.png"
+                   src="/newAssets/affiliation-logo-3.png"
                    alt="Affiliation 3"
                    fill
                    className="object-contain"
@@ -187,7 +187,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
                </Link>
                <Link href="#" className="relative w-full max-w-[120px] md:max-w-[160px] lg:max-w-[400px] h-[60px] lg:h-[100px] hover:opacity-80 transition-opacity">
                  <Image
-                   src="/newAssets/circle3.png"
+                   src="/newAssets/affiliation-logo-4.png"
                    alt="Affiliation 4"
                    fill
                    className="object-contain"
@@ -195,7 +195,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
                </Link>
                <Link href="#" className="relative w-full max-w-[120px] md:max-w-[160px] lg:max-w-[400px] h-[60px] lg:h-[100px] hover:opacity-80 transition-opacity">
                  <Image
-                   src="/newAssets/circle4.png"
+                   src="/newAssets/affiliation-logo-5.png"
                    alt="Affiliation 5"
                    fill
                    className="object-contain"
