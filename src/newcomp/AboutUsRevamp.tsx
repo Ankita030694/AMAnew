@@ -175,6 +175,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
                    alt="Affiliation 2"
                    fill
                    className="object-contain"
+                   unoptimized
                  />
                </Link>
                <Link href="#" className="relative w-full max-w-[120px] md:max-w-[160px] lg:max-w-[400px] h-[60px] lg:h-[100px] hover:opacity-80 transition-opacity">
@@ -183,6 +184,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
                    alt="Affiliation 3"
                    fill
                    className="object-contain"
+                   unoptimized
                  />
                </Link>
                <Link href="#" className="relative w-full max-w-[120px] md:max-w-[160px] lg:max-w-[400px] h-[60px] lg:h-[100px] hover:opacity-80 transition-opacity">
@@ -191,6 +193,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
                    alt="Affiliation 4"
                    fill
                    className="object-contain"
+                   unoptimized
                  />
                </Link>
                <Link href="#" className="relative w-full max-w-[120px] md:max-w-[160px] lg:max-w-[400px] h-[60px] lg:h-[100px] hover:opacity-80 transition-opacity">
@@ -199,6 +202,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
                    alt="Affiliation 5"
                    fill
                    className="object-contain"
+                   unoptimized
                  />
                </Link>
             </div>
