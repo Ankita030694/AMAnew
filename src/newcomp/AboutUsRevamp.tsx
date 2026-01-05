@@ -236,7 +236,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
                       alt="Anuj Anand Malik"
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover object-bottom"
+                      className="object-contain object-bottom"
                       priority
                     />
                  </div>
