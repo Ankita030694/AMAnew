@@ -1,95 +1,11 @@
-'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { FaFacebook, FaTwitter, FaInstagram, FaTelegram, FaLinkedin } from 'react-icons/fa'
-import { collection, getDocs } from 'firebase/firestore'
-import { db } from '../../lib/firebase'
+import { Attorney } from '@/lib/attorneys';
 
-// Define the attorney type
-type Attorney = {
-  id: string;
-  image: string;
-  name: string;
-  role: string;
-  position: string;
-  email: string;
-  sort: number;
-  socials: {
-    [key: string]: string;
-  };
-};
-
-export default function OurAttorneys() {
-  const [allMembers, setAllMembers] = useState<Attorney[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  // Fetch users from Firestore
-  const fetchUsers = async () => {
-    try {
-      const querySnapshot = await getDocs(collection(db, 'users'));
-      const users = querySnapshot.docs.map(doc => {
-        const data = doc.data();
-        return {
-          id: doc.id,
-          image: data.image || '',
-          name: data.name || '',
-          role: data.role || '',
-          position: data.position || '',
-          email: data.email || '',
-          sort: data.sort || 0,
-          socials: {
-            instagram: "https://www.instagram.com/amalegalsolutions/?hl=en",
-            linkedin: "https://in.linkedin.com/company/ama-legal-solutions"
-          }
-        };
-      });
-
-      // Define role priority for sorting
-      const rolePriority = {
-        'lawyer': 1,
-        'tech': 2,
-        'business_development': 3
-      };
-
-      // Sort all users by role priority first, then by sort field within each role
-      const sortedUsers = users.sort((a, b) => {
-        const aPriority = rolePriority[a.role as keyof typeof rolePriority] || 999;
-        const bPriority = rolePriority[b.role as keyof typeof rolePriority] || 999;
-        
-        if (aPriority !== bPriority) {
-          return aPriority - bPriority;
-        }
-        
-        return a.sort - b.sort;
-      });
-
-      setAllMembers(sortedUsers);
-      setLoading(false);
-    } catch (error) {
-      console.error('Error fetching users:', error);
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchUsers();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="bg-white py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#6B5B3D] mx-auto"></div>
-            <p className="mt-4 text-[#6B5B3D]">Loading team members...</p>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
+export default function OurAttorneys({ attorneys = [] }: { attorneys?: Attorney[] }) {
+  
   return (
     <div className="bg-white py-6">
       <motion.div 
@@ -119,7 +35,7 @@ export default function OurAttorneys() {
         </motion.div>
 
         {/* All Team Members */}
-        {allMembers.length > 0 ? (
+        {attorneys.length > 0 ? (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -127,7 +43,7 @@ export default function OurAttorneys() {
             className="mb-16"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-              {allMembers.map((attorney, index) => (
+              {attorneys.map((attorney, index) => (
                 <motion.div
                   key={attorney.id}
                   initial={{ opacity: 0, y: 20 }}
@@ -135,7 +51,7 @@ export default function OurAttorneys() {
                   transition={{ duration: 0.6, delay: 0.4 + 0.1 * index }}
                   className="flex flex-col items-center"
                 >
-                  <AttorneyCard attorney={attorney} />
+                  <AttorneyCard attorney={attorney} index={index} />
                 </motion.div>
               ))}
             </div>
@@ -150,7 +66,7 @@ export default function OurAttorneys() {
   );
 }
 
-const AttorneyCard = ({ attorney }: { attorney: Attorney }) => {
+const AttorneyCard = ({ attorney, index }: { attorney: Attorney; index: number }) => {
   const socialIcons = {
     facebook: FaFacebook,
     twitter: FaTwitter,
@@ -173,6 +89,7 @@ const AttorneyCard = ({ attorney }: { attorney: Attorney }) => {
             fill
             className="object-cover transition-transform duration-300 hover:scale-110"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw"
+            priority={index < 4}
           />
         ) : (
           <div className="w-full h-full bg-gray-200 flex items-center justify-center">

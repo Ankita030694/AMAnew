@@ -10,6 +10,7 @@
 import Navbar from "@/newcomp/Navbar";
 import Footer from "@/newcomp/Footer";
 import AboutUsRevamp from "@/newcomp/AboutUsRevamp";
+import { fetchAttorneys } from "@/lib/attorneys";
 
 export const metadata = {
   title: 'About AMA Legal Solutions: Experienced Law Firm in Gurugram',
@@ -18,11 +19,13 @@ export const metadata = {
     canonical: 'https://amalegalsolutions.com/about', // Add your canonical URL here
   },
 }
-export default function About() {
+export default async function About() {
+    const attorneys = await fetchAttorneys();
+    
     return (
       <>
         <Navbar />
-        <AboutUsRevamp />
+        <AboutUsRevamp attorneys={attorneys} />
         <Footer />
       </>
       /*

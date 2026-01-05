@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import OurAttorneys from "../components/aboutcomps/OurAttorneys";
+import { Attorney } from "@/lib/attorneys";
 
-const AboutUsRevamp = () => {
+const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
   return (
     <main className="w-full bg-[#EAE6DB]">
       {/* Hero Section */}
@@ -417,8 +418,8 @@ const AboutUsRevamp = () => {
       </section>
 
       {/* Our Attorneys Section */}
-      <OurAttorneys />
-
+      <OurAttorneys attorneys={attorneys} />
+      
       {/* CTA Section */}
     <section className="relative bg-[#30261C] py-[90px] overflow-hidden">
       {/* Background Decorative Elements */}
