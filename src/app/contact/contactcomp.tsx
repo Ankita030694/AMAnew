@@ -156,7 +156,7 @@ const ContactComp = () => {
         <div className="flex flex-col-reverse lg:flex-row gap-12 lg:gap-24 relative">
           
           {/* Left Section - Content */}
-          <div className="flex-1 flex flex-col justify-between min-h-[600px]">
+          <div className="flex-1 flex flex-col justify-between min-h-[600px] max-w-3xl">
             <div>
               <h1 className="text-[31px] md:text-[47px] font-medium text-[#30261C] leading-tight mb-6">
                 Resolve Your Legal Matters with Confidence
@@ -211,7 +211,7 @@ const ContactComp = () => {
                 Connect With us
               </h2>
                 {/* Grid Container */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full h-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl h-full">
                   
                   {/* Left Column: Email & Call */}
                   <div className="flex flex-col gap-2">
