@@ -162,7 +162,7 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
   return (
     <div className="bg-transparent">
       {/* Banner Section */}
-      <div className="relative w-full h-[300px] md:h-[550px] flex items-center justify-center">
+      <div className="relative w-full h-[300px] md:h-[550px] flex items-center justify-center -mt-15">
         <Image
           src="/amalive1.png"
           alt="AMA Live Banner"
