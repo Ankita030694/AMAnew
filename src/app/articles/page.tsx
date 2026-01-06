@@ -8,7 +8,15 @@ export const metadata = {
 
 // Then import and use your client component:
 import ArticlePage from './articlecomp';
+import Navbar from "@/newcomp/Navbar";
+import Footer from "@/newcomp/Footer";
 
 export default function Page() {
-  return <ArticlePage />;
+  return (
+    <main style={{ fontFamily: "var(--font-polysans)" }}>
+      <Navbar />
+      <ArticlePage />
+      <Footer />
+    </main>
+  );
 }

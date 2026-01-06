@@ -8,13 +8,13 @@ import Footer from "@/newcomp/Footer";
 // This is now a Client Component that will always fetch fresh data
 export default function AmaLivePage() {
   return (
-    <>
+    <div style={{ fontFamily: "var(--font-polysans)" }}>
       <Navbar />
       <Suspense fallback={<VideosSkeleton />}>
         <AmaLiveClient initialVideos={[]} />
       </Suspense>
       <Footer />
-    </>
+    </div>
   );
 }
 

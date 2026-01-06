@@ -238,7 +238,7 @@ export default async function Page({
   }
 
   return (
-    <>
+    <div style={{ fontFamily: "var(--font-polysans)" }}>
       <Navbar />
       <PerformanceMonitor />
       {/* Combined Schema */}
@@ -258,7 +258,7 @@ export default async function Page({
         relatedBlogs={relatedBlogs}
       />
       <Footer />
-    </>
+    </div>
   );
 }
 

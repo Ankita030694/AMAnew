@@ -124,8 +124,8 @@ export default function Page() {
     <div className="container mx-auto px-4 py-8 bg-white">
       {/* Page Title */}
       <motion.h1 
-        className="text-4xl md:text-5xl text-center font-serif mb-8 mt-20"
-        style={{ color: '#5A4C33' }}
+        className="text-4xl md:text-5xl text-center mb-8 mt-20"
+        style={{ color: '#5A4C33', fontFamily: "var(--font-polysans)" }}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}

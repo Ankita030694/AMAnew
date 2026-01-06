@@ -25,7 +25,7 @@ const BlogLoading = () => (
 
 export default function Page() {
   return (
-    <main className='bg-[#F5F2EB]'>
+    <main className='bg-[#F5F2EB]' style={{ fontFamily: "var(--font-polysans)" }}>
       <Navbar />
       <PerformanceMonitor />
       
