@@ -152,23 +152,23 @@ const ContactComp = () => {
     <div className="min-h-screen bg-[#F8F5EC] flex flex-col font-[family-name:var(--font-polysans)]">
       <Navbar />
       
-      <main className="flex-grow pt-32 px-4 md:px-8 max-w-[1440px] mx-auto w-full mb-20">
+      <main className="flex-grow pt-[100px] md:pt-[120px] px-4 md:px-8 max-w-[1440px] mx-auto w-full mb-[120px]">
         <div className="flex flex-col-reverse lg:flex-row gap-12 lg:gap-24 relative">
           
           {/* Left Section - Content */}
           <div className="flex-1 flex flex-col justify-between min-h-[600px] max-w-3xl">
             <div>
-              <h1 className="text-[31px] md:text-[47px] font-medium text-[#30261C] leading-tight mb-6">
+              <h1 className="text-[32px] md:text-[65px] font-semibold text-[#30261C] leading-[40px] md:leading-[65px] mb-[30px] opacity-100">
                 Resolve Your Legal Matters with Confidence
               </h1>
-              <p className="text-xl text-[#30261C]/80 leading-relaxed max-w-2xl">
+              <p className="text-[16px] md:text-[25px] text-[#30261C] leading-[24px] md:leading-[29px] font-normal max-w-2xl opacity-85 mb-[50px]">
                 Connect with our legal team to receive clear, strategic, and results-driven legal guidance tailored to your needs.
               </p>
             </div>
 
             {/* Client Logos Slider */}
             <div className="py-8">
-              <h2 className="text-2xl font-medium text-[#30261C] mb-8">
+              <h2 className="text-[24px] md:text-[27px] leading-[31px] font-normal text-[#30261C] opacity-85 mb-[35px]">
                 Trusted by Clients Across India
               </h2>
               
@@ -207,7 +207,7 @@ const ContactComp = () => {
 
             {/* Connect With Us - Bento Grid */}
             <div className="mt-auto">
-              <h2 className="text-2xl font-medium text-[#30261C] mb-8">
+              <h2 className="text-[24px] md:text-[27px] leading-[31px] font-normal text-[#30261C] opacity-85 mb-[35px]">
                 Connect With us
               </h2>
                 {/* Grid Container */}

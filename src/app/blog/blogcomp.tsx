@@ -394,7 +394,7 @@ export default function Page() {
       
       {/* Page Title */}
       <h1 
-        className="text-4xl md:text-5xl text-center mb-8 mt-20"
+        className="text-[32px] md:text-[65px] font-semibold text-center mb-[80px] mt-[120px] leading-[40px] md:leading-[65px] opacity-100"
         style={{ color: '#5A4C33', fontFamily: "var(--font-polysans)" }}
         id="blog-page-title"
       >
@@ -403,7 +403,7 @@ export default function Page() {
 
       {/* Search Bar */}
       <motion.div 
-        className="max-w-2xl mx-auto mb-8"
+        className="max-w-2xl mx-auto mb-[80px]"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.5 }}
@@ -462,20 +462,20 @@ export default function Page() {
           </div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8" data-blog-content>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-[80px]" data-blog-content>
           {/* Main Content (2/3 width on large screens) */}
           <div className="lg:col-span-2">
             {/* Spotlight Section - Only show if there are search results */}
             {spotlightArticle && (
-              <div className="mb-12">
+              <div className="mb-[80px]">
                 <motion.div
-                  className="flex items-center gap-2 mb-4"
+                  className="flex items-center gap-2 mb-[35px]"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
                   
-                  <h2 className="text-xl font-medium" style={{ color: '#5A4C33' }}>
+                  <h2 className="text-[32px] md:text-[65px] font-semibold leading-[40px] md:leading-[65px] opacity-100" style={{ color: '#5A4C33' }}>
                     {searchQuery ? 'Search Result' : 'Spotlight'}
                   </h2>
                 </motion.div>
@@ -512,12 +512,12 @@ export default function Page() {
                       </div>
                     </div>
                     
-                    <div className="relative bg-white p-4"> {/* Added pt-2 to create space between image and text */}
-                      <h3 className="text-xl font-medium mb-1" style={{ color: '#5A4C33' }}>
+                    <div className="relative bg-white p-6"> {/* Added pt-2 to create space between image and text */}
+                      <h3 className="text-[24px] md:text-[27px] font-normal leading-[31px] mb-[15px] opacity-85" style={{ color: '#5A4C33' }}>
                         {spotlightArticle.title}
                       </h3>
-                      <p className="text-sm text-blue-600 mb-1">{spotlightArticle.subtitle}</p>
-                      <p className="text-sm text-gray-600">{spotlightArticle.description}</p>
+                      <p className="text-sm text-blue-600 mb-[15px] max-w-none">{spotlightArticle.subtitle}</p>
+                      <p className="text-[16px] md:text-[25px] leading-[24px] md:leading-[29px] font-normal text-gray-600 opacity-85">{spotlightArticle.description}</p>
                     </div>
                   </motion.div>
                 </Link>
@@ -525,17 +525,17 @@ export default function Page() {
             )}
             
             {/* Articles Section */}
-            <div className="mb-8">
+            <div className="mb-[80px]">
               <motion.div 
-                className="flex items-center justify-between mb-4"
+                className="flex items-center justify-between mb-[35px]"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
                 <div className="flex items-center gap-2">
-                  <h2 className="text-xl font-medium" style={{ color: '#5A4C33' }}>
+                  <h2 className="text-[32px] md:text-[65px] font-semibold leading-[40px] md:leading-[65px] opacity-100" style={{ color: '#5A4C33' }}>
                     {searchQuery ? 'Search Results' : 'Blogs'} {regularArticles.length > 0 && (
-                      <span className="text-sm text-gray-500 font-normal">
+                      <span className="text-[24px] md:text-[27px] text-gray-500 font-normal opacity-85 ml-4">
                         ({regularArticles.length} articles)
                       </span>
                     )}
@@ -629,12 +629,12 @@ export default function Page() {
                             </div>
                           </div>
                           
-                          <div className="p-4 relative bg-white">
-                            <h3 className="text-lg font-medium mb-2" style={{ color: '#5A4C33' }}>
+                          <div className="p-6 relative bg-white">
+                            <h3 className="text-[24px] md:text-[27px] leading-[31px] font-normal mb-[15px] opacity-85" style={{ color: '#5A4C33' }}>
                               {article.title}
                             </h3>
                             <p className="text-sm mb-2 text-blue-600">{article.subtitle}</p>
-                            <p className="text-sm text-gray-500">{article.description}</p>
+                            <p className="text-[16px] md:text-[18px] text-gray-500 opacity-85">{article.description}</p>
                           </div>
                         </motion.div>
                       </Link>
@@ -775,16 +775,16 @@ export default function Page() {
           {/* Sidebar (1/3 width on large screens) */}
           <div className="lg:col-span-1">
             <motion.div
-              className="mb-8"
+              className="mb-[80px]"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
             >
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 mb-[35px]">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="#D2A02A" stroke="#D2A02A" strokeWidth="1.5">
                   <path d="M12 2L14.39 8.26L21 9.27L16.5 14.14L17.77 21L12 17.77L6.23 21L7.5 14.14L3 9.27L9.61 8.26L12 2z" />
                 </svg>
-                <h2 className="text-xl font-medium" style={{ color: '#5A4C33' }}>
+                <h2 className="text-[32px] md:text-[65px] font-semibold leading-[40px] md:leading-[65px] opacity-100" style={{ color: '#5A4C33' }}>
                   {searchQuery ? 'Related' : 'Trending'}
                 </h2>
               </div>

@@ -105,34 +105,34 @@ const ServicesClient = () => {
 
         
       {/* Hero Section */}
-      <section className="relative w-full pt-32 md:pt-32 flex flex-col items-center">
+      <section className="relative w-full pt-20 md:pt-[150px] pb-[50px] md:pb-[120px] flex flex-col items-center">
          <div className="text-center max-w-6xl mx-auto z-10 px-4 pb-12">
-              <h1 className="text-[32px] md:text-[54px] font-light text-[#30261C] leading-tight"  style={{
+              <h1 className="text-[32px] md:text-[65px] font-semibold text-[#30261C] leading-[40px] md:leading-[75px] mb-[30px] opacity-100"  style={{
                     background: "linear-gradient(90deg, #30261C 5.29%, #D29E0D 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
                     color: "transparent",
-                    fontWeight: 400
+                    overflow: "visible"
                   }}>
                   Our Legal Services
               </h1>
               <h2 
-                  className="text-[28px] md:text-[48px] leading-tight mb-8 text-black"
+                  className="text-[24px] md:text-[27px] leading-[30px] md:leading-[31px] font-normal text-black opacity-85 mb-[35px -mt-2"
               >
                   Comprehensive Legal Solutions Tailored to You
               </h2>
              
               <p 
-                className="text-center text-light md:text-xl max-w-3xl mx-auto leading-relaxed mb-10"
-                style={{ color: "rgba(48, 38, 28, 0.75)" }}
+                className="text-center text-[13px] md:text-[20px] leading-[24px] md:leading-[29px] font-normal max-w-4xl mx-auto mb-[50px] opacity-85"
+                style={{ color: "rgba(48, 38, 28, 0.85)" }}
               >
                   We provide reliable legal advice and representation for individuals and businesses, ensuring clarity, compliance, and confidence at every stage.
               </p>
 
               <Link 
                 href="/contact"
-                className="inline-block px-8 py-3 sm:px-10 sm:py-4 rounded-full text-[#30261C] text-base sm:text-lg font-medium transition-all hover:opacity-90 mb-12"
+                className="inline-block px-10 py-4 rounded-full text-[#30261C] text-lg font-semibold transition-all hover:opacity-90 mb-[80px]"
                 style={{
                   background: "#D29E0D",
                 }}
@@ -141,7 +141,7 @@ const ServicesClient = () => {
               </Link>
          </div>
 
-         <div className="relative w-full z-10 -mt-20 md:-mt-110">
+         <div className="relative w-full z-10 -mt-20 md:-mt-[450px]">
              <Image 
                 src="/handshake.png" 
                 alt="Legal Experts Handshake" 
@@ -154,17 +154,17 @@ const ServicesClient = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="w-full px-4 md:px-8 pb-24 max-w-[1400px] mx-auto z-10 relative mt-8 md:-mt-50">
-          <div className="text-center max-w-4xl mx-auto mb-16">
-              <h2 className="text-[28px] md:text-[42px] font-normal text-[#30261C] mb-6" style={{ fontFamily: "var(--font-polysans)" }}>
+      <section className="w-full px-4 md:px-8 max-w-[1600px] mx-auto z-10 relative mt-8 md:-mt-50 mb-[120px]">
+          <div className="text-center max-w-5xl mx-auto mb-[80px]">
+              <h2 className="text-[32px] md:text-[65px] font-semibold text-[#30261C] leading-[40px] md:leading-[65px] mb-[30px] opacity-100" style={{ fontFamily: "var(--font-polysans)" }}>
                   Explore Our Full Range of Legal Services
               </h2>
-              <p className="text-[#30261C]/80 text-base md:text-lg leading-relaxed">
+              <p className="text-[#30261C] text-[13px] md:text-[20px] leading-[24px] md:leading-[29px] font-normal opacity-85">
                   We offer comprehensive legal services across personal, corporate, and compliance matters. Our team focuses on practical solutions, legal accuracy, and client-first representation to achieve the best outcomes.
               </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[35px]">
             {servicesData.map((item, index) => (
                 <Link href={item.link} key={index} className="group h-full">
                     <div className="h-full rounded-[24px] bg-[#EAE6DB] border border-white/40 shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] p-6 lg:p-8 flex flex-col gap-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-[#D29E0D]/30">

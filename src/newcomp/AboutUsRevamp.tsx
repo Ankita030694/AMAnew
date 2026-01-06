@@ -15,19 +15,18 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
         <div className="flex-grow flex flex-col justify-center items-center px-4 w-full pt-32 md:pt-50 mb-24 md:mb-0">
           
           {/* Headings Group */}
-          <div className="text-center mb-6 md:mb-8">
-              <h1 className="text-[32px] md:text-[54px] font-light text-black leading-tight">
+          <div className="text-center mb-[30px]">
+              <h1 className="text-[26px] md:text-[52px] font-semibold text-black leading-[32px] md:leading-[52px] opacity-100">
                   Expert Legal Solutions. Trusted Lawyers.
               </h1>
               <h2 
-                  className="text-[32px] md:text-[54px] leading-tight"
+                  className="text-[26px] md:text-[52px] leading-[32px] md:leading-[52px] font-semibold opacity-100"
                   style={{
                     background: "linear-gradient(90deg, #30261C 5.29%, #D29E0D 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
                     color: "transparent",
-                    fontWeight: 400
                   }}
               >
                   Your Complete Legal Partner.
@@ -36,14 +35,14 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
 
           {/* Description */}
           <p 
-              className="text-center text-base md:text-xl max-w-2xl px-6 mb-8 font-medium leading-relaxed"
-              style={{ color: "rgba(48, 38, 28, 0.75)" }}
+              className="text-center text-[13px] md:text-[20px] max-w-3xl px-6 mb-[50px] font-normal leading-[19px] md:leading-[23px] opacity-85"
+              style={{ color: "rgba(48, 38, 28, 0.85)" }}
           >
               AMA Legal Solutions unites expert counsel, strategic case management, and personalized advice to ensure you never lose track of what matters.
           </p>
 
           {/* App Store Icons */}
-          <div className="flex justify-center gap-4 mb-8">
+          <div className="flex justify-center gap-[30px] mb-[80px]">
               <Link href="https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions" target="_blank" className="hover:opacity-80 transition-opacity">
                   <Image src="/newAssets/playstore.svg" alt="Google Play" width={160} height={48} className="w-[130px] sm:w-[160px] h-auto" />
               </Link>
@@ -65,11 +64,11 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
       </section>
 
       {/* Mission Section */}
-      <section className="w-full px-4 md:px-8 py-16 md:py-24 max-w-[95%] mx-auto">
+      <section className="w-full px-4 md:px-8 py-[80px] md:py-[120px] max-w-[95%] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-start">
           {/* Left Column */}
-          <div className="flex flex-col items-start gap-8">
-            <h3 className="text-[32px] md:text-[48px] leading-tight font-light text-black">
+          <div className="flex flex-col items-start gap-[35px]">
+            <h3 className="text-[26px] md:text-[52px] leading-[32px] md:leading-[52px] font-semibold text-black opacity-100">
               <span 
                 style={{
                   background: "linear-gradient(90deg, #30261C 5.29%, #D29E0D 100%)",
@@ -77,7 +76,6 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
                   color: "transparent",
-                  fontWeight: 400
                 }}
               >
                 AMA Legal Solutions
@@ -88,7 +86,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
             
             <Link 
               href="/contact"
-              className="inline-block px-8 py-3 sm:px-10 sm:py-4 rounded-full text-[#30261C] text-base sm:text-lg font-medium transition-all hover:opacity-90"
+              className="inline-block px-10 py-4 rounded-full text-[#30261C] text-[15px] font-semibold transition-all hover:opacity-90"
               style={{
                 background: "#D29E0D",
               }}
@@ -142,9 +140,9 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
           </div>
 
           {/* Right Column */}
-          <div className="text-[#30261C] text-lg md:text-xl leading-relaxed space-y-6 font-normal opacity-80">
+          <div className="text-[#30261C] text-[13px] md:text-[20px] leading-[19px] md:leading-[23px] space-y-6 font-normal opacity-85">
 
-            <h3> <span className="font-bold opacity-100">Our mission:</span> </h3>
+            <h3> <span className="font-semibold opacity-100 text-[19px] md:text-[22px] leading-[25px]">Our mission:</span> </h3>
             <p>
              To provide trusted, results-focused legal solutions that protect your financial and business interests ethically, clearly, and efficiently.
 
@@ -165,13 +163,12 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
       </section>
 
       {/* Affiliations Section */}
-      <section className="w-full px-4 md:px-8 max-w-[95%] mx-auto mb-16 md:mb-24">
-         <div className="w-full rounded-[35px] bg-[#EAE6DB] border border-white/40 shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] p-6 lg:p-12 flex flex-col items-center gap-6 lg:gap-12">
+      <section className="w-full px-4 md:px-8 max-w-[95%] mx-auto mb-[120px]">
+         <div className="w-full rounded-[35px] bg-[#EAE6DB] border border-white/40 shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] p-6 lg:p-12 flex flex-col items-center gap-[50px]">
             <h2 
-              className="text-[#30261C] text-center text-[31px] md:text-[47px] font-normal leading-[1.2] lg:leading-[1.2]"
+              className="text-[#30261C] text-center text-[26px] md:text-[52px] font-semibold leading-[32px] md:leading-[52px]"
               style={{
                 fontFamily: "var(--font-polysans)",
-                fontWeight: 400
               }}
             >
               Affiliations That Strengthen Our Practice
@@ -219,7 +216,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
       </section>
 
       {/* Legacy Section */}
-      <section className="w-full py-16 md:py-24 flex flex-col items-center bg-[#EAE6DB] overflow-hidden">
+      <section className="w-full py-[80px] md:py-[120px] flex flex-col items-center bg-[#EAE6DB] overflow-hidden">
         {/* Main Heading */}
        
        
@@ -269,15 +266,15 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
               {/* Right Content (Text) - Swapped Position */}
               <div className="flex-1 p-5 md:p-10 flex flex-col justify-start md:justify-center items-start md:items-end z-20 max-w-full md:max-w-2xl text-left md:text-right h-full md:ml-auto">
                 {/* Top Section: Header Info */}
-                <div className="w-full flex flex-col items-start md:items-end gap-1 md:gap-4 mb-3 md:mb-2 text-left md:text-right z-30 relative">
+                <div className="w-full flex flex-col items-start md:items-end gap-1 md:gap-[30px] mb-[30px] text-left md:text-right z-30 relative">
                    <div className="flex flex-col md:flex-row md:items-baseline justify-end gap-1">
-                      <h3 className="text-[#30261C] text-[24px] md:text-[32px] font-normal leading-tight">
+                      <h3 className="text-[#30261C] text-[26px] md:text-[34px] font-semibold leading-tight opacity-100">
                       Anuj Anand Malik
                       </h3>
                    </div>
 
                   <div className="space-y-1 w-full flex flex-col items-start md:items-end">
-                      <p className="text-[#D29E0D] text-[16px] md:text-xl font-medium w-full text-left md:text-right">
+                      <p className="text-[#D29E0D] text-[13px] md:text-[20px] font-medium w-full text-left md:text-right mb-[30px]">
                           Advocate, Legal Consultant, Banking Lawyer, and Loan Settlement Expert
                       </p>
                   </div>
@@ -285,7 +282,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
 
                 {/* Bottom Section: Description */}
                 <div className="w-full flex-1 relative min-h-0 flex flex-col items-start md:items-end">
-                  <div className="w-[90%] md:w-full text-[#30261C] text-[16px] md:text-md opacity-80 z-20 h-full overflow-y-auto md:overflow-visible pb-[340px] md:pb-2 content-start pr-1 text-left md:text-right">
+                  <div className="w-[90%] md:w-full text-[#30261C] text-[13px] md:text-[20px] leading-[19px] md:leading-[23px] opacity-80 z-20 h-full overflow-y-auto md:overflow-visible pb-[340px] md:pb-2 content-start pr-1 text-left md:text-right">
                       <div className="space-y-4">
                         <p>
                           I am Anuj Anand Malik, an advocate, legal consultant, banking lawyer,
@@ -307,14 +304,14 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
       </section>
 
       {/* Our Journey Through Time Section */}
-      <section className="w-full px-4 md:px-8 py-12 md:py-16 flex flex-col items-center gap-8 md:gap-14">
+      <section className="w-full px-4 md:px-8 py-[80px] md:py-[120px] flex flex-col items-center gap-[50px] md:gap-[80px]">
         {/* Section Header */}
-        <div className="flex flex-col items-center gap-4 md:gap-6 max-w-2xl text-center">
-          <h2 className="text-3xl md:text-5xl font-normal text-[#30261C] leading-tight">
+        <div className="flex flex-col items-center gap-[35px] max-w-4xl text-center">
+          <h2 className="text-[26px] md:text-[52px] font-semibold text-[#30261C] leading-[32px] md:leading-[52px] opacity-100">
             Our Journey Through Time
           </h2>
           <p
-            className="text-lg md:text-2xl font-normal leading-relaxed tracking-wide"
+            className="text-[13px] md:text-[20px] font-normal leading-[19px] md:leading-[23px] opacity-85"
             style={{ color: "rgba(48, 38, 28, 0.85)" }}
           >
             Explore the chapters of our story from where we began to where we&apos;re headed.
