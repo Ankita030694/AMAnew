@@ -114,8 +114,8 @@ const AnimatedBorder = ({ isMobileView = false }: { isMobileView?: boolean }) =>
     const runAnimation = async () => {
       while (isMounted) {
         setCompletedCheckpoints([]);
-        progress.set(0);
-        blobProgress.set(0);
+        progress.set(0.05);
+        blobProgress.set(0.05);
         setLastActiveCheckpoint(null);
         
         for (const checkpoint of CHECKPOINTS) {
@@ -149,8 +149,8 @@ const AnimatedBorder = ({ isMobileView = false }: { isMobileView?: boolean }) =>
 
         // Finish path
         await Promise.all([
-            animate(progress, 1, { duration: 1.5, ease: "linear" }),
-            animate(blobProgress, 1, { duration: 1.5, ease: "linear" })
+            animate(progress, 0.95, { duration: 1.5, ease: "linear" }),
+            animate(blobProgress, 0.95, { duration: 1.5, ease: "linear" })
         ]);
         
         // Reset

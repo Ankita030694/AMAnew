@@ -5,12 +5,12 @@ import { Handshake, Lightbulb, Building2, Landmark } from "lucide-react";
 
 const Services = () => {
   return (
-    <section className="w-full max-w-8xl mx-auto px-4 lg:px-20 py-16 lg:py-24">
+    <section className="w-full max-w-8xl xl:max-w-[100%] mx-auto px-4 lg:px-20 py-16 lg:py-24 transition-all duration-300">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
         {/* Left Column Group */}
         <div className="flex flex-col gap-6 h-full">
           {/* Image Container */}
-          <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-full rounded-[25px] overflow-hidden min-h-[250px] lg:min-h-[650px]">
+          <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-full rounded-[25px] overflow-hidden min-h-[250px] lg:min-h-[650px] xl:min-h-[500px]">
             <Image
               src="/newAssets/office.png"
               alt="Office"
@@ -66,7 +66,7 @@ const Services = () => {
         {/* Right Column - 2x2 Grid */}
         <div className="grid grid-cols-2 gap-3 lg:gap-6">
           {/* Box 1 - Loan Settlement */}
-          <Link href="/services/loan-settlement" className="p-3 lg:p-4 rounded-[25px] bg-gradient-to-t from-white to-white shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] flex flex-col justify-between items-start text-left gap-2 lg:gap-4 h-full min-h-[200px] lg:min-h-[300px] hover:scale-[1.02] transition-transform duration-300">
+          <Link href="/services/loan-settlement" className="p-3 lg:p-4 xl:p-4 rounded-[25px] bg-gradient-to-t from-white to-white shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] flex flex-col justify-between items-start text-left gap-2 lg:gap-4 xl:gap-2 h-full min-h-[200px] lg:min-h-[300px] xl:min-h-[240px] hover:scale-[1.02] transition-transform duration-300">
             <Handshake className="w-11 h-11 text-[#30261C]" />
             <div>
               <h3 
@@ -85,7 +85,7 @@ const Services = () => {
           </Link>
 
           {/* Box 2 - Intellectual Property Rights */}
-          <Link href="/services/intellectual-property-rights" className="p-3 lg:p-5 rounded-[25px] bg-[linear-gradient(180deg,#FFF_-47.71%,#D29E0D_199.6%)] shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] flex flex-col justify-between items-start text-left gap-2 lg:gap-4 h-full min-h-[200px] lg:min-h-[300px] hover:scale-[1.02] transition-transform duration-300">
+          <Link href="/services/intellectual-property-rights" className="p-3 lg:p-5 xl:p-4 rounded-[25px] bg-[linear-gradient(180deg,#FFF_-47.71%,#D29E0D_199.6%)] shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] flex flex-col justify-between items-start text-left gap-2 lg:gap-4 xl:gap-2 h-full min-h-[200px] lg:min-h-[300px] xl:min-h-[240px] hover:scale-[1.02] transition-transform duration-300">
              <Lightbulb className="w-11 h-11 text-[#30261C]" />
              <div>
                <h3 
@@ -104,7 +104,7 @@ const Services = () => {
           </Link>
 
            {/* Box 3 - Corporate Law */}
-           <Link href="/services/corporate" className="p-3 lg:p-5 rounded-[25px] bg-[linear-gradient(180deg,#FFF_-47.71%,#D29E0D_199.6%)] shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] flex flex-col justify-between items-start text-left gap-2 lg:gap-4 h-full min-h-[200px] lg:min-h-[300px] hover:scale-[1.02] transition-transform duration-300">
+           <Link href="/services/corporate" className="p-3 lg:p-5 xl:p-4 rounded-[25px] bg-[linear-gradient(180deg,#FFF_-47.71%,#D29E0D_199.6%)] shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] flex flex-col justify-between items-start text-left gap-2 lg:gap-4 xl:gap-2 h-full min-h-[200px] lg:min-h-[300px] xl:min-h-[240px] hover:scale-[1.02] transition-transform duration-300">
              <Building2 className="w-11 h-11 text-[#30261C]" />
              <div>
                <h3 
@@ -123,7 +123,7 @@ const Services = () => {
           </Link>
 
           {/* Box 4 - Banking and Finance */}
-          <Link href="/services/banking-and-finance" className="p-3 lg:p-5 rounded-[25px] bg-gradient-to-t from-white to-white shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] flex flex-col justify-between items-start text-left gap-2 lg:gap-4 h-full min-h-[200px] lg:min-h-[300px] hover:scale-[1.02] transition-transform duration-300">
+          <Link href="/services/banking-and-finance" className="p-3 lg:p-5 xl:p-4 rounded-[25px] bg-gradient-to-t from-white to-white shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] flex flex-col justify-between items-start text-left gap-2 lg:gap-4 xl:gap-2 h-full min-h-[200px] lg:min-h-[300px] xl:min-h-[240px] hover:scale-[1.02] transition-transform duration-300">
              <Landmark className="w-11 h-11 text-[#30261C]" />
              <div>
                <h3 

@@ -14,7 +14,7 @@ const slides = [
       "Director General of Audit (Central-Receipt)",
     ],
     description:
-      "Inspired by a deep passion for justice and a strong vision to serve the community, R.C. Malik pursued law with an unwavering commitment to excellence. Guided by integrity and a steadfast ethical compass, he dedicated himself to providing trusted and effective legal counsel. His consistent professionalism and principled approach earned him a respected reputation, laying a strong foundation built on trust, credibility, and enduring legal values.",
+      "Inspired by a deep-seated passion for justice and a transformative vision to serve the community, R.C. Malik pursued the legal profession with an unwavering commitment to excellence and public service. Guided by absolute integrity and a steadfast ethical compass, he dedicated his life to providing trusted, effective, and principled legal counsel. His consistent professionalism, combined with a profound understanding of the law, earned him a highly respected reputation across the fraternity. Through his tireless efforts, he laid a robust foundation for the practice, built on the pillars of trust, credibility, and enduring legal values that continue to inspire generations.",
     image: "/newAssets/dadaji1.png",
     imageWidth: "640px",
     objectFit: "cover",
@@ -200,7 +200,7 @@ const Legacy = () => {
                         {currentSlide.titles.map((title, idx) => (
                         <p
                             key={idx}
-                            className="text-[#D29E0D] text-[16px] md:text-[14px] font-medium font-sans w-full"
+                            className="text-[#D29E0D] text-[20px] md:text-[18px] font-medium font-sans w-full"
                         >
                             {title}
                         </p>
@@ -211,7 +211,7 @@ const Legacy = () => {
                   {/* Bottom Section: Description (Constrained Width) + Image (Absolute Bottom Right) */}
                   <div className="w-full flex-1 relative min-h-0">
                     {/* Description - Constrained to Left 60% on mobile to avoid image overlap */}
-                    <div className="w-[90%] md:w-full text-[#30261C] text-[16px] md:text-[13px] leading-[1.4] md:leading-[19px] font-sans opacity-80 z-20 h-full overflow-y-auto md:overflow-visible pb-2 content-start pr-1">
+                    <div className="w-[90%] md:w-full text-[#30261C] text-[13px] md:text-[16px] leading-[1.4] md:leading-[24px] font-sans opacity-80 z-20 h-full overflow-y-auto md:overflow-visible pb-2 content-start pr-1">
                         {currentSlide.description}
                     </div>
 

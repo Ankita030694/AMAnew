@@ -17,7 +17,7 @@ const Navbar = () => {
   // State for animation targets
   const [targetX, setTargetX] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
-  const [showSpacer, setShowSpacer] = useState(false);
+
 
   // Scroll progress
   const { scrollY } = useScroll();
@@ -32,11 +32,7 @@ const Navbar = () => {
     restDelta: 0.001
   });
 
-  // Toggle spacer visibility based on scroll
-  useMotionValueEvent(smoothProgress, "change", (latest) => {
-    if (latest > 0.01 && !showSpacer) setShowSpacer(true);
-    if (latest <= 0.01 && showSpacer) setShowSpacer(false);
-  });
+
 
   // Calculate positions on mount and resize
   useEffect(() => {
@@ -109,6 +105,9 @@ const Navbar = () => {
 
   // Spacer width for the logo to dock
   const spacerWidth = useTransform(smoothProgress, [0, 1], ["0px", "80px"]);
+  // Animate negative margin to counteract the gap when spacer is "hidden"
+  // Assuming gap-15 is 60px. At 0, we need -60px to cancel one gap.
+  const spacerMarginLeft = useTransform(smoothProgress, [0, 1], ["-60px", "-15px"]);
 
   // Mobile Menu State
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -193,7 +192,7 @@ const Navbar = () => {
           {/* Desktop Middle: Nav Links */}
           <div
             ref={navLinksRef}
-            className="hidden md:flex items-center gap-15 px-15 py-5 rounded-full relative z-40 transition-all duration-300"
+            className="hidden md:flex items-center gap-15 px-15 py-3 rounded-full relative z-40 transition-all duration-300"
             style={{
               background: "rgba(48, 38, 28, 0.90)",
               boxShadow: "0 0 8px 0 rgba(0, 0, 0, 0.10)",
@@ -208,15 +207,13 @@ const Navbar = () => {
             </Link>
 
             {/* Spacer for Logo */}
-            {showSpacer && (
-              <motion.div
-                style={{
-                  width: spacerWidth,
-                  marginLeft: "-15px"
-                }}
-                className="h-1 flex-shrink-0"
-              />
-            )}
+            <motion.div
+              style={{
+                width: spacerWidth,
+                marginLeft: spacerMarginLeft
+              }}
+              className="h-1 flex-shrink-0"
+            />
 
             <Link ref={servicesRef} href="/services" className="text-white/90 hover:text-white transition-colors text-lg font-light">
               Services
@@ -278,7 +275,7 @@ const Navbar = () => {
           <div className="hidden md:block flex-shrink-0">
             <Link
               href="/contact"
-              className="px-15 py-5 rounded-full text-[#30261C] text-lg font-light transition-all hover:opacity-90"
+              className="px-15 py-3 rounded-full text-[#30261C] text-lg font-light transition-all hover:opacity-90"
               style={{
                 background: "rgba(210, 158, 13, 0.80)",
                 boxShadow: "0 0 8px 0 rgba(0, 0, 0, 0.10)",
