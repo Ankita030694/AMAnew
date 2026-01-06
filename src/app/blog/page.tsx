@@ -10,6 +10,9 @@ import BlogPage from './blogcomp';
 import { Suspense } from 'react';
 import PerformanceMonitor from '../../components/PerformanceMonitor';
 
+import Navbar from "@/newcomp/Navbar";
+import Footer from "@/newcomp/Footer";
+
 // Enhanced loading component
 const BlogLoading = () => (
   <div className="min-h-screen bg-[#F5F2EB] flex items-center justify-center">
@@ -23,11 +26,13 @@ const BlogLoading = () => (
 export default function Page() {
   return (
     <main className='bg-[#F5F2EB]'>
+      <Navbar />
       <PerformanceMonitor />
       
       <Suspense fallback={<BlogLoading />}>
         <BlogPage />
       </Suspense>
+      <Footer />
     </main>
   );
 }

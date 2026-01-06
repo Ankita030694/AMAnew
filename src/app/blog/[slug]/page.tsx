@@ -5,6 +5,8 @@ import ArticleDetail, { Blog, FAQ, Review } from "./blogdetail";
 import Script from "next/script";
 import { unstable_cache } from 'next/cache';
 import PerformanceMonitor from '../../../components/PerformanceMonitor';
+import Navbar from "@/newcomp/Navbar";
+import Footer from "@/newcomp/Footer";
 
 // Enhanced cache with TTL (Time To Live)
 const blogCache = new Map<string, { data: any; timestamp: number }>();
@@ -237,6 +239,7 @@ export default async function Page({
 
   return (
     <>
+      <Navbar />
       <PerformanceMonitor />
       {/* Combined Schema */}
       {combinedSchema && (
@@ -254,6 +257,7 @@ export default async function Page({
         reviews={reviews} 
         relatedBlogs={relatedBlogs}
       />
+      <Footer />
     </>
   );
 }
