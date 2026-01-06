@@ -11,6 +11,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Link from "next/link";
 import Image from "next/image";
+import CTA from "@/newcomp/CTA";
 import Locations from "@/components/locations";
 
 // Services Data
@@ -200,55 +201,7 @@ const ServicesClient = () => {
       </div>
 
       {/* CTA Section */}
-      <section className="relative bg-[#30261C] py-[90px] overflow-hidden">
-             {/* Background Decorative Elements */}
-             <div className="absolute inset-0 pointer-events-none">
-                <div 
-                    className="absolute w-[968px] h-[1293px] left-1/2 -ml-[284px] -top-[531px]"
-                    style={{ transform: 'rotate(11.849deg)' }}
-                >
-                    <div className="absolute w-[49px] h-[1298px] left-[8px] top-[69px]" style={{ transform: 'rotate(39.681deg)', background: 'rgba(234, 230, 219, 0.00)', filter: 'blur(129.4px)' }} />
-                    <div className="absolute w-[49px] h-[1298px] left-[498px] top-[191px]" style={{ transform: 'rotate(29.681deg)', background: 'rgba(234, 230, 219, 0.50)', filter: 'blur(129.4px)' }} />
-                    <div className="absolute w-[49px] h-[1298px] left-[297px] top-[130px]" style={{ transform: 'rotate(29.681deg)', background: 'rgba(234, 230, 219, 0.50)', filter: 'blur(129.4px)' }} />
-                    <div className="absolute w-[49px] h-[1298px] left-[90px] top-[86px]" style={{ transform: 'rotate(29.681deg)', background: 'rgba(234, 230, 219, 0.36)', filter: 'blur(129.4px)' }} />
-                </div>
-                 {/* Golden Blur Effect */}
-                 <svg className="absolute left-[30%] bottom-0 w-[245px] h-[234px]" style={{ filter: 'blur(101.6px)' }} width="868" height="696" viewBox="0 0 868 696" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g filter="url(#filter0_f_cta_services)">
-                        <path d="M270.9 472.4V270.9L596.9 472.4V582.9L270.9 472.4Z" fill="#D29E0D" fillOpacity="0.61" />
-                    </g>
-                    <defs>
-                        <filter id="filter0_f_cta_services" x="0" y="0" width="867.8" height="853.8" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                        <feGaussianBlur stdDeviation="135.45" result="effect1_foregroundBlur"/>
-                        </filter>
-                    </defs>
-                 </svg>
-             </div>
-             
-             <div className="relative z-10 max-w-[700px] mx-auto flex flex-col items-center gap-[30px] px-4">
-                  <h2 
-                    className="text-[#EAE6DB] text-center text-[31px] md:text-[47px] font-normal leading-[1.2]"
-                    style={{ fontFamily: 'var(--font-polysans)' }}
-                  >
-                    Not sure what you need?
-                  </h2>
-                   <p 
-                    className="text-center text-[16px] md:text-[20px] font-light leading-[1.6] w-full"
-                    style={{ color: 'rgba(234, 230, 219, 0.65)', fontFamily: 'var(--font-polysans)' }}
-                  >
-                    Our experts are here to guide you through your legal journey.
-                  </p>
-                  
-                  <Link
-                      href="/contact"
-                      className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#D29E0D] text-[#30261C] font-medium hover:bg-[#b88a24] transition-colors"
-                  >
-                      Schedule a Consultation
-                  </Link>
-             </div>
-      </section>
+      <CTA />
 
 
     </main>
