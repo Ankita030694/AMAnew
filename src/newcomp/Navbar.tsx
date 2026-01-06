@@ -221,11 +221,14 @@ const Navbar = () => {
 
             {/* Dropdown */}
             <div
-              className="relative group"
+              className="group h-full flex items-center"
               onMouseEnter={() => setIsDropdownOpen(true)}
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
-              <button className="flex items-center gap-1 text-white/90 hover:text-white transition-colors text-lg font-light">
+              <button 
+                className="flex items-center gap-1 text-white/90 hover:text-white transition-colors text-lg font-light h-full"
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              >
                 Insights
                 <svg
                   className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
@@ -237,37 +240,97 @@ const Navbar = () => {
                 </svg>
               </button>
 
-              {isDropdownOpen && (
-                <div className="absolute top-full left-0 pt-4 w-48">
-                  <div
-                    className="rounded-2xl overflow-hidden py-2"
-                    style={{
-                      background: "rgba(48, 38, 28, 0.95)",
-                      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
-                      backdropFilter: "blur(12px)",
-                    }}
+              <AnimatePresence>
+                {isDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute left-0 w-full pt-2 z-50 cursor-default"
+                    style={{ top: "100%" }}
                   >
-                    <Link
-                      href="/blog"
-                      className="block px-4 py-2 text-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+                    <div 
+                      className="flex w-full p-8 gap-8"
+                      style={{
+                        borderRadius: "25px",
+                        background: "rgba(255, 255, 255, 0.85)",
+                        backdropFilter: "blur(8px)",
+                        boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
+                      }}
                     >
-                      Blog
-                    </Link>
-                    <Link
-                      href="/amalive"
-                      className="block px-4 py-2 text-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors"
-                    >
-                      AMA Live
-                    </Link>
-                    <Link
-                      href="/articles"
-                      className="block px-4 py-2 text-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors"
-                    >
-                      Articles
-                    </Link>
-                  </div>
-                </div>
-              )}
+                      {/* Left Column */}
+                      <div className="flex-1 flex flex-col justify-start gap-8 pl-8 pt-5">
+                        <Link href="/articles" className="flex items-center gap-6 group hover:opacity-80 transition-opacity">
+                          <div className="w-[40px] h-[40px] relative flex-shrink-0">
+                            <Image 
+                              src="/article.svg" 
+                              alt="Articles" 
+                              fill 
+                              className="object-contain" 
+                            />
+                          </div>
+                          <span style={{ 
+                            color: "#000", 
+                            fontFamily: "var(--font-polysans)", 
+                            fontSize: "25px", 
+                            fontWeight: 300, 
+                            fontStyle: "normal",
+                            lineHeight: "25px" 
+                          }}>
+                            Articles
+                          </span>
+                        </Link>
+                        
+                        <Link href="/amalive" className="flex items-center gap-6 group hover:opacity-80 transition-opacity">
+                          <div className="w-[40px] h-[40px] relative flex-shrink-0">
+                            <Image 
+                              src="/live.svg" 
+                              alt="AMA Live" 
+                              fill 
+                              className="object-contain" 
+                            />
+                          </div>
+                          <span style={{ 
+                            color: "#000", 
+                            fontFamily: "var(--font-polysans)", 
+                            fontSize: "25px", 
+                            fontWeight: 300, 
+                            fontStyle: "normal",
+                            lineHeight: "25px" 
+                          }}>
+                            AMA Live
+                          </span>
+                        </Link>
+                      </div>
+
+                      {/* Right Column */}
+                      <div 
+                        className="flex-1 p-8 flex flex-col justify-center gap-4" 
+                        style={{
+                          borderRadius: "10px",
+                          background: "rgba(172, 172, 172, 0.25)"
+                        }}
+                      >
+                        <Link href="/blog" className="block w-full">
+                          <h3 
+                            className="text-[25px] font-normal mb-2 text-black"
+                            style={{ fontFamily: "var(--font-polysans)" }}
+                          >
+                            Blogs
+                          </h3>
+                          <p 
+                            className="text-[16px] leading-relaxed text-black/80 font-light"
+                            style={{ fontFamily: "var(--font-polysans)" }}
+                          >
+                            Explore expert legal blogs from AMA Legal Solutions, featuring insights on corporate law, compliance, contracts, and more to keep you informed.
+                          </p>
+                        </Link>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
 
