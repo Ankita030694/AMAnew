@@ -200,7 +200,7 @@ const Legacy = () => {
                         {currentSlide.titles.map((title, idx) => (
                         <p
                             key={idx}
-                            className="text-[#D29E0D] text-[20px] md:text-[18px] font-medium font-sans w-full"
+                            className="text-[#D29E0D] text-[15px] md:text-[18px] font-medium font-sans w-full"
                         >
                             {title}
                         </p>
@@ -222,8 +222,8 @@ const Legacy = () => {
 
                 {/* Mobile Image - Absolute Bottom Right */}
                     <div 
-                      className={`md:hidden absolute bottom-0 -right-10 z-10 pointer-events-none translate-y-[20px] ${
-                        currentSlide.id === 1 ? "w-[85%] h-[350px]" : "w-[60%] h-[320px]"
+                      className={`md:hidden absolute -bottom-3 -right-10 z-10 pointer-events-none translate-y-[20px] ${
+                        currentSlide.id === 1 ? "w-[85%] h-[350px]" : "w-[80%] h-[420px]"
                       }`}
                     > 
                          <Image
