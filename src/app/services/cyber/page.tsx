@@ -261,16 +261,24 @@ export default function CyberLawPage() {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-7xl py-8">
+        <div className="container mx-auto px-4 max-w-[1600px] py-8">
           <Breadcrumbs items={breadcrumbItems} />
           
-          <div className="flex flex-col lg:flex-row gap-12">
-            {/* Main Content Area */}
-            <div className="lg:w-3/4">
-              
-              <TableOfContents sections={tocSections} />
+          <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 items-start">
+            {/* Left Sidebar - TOC (Desktop) */}
+            <div className="hidden lg:block sticky top-24">
+              <TableOfContents sections={tocSections} orientation="vertical" />
+            </div>
 
-              <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm mt-8 space-y-12">
+            {/* Main Content Area */}
+            <div className="min-w-0">
+              
+              {/* TOC (Mobile) */}
+              <div className="lg:hidden mb-8">
+                <TableOfContents sections={tocSections} />
+              </div>
+
+              <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm space-y-12">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
@@ -355,8 +363,7 @@ export default function CyberLawPage() {
                   </div>
                 </section>
 
-                {/* Placeholder for Part 2 */}
-                {/* Types of Cyber Crimes */}
+                {/* Cyber Crimes */}
                 <section id="cyber-crimes" className="scroll-mt-32">
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">Common Types of Cyber Crimes We Handle</h2>
                   <p className="text-lg leading-relaxed mb-8 text-gray-700">
@@ -385,7 +392,7 @@ export default function CyberLawPage() {
                     <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
                       <h3 className="text-xl font-bold text-gray-900 mb-2">4. Cyber Stalking and Harassment</h3>
                       <p className="text-gray-700">
-                        The anonymity of the internet often emboldens harassers. Cyber stalking involves persistent online harassment that causes fear or distress. We help victims obtain restraining orders and file criminal complaints under Section 354D of the IPC and Section 67 of the IT Act.
+                         The anonymity of the internet often emboldens harassers. Cyber stalking involves persistent online harassment that causes fear or distress. We help victims obtain restraining orders and file criminal complaints under Section 354D of the IPC and Section 67 of the IT Act.
                       </p>
                     </div>
                     <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
@@ -610,8 +617,7 @@ export default function CyberLawPage() {
             </div>
 
             {/* Sidebar */}
-            <div className="lg:w-1/4">
-              <div className="sticky top-24 space-y-8">
+            <div className="hidden lg:block space-y-8 sticky top-24">
                 {/* Contact Card */}
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                   <h3 className="text-xl font-bold text-gray-900 mb-4">Victim of Cyber Crime?</h3>
@@ -658,7 +664,6 @@ export default function CyberLawPage() {
                     </li>
                   </ul>
                 </div>
-              </div>
             </div>
           </div>
           

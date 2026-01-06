@@ -1,5 +1,4 @@
 
-import Navbar from "@/newcomp/Navbar";
 import Hero from "@/newcomp/Hero";
 import Clients from "@/newcomp/Clients";
 import Legacy from "@/newcomp/Legacy";
@@ -10,7 +9,6 @@ import Testimonials from "@/newcomp/Testimonials";
 import VideoTestimonials from "@/newcomp/VideoTestimonials";
 import FAQ from "@/newcomp/FAQ";
 import CTA from "@/newcomp/CTA";
-import Footer from "@/newcomp/Footer";
 import WhatsAppWidget from "@/newcomp/WhatsAppWidget";
 import Script from "next/script";
 import { baseTestimonials } from "@/data/testimonials";
@@ -173,7 +171,6 @@ export default function Home() {
         }}
       />
       
-      <Navbar />
       <Hero />
       <Clients />
       <Legacy />
@@ -188,7 +185,6 @@ export default function Home() {
       <VideoTestimonials />
       <FAQ />
       <CTA />
-      <Footer />
       <WhatsAppWidget />
     </main>
   );

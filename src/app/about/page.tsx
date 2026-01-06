@@ -7,8 +7,6 @@
 // import AnimatedCounter from "@/components/AnimatedCounter";
 // import Image from "next/image";
 
-import Navbar from "@/newcomp/Navbar";
-import Footer from "@/newcomp/Footer";
 import AboutUsRevamp from "@/newcomp/AboutUsRevamp";
 import { fetchAttorneys } from "@/lib/attorneys";
 
@@ -24,9 +22,7 @@ export default async function About() {
     
     return (
       <>
-        <Navbar />
         <AboutUsRevamp attorneys={attorneys} />
-        <Footer />
       </>
       /*
       <div>

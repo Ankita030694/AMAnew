@@ -298,16 +298,24 @@ export default function LitigationPage() {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-7xl py-8">
+        <div className="container mx-auto px-4 max-w-[1600px] py-8">
           <Breadcrumbs items={breadcrumbItems} />
           
-          <div className="flex flex-col lg:flex-row gap-12">
-            {/* Main Content Area */}
-            <div className="lg:w-3/4">
-              
-              <TableOfContents sections={tocSections} />
+          <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 items-start">
+            {/* Left Sidebar - TOC (Desktop) */}
+            <div className="hidden lg:block sticky top-24">
+              <TableOfContents sections={tocSections} orientation="vertical" />
+            </div>
 
-              <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm mt-8 space-y-12">
+            {/* Main Content Area */}
+            <div className="min-w-0">
+              
+              {/* TOC (Mobile) */}
+              <div className="lg:hidden mb-8">
+                <TableOfContents sections={tocSections} />
+              </div>
+
+              <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm space-y-12">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
@@ -689,8 +697,7 @@ export default function LitigationPage() {
             </div>
 
             {/* Sidebar */}
-            <div className="lg:w-1/4">
-              <div className="sticky top-24 space-y-8">
+            <div className="hidden lg:block space-y-8 sticky top-24">
                 {/* Contact Card */}
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                   <h3 className="text-xl font-bold text-gray-900 mb-4">Need Urgent Legal Help?</h3>
@@ -738,7 +745,6 @@ export default function LitigationPage() {
                   </ul>
                 </div>
               </div>
-            </div>
           </div>
           
           <div className="mt-16">

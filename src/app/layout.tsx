@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import HomeHidden from "@/components/HomeHidden";
+import Navbar from "@/newcomp/Navbar";
+import Footer from "@/newcomp/Footer";
 import { Toaster } from "react-hot-toast";
 import Script from 'next/script'
 
@@ -235,13 +234,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
           }}
         />
         {/* End Google Tag Manager (noscript) */}
-        <HomeHidden>
-          <Navbar />
-        </HomeHidden>
+        <Navbar />
         {children}
-        <HomeHidden>
-          <Footer />
-        </HomeHidden>
+        <Footer />
         <Toaster position="top-right" />
         {process.env.NEXT_PUBLIC_GA_TRACKING_ID && (
           <>
