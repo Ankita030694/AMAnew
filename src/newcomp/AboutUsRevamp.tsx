@@ -17,7 +17,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
           {/* Headings Group */}
           <div className="text-center mb-6 md:mb-8">
               <h1 className="text-[32px] md:text-[54px] font-light text-black leading-tight">
-                  Clear answers. Real lawyers.
+                  Expert Legal Solutions. Trusted Lawyers.
               </h1>
               <h2 
                   className="text-[32px] md:text-[54px] leading-tight"
@@ -30,7 +30,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
                     fontWeight: 400
                   }}
               >
-                  One trusted legal workspace.
+                  Your Complete Legal Partner.
               </h2>
           </div>
 
@@ -39,7 +39,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
               className="text-center text-base md:text-xl max-w-2xl px-6 mb-8 font-medium leading-relaxed"
               style={{ color: "rgba(48, 38, 28, 0.75)" }}
           >
-              AMA Legal Solutions brings your questions, cases, and expert advice together so you never lose track of what matters.
+              AMA Legal Solutions unites expert counsel, strategic case management, and personalized advice to ensure you never lose track of what matters.
           </p>
 
           {/* App Store Icons */}
@@ -95,6 +95,50 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
             >
               Request a Consultation
             </Link>
+
+            {/* Relocated Affiliation Logos */}
+            <div className="w-[120%] -ml-[10%] md:w-full md:-ml-30 mt-2 grid grid-cols-4 md:grid-cols-2 gap-1 md:gap-4 items-center justify-items-center md:items-start md:justify-items-start">
+               {/* Logo 2 */}
+               <Link href="#" className="relative w-[100%] h-[50px] md:h-[80px] hover:opacity-80 transition-opacity">
+                 <Image
+                   src="/newAssets/affiliation-logo-2.png"
+                   alt="Affiliation 2"
+                   fill
+                   className="object-contain object-center scale-[2] md:scale-100 origin-center"
+                   unoptimized
+                 />
+               </Link>
+               {/* Logo 3 */}
+               <Link href="#" className="relative w-full h-[50px] md:h-[80px] hover:opacity-80 transition-opacity">
+                 <Image
+                   src="/newAssets/affiliation-logo-3.png"
+                   alt="Affiliation 3"
+                   fill
+                   className="object-contain object-center scale-[2] md:scale-100 origin-center"
+                   unoptimized
+                 />
+               </Link>
+               {/* Logo 4 */}
+               <Link href="#" className="relative w-full h-[50px] md:h-[80px] hover:opacity-80 transition-opacity">
+                 <Image
+                   src="/newAssets/affiliation-logo-4.png"
+                   alt="Affiliation 4"
+                   fill
+                   className="object-contain object-center scale-[2] md:scale-100 origin-center"
+                   unoptimized
+                 />
+               </Link>
+               {/* Logo 5 */}
+               <Link href="#" className="relative w-full h-[50px] md:h-[80px] hover:opacity-80 transition-opacity">
+                 <Image
+                   src="/newAssets/affiliation-logo-5.png"
+                   alt="Affiliation 5"
+                   fill
+                   className="object-contain object-center scale-[2] md:scale-100 origin-center"
+                   unoptimized
+                 />
+               </Link>
+            </div>
           </div>
 
           {/* Right Column */}
@@ -132,8 +176,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
             >
               Affiliations That Strengthen Our Practice
             </h2>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-16 w-full items-center justify-items-center">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-16 w-full items-center justify-items-center">
                {/* Existing 4 Logos */}
                <Link href="https://mcia.org.in/" target="_blank" className="relative w-full max-w-[120px] md:max-w-[160px] lg:max-w-[200px] h-[60px] lg:h-[100px] hover:opacity-80 transition-opacity">
                 <Image
@@ -168,45 +211,11 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
                  />
                </Link>
 
-               {/* New 4 Logos */}
-               <Link href="#" className="relative w-full max-w-[120px] md:max-w-[160px] lg:max-w-[400px] h-[60px] lg:h-[100px] hover:opacity-80 transition-opacity">
-                 <Image
-                   src="/newAssets/affiliation-logo-2.png"
-                   alt="Affiliation 2"
-                   fill
-                   className="object-contain"
-                   unoptimized
-                 />
-               </Link>
-               <Link href="#" className="relative w-full max-w-[120px] md:max-w-[160px] lg:max-w-[400px] h-[60px] lg:h-[100px] hover:opacity-80 transition-opacity">
-                 <Image
-                   src="/newAssets/affiliation-logo-3.png"
-                   alt="Affiliation 3"
-                   fill
-                   className="object-contain"
-                   unoptimized
-                 />
-               </Link>
-               <Link href="#" className="relative w-full max-w-[120px] md:max-w-[160px] lg:max-w-[400px] h-[60px] lg:h-[100px] hover:opacity-80 transition-opacity">
-                 <Image
-                   src="/newAssets/affiliation-logo-4.png"
-                   alt="Affiliation 4"
-                   fill
-                   className="object-contain"
-                   unoptimized
-                 />
-               </Link>
-               <Link href="#" className="relative w-full max-w-[120px] md:max-w-[160px] lg:max-w-[400px] h-[60px] lg:h-[100px] hover:opacity-80 transition-opacity">
-                 <Image
-                   src="/newAssets/affiliation-logo-5.png"
-                   alt="Affiliation 5"
-                   fill
-                   className="object-contain"
-                   unoptimized
-                 />
-               </Link>
-            </div>
+
          </div>
+            </div>
+            
+          
       </section>
 
       {/* Legacy Section */}
