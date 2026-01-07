@@ -311,7 +311,7 @@ const Navbar = () => {
                         className="flex-1 p-8 flex flex-col justify-center gap-4" 
                         style={{
                           borderRadius: "10px",
-                          background: "rgba(172, 172, 172, 0.25)"
+                          background: "rgba(210, 158, 13, 0.65)"
                         }}
                       >
                         <Link href="/blog" className="block w-full">
