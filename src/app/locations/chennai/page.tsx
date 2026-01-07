@@ -221,7 +221,20 @@ const serviceSchemas = servicesData.map(service => ({
   "@type": "Service",
   "name": service.name,
   "description": service.description,
-  "provider": { "@type": "LegalService", "name": "AMA Legal Solutions Chennai" },
+  "provider": {
+    "@type": "LegalService",
+    "name": "AMA Legal Solutions",
+    "image": "https://amalegalsolutions.com/city6.svg",
+    "description": "Leading law firm in Chennai providing expert legal services.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Chennai",
+      "addressRegion": "Tamil Nadu",
+      "addressCountry": "IN"
+    },
+    "telephone": "+918700343611",
+    "priceRange": "$$"
+  },
   "areaServed": { "@type": "City", "name": "Chennai" },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
