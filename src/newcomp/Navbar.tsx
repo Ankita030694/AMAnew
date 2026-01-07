@@ -254,7 +254,7 @@ const Navbar = () => {
                       className="flex w-full p-8 gap-8"
                       style={{
                         borderRadius: "25px",
-                        background: "rgba(255, 255, 255, 0.85)",
+                        background: "rgba(255, 255, 255, 1)",
                         backdropFilter: "blur(8px)",
                         boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
                       }}
@@ -267,7 +267,8 @@ const Navbar = () => {
                               src="/article.svg" 
                               alt="Articles" 
                               fill 
-                              className="object-contain" 
+                              className="object-contain"
+                              unoptimized
                             />
                           </div>
                           <span style={{ 
@@ -288,7 +289,8 @@ const Navbar = () => {
                               src="/live.svg" 
                               alt="AMA Live" 
                               fill 
-                              className="object-contain" 
+                              className="object-contain"
+                              unoptimized
                             />
                           </div>
                           <span style={{ 
