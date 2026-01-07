@@ -42,12 +42,12 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
           </p>
 
           {/* App Store Icons */}
-          <div className="flex justify-center gap-[30px] mb-[80px]">
+          <div className="flex justify-center gap-[30px] mb-[80px] relative z-20">
               <Link href="https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions" target="_blank" className="hover:opacity-80 transition-opacity">
-                  <Image src="/newAssets/playstore.svg" alt="Google Play" width={160} height={48} className="w-[130px] sm:w-[160px] h-auto" />
+                  <Image src="/newAssets/appstore.svg" alt="App Store" width={160} height={48} className="w-[130px] sm:w-[160px] h-auto" />
               </Link>
               <Link href="https://apps.apple.com/in/app/ama-legal-solutions/id6755156186" target="_blank" className="hover:opacity-80 transition-opacity">
-                  <Image src="/newAssets/appstore.svg" alt="App Store" width={160} height={48} className="w-[130px] sm:w-[160px] h-auto" />
+                  <Image src="/newAssets/playstore.svg" alt="Google Play" width={160} height={48} className="w-[130px] sm:w-[160px] h-auto" />
               </Link>
           </div>
         </div>
@@ -58,7 +58,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
             alt="About Hero"
             width={1400}
             height={800}
-            className="mt-auto object-contain scale-[1.5] origin-bottom mb-12 md:mb-0 md:scale-100 ml-10"
+            className="-mt-30 object-contain scale-[1.5] origin-bottom mb-12 md:mb-0 md:scale-100 ml-10"
             priority
         />
       </section>
@@ -95,44 +95,44 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
             </Link>
 
             {/* Relocated Affiliation Logos */}
-            <div className="w-[120%] -ml-[10%] md:w-full md:-ml-30 mt-2 grid grid-cols-4 md:grid-cols-2 gap-1 md:gap-4 items-center justify-items-center md:items-start md:justify-items-start">
+            <div className="w-full mt-6 flex flex-row gap-6 items-center justify-center md:justify-start -ml-20">
                {/* Logo 2 */}
-               <Link href="#" className="relative w-[100%] h-[50px] md:h-[80px] hover:opacity-80 transition-opacity">
+               <Link href="#" className="relative w-[105px] md:w-[510px] h-[75px] md:h-[135px] hover:opacity-80 transition-opacity">
                  <Image
                    src="/newAssets/affiliation-logo-2.png"
                    alt="Affiliation 2"
                    fill
-                   className="object-contain object-center scale-[2] md:scale-100 origin-center"
+                   className="object-contain object-left scale-[1.5] md:scale-200 origin-center md:origin-left"
                    unoptimized
                  />
                </Link>
                {/* Logo 3 */}
-               <Link href="#" className="relative w-full h-[50px] md:h-[80px] hover:opacity-80 transition-opacity">
+               <Link href="#" className="relative w-[105px] md:w-[510px] h-[75px] md:h-[135px] hover:opacity-80 transition-opacity">
                  <Image
                    src="/newAssets/affiliation-logo-3.png"
                    alt="Affiliation 3"
                    fill
-                   className="object-contain object-center scale-[2] md:scale-100 origin-center"
+                   className="object-contain object-left scale-[1.5] md:scale-200 origin-center md:origin-left"
                    unoptimized
                  />
                </Link>
                {/* Logo 4 */}
-               <Link href="#" className="relative w-full h-[50px] md:h-[80px] hover:opacity-80 transition-opacity">
+               <Link href="#" className="relative w-[105px] md:w-[510px] h-[75px] md:h-[135px] hover:opacity-80 transition-opacity">
                  <Image
                    src="/newAssets/affiliation-logo-4.png"
                    alt="Affiliation 4"
                    fill
-                   className="object-contain object-center scale-[2] md:scale-100 origin-center"
+                   className="object-contain object-left scale-[1.5] md:scale-200 origin-center md:origin-left"
                    unoptimized
                  />
                </Link>
                {/* Logo 5 */}
-               <Link href="#" className="relative w-full h-[50px] md:h-[80px] hover:opacity-80 transition-opacity">
+               <Link href="#" className="relative w-[105px] md:w-[510px] h-[75px] md:h-[155px] hover:opacity-80 transition-opacity">
                  <Image
                    src="/newAssets/affiliation-logo-5.png"
                    alt="Affiliation 5"
                    fill
-                   className="object-contain object-center scale-[2] md:scale-100 origin-center"
+                   className="object-contain object-left scale-[1.5] md:scale-200 origin-center md:origin-left"
                    unoptimized
                  />
                </Link>
@@ -140,7 +140,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
           </div>
 
           {/* Right Column */}
-          <div className="text-[#30261C] text-[13px] md:text-[20px] leading-[19px] md:leading-[23px] space-y-6 font-normal opacity-85">
+          <div className="text-[#30261C] text-[13px] md:text-[20px] leading-[19px] md:leading-[30px] space-y-6 font-normal opacity-85">
 
             <h3> <span className="font-semibold opacity-100 text-[19px] md:text-[22px] leading-[25px]">Our mission:</span> </h3>
             <p>
@@ -266,7 +266,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
               {/* Right Content (Text) - Swapped Position */}
               <div className="flex-1 p-5 md:p-10 flex flex-col justify-start md:justify-center items-start md:items-end z-20 max-w-full md:max-w-2xl text-left md:text-right h-full md:ml-auto">
                 {/* Top Section: Header Info */}
-                <div className="w-full flex flex-col items-start md:items-end gap-1 md:gap-[30px] mb-[30px] text-left md:text-right z-30 relative">
+                <div className="w-full flex flex-col items-start md:items-end gap-1 md:gap-[30px] mb-[5px] text-left md:text-right z-30 relative">
                    <div className="flex flex-col md:flex-row md:items-baseline justify-end gap-1">
                       <h3 className="text-[#30261C] text-[26px] md:text-[34px] font-semibold leading-tight opacity-100">
                       Anuj Anand Malik
@@ -274,7 +274,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
                    </div>
 
                   <div className="space-y-1 w-full flex flex-col items-start md:items-end">
-                      <p className="text-[#D29E0D] text-[13px] md:text-[20px] font-medium w-full text-left md:text-right mb-[30px]">
+                      <p className="text-[#D29E0D] text-[13px] md:text-[20px] font-medium w-full text-left md:text-right mb-[5px]">
                           Advocate, Legal Consultant, Banking Lawyer, and Loan Settlement Expert
                       </p>
                   </div>
@@ -282,7 +282,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
 
                 {/* Bottom Section: Description */}
                 <div className="w-full flex-1 relative min-h-0 flex flex-col items-start md:items-end">
-                  <div className="w-[90%] md:w-full text-[#30261C] text-[13px] md:text-[20px] leading-[19px] md:leading-[23px] opacity-80 z-20 h-full overflow-y-auto md:overflow-visible pb-[340px] md:pb-2 content-start pr-1 text-left md:text-right">
+                  <div className="w-[90%] md:w-full text-[#30261C] text-[13px] md:text-[20px] leading-[19px] md:leading-[28px] opacity-80 z-20 h-full overflow-y-auto md:overflow-visible pb-[340px] md:pb-2 content-start pr-1 text-left md:text-right">
                       <div className="space-y-4">
                         <p>
                           I am Anuj Anand Malik, an advocate, legal consultant, banking lawyer,
