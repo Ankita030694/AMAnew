@@ -5,7 +5,7 @@ import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 // FAQ data for rendering and Schema
-const faqs = [
+const faqs = [ 
   {
     question: "What is arbitration and how does it work in India?",
     answer: "Arbitration is a form of alternative dispute resolution (ADR) where a dispute is submitted, by agreement of the parties, to one or more arbitrators who make a binding decision on the dispute. In India, it is governed by the Arbitration and Conciliation Act, 1996. It serves as a private and efficient alternative to traditional court litigation, allowing parties to resolve commercial and civil disputes outside the courtroom. The process involves the appointment of an impartial arbitrator, presentation of evidence, and the issuance of an arbitral award that is legally enforceable like a court decree."
