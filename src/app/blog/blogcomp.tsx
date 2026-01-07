@@ -380,7 +380,7 @@ export default function Page() {
   };
   
   return (
-    <div className="container mx-auto px-4 py-8 bg-white">
+    <div className="container mx-auto px-4 py-8">
       {/* Schema.org FAQ Markup for SEO */}
       {webPageSchema && (
         <Script

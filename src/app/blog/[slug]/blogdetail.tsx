@@ -144,7 +144,7 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800">
+    <div className="min-h-screen bg-[#F5F2EB] text-gray-800">
       {/* Hero Image Section */}
       <div className="w-full h-[400px] md:h-[500px] relative bg-[#1a202c]">
         <div 
