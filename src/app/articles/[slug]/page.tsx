@@ -4,7 +4,6 @@ import type { Metadata, ResolvingMetadata } from "next";
 import ArticleDetail from "./articledetail";
 import Script from "next/script";
 import Navbar from "@/newcomp/Navbar";
-import Footer from "@/newcomp/Footer";
 
 // Cache for article data to avoid repeated Firebase queries
 const articleCache = new Map<string, any>();
@@ -216,7 +215,6 @@ export default async function Page({
           </div>
         </div>
       </header>
-      <Footer />
     </div>
   );
 }

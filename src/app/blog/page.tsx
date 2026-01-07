@@ -11,7 +11,6 @@ import { Suspense } from 'react';
 import PerformanceMonitor from '../../components/PerformanceMonitor';
 
 import Navbar from "@/newcomp/Navbar";
-import Footer from "@/newcomp/Footer";
 
 // Enhanced loading component
 const BlogLoading = () => (
@@ -32,7 +31,6 @@ export default function Page() {
       <Suspense fallback={<BlogLoading />}>
         <BlogPage />
       </Suspense>
-      <Footer />
     </main>
   );
 }

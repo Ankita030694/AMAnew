@@ -69,14 +69,44 @@ export default function TableOfContents({ sections, orientation = "horizontal" }
     }
   };
 
+  // Scroll active button into view (for vertical)
+  useEffect(() => {
+    if (orientation === "vertical" && activeSection && scrollContainerRef.current && buttonRefs.current[activeSection]) {
+      const container = scrollContainerRef.current;
+      const button = buttonRefs.current[activeSection];
+
+      if (button) {
+        const containerTop = container.offsetTop;
+        const containerHeight = container.clientHeight;
+        const buttonTop = button.offsetTop - containerTop; // Relative position
+        const buttonHeight = button.offsetHeight;
+
+        // Calculate scroll position to keep button in view (e.g. center it)
+        const scrollTop = buttonTop - containerHeight / 2 + buttonHeight / 2;
+
+        container.scrollTo({
+          top: scrollTop,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, [activeSection, orientation]);
+
+
   if (orientation === "vertical") {
     return (
-      <nav className="flex flex-col space-y-1">
+      <nav 
+        ref={scrollContainerRef}
+        className="flex flex-col space-y-1 max-h-[calc(100vh-120px)] overflow-y-auto custom-scrollbar pr-2"
+      >
         {sections.map((section) => (
           <button
             key={section.id}
+            ref={(el) => {
+              buttonRefs.current[section.id] = el;
+            }}
             onClick={() => scrollToSection(section.id)}
-            className={`text-left px-4 py-3 text-sm font-medium rounded-r-lg transition-all duration-200 border-l-4 ${
+            className={`text-left px-4 py-3 text-sm font-medium rounded-r-lg transition-all duration-200 border-l-4 flex-shrink-0 ${
               activeSection === section.id
                 ? "bg-gray-50 border-[#D2A02A] text-[#D2A02A]"
                 : "border-transparent text-gray-600 hover:bg-gray-50 hover:text-gray-900"

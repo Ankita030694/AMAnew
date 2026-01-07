@@ -153,7 +153,7 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
         ></div>
       </div>
 
-      <div className="container mx-auto px-4 max-w-7xl py-8">
+      <div className="container mx-auto px-4 max-w-[1600px] py-8">
         <Breadcrumbs items={breadcrumbItems} />
         
         {/* Blog Header Content */}
@@ -173,13 +173,21 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
           </div>
         </div>
         
-        <div className="flex flex-col lg:flex-row gap-12">
-          {/* Main Content Area */}
-          <div className="lg:w-3/4">
-            
-            <TableOfContents sections={tocSections} />
+        <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 items-start">
+          
+          {/* Left Sidebar - TOC (Desktop) */}
+          <div className="hidden lg:block sticky top-24">
+             <TableOfContents sections={tocSections} orientation="vertical" />
+          </div>
 
-            <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm mt-8 space-y-12">
+          {/* Main Content Area */}
+          <div className="min-w-0">
+            {/* TOC (Mobile) */}
+            <div className="lg:hidden mb-8">
+               <TableOfContents sections={tocSections} />
+            </div>
+
+            <div className="bg-white p-6 md:p-12 rounded-2xl shadow-sm space-y-12">
               {/* Article Content */}
               <div 
                 className="prose prose-lg max-w-none text-gray-700 tiptap-content"
@@ -293,7 +301,7 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
               {relatedBlogs.length > 0 && (
                 <section className="border-t border-gray-200 pt-12">
                   <h2 className="text-3xl font-bold text-gray-900 mb-8">Related Articles</h2>
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
                     {relatedBlogs.map((article) => (
                       <Link key={article.id} href={`/blog/${article.slug}`} className="group">
                         <div className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
@@ -329,9 +337,8 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
             </div>
           </div>
 
-          {/* Sidebar */}
-          <div className="lg:w-1/4">
-            <div className="sticky top-24 space-y-8">
+          {/* Right Sidebar - Author & CTA */}
+          <div className="space-y-8 sticky top-24">
               {/* Author Card */}
               {blog.author && (
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
@@ -389,7 +396,6 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
                 </Link>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </div>

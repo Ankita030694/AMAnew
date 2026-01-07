@@ -3,7 +3,6 @@ import { Suspense } from 'react';
 import AmaLiveClient from './client';
 
 import Navbar from "@/newcomp/Navbar";
-import Footer from "@/newcomp/Footer";
 
 // This is now a Client Component that will always fetch fresh data
 export default function AmaLivePage() {
@@ -13,7 +12,6 @@ export default function AmaLivePage() {
       <Suspense fallback={<VideosSkeleton />}>
         <AmaLiveClient initialVideos={[]} />
       </Suspense>
-      <Footer />
     </div>
   );
 }

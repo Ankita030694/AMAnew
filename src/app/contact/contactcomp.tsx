@@ -14,7 +14,6 @@ import { serverTimestamp } from "firebase/firestore";
 import { db } from "../../lib/firebase";
 import payu from "../../../public/payu.png";
 import Navbar from "@/newcomp/Navbar";
-import Footer from "@/newcomp/Footer";
 
 // Generate array of logo paths: 1.png to 17.png
 const clientLogos = Array.from({ length: 17 }, (_, i) => `/newAssets/clientLogos/${i + 1}.png`);
@@ -472,7 +471,6 @@ const ContactComp = () => {
         />
       </div>
 
-      <Footer />
     </div>
   );
 };
