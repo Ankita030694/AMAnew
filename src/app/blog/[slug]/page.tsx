@@ -26,27 +26,54 @@ const getBlogBySlug = unstable_cache(async (slug: string) => {
     return cached.data;
   }
 
+  console.log(`[getBlogBySlug] Fetching blog for slug: "${slug}"`);
+
   try {
     const blogsCollection = collection(db, "blogs");
-    const q = query(blogsCollection, where("slug", "==", slug), limit(1));
-    const querySnapshot = await getDocs(q);
+    
+    // Try exact match first
+    let q = query(blogsCollection, where("slug", "==", slug), limit(1));
+    let querySnapshot = await getDocs(q);
+
+    // If not found, try decoded slug
+    if (querySnapshot.empty) {
+        const decodedSlug = decodeURIComponent(slug);
+        if (decodedSlug !== slug) {
+            console.log(`[getBlogBySlug] Retrying with decoded slug: "${decodedSlug}"`);
+            q = query(blogsCollection, where("slug", "==", decodedSlug), limit(1));
+            querySnapshot = await getDocs(q);
+        }
+    }
+    
+    // If still not found, try trimming
+    if (querySnapshot.empty) {
+        const trimmedSlug = slug.trim();
+        if (trimmedSlug !== slug) {
+            console.log(`[getBlogBySlug] Retrying with trimmed slug: "${trimmedSlug}"`);
+            q = query(blogsCollection, where("slug", "==", trimmedSlug), limit(1));
+            querySnapshot = await getDocs(q);
+        }
+    }
 
     if (!querySnapshot.empty) {
       const doc = querySnapshot.docs[0];
       const data = { id: doc.id, ...doc.data() };
       
+      console.log(`[getBlogBySlug] Found blog: ${doc.id}`);
+
       // Cache the result with timestamp
       blogCache.set(slug, { data, timestamp: Date.now() });
       return data;
     }
     
+    console.log(`[getBlogBySlug] No blog found for slug: "${slug}"`);
     return null;
   } catch (error) {
     console.error("Error fetching blog by slug:", error);
     return null;
   }
 }, ['blog-by-slug'], { 
-  revalidate: 300, // 5 minutes
+  revalidate: 60, // Reduced revalidation time for debugging
   tags: ['blogs']
 });
 
