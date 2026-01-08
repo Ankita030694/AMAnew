@@ -20,7 +20,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
                   Expert Legal Solutions. Trusted Lawyers.
               </h1>
               <h2 
-                  className="text-[26px] md:text-[52px] leading-[32px] md:leading-[52px] font-semibold opacity-100"
+                  className="text-[26px] md:text-[52px] leading-[32px] md:leading-[65px] font-semibold opacity-100"
                   style={{
                     background: "linear-gradient(90deg, #30261C 5.29%, #D29E0D 100%)",
                     WebkitBackgroundClip: "text",
