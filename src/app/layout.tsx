@@ -42,7 +42,7 @@ const polySans = localFont({
 
 export const metadata: Metadata = {
   title: "AMA Legal Solutions | Top Law Firm in India",
-  description: "Top-rated Indian law firm for corporate, real estate, and entertainment law. Contact us for expert legal consultation.",
+  description: "Top-rated Indian law firm for loan settlement, intellectual property rights, and corporate law. Contact us for expert legal consultation.",
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '16x16 32x32 48x48', type: 'image/x-icon' },
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   openGraph: {
     title: "AMA Legal Solutions | Top Law Firm in India",
-    description: "Top-rated Indian law firm for corporate, real estate, and entertainment law. Contact us for expert legal consultation.",
+    description: "Top-rated Indian law firm for loan settlement, intellectual property rights, and corporate law. Contact us for expert legal consultation.",
     url: "https://www.amalegalsolutions.com",
     siteName: "AMA Legal Solutions",
     images: [
@@ -212,10 +212,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 "name": "AMA Legal Solutions - Legal Services",
                 "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
                 "telephone": "8700343611",
-                "priceRange": "$$",
+                "priceRange": "₹₹",
                 "address": {
                   "@type": "PostalAddress",
-                  "streetAddress": "2493AP, Block G, Sushant Lok 2, Sector 57,",
+                  "streetAddress": "2493AP, Block G, Sushant Lok 2, Sector 57",
                   "addressLocality": "Gurugram",
                   "postalCode": "122001",
                   "addressCountry": "IN"

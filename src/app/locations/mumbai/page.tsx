@@ -86,6 +86,11 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "AMA Legal Solutions Mumbai",
+  "founder": {
+    "@type": "Person",
+    "name": "Anuj Anand Malik",
+    "url": "https://amalegalsolutions.com/author/anuj-anand-malik"
+  },
   "image": "https://amalegalsolutions.com/city2.svg",
   "description": "Leading law firm in Mumbai providing expert legal services in Corporate Law, Media Law, Real Estate, and Litigation.",
   "address": {

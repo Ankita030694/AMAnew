@@ -7,7 +7,7 @@ const Footer = () => {
     <footer
       className="relative py-[48px] px-[24px] md:px-[72px] bg-[#30261C]"
     >
-      <div className="max-w-[1240px] mx-auto relative">
+      <div className="max-w-[1600px] mx-auto relative">
         {/* Radial Gradient */}
         <div 
           className="absolute top-1/2 left-1/2 md:left-[40%] -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] pointer-events-none"
@@ -150,6 +150,32 @@ const Footer = () => {
                       className="text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors"
                     >
                       {service.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Our Locations Column */}
+            <div className="flex flex-col gap-[16px] w-[198px]">
+              <h3 className="text-white text-[18px] md:text-[20px] font-semibold leading-[20px]">
+                Our Locations
+              </h3>
+              <ul className="flex flex-col gap-[12px]">
+                {[
+                  { name: 'New Delhi', href: '/locations/newdelhi' },
+                  { name: 'Mumbai', href: '/locations/mumbai' },
+                  { name: 'Bengaluru', href: '/locations/bengaluru' },
+                  { name: 'Chennai', href: '/locations/chennai' },
+                  { name: 'Jaipur', href: '/locations/jaipur' },
+                  { name: 'Kolkata', href: '/locations/kolkata' },
+                ].map((location) => (
+                  <li key={location.href}>
+                    <Link 
+                      href={location.href}
+                      className="text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors"
+                    >
+                      {location.name}
                     </Link>
                   </li>
                 ))}

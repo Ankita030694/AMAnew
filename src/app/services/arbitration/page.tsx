@@ -102,9 +102,9 @@ const articleSchema = {
   "description": "Comprehensive guide to arbitration in India. Learn about the legal framework, process, and benefits of arbitration with expert legal assistance from AMA Legal Solutions.",
   "image": "https://amalegalsolutions.com/services/9.png",
   "author": {
-    "@type": "Organization",
-    "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "@type": "Person",
+    "name": "Anuj Anand Malik",
+    "url": "https://amalegalsolutions.com/author/anuj-anand-malik"
   },
   "publisher": {
     "@type": "Organization",

@@ -346,7 +346,7 @@ function generateServiceSlugRoutes(baseUrl: string) {
         url: `${baseUrl}/services/${service}/${slug}`,
         lastModified: new Date().toISOString(),
         changeFrequency: 'monthly',
-        priority: 0.6
+        priority: 0.8
       })
     }
   }
