@@ -380,42 +380,6 @@ function generateCombinedSchema(blogData: any, faqs: any[], reviews: any[]) {
     });
   }
 
-  // 5. Review/Product Schema (if present)
-  if (reviews.length > 0) {
-    const totalRating = reviews.reduce((acc: number, review: any) => acc + review.rating, 0);
-    const avgRating = (totalRating / reviews.length).toFixed(1);
-
-    graph.push({
-      "@type": "Product",
-      "@id": `${blogUrl}#product`,
-      "name": blogData.title,
-      "image": blogData.image || `${baseUrl}/logo.png`,
-      "description": blogData.metaDescription || blogData.subtitle,
-      "brand": { "@id": `${baseUrl}/#organization` },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": avgRating,
-        "reviewCount": reviews.length,
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": reviews.map(review => ({
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": review.rating.toString(),
-          "bestRating": "5",
-          "worstRating": "1"
-        },
-        "author": {
-          "@type": "Person",
-          "name": review.name
-        },
-        "reviewBody": review.review
-      }))
-    });
-  }
-
   return {
     "@context": "https://schema.org",
     "@graph": graph
