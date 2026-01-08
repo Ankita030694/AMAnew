@@ -106,44 +106,45 @@ export default function SuccessStoriesPage() {
       <main className="pb-20 overflow-x-hidden relative">
         {/* ... (Hero and Strips remain same) */}
         {/* Hero Section with Twisted Tape */}
-        <section className="relative pt-32 pb-20 text-center bg-[#EAE6DB]">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-[#30261C]">
+        <section className="relative pt-32 pb-20 text-center bg-[#EAE6DB] overflow-hidden">
+          <h1 className="hidden md:block text-4xl md:text-6xl font-bold mb-4 text-[#30261C]">
             Legal Excellence,<br />
             <span className="text-[#D2A02A]">Proven by Numbers</span>
           </h1>
 
         {/* The Dark Intersecting Strip */}
-        <div className="relative w-full mt-32 z-0">
+        <div className="relative w-full mt-30 md:mt-32 z-0">
              <div 
-               className="w-[120%] -ml-[10%] h-[140px] transform rotate-10 flex flex-col md:flex-row items-stretch border-y border-[#D2A02A]/20"
+               className="w-[120%] -ml-[10%] h-[110px] md:h-[140px] transform rotate-25 md:rotate-10 flex flex-col md:flex-row items-stretch border-y border-[#D2A02A]/20"
                style={{
                  background: "#30261C",
                  boxShadow: "3px 4px 30.5px 0 rgba(0, 0, 0, 0.05)",
                  backdropFilter: "blur(2px)",
                }}
              >
-                <div className="flex w-full h-full items-center pr-[5%]">
-                   {/* Column 1: Testimonial Slider (80%) */}
-                   <div className="w-[80%] h-full flex items-center overflow-hidden relative border-r border-[#D2A02A]/10">
-                      <div className="animate-marquee whitespace-nowrap flex gap-12 px-8">
+                <div className="flex flex-row w-full h-full items-center md:items-stretch md:pr-[5%]">
+                   {/* Column 1: Testimonial Slider (Mobile: Full width, Desktop: 80%) */}
+                   <div className="w-[65%] md:w-[80%] h-full flex items-center overflow-hidden relative border-r border-[#D2A02A]/10">
+                      <div className="animate-marquee whitespace-nowrap flex gap-12 px-2 md:px-8">
                          {[...baseTestimonials, ...baseTestimonials].map((t, i) => (
-                           <div key={i} className="inline-flex items-center gap-6 min-w-[500px]">
+                           <div key={i} className="inline-flex items-center gap-4 md:gap-6 min-w-[250px] md:min-w-[500px]">
                               {/* Left: Avatar & Info */}
-                              <div className="flex items-center gap-3 shrink-0">
-                                 <div className="w-[40px] h-[40px] bg-white rounded-full flex items-center justify-center p-1">
+                              <div className="flex items-center gap-2 md:gap-3 shrink-0">
+                                 <div className="w-[30px] h-[30px] md:w-[40px] md:h-[40px] bg-white rounded-full flex items-center justify-center p-1">
                                     <Image src="/newAssets/google-g.svg" alt="G" width={24} height={24} />
                                  </div>
                                  <div className="text-left">
-                                    <div className="text-[#D2A02A] font-bold text-sm">{t.author}</div>
-                                    <Image src="/newAssets/stars.png" alt="Stars" width={60} height={10} className="mt-1" />
+                                    <div className="text-[#D2A02A] font-bold text-xs md:text-sm">{t.author}</div>
+                                    <Image src="/newAssets/stars.png" alt="Stars" width={50} height={8} className="mt-1 block md:hidden" />
+                                     <Image src="/newAssets/stars.png" alt="Stars" width={60} height={10} className="mt-1 hidden md:block" />
                                  </div>
                               </div>
                               
                               {/* Center: Divider */}
-                              <div className="w-[1px] h-[40px] bg-[#D2A02A]/30"></div>
+                              <div className="w-[1px] h-[30px] md:h-[40px] bg-[#D2A02A]/30"></div>
                               
                               {/* Right: Text */}
-                              <div className="text-white/80 text-sm whitespace-normal line-clamp-2 max-w-[300px] text-left italic">
+                              <div className="text-white/80 text-xs md:text-sm whitespace-normal line-clamp-3 md:line-clamp-2 max-w-[150px] md:max-w-[300px] text-left italic">
                                 "{t.text}"
                               </div>
                            </div>
@@ -151,10 +152,10 @@ export default function SuccessStoriesPage() {
                       </div>
                    </div>
 
-                   {/* Column 2: Static Badge (20%) */}
-                   <div className="w-[20%] h-full flex flex-row items-center justify-center bg-[#251D16] z-10 p-4 shadow-[-10px_0_20px_rgba(0,0,0,0.2)] gap-3">
-                      <Image src="/newAssets/google.png" alt="Google" width={80} height={26} className="object-contain" />
-                      <div className="flex flex-col items-start">
+                   {/* Column 2: Static Badge (Mobile: 35%, Desktop: 20%) */}
+                   <div className="w-[35%] md:w-[20%] h-full flex flex-col items-center justify-center bg-[#251D16] z-10 p-2 md:p-4 shadow-[-10px_0_20px_rgba(0,0,0,0.2)] gap-2 md:gap-3">
+                      <Image src="/newAssets/google.png" alt="Google" width={60} height={20} className="object-contain md:w-[80px] md:h-[26px]" />
+                      <div className="flex flex-col items-start scale-90 md:scale-100">
                           <div className="flex gap-0.5 mb-1">
                               {[1,2,3,4,5].map(s => <span key={s} className="text-[#F4B400] text-sm leading-none">★</span>)}
                           </div>
@@ -166,34 +167,36 @@ export default function SuccessStoriesPage() {
              </div>
         </div>
 
-        {/* The Stats Strip Container (Existing) */}
-        <div className="relative w-full -mt-32 mb-20 z-10">
-          <div className="w-full transform -rotate-8 scale-105 origin-center">
+        {/* The Stats Strip Container */}
+        <div className="relative w-full -mt-15 md:-mt-32 mb-10 md:mb-20 z-10">
+          <div className="w-full transform -rotate-12 md:-rotate-8 scale-105 origin-center">
             <div 
-              className="w-full min-h-[140px] flex flex-col md:flex-row items-center justify-around px-4 md:px-12 py-2"
+              className="w-full min-h-[110px] md:min-h-[140px] flex flex-row items-center justify-between px-2 md:px-12 py-4 md:py-2"
               style={{
-                background: "rgba(255, 255, 255, 0.15)",
+                background: "rgba(255, 255, 255, 0.45)",
                 boxShadow: "0 0 89.8px 0 rgba(0, 0, 0, 0.45)",
                 backdropFilter: "blur(78.5px)",
               }}
             >
-               {/* Stats Content */}
-               {stats.map((stat, idx) => (
-                 <div key={idx} className="text-center group cursor-default mb-4 md:mb-0">
-                   <div 
-                     className="text-[#30261C] text-3xl md:text-5xl font-medium mb-1 group-hover:scale-110 transition-transform duration-300"
-                     style={{ fontFamily: "var(--font-polysans)" }}
-                   >
-                     {stat.value}
+               {/* Stats Content - Single Row */}
+               <div className="w-full flex flex-row justify-around items-center">
+                 {stats.map((stat, idx) => (
+                   <div key={idx} className="text-center group cursor-default">
+                     <div 
+                       className="text-[#30261C] text-xl md:text-5xl font-medium mb-0.5 md:mb-1 group-hover:scale-110 transition-transform duration-300"
+                       style={{ fontFamily: "var(--font-polysans)" }}
+                     >
+                       {stat.value}
+                     </div>
+                     <div 
+                       className="text-[#30261C] text-[10px] md:text-sm uppercase tracking-widest opacity-80 leading-tight"
+                       style={{ fontFamily: "var(--font-polysans)" }}
+                     >
+                       {stat.label.replace("Experience", "Exp.")}
+                     </div>
                    </div>
-                   <div 
-                     className="text-[#30261C] text-xs md:text-sm uppercase tracking-widest opacity-80"
-                     style={{ fontFamily: "var(--font-polysans)" }}
-                   >
-                     {stat.label}
-                   </div>
-                 </div>
-               ))}
+                 ))}
+               </div>
                
             </div>
           </div>

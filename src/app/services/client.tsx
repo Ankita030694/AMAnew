@@ -106,7 +106,7 @@ const ServicesClient = () => {
         
       {/* Hero Section */}
       <section className="relative w-full pt-20 md:pt-[150px] pb-[50px] md:pb-[120px] flex flex-col items-center">
-         <div className="text-center max-w-6xl mx-auto z-10 px-4 pb-12">
+         <div className="text-center max-w-6xl mx-auto z-20 px-4 pb-12">
               <h1 className="text-[32px] md:text-[65px] font-semibold text-[#30261C] leading-[40px] md:leading-[75px] mb-[30px] opacity-100"  style={{
                     background: "linear-gradient(90deg, #30261C 5.29%, #D29E0D 100%)",
                     WebkitBackgroundClip: "text",

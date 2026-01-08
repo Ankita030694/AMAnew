@@ -304,6 +304,38 @@ const Navbar = () => {
                             AMA Live
                           </span>
                         </Link>
+
+                        <Link href="/success-stories" className="flex items-center gap-6 group hover:opacity-80 transition-opacity">
+                          <div className="w-[40px] h-[40px] relative flex-shrink-0 flex items-center justify-center">
+                             {/* success-stories icon placeholder or reuse article icon for now if no specific icon provided, 
+                                 but user said 'just like the success stories page' implying the link style. 
+                                 I'll use a simple icon or just the text if that's what 'without the stories' meant, 
+                                 but the previous items have icons. I'll use a star icon or similar if available, 
+                                 or duplicates article svg to keep layout consistent. 
+                                 Actually, let's use a generic 'story' icon or similar. 
+                                 Wait, the user said "just like the success stories page without the stories". 
+                                 The success stories page doesn't have an icon in the navbar context I wrote before. 
+                                 I will use the 'article.svg' as a placeholder or maybe 'live.svg' 
+                                 Let's check if I can use a standard icon. 
+                                 I'll use a simple text align or better yet, reuse one of the existing SVGs or just create a new simple SVG for it.
+                                 Let's use a simple Star SVG for Success Stories.
+                             */}
+                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" 
+                                stroke="#000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                             </svg>
+                          </div>
+                          <span style={{ 
+                            color: "#000", 
+                            fontFamily: "var(--font-polysans)", 
+                            fontSize: "25px", 
+                            fontWeight: 300, 
+                            fontStyle: "normal",
+                            lineHeight: "25px" 
+                          }}>
+                            Success Stories
+                          </span>
+                        </Link>
                       </div>
 
                       {/* Right Column */}
@@ -311,7 +343,7 @@ const Navbar = () => {
                         className="flex-1 p-8 flex flex-col justify-center gap-4" 
                         style={{
                           borderRadius: "10px",
-                          background: "rgba(210, 158, 13, 0.65)"
+                          background: "rgba(210, 158, 13, 1)" // Opacity 1
                         }}
                       >
                         <Link href="/blog" className="block w-full">
@@ -474,6 +506,14 @@ const Navbar = () => {
                                        exit={{ height: 0, opacity: 0 }}
                                        className="overflow-hidden flex flex-col gap-4 pl-4"
                                    >
+                                       <Link 
+                                            href="/success-stories"
+                                            className="text-[#30261C]/80 font-[400] tracking-wide"
+                                            style={{ fontFamily: "var(--font-polysans)", fontSize: "28px", lineHeight: "28px" }}
+                                            onClick={() => setIsMobileMenuOpen(false)}
+                                        >
+                                            Success Stories
+                                        </Link>
                                        <Link 
                                            href="/blog"
                                            className="text-[#30261C]/80 font-[400] tracking-wide"
