@@ -1,61 +1,173 @@
-import { collection, getDocs, query, where, limit } from "firebase/firestore";
+import { collection, getDocs, query, where, limit, orderBy } from "firebase/firestore";
 import { db } from "../../../lib/firebase";
 import type { Metadata, ResolvingMetadata } from "next";
-import ArticleDetail from "./articledetail";
+import ArticleDetail, { Article, FAQ, Review } from "./articledetail";
 import Script from "next/script";
+import { unstable_cache } from 'next/cache';
 import Navbar from "@/newcomp/Navbar";
 
-// Cache for article data to avoid repeated Firebase queries
-const articleCache = new Map<string, any>();
-const faqCache = new Map<string, any[]>();
+// Enhanced cache with TTL (Time To Live)
+const articleCache = new Map<string, { data: any; timestamp: number }>();
+const faqCache = new Map<string, { data: any[]; timestamp: number }>();
+const reviewCache = new Map<string, { data: any[]; timestamp: number }>();
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 
-// Optimized function to fetch article by slug
-async function getArticleBySlug(slug: string) {
-  // Check cache first
-  if (articleCache.has(slug)) {
-    return articleCache.get(slug);
+// Helper function to check if cache entry is valid
+const isCacheValid = (timestamp: number) => {
+  return Date.now() - timestamp < CACHE_TTL;
+};
+
+// Optimized function to fetch article by slug with enhanced caching
+const getArticleBySlug = unstable_cache(async (slug: string) => {
+  // Check cache first with TTL validation
+  const cached = articleCache.get(slug);
+  if (cached && isCacheValid(cached.timestamp)) {
+    return cached.data;
   }
 
+  console.log(`[getArticleBySlug] Fetching article for slug: "${slug}"`);
+
   try {
-    // Use where clause to query only the specific article
     const articlesCollection = collection(db, "articles");
-    const q = query(articlesCollection, where("slug", "==", slug), limit(1));
-    const querySnapshot = await getDocs(q);
+    
+    // Try exact match first
+    let q = query(articlesCollection, where("slug", "==", slug), limit(1));
+    let querySnapshot = await getDocs(q);
+
+    // If not found, try decoded slug
+    if (querySnapshot.empty) {
+        const decodedSlug = decodeURIComponent(slug);
+        if (decodedSlug !== slug) {
+            console.log(`[getArticleBySlug] Retrying with decoded slug: "${decodedSlug}"`);
+            q = query(articlesCollection, where("slug", "==", decodedSlug), limit(1));
+            querySnapshot = await getDocs(q);
+        }
+    }
+    
+    // If still not found, try trimming
+    if (querySnapshot.empty) {
+        const trimmedSlug = slug.trim();
+        if (trimmedSlug !== slug) {
+            console.log(`[getArticleBySlug] Retrying with trimmed slug: "${trimmedSlug}"`);
+            q = query(articlesCollection, where("slug", "==", trimmedSlug), limit(1));
+            querySnapshot = await getDocs(q);
+        }
+    }
 
     if (!querySnapshot.empty) {
       const doc = querySnapshot.docs[0];
       const data = { id: doc.id, ...doc.data() };
       
-      // Cache the result
-      articleCache.set(slug, data);
+      console.log(`[getArticleBySlug] Found article: ${doc.id}`);
+
+      // Cache the result with timestamp
+      articleCache.set(slug, { data, timestamp: Date.now() });
       return data;
     }
     
+    console.log(`[getArticleBySlug] No article found for slug: "${slug}"`);
     return null;
   } catch (error) {
     console.error("Error fetching article by slug:", error);
     return null;
   }
-}
+}, ['article-by-slug'], { 
+  revalidate: 60,
+  tags: ['articles']
+});
 
-// Dynamic metadata generation - optimized with proper querying
+// Function to fetch FAQs server-side with enhanced caching
+const getArticleFAQs = unstable_cache(async (articleId: string) => {
+  const cached = faqCache.get(articleId);
+  if (cached && isCacheValid(cached.timestamp)) {
+    return cached.data;
+  }
+
+  try {
+    const faqsSnapshot = await getDocs(collection(db, 'articles', articleId, 'faqs'));
+    const faqs = faqsSnapshot.docs.map(doc => ({
+      id: doc.id,
+      question: doc.data().question || '',
+      answer: doc.data().answer || ''
+    }));
+    
+    faqCache.set(articleId, { data: faqs, timestamp: Date.now() });
+    return faqs;
+  } catch (error) {
+    console.error("Error fetching FAQs:", error);
+    return [];
+  }
+}, ['article-faqs'], {
+  revalidate: 300,
+  tags: ['faqs']
+});
+
+// Function to fetch Reviews server-side
+const getArticleReviews = unstable_cache(async (articleId: string) => {
+  const cached = reviewCache.get(articleId);
+  if (cached && isCacheValid(cached.timestamp)) {
+    return cached.data;
+  }
+
+  try {
+    const reviewsSnapshot = await getDocs(collection(db, 'articles', articleId, 'reviews'));
+    const reviews = reviewsSnapshot.docs.map(doc => ({
+      id: doc.id,
+      name: doc.data().name || '',
+      rating: doc.data().rating || 5,
+      review: doc.data().review || ''
+    }));
+    
+    reviewCache.set(articleId, { data: reviews, timestamp: Date.now() });
+    return reviews;
+  } catch (error) {
+    console.error("Error fetching Reviews:", error);
+    return [];
+  }
+}, ['article-reviews'], {
+  revalidate: 300,
+  tags: ['reviews']
+});
+
+// Function to fetch Related Articles
+const getRelatedArticles = async (excludeId: string) => {
+  try {
+    const articlesCollection = collection(db, 'articles');
+    const q = query(
+      articlesCollection, 
+      orderBy('date', 'desc'), // Assuming 'date' is used for ordering, or use 'created'
+      limit(6) 
+    );
+    const querySnapshot = await getDocs(q);
+    
+    const allArticles = querySnapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    })) as Article[];
+    
+    // Filter out current article and take top 3
+    return allArticles.filter(article => article.id !== excludeId).slice(0, 3);
+  } catch (error) {
+    console.error("Error fetching related articles:", error);
+    return [];
+  }
+};
+
+// Dynamic metadata generation
 export async function generateMetadata(
   props: { params: Promise<{ slug: string }> },
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const { slug } = await props.params;
 
-  // Default metadata in case we can't find the article
   let title = "Article | AMA Legal Solutions";
   let description = "Read our latest insights and articles at AMA Legal Solutions";
   let image = "";
   let author = "AMA Legal Solutions";
 
-  // Base URL for canonical link
   const baseUrl = "https://amalegalsolutions.com";
 
   try {
-    // Use optimized function to fetch article data
     const articleData = await getArticleBySlug(slug);
     
     if (articleData) {
@@ -102,7 +214,7 @@ export async function generateMetadata(
   };
 }
 
-// Updated Page component - optimized
+// Updated Page component
 export default async function Page({
   params,
 }: {
@@ -111,204 +223,193 @@ export default async function Page({
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
 
-  // Get the article data and FAQs server-side
-  let pageTitle = "Latest Insights from AMA Legal Solutions";
   let articleData = null;
-  let faqs: any[] = [];
-  let faqSchema = null;
-  let articleSchema = null;
+  let faqs: FAQ[] = [];
+  let reviews: Review[] = [];
+  let relatedArticles: Article[] = [];
+  
+  let combinedSchema = null;
 
   try {
     articleData = await getArticleBySlug(slug);
     if (articleData) {
-      pageTitle = articleData.title || pageTitle;
-      faqs = await getArticleFAQs(articleData.id) || [];
-      faqSchema = generateFAQSchema(faqs, articleData);
-      articleSchema = generateArticleSchema(articleData, faqs);
+      // Fetch related data in parallel
+      const [fetchedFaqs, fetchedReviews, fetchedRelated] = await Promise.all([
+        getArticleFAQs(articleData.id),
+        getArticleReviews(articleData.id),
+        getRelatedArticles(articleData.id)
+      ]);
+
+      faqs = fetchedFaqs;
+      reviews = fetchedReviews;
+      relatedArticles = fetchedRelated;
+
+      // Generate Combined Schema
+      combinedSchema = generateCombinedSchema(articleData, faqs, reviews);
     }
   } catch (error) {
     console.error("Error fetching article data:", error);
   }
 
+  if (!articleData) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-900">Article Not Found</h1>
+          <p className="text-gray-600 mt-2">The article you are looking for does not exist.</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div style={{ fontFamily: "var(--font-polysans)" }}>
       <Navbar />
-      {/* Server-side rendered FAQ Schema */}
-      {faqSchema && (
+      {/* Combined Schema */}
+      {combinedSchema && (
         <Script
-          id="article-faq-schema"
+          id="article-combined-schema"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqSchema)
-          }}
-          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema) }}
         />
       )}
       
-      {/* Server-side rendered Article Schema */}
-      {articleSchema && (
-        <Script
-          id="article-article-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(articleSchema)
-          }}
-          strategy="beforeInteractive"
-        />
-      )}
-      
-      <header>
-        <h1 className="sr-only">AMA Legal Insights</h1>
-        <ArticleDetail slug={slug} />
-        {/* Styled Disclaimer Section */}
-        <div className="my-12 px-6 py-8 bg-gray-50 rounded-xl border border-gray-200 shadow-sm text-center">
-          <h3 className="text-[#5A4C33] text-xl font-medium mb-4 text-center">
-            Disclaimer
-          </h3>
-          <div className="text-gray-700 text-sm leading-relaxed space-y-4">
-            <p>
-              The information provided on this website www.amalegalsolutions.com
-              is for general informational purposes only and should not be
-              considered legal, financial, or professional advice. While we
-              strive to ensure that the content is accurate and up to date, we
-              do not guarantee the completeness, reliability, or accuracy of any
-              information.
-            </p>
-            <p>
-              Any reliance you place on the information provided is strictly at
-              your own risk. AMA Legal Solutions, its founders, employees, or
-              affiliates shall be held liable for any losses, damages, or legal
-              consequences arising from the use of this website or any linked
-              resources.
-            </p>
-            <p>
-              The content on this website does not establish a client-attorney
-              relationship. If you require legal or financial assistance, we
-              strongly recommend consulting with a qualified professional. Any
-              discussions, consultations, or assessments provided through this
-              website or related services are for preliminary guidance only.
-            </p>
-            <p>
-              Our services are subject to applicable laws and regulations, and
-              results may vary depending on individual circumstances. We do not
-              guarantee specific outcomes for loan settlements, debt
-              negotiations, or legal proceedings.
-            </p>
-            <p>
-              Additionally, this website may contain links to third-party
-              websites for additional information or reference. We do not
-              endorse or assume responsibility for the content, privacy
-              policies, or practices of these external websites.
-            </p>
-            <p className="font-medium">
-              By using this website, you acknowledge and agree to this
-              disclaimer. If you do not agree with any part of this notice,
-              please refrain from using our services. For legal assistance or
-              inquiries, please contact us at{" "}
-              <a
-                href="mailto:notify@amalegalsolutions.com"
-                className="text-[#D2A02A] hover:underline"
-              >
-                notify@amalegalsolutions.com
-              </a>
-            </p>
-          </div>
-        </div>
-      </header>
+      <ArticleDetail 
+        article={articleData as Article} 
+        faqs={faqs} 
+        reviews={reviews} 
+        relatedArticles={relatedArticles}
+      />
     </div>
   );
 }
 
-// Function to fetch FAQs server-side
-async function getArticleFAQs(articleId: string) {
-  // Check cache first
-  if (faqCache.has(articleId)) {
-    return faqCache.get(articleId);
-  }
+function generateCombinedSchema(articleData: any, faqs: any[], reviews: any[]) {
+  const baseUrl = "https://amalegalsolutions.com";
+  const articleUrl = `${baseUrl}/articles/${articleData.slug}`;
+  const isOrganizationAuthor = !articleData.author || articleData.author === "AMA Legal Solutions";
 
-  try {
-    const faqsSnapshot = await getDocs(collection(db, 'articles', articleId, 'faqs'));
-    const faqs = faqsSnapshot.docs.map(doc => ({
-      id: doc.id,
-      question: doc.data().question || '',
-      answer: doc.data().answer || ''
-    }));
-    
-    // Cache the result
-    faqCache.set(articleId, faqs);
-    return faqs;
-  } catch (error) {
-    console.error("Error fetching FAQs:", error);
-    return [];
-  }
-}
+  const graph = [];
 
-// Function to generate FAQ schema
-function generateFAQSchema(faqs: any[], articleData: any) {
-  if (faqs.length === 0) return null;
-
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "name": `${articleData.title} - Frequently Asked Questions`,
-    "description": `Frequently asked questions about ${articleData.title}`,
-    "url": `https://amalegalsolutions.com/articles/${articleData.slug}`,
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer.replace(/<[^>]*>/g, '') // Strip HTML tags
-      }
-    }))
-  };
-}
-
-// Function to generate article schema
-function generateArticleSchema(articleData: any, faqs: any[]) {
-  const baseSchema: any = {
-    "@context": "https://schema.org",
+  // 1. Article Schema
+  const articleSchema: any = {
     "@type": "Article",
+    "@id": `${articleUrl}#article`,
+    "isPartOf": { "@id": articleUrl },
+    "author": {
+      "@type": isOrganizationAuthor ? "Organization" : "Person",
+      "name": articleData.author || "AMA Legal Solutions",
+      "url": articleData.author === "Anuj Anand Malik" ? `${baseUrl}/author/anuj-anand-malik` : 
+            articleData.author === "Shrey Arora" ? `${baseUrl}/author/shrey-arora` : 
+            `${baseUrl}/about`
+    },
     "headline": articleData.title,
-    "name": articleData.title,
-    "description": articleData.metaDescription || articleData.subtitle || articleData.description?.replace(/<[^>]*>/g, '').substring(0, 160) || '',
-    "url": `https://amalegalsolutions.com/articles/${articleData.slug}`,
     "datePublished": articleData.date,
     "dateModified": articleData.date,
-    "author": {
-      "@type": "Person",
-      "name": articleData.author || "AMA Legal Solutions",
-      "url": articleData.author === "Anuj Anand Malik" ? "https://amalegalsolutions.com/author/anuj-anand-malik" : 
-            articleData.author === "Shrey Arora" ? "https://amalegalsolutions.com/author/shrey-arora" : 
-            "https://amalegalsolutions.com/about"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "AMA Legal Solutions",
-      "url": "https://amalegalsolutions.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://amalegalsolutions.com/logo.png"
-      }
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `https://amalegalsolutions.com/articles/${articleData.slug}`
-    },
-    "keywords": articleData.metaTitle || articleData.title,
-    "articleSection": "Legal Articles",
-    "inLanguage": "en-IN"
-  };
-
-  // Add image if available
-  if (articleData.image) {
-    baseSchema.image = {
+    "mainEntityOfPage": { "@id": articleUrl },
+    "publisher": { "@id": `${baseUrl}/#organization` },
+    "image": articleData.image ? {
       "@type": "ImageObject",
       "url": articleData.image,
       "caption": articleData.title
+    } : undefined,
+    "keywords": articleData.metaTitle || articleData.title,
+    "articleSection": "Legal Articles",
+    "inLanguage": "en-IN",
+    "description": articleData.metaDescription || articleData.subtitle || articleData.description?.replace(/<[^>]*>/g, '').substring(0, 160) || ''
+  };
+
+  // Add AggregateRating to Article Schema if reviews exist
+  if (reviews.length > 0) {
+    const totalRating = reviews.reduce((acc, review) => acc + review.rating, 0);
+    const averageRating = (totalRating / reviews.length).toFixed(1);
+
+    articleSchema.aggregateRating = {
+      "@type": "AggregateRating",
+      "ratingValue": averageRating,
+      "reviewCount": reviews.length,
+      "bestRating": "5",
+      "worstRating": "1"
     };
+
+    // Also add individual reviews
+    articleSchema.review = reviews.map(review => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": review.name
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": review.rating,
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": review.review
+    }));
   }
 
-  // Note: FAQ schema is handled separately, not embedded in article
-  return baseSchema;
+  graph.push(articleSchema);
+
+  // 2. Organization Schema
+  graph.push({
+    "@type": "Organization",
+    "@id": `${baseUrl}/#organization`,
+    "name": "AMA Legal Solutions",
+    "url": baseUrl,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${baseUrl}/logo.png`
+    }
+  });
+
+  // 3. Breadcrumb Schema
+  graph.push({
+    "@type": "BreadcrumbList",
+    "@id": `${articleUrl}#breadcrumb`,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": baseUrl
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Articles",
+        "item": `${baseUrl}/articles`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": articleData.title,
+        "item": articleUrl
+      }
+    ]
+  });
+
+  // 4. FAQ Schema (if present)
+  if (faqs.length > 0) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${articleUrl}#faq`,
+      "name": `${articleData.title} - Frequently Asked Questions`,
+      "description": `Frequently asked questions about ${articleData.title}`,
+      "url": articleUrl,
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer.replace(/<[^>]*>/g, '')
+        }
+      }))
+    });
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": graph
+  };
 }

@@ -394,7 +394,7 @@ export default function Page() {
       
       {/* Page Title */}
       <h1 
-        className="text-[32px] md:text-[65px] font-semibold text-center mb-[80px] mt-[120px] leading-[40px] md:leading-[65px] opacity-100"
+        className="text-[32px] md:text-[45px] font-semibold text-center mb-[80px] mt-[120px] leading-[40px] md:leading-[65px] opacity-100"
         style={{ color: '#5A4C33', fontFamily: "var(--font-polysans)" }}
         id="blog-page-title"
       >
@@ -475,7 +475,7 @@ export default function Page() {
                   transition={{ delay: 0.2 }}
                 >
                   
-                  <h2 className="text-[26px] md:text-[52px] font-semibold leading-[32px] md:leading-[52px] opacity-100" style={{ color: '#5A4C33' }}>
+                  <h2 className="text-[26px] md:text-[25px] font-semibold leading-[32px] md:leading-[52px] opacity-100" style={{ color: '#5A4C33' }}>
                     {searchQuery ? 'Search Result' : 'Spotlight'}
                   </h2>
                 </motion.div>
@@ -533,7 +533,7 @@ export default function Page() {
                 transition={{ delay: 0.3 }}
               >
                 <div className="flex items-center gap-2">
-                  <h2 className="text-[26px] md:text-[52px] font-semibold leading-[32px] md:leading-[52px] opacity-100" style={{ color: '#5A4C33' }}>
+                  <h2 className="text-[26px] md:text-[25px] font-semibold leading-[32px] md:leading-[52px] opacity-100" style={{ color: '#5A4C33' }}>
                     {searchQuery ? 'Search Results' : 'Blogs'} {regularArticles.length > 0 && (
                       <span className="text-[20px] md:text-[22px] text-gray-500 font-normal opacity-85 ml-4">
                         ({regularArticles.length} articles)
@@ -784,7 +784,7 @@ export default function Page() {
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="#D2A02A" stroke="#D2A02A" strokeWidth="1.5">
                   <path d="M12 2L14.39 8.26L21 9.27L16.5 14.14L17.77 21L12 17.77L6.23 21L7.5 14.14L3 9.27L9.61 8.26L12 2z" />
                 </svg>
-                <h2 className="text-[26px] md:text-[52px] font-semibold leading-[32px] md:leading-[52px] opacity-100" style={{ color: '#5A4C33' }}>
+                <h2 className="text-[26px] md:text-[25px] font-semibold leading-[32px] md:leading-[52px] opacity-100" style={{ color: '#5A4C33' }}>
                   {searchQuery ? 'Related' : 'Trending'}
                 </h2>
               </div>
