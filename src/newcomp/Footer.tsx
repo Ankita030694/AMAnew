@@ -143,6 +143,7 @@ const Footer = () => {
                   { name: 'Litigation', href: '/services/litigation' },
                   { name: 'Loan Settlement', href: '/services/loan-settlement' },
                   { name: 'Real Estate', href: '/services/real-estate' },
+                  { name: 'Success Stories', href: '/success-stories' },
                 ].map((service) => (
                   <li key={service.href}>
                     <Link 

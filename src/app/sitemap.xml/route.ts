@@ -2,6 +2,7 @@
 // import { MetadataRoute } from 'next'
 import { db } from '@/lib/firebase'
 import { collection, getDocs } from 'firebase/firestore'
+import { successStories } from '@/data/success-stories'
 
 export async function GET(): Promise<Response> {
   const blogs = await fetchAllBlogs()
@@ -220,8 +221,16 @@ export async function GET(): Promise<Response> {
     priority: 0.7
   }))
 
+  // Build dynamic success story routes
+  const successStoryRoutes = successStories.map(story => ({
+    url: `${baseUrl}/success-stories/${story.slug}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: 'monthly',
+    priority: 0.8
+  }))
+
   // Combine all routes
-  const allRoutes = [...staticRoutes, ...serviceSlugRoutes, ...blogRoutes, ...articleRoutes]
+  const allRoutes = [...staticRoutes, ...serviceSlugRoutes, ...blogRoutes, ...articleRoutes, ...successStoryRoutes]
 
   // Generate XML
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
