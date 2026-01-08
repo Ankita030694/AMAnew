@@ -131,7 +131,7 @@ export default function SuccessStoriesPage() {
                               {/* Left: Avatar & Info */}
                               <div className="flex items-center gap-2 md:gap-3 shrink-0">
                                  <div className="w-[30px] h-[30px] md:w-[40px] md:h-[40px] bg-white rounded-full flex items-center justify-center p-1">
-                                    <Image src="/newAssets/google-g.svg" alt="G" width={24} height={24} />
+                                    <Image src="/newAssets/google-g.svg" alt="G" width={24} height={24} unoptimized />
                                  </div>
                                  <div className="text-left">
                                     <div className="text-[#D2A02A] font-bold text-xs md:text-sm">{t.author}</div>
@@ -154,7 +154,7 @@ export default function SuccessStoriesPage() {
 
                    {/* Column 2: Static Badge (Mobile: 35%, Desktop: 20%) */}
                    <div className="w-[35%] md:w-[20%] h-full flex flex-col items-center justify-center bg-[#251D16] z-10 p-2 md:p-4 shadow-[-10px_0_20px_rgba(0,0,0,0.2)] gap-2 md:gap-3">
-                      <Image src="/newAssets/google.png" alt="Google" width={60} height={20} className="object-contain md:w-[80px] md:h-[26px]" />
+                      <Image src="/newAssets/google.png" alt="Google" width={60} height={20} className="object-contain md:w-[80px] md:h-[26px]" unoptimized />
                       <div className="flex flex-col items-start scale-90 md:scale-100">
                           <div className="flex gap-0.5 mb-1">
                               {[1,2,3,4,5].map(s => <span key={s} className="text-[#F4B400] text-sm leading-none">★</span>)}
