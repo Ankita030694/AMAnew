@@ -43,7 +43,7 @@ const Hero = () => {
         {/* Horizontal Line for Mobile / U-Border for Desktop handled in AnimatedBorder */}
         
       </div>
-       <div className="mt-[50px] md:mt-[80px] flex flex-col items-center gap-[35px] px-4">
+       <div className="-mt-20 md:mt-[80px] flex flex-col items-center gap-[35px] px-4">
           <p className="text-[24px] md:text-[32px] font-semibold text-black text-center leading-tight">
             Download the <span className="text-[#D29E0D]">AMA Legal Solutions</span> App Today
           </p>
