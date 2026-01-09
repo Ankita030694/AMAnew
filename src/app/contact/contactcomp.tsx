@@ -157,7 +157,7 @@ const ContactComp = () => {
           {/* Left Section - Content */}
           <div className="flex-1 flex flex-col justify-between min-h-[600px] max-w-3xl">
             <div>
-              <h1 className="text-[32px] md:text-[65px] font-semibold text-[#30261C] leading-[40px] md:leading-[65px] mb-[30px] opacity-100">
+              <h1 className="text-[32px] md:text-[45px] font-semibold text-[#30261C] leading-[40px] md:leading-[65px] mb-[30px] opacity-100">
                 Resolve Your Legal Matters with Confidence
               </h1>
               <p className="text-[16px] md:text-[25px] text-[#30261C] leading-[24px] md:leading-[29px] font-normal max-w-2xl opacity-85 mb-[50px]">
