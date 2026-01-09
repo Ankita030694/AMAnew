@@ -146,7 +146,7 @@ const Services = () => {
       {/* Affiliations Section */}
       <div className="mt-12 w-full rounded-[35px] bg-[rgba(255,255,255,0.15)] shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] p-6 lg:p-12 flex flex-col items-center gap-6 lg:gap-12">
         <h2 
-          className="text-[#30261C] text-center text-[31px] md:text-[47px] font-normal leading-[1.2] lg:leading-[1.2]"
+          className="text-[#30261C] text-center text-[25px] md:text-[47px] font-normal leading-[1.2] lg:leading-[1.2]"
           style={{ fontFamily: "var(--font-polysans)" }}
         >
           Affiliations That Strengthen Our Practice

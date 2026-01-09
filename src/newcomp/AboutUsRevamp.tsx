@@ -166,7 +166,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
       <section className="w-full px-4 md:px-8 max-w-[95%] mx-auto mb-[120px]">
          <div className="w-full rounded-[35px] bg-[#EAE6DB] border border-white/40 shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] p-6 lg:p-12 flex flex-col items-center gap-[50px]">
             <h2 
-              className="text-[#30261C] text-center text-[26px] md:text-[52px] font-semibold leading-[32px] md:leading-[52px]"
+              className="text-[#30261C] text-center text-[25px] md:text-[52px] font-semibold leading-[32px] md:leading-[52px]"
               style={{
                 fontFamily: "var(--font-polysans)",
               }}
