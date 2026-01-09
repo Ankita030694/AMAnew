@@ -96,18 +96,8 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
     return processContent(blog.description);
   }, [blog.description]);
 
-  useEffect(() => {
+    useEffect(() => {
     setCurrentUrl(window.location.href);
-    
-    if (typeof window !== 'undefined' && 'scrollRestoration' in window.history) {
-      window.history.scrollRestoration = 'manual';
-    }
-    
-    return () => {
-      if (typeof window !== 'undefined' && 'scrollRestoration' in window.history) {
-        window.history.scrollRestoration = 'auto';
-      }
-    };
   }, []);
 
   const toggleFaq = (faqId: string) => {

@@ -167,7 +167,7 @@ const ServicesClient = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[35px]">
             {servicesData.map((item, index) => (
                 <Link href={item.link} key={index} className="group h-full">
-                    <div className="h-full rounded-[24px] bg-[#EAE6DB] border border-white/40 shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] p-6 lg:p-8 flex flex-col gap-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-[#D29E0D]/30">
+                    <div className="h-full rounded-[24px] bg-white border border-white/40 shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] p-6 lg:p-8 flex flex-col gap-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-[#D29E0D]/30">
                         {/* Icon */}
                         <div className="w-14 h-14 rounded-full bg-[#30261C]/5 flex items-center justify-center text-[#D29E0D] group-hover:bg-[#D29E0D] group-hover:text-[#EAE6DB] transition-colors duration-300">
                              <FontAwesomeIcon icon={item.icon} className="w-6 h-6" />

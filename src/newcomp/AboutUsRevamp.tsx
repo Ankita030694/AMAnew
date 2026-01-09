@@ -58,13 +58,13 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
             alt="About Hero"
             width={1400}
             height={800}
-            className="-mt-15 md:-mt-50 object-contain scale-[1.5] origin-bottom mb-12 md:mb-0 md:scale-100 ml-10"
+            className="-mt-15 md:-mt-20 object-contain scale-[1.5] origin-bottom mb-12 md:mb-0 md:scale-100 ml-10"
             priority
         />
       </section>
 
       {/* Mission Section */}
-      <section className="w-full px-4 md:px-8 py-[80px] md:py-[120px] max-w-[95%] mx-auto">
+      <section className="w-full -mt-15 md:mt-0 px-4 md:px-8 py-12 max-w-[95%] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-start">
           {/* Left Column */}
           <div className="flex flex-col items-start gap-[35px]">
@@ -142,8 +142,8 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
           {/* Right Column */}
           <div className="text-[#30261C] text-[13px] md:text-[20px] leading-[19px] md:leading-[30px] space-y-6 font-normal opacity-85">
 
-            <h3> <span className="font-semibold opacity-100 text-[19px] md:text-[22px] leading-[25px]">Our mission:</span> </h3>
-            <p>
+            <h3> <span className="font-semibold opacity-100 text-[19px] md:text-[22px] md:leading-[25px]">Our mission:</span> </h3>
+            <p className="leading-[25px]">
              To provide trusted, results-focused legal solutions that protect your financial and business interests ethically, clearly, and efficiently.
 
 
@@ -216,7 +216,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
       </section>
 
       {/* Legacy Section */}
-      <section className="w-full py-[80px] md:py-[120px] flex flex-col items-center bg-[#EAE6DB] overflow-hidden">
+      <section className="w-full -mt-15 md:mt-0 py-8 flex flex-col items-center bg-[#EAE6DB] overflow-hidden">
         {/* Main Heading */}
        
        
@@ -304,7 +304,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
       </section>
 
       {/* Our Journey Through Time Section */}
-      <section className="w-full px-4 md:px-8 py-[80px] md:py-[120px] flex flex-col items-center gap-[50px] md:gap-[80px]">
+      <section className="w-full px-4 md:px-8 py-8 flex flex-col items-center gap-[50px] md:gap-[80px]">
         {/* Section Header */}
         <div className="flex flex-col items-center gap-[35px] max-w-4xl text-center">
           <h2 className="text-[26px] md:text-[52px] font-semibold text-[#30261C] leading-[32px] md:leading-[52px] opacity-100">

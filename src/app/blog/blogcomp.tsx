@@ -79,7 +79,7 @@ const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
 };
 
 // Define the Blog interface
-interface Blog {
+export interface Blog {
   id: string;
   title: string;
   subtitle: string;
@@ -92,19 +92,14 @@ interface Blog {
   slug: string; // Changed from optional to required
 }
 
-// Enhanced cache with TTL for better performance
-const blogsCache = new Map<string, { data: Blog[]; timestamp: number }>();
-const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+interface BlogPageProps {
+  initialBlogs: Blog[];
+}
 
-// Helper function to check if cache entry is valid
-const isCacheValid = (timestamp: number) => {
-  return Date.now() - timestamp < CACHE_TTL;
-};
-
-export default function Page() {
-  const [blogs, setBlogs] = useState<Blog[]>([]);
-  const [filteredBlogs, setFilteredBlogs] = useState<Blog[]>([]);
-  const [loading, setLoading] = useState(true);
+export default function Page({ initialBlogs = [] }: BlogPageProps) {
+  const [blogs, setBlogs] = useState<Blog[]>(initialBlogs);
+  const [filteredBlogs, setFilteredBlogs] = useState<Blog[]>(initialBlogs);
+  const [loading, setLoading] = useState(false);
   const [paginationLoading, setPaginationLoading] = useState(false);
   const [scrollLocked, setScrollLocked] = useState(false); // Reduced scroll lock time
   const [webPageSchema, setWebPageSchema] = useState<any>(null);
@@ -201,15 +196,38 @@ export default function Page() {
     };
   };
 
-  // Simplified scroll management for better performance
+  // Set schema on mount
   useEffect(() => {
-    // Simple scroll to top on mount
-    if (typeof window !== 'undefined') {
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    if (initialBlogs.length > 0) {
+      setWebPageSchema(generateBlogFaqSchema(initialBlogs));
     }
   }, []);
 
-  // Update URL when page changes
+  // Simplified scroll management for better performance
+
+  // Force scroll to top on mount and ensure browser doesn't restore scroll position
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Store original restoration preference
+      const originalRestoration = window.history.scrollRestoration;
+      // Set to manual to prevent browser from restoring position
+      window.history.scrollRestoration = 'manual';
+      // Force scroll to top immediately
+      window.scrollTo(0, 0);
+
+      return () => {
+        // Restore original preference on cleanup
+        window.history.scrollRestoration = originalRestoration;
+      };
+    }
+  }, []);
+
+  // Ensure we are at the top when content loads
+  useEffect(() => {
+    if (!loading) {
+      window.scrollTo(0, 0);
+    }
+  }, [loading]);
   const updateURL = (page: number) => {
     const params = new URLSearchParams(searchParams);
     if (page === 1) {
@@ -230,58 +248,7 @@ export default function Page() {
     }
   }, [searchParams]);
 
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      const cacheKey = 'all-blogs';
-      
-      // Check cache first
-      const cached = blogsCache.get(cacheKey);
-      if (cached && isCacheValid(cached.timestamp)) {
-        setBlogs(cached.data);
-        setFilteredBlogs(cached.data);
-        setLoading(false);
-        setWebPageSchema(generateBlogFaqSchema(cached.data));
-        return;
-      }
 
-      try {
-        const blogsCollection = collection(db, 'blogs');
-        const blogsQuery = query(blogsCollection, orderBy('created', 'desc'));
-        const querySnapshot = await getDocs(blogsQuery);
-        
-        const blogsData = querySnapshot.docs.map(doc => {
-          const data = doc.data();
-          
-          return {
-            id: doc.id,
-            title: data.title || '',
-            subtitle: data.subtitle || '',
-            description: truncateWords(data.description || '', 20),
-            date: data.date || '',
-            image: data.image || '',
-            created: data.created || Date.now(),
-            metaTitle: data.metaTitle || '',
-            metaDescription: data.metaDescription || '',
-            slug: data.slug || '' // Use slug directly from database
-          };
-        });
-        
-        // Cache the result
-        blogsCache.set(cacheKey, { data: blogsData, timestamp: Date.now() });
-        
-        setBlogs(blogsData);
-        setFilteredBlogs(blogsData);
-        setLoading(false);
-        setWebPageSchema(generateBlogFaqSchema(blogsData));
-        
-      } catch (error) {
-        console.error("Error fetching blogs:", error);
-        setLoading(false);
-      }
-    };
-
-    fetchBlogs();
-  }, []);
 
   // Helper function to shuffle array (Fisher-Yates algorithm)
   const shuffleArray = (array: Blog[]) => {
