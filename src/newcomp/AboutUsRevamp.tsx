@@ -95,44 +95,44 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
             </Link>
 
             {/* Relocated Affiliation Logos */}
-            <div className="w-full mt-6 flex flex-row gap-6 items-center justify-center md:justify-start -ml-20">
+            <div className="w-full mt-6 flex flex-row flex-wrap justify-center gap-6 md:justify-start md:flex-nowrap md:-ml-20">
                {/* Logo 2 */}
-               <Link href="#" className="relative w-[105px] md:w-[510px] h-[75px] md:h-[135px] hover:opacity-80 transition-opacity">
+               <Link href="#" className="relative w-[150px] md:w-[510px] h-[100px] md:h-[135px] hover:opacity-80 transition-opacity">
                  <Image
                    src="/newAssets/affiliation-logo-2.png"
                    alt="Affiliation 2"
                    fill
-                   className="object-contain object-left scale-[1.5] md:scale-200 origin-center md:origin-left"
+                   className="object-contain object-left md:scale-200 md:origin-left"
                    unoptimized
                  />
                </Link>
                {/* Logo 3 */}
-               <Link href="#" className="relative w-[105px] md:w-[510px] h-[75px] md:h-[135px] hover:opacity-80 transition-opacity">
+               <Link href="#" className="relative w-[150px] md:w-[510px] h-[100px] md:h-[135px] hover:opacity-80 transition-opacity">
                  <Image
                    src="/newAssets/affiliation-logo-3.png"
                    alt="Affiliation 3"
                    fill
-                   className="object-contain object-left scale-[1.5] md:scale-200 origin-center md:origin-left"
+                   className="object-contain object-left md:scale-200 md:origin-left"
                    unoptimized
                  />
                </Link>
                {/* Logo 4 */}
-               <Link href="#" className="relative w-[105px] md:w-[510px] h-[75px] md:h-[135px] hover:opacity-80 transition-opacity">
+               <Link href="#" className="relative w-[150px] md:w-[510px] h-[100px] md:h-[135px] hover:opacity-80 transition-opacity">
                  <Image
                    src="/newAssets/affiliation-logo-4.png"
                    alt="Affiliation 4"
                    fill
-                   className="object-contain object-left scale-[1.5] md:scale-200 origin-center md:origin-left"
+                   className="object-contain object-left md:scale-200 md:origin-left"
                    unoptimized
                  />
                </Link>
                {/* Logo 5 */}
-               <Link href="#" className="relative w-[105px] md:w-[510px] h-[75px] md:h-[155px] hover:opacity-80 transition-opacity">
+               <Link href="#" className="relative w-[150px] md:w-[510px] h-[100px] md:h-[155px] hover:opacity-80 transition-opacity">
                  <Image
                    src="/newAssets/affiliation-logo-5.png"
                    alt="Affiliation 5"
                    fill
-                   className="object-contain object-left scale-[1.5] md:scale-200 origin-center md:origin-left"
+                   className="object-contain object-left md:scale-200 md:origin-left"
                    unoptimized
                  />
                </Link>
