@@ -58,7 +58,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
             alt="About Hero"
             width={1400}
             height={800}
-            className="-mt-30 object-contain scale-[1.5] origin-bottom mb-12 md:mb-0 md:scale-100 ml-10"
+            className="-mt-15 md:-mt-50 object-contain scale-[1.5] origin-bottom mb-12 md:mb-0 md:scale-100 ml-10"
             priority
         />
       </section>
