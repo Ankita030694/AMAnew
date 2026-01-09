@@ -322,7 +322,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 w-full max-w-[1200px]">
           {/* Our History Card */}
           <Link href="/ourhistory" className="group">
-            <div className="relative w-full h-[400px] md:h-[480px] rounded-[24px] bg-white/15 shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] overflow-hidden">
+            <div className="relative w-full h-[460px] md:h-[480px] rounded-[24px] bg-white/15 shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] overflow-hidden">
               {/* Image */}
               <div className="absolute top-[-140px] left-0 w-full h-[470px]">
                 <Image
@@ -357,7 +357,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
 
           {/* Our Present Card */}
           <Link href="/present" className="group">
-            <div className="relative w-full h-[400px] md:h-[480px] rounded-[24px] bg-white/15 shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] overflow-hidden">
+            <div className="relative w-full h-[460px] md:h-[480px] rounded-[24px] bg-white/15 shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] overflow-hidden">
               {/* Image */}
               <div className="absolute top-0 left-0 w-full h-[300px]">
                 <Image
@@ -392,7 +392,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
 
           {/* Our Vision Card */}
           <Link href="/ourvision" className="group">
-            <div className="relative w-full h-[400px] md:h-[480px] rounded-[24px] bg-white/15 shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] overflow-hidden">
+            <div className="relative w-full h-[460px] md:h-[480px] rounded-[24px] bg-white/15 shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] overflow-hidden">
               {/* Video */}
               <div className="absolute top-0 left-0 w-full h-[300px]">
                 <video
