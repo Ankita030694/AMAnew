@@ -70,7 +70,6 @@ export default async function Page() {
       <PerformanceMonitor />
       
       <Suspense fallback={<BlogLoading />}>
-        {/* @ts-expect-error Async Server Component */}
         <BlogPage initialBlogs={blogs} />
       </Suspense>
     </main>
