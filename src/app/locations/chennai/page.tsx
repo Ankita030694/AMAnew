@@ -398,10 +398,10 @@ export default function ChennaiLocationPage() {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-[1600px] py-8">
+        <div className="container mx-auto px-4 max-w-[1600px] py-4 md:py-8">
           <Breadcrumbs items={breadcrumbItems} />
           
-          <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr_300px] gap-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr_300px] gap-6 lg:gap-10 items-start">
             {/* Left Sidebar - TOC (Desktop) */}
             <div className="hidden lg:block sticky top-28">
               <TableOfContents sections={tocSections} orientation="vertical" />
@@ -414,15 +414,15 @@ export default function ChennaiLocationPage() {
                 <TableOfContents sections={tocSections} />
               </div>
 
-              <div className="bg-white p-6 md:p-12 rounded-3xl shadow-sm space-y-16 border border-gray-100">
+              <div className="bg-white p-4 md:p-12 rounded-3xl shadow-sm space-y-10 md:space-y-16 border border-gray-100">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Defending Rights in the Gateway of South India</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Defending Rights in the Gateway of South India</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     Chennai is a city where deep-rooted tradition meets cutting-edge technology. Home to the SaaS revolution and a robust automotive sector, it demands legal services that are as versatile as its economy. Presiding over it all is the majestic <strong>Madras High Court</strong>, a beacon of justice for over a century.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     At <strong>AMA Legal Solutions</strong>, we pride ourselves on being deeply ingrained in Chennai's legal ecosystem. Whether you are a startup founder in Taramani needing an IP strategy, a manufacturer in Oragadam facing labor unrest, or a family in Anna Nagar seeking property resolution, we are here to serve.
                   </p>
                   <p className="text-lg leading-relaxed text-gray-700">
@@ -432,8 +432,8 @@ export default function ChennaiLocationPage() {
 
                 {/* Chennai Legal Context */}
                 <section id="legal-legacy" className="scroll-mt-32">
-                   <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Chennai's Unique Legal Landscape</h2>
-                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Chennai's Unique Legal Landscape</h2>
+                   <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                      The practice of law in Chennai is shaped by the <strong>Madras High Court's Original Jurisdiction</strong>, meaning certain civil suits can be filed directly in the High Court rather than lower courts. This is a unique privilege shared by only a few cities in India.
                    </p>
                    <div className="bg-gray-50 p-8 rounded-2xl border-l-4 border-[#D2A02A] my-8">
@@ -451,8 +451,8 @@ export default function ChennaiLocationPage() {
 
                 {/* Why You Need an Expert */}
                 <section id="why-expert" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">The Advantage of Local Expertise</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">The Advantage of Local Expertise</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     Navigating Chennai's bureaucracy requires more than just legal knowledge; it requires on-the-ground experience.
                   </p>
                   <div className="grid md:grid-cols-2 gap-6">
@@ -477,8 +477,8 @@ export default function ChennaiLocationPage() {
 
                  {/* Practice Areas Overview */}
                 <section id="practice-areas" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Key Practice Areas</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Key Practice Areas</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     We tailor our services to the diverse needs of Chennai, from individual support to multinational corporate advisory.
                   </p>
                 </section>
@@ -584,7 +584,7 @@ export default function ChennaiLocationPage() {
 
                 {/* Courts Guide */}
                 <section id="courts-guide" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Guide to Courts in Chennai</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Guide to Courts in Chennai</h2>
                   <p className="text-lg leading-relaxed mb-8 text-gray-700">
                     A brief overview of the forums where we represent you.
                   </p>
@@ -625,8 +625,8 @@ export default function ChennaiLocationPage() {
 
                 {/* Our Approach */}
                 <section id="our-approach" className="scroll-mt-32">
-                   <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">The AMA Approach</h2>
-                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">The AMA Approach</h2>
+                   <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                      Our practice is built on trust, intelligence, and speed.
                    </p>
                    
@@ -656,7 +656,7 @@ export default function ChennaiLocationPage() {
 
                 {/* Why AMA */}
                 <section id="why-ama" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Why Chennai Chooses AMA?</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Why Chennai Chooses AMA?</h2>
                   <p className="text-lg leading-relaxed mb-8 text-gray-700">
                     We combine the heritage of Madras lawyering with the demands of the modern economy.
                   </p>
@@ -754,7 +754,7 @@ export default function ChennaiLocationPage() {
             </div>
 
             {/* Sidebar */}
-            <div className="hidden lg:block space-y-8 sticky top-28">
+            <div className="space-y-8 lg:sticky lg:top-28 mt-12 lg:mt-0">
                 {/* Contact Card */}
                 <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Need Urgent Advice?</h3>

@@ -306,10 +306,10 @@ export default function NewDelhiLocationPage() {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-[1600px] py-8">
+        <div className="container mx-auto px-4 max-w-[1600px] py-4 md:py-8">
           <Breadcrumbs items={breadcrumbItems} />
           
-          <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr_300px] gap-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr_300px] gap-6 lg:gap-10 items-start">
             {/* Left Sidebar - TOC (Desktop) */}
             <div className="hidden lg:block sticky top-28">
               <TableOfContents sections={tocSections} orientation="vertical" />
@@ -322,15 +322,15 @@ export default function NewDelhiLocationPage() {
                 <TableOfContents sections={tocSections} />
               </div>
 
-              <div className="bg-white p-6 md:p-12 rounded-3xl shadow-sm space-y-16 border border-gray-100">
+              <div className="bg-white p-4 md:p-12 rounded-3xl shadow-sm space-y-10 md:space-y-16 border border-gray-100">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Premier Legal Representation in New Delhi</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Premier Legal Representation in New Delhi</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     New Delhi is more than just the capital of India it is the undisputed legal epicenter of the nation. It is a city where landmark judgments are delivered, where the constitution is interpreted, and where the fates of corporations and individuals alike are decided. In such a high-stakes environment, having ordinary legal representation is simply not enough. You need advocates who are not only learned in the law but also masters of strategy.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                      <strong>AMA Legal Solutions</strong> stands at the forefront of this demanding legal landscape. We are a full-service law firm dedicated to providing exceptional legal counsel to a diverse clientele ranging from multinational corporations and startups to families and individuals. Our philosophy is rooted in the belief that justice should be accessible, transparent, and swift. With deep roots in the Delhi legal fraternity, we leverage our knowledge and experience to secure the best possible outcomes for our clients.
                   </p>
                   <p className="text-lg leading-relaxed text-gray-700">
@@ -340,8 +340,8 @@ export default function NewDelhiLocationPage() {
 
                 {/* Delhi: The Legal Powerhouse */}
                 <section id="legal-capital" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Why Delhi is India's Legal Battleground</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Why Delhi is India's Legal Battleground</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     Understanding the importance of New Delhi in the legal world is crucial for any litigant. It is the seat of the <strong>Supreme Court of India</strong>, the final court of appeal. This means that eventually, the most significant legal matters from every corner of the country find their way here. Additionally, the <strong>Delhi High Court</strong> is renowned globally for its progressive judgments, especially in matters of Intellectual Property Rights (IPR), arbitration, and corporate law.
                   </p>
                   <div className="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl border border-gray-200 my-8">
@@ -362,8 +362,8 @@ export default function NewDelhiLocationPage() {
 
                 {/* Why You Need an Expert */}
                 <section id="why-need-expert" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">The Risks of Inadequate Representation</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">The Risks of Inadequate Representation</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     The Indian judicial system is complex, often characterized by procedural intricacies and delays. A lawyer without specific expertise in the relevant domain or court can inadvertently cause irreparable damage to your case.
                   </p>
                   <div className="grid md:grid-cols-2 gap-6">
@@ -388,8 +388,8 @@ export default function NewDelhiLocationPage() {
 
                 {/* Practice Areas Overview */}
                 <section id="practice-areas" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Key Practice Areas</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Key Practice Areas</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     AMA Legal Solutions is a multi-disciplinary firm. Our team comprises specialized advocates who head different verticals, ensuring that you receive expert advice whether you are an individual reaching out for help or a corporation seeking general counsel.
                   </p>
                 </section>
@@ -530,7 +530,7 @@ export default function NewDelhiLocationPage() {
 
                 {/* Courts Guide */}
                 <section id="courts-guide" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">A Litigant's Guide to Courts in Delhi</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">A Litigant's Guide to Courts in Delhi</h2>
                   <p className="text-lg leading-relaxed mb-8 text-gray-700">
                     Navigating the physical infrastructure of Delhi's courts can be as dauting as the legal arguments. Here is a brief guide to the forums where we regularly appear.
                   </p>
@@ -580,8 +580,8 @@ export default function NewDelhiLocationPage() {
 
                 {/* Our Approach */}
                 <section id="our-approach" className="scroll-mt-32">
-                   <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Our Methodology: The AMA Advantage</h2>
-                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Our Methodology: The AMA Advantage</h2>
+                   <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                      We don't believe in a one-size-fits-all approach. Every client comes with a unique set of facts, emotional baggage, and financial constraints. Our methodology is designed to provide personalized legal care.
                    </p>
                    
@@ -611,7 +611,7 @@ export default function NewDelhiLocationPage() {
 
                 {/* Why AMA */}
                 <section id="why-ama" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Why Choose AMA Legal Solutions?</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Why Choose AMA Legal Solutions?</h2>
                   <p className="text-lg leading-relaxed mb-8 text-gray-700">
                     Choosing a lawyer is a decision of trust. Here is why AMA Legal Solutions is the preferred choice for hundreds of clients in New Delhi:
                   </p>
@@ -745,7 +745,7 @@ export default function NewDelhiLocationPage() {
             </div>
 
             {/* Sidebar */}
-            <div className="hidden lg:block space-y-8 sticky top-28">
+            <div className="space-y-8 lg:sticky lg:top-28 mt-12 lg:mt-0">
                 {/* Contact Card */}
                 <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Need Urgent Advice?</h3>

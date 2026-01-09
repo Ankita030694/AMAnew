@@ -304,10 +304,10 @@ export default function KolkataLocationPage() {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-[1600px] py-8">
+        <div className="container mx-auto px-4 max-w-[1600px] py-4 md:py-8">
           <Breadcrumbs items={breadcrumbItems} />
           
-          <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr_300px] gap-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr_300px] gap-6 lg:gap-10 items-start">
             {/* Left Sidebar - TOC (Desktop) */}
             <div className="hidden lg:block sticky top-28">
               <TableOfContents sections={tocSections} orientation="vertical" />
@@ -320,15 +320,15 @@ export default function KolkataLocationPage() {
                 <TableOfContents sections={tocSections} />
               </div>
 
-              <div className="bg-white p-6 md:p-12 rounded-3xl shadow-sm space-y-16 border border-gray-100">
+              <div className="bg-white p-4 md:p-12 rounded-3xl shadow-sm space-y-10 md:space-y-16 border border-gray-100">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Premier Legal Representation in the City of Joy</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Premier Legal Representation in the City of Joy</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     Kolkata is a city where history meets modernity. As the former capital of British India, it houses the country's oldest High Court and boasts a rich legal heritage. Today, it serves as the commercial gateway to Eastern India, bristling with activity in traditional sectors like tea and jute, alongside rapidly expanding IT hubs in Salt Lake and New Town.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                      <strong>AMA Legal Solutions</strong> is proud to be a part of this vibrant ecosystem. We understand that doing business in West Bengal requires a nuanced understanding of local laws, labor relations, and administrative procedures. Our team of experienced advocates bridges the gap between old-school legal craftsmanship and new-age commercial requirements.
                   </p>
                   <p className="text-lg leading-relaxed text-gray-700">
@@ -338,11 +338,11 @@ export default function KolkataLocationPage() {
 
                 {/* The Legal Heritage */}
                 <section id="city-of-joy" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">A Unique Legal Landscape</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">A Unique Legal Landscape</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     The legal framework in Kolkata is distinct. The <strong>Calcutta High Court</strong> is not just an appellate body; meant of its Original Side, it has the power to try civil suits directly, a privilege shared with only Mumbai and Chennai. This "Original Side" practice demands specialized pleading and procedural knowledge that few firms possess.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                    Furthermore, West Bengal has specific state laws that deeply impact property and business:
                   </p>
                   <div className="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl border border-gray-200 my-8">
@@ -357,8 +357,8 @@ export default function KolkataLocationPage() {
 
                 {/* Why Expert Counsel Matters */}
                 <section id="why-expert" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">The Importance of Specialized Counsel</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">The Importance of Specialized Counsel</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     Navigating Kolkata's courts can be challenging. The procedures in the Alipore Judges Court differ vastly from those in the Bankshall Court or the High Court. A generalized approach often leads to procedural delays—getting a case 'dismissed for default' or stuck in the 'list' for years.
                   </p>
                   <p className="text-lg leading-relaxed text-gray-700">
@@ -368,8 +368,8 @@ export default function KolkataLocationPage() {
 
                 {/* Practice Areas Overview */}
                 <section id="practice-areas" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Key Practice Areas</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Key Practice Areas</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     We offer a comprehensive range of legal services tailored to the needs of Kolkata's citizens and businesses.
                   </p>
                 </section>
@@ -493,7 +493,7 @@ export default function KolkataLocationPage() {
 
                 {/* Courts Guide */}
                 <section id="courts-guide" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">A Litigant's Guide to Courts in Kolkata</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">A Litigant's Guide to Courts in Kolkata</h2>
                   <p className="text-lg leading-relaxed mb-8 text-gray-700">
                     Understanding the jurisdiction is the first step to justice. Here are the key courts where we practice.
                   </p>
@@ -551,8 +551,8 @@ export default function KolkataLocationPage() {
 
                 {/* Our Methodology */}
                 <section id="our-methodology" className="scroll-mt-32">
-                   <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Our Methodology</h2>
-                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Our Methodology</h2>
+                   <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                      We blend the rigorous standards of the Calcutta Bar with modern efficiency:
                    </p>
                    
@@ -582,7 +582,7 @@ export default function KolkataLocationPage() {
 
                 {/* Why AMA */}
                 <section id="why-ama" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Why Choose AMA Legal Solutions?</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Why Choose AMA Legal Solutions?</h2>
                   <p className="text-lg leading-relaxed mb-8 text-gray-700">
                     Trusted by families in South Kolkata and businesses in Sector V alike.
                   </p>
@@ -716,7 +716,7 @@ export default function KolkataLocationPage() {
             </div>
 
             {/* Sidebar */}
-            <div className="hidden lg:block space-y-8 sticky top-28">
+            <div className="space-y-8 lg:sticky lg:top-28 mt-12 lg:mt-0">
                 {/* Contact Card */}
                 <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Need a Lawyer in Kolkata?</h3>

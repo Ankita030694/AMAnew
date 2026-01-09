@@ -306,10 +306,10 @@ export default function BengaluruLocationPage() {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-[1600px] py-8">
+        <div className="container mx-auto px-4 max-w-[1600px] py-4 md:py-8">
           <Breadcrumbs items={breadcrumbItems} />
           
-          <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr_300px] gap-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr_300px] gap-6 lg:gap-10 items-start">
             {/* Left Sidebar - TOC (Desktop) */}
             <div className="hidden lg:block sticky top-28">
               <TableOfContents sections={tocSections} orientation="vertical" />
@@ -322,15 +322,15 @@ export default function BengaluruLocationPage() {
                 <TableOfContents sections={tocSections} />
               </div>
 
-              <div className="bg-white p-6 md:p-12 rounded-3xl shadow-sm space-y-16 border border-gray-100">
+              <div className="bg-white p-4 md:p-12 rounded-3xl shadow-sm space-y-10 md:space-y-16 border border-gray-100">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Trusted Legal Partners in Namma Bengaluru</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Trusted Legal Partners in Namma Bengaluru</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     Bengaluru is a city of dualities. It is at once the "Garden City" with its rich colonial legal heritage and the "Silicon Valley of India," pulsating with the energy of thousands of startups and multinational corporations. Navigating the legal landscape here requires a law firm that can bridge these two worlds seamlessly.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     At <strong>AMA Legal Solutions</strong>, we understand that legal challenges in Bengaluru are unique. A property dispute here often involves complex municipal records dating back decades, while a corporate dispute might involve cutting-edge blockchain technology or AI algorithms. Our team of advocates is diverse, combining seasoned litigators who know the pulse of the City Civil Court with modern corporate lawyers who speak the language of equity and vesting cliffs.
                   </p>
                   <p className="text-lg leading-relaxed text-gray-700">
@@ -340,8 +340,8 @@ export default function BengaluruLocationPage() {
 
                 {/* Silicon Valley */}
                 <section id="silicon-valley" className="scroll-mt-32">
-                   <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Bengaluru: The Innovation & Legal Hub</h2>
-                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Bengaluru: The Innovation & Legal Hub</h2>
+                   <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                      Bengaluru is distinct in the Indian legal ecosystem. It is the headquarters for some of the world's largest IT firms and home to over 40% of India's tech startups. This concentration of technology creates a high demand for specialized legal services that go beyond traditional litigation.
                    </p>
                    <div className="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl border border-gray-200 my-8">
@@ -362,8 +362,8 @@ export default function BengaluruLocationPage() {
 
                 {/* Why You Need an Expert */}
                 <section id="why-need-expert" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">The Cost of Legal Oversight</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">The Cost of Legal Oversight</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     In a fast-moving city like Bengaluru, skipping legal due diligence or choosing inexperienced counsel can have disastrous consequences. The cost of correcting a legal mistake is often ten times the cost of preventing it.
                   </p>
                   <div className="grid md:grid-cols-2 gap-6">
@@ -388,8 +388,8 @@ export default function BengaluruLocationPage() {
 
                  {/* Practice Areas Overview */}
                 <section id="practice-areas" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Key Practice Areas</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Key Practice Areas</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     We offer a full spectrum of legal services tailored to the specific needs of Bengaluru's residents and businesses.
                   </p>
                 </section>
@@ -521,7 +521,7 @@ export default function BengaluruLocationPage() {
 
                 {/* Courts Guide */}
                 <section id="courts-guide" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Guide to Courts in Bengaluru</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Guide to Courts in Bengaluru</h2>
                   <p className="text-lg leading-relaxed mb-8 text-gray-700">
                     Understanding the jurisdiction is half the battle. Here are the key forums where we advocate for you.
                   </p>
@@ -564,8 +564,8 @@ export default function BengaluruLocationPage() {
 
                 {/* Our Approach */}
                 <section id="our-approach" className="scroll-mt-32">
-                   <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">The AMA Approach</h2>
-                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">The AMA Approach</h2>
+                   <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                      We combine the rigor of a traditional law firm with the agility of a startup. Our approach is client-centric, tech-savvy, and result-driven.
                    </p>
                    
@@ -595,7 +595,7 @@ export default function BengaluruLocationPage() {
 
                 {/* Why AMA */}
                 <section id="why-ama" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Why Bengaluru Chooses AMA?</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Why Bengaluru Chooses AMA?</h2>
                   <p className="text-lg leading-relaxed mb-8 text-gray-700">
                     In a city with thousands of lawyers, we stand out because we care.
                   </p>
@@ -729,7 +729,7 @@ export default function BengaluruLocationPage() {
             </div>
 
             {/* Sidebar */}
-            <div className="hidden lg:block space-y-8 sticky top-28">
+            <div className="space-y-8 lg:sticky lg:top-28 mt-12 lg:mt-0">
                 {/* Contact Card */}
                 <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Need Urgent Advice?</h3>

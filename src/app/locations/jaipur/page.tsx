@@ -306,10 +306,10 @@ export default function JaipurLocationPage() {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-[1600px] py-8">
+        <div className="container mx-auto px-4 max-w-[1600px] py-4 md:py-8">
           <Breadcrumbs items={breadcrumbItems} />
           
-          <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr_300px] gap-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr_300px] gap-6 lg:gap-10 items-start">
             {/* Left Sidebar - TOC (Desktop) */}
             <div className="hidden lg:block sticky top-28">
               <TableOfContents sections={tocSections} orientation="vertical" />
@@ -322,15 +322,15 @@ export default function JaipurLocationPage() {
                 <TableOfContents sections={tocSections} />
               </div>
 
-              <div className="bg-white p-6 md:p-12 rounded-3xl shadow-sm space-y-16 border border-gray-100">
+              <div className="bg-white p-4 md:p-12 rounded-3xl shadow-sm space-y-10 md:space-y-16 border border-gray-100">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Your Legal Shield in Rajasthan's Capital</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Your Legal Shield in Rajasthan's Capital</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     Jaipur is not just a city of palaces and forts; it is a rapidly modernizing metropolis with a thriving real estate market, a booming tourism industry, and a complex legal framework. As the seat of the <strong>Rajasthan High Court Bench</strong>, it is the center of judicial power for the region.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     At <strong>AMA Legal Solutions</strong>, we blend the traditional values of trust and integrity with modern legal acumen. Whether you are dealing with a property dispute in C-Scheme, a heritage conservation issue in the Walled City, or a corporate merger in Sitapura Industrial Area, our team has the local knowledge and legal expertise to guide you.
                   </p>
                   <p className="text-lg leading-relaxed text-gray-700">
@@ -340,8 +340,8 @@ export default function JaipurLocationPage() {
 
                 {/* Jaipur Legal Context */}
                 <section id="legal-heritage" className="scroll-mt-32">
-                   <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">The Legal Landscape of Jaipur</h2>
-                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">The Legal Landscape of Jaipur</h2>
+                   <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                      The legal environment in Jaipur is unique. It involves a mix of central laws, state-specific legislations like the <em>Rajasthan Tenancy Act</em>, and municipal bylaws governed by the <strong>Jaipur Development Authority (JDA)</strong>.
                    </p>
                    <div className="bg-gray-50 p-8 rounded-2xl border-l-4 border-[#D2A02A] my-8">
@@ -359,8 +359,8 @@ export default function JaipurLocationPage() {
 
                 {/* Why You Need an Expert */}
                 <section id="why-expert" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Why Local Expertise is Non-Negotiable</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Why Local Expertise is Non-Negotiable</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     Applying general legal principles without understanding local nuances can be fatal to your case. In Jaipur, the difference between winning and losing often lies in understanding the specific 'Master Plans' of the JDA or the 'DLC Rates' for stamp duty.
                   </p>
                   <div className="grid md:grid-cols-2 gap-6">
@@ -385,8 +385,8 @@ export default function JaipurLocationPage() {
 
                  {/* Practice Areas Overview */}
                 <section id="practice-areas" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Key Practice Areas</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Key Practice Areas</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     Our full-service capabilities allow us to handle specialised needs of Jaipur's residents and industries.
                   </p>
                 </section>
@@ -482,7 +482,7 @@ export default function JaipurLocationPage() {
 
                 {/* Courts Guide */}
                 <section id="courts-guide" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Guide to Courts in Jaipur</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Guide to Courts in Jaipur</h2>
                   <p className="text-lg leading-relaxed mb-8 text-gray-700">
                     We practice across all major judicial forums in the city.
                   </p>
@@ -524,8 +524,8 @@ export default function JaipurLocationPage() {
 
                 {/* Our Approach */}
                 <section id="our-approach" className="scroll-mt-32">
-                   <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">The AMA Promise</h2>
-                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">The AMA Promise</h2>
+                   <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                      We treat every case with the seriousness it deserves.
                    </p>
                    
@@ -555,7 +555,7 @@ export default function JaipurLocationPage() {
 
                 {/* Why AMA */}
                 <section id="why-ama" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Why Jaipur Trusts Us?</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Why Jaipur Trusts Us?</h2>
                   <p className="text-lg leading-relaxed mb-8 text-gray-700">
                     We have built our reputation on successfully handling complex cases that other firms refused.
                   </p>
@@ -689,7 +689,7 @@ export default function JaipurLocationPage() {
             </div>
 
             {/* Sidebar */}
-            <div className="hidden lg:block space-y-8 sticky top-28">
+            <div className="space-y-8 lg:sticky lg:top-28 mt-12 lg:mt-0">
                 {/* Contact Card */}
                 <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Need Urgent Advice?</h3>

@@ -303,7 +303,7 @@ export default function MumbaiLocationPage() {
           <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
           <div 
             className="absolute inset-0 bg-cover bg-center z-0" 
-            style={{ backgroundImage: "url('/city2.svg')", filter: "brightness(0.5)" }}
+            style={{ backgroundImage: "url('/city2.svg')" }}
           ></div>
           <div className="relative z-20 container mx-auto px-4 py-24 md:py-40 text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight mt-10">
@@ -320,10 +320,10 @@ export default function MumbaiLocationPage() {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-[1600px] py-8">
+        <div className="container mx-auto px-4 max-w-[1600px] py-4 md:py-8">
           <Breadcrumbs items={breadcrumbItems} />
           
-          <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr_300px] gap-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr_300px] gap-6 lg:gap-10 items-start">
             {/* Left Sidebar - TOC (Desktop) */}
             <div className="hidden lg:block sticky top-28">
               <TableOfContents sections={tocSections} orientation="vertical" />
@@ -336,18 +336,18 @@ export default function MumbaiLocationPage() {
                 <TableOfContents sections={tocSections} />
               </div>
 
-              <div className="bg-white p-6 md:p-12 rounded-3xl shadow-sm space-y-16 border border-gray-100">
+              <div className="bg-white p-4 md:p-12 rounded-3xl shadow-sm space-y-10 md:space-y-16 border border-gray-100">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-4">Premier Legal Representation in Mumbai: Navigating Complexity with Precision</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Premier Legal Representation in Mumbai: Navigating Complexity with Precision</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     Mumbai is not just the financial and commercial capital of India; it is a city of dreams, ambition, and intense competition. It is the beating heart of India's economy, housing the headquarters of major corporations, the Reserve Bank of India, and the vibrant Indian film industry. In such a high-stakes environment, legal challenges are inevitable, complex, and often require urgent attention. From high-value corporate mergers in Nariman Point and intellectual property battles in Andheri's media hub to critical property redevelopment disputes in the suburbs, the legal landscape of Mumbai is as dynamic as the city itself.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                      <strong>AMA Legal Solutions</strong> has established itself as a trusted partner for businesses, families, and individuals navigating this complex ecosystem. We understand the unique pulse of this city. We know that in Mumbai, time is essentially money, and legal delays can lead to astronomical losses. Our team of expert lawyers combines swift, decisive action with deep legal acumen to deliver results that matter. We do not just offer legal advice; we offer strategic solutions that align with your commercial and personal goals.
                   </p>
-                  <p className="text-lg leading-relaxed text-gray-700">
+                  <p className="text-base md:text-lg leading-relaxed text-gray-700">
                     Whether you are an entrepreneur facing regulatory hurdles, a cooperative housing society dealing with a stalled redevelopment project, or a media house protecting its creative assets, we stand by you. Our practice spans across the Bombay High Court, City Civil & Sessions Court, National Company Law Tribunal (NCLT), Debts Recovery Tribunal (DRT), and other specialized forums. We bring a legacy of trust and a reputation for excellence to every case we handle.
                   </p>
                 </section>
@@ -764,7 +764,7 @@ export default function MumbaiLocationPage() {
             </div>
 
             {/* Sidebar */}
-            <div className="hidden lg:block space-y-8 sticky top-28">
+            <div className="space-y-8 lg:sticky lg:top-28 mt-12 lg:mt-0">
                 {/* Contact Card */}
                 <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Need a Lawyer in Mumbai?</h3>
