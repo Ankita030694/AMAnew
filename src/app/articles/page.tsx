@@ -12,7 +12,7 @@ import Navbar from "@/newcomp/Navbar";
 
 export default function Page() {
   return (
-    <main style={{ fontFamily: "var(--font-polysans)" }}>
+    <main className='bg-[#F5F2EB] min-h-screen' style={{ fontFamily: "var(--font-polysans)" }}>
       <Navbar />
       <ArticlePage />
     </main>

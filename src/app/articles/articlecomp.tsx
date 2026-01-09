@@ -121,7 +121,7 @@ export default function Page() {
   const regularArticles = articles.length > 0 ? articles.slice(1) : [];
   
   return (
-    <div className="container mx-auto px-4 py-8 bg-white">
+    <div className="container mx-auto px-4 py-8 bg-[#F5F2EB]">
       {/* Page Title */}
       <motion.h1 
         className="text-4xl md:text-5xl text-center mb-8 mt-20"
