@@ -9,7 +9,7 @@ import Testimonials from "@/newcomp/Testimonials";
 import VideoTestimonials from "@/newcomp/VideoTestimonials";
 import FAQ from "@/newcomp/FAQ";
 import CTA from "@/newcomp/CTA";
-import WhatsAppWidget from "@/newcomp/WhatsAppWidget";
+
 import Script from "next/script";
 import { baseTestimonials } from "@/data/testimonials";
 
@@ -185,7 +185,7 @@ export default function Home() {
       <VideoTestimonials />
       <FAQ />
       <CTA />
-      <WhatsAppWidget />
+
     </main>
   );
 }

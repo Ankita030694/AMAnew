@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/newcomp/Navbar";
 import Footer from "@/newcomp/Footer";
+import WhatsAppWidget from "@/newcomp/WhatsAppWidget";
 import { Toaster } from "react-hot-toast";
 import Script from 'next/script'
 
@@ -242,6 +243,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
         <Navbar />
         {children}
         <Footer />
+        <WhatsAppWidget />
         <Toaster position="top-right" />
         {process.env.NEXT_PUBLIC_GA_TRACKING_ID && (
           <>
