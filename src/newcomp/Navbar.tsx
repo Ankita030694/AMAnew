@@ -151,7 +151,7 @@ const Navbar = () => {
                     width={310}
                     height={60}
                     className="h-10 md:h-12 w-auto"
-                    priority
+
                   />
                 </motion.div>
 
