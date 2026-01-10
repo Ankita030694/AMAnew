@@ -145,7 +145,7 @@ const Navbar = () => {
                   }}
                   className="relative"
                 >
-                  <Image
+                  <img
                     src="/newAssets/logo/ama.svg"
                     alt="AMA Legal Solutions"
                     width={310}
@@ -163,7 +163,7 @@ const Navbar = () => {
                   }}
                   className="absolute inset-0 flex items-center justify-center"
                 >
-                  <Image
+                  <img
                     src="/newAssets/logo/ama_box.svg"
                     alt="AMA Legal Solutions"
                     width={40}
@@ -177,13 +177,13 @@ const Navbar = () => {
             {/* Mobile Static Logo */}
             <div className="md:hidden">
                 <Link href="/" className="block" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Image
+                    <img
                     src="/newAssets/logo/ama.svg"
                     alt="AMA Legal Solutions"
                     width={310}
                     height={60}
                     className="h-10 w-auto"
-                    priority
+
                     />
                 </Link>
             </div>
