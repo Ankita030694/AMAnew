@@ -38,6 +38,8 @@ export async function GET(): Promise<Response> {
     '/services/loan-settlement',
     '/services/real-estate',
     '/services/trademark-registration',
+    '/services/how-to-register-trademark-with-ipindia',
+    '/services/expert-vakil-search-for-trademark-registration',
     '/ourhistory',
     '/present',
     '/ourvision',
