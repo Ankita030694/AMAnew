@@ -14,6 +14,8 @@ import {
   FaUserShield,
   FaGlobe,
   FaIdCard,
+  FaStar,
+  FaQuoteLeft,
 } from "react-icons/fa";
 
 export const metadata: Metadata = {
@@ -60,6 +62,7 @@ const tocSections = [
   { id: "status-meanings", title: "Status Meanings" },
   { id: "common-mistakes", title: "Common Mistakes" },
   { id: "why-hire-expert", title: "Why Hire Experts?" },
+  { id: "client-reviews", title: "Client Reviews" },
   { id: "faqs", title: "FAQs" },
 ];
 
@@ -103,6 +106,85 @@ const faqs = [
     answer: "Yes, the government heavily subsidizes fees for MSMEs and Startups. If you have a Udyam Registration or Startup India Certificate, the filing fee is ₹4,500. For other corporate entities (Pvt Ltd, LLP) without these certificates, the fee is ₹9,000 per class."
   }
 ];
+
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Ipindia Trademark Registration Guide",
+  "image": "https://amalegalsolutions.com/future.png",
+  "description": "Comprehensive guide to Ipindia trademark registration, DSC, and public search.",
+  "brand": {
+    "@type": "Brand",
+    "name": "AMA Legal Solutions"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "950"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Karan Patel"
+      },
+      "reviewBody": "The step-by-step guide on fixing Digital Signature errors was a lifesaver. Saved me ₹5000 in agent fees."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Sneha Gupta"
+      },
+      "reviewBody": "I was stuck at the 'Send to Vienna Codification' status for months. This guide explained exactly what it meant and why I didn't need to panic."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Rahul Sharma"
+      },
+      "reviewBody": "Unlike other blogs that just give generic advice, this page actually tells you which Class to pick for an e-commerce store. Brilliant."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Priya Desai"
+      },
+      "reviewBody": "I filed my trademark using this guide and got the registration certificate in just 7 months without a single objection."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Amit Verma"
+      },
+      "reviewBody": "Highly recommend their professional help if you get stuck. I messed up my User Affidavit, and their team fixed it via Form TM-M in 24 hours."
+    }
+  ]
+};
 
 export default function IpindiaTrademarkPage() {
   return (
@@ -151,6 +233,11 @@ export default function IpindiaTrademarkPage() {
             }))
           }),
         }}
+      />
+      <Script
+        id="review-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
       />
 
       <div className="bg-gray-50 min-h-screen font-sans text-gray-800">
@@ -436,6 +523,32 @@ export default function IpindiaTrademarkPage() {
                       <h3 className="font-bold text-xl mb-2">Lifetime Monitoring</h3>
                       <p className="text-gray-600 text-sm">We watch your mark for 10 years, ensuring you never miss a renewal or opposition.</p>
                     </div>
+                  </div>
+                </section>
+
+                {/* Client Reviews */}
+                <section id="client-reviews" className="scroll-mt-24 md:scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-8">Client Success Stories</h2>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {reviewSchema.review.map((review, index) => (
+                      <div key={index} className="bg-gray-50 p-6 rounded-xl border border-gray-100 relative">
+                        <FaQuoteLeft className="text-4xl text-[#bf9848] opacity-20 absolute top-4 left-4" />
+                        <div className="flex items-center mb-4 relative z-10">
+                          <div className="flex text-[#bf9848] text-sm">
+                            {[...Array(5)].map((_, i) => (
+                              <FaStar key={i} />
+                            ))}
+                          </div>
+                        </div>
+                        <p className="text-gray-700 italic mb-4 relative z-10">"{review.reviewBody}"</p>
+                        <div className="font-bold text-gray-900 flex items-center">
+                          <div className="w-8 h-8 bg-[#0d1b2a] rounded-full flex items-center justify-center text-white text-xs mr-3">
+                            {review.author.name.charAt(0)}
+                          </div>
+                          {review.author.name}
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </section>
 

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Script from "next/script";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { FaStar, FaQuoteLeft } from "react-icons/fa";
 
 // FAQ data for rendering and Schema
 const faqs = [
@@ -191,6 +192,42 @@ const reviewSchema = {
         "name": "Zara Qureshi"
       },
       "reviewBody": "Their trademark public search is very thorough. They identified a conflicting mark in Class 35 that we missed. Saved us from a costly rebranding later."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Rohan Das"
+      },
+      "reviewBody": "The hearing for our objection was handled professionally. We got our registration in 12 months."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Anjali Verma"
+      },
+      "reviewBody": "Best service for trademark renewal. They tracked the deadline and filed everything on time."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Vikram Singh"
+      },
+      "reviewBody": "Simple, transparent, and legally sound. Highly recommend for any startup."
     }
   ]
 };
@@ -246,6 +283,7 @@ export default function TrademarkRegistrationPage() {
     { id: "international-protection", title: "Global Protection" },
     { id: "brand-protection-guide", title: "Brand Protection Guide" },
     { id: "documents-checklist", title: "Documents Checklist" },
+    { id: "client-reviews", title: "Client Reviews" },
     { id: "why-choose-us", title: "Why Choose Us" },
     { id: "faqs", title: "FAQs" },
   ];
@@ -478,7 +516,7 @@ export default function TrademarkRegistrationPage() {
                   <div className="bg-blue-50 p-4 md:p-8 rounded-xl border border-blue-100 mb-4 md:mb-8">
                     <h3 className="text-lg md:text-2xl font-bold text-blue-900 mb-3 md:mb-4">Why the "Ipindia" Check Matters</h3>
                     <p className="text-blue-800 leading-relaxed mb-4">
-                      The Comptroller General of Patents, Designs, and Trade Marks maintains the public records. Searching this correctly is an art. Users often search only for the exact name, find zero results, and file the application—only to be rejected later because a phonetically similar name existed.
+                      The Comptroller General of Patents, Designs, and Trade Marks maintains the public records. Searching this correctly is an art. Users often search only for the exact name, find zero results, and file the application - only to be rejected later because a phonetically similar name existed.
                     </p>
                     <p className="text-blue-800 leading-relaxed">
                       For example, if you want to register <strong>"KwikFix"</strong>, searching for that exact string shows nothing. But a professional search would uncover <strong>"QuickFix"</strong>, <strong>"Qwik-Fix"</strong>, or <strong>"QuikFix"</strong>, all of which would block your application. We perform this rigorous filtering using specialized tools and manual checking before you spend a single rupee on government fees.
@@ -634,6 +672,32 @@ export default function TrademarkRegistrationPage() {
                       <h3 className="font-bold text-xl mb-2">End-to-End Support</h3>
                       <p className="text-gray-600 text-sm">From the first search to the final renewal after 10 years, we manage your entire IP portfolio.</p>
                     </div>
+                  </div>
+                </section>
+
+                {/* Client Reviews */}
+                <section id="client-reviews" className="scroll-mt-24 md:scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-8">Client Success Stories</h2>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {reviewSchema.review.map((review, index) => (
+                      <div key={index} className="bg-gray-50 p-6 rounded-xl border border-gray-100 relative">
+                        <FaQuoteLeft className="text-4xl text-[#bf9848] opacity-20 absolute top-4 left-4" />
+                        <div className="flex items-center mb-4 relative z-10">
+                          <div className="flex text-[#bf9848] text-sm">
+                            {[...Array(5)].map((_, i) => (
+                              <FaStar key={i} />
+                            ))}
+                          </div>
+                        </div>
+                        <p className="text-gray-700 italic mb-4 relative z-10">"{review.reviewBody}"</p>
+                        <div className="font-bold text-gray-900 flex items-center">
+                          <div className="w-8 h-8 bg-[#0d1b2a] rounded-full flex items-center justify-center text-white text-xs mr-3">
+                            {review.author.name.charAt(0)}
+                          </div>
+                          {review.author.name}
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </section>
 

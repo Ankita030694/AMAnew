@@ -40,6 +40,8 @@ export async function GET(): Promise<Response> {
     '/services/trademark-registration',
     '/services/how-to-register-trademark-with-ipindia',
     '/services/expert-vakil-search-for-trademark-registration',
+    '/services/comprehensive-guide-to-india-filings-for-trademarks',
+    '/services/quick-company-registration-and-trademark',
     '/ourhistory',
     '/present',
     '/ourvision',

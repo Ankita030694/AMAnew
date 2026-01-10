@@ -766,6 +766,28 @@ export default function IntellectualPropertyPage() {
                   </span>
                 </div>
               </Link>
+              <Link href="/services/comprehensive-guide-to-india-filings-for-trademarks" className="group">
+                <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 h-full flex flex-col">
+                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#D2A02A] transition-colors mb-2">Guide to India Filings</h3>
+                  <p className="text-gray-600 text-sm flex-grow">
+                    Filing a trademark in India? A comprehensive legal guide to the ecosystem of 'India Filings' and how to secure registration.
+                  </p>
+                  <span className="text-[#D2A02A] font-semibold text-sm mt-4 flex items-center">
+                    Read Guide <span className="ml-1 text-lg">›</span>
+                  </span>
+                </div>
+              </Link>
+              <Link href="/services/quick-company-registration-and-trademark" className="group">
+                <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 h-full flex flex-col">
+                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#D2A02A] transition-colors mb-2">Quick Company Search</h3>
+                  <p className="text-gray-600 text-sm flex-grow">
+                    Need a "Quick Company" registration? Learn the risks of instant filing vs strategic incorporation and trademark protection.
+                  </p>
+                  <span className="text-[#D2A02A] font-semibold text-sm mt-4 flex items-center">
+                    Read Guide <span className="ml-1 text-lg">›</span>
+                  </span>
+                </div>
+              </Link>
             </div>
           </div>
 
