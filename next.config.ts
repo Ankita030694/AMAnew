@@ -8,6 +8,8 @@ const nextConfig = {
     // Remove console logs in production
     removeConsole: process.env.NODE_ENV === "production",
   },
+  // Enable source maps for easier debugging
+  productionBrowserSourceMaps: true,
   // Configure external image domains
   images: {
     remotePatterns: [

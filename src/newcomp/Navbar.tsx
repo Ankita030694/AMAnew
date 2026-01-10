@@ -148,8 +148,8 @@ const Navbar = () => {
                   <Image
                     src="/newAssets/logo/ama.svg"
                     alt="AMA Legal Solutions"
-                    width={180}
-                    height={40}
+                    width={310}
+                    height={60}
                     className="h-10 md:h-12 w-auto"
                     priority
                   />
@@ -180,8 +180,8 @@ const Navbar = () => {
                     <Image
                     src="/newAssets/logo/ama.svg"
                     alt="AMA Legal Solutions"
-                    width={180}
-                    height={40}
+                    width={310}
+                    height={60}
                     className="h-10 w-auto"
                     priority
                     />

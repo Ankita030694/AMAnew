@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
-import OurAttorneys from "../components/aboutcomps/OurAttorneys";
+const OurAttorneys = dynamic(() => import("../components/aboutcomps/OurAttorneys"));
 import { Attorney } from "@/lib/attorneys";
 
 const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
@@ -258,7 +259,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
                     src="/newAssets/bhiya.png"
                     alt="Anuj Anand Malik"
                     fill
-                    className="object-cover object-bottom overflow-visible"
+                    className="object-cover object-bottom"
                     priority
                   />
                </div>

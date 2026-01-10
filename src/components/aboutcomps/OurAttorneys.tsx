@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { m, LazyMotion, domMax } from 'framer-motion'
 import { FaFacebook, FaTwitter, FaInstagram, FaTelegram, FaLinkedin } from 'react-icons/fa'
 import { Attorney } from '@/lib/attorneys';
 
@@ -8,13 +8,14 @@ export default function OurAttorneys({ attorneys = [] }: { attorneys?: Attorney[
   
   return (
     <div className="bg-white py-6">
-      <motion.div 
+      <LazyMotion features={domMax}>
+      <m.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <motion.div 
+        <m.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -32,11 +33,11 @@ export default function OurAttorneys({ attorneys = [] }: { attorneys?: Attorney[
             </span>
             <div className="h-[1px] bg-[#D2A02A] w-24"></div>
           </div>
-        </motion.div>
+        </m.div>
 
         {/* All Team Members */}
         {attorneys.length > 0 ? (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -44,7 +45,7 @@ export default function OurAttorneys({ attorneys = [] }: { attorneys?: Attorney[
           >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
               {attorneys.map((attorney, index) => (
-                <motion.div
+                <m.div
                   key={attorney.id}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -52,16 +53,17 @@ export default function OurAttorneys({ attorneys = [] }: { attorneys?: Attorney[
                   className="flex flex-col items-center"
                 >
                   <AttorneyCard attorney={attorney} index={index} />
-                </motion.div>
+                </m.div>
               ))}
             </div>
-          </motion.div>
+          </m.div>
         ) : (
           <div className="text-center py-12">
             <p className="text-gray-600 text-lg">No team members found. Please check back later.</p>
           </div>
         )}
-      </motion.div>
+      </m.div>
+      </LazyMotion>
     </div>
   );
 }
@@ -77,7 +79,7 @@ const AttorneyCard = ({ attorney, index }: { attorney: Attorney; index: number }
 
   return (
     <>
-      <motion.div 
+      <m.div 
         whileHover={{ scale: 1.05 }}
         transition={{ type: "spring", stiffness: 300 }}
         className="relative w-64 h-64 mb-6 overflow-hidden rounded-lg shadow-lg"
@@ -98,7 +100,7 @@ const AttorneyCard = ({ attorney, index }: { attorney: Attorney; index: number }
             </span>
           </div>
         )}
-      </motion.div>
+      </m.div>
       
       <h3 className="text-xl font-semibold text-[#6B5B3D] mb-2">
         {attorney.name}
@@ -109,7 +111,7 @@ const AttorneyCard = ({ attorney, index }: { attorney: Attorney; index: number }
         {Object.entries(attorney.socials).map(([platform, url]) => {
           const Icon = socialIcons[platform as keyof typeof socialIcons];
           return (
-            <motion.div
+            <m.div
               key={platform}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -120,7 +122,7 @@ const AttorneyCard = ({ attorney, index }: { attorney: Attorney; index: number }
               >
                 <Icon className="w-5 h-5" />
               </Link>
-            </motion.div>
+            </m.div>
           );
         })}
       </div>

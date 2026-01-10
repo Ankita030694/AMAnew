@@ -230,7 +230,7 @@ const Legacy = () => {
                             src={currentSlide.image}
                             alt={currentSlide.name}
                             fill
-                            className={`${currentSlide.id === 1 ? "object-cover" : "object-contain"} object-bottom overflow-visible`}
+                            className={`${currentSlide.id === 1 ? "object-cover" : "object-contain"} object-bottom`}
                             priority
                         />
                     </div>

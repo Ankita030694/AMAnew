@@ -110,9 +110,22 @@ const AnimatedBorder = ({ isMobileView = false }: { isMobileView?: boolean }) =>
     if (width === 0 || height === 0) return;
 
     let isMounted = true;
+    let observer: IntersectionObserver | null = null;
+    let isVisible = false;
 
+    // Animation runner
     const runAnimation = async () => {
+      // Wait for visibility before starting loop
+      while (!isVisible && isMounted) {
+        await new Promise(resolve => setTimeout(resolve, 500));
+      }
+      
       while (isMounted) {
+        // If became invisible during loop, wait again
+        while (!isVisible && isMounted) {
+          await new Promise(resolve => setTimeout(resolve, 500));
+        }
+        
         setCompletedCheckpoints([]);
         progress.set(0.05);
         blobProgress.set(0.05);
@@ -120,6 +133,9 @@ const AnimatedBorder = ({ isMobileView = false }: { isMobileView?: boolean }) =>
         
         for (const checkpoint of CHECKPOINTS) {
           if (!isMounted) break;
+          // Check visibility
+          while (!isVisible && isMounted) { await new Promise(resolve => setTimeout(resolve, 500)); }
+
           // 1. Move to checkpoint
           const duration = 1.5; 
           
@@ -158,10 +174,20 @@ const AnimatedBorder = ({ isMobileView = false }: { isMobileView?: boolean }) =>
       }
     };
 
+    // Intersection Observer to toggle isVisible flag
+    if (containerRef.current) {
+      observer = new IntersectionObserver(([entry]) => {
+        isVisible = entry.isIntersecting;
+      }, { threshold: 0.1 }); // 10% visible to start/resume
+      
+      observer.observe(containerRef.current);
+    }
+
     runAnimation();
 
     return () => {
       isMounted = false;
+      if (observer) observer.disconnect();
     };
   }, [width, height, isMobileView, progress, blobProgress]);
 

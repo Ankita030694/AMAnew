@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { FaFacebookF, FaInstagram, FaLinkedin, FaYoutube, FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -46,25 +47,25 @@ export default function Footer() {
                     href="https://www.facebook.com/amalegalsolutions/"
                     className="group w-12 h-12 bg-white/15 backdrop-blur-sm rounded-xl border border-white/30 flex items-center justify-center hover:bg-white/25 hover:border-white/50 transition-all duration-300 hover:scale-110 hover:shadow-lg"
                   >
-                    <i className="fab fa-facebook-f text-lg group-hover:scale-110 transition-transform duration-300"></i>
+                    <FaFacebookF className="text-lg group-hover:scale-110 transition-transform duration-300" />
                   </Link>
                   <Link
                     href="https://www.instagram.com/amalegalsolutions/?hl=en"
                     className="group w-12 h-12 bg-white/15 backdrop-blur-sm rounded-xl border border-white/30 flex items-center justify-center hover:bg-white/25 hover:border-white/50 transition-all duration-300 hover:scale-110 hover:shadow-lg"
                   >
-                    <i className="fab fa-instagram text-lg group-hover:scale-110 transition-transform duration-300"></i>
+                    <FaInstagram className="text-lg group-hover:scale-110 transition-transform duration-300" />
                   </Link>
                   <Link
                     href="https://in.linkedin.com/company/ama-legal-solutions"
                     className="group w-12 h-12 bg-white/15 backdrop-blur-sm rounded-xl border border-white/30 flex items-center justify-center hover:bg-white/25 hover:border-white/50 transition-all duration-300 hover:scale-110 hover:shadow-lg"
                   >
-                    <i className="fab fa-linkedin text-lg group-hover:scale-110 transition-transform duration-300"></i>
+                    <FaLinkedin className="text-lg group-hover:scale-110 transition-transform duration-300" />
                   </Link>
                   <Link
                     href="https://www.youtube.com/@amalegalsolution"
                     className="group w-12 h-12 bg-white/15 backdrop-blur-sm rounded-xl border border-white/30 flex items-center justify-center hover:bg-white/25 hover:border-white/50 transition-all duration-300 hover:scale-110 hover:shadow-lg"
                   >
-                    <i className="fab fa-youtube text-lg group-hover:scale-110 transition-transform duration-300"></i>
+                    <FaYoutube className="text-lg group-hover:scale-110 transition-transform duration-300" />
                   </Link>
                 </div>
                 
@@ -145,7 +146,7 @@ export default function Footer() {
                 <ul className="space-y-5">
                   <li className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-white/20 rounded-lg flex items-center justify-center mt-0.5 flex-shrink-0">
-                      <i className="fas fa-map-marker-alt text-sm"></i>
+                      <FaMapMarkerAlt className="text-sm" />
                     </div>
                     <a
                       href="https://www.google.com/maps/place/AMA+LEGAL+SOLUTIONS/@28.4256874,77.0878512,17z/data=!3m1!4b1!4m6!3m5!1s0x8b74fa3c4bce8f29:0x9c0cf35a3104b12e!2sAMA+LEGAL+SOLUTIONS!8m2!3d28.4256874!4d77.0878512"
@@ -158,7 +159,7 @@ export default function Footer() {
                   </li>
                   <li className="flex items-center space-x-3">
                     <div className="w-6 h-6 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <i className="fas fa-phone text-sm"></i>
+                      <FaPhone className="text-sm" />
                     </div>
                     <a
                       href="tel:+918700343611"
@@ -169,7 +170,7 @@ export default function Footer() {
                   </li>
                   <li className="flex items-center space-x-3">
                     <div className="w-6 h-6 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <i className="fas fa-envelope text-sm"></i>
+                      <FaEnvelope className="text-sm" />
                     </div>
                     <a
                       href="mailto:notify@amalegalsolutions.com"
