@@ -731,6 +731,23 @@ export default function IntellectualPropertyPage() {
           </div>
           
           <div className="mt-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Looking for Something Else?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Link href="/services/trademark-registration" className="group">
+                <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 h-full flex flex-col">
+                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#D2A02A] transition-colors mb-2">Trademark Registration</h3>
+                  <p className="text-gray-600 text-sm flex-grow">
+                    Secure your brand identity with expert trademark registration, objection handling, and hearing representation.
+                  </p>
+                  <span className="text-[#D2A02A] font-semibold text-sm mt-4 flex items-center">
+                    Learn More <span className="ml-1 text-lg">›</span>
+                  </span>
+                </div>
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-16">
             <GenericStatesGrid 
               serviceName="Trademark Registration" 
               servicePath="intellectual-property-rights"
