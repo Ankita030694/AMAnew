@@ -287,14 +287,14 @@ export default function TrademarkRegistrationPage() {
             style={{ background: "linear-gradient(to right, #000000, #141e30)" }}
           ></div>
           <div className="relative z-20 container mx-auto px-4 py-24 md:py-32 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight mt-10">
+            <h1 className="text-3xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-6 md:mt-10">
               Complete <span className="text-[#bf9848]">Trademark Registration</span> & Legal Protection
             </h1>
-            <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-gray-300">
+            <p className="text-lg md:text-2xl mb-8 md:mb-10 max-w-3xl mx-auto text-gray-300">
               From detailed public searches to winning high-stakes objection hearings. We are India's premier IP law firm dedicated to safeguarding your brand identity against infringement and copycats.
             </p>
             <Link href="/contact">
-              <button className="bg-[#bf9848] hover:bg-[#9e7d3a] text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg border border-[#bf9848]">
+              <button className="bg-[#bf9848] hover:bg-[#9e7d3a] text-white font-bold py-3 px-8 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-base md:text-lg border border-[#bf9848]">
                 Secure Your Brand Name Now
               </button>
             </Link>
@@ -313,56 +313,62 @@ export default function TrademarkRegistrationPage() {
             {/* Main Content Area */}
             <div className="min-w-0">
               {/* TOC (Mobile) */}
-              <div className="lg:hidden mb-8">
-                <TableOfContents sections={tocSections} />
-              </div>
+              <TableOfContents sections={tocSections} className="lg:hidden mb-6 sticky top-20 md:top-16" />
 
-              <div className="bg-white p-6 md:p-12 rounded-2xl shadow-sm space-y-12">
+              <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
                 
                 {/* Introduction */}
-                <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">More Than Just Filing: A Strategic Shield for Your Brand</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                <section id="introduction" className="scroll-mt-24 md:scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-6">More Than Just Filing: A Strategic Shield for Your Brand</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     In the highly competitive Indian marketplace, your brand name is your most valuable asset. It represents your goodwill, your customer loyalty, and your business reputation. But simply using a name isn't enough; you must legally own it. <strong>Trademark registration</strong> is the only legal mechanism to secure exclusive rights to your brand, logo, slogan, or even sound mark. Without it, you risk losing your brand equity to unscrupulous copycats or, worse, facing legal action for using a name someone else has unknowingly registered.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     Many businesses mistakenly assume that a company registration (Incorporation) or a domain name purchase automatically protects their brand. This is a dangerous myth. Only a registration under the <strong>Trade Marks Act, 1999</strong>, grants you the statutory right to sue for infringement and stop others from trading on your goodwill. Whether you are a startup needing a preliminary <strong>brand name availability check</strong> or an established firm fighting a complex <strong>trademark status opposed</strong> situation, AMA Legal Solutions acts as your unyielding legal shield.
                   </p>
-                  <p className="text-lg leading-relaxed text-gray-700">
+                  <p className="text-sm md:text-lg leading-relaxed text-gray-700">
                     We don't just fill forms. We provide strategic counsel. From conducting a rigorous <strong>phonetic similarity check</strong> on the Ipindia database to representing you in a high-stakes <strong>trademark hearing process</strong>, our team of seasoned IP attorneys ensures your brand remains unshakeable. We understand that a weak trademark is a business liability, and we work to ensure yours is an enforceable asset.
                   </p>
                 </section>
 
                 {/* Trademark Classes */}
-                <section id="trademark-classes" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Understanding Trademark Classes: A Critical Decision</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                <section id="trademark-classes" className="scroll-mt-24 md:scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-6">Understanding Trademark Classes: A Critical Decision</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     One of the most common reasons for trademark refusal is filing under the wrong class. The <strong>NICE Classification</strong> system divides goods and services into 45 classes (1-34 for goods, 35-45 for services). Choosing the correct class is vital for protection.
                   </p>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                      <h3 className="font-bold text-xl text-gray-900 mb-2">Class 9: Electronics & Software</h3>
-                      <p className="text-gray-600 text-sm">Includes computer software, mobile apps, electronics, and scientific apparatus. Essential for all tech startups.</p>
+                  <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+                    <div className="bg-gray-50 p-3 md:p-6 rounded-xl border border-gray-100 hover:border-[#D2A02A] transition-colors">
+                      <h3 className="text-base md:text-xl font-bold text-[#D2A02A] mb-2">Class 9: Tech & Electronics</h3>
+                      <p className="text-xs md:text-sm text-gray-600">
+                        Software, mobile apps, computers, and electronics. Essential for tech startups and SaaS companies.
+                      </p>
                     </div>
-                     <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                      <h3 className="font-bold text-xl text-gray-900 mb-2">Class 35: Business Services</h3>
-                      <p className="text-gray-600 text-sm">Covers advertising, business management, and <strong>retail store services</strong>. If you are an aggregator or a marketplace, this is mandatory.</p>
+                    <div className="bg-gray-50 p-3 md:p-6 rounded-xl border border-gray-100 hover:border-[#D2A02A] transition-colors">
+                      <h3 className="text-base md:text-xl font-bold text-[#D2A02A] mb-2">Class 35: Advertising & Business</h3>
+                      <p className="text-xs md:text-sm text-gray-600">
+                        Business management, e-commerce, retail stores, and advertising services. The most common service class.
+                      </p>
                     </div>
-                     <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                      <h3 className="font-bold text-xl text-gray-900 mb-2">Class 25: Clothing & Apparel</h3>
-                      <p className="text-gray-600 text-sm">Strictly for clothing, footwear, and headgear. Does not cover the retail shop selling them (that's Class 35).</p>
+                    <div className="bg-gray-50 p-3 md:p-6 rounded-xl border border-gray-100 hover:border-[#D2A02A] transition-colors">
+                      <h3 className="text-base md:text-xl font-bold text-[#D2A02A] mb-2">Class 25: Clothing</h3>
+                      <p className="text-xs md:text-sm text-gray-600">
+                        Apparel, footwear, and headgear. A must for fashion brands and designers.
+                      </p>
                     </div>
-                     <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                      <h3 className="font-bold text-xl text-gray-900 mb-2">Class 41: Education & Entertainment</h3>
-                      <p className="text-gray-600 text-sm">For schools, training institutes, event management companies, and content creators.</p>
+                    <div className="bg-gray-50 p-3 md:p-6 rounded-xl border border-gray-100 hover:border-[#D2A02A] transition-colors">
+                      <h3 className="text-base md:text-xl font-bold text-[#D2A02A] mb-2">Class 41: Education & Entertainment</h3>
+                      <p className="text-xs md:text-sm text-gray-600">
+                        Training institutes, events, content creation, and entertainment services.
+                      </p>
                     </div>
-                     <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                      <h3 className="font-bold text-xl text-gray-900 mb-2">Class 42: Tech Services</h3>
-                      <p className="text-gray-600 text-sm">For SaaS platforms, software development services, and IT consultancy. distinct from the software product itself (Class 9).</p>
+                    <div className="bg-gray-50 p-3 md:p-6 rounded-xl border border-gray-100 hover:border-[#D2A02A] transition-colors">
+                      <h3 className="text-base md:text-xl font-bold text-[#D2A02A] mb-2">Class 42: Tech Services</h3>
+                      <p className="text-xs md:text-sm text-gray-600">For SaaS platforms, software development services, and IT consultancy. distinct from the software product itself (Class 9).</p>
                     </div>
-                     <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                      <h3 className="font-bold text-xl text-gray-900 mb-2">Class 5: Pharmaceuticals</h3>
-                      <p className="text-gray-600 text-sm">For medicines, supplements, and medical hygiene products. A highly litigated class requiring distinct names.</p>
+                    <div className="bg-gray-50 p-3 md:p-6 rounded-xl border border-gray-100 hover:border-[#D2A02A] transition-colors">
+                      <h3 className="text-base md:text-xl font-bold text-[#D2A02A] mb-2">Class 5: Pharmaceuticals</h3>
+                      <p className="text-xs md:text-sm text-gray-600">For medicines, supplements, and medical hygiene products. A highly litigated class requiring distinct names.</p>
                     </div>
                   </div>
                   <p className="mt-4 text-gray-700 italic">
@@ -371,9 +377,9 @@ export default function TrademarkRegistrationPage() {
                 </section>
 
                 {/* Registration Process */}
-                <section id="trademark-process" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">The Strategic Registration Workflow</h2>
-                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
+                <section id="trademark-process" className="scroll-mt-24 md:scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-6">The Strategic Registration Workflow</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-8 text-gray-700">
                     Getting a trademark registered is a multi-step legal procedure. It is not an instant process. Understanding the lifecycle helps you plan your business launch effectively.
                   </p>
                   
@@ -421,9 +427,9 @@ export default function TrademarkRegistrationPage() {
                 </section>
 
                 {/* objection-handling */}
-                <section id="objection-handling" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Mastering Objections and Hearings: Our Core Expertise</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                <section id="objection-handling" className="scroll-mt-24 md:scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-6">Mastering Objections and Hearings: Our Core Expertise</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     Receiving an objection is not a rejection; it is a question from the registry. However, answering it requires legal precision. A standard or template reply often leads to a hearing or refusal. We specialize in handling complex objections.
                   </p>
                   
@@ -467,10 +473,10 @@ export default function TrademarkRegistrationPage() {
                 </section>
 
                 {/* Search & Verify */}
-                <section id="search-verification" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Search & Verify: The Foundation of IP Strategy</h2>
-                  <div className="bg-blue-50 p-8 rounded-xl border border-blue-100 mb-8">
-                    <h3 className="text-2xl font-bold text-blue-900 mb-4">Why the "Ipindia" Check Matters</h3>
+                <section id="search-verification" className="scroll-mt-24 md:scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-6">Search & Verify: The Foundation of IP Strategy</h2>
+                  <div className="bg-blue-50 p-4 md:p-8 rounded-xl border border-blue-100 mb-4 md:mb-8">
+                    <h3 className="text-lg md:text-2xl font-bold text-blue-900 mb-3 md:mb-4">Why the "Ipindia" Check Matters</h3>
                     <p className="text-blue-800 leading-relaxed mb-4">
                       The Comptroller General of Patents, Designs, and Trade Marks maintains the public records. Searching this correctly is an art. Users often search only for the exact name, find zero results, and file the application—only to be rejected later because a phonetically similar name existed.
                     </p>
@@ -481,9 +487,9 @@ export default function TrademarkRegistrationPage() {
                 </section>
 
                 {/* Startup Benefits */}
-                <section id="startup-benefits" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Startup India & MSME Benefits</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                <section id="startup-benefits" className="scroll-mt-24 md:scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-6">Startup India & MSME Benefits</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     The Government of India is aggressively promoting entrepreneurship. If you are a registered MSME (Udyam Registration) or a DIPP-recognized Startup, you are eligible for significant benefits in trademark filing.
                   </p>
                    <div className="flex flex-col md:flex-row gap-6 mb-6">
@@ -508,9 +514,9 @@ export default function TrademarkRegistrationPage() {
                 </section>
 
                 {/* International Protection */}
-                <section id="international-protection" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Going Global: The Madrid Protocol</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                <section id="international-protection" className="scroll-mt-24 md:scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-6">Going Global: The Madrid Protocol</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     A trademark registered in India provides protection only within Indian territory. If you plan to export goods or offer services globally, you need international protection. Thanks to India's accession to the <strong>Madrid Protocol</strong>, this is now easier than ever.
                   </p>
                   <ul className="space-y-4 mb-6">
@@ -533,70 +539,58 @@ export default function TrademarkRegistrationPage() {
                 </section>
 
                 {/* Cost & Timeline */}
-                <section id="cost-timeline" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Timelines and Cost Structure</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                <section id="cost-timeline" className="scroll-mt-24 md:scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-6">Timelines and Cost Structure</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     Transparency in billing and expectations is our hallmark. Here is what you need to know about the investment and time required.
                   </p>
                   
-                  <div className="overflow-x-auto mb-8">
-                    <table className="w-full border-collapse border border-gray-200 rounded-lg">
-                      <thead className="bg-gray-100">
-                        <tr>
-                          <th className="p-4 text-left border-b border-gray-200 text-gray-900">Stage</th>
-                          <th className="p-4 text-left border-b border-gray-200 text-gray-900">Estimated Time</th>
-                          <th className="p-4 text-left border-b border-gray-200 text-gray-900">Notes</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr className="border-b border-gray-50">
-                          <td className="p-4 text-gray-700 font-medium">Application Filing</td>
-                          <td className="p-4 text-gray-600">1-2 Days</td>
-                          <td className="p-4 text-gray-600">You get the TM application number immediately.</td>
-                        </tr>
-                        <tr className="border-b border-gray-50">
-                          <td className="p-4 text-gray-700 font-medium">Examination Report Issuance</td>
-                          <td className="p-4 text-gray-600">1-3 Months</td>
-                          <td className="p-4 text-gray-600">Issued by the Registry.</td>
-                        </tr>
-                        <tr className="border-b border-gray-50">
-                          <td className="p-4 text-gray-700 font-medium">Objection Reply</td>
-                          <td className="p-4 text-gray-600">Within 30 Days</td>
-                          <td className="p-4 text-gray-600">Strict deadline. Requires legal drafting.</td>
-                        </tr>
-                        <tr className="border-b border-gray-50">
-                          <td className="p-4 text-gray-700 font-medium">Publication (Journal)</td>
-                          <td className="p-4 text-gray-600">After Acceptance</td>
-                          <td className="p-4 text-gray-600">Open for opposition for 4 months.</td>
-                        </tr>
-                        <tr>
-                          <td className="p-4 text-gray-700 font-medium">Registration Certificate</td>
-                          <td className="p-4 text-gray-600">~6-8 Months (Fastest)</td>
-                          <td className="p-4 text-gray-600">If no objections/oppositions occur.</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Government Fees</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="border p-4 rounded-lg bg-green-50">
-                      <span className="block text-sm text-gray-500 uppercase tracking-wide font-semibold">Individual / Startup / MSME</span>
-                      <span className="block text-3xl font-bold text-green-700 mt-2">₹4,500</span>
-                      <span className="block text-sm text-gray-600 mt-1">per class / per mark</span>
+                  <div className="grid md:grid-cols-2 gap-4 md:gap-8">
+                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm">
+                      <h3 className="text-base md:text-xl font-bold text-gray-900 mb-3 md:mb-4 border-b pb-2">Government Fees</h3>
+                      <ul className="space-y-3 md:space-y-4 text-xs md:text-base text-gray-700">
+                        <li className="flex justify-between items-center">
+                          <span>Individual / Startup / MSME</span>
+                          <span className="font-bold  text-[#D2A02A]">₹4,500</span>
+                        </li>
+                        <li className="flex justify-between items-center">
+                          <span>Company / LLP (Without MSME)</span>
+                          <span className="font-bold text-[#D2A02A]">₹9,000</span>
+                        </li>
+                        <li className="flex justify-between items-center text-gray-500 text-[10px] md:text-sm mt-2 pt-2 border-t">
+                          *Fees are per class per mark
+                        </li>
+                      </ul>
                     </div>
-                    <div className="border p-4 rounded-lg">
-                      <span className="block text-sm text-gray-500 uppercase tracking-wide font-semibold">Company / Partnership / Others</span>
-                      <span className="block text-3xl font-bold text-gray-800 mt-2">₹9,000</span>
-                      <span className="block text-sm text-gray-600 mt-1">per class / per mark</span>
+                    
+                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm">
+                      <h3 className="text-base md:text-xl font-bold text-gray-900 mb-3 md:mb-4 border-b pb-2">Estimated Timeline</h3>
+                      <ul className="space-y-3 md:space-y-4 text-xs md:text-base text-gray-700">
+                        <li className="flex items-start">
+                          <div className="min-w-[4px] h-[4px] mt-1.5 rounded-full bg-green-500 mr-2"></div>
+                          <span><strong>24 Hours:</strong> Application Filing & TM Receipt</span>
+                        </li>
+                        <li className="flex items-start">
+                          <div className="min-w-[4px] h-[4px] mt-1.5 rounded-full bg-green-500 mr-2"></div>
+                          <span><strong>1-3 Months:</strong> Examination Report Issued</span>
+                        </li>
+                        <li className="flex items-start">
+                          <div className="min-w-[4px] h-[4px] mt-1.5 rounded-full bg-green-500 mr-2"></div>
+                          <span><strong>4 Months:</strong> Opposition Period</span>
+                        </li>
+                        <li className="flex items-start">
+                          <div className="min-w-[4px] h-[4px] mt-1.5 rounded-full bg-green-500 mr-2"></div>
+                          <span><strong>6-18 Months:</strong> Final Registration Certificate</span>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </section>
 
                 {/* Documents Checklist */}
-                <section id="documents-checklist" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Documents Required for Filing</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                <section id="documents-checklist" className="scroll-mt-24 md:scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-6">Documents Required for Filing</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     Preparing the right documents ensures your application doesn't get stalled in the "Formalities Check Fail" stage.
                   </p>
                   <ul className="grid md:grid-cols-2 gap-4">
@@ -622,8 +616,8 @@ export default function TrademarkRegistrationPage() {
                 </section>
 
                 {/* Why Choose Us */}
-                <section id="why-choose-us" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Trust AMA Legal Solutions?</h2>
+                <section id="why-choose-us" className="scroll-mt-24 md:scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-6">Why Trust AMA Legal Solutions?</h2>
                   <div className="grid md:grid-cols-3 gap-6 text-center">
                     <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fffcf5] transition-colors border border-gray-100">
                       <div className="text-4xl mb-4">🔍</div>
@@ -644,8 +638,8 @@ export default function TrademarkRegistrationPage() {
                 </section>
 
                 {/* FAQs */}
-                <section id="faqs" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Common Questions About Trademarks</h2>
+                <section id="faqs" className="scroll-mt-24 md:scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-8">Common Questions About Trademarks</h2>
                   <div className="space-y-6">
                     {faqs.map((faq, index) => (
                       <div key={index} className="border-b border-gray-200 pb-6 last:border-0">
@@ -661,25 +655,28 @@ export default function TrademarkRegistrationPage() {
                   </div>
                 </section>
 
-                {/* CTA */}
-                <section className="bg-gradient-to-br from-[#0d1b2a] to-[#1e2a3b] rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">
+                {/* Final CTA */}
+                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-xl md:rounded-3xl p-6 md:p-16 text-center text-white relative overflow-hidden">
                   <div className="relative z-10">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">Secure Your Brand's Future Today</h2>
-                    <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
-                      Don't let a competitor steal your hard work. Get your brand registered with India's most trusted IP legal team.
+                    <h2 className="text-xl md:text-5xl font-bold mb-3 md:mb-6">Protect Your Intellectual Property Today</h2>
+                    <p className="text-sm md:text-xl opacity-90 mb-6 md:mb-10 max-w-2xl mx-auto">
+                      Don't leave your brand vulnerable. Secure your rights with India's most trusted IP legal experts.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
                       <Link href="/contact">
-                        <button className="bg-[#bf9848] hover:bg-[#9e7d3a] text-white font-bold py-4 px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg w-full sm:w-auto border border-[#bf9848]">
-                          Free Trademark Consultation
+                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
+                          Get Free Consultation
                         </button>
                       </Link>
                       <a href="tel:+918700343611">
-                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-4 px-12 rounded-full transition-all text-lg w-full sm:w-auto">
+                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all text-sm md:text-lg w-full sm:w-auto">
                           Call: +91-8700343611
                         </button>
                       </a>
                     </div>
+                    <p className="mt-4 md:mt-8 text-xs md:text-base opacity-70">
+                      Confidential • Professional • Efficient
+                    </p>
                   </div>
                 </section>
 

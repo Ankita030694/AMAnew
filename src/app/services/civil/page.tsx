@@ -246,16 +246,16 @@ export default function CivilPage() {
           <div 
             className="absolute inset-0 bg-cover bg-center z-0" 
           ></div>
-          <div className="relative z-20 container mx-auto px-4 py-24 md:py-32 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight mt-10">
-              Secure Your Rights with Expert <span className="text-[#D2A02A]">Civil Lawyers in India</span>
+          <div className="relative z-20 container mx-auto px-4 py-12 md:py-32 text-center">
+            <h1 className="text-2xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-10">
+              Top <span className="text-[#D2A02A]">Civil Lawyers</span> in India
             </h1>
-            <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-gray-200">
-              Comprehensive legal representation for property disputes, contract breaches, family matters, and more. We fight for your justice with strategy and dedication.
+            <p className="text-sm md:text-2xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
+              Expert legal representation for property disputes, family law, recovery suits, and constitutional matters. Practical solutions for complex civil problems.
             </p>
             <Link href="/contact">
-              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg">
-                Get Expert Legal Advice
+              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg">
+                Get a Free Consultation
               </button>
             </Link>
           </div>
@@ -272,19 +272,18 @@ export default function CivilPage() {
 
             {/* Main Content Area */}
             <div className="min-w-0">
-              
               {/* TOC (Mobile) */}
-              <div className="lg:hidden mb-8">
+              <div className="lg:hidden mb-6 sticky top-20 z-10">
                 <TableOfContents sections={tocSections} />
               </div>
 
-              <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm space-y-12">
+              <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Navigating Civil Disputes in India</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Civil law is the backbone of a structured society, governing the interactions and conflicts between individuals, organizations, and entities. In a country as vast and diverse as India, civil disputes are commonplace, ranging from property disagreements within families to complex contractual breaches between corporations. These disputes, while not criminal in nature, can have profound implications on your financial stability, personal relationships, and peace of mind.
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Civil Litigation: Protecting Your Rights and Property</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
+                    Civil law in India encompasses a vast array of disputes between individuals, organizations, and even government bodies. Unlike criminal law, which deals with offenses against the state, civil law focuses on resolving conflicts and providing remedies—usually in the form of compensation or specific performance—to the aggrieved party.
                   </p>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
                     At AMA Legal Solutions, we understand that every civil case is unique and carries its own set of emotional and financial burdens. Whether you are fighting for your rightful share in an ancestral property, seeking justice for a breach of trust, or navigating the complexities of a divorce, you need more than just a lawyer; you need a strategic partner. Our team of expert <strong>civil lawyers in India</strong> is dedicated to providing you with robust legal representation that is both ethical and effective.
@@ -533,26 +532,26 @@ export default function CivilPage() {
                 </section>
 
                 {/* Final CTA */}
-                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">
+                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-xl md:rounded-3xl p-6 md:p-16 text-center text-white relative overflow-hidden">
                   <div className="relative z-10">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">Don't Let Legal Disputes Drain You</h2>
-                    <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
-                      Take the first step towards justice. Our expert civil lawyers are ready to fight for your rights and secure your future.
+                    <h2 className="text-xl md:text-5xl font-bold mb-4 md:mb-6">Protect Your Rights Today</h2>
+                    <p className="text-sm md:text-xl opacity-90 mb-6 md:mb-10 max-w-2xl mx-auto">
+                      Civil disputes can be complex and draining. Get the expert legal support you need to secure a favorable outcome.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
                       <Link href="/contact">
-                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg w-full sm:w-auto">
+                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
                           Book Your Consultation
                         </button>
                       </Link>
                       <a href="tel:+918700343611">
-                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-4 px-12 rounded-full transition-all text-lg w-full sm:w-auto">
+                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all text-sm md:text-lg w-full sm:w-auto">
                           Call: +91-8700343611
                         </button>
                       </a>
                     </div>
-                    <p className="mt-8 text-sm opacity-70">
-                      Confidential • Legal • Effective
+                    <p className="mt-4 md:mt-8 text-xs md:text-sm opacity-70">
+                      Experienced • Strategic • Client-Focused
                     </p>
                   </div>
                 </section>

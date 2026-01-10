@@ -212,15 +212,15 @@ export default function EntertainmentLawPage() {
             className="absolute inset-0 bg-cover bg-center z-0" 
 
           ></div>
-          <div className="relative z-20 container mx-auto px-4 py-24 md:py-32 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight mt-10">
+          <div className="relative z-20 container mx-auto px-4 py-12 md:py-32 text-center">
+            <h1 className="text-2xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-10">
               Premier <span className="text-[#D2A02A]">Entertainment Lawyers</span> in India
             </h1>
-            <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-gray-200">
+            <p className="text-sm md:text-2xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
               Protecting Creativity, Securing Rights, and Empowering the Media Industry. From Bollywood to digital creators, we protect your art and business.
             </p>
             <Link href="/contact">
-              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg">
+              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg">
                 Get a Free Consultation
               </button>
             </Link>
@@ -240,16 +240,16 @@ export default function EntertainmentLawPage() {
             <div className="min-w-0">
               
               {/* TOC (Mobile) */}
-              <div className="lg:hidden mb-8">
+              <div className="lg:hidden mb-6 sticky top-20 z-10">
                 <TableOfContents sections={tocSections} />
               </div>
 
-              <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm space-y-12">
+              <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Navigating the Complex World of Entertainment Law</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Navigating the Complex World of Entertainment Law</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     The Indian entertainment industry is a vibrant, rapidly evolving ecosystem that commands global attention. From the glitz of Bollywood and the dynamic regional cinema of Tollywood to the booming music industry and the explosive growth of Over The Top (OTT) platforms, the sector is expanding at an unprecedented rate. However, with this growth comes a myriad of legal complexities. Navigating this landscape requires more than just general legal knowledge; it demands the specialized expertise of seasoned <strong>entertainment lawyers in India</strong> who understand the nuances of creativity, commerce, and the law.
                   </p>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
@@ -507,25 +507,25 @@ export default function EntertainmentLawPage() {
                 </section>
 
                 {/* Final CTA */}
-                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">
+                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-xl md:rounded-3xl p-6 md:p-16 text-center text-white relative overflow-hidden">
                   <div className="relative z-10">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Protect Your Creative Legacy?</h2>
-                    <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
+                    <h2 className="text-xl md:text-5xl font-bold mb-4 md:mb-6">Ready to Protect Your Creative Legacy?</h2>
+                    <p className="text-sm md:text-xl opacity-90 mb-6 md:mb-10 max-w-2xl mx-auto">
                       Don't let legal hurdles stifle your creativity. Partner with India's leading entertainment lawyers and secure your future in the spotlight.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
                       <Link href="/contact">
-                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg w-full sm:w-auto">
+                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
                           Book Your Consultation
                         </button>
                       </Link>
                       <a href="tel:+918700343611">
-                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-4 px-12 rounded-full transition-all text-lg w-full sm:w-auto">
+                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all text-sm md:text-lg w-full sm:w-auto">
                           Call: +91-8700343611
                         </button>
                       </a>
                     </div>
-                    <p className="mt-8 text-sm opacity-70">
+                    <p className="mt-4 md:mt-8 text-xs md:text-sm opacity-70">
                       Confidential • Legal • Effective
                     </p>
                   </div>

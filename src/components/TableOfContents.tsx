@@ -8,9 +8,10 @@ interface TableOfContentsProps {
     title: string;
   }>;
   orientation?: 'horizontal' | 'vertical';
+  className?: string;
 }
 
-export default function TableOfContents({ sections, orientation = "horizontal" }: TableOfContentsProps) {
+export default function TableOfContents({ sections, orientation = "horizontal", className = "" }: TableOfContentsProps) {
   const [activeSection, setActiveSection] = useState<string>("");
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const buttonRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({});
@@ -124,9 +125,9 @@ export default function TableOfContents({ sections, orientation = "horizontal" }
 
   if (orientation === "vertical") {
     return (
-      <nav 
+    <nav 
         ref={scrollContainerRef}
-        className="flex flex-col space-y-1 max-h-[calc(100vh-120px)] overflow-y-auto custom-scrollbar pr-2 relative"
+        className={`flex flex-col space-y-1 max-h-[calc(100vh-120px)] overflow-y-auto custom-scrollbar pr-2 relative ${className}`}
       >
         {sections.map((section) => (
           <button
@@ -149,7 +150,7 @@ export default function TableOfContents({ sections, orientation = "horizontal" }
   }
 
   return (
-    <div className="bg-white border-b border-gray-200 sticky top-16 md:top-20 z-30 shadow-sm -mx-4 md:mx-0">
+    <div className={`bg-white border-b border-gray-200 sticky top-16 md:top-20 z-30 shadow-sm -mx-4 md:mx-0 ${className}`}>
       <div className="container mx-auto px-4 max-w-6xl">
         <div 
           ref={scrollContainerRef}

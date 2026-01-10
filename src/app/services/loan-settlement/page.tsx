@@ -284,15 +284,15 @@ export default function LoanSettlementPage() {
             className="absolute inset-0 bg-cover bg-center z-0" 
             style={{ background: "black" }}
           ></div>
-          <div className="relative z-20 container mx-auto px-4 py-24 md:py-32 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight mt-10">
+          <div className="relative z-20 container mx-auto px-4 py-12 md:py-32 text-center">
+            <h1 className="text-2xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-10">
               Regain Your Financial Freedom with <span className="text-[#D2A02A]">Loan Settlement</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-gray-200">
+            <p className="text-sm md:text-2xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
               Expert legal representation to negotiate with banks, reduce your debt burden by up to 50%, and stop harassment. Legally. Ethically. Effectively.
             </p>
             <Link href="/contact">
-              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg">
+              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg">
                 Get a Free Case Evaluation
               </button>
             </Link>
@@ -309,33 +309,34 @@ export default function LoanSettlementPage() {
             </div>
 
             {/* Main Content Area */}
+            {/* Main Content Area */}
             <div className="min-w-0">
               {/* TOC (Mobile) */}
-              <div className="lg:hidden mb-8">
+              <div className="lg:hidden mb-6 sticky top-20 z-10">
                 <TableOfContents sections={tocSections} />
               </div>
 
-              <div className="bg-white p-6 md:p-12 rounded-2xl shadow-sm space-y-12">
+              <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Overcoming the Debt Trap in India</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Overcoming the Debt Trap in India</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     In the dynamic economic landscape of India, financial instability can strike anyone. Whether due to an unexpected job loss, a medical emergency in the family, or a business downturn, finding yourself in a debt trap is a stressful and isolating experience. The constant pressure of mounting interest, the fear of legal notices, and the relentless calls from recovery agents can take a severe toll on your mental peace and personal life.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     However, it is crucial to understand that being in debt is not a crime, and there are legal avenues available to help you navigate this difficult phase. <strong>Loan settlement</strong> (often searched as <em>debt settlement India</em>) is one such powerful tool that provides a dignified exit route for honest borrowers who are genuinely unable to repay their full debts. At AMA Legal Solutions, we believe that everyone deserves a second chance at financial stability. Our mission is to provide you with the expert legal support needed to negotiate with financial institutions on equal footing.
                   </p>
-                  <p className="text-lg leading-relaxed text-gray-700">
+                  <p className="text-sm md:text-lg leading-relaxed text-gray-700">
                     We are not just a debt settlement agency; we are a team of experienced <strong>loan settlement lawyers</strong> who understand the intricacies of banking laws in India. We stand between you and the harassment, ensuring that your rights are protected while we work tirelessly to secure a settlement that you can afford.
                   </p>
                 </section>
 
                 {/* What is Loan Settlement */}
                 <section id="what-is-settlement" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">What is Loan Settlement?</h2>
-                  <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
-                    <p className="text-lg text-blue-900 italic">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">What is Loan Settlement?</h2>
+                  <div className="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 mb-4 md:mb-8 rounded-r-lg">
+                    <p className="text-sm md:text-lg text-blue-900 italic">
                       "Loan settlement is a mutual agreement between a lender and a borrower to close a loan account for an amount less than the total outstanding dues."
                     </p>
                   </div>
@@ -349,11 +350,11 @@ export default function LoanSettlementPage() {
 
                 {/* When to Consider */}
                 <section id="when-to-consider" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">When Should You Consider Loan Settlement?</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">When Should You Consider Loan Settlement?</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     Loan settlement is not for everyone. It is a strategic option for those facing genuine financial distress. You should consider this option if:
                   </p>
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                     <div className="flex items-start">
                       <div className="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center mr-3 mt-1">⚠️</div>
                       <div>
@@ -583,38 +584,38 @@ export default function LoanSettlementPage() {
 
                 {/* Types of Loans */}
                 <section id="types-of-loans" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Types of Loans We Settle</h2>
-                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Types of Loans We Settle</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-8 text-gray-700">
                     Not all loans are the same, and the strategy for settlement differs based on the nature of the debt. We specialize in settling various types of unsecured and secured debts.
                   </p>
                   
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Personal Loans</h3>
-                      <p className="text-gray-700">
+                  <div className="grid md:grid-cols-2 gap-4 md:gap-8">
+                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-base md:text-xl font-bold text-[#D2A02A] mb-2 md:mb-3">Personal Loans</h3>
+                      <p className="text-gray-700 text-xs md:text-base">
                         <strong>Personal loan settlement</strong> is a common solution for unsecured debts with high interest rates. Banks are often willing to negotiate significantly on these as they have no collateral to fall back on.
                       </p>
                     </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Credit Card Debt</h3>
-                      <p className="text-gray-700">
+                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-base md:text-xl font-bold text-[#D2A02A] mb-2 md:mb-3">Credit Card Debt</h3>
+                      <p className="text-gray-700 text-xs md:text-base">
                         <strong>Credit card settlement</strong> is notoriously difficult to manage due to compounding interest. We help clients settle credit card dues, often achieving substantial reductions from the inflated outstanding amounts.
                       </p>
                     </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Business Loans (Unsecured)</h3>
-                      <p className="text-gray-700">
+                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-base md:text-xl font-bold text-[#D2A02A] mb-2 md:mb-3">Business Loans (Unsecured)</h3>
+                      <p className="text-gray-700 text-xs md:text-base">
                         For MSMEs and entrepreneurs, business loans can become a burden during market downturns. We assist in settling unsecured business loans to help you save your business from bankruptcy.
                       </p>
                     </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Education Loans</h3>
-                      <p className="text-gray-700">
+                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-base md:text-xl font-bold text-[#D2A02A] mb-2 md:mb-3">Education Loans</h3>
+                      <p className="text-gray-700 text-xs md:text-base">
                         In cases of genuine hardship where employment is not secured post-education, we can negotiate settlement terms for education loans to prevent long-term financial distress for young professionals.
                       </p>
                     </div>
                   </div>
-                  <p className="mt-6 text-sm text-gray-500 italic">
+                  <p className="mt-4 md:mt-6 text-xs md:text-sm text-gray-500 italic">
                     *Note: Secured loans (Home Loans, Car Loans) are harder to settle as banks can seize the asset. However, we provide legal consultancy for these cases to explore options like restructuring or time-extension.
                   </p>
                 </section>
@@ -721,25 +722,25 @@ export default function LoanSettlementPage() {
                 </section>
 
                 {/* Final CTA */}
-                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">
+                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-xl md:rounded-3xl p-6 md:p-16 text-center text-white relative overflow-hidden">
                   <div className="relative z-10">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">Don't Let Debt Control Your Life</h2>
-                    <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
+                    <h2 className="text-xl md:text-5xl font-bold mb-4 md:mb-6">Don't Let Debt Control Your Life</h2>
+                    <p className="text-sm md:text-xl opacity-90 mb-6 md:mb-10 max-w-2xl mx-auto">
                       Take the first step towards a debt-free future. Our expert lawyers are ready to fight for your financial freedom.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
                       <Link href="/contact">
-                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg w-full sm:w-auto">
+                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
                           Book Your Consultation
                         </button>
                       </Link>
                       <a href="tel:+918700343611">
-                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-4 px-12 rounded-full transition-all text-lg w-full sm:w-auto">
+                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all text-sm md:text-lg w-full sm:w-auto">
                           Call: +91-8700343611
                         </button>
                       </a>
                     </div>
-                    <p className="mt-8 text-sm opacity-70">
+                    <p className="mt-4 md:mt-8 text-xs md:text-sm opacity-70">
                       Confidential • Legal • Effective
                     </p>
                   </div>

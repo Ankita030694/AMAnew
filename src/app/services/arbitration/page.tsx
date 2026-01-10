@@ -248,15 +248,15 @@ export default function ArbitrationPage() {
             className="absolute inset-0 bg-cover bg-center z-0" 
             style={{ background: "black" }}
           ></div>
-          <div className="relative z-20 container mx-auto px-4 py-24 md:py-32 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight mt-10">
+          <div className="relative z-20 container mx-auto px-4 py-12 md:py-32 text-center">
+            <h1 className="text-2xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-10">
               Expert Legal Solutions for <span className="text-[#D2A02A]">Arbitration in India</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-gray-200">
+            <p className="text-sm md:text-2xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
               Resolve your commercial and civil disputes efficiently with our top-rated arbitration lawyers. Fast, confidential, and legally binding resolutions tailored to your needs.
             </p>
             <Link href="/contact">
-              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg">
+              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg">
                 Get a Free Consultation
               </button>
             </Link>
@@ -275,16 +275,16 @@ export default function ArbitrationPage() {
             {/* Main Content Area */}
             <div className="min-w-0">
               {/* TOC (Mobile) */}
-              <div className="lg:hidden mb-8">
+              <div className="lg:hidden mb-6 sticky top-20 z-10">
                 <TableOfContents sections={tocSections} />
               </div>
 
-              <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm space-y-12">
+              <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Efficient Dispute Resolution in a Complex Business World</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Efficient Dispute Resolution in a Complex Business World</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     In today's fast-paced global economy, commercial disputes are inevitable. However, resolving these disputes through traditional court litigation can be a time-consuming, expensive, and public process. For businesses and individuals alike, the need for a faster, more flexible, and confidential method of dispute resolution is paramount. This is where <strong>arbitration</strong> steps in as a preferred alternative.
                   </p>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
@@ -297,20 +297,20 @@ export default function ArbitrationPage() {
 
                 {/* What is Arbitration */}
                 <section id="what-is-arbitration" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">What is Arbitration?</h2>
-                  <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
-                    <p className="text-lg text-blue-900 italic">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">What is Arbitration?</h2>
+                  <div className="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 mb-4 md:mb-8 rounded-r-lg">
+                    <p className="text-sm md:text-lg text-blue-900 italic">
                       "Arbitration is a private dispute resolution process where parties agree to submit their differences to one or more impartial arbitrators who make a binding decision, known as an arbitral award."
                     </p>
                   </div>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     Unlike litigation, where a judge appointed by the state decides the case in a public courtroom, arbitration is a consensual process. The parties have the autonomy to choose their decision-maker (the arbitrator), the rules of procedure, the language of proceedings, and even the venue. This flexibility makes it a highly attractive option for commercial entities.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     The decision made by the arbitrator, called the <strong>arbitral award</strong>, is final and binding on the parties. It has the same legal effect as a court decree and can be enforced in the same manner. This ensures that the outcome of the arbitration is not just a recommendation but a legally enforceable order.
                   </p>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Key Characteristics of Arbitration</h3>
-                  <ul className="list-disc pl-6 space-y-4 text-gray-700 mb-6">
+                  <h3 className="text-lg md:text-2xl font-semibold text-gray-900 mb-3 md:mb-4">Key Characteristics of Arbitration</h3>
+                  <ul className="list-disc pl-6 space-y-3 md:space-y-4 text-gray-700 mb-6 text-sm md:text-base">
                     <li>
                       <strong>Consensual:</strong> Arbitration can only take place if both parties have agreed to it, usually through an arbitration clause in their contract or a separate submission agreement.
                     </li>
@@ -538,25 +538,25 @@ export default function ArbitrationPage() {
                 </section>
 
                 {/* Final CTA */}
-                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">
+                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-xl md:rounded-3xl p-6 md:p-16 text-center text-white relative overflow-hidden">
                   <div className="relative z-10">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">Resolve Disputes Efficiently</h2>
-                    <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
+                    <h2 className="text-xl md:text-5xl font-bold mb-4 md:mb-6">Resolve Disputes Efficiently</h2>
+                    <p className="text-sm md:text-xl opacity-90 mb-6 md:mb-10 max-w-2xl mx-auto">
                       Don't let legal battles drain your resources. Choose expert arbitration for a faster, smarter resolution.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
                       <Link href="/contact">
-                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg w-full sm:w-auto">
+                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
                           Book Your Consultation
                         </button>
                       </Link>
                       <a href="tel:+918700343611">
-                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-4 px-12 rounded-full transition-all text-lg w-full sm:w-auto">
+                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all text-sm md:text-lg w-full sm:w-auto">
                           Call: +91-8700343611
                         </button>
                       </a>
                     </div>
-                    <p className="mt-8 text-sm opacity-70">
+                    <p className="mt-4 md:mt-8 text-xs md:text-sm opacity-70">
                       Confidential • Binding • Professional
                     </p>
                   </div>
