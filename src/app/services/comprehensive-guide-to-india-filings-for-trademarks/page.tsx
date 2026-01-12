@@ -647,7 +647,7 @@ export default function IndiaFilingsPage() {
                     </Link>
                   </li>
                    <li>
-                    <Link href="/services/company-registration" className="text-gray-600 hover:text-[#bf9848] transition-colors text-sm flex items-center">
+                    <Link href="/services/corporate" className="text-gray-600 hover:text-[#bf9848] transition-colors text-sm flex items-center">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#bf9848] mr-2"></span>
                       Company Registration
                     </Link>

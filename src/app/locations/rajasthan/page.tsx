@@ -255,7 +255,7 @@ export default function RajasthanLocationPage() {
   ];
 
   const breadcrumbItems = [
-    { label: "Locations", href: "/locations" },
+    { label: "Locations", href: "#" },
     { label: "Rajasthan", href: "/locations/rajasthan" },
   ];
 

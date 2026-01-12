@@ -264,7 +264,7 @@ export default function PunjabLocationPage() {
   ];
 
   const breadcrumbItems = [
-    { label: "Locations", href: "/locations" },
+    { label: "Locations", href: "#" },
     { label: "Punjab", href: "/locations/punjab" },
   ];
 

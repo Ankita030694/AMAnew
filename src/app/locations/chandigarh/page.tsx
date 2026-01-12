@@ -255,7 +255,7 @@ export default function ChandigarhLocationPage() {
   ];
 
   const breadcrumbItems = [
-    { label: "Locations", href: "/locations" },
+    { label: "Locations", href: "#" },
     { label: "Chandigarh", href: "/locations/chandigarh" },
   ];
 

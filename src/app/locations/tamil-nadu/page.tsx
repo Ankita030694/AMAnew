@@ -254,7 +254,7 @@ export default function TamilNaduLocationPage() {
   ];
 
   const breadcrumbItems = [
-    { label: "Locations", href: "/locations" },
+    { label: "Locations", href: "#" },
     { label: "Tamil Nadu", href: "/locations/tamil-nadu" },
   ];
 

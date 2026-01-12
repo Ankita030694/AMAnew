@@ -271,7 +271,7 @@ export default function TelanganaLocationPage() {
   ];
 
   const breadcrumbItems = [
-    { label: "Locations", href: "/locations" },
+    { label: "Locations", href: "#" },
     { label: "Telangana", href: "/locations/telangana" },
   ];
 
@@ -768,7 +768,7 @@ export default function TelanganaLocationPage() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/cheque-bounce-lawyer" className="text-gray-600 hover:text-[#D2A02A] flex items-center transition-colors">
+                      <Link href="/services/civil" className="text-gray-600 hover:text-[#D2A02A] flex items-center transition-colors">
                         <span className="w-2 h-2 bg-gray-300 rounded-full mr-3"></span> Cheque Bounce
                       </Link>
                     </li>

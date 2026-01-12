@@ -576,7 +576,7 @@ export default function EntertainmentLawPage() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/cyber-crime" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                      <Link href="/services/cyber" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
                         <span className="mr-2">›</span> Cyber Crime
                       </Link>
                     </li>

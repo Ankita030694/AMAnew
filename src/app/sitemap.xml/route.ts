@@ -201,15 +201,8 @@ export async function GET(): Promise<Response> {
     '/services/intellectual-property-rights/tripura',
     '/services/intellectual-property-rights/uttarakhand',
     '/services/intellectual-property-rights/west-bengal',
-    // Specific Litigation State Pages
-    '/services/litigation/uttar-pradesh',
-    '/services/litigation/uttarakhand',
-    '/services/litigation/punjab',
-    '/services/litigation/rajasthan',
-    '/services/litigation/tamil-nadu',
-    '/services/litigation/west-bengal',
-    '/services/litigation/maharashtra',
-    '/services/litigation/delhi'
+    // Specific Litigation State Pages - Covered by generator
+    // Removed redundant static entries
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
@@ -312,7 +305,7 @@ function generateServiceSlugRoutes(baseUrl: string) {
     'cyber',
     'drafting',
     'entertainment',
-    'intellectual-property-rights',
+    // 'intellectual-property-rights', // Has specific state pages
     'litigation',
     // 'loan-settlement', // Removed as it now has specific pages
     'real-estate'

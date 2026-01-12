@@ -222,7 +222,7 @@ export default function UttarakhandLocationPage() {
   ];
 
   const breadcrumbItems = [
-    { label: "Locations", href: "/locations" },
+    { label: "Locations", href: "#" },
     { label: "Uttarakhand", href: "/locations/uttarakhand" },
   ];
 

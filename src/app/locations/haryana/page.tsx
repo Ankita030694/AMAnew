@@ -254,7 +254,7 @@ export default function HaryanaLocationPage() {
   ];
 
   const breadcrumbItems = [
-    { label: "Locations", href: "/locations" },
+    { label: "Locations", href: "#" },
     { label: "Haryana", href: "/locations/haryana" },
   ];
 

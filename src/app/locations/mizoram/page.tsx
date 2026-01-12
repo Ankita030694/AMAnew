@@ -241,7 +241,7 @@ export default function MizoramLocationPage() {
   ];
 
   const breadcrumbItems = [
-    { label: "Locations", href: "/locations" },
+    { label: "Locations", href: "#" },
     { label: "Mizoram", href: "/locations/mizoram" },
   ];
 

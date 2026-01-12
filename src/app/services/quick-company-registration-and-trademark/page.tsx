@@ -617,7 +617,7 @@ export default function QuickCompanyPage() {
                 <h3 className="text-lg font-bold mb-4 text-gray-900">Explore Services</h3>
                 <ul className="space-y-3">
                   <li>
-                    <Link href="/services/company-registration" className="text-gray-600 hover:text-[#bf9848] transition-colors text-sm flex items-center">
+                    <Link href="/services/corporate" className="text-gray-600 hover:text-[#bf9848] transition-colors text-sm flex items-center">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#bf9848] mr-2"></span>
                       Company Registration
                     </Link>

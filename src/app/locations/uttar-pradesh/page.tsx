@@ -222,7 +222,7 @@ export default function UttarPradeshLocationPage() {
   ];
 
   const breadcrumbItems = [
-    { label: "Locations", href: "/locations" },
+    { label: "Locations", href: "#" },
     { label: "Uttar Pradesh", href: "/locations/uttar-pradesh" },
   ];
 

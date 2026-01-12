@@ -257,7 +257,7 @@ export default function KeralaLocationPage() {
   ];
 
   const breadcrumbItems = [
-    { label: "Locations", href: "/locations" },
+    { label: "Locations", href: "#" },
     { label: "Kerala", href: "/locations/kerala" },
   ];
 

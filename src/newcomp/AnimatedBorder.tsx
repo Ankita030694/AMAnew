@@ -7,7 +7,7 @@ import Image from "next/image";
 const CHECKPOINTS = [
   { id: 1, progress: 0.08, side: "left", brownText: "Download App", whiteText: "App Downloaded" },
   { id: 2, progress: 0.20, side: "left", brownText: "Raise Query", whiteText: "Query Received" },
-  { id: 3, progress: 0.5, side: "bottom", brownText: "Connect To Expert", whiteText: "Expert Connected" },
+  { id: 3, progress: 0.48, side: "bottom", brownText: "Connect To Expert", whiteText: "Expert Connected" },
   { id: 4, progress: 0.80, side: "right", brownText: "Get Legal Answers", whiteText: "Query Answered" },
   { id: 5, progress: 0.92, side: "right", brownText: "Track Case", whiteText: "Real Time Updates Active" },
 ];

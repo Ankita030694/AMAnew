@@ -119,8 +119,8 @@ export default function Footer() {
                     { href: "/services", label: "Services" },
                     { href: "/contact", label: "Contact Us" },
                     { href: "/blog", label: "Blogs" },
-                    { href: "/termscondition", label: "T&C" },
-                    { href: "/privacypolicy", label: "Privacy Policy" }
+                    { href: "/terms-and-conditions", label: "T&C" },
+                    { href: "/privacy-policy", label: "Privacy Policy" }
                   ].map((link) => (
                     <li key={link.href}>
                       <Link
@@ -227,6 +227,14 @@ export default function Footer() {
             <p className="text-base font-medium text-[#1a1a1a]">
               © {new Date().getFullYear()} AMA Legal Solutions. All Rights Reserved.
             </p>
+            <div className="flex space-x-6">
+              <Link href="/privacy-policy" className="text-sm font-medium text-[#2a2a2a] hover:text-[#1a1a1a] transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms-and-conditions" className="text-sm font-medium text-[#2a2a2a] hover:text-[#1a1a1a] transition-colors">
+                Terms & Conditions
+              </Link>
+            </div>
           </div>
         </div>
       </div>

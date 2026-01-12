@@ -339,7 +339,7 @@ export default function ChennaiLocationPage() {
   ];
 
   const breadcrumbItems = [
-    { label: "Locations", href: "/locations" },
+    { label: "Locations", href: "#" },
     { label: "Chennai", href: "/locations/chennai" },
   ];
 
@@ -791,7 +791,7 @@ export default function ChennaiLocationPage() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/marriage-registration" className="text-gray-600 hover:text-[#D2A02A] flex items-center transition-colors">
+                      <Link href="/services/civil" className="text-gray-600 hover:text-[#D2A02A] flex items-center transition-colors">
                         <span className="w-2 h-2 bg-gray-300 rounded-full mr-3"></span> Family & Divorce
                       </Link>
                     </li>
@@ -801,7 +801,7 @@ export default function ChennaiLocationPage() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/ipr" className="text-gray-600 hover:text-[#D2A02A] flex items-center transition-colors">
+                      <Link href="/services/intellectual-property-rights" className="text-gray-600 hover:text-[#D2A02A] flex items-center transition-colors">
                         <span className="w-2 h-2 bg-gray-300 rounded-full mr-3"></span> IPR & Trademark
                       </Link>
                     </li>
