@@ -7,7 +7,8 @@ import {
   faHouse, 
   faScaleBalanced, 
   faUsers,  
-  faArrowRight  
+  faArrowRight,
+  faFileLines
 } from '@fortawesome/free-solid-svg-icons';
 import Link from "next/link";
 import Image from "next/image";
@@ -88,6 +89,40 @@ const servicesData = [
       description: "Banking & Financial Dispute Litigation | Intellectual Property (IP) Litigation | Real Estate & Construction Litigation | Debt Recovery & Financial Disputes | Criminal Litigation | Civil Litigation |",
       link: "/services/litigation"
     }
+];
+
+// Guides Data
+const guidesData = [
+  {
+    icon: faFileLines,
+    title: "Trademark Registration Services",
+    description: "Expert trademark registration, objection reply, and hearing services. Secure your brand name with India's top IP lawyers.",
+    link: "/services/trademark-registration"
+  },
+  {
+    icon: faFileLines,
+    title: "Ipindia Trademark Guide",
+    description: "Master the Ipindia portal (ipindia.gov.in) for trademark registration. Detailed guide on DSC, Public Search, and Form TM-A.",
+    link: "/services/how-to-register-trademark-with-ipindia"
+  },
+  {
+    icon: faFileLines,
+    title: "India Filings Comprehensive Guide",
+    description: "Navigating India filings for trademarks? A comprehensive legal guide on filing trademarks in India and avoiding rejection.",
+    link: "/services/comprehensive-guide-to-india-filings-for-trademarks"
+  },
+  {
+    icon: faFileLines,
+    title: "Quick Company Registration",
+    description: "Learn how to fast-track your business incorporation in India while ensuring full legal compliance and trademark protection.",
+    link: "/services/quick-company-registration-and-trademark"
+  },
+  {
+    icon: faFileLines,
+    title: "Expert Vakil Search Guide",
+    description: "Find top IP lawyers in India. Learn to distinguish between automated bots and genuine experts for your trademark registration.",
+    link: "/services/expert-vakil-search-for-trademark-registration"
+  }
 ];
 
 const ServicesClient = () => {
@@ -189,6 +224,44 @@ const ServicesClient = () => {
                                 Learn More <FontAwesomeIcon icon={faArrowRight} className="w-4 h-4" />
                             </span>
                          </div>
+                    </div>
+                </Link>
+            ))}
+          </div>
+      </section>
+
+      {/* Guides Grid */}
+      <section className="w-full px-4 md:px-8 max-w-[1600px] mx-auto z-10 relative mb-[120px]">
+          <div className="text-center max-w-5xl mx-auto mb-[60px]">
+              <h2 className="text-[28px] md:text-[50px] font-semibold text-[#30261C] leading-[35px] md:leading-[55px] mb-[20px] opacity-100" style={{ fontFamily: "var(--font-polysans)" }}>
+                  Essential Legal Guides & Resources
+              </h2>
+              <p className="text-[#30261C] text-[13px] md:text-[18px] leading-[24px] md:leading-[28px] font-normal opacity-85">
+                  Deep-dive resources to help you understand complex legal processes in India.
+              </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
+            {guidesData.map((item, index) => (
+                <Link href={item.link} key={index} className="group h-full">
+                    <div className="h-full rounded-[20px] bg-[#fdfbf7] border border-[#D29E0D]/10 hover:border-[#D29E0D]/40 p-6 md:p-8 flex flex-col gap-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                        <div className="flex items-start justify-between">
+                            <div className="w-12 h-12 rounded-full bg-[#D29E0D]/10 flex items-center justify-center text-[#D29E0D] group-hover:bg-[#D29E0D] group-hover:text-white transition-colors duration-300">
+                                  <FontAwesomeIcon icon={item.icon} className="w-5 h-5" />
+                            </div>
+                            <span className="text-[#D29E0D] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1">
+                                Read Guide <FontAwesomeIcon icon={faArrowRight} className="w-3 h-3" />
+                            </span>
+                        </div>
+                        
+                        <div>
+                              <h3 className="text-lg md:text-xl font-medium text-[#30261C] mb-2" style={{ fontFamily: "var(--font-polysans)" }}>
+                                {item.title}
+                              </h3>
+                              <p className="text-[#30261C]/70 text-sm leading-relaxed">
+                                {item.description}
+                              </p>
+                        </div>
                     </div>
                 </Link>
             ))}

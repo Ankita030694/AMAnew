@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     "start a business india"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/quick-company-registration-and-trademark',
+    canonical: 'https://www.amalegalsolutions.com/services/quick-company-registration-and-trademark',
   },
   openGraph: {
     title: "Quick Company Registration & Trademark Insights | Speed vs Safety",

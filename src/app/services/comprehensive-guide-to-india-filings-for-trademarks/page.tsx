@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     "business registration india"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/comprehensive-guide-to-india-filings-for-trademarks',
+    canonical: 'https://www.amalegalsolutions.com/services/comprehensive-guide-to-india-filings-for-trademarks',
   },
   openGraph: {
     title: "Guide to India Filings for Trademarks | Secure Brand Registration",

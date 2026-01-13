@@ -253,7 +253,7 @@ export const metadata = {
     "trademark renewal process"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/trademark-registration',
+    canonical: 'https://www.amalegalsolutions.com/services/trademark-registration',
   },
   openGraph: {
     title: "Trademark Registration & Objection Reply | Trademark Registration Experts",

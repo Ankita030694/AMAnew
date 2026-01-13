@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     "legal due diligence for startups"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/expert-vakil-search-for-trademark-registration',
+    canonical: 'https://www.amalegalsolutions.com/services/expert-vakil-search-for-trademark-registration',
   },
   openGraph: {
     title: "Expert Vakil Search for Trademark Registration | Find Top IP Lawyers",

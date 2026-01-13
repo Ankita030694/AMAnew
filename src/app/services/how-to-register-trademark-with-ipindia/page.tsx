@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     "digital signature for trademark"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/how-to-register-trademark-with-ipindia',
+    canonical: 'https://www.amalegalsolutions.com/services/how-to-register-trademark-with-ipindia',
   },
   openGraph: {
     title: "How to Register Trademark with Ipindia | Official Portal Guide",
