@@ -157,32 +157,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Our Locations Column */}
-            <div className="flex flex-col gap-[16px] w-[198px]">
-              <h3 className="text-white text-[18px] md:text-[20px] font-semibold leading-[20px]">
-                Our Locations
-              </h3>
-              <ul className="flex flex-col gap-[12px]">
-                {[
-                  { name: 'New Delhi', href: '/locations/newdelhi' },
-                  { name: 'Mumbai', href: '/locations/mumbai' },
-                  { name: 'Bengaluru', href: '/locations/bengaluru' },
-                  { name: 'Chennai', href: '/locations/chennai' },
-                  { name: 'Jaipur', href: '/locations/jaipur' },
-                  { name: 'Kolkata', href: '/locations/kolkata' },
-                ].map((location) => (
-                  <li key={location.href}>
-                    <Link 
-                      href={location.href}
-                      className="text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors"
-                    >
-                      {location.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
+         
             {/* Contact Details */}
             <div className="flex flex-col gap-[16px] w-[252px]">
               <h3 className="text-white text-[18px] md:text-[20px] font-semibold leading-[20px]">
