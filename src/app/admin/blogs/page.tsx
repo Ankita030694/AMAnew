@@ -78,7 +78,8 @@ const BlogsDashboard = () => {
   const [isLoadingRss, setIsLoadingRss] = useState(false);
 
   // AI Generation state
-  const [prompt, setPrompt] = useState('');
+  const [primaryKeyword, setPrimaryKeyword] = useState('');
+  const [secondaryKeyword, setSecondaryKeyword] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
 
   // Calculate the total number of pages
@@ -367,8 +368,8 @@ const BlogsDashboard = () => {
 
   // Handle AI generation
   const handleGenerate = async () => {
-    if (!prompt.trim()) {
-      alert('Please enter a topic to generate a blog.');
+    if (!primaryKeyword.trim()) {
+      alert('Please enter a primary keyword.');
       return;
     }
 
@@ -379,7 +380,7 @@ const BlogsDashboard = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ prompt }),
+        body: JSON.stringify({ primaryKeyword, secondaryKeyword }),
       });
 
       if (!response.ok) {
@@ -945,24 +946,38 @@ const BlogsDashboard = () => {
                       <FontAwesomeIcon icon={faMagic} className="mr-2" />
                       AI Magic Generator
                     </h3>
-                    <div className="flex gap-2">
-                      <input
-                        type="text"
-                        value={prompt}
-                        onChange={(e) => setPrompt(e.target.value)}
-                        placeholder="Enter a topic (e.g., 'Latest trends in Indian real estate')..."
-                        className="flex-1 px-4 py-2 border border-indigo-200 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
-                        disabled={isGenerating}
-                      />
+                    <div className="flex flex-col gap-4">
+                      <div>
+                          <label className="block text-xs text-indigo-800 mb-1">Primary Keyword (Must be specific)</label>
+                          <input
+                            type="text"
+                            value={primaryKeyword}
+                            onChange={(e) => setPrimaryKeyword(e.target.value)}
+                            placeholder="e.g., 'Get freed from loan'"
+                            className="w-full px-4 py-2 border border-indigo-200 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
+                            disabled={isGenerating}
+                          />
+                      </div>
+                      <div>
+                          <label className="block text-xs text-indigo-800 mb-1">Secondary Keyword (Optional)</label>
+                          <input
+                            type="text"
+                            value={secondaryKeyword}
+                            onChange={(e) => setSecondaryKeyword(e.target.value)}
+                            placeholder="e.g., 'loan settlement process'"
+                            className="w-full px-4 py-2 border border-indigo-200 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
+                            disabled={isGenerating}
+                          />
+                      </div>
                       <button
                         type="button"
                         onClick={handleGenerate}
                         disabled={isGenerating}
-                        className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 disabled:bg-indigo-400 transition-colors flex items-center"
+                        className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 disabled:bg-indigo-400 transition-colors flex items-center justify-center"
                       >
                         {isGenerating ? (
                           <>
-
+                            <span className="animate-spin mr-2">💫</span>
                             Generating...
                           </>
                         ) : (
