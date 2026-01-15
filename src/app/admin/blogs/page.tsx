@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faEdit, faTrash, faUpload } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faEdit, faTrash, faUpload, faMagic } from '@fortawesome/free-solid-svg-icons';
 import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, getDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
@@ -76,6 +76,10 @@ const BlogsDashboard = () => {
   const itemsPerPage = 10; // Set the number of items per page
   const [rssDebugInfo, setRssDebugInfo] = useState<string>('');
   const [isLoadingRss, setIsLoadingRss] = useState(false);
+
+  // AI Generation state
+  const [prompt, setPrompt] = useState('');
+  const [isGenerating, setIsGenerating] = useState(false);
 
   // Calculate the total number of pages
   const totalPages = Math.ceil(blogs.length / itemsPerPage);
@@ -156,7 +160,23 @@ const BlogsDashboard = () => {
     };
 
     fetchBlogs();
+    fetchBlogs();
   }, []);
+
+  // Autosave functionality
+  useEffect(() => {
+    if (showBlogForm && newBlog) {
+      // Don't save if it's empty initial state
+      if (newBlog.title === '' && newBlog.description === '') return;
+
+      const timer = setTimeout(() => {
+        const key = formMode === 'edit' && newBlog.id ? `autosave_blog_${newBlog.id}` : 'autosave_blog_new';
+        localStorage.setItem(key, JSON.stringify(newBlog));
+      }, 1000); // Save after 1 second of inactivity
+
+      return () => clearTimeout(timer);
+    }
+  }, [newBlog, showBlogForm, formMode]);
 
   // Handle animation sequence
   // useEffect(() => {
@@ -341,6 +361,62 @@ const BlogsDashboard = () => {
       alert(`Failed to upload image: ${error instanceof Error ? error.message : "Please check your internet connection and try again."}`);
     } finally {
       setUploading(false);
+    }
+
+  };
+
+  // Handle AI generation
+  const handleGenerate = async () => {
+    if (!prompt.trim()) {
+      alert('Please enter a topic to generate a blog.');
+      return;
+    }
+
+    try {
+      setIsGenerating(true);
+      const response = await fetch('/api/generate-article', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ prompt }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to generate blog');
+      }
+
+      const generatedData = await response.json();
+
+      setNewBlog(prevState => ({
+        ...prevState,
+        title: generatedData.title || prevState.title,
+        subtitle: generatedData.subtitle || prevState.subtitle,
+        description: generatedData.description || prevState.description, // HTML content
+        metaTitle: generatedData.metaTitle || prevState.metaTitle,
+        metaDescription: generatedData.metaDescription || prevState.metaDescription,
+        slug: generatedData.slug || prevState.slug, // Or generate from title
+        faqs: generatedData.faqs || prevState.faqs,
+        reviews: generatedData.reviews || prevState.reviews,
+      }));
+
+      // If slug wasn't provided but title was, generate one
+      if (!generatedData.slug && generatedData.title) {
+        const generatedSlug = generatedData.title
+          .toLowerCase()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/\s+/g, '-')
+          .replace(/-+/g, '-');
+          
+        setNewBlog(prev => ({ ...prev, slug: generatedSlug }));
+      }
+      
+      alert('Blog generated successfully! Please review and add an image.');
+    } catch (error) {
+      console.error('Error generating blog:', error);
+      alert('Failed to generate blog. Please try again.');
+    } finally {
+      setIsGenerating(false);
     }
   };
   
@@ -531,11 +607,33 @@ const BlogsDashboard = () => {
       
       setNewBlog({...blog, faqs, reviews});
       setFormMode('edit');
+      
+      // Check for saved draft for this specific blog
+      const savedDraft = localStorage.getItem(`autosave_blog_${blog.id}`);
+      if (savedDraft) {
+        if (window.confirm('Found an unsaved draft for this blog. Do you want to restore your edits?')) {
+          setNewBlog(JSON.parse(savedDraft));
+        } else {
+          localStorage.removeItem(`autosave_blog_${blog.id}`);
+        }
+      }
+      
       setShowBlogForm(true);
     } catch (error) {
       console.error("Error fetching FAQs:", error);
       setNewBlog(blog);
       setFormMode('edit');
+      
+      // Check for saved draft even on error
+      const savedDraft = localStorage.getItem(`autosave_blog_${blog.id}`);
+      if (savedDraft) {
+        if (window.confirm('Found an unsaved draft for this blog. Do you want to restore your edits?')) {
+          setNewBlog(JSON.parse(savedDraft));
+        } else {
+          localStorage.removeItem(`autosave_blog_${blog.id}`);
+        }
+      }
+      
       setShowBlogForm(true); 
     }
   };
@@ -597,6 +695,13 @@ const BlogsDashboard = () => {
 
   // Reset form state
   const resetForm = () => {
+    // Clear autosave draft based on current mode
+    if (formMode === 'edit' && newBlog.id) {
+      localStorage.removeItem(`autosave_blog_${newBlog.id}`);
+    } else {
+      localStorage.removeItem('autosave_blog_new');
+    }
+
     setNewBlog({
       title: '',
       subtitle: '',
@@ -771,6 +876,31 @@ const BlogsDashboard = () => {
                     resetForm();
                   } else {
                     setFormMode('add');
+
+                    // Check for saved draft for new blog
+                    const savedDraft = localStorage.getItem('autosave_blog_new');
+                    if (savedDraft) {
+                      if (window.confirm('Found an unsaved draft. Do you want to restore it?')) {
+                        setNewBlog(JSON.parse(savedDraft));
+                      } else {
+                        localStorage.removeItem('autosave_blog_new');
+                        setNewBlog({
+                          title: '',
+                          subtitle: '',
+                          description: '',
+                          date: new Date().toISOString().split('T')[0],
+                          image: '',
+                          created: Date.now(),
+                          metaTitle: '',
+                          metaDescription: '',
+                          slug: '',
+                          faqs: [],
+                          reviews: [],
+                          author: 'Anuj Anand Malik'
+                        });
+                      }
+                    }
+
                     setShowBlogForm(true);
                   }
                 }}
@@ -787,14 +917,53 @@ const BlogsDashboard = () => {
             {showBlogForm ? (
               // Blog Creation/Edit Form with Updated Fields and Tiptap Editor
               <AnimatePresence mode="wait">
-                <motion.form
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
+                <h2 className="text-xl font-bold mb-6 text-[#5A4C33] flex items-center">
+                  <FontAwesomeIcon icon={formMode === 'add' ? faPlus : faEdit} className="mr-3" />
+                  {formMode === 'add' ? 'Add New Blog' : 'Edit Blog'}
+                </h2>
+                
+                <form 
                   onSubmit={handleSubmitBlog}
                   className="space-y-6"
                 >
+                  {/* AI Generator Section */}
+                  <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-200 mb-6">
+                    <h3 className="text-indigo-800 font-medium mb-2 flex items-center">
+                      <FontAwesomeIcon icon={faMagic} className="mr-2" />
+                      AI Magic Generator
+                    </h3>
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        value={prompt}
+                        onChange={(e) => setPrompt(e.target.value)}
+                        placeholder="Enter a topic (e.g., 'Latest trends in Indian real estate')..."
+                        className="flex-1 px-4 py-2 border border-indigo-200 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
+                        disabled={isGenerating}
+                      />
+                      <button
+                        type="button"
+                        onClick={handleGenerate}
+                        disabled={isGenerating}
+                        className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 disabled:bg-indigo-400 transition-colors flex items-center"
+                      >
+                        {isGenerating ? (
+                          <>
+
+                            Generating...
+                          </>
+                        ) : (
+                          <>
+                            Generate Blog
+                          </>
+                        )}
+                      </button>
+                    </div>
+                    <p className="text-xs text-indigo-600 mt-2">
+                      This will auto-fill the form with SEO-optimized title, description, content, FAQs, and more (Indian Context).
+                    </p>
+                  </div>
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="title" className="block text-sm font-medium text-[#5A4C33] mb-1">Blog Title</label>
@@ -1117,7 +1286,7 @@ const BlogsDashboard = () => {
                       {formMode === 'add' ? 'Publish Blog' : 'Update Blog'}
                     </motion.button>
                   </div>
-                </motion.form>
+                </form>
               </AnimatePresence>
             ) : (
               // Blogs Table

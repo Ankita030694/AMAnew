@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faEdit, faTrash, faUpload } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faEdit, faTrash, faUpload, faMagic } from '@fortawesome/free-solid-svg-icons';
 import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, getDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
@@ -72,6 +72,10 @@ const ArticlesDashboard = () => {
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
+  
+  // AI Generation state
+  const [prompt, setPrompt] = useState('');
+  const [isGenerating, setIsGenerating] = useState(false);
 
   // Check if user is logged in; if not, redirect to login page
   useEffect(() => {
@@ -143,6 +147,21 @@ const ArticlesDashboard = () => {
 
     fetchBlogs();
   }, []);
+
+  // Autosave functionality
+  useEffect(() => {
+    if (showBlogForm && newBlog) {
+      // Don't save if it's empty initial state
+      if (newBlog.title === '' && newBlog.description === '') return;
+
+      const timer = setTimeout(() => {
+        const key = formMode === 'edit' && newBlog.id ? `autosave_article_${newBlog.id}` : 'autosave_article_new';
+        localStorage.setItem(key, JSON.stringify(newBlog));
+      }, 1000); // Save after 1 second of inactivity
+
+      return () => clearTimeout(timer);
+    }
+  }, [newBlog, showBlogForm, formMode]);
 
   // Handle blog form input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -344,11 +363,33 @@ const ArticlesDashboard = () => {
       
       setNewBlog({...blog, faqs, reviews});
       setFormMode('edit');
+      
+      // Check for saved draft for this specific article
+      const savedDraft = localStorage.getItem(`autosave_article_${blog.id}`);
+      if (savedDraft) {
+        if (window.confirm('Found an unsaved draft for this article. Do you want to restore your edits?')) {
+          setNewBlog(JSON.parse(savedDraft));
+        } else {
+          localStorage.removeItem(`autosave_article_${blog.id}`);
+        }
+      }
+      
       setShowBlogForm(true);
     } catch (error) {
       console.error("Error fetching FAQs:", error);
       setNewBlog(blog);
       setFormMode('edit');
+      
+      // Check for saved draft even on error
+      const savedDraft = localStorage.getItem(`autosave_article_${blog.id}`);
+      if (savedDraft) {
+        if (window.confirm('Found an unsaved draft for this article. Do you want to restore your edits?')) {
+          setNewBlog(JSON.parse(savedDraft));
+        } else {
+          localStorage.removeItem(`autosave_article_${blog.id}`);
+        }
+      }
+      
       setShowBlogForm(true);
     }
   };
@@ -410,6 +451,13 @@ const ArticlesDashboard = () => {
 
   // Reset form state
   const resetForm = () => {
+    // Clear autosave draft based on current mode
+    if (formMode === 'edit' && newBlog.id) {
+      localStorage.removeItem(`autosave_article_${newBlog.id}`);
+    } else {
+      localStorage.removeItem('autosave_article_new');
+    }
+
     setNewBlog({
       title: '',
       subtitle: '',
@@ -588,6 +636,61 @@ const ArticlesDashboard = () => {
     });
   };
 
+  // Handle AI generation
+  const handleGenerate = async () => {
+    if (!prompt.trim()) {
+      alert('Please enter a topic to generate an article.');
+      return;
+    }
+
+    try {
+      setIsGenerating(true);
+      const response = await fetch('/api/generate-article', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ prompt }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to generate article');
+      }
+
+      const generatedData = await response.json();
+
+      setNewBlog(prevState => ({
+        ...prevState,
+        title: generatedData.title || prevState.title,
+        subtitle: generatedData.subtitle || prevState.subtitle,
+        description: generatedData.description || prevState.description, // HTML content
+        metaTitle: generatedData.metaTitle || prevState.metaTitle,
+        metaDescription: generatedData.metaDescription || prevState.metaDescription,
+        slug: generatedData.slug || prevState.slug, // Or generate from title
+        faqs: generatedData.faqs || prevState.faqs,
+        reviews: generatedData.reviews || prevState.reviews,
+      }));
+
+      // If slug wasn't provided but title was, generate one
+      if (!generatedData.slug && generatedData.title) {
+        const generatedSlug = generatedData.title
+          .toLowerCase()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/\s+/g, '-')
+          .replace(/-+/g, '-');
+          
+        setNewBlog(prev => ({ ...prev, slug: generatedSlug }));
+      }
+      
+      alert('Article generated successfully! Please review and add an image.');
+    } catch (error) {
+      console.error('Error generating article:', error);
+      alert('Failed to generate article. Please try again.');
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
   return (
     <div className="min-h-screen overflow-hidden relative">
 
@@ -670,6 +773,40 @@ const ArticlesDashboard = () => {
                     resetForm();
                   } else {
                     setFormMode('add');
+                    
+                    // Check for saved draft for new article
+                    const savedDraft = localStorage.getItem('autosave_article_new');
+                    if (savedDraft) {
+                      if (window.confirm('Found an unsaved draft. Do you want to restore it?')) {
+                        setNewBlog(JSON.parse(savedDraft));
+                      } else {
+                        localStorage.removeItem('autosave_article_new');
+                        // setNewBlog to default is not needed as it's the initial state, 
+                        // but if we want to be sure we can reset it, though resetForm is unsafe to call here 
+                        // as it might clear the draft we just found if we were to reorganize logic.
+                        // Since showBlogForm was false, newBlog should ideally be empty, 
+                        // but strictly speaking resetting explicitly is safer if state lingered.
+                        // However, resetForm also clears localStorage, which we just did. 
+                        // The default state is already set in the NewBlog definition or we can rely on manual reset if needed.
+                        // Actually, let's just leave it as is, assuming initial state is clean or handled.
+                        // Better: explicitly reset state to clean slate if discarding draft
+                        setNewBlog({
+                            title: '',
+                            subtitle: '',
+                            description: '',
+                            date: new Date().toISOString().split('T')[0],
+                            image: '',
+                            created: Date.now(),
+                            metaTitle: '',
+                            metaDescription: '',
+                            slug: '',
+                            faqs: [],
+                            reviews: [],
+                            author: 'Anuj Anand Malik'
+                        });
+                      }
+                    }
+                    
                     setShowBlogForm(true);
                   }
                 }}
@@ -694,6 +831,44 @@ const ArticlesDashboard = () => {
                   onSubmit={handleSubmitBlog}
                   className="space-y-6"
                 >
+                  {/* AI Generator Section */}
+                  <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-200 mb-6">
+                    <h3 className="text-indigo-800 font-medium mb-2 flex items-center">
+                      <FontAwesomeIcon icon={faMagic} className="mr-2" />
+                      AI Magic Generator
+                    </h3>
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        value={prompt}
+                        onChange={(e) => setPrompt(e.target.value)}
+                        placeholder="Enter a topic (e.g., 'A complete guide to civil lawsuits in India')..."
+                        className="flex-1 px-4 py-2 border border-indigo-200 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
+                        disabled={isGenerating}
+                      />
+                      <button
+                        type="button"
+                        onClick={handleGenerate}
+                        disabled={isGenerating}
+                        className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 disabled:bg-indigo-400 transition-colors flex items-center"
+                      >
+                        {isGenerating ? (
+                          <>
+
+                            Generating...
+                          </>
+                        ) : (
+                          <>
+                            Generate Article
+                          </>
+                        )}
+                      </button>
+                    </div>
+                    <p className="text-xs text-indigo-600 mt-2">
+                      This will auto-fill the form with SEO-optimized title, description, content, FAQs, and more.
+                    </p>
+                  </div>
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="title" className="block text-sm font-medium text-[#5A4C33] mb-1">Article Title</label>
