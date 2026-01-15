@@ -64,17 +64,26 @@ export async function POST(request: Request) {
                 { role: "user", content: prompt },
             ],
             response_format: { type: "json_object" },
+            stream: true,
         });
 
-        const content = completion.choices[0].message.content;
+        const stream = new ReadableStream({
+            async start(controller) {
+                for await (const chunk of completion) {
+                    const content = chunk.choices[0]?.delta?.content || "";
+                    if (content) {
+                        controller.enqueue(new TextEncoder().encode(content));
+                    }
+                }
+                controller.close();
+            },
+        });
 
-        if (!content) {
-            return NextResponse.json({ error: 'Failed to generate content' }, { status: 500 });
-        }
-
-        const generatedData = JSON.parse(content);
-
-        return NextResponse.json(generatedData);
+        return new Response(stream, {
+            headers: {
+                "Content-Type": "text/plain; charset=utf-8",
+            },
+        });
     } catch (error) {
         console.error('Error generating article:', error);
         return NextResponse.json(

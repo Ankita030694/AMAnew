@@ -386,7 +386,20 @@ const BlogsDashboard = () => {
         throw new Error('Failed to generate blog');
       }
 
-      const generatedData = await response.json();
+      // Handle streaming response
+      const reader = response.body?.getReader();
+      if (!reader) {
+        throw new Error('No reader available');
+      }
+
+      let accumulatedDetails = '';
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        accumulatedDetails += new TextDecoder().decode(value);
+      }
+
+      const generatedData = JSON.parse(accumulatedDetails);
 
       setNewBlog(prevState => ({
         ...prevState,
