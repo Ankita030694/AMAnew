@@ -83,3 +83,6 @@ export async function POST(request: Request) {
         );
     }
 }
+
+export const runtime = 'edge';
+export const maxDuration = 300;
