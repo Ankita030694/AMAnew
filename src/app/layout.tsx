@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -265,6 +266,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
             />
           </>
         )}
+        <Analytics />
       </body>
     </html>
   );
