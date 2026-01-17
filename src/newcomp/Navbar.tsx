@@ -338,28 +338,57 @@ const Navbar = () => {
                         </Link>
                       </div>
 
-                      {/* Right Column */}
-                      <div 
-                        className="flex-1 p-8 flex flex-col justify-center gap-4" 
-                        style={{
-                          borderRadius: "10px",
-                          background: "rgba(210, 158, 13, 1)" // Opacity 1
-                        }}
-                      >
-                        <Link href="/blog" className="block w-full">
-                          <h3 
-                            className="text-[25px] font-normal mb-2 text-black"
-                            style={{ fontFamily: "var(--font-polysans)" }}
-                          >
-                            Blogs
-                          </h3>
-                          <p 
-                            className="text-[16px] leading-relaxed text-black/80 font-light"
-                            style={{ fontFamily: "var(--font-polysans)" }}
-                          >
-                            Explore expert legal blogs from AMA Legal Solutions, featuring insights on corporate law, compliance, contracts, and more to keep you informed.
-                          </p>
-                        </Link>
+                      {/* Right Column - Split into two */}
+                      <div className="flex-1 flex flex-col gap-4">
+                        {/* Blogs Container (Top Half) */}
+                        <div 
+                          className="flex-1 p-6 flex flex-col justify-center gap-2" 
+                          style={{
+                            borderRadius: "10px",
+                            background: "rgba(210, 158, 13, 1)" // Gold
+                          }}
+                        >
+                          <Link href="/blog" className="block w-full group">
+                            <div className="flex justify-between items-start">
+                              <h3 
+                                className="text-[25px] font-normal mb-1 text-black group-hover:opacity-80 transition-opacity"
+                                style={{ fontFamily: "var(--font-polysans)" }}
+                              >
+                                Blogs
+                              </h3>
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-black transform group-hover:translate-x-1 transition-transform">
+                                <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
+                            </div>
+                          
+                          </Link>
+                        </div>
+
+                        {/* AMA Container (Bottom Half) */}
+                        <div 
+                          className="flex-1 p-6 flex flex-col justify-center gap-2" 
+                          style={{
+                            borderRadius: "10px",
+                            background: "#30261C" // Brown from brand
+                          }}
+                        >
+                          <Link href="/ama" className="block w-full group">
+                            <div className="flex justify-between items-start">
+                              <h3 
+                                className="text-[25px] font-normal mb-1 text-[#EBE9E4] group-hover:opacity-80 transition-opacity"
+                                style={{ fontFamily: "var(--font-polysans)" }}
+                              >
+                                Ask Me Anything
+                              </h3>
+                              <div className="w-8 h-8 flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EBE9E4" className="transform transition-transform">
+                                    <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                  </svg>
+                              </div>
+                            </div>
+                         
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </motion.div>
@@ -530,13 +559,21 @@ const Navbar = () => {
                                        >
                                            AMA Live
                                        </Link>
-                                       <Link 
+                                        <Link 
                                             href="/articles"
                                             className="text-[#30261C]/80 font-[400] tracking-wide"
                                             style={{ fontFamily: "var(--font-polysans)", fontSize: "28px", lineHeight: "28px" }}
                                             onClick={() => setIsMobileMenuOpen(false)}
                                         >
                                             Articles
+                                        </Link>
+                                        <Link 
+                                            href="/ama"
+                                            className="text-[#30261C]/80 font-[400] tracking-wide"
+                                            style={{ fontFamily: "var(--font-polysans)", fontSize: "28px", lineHeight: "28px" }}
+                                            onClick={() => setIsMobileMenuOpen(false)}
+                                        >
+                                            Ask Me Anything
                                         </Link>
                                    </motion.div>
                                )}
