@@ -622,12 +622,7 @@ export default function QuickCompanyPage() {
                       Company Registration
                     </Link>
                   </li>
-                  <li>
-                    <Link href="/services/comprehensive-guide-to-india-filings-for-trademarks" className="text-gray-600 hover:text-[#bf9848] transition-colors text-sm flex items-center">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#bf9848] mr-2"></span>
-                      India Filings Guide
-                    </Link>
-                  </li>
+
                   <li>
                     <Link href="/services/expert-vakil-search-for-trademark-registration" className="text-gray-600 hover:text-[#bf9848] transition-colors text-sm flex items-center">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#bf9848] mr-2"></span>

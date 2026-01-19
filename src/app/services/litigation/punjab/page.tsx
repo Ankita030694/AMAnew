@@ -117,7 +117,7 @@ const articleSchema = {
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/logo.png"
+      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-12-02",
@@ -724,12 +724,12 @@ export default function PunjabLitigationPage() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/family-law" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                      <Link href="/services/civil" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
                         <span className="mr-2">›</span> Family Law
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/corporate-law" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                      <Link href="/services/corporate" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
                         <span className="mr-2">›</span> Corporate Law
                       </Link>
                     </li>

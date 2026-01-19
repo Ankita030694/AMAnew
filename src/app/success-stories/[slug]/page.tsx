@@ -69,7 +69,7 @@ export default async function SuccessStoryPage({ params }: Props) {
     "@type": "Article",
     "headline": story.seo.title,
     "description": story.seo.description,
-    "image": "https://amalegalsolutions.com/logo.png", // Fallback or specific image
+    "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png", // Fallback or specific image
     "author": {
       "@type": "Organization",
       "name": "AMA Legal Solutions",
@@ -80,7 +80,7 @@ export default async function SuccessStoryPage({ params }: Props) {
       "name": "AMA Legal Solutions",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://amalegalsolutions.com/logo.png"
+        "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
       }
     },
   };

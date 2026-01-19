@@ -120,7 +120,7 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Trademark Registration Services: Protect Your Brand Identity",
   "description": "Expert trademark registration, objection reply, and hearing services. Secure your brand name with India's top IP lawyers.",
-  "image": "https://amalegalsolutions.com/services/trademark.png",
+  "image": "https://amalegalsolutions.com/services/4.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
@@ -131,7 +131,7 @@ const articleSchema = {
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/logo.png"
+      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-01-15",
@@ -157,7 +157,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Trademark Registration Services",
-  "image": "https://amalegalsolutions.com/services/trademark.png",
+  "image": "https://amalegalsolutions.com/services/4.png",
   "description": "Comprehensive trademark services including search, filing, objection reply, and litigation.",
   "brand": {
     "@type": "Brand",
@@ -262,7 +262,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/services/trademark.png",
+        url: "/services/4.png",
         width: 1200,
         height: 630,
         alt: "Trademark Registration Services",

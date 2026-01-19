@@ -83,7 +83,7 @@ const WestBengalIPRPage = () => {
       name: "AMA Legal Solutions",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.amalegalsolutions.com/logo.png",
+        url: "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
       },
     },
     datePublished: "2024-11-24",

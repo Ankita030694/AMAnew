@@ -78,7 +78,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "AMA Legal Solutions Chandigarh",
-  "image": "https://amalegalsolutions.com/ama-logo.png",
+  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Premier law firm in Chandigarh specializing in High Court Litigation, NCLT, Estate Office matters, and Corporate Law.",
   "address": {
     "@type": "PostalAddress",
@@ -138,7 +138,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Chandigarh",
-  "image": "https://amalegalsolutions.com/ama-logo.png",
+  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Expert legal services in Chandigarh by AMA Legal Solutions.",
   "brand": {
     "@type": "Brand",
@@ -227,7 +227,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/ama-logo.png",
+        url: "/ama-legal-solutions-logo.png",
         width: 1200,
         height: 630,
         alt: "Legal Services Chandigarh",

@@ -86,7 +86,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "AMA Legal Solutions Punjab",
-  "image": "https://amalegalsolutions.com/ama-logo.png",
+  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Leading law firm in Punjab specializing in NRI Legal Services, High Court Litigation, RERA, and Industrial Disputes.",
   "address": {
     "@type": "PostalAddress",
@@ -145,7 +145,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Punjab",
-  "image": "https://amalegalsolutions.com/ama-logo.png",
+  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Top-tier legal services in Punjab by AMA Legal Solutions.",
   "brand": {
     "@type": "Brand",
@@ -234,7 +234,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/ama-logo.png",
+        url: "/ama-legal-solutions-logo.png",
         width: 1200,
         height: 630,
         alt: "Legal Services Punjab",

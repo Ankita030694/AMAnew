@@ -91,7 +91,7 @@ const articleSchema = {
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/logo.png"
+      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-15",
@@ -760,17 +760,6 @@ export default function IntellectualPropertyPage() {
                   <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#D2A02A] transition-colors mb-2">Expert Vakil Search</h3>
                   <p className="text-gray-600 text-sm flex-grow">
                     Looking for the right lawyer? Learn how to conduct a proper 'Vakil Search' to find expert IP attorneys vs automated bots.
-                  </p>
-                  <span className="text-[#D2A02A] font-semibold text-sm mt-4 flex items-center">
-                    Read Guide <span className="ml-1 text-lg">›</span>
-                  </span>
-                </div>
-              </Link>
-              <Link href="/services/comprehensive-guide-to-india-filings-for-trademarks" className="group">
-                <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 h-full flex flex-col">
-                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#D2A02A] transition-colors mb-2">Guide to India Filings</h3>
-                  <p className="text-gray-600 text-sm flex-grow">
-                    Filing a trademark in India? A comprehensive legal guide to the ecosystem of 'India Filings' and how to secure registration.
                   </p>
                   <span className="text-[#D2A02A] font-semibold text-sm mt-4 flex items-center">
                     Read Guide <span className="ml-1 text-lg">›</span>

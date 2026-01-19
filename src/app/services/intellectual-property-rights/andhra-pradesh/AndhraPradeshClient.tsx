@@ -456,7 +456,7 @@ export default function AndhraPradeshClient() {
               "name": "AMA Legal Solutions",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://amalegalsolutions.com/logo.png"
+                "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
               }
             },
             "datePublished": "2024-11-26",

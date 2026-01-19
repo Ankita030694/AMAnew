@@ -78,7 +78,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "AMA Legal Solutions Haryana",
-  "image": "https://amalegalsolutions.com/ama-logo.png",
+  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Leading law firm in Haryana providing expert legal services in High Court Litigation, Loan Settlement, RERA, and Corporate Law.",
   "address": {
     "@type": "PostalAddress",
@@ -136,7 +136,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Haryana",
-  "image": "https://amalegalsolutions.com/ama-logo.png",
+  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Top-tier legal services in Haryana by AMA Legal Solutions.",
   "brand": {
     "@type": "Brand",
@@ -225,7 +225,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/ama-logo.png", // Fallback to logo as we might not have a city specific SVG for Haryana yet
+        url: "/ama-legal-solutions-logo.png", // Fallback to logo as we might not have a city specific SVG for Haryana yet
         width: 1200,
         height: 630,
         alt: "Legal Services Haryana",

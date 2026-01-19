@@ -78,7 +78,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "AMA Legal Solutions Tamil Nadu",
-  "image": "https://amalegalsolutions.com/ama-logo.png",
+  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Leading law firm in Tamil Nadu specializing in Madras High Court Litigation, Corporate Law, Maritime Law, and IP for SaaS.",
   "address": {
     "@type": "PostalAddress",
@@ -137,7 +137,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Tamil Nadu",
-  "image": "https://amalegalsolutions.com/ama-logo.png",
+  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Expert legal services in Tamil Nadu by AMA Legal Solutions.",
   "brand": {
     "@type": "Brand",
@@ -226,7 +226,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/ama-logo.png",
+        url: "/ama-legal-solutions-logo.png",
         width: 1200,
         height: 630,
         alt: "Legal Services Tamil Nadu",

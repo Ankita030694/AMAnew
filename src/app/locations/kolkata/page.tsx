@@ -748,7 +748,7 @@ export default function KolkataLocationPage() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/realestate" className="text-gray-600 hover:text-[#D2A02A] flex items-center transition-colors">
+                      <Link href="/services/real-estate" className="text-gray-600 hover:text-[#D2A02A] flex items-center transition-colors">
                         <span className="w-2 h-2 bg-gray-300 rounded-full mr-3"></span> Property & Probate
                       </Link>
                     </li>

@@ -331,7 +331,7 @@ function generateCombinedSchema(blogData: any, faqs: any[], reviews: any[]) {
     "url": baseUrl,
     "logo": {
       "@type": "ImageObject",
-      "url": `${baseUrl}/logo.png`
+      "url": `${baseUrl}/ama-legal-solutions-logo.png`
     }
   });
 

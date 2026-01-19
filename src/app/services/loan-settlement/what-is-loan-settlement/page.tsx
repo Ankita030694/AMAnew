@@ -76,7 +76,7 @@ const articleSchema = {
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/logo.png"
+      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-12-02",
@@ -506,12 +506,12 @@ export default function WhatIsLoanSettlementPage() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/cheque-bounce" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                      <Link href="/services/litigation" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
                         <span className="mr-2">›</span> Cheque Bounce Laws
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/debt-recovery" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                      <Link href="/services/debt-consolidation" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
                         <span className="mr-2">›</span> DRT Proceedings
                       </Link>
                     </li>
