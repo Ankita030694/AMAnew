@@ -105,12 +105,7 @@ const guidesData = [
     description: "Master the Ipindia portal (ipindia.gov.in) for trademark registration. Detailed guide on DSC, Public Search, and Form TM-A.",
     link: "/services/how-to-register-trademark-with-ipindia"
   },
-  {
-    icon: faFileLines,
-    title: "India Filings Comprehensive Guide",
-    description: "Navigating India filings for trademarks? A comprehensive legal guide on filing trademarks in India and avoiding rejection.",
-    link: "/services/comprehensive-guide-to-india-filings-for-trademarks"
-  },
+
   {
     icon: faFileLines,
     title: "Quick Company Registration",

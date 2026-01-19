@@ -726,7 +726,7 @@ export default function ChennaiLocationPage() {
 
                 {/* Final CTA */}
                 <section className="bg-[#1a202c] rounded-3xl p-10 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
-                  <div className="absolute inset-0 opacity-10" style={{backgroundImage: "url('/pattern.png')"}}></div>
+                  <div className="absolute inset-0 opacity-10" style={{backgroundImage: "url('/bannerbg.png')"}}></div>
                   <div className="relative z-10">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">Expert Legal Help is Just a Call Away</h2>
                     <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto text-gray-300">

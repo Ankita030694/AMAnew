@@ -278,13 +278,12 @@ export default function TrademarkRegistrationPage() {
     { id: "trademark-process", title: "Registration Process" },
     { id: "objection-handling", title: "Objection & Hearing" },
     { id: "search-verification", title: "Search & Verification" },
-    { id: "cost-timeline", title: "Cost & Timeline" },
     { id: "startup-benefits", title: "Startup & MSME Benefits" },
     { id: "international-protection", title: "Global Protection" },
-    { id: "brand-protection-guide", title: "Brand Protection Guide" },
+    { id: "cost-timeline", title: "Cost & Timeline" },
     { id: "documents-checklist", title: "Documents Checklist" },
-    { id: "client-reviews", title: "Client Reviews" },
     { id: "why-choose-us", title: "Why Choose Us" },
+    { id: "client-reviews", title: "Client Reviews" },
     { id: "faqs", title: "FAQs" },
   ];
 

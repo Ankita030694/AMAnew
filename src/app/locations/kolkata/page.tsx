@@ -78,7 +78,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "AMA Legal Solutions Kolkata",
-  "image": "https://amalegalsolutions.com/city3.svg",
+  "image": "https://amalegalsolutions.com/city4.svg",
   "description": "Leading law firm in Kolkata providing expert legal services in High Court Litigation, Corporate Law, Real Estate, and Family Disputes.",
   "address": {
     "@type": "PostalAddress",
@@ -135,7 +135,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Kolkata",
-  "image": "https://amalegalsolutions.com/city3.svg",
+  "image": "https://amalegalsolutions.com/city4.svg",
   "description": "Top-tier legal services in Kolkata by AMA Legal Solutions.",
   "brand": {
     "@type": "Brand",
@@ -287,7 +287,7 @@ export default function KolkataLocationPage() {
           <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
           <div 
             className="absolute inset-0 bg-cover bg-center z-0" 
-            style={{ backgroundImage: "url('/city3.svg')", filter: "brightness(0.5)" }}
+            style={{ backgroundImage: "url('/city4.svg')", filter: "brightness(0.5)" }}
           ></div>
           <div className="relative z-20 container mx-auto px-4 py-24 md:py-40 text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight mt-10">
@@ -688,7 +688,7 @@ export default function KolkataLocationPage() {
 
                 {/* Final CTA */}
                 <section className="bg-[#1a202c] rounded-3xl p-10 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
-                  <div className="absolute inset-0 opacity-10" style={{backgroundImage: "url('/pattern.png')"}}></div>
+                  <div className="absolute inset-0 opacity-10" style={{backgroundImage: "url('/bannerbg.png')"}}></div>
                   <div className="relative z-10">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">Expert Legal Help in Kolkata</h2>
                     <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto text-gray-300">

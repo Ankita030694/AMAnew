@@ -35,10 +35,10 @@ const faqs = [
   },
   {
     question: "What legal services do you offer for startups in Mumbai?",
-    answer: "Mumbai is a thriving startup hub, especially in Powai and Andheri. We assist startups with incorporation, co-founder agreements, fundraising (SHA/SSA), ESOPs, and intellectual property registration. We act as your external general counsel to navigate the regulatory landscape, ensuring compliance with RBI regulations for fintechs and data privacy laws for tech companies."
+    answer: "Mumbai is a thriving startup hub, especially in Powai and Andheri East. We assist startups with incorporation, co-founder agreements, fundraising (SHA/SSA), ESOPs, and intellectual property registration. We act as your external general counsel to navigate the regulatory landscape, ensuring compliance with RBI regulations for fintechs and data privacy laws for tech companies."
   },
   {
-    question: "Can you help with Deep Convayance for Housing Societies?",
+    question: "Can you help with Deemed Conveyance for Housing Societies?",
     answer: "Yes, Deemed Conveyance is critical for many housing societies in Mumbai where the builder refuses to transfer the land title. We assist Managing Committees in filing applications before the District Deputy Registrar (DDR) to obtain the Deemed Conveyance order and subsequently getting the property card and 7/12 extract mutated in the society's name."
   },
   {
@@ -303,7 +303,7 @@ export default function MumbaiLocationPage() {
           <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
           <div 
             className="absolute inset-0 bg-cover bg-center z-0" 
-            style={{ backgroundImage: "url('/city2.svg')" }}
+            style={{ backgroundImage: "url('/bannerbg.png')" }}
           ></div>
           <div className="relative z-20 container mx-auto px-4 py-24 md:py-40 text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight mt-10">
@@ -736,7 +736,7 @@ export default function MumbaiLocationPage() {
 
                 {/* Final CTA */}
                 <section className="bg-[#1a202c] rounded-3xl p-10 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
-                  <div className="absolute inset-0 opacity-10" style={{backgroundImage: "url('/pattern.png')"}}></div>
+                  <div className="absolute inset-0 opacity-10" style={{backgroundImage: "url('/bannerbg.png')"}}></div>
                   <div className="relative z-10">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">Expert Legal Help in Mumbai</h2>
                     <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto text-gray-300">
