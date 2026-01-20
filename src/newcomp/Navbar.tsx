@@ -372,7 +372,7 @@ const Navbar = () => {
                             background: "#30261C" // Brown from brand
                           }}
                         >
-                          <Link href="/ama" className="block w-full group">
+                          <Link href="/ask-me-anything" className="block w-full group">
                             <div className="flex justify-between items-start">
                               <h3 
                                 className="text-[25px] font-normal mb-1 text-[#EBE9E4] group-hover:opacity-80 transition-opacity"
@@ -568,7 +568,7 @@ const Navbar = () => {
                                             Articles
                                         </Link>
                                         <Link 
-                                            href="/ama"
+                                            href="/ask-me-anything"
                                             className="text-[#30261C]/80 font-[400] tracking-wide"
                                             style={{ fontFamily: "var(--font-polysans)", fontSize: "28px", lineHeight: "28px" }}
                                             onClick={() => setIsMobileMenuOpen(false)}

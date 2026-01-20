@@ -18,6 +18,7 @@ export async function GET(): Promise<Response> {
     '/blog',
     '/articles',
     '/amalive',
+    '/ask-me-anything',
     '/locations/bengaluru',
     '/locations/chennai',
     '/locations/jaipur',
