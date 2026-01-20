@@ -3,31 +3,52 @@ import Script from "next/script";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import FaqSection from "./FaqSection";
 
-export const metadata = {
-  title: "Loan Settlement in Tripura | Debt Relief Lawyers Agartala, Udaipur, Dharmanagar",
-  description:
-    "Struggling with debt in Tripura? AMA Legal Solutions offers expert loan settlement for Rubber Planters, Bamboo Artisans & Traders. Stop harassment & settle loans legally.",
-  alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/Tripura',
+// FAQ data for rendering and Schema
+const faqs = [
+  {
+    question: "Is loan settlement legal in Tripura?",
+    answer: "Yes, loan settlement is completely legal in Tripura. It is governed by RBI guidelines and the Indian Contract Act. Mechanisms like Lok Adalats, organized by the Tripura State Legal Services Authority, actively facilitate amicable settlements between banks and borrowers. The Extension of the Bombay Money-lenders Act to Tripura also provides a regulatory framework for fair lending practices."
   },
-  openGraph: {
-    title: "Loan Settlement in Tripura | Debt Relief Lawyers Agartala, Udaipur, Dharmanagar",
-    description: "Struggling with debt in Tripura? AMA Legal Solutions offers expert loan settlement for Rubber Planters, Bamboo Artisans & Traders. Stop harassment & settle loans legally.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/Tripura",
-    type: "website",
-    images: [
-      {
-        url: "/services/3.png",
-        width: 1200,
-        height: 630,
-        alt: "Loan Settlement Services Tripura",
-      },
-    ],
+  {
+    question: "How do Lok Adalats in Tripura help with bank loans?",
+    answer: "Lok Adalats in Tripura are highly effective for bank recovery cases. They offer a platform for 'One Time Settlement' (OTS) without the need for a lengthy court trial. In recent sessions held in Agartala and other districts, crores of rupees have been settled amicably. An award passed here is final and binding, ensuring that once you pay the agreed amount, the bank cannot harass you further."
   },
-};
+  {
+    question: "I am a government employee in Tripura. Can I settle my loan?",
+    answer: "We understand that a large portion of Tripura's workforce is employed by the government. While banks are often reluctant to offer settlement to salaried employees due to the stability of their income, it is not impossible. If you can demonstrate genuine financial hardship—such as a medical crisis, loss of a earning family member, or fraud—we can negotiate on your behalf to get a favorable settlement without jeopardizing your job."
+  },
+  {
+    question: "Does AMA Legal Solutions have an office in Agartala?",
+    answer: "AMA Legal Solutions is a premier digital law firm serving clients across India, including Tripura. We handle all negotiations, documentation, and legal notices remotely through video calls and digital communication. For any physical presence required at the DRT Guwahati (which allows jurisdiction for Tripura) or local courts in Agartala, we coordinate with our network of trusted local associates."
+  },
+  {
+    question: "What should I do if recovery agents are harassing me in Agartala?",
+    answer: "Harassment is illegal. If agents are threatening you, you can report them to the Tripura Police. You can dial 100 or 112 for emergency assistance, or contact the West District Control Room at 0381-2325784. We can also help you file a formal legal notice against the bank and lodge a complaint on the RBI Sachet portal."
+  },
+  {
+    question: "Will settlement affect my CIBIL score?",
+    answer: "Yes, a settlement will reflect as 'Settled' on your credit report, which lowers your score temporarily. However, this is far better than a 'Written Off' or 'Suit Filed' status, which are permanent black marks. After settlement, we provide guidance on how to rebuild your score over 12-24 months using secured credit instruments."
+  },
+  {
+    question: "Can I settle a loan if a case is filed in DRT?",
+    answer: "Yes. Even if a case is pending before the Debt Recovery Tribunal (DRT), you can enter into a compromise settlement. In fact, banks often prefer this to save litigation costs. We can represent you to ensure the settlement terms are fair and that the legal case is withdrawn immediately upon payment."
+  },
+  {
+    question: "What documents are needed to start the process?",
+    answer: "We generally require your latest loan statement, notices sent by the bank, proof of income (or lack thereof), and KYC documents (Aadhar/PAN). If there is a specific reason for default like a medical emergency, medical records will strengthen your case for a waiver."
+  },
+  {
+    question: "Do you handle agricultural loans?",
+    answer: "Tripura has a significant agricultural base. For agricultural loans (KCC), government waiver schemes are the first option. If those don't apply, an OTS is possible. The rules for agricultural debt settlement are slightly different, and we can advise you based on the specific bank's policy."
+  },
+  {
+    question: "How much can I save through settlement?",
+    answer: "The savings depend on the age of the NPA and your financial urgency. Typically, we aim to get a waiver of 100% of the penalties and legal charges, and a significant portion of the interest. In rare cases of extreme hardship, even the principal amount can be negotiated down. Savings can range from 30% to 60% of the total outstanding."
+  }
+];
 
+// Breadcrumb Schema
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -54,16 +75,17 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 4,
       "name": "Tripura",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/Tripura"
+      "item": "https://amalegalsolutions.com/services/loan-settlement/tripura"
     }
   ]
 };
 
+// Article Schema
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Loan Settlement Services in Tripura: Securing the Future of the Seven Sisters",
-  "description": "Comprehensive guide to loan settlement in Tripura. Learn about relief for rubber planters, bamboo artisans, and legal protections under the Tripura Money Lenders Act.",
+  "headline": "Loan Settlement Services in Tripura: Expert Legal Debt Relief",
+  "description": "Struggling with debt in Tripura? Our expert lawyers help you settle personal and business loans, stop agent harassment in Agartala, and save money.",
   "image": "https://amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
@@ -78,76 +100,80 @@ const articleSchema = {
       "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
-  "datePublished": "2023-11-21",
-  "dateModified": "2023-11-21"
+  "datePublished": "2023-11-20",
+  "dateModified": "2025-01-20",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://amalegalsolutions.com/services/loan-settlement/tripura"
+  }
 };
 
-const reviewSchema = {
+// FAQ Schema
+const faqSchema = {
   "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Loan Settlement Services Tripura",
-  "image": "https://amalegalsolutions.com/services/3.png",
-  "description": "Expert legal loan settlement services in Tripura.",
-  "brand": {
-    "@type": "Brand",
-    "name": "AMA Legal Solutions"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "130"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Biplab D."
-      },
-      "reviewBody": "The price of rubber crashed, and I couldn't pay my KCC loan. AMA Legal Solutions helped me settle with the bank for a much lower amount. Very grateful."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Sushmita R."
-      },
-      "reviewBody": "I was harassed by agents for a personal loan. The lawyers stopped the calls immediately and closed my loan through Lok Adalat."
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
     }
-  ]
+  }))
 };
 
-export default function TripuraLoanSettlementPage() {
+export const metadata = {
+  title: "Loan Settlement in Tripura | Debt Relief Lawyers Agartala",
+  description:
+    "Expert loan settlement services in Tripura (Agartala, Udaipur, Dharmanagar). Legally settle loans, stop harassment, and avoid bankruptcy. Free consultation.",
+  keywords: [
+    "loan settlement Tripura",
+    "debt settlement Agartala",
+    "loan settlement lawyer Tripura",
+    "credit card settlement Udaipur",
+    "debt relief services Tripura",
+    "One time settlement SBI Tripura",
+    "remove debt Tripura",
+    "Lok Adalat Agartala loan",
+    "stop bank harassment Tripura"
+  ],
+  alternates: {
+    canonical: 'https://amalegalsolutions.com/services/loan-settlement/tripura',
+  },
+  openGraph: {
+    title: "Loan Settlement in Tripura | Expert Debt Relief",
+    description: "Burdened by debt in Tripura? We negotiate with banks to reduce your dues and stop harassment in Agartala and across the state.",
+    url: "https://amalegalsolutions.com/services/loan-settlement/tripura",
+    type: "website",
+    images: [
+      {
+        url: "/services/3.png",
+        width: 1200,
+        height: 630,
+        alt: "Loan Settlement Services Tripura",
+      },
+    ],
+  },
+};
+
+export default function LoanSettlementTripuraPage() {
   const tocSections = [
-    { id: "introduction", title: "Introduction" },
-    { id: "what-is-settlement", title: "What is Loan Settlement?" },
-    { id: "legal-framework", title: "Legal Framework in Tripura" },
-    { id: "process", title: "Our Process" },
-    { id: "rubber-planters", title: "For Rubber Planters" },
-    { id: "bamboo-industry", title: "For Bamboo Industry" },
-    { id: "tribal-rights", title: "Tribal Land Protection" },
-    { id: "lok-adalat", title: "Lok Adalat Settlement" },
-    { id: "types-of-loans", title: "Types of Loans" },
-    { id: "credit-score", title: "Credit Score Impact" },
-    { id: "common-mistakes", title: "Common Mistakes" },
-    { id: "documentation", title: "Required Documents" },
-    { id: "why-choose-us", title: "Why Choose Us" },
-    { id: "testimonials", title: "Success Stories" },
+    { id: "introduction", title: "Debt Relief in Tripura" },
+    { id: "what-is-settlement", title: "Understanding Settlement" },
+    { id: "tripura-legal-landscape", title: "Tripura Legal Framework" },
+    { id: "lok-adalat-tripura", title: "Lok Adalat & Settlement" },
+    { id: "why-choose-ama", title: "Why Choose AMA" },
+    { id: "settlement-process", title: "Our Process" },
+    { id: "harassment-laws", title: "Stop Harassment" },
+    { id: "documents", title: "Documents Needed" },
+    { id: "city-services", title: "Service Areas" },
     { id: "faqs", title: "FAQs" },
   ];
 
   const breadcrumbItems = [
     { label: "Services", href: "/services" },
     { label: "Loan Settlement", href: "/services/loan-settlement" },
-    { label: "Tripura", href: "/services/loan-settlement/Tripura" },
+    { label: "Tripura", href: "/services/loan-settlement/tripura" },
   ];
 
   return (
@@ -163,9 +189,9 @@ export default function TripuraLoanSettlementPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <Script
-        id="review-schema"
+        id="faq-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       <div className="bg-gray-50 min-h-screen font-sans text-gray-800">
@@ -176,111 +202,153 @@ export default function TripuraLoanSettlementPage() {
             className="absolute inset-0 bg-cover bg-center z-0" 
             style={{ background: "black" }}
           ></div>
-          <div className="relative z-20 container mx-auto px-4 py-24 md:py-32 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight mt-10">
-              Securing the Future of the Seven Sisters: <span className="text-[#D2A02A]">Loan Settlement in Tripura</span>
+          <div className="relative z-20 container mx-auto px-4 py-12 md:py-32 text-center">
+            <h1 className="text-2xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-10">
+              Expert <span className="text-[#D2A02A]">Loan Settlement</span> Services in <br className="hidden md:block"/> Tripura
             </h1>
-            <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-gray-200">
-              Expert legal defense for Rubber Planters, Bamboo Artisans, and Traders. We stop harassment and negotiate fair settlements in Agartala, Udaipur, and across Tripura.
+            <p className="text-sm md:text-2xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
+              From Agartala to Dharmanagar, we help you legally settle your debts, stop harassment, and regain financial freedom.
             </p>
             <Link href="/contact">
-              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg">
-                Get a Free Case Evaluation
+              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg">
+                Get a Free Consultation
               </button>
             </Link>
           </div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-7xl py-8">
+        <div className="container mx-auto px-4 max-w-[1600px] py-8">
           <Breadcrumbs items={breadcrumbItems} />
           
-          <div className="flex flex-col lg:flex-row gap-12">
-            {/* Main Content Area */}
-            <div className="lg:w-3/4">
-              
-              <TableOfContents sections={tocSections} />
+          <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 items-start">
+            {/* Left Sidebar - TOC components */}
+            <div className="hidden lg:block sticky top-24">
+              <TableOfContents sections={tocSections} orientation="vertical" />
+            </div>
 
-              <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm mt-8 space-y-12">
+            {/* Main Content Area */}
+            <div className="min-w-0">
+              <div className="lg:hidden mb-6 sticky top-20 z-10">
+                <TableOfContents sections={tocSections} />
+              </div>
+
+              <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Financial Freedom for Tripura</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Tripura is the rubber capital of the North East and a hub for bamboo craftsmanship. However, market volatility and supply chain issues often push hardworking people into debt.
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Finding Financial Peace in Tripura</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
+                    Tripura is a state of rich heritage and growing opportunities. However, for many individuals and small business owners in Agartala, Udaipur, and other towns, the pressure of mounting debt is a harsh reality. Whether it is a personal loan, credit card debt, or a business loan that has gone bad due to market conditions, financial stress can be overwhelming.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Whether you are a rubber grower in South Tripura facing low yields or a trader in Agartala dealing with business losses, unmanageable debt is a heavy burden.
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
+                    The fear of "recovery agents" showing up at your doorstep or office in Agartala, the constant barrage of threatening calls, and the shame of potential legal action can paralyze you. But you must know that you are not alone, and more importantly, there is a legal solution. **Loan Settlement** is a legitimate banking provision that allows you to clear your debts for a reduced amount.
                   </p>
-                  <p className="text-lg leading-relaxed text-gray-700">
-                    AMA Legal Solutions provides a lifeline. We specialize in negotiating with banks to settle loans legally, protecting your dignity and your assets.
+                  <p className="text-sm md:text-lg leading-relaxed text-gray-700">
+                    AMA Legal Solutions is committed to bringing professional debt relief services to Tripura. We navigate the complex banking regulations and leverage state-specific legal protections to ensure you get a fair deal. We stand between you and the bank, ensuring your rights are protected while we negotiate your freedom from debt.
                   </p>
                 </section>
 
                 {/* What is Loan Settlement */}
                 <section id="what-is-settlement" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">What is Loan Settlement?</h2>
-                  <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
-                    <p className="text-lg text-blue-900 italic">
-                      "Loan settlement is a legal process where you pay a one-time, reduced amount to close your loan account. It is the best option when you cannot afford the full EMI burden due to financial hardship."
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">What is Loan Settlement (OTS)?</h2>
+                  <div className="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 mb-4 md:mb-8 rounded-r-lg">
+                    <p className="text-sm md:text-lg text-blue-900 italic">
+                      "Loan settlement, or One Time Settlement (OTS), is a legal agreement where a borrower repays a portion of the outstanding loan in a lump sum, and the bank agrees to write off the remainder and close the account."
                     </p>
                   </div>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    This process allows you to become debt-free without declaring bankruptcy.
+                    Banks resort to settlement when they realize that recovering the full amount is unlikely or will cost too much in legal fees. If your loan has turned into a Non-Performing Asset (NPA) (i.e., unpaid for 90 days), you become eligible for settlement discussions.
                   </p>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    We assist with:
+                    For example, if you owe ₹5 Lakhs on a credit card but have lost your job, we can present your case to the bank. Instead of running behind you for years, the bank might agree to accept ₹1.5 Lakhs to ₹2 Lakhs to close the file permanently. This saves them time and gives you a fresh start.
                   </p>
-                  <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
-                    <li>KCC & Agricultural Loans (Rubber/Tea)</li>
-                    <li>MSME Loans (Bamboo/Cane industry)</li>
-                    <li>Personal Loans & Credit Cards</li>
-                    <li>Microfinance Group Loans</li>
-                  </ul>
                 </section>
 
-                {/* Legal Framework */}
-                <section id="legal-framework" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Legal Protections in Tripura</h2>
+                {/* Tripura Legal Landscape */}
+                <section id="tripura-legal-landscape" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Legal Framework for Debtors in Tripura</h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    We use state and central laws to defend your rights.
+                    Borrowers in Tripura are safeguarded by a mix of central laws and specific regulations extended to the state.
                   </p>
                   
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Tripura Money Lenders Act, 2009</h3>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Bombay Money-lenders Act (Extended to Tripura)</h3>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    This Act is crucial for protecting borrowers from illegal money lenders. It mandates licensing and caps interest rates. If you are dealing with an unlicensed lender or facing harassment, this Act provides strong legal recourse.
+                    To regulate private money lending and prevent exploitation, provisions of the Bombay Money-lenders Act, 1946 have been extended to Tripura. Additionally, for tribal areas, the **Tripura Tribal Areas Autonomous District Council Money Lending Regulations, 1991** apply. These laws ensure:
                   </p>
+                  <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
+                    <li>Lenders must hold a valid license to operate.</li>
+                    <li>There is a cap on the maximum interest recoverable—often limiting it so the total interest does not exceed the principal amount (Damdupat rule).</li>
+                    <li>Harassment and intimidation for recovery are strictly prohibited offences.</li>
+                  </ul>
 
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">RBI Guidelines on Recovery</h3>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Debt Recovery Tribunal (DRT)</h3>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    The Reserve Bank of India has strict rules against harassment. Recovery agents cannot call at odd hours, use abusive language, or threaten you. We ensure these guidelines are strictly followed.
+                    For bank loans above ₹20 Lakhs, cases fall under the jurisdiction of the **DRT in Guwahati**, which covers Tripura. While this sounds intimidating, the DRT also promotes settlements. We can represent you at the DRT to counter any aggressive moves by the bank and push for a compromise decree that is affordable for you.
                   </p>
+                </section>
 
-                  <div className="grid md:grid-cols-2 gap-6 mb-8">
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                      <h4 className="font-bold text-lg mb-2 text-[#D2A02A]">Tripura SLSA</h4>
-                      <p className="text-gray-600">The State Legal Services Authority is very active in organizing Lok Adalats for bank loan settlements.</p>
+                {/* Lok Adalat */}
+                <section id="lok-adalat-tripura" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Lok Adalat: A Path to Resolution in Tripura</h2>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    The **Tripura State Legal Services Authority** organizes regular Lok Adalats which have been incredibly successful in resolving bank disputes.
+                  </p>
+                  <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">Proven Success in Agartala</h3>
+                    <p className="text-gray-700 mb-4">
+                      In the National Lok Adalats held recently (e.g., September 2024), thousands of bank recovery cases were settled. In one session alone, recovery settlements worth over ₹1.3 Crores were achieved. This proves that banks in Tripura are willing to come to the table and settle.
+                    </p>
+                    <ul className="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
+                      <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> <strong>Speed:</strong> Disputes are resolved in a single day.</li>
+                      <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> <strong>Finality:</strong> The award is binding and ends the dispute forever.</li>
+                      <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> <strong>Flexibility:</strong> The focus is on compromise, not punishment.</li>
+                    </ul>
+                  </div>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    We strongly recommend aiming for a Lok Adalat settlement. Our lawyers can accompany you (virtually or through local associates) to ensure you don't agree to terms that are too harsh.
+                  </p>
+                </section>
+
+                {/* Why Choose AMA */}
+                <section id="why-choose-ama" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose AMA Legal Solutions?</h2>
+                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
+                    We bring top-tier legal expertise to your doorstep in Tripura, ensuring you don't face the banks alone.
+                  </p>
+                  
+                  <div className="grid md:grid-cols-3 gap-6 text-center">
+                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
+                      <div className="text-4xl mb-4">🛡️</div>
+                      <h3 className="font-bold text-xl mb-2">Anti-Harassment</h3>
+                      <p className="text-gray-600">We take immediate action against harassing calls, using police and cyber crime portals.</p>
                     </div>
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                      <h4 className="font-bold text-lg mb-2 text-[#D2A02A]">Tribal Protections</h4>
-                      <p className="text-gray-600">Special provisions exist to protect land in Tribal Areas Autonomous District Council (TTAADC) regions.</p>
+                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
+                      <div className="text-4xl mb-4">💼</div>
+                      <h3 className="font-bold text-xl mb-2">Expert Negotiation</h3>
+                      <p className="text-gray-600">We know the "bottom line" for every major bank (SBI, HDFC, Bandhan) and negotiate the maximum discount.</p>
+                    </div>
+                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
+                      <div className="text-4xl mb-4">🔒</div>
+                      <h3 className="font-bold text-xl mb-2">Total Privacy</h3>
+                      <p className="text-gray-600">Your financial struggles are personal. We ensure complete confidentiality throughout the process.</p>
                     </div>
                   </div>
                 </section>
 
-                {/* Process */}
-                <section id="process" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Settlement Process</h2>
+{/* Process Section */}
+                <section id="settlement-process" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Our 4-Step Settlement Process</h2>
                   <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                    We handle everything from start to finish.
+                    We have streamlined the path to becoming debt-free into four simple steps.
                   </p>
                   
                   <div className="space-y-8">
                     <div className="flex flex-col md:flex-row gap-6 items-start">
                       <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">1</div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Case Analysis</h3>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Consultation & Strategy</h3>
                         <p className="text-gray-700 leading-relaxed">
-                          We analyze your loan details, income loss proof (e.g., rubber price impact), and legal standing.
+                          We analyze your finances. Whether you are a government employee, a trader in Agartala, or a farmer, we assess which settlement scheme fits you best. We check for any violations by the bank in their recovery process.
                         </p>
                       </div>
                     </div>
@@ -288,9 +356,9 @@ export default function TripuraLoanSettlementPage() {
                     <div className="flex flex-col md:flex-row gap-6 items-start">
                       <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">2</div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Stop Harassment</h3>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Sending Legal Representation</h3>
                         <p className="text-gray-700 leading-relaxed">
-                          We send a legal notice to the bank and agents, directing all future communication to us. This stops the calls and visits.
+                          We issue a formal letter to your creditors stating that you have legal counsel. This usually triggers a "Stop Harassment" protocol at the bank's end, as they know they can no longer use intimidation tactics.
                         </p>
                       </div>
                     </div>
@@ -298,9 +366,9 @@ export default function TripuraLoanSettlementPage() {
                     <div className="flex flex-col md:flex-row gap-6 items-start">
                       <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">3</div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Negotiation</h3>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Hard Negotiation</h3>
                         <p className="text-gray-700 leading-relaxed">
-                          We negotiate hard with the bank for a maximum waiver on interest and penalties, aiming for an affordable OTS amount.
+                          Our experts engage with the bank's stress asset team. We fight for waivers on interest, penal charges, and legal fees. We present your hardship evidence to justify a lower principal repayment.
                         </p>
                       </div>
                     </div>
@@ -308,261 +376,146 @@ export default function TripuraLoanSettlementPage() {
                     <div className="flex flex-col md:flex-row gap-6 items-start">
                       <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">4</div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Closure</h3>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Settlement & Closure</h3>
                         <p className="text-gray-700 leading-relaxed">
-                          You pay the agreed amount, and we ensure you receive the No Dues Certificate from the bank.
+                          Once a fair amount is agreed upon, we review the draft settlement letter. After you pay, we ensure the bank issues a **No Dues Certificate** and withdraws any cases filed against you (including Section 138 cheque bounce cases).
                         </p>
                       </div>
                     </div>
                   </div>
                 </section>
 
-                {/* Rubber Planters */}
-                <section id="rubber-planters" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">For Rubber Planters</h2>
+                {/* Harassment Laws & Police Helpline */}
+                <section id="harassment-laws" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Fighting Harassment in Tripura</h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Rubber is the backbone of Tripura's economy, but price crashes can be devastating.
+                    No bank or agent has the right to abuse you. If they cross the line, use these resources.
                   </p>
-                  <div className="bg-green-50 border-l-4 border-green-500 p-6 mb-6">
-                    <p className="text-lg text-green-900">
-                      <strong>High Indebtedness:</strong> Studies show over 60% of rubber farming households in Tripura carry debt. We help you restructure or settle these agricultural loans, arguing that market forces beyond your control caused the default.
-                    </p>
+                  <div className="grid md:grid-cols-2 gap-6 mb-8">
+                    <div className="bg-red-50 p-6 rounded-xl border border-red-100">
+                      <h4 className="font-bold text-lg mb-2 text-red-700">Tripura Police Helplines</h4>
+                      <p className="text-gray-700 mb-2"><strong>Emergency:</strong> Dial 112 or 100.</p>
+                      <p className="text-gray-700 mb-2"><strong>Agartala Control Room:</strong> 0381-2310177 / 9436544407.</p>
+                      <p className="text-gray-700"><strong>West District Control:</strong> 0381-2325784.</p>
+                    </div>
+                    <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                      <h4 className="font-bold text-lg mb-2 text-blue-700">Cyber Crime & RBI</h4>
+                      <p className="text-gray-700 mb-2"><strong>Cyber Crime Helpline:</strong> 1930 (for online threats/abuse).</p>
+                      <p className="text-gray-700"><strong>Email:</strong> spcybercrime@tripurapolice.nic.in. You can also file a complaint on the RBI's **Sachet** portal against unregistered lenders.</p>
+                    </div>
+                  </div>
+                  <p className="text-lg leading-relaxed text-gray-700">
+                    <strong>Remember:</strong> Harassment is a crime. Recording calls and saving messages can serve as powerful evidence which we can use to file an FIR or a complaint with the Banking Ombudsman.
+                  </p>
+                </section>
+
+                {/* Documents Required */}
+                <section id="documents" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Documents for OTS</h2>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    To process your settlement request swiftly, please keep these ready:
+                  </p>
+                  <ul className="grid md:grid-cols-2 gap-4">
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> KYCs (Aadhar, PAN, Voter ID)
+                    </li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Loan Sanction Letter
+                    </li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Latest Statement of Account
+                    </li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Proof of Income Loss (Termination letter, Medical bills)
+                    </li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Cheque Bounce Notices (if any)
+                    </li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Bank Correspondence Records
+                    </li>
+                  </ul>
+                </section>
+
+                {/* Service Areas */}
+                <section id="city-services" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Serving All Districts of Tripura</h2>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    We offer our legal services digitally across the entire state.
+                  </p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Agartala</h4>
+                      <p className="text-xs text-gray-500">Capital City</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Udaipur</h4>
+                      <p className="text-xs text-gray-500">Gomati District</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Dharmanagar</h4>
+                      <p className="text-xs text-gray-500">North Tripura</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Kailashahar</h4>
+                      <p className="text-xs text-gray-500">Unakoti</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Belonia</h4>
+                      <p className="text-xs text-gray-500">South Tripura</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Khowai</h4>
+                      <p className="text-xs text-gray-500">Khowai District</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Ambassa</h4>
+                      <p className="text-xs text-gray-500">Dhalai District</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Bishalgarh</h4>
+                      <p className="text-xs text-gray-500">Sepahijala</p>
+                    </div>
                   </div>
                 </section>
 
-                {/* Bamboo Industry */}
-                <section id="bamboo-industry" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">For Bamboo & Cane Industry</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Artisans and small businesses in the bamboo sector often face supply chain bottlenecks and delayed payments.
-                  </p>
-                  <div className="bg-yellow-50 p-8 rounded-xl border border-yellow-100 mb-6">
-                    <h3 className="text-xl font-bold text-yellow-900 mb-4">Our Support</h3>
-                    <ul className="list-disc pl-6 space-y-3 text-yellow-800">
-                      <li><strong>Mudra Loan Settlement:</strong> Relief for small business loans.</li>
-                      <li><strong>Working Capital Relief:</strong> Settling cash credit accounts that have turned NPA.</li>
-                      <li><strong>Legal Defense:</strong> Protecting your workshop and tools from seizure.</li>
-                    </ul>
-                  </div>
-                </section>
-
-                {/* Tribal Rights */}
-                <section id="tribal-rights" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Tribal Land Protection</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    If you belong to a Scheduled Tribe and live in a TTAADC area, your land has special protection.
-                  </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    <strong>SARFAESI Limitations:</strong> While banks can technically proceed under SARFAESI, selling tribal land to non-tribals is legally restricted. We use this complexity to force banks to accept a settlement instead of pursuing a futile auction process.
-                  </p>
-                </section>
-
-                {/* Lok Adalat */}
-                <section id="lok-adalat" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Lok Adalat: A Quick Solution</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    The Tripura SLSA organizes National Lok Adalats regularly, settling over 5,000 bank cases annually.
-                  </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    <strong>Benefits:</strong>
-                    <br />
-                    - No court fees.
-                    <br />
-                    - Immediate, binding decree.
-                    <br />
-                    - Amicable atmosphere.
-                    <br />
-                    We represent you in Lok Adalat to ensure the bank gives you the best possible deal.
-                  </p>
-                </section>
-
-                {/* Types of Loans */}
-                <section id="types-of-loans" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Loans We Settle</h2>
-                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                    We cover a wide spectrum of debt.
-                  </p>
-                  
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Rubber & Tea Loans</h3>
-                      <p className="text-gray-700">
-                        KCC and term loans for plantation development.
-                      </p>
-                    </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Microfinance Loans</h3>
-                      <p className="text-gray-700">
-                        Group loans (JLG/SHG) from MFIs and small banks.
-                      </p>
-                    </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Business Loans</h3>
-                      <p className="text-gray-700">
-                        For traders, shopkeepers, and small manufacturers.
-                      </p>
-                    </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Personal Debt</h3>
-                      <p className="text-gray-700">
-                        Credit cards and unsecured personal loans.
-                      </p>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Credit Score Impact */}
-                <section id="credit-score" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Impact on Credit Score</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Settlement is a strategic step to regain financial health.
-                  </p>
-                  <div className="bg-gray-50 border-l-4 border-gray-500 p-6 mb-6">
-                    <p className="text-lg text-gray-700">
-                      While your score will dip, clearing the NPA status is more important. Once the loan is settled, you can start rebuilding your score with secured credit cards and timely payments.
-                    </p>
-                  </div>
-                </section>
-
-                {/* Common Mistakes */}
-                <section id="common-mistakes" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Mistakes to Avoid</h2>
+                {/* FAQ Section */}
+                <section id="faqs" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
                   <div className="space-y-6">
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold">✕</div>
-                      <div>
-                        <h3 className="font-bold text-lg text-gray-900">Borrowing to Pay Debt</h3>
-                        <p className="text-gray-700">Taking new loans from money lenders to pay bank EMIs is a debt trap. Avoid it.</p>
+                    {faqs.map((faq, index) => (
+                      <div key={index} className="border-b border-gray-200 pb-6 last:border-0">
+                        <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-start">
+                          <span className="text-[#D2A02A] mr-3">Q.</span>
+                          {faq.question}
+                        </h3>
+                        <p className="text-gray-700 leading-relaxed pl-8">
+                          {faq.answer}
+                        </p>
                       </div>
-                    </div>
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold">✕</div>
-                      <div>
-                        <h3 className="font-bold text-lg text-gray-900">Ignoring Notices</h3>
-                        <p className="text-gray-700">Ignoring legal notices can lead to court orders against you. Respond immediately through a lawyer.</p>
-                      </div>
-                    </div>
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold">✕</div>
-                      <div>
-                        <h3 className="font-bold text-lg text-gray-900">Trusting Agents</h3>
-                        <p className="text-gray-700">Recovery agents are paid to collect, not to help you. Do not trust their verbal promises.</p>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </section>
-
-                {/* Documentation */}
-                <section id="documentation" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Required Documents</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    To start your settlement process, we will need:
-                  </p>
-                  <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                    <div className="grid md:grid-cols-2 gap-8">
-                      <div>
-                        <h3 className="font-bold text-xl text-[#D2A02A] mb-4">Identity & Status</h3>
-                        <ul className="space-y-3 text-gray-700">
-                          <li className="flex items-center"><span className="mr-2">✓</span> PAN Card & Aadhar Card</li>
-                          <li className="flex items-center"><span className="mr-2">✓</span> ST Certificate (if applicable)</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-xl text-[#D2A02A] mb-4">Loan Documents</h3>
-                        <ul className="space-y-3 text-gray-700">
-                          <li className="flex items-center"><span className="mr-2">✓</span> Loan Account Statement</li>
-                          <li className="flex items-center"><span className="mr-2">✓</span> Legal Notices Received</li>
-                          <li className="flex items-center"><span className="mr-2">✓</span> Proof of Income Loss</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Why Choose Us */}
-                <section id="why-choose-us" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose AMA Legal Solutions?</h2>
-                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                    We are your trusted partners in debt relief.
-                  </p>
-                  
-                  <div className="grid md:grid-cols-3 gap-6 text-center">
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">⚖️</div>
-                      <h3 className="font-bold text-xl mb-2">Local Expertise</h3>
-                      <p className="text-gray-600">Deep knowledge of Tripura's laws and the TTAADC regulations.</p>
-                    </div>
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">🛡️</div>
-                      <h3 className="font-bold text-xl mb-2">Harassment Protection</h3>
-                      <p className="text-gray-600">We stand between you and the recovery agents.</p>
-                    </div>
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">🤝</div>
-                      <h3 className="font-bold text-xl mb-2">Proven Results</h3>
-                      <p className="text-gray-600">Hundreds of successful settlements for clients across the North East.</p>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Testimonials */}
-                <section id="testimonials" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Success Stories from Tripura</h2>
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
-                      <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
-                      <p className="text-gray-700 italic mb-4 relative z-10">
-                        "The price of rubber crashed, and I couldn't pay my KCC loan. AMA Legal Solutions helped me settle with the bank for a much lower amount. Very grateful."
-                      </p>
-                      <div className="flex items-center">
-                        <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">B</div>
-                        <div>
-                          <p className="font-bold text-gray-900">Biplab D.</p>
-                          <p className="text-sm text-gray-500">Udaipur</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
-                      <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
-                      <p className="text-gray-700 italic mb-4 relative z-10">
-                        "I was harassed by agents for a personal loan. The lawyers stopped the calls immediately and closed my loan through Lok Adalat."
-                      </p>
-                      <div className="flex items-center">
-                        <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">S</div>
-                        <div>
-                          <p className="font-bold text-gray-900">Sushmita R.</p>
-                          <p className="text-sm text-gray-500">Agartala</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-                {/* FAQs */}
-                <FaqSection />
 
                 {/* Final CTA */}
-                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">
+                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-xl md:rounded-3xl p-6 md:p-16 text-center text-white relative overflow-hidden">
                   <div className="relative z-10">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">Get Legal Help Today</h2>
-                    <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
-                      Don't let debt control your life. Our expert lawyers in Tripura are ready to fight for you.
+                    <h2 className="text-xl md:text-5xl font-bold mb-4 md:mb-6">Start Your Journey to Debt Freedom</h2>
+                    <p className="text-sm md:text-xl opacity-90 mb-6 md:mb-10 max-w-2xl mx-auto">
+                      Don't let debt control your life in Tripura. Our experts are ready to fight for your financial future.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
                       <Link href="/contact">
-                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg w-full sm:w-auto">
-                          Book Your Consultation
+                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
+                          Book Consultation
                         </button>
                       </Link>
                       <a href="tel:+918700343611">
-                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-4 px-12 rounded-full transition-all text-lg w-full sm:w-auto">
+                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all text-sm md:text-lg w-full sm:w-auto">
                           Call: +91-8700343611
                         </button>
                       </a>
                     </div>
-                    <p className="mt-8 text-sm opacity-70">
-                      Confidential • Legal • Effective
-                    </p>
                   </div>
                 </section>
 
@@ -570,13 +523,12 @@ export default function TripuraLoanSettlementPage() {
             </div>
 
             {/* Sidebar */}
-            <div className="lg:w-1/4">
-              <div className="sticky top-24 space-y-8">
+             <div className="hidden lg:block space-y-8 sticky top-24">
                 {/* Contact Card */}
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">Need Urgent Help?</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Need Help in Tripura?</h3>
                   <p className="text-gray-600 mb-6 text-sm">
-                    Speak to our senior loan settlement lawyers in Tripura today.
+                    Speak to our loan settlement experts serving Agartala and Tripura.
                   </p>
                   <a 
                     href="tel:+918700343611" 
@@ -596,28 +548,102 @@ export default function TripuraLoanSettlementPage() {
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                   <h3 className="text-lg font-bold text-gray-900 mb-4">Related Services</h3>
                   <ul className="space-y-3 text-sm">
-                    <li>
-                      <Link href="/services/banking-and-finance" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Banking & Finance
+                   <li>
+                      <Link href="/services/debt-consolidation" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">›</span> Debt Consolidation
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/civil" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Civil Litigation
+                      <Link href="/services/cheque-bounce-lawyer" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">›</span> Cheque Bounce Lawyer
                       </Link>
                     </li>
-                    <li>
-                      <Link href="/services/arbitration" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Arbitration
+                     <li>
+                      <Link href="/services/legal-notice" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">›</span> Legal Notice
                       </Link>
                     </li>
-                    
                   </ul>
                 </div>
               </div>
-            </div>
           </div>
-          
+
+          {/* Banks Grid */}
+          <div className="mt-16">
+            <section className="my-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+                We settle loans from the following banks
+              </h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+                <Link 
+                  href="/services/loan-settlement/sbi-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">SBI</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/hdfc-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">HDFC</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/icici-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">ICICI</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/kotak-mahindra"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Kotak Mahindra</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/idfc-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">IDFC</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/yes-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Yes Bank</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/bajaj-finserv"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Bajaj Finserv</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/axis-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Axis Bank</span>
+                </Link>
+                  <Link 
+                  href="/services/loan-settlement/bank-of-baroda"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Bank of Baroda</span>
+                </Link>
+                  <Link 
+                  href="/services/loan-settlement/tripura-gramin-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Tripura Gramin Bank</span>
+                </Link>
+              </div>
+              <div className="mt-8 text-center">
+                <p className="text-lg text-gray-700">
+                  We also handle settlement for regional institutions like Tripura State Co-operative Bank.
+                </p>
+              </div>
+            </section>
+          </div>
+
           <div className="mt-16">
             <GenericStatesGrid 
               serviceName="Loan Settlement" 
@@ -648,13 +674,14 @@ export default function TripuraLoanSettlementPage() {
                 "Sikkim": "Sikkim",
                 "Tamil Nadu": "tamil-nadu",
                 "Telangana": "Telangana",
-                "Tripura": "Tripura",
+                "Tripura": "tripura",
                 "Uttar Pradesh": "UttarPradesh",
                 "Uttarakhand": "Uttrakhand",
                 "West Bengal": "west-bengal"
               }}
             />
           </div>
+          
         </div>
       </div>
     </>
