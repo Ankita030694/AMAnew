@@ -3,31 +3,52 @@ import Script from "next/script";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import FaqSection from "./FaqSection";
 
-export const metadata = {
-  title: "Loan Settlement in Odisha | Debt Relief Lawyers Bhubaneswar, Cuttack, Rourkela",
-  description:
-    "Struggling with debt in Odisha? AMA Legal Solutions offers expert loan settlement. We protect Pensioners (HC Ruling), help Cyclone-affected Farmers, and stop harassment.",
-  alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/Odisha',
+// FAQ data for rendering and Schema
+const faqs = [
+  {
+    question: "Is loan settlement legal in Odisha?",
+    answer: "Yes, loan settlement is a fully legal financial process in Odisha. It is governed by Reserve Bank of India (RBI) guidelines and supported by state laws like the Odisha Money Lenders Act, 1939. The Odisha State Legal Services Authority (OSLSA) also actively facilitates settlements through Lok Adalats, making it a recognized method for debt resolution."
   },
-  openGraph: {
-    title: "Loan Settlement in Odisha | Debt Relief Lawyers Bhubaneswar, Cuttack, Rourkela",
-    description: "Struggling with debt in Odisha? AMA Legal Solutions offers expert loan settlement. We protect Pensioners (HC Ruling), help Cyclone-affected Farmers, and stop harassment.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/Odisha",
-    type: "website",
-    images: [
-      {
-        url: "/services/3.png",
-        width: 1200,
-        height: 630,
-        alt: "Loan Settlement Services Odisha",
-      },
-    ],
+  {
+    question: "How does the Odisha Money Lenders Act help borrowers?",
+    answer: "The Odisha Money Lenders Act, 1939, is a key protection for borrowers. It mandates that lenders must be registered and caps interest rates (typically 9% for secured and 12% for unsecured loans). Crucially, it empowers courts to reopen transactions where interest is excessive and enforces the 'Damdupat' rule, ensuring you don't pay interest exceeding the principal amount."
   },
-};
+  {
+    question: "I live in Bhubaneswar. Can I settle my personal loan?",
+    answer: "Absolutely. Whether you are in Bhubaneswar, Cuttack, or Rourkela, if you are facing financial hardship, you can settle your personal loan. We help you negotiate with banks to waive off penal charges and a portion of the interest, allowing you to close the loan with a single manageable payment."
+  },
+  {
+    question: "Does AMA Legal Solutions have an office in Cuttack?",
+    answer: "AMA Legal Solutions is a digital-first Pan-India firm. We handle all negotiations, documentation, and legal notices remotely from our central office, serving clients across Odisha including Cuttack. For any physical legal representation required in the Odisha High Court or local tribunals, we collaborate with our network of experienced local lawyers."
+  },
+  {
+    question: "What is the Anti-Extortion Helpline in Odisha?",
+    answer: "The Commissionerate Police of Bhubaneswar-Cuttack has launched a dedicated Anti-Extortion Helpline (99389100) to tackle harassment. If recovery agents are threatening you or demanding illegal amounts, you can report them immediately. We also help you file formal complaints to stop such harassment."
+  },
+  {
+    question: "Can I settle a loan if the bank has filed a SARFAESI notice?",
+    answer: "Yes, receiving a SARFAESI notice does not mean the end of the road. You can still initiate a One Time Settlement (OTS). In fact, banks often prefer OTS to save the time and cost of auctioning property. We can represent you to stay the proceedings and negotiate a settlement before your property is at risk."
+  },
+  {
+    question: "Will settlement ruin my CIBIL score?",
+    answer: "Settling a loan will mark your account as 'Settled' rather than 'Closed' in your credit report, which does impact your score. However, this is a temporary setback and far better than a 'Write-off' or legal default. We provide a post-settlement credit rebuilding guide to help you improve your score over time."
+  },
+  {
+    question: "How effective are Lok Adalats in Odisha for bank loans?",
+    answer: "Extremely effective. Recent National Lok Adalats in Odisha have settled thousands of bank recovery cases, with settlement amounts running into crores. For example, in a recent session in Khordha district, over ₹23 crore was realized through settlements. It is a fast, cost-effective, and binding way to resolve your debt."
+  },
+  {
+    question: "Do you handle agricultural loans for farmers in Odisha?",
+    answer: "Yes, we understand the importance of agriculture in Odisha. For Kisan Credit Card (KCC) loans or tractor loans, specific relief schemes and OTS policies apply. We can guide farmers on how to avail these benefits and negotiate with banks like Odisha Gramya Bank for a fair settlement."
+  },
+  {
+    question: "What documents do I need to start the process?",
+    answer: "To assess your case, we need your loan sanction letter, the latest statement of account, any notices received from the bank (like 138 or SARFAESI), and your KYC documents (Aadhar/PAN). Proof of your financial hardship (like termination letter or medical records) is also vital for a good negotiation."
+  }
+];
 
+// Breadcrumb Schema
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -54,16 +75,17 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 4,
       "name": "Odisha",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/Odisha"
+      "item": "https://amalegalsolutions.com/services/loan-settlement/odisha"
     }
   ]
 };
 
+// Article Schema
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Loan Settlement Services in Odisha: Resilience Against Debt",
-  "description": "Comprehensive guide to loan settlement in Odisha. Learn how to legally settle loans, protect pension funds under HC rulings, and resolve cyclone/mining debt.",
+  "headline": "Loan Settlement Services in Odisha: Expert Debt Relief",
+  "description": "Struggling with debt in Odisha? Our expert lawyers help you settle loans, stop harassment in Bhubaneswar & Cuttack, and save up to 50% on dues.",
   "image": "https://amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
@@ -78,75 +100,80 @@ const articleSchema = {
       "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
-  "datePublished": "2023-11-21",
-  "dateModified": "2023-11-21"
+  "datePublished": "2023-11-20",
+  "dateModified": "2025-01-20",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://amalegalsolutions.com/services/loan-settlement/odisha"
+  }
 };
 
-const reviewSchema = {
+// FAQ Schema
+const faqSchema = {
   "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Loan Settlement Services Odisha",
-  "image": "https://amalegalsolutions.com/services/3.png",
-  "description": "Expert legal loan settlement services in Odisha.",
-  "brand": {
-    "@type": "Brand",
-    "name": "AMA Legal Solutions"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "380"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Bimal P."
-      },
-      "reviewBody": "I am a retired teacher in Cuttack. The bank started deducting EMI from my pension for a loan I guaranteed. AMA lawyers cited the High Court judgment and stopped the deduction immediately. They are lifesavers."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Sanjukta D."
-      },
-      "reviewBody": "Our SHG in Puri was unable to pay due to Cyclone Fani losses. The bank was harassing us. AMA Legal Solutions helped us restructure the loan and get a waiver on interest."
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
     }
-  ]
+  }))
 };
 
-export default function OdishaLoanSettlementPage() {
+export const metadata = {
+  title: "Loan Settlement in Odisha | Debt Relief Lawyers Bhubaneswar",
+  description:
+    "Expert loan settlement in Odisha (Bhubaneswar, Cuttack). Settle personal & business loans legally. Stop police harassment & credit card debt. Free Consultation.",
+  keywords: [
+    "loan settlement Odisha",
+    "debt settlement Bhubaneswar",
+    "loan settlement lawyer Cuttack",
+    "credit card settlement Rourkela",
+    "debt relief services Odisha",
+    "One time settlement SBI Odisha",
+    "remove debt Odisha",
+    "Lok Adalat Bhubaneswar loan",
+    "Odisha Money Lenders Act lawyer"
+  ],
+  alternates: {
+    canonical: 'https://amalegalsolutions.com/services/loan-settlement/odisha',
+  },
+  openGraph: {
+    title: "Loan Settlement in Odisha | Expert Debt Relief",
+    description: "Burdened by debt in Odisha? We negotiate with banks to reduce your dues and stop harassment in Bhubaneswar, Cuttack, and across the state.",
+    url: "https://amalegalsolutions.com/services/loan-settlement/odisha",
+    type: "website",
+    images: [
+      {
+        url: "/services/3.png",
+        width: 1200,
+        height: 630,
+        alt: "Loan Settlement Services Odisha",
+      },
+    ],
+  },
+};
+
+export default function LoanSettlementOdishaPage() {
   const tocSections = [
-    { id: "introduction", title: "Introduction" },
-    { id: "what-is-settlement", title: "What is Loan Settlement?" },
-    { id: "legal-framework", title: "Legal Framework in Odisha" },
-    { id: "process", title: "Our Process" },
-    { id: "mining-sector", title: "For Mining Workers" },
-    { id: "agriculture-sector", title: "For Farmers & SHGs" },
-    { id: "lok-adalat", title: "Lok Adalat Settlement" },
-    { id: "types-of-loans", title: "Types of Loans" },
-    { id: "credit-score", title: "Credit Score Impact" },
-    { id: "common-mistakes", title: "Common Mistakes" },
-    { id: "documentation", title: "Required Documents" },
-    { id: "why-choose-us", title: "Why Choose Us" },
-    { id: "testimonials", title: "Success Stories" },
+    { id: "introduction", title: "Debt Relief in Odisha" },
+    { id: "what-is-settlement", title: "Understanding Settlement" },
+    { id: "odisha-legal-framework", title: "Odisha Legal Laws" },
+    { id: "lok-adalat-odisha", title: "Lok Adalat & Success" },
+    { id: "why-choose-ama", title: "Why Choose AMA" },
+    { id: "settlement-process", title: "Our Process" },
+    { id: "harassment-laws", title: "Stop Harassment" },
+    { id: "documents", title: "Documents Needed" },
+    { id: "city-services", title: "Service Areas" },
     { id: "faqs", title: "FAQs" },
   ];
 
   const breadcrumbItems = [
     { label: "Services", href: "/services" },
     { label: "Loan Settlement", href: "/services/loan-settlement" },
-    { label: "Odisha", href: "/services/loan-settlement/Odisha" },
+    { label: "Odisha", href: "/services/loan-settlement/odisha" },
   ];
 
   return (
@@ -162,9 +189,9 @@ export default function OdishaLoanSettlementPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <Script
-        id="review-schema"
+        id="faq-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       <div className="bg-gray-50 min-h-screen font-sans text-gray-800">
@@ -175,111 +202,153 @@ export default function OdishaLoanSettlementPage() {
             className="absolute inset-0 bg-cover bg-center z-0" 
             style={{ background: "black" }}
           ></div>
-          <div className="relative z-20 container mx-auto px-4 py-24 md:py-32 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight mt-10">
-              Resilience Against Debt: <span className="text-[#D2A02A]">Loan Settlement in Odisha</span>
+          <div className="relative z-20 container mx-auto px-4 py-12 md:py-32 text-center">
+            <h1 className="text-2xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-10">
+              Expert <span className="text-[#D2A02A]">Loan Settlement</span> Services in <br className="hidden md:block"/> Odisha
             </h1>
-            <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-gray-200">
-              Expert legal defense for Pensioners, Farmers, and Mining Workers. We protect your rights under the Odisha Money Lenders Act and High Court rulings in Bhubaneswar, Cuttack, and Rourkela.
+            <p className="text-sm md:text-2xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
+              From Bhubaneswar to Rourkela, we help you legally settle your debts, stop agent harassment, and rebuild your financial dignity.
             </p>
             <Link href="/contact">
-              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg">
-                Get a Free Case Evaluation
+              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg">
+                Get a Free Consultation
               </button>
             </Link>
           </div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-7xl py-8">
+        <div className="container mx-auto px-4 max-w-[1600px] py-8">
           <Breadcrumbs items={breadcrumbItems} />
           
-          <div className="flex flex-col lg:flex-row gap-12">
-            {/* Main Content Area */}
-            <div className="lg:w-3/4">
-              
-              <TableOfContents sections={tocSections} />
+          <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 items-start">
+            {/* Left Sidebar - TOC components */}
+            <div className="hidden lg:block sticky top-24">
+              <TableOfContents sections={tocSections} orientation="vertical" />
+            </div>
 
-              <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm mt-8 space-y-12">
+            {/* Main Content Area */}
+            <div className="min-w-0">
+              <div className="lg:hidden mb-6 sticky top-20 z-10">
+                <TableOfContents sections={tocSections} />
+              </div>
+
+              <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Rebuilding Lives in the Land of Jagannath</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Odisha is a land of resilience. From the <strong>coastal belts of Puri and Balasore</strong> facing frequent cyclones to the <strong>mineral-rich districts of Keonjhar and Sundargarh</strong>, the people of Odisha face unique challenges.
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Finding Financial Freedom in Odisha</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
+                    Odisha is witnessing rapid economic growth, from the IT hubs of Bhubaneswar to the industrial belts of Angul and Jharsuguda. However, financial instability can strike anyone. Whether it is a business affected by cyclones, a personal medical emergency, or job loss, debt can pile up quickly.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Financial distress here often stems from natural calamities or industrial displacement. But debt should not cost you your dignity or your livelihood. The law provides strong protections, especially for pensioners and farmers.
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
+                    If you are dealing with aggressive recovery agents or the fear of a legal notice in Cuttack or Puri, you need to know your rights. Using the **Odisha Money Lenders Act** and other legal provisions, you can protect yourself from exploitation. **Loan Settlement** is a dignified, legal way to exit the debt trap without filing for bankruptcy.
                   </p>
-                  <p className="text-lg leading-relaxed text-gray-700">
-                    AMA Legal Solutions stands with the people of Odisha. We help you navigate the legal system, including the <strong>Odisha Money Lenders Act</strong> and <strong>High Court judgments</strong>, to settle your debts and regain your peace of mind.
+                  <p className="text-sm md:text-lg leading-relaxed text-gray-700">
+                    AMA Legal Solutions is here to stand by you. We deal with banks daily, understanding their internal policies to negotiate a settlement that you can actually afford, ensuring you can live debt-free in Odisha.
                   </p>
                 </section>
 
                 {/* What is Loan Settlement */}
                 <section id="what-is-settlement" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">What is Loan Settlement?</h2>
-                  <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
-                    <p className="text-lg text-blue-900 italic">
-                      "Loan settlement, or One Time Settlement (OTS), is a legal negotiation where the bank agrees to accept a reduced lump sum amount to close a loan account that has become a Non-Performing Asset (NPA)."
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">What is Loan Settlement (OTS)?</h2>
+                  <div className="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 mb-4 md:mb-8 rounded-r-lg">
+                    <p className="text-sm md:text-lg text-blue-900 italic">
+                      "Loan settlement, or One Time Settlement (OTS), is a legal agreement where the bank agrees to accept a reduced payment—often significantly lower than the total dues—to close a loan account permanently."
                     </p>
                   </div>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    For a cyclone-affected farmer, this could mean settling a KCC loan by paying only a portion of the principal, with interest waived off due to 'Force Majeure' conditions.
+                    This is not charity; it is a business decision for banks to clear their books of Non-Performing Assets (NPAs). If you have a genuine valid reason for default, banks are willing to negotiate.
                   </p>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    We assist with:
+                    For instance, if you have a credit card debt of ₹3 Lakhs that has ballooned to ₹6 Lakhs due to interest, we can step in. We can negotiate to waive the inflated interest and penalties, potentially settling the account for ₹2-3 Lakhs.
                   </p>
-                  <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
-                    <li>Pensioner & Personal Loans</li>
-                    <li>Mining & Industrial Worker Loans</li>
-                    <li>Agricultural & KCC Loans</li>
-                    <li>Mission Shakti SHG Loans</li>
-                  </ul>
                 </section>
 
-                {/* Legal Framework */}
-                <section id="legal-framework" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Legal Protections in Odisha</h2>
+                {/* Odisha Legal Framework */}
+                <section id="odisha-legal-framework" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Legal Protections for Borrowers in Odisha</h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Odisha has specific laws and court rulings that protect borrowers.
+                    The state of Odisha has robust laws to protect residents from predatory lending and harassment.
                   </p>
                   
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Pension Protection (Orissa High Court)</h3>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    In the landmark case of <strong>Bharat Chandra Mallick v. SBI</strong>, the Orissa High Court ruled that banks <strong>cannot unilaterally deduct money from a pension account</strong> without due process. Your pension is a protected asset for your livelihood. If a bank is deducting your pension for a loan (even if you are a guarantor), we can legally stop it.
-                  </p>
-
                   <h3 className="text-2xl font-semibold text-gray-900 mb-4">Odisha Money Lenders Act, 1939</h3>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    This Act strictly regulates private money lending. It caps interest rates at <strong>9% for secured loans</strong> and <strong>12% for unsecured loans</strong>. Any private lender charging exorbitant interest or operating without a license is acting illegally, and such debts may be unenforceable.
+                    This Act is a shield against unfair practices. Key benefits include:
                   </p>
+                  <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
+                    <li><strong>Interest Cap:</strong> It strictly regulates interest rates, typically capping them (e.g., 9% secured, 12% unsecured) to prevent usury.</li>
+                    <li><strong>Damdupat Rule:</strong> It enforces the principle that total interest recoverable cannot exceed the principal amount at any given time.</li>
+                    <li><strong>Registration:</strong> It makes it mandatory for money lenders to be registered, making loans from unlicensed lenders legally potentially unenforceable.</li>
+                  </ul>
 
-                  <div className="grid md:grid-cols-2 gap-6 mb-8">
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                      <h4 className="font-bold text-lg mb-2 text-[#D2A02A]">OSLSA Lok Adalats</h4>
-                      <p className="text-gray-600">The Odisha State Legal Services Authority conducts Lok Adalats. These are effective forums for settling bank disputes amicably and quickly.</p>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Anti-Extortion & Protection Acts</h3>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    The **Commissionerates of Bhubaneswar and Cuttack** have taken a strong stance against extortion by recovery agents. The **Odisha Protection of Interests of Depositors Act** also reflects the state's intent to curb financial fraud, creating a legal environment that favors fair treatment of the common man.
+                  </p>
+                </section>
+
+                {/* Lok Adalat */}
+                <section id="lok-adalat-odisha" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Lok Adalat: Fast-Track Settlement in Odisha</h2>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    The **Odisha State Legal Services Authority (OSLSA)** organizes Lok Adalats that have proven incredibly successful for bank recovery cases.
+                  </p>
+                  <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">Record-Breaking Settlements</h3>
+                    <p className="text-gray-700 mb-4">
+                      In 2025 alone, district-level Lok Adalats in Odisha disposed of over 1.9 lakh cases with settlements worth ₹130.8 Crore. A single event in Khordha district saw ₹23 Crore realized. This shows that banks in Odisha are actively looking to settle.
+                    </p>
+                    <ul className="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
+                      <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> <strong>Binding Decision:</strong> The award is final and legally binding on the bank.</li>
+                      <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> <strong>Cost-Free:</strong> There are no court fees involved in this process.</li>
+                      <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> <strong>Amicable:</strong> It encourages compromise rather than confrontation.</li>
+                    </ul>
+                  </div>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    Our team can represent you in these Lok Adalats to ensure your voice is heard and you get a settlement that respects your financial constraints.
+                  </p>
+                </section>
+
+                {/* Why Choose AMA */}
+                <section id="why-choose-ama" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose AMA Legal Solutions?</h2>
+                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
+                    We bring professional legal defense to your doorstep in Odisha.
+                  </p>
+                  
+                  <div className="grid md:grid-cols-3 gap-6 text-center">
+                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
+                      <div className="text-4xl mb-4">👮</div>
+                      <h3 className="font-bold text-xl mb-2">Police Protection</h3>
+                      <p className="text-gray-600">We utilize the Anti-Extortion helpline and Cuttack-Bhubaneswar police resources to stop harassment immediately.</p>
                     </div>
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                      <h4 className="font-bold text-lg mb-2 text-[#D2A02A]">Disaster Management Act</h4>
-                      <p className="text-gray-600">We use provisions related to natural calamities (like cyclones) to argue for loan restructuring and interest waivers.</p>
+                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
+                      <div className="text-4xl mb-4">🤝</div>
+                      <h3 className="font-bold text-xl mb-2">Local Insight</h3>
+                      <p className="text-gray-600">We understand the specific operations of Odisha's banks and the legal tendencies of OSLSA Lok Adalats.</p>
+                    </div>
+                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
+                      <div className="text-4xl mb-4">💰</div>
+                      <h3 className="font-bold text-xl mb-2">Proven Savings</h3>
+                      <p className="text-gray-600">Our clients in Odisha have saved lakhs on interest waivers through our expert negotiation strategies.</p>
                     </div>
                   </div>
                 </section>
 
-                {/* Process */}
-                <section id="process" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Settlement Process</h2>
+{/* Process Section */}
+                <section id="settlement-process" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Our 4-Step Settlement Process</h2>
                   <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                    We guide you through a structured process to achieve financial freedom.
+                    We have a structured approach to help you clear your debts in Odisha.
                   </p>
                   
                   <div className="space-y-8">
                     <div className="flex flex-col md:flex-row gap-6 items-start">
                       <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">1</div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Legal Notice & Shielding</h3>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Assessment</h3>
                         <p className="text-gray-700 leading-relaxed">
-                          We send a legal notice to the bank. This stops them from calling you directly and compels them to communicate only through us.
+                          We analyze your financial health and loan details. We check if your loan is secured or unsecured and identify the best settlement scheme available under RBI guidelines.
                         </p>
                       </div>
                     </div>
@@ -287,9 +356,9 @@ export default function OdishaLoanSettlementPage() {
                     <div className="flex flex-col md:flex-row gap-6 items-start">
                       <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">2</div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Financial Assessment</h3>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Notice & Representation</h3>
                         <p className="text-gray-700 leading-relaxed">
-                          We analyze your situation. For pensioners, we ensure your account is protected. For farmers, we document cyclone damage.
+                          We officially intimate the bank that AMA Legal Solutions represents you. This legal buffer helps stop the daily harassment calls and forces the bank to deal with professionals.
                         </p>
                       </div>
                     </div>
@@ -299,7 +368,7 @@ export default function OdishaLoanSettlementPage() {
                       <div>
                         <h3 className="text-2xl font-bold text-gray-900 mb-3">Negotiation</h3>
                         <p className="text-gray-700 leading-relaxed">
-                          Our team negotiates with bank officials to reduce the outstanding amount, aiming for a waiver of interest and penalties.
+                          We negotiate hard. Whether it's facing the bank's recovery team or presenting your case in a Lok Adalat in Cuttack, we fight for the lowest possible settlement figure.
                         </p>
                       </div>
                     </div>
@@ -309,243 +378,145 @@ export default function OdishaLoanSettlementPage() {
                       <div>
                         <h3 className="text-2xl font-bold text-gray-900 mb-3">Closure</h3>
                         <p className="text-gray-700 leading-relaxed">
-                          We review the settlement letter. Once you pay the agreed amount, we ensure you receive a No Dues Certificate.
+                          Once the settlement amount is paid, we ensure you receive the 'No Dues Certificate' and that your loan account is closed in the bureau records.
                         </p>
                       </div>
                     </div>
                   </div>
                 </section>
 
-                {/* Mining Sector */}
-                <section id="mining-sector" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">For Mining & Industrial Workers</h2>
+                {/* Harassment Laws & Police Helpline */}
+                <section id="harassment-laws" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Fighting Harassment in Odisha</h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Workers in Keonjhar, Sundargarh, and Jharsuguda often face instability due to mine closures or health issues.
+                    Odisha Police has zero tolerance for extortion by recovery agents. Use these resources if you are being threatened.
                   </p>
-                  <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-6">
-                    <p className="text-lg text-blue-900">
-                      <strong>Health-Related Debt:</strong> If you have taken loans for medical treatment (e.g., for occupational diseases), we can use this compassionate ground to negotiate a better settlement.
-                    </p>
+                  <div className="grid md:grid-cols-2 gap-6 mb-8">
+                    <div className="bg-red-50 p-6 rounded-xl border border-red-100">
+                      <h4 className="font-bold text-lg mb-2 text-red-700">Police Helplines</h4>
+                      <p className="text-gray-700 mb-2"><strong>Emergency:</strong> Dial 112.</p>
+                      <p className="text-gray-700 mb-2"><strong>Anti-Extortion (Bhubaneswar-Cuttack):</strong> 99389100. (WhatsApp/Telegram/SMS supported).</p>
+                      <p className="text-gray-700"><strong>Bhubaneswar Control Room:</strong> 0674-100 / 0674-2973888.</p>
+                    </div>
+                    <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                      <h4 className="font-bold text-lg mb-2 text-blue-700">Cyber Crime Cell</h4>
+                      <p className="text-gray-700 mb-2"><strong>National Helpline:</strong> 1930.</p>
+                      <p className="text-gray-700 mb-2"><strong>Odisha Cyber Helpline:</strong> 7077798111.</p>
+                      <p className="text-gray-700"><strong>Cuttack Crime Branch:</strong> 0671-2305485.</p>
+                    </div>
                   </div>
                   <p className="text-lg leading-relaxed text-gray-700">
-                    We also assist with vehicle loans for trucks and dumpers that are no longer operational due to mining bans or lack of work.
+                    <strong>Your Right:</strong> Agents cannot call at odd hours, use abusive language, or visit your workplace without notice. If they do, we help you file a complaint.
                   </p>
                 </section>
 
-                {/* Agriculture Sector */}
-                <section id="agriculture-sector" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">For Farmers & Mission Shakti SHGs</h2>
+                {/* Documents Required */}
+                <section id="documents" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Documents for OTS</h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Odisha's farmers and women entrepreneurs are the backbone of the state.
+                    Keep these ready to speed up your settlement:
                   </p>
-                  <div className="bg-yellow-50 p-8 rounded-xl border border-yellow-100 mb-6">
-                    <h3 className="text-xl font-bold text-yellow-900 mb-4">Cyclone Relief & SHG Support</h3>
-                    <ul className="list-disc pl-6 space-y-3 text-yellow-800">
-                      <li><strong>Force Majeure:</strong> We argue that crop loss due to cyclones (like Dana/Fani) is beyond your control, warranting loan restructuring.</li>
-                      <li><strong>SHG Settlement:</strong> We help Mission Shakti groups settle collective loans if the group business has failed, preventing member harassment.</li>
-                      <li><strong>KCC Loans:</strong> We help restructure Kisan Credit Card loans.</li>
-                    </ul>
+                  <ul className="grid md:grid-cols-2 gap-4">
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Aadhar & PAN Card
+                    </li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Latest Loan Statement
+                    </li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Employment/Income Proof
+                    </li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Proof of Financial Hardship
+                    </li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Legal Notices (if any)
+                    </li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Correspondence with Bank
+                    </li>
+                  </ul>
+                </section>
+
+                {/* Service Areas */}
+                <section id="city-services" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Serving All Districts of Odisha</h2>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    Our digital services are available across the state.
+                  </p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Bhubaneswar</h4>
+                      <p className="text-xs text-gray-500">Capital City</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Cuttack</h4>
+                      <p className="text-xs text-gray-500">Silver City</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Rourkela</h4>
+                      <p className="text-xs text-gray-500">Steel City</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Berhampur</h4>
+                      <p className="text-xs text-gray-500">Silk City</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Sambalpur</h4>
+                      <p className="text-xs text-gray-500">Western Odisha</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Puri</h4>
+                      <p className="text-xs text-gray-500">Pilgrim City</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Balasore</h4>
+                      <p className="text-xs text-gray-500">Coastal Odisha</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Bhadrak</h4>
+                      <p className="text-xs text-gray-500">Bhadrak District</p>
+                    </div>
                   </div>
                 </section>
 
-                {/* Lok Adalat */}
-                <section id="lok-adalat" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Lok Adalat: Fast & Fair Justice</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    The OSLSA actively promotes Lok Adalats for bank recovery cases.
-                  </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    <strong>Why it works:</strong> It is a non-adversarial forum where you can sit across the table with bank officials and a mediator to reach a compromise. The settlement is final, and you save on legal costs. We can represent you in Lok Adalats across Odisha.
-                  </p>
-                </section>
-
-                {/* Types of Loans */}
-                <section id="types-of-loans" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Loans We Settle</h2>
-                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                    Our expertise covers various types of loans common in Odisha.
-                  </p>
-                  
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Pension Loans</h3>
-                      <p className="text-gray-700">
-                        Protecting retirees from illegal deductions.
-                      </p>
-                    </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">SHG Loans</h3>
-                      <p className="text-gray-700">
-                        Settling Mission Shakti group loans amicably.
-                      </p>
-                    </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Mining Vehicle Loans</h3>
-                      <p className="text-gray-700">
-                        Settlement for trucks and heavy machinery.
-                      </p>
-                    </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">KCC & Agri Loans</h3>
-                      <p className="text-gray-700">
-                        Relief for cyclone-affected farmers.
-                      </p>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Credit Score Impact */}
-                <section id="credit-score" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Impact on Credit Score</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Settlement will be reported to CIBIL, but it is a necessary step to regain financial control.
-                  </p>
-                  <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-6">
-                    <p className="text-lg text-yellow-900">
-                      <strong>The Trade-off:</strong> A temporary dip in your credit score is better than facing legal action or losing your assets. Once settled, you can rebuild your score over time.
-                    </p>
-                  </div>
-                </section>
-
-                {/* Common Mistakes */}
-                <section id="common-mistakes" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Mistakes to Avoid</h2>
+                {/* FAQ Section */}
+                <section id="faqs" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
                   <div className="space-y-6">
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold">✕</div>
-                      <div>
-                        <h3 className="font-bold text-lg text-gray-900">Ignoring Bank Notices</h3>
-                        <p className="text-gray-700">Silence can lead to legal escalation. Always respond, preferably through a lawyer.</p>
+                    {faqs.map((faq, index) => (
+                      <div key={index} className="border-b border-gray-200 pb-6 last:border-0">
+                        <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-start">
+                          <span className="text-[#D2A02A] mr-3">Q.</span>
+                          {faq.question}
+                        </h3>
+                        <p className="text-gray-700 leading-relaxed pl-8">
+                          {faq.answer}
+                        </p>
                       </div>
-                    </div>
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold">✕</div>
-                      <div>
-                        <h3 className="font-bold text-lg text-gray-900">Borrowing from Private Lenders</h3>
-                        <p className="text-gray-700">Avoid illegal money lenders. If you are already trapped, use the Odisha Money Lenders Act for protection.</p>
-                      </div>
-                    </div>
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold">✕</div>
-                      <div>
-                        <h3 className="font-bold text-lg text-gray-900">Allowing Pension Deduction</h3>
-                        <p className="text-gray-700">Do not let the bank deduct from your pension. It is illegal without due process. Contact us immediately.</p>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </section>
-
-                {/* Documentation */}
-                <section id="documentation" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Required Documents</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    To start your settlement process, we will need:
-                  </p>
-                  <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                    <div className="grid md:grid-cols-2 gap-8">
-                      <div>
-                        <h3 className="font-bold text-xl text-[#D2A02A] mb-4">Identity Proof</h3>
-                        <ul className="space-y-3 text-gray-700">
-                          <li className="flex items-center"><span className="mr-2">✓</span> PAN Card & Aadhar Card</li>
-                          <li className="flex items-center"><span className="mr-2">✓</span> Pension Payment Order (if applicable)</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-xl text-[#D2A02A] mb-4">Loan Documents</h3>
-                        <ul className="space-y-3 text-gray-700">
-                          <li className="flex items-center"><span className="mr-2">✓</span> Loan Account Statement</li>
-                          <li className="flex items-center"><span className="mr-2">✓</span> Legal Notices</li>
-                          <li className="flex items-center"><span className="mr-2">✓</span> Proof of Income Loss (Cyclone/Medical)</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Why Choose Us */}
-                <section id="why-choose-us" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose AMA Legal Solutions?</h2>
-                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                    We are committed to protecting the people of Odisha.
-                  </p>
-                  
-                  <div className="grid md:grid-cols-3 gap-6 text-center">
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">⚖️</div>
-                      <h3 className="font-bold text-xl mb-2">Pension Protectors</h3>
-                      <p className="text-gray-600">Experts in stopping illegal pension deductions.</p>
-                    </div>
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">🌪️</div>
-                      <h3 className="font-bold text-xl mb-2">Cyclone Relief</h3>
-                      <p className="text-gray-600">Specialized in 'Force Majeure' settlements for farmers.</p>
-                    </div>
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">🛡️</div>
-                      <h3 className="font-bold text-xl mb-2">Anti-Harassment</h3>
-                      <p className="text-gray-600">We take strong legal action against harassment by recovery agents.</p>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Testimonials */}
-                <section id="testimonials" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Success Stories from Odisha</h2>
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
-                      <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
-                      <p className="text-gray-700 italic mb-4 relative z-10">
-                        "I am a retired teacher in Cuttack. The bank started deducting EMI from my pension for a loan I guaranteed. AMA lawyers cited the High Court judgment and stopped the deduction immediately. They are lifesavers."
-                      </p>
-                      <div className="flex items-center">
-                        <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">B</div>
-                        <div>
-                          <p className="font-bold text-gray-900">Bimal P.</p>
-                          <p className="text-sm text-gray-500">Cuttack</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
-                      <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
-                      <p className="text-gray-700 italic mb-4 relative z-10">
-                        "Our SHG in Puri was unable to pay due to Cyclone Fani losses. The bank was harassing us. AMA Legal Solutions helped us restructure the loan and get a waiver on interest."
-                      </p>
-                      <div className="flex items-center">
-                        <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">S</div>
-                        <div>
-                          <p className="font-bold text-gray-900">Sanjukta D.</p>
-                          <p className="text-sm text-gray-500">Puri</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-                {/* FAQs */}
-                <FaqSection />
 
                 {/* Final CTA */}
-                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">
+                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-xl md:rounded-3xl p-6 md:p-16 text-center text-white relative overflow-hidden">
                   <div className="relative z-10">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">Get Legal Help Today</h2>
-                    <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
-                      Don't face the banks alone. Our expert lawyers in Odisha are here to protect you.
+                    <h2 className="text-xl md:text-5xl font-bold mb-4 md:mb-6">Start Your New Life in Odisha</h2>
+                    <p className="text-sm md:text-xl opacity-90 mb-6 md:mb-10 max-w-2xl mx-auto">
+                      Don't let debt hold you back. Let us help you settle your loans and regain your peace of mind.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
                       <Link href="/contact">
-                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg w-full sm:w-auto">
-                          Book Your Consultation
+                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
+                          Book Consultation
                         </button>
                       </Link>
                       <a href="tel:+918700343611">
-                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-4 px-12 rounded-full transition-all text-lg w-full sm:w-auto">
+                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all text-sm md:text-lg w-full sm:w-auto">
                           Call: +91-8700343611
                         </button>
                       </a>
                     </div>
-                    <p className="mt-8 text-sm opacity-70">
-                      Confidential • Legal • Effective
-                    </p>
                   </div>
                 </section>
 
@@ -553,13 +524,12 @@ export default function OdishaLoanSettlementPage() {
             </div>
 
             {/* Sidebar */}
-            <div className="lg:w-1/4">
-              <div className="sticky top-24 space-y-8">
+             <div className="hidden lg:block space-y-8 sticky top-24">
                 {/* Contact Card */}
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">Need Urgent Help?</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Need Help in Odisha?</h3>
                   <p className="text-gray-600 mb-6 text-sm">
-                    Speak to our senior loan settlement lawyers in Odisha today.
+                    Speak to our loan settlement experts serving Bhubaneswar and Cuttack.
                   </p>
                   <a 
                     href="tel:+918700343611" 
@@ -579,28 +549,102 @@ export default function OdishaLoanSettlementPage() {
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                   <h3 className="text-lg font-bold text-gray-900 mb-4">Related Services</h3>
                   <ul className="space-y-3 text-sm">
-                    <li>
-                      <Link href="/services/banking-and-finance" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Banking & Finance
+                   <li>
+                      <Link href="/services/debt-consolidation" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">›</span> Debt Consolidation
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/civil" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Civil Litigation
+                      <Link href="/services/cheque-bounce-lawyer" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">›</span> Cheque Bounce Lawyer
                       </Link>
                     </li>
-                    <li>
-                      <Link href="/services/arbitration" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Arbitration
+                     <li>
+                      <Link href="/services/legal-notice" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">›</span> Legal Notice
                       </Link>
                     </li>
-                    
                   </ul>
                 </div>
               </div>
-            </div>
           </div>
-          
+
+          {/* Banks Grid */}
+          <div className="mt-16">
+            <section className="my-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+                We settle loans from the following banks
+              </h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+                <Link 
+                  href="/services/loan-settlement/sbi-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">SBI</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/hdfc-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">HDFC</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/icici-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">ICICI</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/kotak-mahindra"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Kotak Mahindra</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/idfc-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">IDFC</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/yes-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Yes Bank</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/bajaj-finserv"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Bajaj Finserv</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/axis-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Axis Bank</span>
+                </Link>
+                  <Link 
+                  href="/services/loan-settlement/bank-of-baroda"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Bank of Baroda</span>
+                </Link>
+                  <Link 
+                  href="/services/loan-settlement/odisha-gramya-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Odisha Gramya Bank</span>
+                </Link>
+              </div>
+              <div className="mt-8 text-center">
+                <p className="text-lg text-gray-700">
+                  We also handle settlement for regional institutions.
+                </p>
+              </div>
+            </section>
+          </div>
+
           <div className="mt-16">
             <GenericStatesGrid 
               serviceName="Loan Settlement" 
@@ -624,20 +668,21 @@ export default function OdishaLoanSettlementPage() {
                 "Manipur": "Manipur",
                 "Meghalaya": "Meghalaya",
                 "Mizoram": "Mizoram",
-                "Odisha": "Odisha",
-                "Puducherry": "Puducherry",
+                "Odisha": "odisha",
+                "Puducherry": "puducherry",
                 "Punjab": "Punjab",
                 "Rajasthan": "Rajasthan",
                 "Sikkim": "Sikkim",
                 "Tamil Nadu": "tamil-nadu",
                 "Telangana": "Telangana",
-                "Tripura": "Tripura",
+                "Tripura": "tripura",
                 "Uttar Pradesh": "UttarPradesh",
                 "Uttarakhand": "Uttrakhand",
                 "West Bengal": "west-bengal"
               }}
             />
           </div>
+          
         </div>
       </div>
     </>
