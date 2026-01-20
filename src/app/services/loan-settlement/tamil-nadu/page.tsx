@@ -3,31 +3,52 @@ import Script from "next/script";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import FaqSection from "./FaqSection";
 
-export const metadata = {
-  title: "Loan Settlement in Tamil Nadu | Debt Relief Lawyers Chennai, Coimbatore, Madurai",
-  description:
-    "Struggling with debt in Tamil Nadu? AMA Legal Solutions offers expert loan settlement for MSMEs in Tirupur, auto ancillaries in Chennai, and individuals. Stop 'Kandhu Vatti' harassment & settle legally.",
-  alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/Tamil-Nadu',
+// Detailed FAQ data for rendering and Schema
+const faqs = [
+  {
+    question: "Is 'Kanduvatti' legal in Tamil Nadu?",
+    answer: "No, 'Kanduvatti' (charging exorbitant interest) is strictly illegal under the Tamil Nadu Prohibition of Charging Exorbitant Interest Act, 2003. Lenders charging daily interest (Meter Vatti), hourly interest, or rates above the government-mandated cap can face up to 3 years of imprisonment. We help you file complaints and settle only the principal + legal interest."
   },
-  openGraph: {
-    title: "Loan Settlement in Tamil Nadu | Debt Relief Lawyers Chennai, Coimbatore, Madurai",
-    description: "Struggling with debt in Tamil Nadu? AMA Legal Solutions offers expert loan settlement for MSMEs in Tirupur, auto ancillaries in Chennai, and individuals. Stop 'Kandhu Vatti' harassment & settle legally.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/Tamil-Nadu",
-    type: "website",
-    images: [
-      {
-        url: "/services/3.png",
-        width: 1200,
-        height: 630,
-        alt: "Loan Settlement Services Tamil Nadu",
-      },
-    ],
+  {
+    question: "What is the new Tamil Nadu Money Lending Entities Act, 2025?",
+    answer: "The Tamil Nadu Money Lending Entities (Prevention of Coercive Actions) Act, 2025, is a recent legislation designed to stop aggressive recovery by fintech apps and micro-finance companies. It criminalizes harassment, public shaming, and threats by recovery agents. It also holds the directors of these lending companies liable for the actions of their agents."
   },
-};
+  {
+    question: "I am an IT employee in OMR/Chennai with credit card debt. Can you help?",
+    answer: "Yes, we specialize in helping Chennai's tech workforce. Whether you work in OMR, Porur, or Siruseri, we know the pressure of high rents and lifestyle costs. We negotiate with banks (HDFC, ICICI, Citi, etc.) to consolidate your multiple credit card dues into a single settlement, saving you up to 50% and stopping the harassment."
+  },
+  {
+    question: "Can MSMEs in Tirupur/Coimbatore get loan settlement?",
+    answer: "Absolutely. We understand the crisis caused by fluctuating yarn prices and electricity costs. We assist MSMEs in Tirupur and Coimbatore in restructuring their business loans or opting for One Time Settlement (OTS) without declaring bankruptcy, allowing you to keep your machinery and operations running."
+  },
+  {
+    question: "Do you handle questions related to the 'Madras High Court Ruling on Recovery Agents'?",
+    answer: "Yes. The Madras High Court (Justice Kuna Santhosh Kumar vs RBI case, April 2024) strictly banned banks from sending agents to borrowers' homes to threaten them. We use this judgment to issue legal notices to banks if they send 'musclemen' to your doorstep, forcing them to back down and negotiate civilly."
+  },
+  {
+    question: "How do I file a police complaint against a loan shark in Tamil Nadu?",
+    answer: "You can use the 'Kaaval Uthavi' app or dial 100/112. For Kanduvatti specifically, many districts have dedicated cells. We assist you in drafting a formal police complaint that cites the specific sections of the 2003 Act, increasing the chances of an FIR being registered against the illegal lender."
+  },
+  {
+    question: "Will settlement affect my CIBIL score?",
+    answer: "Yes, a settlement drops your score initially as the account is marked 'Settled'. However, this is better than a 'Write-off' or 'Suit Filed' status. We provide a post-settlement credit repair guide to help you rebuild your score to 750+ within 18-24 months."
+  },
+  {
+    question: "What is 'Meter Vatti' and how do I stop it?",
+    answer: "'Meter Vatti' is a predatory practice where interest is charged on an hourly or daily basis on the loan amount not paid. This is a criminal offense. If you are a victim, do not pay another rupee. Contact us immediately. We will help you deposit the legal principal amount in court under the 2003 Act and get the loan declared as discharged."
+  },
+  {
+    question: "Do you have lawyers in Madurai and Salem?",
+    answer: "Yes, AMA Legal Solutions has a pan-Tamil Nadu presence. We have associate lawyers in Madurai, Salem, Trichy, and Erode to handle physical court appearances or Lok Adalat representations if required, while our central team handles the bank negotiations."
+  },
+  {
+    question: "How much can I save through settlement?",
+    answer: "While it depends on the delinquency period, we typically save clients 40-60% of the total outstanding amount. We aim for a 'Principal-Only' settlement where possible, waiving off the accumulated penalties and exorbitant interest."
+  }
+];
 
+// Enhanced Breadcrumb Schema
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -54,17 +75,18 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 4,
       "name": "Tamil Nadu",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/Tamil-Nadu"
+      "item": "https://amalegalsolutions.com/services/loan-settlement/tamil-nadu"
     }
   ]
 };
 
+// Enhanced Article Schema
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Loan Settlement Services in Tamil Nadu: Protecting the Enterprise of the South",
-  "description": "Comprehensive guide to loan settlement in Tamil Nadu. Learn how to legally settle MSME loans in Tirupur, protect against 'Kandhu Vatti', and resolve debt issues in Chennai.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "headline": "Loan Settlement in Tamil Nadu | Stop Kanduvatti & Harassment",
+  "description": "Expert debt relief in Tamil Nadu. Settle loans under the 2003 Kanduvatti Act & 2025 Coercive Actions Act. Specialized help for Chennai IT professionals & Tirupur MSMEs.",
+  "image": "https://amalegalsolutions.com/services/chennai-central.jpg",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
@@ -78,74 +100,96 @@ const articleSchema = {
       "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
-  "datePublished": "2023-11-21",
-  "dateModified": "2023-11-21"
-};
-
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Loan Settlement Services Tamil Nadu",
-  "image": "https://amalegalsolutions.com/services/3.png",
-  "description": "Expert legal loan settlement services in Tamil Nadu.",
-  "brand": {
-    "@type": "Brand",
-    "name": "AMA Legal Solutions"
+  "datePublished": "2023-11-20",
+  "dateModified": "2025-05-20",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://amalegalsolutions.com/services/loan-settlement/tamil-nadu"
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "720"
+  "about": {
+    "@type": "Thing",
+    "name": "Debt Settlement",
+    "description": "Legal process of settling debt for a reduced amount."
   },
-  "review": [
+  "mentions": [
     {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Karthik Raja"
-      },
-      "reviewBody": "My textile export business in Tirupur was in trouble due to global demand slump. AMA Legal Solutions helped me settle my bank loan and avoid NPA classification. Truly professional."
+      "@type": "Legislation",
+      "name": "Tamil Nadu Prohibition of Charging Exorbitant Interest Act, 2003"
     },
     {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Lakshmi Narayanan"
-      },
-      "reviewBody": "I was trapped by a Kandhu Vatti lender in Chennai. The legal team at AMA guided me on how to use the law to stop the harassment and settle the principal amount."
+      "@type": "Legislation",
+      "name": "Tamil Nadu Money Lending Entities (Prevention of Coercive Actions) Act, 2025"
     }
   ]
 };
 
-export default function TNLoanSettlementPage() {
+// FAQ Schema
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
+export const metadata = {
+  title: "Loan Settlement Tamil Nadu | Stop Kanduvatti & Harassment",
+  description:
+    "#1 Loan Settlement in Tamil Nadu. Settle debts under 2003 Kanduvatti Act. Expert help for Chennai IT professionals, Coimbatore MSMEs. Stop recovery harassment now.",
+  keywords: [
+    "loan settlement Tamil Nadu",
+    "Kanduvatti complaint number",
+    "debt settlement Chennai",
+    "Tamil Nadu Prohibition of Charging Exorbitant Interest Act 2003",
+    "credit card settlement Chennai for IT professionals",
+    "MSME loan settlement Tirupur",
+    "stop recovery harassment Coimbatore",
+    "Madras High Court loan recovery judgment 2024",
+    "debt relief lawyers Madurai",
+    "Tamil Nadu Money Lending Entities Act 2025"
+  ],
+  alternates: {
+    canonical: 'https://amalegalsolutions.com/services/loan-settlement/tamil-nadu',
+  },
+   openGraph: {
+    title: "Loan Settlement in Tamil Nadu | Stop Kanduvatti & Harassment",
+    description: "Burdened by debt in Chennai or Coimbatore? Use the 2003 Kanduvatti Act to stop harassment and settle loans for less. We protect IT staff and MSMEs.",
+    url: "https://amalegalsolutions.com/services/loan-settlement/tamil-nadu",
+    type: "website",
+    images: [
+      {
+        url: "/services/chennai-central.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Tamil Nadu Loan Settlement Services",
+      },
+    ],
+  },
+};
+
+export default function LoanSettlementTamilNaduPage() {
   const tocSections = [
-    { id: "introduction", title: "Introduction" },
-    { id: "what-is-settlement", title: "What is Loan Settlement?" },
-    { id: "legal-framework", title: "Legal Framework in TN" },
-    { id: "process", title: "Our Process" },
-    { id: "msme-settlement", title: "MSME & Textile Loans" },
-    { id: "lok-adalat", title: "Lok Adalat Settlement" },
-    { id: "types-of-loans", title: "Types of Loans" },
-    { id: "credit-score", title: "Credit Score Impact" },
-    { id: "common-mistakes", title: "Common Mistakes" },
-    { id: "documentation", title: "Required Documents" },
-    { id: "why-choose-us", title: "Why Choose Us" },
-    { id: "testimonials", title: "Success Stories" },
+    { id: "introduction", title: "Tamil Nadu's Debt Reality" },
+    { id: "what-is-settlement", title: "Understanding OTS" },
+    { id: "legal-framework", title: "Kanduvatti & Laws" },
+    { id: "it-crisis", title: "Chennai IT Debt Crisis" },
+    { id: "msme-relief", title: "MSME Relief (Tirupur)" },
+    { id: "high-court", title: "High Court Protective Rulings" },
+    { id: "process", title: "Settlement Process" },
+    { id: "harassment", title: "Stop Harassment" },
+    { id: "service-areas", title: "Services by City" },
     { id: "faqs", title: "FAQs" },
   ];
 
   const breadcrumbItems = [
     { label: "Services", href: "/services" },
     { label: "Loan Settlement", href: "/services/loan-settlement" },
-    { label: "Tamil Nadu", href: "/services/loan-settlement/Tamil-Nadu" },
+    { label: "Tamil Nadu", href: "/services/loan-settlement/tamil-nadu" },
   ];
 
   return (
@@ -155,399 +199,406 @@ export default function TNLoanSettlementPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <Script
+       <Script
         id="article-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <Script
-        id="review-schema"
+        id="faq-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       <div className="bg-gray-50 min-h-screen font-sans text-gray-800">
         {/* Hero Section */}
         <div className="relative bg-[#1a202c] text-white">
-          <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+          <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
           <div 
             className="absolute inset-0 bg-cover bg-center z-0" 
-            style={{ background: "black" }}
+            style={{ backgroundImage: "url('/services/chennai-central.jpg')", backgroundColor: "#111" }} 
           ></div>
-          <div className="relative z-20 container mx-auto px-4 py-24 md:py-32 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight mt-10">
-              Protecting the Enterprise of the South: <span className="text-[#D2A02A]">Loan Settlement in Tamil Nadu</span>
+          <div className="relative z-20 container mx-auto px-4 py-20 md:py-32 text-center">
+            <h1 className="text-3xl md:text-6xl font-extrabold mb-4 md:mb-6 leading-tight mt-10">
+              <span className="text-[#D2A02A]">Tamil Nadu's Trusted</span> <br/> Debt Settlement Experts
             </h1>
-            <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-gray-200">
-              Expert legal defense for Exporters in Tirupur, Manufacturers in Chennai, and Families across TN. Stop 'Kandhu Vatti' and settle bank debts with dignity.
+            <p className="text-lg md:text-2xl mb-8 md:mb-12 max-w-4xl mx-auto text-gray-200 font-light">
+              From the IT corridors of **OMR** to the textile hubs of **Tirupur**, we help you defeat **Kanduvatti** and settle bank loans legally.
             </p>
-            <Link href="/contact">
-              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg">
-                Get a Free Case Evaluation
-              </button>
-            </Link>
+            <div className="flex flex-col md:flex-row justify-center gap-4">
+              <Link href="/contact">
+                <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-xl text-lg w-full md:w-auto">
+                  Free Debt Analysis
+                </button>
+              </Link>
+              <a href="tel:+918700343611">
+                 <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-4 px-10 rounded-full transition-all text-lg w-full md:w-auto">
+                   Call Experts: +91-8700343611
+                 </button>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-7xl py-8">
+        <div className="container mx-auto px-4 max-w-[1600px] py-8">
           <Breadcrumbs items={breadcrumbItems} />
           
-          <div className="flex flex-col lg:flex-row gap-12">
-            {/* Main Content Area */}
-            <div className="lg:w-3/4">
-              
-              <TableOfContents sections={tocSections} />
+          <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 items-start">
+            {/* Left Sidebar - TOC */}
+            <div className="hidden lg:block sticky top-24">
+              <TableOfContents sections={tocSections} orientation="vertical" />
+            </div>
 
-              <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm mt-8 space-y-12">
+            {/* Main Content Area */}
+            <div className="min-w-0">
+              <div className="lg:hidden mb-6 sticky top-20 z-30">
+                <TableOfContents sections={tocSections} />
+              </div>
+
+              <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Overcoming Financial Challenges in Tamil Nadu</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Tamil Nadu is an industrial powerhouse, from the <strong>auto hubs of Chennai</strong> to the <strong>textile mills of Tirupur and Coimbatore</strong>. However, global economic shifts and market volatility can put immense pressure on businesses and individuals.
+                  <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6">Financial Freedom for Tamil Nadu</h2>
+                  <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                    Tamil Nadu is an economic powerhouse, home to Chennai's booming SaaS industry, Coimbatore's precision engineering, and Tirupur's global textile dominance. Yet, behind this industrial success lies a silent crisis of debt. The high cost of urban living in <strong>Chennai</strong>, fluctuating yarn prices affecting <strong>MSMEs</strong>, and the predatory menace of <strong>"Kanduvatti" (usury)</strong> have trapped thousands in a cycle of financial stress.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Whether it's an MSME facing a working capital crunch or an individual trapped by the illegal "Kandhu Vatti" (usury) system, financial stress is a serious issue.
-                  </p>
-                  <p className="text-lg leading-relaxed text-gray-700">
-                    AMA Legal Solutions brings specialized legal expertise to Tamil Nadu. We help you navigate the complexities of banking laws and state-specific protections to settle your debts and regain your financial freedom.
+                  <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                    Whether you are a software engineer in Taramani facing credit card pile-ups or a textile unit owner in Erode struggling with business loans, there is a legal way out. <strong>AMA Legal Solutions</strong> brings authoritative legal expertise to help you stop harassment, reduce your debt burden, and regain your peace of mind.
                   </p>
                 </section>
 
                 {/* What is Loan Settlement */}
                 <section id="what-is-settlement" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">What is Loan Settlement?</h2>
-                  <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
-                    <p className="text-lg text-blue-900 italic">
-                      "Loan settlement, or One Time Settlement (OTS), is a legal negotiation where the bank agrees to accept a reduced lump sum amount to close a loan account that has become a Non-Performing Asset (NPA)."
-                    </p>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Understanding One Time Settlement (OTS)</h2>
+                  <div className="flex flex-col md:flex-row gap-6 items-center bg-orange-50 p-6 rounded-xl border-l-4 border-orange-600">
+                    <div className="flex-1">
+                      <p className="text-orange-900 text-lg font-medium italic mb-2">
+                        "OTS is your legal right to exit a debt trap with dignity."
+                      </p>
+                      <p className="text-gray-700">
+                        It involves negotiating with the bank to waive off the accumulated interest and penalties, allowing you to pay just a portion of the principal (or slightly more) to close the account forever.
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    For a garment exporter in Tirupur, this could mean settling a ₹1 Crore loan for ₹50-60 Lakhs to avoid factory closure. It is a practical, legal solution to end the debt cycle.
-                  </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    We assist with:
-                  </p>
-                  <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
-                    <li>MSME & Industrial Loans (Chennai, Coimbatore, Hosur)</li>
-                    <li>Textile & Garment Unit Loans (Tirupur, Erode)</li>
-                    <li>Personal Loans & Credit Cards</li>
-                    <li>Vehicle Loans & Commercial Equipment Finance</li>
-                  </ul>
+                  <div className="mt-8 grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 className="font-bold text-xl mb-4 text-gray-800">Who is Eligible?</h4>
+                        <ul className="space-y-3 text-gray-700">
+                            <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> Unsecured loans (Credit Cards, Personal Loans).</li>
+                            <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> Borrowers with genuine financial hardship (Job loss, Medical).</li>
+                            <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> MSMEs facing cash flow crunch due to market factors.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 className="font-bold text-xl mb-4 text-gray-800">The Outcome</h4>
+                        <p className="text-gray-700 leading-relaxed">
+                            You get a formal "Settlement Letter" from the bank. The harassment stops immediately. You become debt-free in months, not years.
+                        </p>
+                    </div>
+                  </div>
                 </section>
 
-                {/* Legal Framework */}
+                {/* Legal Framework - Deep Dive */}
                 <section id="legal-framework" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Legal Protections in Tamil Nadu</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Tamil Nadu has robust laws to protect borrowers, especially against predatory lending.
-                  </p>
-                  
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">The Kandhu Vatti Act (2003)</h3>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    The <strong>Tamil Nadu Prohibition of Charging Exorbitant Interest Act, 2003</strong>, is a powerful tool. It strictly prohibits charging exorbitant interest rates known locally as <em>"Kandhu Vatti"</em>, <em>"Meter Vatti"</em>, or <em>"Daily Vatti"</em>. Offenders can face up to 3 years of imprisonment and a fine. We use this act to shield clients from illegal harassment by private moneylenders.
-                  </p>
-
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Madras High Court Protection</h3>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    The <strong>Madras High Court</strong> has consistently ruled against the use of "muscle power" by recovery agents. In a landmark judgment, the court emphasized that banks must follow the due process of law and cannot forcibly seize vehicles or property.
-                  </p>
-
-                  <div className="grid md:grid-cols-2 gap-6 mb-8">
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                      <h4 className="font-bold text-lg mb-2 text-[#D2A02A]">TNSLSA Lok Adalats</h4>
-                      <p className="text-gray-600">The Tamil Nadu State Legal Services Authority conducts frequent Lok Adalats, offering a fast track for settling bank disputes amicably and legally.</p>
-                    </div>
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                      <h4 className="font-bold text-lg mb-2 text-[#D2A02A]">RBI Guidelines</h4>
-                      <p className="text-gray-600">We ensure that banks strictly adhere to the RBI's Fair Practice Code, preventing harassment and ensuring transparent dealings.</p>
-                    </div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <span className="px-3 py-1 bg-[#D2A02A] text-white text-xs font-bold rounded uppercase tracking-wider">Know Your Rights</span>
+                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Defeating Kanduvatti & Legal Shields</h2>
                   </div>
-                </section>
-
-                {/* Process */}
-                <section id="process" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Settlement Process</h2>
-                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                    We guide you through a structured process to achieve financial freedom.
-                  </p>
                   
+                  <p className="text-lg text-gray-700 mb-8">
+                    Tamil Nadu has some of the stringent laws in India against predatory lending. We use these laws as a shield for our clients.
+                  </p>
+
                   <div className="space-y-8">
-                    <div className="flex flex-col md:flex-row gap-6 items-start">
-                      <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">1</div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Legal Shielding</h3>
-                        <p className="text-gray-700 leading-relaxed">
-                          We send a legal notice to the bank/lender. This stops them from calling you directly and compels them to communicate only through your legal counsel.
-                        </p>
-                      </div>
+                    {/* The Kanduvatti Act */}
+                    <div className="border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <div className="bg-red-900 text-white p-4">
+                            <h3 className="text-xl font-bold">Tamil Nadu Prohibition of Charging Exorbitant Interest Act, 2003</h3>
+                        </div>
+                        <div className="p-6 bg-white">
+                            <p className="text-gray-700 mb-4">
+                                Commonly known as the <strong>Anti-Kanduvatti Act</strong>, this powerful law was enacted to crush the practice of usury.
+                            </p>
+                            <div className="grid md:grid-cols-2 gap-4">
+                                <div className="bg-red-50 p-4 rounded-lg">
+                                    <h4 className="font-bold text-red-800 mb-2">Illegal Practices Defined</h4>
+                                    <ul className="space-y-2 text-sm text-gray-700">
+                                        <li>• <strong>Kanduvatti:</strong> Exorbitant interest.</li>
+                                        <li>• <strong>Meter Vatti:</strong> Daily/Hourly interest.</li>
+                                        <li>• <strong>Thandal:</strong> Collecting interest with principal daily.</li>
+                                    </ul>
+                                </div>
+                                <div className="bg-green-50 p-4 rounded-lg">
+                                    <h4 className="font-bold text-green-800 mb-2">Your Remedy</h4>
+                                    <p className="text-sm text-gray-700">
+                                        You can petition the court to deposit the legal principal amount. The court can declare the loan discharged. Lenders face up to 3 years in jail and ₹30,000 fine.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="flex flex-col md:flex-row gap-6 items-start">
-                      <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">2</div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Financial Assessment</h3>
-                        <p className="text-gray-700 leading-relaxed">
-                          We analyze your financial health. For businesses in Tirupur or Chennai, we review cash flows and order books to determine a realistic settlement offer.
+                    {/* New 2025 Act */}
+                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h3 className="text-xl font-bold text-gray-900 mb-4">TN Money Lending Entities (Prevention of Coercive Actions) Act, 2025</h3>
+                        <p className="text-gray-700 mb-4">
+                            The latest weapon in borrower protection. This Act specifically targets modern "Fintech Loan Apps" and "Micro-finance" companies.
                         </p>
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col md:flex-row gap-6 items-start">
-                      <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">3</div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Strategic Negotiation</h3>
-                        <p className="text-gray-700 leading-relaxed">
-                          Our team negotiates with bank officials in Chennai or regional offices to reduce the outstanding amount, aiming for a waiver of interest and penalties.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col md:flex-row gap-6 items-start">
-                      <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">4</div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Closure & Peace</h3>
-                        <p className="text-gray-700 leading-relaxed">
-                          We review the settlement letter to ensure there are no hidden clauses. Once you pay the agreed amount, we ensure you receive a No Dues Certificate.
-                        </p>
-                      </div>
+                        <ul className="space-y-2 text-gray-700">
+                            <li><strong>• No Public Shaming:</strong> Calling relatives or colleagues is a criminal offense.</li>
+                            <li><strong>• Director Liability:</strong> The top management of the lending company can be arrested for the harassment caused by their ground-level agents.</li>
+                        </ul>
                     </div>
                   </div>
                 </section>
 
-                {/* MSME Settlement */}
-                <section id="msme-settlement" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">MSME & Textile Loans</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    The textile industry in Tirupur and the engineering hubs in Coimbatore are the backbone of TN's economy. But they are vulnerable to global market fluctuations.
-                  </p>
-                  <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-6">
-                    <p className="text-lg text-blue-900">
-                      <strong>Industry Expertise:</strong> We have specific experience in restructuring and settling loans for textile units, garment exporters, and auto component manufacturers. We understand the nuances of Letter of Credit (LC) defaults and working capital limits.
-                    </p>
-                  </div>
-                  <p className="text-lg leading-relaxed text-gray-700">
-                    Don't let a temporary slump destroy your business legacy. Legal settlement can help you retain your machinery and restart your operations.
-                  </p>
-                </section>
-
-                {/* Lok Adalat */}
-                <section id="lok-adalat" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Lok Adalat: Fast & Final Resolution</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    The TNSLSA actively promotes Lok Adalats for bank recovery cases.
-                  </p>
-                  <div className="bg-green-50 p-8 rounded-xl border border-green-100 mb-6">
-                    <h3 className="text-xl font-bold text-green-900 mb-4">Why Choose Lok Adalat?</h3>
-                    <ul className="list-disc pl-6 space-y-3 text-green-800">
-                      <li><strong>Speed:</strong> Cases are often settled in a single day.</li>
-                      <li><strong>Finality:</strong> The award is binding and cannot be appealed.</li>
-                      <li><strong>Cost-Effective:</strong> No court fees, and often significant waivers on interest.</li>
-                    </ul>
+                {/* IT Sector Focus */}
+                <section id="it-crisis" className="scroll-mt-32">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Chennai's IT & SaaS Debt Trap</h2>
+                  <div className="relative bg-blue-900 text-white p-8 rounded-2xl overflow-hidden">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 transform translate-x-1/2 -translate-y-1/2"></div>
+                    <div className="relative z-10">
+                        <h3 className="text-2xl font-bold mb-4">For Techies in OMR, Porur & Siruseri</h3>
+                        <p className="text-blue-100 text-lg mb-6">
+                            High salaries in Chennai's SaaS boom often come with high liabilities. One missed project deadline or layoff can spiral finances out of control.
+                        </p>
+                        <div className="grid md:grid-cols-2 gap-6">
+                            <div className="bg-blue-800/50 p-4 rounded-lg backdrop-blur-sm">
+                                <h4 className="font-bold text-yellow-400 mb-2">The "Minimum Due" Mirage</h4>
+                                <p className="text-sm">
+                                    Paying the "Minimum Due" on your HDFC or Citibank card feels safe, but at 42% APR, your debt doubles every 2 years. We help you break this cycle.
+                                </p>
+                            </div>
+                            <div className="bg-blue-800/50 p-4 rounded-lg backdrop-blur-sm">
+                                <h4 className="font-bold text-yellow-400 mb-2">PL Stacking</h4>
+                                <p className="text-sm">
+                                    Taking a Personal Loan to pay off a Credit Card is common but dangerous. We negotiate a combined settlement for all your unsecured debts.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                   </div>
                 </section>
 
-                {/* Types of Loans */}
-                <section id="types-of-loans" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Loans We Settle</h2>
-                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                    Our expertise covers the spectrum of debt issues in Tamil Nadu.
+{/* MSME & Textile Sector Relief */}
+                <section id="msme-relief" className="scroll-mt-32">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">MSME Debt Relief (Coimbatore & Tirupur)</h2>
+                  <p className="text-lg text-gray-700 mb-6">
+                    For the industrial belt of Western Tamil Nadu, the challenge is operational debt. Spiraling yarn prices and power tariffs have pushed many thriving units into the NPA zone.
                   </p>
                   
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Textile & MSME</h3>
-                      <p className="text-gray-700">
-                        Settlement for garment units in Tirupur and engineering firms in Coimbatore.
-                      </p>
-                    </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Personal & Credit Card</h3>
-                      <p className="text-gray-700">
-                        Resolving unsecured personal debt and credit card dues for IT professionals and others.
-                      </p>
-                    </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Vehicle Loans</h3>
-                      <p className="text-gray-700">
-                        Protecting your vehicle from illegal seizure by recovery agents in Chennai and other cities.
-                      </p>
-                    </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Education Loans</h3>
-                      <p className="text-gray-700">
-                        Helping graduates settle education loans that have become a burden due to unemployment.
-                      </p>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Credit Score Impact */}
-                <section id="credit-score" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Impact on Credit Score</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Settlement will show on your CIBIL report, but it is a necessary step to stop the financial bleeding.
-                  </p>
-                  <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-6">
-                    <p className="text-lg text-yellow-900">
-                      <strong>Reality Check:</strong> A "Settled" status is better than a "Written Off" or "Suit Filed" status. It allows you to close the chapter and eventually rebuild your financial health.
+                  <div className="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-600 mb-8">
+                    <h3 className="text-xl font-bold text-purple-900 mb-3">Restructuring vs. Bankruptcy</h3>
+                    <p className="text-gray-700 text-lg">
+                      Many business owners fear that NPA means the end. It doesn't.
                     </p>
+                    <div className="mt-4 grid md:grid-cols-2 gap-4">
+                        <div className="bg-white p-4 rounded-lg shadow-sm">
+                            <h4 className="font-bold text-gray-900">For Secured Loans (Machinery/Land)</h4>
+                            <p className="text-sm text-gray-600">
+                                We help you apply for <strong>MSME Restructuring</strong> schemes that extend the tenure and lower the EMI, preventing the bank from auctioning your assets under SARFAESI.
+                            </p>
+                        </div>
+                        <div className="bg-white p-4 rounded-lg shadow-sm">
+                            <h4 className="font-bold text-gray-900">For Unsecured Business Loans</h4>
+                            <p className="text-sm text-gray-600">
+                                We negotiate a settlement (OTS) to close the loan at 25-40% of the value, citing market volatility as the genuine reason for default.
+                            </p>
+                        </div>
+                    </div>
                   </div>
                 </section>
 
-                {/* Common Mistakes */}
-                <section id="common-mistakes" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Mistakes to Avoid</h2>
+                {/* High Court Rulings */}
+                <section id="high-court" className="scroll-mt-32">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">High Court Judgments Protecting You</h2>
                   <div className="space-y-6">
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold">✕</div>
-                      <div>
-                        <h3 className="font-bold text-lg text-gray-900">Paying "Kandhu Vatti"</h3>
-                        <p className="text-gray-700">Never pay illegal exorbitant interest. The law protects you. Report it instead.</p>
-                      </div>
+                    <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+                        <h4 className="font-bold text-lg text-gray-900 mb-2">Ban on Musclemen</h4>
+                        <p className="text-gray-600 text-sm mb-3"><em>Ref: Kuna Santhosh Kumar vs. RBI (Madras HC, April 2024)</em></p>
+                        <p className="text-gray-700">
+                            In this landmark judgment, the Madras High Court explicitly stated that banks cannot use "muscle power" or goons to recover loans. It directed that any agent visiting a borrower must carry an ID card and authorization. Violent recovery is a violation of your fundamental rights (Article 21).
+                        </p>
                     </div>
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold">✕</div>
-                      <div>
-                        <h3 className="font-bold text-lg text-gray-900">Ignoring Legal Notices</h3>
-                        <p className="text-gray-700">If you receive a notice from a court in Chennai or Madurai, act immediately. Ignoring it can lead to an arrest warrant.</p>
-                      </div>
-                    </div>
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold">✕</div>
-                      <div>
-                        <h3 className="font-bold text-lg text-gray-900">Surrendering Assets</h3>
-                        <p className="text-gray-700">Do not hand over your vehicle or property to agents without a court order. The Madras High Court protects you from this.</p>
-                      </div>
+                    <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+                        <h4 className="font-bold text-lg text-gray-900 mb-2">Reining in Digital Lenders</h4>
+                        <p className="text-gray-600 text-sm mb-3"><em>Ref: Recent Cyber Wing Circulars</em></p>
+                        <p className="text-gray-700">
+                            The Tamil Nadu Police Cyber Wing, backed by court directives, has made it a priority to book loan apps that morph photos or harass contacts. We use these circulars to file strong cyber complaints (CSR) that force these apps to delete your data.
+                        </p>
                     </div>
                   </div>
                 </section>
 
-                {/* Documentation */}
-                <section id="documentation" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Required Documents</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    To start your settlement process, we will need:
-                  </p>
-                  <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                    <div className="grid md:grid-cols-2 gap-8">
-                      <div>
-                        <h3 className="font-bold text-xl text-[#D2A02A] mb-4">Identity Proof</h3>
-                        <ul className="space-y-3 text-gray-700">
-                          <li className="flex items-center"><span className="mr-2">✓</span> PAN Card & Aadhar Card</li>
-                          <li className="flex items-center"><span className="mr-2">✓</span> GST Registration (for MSMEs)</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-xl text-[#D2A02A] mb-4">Loan Documents</h3>
-                        <ul className="space-y-3 text-gray-700">
-                          <li className="flex items-center"><span className="mr-2">✓</span> Loan Account Statement</li>
-                          <li className="flex items-center"><span className="mr-2">✓</span> Any Legal Notices Received</li>
-                          <li className="flex items-center"><span className="mr-2">✓</span> Sanction Letter</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Why Choose Us */}
-                <section id="why-choose-us" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose AMA Legal Solutions in TN?</h2>
-                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                    We are committed to protecting the rights of borrowers in Tamil Nadu.
-                  </p>
-                  
-                  <div className="grid md:grid-cols-3 gap-6 text-center">
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">⚖️</div>
-                      <h3 className="font-bold text-xl mb-2">Legal Expertise</h3>
-                      <p className="text-gray-600">Deep knowledge of the Kandhu Vatti Act and Madras High Court rulings.</p>
-                    </div>
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">🏭</div>
-                      <h3 className="font-bold text-xl mb-2">Industry Focused</h3>
-                      <p className="text-gray-600">Specialized support for Textile (Tirupur) and Auto (Chennai) industries.</p>
-                    </div>
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">🛡️</div>
-                      <h3 className="font-bold text-xl mb-2">Anti-Harassment</h3>
-                      <p className="text-gray-600">We take strong legal action against aggressive recovery agents and usurious lenders.</p>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Testimonials */}
-                <section id="testimonials" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Success Stories from TN</h2>
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
-                      <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
-                      <p className="text-gray-700 italic mb-4 relative z-10">
-                        "My textile export business in Tirupur was in trouble due to global demand slump. AMA Legal Solutions helped me settle my bank loan and avoid NPA classification. Truly professional."
-                      </p>
-                      <div className="flex items-center">
-                        <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">K</div>
-                        <div>
-                          <p className="font-bold text-gray-900">Karthik Raja</p>
-                          <p className="text-sm text-gray-500">Tirupur</p>
+                {/* Settlement Process */}
+                <section id="process" className="scroll-mt-32">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">The "AMA" Settlement Strategy</h2>
+                  <div className="relative">
+                    {/* Vertical Line */}
+                    <div className="absolute left-8 top-0 bottom-0 w-1 bg-gray-200 hidden md:block"></div>
+                    
+                    <div className="space-y-12">
+                        <div className="relative flex flex-col md:flex-row gap-8">
+                            <div className="flex-shrink-0 z-10">
+                                <div className="w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold border-4 border-white shadow-lg">1</div>
+                            </div>
+                            <div>
+                                <h3 className="text-xl font-bold text-gray-900 mb-2">Legal Shielding</h3>
+                                <p className="text-gray-700">
+                                    We issue a legal notice under the <strong>2003 Kanduvatti Act</strong> or relevant banking codes to the lender. This immediately shifts the power dynamic. They know you are legally represented.
+                                </p>
+                            </div>
                         </div>
-                      </div>
-                    </div>
-                    <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
-                      <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
-                      <p className="text-gray-700 italic mb-4 relative z-10">
-                        "I was trapped by a Kandhu Vatti lender in Chennai. The legal team at AMA guided me on how to use the law to stop the harassment and settle the principal amount."
-                      </p>
-                      <div className="flex items-center">
-                        <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">L</div>
-                        <div>
-                          <p className="font-bold text-gray-900">Lakshmi Narayanan</p>
-                          <p className="text-sm text-gray-500">Chennai</p>
+
+                        <div className="relative flex flex-col md:flex-row gap-8">
+                            <div className="flex-shrink-0 z-10">
+                                <div className="w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold border-4 border-white shadow-lg">2</div>
+                            </div>
+                            <div>
+                                <h3 className="text-xl font-bold text-gray-900 mb-2">Financial Analysis</h3>
+                                <p className="text-gray-700">
+                                    We analyze your "True Paying Capacity". We prove to the bank that you simply cannot pay the inflated amount, backing it with income proofs and other liability statements.
+                                </p>
+                            </div>
                         </div>
-                      </div>
+
+                        <div className="relative flex flex-col md:flex-row gap-8">
+                            <div className="flex-shrink-0 z-10">
+                                <div className="w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold border-4 border-white shadow-lg">3</div>
+                            </div>
+                            <div>
+                                <h3 className="text-xl font-bold text-gray-900 mb-2">Negotiation at HQ Level</h3>
+                                <p className="text-gray-700">
+                                    Our team negotiates directly with the Credit Managers at the bank's zonal offices in Chennai or Mumbai, bypassing the aggressive local collection agents who have no decision-making power.
+                                </p>
+                            </div>
+                        </div>
+
+                         <div className="relative flex flex-col md:flex-row gap-8">
+                            <div className="flex-shrink-0 z-10">
+                                <div className="w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold border-4 border-white shadow-lg">4</div>
+                            </div>
+                            <div>
+                                <h3 className="text-xl font-bold text-gray-900 mb-2">Closure & No Dues</h3>
+                                <p className="text-gray-700">
+                                    You pay the agreed settlement amount directly to the bank (never to us or an agent). We review the <strong>Settlement Letter</strong> to ensure there are no hidden clauses.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                   </div>
                 </section>
 
-                {/* FAQs */}
-                <FaqSection />
+                {/* Harassment Laws & Police Helpline */}
+                <section id="harassment" className="scroll-mt-32">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Emergency Help in Tamil Nadu</h2>
+                  <p className="text-lg text-gray-700 mb-8">
+                    If agents are at your home or work, use these resources.
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-6 mb-8">
+                    <div className="bg-red-50 p-8 rounded-2xl border border-red-100 shadow-sm hover:shadow-md transition-shadow">
+                      <h4 className="font-bold text-xl mb-4 text-red-700 flex items-center">
+                        <span className="text-2xl mr-2">👮‍♂️</span> Police Helplines
+                      </h4>
+                       <div className="space-y-2">
+                        <p className="text-gray-900"><strong>Emergency:</strong> 100 / 112</p>
+                        <p className="text-gray-900"><strong>Cyber Crime:</strong> 1930</p>
+                        <p className="text-gray-900"><strong>Chennai Anti-Kanduvatti Cell:</strong> Check local commissionerate listings.</p>
+                      </div>
+                    </div>
+                    <div className="bg-blue-50 p-8 rounded-2xl border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
+                      <h4 className="font-bold text-xl mb-4 text-blue-700 flex items-center">
+                        <span className="text-2xl mr-2">📱</span> Kaaval Uthavi App
+                      </h4>
+                      <p className="text-gray-700 text-sm mb-4">
+                          The Tamil Nadu Police's official app "Kaaval Uthavi" has an SOS button that sends your live location to the nearest control room. Use this if agents are threatening you physically.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+
+                {/* Service Areas */}
+                <section id="service-areas" className="scroll-mt-32">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Serving across Tamil Nadu</h2>
+                  <p className="text-lg text-gray-700 mb-8">
+                    We cover every major district with a mix of digital negotiation and local legal support.
+                  </p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {[
+                      { city: "Chennai", desc: "Metro Region" },
+                      { city: "Coimbatore", desc: "Textile/Engg Hub" },
+                      { city: "Madurai", desc: "Temple City" },
+                      { city: "Tirupur", desc: "Export Hub" },
+                      { city: "Salem", desc: "Steel City" },
+                      { city: "Trichy", desc: "Central TN" },
+                      { city: "Erode", desc: "Turmeric City" },
+                      { city: "Tirunelveli", desc: "Southern Hub" }
+                    ].map((item, idx) => (
+                      <div key={idx} className="p-4 border border-gray-100 rounded-lg hover:border-[#D2A02A] hover:bg-yellow-50 transition-all text-center group">
+                        <h4 className="font-bold text-gray-900 group-hover:text-[#D2A02A]">{item.city}</h4>
+                        <p className="text-xs text-gray-500">{item.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+
+                {/* FAQ Section */}
+                <section id="faqs" className="scroll-mt-32">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
+                  <div className="space-y-4">
+                    {faqs.map((faq, index) => (
+                      <details key={index} className="group bg-gray-50 rounded-xl p-4 [&_summary::-webkit-details-marker]:hidden">
+                        <summary className="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900 font-bold text-lg">
+                          <h3 className="hover:text-[#D2A02A] transition-colors">{faq.question}</h3>
+                          <span className="relative size-5 shrink-0">
+                            <svg className="absolute inset-0 size-5 opacity-100 group-open:opacity-0 transition-opacity" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <svg className="absolute inset-0 size-5 opacity-0 group-open:opacity-100 transition-opacity" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                          </span>
+                        </summary>
+                        <p className="mt-4 leading-relaxed text-gray-700 pl-2 border-l-2 border-[#D2A02A]">
+                          {faq.answer}
+                        </p>
+                      </details>
+                    ))}
+                  </div>
+                </section>
 
                 {/* Final CTA */}
-                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">
+                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-2xl md:rounded-3xl p-8 md:p-16 text-center text-white relative overflow-hidden shadow-2xl">
+                  <div className="absolute top-0 left-0 w-full h-full bg-[url('/services/pattern.png')] opacity-10"></div>
                   <div className="relative z-10">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">Get Legal Help Today</h2>
-                    <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
-                      Don't face the banks alone. Our expert lawyers in Tamil Nadu are here to protect you.
+                    <h2 className="text-2xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight">
+                      Reclaim Your Life from Debt
+                    </h2>
+                    <p className="text-base md:text-xl opacity-90 mb-8 md:mb-12 max-w-2xl mx-auto font-light">
+                      Join thousands of Tamil Nadu residents who have legally settled their loans and are now debt-free.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                       <Link href="/contact">
-                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg w-full sm:w-auto">
-                          Book Your Consultation
+                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-12 rounded-full transition-all transform hover:scale-105 shadow-xl text-lg w-full sm:w-auto">
+                          Start Settlement Now
                         </button>
                       </Link>
                       <a href="tel:+918700343611">
-                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-4 px-12 rounded-full transition-all text-lg w-full sm:w-auto">
-                          Call: +91-8700343611
+                        <button className="bg-white/10 backdrop-blur-md border md:border-2 border-white/30 hover:bg-white hover:text-gray-900 text-white font-bold py-4 px-12 rounded-full transition-all text-lg w-full sm:w-auto">
+                          Call +91-8700343611
                         </button>
                       </a>
                     </div>
-                    <p className="mt-8 text-sm opacity-70">
-                      Confidential • Legal • Effective
-                    </p>
                   </div>
                 </section>
 
               </div>
             </div>
-
-            {/* Sidebar */}
-            <div className="lg:w-1/4">
-              <div className="sticky top-24 space-y-8">
+            
+            {/* Right Sidebar - Sticky */}
+            <div className="hidden lg:block space-y-8 sticky top-24">
                 {/* Contact Card */}
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">Need Urgent Help?</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Need Urgent Help?</h3>
                   <p className="text-gray-600 mb-6 text-sm">
-                    Speak to our senior loan settlement lawyers in Tamil Nadu today.
+                    Speak to our senior loan settlement lawyers today.
                   </p>
                   <a 
                     href="tel:+918700343611" 
@@ -563,33 +614,60 @@ export default function TNLoanSettlementPage() {
                   </Link>
                 </div>
 
-                {/* Quick Links */}
+                {/* State Data */}
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">Related Services</h3>
-                  <ul className="space-y-3 text-sm">
-                    <li>
-                      <Link href="/services/banking-and-finance" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Banking & Finance
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/services/civil" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Civil Litigation
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/services/arbitration" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Arbitration
-                      </Link>
-                    </li>
-                    
-                  </ul>
+                    <h4 className="font-bold text-lg mb-4 text-[#D2A02A]">State Data</h4>
+                    <ul className="space-y-4 text-sm">
+                        <li className="flex justify-between border-b border-gray-100 pb-2">
+                            <span className="opacity-70 text-gray-700">Anti-Kanduvatti Act</span>
+                            <span className="font-bold text-green-600">Active</span>
+                        </li>
+                         <li className="flex justify-between border-b border-gray-100 pb-2">
+                            <span className="opacity-70 text-gray-700">Lok Adalat (2024)</span>
+                            <span className="font-bold text-gray-900">₹695 Cr Settled</span>
+                        </li>
+                         <li className="flex justify-between">
+                            <span className="opacity-70 text-gray-700">Kaaval Uthavi</span>
+                            <span className="font-bold text-blue-600">App Live</span>
+                        </li>
+                    </ul>
                 </div>
-              </div>
             </div>
           </div>
-          
-          <div className="mt-16">
+
+          {/* Banks Grid - Full Width */}
+          <div className="mt-20 md:mt-32">
+            <section className="my-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
+                We Settle Loans From
+              </h2>
+              <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                From nationalized giants to regional banks in Tamil Nadu, we handle them all.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                {[
+                    "SBI", "HDFC", "ICICI", "Kotak Mahindra", "Axis Bank", 
+                    "IndusInd", "IDFC First", "Yes Bank", "Bajaj Finserv", "City Union Bank"
+                ].map((bank) => (
+                    <Link 
+                      key={bank}
+                      href={`/services/loan-settlement/${bank.toLowerCase().replace(' ', '-')}`}
+                      className="bg-white border border-gray-200 rounded-xl p-4 text-center hover:shadow-lg transition-all duration-300 hover:border-[#D2A02A] hover:-translate-y-1 group"
+                    >
+                      <span className="text-gray-800 font-bold group-hover:text-[#D2A02A] transition-colors">{bank}</span>
+                    </Link>
+                ))}
+              </div>
+               <div className="mt-8 text-center">
+                  <span className="inline-block px-4 py-2 bg-green-50 text-green-700 rounded-full text-sm font-semibold border border-green-200">
+                    including City Union Bank (CUB) & Karur Vysya Bank (KVB)
+                  </span>
+                </div>
+            </section>
+          </div>
+
+          {/* States Grid - Full Width */}
+          <div className="mt-20">
             <GenericStatesGrid 
               serviceName="Loan Settlement" 
               servicePath="loan-settlement" 
@@ -605,27 +683,28 @@ export default function TNLoanSettlementPage() {
                 "Haryana": "Haryana",
                 "Himachal Pradesh": "himachal-pradesh",
                 "Jharkhand": "Jharkhand",
-                "Karnataka": "Karnataka",
+                "Karnataka": "karnataka",
                 "Kerala": "Kerala",
                 "Madhya Pradesh": "madhya-pradesh",
                 "Maharashtra": "Maharashtra",
                 "Manipur": "Manipur",
                 "Meghalaya": "Meghalaya",
                 "Mizoram": "Mizoram",
-                "Odisha": "Odisha",
-                "Puducherry": "Puducherry",
+                "Odisha": "odisha",
+                "Puducherry": "puducherry",
                 "Punjab": "Punjab",
                 "Rajasthan": "Rajasthan",
                 "Sikkim": "Sikkim",
                 "Tamil Nadu": "tamil-nadu",
                 "Telangana": "Telangana",
-                "Tripura": "Tripura",
+                "Tripura": "tripura",
                 "Uttar Pradesh": "UttarPradesh",
                 "Uttarakhand": "Uttrakhand",
                 "West Bengal": "west-bengal"
               }}
             />
           </div>
+          
         </div>
       </div>
     </>

@@ -251,10 +251,9 @@ export default function LoanSettlementKarnatakaPage() {
         <div className="container mx-auto px-4 max-w-[1600px] py-8">
           <Breadcrumbs items={breadcrumbItems} />
           
-          <div className="grid grid-cols-1 lg:grid-cols-[250px_1fr_300px] gap-8 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 items-start">
             {/* Left Sidebar - TOC components */}
-            <div className="hidden lg:block sticky top-24 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                <h3 className="font-bold text-gray-900 mb-4 px-2">Table of Contents</h3>
+            <div className="hidden lg:block sticky top-24">
               <TableOfContents sections={tocSections} orientation="vertical" />
             </div>
 
@@ -264,7 +263,7 @@ export default function LoanSettlementKarnatakaPage() {
                 <TableOfContents sections={tocSections} />
               </div>
 
-              <div className="bg-white p-4 md:p-12 rounded-2xl shadow-sm space-y-10 md:space-y-16">
+              <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
                 
                 {/* Introduction - The Dual Economy Context */}
                 <section id="introduction" className="scroll-mt-32">
@@ -604,10 +603,47 @@ export default function LoanSettlementKarnatakaPage() {
               </div>
             </div>
             
-            {/* Sidebar Mobile Placement (if needed for structure, but hidden here as it's sticky up top) */}
-             <div className="lg:hidden">
-                {/* Mobile sidebar content if any */}
-             </div>
+            {/* Right Sidebar - Sticky */}
+            <div className="hidden lg:block space-y-8 sticky top-24">
+                {/* Contact Card */}
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Need Urgent Help?</h3>
+                  <p className="text-gray-600 mb-6 text-sm">
+                    Speak to our senior loan settlement lawyers in Bangalore today.
+                  </p>
+                  <a 
+                    href="tel:+918700343611" 
+                    className="block w-full bg-[#D2A02A] text-white text-center py-3 rounded-lg font-semibold hover:bg-[#b88a22] transition-colors mb-4"
+                  >
+                    Call +91-8700343611
+                  </a>
+                  <Link 
+                    href="/contact" 
+                    className="block w-full border border-[#D2A02A] text-[#D2A02A] text-center py-3 rounded-lg font-semibold hover:bg-[#D2A02A] hover:text-white transition-colors"
+                  >
+                    Request Callback
+                  </Link>
+                </div>
+
+                {/* State Data */}
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h4 className="font-bold text-lg mb-4 text-[#D2A02A]">State Data</h4>
+                    <ul className="space-y-4 text-sm">
+                        <li className="flex justify-between border-b border-gray-100 pb-2">
+                            <span className="opacity-70 text-gray-700">2025 Ordinance</span>
+                            <span className="font-bold text-green-600">Active</span>
+                        </li>
+                         <li className="flex justify-between border-b border-gray-100 pb-2">
+                            <span className="opacity-70 text-gray-700">KGB OTS Cases</span>
+                            <span className="font-bold text-gray-900">1 Lakh+</span>
+                        </li>
+                         <li className="flex justify-between">
+                            <span className="opacity-70 text-gray-700">Police WhatsApp</span>
+                            <span className="font-bold text-blue-600">Live</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
           </div>
 
           {/* Banks Grid - Full Width */}
