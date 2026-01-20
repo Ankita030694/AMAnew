@@ -779,7 +779,20 @@ export default function DelhiIPRPage() {
           
           <div className="mt-20">
             <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">IPR Services Across India</h2>
-            <GenericStatesGrid serviceName="Trademark Registration" servicePath="intellectual-property-rights" />
+            <GenericStatesGrid 
+              serviceName="Trademark Registration" 
+              servicePath="intellectual-property-rights"
+              customSlugs={{
+                "Delhi": "Delhi",
+                "Gujarat": "Gujarat",
+                "Maharashtra": "Maharashtra",
+                "Punjab": "Punjab",
+                "Rajasthan": "Rajasthan",
+                "Tamil Nadu": "TamilNadu",
+                "Uttar Pradesh": "UttarPradesh",
+                "Puducherry": "pudducherry"
+              }}
+            />
           </div>
         </div>
       </div>

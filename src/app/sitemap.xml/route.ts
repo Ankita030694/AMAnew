@@ -88,6 +88,9 @@ export async function GET(): Promise<Response> {
     '/services/loan-settlement/madhya-pradesh',
     '/services/loan-settlement/tamil-nadu',
     '/services/loan-settlement/west-bengal',
+    '/services/loan-settlement/jammu-and-kashmir',
+    '/services/loan-settlement/ladakh',
+    '/services/loan-settlement/lakshadweep',
     // Specific Loan Settlement City Pages
     '/services/loan-settlement/Ghaziabad',
     '/services/loan-settlement/Gurugram',

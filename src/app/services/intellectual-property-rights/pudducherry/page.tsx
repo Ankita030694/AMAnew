@@ -655,7 +655,20 @@ export default function PudducherryIPRPage() {
           </div>
           
           <div className="mt-16">
-            <GenericStatesGrid serviceName="Trademark Registration" servicePath="intellectual-property-rights" />
+            <GenericStatesGrid 
+              serviceName="Trademark Registration" 
+              servicePath="intellectual-property-rights"
+              customSlugs={{
+                "Delhi": "Delhi",
+                "Gujarat": "Gujarat",
+                "Maharashtra": "Maharashtra",
+                "Punjab": "Punjab",
+                "Rajasthan": "Rajasthan",
+                "Tamil Nadu": "TamilNadu",
+                "Uttar Pradesh": "UttarPradesh",
+                "Puducherry": "pudducherry"
+              }}
+            />
           </div>
         </div>
       </div>

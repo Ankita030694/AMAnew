@@ -786,6 +786,17 @@ const BiharIPRPage = () => {
             <GenericStatesGrid
               serviceName="Trademark Registration"
               servicePath="intellectual-property-rights"
+              customSlugs={{
+                "Delhi": "Delhi",
+                "Gujarat": "Gujarat",
+                "Maharashtra": "Maharashtra",
+                "Punjab": "Punjab",
+                "Rajasthan": "Rajasthan",
+                "Tamil Nadu": "TamilNadu",
+                "Uttar Pradesh": "UttarPradesh",
+                "Puducherry": "pudducherry",
+                "Kerala": "kerala"
+              }}
             />
           </div>
         </div>

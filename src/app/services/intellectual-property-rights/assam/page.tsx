@@ -479,7 +479,20 @@ export default function AssamIPRPage() {
           </div>
           
           <div className="mt-16">
-            <GenericStatesGrid serviceName="Intellectual Property Rights" servicePath="intellectual-property-rights" />
+            <GenericStatesGrid 
+              serviceName="Intellectual Property Rights" 
+              servicePath="intellectual-property-rights"
+              customSlugs={{
+                "Delhi": "Delhi",
+                "Gujarat": "Gujarat",
+                "Maharashtra": "Maharashtra",
+                "Punjab": "Punjab",
+                "Rajasthan": "Rajasthan",
+                "Tamil Nadu": "TamilNadu",
+                "Uttar Pradesh": "UttarPradesh",
+                "Puducherry": "pudducherry"
+              }}
+            />
           </div>
         </div>
       </div>
