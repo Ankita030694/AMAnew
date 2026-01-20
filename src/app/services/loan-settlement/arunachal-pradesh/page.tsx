@@ -3,31 +3,52 @@ import Script from "next/script";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import FaqSection from "./FaqSection";
 
-export const metadata = {
-  title: "Loan Settlement in Arunachal Pradesh | Debt Relief Lawyers Itanagar, Pasighat",
-  description:
-    "Struggling with debt in Arunachal Pradesh? AMA Legal Solutions offers expert loan settlement for Govt employees & tribal land owners. Stop harassment & settle legally.",
-  alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/Arunachal-Pradesh',
+// FAQ data for rendering and Schema
+const faqs = [
+  {
+    question: "Is loan settlement legal in Arunachal Pradesh?",
+    answer: "Yes, loan settlement is fully legal in Arunachal Pradesh. It operates under the framework of RBI guidelines and is supported by state-level mechanisms like the Lok Adalats organized by the Arunachal Pradesh State Legal Services Authority (APSLSA). The Arunachal Pradesh Money Lending (Regulation) Act, 2018, also provides a legal basis for fair lending and debt resolution."
   },
-  openGraph: {
-    title: "Loan Settlement in Arunachal Pradesh | Debt Relief Lawyers Itanagar, Pasighat",
-    description: "Struggling with debt in Arunachal Pradesh? AMA Legal Solutions offers expert loan settlement for Govt employees & tribal land owners. Stop harassment & settle legally.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/Arunachal-Pradesh",
-    type: "website",
-    images: [
-      {
-        url: "/services/3.png",
-        width: 1200,
-        height: 630,
-        alt: "Loan Settlement Services Arunachal Pradesh",
-      },
-    ],
+  {
+    question: "Can I settle my loan if I am a government employee in AP?",
+    answer: "Many residents in Arunachal Pradesh are government employees. While banks are generally stricter with salaried government employees due to their stable income, settlement is still possible if you can prove genuine financial hardship (like medical emergencies or family crises). We handle such cases with extreme discretion to ensure your employment reputation is not affected."
   },
-};
+  {
+    question: "What is the Lok Adalat's role in Itanagar for loans?",
+    answer: "The Lok Adalat in Itanagar and other districts is a powerful forum for settling bank recovery cases without a formal court trial. Awards passed here are final. We represent our clients in these Lok Adalats to ensure they get a fair settlement amount and are not pressured by bank officials into signing unfavorable terms."
+  },
+  {
+    question: "Do you have a physical office in Itanagar?",
+    answer: "AMA Legal Solutions operates as a digital-first law firm with a network of lawyers across India, including associates in the North East. We handle your entire case remotely via video consultations, email, and phone, while our local legal partners can assist with on-ground requirements in Itanagar or the Guwahati DRT if necessary."
+  },
+  {
+    question: "How does the AP Money Lending Act protect me?",
+    answer: "The Arunachal Pradesh Money Lending (Regulation) Act, 2018, was enacted to curb illegal money lending and harassment. It mandates that lenders must be licensed and cannot charge exorbitant interest rates. If you are facing harassment from unlicensed money lenders or aggressive recovery agents, this Act provides you with strong legal remedies."
+  },
+  {
+    question: "Can settlement remove the 'Written Off' status and improve CIBIL?",
+    answer: "Settlement changes the status to 'Settled', which is better than 'Written Off'. While it still impacts your score initially, it stops the bleeding. By clearing the debt, you can start rebuilding your CIBIL score immediately. We guide you on how to use secured credit cards to boost your score post-settlement."
+  },
+  {
+    question: "What if the bank has filed a case in DRT Guwahati?",
+    answer: "The Debt Recovery Tribunal (DRT) in Guwahati has jurisdiction over Arunachal Pradesh for high-value cases (usually above ₹20 Lakhs). If a case is filed there, do not ignore it. We can represent you at the DRT to contest the bank's claims or negotiate a settlement (OTS) during the pendency of the case."
+  },
+  {
+    question: "Can I settle agricultural loans in Arunachal Pradesh?",
+    answer: "Agricultural loans often have specific government waiver schemes (KCC waivers). However, if you are not covered by a scheme and are defaulting, a One Time Settlement (OTS) is possible. The process differs slightly from personal loans, and we can advise you based on the specific bank's agricultural debt policy."
+  },
+  {
+    question: "How quickly can you stop harassment from recovery agents?",
+    answer: "Once you hire us, we issue a formal legal notice of representation to the lender. This typically stops the harassment within 24-48 hours. If agents continue to harass you, we can help you file a complaint via the 'Jansunwai' portal or with the local police under relevant protection laws."
+  },
+  {
+    question: "How much does AMA Legal Solutions charge?",
+    answer: "Our fees are transparent and affordable. We charge a small retainer fee to start the legal representation and a success fee only when we successfully save you money on the settlement. There are no hidden charges, and we discuss all costs upfront during your free consultation."
+  }
+];
 
+// Breadcrumb Schema
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -54,16 +75,17 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 4,
       "name": "Arunachal Pradesh",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/Arunachal-Pradesh"
+      "item": "https://amalegalsolutions.com/services/loan-settlement/arunachal-pradesh"
     }
   ]
 };
 
+// Article Schema
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Loan Settlement Services in Arunachal Pradesh: Protecting the Pride of the Dawn-Lit Mountains",
-  "description": "Comprehensive guide to loan settlement in Arunachal Pradesh. Learn how to legally settle personal loans, protect tribal land rights, and resolve debt issues.",
+  "headline": "Loan Settlement Services in Arunachal Pradesh: Expert Legal Help",
+  "description": "Facing debt issues in Arunachal Pradesh? Our expert lawyers in Itanagar & Pasighat help you settle loans, stop harassment, and save up to 50% on dues.",
   "image": "https://amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
@@ -78,75 +100,80 @@ const articleSchema = {
       "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
-  "datePublished": "2023-11-21",
-  "dateModified": "2023-11-21"
+  "datePublished": "2023-11-20",
+  "dateModified": "2025-01-20",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://amalegalsolutions.com/services/loan-settlement/arunachal-pradesh"
+  }
 };
 
-const reviewSchema = {
+// FAQ Schema
+const faqSchema = {
   "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Loan Settlement Services Arunachal Pradesh",
-  "image": "https://amalegalsolutions.com/services/3.png",
-  "description": "Expert legal loan settlement services in Arunachal Pradesh.",
-  "brand": {
-    "@type": "Brand",
-    "name": "AMA Legal Solutions"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "420"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Tana T."
-      },
-      "reviewBody": "I am a government employee in Naharlagun. I was drowning in personal loan EMIs. AMA Legal Solutions helped me restructure my debt and stop the bank from harassing me at my office."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Dorjee K."
-      },
-      "reviewBody": "They helped me save my land in Tawang from being auctioned by the bank. Their knowledge of tribal land rights and SARFAESI laws is excellent."
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
     }
-  ]
+  }))
 };
 
-export default function ArunachalLoanSettlementPage() {
+export const metadata = {
+  title: "Loan Settlement in Arunachal Pradesh | Debt Relief Lawyers Itanagar",
+  description:
+    "Best loan settlement services in Arunachal Pradesh (Itanagar, Naharlagun, Pasighat). Legally settle personal loans & credit cards. Stop bank harassment today.",
+  keywords: [
+    "loan settlement Arunachal Pradesh",
+    "debt settlement Itanagar",
+    "loan settlement Pasighat",
+    "debt relief services AP",
+    "credit card settlement Naharlagun",
+    "loan settlement lawyer Arunachal",
+    "One time settlement SBI AP",
+    "remove debt Arunachal Pradesh",
+    "Lok Adalat Itanagar loan"
+  ],
+  alternates: {
+    canonical: 'https://amalegalsolutions.com/services/loan-settlement/arunachal-pradesh',
+  },
+  openGraph: {
+    title: "Loan Settlement in Arunachal Pradesh | Expert Debt Relief",
+    description: "Struggling with debt in Arunachal Pradesh? We negotiate with banks to reduce your debt and stop harassment in Itanagar and across the state.",
+    url: "https://amalegalsolutions.com/services/loan-settlement/arunachal-pradesh",
+    type: "website",
+    images: [
+      {
+        url: "/services/3.png",
+        width: 1200,
+        height: 630,
+        alt: "Loan Settlement Services Arunachal Pradesh",
+      },
+    ],
+  },
+};
+
+export default function LoanSettlementAPPage() {
   const tocSections = [
-    { id: "introduction", title: "Introduction" },
-    { id: "what-is-settlement", title: "What is Loan Settlement?" },
-    { id: "legal-framework", title: "Legal Framework in Arunachal" },
-    { id: "process", title: "Our Process" },
-    { id: "govt-employees", title: "For Govt Employees" },
-    { id: "tribal-rights", title: "Tribal Land Rights" },
-    { id: "lok-adalat", title: "Lok Adalat Settlement" },
-    { id: "types-of-loans", title: "Types of Loans" },
-    { id: "credit-score", title: "Credit Score Impact" },
-    { id: "common-mistakes", title: "Common Mistakes" },
-    { id: "documentation", title: "Required Documents" },
-    { id: "why-choose-us", title: "Why Choose Us" },
-    { id: "testimonials", title: "Success Stories" },
+    { id: "introduction", title: "Debt Relief in AP" },
+    { id: "what-is-settlement", title: "Understanding Settlement" },
+    { id: "ap-legal-landscape", title: "AP Legal Framework" },
+    { id: "lok-adalat", title: "Lok Adalat & Settlement" },
+    { id: "why-choose-ama", title: "Why Choose AMA" },
+    { id: "settlement-process", title: "Our Process" },
+    { id: "harassment-laws", title: "Stop Harassment" },
+    { id: "documents", title: "Documents Needed" },
+    { id: "city-services", title: "Service Areas" },
     { id: "faqs", title: "FAQs" },
   ];
 
   const breadcrumbItems = [
     { label: "Services", href: "/services" },
     { label: "Loan Settlement", href: "/services/loan-settlement" },
-    { label: "Arunachal Pradesh", href: "/services/loan-settlement/Arunachal-Pradesh" },
+    { label: "Arunachal Pradesh", href: "/services/loan-settlement/arunachal-pradesh" },
   ];
 
   return (
@@ -162,9 +189,9 @@ export default function ArunachalLoanSettlementPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <Script
-        id="review-schema"
+        id="faq-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       <div className="bg-gray-50 min-h-screen font-sans text-gray-800">
@@ -175,111 +202,154 @@ export default function ArunachalLoanSettlementPage() {
             className="absolute inset-0 bg-cover bg-center z-0" 
             style={{ background: "black" }}
           ></div>
-          <div className="relative z-20 container mx-auto px-4 py-24 md:py-32 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight mt-10">
-              Protecting the Pride of the Dawn-Lit Mountains: <span className="text-[#D2A02A]">Loan Settlement in Arunachal Pradesh</span>
+          <div className="relative z-20 container mx-auto px-4 py-12 md:py-32 text-center">
+            <h1 className="text-2xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-10">
+              Trusted <span className="text-[#D2A02A]">Loan Settlement</span> Services in <br className="hidden md:block"/> Arunachal Pradesh
             </h1>
-            <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-gray-200">
-              Expert legal defense for Government Employees and Tribal Land Owners. Stop harassment and settle bank debts with dignity in Itanagar, Pasighat, and beyond.
+            <p className="text-sm md:text-2xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
+              From Itanagar to Tawang, we help you legally negotiate with banks to reduce your debt burden and stop agent harassment.
             </p>
             <Link href="/contact">
-              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg">
-                Get a Free Case Evaluation
+              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg">
+                Get a Free Consultation
               </button>
             </Link>
           </div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-7xl py-8">
+        <div className="container mx-auto px-4 max-w-[1600px] py-8">
           <Breadcrumbs items={breadcrumbItems} />
           
-          <div className="flex flex-col lg:flex-row gap-12">
-            {/* Main Content Area */}
-            <div className="lg:w-3/4">
-              
-              <TableOfContents sections={tocSections} />
+          <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 items-start">
+            {/* Left Sidebar - TOC components */}
+            <div className="hidden lg:block sticky top-24">
+              <TableOfContents sections={tocSections} orientation="vertical" />
+            </div>
 
-              <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm mt-8 space-y-12">
+            {/* Main Content Area */}
+            <div className="min-w-0">
+              <div className="lg:hidden mb-6 sticky top-20 z-10">
+                <TableOfContents sections={tocSections} />
+              </div>
+
+              <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Financial Challenges in the Land of Dawn-Lit Mountains</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Arunachal Pradesh is unique, with a strong reliance on government employment and a rich tribal heritage. However, financial stress is rising. <strong>Government employees</strong> often find themselves trapped in a cycle of personal loans, while <strong>entrepreneurs</strong> face challenges with business loans.
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Overcoming Financial Stress in the Land of Dawn-Lit Mountains</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
+                    Arunachal Pradesh, with its breathtaking landscapes and vibrant culture, is developing rapidly. However, the economic reality for many residents in cities like Itanagar, Naharlagun, and Pasighat can be challenging. Whether you are running a small business affected by market fluctuations or a salaried individual facing unexpected medical expenses, debt can pile up quickly.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    The fear of social stigma and the complexity of land laws (LPCs and SARFAESI) add to the burden.
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
+                    The stress of receiving constant calls from bank recovery agents, the fear of legal notices, and the worry about social reputation are common issues faced by thousands in the state. But defaulting on a loan does not mean the end of your financial life. **Loan Settlement** is a legal and effective way to exit this debt trap.
                   </p>
-                  <p className="text-lg leading-relaxed text-gray-700">
-                    AMA Legal Solutions provides specialized legal support to the people of Arunachal Pradesh. Whether you are in Itanagar, Naharlagun, Pasighat, or Tawang, we help you navigate the legal system to settle your debts and protect your assets.
+                  <p className="text-sm md:text-lg leading-relaxed text-gray-700">
+                    AMA Legal Solutions brings expert legal aid to Arunachal Pradesh. We understand the unique socio-economic fabric of the state and the specific challenges faced by its residents. Our team of lawyers works tirelessly to negotiate with lenders on your behalf, ensuring you get a fair chance to settle your debts and move forward with dignity.
                   </p>
                 </section>
 
                 {/* What is Loan Settlement */}
                 <section id="what-is-settlement" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">What is Loan Settlement?</h2>
-                  <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
-                    <p className="text-lg text-blue-900 italic">
-                      "Loan settlement, or One Time Settlement (OTS), is a legal negotiation where the bank agrees to accept a reduced lump sum amount to close a loan account that has become a Non-Performing Asset (NPA)."
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">What is Loan Settlement (OTS)?</h2>
+                  <div className="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 mb-4 md:mb-8 rounded-r-lg">
+                    <p className="text-sm md:text-lg text-blue-900 italic">
+                      "Loan settlement is a negotiated agreement where the lender accepts a reduced payment—often significantly lower than the total dues—to close a non-performing loan account."
                     </p>
                   </div>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    For a government employee, this could mean settling a personal loan of ₹10 Lakhs for ₹5-6 Lakhs, allowing you to free up your salary from crippling EMIs.
+                    When you are unable to pay your EMIs for over 90 days, your loan becomes a Non-Performing Asset (NPA). For banks (like SBI, Apex Bank, or private lenders), holding onto NPAs is bad for business. If they see that a borrower in Arunachal Pradesh has a **genuine financial crisis**, they are often willing to settle through a One Time Settlement (OTS) scheme.
                   </p>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    We assist with:
+                    For instance, if you have a personal loan of ₹8 Lakhs that has ballooned to ₹12 Lakhs with interest, but you have lost your income source, we might negotiate to close the entire account for ₹4-5 Lakhs. This stops the interest meter and ends the legal liability once and for all.
                   </p>
-                  <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
-                    <li>Personal Loans & Credit Cards</li>
-                    <li>'Apon Ghar' Housing Loans</li>
-                    <li>Business Loans (MSME)</li>
-                    <li>KCC & Agricultural Loans</li>
-                  </ul>
                 </section>
 
-                {/* Legal Framework */}
-                <section id="legal-framework" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Legal Protections in Arunachal Pradesh</h2>
+                {/* AP Legal Landscape */}
+                <section id="ap-legal-landscape" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Legal Protections for Borrowers in Arunachal Pradesh</h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    You have specific legal rights that protect you from exploitation.
+                    Residents of Arunachal Pradesh are protected by a combination of central banking laws and specific state regulations. Knowing these laws is your shield against harassment.
                   </p>
                   
                   <h3 className="text-2xl font-semibold text-gray-900 mb-4">Arunachal Pradesh Money Lending (Regulation) Act, 2018</h3>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    This Act regulates private money lending in the state. It mandates that all lenders must be licensed and caps interest rates (typically 15-18%). If you are dealing with unlicensed lenders charging exorbitant interest, this law is your shield.
+                    This landmark state legislation was introduced to regulate money lending and curb the menace of illegal loan sharks. It ensures that:
                   </p>
+                  <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
+                    <li>Money lenders must be registered and licensed.</li>
+                    <li>Interest rates cannot exceed the prescribed limits.</li>
+                    <li><strong>Harassment is illegal:</strong> Any form of intimidation or coercion to recover debt is a punishable offense.</li>
+                    <li>Courts can intervene to allow repayment in easy installments based on your capacity.</li>
+                  </ul>
 
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Gauhati High Court (Itanagar Bench) Protection</h3>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">DRT Guwahati Jurisdiction</h3>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    The <strong>Gauhati High Court</strong> has consistently ruled against harassment by recovery agents. Banks cannot use force or humiliation to recover dues. We can seek immediate judicial intervention if your rights are violated.
+                    For formalized bank loans, especially higher value ones (above ₹20 Lakhs), the <strong>Debt Recovery Tribunal (DRT) in Guwahati</strong> has jurisdiction over Arunachal Pradesh. If a bank initiates a SARFAESI action to seize your property or files a recovery suit, it usually happens through this tribunal. Having legal representation that understands DRT procedures is crucial to defend your assets and negotiate a settlement before it's too late.
                   </p>
+                </section>
 
-                  <div className="grid md:grid-cols-2 gap-6 mb-8">
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                      <h4 className="font-bold text-lg mb-2 text-[#D2A02A]">APSLSA Lok Adalats</h4>
-                      <p className="text-gray-600">The Arunachal Pradesh State Legal Services Authority conducts Lok Adalats, which are effective for settling bank disputes amicably and quickly.</p>
+                {/* Lok Adalat */}
+                <section id="lok-adalat" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Solving Disputes through Lok Adalat in AP</h2>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    The <strong>Arunachal Pradesh State Legal Services Authority (APSLSA)</strong> actively organizes Lok Adalats across the state to resolve disputes amicably. These are particularly effective for bank recovery cases.
+                  </p>
+                  <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">Recent Success Stories</h3>
+                    <p className="text-gray-700 mb-4">
+                      In recent sessions held in Itanagar and other districts, Lok Adalats have settled hundreds of bank recovery cases worth crores of rupees. For example, in September 2024 alone, over ₹2.6 Crores was recovered through amicable settlements in bank cases.
+                    </p>
+                    <ul className="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
+                      <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> <strong>Binding Decision:</strong> The award is final and cannot be appealed.</li>
+                      <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> <strong>No Court Fees:</strong> It is a cost-effective method.</li>
+                      <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> <strong>Mutual Consent:</strong> Settlement happens only if YOU agree to the amount.</li>
+                    </ul>
+                  </div>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    Our team can represent you in these Lok Adalats effectively. We ensure that you are not intimidated by the bank's lawyers and that the settlement amount proposed is actually affordable for you.
+                  </p>
+                </section>
+
+                {/* Why Choose AMA */}
+                <section id="why-choose-ama" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Trust AMA Legal Solutions?</h2>
+                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
+                    We combine national-level legal expertise with a deep respect for the local sensitivities of Arunachal Pradesh.
+                  </p>
+                  
+                  <div className="grid md:grid-cols-3 gap-6 text-center">
+                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
+                      <div className="text-4xl mb-4">🛡️</div>
+                      <h3 className="font-bold text-xl mb-2">Harassment Protection</h3>
+                      <p className="text-gray-600">We utilize the 'Jansunwai' portal and local police channels to ensure you are treated with dignity.</p>
                     </div>
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                      <h4 className="font-bold text-lg mb-2 text-[#D2A02A]">RBI Guidelines</h4>
-                      <p className="text-gray-600">We ensure strict adherence to RBI guidelines regarding fair practices code and recovery agent conduct.</p>
+                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
+                      <div className="text-4xl mb-4">⚖️</div>
+                      <h3 className="font-bold text-xl mb-2">Legal Authority</h3>
+                      <p className="text-gray-600">We don't just talk; we send legal notices. We represent you in legal forums like Lok Adalats and DRT.</p>
+                    </div>
+                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
+                      <div className="text-4xl mb-4">🤝</div>
+                      <h3 className="font-bold text-xl mb-2">Client Confidentiality</h3>
+                      <p className="text-gray-600">In close-knit communities, privacy is paramount. We ensure your financial matters remain strictly confidential.</p>
                     </div>
                   </div>
                 </section>
 
-                {/* Process */}
-                <section id="process" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Settlement Process</h2>
+{/* Process Section */}
+                <section id="settlement-process" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Debt Resolution Process</h2>
                   <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                    We guide you through a structured process to achieve financial freedom.
+                    We follow a transparent and structured approach to help you become debt-free.
                   </p>
                   
                   <div className="space-y-8">
                     <div className="flex flex-col md:flex-row gap-6 items-start">
                       <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">1</div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Legal Notice & Shielding</h3>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Free Case Assessment</h3>
                         <p className="text-gray-700 leading-relaxed">
-                          We send a legal notice to the bank. This stops them from calling you directly and compels them to communicate only through us.
+                          We start by understanding your debt portfolio. We review your loan documents, current income, and employment status (whether govt or private) to design a settlement strategy eligible under bank policies.
                         </p>
                       </div>
                     </div>
@@ -287,9 +357,9 @@ export default function ArunachalLoanSettlementPage() {
                     <div className="flex flex-col md:flex-row gap-6 items-start">
                       <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">2</div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Financial Assessment</h3>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Legal Intervention</h3>
                         <p className="text-gray-700 leading-relaxed">
-                          We analyze your income and liabilities. For government employees, we assess your take-home salary to propose a realistic settlement plan.
+                          We formally notify your creditors that AMA Legal Solutions represents you. This signals to them that you have legal backing, which typically reduces harassment significantly.
                         </p>
                       </div>
                     </div>
@@ -297,9 +367,9 @@ export default function ArunachalLoanSettlementPage() {
                     <div className="flex flex-col md:flex-row gap-6 items-start">
                       <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">3</div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Negotiation</h3>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Negotiation & Settlement</h3>
                         <p className="text-gray-700 leading-relaxed">
-                          Our team negotiates with bank officials to reduce the outstanding amount, aiming for a waiver of interest and penalties.
+                          We negotiate with the bank's recovery officers to get the best possible OTS (One Time Settlement) deal. We aim for maximum waiver on interest and penalties, and a reduction in the principal amount relative to your hardship.
                         </p>
                       </div>
                     </div>
@@ -307,259 +377,161 @@ export default function ArunachalLoanSettlementPage() {
                     <div className="flex flex-col md:flex-row gap-6 items-start">
                       <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">4</div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Closure</h3>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Closure & Freedom</h3>
                         <p className="text-gray-700 leading-relaxed">
-                          We review the settlement letter. Once you pay the agreed amount, we ensure you receive a No Dues Certificate.
+                          Upon payment of the agreed amount, we ensure you receive the <strong>No Dues Certificate (NDC)</strong>. We also guide you on ensuring the bank updates your status with CIBIL.
                         </p>
                       </div>
                     </div>
                   </div>
                 </section>
 
-                {/* Govt Employees */}
-                <section id="govt-employees" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">For Government Employees</h2>
+                {/* Harassment Laws & Police Helpline */}
+                <section id="harassment-laws" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">How to Handle Harassment in AP</h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Government service is the backbone of Arunachal's economy. We understand the pressure of maintaining social status while struggling with debt.
+                    Debt collection harassment is a violation of your rights. The Arunachal Pradesh government and police have mechanisms to help you.
                   </p>
-                  <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-6">
-                    <p className="text-lg text-blue-900">
-                      <strong>Salary Protection:</strong> Banks cannot arbitrarily freeze your salary account. We ensure that your essential living expenses are protected during the settlement process.
-                    </p>
+                  <div className="grid md:grid-cols-2 gap-6 mb-8">
+                    <div className="bg-red-50 p-6 rounded-xl border border-red-100">
+                      <h4 className="font-bold text-lg mb-2 text-red-700">Police Assistance</h4>
+                      <p className="text-gray-700 mb-2">If you feel threatened, dial <strong>112</strong> or <strong>100</strong> immediately.</p>
+                      <p className="text-gray-700 mb-2"><strong>Itanagar Capital Control Room:</strong> You can reach out at <strong>6009909795</strong> for urgent help in the capital region.</p>
+                      <p className="text-gray-700"><strong>Women's Helpline:</strong> Dial <strong>181</strong> or <strong>1091</strong> for specialized assistance.</p>
+                    </div>
+                    <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                      <h4 className="font-bold text-lg mb-2 text-blue-700">Online Grievance Redressal</h4>
+                      <p className="text-gray-700 mb-2">You can lodge a formal complaint against harassing agents via the <strong>Jansunwai</strong> portal of the AP Government.</p>
+                      <p className="text-gray-700">For cyber harassment (abusive messages/calls), file a complaint at <strong>cybercrime.gov.in</strong> or dial <strong>1930</strong>.</p>
+                    </div>
                   </div>
                   <p className="text-lg leading-relaxed text-gray-700">
-                    Whether it's a personal loan or an 'Apon Ghar' housing loan, we can help you restructure or settle it without jeopardizing your job.
+                    <strong>Note:</strong> Banks are responsible for the conduct of their agents. We hold them accountable legally if they cross the line.
                   </p>
                 </section>
 
-                {/* Tribal Rights */}
-                <section id="tribal-rights" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Tribal Land Rights & SARFAESI</h2>
+                {/* Documents Required */}
+                <section id="documents" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Documents to Start Settlement</h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    The issue of land attachment in Arunachal Pradesh is complex due to special constitutional protections.
+                    To build a strong case for your hardship, we need the following documents:
                   </p>
-                  <div className="bg-yellow-50 p-8 rounded-xl border border-yellow-100 mb-6">
-                    <h3 className="text-xl font-bold text-yellow-900 mb-4">Key Protections</h3>
-                    <ul className="list-disc pl-6 space-y-3 text-yellow-800">
-                      <li><strong>Agricultural Land Exemption:</strong> The SARFAESI Act generally does not apply to agricultural land.</li>
-                      <li><strong>Transfer Restrictions:</strong> Even for non-agricultural land with an LPC, the sale is typically restricted to other tribals to preserve indigenous ownership.</li>
-                      <li><strong>Legal Defense:</strong> We challenge any bank action that violates these specific protections or fails to follow due process.</li>
-                    </ul>
+                  <ul className="grid md:grid-cols-2 gap-4">
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Aadhar Card & PAN Card
+                    </li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Loan Account Statement (Latest)
+                    </li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Salary Slips (showing deduction/loss)
+                    </li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Bank Statements (Last 6 months)
+                    </li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Medical certificates (if medical hardship)
+                    </li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Copies of any legal notices received
+                    </li>
+                  </ul>
+                </section>
+
+                {/* Service Areas */}
+                <section id="city-services" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Serving Across Arunachal Pradesh</h2>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    Our digital legal services extend to all major towns and districts in the state.
+                  </p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Itanagar</h4>
+                      <p className="text-xs text-gray-500">Capital Complex</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Naharlagun</h4>
+                      <p className="text-xs text-gray-500">Twin Capital City</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Pasighat</h4>
+                      <p className="text-xs text-gray-500">Smart City</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Tawang</h4>
+                      <p className="text-xs text-gray-500">Tourism Hub</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Ziro</h4>
+                      <p className="text-xs text-gray-500">Lower Subansiri</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Aalo</h4>
+                      <p className="text-xs text-gray-500">West Siang</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Bomdila</h4>
+                      <p className="text-xs text-gray-500">West Kameng</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Tezu</h4>
+                      <p className="text-xs text-gray-500">Lohit District</p>
+                    </div>
                   </div>
                 </section>
 
-                {/* Lok Adalat */}
-                <section id="lok-adalat" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Lok Adalat: A Path to Peace</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    The APSLSA actively promotes Lok Adalats for bank recovery cases.
-                  </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    <strong>Why it works:</strong> It is a non-adversarial forum where you can sit across the table with bank officials and a mediator to reach a compromise. The settlement is final, and you save on legal costs. We can represent you in Lok Adalats across Arunachal Pradesh.
-                  </p>
-                </section>
-
-                {/* Types of Loans */}
-                <section id="types-of-loans" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Loans We Settle</h2>
-                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                    Our expertise covers various types of loans common in Arunachal Pradesh.
-                  </p>
-                  
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Personal Loans</h3>
-                      <p className="text-gray-700">
-                        Settlement for govt employees and individuals facing high EMI burdens.
-                      </p>
-                    </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Housing Loans</h3>
-                      <p className="text-gray-700">
-                        Including 'Apon Ghar' scheme loans, helping you save your home.
-                      </p>
-                    </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Business Loans</h3>
-                      <p className="text-gray-700">
-                        Helping entrepreneurs in Itanagar/Pasighat settle MSME loans.
-                      </p>
-                    </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Credit Cards</h3>
-                      <p className="text-gray-700">
-                        Negotiating to waive off high interest and late payment charges.
-                      </p>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Credit Score Impact */}
-                <section id="credit-score" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Impact on Credit Score</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Settlement will be reported to CIBIL, but it is a necessary step to regain financial control.
-                  </p>
-                  <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-6">
-                    <p className="text-lg text-yellow-900">
-                      <strong>The Trade-off:</strong> A temporary dip in your credit score is better than facing legal action or losing your assets. Once settled, you can rebuild your score over time.
-                    </p>
-                  </div>
-                </section>
-
-                {/* Common Mistakes */}
-                <section id="common-mistakes" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Mistakes to Avoid</h2>
+                {/* FAQ Section */}
+                <section id="faqs" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
                   <div className="space-y-6">
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold">✕</div>
-                      <div>
-                        <h3 className="font-bold text-lg text-gray-900">Ignoring Bank Notices</h3>
-                        <p className="text-gray-700">Silence can lead to legal escalation. Always respond, preferably through a lawyer.</p>
+                    {faqs.map((faq, index) => (
+                      <div key={index} className="border-b border-gray-200 pb-6 last:border-0">
+                        <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-start">
+                          <span className="text-[#D2A02A] mr-3">Q.</span>
+                          {faq.question}
+                        </h3>
+                        <p className="text-gray-700 leading-relaxed pl-8">
+                          {faq.answer}
+                        </p>
                       </div>
-                    </div>
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold">✕</div>
-                      <div>
-                        <h3 className="font-bold text-lg text-gray-900">Borrowing from Unlicensed Lenders</h3>
-                        <p className="text-gray-700">Avoid illegal money lenders. If you are already trapped, use the Money Lending Act 2018 for protection.</p>
-                      </div>
-                    </div>
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold">✕</div>
-                      <div>
-                        <h3 className="font-bold text-lg text-gray-900">Panicking</h3>
-                        <p className="text-gray-700">Debt is a civil matter. You cannot be arrested for genuine inability to pay (except in specific cheque bounce cases). Stay calm and seek legal help.</p>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </section>
-
-                {/* Documentation */}
-                <section id="documentation" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Required Documents</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    To start your settlement process, we will need:
-                  </p>
-                  <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                    <div className="grid md:grid-cols-2 gap-8">
-                      <div>
-                        <h3 className="font-bold text-xl text-[#D2A02A] mb-4">Identity Proof</h3>
-                        <ul className="space-y-3 text-gray-700">
-                          <li className="flex items-center"><span className="mr-2">✓</span> PAN Card & Aadhar Card</li>
-                          <li className="flex items-center"><span className="mr-2">✓</span> Govt ID Card (if applicable)</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-xl text-[#D2A02A] mb-4">Loan Documents</h3>
-                        <ul className="space-y-3 text-gray-700">
-                          <li className="flex items-center"><span className="mr-2">✓</span> Loan Account Statement</li>
-                          <li className="flex items-center"><span className="mr-2">✓</span> Legal Notices</li>
-                          <li className="flex items-center"><span className="mr-2">✓</span> LPC (for land loans)</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Why Choose Us */}
-                <section id="why-choose-us" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose AMA Legal Solutions?</h2>
-                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                    We are committed to protecting the rights of the people of Arunachal Pradesh.
-                  </p>
-                  
-                  <div className="grid md:grid-cols-3 gap-6 text-center">
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">⚖️</div>
-                      <h3 className="font-bold text-xl mb-2">Tribal Rights Experts</h3>
-                      <p className="text-gray-600">Deep understanding of land laws, LPCs, and SARFAESI implications in Arunachal.</p>
-                    </div>
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">🏛️</div>
-                      <h3 className="font-bold text-xl mb-2">Govt Employee Focus</h3>
-                      <p className="text-gray-600">Specialized strategies to protect salary accounts and jobs.</p>
-                    </div>
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">🛡️</div>
-                      <h3 className="font-bold text-xl mb-2">Anti-Harassment</h3>
-                      <p className="text-gray-600">We take strong legal action against harassment by recovery agents.</p>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Testimonials */}
-                <section id="testimonials" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Success Stories from Arunachal</h2>
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
-                      <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
-                      <p className="text-gray-700 italic mb-4 relative z-10">
-                        "I am a government employee in Naharlagun. I was drowning in personal loan EMIs. AMA Legal Solutions helped me restructure my debt and stop the bank from harassing me at my office."
-                      </p>
-                      <div className="flex items-center">
-                        <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">T</div>
-                        <div>
-                          <p className="font-bold text-gray-900">Tana T.</p>
-                          <p className="text-sm text-gray-500">Naharlagun</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
-                      <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
-                      <p className="text-gray-700 italic mb-4 relative z-10">
-                        "They helped me save my land in Tawang from being auctioned by the bank. Their knowledge of tribal land rights and SARFAESI laws is excellent."
-                      </p>
-                      <div className="flex items-center">
-                        <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">D</div>
-                        <div>
-                          <p className="font-bold text-gray-900">Dorjee K.</p>
-                          <p className="text-sm text-gray-500">Tawang</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-                {/* FAQs */}
-                <FaqSection />
 
                 {/* Final CTA */}
-                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">
+                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-xl md:rounded-3xl p-6 md:p-16 text-center text-white relative overflow-hidden">
                   <div className="relative z-10">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">Get Legal Help Today</h2>
-                    <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
-                      Don't face the banks alone. Our expert lawyers in Arunachal Pradesh are here to protect you.
+                    <h2 className="text-xl md:text-5xl font-bold mb-4 md:mb-6">Regain Your Financial Peace</h2>
+                    <p className="text-sm md:text-xl opacity-90 mb-6 md:mb-10 max-w-2xl mx-auto">
+                      Expert legal help is now available in Arunachal Pradesh. Settle your loans legally and start afresh.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
                       <Link href="/contact">
-                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg w-full sm:w-auto">
-                          Book Your Consultation
+                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
+                          Book Consultation
                         </button>
                       </Link>
                       <a href="tel:+918700343611">
-                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-4 px-12 rounded-full transition-all text-lg w-full sm:w-auto">
+                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all text-sm md:text-lg w-full sm:w-auto">
                           Call: +91-8700343611
                         </button>
                       </a>
                     </div>
-                    <p className="mt-8 text-sm opacity-70">
-                      Confidential • Legal • Effective
-                    </p>
                   </div>
                 </section>
+
+
 
               </div>
             </div>
 
             {/* Sidebar */}
-            <div className="lg:w-1/4">
-              <div className="sticky top-24 space-y-8">
+             <div className="hidden lg:block space-y-8 sticky top-24">
                 {/* Contact Card */}
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">Need Urgent Help?</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Need Help in AP?</h3>
                   <p className="text-gray-600 mb-6 text-sm">
-                    Speak to our senior loan settlement lawyers in Arunachal Pradesh today.
+                    Speak to our lawyers serving Itanagar and Arunachal Pradesh.
                   </p>
                   <a 
                     href="tel:+918700343611" 
@@ -579,28 +551,102 @@ export default function ArunachalLoanSettlementPage() {
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                   <h3 className="text-lg font-bold text-gray-900 mb-4">Related Services</h3>
                   <ul className="space-y-3 text-sm">
-                    <li>
-                      <Link href="/services/banking-and-finance" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Banking & Finance
+                   <li>
+                      <Link href="/services/debt-consolidation" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">›</span> Debt Consolidation
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/civil" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Civil Litigation
+                      <Link href="/services/cheque-bounce-lawyer" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">›</span> Cheque Bounce Lawyer
                       </Link>
                     </li>
-                    <li>
-                      <Link href="/services/arbitration" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Arbitration
+                     <li>
+                      <Link href="/services/legal-notice" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">›</span> Legal Notice
                       </Link>
                     </li>
-                    
                   </ul>
                 </div>
               </div>
-            </div>
           </div>
-          
+
+          {/* Banks Grid */}
+          <div className="mt-16">
+            <section className="my-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+                We settle loans from the following banks
+              </h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+                <Link 
+                  href="/services/loan-settlement/sbi-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">SBI</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/hdfc-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">HDFC</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/icici-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">ICICI</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/kotak-mahindra"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Kotak Mahindra</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/idfc-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">IDFC</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/yes-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Yes Bank</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/bajaj-finserv"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Bajaj Finserv</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/axis-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Axis Bank</span>
+                </Link>
+                  <Link 
+                  href="/services/loan-settlement/bank-of-baroda"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Bank of Baroda</span>
+                </Link>
+                  <Link 
+                  href="/services/loan-settlement/aditya-birla"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Aditya Birla</span>
+                </Link>
+              </div>
+              <div className="mt-8 text-center">
+                <p className="text-lg text-gray-700">
+                  We also handle settlement for regional institutions like Arunachal Pradesh State Cooperative Apex Bank.
+                </p>
+              </div>
+            </section>
+          </div>
+
           <div className="mt-16">
             <GenericStatesGrid 
               serviceName="Loan Settlement" 
@@ -617,6 +663,7 @@ export default function ArunachalLoanSettlementPage() {
                 "Haryana": "Haryana",
                 "Himachal Pradesh": "himachal-pradesh",
                 "Jharkhand": "Jharkhand",
+                "Karnataka": "Karnataka",
                 "Kerala": "Kerala",
                 "Madhya Pradesh": "madhya-pradesh",
                 "Maharashtra": "Maharashtra",
@@ -637,6 +684,7 @@ export default function ArunachalLoanSettlementPage() {
               }}
             />
           </div>
+          
         </div>
       </div>
     </>
