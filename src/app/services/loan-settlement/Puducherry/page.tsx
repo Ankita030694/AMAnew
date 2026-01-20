@@ -8,43 +8,43 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 const faqs = [
   {
     question: "Is loan settlement legal in Puducherry?",
-    answer: "Yes, loan settlement is a completely legal financial process in Puducherry. It is governed by the Reserve Bank of India (RBI) guidelines and is a recognized method for resolving Non-Performing Assets (NPAs). It allows borrowers who are genuinely unable to repay their full debt to negotiate a reduced one-time payment to close their loan accounts."
+    answer: "Yes, loan settlement is a fully legal financial process in Puducherry. It is governed by RBI guidelines and supported by local acts like the Puducherry Money Lenders Act, 1970, which regulates interest rates and fair lending. The Puducherry Legal Services Authority also actively promotes amicable settlements through Lok Adalats."
   },
   {
-    question: "How does the Puducherry Money Lenders Act protect me?",
-    answer: "The Puducherry Money Lenders Act, 1970, strictly regulates private money lending. It requires lenders to be licensed and caps the interest rates they can charge. If you are being harassed by an unlicensed lender or charged exorbitant interest (usury), we can use this Act to legally challenge their claims and protect you from exploitation."
+    question: "How does the Puducherry Money Lenders Act, 1970 help me?",
+    answer: "The Puducherry Money Lenders Act, 1970, protects borrowers from usurious interest rates. Section 20-A specifically prohibits courts from decreeing interest payments higher than the principal loan amount (Damdupat rule). Section 20-B allows courts to let you pay debts in easy installments. If you are being charged illegal interest, we can use this Act to defend you."
   },
   {
-    question: "Can I settle loans with cooperative banks in Puducherry?",
-    answer: "Yes, cooperative banks in Puducherry often have One Time Settlement (OTS) schemes, especially for agricultural and small business loans. While the government occasionally announces waiver schemes, an individual OTS is a faster way to resolve specific defaults. We can negotiate with these banks on your behalf."
+    question: "Can I settle my loan if I am a government employee in Pondicherry?",
+    answer: "Many residents in Puducherry are employed in government sectors. While banks often view government employees as having stable income and thus are harder to settle with, it is possible if you can prove genuine financial distress (like a medical crisis). We handle these negotiations discreetly to ensure your professional reputation is protected."
   },
   {
-    question: "What is the role of the Puducherry Legal Services Authority (UTPLSA)?",
-    answer: "The UTPLSA organizes Lok Adalats, which are powerful forums for settling disputes amicably. If your bank has initiated legal action, we can represent you in a Lok Adalat. Settlements reached here are final, binding, and often involve significant waivers of interest and penalties, providing a quick resolution."
+    question: "Does AMA Legal Solutions represent cases in the Puducherry courts?",
+    answer: "AMA Legal Solutions operates as a digital-first legal firm providing nationwide coverage. We handle negotiations and paperwork remotely. For any on-ground representation needed in Puducherry courts or tribunals, we coordinate with our network of trusted local associates in Pondicherry to ensure you have physical representation when required."
   },
   {
-    question: "I am a fisherman in Karaikal with a debt due to low catch. Can you help?",
-    answer: "Absolutely. We understand the crisis in the fishing sector due to climate factors and pollution. We can present your situation—declining yield and livelihood distress—as a genuine ground for hardship (Force Majeure) to negotiate a favorable settlement with your bank or NBFC."
+    question: "What is the role of Lok Adalats in Puducherry for bank recovery?",
+    answer: "Lok Adalats in Puducherry are very effective. In recent sessions, they have settled claims worth crores. They provide a platform where you can sit across from bank officials and agree on a 'One Time Settlement' (OTS) without a long trial. The decision made here is final and binding, ending the harassment instantly."
   },
   {
-    question: "Do you cover Mahe and Yanam regions as well?",
-    answer: "Yes, AMA Legal Solutions offers pan-India services. Whether you are in Puducherry, Karaikal, Mahe, or Yanam, we can handle your case remotely. You do not need to visit our office; we manage all negotiations and documentation digitally and over the phone."
+    question: "How can I stop harassment from recovery agents in Puducherry?",
+    answer: "Harassment is a crime. You can report aggressive agents to the Puducherry Police by dialing 112 or contacting the Cyber Crime cell at 1930 if the harassment is digital. Once you hire us, we send a legal notice to the bank, which typically stops the harassment as they know you are now legally represented."
   },
   {
-    question: "Will settlement affect my CIBIL score?",
-    answer: "Yes, settling a loan will mark your account as 'Settled' in your credit report, which temporarily lowers your score. However, this is far better than a 'Written-off' status or facing legal recovery suits. With good financial habits, you can rebuild your score within 2-3 years."
+    question: "Can I settle credit card debt in Puducherry?",
+    answer: "Absolutely. Credit card debt is unsecured and often carries the highest interest rates. It is one of the most common types of debt we settle. We can often negotiate waivers of up to 50-60% on the total outstanding amount, depending on your delinquency status."
   },
   {
-    question: "How do you stop harassment from recovery agents?",
-    answer: "Once you hire us, we issue a legal notice to your creditors informing them of our representation. Under RBI's Fair Practices Code, they are prohibited from harassing you. We handle all their calls and ensure they respect your legal rights. If they persist, we file formal complaints with the Banking Ombudsman and local police."
+    question: "What if the bank has filed a Section 138 cheque bounce case?",
+    answer: "A Section 138 case is a criminal offense, so you must attend the court dates. However, we can run a parallel process of negotiation. Once a settlement is reached, the bank gives a consent letter to withdraw the case. We ensure this withdrawal is part of the final settlement agreement."
   },
   {
-    question: "What documents are required to start the process?",
-    answer: "To begin, we need your loan account statements, sanction letters, KYC documents (Aadhaar/PAN), and any proof of your financial hardship (such as medical bills, proof of business loss, or termination letter). We will guide you on how to collect and submit these."
+    question: "Do you handle business loans and MSME debt?",
+    answer: "Yes, we assist with business loan settlements. For MSMEs in industrial areas like Thattanchavady or Sedarapet, if business has suffered, we can negotiate with lenders for a restructuring or OTS based on your current cash flows."
   },
   {
-    question: "How long does the entire process take?",
-    answer: "The settlement process usually takes between 3 to 6 months. This depends on the bank's internal processing times and the complexity of your case. We strive to resolve it as quickly as possible while ensuring you get the best possible deal."
+    question: "How does the settlement process affect my CIBIL score?",
+    answer: "Settling a loan will mark the account as 'Settled' in your credit report, which drops your score. However, this is better than a 'Write-off' or ongoing delinquency. Once the debt is clear, we guide you on how to rebuild your score over the next 12-24 months."
   }
 ];
 
@@ -75,7 +75,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 4,
       "name": "Puducherry",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/Puducherry"
+      "item": "https://amalegalsolutions.com/services/loan-settlement/puducherry"
     }
   ]
 };
@@ -84,8 +84,8 @@ const breadcrumbSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Loan Settlement Services in Puducherry: Expert Legal Debt Relief",
-  "description": "Struggling with debt in Puducherry? Get expert legal help for loan settlement in Pondicherry, Karaikal, Mahe, and Yanam. Stop harassment and settle your loans legally.",
+  "headline": "Loan Settlement Services in Puducherry: Expert Debt Relief",
+  "description": "Facing debt in Puducherry? Our expert lawyers help you settle loans, stop bank harassment in Pondicherry, Karaikal, Mahe, Yanam, and save money.",
   "image": "https://amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
@@ -100,11 +100,11 @@ const articleSchema = {
       "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
-  "datePublished": "2024-11-21",
-  "dateModified": "2024-11-21",
+  "datePublished": "2023-11-20",
+  "dateModified": "2025-01-20",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://amalegalsolutions.com/services/loan-settlement/Puducherry"
+    "@id": "https://amalegalsolutions.com/services/loan-settlement/puducherry"
   }
 };
 
@@ -122,61 +122,28 @@ const faqSchema = {
   }))
 };
 
-// Review Schema
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Loan Settlement Services Puducherry",
-  "image": "https://amalegalsolutions.com/services/3.png",
-  "description": "Top-rated loan settlement and debt relief services in Puducherry.",
-  "brand": {
-    "@type": "Brand",
-    "name": "AMA Legal Solutions"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "310"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Anand Kumar"
-      },
-      "reviewBody": "I run a small guest house in White Town. The pandemic wiped out my savings, and I couldn't pay my business loan. AMA Legal Solutions helped me negotiate a settlement with the bank. They were very professional and stopped the recovery agents from harassing me."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Selvam R."
-      },
-      "reviewBody": "As a fisherman in Karaikal, my income is very uncertain. I fell into a debt trap with a private lender. AMA lawyers explained my rights under the Money Lenders Act and helped me settle the debt fairly. I highly recommend them."
-    }
-  ]
-};
-
 export const metadata = {
-  title: "Loan Settlement in Puducherry | Debt Settlement Lawyers Pondicherry",
+  title: "Loan Settlement in Puducherry | Debt Relief Lawyers Pondicherry",
   description:
-    "Expert loan settlement services in Puducherry. We help you settle personal and business loans in Pondicherry, Karaikal, Mahe, and Yanam. Stop harassment and reduce debt.",
+    "Expert loan settlement in Puducherry (Pondicherry, Karaikal). Legally settle personal loans & credit cards. Stop agent harassment & save up to 50%.",
+  keywords: [
+    "loan settlement Puducherry",
+    "debt settlement Pondicherry",
+    "loan settlement lawyer Puducherry",
+    "credit card settlement Karaikal",
+    "debt relief services Puducherry",
+    "One time settlement SBI Pondicherry",
+    "remove debt Puducherry",
+    "Lok Adalat Pondicherry loan",
+    "cheque bounce lawyer Puducherry"
+  ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/Puducherry',
+    canonical: 'https://amalegalsolutions.com/services/loan-settlement/puducherry',
   },
   openGraph: {
-    title: "Loan Settlement in Puducherry | Debt Settlement Lawyers Pondicherry",
-    description: "Struggling with debt in Puducherry? We negotiate with banks to reduce your debt and stop harassment. Legal, safe, and effective services.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/Puducherry",
+    title: "Loan Settlement in Puducherry | Expert Debt Relief",
+    description: "Burdened by debt in Puducherry? We negotiate with banks to reduce your dues and stop harassment in Pondicherry and Karaikal.",
+    url: "https://amalegalsolutions.com/services/loan-settlement/puducherry",
     type: "website",
     images: [
       {
@@ -189,20 +156,24 @@ export const metadata = {
   },
 };
 
-export default function PuducherryLoanSettlementPage() {
+export default function LoanSettlementPuducherryPage() {
   const tocSections = [
-    { id: "introduction", title: "Introduction" },
-    { id: "legal-framework", title: "Legal Framework in Puducherry" },
-    { id: "debt-traps", title: "Common Debt Traps" },
-    { id: "process", title: "Settlement Process" },
-    { id: "why-choose-us", title: "Why Choose AMA" },
+    { id: "introduction", title: "Debt Relief in Puducherry" },
+    { id: "what-is-settlement", title: "Understanding Settlement" },
+    { id: "puducherry-legal", title: "Puducherry Legal Laws" },
+    { id: "lok-adalat-py", title: "Lok Adalat Solutions" },
+    { id: "why-choose-ama", title: "Why Choose AMA" },
+    { id: "settlement-process", title: "Our Process" },
+    { id: "harassment-laws", title: "Stop Harassment" },
+    { id: "documents", title: "Documents Needed" },
+    { id: "city-services", title: "Service Areas" },
     { id: "faqs", title: "FAQs" },
   ];
 
   const breadcrumbItems = [
     { label: "Services", href: "/services" },
     { label: "Loan Settlement", href: "/services/loan-settlement" },
-    { label: "Puducherry", href: "/services/loan-settlement/Puducherry" },
+    { label: "Puducherry", href: "/services/loan-settlement/puducherry" },
   ];
 
   return (
@@ -222,11 +193,6 @@ export default function PuducherryLoanSettlementPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <Script
-        id="review-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-      />
 
       <div className="bg-gray-50 min-h-screen font-sans text-gray-800">
         {/* Hero Section */}
@@ -236,118 +202,153 @@ export default function PuducherryLoanSettlementPage() {
             className="absolute inset-0 bg-cover bg-center z-0" 
             style={{ background: "black" }}
           ></div>
-          <div className="relative z-20 container mx-auto px-4 py-24 md:py-32 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight mt-10">
-              Loan Settlement Services in <span className="text-[#D2A02A]">Puducherry</span>
+          <div className="relative z-20 container mx-auto px-4 py-12 md:py-32 text-center">
+            <h1 className="text-2xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-10">
+              Reliable <span className="text-[#D2A02A]">Loan Settlement</span> Services in <br className="hidden md:block"/> Puducherry
             </h1>
-            <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-gray-200">
-              Expert legal help in Pondicherry, Karaikal, Mahe, and Yanam to settle your debts, stop harassment, and regain financial peace.
+            <p className="text-sm md:text-2xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
+              From the White Town of Pondicherry to Karaikal, we help you legally settle your debts, end agent harassment, and regain your peace of mind.
             </p>
             <Link href="/contact">
-              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg">
+              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg">
                 Get a Free Consultation
               </button>
             </Link>
           </div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-7xl py-8">
+        <div className="container mx-auto px-4 max-w-[1600px] py-8">
           <Breadcrumbs items={breadcrumbItems} />
           
-          <div className="flex flex-col lg:flex-row gap-12">
-            {/* Main Content Area */}
-            <div className="lg:w-3/4">
-              
-              <TableOfContents sections={tocSections} />
+          <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 items-start">
+            {/* Left Sidebar - TOC components */}
+            <div className="hidden lg:block sticky top-24">
+              <TableOfContents sections={tocSections} orientation="vertical" />
+            </div>
 
-              <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm mt-8 space-y-12">
+            {/* Main Content Area */}
+            <div className="min-w-0">
+              <div className="lg:hidden mb-6 sticky top-20 z-10">
+                <TableOfContents sections={tocSections} />
+              </div>
+
+              <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Debt Relief and Loan Settlement in Puducherry</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Puducherry, a union territory known for its serene beaches and French colonial heritage, is also a bustling economic hub. However, beneath the calm surface, many residents in Puducherry, Karaikal, Mahe, and Yanam are facing severe financial stress. The local economy, heavily reliant on tourism, fishing, and small industries, has faced significant volatility in recent years. From the lingering economic aftershocks of the pandemic to the unpredictability of the fishing catch, many families and business owners have found themselves in a debt trap.
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Restoring Financial Serenity in Puducherry</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
+                    Puducherry, with its unique blend of French colonial heritage and Tamil culture, is a place of peace. But for many residents in Pondicherry, Karaikal, Mahe, and Yanam, that peace is being disturbed by the stress of unmanageable debt. Whether you are a small business owner on Mission Street affected by tourism fluctuations or a salaried employee dealing with personal emergencies, debt traps can happen to anyone.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    If you are struggling to keep up with your EMI payments, you are not alone. Whether it is a personal loan, a credit card debt, or a business loan, defaulting can be stressful. But there is a legal way out. <strong>Loan Settlement</strong> is a practical financial solution recognized by the RBI. It allows you to negotiate with your bank to pay a reduced lump sum amount to close your loan account once and for all.
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
+                    If you are losing sleep over EMI defaults, facing rude calls from recovery agents, or worrying about legal notices, know that there is a way out. **Loan Settlement** is a practical and legal solution available to you. It allows you to close your debt chapter without declaring bankruptcy.
                   </p>
-                  <p className="text-lg leading-relaxed text-gray-700">
-                    At AMA Legal Solutions, we specialize in helping the people of Puducherry navigate these difficult times. Our team of expert lawyers understands the local legal landscape and can help you settle your debts with dignity, protecting you from harassment and helping you start fresh.
+                  <p className="text-sm md:text-lg leading-relaxed text-gray-700">
+                    AMA Legal Solutions brings expert debt relief services to the Union Territory of Puducherry. We understand the local legal landscape, including the specific provisions of the Puducherry Money Lenders Act, and use them to protect your rights while negotiating a favorable settlement with your bank.
                   </p>
                 </section>
 
-                {/* Legal Framework */}
-                <section id="legal-framework" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Legal Framework for Loan Settlement in Puducherry</h2>
+                {/* What is Loan Settlement */}
+                <section id="what-is-settlement" className="scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">What is Loan Settlement (OTS)?</h2>
+                  <div className="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 mb-4 md:mb-8 rounded-r-lg">
+                    <p className="text-sm md:text-lg text-blue-900 italic">
+                      "Loan settlement, also known as One Time Settlement (OTS), is a process where the lender agrees to accept a lump-sum payment that is less than the total outstanding debt to fully close the loan account."
+                    </p>
+                  </div>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    The process of loan settlement in Puducherry is governed by central banking regulations and specific local acts that provide protection to borrowers.
+                    Banks (like Indian Bank, Canara Bank, SBI, etc.) prefer this route for "bad loans" (NPAs) because it saves them the time and cost of litigation. If you have a genuine inability to pay—due to job loss, business failure, or health issues—we can negotiate with the bank to waive off the interest and penalties, and sometimes even a part of the principal.
+                  </p>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    Imagine clearing a ₹8 Lakh debt for ₹3.5 Lakhs and ending the harassment forever. That is the power of a professionally negotiated settlement.
+                  </p>
+                </section>
+
+                {/* Puducherry Legal Laws */}
+                <section id="puducherry-legal" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Legal Protections for Borrowers in Puducherry</h2>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    Residents of Puducherry have specific legal shields against unfair lending practices.
                   </p>
                   
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Key Legal Provisions</h3>
-                  <ul className="list-disc pl-6 space-y-4 text-gray-700 mb-6">
-                    <li>
-                      <strong>RBI Guidelines on Settlement:</strong> The Reserve Bank of India has issued clear guidelines (including the "Prudential Framework for Resolution of Stressed Assets") that allow banks to enter into compromise settlements with borrowers. This is the foundation of our negotiation strategy. We ensure that banks follow these guidelines and offer you a fair settlement based on your genuine financial hardship.
-                    </li>
-                    <li>
-                      <strong>Puducherry Money Lenders Act, 1970:</strong> This is a crucial piece of legislation for those dealing with private lenders. The Act requires all money lenders in the Union Territory to be licensed and regulates the interest rates they can charge. It explicitly prohibits usurious interest rates. If you are being exploited by an unregistered lender, we can use this Act to challenge the debt and seek legal protection.
-                    </li>
-                    <li>
-                      <strong>Puducherry Relief from Indebtedness Act, 1987:</strong> While primarily historical, this Act reflects the state's commitment to providing relief to the indebted poor. Its principles often influence the approach of local authorities and cooperative institutions towards debt relief for vulnerable sections like agricultural laborers and artisans.
-                    </li>
-                    <li>
-                      <strong>Lok Adalats (UTPLSA):</strong> The <strong>Union Territory of Puducherry Legal Services Authority (UTPLSA)</strong> regularly conducts Lok Adalats. These are "People's Courts" designed to settle disputes quickly and amicably. In recent sittings, hundreds of bank recovery cases have been settled. An award passed by a Lok Adalat is final and binding, and it often involves significant concessions from the bank. We can represent you in these forums to secure a favorable outcome.
-                    </li>
-                    <li>
-                      <strong>Protection Against Harassment:</strong> You have a fundamental right to be treated with dignity. RBI's Fair Practices Code strictly prohibits recovery agents from using abusive language, threatening you, or calling at odd hours. We take a zero-tolerance approach to harassment and will take immediate legal action against any agent violating these norms.
-                    </li>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Puducherry Money Lenders Act, 1970</h3>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    This Act is a crucial tool for debtor protection. Key provisions include:
+                  </p>
+                  <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
+                    <li><strong>Section 20-A (Limitation on Interest):</strong> It prohibits courts from passing a decree for interest that exceeds the principal amount. This is known as the "Damdupat" rule, protecting you from situations where interest balloons to multiple times the loan amount.</li>
+                    <li><strong>Section 20-B (Installment Payments):</strong> The court has the power to order that the debt due be paid in installments, considering your financial capacity.</li>
+                    <li><strong>Section 20-D (Account Inquiry):</strong> You have the right to ask the court to inquire into the accounts to determine the *actual* amount due, stripping away hidden or illegal charges.</li>
                   </ul>
+
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Puducherry Relief from Indebtedness Act, 1987</h3>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    While specifically for certain categories of debtors and older debts, the spirit of this Act influences the lenient view courts often take towards genuine debtors in the region, emphasizing relief over persecution.
+                  </p>
                 </section>
 
-                {/* Common Debt Traps */}
-                <section id="debt-traps" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Common Debt Traps in Puducherry</h2>
+                {/* Lok Adalat */}
+                <section id="lok-adalat-py" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Lok Adalat: Amicable Resolution in Puducherry</h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Understanding the root cause of your debt is the first step to solving it. In Puducherry, we often see the following scenarios leading to financial distress:
+                    The **Union Territory of Puducherry Legal Services Authority (UTPLSA)** regularly organizes Lok Adalats to resolve bank disputes swiftly.
+                  </p>
+                  <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">Effective & Fast</h3>
+                    <p className="text-gray-700 mb-4">
+                      Lok Adalats in Puducherry have a strong track record. For instance, in a mega Lok Adalat in 2016, 259 cases were settled with awards worth ₹2.47 crore. More recently in 2024, hundreds of bank recovery plaints were closed amicably.
+                    </p>
+                    <ul className="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
+                      <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> <strong>Direct Negotiation:</strong> You speak face-to-face with bank officials.</li>
+                      <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> <strong>Binding Award:</strong> The settlement is final and holds the same weight as a court decree.</li>
+                      <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> <strong>No Appeal:</strong> Once settled, the bank cannot file an appeal to claim more money.</li>
+                    </ul>
+                  </div>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    We can represent you in these Lok Adalats to ensure you get a fair deal and that the bank doesn't pressure you into an agreement you can't afford.
+                  </p>
+                </section>
+
+                {/* Why Choose AMA */}
+                <section id="why-choose-ama" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose AMA Legal Solutions?</h2>
+                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
+                    We combine our national expertise with a deep understanding of Puducherry's local regulations.
                   </p>
                   
-                  <div className="space-y-6">
-                    <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                      <h3 className="text-xl font-bold text-blue-800 mb-3">1. Crisis in the Fishing Sector</h3>
-                      <p className="text-gray-700">
-                        Fisherfolk in Puducherry and Karaikal are facing a dual crisis of declining fish yields due to climate change and marine pollution. Many have taken loans to buy boats or nets but are unable to repay them due to low catch. This is a genuine livelihood crisis that can be used as a strong ground for negotiating loan settlements with banks.
-                      </p>
+                  <div className="grid md:grid-cols-3 gap-6 text-center">
+                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
+                      <div className="text-4xl mb-4">⚖️</div>
+                      <h3 className="font-bold text-xl mb-2">Legal Protection</h3>
+                      <p className="text-gray-600">We leverage the Puducherry Money Lenders Act to challenge excessive interest claims.</p>
                     </div>
-
-                    <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                      <h3 className="text-xl font-bold text-blue-800 mb-3">2. Tourism Volatility</h3>
-                      <p className="text-gray-700">
-                        The tourism industry is the backbone of Puducherry's economy. However, it is highly seasonal and vulnerable to external shocks. Many guest house owners, restaurant operators, and tour guides took loans to expand but faced severe losses during the off-season or post-pandemic slowdowns. We help such business owners restructure or settle their debts to keep their businesses afloat.
-                      </p>
+                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
+                      <div className="text-4xl mb-4">🚫</div>
+                      <h3 className="font-bold text-xl mb-2">Stop Harassment</h3>
+                      <p className="text-gray-600">We take swift legal action against any agent violating your rights, involving the police if necessary.</p>
                     </div>
-
-                    <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                      <h3 className="text-xl font-bold text-blue-800 mb-3">3. High-Interest Private Loans</h3>
-                      <p className="text-gray-700">
-                        Due to the difficulty in accessing formal credit, many small traders and daily wage earners turn to private moneylenders who charge exorbitant interest rates. This leads to a debt spiral where the borrower pays only the interest and the principal never reduces. We advise clients on how to exit these traps legally.
-                      </p>
+                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
+                      <div className="text-4xl mb-4">📉</div>
+                      <h3 className="font-bold text-xl mb-2">Max Savings</h3>
+                      <p className="text-gray-600">Our negotiators know the settlement limits of banks like Indian Bank & SBI, ensuring you save the maximum possible.</p>
                     </div>
                   </div>
                 </section>
 
-                {/* Process */}
-                <section id="process" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Proven Loan Settlement Process</h2>
+{/* Process Section */}
+                <section id="settlement-process" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Our 4-Step Path to Freedom</h2>
                   <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                    At AMA Legal Solutions, we follow a structured, transparent, and legal process to help you become debt-free. Here is how we handle your case in Puducherry:
+                    We follow a proven strategy to get you out of debt.
                   </p>
                   
                   <div className="space-y-8">
                     <div className="flex flex-col md:flex-row gap-6 items-start">
                       <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">1</div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Detailed Case Assessment</h3>
-                        <p className="text-gray-700 leading-relaxed mb-4">
-                          We start by analyzing your financial situation. We review your loan documents, income status, and the reasons for your default. Whether you are a hotelier in White Town or a fisherman in Karaikal, we tailor our strategy to your specific circumstances.
+                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Case Analysis</h3>
+                        <p className="text-gray-700 leading-relaxed">
+                          We review your loan documents and legal notices. We assess if the interest charged violates the Puducherry Money Lenders Act (e.g., exceeding the principal).
                         </p>
                       </div>
                     </div>
@@ -355,9 +356,9 @@ export default function PuducherryLoanSettlementPage() {
                     <div className="flex flex-col md:flex-row gap-6 items-start">
                       <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">2</div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Legal Representation & Anti-Harassment</h3>
-                        <p className="text-gray-700 leading-relaxed mb-4">
-                          We formally notify your creditors that AMA Legal Solutions is representing you. This is a crucial step as it directs all future communication to us. We put an immediate stop to harassing calls and visits from recovery agents, giving you the peace of mind you deserve.
+                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Legal Shielding</h3>
+                        <p className="text-gray-700 leading-relaxed">
+                          We formally notify the bank of our representation. This immediately creates a buffer between you and the recovery agents, reducing harassment significantly.
                         </p>
                       </div>
                     </div>
@@ -365,9 +366,9 @@ export default function PuducherryLoanSettlementPage() {
                     <div className="flex flex-col md:flex-row gap-6 items-start">
                       <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">3</div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Strategic Negotiation</h3>
-                        <p className="text-gray-700 leading-relaxed mb-4">
-                          Our experienced negotiators engage with the bank's authorized officers. We present your "Hardship Letter"—documenting your financial struggles—to justify a settlement. We fight for the maximum possible waiver on interest and penalties, aiming to reduce the principal amount as well.
+                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Negotiation</h3>
+                        <p className="text-gray-700 leading-relaxed">
+                          We negotiate with the bank's zonal officers or in the Lok Adalat. We push for a settlement amount that aligns with your current financial reality, aiming for maximum relief.
                         </p>
                       </div>
                     </div>
@@ -375,75 +376,110 @@ export default function PuducherryLoanSettlementPage() {
                     <div className="flex flex-col md:flex-row gap-6 items-start">
                       <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">4</div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Settlement and Closure</h3>
-                        <p className="text-gray-700 leading-relaxed mb-4">
-                          Once we reach an agreement that you can afford, we ensure you receive a formal settlement letter from the bank. We review this document to ensure there are no hidden clauses. After you make the payment, we ensure you get the No Dues Certificate (NDC), officially closing the chapter on your debt.
+                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Debt Free</h3>
+                        <p className="text-gray-700 leading-relaxed">
+                          Upon payment of the settlement amount, we ensure you receive the official "No Dues Certificate" and that the bank withdraws any legal cases (Sarfaesi/Cheque Bounce) against you.
                         </p>
                       </div>
                     </div>
                   </div>
                 </section>
 
-                {/* Why Choose Us */}
-                <section id="why-choose-us" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose AMA Legal Solutions in Puducherry?</h2>
-                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                    We are not just a debt settlement company; we are a team of legal experts committed to your financial freedom.
+                {/* Harassment Laws & Police Helpline */}
+                <section id="harassment-laws" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Stopping Harassment in Puducherry</h2>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    Debt recovery has rules. If those rules are broken, you have the law on your side.
                   </p>
-                  
-                  <div className="grid md:grid-cols-3 gap-6 text-center">
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">🏛️</div>
-                      <h3 className="font-bold text-xl mb-2">Local Legal Knowledge</h3>
-                      <p className="text-gray-600">We are well-versed in the Puducherry Money Lenders Act and local Lok Adalat procedures.</p>
+                  <div className="grid md:grid-cols-2 gap-6 mb-8">
+                    <div className="bg-red-50 p-6 rounded-xl border border-red-100">
+                      <h4 className="font-bold text-lg mb-2 text-red-700">Puducherry Police Helplines</h4>
+                      <p className="text-gray-700 mb-2"><strong>Emergency:</strong> Dial 112 or 100.</p>
+                      <p className="text-gray-700 mb-2"><strong>Control Room:</strong> 1031 or 1800-425-1031.</p>
+                      <p className="text-gray-700"><strong>WhatsApp Helpline:</strong> 9489205039 (for non-emergency complaints).</p>
                     </div>
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">🗺️</div>
-                      <h3 className="font-bold text-xl mb-2">Pan-Territory Service</h3>
-                      <p className="text-gray-600">From Puducherry to Karaikal, Mahe, and Yanam, we serve clients across the entire Union Territory.</p>
+                    <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                      <h4 className="font-bold text-lg mb-2 text-blue-700">Cyber Crime Cell</h4>
+                      <p className="text-gray-700 mb-2"><strong>Helpline:</strong> 1930 or 9489205246.</p>
+                      <p className="text-gray-700">If agents send abusive messages or morphed photos, report it immediately to cybercell-police@py.gov.in.</p>
                     </div>
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">📞</div>
-                      <h3 className="font-bold text-xl mb-2">Remote Assistance</h3>
-                      <p className="text-gray-600">You don't need to visit our office. We handle everything digitally, saving you time and travel costs.</p>
+                  </div>
+                  <p className="text-lg leading-relaxed text-gray-700">
+                    <strong>Legal Note:</strong> If an agent threatens you physically or verbally, we can help you file a formal police complaint (FIR) for criminal intimidation.
+                  </p>
+                </section>
+
+                {/* Documents Required */}
+                <section id="documents" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Documents for OTS</h2>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    Prepare these documents to expedite your settlement process:
+                  </p>
+                  <ul className="grid md:grid-cols-2 gap-4">
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Aadhar & PAN Card
+                    </li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Loan Account Statement (Up to date)
+                    </li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Any Legal Notices Received
+                    </li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Proof of Income/Job Loss
+                    </li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Medical Reports (if applying for medical hardship)
+                    </li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg">
+                      <span className="text-[#D2A02A] mr-3">✓</span> Correspondence with Bank
+                    </li>
+                  </ul>
+                </section>
+
+                {/* Service Areas */}
+                <section id="city-services" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Serving All Regions of Puducherry</h2>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    Our digital services cover the entire U.T., including all four districts.
+                  </p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Pondicherry</h4>
+                      <p className="text-xs text-gray-500">Capital Region</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Karaikal</h4>
+                      <p className="text-xs text-gray-500">Coromandel Coast</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Mahe</h4>
+                      <p className="text-xs text-gray-500">Malabar Coast</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Yanam</h4>
+                      <p className="text-xs text-gray-500">Godavari District</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Ozhukarai</h4>
+                      <p className="text-xs text-gray-500">Municipality</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Ariyankuppam</h4>
+                      <p className="text-xs text-gray-500">Commune</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Villianur</h4>
+                      <p className="text-xs text-gray-500">Commune</p>
+                    </div>
+                    <div className="p-4 border rounded-lg hover:border-[#D2A02A] transition-colors">
+                      <h4 className="font-bold text-gray-900">Bahour</h4>
+                      <p className="text-xs text-gray-500">Commune</p>
                     </div>
                   </div>
                 </section>
 
-                {/* Testimonials */}
-                <section id="testimonials" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Success Stories from Puducherry</h2>
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
-                      <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
-                      <p className="text-gray-700 italic mb-4 relative z-10">
-                        "I had a loan for my boutique hotel in White Town. When tourists stopped coming during the pandemic, I couldn't pay. The bank threatened to seize my property. AMA Legal Solutions intervened and settled the loan for 50% of the amount. They saved my business."
-                      </p>
-                      <div className="flex items-center">
-                        <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">A</div>
-                        <div>
-                          <p className="font-bold text-gray-900">Anand Kumar</p>
-                          <p className="text-sm text-gray-500">Hotel Owner, Puducherry</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
-                      <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
-                      <p className="text-gray-700 italic mb-4 relative z-10">
-                        "I took a loan for a new fishing boat in Karaikal, but the catch was very poor for two seasons. I was drowning in debt. AMA lawyers helped me explain my situation to the bank manager and got me a settlement I could afford. I am very thankful."
-                      </p>
-                      <div className="flex items-center">
-                        <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">S</div>
-                        <div>
-                          <p className="font-bold text-gray-900">Selvam R.</p>
-                          <p className="text-sm text-gray-500">Fisherman, Karaikal</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-                {/* FAQs */}
+                {/* FAQ Section */}
                 <section id="faqs" className="scroll-mt-32">
                   <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
                   <div className="space-y-6">
@@ -462,27 +498,24 @@ export default function PuducherryLoanSettlementPage() {
                 </section>
 
                 {/* Final CTA */}
-                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">
+                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-xl md:rounded-3xl p-6 md:p-16 text-center text-white relative overflow-hidden">
                   <div className="relative z-10">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">Live Debt-Free in Puducherry</h2>
-                    <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
-                      Don't let debt steal your peace of mind. Our expert lawyers are ready to fight for you.
+                    <h2 className="text-xl md:text-5xl font-bold mb-4 md:mb-6">Regain Your Financial Peace in Puducherry</h2>
+                    <p className="text-sm md:text-xl opacity-90 mb-6 md:mb-10 max-w-2xl mx-auto">
+                      Don't let debt define your life. Expert legal help is just a click away in Pondicherry.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
                       <Link href="/contact">
-                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg w-full sm:w-auto">
-                          Book Your Consultation
+                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
+                          Book Consultation
                         </button>
                       </Link>
                       <a href="tel:+918700343611">
-                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-4 px-12 rounded-full transition-all text-lg w-full sm:w-auto">
+                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all text-sm md:text-lg w-full sm:w-auto">
                           Call: +91-8700343611
                         </button>
                       </a>
                     </div>
-                    <p className="mt-8 text-sm opacity-70">
-                      Confidential • Legal • Effective
-                    </p>
                   </div>
                 </section>
 
@@ -490,13 +523,12 @@ export default function PuducherryLoanSettlementPage() {
             </div>
 
             {/* Sidebar */}
-            <div className="lg:w-1/4">
-              <div className="sticky top-24 space-y-8">
+             <div className="hidden lg:block space-y-8 sticky top-24">
                 {/* Contact Card */}
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">Talk to an Expert</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Need Help in Puducherry?</h3>
                   <p className="text-gray-600 mb-6 text-sm">
-                    Get immediate legal advice for your debt problems in Puducherry.
+                    Speak to our lawyers serving Pondicherry and Karaikal.
                   </p>
                   <a 
                     href="tel:+918700343611" 
@@ -516,23 +548,102 @@ export default function PuducherryLoanSettlementPage() {
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                   <h3 className="text-lg font-bold text-gray-900 mb-4">Related Services</h3>
                   <ul className="space-y-3 text-sm">
-                    
-                    <li>
-                      <Link href="/services/arbitration" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Arbitration
+                   <li>
+                      <Link href="/services/debt-consolidation" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">›</span> Debt Consolidation
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/civil" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Civil Litigation
+                      <Link href="/services/cheque-bounce-lawyer" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">›</span> Cheque Bounce Lawyer
+                      </Link>
+                    </li>
+                     <li>
+                      <Link href="/services/legal-notice" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">›</span> Legal Notice
                       </Link>
                     </li>
                   </ul>
                 </div>
               </div>
-            </div>
           </div>
-          
+
+          {/* Banks Grid */}
+          <div className="mt-16">
+            <section className="my-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+                We settle loans from the following banks
+              </h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+                <Link 
+                  href="/services/loan-settlement/sbi-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">SBI</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/hdfc-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">HDFC</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/icici-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">ICICI</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/kotak-mahindra"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Kotak Mahindra</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/idfc-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">IDFC</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/yes-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Yes Bank</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/bajaj-finserv"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Bajaj Finserv</span>
+                </Link>
+                <Link 
+                  href="/services/loan-settlement/axis-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Axis Bank</span>
+                </Link>
+                  <Link 
+                  href="/services/loan-settlement/bank-of-baroda"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Bank of Baroda</span>
+                </Link>
+                  <Link 
+                  href="/services/loan-settlement/indian-bank"
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                >
+                  <span className="text-gray-800 font-medium text-sm leading-tight block">Indian Bank</span>
+                </Link>
+              </div>
+              <div className="mt-8 text-center">
+                <p className="text-lg text-gray-700">
+                  We also handle settlement for regional institutions like Puducherry Cooperative Bank.
+                </p>
+              </div>
+            </section>
+          </div>
+
           <div className="mt-16">
             <GenericStatesGrid 
               serviceName="Loan Settlement" 
@@ -557,19 +668,20 @@ export default function PuducherryLoanSettlementPage() {
                 "Meghalaya": "Meghalaya",
                 "Mizoram": "Mizoram",
                 "Odisha": "Odisha",
-                "Puducherry": "Puducherry",
+                "Puducherry": "puducherry",
                 "Punjab": "Punjab",
                 "Rajasthan": "Rajasthan",
                 "Sikkim": "Sikkim",
                 "Tamil Nadu": "tamil-nadu",
                 "Telangana": "Telangana",
-                "Tripura": "Tripura",
+                "Tripura": "tripura",
                 "Uttar Pradesh": "UttarPradesh",
                 "Uttarakhand": "Uttrakhand",
                 "West Bengal": "west-bengal"
               }}
             />
           </div>
+          
         </div>
       </div>
     </>
