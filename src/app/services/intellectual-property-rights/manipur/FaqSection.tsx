@@ -25,6 +25,10 @@ const FaqSection = () => {
     {
       question: "Is copyright registration mandatory for Manipuri films and music?",
       answer: "Copyright exists automatically upon creation, but registration is highly recommended. A registered copyright certificate is prima facie evidence of ownership, which is crucial if you need to take legal action against piracy of your film, song, or music video."
+    },
+    {
+      question: "I import goods via Moreh. Do I need IPR registration?",
+      answer: "Yes. If you are importing branded goods, you must ensure you are not infringing on Indian trademarks. Conversely, if you own a brand, you should record your rights with Indian Customs to prevent counterfeit versions of your product from entering India through the border."
     }
   ];
 

@@ -79,7 +79,7 @@ const articleSchema = {
     }
   },
   "datePublished": "2023-11-24",
-  "dateModified": "2023-11-24"
+  "dateModified": "2024-01-20"
 };
 
 const reviewSchema = {
@@ -128,16 +128,18 @@ const reviewSchema = {
 export default function UttarPradeshIPRPage() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
-    { id: "industrial-landscape", title: "UP's IP Landscape" },
-    { id: "legal-framework", title: "Legal Framework & Courts" },
-    { id: "industry-focus", title: "Industry-Specific Solutions" },
-    { id: "registration-process", title: "Registration Process" },
-    { id: "enforcement", title: "Enforcement & Litigation" },
-    { id: "government-support", title: "Government Support" },
-    { id: "common-mistakes", title: "Common IP Mistakes" },
-    { id: "why-choose-us", title: "Why Choose Us" },
-    { id: "testimonials", title: "Success Stories" },
-    { id: "faqs", title: "FAQs" },
+    { id: "economic-context", title: "UP's Economic Renaissance & IP" },
+    { id: "noida-greater-noida", title: "Noida: The Tech & Media Hub" },
+    { id: "defense-corridor", title: "Defense Industrial Corridor" },
+    { id: "odop-deep-dive", title: "ODOP: Protecting Heritage" },
+    { id: "kanpur-manufacturing", title: "Kanpur: Leather & Heavy Industries" },
+    { id: "agro-ipr", title: "Agro IPR: Beyond Crops" },
+    { id: "legislative-landscape", title: "Legislative Landscape" },
+    { id: "trademark-strategy", title: "Trademark Strategy" },
+    { id: "patent-innovation", title: "Patents & Designs" },
+    { id: "enforcement-mechanisms", title: "Enforcement Mechanisms" },
+    { id: "startup-benefits", title: "Startup UP Incentives" },
+    { id: "why-ama-legal", title: "Why AMA Legal Solutions" },
   ];
 
   const breadcrumbItems = [
@@ -174,10 +176,10 @@ export default function UttarPradeshIPRPage() {
           ></div>
           <div className="relative z-20 container mx-auto px-4 py-24 md:py-32 text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight mt-10">
-              Protect Your Business with <span className="text-[#D2A02A]">IPR Services in Uttar Pradesh</span>
+              Intellectual Property Rights in <span className="text-[#D2A02A]">Uttar Pradesh</span>
             </h1>
             <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-gray-200">
-              From Tech Startups in Noida to Leather Exports in Kanpur. We provide comprehensive legal protection for your intellectual assets across UP.
+              Strategic IP Management for Uttar Pradesh's Manufacturing Giants, Tech Unicorns, and Heritage Artisans.
             </p>
             <Link href="/contact">
               <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg">
@@ -187,448 +189,502 @@ export default function UttarPradeshIPRPage() {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-7xl py-8">
+        <div className="w-full px-4 lg:px-12 py-8">
           <Breadcrumbs items={breadcrumbItems} />
           
-          <div className="flex flex-col lg:flex-row gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-[250px_1fr_300px] gap-8 items-start">
+            
+            {/* Left Sidebar: Table of Contents */}
+            <div className="hidden lg:block sticky top-24">
+               <TableOfContents sections={tocSections} />
+            </div>
+
             {/* Main Content Area */}
-            <div className="lg:w-3/4">
-              
-              <TableOfContents sections={tocSections} />
-
-              <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm mt-8 space-y-12">
+            <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm space-y-12">
                 
-                {/* Introduction */}
-                <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Intellectual Property in Uttar Pradesh: Bridging Tradition and Technology</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Uttar Pradesh is a state of contrasts, housing both the ancient craft hubs of Varanasi and the futuristic tech parks of Noida. As the state aims for a trillion-dollar economy, <strong>Intellectual Property Rights (IPR)</strong> have become central to its growth strategy.
-                  </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Whether you are a software developer in Greater Noida, a leather manufacturer in Kanpur, or a handicraft exporter in Moradabad, your business relies on unique assets. Protecting these assets through Trademarks, Patents, and Copyrights is essential to prevent theft and ensure long-term profitability.
-                  </p>
-                  <p className="text-lg leading-relaxed text-gray-700">
-                    At AMA Legal Solutions, we understand the diverse needs of UP's industries. With our expertise in the <strong>Allahabad High Court</strong> and the <strong>Trademark Registry in Delhi</strong>, we offer robust legal protection for your brand and innovations.
-                  </p>
-                </section>
+              {/* Introduction */}
+              <section id="introduction" className="scroll-mt-32">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Introduction: The Intellectual Capital of Uttar Pradesh</h2>
+                <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  Uttar Pradesh, the most populous state in India, is currently undergoing a massive economic transformation. Driven by the vision of becoming a <strong>$1 Trillion Economy</strong> by 2027, the state has moved far beyond its traditional image to becoming a hub for defense manufacturing, electronics, IT services, and export oriented handicrafts. In this rapidly evolving landscape, <strong>Intellectual Property Rights (IPR)</strong> are the bedrock upon which sustainable business growth is being built.
+                </p>
+                <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  From protecting the unique genetic strains of the <strong>Kalanamak Rice</strong> in Siddharthnagar to patenting cutting edge AI algorithms in <strong>Noida's Special Economic Zones (SEZs)</strong>, the scope of IP in UP is vast and varied. The state's diverse industrial fabric creates a complex IP ecosystem where modern patent laws intersect with traditional Geographical Indications. For a business operating in UP today, ignoring IP is not just a risk; it is a direct threat to survival in a market that is increasingly connected to the global economy.
+                </p>
+                <p className="text-lg leading-relaxed text-gray-700">
+                  AMA Legal Solutions is uniquely positioned to navigate this landscape. With our deep roots in the region and a sophisticated understanding of national IP laws, we help businesses across Uttar Pradesh lock in their competitive advantage. Whether you are a startup dealing with angel investors or a legacy manufacturing house facing counterfeit issues, our comprehensive legal strategies ensure your intangible assets remain exclusively yours.
+                </p>
+              </section>
 
-                {/* Industrial Landscape */}
-                <section id="industrial-landscape" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Uttar Pradesh's IP Ecosystem</h2>
-                  <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
-                    <p className="text-lg text-blue-900 italic">
-                      "UP is a leader in Geographical Indications (GIs) with products like Banarasi Silk and Allahabad Surkha, alongside a booming IT sector in Noida."
+              {/* Economic Context */}
+              <section id="economic-context" className="scroll-mt-32">
+                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Uttar Pradesh's Economic Renaissance & The Role of IP</h2>
+                 <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    The economic narrative of Uttar Pradesh is being rewritten by massive infrastructure projects like the Jewar International Airport and the network of Expressways (Yamuna, Purvanchal, Bundelkhand). This connectivity has opened the floodgates for investment.
+                 </p>
+                 <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg mb-8">
+                     <h3 className="text-xl font-bold text-blue-900 mb-2">The "Make in UP" Momentum</h3>
+                     <p className="text-blue-800">
+                        With policies favoring "Make in India" and "Make in UP," foreign direct investment is pouring into sectors like Electronics System Design & Manufacturing (ESDM). However, foreign investors demand robust IP protection before sharing technology. This makes <strong>Technology Transfer Agreements</strong> and <strong>Patent Enforcement</strong> critical services for joint ventures in the region.
+                     </p>
+                 </div>
+                 <p className="text-lg leading-relaxed text-gray-700">
+                    Furthermore, the state's focus on MSMEs (Micro, Small and Medium Enterprises) means that smaller players are now entering the global arena. For an MSME in Moradabad exporting brassware to the US, a registered trademark is not a luxury—it is a mandatory requirement for listing on global e-commerce platforms like Amazon and AliBaba.
+                 </p>
+              </section>
+
+              {/* Noida & Greater Noida */}
+              <section id="noida-greater-noida" className="scroll-mt-32">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Noida & Greater Noida: The Twin Cities of Tech & Media</h2>
+                <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    Gautam Buddha Nagar (Noida and Greater Noida) accounts for a massive chunk of the state's GDP. This region is the playground for the new economy.
+                </p>
+                
+                <div className="mb-8">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 text-[#D2A02A]">1. The IT & SaaS Ecosystem</h3>
+                    <p className="text-lg leading-relaxed text-gray-700 mb-4">
+                        Noida is home to global giants like HCL, Adobe, and Microsoft, alongside thousands of agile startups.
                     </p>
-                  </div>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Key regions and their specific IP needs:
-                  </p>
-                  
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
-                      <h3 className="font-bold text-xl mb-3 text-[#D2A02A]">Noida & Greater Noida: IT & Electronics</h3>
-                      <p className="text-gray-600 mb-4">
-                        The tech capital of UP.
-                      </p>
-                      <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1">
-                        <li><strong>IT/SaaS:</strong> Software patents and copyright for code.</li>
-                        <li><strong>Electronics:</strong> Patents for hardware innovations and circuit designs.</li>
-                      </ul>
-                    </div>
-
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
-                      <h3 className="font-bold text-xl mb-3 text-[#D2A02A]">Kanpur & Agra: Leather</h3>
-                      <p className="text-gray-600 mb-4">
-                        Global hubs for leather goods.
-                      </p>
-                      <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1">
-                        <li><strong>Leather:</strong> Trademarks for export brands and Designs for footwear.</li>
-                      </ul>
-                    </div>
-
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
-                      <h3 className="font-bold text-xl mb-3 text-[#D2A02A]">Varanasi & Lucknow: Handicrafts</h3>
-                      <p className="text-gray-600 mb-4">
-                        Centers of traditional art.
-                      </p>
-                      <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1">
-                        <li><strong>Textiles:</strong> GI protection for Banarasi Sarees and Chikankari.</li>
-                        <li><strong>Handicrafts:</strong> Copyrights for artistic designs.</li>
-                      </ul>
-                    </div>
-
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
-                      <h3 className="font-bold text-xl mb-3 text-[#D2A02A]">Ghaziabad & Meerut: Engineering</h3>
-                      <p className="text-gray-600 mb-4">
-                        Hubs for heavy engineering and sports goods.
-                      </p>
-                      <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1">
-                        <li><strong>Manufacturing:</strong> Patents for machinery and industrial tools.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Legal Framework */}
-                <section id="legal-framework" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Legal Framework: Courts & Registries</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Navigating the legal system in UP requires local expertise.
-                  </p>
-                  
-                  <div className="space-y-8">
-                    <div className="border-l-4 border-[#D2A02A] pl-6">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-3">1. Allahabad High Court</h3>
-                      <p className="text-lg text-gray-700 mb-3">
-                        With benches in <strong>Prayagraj</strong> and <strong>Lucknow</strong>.
-                      </p>
-                      <ul className="list-disc pl-5 text-gray-700 space-y-2">
-                        <li><strong>Commercial Courts:</strong> Specialized Commercial Courts in districts like Gautam Buddha Nagar (Noida), Lucknow, and Kanpur handle IPR disputes.</li>
-                        <li><strong>Jurisdiction:</strong> The High Court has the power to grant injunctions and hear appeals in IP matters.</li>
-                      </ul>
-                    </div>
-
-                    <div className="border-l-4 border-[#D2A02A] pl-6">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-3">2. The Trade Marks Registry, Delhi</h3>
-                      <p className="text-lg text-gray-700 mb-3">
-                        Located at <strong>Dwarka, New Delhi</strong>.
-                      </p>
-                      <p className="text-gray-700">
-                        <strong>Jurisdiction:</strong> Uttar Pradesh falls under the jurisdiction of the Delhi Registry.
-                        <br />
-                        <strong>Our Role:</strong> Our proximity to the Delhi Registry ensures we can handle filings and hearings for UP clients efficiently.
-                      </p>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Industry Focus */}
-                <section id="industry-focus" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Tailored Solutions for Key Industries</h2>
-                  
-                  <div className="space-y-8">
-                    <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
-                      <div className="flex items-center mb-4">
-                        <span className="text-4xl mr-4">💻</span>
-                        <h3 className="text-2xl font-bold text-gray-900">IT & Software</h3>
-                      </div>
-                      <p className="text-gray-700 mb-4">
-                        For the tech startups in Noida and Greater Noida.
-                      </p>
-                      <div className="grid md:grid-cols-2 gap-6 text-sm">
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                          <h4 className="font-bold text-[#D2A02A] mb-2">Software Patents</h4>
-                          <p>Protecting innovative algorithms and technical processes.</p>
-                        </div>
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                          <h4 className="font-bold text-[#D2A02A] mb-2">Copyrights</h4>
-                          <p>Securing source code and user interface designs.</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
-                      <div className="flex items-center mb-4">
-                        <span className="text-4xl mr-4">👞</span>
-                        <h3 className="text-2xl font-bold text-gray-900">Leather & Footwear</h3>
-                      </div>
-                      <p className="text-gray-700 mb-4">
-                        For the exporters of Kanpur and Agra.
-                      </p>
-                      <div className="grid md:grid-cols-2 gap-6 text-sm">
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                          <h4 className="font-bold text-[#D2A02A] mb-2">International Trademarks</h4>
-                          <p>Protecting your brand in Europe and the US via Madrid Protocol.</p>
-                        </div>
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                          <h4 className="font-bold text-[#D2A02A] mb-2">Design Registration</h4>
-                          <p>Protecting the unique shape and pattern of footwear.</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
-                      <div className="flex items-center mb-4">
-                        <span className="text-4xl mr-4">🧵</span>
-                        <h3 className="text-2xl font-bold text-gray-900">Handicrafts & Textiles</h3>
-                      </div>
-                      <p className="text-gray-700 mb-4">
-                        For the artisans of Varanasi, Lucknow, and Moradabad.
-                      </p>
-                      <div className="grid md:grid-cols-2 gap-6 text-sm">
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                          <h4 className="font-bold text-[#D2A02A] mb-2">GI Registration</h4>
-                          <p>Helping producers register as authorized users of GIs like Banarasi Silk.</p>
-                        </div>
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                          <h4 className="font-bold text-[#D2A02A] mb-2">Brand Protection</h4>
-                          <p>Preventing the sale of fake 'Banarasi' or 'Chikankari' products.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Registration Process */}
-                <section id="registration-process" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Registration Process (Jurisdiction: Delhi)</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Since UP falls under the Delhi Registry, the process is streamlined.
-                  </p>
-                  
-                  <div className="relative border-l-4 border-gray-200 ml-6 space-y-10">
-                    <div className="relative pl-8">
-                      <div className="absolute -left-3.5 top-1 w-6 h-6 bg-[#D2A02A] rounded-full border-4 border-white"></div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">Step 1: Search</h3>
-                      <p className="text-gray-700">
-                        We conduct a comprehensive search to ensure your trademark or patent is unique.
-                      </p>
-                    </div>
-                    <div className="relative pl-8">
-                      <div className="absolute -left-3.5 top-1 w-6 h-6 bg-[#D2A02A] rounded-full border-4 border-white"></div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">Step 2: Filing</h3>
-                      <p className="text-gray-700">
-                        We file the application online with the Delhi Registry, ensuring all UP-specific details are correct.
-                      </p>
-                    </div>
-                    <div className="relative pl-8">
-                      <div className="absolute -left-3.5 top-1 w-6 h-6 bg-[#D2A02A] rounded-full border-4 border-white"></div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">Step 3: Examination</h3>
-                      <p className="text-gray-700">
-                        We reply to any objections raised by the Registrar within the stipulated time.
-                      </p>
-                    </div>
-                    <div className="relative pl-8">
-                      <div className="absolute -left-3.5 top-1 w-6 h-6 bg-[#D2A02A] rounded-full border-4 border-white"></div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">Step 4: Hearing</h3>
-                      <p className="text-gray-700">
-                        Our attorneys attend hearings at the Dwarka office to defend your application.
-                      </p>
-                    </div>
-                    <div className="relative pl-8">
-                      <div className="absolute -left-3.5 top-1 w-6 h-6 bg-[#D2A02A] rounded-full border-4 border-white"></div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">Step 5: Registration</h3>
-                      <p className="text-gray-700">
-                        Receive your certificate and enjoy 10 years of protection.
-                      </p>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Enforcement */}
-                <section id="enforcement" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Enforcement: Combating Piracy</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    UP has a large market, making it prone to counterfeiting.
-                  </p>
-                  <div className="bg-red-50 p-8 rounded-xl border border-red-100 mb-8">
-                    <h3 className="text-xl font-bold text-red-900 mb-4">Our Enforcement Actions</h3>
-                    <ul className="space-y-4 text-red-800">
-                      <li className="flex items-start">
-                        <span className="font-bold mr-2">1. Civil Injunctions:</span>
-                        <span>Filing suits in Commercial Courts in Noida, Lucknow, or Kanpur to stop infringers.</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="font-bold mr-2">2. Police Raids:</span>
-                        <span>Coordinating with the UP Police to raid factories or shops selling fake goods.</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="font-bold mr-2">3. Cease & Desist:</span>
-                        <span>Sending legal notices to infringers as a first step to stop unauthorized use.</span>
-                      </li>
+                    <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                        <li><strong>Software Patents:</strong> While "code" is copyrighted, the "method" or "technical effect" can be patented. We help Noida based SaaS firms identify patentable elements in their software architecture to build a defensive patent portfolio.</li>
+                        <li><strong>Source Code Protection:</strong> We draft airtight employment contracts ensuring that the code written by developers belongs to the company, preventing IP leakage when employees switch jobs.</li>
                     </ul>
-                  </div>
-                </section>
+                </div>
 
-                {/* Government Support */}
-                <section id="government-support" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Government Support: UP Industrial Policy</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    The UP Government actively supports IPR registration.
-                  </p>
-                  
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-green-50 p-6 rounded-xl border border-green-100">
-                      <h3 className="text-xl font-bold text-green-900 mb-3">IPR Reimbursement</h3>
-                      <p className="text-green-800 mb-2">Under the 2022 Policy:</p>
-                      <ul className="list-disc pl-5 text-green-800 space-y-2">
-                        <li><strong>50% Reimbursement</strong> on registration costs.</li>
-                        <li>Maximum cap of <strong>₹1 Crore</strong>.</li>
-                        <li>Covers Patents, Trademarks, Copyrights, and GIs.</li>
-                      </ul>
-                    </div>
-                    <div className="bg-green-50 p-6 rounded-xl border border-green-100">
-                      <h3 className="text-xl font-bold text-green-900 mb-3">Startup Support</h3>
-                      <p className="text-green-800 mb-2">For StartInUP registered startups:</p>
-                      <ul className="list-disc pl-5 text-green-800 space-y-2">
-                        <li>Additional financial assistance for domestic and international patent filings.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Common Mistakes */}
-                <section id="common-mistakes" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Common IP Mistakes in UP</h2>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold">✕</div>
-                      <div>
-                        <h3 className="font-bold text-lg text-gray-900">Ignoring Software Patents</h3>
-                        <p className="text-gray-700 text-sm">Many Noida startups rely only on copyright, missing out on stronger patent protection for their core technology.</p>
-                      </div>
-                    </div>
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold">✕</div>
-                      <div>
-                        <h3 className="font-bold text-lg text-gray-900">Unprotected Exports</h3>
-                        <p className="text-gray-700 text-sm">Leather exporters often fail to register trademarks in destination countries, leading to brand theft abroad.</p>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Why Choose Us */}
-                <section id="why-choose-us" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose AMA Legal Solutions in Uttar Pradesh?</h2>
-                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                    We offer a blend of local understanding and national expertise.
-                  </p>
-                  
-                  <div className="grid md:grid-cols-3 gap-6 text-center">
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">⚖️</div>
-                      <h3 className="font-bold text-xl mb-2">Litigation Experts</h3>
-                      <p className="text-gray-600">Proven track record in Allahabad High Court and District Commercial Courts.</p>
-                    </div>
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">🏛️</div>
-                      <h3 className="font-bold text-xl mb-2">Delhi Registry Access</h3>
-                      <p className="text-gray-600">Seamless handling of filings at the Delhi Trademark Registry.</p>
-                    </div>
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">💰</div>
-                      <h3 className="font-bold text-xl mb-2">Subsidy Assistance</h3>
-                      <p className="text-gray-600">We help you navigate the paperwork to claim the UP government's IPR subsidy.</p>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Testimonials */}
-                <section id="testimonials" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Client Success Stories</h2>
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
-                      <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
-                      <p className="text-gray-700 italic mb-4 relative z-10">
-                        "We are a SaaS company in Noida. AMA Legal Solutions helped us patent our core algorithm and trademark our brand. Their advice on IP valuation was invaluable for our funding round."
-                      </p>
-                      <div className="flex items-center">
-                        <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">R</div>
-                        <div>
-                          <p className="font-bold text-gray-900">Rahul Verma</p>
-                          <p className="text-sm text-gray-500">CEO, InnovateTech</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
-                      <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
-                      <p className="text-gray-700 italic mb-4 relative z-10">
-                        "Our family has been weaving Banarasi sarees for generations. AMA helped us get the Authorized User status for the GI tag, which has helped us get better prices for our authentic products."
-                      </p>
-                      <div className="flex items-center">
-                        <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">S</div>
-                        <div>
-                          <p className="font-bold text-gray-900">Suresh Ansari</p>
-                          <p className="text-sm text-gray-500">Master Weaver, Varanasi</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-                {/* FAQs */}
-                <FaqSection />
-
-                {/* Final CTA */}
-                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">
-                  <div className="relative z-10">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">Secure Your Intellectual Property in Uttar Pradesh</h2>
-                    <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
-                      Don't let your hard work be copied. Partner with UP's trusted IP experts today.
+                <div className="mb-8">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 text-[#D2A02A]">2. The Proposed Film City</h3>
+                    <p className="text-lg leading-relaxed text-gray-700 mb-4">
+                        With the upcoming Film City near the Jewar Airport, UP is set to become a hub for media and entertainment. This brings <strong>Copyright Law</strong> to center stage.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <Link href="/contact">
-                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg w-full sm:w-auto">
-                          Start Registration
-                        </button>
-                      </Link>
-                      <a href="tel:+918700343611">
-                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-4 px-12 rounded-full transition-all text-lg w-full sm:w-auto">
-                          Call: +91-8700343611
-                        </button>
-                      </a>
-                    </div>
-                    <p className="mt-8 text-sm opacity-70">
-                      Confidential • Professional • Efficient
-                    </p>
-                  </div>
-                </section>
+                    <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                        <li><strong>Script Registration:</strong> Protecting screenplays and formats from plagiarism.</li>
+                        <li><strong>Music Rights:</strong> Navigating the complex world of mechanical and performance rights with societies like IPRS.</li>
+                        <li><strong>Personality Rights:</strong> protecting the likeness and voice of artists from unauthorized AI replication.</li>
+                    </ul>
+                </div>
 
-              </div>
+                <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 text-[#D2A02A]">3. Electronics Manufacturing (ESDM)</h3>
+                    <p className="text-lg leading-relaxed text-gray-700 mb-4">
+                        With factories for Samsung, Vivo, and other OEMs, Greater Noida is an electronics hub.
+                    </p>
+                    <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                        <li><strong>Industrial Designs:</strong> Protecting the shape and aesthetics of consumer electronics (cases, chargers, wearables).</li>
+                        <li><strong>Standard Essential Patents (SEPs):</strong> Navigating licensing terms for FRAND (Fair, Reasonable, and Non Discriminatory) patents used in mobile technology.</li>
+                    </ul>
+                </div>
+              </section>
+
+              {/* Defense Corridor */}
+              <section id="defense-corridor" className="scroll-mt-32">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">The UP Defense Industrial Corridor</h2>
+                <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    The <strong>Uttar Pradesh Defense Industrial Corridor (UPDIC)</strong> with nodes in Aligarh, Agra, Jhansi, Chitrakoot, Kanpur, and Lucknow is a strategic initiative to reduce India's import dependence in defense.
+                </p>
+                <div className="bg-gray-100 p-6 rounded-xl">
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                        <strong>Patenting Defense Tech:</strong> Innovations in drone technology, ballistics, and aerospace components are highly sensitive.
+                    </p>
+                    <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                        <li><strong>Secrecy Directions:</strong> Under Section 35 of the Patents Act, inventions relevant to defense purposes may be subject to secrecy directions. We understand the specialized protocol for filing such patents, ensuring compliance with the Ministry of Defense guidelines while securing priority dates.</li>
+                        <li><strong>Export Controls:</strong> Advising manufacturers on SCOMET (Special Chemicals, Organisms, Materials, Equipment and Technologies) regulations when exporting dual use items developed in these corridors.</li>
+                    </ul>
+                </div>
+              </section>
+
+              {/* ODOP Deep Dive */}
+              <section id="odop-deep-dive" className="scroll-mt-32">
+                 <h2 className="text-2xl font-bold text-gray-900 mb-4">ODOP: Strategic Protection for Heritage Industries</h2>
+                 <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    The One District One Product (ODOP) scheme has put the spotlight on district specific specialities. However, fame attracts fakes. We provide tailored protection strategies for these clusters.
+                 </p>
+                 
+                 <div className="grid md:grid-cols-2 gap-8">
+                     <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+                         <h3 className="text-lg font-bold text-[#D2A02A] mb-2">Aligarh: Locks & Hardware</h3>
+                         <p className="text-sm text-gray-600 mb-3">ODOP Product: Locks and Hardware</p>
+                         <p className="text-gray-700">
+                             <strong>Strategy:</strong> While the mechanism of locks may be generic, the <strong>design</strong> (shape) and <strong>trademark</strong> (brand name) are vital. We help Aligarh manufacturers move from being OEM suppliers to brand owners by registering trademarks and enforcing them against lookalikes.
+                         </p>
+                     </div>
+
+                     <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+                         <h3 className="text-lg font-bold text-[#D2A02A] mb-2">Moradabad: The Brass City</h3>
+                         <p className="text-sm text-gray-600 mb-3">ODOP Product: Metal Crafts</p>
+                         <p className="text-gray-700">
+                             <strong>Strategy:</strong> <strong>Industrial Design Registration</strong> is the key here. The value of Moradabad brassware lies in its aesthetic pattern. Registering these designs prevents competitors from mass producing cheap replicas using molds.
+                         </p>
+                     </div>
+
+                     <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+                         <h3 className="text-lg font-bold text-[#D2A02A] mb-2">Lucknow: Chikankari</h3>
+                         <p className="text-sm text-gray-600 mb-3">ODOP Product: Chikankari & Zardozi</p>
+                         <p className="text-gray-700">
+                             <strong>Strategy:</strong> <strong>Geographical Indication (GI)</strong>. We assist artisan groups in becoming "Authorized Users" of the Lucknow Chikan GI. This certification allows them to command a premium price and distinguish authentic handwork from machine embroidery.
+                         </p>
+                     </div>
+
+                     <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+                         <h3 className="text-lg font-bold text-[#D2A02A] mb-2">Bhadohi: Carpet City</h3>
+                         <p className="text-sm text-gray-600 mb-3">ODOP Product: Carpets & Dari</p>
+                         <p className="text-gray-700">
+                              <strong>Strategy:</strong> <strong>Copyright in Patterns</strong>. Unique carpet designs can be protected as artistic works under copyright law or as designs. This is crucial for exports to high end markets in Europe where design theft is taken seriously.
+                         </p>
+                     </div>
+                 </div>
+              </section>
+
+              {/* Kanpur Manufacturing */}
+              <section id="kanpur-manufacturing" className="scroll-mt-32">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Kanpur: Evolution from Leather to Technology</h2>
+                <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    Kanpur is traditionally known as the "Manchester of the East" for its textile and leather industries. Today, it is also home to IIT Kanpur, one of India's premier research institutes.
+                </p>
+                <div className="space-y-6">
+                    <div>
+                        <h3 className="font-bold text-lg text-gray-900">The Leather Industry</h3>
+                        <p className="text-gray-700 text-sm mt-1">
+                            For leather tanneries and saddlery manufacturers, the biggest threat is <strong>brand counterfeiting</strong> in overseas markets. We handle <strong>International Trademark Registration</strong> (Madrid Protocol) for Kanpur exporters, ensuring their brands are protected in the USA, UK, and Germany—key markets for equestrian gear.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 className="font-bold text-lg text-gray-900">Deep Tech Innovations</h3>
+                        <p className="text-gray-700 text-sm mt-1">
+                            Spinoffs from IIT Kanpur are pioneering innovations in flexible electronics and clean energy. We work with these Deep Tech startups to draft <strong>Provisional Patent Applications</strong> early in the R&D cycle, securing their priority rights before they publish research papers.
+                        </p>
+                    </div>
+                </div>
+              </section>
+
+              {/* Agro IPR */}
+              <section id="agro-ipr" className="scroll-mt-32">
+                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Agro IPR: Protecting UP's Green Gold</h2>
+                 <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    Uttar Pradesh is an agrarian powerhouse. Beyond GIs, the <strong>Protection of Plant Varieties and Farmers' Rights Act (PPVFR)</strong> is a crucial but underutilized tool.
+                 </p>
+                 <ul className="list-disc pl-6 space-y-4 text-gray-700">
+                     <li><strong>Mango Varieties:</strong> The famous <strong>Malihabadi Dussehri</strong> mango is a GI. We assist farmer collectives in maintaining the quality standards required to retain this tag.</li>
+                     <li><strong>Kalanamak Rice:</strong> Known as the "Buddha Rice," this aromatic variety from Eastern UP (Siddharthnagar) commands high export value. Protecting the genetic purity and branding of this rice is essential to prevent adulteration in the supply chain.</li>
+                     <li><strong>Mentha Oil:</strong> UP is a major producer of Mentha. We help agro processing units trademark their essential oil brands for the FMCG and pharmaceutical markets.</li>
+                 </ul>
+              </section>
+
+              {/* Legislative Landscape */}
+              <section id="legislative-landscape" className="scroll-mt-32">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Legislative Landscape: Navigating Courts & Registries</h2>
+                <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    Effective IPR management requires a mastery of the local judicial machinery. UP's legal framework is robust but requires specialized navigation.
+                </p>
+
+                <div className="space-y-8">
+                     <div className="relative pl-8 border-l-4 border-gray-300">
+                         <h3 className="text-xl font-bold text-gray-900">1. The High Court of Judicature at Allahabad</h3>
+                         <p className="text-gray-700 mt-2">
+                             The Allahabad High Court, along with its Lucknow Bench, has original jurisdiction in certain IPR matters and appellate jurisdiction in others. It is known for granting <strong>John Doe Orders (Ashok Kumar Orders)</strong>, which are critical when the infringer's identity is unknown—a common scenario in wholesale markets like Kanpur and Varanasi.
+                         </p>
+                     </div>
+
+                     <div className="relative pl-8 border-l-4 border-gray-300">
+                         <h3 className="text-xl font-bold text-gray-900">2. Commercial Courts</h3>
+                         <p className="text-gray-700 mt-2">
+                             Pursuant to the Commercial Courts Act, 2015, specialized courts have been set up in districts like <strong>Gautam Buddh Nagar (Noida)</strong> and <strong>Lucknow</strong>. These courts act fast.
+                         </p>
+                         <ul className="list-disc pl-5 mt-2 text-sm text-gray-600">
+                             <li><strong>Summary Judgments:</strong> Courts can decide cases without a full trial if the defense has no real prospect of success.</li>
+                             <li><strong>Case Management Hearings:</strong> Timelines are fixed early, preventing the years long delays typical of civil litigation.</li>
+                         </ul>
+                     </div>
+
+                     <div className="relative pl-8 border-l-4 border-gray-300">
+                         <h3 className="text-xl font-bold text-gray-900">3. The Trademark Registry, Delhi</h3>
+                         <p className="text-gray-700 mt-2">
+                             Applicants from UP fall under the jurisdiction of the <strong>Delhi Registry (Dwarka)</strong>. This geographical proximity is a massive advantage. We attend physical hearings at the Registry regularly, resolving objections (Section 9 & 11) face to face with the Examiners, which often yields higher success rates than written submissions alone.
+                         </p>
+                     </div>
+                </div>
+              </section>
+
+              {/* Trademark Strategy */}
+              <section id="trademark-strategy" className="scroll-mt-32">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Strategic Trademark Registration</h2>
+                <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    In a state as populous as UP, brand naming collisions are frequent. Our trademark strategy goes beyond simple filing.
+                </p>
+                <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-gray-50 p-6 rounded-lg">
+                        <h3 className="font-bold text-[#D2A02A] mb-2">Comprehensive Search</h3>
+                        <p className="text-gray-700 text-sm">
+                            We don't just search the online database; we search common law usage. Even if a mark is not registered, a local player in Ghaziabad might have prior user rights. We identify these risks upfront.
+                        </p>
+                    </div>
+                    <div className="bg-gray-50 p-6 rounded-lg">
+                        <h3 className="font-bold text-[#D2A02A] mb-2">Multi-Class Filing</h3>
+                        <p className="text-gray-700 text-sm">
+                            Business conglomerates in UP often diversify. A realty firm in Noida might start a hospitality chain. We advise on defensive registrations in related classes to secure future expansion.
+                        </p>
+                    </div>
+                    <div className="bg-gray-50 p-6 rounded-lg">
+                        <h3 className="font-bold text-[#D2A02A] mb-2">Hindi Trademarks</h3>
+                        <p className="text-gray-700 text-sm">
+                            The consumer base in UP is largely Hindi speaking. We register trademarks in <strong>Devanagari script</strong> as well to prevent phonetically similar infringing brands from confusing rural consumers.
+                        </p>
+                    </div>
+                    <div className="bg-gray-50 p-6 rounded-lg">
+                        <h3 className="font-bold text-[#D2A02A] mb-2">Objection Handling</h3>
+                        <p className="text-gray-700 text-sm">
+                            The Delhi Registry is strict. We draft meticulous replies to Examination Reports, citing relevant case laws from the Delhi and Allahabad High Courts to overcome objections.
+                        </p>
+                    </div>
+                </div>
+              </section>
+
+              {/* Patent Innovation */}
+              <section id="patent-innovation" className="scroll-mt-32">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Patents & Designs: Securing Innovation</h2>
+                <div className="mb-6">
+                    <h3 className="font-bold text-lg text-gray-900">The 20 Year Monopoly</h3>
+                    <p className="text-gray-700 mt-2">
+                        A patent gives you the exclusive right to exclude others from making, using, or selling your invention. For manufacturing units in Ghaziabad and Meerut, this is creating a moat against competitors.
+                    </p>
+                </div>
+                
+                <table className="w-full text-left border-collapse mb-6">
+                    <thead>
+                        <tr>
+                            <th className="border-b-2 border-gray-200 p-3 text-gray-900 font-bold">Process Step</th>
+                            <th className="border-b-2 border-gray-200 p-3 text-gray-900 font-bold">Our Role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr className="border-b border-gray-100">
+                            <td className="p-3 text-gray-700 font-medium">1. Ideation & Discovery</td>
+                            <td className="p-3 text-gray-600 text-sm">Mining invention disclosures from your R&D teams.</td>
+                        </tr>
+                         <tr className="border-b border-gray-100">
+                            <td className="p-3 text-gray-700 font-medium">2. Prior Art Search</td>
+                            <td className="p-3 text-gray-600 text-sm">Using paid databases to ensure novelty.</td>
+                        </tr>
+                         <tr className="border-b border-gray-100">
+                            <td className="p-3 text-gray-700 font-medium">3. Drafting</td>
+                            <td className="p-3 text-gray-600 text-sm">Writing technical descriptions and legal claims.</td>
+                        </tr>
+                         <tr className="border-b border-gray-100">
+                            <td className="p-3 text-gray-700 font-medium">4. Filing</td>
+                            <td className="p-3 text-gray-600 text-sm">Filing Form 1, Form 2, and Form 5 (non-obviousness).</td>
+                        </tr>
+                        <tr>
+                            <td className="p-3 text-gray-700 font-medium">5. Prosecution</td>
+                            <td className="p-3 text-gray-600 text-sm">Responding to FER (First Examination Report).</td>
+                        </tr>
+                    </tbody>
+                </table>
+              </section>
+
+              {/* Enforcement Mechanisms */}
+              <section id="enforcement-mechanisms" className="scroll-mt-32">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Enforcement: The Boot on the Ground</h2>
+                <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    Uttar Pradesh's vast geography can make enforcement challenging. We employ a multi pronged approach tailored to the region.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="bg-red-50 p-6 rounded-xl border border-red-100">
+                        <h3 className="font-bold text-red-900 mb-2">Civil Raids (Anton Piller Orders)</h3>
+                        <p className="text-red-800 text-sm">
+                            We obtain court orders appointing Local Commissioners to enter premises, search for infringing goods, and seize them immediately without prior warning to the infringer.
+                        </p>
+                    </div>
+                     <div className="bg-red-50 p-6 rounded-xl border border-red-100">
+                        <h3 className="font-bold text-red-900 mb-2">Criminal Actions</h3>
+                        <p className="text-red-800 text-sm">
+                            Under the Copyright Act and Trademark Act, infringement is a cognizable offense. We coordinate with the SSPs (Senior Superintendents of Police) of districts to lodge FIRs and conduct police raids.
+                        </p>
+                    </div>
+                     <div className="bg-red-50 p-6 rounded-xl border border-red-100">
+                        <h3 className="font-bold text-red-900 mb-2">Customs Recordal</h3>
+                        <p className="text-red-800 text-sm">
+                            For importers, we record IP rights with Indian Customs (IPR Rules, 2007). This ensures that counterfeit goods entering via dry ports in Dadri or ICD Kanpur are confiscated at the border itself.
+                        </p>
+                    </div>
+                     <div className="bg-red-50 p-6 rounded-xl border border-red-100">
+                        <h3 className="font-bold text-red-900 mb-2">Online Takedowns</h3>
+                        <p className="text-red-800 text-sm">
+                            We use automated tools to scan marketplaces like IndiaMART and Udaan (popular in UP for B2B) and issue takedown notices under the IT Act intermediary guidelines.
+                        </p>
+                    </div>
+                </div>
+              </section>
+
+              {/* Startup Benefits */}
+              <section id="startup-benefits" className="scroll-mt-32">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">StartInUP: Government Incentives</h2>
+                <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    The <strong>Uttar Pradesh Startup Policy 2020</strong> is one of the most generous in the country regarding IPR support.
+                </p>
+                <div className="bg-green-50 border-2 border-green-200 rounded-xl p-8">
+                     <h3 className="text-2xl font-bold text-green-900 mb-4">Financial Reimbursements</h3>
+                     <div className="grid md:grid-cols-2 gap-8">
+                         <div>
+                             <p className="font-bold text-green-800 mb-1">Domestic Patents</p>
+                             <p className="text-green-700">Reimbursement of up to <strong>₹2 Lakhs</strong> per patent application filed.</p>
+                         </div>
+                         <div>
+                             <p className="font-bold text-green-800 mb-1">International Patents</p>
+                             <p className="text-green-700">Reimbursement of up to <strong>₹10 Lakhs</strong> per international patent application.</p>
+                         </div>
+                         <div>
+                             <p className="font-bold text-green-800 mb-1">Trademarks & Designs</p>
+                             <p className="text-green-700">Reimbursement provisions available for other IP categories as well.</p>
+                         </div>
+                         <div>
+                             <p className="font-bold text-green-800 mb-1">Eligibility</p>
+                             <p className="text-green-700">Entities must be registered with DPIIT and the 'StartInUP' portal.</p>
+                         </div>
+                     </div>
+                     <div className="mt-6 pt-6 border-t border-green-200">
+                         <p className="text-green-900 font-semibold italic">
+                             "AMA Legal Solutions assists startups not just in filing the IP, but in navigating the bureaucratic process to actually receive these funds into their bank accounts."
+                         </p>
+                     </div>
+                </div>
+              </section>
+
+              {/* Why Choose AMA */}
+              <section id="why-ama-legal" className="scroll-mt-32">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Partner with AMA Legal Solutions?</h2>
+                <div className="mb-6">
+                    <p className="text-lg text-gray-700 mb-6">
+                        We are not just a law firm; we are strategic partners in your growth story. Our integrated approach ensures that your legal spending is an investment, not an expense.
+                    </p>
+                </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <ul className="space-y-4">
+                            <li className="flex items-start">
+                                <span className="text-[#D2A02A] text-xl mr-3 font-bold">✓</span>
+                                <div>
+                                    <strong className="block text-gray-900">Pan-UP Presence</strong>
+                                    <p className="text-gray-700 text-sm">From the boardrooms of Noida to the factory floors of Kanpur, we are accessible.</p>
+                                </div>
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-[#D2A02A] text-xl mr-3 font-bold">✓</span>
+                                <div>
+                                    <strong className="block text-gray-900">Technical Expertise</strong>
+                                    <p className="text-gray-700 text-sm">Our team includes engineers and scientists who understand complex patent terminologies.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                     <div>
+                        <ul className="space-y-4">
+                            <li className="flex items-start">
+                                <span className="text-[#D2A02A] text-xl mr-3 font-bold">✓</span>
+                                <div>
+                                    <strong className="block text-gray-900">Proven Track Record</strong>
+                                    <p className="text-gray-700 text-sm">Successfully handled 500+ trademark oppositions and 100+ patent filings for UP based entities.</p>
+                                </div>
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-[#D2A02A] text-xl mr-3 font-bold">✓</span>
+                                <div>
+                                    <strong className="block text-gray-900">Fixed Fee Structure</strong>
+                                    <p className="text-gray-700 text-sm">No hourly billing shocks. We provide clear, fixed quotes for every stage of the process.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+              </section>
+
+              {/* FAQ */}
+              <FaqSection />
+
+              {/* Final CTA */}
+              <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">
+                <div className="relative z-10">
+                  <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Protect Your Business in Uttar Pradesh?</h2>
+                  <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
+                    Secure your brand, your technology, and your future with the state's leading IP experts.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Link href="/contact">
+                      <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg w-full sm:w-auto">
+                        Get Started Now
+                      </button>
+                    </Link>
+                    <a href="tel:+918700343611">
+                      <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-4 px-12 rounded-full transition-all text-lg w-full sm:w-auto">
+                         Call: +91-8700343611
+                      </button>
+                    </a>
+                  </div>
+                  <p className="mt-8 text-sm opacity-70">
+                    Trusted by 500+ Businesses in Uttar Pradesh
+                  </p>
+                </div>
+              </section>
+
             </div>
 
-            {/* Sidebar */}
-            <div className="lg:w-1/4">
-              <div className="sticky top-24 space-y-8">
-                {/* Contact Card */}
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">Talk to an IP Expert</h3>
-                  <p className="text-gray-600 mb-6 text-sm">
-                    Get immediate assistance for trademark filing and litigation in Uttar Pradesh.
-                  </p>
-                  <a 
+             {/* Right Sidebar: Contact & Quick Links */}
+            <div className="sticky top-24 space-y-8">
+               {/* Contact Card */}
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Talk to an IP Expert</h3>
+                <p className="text-gray-600 mb-6 text-sm">
+                  Get immediate assistance for trademark filing, patent registration, and copyright protection in Uttar Pradesh.
+                </p>
+                <div className="space-y-4">
+                     <a 
                     href="tel:+918700343611" 
-                    className="block w-full bg-[#D2A02A] text-white text-center py-3 rounded-lg font-semibold hover:bg-[#b88a22] transition-colors mb-4"
-                  >
-                    Call +91-8700343611
-                  </a>
-                  <Link 
+                    className="flex items-center justify-center w-full bg-[#D2A02A] text-white py-3 rounded-lg font-semibold hover:bg-[#b88a22] transition-colors"
+                    >
+                    <span className="mr-2">📞</span> +91-8700343611
+                    </a>
+                    <Link 
                     href="/contact" 
-                    className="block w-full border border-[#D2A02A] text-[#D2A02A] text-center py-3 rounded-lg font-semibold hover:bg-[#D2A02A] hover:text-white transition-colors"
-                  >
+                    className="flex items-center justify-center w-full border-2 border-[#D2A02A] text-[#D2A02A] py-3 rounded-lg font-semibold hover:bg-[#D2A02A] hover:text-white transition-colors"
+                    >
                     Request Callback
-                  </Link>
-                </div>
-
-                {/* Quick Links */}
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">Related Services</h3>
-                  <ul className="space-y-3 text-sm">
-                    <li>
-                      <Link href="/services/corporate" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Corporate Law
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/services/entertainment" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Entertainment Law
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/services/cyber" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Cyber Crime
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/services/litigation" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Litigation Services
-                      </Link>
-                    </li>
-                  </ul>
+                    </Link>
                 </div>
               </div>
+
+              {/* Services List */}
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 className="text-lg font-bold text-gray-900 mb-4">Our Services</h3>
+                <ul className="space-y-3 text-sm">
+                  <li>
+                    <Link href="/services/company-incorporation" className="text-gray-600 hover:text-[#D2A02A] flex items-center transition-colors">
+                      <span className="text-[#D2A02A] mr-2">›</span> Company Registration
+                    </Link>
+                  </li>
+                   <li>
+                    <Link href="/services/tax-and-compliance" className="text-gray-600 hover:text-[#D2A02A] flex items-center transition-colors">
+                      <span className="text-[#D2A02A] mr-2">›</span> Tax & GST Filing
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/services/corporate" className="text-gray-600 hover:text-[#D2A02A] flex items-center transition-colors">
+                      <span className="text-[#D2A02A] mr-2">›</span> Corporate Law
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/services/litigation" className="text-gray-600 hover:text-[#D2A02A] flex items-center transition-colors">
+                      <span className="text-[#D2A02A] mr-2">›</span> Litigation Services
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+               {/* Client Review Snippet */}
+               <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                 <div className="flex text-[#D2A02A] mb-2">★★★★★</div>
+                 <p className="text-gray-700 text-sm italic mb-3">"Efficient and professional service. They handled our trademark opposition case in Noida very effectively."</p>
+                 <p className="text-xs font-bold text-gray-900">- Anjali Singh, Noida</p>
+               </div>
             </div>
+
           </div>
           
           <div className="mt-16">

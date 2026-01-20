@@ -4,7 +4,7 @@ import GenericStatesGrid from "@/components/GenericStatesGrid";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-// FAQ data for rendering and Schema
+// Extensive FAQ data for rendering and Schema
 const faqs = [
   {
     question: "What is the difference between civil and criminal litigation in India?",
@@ -135,7 +135,7 @@ const articleSchema = {
     }
   },
   "datePublished": "2023-11-15",
-  "dateModified": "2023-11-20"
+  "dateModified": "2024-01-20"
 };
 
 // FAQ Schema
@@ -231,14 +231,14 @@ export const metadata = {
 export default function LitigationPage() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
-    { id: "types-of-litigation", title: "Types of Litigation" },
+    { id: "understanding-litigation", title: "Understanding Litigation" },
+    { id: "practice-areas", title: "Practice Areas" },
     { id: "litigation-process", title: "The Litigation Process" },
-    { id: "court-hierarchy", title: "Court Hierarchy in India" },
-    { id: "challenges", title: "Common Challenges" },
-    { id: "strategy", title: "Pre-Litigation Strategy" },
+    { id: "court-hierarchy", title: "Judicial Hierarchy" },
+    { id: "strategies", title: "Litigation Strategy" },
     { id: "tribunals", title: "Specialized Tribunals" },
-    { id: "why-choose-us", title: "Why Choose Us" },
-    { id: "testimonials", title: "Client Reviews" },
+    { id: "why-ama", title: "Why Choose AMA?" },
+    { id: "client-reviews", title: "Client Reviews" },
     { id: "faqs", title: "FAQs" },
   ];
 
@@ -281,121 +281,154 @@ export default function LitigationPage() {
           <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
           <div 
             className="absolute inset-0 bg-cover bg-center z-0 bg-black" 
-            style={{ background: "black" }}
+            style={{ backgroundImage: "url('/services/litigation-hero.jpg')", backgroundColor: "#1a1a1a" }} 
           ></div>
-          <div className="relative z-20 container mx-auto px-4 py-12 md:py-32 text-center">
-            <h1 className="text-2xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-10">
+          <div className="relative z-20 container mx-auto px-4 py-20 md:py-32 text-center">
+            <h1 className="text-3xl md:text-6xl font-bold mb-6 leading-tight mt-10">
               Expert <span className="text-[#D2A02A]">Litigation Services</span> in India
             </h1>
-            <p className="text-sm md:text-2xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
-              Defending your rights with strategic advocacy. From civil disputes to complex criminal defense, we are your trusted legal partners in Indian courts.
+            <p className="text-lg md:text-2xl mb-10 max-w-4xl mx-auto text-gray-200 font-light">
+              Defending your rights with strategic advocacy. We provide robust legal representation for civil, criminal, and commercial disputes across all Indian courts.
             </p>
             <Link href="/contact">
-              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg">
+              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-xl text-lg border-2 border-[#D2A02A]">
                 Get Legal Representation
               </button>
             </Link>
           </div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-[1600px] py-8">
+        <div className="container mx-auto px-4 max-w-[1600px] py-12">
           <Breadcrumbs items={breadcrumbItems} />
           
-          <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[250px_1fr_300px] gap-12 items-start">
             {/* Left Sidebar - TOC (Desktop) */}
-            <div className="hidden lg:block sticky top-24">
+            <div className="hidden lg:block sticky top-28 self-start">
               <TableOfContents sections={tocSections} orientation="vertical" />
             </div>
 
             {/* Main Content Area */}
             <div className="min-w-0">
-              
               {/* TOC (Mobile) */}
-              <div className="lg:hidden mb-6 sticky top-20 z-10">
+              <div className="lg:hidden mb-8 sticky top-20 z-20">
                 <TableOfContents sections={tocSections} />
               </div>
 
-              <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
+              <div className="bg-white p-6 md:p-12 rounded-2xl shadow-sm space-y-12 border border-gray-100">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Navigating the Indian Legal System</h2>
-                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
-                    The Indian legal landscape is vast, complex, and often daunting for individuals and businesses alike. <strong>Litigation</strong> is the process of taking legal action in a court of law to resolve a dispute. It is the ultimate mechanism for enforcing rights, seeking redressal for wrongs, and ensuring justice is served. Whether it is a property dispute, a breach of contract, or a criminal accusation, the outcome of litigation can have profound personal and financial implications.
-                  </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    At AMA Legal Solutions, we believe that effective litigation is not just about knowing the law; it is about understanding the strategy of the courtroom. Our team of experienced <strong>litigation lawyers in India</strong> brings a wealth of knowledge across various practice areas. We are committed to providing robust representation that is both aggressive in protecting your interests and pragmatic in achieving your goals.
-                  </p>
-                  <p className="text-lg leading-relaxed text-gray-700">
-                    We handle cases across the entire judicial hierarchy, from District Courts to High Courts and the Supreme Court of India. Our approach is client centric: we listen, we analyze, and we fight tirelessly to secure the best possible outcome for you. We understand that every case is unique, and therefore, we tailor our legal strategies to meet the specific needs and objectives of our clients.
-                  </p>
+                  <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-20 after:h-1 after:bg-[#D2A02A]">
+                    Navigating the Complexities of Indian Litigation
+                  </h2>
+                  <div className="prose prose-lg text-gray-700 max-w-none space-y-4">
+                    <p>
+                      The Indian judicial system involves a complex web of laws, procedural codes, and court precedents. Whether you are an individual fighting for your property rights or a corporation defending a commercial contract, the stakes in litigation are invariably high. A favorable judgment can secure your future, while a loss can have severe financial and reputational consequences. In this adversarial system, having a skilled legal partner is not a luxury; it is a necessity.
+                    </p>
+                    <p>
+                      At <strong>AMA Legal Solutions</strong>, we understand the intricacies of the Indian courtroom. Litigation is not merely about filing papers; it is about crafting a compelling narrative backed by irrefutable evidence and sound legal logic. Our team of seasoned litigators brings decades of combined experience across District Courts, High Courts, and the Supreme Court of India. We pride ourselves on our ability to demystify the legal process for our clients, providing transparent, aggressive, and results driven representation.
+                    </p>
+                    <p>
+                      This guide provides an in depth look at our litigation services, the judicial process in India, and how we engineer strategies to win your case.
+                    </p>
+                  </div>
                 </section>
 
-                {/* Types of Litigation */}
-                <section id="types-of-litigation" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Areas of Litigation Expertise</h2>
-                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                    Litigation is a broad field encompassing various branches of law. Our firm offers specialized services in the following key areas, ensuring that you have expert guidance regardless of the nature of your dispute:
+                {/* Understanding Litigation */}
+                <section id="understanding-litigation" className="scroll-mt-32">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Understanding Litigation in India</h2>
+                  <div className="bg-gradient-to-r from-blue-50 to-white border-l-8 border-blue-600 p-8 mb-8 rounded-r-xl">
+                    <p className="text-xl text-blue-900 font-medium italic">
+                      "Litigation is the process of taking legal action in a court of law. It is the formal mechanism for resolving disputes where a judge (or bench of judges) adjudicates based on the evidence presented and the applicable statutory laws."
+                    </p>
+                  </div>
+                  <p className="text-lg text-gray-700 mb-6">
+                    Broadly, Indian litigation is divided into two primary categories, each with its own distinct standard of proof and procedure.
                   </p>
-                  
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
-                      <h3 className="text-xl font-bold text-blue-900 mb-3">Civil Litigation</h3>
-                      <p className="text-gray-700 mb-3">
-                        Civil law governs disputes between individuals or organizations. We handle:
+                    <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Civil Litigation</h3>
+                      <p className="text-gray-700">
+                        <strong>Focus:</strong> Disputes between private parties (individuals or organizations).<br/>
+                        <strong>Objective:</strong> To seek compensation (damages), specific performance of a contract, or injunctions.<br/>
+                        <strong>Standard of Proof:</strong> "Preponderance of probabilities" – meaning it is more likely than not that the claim is true.<br/>
+                        <strong>Examples:</strong> Property disputes, breach of contract, family law, torts.
                       </p>
-                      <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                        <li>Property and Real Estate Disputes</li>
-                        <li>Breach of Contract & Specific Performance</li>
-                        <li>Recovery Suits (Money Recovery)</li>
-                        <li>Injunctions and Stay Orders</li>
-                        <li>Defamation Suits</li>
-                        <li>Consumer Protection Cases</li>
+                    </div>
+                    <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Criminal Litigation</h3>
+                      <p className="text-gray-700">
+                        <strong>Focus:</strong> Offenses against the state and society.<br/>
+                        <strong>Objective:</strong> To punish the offender through imprisonment, fines, or both.<br/>
+                        <strong>Standard of Proof:</strong> "Beyond reasonable doubt" – the prosecution must prove guilt with near absolute certainty.<br/>
+                        <strong>Examples:</strong> Theft, assault, fraud, cybercrime, murder.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+
+                {/* Practice Areas */}
+                <section id="practice-areas" className="scroll-mt-32">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Our Areas of Litigation Expertise</h2>
+                  
+                  <div className="grid md:grid-cols-2 gap-8">
+                    {/* Civil */}
+                    <div className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 p-8 rounded-xl relative overflow-hidden group">
+                      <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <span className="text-6xl">⚖️</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-4">Civil Litigation</h3>
+                      <ul className="space-y-2 text-gray-700">
+                        <li className="flex items-start"><span className="text-[#D2A02A] mr-2">▪</span>Property & Real Estate Disputes (Title suits, Possession)</li>
+                        <li className="flex items-start"><span className="text-[#D2A02A] mr-2">▪</span>Breach of Contract & Specific Performance</li>
+                        <li className="flex items-start"><span className="text-[#D2A02A] mr-2">▪</span>Recovery of Money Suits</li>
+                        <li className="flex items-start"><span className="text-[#D2A02A] mr-2">▪</span>Injunctions (Stay Orders)</li>
+                        <li className="flex items-start"><span className="text-[#D2A02A] mr-2">▪</span>Defamation & Torts</li>
                       </ul>
                     </div>
 
-                    <div className="bg-red-50 p-6 rounded-xl border-l-4 border-red-500">
-                      <h3 className="text-xl font-bold text-red-900 mb-3">Criminal Litigation</h3>
-                      <p className="text-gray-700 mb-3">
-                        Criminal law involves prosecution by the state. Our defense services include:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                        <li>Bail Matters (Regular & Anticipatory)</li>
-                        <li>Cheque Bounce Cases (Section 138 NI Act)</li>
-                        <li>White Collar Crimes & Fraud</li>
-                        <li>Cyber Crime Defense</li>
-                        <li>Quashing of FIRs in High Court</li>
-                        <li>Criminal Appeals & Revisions</li>
+                    {/* Criminal */}
+                    <div className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 p-8 rounded-xl relative overflow-hidden group">
+                      <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <span className="text-6xl">🚔</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-4">Criminal Defense</h3>
+                      <ul className="space-y-2 text-gray-700">
+                        <li className="flex items-start"><span className="text-[#D2A02A] mr-2">▪</span>Bail Matters (Anticipatory & Regular)</li>
+                        <li className="flex items-start"><span className="text-[#D2A02A] mr-2">▪</span>Cheque Bounce (Section 138 NI Act)</li>
+                        <li className="flex items-start"><span className="text-[#D2A02A] mr-2">▪</span>White Collar Crimes & Corporate Fraud</li>
+                        <li className="flex items-start"><span className="text-[#D2A02A] mr-2">▪</span>Cyber Crime Defense</li>
+                        <li className="flex items-start"><span className="text-[#D2A02A] mr-2">▪</span>Quashing of FIRs (Section 482 CrPC)</li>
                       </ul>
                     </div>
 
-                    <div className="bg-yellow-50 p-6 rounded-xl border-l-4 border-yellow-500">
-                      <h3 className="text-xl font-bold text-yellow-900 mb-3">Commercial & Corporate</h3>
-                      <p className="text-gray-700 mb-3">
-                        Business disputes require a keen understanding of commerce and law. We manage:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                        <li>Shareholder & Partnership Disputes</li>
-                        <li>Mergers & Acquisitions Litigation</li>
-                        <li>Intellectual Property Infringement</li>
-                        <li>Insolvency & Bankruptcy (IBC)</li>
-                        <li>Arbitration & Mediation</li>
-                        <li>Commercial Contract Enforcement</li>
+                    {/* Commercial */}
+                    <div className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 p-8 rounded-xl relative overflow-hidden group">
+                      <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <span className="text-6xl">🏢</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-4">Commercial & Corporate</h3>
+                      <ul className="space-y-2 text-gray-700">
+                        <li className="flex items-start"><span className="text-[#D2A02A] mr-2">▪</span>Shareholder & Partnership Disputes</li>
+                        <li className="flex items-start"><span className="text-[#D2A02A] mr-2">▪</span>Insolvency & Bankruptcy (IBC)</li>
+                        <li className="flex items-start"><span className="text-[#D2A02A] mr-2">▪</span>Mergers & Acquisitions Litigation</li>
+                        <li className="flex items-start"><span className="text-[#D2A02A] mr-2">▪</span>Intellectual Property Infringement</li>
+                        <li className="flex items-start"><span className="text-[#D2A02A] mr-2">▪</span>Commercial Arbitration Enforcement</li>
                       </ul>
                     </div>
 
-                    <div className="bg-green-50 p-6 rounded-xl border-l-4 border-green-500">
-                      <h3 className="text-xl font-bold text-green-900 mb-3">Family & Matrimonial</h3>
-                      <p className="text-gray-700 mb-3">
-                        Sensitive handling of personal matters is our priority. We assist with:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                        <li>Divorce Proceedings (Mutual & Contested)</li>
-                        <li>Child Custody & Visitation Rights</li>
-                        <li>Maintenance & Alimony</li>
-                        <li>Domestic Violence Cases</li>
-                        <li>Succession & Wills</li>
-                        <li>Restitution of Conjugal Rights</li>
+                    {/* Family */}
+                    <div className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 p-8 rounded-xl relative overflow-hidden group">
+                      <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <span className="text-6xl">👨‍👩‍👧</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-4">Family & Constitutional</h3>
+                      <ul className="space-y-2 text-gray-700">
+                        <li className="flex items-start"><span className="text-[#D2A02A] mr-2">▪</span>Divorce & Child Custody</li>
+                        <li className="flex items-start"><span className="text-[#D2A02A] mr-2">▪</span>Succession & Wills</li>
+                        <li className="flex items-start"><span className="text-[#D2A02A] mr-2">▪</span>Writ Petitions (High Court & Supreme Court)</li>
+                        <li className="flex items-start"><span className="text-[#D2A02A] mr-2">▪</span>Public Interest Litigations (PIL)</li>
+                        <li className="flex items-start"><span className="text-[#D2A02A] mr-2">▪</span>Service & Employment Matters</li>
                       </ul>
                     </div>
                   </div>
@@ -403,247 +436,247 @@ export default function LitigationPage() {
 
                 {/* Litigation Process */}
                 <section id="litigation-process" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">The Litigation Process: Step by Step</h2>
-                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                    Understanding the lifecycle of a lawsuit helps reduce anxiety and allows for better preparation. While every case is unique, most civil litigation in India follows this general trajectory:
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">The Lifecycle of a Lawsuit</h2>
+                  <p className="text-lg text-gray-700 mb-8">
+                    Understanding the procedural steps can help reduce the anxiety associated with litigation. While every case is unique, a typical civil suit follows this trajectory:
                   </p>
                   
-                  <div className="relative border-l-4 border-[#D2A02A] ml-6 space-y-12">
-                    <div className="relative pl-8">
-                      <div className="absolute -left-3.5 top-1 w-6 h-6 bg-[#D2A02A] rounded-full border-4 border-white"></div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">Step 1: Legal Notice</h3>
+                  <div className="relative border-l-4 border-gray-200 ml-4 md:ml-8 space-y-12">
+                    
+                    <div className="relative pl-8 md:pl-12">
+                      <div className="absolute -left-[14px] top-0 w-6 h-6 rounded-full bg-[#D2A02A] border-4 border-white shadow-sm"></div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">1. Legal Notice (Pre-Litigation)</h3>
                       <p className="text-gray-700">
-                        Before approaching the court, it is often mandatory or strategic to send a formal Legal Notice to the opposite party. This notice outlines the grievance and demands a resolution within a specific timeframe. Many disputes are resolved at this stage itself.
+                        Before approaching the court, we send a formal Legal Notice to the opposing party. This notice outlines the grievance, legal basis, and demands. It serves as a final warning and often leads to an out of court settlement, saving significant time and cost.
                       </p>
                     </div>
-                    <div className="relative pl-8">
-                      <div className="absolute -left-3.5 top-1 w-6 h-6 bg-[#D2A02A] rounded-full border-4 border-white"></div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">Step 2: Filing of Plaint</h3>
+
+                    <div className="relative pl-8 md:pl-12">
+                      <div className="absolute -left-[14px] top-0 w-6 h-6 rounded-full bg-[#D2A02A] border-4 border-white shadow-sm"></div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">2. Filing of Plaint</h3>
                       <p className="text-gray-700">
-                        If the notice yields no result, we draft and file a 'Plaint' in the court of appropriate jurisdiction. The Plaint details the facts, the cause of action, and the relief claimed. The court then issues a summons to the defendant.
+                        If the notice is ignored, we draft and file a 'Plaint' (complaint) in the court of competent jurisdiction. The court then issues a 'Summons' to the defendant, ordering them to appear.
                       </p>
                     </div>
-                    <div className="relative pl-8">
-                      <div className="absolute -left-3.5 top-1 w-6 h-6 bg-[#D2A02A] rounded-full border-4 border-white"></div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">Step 3: Written Statement & Replication</h3>
+
+                    <div className="relative pl-8 md:pl-12">
+                      <div className="absolute -left-[14px] top-0 w-6 h-6 rounded-full bg-[#D2A02A] border-4 border-white shadow-sm"></div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">3. Pleadings</h3>
                       <p className="text-gray-700">
-                        The defendant must file a 'Written Statement' (defense) responding to the allegations. The plaintiff may then file a 'Replication' to counter the defense. This completes the pleadings stage.
+                        The defendant files a 'Written Statement' defending their position. The plaintiff may file a 'Replication' to counter this. These documents form the 'Pleadings' and set the boundaries of the dispute.
                       </p>
                     </div>
-                    <div className="relative pl-8">
-                      <div className="absolute -left-3.5 top-1 w-6 h-6 bg-[#D2A02A] rounded-full border-4 border-white"></div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">Step 4: Evidence & Trial</h3>
+
+                    <div className="relative pl-8 md:pl-12">
+                      <div className="absolute -left-[14px] top-0 w-6 h-6 rounded-full bg-[#D2A02A] border-4 border-white shadow-sm"></div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">4. Evidence & Trial</h3>
                       <p className="text-gray-700">
-                        The court frames the 'Issues' to be decided. Both parties then present their evidence—documents and witnesses. Witnesses are examined in chief and cross examined by the opposing lawyer. This is the most critical phase of the trial.
+                        The court frames 'Issues' to be decided. Both parties then lead evidence. This involves submitting documents and examining witnesses. Cross examination is the most critical tool here to dismantle the opponent's case.
                       </p>
                     </div>
-                    <div className="relative pl-8">
-                      <div className="absolute -left-3.5 top-1 w-6 h-6 bg-[#D2A02A] rounded-full border-4 border-white"></div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">Step 5: Arguments & Judgment</h3>
+
+                    <div className="relative pl-8 md:pl-12">
+                      <div className="absolute -left-[14px] top-0 w-6 h-6 rounded-full bg-[#D2A02A] border-4 border-white shadow-sm"></div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">5. Final Arguments & Judgment</h3>
                       <p className="text-gray-700">
-                        After evidence is concluded, final arguments are heard. The judge then pronounces the 'Judgment' and passes a 'Decree'. If favorable, the decree is executed; if not, an appeal can be filed in a higher court.
+                        Lawyers present final oral arguments, summarizing the evidence and citing case law. The judge then pronounces the 'Judgment' and passes a 'Decree'.
                       </p>
                     </div>
+
+                    <div className="relative pl-8 md:pl-12">
+                      <div className="absolute -left-[14px] top-0 w-6 h-6 rounded-full bg-[#D2A02A] border-4 border-white shadow-sm"></div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">6. Appeal / Execution</h3>
+                      <p className="text-gray-700">
+                        If favorable, we move to 'Execute' the decree to recover dues or assets. If unfavorable, we file an 'Appeal' in a higher court (High Court or Supreme Court) to challenge the verdict.
+                      </p>
+                    </div>
+
                   </div>
                 </section>
 
                 {/* Court Hierarchy */}
                 <section id="court-hierarchy" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Understanding Court Hierarchy</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    India follows a unified judicial system with a clear hierarchy. Knowing where your case stands is vital for effective representation.
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Judicial Hierarchy in India</h2>
+                  <p className="text-lg text-gray-700 mb-6">
+                    India follows a unified judicial system. Knowing which court has jurisdiction is vital for the success of your petition.
                   </p>
-                  
+                  <div className="grid md:grid-cols-3 gap-6">
+                    <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                      <h4 className="text-lg font-bold text-[#D2A02A] mb-2">Supreme Court</h4>
+                      <p className="text-sm text-gray-600">The apex court. Hears appeals from High Courts and matters involving violation of fundamental rights (Article 32).</p>
+                    </div>
+                    <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                      <h4 className="text-lg font-bold text-[#D2A02A] mb-2">High Courts</h4>
+                      <p className="text-sm text-gray-600">The highest court in a state. Has power of superintendence over all lower courts and hears writ petitions (Article 226).</p>
+                    </div>
+                    <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                      <h4 className="text-lg font-bold text-[#D2A02A] mb-2">District Courts</h4>
+                      <p className="text-sm text-gray-600">The first tier of the judiciary. Divided into Civil Courts (District Judges) and Criminal Courts (Sessions Judges).</p>
+                    </div>
+                  </div>
+                </section>
+
+                {/* Strategies */}
+                <section id="strategies" className="scroll-mt-32">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Winning Litigation Strategies</h2>
+                  <p className="text-lg text-gray-700 mb-8">
+                    Success in court is rarely accidental. It is the result of meticulous planning and strategic foresight. At AMA, we employ specific tactics to gain an edge:
+                  </p>
                   <div className="space-y-6">
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 flex items-start">
-                      <div className="text-4xl mr-4">🏛️</div>
+                    <div className="flex bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                      <div className="flex-shrink-0 mr-4">
+                        <div className="w-10 h-10 bg-[#D2A02A] rounded-full flex items-center justify-center text-white font-bold">1</div>
+                      </div>
                       <div>
-                        <h3 className="text-xl font-bold text-[#D2A02A] mb-2">Supreme Court of India</h3>
-                        <p className="text-gray-700">
-                          The apex court of the land, located in New Delhi. It hears appeals from High Courts and cases involving fundamental rights or substantial questions of law. Its decisions are binding on all other courts.
+                        <h4 className="text-lg font-bold text-gray-900">Pre-Litigation Settlement</h4>
+                        <p className="text-gray-700 text-sm mt-1">
+                          We aggressively pursue settlement through aggressive legal notices and negotiation. Avoiding court is often the best victory.
                         </p>
                       </div>
                     </div>
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 flex items-start">
-                      <div className="text-4xl mr-4">⚖️</div>
+                    <div className="flex bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                      <div className="flex-shrink-0 mr-4">
+                        <div className="w-10 h-10 bg-[#D2A02A] rounded-full flex items-center justify-center text-white font-bold">2</div>
+                      </div>
                       <div>
-                        <h3 className="text-xl font-bold text-[#D2A02A] mb-2">High Courts</h3>
-                        <p className="text-gray-700">
-                          The highest judicial authority in a state. They have jurisdiction over civil and criminal appeals from lower courts and also original jurisdiction in certain matters like writ petitions.
+                        <h4 className="text-lg font-bold text-gray-900">Forum Shopping (Legitimate)</h4>
+                        <p className="text-gray-700 text-sm mt-1">
+                          We analyze whether a Specialized Tribunal (like NCLT) offers a faster remedy than a Civil Court and file accordingly.
                         </p>
                       </div>
                     </div>
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 flex items-start">
-                      <div className="text-4xl mr-4">🏢</div>
+                    <div className="flex bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                      <div className="flex-shrink-0 mr-4">
+                        <div className="w-10 h-10 bg-[#D2A02A] rounded-full flex items-center justify-center text-white font-bold">3</div>
+                      </div>
                       <div>
-                        <h3 className="text-xl font-bold text-[#D2A02A] mb-2">District & Sessions Courts</h3>
-                        <p className="text-gray-700">
-                          The backbone of the judicial system. Civil cases are heard by District Judges, and criminal cases by Sessions Judges. Most litigation begins here.
+                        <h4 className="text-lg font-bold text-gray-900">Caveat Petitions</h4>
+                        <p className="text-gray-700 text-sm mt-1">
+                          If we anticipate a suit against you, we file a 'Caveat' to ensure the court gives us a hearing before passing any adverse ex parte interim orders.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                      <div className="flex-shrink-0 mr-4">
+                        <div className="w-10 h-10 bg-[#D2A02A] rounded-full flex items-center justify-center text-white font-bold">4</div>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-bold text-gray-900">Summary Suits</h4>
+                        <p className="text-gray-700 text-sm mt-1">
+                          For debt recovery, we file Summary Suits (Order 37 CPC) where the defendant has no automatic right to defend, speeding up the judgment.
                         </p>
                       </div>
                     </div>
                   </div>
-                </section>
-
-                {/* Common Challenges */}
-                <section id="challenges" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Common Challenges in Indian Litigation</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Litigation in India is often perceived as slow and cumbersome. While challenges exist, an experienced legal team knows how to navigate them effectively.
-                  </p>
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                      <h3 className="text-xl font-bold text-gray-900 mb-3">1. Delays & Adjournments</h3>
-                      <p className="text-gray-700">
-                        <strong>Challenge:</strong> Frequent adjournments can drag cases for years.<br/>
-                        <strong>Our Solution:</strong> We oppose unnecessary adjournments and file applications for expedited hearings, especially in urgent matters or for senior citizens.
-                      </p>
-                    </div>
-                    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                      <h3 className="text-xl font-bold text-gray-900 mb-3">2. Complex Procedures</h3>
-                      <p className="text-gray-700">
-                        <strong>Challenge:</strong> Procedural errors can lead to case dismissal.<br/>
-                        <strong>Our Solution:</strong> Our team is meticulous with drafting and filing, ensuring compliance with the Code of Civil Procedure (CPC) and Evidence Act to prevent technical setbacks.
-                      </p>
-                    </div>
-                    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                      <h3 className="text-xl font-bold text-gray-900 mb-3">3. Execution of Decree</h3>
-                      <p className="text-gray-700">
-                        <strong>Challenge:</strong> Winning the case is half the battle; getting the money/property is the other half.<br/>
-                        <strong>Our Solution:</strong> We aggressively pursue Execution Petitions, including attachment of assets and arrest warrants, to ensure you get the fruits of your judgment.
-                      </p>
-                    </div>
-                    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                      <h3 className="text-xl font-bold text-gray-900 mb-3">4. Cost Management</h3>
-                      <p className="text-gray-700">
-                        <strong>Challenge:</strong> Legal costs can spiral out of control.<br/>
-                        <strong>Our Solution:</strong> We provide transparent fee structures and cost-benefit analyses at every stage, advising settlement when it is financially more prudent than continued litigation.
-                      </p>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Pre-Litigation Strategy */}
-                <section id="strategy" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">The Importance of Pre-Litigation Strategy</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Many cases are won or lost before they even reach the courtroom. A solid pre-litigation strategy is the foundation of success. At AMA Legal Solutions, we emphasize:
-                  </p>
-                  <ul className="space-y-4 text-gray-700">
-                    <li className="flex items-start">
-                      <span className="text-[#D2A02A] font-bold mr-3 text-xl">✓</span>
-                      <div>
-                        <strong>Evidence Preservation:</strong> We guide clients on collating and preserving critical evidence (emails, contracts, chats) that might be lost over time.
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#D2A02A] font-bold mr-3 text-xl">✓</span>
-                      <div>
-                        <strong>Risk Assessment:</strong> We conduct a thorough SWOT analysis of your case to identify strengths, weaknesses, and potential risks.
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#D2A02A] font-bold mr-3 text-xl">✓</span>
-                      <div>
-                        <strong>Demand Letters:</strong> A well-drafted legal notice can often compel the other party to settle without litigation, saving time and money.
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#D2A02A] font-bold mr-3 text-xl">✓</span>
-                      <div>
-                        <strong>Forum Selection:</strong> Choosing the right court or tribunal (e.g., NCLT vs. Civil Court) can significantly impact the speed and outcome of the case.
-                      </div>
-                    </li>
-                  </ul>
                 </section>
 
                 {/* Specialized Tribunals */}
                 <section id="tribunals" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Specialized Tribunals Representation</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Apart from traditional courts, India has established various quasi judicial bodies to handle specific types of disputes efficiently. We have specialized teams for:
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Specialized Tribunals Representation</h2>
+                  <p className="text-lg text-gray-700 mb-6">
+                    Modern litigation has moved beyond traditional courts. We have specialized teams for quasi-judicial bodies that handle specific subject matters.
                   </p>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="flex items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="text-[#D2A02A] font-bold mr-3">NCLT / NCLAT</span>
-                      <span className="text-gray-700">Company Law & Insolvency</span>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100 hover:border-[#D2A02A] transition-colors">
+                      <span className="block text-xl font-bold text-gray-900 mb-1">NCLT</span>
+                      <span className="text-xs text-gray-500">Company Law</span>
                     </div>
-                    <div className="flex items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="text-[#D2A02A] font-bold mr-3">DRT / DRAT</span>
-                      <span className="text-gray-700">Debt Recovery & Banking</span>
+                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100 hover:border-[#D2A02A] transition-colors">
+                      <span className="block text-xl font-bold text-gray-900 mb-1">DRT / DRAT</span>
+                      <span className="text-xs text-gray-500">Debt Recovery</span>
                     </div>
-                    <div className="flex items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="text-[#D2A02A] font-bold mr-3">RERA</span>
-                      <span className="text-gray-700">Real Estate Regulatory Authority</span>
+                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100 hover:border-[#D2A02A] transition-colors">
+                      <span className="block text-xl font-bold text-gray-900 mb-1">RERA</span>
+                      <span className="text-xs text-gray-500">Real Estate</span>
                     </div>
-                    <div className="flex items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="text-[#D2A02A] font-bold mr-3">CAT / SAT</span>
-                      <span className="text-gray-700">Administrative & Securities Tribunals</span>
+                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100 hover:border-[#D2A02A] transition-colors">
+                      <span className="block text-xl font-bold text-gray-900 mb-1">NGT</span>
+                      <span className="text-xs text-gray-500">Environment</span>
                     </div>
-                    <div className="flex items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="text-[#D2A02A] font-bold mr-3">NGT</span>
-                      <span className="text-gray-700">National Green Tribunal</span>
+                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100 hover:border-[#D2A02A] transition-colors">
+                      <span className="block text-xl font-bold text-gray-900 mb-1">CAT / SAT</span>
+                      <span className="text-xs text-gray-500">Service / Securities</span>
                     </div>
-                    <div className="flex items-center p-4 bg-gray-50 rounded-lg">
-                      <span className="text-[#D2A02A] font-bold mr-3">Consumer Forums</span>
-                      <span className="text-gray-700">Consumer Disputes Redressal</span>
+                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100 hover:border-[#D2A02A] transition-colors">
+                      <span className="block text-xl font-bold text-gray-900 mb-1">Consumer</span>
+                      <span className="text-xs text-gray-500">Consumer Forum</span>
+                    </div>
+                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100 hover:border-[#D2A02A] transition-colors">
+                      <span className="block text-xl font-bold text-gray-900 mb-1">ITAT</span>
+                      <span className="text-xs text-gray-500">Income Tax</span>
+                    </div>
+                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100 hover:border-[#D2A02A] transition-colors">
+                      <span className="block text-xl font-bold text-gray-900 mb-1">Labour</span>
+                      <span className="text-xs text-gray-500">Labour Courts</span>
                     </div>
                   </div>
                 </section>
 
-                {/* Why Choose Us */}
-                <section id="why-choose-us" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose AMA Legal Solutions?</h2>
-                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                    Choosing the right lawyer can make the difference between winning and losing. Here is why we are the preferred choice for litigation in India:
-                  </p>
-                  
-                  <div className="grid md:grid-cols-3 gap-6 text-center">
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">🧠</div>
-                      <h3 className="font-bold text-xl mb-2">Strategic Thinking</h3>
-                      <p className="text-gray-600">We don't just follow procedure; we design legal strategies that anticipate the opponent's moves and maximize your advantage.</p>
+                {/* Why AMA */}
+                <section id="why-ama" className="scroll-mt-32">
+                  <div className="bg-[#1a202c] text-white p-8 md:p-12 rounded-2xl relative overflow-hidden">
+                    <div className="relative z-10">
+                      <h2 className="text-2xl md:text-3xl font-bold mb-6">Why Choose AMA Legal Solutions?</h2>
+                      <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+                        Litigation is a marathon, not a sprint. It requires patience, persistence, and specialized knowledge. At AMA, we combine the personalized attention of a boutique firm with the robust capabilities of a large practice. Our attorneys are accessible, transparent about fees, and relentless in their pursuit of justice. We don't just protect your legal rights; we protect your peace of mind.
+                      </p>
+                      <ul className="grid md:grid-cols-2 gap-4 text-sm md:text-base">
+                        <li className="flex items-center space-x-2">
+                          <span className="text-[#D2A02A] text-xl">✓</span>
+                          <span>Proven Track Record in High Stakes Cases</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <span className="text-[#D2A02A] text-xl">✓</span>
+                          <span>Multi-Jurisdictional Capabilities</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <span className="text-[#D2A02A] text-xl">✓</span>
+                          <span>Transparent & Honest Fee Structure</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <span className="text-[#D2A02A] text-xl">✓</span>
+                          <span>Dedicated Appellate Team</span>
+                        </li>
+                      </ul>
                     </div>
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">🔍</div>
-                      <h3 className="font-bold text-xl mb-2">Deep Expertise</h3>
-                      <p className="text-gray-600">Our team comprises experts in various fields, ensuring that your case is handled by a specialist, not a generalist.</p>
-                    </div>
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">🤝</div>
-                      <h3 className="font-bold text-xl mb-2">Client Partnership</h3>
-                      <p className="text-gray-600">We view ourselves as your partners. We keep you informed at every step and work collaboratively towards your goals.</p>
-                    </div>
+                    <div className="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-[#D2A02A] opacity-10 rounded-full blur-3xl"></div>
                   </div>
                 </section>
 
-                {/* Testimonials */}
-                <section id="testimonials" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Client Success Stories</h2>
+                {/* Reviews */}
+                <section id="client-reviews" className="scroll-mt-32">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Client Success Stories</h2>
                   <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
-                      <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
-                      <p className="text-gray-700 italic mb-4 relative z-10">
-                        "AMA Legal Solutions handled our property dispute with exceptional skill. Their strategic approach in the High Court led to a favorable judgment after years of deadlock. Highly recommended for complex civil litigation."
+                    <div className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl border border-gray-100 shadow-sm relative">
+                      <div className="text-6xl text-gray-100 absolute top-4 left-4 font-serif">"</div>
+                      <p className="text-gray-700 italic mb-6 relative z-10 text-lg leading-relaxed">
+                        AMA Legal Solutions handled our property dispute with exceptional skill. Their strategic approach in the High Court led to a favorable judgment after years of deadlock. Highly recommended for complex civil litigation.
                       </p>
                       <div className="flex items-center">
-                        <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">R</div>
+                        <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">R</div>
                         <div>
                           <p className="font-bold text-gray-900">Rajesh Kumar</p>
                           <p className="text-sm text-gray-500">Real Estate Developer, Delhi</p>
+                          <div className="flex text-[#D2A02A] text-sm mt-1">
+                            ★★★★★
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
-                      <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
-                      <p className="text-gray-700 italic mb-4 relative z-10">
-                        "We engaged them for a corporate commercial dispute. Their team was thorough, professional, and very aggressive in protecting our interests. The settlement we reached was far better than we anticipated."
+                    
+                    <div className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl border border-gray-100 shadow-sm relative">
+                      <div className="text-6xl text-gray-100 absolute top-4 left-4 font-serif">"</div>
+                      <p className="text-gray-700 italic mb-6 relative z-10 text-lg leading-relaxed">
+                        We engaged them for a corporate commercial dispute. Their team was thorough, professional, and very aggressive in protecting our interests. The settlement we reached was far better than we anticipated.
                       </p>
                       <div className="flex items-center">
-                        <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">A</div>
+                        <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">A</div>
                         <div>
                           <p className="font-bold text-gray-900">Anita Desai</p>
                           <p className="text-sm text-gray-500">Director, Tech Solutions</p>
+                          <div className="flex text-[#D2A02A] text-sm mt-1">
+                            ★★★★★
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -652,15 +685,15 @@ export default function LitigationPage() {
 
                 {/* FAQs */}
                 <section id="faqs" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
-                  <div className="space-y-6">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
+                  <div className="grid gap-6">
                     {faqs.map((faq, index) => (
-                      <div key={index} className="border-b border-gray-200 pb-6 last:border-0">
-                        <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-start">
-                          <span className="text-[#D2A02A] mr-3">Q.</span>
+                      <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+                        <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-start">
+                          <span className="text-[#D2A02A] mr-3 mt-1">Q.</span>
                           {faq.question}
                         </h3>
-                        <p className="text-gray-700 leading-relaxed pl-8">
+                        <p className="text-gray-700 leading-relaxed pl-8 text-sm md:text-base">
                           {faq.answer}
                         </p>
                       </div>
@@ -669,85 +702,84 @@ export default function LitigationPage() {
                 </section>
 
                 {/* Final CTA */}
-                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-xl md:rounded-3xl p-6 md:p-16 text-center text-white relative overflow-hidden">
-                  <div className="relative z-10">
-                    <h2 className="text-xl md:text-5xl font-bold mb-4 md:mb-6">Ready to Fight for Your Rights?</h2>
-                    <p className="text-sm md:text-xl opacity-90 mb-6 md:mb-10 max-w-2xl mx-auto">
-                      Don't let legal disputes overwhelm you. Get the expert representation you deserve with AMA Legal Solutions.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-                      <Link href="/contact">
-                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
-                          Schedule Consultation
-                        </button>
-                      </Link>
-                      <a href="tel:+918700343611">
-                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all text-sm md:text-lg w-full sm:w-auto">
-                          Call: +91-8700343611
-                        </button>
-                      </a>
-                    </div>
-                    <p className="mt-4 md:mt-8 text-xs md:text-sm opacity-70">
-                      Confidential • Strategic • Results-Driven
-                    </p>
+                <section className="bg-gradient-to-r from-[#D2A02A] to-[#b88a22] rounded-xl md:rounded-3xl p-8 md:p-16 text-center text-white shadow-2xl">
+                  <h2 className="text-2xl md:text-4xl font-bold mb-6">Ready to Fight for Your Rights?</h2>
+                  <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+                    Don't let legal battles overwhelm you. Get credible, strategic, and aggressive legal representation today.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Link href="/contact">
+                      <button className="bg-white text-[#b88a22] font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-md text-lg w-full sm:w-auto">
+                        Schedule Consultation
+                      </button>
+                    </Link>
+                    <a href="tel:+918700343611">
+                      <button className="bg-transparent border-2 border-white text-white font-bold py-4 px-10 rounded-full transition-all hover:bg-white/10 text-lg w-full sm:w-auto">
+                        Call: +91-8700343611
+                      </button>
+                    </a>
                   </div>
                 </section>
-
+                
               </div>
             </div>
 
-            {/* Sidebar */}
-            <div className="hidden lg:block space-y-8 sticky top-24">
-                {/* Contact Card */}
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">Need Urgent Legal Help?</h3>
+            {/* Right Sidebar */}
+            <div className="hidden lg:block space-y-8 sticky top-28 self-start">
+                <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 overflow-hidden relative">
+                  <div className="absolute top-0 left-0 w-full h-2 bg-[#D2A02A]"></div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Urgent Legal Help?</h3>
                   <p className="text-gray-600 mb-6 text-sm">
-                    Speak to a senior litigation lawyer today.
+                    In litigation, deadlines matter. Missing a limitation period can be fatal to your case.
                   </p>
                   <a 
                     href="tel:+918700343611" 
-                    className="block w-full bg-[#D2A02A] text-white text-center py-3 rounded-lg font-semibold hover:bg-[#b88a22] transition-colors mb-4"
+                    className="block w-full bg-[#D2A02A] text-white text-center py-4 rounded-xl font-bold hover:bg-[#b88a22] transition-colors mb-4 shadow-md"
                   >
-                    Call +91-8700343611
+                    Call Now
                   </a>
                   <Link 
                     href="/contact" 
-                    className="block w-full border border-[#D2A02A] text-[#D2A02A] text-center py-3 rounded-lg font-semibold hover:bg-[#D2A02A] hover:text-white transition-colors"
+                    className="block w-full border-2 border-gray-200 text-gray-700 text-center py-4 rounded-xl font-bold hover:border-[#D2A02A] hover:text-[#D2A02A] transition-all"
                   >
-                    Book Appointment
+                    Request Callback
                   </Link>
                 </div>
 
-                {/* Quick Links */}
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">Related Services</h3>
-                  <ul className="space-y-3 text-sm">
+                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-200">
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">Related Practice Areas</h3>
+                  <ul className="space-y-4">
                     <li>
-                      <Link href="/services/criminal-law" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Criminal Law
+                      <Link href="/services/arbitration" className="group flex items-center text-gray-600 hover:text-[#D2A02A] transition-colors">
+                        <span className="w-2 h-2 bg-gray-300 rounded-full mr-3 group-hover:bg-[#D2A02A]"></span>
+                        Arbitration
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/real-estate" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Real Estate Law
+                      <Link href="/services/criminal-law" className="group flex items-center text-gray-600 hover:text-[#D2A02A] transition-colors">
+                        <span className="w-2 h-2 bg-gray-300 rounded-full mr-3 group-hover:bg-[#D2A02A]"></span>
+                        Criminal Defense
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/drafting" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Legal Drafting
+                      <Link href="/services/real-estate" className="group flex items-center text-gray-600 hover:text-[#D2A02A] transition-colors">
+                        <span className="w-2 h-2 bg-gray-300 rounded-full mr-3 group-hover:bg-[#D2A02A]"></span>
+                        Real Estate Law
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/arbitration" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Arbitration
+                      <Link href="/services/family-law" className="group flex items-center text-gray-600 hover:text-[#D2A02A] transition-colors">
+                        <span className="w-2 h-2 bg-gray-300 rounded-full mr-3 group-hover:bg-[#D2A02A]"></span>
+                        Family Law
                       </Link>
                     </li>
                   </ul>
                 </div>
-              </div>
+            </div>
           </div>
           
-          <div className="mt-16">
+          <div className="mt-20">
+             <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Serving Clients Across Indian Courts</h2>
             <GenericStatesGrid serviceName="Litigation Services" servicePath="litigation" />
           </div>
         </div>

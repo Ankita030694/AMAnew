@@ -4,67 +4,67 @@ import GenericStatesGrid from "@/components/GenericStatesGrid";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-// FAQ data for rendering and Schema
-const faqs = [ 
+// Extensive FAQ data for rendering and Schema
+const faqs = [
   {
-    question: "What is arbitration and how does it work in India?",
-    answer: "Arbitration is a form of alternative dispute resolution (ADR) where a dispute is submitted, by agreement of the parties, to one or more arbitrators who make a binding decision on the dispute. In India, it is governed by the Arbitration and Conciliation Act, 1996. It serves as a private and efficient alternative to traditional court litigation, allowing parties to resolve commercial and civil disputes outside the courtroom. The process involves the appointment of an impartial arbitrator, presentation of evidence, and the issuance of an arbitral award that is legally enforceable like a court decree."
+    question: "What is arbitration under Indian law?",
+    answer: "Arbitration is a form of alternative dispute resolution where parties resolve their disputes privately outside the court system. In India, it is governed by the Arbitration and Conciliation Act, 1996. A neutral third party, called an arbitrator, hears the evidence and makes a decision, known as an arbitral award, which is legally binding and enforceable like a court decree."
   },
   {
-    question: "Is an arbitral award legally binding in India?",
-    answer: "Yes, an arbitral award is legally binding and enforceable in India. Under Section 36 of the Arbitration and Conciliation Act, 1996, an arbitral award is enforced in the same manner as if it were a decree of the court. Once the time for setting aside the award has expired, or such an application has been refused, the award holder can move the court for execution of the award against the judgment debtor."
+    question: "How is arbitration different from mediation?",
+    answer: "The key difference is the power of the third party. In mediation, a neutral mediator helps parties reach a mutually acceptable negotiated settlement but cannot impose a decision. In arbitration, the arbitrator acts like a private judge and delivers a binding verdict based on the evidence and law, which the parties must follow."
   },
   {
-    question: "What are the advantages of arbitration over litigation?",
-    answer: "Arbitration offers several distinct advantages over traditional litigation. primarily, it is generally faster and more efficient, avoiding the long delays of the court system. It provides confidentiality, as proceedings are private unlike open court trials. Parties have the flexibility to choose an arbitrator with specific subject matter expertise relevant to their dispute. Additionally, the procedure is more flexible and can be tailored to the convenience of the parties, often resulting in cost savings in the long run."
+    question: "Is an arbitration agreement mandatory?",
+    answer: "Yes, a valid arbitration agreement is the foundation of the entire process. It can be a specific clause within a larger contract or a separate agreement signed by the parties. This agreement must be in writing and clearly state the intent of the parties to submit their current or future disputes to arbitration rather than to a court."
   },
   {
-    question: "Can any dispute be referred to arbitration?",
-    answer: "While most commercial and civil disputes can be referred to arbitration, there are certain exceptions. Disputes involving rights in rem, such as criminal matters, matrimonial disputes, guardianship matters, insolvency and winding up proceedings, and testamentary matters (wills), are generally considered non-arbitrable in India. However, disputes arising from contracts, intellectual property rights, construction projects, and partnership deeds are standard subjects for arbitration."
+    question: "Can I challenge an arbitral award in India?",
+    answer: "Yes, but on very limited grounds. Under Section 34 of the Arbitration and Conciliation Act, 1996, an award can be set aside if there was a lack of proper notice, the arbitration agreement was invalid, the award deals with a dispute not contemplated by the agreement, or the award conflicts with the public policy of India. You cannot challenge an award simply because you disagree with the arbitrator's evaluation of the facts."
   },
   {
-    question: "How is an arbitrator appointed?",
-    answer: "The appointment of an arbitrator is usually governed by the arbitration agreement between the parties. They can mutually agree on a sole arbitrator or a panel of arbitrators. If the parties fail to agree, or if the appointed arbitrators fail to agree on a presiding arbitrator, they can approach the High Court (for domestic arbitration) or the Supreme Court (for international commercial arbitration) under Section 11 of the Act for the appointment of an arbitrator."
+    question: "How long does the arbitration process take?",
+    answer: "The Arbitration and Conciliation Act mandates that pleadings be completed within 6 months. The arbitral award must generally be delivered within 12 months from the date the arbitral tribunal enters upon the reference. This period can be extended by 6 months with the mutual consent of the parties. This statutory timeline ensures arbitration is significantly faster than traditional court litigation."
   },
   {
-    question: "What is the difference between ad-hoc and institutional arbitration?",
-    answer: "In ad-hoc arbitration, the parties and the arbitrator independently determine the procedure without the involvement of an arbitral institution. In institutional arbitration, a specialized institution (like MCIA, SIAC, or ICC) administers the arbitration process according to its own established rules. Institutional arbitration offers more structure, administrative support, and established rules of procedure, whereas ad-hoc arbitration offers more flexibility but requires more cooperation between parties."
+    question: "What types of disputes are arbitrable?",
+    answer: "Most commercial and civil disputes are arbitrable. This includes disputes related to contacts, supply agreements, construction projects, joint ventures, intellectual property rights, and partnership deeds. However, criminal cases, matrimonial matters, insolvency proceedings, and testamentary matters involving wills are generally not arbitrable in India."
   },
   {
-    question: "How long does arbitration take in India?",
-    answer: "The Arbitration and Conciliation (Amendment) Act, 2015 introduced time limits to expedite proceedings. Section 29A mandates that the award in matters other than international commercial arbitration shall be made within a period of 12 months from the date the arbitral tribunal enters upon the reference. This can be extended by another 6 months by mutual consent. This makes arbitration significantly faster than civil litigation which can drag on for years."
+    question: "How much does arbitration cost in India?",
+    answer: "Costs vary based on the claim amount and whether it is an ad hoc or institutional arbitration. For ad hoc arbitrations, the Fourth Schedule of the Arbitration Act provides a fee model based on the disputed amount. Institutional arbitrations have their own fee schedules. While there are upfront costs, the speed and efficiency often make it cheaper than years of litigation."
   },
   {
-    question: "Can an arbitral award be challenged in court?",
-    answer: "Yes, an arbitral award can be challenged in court, but on very limited grounds specified under Section 34 of the Act. These grounds include incapacity of a party, invalidity of the arbitration agreement, lack of proper notice, the award dealing with a dispute not contemplated by the submission to arbitration, or the award being in conflict with the public policy of India. The court does not sit in appeal over the award or re-examine the merits of the case."
+    question: "Who appoints the arbitrator?",
+    answer: "The parties are free to agree on a procedure for appointing the arbitrator. Usually, they mutually appoint a sole arbitrator. In a three member tribunal, each party appoints one arbitrator, and the two appointed arbitrators choose the third presiding arbitrator. If parties fail to agree, they can approach the High Court or Supreme Court under Section 11 for an appointment."
   },
   {
-    question: "What is the cost of arbitration in India?",
-    answer: "The cost of arbitration varies depending on whether it is ad-hoc or institutional, the complexity of the dispute, and the fees of the arbitrator. For ad-hoc arbitrations, the Fourth Schedule of the Act provides a model fee structure based on the sum in dispute. Institutional arbitrations have their own fee schedules. While there are upfront costs, the speed and efficiency of arbitration often make it more cost-effective than prolonged litigation."
+    question: "Is a lawyer required for arbitration?",
+    answer: "While you can legally represent yourself, it is highly inadvisable. Arbitration involves complex procedural rules, evidence presentation, and legal argumentation. An experienced arbitration lawyer ensures your statement of claim is robust, cross examination is effective, and all statutory timelines are met to protect your interests."
   },
   {
-    question: "Do I need a lawyer for arbitration?",
-    answer: "While it is not legally mandatory to have a lawyer, it is highly recommended. Arbitration involves complex legal procedures, drafting of pleadings, cross-examination of witnesses, and legal arguments. An experienced arbitration lawyer ensures that your case is presented effectively, your rights are protected, and procedural compliances are met. Given the finality of arbitral awards, having expert legal representation is crucial for a favorable outcome."
+    question: "What is an interim measure in arbitration?",
+    answer: "Interim measures are temporary orders passed to protect the subject matter of the dispute or secure the amount in dispute while the arbitration is ongoing. Under Section 9, parties can approach the court for interim relief before or during arbitration. Under Section 17, the arbitral tribunal itself can grant interim measures once it is constituted."
   },
   {
-    question: "What is the role of AMA Legal Solutions in arbitration?",
-    answer: "AMA Legal Solutions provides comprehensive arbitration services. We assist in drafting robust arbitration agreements, representing clients in arbitral proceedings, filing applications for interim relief (Section 9), appointment of arbitrators (Section 11), and challenging or enforcing arbitral awards (Section 34 and 36). Our team of expert lawyers has extensive experience in handling complex domestic and international commercial arbitrations across various sectors."
+    question: "What happens if the other party ignores the arbitration notice?",
+    answer: "If the specialized notice invoking arbitration is ignored, you can proceed to the next step. If your agreement requires mutual appointment and they do not respond within 30 days, you can file a Section 11 petition in the appropriate High Court. The court will then appoint an arbitrator so the proceedings can commence even without the other party's initial cooperation."
   },
   {
-    question: "Can you help with international commercial arbitration?",
-    answer: "Yes, we specialize in international commercial arbitration. We represent clients in disputes where at least one party is a national or resident of a country other than India. We are familiar with the rules of major international arbitral institutions and the specific legal nuances governing international arbitration in India. We also assist in the enforcement of foreign arbitral awards in India."
+    question: "Can foreign companies arbitrate in India?",
+    answer: "Yes, this is known as International Commercial Arbitration. If at least one party is a foreign national or body corporate, the arbitration is classified as international. These proceedings are also governed by the Indian Arbitration Act but have some distinct rules, especially regarding the appointment of arbitrators by the Supreme Court."
   },
   {
-    question: "What is interim relief in arbitration?",
-    answer: "Interim relief refers to temporary orders passed by a court or the arbitral tribunal to protect the subject matter of the dispute or the rights of a party while the arbitration is pending. Under Section 9, a party can approach the court for interim measures before or during the arbitral proceedings. Under Section 17, the arbitral tribunal can also grant interim measures. This is crucial to prevent the other party from alienating assets or causing irreparable harm."
+    question: "How do I enforce an arbitration award?",
+    answer: "Once an award is passed and the time for challenging it (usually 3 months) has expired, it becomes enforceable as a decree of the civil court under Section 36. You can file an execution petition in the court within whose jurisdiction the assets of the losing party are located to recover the awarded amount."
   },
   {
-    question: "What documents are required for arbitration?",
-    answer: "The key document required is the arbitration agreement or the contract containing the arbitration clause. Other documents include the statement of claim, statement of defense, evidence in support of the claim (invoices, emails, contracts, etc.), and any correspondence between the parties regarding the dispute. We help clients compile and organize all necessary documentation to build a strong case."
+    question: "What is institutional arbitration?",
+    answer: "Institutional arbitration is administered by a specialized institution like the Delhi International Arbitration Centre (DIAC) or Mumbai Centre for International Arbitration (MCIA) under its own rules. This provides more structure, administrative support, and pre established fees compared to ad hoc arbitration where parties manage everything themselves."
   },
   {
-    question: "How do I start the arbitration process?",
-    answer: "To start the arbitration process, you typically need to send a formal notice of arbitration to the other party, invoking the arbitration clause in your agreement and proposing the name of an arbitrator (if applicable). If the other party does not respond or agree, you may need to file a petition in court for the appointment of an arbitrator. We guide you through every step of this initiation process to ensure it is legally valid."
+    question: "Why choose AMA Legal Solutions for arbitration?",
+    answer: "AMA Legal Solutions offers deep expertise in the Arbitration and Conciliation Act. Our team represents clients in high stakes construction, commercial, and contractual disputes. We handle the entire lifecycle from drafting the arbitration notice and Section 11 petitions to arguing the main matter and enforcing the final award."
   }
 ];
 
@@ -98,8 +98,8 @@ const breadcrumbSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Arbitration Services in India: Expert Legal Resolution for Commercial Disputes",
-  "description": "Comprehensive guide to arbitration in India. Learn about the legal framework, process, and benefits of arbitration with expert legal assistance from AMA Legal Solutions.",
+  "headline": "Arbitration Services in India: The Complete Guide to Dispute Resolution",
+  "description": "A comprehensive guide to arbitration in India. Understand the process, legal framework under the 1996 Act, and why it is the best choice for commercial disputes.",
   "image": "https://amalegalsolutions.com/services/9.png",
   "author": {
     "@type": "Person",
@@ -114,8 +114,8 @@ const articleSchema = {
       "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
-  "datePublished": "2023-10-01",
-  "dateModified": "2023-10-27"
+  "datePublished": "2024-01-20",
+  "dateModified": "2024-01-20"
 };
 
 // FAQ Schema
@@ -177,15 +177,15 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Arbitration in India | Top Arbitration Lawyers & Legal Services",
+  title: "Arbitration Services in India | Expert Arbitration Lawyers | AMA Legal",
   description:
-    "Looking for expert arbitration in India? AMA Legal Solutions offers top-tier arbitration services for commercial, construction, and international disputes. Fast, confidential, and effective resolution.",
+    "Leading arbitration lawyers in India. We provide expert legal representation for domestic and international commercial arbitration. Secure, fast, and binding dispute resolution.",
   alternates: {
     canonical: 'https://amalegalsolutions.com/services/arbitration',
   },
   openGraph: {
-    title: "Arbitration in India | Top Arbitration Lawyers & Legal Services",
-    description: "Looking for expert arbitration in India? AMA Legal Solutions offers top-tier arbitration services for commercial, construction, and international disputes.",
+    title: "Arbitration Services in India | Expert Arbitration Lawyers",
+    description: "Leading arbitration lawyers in India. We provide expert legal representation for domestic and international commercial arbitration.",
     url: "https://amalegalsolutions.com/services/arbitration",
     type: "website",
     images: [
@@ -202,13 +202,15 @@ export const metadata = {
 export default function ArbitrationPage() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
-    { id: "what-is-arbitration", title: "What is Arbitration?" },
-    { id: "legal-framework", title: "Legal Framework" },
-    { id: "process", title: "Our Process" },
-    { id: "types-of-arbitration", title: "Types of Services" },
-    { id: "advantages", title: "Advantages" },
-    { id: "why-choose-us", title: "Why Choose Us" },
-    { id: "testimonials", title: "Success Stories" },
+    { id: "understanding-arbitration", title: "Understanding Arbitration" },
+    { id: "arbitration-vs-litigation", title: "Arbitration vs Litigation" },
+    { id: "key-benefits", title: "Key Benefits" },
+    { id: "our-services", title: "Types of Services" },
+    { id: "process-steps", title: "The Arbitration Process" },
+    { id: "legal-framework", title: "Legal Framework (1996 Act)" },
+    { id: "sectors", title: "Sectors We Serve" },
+    { id: "testimonials", title: "Client Reviews" },
+    { id: "why-ama", title: "Why Choose AMA?" },
     { id: "faqs", title: "FAQs" },
   ];
 
@@ -234,6 +236,7 @@ export default function ArbitrationPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+
       <Script
         id="review-schema"
         type="application/ld+json"
@@ -243,293 +246,426 @@ export default function ArbitrationPage() {
       <div className="bg-gray-50 min-h-screen font-sans text-gray-800">
         {/* Hero Section */}
         <div className="relative bg-[#1a202c] text-white">
-          <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+          <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
           <div 
             className="absolute inset-0 bg-cover bg-center z-0" 
-            style={{ background: "black" }}
+            style={{ backgroundImage: "url('/services/arbitration-hero.jpg')", backgroundColor: "#1a1a1a" }} 
           ></div>
-          <div className="relative z-20 container mx-auto px-4 py-12 md:py-32 text-center">
-            <h1 className="text-2xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-10">
-              Expert Legal Solutions for <span className="text-[#D2A02A]">Arbitration in India</span>
+          <div className="relative z-20 container mx-auto px-4 py-20 md:py-32 text-center">
+            <h1 className="text-3xl md:text-6xl font-bold mb-6 leading-tight mt-10">
+              Expert Legal Representation for <span className="text-[#D2A02A]">Arbitration in India</span>
             </h1>
-            <p className="text-sm md:text-2xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
-              Resolve your commercial and civil disputes efficiently with our top-rated arbitration lawyers. Fast, confidential, and legally binding resolutions tailored to your needs.
+            <p className="text-lg md:text-2xl mb-10 max-w-4xl mx-auto text-gray-200 font-light">
+              Navigate complex commercial disputes with confidence. We provide strategic, results driven arbitration services designed to secure your business interests efficiently.
             </p>
             <Link href="/contact">
-              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg">
-                Get a Free Consultation
+              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-xl text-lg border-2 border-[#D2A02A]">
+                Schedule Your Consultation
               </button>
             </Link>
           </div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-[1600px] py-8">
+        <div className="container mx-auto px-4 max-w-[1600px] py-12">
           <Breadcrumbs items={breadcrumbItems} />
           
-          <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[250px_1fr_300px] gap-12 items-start">
             {/* Left Sidebar - TOC (Desktop) */}
-            <div className="hidden lg:block sticky top-24">
+            <div className="hidden lg:block sticky top-28 self-start">
               <TableOfContents sections={tocSections} orientation="vertical" />
             </div>
 
             {/* Main Content Area */}
             <div className="min-w-0">
               {/* TOC (Mobile) */}
-              <div className="lg:hidden mb-6 sticky top-20 z-10">
+              <div className="lg:hidden mb-8 sticky top-20 z-20">
                 <TableOfContents sections={tocSections} />
               </div>
 
-              <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
+              <div className="bg-white p-6 md:p-12 rounded-2xl shadow-sm space-y-12 border border-gray-100">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Efficient Dispute Resolution in a Complex Business World</h2>
-                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
-                    In today's fast-paced global economy, commercial disputes are inevitable. However, resolving these disputes through traditional court litigation can be a time-consuming, expensive, and public process. For businesses and individuals alike, the need for a faster, more flexible, and confidential method of dispute resolution is paramount. This is where <strong>arbitration</strong> steps in as a preferred alternative.
-                  </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    At AMA Legal Solutions, we understand that time is money. Our dedicated team of <strong>arbitration lawyers in India</strong> specializes in providing strategic, results-oriented legal representation in domestic and international arbitrations. We move beyond the adversarial nature of courtrooms to find commercially viable solutions that protect your interests and preserve business relationships.
-                  </p>
-                  <p className="text-lg leading-relaxed text-gray-700">
-                    Whether you are a multinational corporation facing a cross-border dispute or a local business dealing with a contract breach, our expertise ensures that your case is handled with the highest level of professional competence and legal acumen.
-                  </p>
-                </section>
-
-                {/* What is Arbitration */}
-                <section id="what-is-arbitration" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">What is Arbitration?</h2>
-                  <div className="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 mb-4 md:mb-8 rounded-r-lg">
-                    <p className="text-sm md:text-lg text-blue-900 italic">
-                      "Arbitration is a private dispute resolution process where parties agree to submit their differences to one or more impartial arbitrators who make a binding decision, known as an arbitral award."
+                  <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-20 after:h-1 after:bg-[#D2A02A]">
+                    The Modern Approach to Commercial Dispute Resolution
+                  </h2>
+                  <div className="prose prose-lg text-gray-700 max-w-none space-y-4">
+                    <p>
+                      In the dynamic landscape of Indian commerce, disputes are an unfortunate but common reality. Whether it is a disagreement over a supply contract, a delay in a construction project, or a deadlock in a joint venture, legal conflicts can derail business operations and drain vital resources. Traditionally, the only recourse was the civil court system, often characterized by long delays and procedural complexities. Today, strictly geared towards efficiency and expertise, <strong>Arbitration</strong> has emerged as the preferred method for resolving commercial disputes in India.
+                    </p>
+                    <p>
+                      At <strong>AMA Legal Solutions</strong>, we recognize that for a business, time is capital. Our specialized arbitration practice is dedicated to providing swift, confidential, and legally robust resolutions. We do not just fight cases; we design legal strategies that align with your commercial objectives. As leading arbitration lawyers in India, we have successfully represented diverse clients ranging from multinational corporations to MSMEs, ensuring their rights are protected and their disputes are resolved with finality.
+                    </p>
+                    <p>
+                      This comprehensive guide explores the nuances of arbitration in India, detailing why it is the superior choice for your business and how our team can navigate you through every step of the process.
                     </p>
                   </div>
-                  <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
-                    Unlike litigation, where a judge appointed by the state decides the case in a public courtroom, arbitration is a consensual process. The parties have the autonomy to choose their decision-maker (the arbitrator), the rules of procedure, the language of proceedings, and even the venue. This flexibility makes it a highly attractive option for commercial entities.
+                </section>
+
+                {/* Understanding Arbitration */}
+                <section id="understanding-arbitration" className="scroll-mt-32">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">What is Arbitration?</h2>
+                  <div className="bg-gradient-to-r from-blue-50 to-white border-l-8 border-blue-600 p-8 mb-8 rounded-r-xl">
+                    <p className="text-xl text-blue-900 font-medium italic">
+                      "Arbitration is a private, consensual legal process where parties agree to submit their dispute to a neutral third party (the arbitrator) rather than a court judge. The decision of the arbitrator, known as the Arbitral Award, is final, binding, and enforceable as a decree of the court."
+                    </p>
+                  </div>
+                  <div className="space-y-4 text-gray-700 text-lg">
+                    <p>
+                      The process is governed by the <strong>Arbitration and Conciliation Act, 1996</strong>, which was significantly amended in 2015 and 2019 to make India a hub for international arbitration. Unlike litigation, which is public and rigid, arbitration offers a flexible and private environment. It is founded on the principle of <strong>party autonomy</strong>, meaning the parties have the freedom to decide many aspects of the procedure, including the appointment of the judge (arbitrator), the language of the proceedings, and the venue.
+                    </p>
+                    <p>
+                      The core objective of arbitration is to provide a fair resolution without the procedural shackles of the Code of Civil Procedure (CPC) or the Indian Evidence Act, although the principles of natural justice and fair play remain paramount.
+                    </p>
+                  </div>
+                </section>
+
+                {/* Arbitration vs Litigation */}
+                <section id="arbitration-vs-litigation" className="scroll-mt-32">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Arbitration vs. Litigation: A Comparative Analysis</h2>
+                  <p className="text-lg text-gray-700 mb-8">
+                    Choosing between arbitration and seeking redress through the courts is a critical strategic decision. While courts are essential for certain types of relief, arbitration offers distinct advantages for commercial entities. The table below outlines the key differences.
                   </p>
-                  <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
-                    The decision made by the arbitrator, called the <strong>arbitral award</strong>, is final and binding on the parties. It has the same legal effect as a court decree and can be enforced in the same manner. This ensures that the outcome of the arbitration is not just a recommendation but a legally enforceable order.
+                  <div className="overflow-x-auto">
+                    <table className="w-full border-collapse border border-gray-200 min-w-[600px]">
+                      <thead>
+                        <tr className="bg-gray-800 text-white text-left">
+                          <th className="p-4 border border-gray-700 w-1/4">Feature</th>
+                          <th className="p-4 border border-gray-700 w-1/3">Litigation (Civil Courts)</th>
+                          <th className="p-4 border border-gray-700 w-1/3">Arbitration</th>
+                        </tr>
+                      </thead>
+                      <tbody className="text-gray-700">
+                        <tr className="bg-white hover:bg-gray-50">
+                          <td className="p-4 border border-gray-200 font-bold">Time Taken</td>
+                          <td className="p-4 border border-gray-200">Indefinite; cases often drag on for 5 to 10 years or more due to court backlog.</td>
+                          <td className="p-4 border border-gray-200">Time bound; the Act mandates completion within 12 months (extendable by 6 months).</td>
+                        </tr>
+                        <tr className="bg-gray-50 hover:bg-gray-100">
+                          <td className="p-4 border border-gray-200 font-bold">Privacy</td>
+                          <td className="p-4 border border-gray-200">Public proceedings; anyone can attend hearings and access judgements.</td>
+                          <td className="p-4 border border-gray-200">Strictly confidential; sensitive commercial data and trade secrets remain private.</td>
+                        </tr>
+                        <tr className="bg-white hover:bg-gray-50">
+                          <td className="p-4 border border-gray-200 font-bold">Expertise</td>
+                          <td className="p-4 border border-gray-200">Judges are generalists handling all types of cases, from crime to family law.</td>
+                          <td className="p-4 border border-gray-200">Parties can select arbitrators with specific industry or technical expertise.</td>
+                        </tr>
+                        <tr className="bg-gray-50 hover:bg-gray-100">
+                          <td className="p-4 border border-gray-200 font-bold">Procedure</td>
+                          <td className="p-4 border border-gray-200">Rigid; strictly bound by the CPC and Evidence Act.</td>
+                          <td className="p-4 border border-gray-200">Flexible; parties can agree on a procedure that suits the case's complexity.</td>
+                        </tr>
+                        <tr className="bg-white hover:bg-gray-50">
+                          <td className="p-4 border border-gray-200 font-bold">Appeal</td>
+                          <td className="p-4 border border-gray-200">Multiple levels of appeal (District, High Court, Supreme Court) causing delays.</td>
+                          <td className="p-4 border border-gray-200">Very limited grounds for challenge; the award is final and binding.</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+
+                {/* Key Benefits */}
+                <section id="key-benefits" className="scroll-mt-32">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Key Benefits for Your Business</h2>
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div className="bg-gray-50 p-8 rounded-xl border-l-4 border-green-500 hover:shadow-lg transition-all">
+                      <h3 className="text-xl font-bold mb-3 text-gray-900">Speed and Efficiency</h3>
+                      <p className="text-gray-600">
+                        The statutory time limit of 12 months for domestic arbitration ensures that your capital is not locked up in disputes for decades. Faster resolution means faster recovery of dues.
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 p-8 rounded-xl border-l-4 border-blue-500 hover:shadow-lg transition-all">
+                      <h3 className="text-xl font-bold mb-3 text-gray-900">Confidentiality</h3>
+                      <p className="text-gray-600">
+                        Reputation is everything. Arbitration ensures that allegations, financial details, and internal matters discussed during the dispute do not become public record or media fodder.
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 p-8 rounded-xl border-l-4 border-purple-500 hover:shadow-lg transition-all">
+                      <h3 className="text-xl font-bold mb-3 text-gray-900">Cost Effectiveness</h3>
+                      <p className="text-gray-600">
+                        While arbitrator fees can be high, the expedited nature of the process significantly reduces the long term legal costs associated with prolonged litigation and multiple appeals.
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 p-8 rounded-xl border-l-4 border-red-500 hover:shadow-lg transition-all">
+                      <h3 className="text-xl font-bold mb-3 text-gray-900">Enforceability</h3>
+                      <p className="text-gray-600">
+                        An arbitral award has the same status as a court decree. Furthermore, Indian arbitral awards are enforceable in over 160 countries under the New York Convention, aiding global business.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+
+                {/* Our Services */}
+                <section id="our-services" className="scroll-mt-32">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Our Comprehensive Arbitration Services</h2>
+                  <p className="text-lg text-gray-700 mb-8">
+                    AMA Legal Solutions covers the entire spectrum of alternative dispute resolution. We do not just act as lawyers; we act as strategic partners to guide you through the complexities of the Act.
                   </p>
-                  <h3 className="text-lg md:text-2xl font-semibold text-gray-900 mb-3 md:mb-4">Key Characteristics of Arbitration</h3>
-                  <ul className="list-disc pl-6 space-y-3 md:space-y-4 text-gray-700 mb-6 text-sm md:text-base">
-                    <li>
-                      <strong>Consensual:</strong> Arbitration can only take place if both parties have agreed to it, usually through an arbitration clause in their contract or a separate submission agreement.
-                    </li>
-                    <li>
-                      <strong>Neutral:</strong> The arbitrator is a neutral third party with no interest in the outcome of the dispute. Parties can select arbitrators with specific technical or legal expertise relevant to their case.
-                    </li>
-                    <li>
-                      <strong>Confidential:</strong> Unlike court proceedings which are open to the public, arbitration hearings and awards are generally confidential, protecting sensitive business information and reputation.
-                    </li>
-                    <li>
-                      <strong>Finality:</strong> Arbitral awards are final and subject to very limited grounds for challenge in court, ensuring a definitive end to the dispute.
-                    </li>
-                  </ul>
+                  
+                  <div className="space-y-8">
+                    <div className="flex flex-col md:flex-row gap-6">
+                      <div className="md:w-1/3">
+                        <div className="bg-[#fff9e6] p-6 rounded-xl h-full border border-[#faeec7]">
+                          <h3 className="text-xl font-bold text-[#b08d55] mb-2">Domestic Arbitration</h3>
+                          <p className="text-sm text-gray-700">Handling disputes between Indian entities.</p>
+                        </div>
+                      </div>
+                      <div className="md:w-2/3">
+                        <h4 className="text-xl font-bold text-gray-900 mb-2">Ad Hoc and Institutional arbitration</h4>
+                        <p className="text-gray-700 leading-relaxed">
+                          We represent clients in both ad hoc arbitrations, where procedures are self regulated, and institutional arbitrations administered by bodies like the Delhi International Arbitration Centre (DIAC). We assist in drafting the arbitration agreement, appointing the arbitrator, and managing the entire trial process.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col md:flex-row gap-6">
+                      <div className="md:w-1/3">
+                        <div className="bg-[#e6f0ff] p-6 rounded-xl h-full border border-[#c7d9fa]">
+                          <h3 className="text-xl font-bold text-[#4a7ac7] mb-2">International Commercial Arbitration</h3>
+                          <p className="text-sm text-gray-700">Cross border dispute resolution.</p>
+                        </div>
+                      </div>
+                      <div className="md:w-2/3">
+                        <h4 className="text-xl font-bold text-gray-900 mb-2">Global Expertise</h4>
+                        <p className="text-gray-700 leading-relaxed">
+                          When disputes involve foreign parties, the rules change. We have expertise in International Commercial Arbitration (ICA) where the seat is in India or abroad. We understand the nuances of the New York Convention and help clients enforce foreign awards within Indian jurisdiction or defend against unjust claims from foreign entities.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col md:flex-row gap-6">
+                      <div className="md:w-1/3">
+                        <div className="bg-[#f0fff4] p-6 rounded-xl h-full border border-[#c7fad0]">
+                          <h3 className="text-xl font-bold text-[#4ac76d] mb-2">Court Assistance (Sec 9, 11, 34)</h3>
+                          <p className="text-sm text-gray-700">Litigation support for arbitration.</p>
+                        </div>
+                      </div>
+                      <div className="md:w-2/3">
+                        <h4 className="text-xl font-bold text-gray-900 mb-2">Judicial Intervention Support</h4>
+                        <p className="text-gray-700 leading-relaxed">
+                          Often, arbitration needs court support. We file fast tracked petitions under Section 9 for interim relief (stay orders, asset freezing) to protect your interests before the tribunal is formed. We also result oriented Section 11 petitions for the appointment of arbitrators when the other party obstructs the process, and Section 34 petitions to challenge illegal awards.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                {/* The Process */}
+                <section id="process-steps" className="scroll-mt-32">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Step-by-Step: The Arbitration Lifecycle</h2>
+                  <div className="relative border-l-4 border-gray-200 ml-4 md:ml-8 space-y-12">
+                    
+                    <div className="relative pl-8 md:pl-12">
+                      <div className="absolute -left-[14px] top-0 w-6 h-6 rounded-full bg-[#D2A02A] border-4 border-white shadow-sm"></div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">1. Notice of Arbitration</h3>
+                      <p className="text-gray-700">
+                        The process commences by issuing a formal legal notice invoking the arbitration clause. This notice must clearly state the dispute and nominate an arbitrator. This is a critical step; a defective notice can derail the entire claim.
+                      </p>
+                    </div>
+
+                    <div className="relative pl-8 md:pl-12">
+                      <div className="absolute -left-[14px] top-0 w-6 h-6 rounded-full bg-[#D2A02A] border-4 border-white shadow-sm"></div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">2. Appointment of Tribunal</h3>
+                      <p className="text-gray-700">
+                        If the other party agrees, the tribunal is constituted. If they fail to respond within 30 days, we typically approach the High Court under Section 11 to have an independent arbitrator appointed by the judiciary.
+                      </p>
+                    </div>
+
+                    <div className="relative pl-8 md:pl-12">
+                      <div className="absolute -left-[14px] top-0 w-6 h-6 rounded-full bg-[#D2A02A] border-4 border-white shadow-sm"></div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">3. Pleadings & Evidence</h3>
+                      <p className="text-gray-700">
+                        The claimant files a Statement of Claim, and the respondent files a Statement of Defense. Unlike courts, evidence is often by way of affidavit. We meticulously draft these documents to ensure every factual and legal ground is covered.
+                      </p>
+                    </div>
+
+                    <div className="relative pl-8 md:pl-12">
+                      <div className="absolute -left-[14px] top-0 w-6 h-6 rounded-full bg-[#D2A02A] border-4 border-white shadow-sm"></div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">4. Oral Arguments</h3>
+                      <p className="text-gray-700">
+                        Lawyers from both sides argue the matter before the arbitrator. Witnesses may be cross examined. Our team excels in oral advocacy, breaking down complex facts into compelling arguments.
+                      </p>
+                    </div>
+
+                    <div className="relative pl-8 md:pl-12">
+                      <div className="absolute -left-[14px] top-0 w-6 h-6 rounded-full bg-[#D2A02A] border-4 border-white shadow-sm"></div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">5. The Award</h3>
+                      <p className="text-gray-700">
+                        The arbitrator passes a written, reasoned award. This award marks the end of the mandate of the tribunal. It is binding on both parties.
+                      </p>
+                    </div>
+
+                    <div className="relative pl-8 md:pl-12">
+                      <div className="absolute -left-[14px] top-0 w-6 h-6 rounded-full bg-[#D2A02A] border-4 border-white shadow-sm"></div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">6. Enforcement or Challenge</h3>
+                      <p className="text-gray-700">
+                        If successful, we move for execution of the award under Section 36 to recover assets. If unsuccessful, we assess grounds to challenge the award in court under Section 34 within the strict 3 month limitation period.
+                      </p>
+                    </div>
+
+                  </div>
                 </section>
 
                 {/* Legal Framework */}
                 <section id="legal-framework" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">The Legal Framework for Arbitration in India</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Arbitration in India is governed by the <strong>Arbitration and Conciliation Act, 1996</strong>, which is based on the UNCITRAL Model Law on International Commercial Arbitration. This legislation provides a robust framework for the conduct of arbitration proceedings and the enforcement of awards.
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">The Legal Framework: Arbitration and Conciliation Act, 1996</h2>
+                  <p className="text-lg text-gray-700 mb-6">
+                    A thorough understanding of the Act is non negotiable for success. The 1996 Act is a self contained code. Here are the most vital sections that every business owner should be aware of:
                   </p>
-                  
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Key Provisions of the Act</h3>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    The Act is divided into two main parts: Part I deals with arbitrations held in India (domestic and international commercial arbitrations with a seat in India), and Part II deals with the enforcement of certain foreign awards (New York Convention and Geneva Convention awards).
-                  </p>
-                  <div className="grid md:grid-cols-2 gap-6 mb-8">
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                      <h4 className="font-bold text-lg mb-2 text-[#D2A02A]">Section 8 & 45: Reference to Arbitration</h4>
-                      <p className="text-gray-600">If a dispute is brought before a court which is the subject of an arbitration agreement, the court must refer the parties to arbitration.</p>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                      <h4 className="text-lg font-bold text-[#D2A02A] mb-2">Section 7</h4>
+                      <p className="text-sm text-gray-600">Defines the arbitration agreement. It states that the agreement must be in writing to be valid.</p>
                     </div>
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                      <h4 className="font-bold text-lg mb-2 text-[#D2A02A]">Section 9 & 17: Interim Relief</h4>
-                      <p className="text-gray-600">Parties can seek interim measures of protection from the court (Sec 9) or the arbitral tribunal (Sec 17) to preserve assets or evidence pending the outcome of arbitration.</p>
+                    <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                      <h4 className="text-lg font-bold text-[#D2A02A] mb-2">Section 8</h4>
+                      <p className="text-sm text-gray-600">Mandates judicial authority to refer parties to arbitration if a valid arbitration agreement exists.</p>
                     </div>
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                      <h4 className="font-bold text-lg mb-2 text-[#D2A02A]">Section 11: Appointment of Arbitrators</h4>
-                      <p className="text-gray-600">If parties fail to agree on an arbitrator, they can approach the Supreme Court or High Court for the appointment of an arbitrator.</p>
+                    <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                      <h4 className="text-lg font-bold text-[#D2A02A] mb-2">Section 9</h4>
+                      <p className="text-sm text-gray-600">Empowers courts to grant interim measures of protection before or during arbitral proceedings.</p>
                     </div>
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                      <h4 className="font-bold text-lg mb-2 text-[#D2A02A]">Section 34: Challenge to Award</h4>
-                      <p className="text-gray-600">An arbitral award can be set aside by a court only on very specific grounds, such as incapacity, invalid agreement, or conflict with public policy.</p>
+                    <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                      <h4 className="text-lg font-bold text-[#D2A02A] mb-2">Section 11</h4>
+                      <p className="text-sm text-gray-600">Provides for the appointment of arbitrators by the Supreme Court or High Court if parties fail to agree.</p>
                     </div>
-                  </div>
-                  <p className="text-lg leading-relaxed text-gray-700">
-                    Recent amendments to the Act in 2015, 2019, and 2021 have further strengthened the arbitration regime in India, introducing strict timelines for completion of proceedings (12 months) and promoting institutional arbitration. At AMA Legal Solutions, we stay abreast of these evolving legal standards to provide you with the most current and effective legal advice.
-                  </p>
-                </section>
-
-                {/* Process */}
-                <section id="process" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Strategic Arbitration Process</h2>
-                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                    Arbitration requires a different strategic approach than traditional litigation. We have developed a comprehensive 4-step process to ensure the best possible outcome for our clients.
-                  </p>
-                  
-                  <div className="space-y-8">
-                    <div className="flex flex-col md:flex-row gap-6 items-start">
-                      <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">1</div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Case Assessment & Strategy</h3>
-                        <p className="text-gray-700 leading-relaxed">
-                          We begin by thoroughly analyzing the dispute and the underlying contract. We assess the strength of the arbitration clause, potential jurisdictional issues, and the merits of the claim. Based on this, we formulate a tailored strategy, whether it involves invoking arbitration, seeking interim relief, or preparing a defense.
-                        </p>
-                      </div>
+                    <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                      <h4 className="text-lg font-bold text-[#D2A02A] mb-2">Section 29A</h4>
+                      <p className="text-sm text-gray-600">Sets the time limit for arbitral award strictly at 12 months, ensuring speedy disposal.</p>
                     </div>
-
-                    <div className="flex flex-col md:flex-row gap-6 items-start">
-                      <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">2</div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Initiation & Appointment</h3>
-                        <p className="text-gray-700 leading-relaxed">
-                          We handle all procedural aspects of initiating the arbitration, including drafting the Notice of Arbitration. If the other party refuses to cooperate in appointing an arbitrator, we file necessary petitions under Section 11 of the Act before the appropriate court to ensure the tribunal is constituted without delay.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col md:flex-row gap-6 items-start">
-                      <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">3</div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Pleadings & Evidence</h3>
-                        <p className="text-gray-700 leading-relaxed">
-                          This is the core of the arbitration. We draft comprehensive Statements of Claim or Defense, prepare witness statements, and collate documentary evidence. Our team is skilled in cross-examining witnesses and presenting compelling legal arguments before the arbitral tribunal to substantiate your case.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col md:flex-row gap-6 items-start">
-                      <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">4</div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Award & Enforcement</h3>
-                        <p className="text-gray-700 leading-relaxed">
-                          Once the arbitral award is passed, our job isn't done. If the award is in your favor, we assist in its execution and enforcement as a court decree. If the award is unfavorable, we analyze the grounds for challenging it under Section 34 of the Act and represent you in the challenge proceedings.
-                        </p>
-                      </div>
+                    <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                      <h4 className="text-lg font-bold text-[#D2A02A] mb-2">Section 34</h4>
+                      <p className="text-sm text-gray-600">Lists the specific, limited grounds on which an arbitral award can be set aside by a court.</p>
                     </div>
                   </div>
                 </section>
 
-                {/* Types of Arbitration Services */}
-                <section id="types-of-arbitration" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Arbitration Expertise</h2>
-                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                    We provide a wide range of arbitration services tailored to specific industries and types of disputes.
+                {/* Sectors */}
+                <section id="sectors" className="scroll-mt-32">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Sectors We Serve</h2>
+                  <p className="text-lg text-gray-700 mb-8">
+                    Disputes are unique to each industry. Our team has domain specific knowledge across various high value sectors.
                   </p>
-                  
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Commercial Arbitration</h3>
-                      <p className="text-gray-700">
-                        Handling disputes arising from business contracts, shareholder agreements, joint ventures, and supply chain contracts. We ensure that commercial realities are prioritized alongside legal arguments.
-                      </p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100">
+                      <div className="text-3xl mb-2">🏗️</div>
+                      <h3 className="font-bold text-gray-900">Construction & Infrastructure</h3>
                     </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Construction & Infrastructure</h3>
-                      <p className="text-gray-700">
-                        Specialized arbitration for construction delays, defect claims, and payment disputes. We work with technical experts to present complex engineering evidence effectively.
-                      </p>
+                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100">
+                      <div className="text-3xl mb-2">🏢</div>
+                      <h3 className="font-bold text-gray-900">Real Estate & Development</h3>
                     </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">International Arbitration</h3>
-                      <p className="text-gray-700">
-                        Representing clients in international commercial arbitrations under rules of major institutions like SIAC, ICC, LCIA, and UNCITRAL. We navigate complex conflict of law issues.
-                      </p>
+                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100">
+                      <div className="text-3xl mb-2">🚢</div>
+                      <h3 className="font-bold text-gray-900">Shipping & Logistics</h3>
                     </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Banking & Finance</h3>
-                      <p className="text-gray-700">
-                        Resolving disputes related to loan agreements, debt recovery, and financial instruments through expedited arbitration procedures to ensure quick recovery of dues.
-                      </p>
+                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100">
+                      <div className="text-3xl mb-2">💰</div>
+                      <h3 className="font-bold text-gray-900">Banking & Finance</h3>
                     </div>
-                  </div>
-                </section>
-
-                {/* Advantages */}
-                <section id="advantages" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose Arbitration?</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Arbitration is not just an alternative; it is often the superior choice for commercial dispute resolution.
-                  </p>
-                  <ul className="list-disc pl-6 space-y-3 text-gray-700 bg-green-50 p-6 rounded-xl">
-                    <li><strong>Speed:</strong> With statutory timelines, arbitration is significantly faster than the years-long delays of Indian courts.</li>
-                    <li><strong>Expertise:</strong> You can choose an arbitrator with specific industry knowledge (e.g., an engineer for construction disputes), ensuring a better understanding of the issues.</li>
-                    <li><strong>Confidentiality:</strong> Keep your business disputes out of the public eye and protect your trade secrets.</li>
-                    <li><strong>Finality:</strong> Limited appeal rights mean the dispute ends sooner, allowing you to get back to business.</li>
-                    <li><strong>Enforceability:</strong> Arbitral awards are easier to enforce internationally than court judgments due to the New York Convention.</li>
-                  </ul>
-                </section>
-
-                {/* Why Choose Us */}
-                <section id="why-choose-us" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose AMA Legal Solutions?</h2>
-                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                    When the stakes are high, you need an arbitration team that combines legal excellence with strategic foresight.
-                  </p>
-                  
-                  <div className="grid md:grid-cols-3 gap-6 text-center">
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">⚖️</div>
-                      <h3 className="font-bold text-xl mb-2">Specialized Expertise</h3>
-                      <p className="text-gray-600">Our team focuses specifically on arbitration law, ensuring you get specialized advice rather than general litigation support.</p>
+                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100">
+                      <div className="text-3xl mb-2">⚡</div>
+                      <h3 className="font-bold text-gray-900">Energy & Power</h3>
                     </div>
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">🌍</div>
-                      <h3 className="font-bold text-xl mb-2">Global Reach</h3>
-                      <p className="text-gray-600">We have experience handling international arbitrations and enforcing foreign awards in India.</p>
+                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100">
+                      <div className="text-3xl mb-2">💊</div>
+                      <h3 className="font-bold text-gray-900">Pharmaceuticals</h3>
                     </div>
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">🤝</div>
-                      <h3 className="font-bold text-xl mb-2">Client-Centric</h3>
-                      <p className="text-gray-600">We prioritize your business goals and work towards cost-effective resolutions that minimize disruption.</p>
+                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100">
+                      <div className="text-3xl mb-2">💻</div>
+                      <h3 className="font-bold text-gray-900">IT & Technology</h3>
+                    </div>
+                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100">
+                      <div className="text-3xl mb-2">🤝</div>
+                      <h3 className="font-bold text-gray-900">Partnership Disputes</h3>
                     </div>
                   </div>
                 </section>
 
                 {/* Testimonials */}
                 <section id="testimonials" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Client Success Stories</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Client Success Stories</h2>
                   <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
-                      <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
-                      <p className="text-gray-700 italic mb-4 relative z-10">
-                        "AMA Legal Solutions handled our complex commercial arbitration with exceptional skill. Their strategic approach and deep understanding of the Arbitration Act led to a favorable award for our company."
+                    <div className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl border border-gray-100 shadow-sm relative">
+                      <div className="text-6xl text-gray-100 absolute top-4 left-4 font-serif">"</div>
+                      <p className="text-gray-700 italic mb-6 relative z-10 text-lg leading-relaxed">
+                        AMA Legal Solutions handled our complex commercial arbitration with exceptional skill. Their strategic approach and deep understanding of the Arbitration Act led to a favorable award for our company.
                       </p>
                       <div className="flex items-center">
-                        <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">V</div>
+                        <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">V</div>
                         <div>
                           <p className="font-bold text-gray-900">Vikram Malhotra</p>
                           <p className="text-sm text-gray-500">Director, Tech Solutions Pvt Ltd</p>
+                          <div className="flex text-[#D2A02A] text-sm mt-1">
+                            ★★★★★
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
-                      <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
-                      <p className="text-gray-700 italic mb-4 relative z-10">
-                        "We were facing a deadlock in a partnership dispute. The arbitration team at AMA guided us through the process efficiently. Their professionalism and dedication are commendable."
+                    
+                    <div className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl border border-gray-100 shadow-sm relative">
+                      <div className="text-6xl text-gray-100 absolute top-4 left-4 font-serif">"</div>
+                      <p className="text-gray-700 italic mb-6 relative z-10 text-lg leading-relaxed">
+                        We were facing a deadlock in a partnership dispute. The arbitration team at AMA guided us through the process efficiently. Their professionalism and dedication are commendable.
                       </p>
                       <div className="flex items-center">
-                        <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">S</div>
+                        <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">S</div>
                         <div>
                           <p className="font-bold text-gray-900">Suresh Reddy</p>
                           <p className="text-sm text-gray-500">Partner, Reddy Constructions</p>
+                          <div className="flex text-[#D2A02A] text-sm mt-1">
+                            ★★★★★
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </section>
 
+                {/* Why AMA */}
+                <section id="why-ama" className="scroll-mt-32">
+                  <div className="bg-[#1a202c] text-white p-8 md:p-12 rounded-2xl relative overflow-hidden">
+                    <div className="relative z-10">
+                      <h2 className="text-2xl md:text-3xl font-bold mb-6">Why Choose AMA Legal Solutions?</h2>
+                      <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+                        Arbitration is distinct from litigation. It involves a different mindset, strategy, and skill set. At AMA Legal Solutions, we bridge the gap between complex legal theory and practical business necessities. Our attorneys are not just litigators; they are arbitration specialists who understand the nuances of tribunal psychology, technical evidence, and cross border enforcement. We are committed to securing the best possible awards for our clients while keeping costs predictable and transparent.
+                      </p>
+                      <div className="flex flex-wrap gap-4">
+                        <div className="flex items-center space-x-2">
+                          <span className="text-[#D2A02A] text-xl">✓</span>
+                          <span>Deep Domain Expertise</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-[#D2A02A] text-xl">✓</span>
+                          <span>Strategic Advisory</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-[#D2A02A] text-xl">✓</span>
+                          <span>Aggressive Representation</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-[#D2A02A] text-xl">✓</span>
+                          <span>Global Enforcement</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-[#D2A02A] opacity-10 rounded-full blur-3xl"></div>
+                  </div>
+                </section>
+
                 {/* FAQs */}
                 <section id="faqs" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
-                  <div className="space-y-6">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
+                  <div className="grid gap-6">
                     {faqs.map((faq, index) => (
-                      <div key={index} className="border-b border-gray-200 pb-6 last:border-0">
-                        <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-start">
-                          <span className="text-[#D2A02A] mr-3">Q.</span>
+                      <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+                        <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-start">
+                          <span className="text-[#D2A02A] mr-3 mt-1">Q.</span>
                           {faq.question}
                         </h3>
-                        <p className="text-gray-700 leading-relaxed pl-8">
+                        <p className="text-gray-700 leading-relaxed pl-8 text-sm md:text-base">
                           {faq.answer}
                         </p>
                       </div>
@@ -538,85 +674,84 @@ export default function ArbitrationPage() {
                 </section>
 
                 {/* Final CTA */}
-                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-xl md:rounded-3xl p-6 md:p-16 text-center text-white relative overflow-hidden">
-                  <div className="relative z-10">
-                    <h2 className="text-xl md:text-5xl font-bold mb-4 md:mb-6">Resolve Disputes Efficiently</h2>
-                    <p className="text-sm md:text-xl opacity-90 mb-6 md:mb-10 max-w-2xl mx-auto">
-                      Don't let legal battles drain your resources. Choose expert arbitration for a faster, smarter resolution.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-                      <Link href="/contact">
-                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
-                          Book Your Consultation
-                        </button>
-                      </Link>
-                      <a href="tel:+918700343611">
-                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all text-sm md:text-lg w-full sm:w-auto">
-                          Call: +91-8700343611
-                        </button>
-                      </a>
-                    </div>
-                    <p className="mt-4 md:mt-8 text-xs md:text-sm opacity-70">
-                      Confidential • Binding • Professional
-                    </p>
+                <section className="bg-gradient-to-r from-[#D2A02A] to-[#b88a22] rounded-xl md:rounded-3xl p-8 md:p-16 text-center text-white shadow-2xl">
+                  <h2 className="text-2xl md:text-4xl font-bold mb-6">Ready to Resolve Your Dispute?</h2>
+                  <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+                    Don't let commercial conflicts stagnate your business growth. Contact our expert arbitration team today for a preliminary assessment of your case.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Link href="/contact">
+                      <button className="bg-white text-[#b88a22] font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-md text-lg w-full sm:w-auto">
+                        Get Professional Advice
+                      </button>
+                    </Link>
+                    <a href="tel:+918700343611">
+                      <button className="bg-transparent border-2 border-white text-white font-bold py-4 px-10 rounded-full transition-all hover:bg-white/10 text-lg w-full sm:w-auto">
+                        Call: +91-8700343611
+                      </button>
+                    </a>
                   </div>
                 </section>
                 
               </div>
             </div>
 
-            {/* Sidebar */}
-            <div className="hidden lg:block space-y-8 sticky top-24">
-                {/* Contact Card */}
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">Need Legal Advice?</h3>
+            {/* Right Sidebar */}
+            <div className="hidden lg:block space-y-8 sticky top-28 self-start">
+                <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 overflow-hidden relative">
+                  <div className="absolute top-0 left-0 w-full h-2 bg-[#D2A02A]"></div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Urgent Assistance?</h3>
                   <p className="text-gray-600 mb-6 text-sm">
-                    Speak to our expert arbitration lawyers today.
+                    Arbitration timelines are strict. Delaying action can be fatal to your claim.
                   </p>
                   <a 
                     href="tel:+918700343611" 
-                    className="block w-full bg-[#D2A02A] text-white text-center py-3 rounded-lg font-semibold hover:bg-[#b88a22] transition-colors mb-4"
+                    className="block w-full bg-[#D2A02A] text-white text-center py-4 rounded-xl font-bold hover:bg-[#b88a22] transition-colors mb-4 shadow-md"
                   >
-                    Call +91-8700343611
+                    Call Now
                   </a>
                   <Link 
                     href="/contact" 
-                    className="block w-full border border-[#D2A02A] text-[#D2A02A] text-center py-3 rounded-lg font-semibold hover:bg-[#D2A02A] hover:text-white transition-colors"
+                    className="block w-full border-2 border-gray-200 text-gray-700 text-center py-4 rounded-xl font-bold hover:border-[#D2A02A] hover:text-[#D2A02A] transition-all"
                   >
                     Request Callback
                   </Link>
                 </div>
 
-                {/* Quick Links */}
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">Related Services</h3>
-                  <ul className="space-y-3 text-sm">
+                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-200">
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">Related Practice Areas</h3>
+                  <ul className="space-y-4">
                     <li>
-                      <Link href="/services/civil" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Civil Litigation
+                      <Link href="/services/civil" className="group flex items-center text-gray-600 hover:text-[#D2A02A] transition-colors">
+                        <span className="w-2 h-2 bg-gray-300 rounded-full mr-3 group-hover:bg-[#D2A02A]"></span>
+                        Civil Litigation
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/corporate" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Corporate Law
+                      <Link href="/services/corporate" className="group flex items-center text-gray-600 hover:text-[#D2A02A] transition-colors">
+                        <span className="w-2 h-2 bg-gray-300 rounded-full mr-3 group-hover:bg-[#D2A02A]"></span>
+                        Corporate Law
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/loan-settlement" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Loan Settlement
+                      <Link href="/services/contract" className="group flex items-center text-gray-600 hover:text-[#D2A02A] transition-colors">
+                        <span className="w-2 h-2 bg-gray-300 rounded-full mr-3 group-hover:bg-[#D2A02A]"></span>
+                        Contract Drafting
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/drafting" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Legal Drafting
+                      <Link href="/services/cheque-bounce" className="group flex items-center text-gray-600 hover:text-[#D2A02A] transition-colors">
+                        <span className="w-2 h-2 bg-gray-300 rounded-full mr-3 group-hover:bg-[#D2A02A]"></span>
+                        Cheque Bounce
                       </Link>
                     </li>
                   </ul>
+                </div>
             </div>
           </div>
-          </div>
           
-          <div className="mt-16">
+          <div className="mt-20">
+             <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Serving Clients Across India</h2>
             <GenericStatesGrid serviceName="Arbitration" servicePath="arbitration" />
           </div>
         </div>
