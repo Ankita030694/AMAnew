@@ -43,7 +43,7 @@ const Hero = () => {
         {/* Horizontal Line for Mobile / U-Border for Desktop handled in AnimatedBorder */}
         
       </div>
-       <div className="-mt-20 md:mt-[80px] flex flex-col items-center gap-[35px] px-4">
+  <div className="-mt-20 md:mt-[80px] flex flex-col items-center gap-[35px] px-4">
           <p className="text-[24px] md:text-[32px] font-semibold text-black text-center leading-tight">
             Download the <span className="text-[#D29E0D]">AMA Legal Solutions</span> App Today
           </p>
@@ -55,6 +55,43 @@ const Hero = () => {
               <Image src="/newAssets/playstore.svg" alt="Google Play" width={200} height={60} className="w-[160px] md:w-[200px] h-auto" />
             </Link>
           </div>
+        </div>
+
+        {/* Media Coverage Section */}
+        <div className="mt-20 w-full px-4 flex justify-center">
+            <div 
+              className="w-full max-w-7xl rounded-[35px] flex flex-col justify-center items-center gap-10 py-10"
+              style={{
+                background: "rgba(255, 255, 255, 0.15)",
+                boxShadow: "3px 4px 30.5px 0 rgba(0, 0, 0, 0.05)",
+                backdropFilter: "blur(2px)",
+              }}
+            >
+                <h2 
+                  className="text-[#30261C] text-center text-3xl md:text-[40px] font-normal leading-tight md:leading-[44px]"
+                  style={{ fontFamily: '"PolySans Trial", sans-serif' }}
+                >
+                  Our media coverages
+                </h2>
+
+                <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 px-4">
+                  <Link href="https://yourstory.com/companies/ama-legal-solutions" target="_blank" className="hover:opacity-80 transition-opacity">
+                    <Image src="/newAssets/media/yourstory.png" alt="YourStory" width={180} height={50} className="h-8 md:h-20 w-auto object-contain" />
+                  </Link>
+                  <Link href="https://www.livemint.com/" target="_blank" className="hover:opacity-80 transition-opacity">
+                    <Image src="/newAssets/media/livemint.png" alt="LiveMint" width={180} height={50} className="h-8 md:h-20 w-auto object-contain" />
+                  </Link>
+                   <Link href="https://www.barandbench.com/news/ama-legal-solutions-launches-indias-first-law-firm-backed-pro-bono-driven-mobile-app" target="_blank" className="hover:opacity-80 transition-opacity">
+                    <Image src="/newAssets/media/barandbench.png" alt="Bar and Bench" width={180} height={50} className="h-8 md:h-20 w-auto object-contain" />
+                  </Link>
+                   <Link href="https://medium.com/" target="_blank" className="hover:opacity-80 transition-opacity">
+                    <Image src="/newAssets/media/medium.png" alt="Medium" width={180} height={50} className="h-8 md:h-20 w-auto object-contain" />
+                  </Link>
+                   <Link href="https://www.mid-day.com/" target="_blank" className="hover:opacity-80 transition-opacity">
+                    <Image src="/newAssets/media/mid_day.png" alt="Mid-day" width={180} height={50} className="h-8 md:h-20 w-auto object-contain" />
+                  </Link>
+                </div>
+            </div>
         </div>
     </section>
   );
