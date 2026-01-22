@@ -323,17 +323,58 @@ function generateCombinedSchema(blogData: any, faqs: any[], reviews: any[]) {
   };
   graph.push(articleSchema);
 
-  // 2. Organization Schema
-  graph.push({
-    "@type": "Organization",
+  // 2. Organization / LegalService Schema with AggregateRating
+  const organizationSchema: any = {
+    "@type": "LegalService",
     "@id": `${baseUrl}/#organization`,
     "name": "AMA Legal Solutions",
     "url": baseUrl,
     "logo": {
       "@type": "ImageObject",
       "url": `${baseUrl}/ama-legal-solutions-logo.png`
-    }
-  });
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2493AP, Block G, Sushant Lok 2,Sector 57",
+      "addressLocality": "Gurugram",
+      "addressRegion": "Haryana",
+      "postalCode": "122001",
+      "addressCountry": "IN"
+    },
+    "telephone": "+918700343611",
+    "priceRange": "$$"
+  };
+
+  // Add AggregateRating if reviews exist
+  if (reviews && reviews.length > 0) {
+    const totalRating = reviews.reduce((sum, review) => sum + (Number(review.rating) || 0), 0);
+    const avgRating = (totalRating / reviews.length).toFixed(1);
+
+    organizationSchema.aggregateRating = {
+      "@type": "AggregateRating",
+      "ratingValue": avgRating,
+      "reviewCount": reviews.length.toString(),
+      "bestRating": "5",
+      "worstRating": "1"
+    };
+
+    organizationSchema.review = reviews.map(review => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": review.name || "Anonymous"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": (Number(review.rating) || 5).toString(),
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": review.review || ""
+    }));
+  }
+
+  graph.push(organizationSchema);
 
   // 3. Breadcrumb Schema
   graph.push({
