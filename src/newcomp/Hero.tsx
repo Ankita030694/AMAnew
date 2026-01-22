@@ -84,7 +84,7 @@ const Hero = () => {
                    <Link href="https://www.barandbench.com/news/ama-legal-solutions-launches-indias-first-law-firm-backed-pro-bono-driven-mobile-app" target="_blank" className="hover:opacity-80 transition-opacity">
                     <Image src="/newAssets/media/barandbench.png" alt="Bar and Bench" width={180} height={50} className="h-8 md:h-20 w-auto object-contain" />
                   </Link>
-                   <Link href="https://medium.com/" target="_blank" className="hover:opacity-80 transition-opacity">
+                   <Link href="https://medium.com/@amalegalsolutions" target="_blank" className="hover:opacity-80 transition-opacity">
                     <Image src="/newAssets/media/medium.png" alt="Medium" width={180} height={50} className="h-8 md:h-20 w-auto object-contain" />
                   </Link>
                    <Link href="https://www.mid-day.com/" target="_blank" className="hover:opacity-80 transition-opacity">
