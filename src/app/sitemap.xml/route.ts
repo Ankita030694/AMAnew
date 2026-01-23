@@ -95,6 +95,7 @@ export async function GET(): Promise<Response> {
     '/services/loan-settlement/Ghaziabad',
     '/services/loan-settlement/Gurugram',
     '/services/loan-settlement/Jaipur',
+    '/services/loan-settlement/Hyderabad',
     '/services/loan-settlement/Kanpur',
     '/services/loan-settlement/Mumbai',
     '/services/loan-settlement/Noida',

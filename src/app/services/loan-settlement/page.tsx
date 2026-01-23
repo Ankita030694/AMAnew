@@ -1036,6 +1036,7 @@ export default function LoanSettlementPage() {
                 "Gujarat": "Gujarat",
                 "Haryana": "Haryana",
                 "Himachal Pradesh": "himachal-pradesh",
+                "Hyderabad": "Hyderabad",
                 "Jharkhand": "Jharkhand",
                 "Karnataka": "Karnataka",
                 "Kerala": "Kerala",
