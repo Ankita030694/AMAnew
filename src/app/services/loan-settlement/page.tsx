@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Script from "next/script";
+import Image from "next/image";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -301,6 +302,36 @@ export default function LoanSettlementPage() {
 
         <div className="container mx-auto px-4 max-w-[1600px] py-8">
           <Breadcrumbs items={breadcrumbItems} />
+          
+          {/* Mobile App Store Links */}
+          <div className="lg:hidden flex gap-4 mb-6 mt-2">
+            <Link 
+              href="https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions" 
+              target="_blank"
+              className="hover:opacity-80 transition-opacity"
+            >
+              <Image 
+                src="/newAssets/appstore.svg" 
+                alt="Get it on Google Play" 
+                width={130} 
+                height={36}
+                className="w-[120px] h-auto"
+              />
+            </Link>
+            <Link 
+              href="https://apps.apple.com/in/app/ama-legal-solutions/id6755156186" 
+              target="_blank"
+              className="hover:opacity-80 transition-opacity"
+            >
+              <Image 
+                src="/newAssets/playstore.svg" 
+                alt="Download on App Store" 
+                width={130} 
+                height={36}
+                className="w-[120px] h-auto"
+              />
+            </Link>
+          </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 items-start">
             {/* Left Sidebar - TOC (Desktop) */}
@@ -797,6 +828,39 @@ export default function LoanSettlementPage() {
                     </li>
                     
                   </ul>
+                  
+                  {/* App Store Links */}
+                  <div className="mt-6 pt-6 border-t border-gray-100">
+                    <p className="text-sm font-semibold text-gray-900 mb-3">Download Our App</p>
+                    <div className="flex flex-col gap-3">
+                      <Link 
+                        href="https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions" 
+                        target="_blank"
+                        className="hover:opacity-80 transition-opacity"
+                      >
+                        <Image 
+                          src="/newAssets/appstore.svg" 
+                          alt="Get it on Google Play" 
+                          width={130} 
+                          height={36}
+                          className="w-full h-auto max-w-[130px]"
+                        />
+                      </Link>
+                      <Link 
+                        href="https://apps.apple.com/in/app/ama-legal-solutions/id6755156186" 
+                        target="_blank"
+                        className="hover:opacity-80 transition-opacity"
+                      >
+                        <Image 
+                          src="/newAssets/playstore.svg" 
+                          alt="Download on App Store" 
+                          width={130} 
+                          height={36}
+                          className="w-full h-auto max-w-[130px]"
+                        />
+                      </Link>
+                    </div>
+                  </div>
                 </div>
             </div>
           </div>

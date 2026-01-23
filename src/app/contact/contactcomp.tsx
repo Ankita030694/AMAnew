@@ -446,8 +446,38 @@ const ContactComp = () => {
                       )}
                     </a>
                   </div>
-                  <div className="flex justify-center pt-2 opacity-80 hover:opacity-100 transition-opacity">
-                    <img src={payu.src} alt="Secured by PayU" className="w-32" />
+                  <div className="flex flex-col items-center gap-4 pt-2">
+                    <div className="opacity-80 hover:opacity-100 transition-opacity">
+                      <img src={payu.src} alt="Secured by PayU" className="w-32" />
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Link 
+                        href="https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions" 
+                        target="_blank"
+                        className="hover:opacity-80 transition-opacity"
+                      >
+                        <Image 
+                          src="/newAssets/appstore.svg" 
+                          alt="Get it on Google Play" 
+                          width={130} 
+                          height={36}
+                          className="w-[130px] h-[36px]"
+                        />
+                      </Link>
+                      <Link 
+                        href="https://apps.apple.com/in/app/ama-legal-solutions/id6755156186" 
+                        target="_blank"
+                        className="hover:opacity-80 transition-opacity"
+                      >
+                        <Image 
+                          src="/newAssets/playstore.svg" 
+                          alt="Download on App Store" 
+                          width={130} 
+                          height={36}
+                          className="w-[130px] h-[36px]"
+                        />
+                      </Link>
+                    </div>
                   </div>
                 </form>
               )}
