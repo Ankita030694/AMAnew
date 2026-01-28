@@ -397,11 +397,21 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Desktop Right: Contact Us Button */}
-          <div className="hidden md:block flex-shrink-0">
+          {/* Desktop Right: Pay Now and Contact Us Buttons */}
+          <div className="hidden md:flex items-center gap-4 flex-shrink-0">
+            <Link
+              href="https://pmny.in/DIMRKGkGQz6L"
+              className="px-8 py-3 rounded-full text-white font-bold transition-all hover:scale-105 active:scale-95"
+              style={{
+                backgroundColor: "#E19100",
+                boxShadow: "0 4px 14px 0 rgba(225, 145, 0, 0.39)",
+              }}
+            >
+              Pay Now
+            </Link>
             <Link
               href="/contact"
-              className="px-15 py-3 rounded-full text-[#30261C] text-lg font-light transition-all hover:opacity-90"
+              className="px-8 py-3 rounded-full text-[#30261C] font-light transition-all hover:opacity-90 active:scale-95"
               style={{
                 background: "rgba(210, 158, 13, 0.80)",
                 boxShadow: "0 0 8px 0 rgba(0, 0, 0, 0.10)",
@@ -580,14 +590,22 @@ const Navbar = () => {
                            </AnimatePresence>
                        </div>
 
-                       <Link 
-                           href="/contact"
-                           className="text-[#30261C] font-[400] tracking-wide"
-                           style={{ fontFamily: "var(--font-polysans)", fontSize: "35px", lineHeight: "35px" }}
-                           onClick={() => setIsMobileMenuOpen(false)}
-                       >
-                           Contact
-                       </Link>
+                        <Link 
+                            href="https://pmny.in/DIMRKGkGQz6L"
+                            className="text-[#E19100] font-[700] tracking-wide"
+                            style={{ fontFamily: "var(--font-polysans)", fontSize: "35px", lineHeight: "35px" }}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                            Pay Now
+                        </Link>
+                        <Link 
+                            href="/contact"
+                            className="text-[#30261C] font-[400] tracking-wide"
+                            style={{ fontFamily: "var(--font-polysans)", fontSize: "35px", lineHeight: "35px" }}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                            Contact
+                        </Link>
                    </div>
 
                    {/* Divider - Faded from left and right */}

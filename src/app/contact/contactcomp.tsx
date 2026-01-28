@@ -230,19 +230,20 @@ const ContactComp = () => {
                       </div>
                     </Link>
 
-                    {/* Call Box */}
+                    {/* Pay Now Box */}
                     <Link
-                      href="tel:+918700343611" 
+                      href="https://pmny.in/DIMRKGkGQz6L"
                       className="flex-1 p-2 rounded-[25px] border border-white/20 transition-transform hover:-translate-y-1"
                       style={{
-                        background: "rgba(255, 255, 255, 0.15)",
-                        boxShadow: "3px 4px 30.5px 0 rgba(0, 0, 0, 0.05)",
+                        background: "rgba(225, 145, 0, 0.15)",
+                        boxShadow: "3px 4px 30.5px 0 rgba(225, 145, 0, 0.05)",
                         backdropFilter: "blur(2px)",
+                        border: "1px solid rgba(225, 145, 0, 0.3)"
                       }}
                     >
                       <div className="flex flex-col h-full justify-between">
-                        <h3 className="text-base font-semibold text-[#30261C] mb-0.5 pl-3">Call Us</h3>
-                        <p className="text-[#30261C]/80 text-sm pl-3">+91 87003 43611</p>
+                        <h3 className="text-base font-bold text-[#E19100] mb-0.5 pl-3">Pay Now</h3>
+                        <p className="text-[#E19100]/80 text-sm pl-3">Swift & Secure Payments</p>
                       </div>
                     </Link>
                   </div>
