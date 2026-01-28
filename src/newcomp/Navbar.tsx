@@ -399,16 +399,7 @@ const Navbar = () => {
 
           {/* Desktop Right: Pay Now and Contact Us Buttons */}
           <div className="hidden md:flex items-center gap-4 flex-shrink-0">
-            <Link
-              href="https://pmny.in/DIMRKGkGQz6L"
-              className="px-8 py-3 rounded-full text-white font-bold transition-all hover:scale-105 active:scale-95"
-              style={{
-                backgroundColor: "#E19100",
-                boxShadow: "0 4px 14px 0 rgba(225, 145, 0, 0.39)",
-              }}
-            >
-              Pay Now
-            </Link>
+         
             <Link
               href="/contact"
               className="px-8 py-3 rounded-full text-[#30261C] font-light transition-all hover:opacity-90 active:scale-95"
@@ -590,14 +581,7 @@ const Navbar = () => {
                            </AnimatePresence>
                        </div>
 
-                        <Link 
-                            href="https://pmny.in/DIMRKGkGQz6L"
-                            className="text-[#E19100] font-[700] tracking-wide"
-                            style={{ fontFamily: "var(--font-polysans)", fontSize: "35px", lineHeight: "35px" }}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                            Pay Now
-                        </Link>
+                       
                         <Link 
                             href="/contact"
                             className="text-[#30261C] font-[400] tracking-wide"

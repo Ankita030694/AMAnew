@@ -141,6 +141,7 @@ const Footer = () => {
                   { name: 'Entertainment', href: '/services/entertainment' },
                   { name: 'Intellectual Property Rights', href: '/services/intellectual-property-rights' },
                   { name: 'Litigation', href: '/services/litigation' },
+                  { name: 'Legal Notice Delhi', href: '/send-legal-notice-in-delhi' },
                   { name: 'Loan Settlement', href: '/services/loan-settlement' },
                   { name: 'Real Estate', href: '/services/real-estate' },
                   { name: 'Success Stories', href: '/success-stories' },
