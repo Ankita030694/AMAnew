@@ -258,7 +258,7 @@ export default function LegalNoticeDelhiPage() {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-[1300px] py-8">
+        <div className="container mx-auto px-4 max-w-8xl py-8">
           <Breadcrumbs items={breadcrumbItems} />
           
           <div className="grid grid-cols-1 lg:grid-cols-[200px_1fr_250px] gap-10 items-start">
@@ -762,7 +762,6 @@ export default function LegalNoticeDelhiPage() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }
