@@ -3,10 +3,110 @@ import Image from "next/image";
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
+  const footerColumns = [
+    // ROW 1
+    {
+      title: "",
+      links: [
+        { name: 'Home', href: '/' },
+        { name: 'About Us', href: '/about' },
+        { name: 'Contact Us', href: '/contact' },
+        { name: 'Success Stories', href: '/success-stories' },
+        { name: 'Privacy Policy', href: '/privacy-policy' },
+        { name: 'Terms of Service', href: '/terms-and-conditions' },
+        { name: 'Client Login', href: '/login' },
+      ]
+    },
+    {
+      title: "Our Expertise",
+      links: [
+        { name: 'Arbitration', href: '/services/arbitration' },
+        { name: 'Banking & Finance', href: '/services/banking-and-finance' },
+        { name: 'Civil Law', href: '/services/civil' },
+        { name: 'Corporate Law', href: '/services/corporate' },
+        { name: 'Criminal Law', href: '/services/criminal-law' },
+        { name: 'Cyber Law', href: '/services/cyber' },
+        { name: 'Legal Drafting', href: '/services/drafting' },
+      ]
+    },
+    {
+      title: "Connect With Us",
+      links: [
+        { name: 'Our Location', href: 'https://maps.app.goo.gl/C11eKgqm46oUwdio9', external: true },
+        { name: 'Call Support', href: 'tel:+918700343611' },
+        { name: 'Email Us', href: 'mailto:notify@amalegalsolutions.com' },
+        { name: 'Instagram', href: 'https://www.instagram.com/amalegalsolutions/?hl=en', external: true },
+        { name: 'Facebook', href: 'https://www.facebook.com/amalegalsolutions/', external: true },
+        { name: 'LinkedIn', href: 'https://in.linkedin.com/company/ama-legal-solutions', external: true },
+        { name: 'YouTube', href: 'https://www.youtube.com/@amalegalsolution', external: true },
+      ]
+    },
+    {
+      title: "Top Locations",
+      links: [
+        { name: 'Delhi NCR', href: '/locations/newdelhi' },
+        { name: 'Mumbai', href: '/locations/mumbai' },
+        { name: 'Bengaluru', href: '/locations/bengaluru' },
+        { name: 'Kolkata', href: '/locations/kolkata' },
+        { name: 'Chennai', href: '/locations/chennai' },
+        { name: 'Jaipur', href: '/locations/jaipur' },
+        { name: 'Chandigarh', href: '/locations/chandigarh' },
+      ]
+    },
+    // ROW 2
+    {
+      title: "Send Legal Notice",
+      links: [
+        { name: 'Online Notice India', href: '/send-legal-notice' },
+        { name: 'Legal Notice Delhi', href: '/send-legal-notice-in-delhi' },
+        { name: 'Legal Notice Gurugram', href: '/send-legal-notice-in-gurugram' },
+        { name: 'Legal Notice Noida', href: '/send-legal-notice-in-noida' },
+        { name: 'Legal Notice Haryana', href: '/send-legal-notice-haryana' },
+        { name: 'Legal Notice Uttar Pradesh', href: '/send-legal-notice-in-uttar-pradesh' },
+        { name: 'Legal Notice Punjab', href: '/send-legal-notice-in-punjab' },
+        { name: 'How to Send Notice', href: '/how-can-i-send-legal-notice' },
+      ]
+    },
+    {
+      title: "Loan Settlement",
+      links: [
+        { name: 'Settlement Services', href: '/services/loan-settlement' },
+        { name: 'Debt Consolidation', href: '/services/debt-consolidation' },
+        { name: 'SBI Loan Settlement', href: '/services/loan-settlement/sbi' },
+        { name: 'ICICI Bank Settlement', href: '/services/loan-settlement/icici-bank' },
+        { name: 'HDFC Bank Settlement', href: '/services/loan-settlement/hdfc-bank' },
+        { name: 'Axis Bank Settlement', href: '/services/loan-settlement/axis-bank' },
+        { name: 'Kotak Mahindra Settlement', href: '/services/loan-settlement/kotak-mahindra' },
+      ]
+    },
+    {
+      title: "IPR & Trademark",
+      links: [
+        { name: 'IPR Services', href: '/services/intellectual-property-rights' },
+        { name: 'Trademark Registration', href: '/services/trademark-registration' },
+        { name: 'Expert Vakil Search', href: '/services/expert-vakil-search-for-trademark-registration' },
+        { name: 'Company Registration', href: '/services/quick-company-registration-and-trademark' },
+        { name: 'IPIndia Guide', href: '/services/how-to-register-trademark-with-ipindia' },
+        { name: 'Trademark Delhi', href: '/services/intellectual-property-rights/Delhi' },
+        { name: 'Trademark Maharashtra', href: '/services/intellectual-property-rights/Maharashtra' },
+      ]
+    },
+    {
+      title: "Additional Services",
+      links: [
+        { name: 'Entertainment Law', href: '/services/entertainment' },
+        { name: 'Litigation Support', href: '/services/litigation' },
+        { name: 'Real Estate Law', href: '/services/real-estate' },
+        { name: 'NCLT Matters', href: '/services/corporate' },
+        { name: 'RERA Compliance', href: '/services/real-estate' },
+        { name: 'High Court Advocacy', href: '/services/litigation/delhi' },
+        { name: 'Consumer Protection', href: '/services/civil' },
+      ]
+    },
+  ];
+
   return (
-    <footer
-      className="relative py-[48px] px-[24px] md:px-[72px] bg-[#30261C]"
-    >
+    <footer className="relative py-[64px] px-[24px] md:px-[72px] bg-[#30261C]">
       <div className="max-w-[1600px] mx-auto relative">
         {/* Radial Gradient */}
         <div 
@@ -16,192 +116,119 @@ const Footer = () => {
           }}
         />
 
-        {/* Main Content */}
-        <div className="flex flex-col md:flex-row justify-between items-start mb-[48px] gap-[48px] md:gap-0">
-          {/* Left Section - Logo, Social Icons, App Badges */}
-          <div className="flex flex-col gap-[32px] md:gap-[68px] w-full md:w-[272px]">
-            {/* Logo */}
+        {/* Row 1 Content */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[48px] md:gap-[40px] mb-[64px]">
+          {/* Logo & Branding - Part of Column 1 */}
+          <div className="flex flex-col gap-[24px]">
             <Link href="/">
               <Image 
                 src="/newAssets/logo/ama-white.svg" 
                 alt="AMA Legal Solutions" 
                 width={206} 
                 height={40}
-                className="w-[206px] h-[40px]"
+                className="w-[206px] h-[40px] mb-4"
               />
             </Link>
-
-            {/* Social Icons and App Badges */}
-            <div className="flex flex-col gap-[24px]">
-              {/* Social Icons */}
-              <div className="flex items-center gap-[28px]">
-                <Link 
-                  href="https://www.instagram.com/amalegalsolutions/?hl=en" 
-                  target="_blank"
-                  className="text-[#EAE6DB] hover:opacity-80 transition-opacity"
-                  aria-label="Instagram"
-                >
-                  <FaInstagram size={26} />
-                </Link>
-                <Link 
-                  href="https://www.facebook.com/amalegalsolutions/" 
-                  target="_blank"
-                  className="text-[#EAE6DB] hover:opacity-80 transition-opacity"
-                  aria-label="Facebook"
-                >
-                  <FaFacebookF size={26} />
-                </Link>
-                <Link 
-                  href="https://in.linkedin.com/company/ama-legal-solutions" 
-                  target="_blank"
-                  className="text-[#EAE6DB] hover:opacity-80 transition-opacity"
-                  aria-label="LinkedIn"
-                >
-                  <FaLinkedinIn size={26} />
-                </Link>
-                <Link 
-                  href="https://www.youtube.com/@amalegalsolution" 
-                  target="_blank"
-                  className="text-[#EAE6DB] hover:opacity-80 transition-opacity"
-                  aria-label="YouTube"
-                >
-                  <FaYoutube size={26} />
-                </Link>
-              </div>
-
-              {/* App Store Badges */}
-              <div className="flex items-center gap-[12px]">
-                <Link 
-                  href="https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions" 
-                  target="_blank"
-                  className="hover:opacity-80 transition-opacity"
-                >
-                  <Image 
-                    src="/newAssets/appstore.svg" 
-                    alt="Download on App Store" 
-                    width={130} 
-                    height={36}
-                    className="w-[130px] h-[36px]"
-                  />
-                </Link>
-                <Link 
-                  href="https://apps.apple.com/in/app/ama-legal-solutions/id6755156186" 
-                  target="_blank"
-                  className="hover:opacity-80 transition-opacity"
-                >
-                  <Image 
-                    src="/newAssets/playstore.svg" 
-                    alt="Get it on Google Play" 
-                    width={130} 
-                    height={36}
-                    className="w-[130px] h-[36px]"
-                  />
-                </Link>
-              </div>
-            </div>
+            <h3 className="text-white text-[18px] md:text-[20px] font-semibold leading-[20px] border-b border-white/10 pb-4">
+              {footerColumns[0].title}
+            </h3>
+            <ul className="flex flex-col gap-[12px]">
+              {footerColumns[0].links.map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    href={link.href}
+                    className="text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Right Section - Expertise and Contact */}
-          <div className="flex flex-col md:flex-row items-start gap-[40px] md:gap-[72px] w-full md:w-auto">
-            {/* Our Expertise Column 1 */}
-            <div className="flex flex-col gap-[16px] w-[198px]">
-              <h3 className="text-white text-[18px] md:text-[20px] font-semibold leading-[20px]">
-                Our Expertise
+          {/* Columns 2-4 of Row 1 */}
+          {footerColumns.slice(1, 4).map((column, idx) => (
+            <div key={idx} className="flex flex-col gap-[24px]">
+              <h3 className="text-white text-[18px] md:text-[20px] font-semibold leading-[20px] border-b border-white/10 pb-4">
+                {column.title}
               </h3>
               <ul className="flex flex-col gap-[12px]">
-                {[
-                  { name: 'Arbitration', href: '/services/arbitration' },
-                  { name: 'Banking and Finance', href: '/services/banking-and-finance' },
-                  { name: 'Civil', href: '/services/civil' },
-                  { name: 'Corporate', href: '/services/corporate' },
-                  { name: 'Criminal Law', href: '/services/criminal-law' },
-                  { name: 'Cyber', href: '/services/cyber' },
-                ].map((service) => (
-                  <li key={service.href}>
-                    <Link 
-                      href={service.href}
-                      className="text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors"
-                    >
-                      {service.name}
-                    </Link>
+                {column.links.map((link) => (
+                  <li key={link.href}>
+                    {link.external ? (
+                      <a 
+                        href={link.href} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors"
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link 
+                        href={link.href}
+                        className="text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
             </div>
-
-            {/* Our Expertise Column 2 */}
-            <div className="flex flex-col gap-[16px] w-[198px]">
-              {/* Invisible header for alignment */}
-              <h3 className="text-white text-[18px] md:text-[20px] font-semibold leading-[20px] opacity-0 select-none hidden md:block">
-                Our Expertise
-              </h3>
-              <ul className="flex flex-col gap-[12px]">
-                {[
-                  { name: 'Drafting', href: '/services/drafting' },
-                  { name: 'Entertainment', href: '/services/entertainment' },
-                  { name: 'Intellectual Property Rights', href: '/services/intellectual-property-rights' },
-                  { name: 'Litigation', href: '/services/litigation' },
-                  { name: 'Legal Notice Delhi', href: '/send-legal-notice-in-delhi' },
-                  { name: 'Legal Notice Gurugram', href: '/send-legal-notice-in-gurugram' },
-                  { name: 'Legal Notice Noida', href: '/send-legal-notice-in-noida' },
-                  { name: 'Loan Settlement', href: '/services/loan-settlement' },
-                  { name: 'Real Estate', href: '/services/real-estate' },
-                  { name: 'Success Stories', href: '/success-stories' },
-                ].map((service) => (
-                  <li key={service.href}>
-                    <Link 
-                      href={service.href}
-                      className="text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors"
-                    >
-                      {service.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-         
-            {/* Contact Details */}
-            <div className="flex flex-col gap-[16px] w-[252px]">
-              <h3 className="text-white text-[18px] md:text-[20px] font-semibold leading-[20px]">
-                Contact Details
-              </h3>
-              <div className="flex flex-col gap-[12px]">
-                <a 
-                  href="https://maps.app.goo.gl/C11eKgqm46oUwdio9" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors block"
-                >
-                  2493AP, Block G, Sushant Lok 2,Sector 57, Gurugram, Haryana – 122001
-                </a>
-                <a 
-                  href="tel:+918700343611" 
-                  className="text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors block"
-                >
-                  +91 87003 43611
-                </a>
-                <a 
-                  href="mailto:notify@amalegalsolutions.com" 
-                  className="text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors block"
-                >
-                  notify@amalegalsolutions.com
-                </a>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
 
-        {/* Divider */}
-        <div className="w-full h-[2px] bg-gradient-to-r from-[rgba(53,43,32,0.35)] via-[rgba(255,255,255,0.35)] to-[rgba(48,38,28,0.35)] mb-[24px]" />
+        {/* Row 2 Content */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[48px] md:gap-[40px] mb-[48px]">
+          {footerColumns.slice(4).map((column, idx) => (
+            <div key={idx} className="flex flex-col gap-[24px]">
+              <h3 className="text-white text-[18px] md:text-[20px] font-semibold leading-[20px] border-b border-white/10 pb-4">
+                {column.title}
+              </h3>
+              <ul className="flex flex-col gap-[12px]">
+                {column.links.map((link) => (
+                  <li key={link.href}>
+                    <Link 
+                      href={link.href}
+                      className="text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Apps & Socials Bottom Bar */}
+        <div className="flex flex-col md:flex-row justify-between items-center py-8 border-t border-white/10 gap-8">
+           <div className="flex items-center gap-[12px]">
+              <Link href="https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions" target="_blank">
+                <Image src="/newAssets/appstore.svg" alt="Play Store" width={130} height={36} className="w-[130px] h-[36px]" />
+              </Link>
+              <Link href="https://apps.apple.com/in/app/ama-legal-solutions/id6755156186" target="_blank">
+                <Image src="/newAssets/playstore.svg" alt="App Store" width={130} height={36} className="w-[130px] h-[36px]" />
+              </Link>
+           </div>
+           
+           <div className="flex items-center gap-6">
+              <a href="https://www.instagram.com/amalegalsolutions/" target="_blank" className="text-white/60 hover:text-white"><FaInstagram size={20} /></a>
+              <a href="https://www.facebook.com/amalegalsolutions/" target="_blank" className="text-white/60 hover:text-white"><FaFacebookF size={20} /></a>
+              <a href="https://in.linkedin.com/company/ama-legal-solutions" target="_blank" className="text-white/60 hover:text-white"><FaLinkedinIn size={20} /></a>
+              <a href="https://www.youtube.com/@amalegalsolution" target="_blank" className="text-white/60 hover:text-white"><FaYoutube size={20} /></a>
+           </div>
+        </div>
 
         {/* Copyright */}
-        <p className="text-[rgba(255,255,255,0.75)] text-[12px] md:text-[14px] font-light leading-[14px] text-center md:text-left">
+        <p className="text-[rgba(255,255,255,0.75)] text-[12px] md:text-[14px] font-light leading-[14px] text-center mt-8">
           © 2025 AMA Legal Solutions. All Rights Reserved.
         </p>
       </div>
     </footer>
   );
 };
+
 
 export default Footer;
