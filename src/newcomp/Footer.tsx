@@ -87,8 +87,9 @@ const Footer = () => {
         { name: 'Expert Vakil Search', href: '/services/expert-vakil-search-for-trademark-registration' },
         { name: 'Company Registration', href: '/services/quick-company-registration-and-trademark' },
         { name: 'IPIndia Guide', href: '/services/how-to-register-trademark-with-ipindia' },
-        { name: 'Trademark Delhi', href: '/services/intellectual-property-rights/Delhi' },
-        { name: 'Trademark Maharashtra', href: '/services/intellectual-property-rights/Maharashtra' },
+        {name:"Trademark Search",href:"/services/trademark-search"},
+        {name:"Trademark Status",href:"/services/trademark-status"},
+        {name:"Comprehensive Guide Trademark Registration India",href:"/services/comprehensive-guide-trademark-registration-india"},
       ]
     },
     {
