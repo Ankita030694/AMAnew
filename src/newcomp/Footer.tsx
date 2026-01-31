@@ -90,6 +90,8 @@ const Footer = () => {
         {name:"Trademark Search",href:"/services/trademark-search"},
         {name:"Trademark Status",href:"/services/trademark-status"},
         {name:"Comprehensive Guide Trademark Registration India",href:"/services/comprehensive-guide-trademark-registration-india"},
+        {name:"Trademark Registration Fees",href:"/trademark-registration-fees"},
+        {name:"MSME Registration",href:"/msme-registration"},
       ]
     },
     {
