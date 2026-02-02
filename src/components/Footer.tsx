@@ -199,6 +199,8 @@ export default function Footer() {
                     { href: "/services/loan-settlement/lok-adalat", label: "Lok Adalat Settlement" },
                     { href: "/services/loan-settlement/what-is-loan-settlement", label: "What is Loan Settlement?" },
                     { href: "/services/intellectual-property-rights", label: "Intellectual Property Rights" },
+                    { href: "/trademark-registration-fees", label: "Trademark Registration Fees" },
+                    { href: "/trademark-objection-reply-procedure", label: "Trademark Objection Reply" },
                     { href: "/services/entertainment", label: "Entertainment Law" },
                     { href: "/services/real-estate", label: "Real Estate" },
                     { href: "/services/criminal-law", label: "Criminal Law" }

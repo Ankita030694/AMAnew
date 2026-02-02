@@ -92,6 +92,11 @@ const Footer = () => {
         {name:"Comprehensive Guide Trademark Registration India",href:"/services/comprehensive-guide-trademark-registration-india"},
         {name:"Trademark Registration Fees",href:"/trademark-registration-fees"},
         {name:"MSME Registration",href:"/msme-registration"},
+        {name:"DIY Trademark Registration",href:"/can-i-register-my-trademark-by-myself"},
+        {name:"Required Documents for Trademark",href:"/what-documents-are-required-for-trademark-registration"},
+        {name:"GST for Trademarks",href:"/is-gst-required-for-trademarks"},
+        {name:"TM vs R: Which is Better?",href:"/which-is-better-tm-or-r"},
+        {name:"Trademark Objection Reply Procedure",href:"/trademark-objection-reply-procedure"},
       ]
     },
     {
