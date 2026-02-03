@@ -90,25 +90,25 @@ const Footer = () => {
         {name:"Trademark Search",href:"/services/trademark-search"},
         {name:"Trademark Status",href:"/services/trademark-status"},
         {name:"Comprehensive Guide Trademark Registration India",href:"/services/comprehensive-guide-trademark-registration-india"},
-        {name:"Trademark Registration Fees",href:"/trademark-registration-fees"},
+         {name:"Validity of Trademark Registration",href:"/validity-of-trademark-registration"},
+        {name:"Trademark Registration Timeline",href:"/how-much-time-it-takes-to-get-your-trademark-registered"},
+        
+      ]
+    },
+    {
+      title: "Additional Services",
+      links: [
+       {name:"Trademark Registration Fees",href:"/trademark-registration-fees"},
         {name:"MSME Registration",href:"/msme-registration"},
         {name:"DIY Trademark Registration",href:"/can-i-register-my-trademark-by-myself"},
         {name:"Required Documents for Trademark",href:"/what-documents-are-required-for-trademark-registration"},
         {name:"GST for Trademarks",href:"/is-gst-required-for-trademarks"},
         {name:"TM vs R: Which is Better?",href:"/which-is-better-tm-or-r"},
         {name:"Trademark Objection Reply Procedure",href:"/trademark-objection-reply-procedure"},
-      ]
-    },
-    {
-      title: "Additional Services",
-      links: [
-        { name: 'Entertainment Law', href: '/services/entertainment' },
-        { name: 'Litigation Support', href: '/services/litigation' },
-        { name: 'Real Estate Law', href: '/services/real-estate' },
-        { name: 'NCLT Matters', href: '/services/corporate' },
-        { name: 'RERA Compliance', href: '/services/real-estate' },
-        { name: 'High Court Advocacy', href: '/services/litigation/delhi' },
-        { name: 'Consumer Protection', href: '/services/civil' },
+        {name:"Can I Sell Without Trademark?",href:"/can-i-sell-my-products-without-trademark"},
+        {name:"How to Get Trademark Certificate",href:"/how-can-i-get-trademark-certificate"},
+        {name:"Registration Office Locations",href:"/where-to-register-trademark"},
+       
       ]
     },
   ];
