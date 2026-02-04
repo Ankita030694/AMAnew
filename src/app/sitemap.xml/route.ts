@@ -20,6 +20,7 @@ export async function GET(): Promise<Response> {
     '/amalive',
     '/ask-me-anything',
     '/locations',
+    '/best-advocate-near-me',
     '/locations/bengaluru',
     '/locations/chennai',
     '/locations/jaipur',

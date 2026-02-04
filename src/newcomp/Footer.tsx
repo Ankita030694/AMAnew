@@ -108,6 +108,7 @@ const Footer = () => {
         {name:"Can I Sell Without Trademark?",href:"/can-i-sell-my-products-without-trademark"},
         {name:"How to Get Trademark Certificate",href:"/how-can-i-get-trademark-certificate"},
         {name:"Registration Office Locations",href:"/where-to-register-trademark"},
+        {name:"Best Advocate Near Me",href:"/best-advocate-near-me"},
        
       ]
     },
