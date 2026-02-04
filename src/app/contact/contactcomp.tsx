@@ -18,11 +18,25 @@ import Navbar from "@/newcomp/Navbar";
 // Generate array of logo paths: 1.png to 17.png
 const clientLogos = Array.from({ length: 17 }, (_, i) => `/newAssets/clientLogos/${i + 1}.png`);
 
+const SERVICE_OPTIONS = [
+  { label: "Loan Settlement", description: "Negotiating and settling outstanding debts and controlling harassment." },
+  { label: "IPR/Trademark/Copyright/Patent", description: "Protecting intellectual property rights." },
+  { label: "Arbitration", description: "Private dispute resolution outside court." },
+  { label: "Drafting", description: "Creating legal documents and contracts." },
+  { label: "Real Estate", description: "Property disputes, buying/selling legalities." },
+  { label: "Entertainment Law", description: "Media, film, and artist legal matters." },
+  { label: "Corporate Law", description: "Business formation, compliance, and M&A." },
+  { label: "Cyber and IT Law", description: "Online crimes, data privacy, and digital rights." },
+  { label: "Litigation", description: "Court representation for civil/criminal cases." },
+  { label: "Civil/Family/Divorce", description: "Divorce, custody, and family disputes." },
+];
+
 const ContactComp = () => {
   const [formState, setFormState] = useState({
     name: "",
     email: "",
     phone: "",
+    serviceRequired: "",
     message: "",
   });
 
@@ -30,6 +44,7 @@ const ContactComp = () => {
     name: "",
     email: "",
     phone: "",
+    serviceRequired: "",
     message: "",
   });
 
@@ -67,8 +82,13 @@ const ContactComp = () => {
     return "";
   };
 
+  const validateService = (service: string) => {
+    if (!service) return "Please select a service";
+    return "";
+  };
+
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
     let newValue = value;
@@ -94,16 +114,18 @@ const ContactComp = () => {
     const nameError = validateName(formState.name);
     const emailError = validateEmail(formState.email);
     const phoneError = validatePhone(formState.phone);
+    const serviceError = validateService(formState.serviceRequired);
     const messageError = validateMessage(formState.message);
 
     setErrors({
       name: nameError,
       email: emailError,
       phone: phoneError,
+      serviceRequired: serviceError,
       message: messageError,
     });
 
-    return !(nameError || emailError || phoneError || messageError);
+    return !(nameError || emailError || phoneError || serviceError || messageError);
   };
 
   const validateAndSaveForm = async () => {
@@ -118,6 +140,24 @@ const ContactComp = () => {
         ...formState,
         timestamp: serverTimestamp()
       });
+
+      // Send WATI Message
+      try {
+        await fetch("/api/send-wati-message", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            phoneNumber: formState.phone,
+            name: formState.name,
+          }),
+        });
+      } catch (watiError) {
+        console.error("Error sending WATI message:", watiError);
+        // We don't block the UI success state if WATI fails
+      }
+
       setSubmitted(true);
 
       setTimeout(() => {
@@ -126,6 +166,7 @@ const ContactComp = () => {
           name: "",
           email: "",
           phone: "",
+          serviceRequired: "",
           message: "",
         });
       }, 3000);
@@ -384,6 +425,43 @@ const ContactComp = () => {
                     />
                     {errors.phone && (
                       <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                    )}
+                  </div>
+
+                  <div className="relative">
+                    <div className="relative">
+                      <select
+                        name="serviceRequired"
+                        value={formState.serviceRequired}
+                        onChange={handleChange}
+                        required
+                        onFocus={() => setFocusedField("serviceRequired")}
+                        onBlur={() => {
+                          setFocusedField(null);
+                          setErrors({
+                            ...errors,
+                            serviceRequired: validateService(formState.serviceRequired),
+                          });
+                        }}
+                        className={`w-full bg-[#F8F5EC] text-[#30261C] px-4 py-3 rounded-lg border appearance-none ${
+                          errors.serviceRequired ? "border-red-500" : "border-gray-200"
+                        } focus:outline-none focus:border-[#D2A02A] transition-colors`}
+                      >
+                        <option value="" disabled>Select Service Required</option>
+                        {SERVICE_OPTIONS.map((service) => (
+                          <option key={service.label} value={service.label}>
+                            {service.label} — {service.description}
+                          </option>
+                        ))}
+                      </select>
+                       <div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                        <svg className="w-4 h-4 text-[#30261C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </div>
+                    {errors.serviceRequired && (
+                      <p className="text-red-500 text-sm mt-1">{errors.serviceRequired}</p>
                     )}
                   </div>
 
