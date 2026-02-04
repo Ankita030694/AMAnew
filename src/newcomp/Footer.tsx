@@ -109,6 +109,10 @@ const Footer = () => {
         {name:"How to Get Trademark Certificate",href:"/how-can-i-get-trademark-certificate"},
         {name:"Registration Office Locations",href:"/where-to-register-trademark"},
         {name:"Best Advocate Near Me",href:"/best-advocate-near-me"},
+        {name:"Best Law Firm Near Me",href:"/best-law-firm-near-me"},
+        {name:"Legal Services Near Me",href:"/legal-services-near-me"},
+        {name:"Delhi NCR Law Firm",href:"/delhi-ncr-law-firm"},
+        {name:"Job Lost Loan Settlement",href:"/job-lost-loan-settlement"},
        
       ]
     },
