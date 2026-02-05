@@ -15,6 +15,7 @@ interface TableData {
   email: string;
   phone: string;
   message: string;
+  serviceRequired: string;
   timestamp: string;
   originalTimestamp: any;
 }
@@ -79,6 +80,7 @@ const AdminDashboard = () => {
             email: docData.email || '-',
             message: docData.message || '-',
             phone: docData.phone || '-',
+            serviceRequired: docData.serviceRequired || '-',
             timestamp: timestamp,
             originalTimestamp: originalTimestamp // Keep original for sorting
           };
@@ -256,6 +258,9 @@ const AdminDashboard = () => {
                     <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider w-24">
                       Phone
                     </th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider w-24">
+                      Service Required
+                    </th>
                     <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">
                       Message
                     </th>
@@ -282,6 +287,9 @@ const AdminDashboard = () => {
                       </td>
                       <td className="px-4 py-4 text-sm text-[#5A4C33]">
                         {truncateText(row.phone, 15)}
+                      </td>
+                      <td className="px-4 py-4 text-sm text-[#5A4C33]">
+                        {truncateText(row.serviceRequired, 20)}
                       </td>
                       <td className="px-4 py-4 text-sm text-[#5A4C33]">
                         {truncateText(row.message, 40)}
@@ -392,6 +400,13 @@ const AdminDashboard = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-2">Date & Time</label>
                   <div className="p-3 bg-gray-50 rounded-md text-[#5A4C33]">
                     {selectedLead.timestamp}
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Service Required</label>
+                  <div className="p-3 bg-gray-50 rounded-md text-[#5A4C33]">
+                    {selectedLead.serviceRequired}
                   </div>
                 </div>
               </div>
