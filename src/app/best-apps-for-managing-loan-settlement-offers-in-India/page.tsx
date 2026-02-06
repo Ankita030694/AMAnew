@@ -140,25 +140,21 @@ const faqSchema = {
 
 const reviewSchema = {
   "@context": "https://schema.org",
-  "@type": "AggregateRating",
-  "itemReviewed": {
-    "@type": "Service",
-    "name": "Loan Settlement Consultation",
-    "provider": {
-      "@type": "Organization",
-      "name": "AMA Legal Solutions"
-    }
+  "@type": "Service",
+  "name": "Loan Settlement Consultation",
+  "provider": {
+    "@type": "Organization",
+    "name": "AMA Legal Solutions",
+    "url": "https://amalegalsolutions.com"
   },
-  "ratingValue": "4.9",
-  "reviewCount": "1250",
-  "bestRating": "5",
-  "worstRating": "1"
-};
-
-const individualReviewsSchema = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "itemListElement": [
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "1250",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
     {
       "@type": "Review",
       "author": { "@type": "Person", "name": "Rahul Sharma" },
@@ -221,11 +217,6 @@ export default function BestAppsForLoanSettlementPage() {
         id="review-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-      />
-      <Script
-        id="individual-reviews-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(individualReviewsSchema) }}
       />
 
       <div className="bg-gray-50 min-h-screen font-sans text-gray-800">

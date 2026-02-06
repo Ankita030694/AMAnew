@@ -164,7 +164,7 @@ Don't leave the future of your brand to chance or automated algorithms. Partner 
 };
 
 // Sitemap logic simplified for render
-const sitemapSchema = {
+const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Trademark Registration Agency Near Me: Expert IP Services in 2026",
@@ -202,8 +202,13 @@ const faqSchema = {
 // Review Schema
 const reviewSchema = {
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "Service",
   "name": "Trademark Registration Agency Services",
+  "provider": {
+    "@type": "Organization",
+    "name": "AMA Legal Solutions",
+    "url": "https://amalegalsolutions.com"
+  },
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
@@ -212,7 +217,7 @@ const reviewSchema = {
   "review": [
     {
       "@type": "Review",
-      "author": "Dr. Ananya Sharma",
+      "author": { "@type": "Person", "name": "Dr. Ananya Sharma" },
       "reviewRating": {
         "@type": "Rating",
         "ratingValue": "5"
@@ -283,7 +288,7 @@ export default function TrademarkAgencyPage() {
           "item": `https://amalegalsolutions.com${item.href}`
         }))
       }) }} />
-      <Script id="article-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(sitemapSchema) }} />
+      <Script id="article-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Script id="review-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
 

@@ -336,8 +336,13 @@ const articleSchema = {
 
 const reviewSchema = {
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "Service",
   "name": "Trademark Opposition Services",
+  "provider": {
+    "@type": "Organization",
+    "name": "AMA Legal Solutions",
+    "url": "https://amalegalsolutions.com"
+  },
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
@@ -346,7 +351,7 @@ const reviewSchema = {
   "review": [
     {
       "@type": "Review",
-      "author": "Dr. Sandeep K.",
+      "author": { "@type": "Person", "name": "Dr. Sandeep K." },
       "reviewRating": {
         "@type": "Rating",
         "ratingValue": "5"
@@ -355,7 +360,7 @@ const reviewSchema = {
     },
     {
       "@type": "Review",
-      "author": "Anjali M.",
+      "author": { "@type": "Person", "name": "Anjali M." },
       "reviewRating": {
         "@type": "Rating",
         "ratingValue": "5"
