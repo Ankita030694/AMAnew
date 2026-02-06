@@ -196,14 +196,7 @@ export default function Footer() {
                   {[
                     { href: "/services/banking-and-finance", label: "Banking and Finance" },
                     { href: "/services/loan-settlement", label: "Loan Settlement" },
-                    { href: "/services/loan-settlement/lok-adalat", label: "Lok Adalat Settlement" },
-                    { href: "/services/loan-settlement/what-is-loan-settlement", label: "What is Loan Settlement?" },
-                    { href: "/services/intellectual-property-rights", label: "Intellectual Property Rights" },
-                    { href: "/trademark-registration-fees", label: "Trademark Registration Fees" },
-                    { href: "/trademark-objection-reply-procedure", label: "Trademark Objection Reply" },
-                    { href: "/services/entertainment", label: "Entertainment Law" },
-                    { href: "/services/real-estate", label: "Real Estate" },
-                    { href: "/services/criminal-law", label: "Criminal Law" }
+                    { href: "/services/loan-settlement/lok-adalat", label: "Lok Adalat Settlement" }
                   ].map((service) => (
                     <li key={service.href}>
                       <Link
@@ -217,6 +210,41 @@ export default function Footer() {
                   ))}
                 </ul>
               </div>
+            </div>
+          </div>
+
+          {/* Queries Section */}
+          <div className="mt-12 pt-8 border-t border-[#1a1a1a]/10">
+            <h3 className="text-2xl font-bold text-[#1a1a1a] relative mb-8">
+              Queries
+              <div className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-[#1a1a1a] to-transparent rounded-full"></div>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { href: "/services/loan-settlement/what-is-loan-settlement", label: "What is Loan Settlement?" },
+                { href: "/services/intellectual-property-rights", label: "Intellectual Property Rights" },
+                { href: "/trademark-registration-fees", label: "Trademark Registration Fees" },
+                { href: "/trademark-objection-reply-procedure", label: "Trademark Objection Reply" },
+                { href: "/services/entertainment", label: "Entertainment Law" },
+                { href: "/services/real-estate", label: "Real Estate" },
+                { href: "/services/criminal-law", label: "Criminal Law" },
+    { href: "/how-to-negotiate-a-loan-settlement-with-lenders-online", label: "How to Negotiate Loan Settlement" },
+    { href: "/top-loan-settlement-services-with-good-customer-reviews", label: "Top Loan Settlement Services" },
+    { href: "/steps-to-trademark-registration", label: "Steps to Trademark Registration" },
+    { href: "/best-apps-for-managing-loan-settlement-offers-in-India", label: "Best Loan Settlement Apps" },
+    { href: "/trademark-opposition-procedure", label: "Trademark Opposition Procedure" }
+              ].map((query) => (
+                <Link
+                  key={query.href}
+                  href={query.href}
+                  className="group flex items-center p-3 rounded-lg bg-white/10 hover:bg-white/20 border border-white/10 hover:border-white/20 transition-all duration-300"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1a1a1a] mr-3 group-hover:scale-150 transition-transform duration-300"></span>
+                  <span className="text-sm font-medium text-[#2a2a2a] group-hover:text-[#1a1a1a] transition-colors duration-300">
+                    {query.label}
+                  </span>
+                </Link>
+              ))}
             </div>
           </div>
         </div>

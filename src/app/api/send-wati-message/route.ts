@@ -24,7 +24,7 @@ export async function POST(request: Request) {
             return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
         }
 
-        const templateName = 'ama_legal_start_message';
+        const templateName = 'ama_legal_query';
         const targetUrl = `${WATI_API_URL}/sendTemplateMessage?whatsappNumber=${formattedPhone}`;
 
         console.log(`Sending WATI message to: ${targetUrl}`);

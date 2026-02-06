@@ -98,7 +98,7 @@ const Footer = () => {
     {
       title: "Additional Services",
       links: [
-       {name:"Trademark Registration Fees",href:"/trademark-registration-fees"},
+        {name:"Trademark Registration Fees",href:"/trademark-registration-fees"},
         {name:"MSME Registration",href:"/msme-registration"},
         {name:"DIY Trademark Registration",href:"/can-i-register-my-trademark-by-myself"},
         {name:"Required Documents for Trademark",href:"/what-documents-are-required-for-trademark-registration"},
@@ -106,6 +106,11 @@ const Footer = () => {
         {name:"TM vs R: Which is Better?",href:"/which-is-better-tm-or-r"},
         {name:"Trademark Objection Reply Procedure",href:"/trademark-objection-reply-procedure"},
         {name:"Can I Sell Without Trademark?",href:"/can-i-sell-my-products-without-trademark"},
+      ]
+    },
+    {
+      title: "Queries",
+      links: [
         {name:"How to Get Trademark Certificate",href:"/how-can-i-get-trademark-certificate"},
         {name:"Registration Office Locations",href:"/where-to-register-trademark"},
         {name:"Best Advocate Near Me",href:"/best-advocate-near-me"},
@@ -113,14 +118,19 @@ const Footer = () => {
         {name:"Legal Services Near Me",href:"/legal-services-near-me"},
         {name:"Delhi NCR Law Firm",href:"/delhi-ncr-law-firm"},
         {name:"Job Lost Loan Settlement",href:"/job-lost-loan-settlement"},
-       
+        {name:"How to Negotiate Loan Settlement",href:"/how-to-negotiate-a-loan-settlement-with-lenders-online"},
+        {name:"Top Loan Settlement Services",href:"/top-loan-settlement-services-with-good-customer-reviews"},
+        {name:"Steps to Trademark Registration",href:"/steps-to-trademark-registration"},
+        {name:"Best Apps for Managing Loan Settlement Offers in India",href:"/best-apps-for-managing-loan-settlement-offers-in-India"},
+        {name:"Trademark Agency Near Me",href:"/trademark-registration-agency-near-me"},
+        {name:"Trademark Opposition Procedure",href:"/trademark-opposition-procedure"},
       ]
-    },
+    }
   ];
 
   return (
     <footer className="relative py-[64px] px-[24px] md:px-[72px] bg-[#30261C]">
-      <div className="max-w-[1600px] mx-auto relative">
+      <div className="max-w-8xl mx-auto relative">
         {/* Radial Gradient */}
         <div 
           className="absolute top-1/2 left-1/2 md:left-[40%] -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] pointer-events-none"
@@ -192,9 +202,11 @@ const Footer = () => {
           ))}
         </div>
 
+
+
         {/* Row 2 Content */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[48px] md:gap-[40px] mb-[48px]">
-          {footerColumns.slice(4).map((column, idx) => (
+          {footerColumns.slice(4, 8).map((column, idx) => (
             <div key={idx} className="flex flex-col gap-[24px]">
               <h3 className="text-white text-[18px] md:text-[20px] font-semibold leading-[20px] border-b border-white/10 pb-4">
                 {column.title}
@@ -213,6 +225,25 @@ const Footer = () => {
               </ul>
             </div>
           ))}
+        </div>
+
+        {/* Row 3 - Queries Grid */}
+        <div className="mb-[48px]">
+          <h3 className="text-white text-[18px] md:text-[20px] font-semibold leading-[20px] border-b border-white/10 pb-4 mb-[24px]">
+            {footerColumns[8].title}
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[24px]">
+             {footerColumns[8].links.map((link) => (
+                <div key={link.href}>
+                   <Link 
+                     href={link.href}
+                     className="text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors"
+                   >
+                     {link.name}
+                   </Link>
+                </div>
+             ))}
+          </div>
         </div>
 
         {/* Apps & Socials Bottom Bar */}
