@@ -317,8 +317,8 @@ const QuestionCard = ({ question, isOpen, onToggle, onRestrictedAction }: { ques
   );
 };
 
-export default function AmaClient() {
-  const [questions, setQuestions] = useState<Question[]>([]);
+export default function AmaClient({ initialQuestions = [] }: { initialQuestions?: Question[] }) {
+  const [questions, setQuestions] = useState<Question[]>(initialQuestions);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [openQuestionId, setOpenQuestionId] = useState<string | null>(null);
