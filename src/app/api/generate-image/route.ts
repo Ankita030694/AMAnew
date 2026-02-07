@@ -22,6 +22,10 @@ export async function POST(request: Request) {
             quality: "standard",
         });
 
+        if (!response.data || response.data.length === 0) {
+            throw new Error('No data returned from OpenAI');
+        }
+
         const imageUrl = response.data[0]?.url;
 
         if (!imageUrl) {
