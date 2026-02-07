@@ -124,6 +124,10 @@ const Footer = () => {
         {name:"Best Apps for Managing Loan Settlement Offers in India",href:"/best-apps-for-managing-loan-settlement-offers-in-India"},
         {name:"Trademark Agency Near Me",href:"/trademark-registration-agency-near-me"},
         {name:"Trademark Opposition Procedure",href:"/trademark-opposition-procedure"},
+        {name:"Is Trademark Mandatory for Amazon",href:"/is-trademark-registration-mandatory-to-sell-on-amazon"},
+        {name:"Trademark Infringement Without Registration",href:"/trademark-infringement-without-registration"},
+        {name:"Name vs Logo Trademark",href:"/is-registering-a-name-instead-of-the-logo-enough"},
+        {name:"Is Trademark Internationally Valid",href:"/is-trademark-internationally-valid"},
       ]
     }
   ];

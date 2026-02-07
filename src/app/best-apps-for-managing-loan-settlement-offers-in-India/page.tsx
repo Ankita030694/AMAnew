@@ -140,13 +140,8 @@ const faqSchema = {
 
 const reviewSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Loan Settlement Consultation",
-  "provider": {
-    "@type": "Organization",
-    "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
-  },
+  "@type": "Product",
+  "name": "Loan Settlement Services",
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",

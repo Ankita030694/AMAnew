@@ -82,6 +82,14 @@ const BlogsDashboard = () => {
   const [secondaryKeyword, setSecondaryKeyword] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
 
+  // New Image Generation and Content Expansion state
+  const [imagePrompt, setImagePrompt] = useState('');
+  const [isGeneratingImage, setIsGeneratingImage] = useState(false);
+  const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(null);
+  const [isUploadingGenerated, setIsUploadingGenerated] = useState(false);
+  const [expansionPrompt, setExpansionPrompt] = useState('');
+  const [isExpanding, setIsExpanding] = useState(false);
+
   // Calculate the total number of pages
   const totalPages = Math.ceil(blogs.length / itemsPerPage);
 
@@ -425,12 +433,128 @@ const BlogsDashboard = () => {
         setNewBlog(prev => ({ ...prev, slug: generatedSlug }));
       }
       
+      // Also set the image prompt if suggested
+      if (generatedData.suggestedImagePrompt) {
+        setImagePrompt(generatedData.suggestedImagePrompt);
+      }
+      
       alert('Blog generated successfully! Please review and add an image.');
     } catch (error) {
       console.error('Error generating blog:', error);
       alert('Failed to generate blog. Please try again.');
     } finally {
       setIsGenerating(false);
+    }
+  };
+
+  const handleGenerateImage = async () => {
+    if (!imagePrompt.trim()) {
+      alert('Please enter an image prompt.');
+      return;
+    }
+
+    try {
+      setIsGeneratingImage(true);
+      const response = await fetch('/api/generate-image', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ prompt: imagePrompt }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to generate image');
+      }
+
+      const data = await response.json();
+      setGeneratedImageUrl(data.imageUrl);
+    } catch (error) {
+      console.error('Error generating image:', error);
+      alert('Failed to generate image. Please try again.');
+    } finally {
+      setIsGeneratingImage(false);
+    }
+  };
+
+  const handleUploadGeneratedImage = async () => {
+    if (!generatedImageUrl) return;
+
+    try {
+      setIsUploadingGenerated(true);
+      
+      // Fetch the image from the URL
+      const response = await fetch(generatedImageUrl);
+      const blob = await response.blob();
+      const file = new File([blob], `generated_${Date.now()}.png`, { type: 'image/png' });
+
+      // Use the existing upload logic (indirectly or directly)
+      // Since handleFileUpload expects an event, we should extract the core upload logic
+      // But for simplicity, we'll repeat the core Firebase upload here
+      
+      const storageRef = ref(storage, `blog-images/${Date.now()}_generated.png`);
+      const snapshot = await uploadBytes(storageRef, file);
+      const downloadURL = await getDownloadURL(snapshot.ref);
+
+      setNewBlog(prevState => ({
+        ...prevState,
+        image: downloadURL
+      }));
+      setImagePreview(downloadURL);
+      setGeneratedImageUrl(null); // Clear the preview once uploaded
+      alert('Image uploaded to Firebase successfully!');
+    } catch (error) {
+      console.error('Error uploading generated image:', error);
+      alert('Failed to upload image to Firebase.');
+    } finally {
+      setIsUploadingGenerated(false);
+    }
+  };
+
+  const handleExpandContent = async () => {
+    if (!newBlog.description) {
+      alert('Please have some content in the editor first.');
+      return;
+    }
+
+    try {
+      setIsExpanding(true);
+      const response = await fetch('/api/expand-content', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          content: newBlog.description, 
+          prompt: expansionPrompt 
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to expand content');
+      }
+
+      const reader = response.body?.getReader();
+      if (!reader) throw new Error('No reader');
+
+      let expandedContent = '';
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        expandedContent += new TextDecoder().decode(value);
+      }
+
+      setNewBlog(prevState => ({
+        ...prevState,
+        description: expandedContent
+      }));
+      
+      alert('Content expanded successfully! (Targeting 5000 words)');
+    } catch (error) {
+      console.error('Error expanding content:', error);
+      alert('Failed to expand content.');
+    } finally {
+      setIsExpanding(false);
     }
   };
   
@@ -1102,7 +1226,7 @@ const BlogsDashboard = () => {
                         
                         {/* Image preview */}
                         {(imagePreview || newBlog.image) && (
-                          <div className="mt-2">
+                          <div className="mt-2 text-black">
                             <img 
                               src={imagePreview || newBlog.image} 
                               alt="Blog image preview" 
@@ -1110,6 +1234,44 @@ const BlogsDashboard = () => {
                             />
                           </div>
                         )}
+                        
+                        {/* AI Image Generation Prompt */}
+                        <div className="mt-4 p-3 bg-purple-50 border border-purple-200 rounded-md">
+                          <label className="block text-xs font-medium text-purple-800 mb-1">AI Image Generation Prompt</label>
+                          <textarea
+                            value={imagePrompt}
+                            onChange={(e) => setImagePrompt(e.target.value)}
+                            rows={3}
+                            className="text-black w-full px-3 py-2 text-sm border border-purple-200 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"
+                            placeholder="Describe the image you want to generate..."
+                          />
+                          <button
+                            type="button"
+                            onClick={handleGenerateImage}
+                            disabled={isGeneratingImage || !imagePrompt}
+                            className="mt-2 w-full px-4 py-2 bg-purple-600 text-white rounded-md text-sm font-medium disabled:bg-purple-300"
+                          >
+                            {isGeneratingImage ? 'Generating Image...' : 'Generate Image with DALL-E'}
+                          </button>
+                          
+                          {generatedImageUrl && (
+                            <div className="mt-4 flex flex-col items-center">
+                              <img 
+                                src={generatedImageUrl} 
+                                alt="Generated" 
+                                className="w-full max-w-xs rounded-lg shadow-lg mb-2"
+                              />
+                              <button
+                                type="button"
+                                onClick={handleUploadGeneratedImage}
+                                disabled={isUploadingGenerated}
+                                className="w-full px-4 py-2 bg-green-600 text-white rounded-md text-sm font-medium"
+                              >
+                                {isUploadingGenerated ? 'Uploading...' : 'Upload this Image to Firebase'}
+                              </button>
+                            </div>
+                          )}
+                        </div>
                         
                         <input
                           type="hidden"
@@ -1284,7 +1446,31 @@ const BlogsDashboard = () => {
                         />
                       )}
                     </div>
-                    <p className="mt-1 text-xs text-gray-500">Use the toolbar above to format your content.</p>
+                    
+                    {/* Content Expansion Section */}
+                    <div className="mt-4 p-4 bg-orange-50 border border-orange-200 rounded-md">
+                      <h3 className="text-sm font-medium text-orange-800 mb-2 flex items-center">
+                        <FontAwesomeIcon icon={faMagic} className="mr-2" />
+                        Expand Content to 5000+ Words
+                      </h3>
+                      <textarea
+                        value={expansionPrompt}
+                        onChange={(e) => setExpansionPrompt(e.target.value)}
+                        rows={3}
+                        className="text-black w-full px-3 py-2 text-sm border border-orange-200 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400"
+                        placeholder="Instructions for expansion (e.g., 'Add more case studies and deep legal analysis regarding Section 138')"
+                      />
+                      <button
+                        type="button"
+                        onClick={handleExpandContent}
+                        disabled={isExpanding || !newBlog.description}
+                        className="mt-2 w-full px-4 py-2 bg-orange-600 text-white rounded-md text-sm font-medium disabled:bg-orange-300"
+                      >
+                        {isExpanding ? 'Expanding content (please wait, this take a while)...' : 'Expand Content to 5000 Words'}
+                      </button>
+                    </div>
+                    
+                    <p className="mt-1 text-xs text-gray-500 text-black">Use the toolbar above to format your content.</p>
                   </div>
                   
                   <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-md">

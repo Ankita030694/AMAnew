@@ -232,7 +232,11 @@ export default function Footer() {
     { href: "/top-loan-settlement-services-with-good-customer-reviews", label: "Top Loan Settlement Services" },
     { href: "/steps-to-trademark-registration", label: "Steps to Trademark Registration" },
     { href: "/best-apps-for-managing-loan-settlement-offers-in-India", label: "Best Loan Settlement Apps" },
-    { href: "/trademark-opposition-procedure", label: "Trademark Opposition Procedure" }
+    { href: "/trademark-opposition-procedure", label: "Trademark Opposition Procedure" },
+    { href: "/is-trademark-registration-mandatory-to-sell-on-amazon", label: "Is Trademark Mandatory for Amazon" },
+    { href: "/trademark-infringement-without-registration", label: "Trademark Infringement Without Registration" },
+    { href: "/is-registering-a-name-instead-of-the-logo-enough", label: "Name vs Logo Trademark" },
+    { href: "/is-trademark-internationally-valid", label: "Is Trademark Internationally Valid" }
               ].map((query) => (
                 <Link
                   key={query.href}

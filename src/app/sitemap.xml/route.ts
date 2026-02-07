@@ -71,6 +71,7 @@ export async function GET(): Promise<Response> {
     '/can-i-register-my-trademark-by-myself',
     '/what-documents-are-required-for-trademark-registration',
     '/is-gst-required-for-trademarks',
+    '/is-trademark-registration-mandatory-to-sell-on-amazon',
     '/which-is-better-tm-or-r',
     '/trademark-objection-reply-procedure',
     '/can-i-sell-my-products-without-trademark',
@@ -135,6 +136,9 @@ export async function GET(): Promise<Response> {
     '/services/loan-settlement/Surat',
     '/services/loan-settlement/what-is-loan-settlement',
     '/how-to-negotiate-a-loan-settlement-with-lenders-online',
+    '/trademark-infringement-without-registration',
+    '/is-registering-a-name-instead-of-the-logo-enough',
+    '/is-trademark-internationally-valid',
     '/services/loan-settlement/lok-adalat',
     // Bank Specific Pages
     '/services/loan-settlement/sbi-bank',
