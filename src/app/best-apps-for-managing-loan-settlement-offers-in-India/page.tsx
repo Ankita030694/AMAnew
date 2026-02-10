@@ -7,14 +7,14 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Best Apps for Managing Loan Settlement Offers in India (2025 Guide)",
-  description: "Discover the best apps for managing loan settlement offers in India. Compare top platforms like SingleDebt, FREED, and CredSettle to negotiate duties and regain financial freedom.",
+  description: "Discover the best apps for managing loan settlement offers in India. Compare top platforms like AMA App, SingleDebt, and FREED to negotiate duties and regain financial freedom.",
   keywords: [
     "best apps for managing loan settlement offers in India",
     "loan settlement apps India",
     "debt settlement services India",
+    "AMA App review",
     "SingleDebt review",
     "FREED loan settlement",
-    "CredSettle features",
     "how to settle loan online",
     "debt relief apps India",
     "manage loan settlement offers",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     question: "What are the best apps for managing loan settlement offers in India?",
-    answer: "Some of the top platforms and services facilitating loan settlement management in India include SingleDebt, FREED, and CredSettle. These platforms offer various features ranging from debt counselling to direct negotiation services. However, it is important to note that while 'apps' can track debts, actual settlement often requires legal intervention and expert negotiation, which is where services like AMA Legal Solutions provide a distinct advantage over purely automated apps."
+    answer: "Some of the top platforms and services facilitating loan settlement management in India include the AMA App, SingleDebt, and FREED. These platforms offer various features ranging from debt counselling to direct negotiation services."
   },
   {
     question: "Are loan settlement apps safe to use?",
@@ -173,9 +173,9 @@ export default function BestAppsForLoanSettlementPage() {
     { id: "rbi-guidelines-2025", title: "RBI 2025: Digital Lending Directions" },
     { id: "data-privacy-dpdp", title: "Data Privacy & Your Rights (DPDP Act)" },
     { id: "top-apps-review", title: "Detailed App Reviews & Comparison" },
-    { id: "singledebt", title: "1. SingleDebt (Management)" },
-    { id: "freed", title: "2. FREED (Relief & Savings)" },
-    { id: "credsettle", title: "3. CredSettle (Formal OTS)" },
+    { id: "ama-app", title: "1. AMA App (Legal & Expert Led)" },
+    { id: "singledebt", title: "2. SingleDebt (Debt Management)" },
+    { id: "freed", title: "3. FREED (Relief & Savings)" },
     { id: "moneyview-tracking", title: "4. Money View (Tracking)" },
     { id: "cooling-off-period", title: "The 2025 Cooling-Off Period" },
     { id: "digital-vs-legal", title: "Digital Tools vs. Legal Help" },
@@ -336,16 +336,66 @@ export default function BestAppsForLoanSettlementPage() {
 
                   {/* Detailed App Reviews & Comparison */}
                   <section id="top-apps-review" className="scroll-mt-32">
-                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Detailed Reviews: The Best Apps for Loan Settlement Management</h2>
-                    <p className="text-lg leading-relaxed text-gray-700 mb-8">
-                       Based on 2025 performance data and consumer protection track records, here is an in depth look at the top digital platforms facilitating debt relief in India.
-                    </p>
+                    {/* AMA App Section */}
+                    <div id="ama-app" className="mb-10 p-8 rounded-2xl bg-white border-2 border-[#D2A02A] shadow-xl relative overflow-hidden">
+                       <div className="absolute top-0 right-0 bg-[#D2A02A] text-white px-4 py-1 text-xs font-bold uppercase">Editor's Choice</div>
+                       <div className="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
+                          <div>
+                             <h3 className="text-2xl font-bold text-gray-900 flex items-center mb-2">
+                                <span className="bg-[#D2A02A] text-white text-sm font-semibold mr-3 px-3 py-1 rounded">1</span>
+                                AMA App (AMA Legal Solutions)
+                             </h3>
+                             <p className="text-[#D2A02A] font-semibold text-sm">Best for Legal-Backed Debt Settlement</p>
+                          </div>
+                          <div className="flex text-yellow-400">
+                             {[1,2,3,4,5].map(s => <svg key={s} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>)}
+                          </div>
+                       </div>
+                       <p className="text-gray-700 mb-6 text-lg leading-relaxed">
+                          The AMA App (AMA Connect) is the only platform in India that combines digital efficiency with direct legal authority. Managed by <strong>AMA Legal Solutions</strong>, it provides a comprehensive ecosystem for borrowers to resolve debt disputes, stop recovery harassment, and negotiate settlements that are legally binding and RBI-compliant.
+                       </p>
+                       <div className="grid md:grid-cols-2 gap-6 bg-gray-50 p-6 rounded-xl mb-6">
+                          <div>
+                             <h4 className="font-semibold text-gray-900 mb-3">Key Advantages:</h4>
+                             <ul className="space-y-2 text-sm text-gray-600">
+                                <li className="flex items-start"><span className="w-1.5 h-1.5 bg-[#D2A02A] rounded-full mr-2 mt-1.5 flex-shrink-0"></span> Direct access to qualified lawyers, not just agents.</li>
+                                <li className="flex items-start"><span className="w-1.5 h-1.5 bg-[#D2A02A] rounded-full mr-2 mt-1.5 flex-shrink-0"></span> Automated legal notice generation to stop bank harassment.</li>
+                                <li className="flex items-start"><span className="w-1.5 h-1.5 bg-[#D2A02A] rounded-full mr-2 mt-1.5 flex-shrink-0"></span> Real-time case tracking and document vault.</li>
+                                <li className="flex items-start"><span className="w-1.5 h-1.5 bg-[#D2A02A] rounded-full mr-2 mt-1.5 flex-shrink-0"></span> RBI-compliant settlement negotiations.</li>
+                             </ul>
+                          </div>
+                          <div className="flex flex-col justify-center gap-3">
+                             <Link href="https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions" target="_blank">
+                                <div className="flex items-center bg-black text-white p-3 rounded-lg hover:bg-gray-800 transition-all">
+                                   <Image src="/newAssets/playstore.svg" alt="Play Store" width={24} height={24} className="mr-3" />
+                                   <div>
+                                      <div className="text-[10px] uppercase">Get it on</div>
+                                      <div className="text-sm font-bold">Google Play</div>
+                                   </div>
+                                </div>
+                             </Link>
+                             <Link href="https://apps.apple.com/in/app/ama-legal-solutions/id6755156186" target="_blank">
+                                <div className="flex items-center bg-black text-white p-3 rounded-lg hover:bg-gray-800 transition-all">
+                                   <Image src="/newAssets/appstore.svg" alt="App Store" width={24} height={24} className="mr-3 invert" />
+                                   <div>
+                                      <div className="text-[10px] uppercase">Download on the</div>
+                                      <div className="text-sm font-bold">App Store</div>
+                                   </div>
+                                </div>
+                             </Link>
+                          </div>
+                       </div>
+                       <div className="text-sm border-t border-gray-100 pt-4 text-gray-600 flex justify-between items-center">
+                          <span><strong>Verdict:</strong> Ideal for borrowers seeking professional, legal-backed settlement.</span>
+                          <span className="font-bold text-[#D2A02A]">Highly Recommended</span>
+                       </div>
+                    </div>
 
                     {/* SingleDebt */}
                     <div id="singledebt" className="mb-10 p-8 rounded-2xl bg-white border border-gray-200 shadow-lg">
                        <div className="flex justify-between items-start mb-6">
                           <h3 className="text-2xl font-bold text-gray-900 flex items-center">
-                             <span className="bg-blue-100 text-blue-800 text-sm font-semibold mr-3 px-3 py-1 rounded">1</span>
+                             <span className="bg-blue-100 text-blue-800 text-sm font-semibold mr-3 px-3 py-1 rounded">2</span>
                              SingleDebt (Debt Management)
                           </h3>
                           <div className="flex text-yellow-400">
@@ -386,7 +436,7 @@ export default function BestAppsForLoanSettlementPage() {
                     <div id="freed" className="mb-10 p-8 rounded-2xl bg-white border border-gray-200 shadow-lg">
                        <div className="flex justify-between items-start mb-6">
                           <h3 className="text-2xl font-bold text-gray-900 flex items-center">
-                             <span className="bg-green-100 text-green-800 text-sm font-semibold mr-3 px-3 py-1 rounded">2</span>
+                             <span className="bg-green-100 text-green-800 text-sm font-semibold mr-3 px-3 py-1 rounded">3</span>
                              FREED (Debt Relief & Savings)
                           </h3>
                           <div className="flex text-yellow-400">
@@ -422,45 +472,6 @@ export default function BestAppsForLoanSettlementPage() {
                        </div>
                     </div>
 
-                    {/* CredSettle */}
-                    <div id="credsettle" className="mb-10 p-8 rounded-2xl bg-white border border-gray-200 shadow-lg">
-                       <div className="flex justify-between items-start mb-6">
-                          <h3 className="text-2xl font-bold text-gray-900 flex items-center">
-                             <span className="bg-purple-100 text-purple-800 text-sm font-semibold mr-3 px-3 py-1 rounded">3</span>
-                             CredSettle (Formal OTS)
-                          </h3>
-                          <div className="flex text-yellow-400">
-                             <svg className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                             <svg className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                             <svg className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                             <svg className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                             <svg className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                          </div>
-                       </div>
-                       <p className="text-gray-700 mb-6">
-                          CredSettle prides itself on being a legal loan settlement company that works within the formal RBI framework. They are known for achieving significant waivers on personal loans and credit cards.
-                       </p>
-                       <div className="grid md:grid-cols-2 gap-6 bg-gray-50 p-6 rounded-xl mb-6">
-                          <div>
-                             <h4 className="font-semibold text-gray-900 mb-3">Key Differentiators:</h4>
-                             <ul className="space-y-2 text-sm text-gray-600">
-                                <li className="flex items-center"><span className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></span> Direct legal negotiation with banks.</li>
-                                <li className="flex items-center"><span className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></span> Zero hidden fees policy.</li>
-                                <li className="flex items-center"><span className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></span> RBI-compliant settlement letters.</li>
-                             </ul>
-                          </div>
-                          <div>
-                             <h4 className="font-semibold text-gray-900 mb-3">Typical Results:</h4>
-                             <div className="space-y-2 text-xs text-gray-500">
-                                <p><strong className="text-green-600">Success:</strong> Often settles for 40% of the original principal.</p>
-                                <p><strong className="text-blue-600">Transparency:</strong> High marks for clear documentation and legal backing.</p>
-                             </div>
-                          </div>
-                       </div>
-                       <div className="text-sm border-t border-gray-100 pt-4 text-gray-500">
-                          <strong>Settlements:</strong> Claims to have settled over ₹680 crore in principal debt.
-                       </div>
-                    </div>
                   </section>
 
                     {/* Money View */}

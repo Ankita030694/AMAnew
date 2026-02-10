@@ -236,7 +236,8 @@ export default function Footer() {
     { href: "/is-trademark-registration-mandatory-to-sell-on-amazon", label: "Is Trademark Mandatory for Amazon" },
     { href: "/trademark-infringement-without-registration", label: "Trademark Infringement Without Registration" },
     { href: "/is-registering-a-name-instead-of-the-logo-enough", label: "Name vs Logo Trademark" },
-    { href: "/is-trademark-internationally-valid", label: "Is Trademark Internationally Valid" }
+    { href: "/is-trademark-internationally-valid", label: "Is Trademark Internationally Valid" },
+    { href: "/not-being-paid-fnf-want-to-send-legal-notice", label: "Legal Notice for Unpaid F&F" }
               ].map((query) => (
                 <Link
                   key={query.href}

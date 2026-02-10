@@ -136,6 +136,7 @@ export async function GET(): Promise<Response> {
     '/services/loan-settlement/Surat',
     '/services/loan-settlement/what-is-loan-settlement',
     '/how-to-negotiate-a-loan-settlement-with-lenders-online',
+    '/not-being-paid-fnf-want-to-send-legal-notice',
     '/trademark-infringement-without-registration',
     '/is-registering-a-name-instead-of-the-logo-enough',
     '/is-trademark-internationally-valid',

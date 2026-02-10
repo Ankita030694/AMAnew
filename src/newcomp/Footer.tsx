@@ -128,6 +128,7 @@ const Footer = () => {
         {name:"Trademark Infringement Without Registration",href:"/trademark-infringement-without-registration"},
         {name:"Name vs Logo Trademark",href:"/is-registering-a-name-instead-of-the-logo-enough"},
         {name:"Is Trademark Internationally Valid",href:"/is-trademark-internationally-valid"},
+        {name:"Legal Notice for Unpaid F&F",href:"/not-being-paid-fnf-want-to-send-legal-notice"},
       ]
     }
   ];
