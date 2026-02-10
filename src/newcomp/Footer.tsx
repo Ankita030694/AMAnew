@@ -119,6 +119,7 @@ const Footer = () => {
         {name:"Delhi NCR Law Firm",href:"/delhi-ncr-law-firm"},
         {name:"Job Lost Loan Settlement",href:"/job-lost-loan-settlement"},
         {name:"How to Negotiate Loan Settlement",href:"/how-to-negotiate-a-loan-settlement-with-lenders-online"},
+        {name:"Special Lok Adalat for Loan Settlement",href:"/special-lok-adalat-for-loan-settlement"},
         {name:"Top Loan Settlement Services",href:"/top-loan-settlement-services-with-good-customer-reviews"},
         {name:"Steps to Trademark Registration",href:"/steps-to-trademark-registration"},
         {name:"Best Apps for Managing Loan Settlement Offers in India",href:"/best-apps-for-managing-loan-settlement-offers-in-India"},
@@ -128,6 +129,7 @@ const Footer = () => {
         {name:"Trademark Infringement Without Registration",href:"/trademark-infringement-without-registration"},
         {name:"Name vs Logo Trademark",href:"/is-registering-a-name-instead-of-the-logo-enough"},
         {name:"Is Trademark Internationally Valid",href:"/is-trademark-internationally-valid"},
+        {name:"Special Lok Adalat for Challan",href:"/special-lok-adalat-for-challan"},
         {name:"Legal Notice for Unpaid F&F",href:"/not-being-paid-fnf-want-to-send-legal-notice"},
       ]
     }

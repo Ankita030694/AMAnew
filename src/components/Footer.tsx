@@ -229,6 +229,7 @@ export default function Footer() {
                 { href: "/services/real-estate", label: "Real Estate" },
                 { href: "/services/criminal-law", label: "Criminal Law" },
     { href: "/how-to-negotiate-a-loan-settlement-with-lenders-online", label: "How to Negotiate Loan Settlement" },
+    { href: "/special-lok-adalat-for-loan-settlement", label: "Special Lok Adalat for Loan Settlement" },
     { href: "/top-loan-settlement-services-with-good-customer-reviews", label: "Top Loan Settlement Services" },
     { href: "/steps-to-trademark-registration", label: "Steps to Trademark Registration" },
     { href: "/best-apps-for-managing-loan-settlement-offers-in-India", label: "Best Loan Settlement Apps" },
@@ -237,6 +238,7 @@ export default function Footer() {
     { href: "/trademark-infringement-without-registration", label: "Trademark Infringement Without Registration" },
     { href: "/is-registering-a-name-instead-of-the-logo-enough", label: "Name vs Logo Trademark" },
     { href: "/is-trademark-internationally-valid", label: "Is Trademark Internationally Valid" },
+    { href: "/special-lok-adalat-for-challan", label: "Special Lok Adalat for Challan" },
     { href: "/not-being-paid-fnf-want-to-send-legal-notice", label: "Legal Notice for Unpaid F&F" }
               ].map((query) => (
                 <Link
