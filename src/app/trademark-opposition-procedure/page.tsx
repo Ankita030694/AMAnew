@@ -336,12 +336,13 @@ const articleSchema = {
 
 const reviewSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Trademark Opposition Services",
-  "provider": {
-    "@type": "Organization",
-    "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+  "@type": "Product",
+  "name": "Trademark Opposition Procedure",
+  "image": "https://www.amalegalsolutions.com/images/trademark-opposition.jpg",
+  "description": "Strategic trademark opposition services including Section 21 filing, counter-statements, and evidence management.",
+  "brand": {
+    "@type": "Brand",
+    "name": "AMA Legal Solutions"
   },
   "aggregateRating": {
     "@type": "AggregateRating",

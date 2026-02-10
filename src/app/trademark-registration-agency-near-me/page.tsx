@@ -202,12 +202,13 @@ const faqSchema = {
 // Review Schema
 const reviewSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
+  "@type": "Product",
   "name": "Trademark Registration Agency Services",
-  "provider": {
-    "@type": "Organization",
-    "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+  "image": "https://www.amalegalsolutions.com/images/trademark-agency.jpg",
+  "description": "Expert trademark registration agency services offering forensic search, localized support, and global brand protection.",
+  "brand": {
+    "@type": "Brand",
+    "name": "AMA Legal Solutions"
   },
   "aggregateRating": {
     "@type": "AggregateRating",
