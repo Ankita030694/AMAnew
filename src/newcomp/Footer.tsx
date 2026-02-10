@@ -130,7 +130,12 @@ const Footer = () => {
         {name:"Name vs Logo Trademark",href:"/is-registering-a-name-instead-of-the-logo-enough"},
         {name:"Is Trademark Internationally Valid",href:"/is-trademark-internationally-valid"},
         {name:"Special Lok Adalat for Challan",href:"/special-lok-adalat-for-challan"},
+        {name:"Trademark Registration Office Delhi",href:"/trademark-registration-office-delhi"},
+        {name:"Is Trademark Registration One Time?",href:"/is-trademark-registration-one-time"},
         {name:"Legal Notice for Unpaid F&F",href:"/not-being-paid-fnf-want-to-send-legal-notice"},
+        {name:"What is OTS? - Comprehensive Guide",href:"/what-is-ots"},
+        {name:"Procedure of Sending Legal Notice",href:"/procedure-of-sending-legal-notice"},
+        {name:"Compare Loan Settlement Companies",href:"/compare-loan-settlement-companies-that-work-with-personal-loans"},
       ]
     }
   ];

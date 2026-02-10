@@ -239,6 +239,8 @@ export default function Footer() {
     { href: "/is-registering-a-name-instead-of-the-logo-enough", label: "Name vs Logo Trademark" },
     { href: "/is-trademark-internationally-valid", label: "Is Trademark Internationally Valid" },
     { href: "/special-lok-adalat-for-challan", label: "Special Lok Adalat for Challan" },
+    { href: "/trademark-registration-office-delhi", label: "Trademark Registration Office Delhi" },
+    { href: "/is-trademark-registration-one-time", label: "Is Trademark Registration One Time?" },
     { href: "/not-being-paid-fnf-want-to-send-legal-notice", label: "Legal Notice for Unpaid F&F" }
               ].map((query) => (
                 <Link
