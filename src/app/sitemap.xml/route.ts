@@ -149,6 +149,8 @@ export async function GET(): Promise<Response> {
     '/is-trademark-internationally-valid',
     '/services/loan-settlement/lok-adalat',
     '/employer-not-paying-salary-after-resignation',
+    '/can-company-hold-my-salary-after-resignation',
+    '/where-to-file-a-complaint-if-your-employer-doesnt-pay-you',
     // Bank Specific Pages
     '/services/loan-settlement/sbi-bank',
     '/services/loan-settlement/hdfc-bank',
