@@ -258,15 +258,15 @@ export default function TrademarkOneTimePage() {
           <div 
             className="absolute inset-0 bg-cover bg-center z-0" 
           ></div>
-          <div className="relative z-20 container mx-auto px-4 py-24 md:py-42 text-center">
+          <div className="relative z-20 container mx-auto px-4 py-16 md:py-32 text-center">
             <div className="flex items-center justify-center gap-2 mb-4 bg-white/10 backdrop-blur-sm w-fit mx-auto px-4 py-1.5 rounded-full border border-white/20">
               <div className="flex text-[#D2A02A] text-sm">★★★★★</div>
               <span className="text-xs font-bold tracking-widest uppercase text-white/90">4.9/5 Rating (1,850+ Reviews)</span>
             </div>
-            <h1 className="text-2xl md:text-4xl font-extrabold mb-4 shadow-sm">
+            <h1 className="text-xl md:text-3xl font-extrabold mb-4 shadow-sm">
               Is Trademark Registration a <span className="text-[#D2A02A]">One-Time</span> Process?
             </h1>
-            <p className="text-sm md:text-lg mb-8 max-w-4xl mx-auto text-gray-100 font-light leading-relaxed">
+            <p className="text-xs md:text-base mb-8 max-w-4xl mx-auto text-gray-100 font-light leading-relaxed">
               Unlock the truth about brand protection. Learn why successful entrepreneurs view trademarking as a continuous asset maintenance strategy rather than a single event.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -279,7 +279,7 @@ export default function TrademarkOneTimePage() {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-8xl py-8">
+        <div className="container mx-auto px-4 max-w-8xl py-6">
           <Breadcrumbs items={breadcrumbItems} />
           
           <div className="grid grid-cols-1 lg:grid-cols-[250px_1fr_320px] gap-8 items-start mt-6">
@@ -299,27 +299,27 @@ export default function TrademarkOneTimePage() {
                  </div>
                </div>
 
-              <div className="bg-white space-y-12 md:space-y-20">
+              <div className="bg-white space-y-10 md:space-y-16">
                 
                 {/* Section 1: Introduction */}
                 <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-2xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-tight">Beyond the Filing: The Lifecycle of Your Brand Asset</h2>
-                  <p className="text-base md:text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-6 leading-tight">Beyond the Filing: The Lifecycle of Your Brand Asset</h2>
+                  <p className="text-sm md:text-base leading-relaxed mb-6 text-gray-700">
                     When you start a business, one of the most exciting milestones is receiving your trademark registration certificate. It feels like the ultimate victory, a shield that protects your hard work from competitors and counterfeiters. Many business owners breathe a sigh of relief, thinking the job is done forever. They ask their lawyers, <strong>"Is trademark registration one time?"</strong> hoping for a definitive yes. 
                   </p>
-                  <p className="text-base md:text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-sm md:text-base leading-relaxed mb-6 text-gray-700">
                     The reality, however, is slightly more complex. While the act of filing an application is a single event, maintaining that legal protection is a continuous journey. In India, like in most modern legal systems, a trademark is not a "forever" grant. It is a lease on a piece of linguistic or visual property that must be renewed periodically to remain in effect. 
                   </p>
-                  <p className="text-base md:text-lg leading-relaxed text-gray-700">
+                  <p className="text-sm md:text-base leading-relaxed text-gray-700">
                     Think of a trademark like a premium piece of real estate in the commercial world. You buy it (registration), but you must pay taxes and perform maintenance (renewal) to keep the title clear. Failure to do so doesn't just result in a fine; it can result in the loss of the property itself. At AMA Legal Solutions, we specialize in not just obtaining these assets for you, but in safeguarding them for generations.
                   </p>
                 </section>
 
                 {/* Section 2: The Myth */}
                 <section id="the-myth" className="scroll-mt-32">
-                  <h2 className="text-2xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-tight">Dismantling the One-Time Registration Myth</h2>
-                  <div className="bg-orange-50 border-l-8 border-[#D2A02A] p-6 mb-8 rounded-r-3xl">
-                     <p className="text-lg md:text-xl font-bold text-orange-900 italic">
+                  <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-6 leading-tight">Dismantling the One-Time Registration Myth</h2>
+                  <div className="bg-orange-50 border-l-8 border-[#D2A02A] p-6 mb-8 rounded-r-2xl">
+                     <p className="text-base md:text-lg font-bold text-orange-900 italic">
                         "If I have the certificate, why do I need to pay again? Is this a recurring expense?"
                      </p>
                   </div>
@@ -336,8 +336,8 @@ export default function TrademarkOneTimePage() {
 
                 {/* Section 3: Validity Period */}
                 <section id="validity-period" className="scroll-mt-32">
-                  <h2 className="text-2xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-tight">The 10-Year Clock: How Long Does It Last?</h2>
-                  <p className="text-base md:text-lg leading-relaxed mb-8 text-gray-700">
+                  <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-6 leading-tight">The 10-Year Clock: How Long Does It Last?</h2>
+                  <p className="text-sm md:text-base leading-relaxed mb-8 text-gray-700">
                     Under the <strong>Trademarks Act, 1999</strong> of India, a trademark registration is valid for a period of <strong>10 years</strong>. This countdown begins not from the date the certificate is issued, but from the <strong>date of the application (priority date)</strong>.
                   </p>
                   
@@ -359,8 +359,8 @@ export default function TrademarkOneTimePage() {
 
                 {/* Section 4: The Renewal Process */}
                 <section id="renewal-process" className="scroll-mt-32">
-                  <h2 className="text-2xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-tight">The Roadmap to Trademark Renewal</h2>
-                  <p className="text-base md:text-lg leading-relaxed mb-8 text-gray-700">
+                  <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-6 leading-tight">The Roadmap to Trademark Renewal</h2>
+                  <p className="text-sm md:text-base leading-relaxed mb-8 text-gray-700">
                     Renewing a trademark is significantly less painful than the initial registration, provided it is done within the legal windows. Here is the timeline every brand owner must memorize:
                   </p>
                   
@@ -399,8 +399,8 @@ export default function TrademarkOneTimePage() {
 
                 {/* Section 5: Costs Involved */}
                 <section id="costs-involved" className="scroll-mt-32">
-                  <h2 className="text-2xl md:text-4xl font-extrabold text-gray-900 mb-8 leading-tight">Financial Planning: Renewal vs. Registration Costs</h2>
-                  <p className="text-base md:text-lg leading-relaxed mb-8 text-gray-700">
+                  <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-8 leading-tight">Financial Planning: Renewal vs. Registration Costs</h2>
+                  <p className="text-sm md:text-base leading-relaxed mb-8 text-gray-700">
                     Understanding the cost structure helps in budgeting for your brand's future. The government fees for renewal are slightly different from filing fees.
                   </p>
                   
@@ -439,8 +439,8 @@ export default function TrademarkOneTimePage() {
 
                 {/* Section 6: Consequences of Non-Renewal */}
                 <section id="consequences-non-renewal" className="scroll-mt-32">
-                  <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-8 leading-tight">The High Price of Forgetfulness: Risks of Expiry</h2>
-                  <p className="text-lg md:text-xl leading-relaxed mb-10 text-gray-700">
+                  <h2 className="text-2xl md:text-4xl font-extrabold text-gray-900 mb-8 leading-tight">The High Price of Forgetfulness: Risks of Expiry</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-10 text-gray-700">
                     Many clients ask, "What is the worst that could happen if I miss the renewal?" The answer is simple: <strong>You lose everything you built.</strong> In the fast-paced world of digital commerce, your brand is often your most valuable asset. When you fail to renew your trademark, you are essentially leaving your front door wide open for competitors and malicious actors to walk in and take what belongs to you.
                   </p>
                   
@@ -478,8 +478,8 @@ export default function TrademarkOneTimePage() {
 
                 {/* Section 7: Restoration */}
                 <section id="restoration" className="scroll-mt-32">
-                  <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-8 leading-tight">Can Dead Trademarks Be Revived? The Restoration Process</h2>
-                  <p className="text-lg md:text-xl leading-relaxed mb-8 text-gray-700">
+                  <h2 className="text-2xl md:text-4xl font-extrabold text-gray-900 mb-8 leading-tight">Can Dead Trademarks Be Revived? The Restoration Process</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-8 text-gray-700">
                     If more than 6 months but less than 12 months have passed since the expiry date, you have reached the final frontier: <strong>Trademark Restoration</strong>. This is the emergency room of intellectual property law.
                   </p>
                   <p className="text-lg md:text-xl leading-relaxed mb-10 text-gray-700">
@@ -514,8 +514,8 @@ export default function TrademarkOneTimePage() {
 
                 {/* Section 8: Maintenance Tips */}
                 <section id="maintenance-tips" className="scroll-mt-32">
-                  <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-8 leading-tight">Proactive Maintenance: Beyond Just Renewals</h2>
-                  <p className="text-lg md:text-xl leading-relaxed mb-10 text-gray-700">
+                  <h2 className="text-2xl md:text-4xl font-extrabold text-gray-900 mb-8 leading-tight">Proactive Maintenance: Beyond Just Renewals</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-10 text-gray-700">
                     Treating trademarking as a one-time event is a strategic error that can cripple your business. Successful global brands treat IP management as a core business function, similar to accounting or HR. Here is how you can step up your brand management game:
                   </p>
                   
@@ -566,8 +566,8 @@ export default function TrademarkOneTimePage() {
 
                 {/* Section 9: Global Perspective */}
                 <section id="global-perspective" className="scroll-mt-32">
-                  <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-8 leading-tight">The Global View: Territoriality and Madrid Protocol</h2>
-                  <p className="text-lg md:text-xl leading-relaxed mb-8 text-gray-700">
+                  <h2 className="text-2xl md:text-4xl font-extrabold text-gray-900 mb-8 leading-tight">The Global View: Territoriality and Madrid Protocol</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-8 text-gray-700">
                     Another major myth related to the "one-time registration" concept is that a single filing in India provides global protection. This is legally incorrect and can lead to devastating consequences for exporters. Trademark rights are strictly <strong>territorial</strong>. A trademark registered with the Mumbai or Delhi registry has zero legal standing in Paris, Tokyo, or New York.
                   </p>
                   <p className="text-lg md:text-xl leading-relaxed mb-8 text-gray-700">
@@ -598,8 +598,8 @@ export default function TrademarkOneTimePage() {
 
                 {/* Section 10: Why Choose Us */}
                 <section id="why-choose-us" className="scroll-mt-32">
-                  <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-10 text-center">Why AMA Legal Solutions for Trademark Management?</h2>
-                  <p className="text-lg md:text-xl leading-relaxed mb-12 text-gray-700 text-center max-w-4xl mx-auto">
+                  <h2 className="text-2xl md:text-4xl font-extrabold text-gray-900 mb-10 text-center">Why AMA Legal Solutions for Trademark Management?</h2>
+                  <p className="text-base md:text-lg leading-relaxed mb-12 text-gray-700 text-center max-w-4xl mx-auto">
                     We don't just file papers; we build brand fortresses. Our relationship with our clients is built on long-term stewardship and a deep understanding of the asset value of intellectual property.
                   </p>
                   
@@ -628,7 +628,7 @@ export default function TrademarkOneTimePage() {
                 </section>
 
                 {/* Final Content Push for word count */}
-                <section className="space-y-10 text-gray-700 text-base md:text-lg leading-relaxed bg-blue-50/50 p-10 rounded-[32px] border border-blue-100">
+                <section className="space-y-10 text-gray-700 text-sm md:text-base leading-relaxed bg-blue-50/50 p-8 rounded-[24px] border border-blue-100">
                   <h3 className="text-2xl font-bold text-gray-900 border-b-2 border-blue-200 pb-3">The Verdict: Branding as a Living Asset</h3>
                   <p>
                     In the final analysis, the journey of trademark registration is more like a carefully managed orchard than a single planting event. While the first victory of getting your certificate is sweet, the true mark of a visionary entrepreneur is the ability to nurture and maintain that victory over many decades. By understanding that trademarking is not a one-time event but a strategic lifecycle maintenance process, you position your brand for sustainable growth and multi-generational value.
@@ -646,7 +646,7 @@ export default function TrademarkOneTimePage() {
 
                 {/* Section 11: Success Stories */}
                 <section id="testimonials" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-6 text-center uppercase tracking-widest">Brand Success Stories</h2>
+                  <h2 className="text-lg md:text-2xl font-extrabold text-gray-900 mb-6 text-center uppercase tracking-widest">Brand Success Stories</h2>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 relative shadow-sm">
                       <div className="text-4xl text-[#fbbf24] absolute top-3 left-3 opacity-10">"</div>
@@ -698,16 +698,16 @@ export default function TrademarkOneTimePage() {
                 </section>
 
                 {/* Final CTA Container */}
-                <section className="bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] rounded-[32px] p-10 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
+                <section className="bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] rounded-[24px] p-8 md:p-16 text-center text-white relative overflow-hidden shadow-2xl">
                   {/* Decorative Elements */}
                   <div className="absolute top-0 right-0 w-64 h-64 bg-[#fbbf24] opacity-10 rounded-full blur-3xl -mr-32 -mt-32"></div>
                   <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500 opacity-10 rounded-full blur-3xl -ml-32 -mb-32"></div>
                   
                   <div className="relative z-10">
-                    <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
+                    <h2 className="text-2xl md:text-4xl font-extrabold mb-6 leading-tight">
                       Never Miss a <span className="text-[#fbbf24]">Renewal</span> Again
                     </h2>
-                    <p className="text-lg md:text-xl opacity-80 mb-10 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-base md:text-lg opacity-80 mb-10 max-w-3xl mx-auto leading-relaxed">
                       Your brand is your legacy. Secure it with our professional lifecycle management and automated tracking system.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
@@ -733,24 +733,24 @@ export default function TrademarkOneTimePage() {
             <div className="hidden lg:block space-y-10 sticky top-28">
               
               {/* Container 1: Urgent CTA */}
-              <div className="bg-[#0f172a] text-white p-10 rounded-3xl shadow-2xl transform hover:-rotate-1 transition-transform">
-                <div className="w-20 h-20 bg-white bg-opacity-10 rounded-2xl flex items-center justify-center mb-8 text-4xl">🚀</div>
-                <h3 className="text-2xl font-extrabold mb-4">Is Your Trademark Safe?</h3>
-                <p className="text-gray-400 mb-8 leading-relaxed">
+              <div className="bg-[#0f172a] text-white p-8 rounded-2xl shadow-2xl transform hover:-rotate-1 transition-transform">
+                <div className="w-16 h-16 bg-white bg-opacity-10 rounded-2xl flex items-center justify-center mb-6 text-3xl">🚀</div>
+                <h3 className="text-xl font-extrabold mb-4">Is Your Trademark Safe?</h3>
+                <p className="text-gray-400 mb-8 leading-relaxed text-sm">
                   Most brands forget their renewal date. Let our experts provide a free audit of your brand portfolio today.
                 </p>
-                <Link href="/contact" className="block w-full bg-[#fbbf24] text-black text-center py-4 rounded-2xl font-extrabold hover:bg-white transition-all transform hover:scale-105 mb-4 shadow-xl">
+                <Link href="/contact" className="block w-full bg-[#fbbf24] text-black text-center py-3 rounded-xl font-extrabold hover:bg-white transition-all transform hover:scale-105 mb-4 shadow-xl text-base">
                   Free Portfolio Health Check
                 </Link>
-                <a href="tel:+918700343611" className="block w-full text-center py-4 rounded-2xl border-2 border-white border-opacity-20 font-bold hover:bg-white hover:bg-opacity-10 transition-all">
+                <a href="tel:+918700343611" className="block w-full text-center py-3 rounded-xl border-2 border-white border-opacity-20 font-bold hover:bg-white hover:bg-opacity-10 transition-all text-sm">
                   Talk to a Senior Lawyer
                 </a>
               </div>
 
               {/* Container 2: Related Pages */}
-              <div className="bg-gray-50 p-10 rounded-3xl border border-gray-100 shadow-sm">
-                <h3 className="text-xl font-bold text-gray-900 mb-8 flex items-center gap-3">
-                  <span className="w-2 h-8 bg-[#fbbf24] rounded-full"></span>
+              <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 shadow-sm">
+                <h3 className="text-lg font-bold text-gray-900 mb-6 flex items-center gap-3">
+                  <span className="w-1.5 h-6 bg-[#fbbf24] rounded-full"></span>
                   Must Read Pages
                 </h3>
                 <div className="space-y-4">
@@ -766,14 +766,14 @@ export default function TrademarkOneTimePage() {
               </div>
 
               {/* Container 3: App Download (Bonus) */}
-              <div className="bg-gradient-to-br from-blue-600 to-indigo-700 p-8 rounded-3xl text-white text-center">
-                <h4 className="font-bold text-xl mb-6">Manage Your IP on the Go</h4>
-                <div className="flex flex-col gap-4 items-center">
+              <div className="bg-gradient-to-br from-blue-600 to-indigo-700 p-6 rounded-2xl text-white text-center">
+                <h4 className="font-bold text-lg mb-6">Manage Your IP on the Go</h4>
+                <div className="flex flex-col gap-3 items-center">
                   <Link href="https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions" target="_blank" className="hover:opacity-80 transition-opacity drop-shadow-lg">
-                    <Image src="/newAssets/appstore.svg" alt="Google Play" width={160} height={44} />
+                    <Image src="/newAssets/appstore.svg" alt="Google Play" width={140} height={38} />
                   </Link>
                   <Link href="https://apps.apple.com/in/app/ama-legal-solutions/id6755156186" target="_blank" className="hover:opacity-80 transition-opacity drop-shadow-lg">
-                    <Image src="/newAssets/playstore.svg" alt="App Store" width={160} height={44} />
+                    <Image src="/newAssets/playstore.svg" alt="App Store" width={140} height={38} />
                   </Link>
                 </div>
               </div>

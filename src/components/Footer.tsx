@@ -240,8 +240,9 @@ export default function Footer() {
     { href: "/is-trademark-internationally-valid", label: "Is Trademark Internationally Valid" },
     { href: "/special-lok-adalat-for-challan", label: "Special Lok Adalat for Challan" },
     { href: "/trademark-registration-office-delhi", label: "Trademark Registration Office Delhi" },
-    { href: "/is-trademark-registration-one-time", label: "Is Trademark Registration One Time?" },
-    { href: "/not-being-paid-fnf-want-to-send-legal-notice", label: "Legal Notice for Unpaid F&F" }
+    { href:    '/is-trademark-registration-one-time', label: "Is Trademark Registration One Time?" },
+    { href: "/not-being-paid-fnf-want-to-send-legal-notice", label: "Legal Notice for Unpaid F&F" },
+    { href: "/employer-not-paying-salary-after-resignation", label: "Salary Not Paid After Resignation" }
               ].map((query) => (
                 <Link
                   key={query.href}

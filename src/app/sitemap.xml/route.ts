@@ -148,6 +148,7 @@ export async function GET(): Promise<Response> {
     '/is-registering-a-name-instead-of-the-logo-enough',
     '/is-trademark-internationally-valid',
     '/services/loan-settlement/lok-adalat',
+    '/employer-not-paying-salary-after-resignation',
     // Bank Specific Pages
     '/services/loan-settlement/sbi-bank',
     '/services/loan-settlement/hdfc-bank',

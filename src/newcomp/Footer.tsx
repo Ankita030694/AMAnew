@@ -89,7 +89,7 @@ const Footer = () => {
         { name: 'IPIndia Guide', href: '/services/how-to-register-trademark-with-ipindia' },
         {name:"Trademark Search",href:"/services/trademark-search"},
         {name:"Trademark Status",href:"/services/trademark-status"},
-        {name:"Comprehensive Guide Trademark Registration India",href:"/services/comprehensive-guide-trademark-registration-india"},
+        {name:"Trademark Registration India",href:"/services/comprehensive-guide-trademark-registration-india"},
          {name:"Validity of Trademark Registration",href:"/validity-of-trademark-registration"},
         {name:"Trademark Registration Timeline",href:"/how-much-time-it-takes-to-get-your-trademark-registered"},
         
@@ -122,7 +122,7 @@ const Footer = () => {
         {name:"Special Lok Adalat for Loan Settlement",href:"/special-lok-adalat-for-loan-settlement"},
         {name:"Top Loan Settlement Services",href:"/top-loan-settlement-services-with-good-customer-reviews"},
         {name:"Steps to Trademark Registration",href:"/steps-to-trademark-registration"},
-        {name:"Best Apps for Managing Loan Settlement Offers in India",href:"/best-apps-for-managing-loan-settlement-offers-in-India"},
+        {name:"Best Apps for Loan Settlement",href:"/best-apps-for-managing-loan-settlement-offers-in-India"},
         {name:"Trademark Agency Near Me",href:"/trademark-registration-agency-near-me"},
         {name:"Trademark Opposition Procedure",href:"/trademark-opposition-procedure"},
         {name:"Is Trademark Mandatory for Amazon",href:"/is-trademark-registration-mandatory-to-sell-on-amazon"},
@@ -136,6 +136,9 @@ const Footer = () => {
         {name:"What is OTS? - Comprehensive Guide",href:"/what-is-ots"},
         {name:"Procedure of Sending Legal Notice",href:"/procedure-of-sending-legal-notice"},
         {name:"Compare Loan Settlement Companies",href:"/compare-loan-settlement-companies-that-work-with-personal-loans"},
+        {name: "Employer not paying salary", href: "/employer-not-paying-salary-after-resignation"},
+        {name: "Where to File Salary Complaint", href: "/where-to-file-a-complaint-if-your-employer-doesnt-pay-you"},
+        {name: "Can Company Hold Salary?", href: "/can-company-hold-my-salary-after-resignation"}
       ]
     }
   ];
