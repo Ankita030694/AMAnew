@@ -158,7 +158,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[48px] md:gap-[40px] mb-[64px]">
           {/* Logo & Branding - Part of Column 1 */}
           <div className="flex flex-col gap-[24px]">
-            <Link href="/">
+            <Link href="/ama-legal-solutions">
               <Image 
                 src="/newAssets/logo/ama-white.svg" 
                 alt="AMA Legal Solutions" 

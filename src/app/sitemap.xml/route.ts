@@ -152,6 +152,7 @@ export async function GET(): Promise<Response> {
     '/employer-not-paying-salary-after-resignation',
     '/can-company-hold-my-salary-after-resignation',
     '/where-to-file-a-complaint-if-your-employer-doesnt-pay-you',
+    '/ama-legal-solutions',
     // Bank Specific Pages
     '/services/loan-settlement/sbi-bank',
     '/services/loan-settlement/hdfc-bank',
