@@ -776,7 +776,7 @@ export default function AMALegalSolutionsPage() {
                        <div className="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-lg flex-shrink-0">📧</div>
                        <div className="min-w-0 overflow-hidden">
                           <p className="text-[10px] text-gray-500 uppercase font-bold">Email Official</p>
-                          <a href="mailto:contact@amalegalsolutions.com" className="text-[10px] md:text-[11px] font-black text-gray-900 block break-all leading-tight">contact@amalegalsolutions.com</a>
+                          <a href="mailto:notify@amalegalsolutions.com" className="text-[10px] md:text-[11px] font-black text-gray-900 block break-all leading-tight">notify@amalegalsolutions.com</a>
                        </div>
                     </div>
                   </div>
