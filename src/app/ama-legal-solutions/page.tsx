@@ -12,43 +12,107 @@ const faqs = [
   },
   {
     question: "Where is the only valid office of AMA Legal Solutions located?",
-    answer: "Our only valid and official office is located at 2493AP, Block G, Sushant Lok 2, Sector 57, Gurugram, Haryana. We do not have any other branches, and we are not affiliated with other entities using similar names. This location is central to our quality control and professional standards."
+    answer: "Our only valid and official office is located at 2493AP, Block G, Sushant Lok 2, Sector 57, Gurugram, Haryana. We do not have any other branches, and we are not affiliated with other entities using similar names."
   },
   {
     question: "What is loan settlement and how does it work?",
-    answer: "Loan settlement is a legal process where a borrower negotiates with a lender to pay a reduced lump sum amount to close the loan account. This is typically an option for those facing genuine financial hardship. We specialize in negotiating these settlements while stopping recovery harassment through strictly legal and ethical protocols."
+    answer: "Loan settlement is a legal process where a borrower negotiates with a lender to pay a reduced lump sum amount to close the loan account. This is typically an option for those facing genuine financial hardship."
   },
   {
     question: "Can AMA Legal Solutions help with trademark registration?",
-    answer: "Yes, we provide comprehensive trademark registration and IPR protection services. We handle everything from trademark search and filing to defending your brand against infringement in court. Our expertise covers all 45 classes of the NICE classification."
+    answer: "Yes, we provide comprehensive trademark registration and IPR protection services. We handle everything from trademark search and filing to defending your brand against infringement in court."
   },
   {
     question: "How does the arbitration process work in India 2026?",
-    answer: "With the Arbitration Act 2025, arbitration has become more institutionalized. It offers a faster and confidential alternative to traditional litigation. We represent clients in both domestic and international commercial arbitrations, ensuring binding and enforceable awards."
+    answer: "With the Arbitration Act 2025, arbitration has become more institutionalized. It offers a faster and confidential alternative to traditional litigation for domestic and international disputes."
   },
   {
     question: "What legal services do you provide for real estate?",
-    answer: "We provide title verification, due diligence, RERA complaint filing, and property dispute resolution. We ensure your real estate investments are legally sound and protected from fraud by conducting exhaustive 30-year searches."
+    answer: "We provide title verification, due diligence, RERA complaint filing, and property dispute resolution. We ensure your real estate investments are legally sound using exhaustive 30-year searches."
   },
   {
     question: "Are you compliant with the DPDP Act 2023?",
-    answer: "Yes, we assist corporations and startups in becoming compliant with the Digital Personal Data Protection Act (DPDP) 2023, which is critical for legal operations in 2026. This includes data audits and consent framework implementation."
+    answer: "Yes, we assist corporations and startups in becoming compliant with the Digital Personal Data Protection Act (DPDP) 2023, including data audits and consent framework implementation."
   },
   {
     question: "How much can I save through loan settlement?",
-    answer: "While it varies by bank and loan type, our experts often secure settlements ranging from 30% to 60% of the total outstanding amount. This depends on the age of the debt, the borrower's financial status, and the type of security involved."
+    answer: "While it varies, our experts often secure settlements ranging from 30% to 60% of the total outstanding amount, depending on the age of debt and financial status."
   },
   {
     question: "Is arbitration better than going to court?",
-    answer: "Arbitration is generally faster, private, and more flexible than traditional litigation. It is particularly effective for commercial disputes where time, confidentiality, and technical expertise are priorities."
+    answer: "Arbitration is generally faster, private, and more flexible than traditional litigation, especially for commercial disputes where time and expertise are priorities."
   },
   {
     question: "Does AMA Legal Solutions serve clients outside of Gurgaon?",
-    answer: "Yes, AMA Legal Solutions is a Pan-India law firm. While our headquarters and central command are located in Sector 57, Gurgaon, we represent clients in courts, tribunals, and mediation centers across all states in India. We have a robust network and digital infrastructure to handle cases nationwide."
+    answer: "Yes, we are a Pan-India law firm. While headquartered in Sector 57, Gurgaon, we represent clients in courts and tribunals across all states in India."
   },
   {
     question: "How does the IEPF recovery process work?",
-    answer: "The IEPF (Investor Education and Protection Fund) recovery involves claiming shares or dividends that have been transferred to the government due to inactivity. We handle the entire documentation, verification with the company, and filing of Form IEPF-5 to ensure your rightful investments are restored."
+    answer: "IEPF recovery involves claiming shares or dividends transferred to the government. We handle the documentation, verification, and filing of Form IEPF-5 for restoration."
+  },
+  {
+    question: "What is a 138 Legal Notice?",
+    answer: "A Section 138 notice is a mandatory legal demand sent for a dishonoured cheque. It gives the payer 15 days to pay before criminal proceedings can be initiated."
+  },
+  {
+    question: "Can you stop harassment from bank recovery agents?",
+    answer: "Absolutely. Once we represent you, we notify the bank under RBI guidelines. All collection efforts must then be routed through your legal counsel, stopping direct harassment."
+  },
+  {
+    question: "What is the Madrid Protocol for trademarks?",
+    answer: "The Madrid Protocol allows you to protect your trademark in up to 125 countries through a single application filed through our Sector 57 office."
+  },
+  {
+    question: "Do you handle NRI legal matters?",
+    answer: "Yes, we specialize in NRI legal services including property management, title verification in India, and representation in family or commercial disputes."
+  },
+  {
+    question: "What is SARFAESI Act litigation?",
+    answer: "SARFAESI allows banks to seize property for unpaid secured loans. We represent clients in DRT (Debt Recovery Tribunal) to challenge these notices and seek stays or settlements."
+  },
+  {
+    question: "How do I verify if a law firm is legitimate in Gurgaon?",
+    answer: "Always check for a physical office at the registered address. AMA Legal Solutions operates exclusively from Sector 57. Beware of LLPs using similar names as we are a professional firm."
+  },
+  {
+    question: "What documents are needed for IEPF share recovery?",
+    answer: "Key documents include original share certificates (or indemnity for loss), Aadhar/PAN, Client Master List (CML), and death certificates if you are a legal heir."
+  },
+  {
+    question: "What is the 'Cooling-off' period in mutual divorce?",
+    answer: "In India, there is typically a 6-month waiting period between the first and second motion in mutual divorce, though recent Supreme Court rulings allow for waivers in specific cases."
+  },
+  {
+    question: "What is the penalty for DPDP Act non-compliance?",
+    answer: "The DPDP Act 2023 prescribes heavy fines reaching up to ₹250 Crores for significant data breaches or failure to implement proper security safeguards."
+  },
+  {
+    question: "How can I register a trademark for a startup in 2026?",
+    answer: "Startups with Udyam Registration get a 50% concession on government fees. We handle the entire fast-track application process from our Gurgaon nerve center."
+  },
+  {
+    question: "What is white-collar crime defense?",
+    answer: "It involves defending allegations of financial fraud, PMLA violations, and corporate embezzlement. We provide 24/7 crisis response and bail representation."
+  },
+  {
+    question: "Can I settle a business loan through OTS?",
+    answer: "Yes, banks offer One-Time Settlements (OTS) for MSMEs and industrial loans. We negotiate these settlements to ensure your business can restart with a clean slate."
+  },
+  {
+    question: "What is a Mutation of property?",
+    answer: "Mutation is the process of updating the owner's name in the local revenue records. It is critical for establishing title and paying property taxes in Haryana."
+  },
+  {
+    question: "How long does a RERA refund take?",
+    answer: "While timelines vary by state, once an order is passed, the execution process through the District Collector typically takes 6-12 months for recovery."
+  },
+  {
+    question: "Do you provide online legal consultations?",
+    answer: "Yes, we provide specialized video consultations for clients across India and abroad, ensuring distance is never a barrier to expert legal advice."
+  },
+  {
+    question: "Why should I choose AMA Legal Solutions over an LLP?",
+    answer: "We offer direct professional accountability led by Advocate Anuj Anand Malik. As a non-LLP firm, we provide a personalized, results-driven approach that corporatized entities often lack."
   }
 ];
 
@@ -181,6 +245,66 @@ const reviewSchema = {
         "name": "Amit Batra"
       },
       "reviewBody": "The best law firm in Gurgaon for loan settlement. They stopped the calls and helped me get an amazing OTS. Highly professional team."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Sneha Gupta"
+      },
+      "reviewBody": "Excellent trademark registration service. They handled my objection smoothly and got my brand registered in record time. Best legal consultant in India!"
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Rajesh Khanna"
+      },
+      "reviewBody": "Recovered my unclaimed shares from IEPF after 10 years of running around. AMA Legal Solutions is the real deal. Highly recommended for investment recovery."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Vikram Singh"
+      },
+      "reviewBody": "Proactive and sharp. Their legal notice was enough to settle my property dispute out of court. Truly the top legal firm in Sector 57 Gurgaon."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Rahul Mehra"
+      },
+      "reviewBody": "Assisted us with complex corporate compliance and DPDP Act audits. Their expertise in corporate law is unmatched in the NCR region."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Arjun Kapoor"
+      },
+      "reviewBody": "Represented us in a high-stakes commercial arbitration. The speed and precision of their legal strategy saved us months of litigation."
     }
   ]
 };
@@ -321,11 +445,11 @@ export default function AMALegalSolutionsPage() {
 
             {/* Main Content Area */}
             <div className="min-w-0">
-              <div className="bg-white p-6 md:p-14 lg:p-20 rounded-[3rem] shadow-[0_20px_80px_rgba(0,0,0,0.03)] space-y-20 border border-gray-100">
+              <div className="bg-white p-5 md:p-11 lg:p-16 rounded-[2.5rem] shadow-[0_20px_80px_rgba(0,0,0,0.03)] space-y-16 border border-gray-100">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-8 tracking-tight">Redefining Legal Advocacy: Our 15-Year Legacy</h2>
+                  <h2 className="text-2xl md:text-4xl font-black text-gray-900 mb-6 tracking-tight">Redefining Legal Advocacy: Our 15-Year Legacy</h2>
                   <div className="prose prose-xl max-w-none text-gray-700 leading-relaxed space-y-8">
                     <p>
                       In the heart of India's Millennium City, **AMA Legal Solutions** stands as a beacon of legal integrity and professional excellence. Founded by Advocate Anuj Anand Malik, the firm was established with a singular, uncompromising mission: to provide world-class legal representation that is accessible, ethical, and results-driven. Over the past decade and a half, we have evolved from a specialized boutique firm into a comprehensive legal powerhouse, serving a diverse clientele ranging from individual borrowers to multinational conglomerates.
@@ -346,8 +470,8 @@ export default function AMALegalSolutionsPage() {
                 </section>
 
                 {/* Identity Marker (Sector 57 / Non-LLP) */}
-                <section id="identity" className="scroll-mt-32 bg-amber-50 p-12 lg:p-16 rounded-[4rem] border border-amber-200">
-                  <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-10 tracking-tight">Pan-India Reach, Centralized Identity</h2>
+                <section id="identity" className="scroll-mt-32 bg-amber-50 p-10 lg:p-14 rounded-[3.5rem] border border-amber-200">
+                  <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-8 tracking-tight">Pan-India Reach, Centralized Identity</h2>
                   <div className="space-y-10 text-gray-700 leading-relaxed text-lg">
                     <p>
                       AMA Legal Solutions operates as a unified Pan-India legal entity and is widely recognized as a premier **Legal Consultant in India**. While we represent clients in every major city across India, we maintain a centralized command structure to ensure that the quality of legal advice remains consistent and high-caliber, regardless of your location.
@@ -387,7 +511,7 @@ export default function AMALegalSolutionsPage() {
 
                 {/* Service 1: Loan Settlement & Arbitration */}
                 <section id="service1" className="scroll-mt-32">
-                  <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 tracking-tight border-b-8 border-[#D2A02A] inline-block pb-2">Service 1: Debt Resolution & Institutional Arbitration</h2>
+                  <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-10 tracking-tight border-b-8 border-[#D2A02A] inline-block pb-2">Service 1: Debt Resolution & Institutional Arbitration</h2>
                   <div className="space-y-16">
                     <div className="prose prose-xl max-w-none text-gray-700">
                       <h3 className="text-3xl font-black text-[#D2A02A] mb-8">The Anatomy of a Perfect Loan Settlement</h3>
@@ -438,7 +562,7 @@ export default function AMALegalSolutionsPage() {
 
                 {/* Service 2: Trademark & IPR */}
                 <section id="service2" className="scroll-mt-32">
-                  <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 tracking-tight border-b-8 border-[#D2A02A] inline-block pb-2">Service 2: The Intellectual Property Fortress</h2>
+                  <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-10 tracking-tight border-b-8 border-[#D2A02A] inline-block pb-2">Service 2: The Intellectual Property Fortress</h2>
                   <div className="space-y-12">
                     <p className="text-2xl leading-relaxed text-gray-800 font-medium">
                       In the modern economy, your name, logo, and inventions are the digital "DNA" of your business. Protecting this DNA is not just a legal requirement - it's a survival imperative. AMA Legal Solutions provides a 360-degree IPR protection suite.
@@ -483,7 +607,7 @@ export default function AMALegalSolutionsPage() {
 
                 {/* Service 3: Legal Notice & Drafting */}
                 <section id="service3" className="scroll-mt-32">
-                  <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 tracking-tight border-b-8 border-[#D2A02A] inline-block pb-2">Service 3: The Art of Strategic Drafting</h2>
+                  <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-10 tracking-tight border-b-8 border-[#D2A02A] inline-block pb-2">Service 3: The Art of Strategic Drafting</h2>
                   <div className="space-y-12">
                     <p className="text-2xl leading-relaxed text-gray-700 italic border-l-8 border-[#D2A02A] pl-10 bg-gray-50 py-10 rounded-r-3xl">
                       "In a world of noise, a well-drafted legal notice is the sound of authority." - Advocate Anuj Anand Malik
@@ -525,7 +649,7 @@ export default function AMALegalSolutionsPage() {
 
                 {/* Service 4: Corporate Law */}
                 <section id="service4" className="scroll-mt-32">
-                  <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 tracking-tight border-b-8 border-[#D2A02A] inline-block pb-2">Service 4: Corporate Architecture & Compliance</h2>
+                  <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-10 tracking-tight border-b-8 border-[#D2A02A] inline-block pb-2">Service 4: Corporate Architecture & Compliance</h2>
                   <div className="space-y-12">
                     <p className="text-2xl leading-relaxed text-gray-700">
                       The corporate landscape in 2026 is no longer about just "incorporating" a company. It's about building a legal structure that can withstand global investor scrutiny and a complex regulatory environment.
@@ -582,7 +706,7 @@ export default function AMALegalSolutionsPage() {
 
                 {/* Service 5: Real Estate Law */}
                 <section id="service5" className="scroll-mt-32">
-                  <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 tracking-tight border-b-8 border-[#D2A02A] inline-block pb-2">Service 5: Real Estate Title & RERA Protection</h2>
+                  <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-10 tracking-tight border-b-8 border-[#D2A02A] inline-block pb-2">Service 5: Real Estate Title & RERA Protection</h2>
                   <div className="space-y-12">
                     <p className="text-2xl leading-relaxed text-gray-700">
                       Gurugram is a city of ambitious skyscrapers and complex land records. For an individual homebuyer, the risks of title fraud or project delays are overwhelming. AMA Legal Solutions is your defense against builder dominance and administrative delays.
@@ -619,7 +743,7 @@ export default function AMALegalSolutionsPage() {
 
                 {/* Service 6: IEPF & Investment Recovery */}
                 <section id="service6" className="scroll-mt-32">
-                  <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 tracking-tight border-b-8 border-green-600 inline-block pb-2">Service 6: IEPF Recovery & Unclaimed Investment Restoration</h2>
+                  <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-10 tracking-tight border-b-8 border-green-600 inline-block pb-2">Service 6: IEPF Recovery & Unclaimed Investment Restoration</h2>
                   <div className="space-y-12">
                      <p className="text-2xl leading-relaxed text-gray-700">
                         Millions of rupees in dividends and shares are transferred to the **Investor Education and Protection Fund (IEPF)** every year due to dormancy. At AMA Legal Solutions, we specialize in navigating the complex bureaucratic and legal hurdles to restore these 'lost' fortunes to their rightful owners.
@@ -657,7 +781,7 @@ export default function AMALegalSolutionsPage() {
 
                 {/* Service 7: Criminal & Family Law */}
                 <section id="service7" className="scroll-mt-32">
-                  <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 tracking-tight border-b-8 border-[#D2A02A] inline-block pb-2">Service 7: Criminal Defense and Family Advocacy</h2>
+                  <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-10 tracking-tight border-b-8 border-[#D2A02A] inline-block pb-2">Service 7: Criminal Defense and Family Advocacy</h2>
                   <div className="space-y-12">
                      <p className="text-2xl leading-relaxed text-gray-700">
                         Human lives are messy, and sometimes the law intersects with our most personal relationships and freedoms. AMA Legal Solutions provides empathetic yet assertive representation in criminal and matrimonial matters.
@@ -730,6 +854,52 @@ export default function AMALegalSolutionsPage() {
                           <p className="text-gray-400 font-bold tracking-widest uppercase">- THE AMA LEGAL COMMITMENT</p>
                        </div>
                     </div>
+                  </div>
+                </section>
+
+                {/* FAQ Section */}
+                <section id="faqs" className="scroll-mt-32">
+                  <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-10 tracking-tight border-b-8 border-[#D2A02A] inline-block pb-2">Frequently Asked Questions</h2>
+                  <div className="space-y-5">
+                    {faqs.map((faq, index) => (
+                      <div key={index} className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <h4 className="text-xl font-black text-gray-900 mb-4 flex gap-4">
+                          <span className="text-[#D2A02A]">Q.</span> {faq.question}
+                        </h4>
+                        <p className="text-gray-600 leading-relaxed pl-8 border-l-2 border-gray-100 italic">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+
+                {/* Reviews Section */}
+                <section id="reviews" className="scroll-mt-32">
+                  <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-10 tracking-tight border-b-8 border-[#D2A02A] inline-block pb-2">Client Success Stories</h2>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {reviewSchema.review.map((rev, index) => (
+                      <div key={index} className="bg-gray-50 p-10 rounded-[3rem] border border-gray-100 relative group overflow-hidden">
+                        <div className="absolute top-0 right-0 p-8 text-6xl text-[#D2A02A]/10 font-serif group-hover:scale-110 transition-transform">"</div>
+                        <div className="flex gap-1 mb-6">
+                          {[...Array(5)].map((_, i) => (
+                            <span key={i} className="text-[#D2A02A] text-xl">★</span>
+                          ))}
+                        </div>
+                        <p className="text-gray-700 text-lg leading-relaxed mb-8 italic relative z-10">
+                          {rev.reviewBody}
+                        </p>
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center text-white font-black">
+                            {rev.author.name.charAt(0)}
+                          </div>
+                          <div>
+                            <h5 className="font-black text-gray-900">{rev.author.name}</h5>
+                            <p className="text-xs text-gray-500 uppercase tracking-widest font-bold">Verified Client</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </section>
 
