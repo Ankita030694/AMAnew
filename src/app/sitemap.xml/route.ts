@@ -14,6 +14,7 @@ export async function GET(): Promise<Response> {
   const staticRoutes = [
     '',
     '/about',
+    '/ama-legal-solutions',
     '/contact',
     '/blog',
     '/articles',
