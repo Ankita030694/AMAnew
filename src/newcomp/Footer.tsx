@@ -14,7 +14,6 @@ const Footer = () => {
         { name: 'Success Stories', href: '/success-stories' },
         { name: 'Privacy Policy', href: '/privacy-policy' },
         { name: 'Terms of Service', href: '/terms-and-conditions' },
-        { name: 'Client Login', href: '/login' },
       ]
     },
     {
