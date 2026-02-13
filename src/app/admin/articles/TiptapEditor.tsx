@@ -23,6 +23,12 @@ import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../../../lib/firebase';
 const lowlight = createLowlight(common);
 
+interface TiptapEditorProps {
+  content: string;
+  onChange: (content: string) => void;
+  className?: string;
+}
+
 // Add image compression helper function
 const compressImage = (file: File): Promise<File> => {
   return new Promise((resolve, reject) => {
@@ -89,12 +95,6 @@ const compressImage = (file: File): Promise<File> => {
   });
 };
 
-interface TiptapEditorProps {
-  content: string;
-  onChange: (content: string) => void;
-  className?: string;
-}
-
 // MenuBar component
 const MenuBar = ({ editor }: { editor: any }) => {
   const [uploading, setUploading] = useState(false);
@@ -122,12 +122,6 @@ const MenuBar = ({ editor }: { editor: any }) => {
   const handleImageUpload = async (file: File) => {
     try {
       setUploading(true);
-      
-      // Check if storage is available
-      if (!storage) {
-        alert("Storage service is not available. Please try again later.");
-        return;
-      }
       
       // Check file size (limit to 10MB)
       const MAX_FILE_SIZE = 10 * 1024 * 1024;
@@ -199,7 +193,7 @@ const MenuBar = ({ editor }: { editor: any }) => {
   };
 
   return (
-    <div className="border-b border-gray-300 p-2 flex flex-wrap gap-1 bg-gray-50">
+    <div className="sticky top-0 z-10 border-b border-gray-300 p-2 flex flex-wrap gap-1 bg-gray-50">
       {/* Text Formatting */}
       <div className="flex gap-1 mr-2">
         <button
@@ -600,6 +594,11 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange, classNam
       Image.configure({
         allowBase64: true,
         inline: true,
+        HTMLAttributes: {
+          class: 'max-w-full h-auto',
+          loading: 'lazy',
+          onerror: "this.onerror=null; this.src='/images/placeholder.png'; this.classList.add('error-image');",
+        },
       }),
       Link.configure({
         openOnClick: false,
@@ -629,7 +628,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange, classNam
         lowlight,
       }),
     ],
-    content: content || '<p>Start writing your blog...</p>',
+    content: content || '<p>Start writing your article...</p>',
     onUpdate: ({ editor }) => {
       onChange(editor.getHTML());
     },
@@ -672,21 +671,108 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange, classNam
     .ProseMirror table { border-collapse: collapse; margin: 0; overflow: hidden; table-layout: fixed; width: 100%; }
     .ProseMirror table td, .ProseMirror table th { border: 2px solid #ced4da; box-sizing: border-box; min-width: 1em; padding: 3px 5px; position: relative; vertical-align: top; }
     .ProseMirror table th { background-color: #f8f9fa; font-weight: bold; text-align: left; }
-    .ProseMirror ul, .ProseMirror ol { padding-left: 1.5em; }
-    .ProseMirror li { margin: 0.5em 0; }
+    
+    /* List styles - Fixed to show bullets and numbers */
+    .ProseMirror ul { 
+      list-style-type: disc; 
+      padding-left: 1.5em; 
+      margin: 1em 0;
+    }
+    .ProseMirror ol { 
+      list-style-type: decimal; 
+      padding-left: 1.5em; 
+      margin: 1em 0;
+    }
+    .ProseMirror li { 
+      margin: 0.5em 0; 
+      display: list-item;
+    }
+    .ProseMirror ul ul { 
+      list-style-type: circle; 
+      margin: 0.5em 0;
+    }
+    .ProseMirror ul ul ul { 
+      list-style-type: square; 
+      margin: 0.5em 0;
+    }
+    .ProseMirror ol ol { 
+      list-style-type: lower-alpha; 
+      margin: 0.5em 0;
+    }
+    .ProseMirror ol ol ol { 
+      list-style-type: lower-roman; 
+      margin: 0.5em 0;
+    }
+    
     .ProseMirror hr { border: none; border-top: 2px solid #ced4da; margin: 1em 0; }
     .ProseMirror img { max-width: 100%; height: auto; }
+    
+    .ProseMirror img.error-image {
+      border: 2px solid #EF4444;
+      min-height: 100px;
+      min-width: 100px;
+      position: relative;
+    }
+    
+    .ProseMirror img.error-image::after {
+      content: 'Failed to load image';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #EF4444;
+      font-size: 0.875rem;
+      text-align: center;
+    }
   `;
 
   // Return the editor content with the MenuBar
   return (
-    <div className={className}>
+    <div className={`${className} relative`}>
       <style jsx global>{editorStyles}</style>
       {isMounted && editor && (
-        <>
+        <div className="flex flex-col h-full">
           <MenuBar editor={editor} />
-          <EditorContent editor={editor} />
-        </>
+          <div className="overflow-y-auto flex-1">
+            <EditorContent 
+            editor={editor} 
+            onDrop={(event) => {
+              if (event.dataTransfer?.files.length) {
+                const file = event.dataTransfer.files[0];
+                if (file.type.startsWith('image/')) {
+                  event.preventDefault();
+                  const input = document.querySelector('input[type="file"]') as HTMLInputElement;
+                  if (input) {
+                    const dataTransfer = new DataTransfer();
+                    dataTransfer.items.add(file);
+                    input.files = dataTransfer.files;
+                    input.dispatchEvent(new Event('change', { bubbles: true }));
+                  }
+                  return true;
+                }
+              }
+              return false;
+            }}
+            onPaste={(event) => {
+              if (event.clipboardData?.files.length) {
+                const file = event.clipboardData.files[0];
+                if (file.type.startsWith('image/')) {
+                  event.preventDefault();
+                  const input = document.querySelector('input[type="file"]') as HTMLInputElement;
+                  if (input) {
+                    const dataTransfer = new DataTransfer();
+                    dataTransfer.items.add(file);
+                    input.files = dataTransfer.files;
+                    input.dispatchEvent(new Event('change', { bubbles: true }));
+                  }
+                  return true;
+                }
+              }
+              return false;
+            }}
+          />
+          </div>
+        </div>
       )}
     </div>
   );

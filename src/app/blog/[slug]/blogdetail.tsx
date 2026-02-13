@@ -53,7 +53,7 @@ const authorBios = {
   "Anuj Anand Malik": {
     name: "Anuj Anand Malik",
     description: "Anuj Anand Malik, Founder of AMA Legal Solutions, is a trusted advocate, loan settlement expert, legal advisor, and banking lawyer. With over a decade of experience in loan settlement, corporate law, financial disputes, and compliance, he leads a result-driven law firm based in India that helps individuals, startups, and businesses achieve legal and financial stability.",
-    image: "/anujbhiya.svg",
+    image: "/anujbhiya.png",
     linkedInUrl: "https://www.linkedin.com/in/iamanujmalik/"
   },
   "Shrey Arora": {

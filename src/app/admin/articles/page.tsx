@@ -31,7 +31,7 @@ interface Review {
   review: string;
 }
 
-// Define Article interface with updated structure
+// Define Article interface
 interface Blog {
   id?: string;
   title: string;
@@ -43,9 +43,9 @@ interface Blog {
   metaTitle?: string;
   metaDescription?: string;
   slug: string;
-  faqs?: FAQ[]; // New field for FAQs
-  reviews?: Review[]; // New field for Reviews
-  author: string; // New author field
+  faqs?: FAQ[];
+  reviews?: Review[];
+  author: string;
 }
 
 const ArticlesDashboard = () => {
@@ -57,15 +57,15 @@ const ArticlesDashboard = () => {
     title: '',
     subtitle: '',
     description: '',
-    date: new Date().toISOString().split('T')[0], // Format as YYYY-MM-DD
+    date: new Date().toISOString().split('T')[0],
     image: '',
     created: Date.now(),
     metaTitle: '',
     metaDescription: '',
     slug: '',
-    faqs: [], // Initialize empty FAQs array
-    reviews: [], // Initialize empty Reviews array
-    author: 'Anuj Anand Malik' // Default author
+    faqs: [],
+    reviews: [],
+    author: 'Anuj Anand Malik'
   });
   const [uploading, setUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
@@ -73,12 +73,31 @@ const ArticlesDashboard = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
   
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+  
   // AI Generation state
   const [primaryKeyword, setPrimaryKeyword] = useState('');
   const [secondaryKeyword, setSecondaryKeyword] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
 
-  // Check if user is logged in; if not, redirect to login page
+  // New Image Generation and Content Expansion state
+  const [imagePrompt, setImagePrompt] = useState('');
+  const [isGeneratingImage, setIsGeneratingImage] = useState(false);
+  const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(null);
+  const [isUploadingGenerated, setIsUploadingGenerated] = useState(false);
+  const [expansionPrompt, setExpansionPrompt] = useState('');
+  const [isExpanding, setIsExpanding] = useState(false);
+
+  // RSS Debug - for parity with blogs even if articles doesn't use it yet
+  const [isLoadingRss, setIsLoadingRss] = useState(false);
+  const [rssDebugInfo, setRssDebugInfo] = useState<string | null>(null);
+
+  const totalPages = Math.ceil(blogs.length / itemsPerPage);
+  const currentBlogs = blogs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+  // Check if user is logged in
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (!user) {
@@ -88,7 +107,6 @@ const ArticlesDashboard = () => {
     return () => unsubscribe();
   }, [router]);
 
-  // Logout handler using Firebase Auth
   const handleLogout = async () => {
     try {
       await signOut(auth);
@@ -98,7 +116,6 @@ const ArticlesDashboard = () => {
     }
   };
 
-  // Navigation handler: Redirect for Blogs and Articles
   const handleNavigation = (itemId: string) => {
     if (itemId === 'blogs') {
       router.push('/admin/blogs');
@@ -115,207 +132,10 @@ const ArticlesDashboard = () => {
     }
   };
 
-  // Fetch blogs data
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, 'articles'));
-        const data = querySnapshot.docs.map(doc => {
-          const docData = doc.data();
-          return {
-            id: doc.id,
-            title: docData.title || '',
-            subtitle: docData.subtitle || '',
-            description: docData.description || '',
-            date: docData.date || '',
-            image: docData.image || '',
-            created: docData.created || Date.now(),
-            metaTitle: docData.metaTitle || '',
-            metaDescription: docData.metaDescription || '',
-            slug: docData.slug || '',
-            faqs: docData.faqs || [],
-            reviews: [], // Initialize empty reviews array (will be fetched when editing)
-            author: docData.author || 'Anuj Anand Malik' // Default author
-          };
-        });
-        // Sort blogs by date in descending order (newest first)
-        const sortedData = data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-        setBlogs(sortedData);
-      } catch (error) {
-        console.error("Error fetching blogs data:", error);
-      }
-    };
-
-    fetchBlogs();
-  }, []);
-
-  // Autosave functionality
-  useEffect(() => {
-    if (showBlogForm && newBlog) {
-      // Don't save if it's empty initial state
-      if (newBlog.title === '' && newBlog.description === '') return;
-
-      const timer = setTimeout(() => {
-        const key = formMode === 'edit' && newBlog.id ? `autosave_article_${newBlog.id}` : 'autosave_article_new';
-        localStorage.setItem(key, JSON.stringify(newBlog));
-      }, 1000); // Save after 1 second of inactivity
-
-      return () => clearTimeout(timer);
-    }
-  }, [newBlog, showBlogForm, formMode]);
-
-  // Handle blog form input changes
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setNewBlog(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
-
-  // Handle Tiptap editor content changes
-  const handleEditorChange = (content: string) => {
-    setNewBlog(prevState => ({
-      ...prevState,
-      description: content
-    }));
-  };
-
-  // Add FAQ to the article
-  const addFaq = () => {
-    setNewBlog(prevState => ({
-      ...prevState,
-      faqs: [...(prevState.faqs || []), { question: '', answer: '' }]
-    }));
-  };
-
-  // Remove FAQ from the article
-  const removeFaq = (index: number) => {
-    setNewBlog(prevState => ({
-      ...prevState,
-      faqs: (prevState.faqs || []).filter((_, i) => i !== index)
-    }));
-  };
-
-  // Handle FAQ input changes
-  const handleFaqChange = (index: number, field: 'question' | 'answer', value: string) => {
-    setNewBlog(prevState => {
-      const updatedFaqs = [...(prevState.faqs || [])];
-      updatedFaqs[index] = { 
-        ...updatedFaqs[index], 
-        [field]: value 
-      };
-      return {
-        ...prevState,
-        faqs: updatedFaqs
-      };
-    });
-  };
-
-  // Add Review to the article
-  const addReview = () => {
-    setNewBlog(prevState => ({
-      ...prevState,
-      reviews: [...(prevState.reviews || []), { name: '', rating: 5, review: '' }]
-    }));
-  };
-
-  // Remove Review from the article
-  const removeReview = (index: number) => {
-    setNewBlog(prevState => ({
-      ...prevState,
-      reviews: (prevState.reviews || []).filter((_, i) => i !== index)
-    }));
-  };
-
-  // Handle Review input changes
-  const handleReviewChange = (index: number, field: keyof Review, value: any) => {
-    setNewBlog(prevState => {
-      const updatedReviews = [...(prevState.reviews || [])];
-      updatedReviews[index] = { 
-        ...updatedReviews[index], 
-        [field]: value 
-      };
-      return {
-        ...prevState,
-        reviews: updatedReviews
-      };
-    });
-  };
-
-  // Handle blog form submission (Create or Update)
-  const handleSubmitBlog = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const fetchBlogs = async () => {
     try {
-      // Add timestamp and format the date
-      const blogWithMetadata = {
-        ...newBlog,
-        created: formMode === 'add' ? Date.now() : newBlog.created,
-        date: new Date(newBlog.date).toISOString().split('T')[0] // Ensure date is in YYYY-MM-DD format
-      };
-      
-      // Remove faqs and reviews from the main document since we'll store them in subcollections
-      const { faqs, reviews, ...blogData } = blogWithMetadata;
-      
-      let blogId = newBlog.id;
-      
-      if (formMode === 'add') {
-        // Add to Firestore
-        const docRef = await addDoc(collection(db, 'articles'), blogData);
-        blogId = docRef.id;
-      } else {
-        // Update existing document
-        if (blogId) {
-          const blogRef = doc(db, 'articles', blogId);
-          await updateDoc(blogRef, blogData);
-        }
-      }
-      
-      // Add FAQs to subcollection
-      if (blogId && faqs && faqs.length > 0) {
-        // First delete existing FAQs if updating
-        if (formMode === 'edit') {
-          const faqsSnapshot = await getDocs(collection(db, 'articles', blogId, 'faqs'));
-          for (const doc of faqsSnapshot.docs) {
-            await deleteDoc(doc.ref);
-          }
-        }
-        
-        // Add all FAQs to subcollection
-        for (const faq of faqs) {
-          await addDoc(collection(db, 'articles', blogId, 'faqs'), {
-            question: faq.question,
-            answer: faq.answer
-          });
-        }
-      }
-
-      // Add Reviews to subcollection
-      if (blogId && reviews && reviews.length > 0) {
-        // First delete existing Reviews if updating
-        if (formMode === 'edit') {
-          const reviewsSnapshot = await getDocs(collection(db, 'articles', blogId, 'reviews'));
-          for (const doc of reviewsSnapshot.docs) {
-            await deleteDoc(doc.ref);
-          }
-        }
-        
-        // Add all Reviews to subcollection
-        for (const review of reviews) {
-          await addDoc(collection(db, 'articles', blogId, 'reviews'), {
-            name: review.name,
-            rating: review.rating,
-            review: review.review
-          });
-        }
-      }
-      
-      // Reset form and show table
-      resetForm();
-      
-      // Fetch the updated blogs
       const querySnapshot = await getDocs(collection(db, 'articles'));
-      const updatedBlogs = querySnapshot.docs.map(doc => {
+      const data = querySnapshot.docs.map(doc => {
         const docData = doc.data();
         return {
           id: doc.id,
@@ -328,382 +148,357 @@ const ArticlesDashboard = () => {
           metaTitle: docData.metaTitle || '',
           metaDescription: docData.metaDescription || '',
           slug: docData.slug || '',
-          faqs: [], // Initialize empty faqs array
-          reviews: [], // Initialize empty reviews array
-          author: docData.author || 'Anuj Anand Malik' // Default author
+          faqs: docData.faqs || [],
+          reviews: docData.reviews || [],
+          author: docData.author || 'Anuj Anand Malik'
         };
       });
-      // Sort blogs by date in descending order (newest first)
-      const sortedUpdatedBlogs = updatedBlogs.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-      setBlogs(sortedUpdatedBlogs);
-      
+      const sortedData = data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+      setBlogs(sortedData);
     } catch (error) {
-      console.error("Error processing blog:", error);
+      console.error("Error fetching blogs data:", error);
     }
   };
 
-  // Handle blog edit - needs to also fetch FAQs from subcollection
-  const handleEdit = async (blog: Blog) => {
-    try {
-      // Fetch FAQs for this article
-      const faqsSnapshot = await getDocs(collection(db, 'articles', blog.id!, 'faqs'));
-      const faqs = faqsSnapshot.docs.map(doc => ({
-        id: doc.id,
-        question: doc.data().question || '',
-        answer: doc.data().answer || ''
-      }));
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
 
-      // Fetch Reviews for this article
-      const reviewsSnapshot = await getDocs(collection(db, 'articles', blog.id!, 'reviews'));
-      const reviews = reviewsSnapshot.docs.map(doc => ({
-        id: doc.id,
-        name: doc.data().name || '',
-        rating: doc.data().rating || 5,
-        review: doc.data().review || ''
-      }));
-      
-      setNewBlog({...blog, faqs, reviews});
-      setFormMode('edit');
-      
-      // Check for saved draft for this specific article
-      const savedDraft = localStorage.getItem(`autosave_article_${blog.id}`);
-      if (savedDraft) {
-        if (window.confirm('Found an unsaved draft for this article. Do you want to restore your edits?')) {
-          setNewBlog(JSON.parse(savedDraft));
-        } else {
-          localStorage.removeItem(`autosave_article_${blog.id}`);
-        }
-      }
-      
-      setShowBlogForm(true);
-    } catch (error) {
-      console.error("Error fetching FAQs:", error);
-      setNewBlog(blog);
-      setFormMode('edit');
-      
-      // Check for saved draft even on error
-      const savedDraft = localStorage.getItem(`autosave_article_${blog.id}`);
-      if (savedDraft) {
-        if (window.confirm('Found an unsaved draft for this article. Do you want to restore your edits?')) {
-          setNewBlog(JSON.parse(savedDraft));
-        } else {
-          localStorage.removeItem(`autosave_article_${blog.id}`);
-        }
-      }
-      
-      setShowBlogForm(true);
+  useEffect(() => {
+    if (showBlogForm && newBlog) {
+      if (newBlog.title === '' && newBlog.description === '') return;
+      const timer = setTimeout(() => {
+        const key = formMode === 'edit' && newBlog.id ? `autosave_article_${newBlog.id}` : 'autosave_article_new';
+        localStorage.setItem(key, JSON.stringify(newBlog));
+      }, 1000);
+      return () => clearTimeout(timer);
     }
+  }, [newBlog, showBlogForm, formMode]);
+
+  const generateSlug = (title: string) => {
+    return title.toLowerCase()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/--+/g, '-')
+      .trim();
   };
 
-  // Handle blog delete
-  const handleDelete = async (id: string | undefined) => {
-    if (!id) return;
-    
-    if (window.confirm('Are you sure you want to delete this article?')) {
-      try {
-        // Get the article content first to extract image URLs
-        const articleDoc = await getDoc(doc(db, 'articles', id));
-        const articleData = articleDoc.data();
-        
-        if (articleData) {
-          // Extract all image URLs from the article content
-          const content = articleData.description || '';
-          const imgRegex = /<img[^>]+src="([^">]+)"/g;
-          const imageUrls = new Set();
-          let match;
-          
-          while ((match = imgRegex.exec(content)) !== null) {
-            imageUrls.add(match[1]);
-          }
-          
-          // Get all article_images documents
-          const imagesSnapshot = await getDocs(collection(db, 'article_images'));
-          const unusedImages = imagesSnapshot.docs.filter(doc => {
-            const imageData = doc.data();
-            return imageUrls.has(imageData.url);
-          });
-          
-          // Delete unused images from Storage and Firestore
-          for (const imageDoc of unusedImages) {
-            const imageData = imageDoc.data();
-            try {
-              // Delete from Storage
-              const imageRef = ref(storage, imageData.path);
-              await deleteObject(imageRef);
-              
-              // Delete from Firestore
-              await deleteDoc(imageDoc.ref);
-            } catch (error) {
-              console.error(`Error deleting image ${imageData.filename}:`, error);
-            }
-          }
-        }
-        
-        // Delete document from Firestore
-        await deleteDoc(doc(db, 'articles', id));
-        
-        // Update local state
-        setBlogs(prevBlogs => prevBlogs.filter(blog => blog.id !== id));
-      } catch (error) {
-        console.error("Error deleting article:", error);
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setNewBlog(prevState => {
+      if (name === 'title' && (!prevState.slug || prevState.slug === generateSlug(prevState.title))) {
+        return {
+          ...prevState,
+          [name]: value,
+          slug: generateSlug(value)
+        };
       }
-    }
-  };
-
-  // Reset form state
-  const resetForm = () => {
-    // Clear autosave draft based on current mode
-    if (formMode === 'edit' && newBlog.id) {
-      localStorage.removeItem(`autosave_article_${newBlog.id}`);
-    } else {
-      localStorage.removeItem('autosave_article_new');
-    }
-
-    setNewBlog({
-      title: '',
-      subtitle: '',
-      description: '',
-      date: new Date().toISOString().split('T')[0],
-      image: '',
-      created: Date.now(),
-      metaTitle: '',
-      metaDescription: '',
-      slug: '',
-      faqs: [], // Reset FAQs array
-      reviews: [], // Reset Reviews array
-      author: 'Anuj Anand Malik' // Default author
+      return {
+        ...prevState,
+        [name]: value
+      };
     });
-    setFormMode('add');
-    setShowBlogForm(false);
   };
 
-  // Cancel form handler
-  const handleCancelForm = () => {
-    resetForm();
-  };
-
-  // Handle title change to auto-generate slug
-  const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const title = e.target.value;
-    const generatedSlug = title
-      .toLowerCase()
-      .replace(/[^\w\s-]/g, '') // Remove special chars
-      .replace(/\s+/g, '-') // Replace spaces with hyphens
-      .replace(/-+/g, '-'); // Replace multiple hyphens with single hyphen
-    
+  const handleEditorChange = (content: string) => {
     setNewBlog(prevState => ({
       ...prevState,
-      title,
-      slug: generatedSlug
+      description: content
     }));
   };
 
-  // Handle file upload to Firebase Storage
-  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    
-    // Check file size (limit to 2MB)
-    const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
-    if (file.size > MAX_FILE_SIZE) {
-      alert("Image is too large. Maximum size is 10MB.");
-      return;
-    }
-    
-    try {
-      setUploading(true);
-      setUploadProgress(0);
-      
-      // Create a reference to the file in Firebase Storage
-      const storageRef = ref(storage, `article-images/${Date.now()}_${file.name}`);
-      
-      // Create a local preview of the image
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        setImagePreview(event.target?.result as string);
-      };
-      reader.readAsDataURL(file);
-      
-      // Compress the image before uploading if it's an image
-      let fileToUpload = file;
-      if (file.type.startsWith('image/')) {
-        fileToUpload = await compressImage(file);
-      }
-      
-      // Upload with retry logic
-      const maxRetries = 3;
-      let retryCount = 0;
-      let uploadSuccessful = false;
-      
-      while (retryCount < maxRetries && !uploadSuccessful) {
-        try {
-          // Upload the file
-          const snapshot = await uploadBytes(storageRef, fileToUpload);
-          
-          // Get the download URL and update the blog state
-          const downloadURL = await getDownloadURL(snapshot.ref);
-          setNewBlog(prevState => ({
-            ...prevState,
-            image: downloadURL
-          }));
-          
-          uploadSuccessful = true;
-          setUploadProgress(100);
-        } catch (err) {
-          console.error(`Upload attempt ${retryCount + 1} failed:`, err);
-          retryCount++;
-          
-          if (retryCount >= maxRetries) {
-            throw new Error(`Failed after ${maxRetries} attempts: ${err instanceof Error ? err.message : String(err)}`);
-          }
-          
-          // Wait before retrying (exponential backoff)
-          await new Promise(resolve => setTimeout(resolve, 1000 * Math.pow(2, retryCount)));
-        }
-      }
-    } catch (error) {
-      console.error("Error uploading image:", error);
-      alert(`Failed to upload image: ${error instanceof Error ? error.message : "Please check your internet connection and try again."}`);
-    } finally {
-      setUploading(false);
-    }
+  const addFaq = () => {
+    setNewBlog(prevState => ({
+      ...prevState,
+      faqs: [...(prevState.faqs || []), { question: '', answer: '' }]
+    }));
   };
-  
-  // Helper function to compress images
+
+  const removeFaq = (index: number) => {
+    setNewBlog(prevState => ({
+      ...prevState,
+      faqs: (prevState.faqs || []).filter((_, i) => i !== index)
+    }));
+  };
+
+  const handleFaqChange = (index: number, field: 'question' | 'answer', value: string) => {
+    setNewBlog(prevState => {
+      const updatedFaqs = [...(prevState.faqs || [])];
+      updatedFaqs[index] = { ...updatedFaqs[index], [field]: value };
+      return { ...prevState, faqs: updatedFaqs };
+    });
+  };
+
+  const addReview = () => {
+    setNewBlog(prevState => ({
+      ...prevState,
+      reviews: [...(prevState.reviews || []), { name: '', rating: 5, review: '' }]
+    }));
+  };
+
+  const removeReview = (index: number) => {
+    setNewBlog(prevState => ({
+      ...prevState,
+      reviews: (prevState.reviews || []).filter((_, i) => i !== index)
+    }));
+  };
+
+  const handleReviewChange = (index: number, field: keyof Review, value: any) => {
+    setNewBlog(prevState => {
+      const updatedReviews = [...(prevState.reviews || [])];
+      updatedReviews[index] = { ...updatedReviews[index], [field]: value };
+      return { ...prevState, reviews: updatedReviews };
+    });
+  };
+
   const compressImage = (file: File): Promise<File> => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = (event) => {
-        const img = new Image();
+        const img = document.createElement('img');
         img.src = event.target?.result as string;
-        
         img.onload = () => {
           const canvas = document.createElement('canvas');
           let width = img.width;
           let height = img.height;
-          
-          // Calculate new dimensions while maintaining aspect ratio
           const MAX_WIDTH = 1200;
           const MAX_HEIGHT = 1200;
-          
           if (width > height) {
-            if (width > MAX_WIDTH) {
-              height = Math.round(height * (MAX_WIDTH / width));
-              width = MAX_WIDTH;
-            }
+            if (width > MAX_WIDTH) { height = Math.round(height * (MAX_WIDTH / width)); width = MAX_WIDTH; }
           } else {
-            if (height > MAX_HEIGHT) {
-              width = Math.round(width * (MAX_HEIGHT / height));
-              height = MAX_HEIGHT;
-            }
+            if (height > MAX_HEIGHT) { width = Math.round(width * (MAX_HEIGHT / height)); height = MAX_HEIGHT; }
           }
-          
-          canvas.width = width;
-          canvas.height = height;
-          
+          canvas.width = width; canvas.height = height;
           const ctx = canvas.getContext('2d');
           ctx?.drawImage(img, 0, 0, width, height);
-          
-          // Convert to blob with reduced quality
-          canvas.toBlob(
-            (blob) => {
-              if (!blob) {
-                reject(new Error('Canvas to Blob conversion failed'));
-                return;
-              }
-              
-              // Create a new file from the blob
-              const compressedFile = new File([blob], file.name, {
-                type: 'image/jpeg',
-                lastModified: Date.now(),
-              });
-              
-              resolve(compressedFile);
-            },
-            'image/jpeg',
-            0.7 // Quality (0.7 = 70%)
-          );
+          canvas.toBlob((blob) => {
+            if (!blob) { reject(new Error('Canvas to Blob failed')); return; }
+            resolve(new File([blob], file.name, { type: 'image/jpeg', lastModified: Date.now() }));
+          }, 'image/jpeg', 0.7);
         };
-        
-        img.onerror = () => {
-          reject(new Error('Error loading image for compression'));
-        };
-      };
-      
-      reader.onerror = () => {
-        reject(new Error('Error reading file for compression'));
       };
     });
   };
 
-  // Handle AI generation
-  const handleGenerate = async () => {
-    if (!primaryKeyword.trim()) {
-      alert('Please enter a primary keyword.');
-      return;
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    try {
+      setUploading(true);
+      setUploadProgress(0);
+      const storageRef = ref(storage, `article-images/${Date.now()}_${file.name}`);
+      const reader = new FileReader();
+      reader.onload = (event) => setImagePreview(event.target?.result as string);
+      reader.readAsDataURL(file);
+      const fileToUpload = file.type.startsWith('image/') ? await compressImage(file) : file;
+      const snapshot = await uploadBytes(storageRef, fileToUpload);
+      const url = await getDownloadURL(snapshot.ref);
+      setNewBlog(prev => ({ ...prev, image: url }));
+      setUploadProgress(100);
+    } catch (error) {
+      console.error(error);
+      alert("Failed to upload image");
+    } finally {
+      setUploading(false);
     }
+  };
 
+  const handleGenerate = async () => {
+    if (!primaryKeyword.trim()) { alert('Enter primary keyword'); return; }
     try {
       setIsGenerating(true);
       const response = await fetch('/api/generate-article', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ primaryKeyword, secondaryKeyword }),
       });
-
-      if (!response.ok) {
-        throw new Error('Failed to generate article');
-      }
-
-      // Handle streaming response
+      if (!response.ok) throw new Error('Failed');
       const reader = response.body?.getReader();
-      if (!reader) {
-        throw new Error('No reader available');
-      }
-
-      let accumulatedDetails = '';
+      if (!reader) return;
+      let fullText = '';
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
-        accumulatedDetails += new TextDecoder().decode(value);
+        fullText += new TextDecoder().decode(value);
+        try {
+          const parts = fullText.split('\n\n');
+          for (const part of parts) {
+            if (part.startsWith('data: ')) {
+              const jsonStr = part.replace('data: ', '');
+              const data = JSON.parse(jsonStr);
+              if (data.type === 'content') {
+                setNewBlog(prev => ({
+                  ...prev,
+                  title: data.data.title || prev.title,
+                  subtitle: data.data.subtitle || prev.subtitle,
+                  description: data.data.description || prev.description,
+                  metaTitle: data.data.metaTitle || prev.metaTitle,
+                  metaDescription: data.data.metaDescription || prev.metaDescription,
+                  slug: data.data.title ? generateSlug(data.data.title) : prev.slug,
+                  faqs: data.data.faqs || prev.faqs,
+                  reviews: data.data.reviews || prev.reviews
+                }));
+              }
+            }
+          }
+        } catch (e) {}
       }
-
-      const generatedData = JSON.parse(accumulatedDetails);
-
-      setNewBlog(prevState => ({
-        ...prevState,
-        title: generatedData.title || prevState.title,
-        subtitle: generatedData.subtitle || prevState.subtitle,
-        description: generatedData.description || prevState.description, // HTML content
-        metaTitle: generatedData.metaTitle || prevState.metaTitle,
-        metaDescription: generatedData.metaDescription || prevState.metaDescription,
-        slug: generatedData.slug || prevState.slug, // Or generate from title
-        faqs: generatedData.faqs || prevState.faqs,
-        reviews: generatedData.reviews || prevState.reviews,
-      }));
-
-      // If slug wasn't provided but title was, generate one
-      if (!generatedData.slug && generatedData.title) {
-        const generatedSlug = generatedData.title
-          .toLowerCase()
-          .replace(/[^\w\s-]/g, '')
-          .replace(/\s+/g, '-')
-          .replace(/-+/g, '-');
-          
-        setNewBlog(prev => ({ ...prev, slug: generatedSlug }));
-      }
-      
-      alert('Article generated successfully! Please review and add an image.');
     } catch (error) {
-      console.error('Error generating article:', error);
-      alert('Failed to generate article. Please try again.');
+      console.error(error);
     } finally {
       setIsGenerating(false);
     }
   };
+
+  const handleGenerateImage = async () => {
+    if (!imagePrompt.trim()) { alert('Enter prompt'); return; }
+    try {
+      setIsGeneratingImage(true);
+      const response = await fetch('/api/generate-image', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt: imagePrompt }),
+      });
+      const data = await response.json();
+      if (data.url) setGeneratedImageUrl(data.url);
+      else alert(data.error || 'Failed to generate');
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsGeneratingImage(false);
+    }
+  };
+
+  const handleUploadGeneratedImage = async () => {
+    if (!generatedImageUrl) return;
+    try {
+      setIsUploadingGenerated(true);
+      const proxyResponse = await fetch(`/api/proxy-image?url=${encodeURIComponent(generatedImageUrl)}`);
+      const blob = await proxyResponse.blob();
+      const file = new File([blob], `generated_${Date.now()}.png`, { type: 'image/png' });
+      const storageRef = ref(storage, `article-images/${file.name}`);
+      const snapshot = await uploadBytes(storageRef, file);
+      const url = await getDownloadURL(snapshot.ref);
+      setNewBlog(prev => ({ ...prev, image: url }));
+      setGeneratedImageUrl(null);
+      alert('Image uploaded successfully');
+    } catch (error) {
+      console.error(error);
+      alert('Failed to upload');
+    } finally {
+      setIsUploadingGenerated(false);
+    }
+  };
+
+  const handleExpandContent = async () => {
+    if (!newBlog.description) return;
+    try {
+      setIsExpanding(true);
+      const response = await fetch('/api/expand-content', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content: newBlog.description, instructions: expansionPrompt }),
+      });
+      const data = await response.json();
+      if (data.expandedContent) {
+        setNewBlog(prev => ({ ...prev, description: data.expandedContent }));
+        alert('Content expanded');
+      } else alert('Failed to expand');
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsExpanding(false);
+    }
+  };
+
+  const handleSubmitBlog = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const blogWithMetadata = {
+        ...newBlog,
+        created: formMode === 'add' ? Date.now() : newBlog.created,
+        date: new Date(newBlog.date).toISOString().split('T')[0]
+      };
+      const { faqs, reviews, ...blogData } = blogWithMetadata;
+      let blogId = newBlog.id;
+      if (formMode === 'add') {
+        const docRef = await addDoc(collection(db, 'articles'), blogData);
+        blogId = docRef.id;
+      } else if (blogId) {
+        await updateDoc(doc(db, 'articles', blogId), blogData);
+      }
+      if (blogId) {
+        const faqsSnap = await getDocs(collection(db, 'articles', blogId, 'faqs'));
+        for (const doc of faqsSnap.docs) await deleteDoc(doc.ref);
+        if (faqs) {
+          for (const faq of faqs) await addDoc(collection(db, 'articles', blogId, 'faqs'), faq);
+        }
+        const reviewsSnap = await getDocs(collection(db, 'articles', blogId, 'reviews'));
+        for (const doc of reviewsSnap.docs) await deleteDoc(doc.ref);
+        if (reviews) {
+          for (const review of reviews) await addDoc(collection(db, 'articles', blogId, 'reviews'), review);
+        }
+      }
+      resetForm();
+      fetchBlogs();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleEdit = async (blog: Blog) => {
+    try {
+      const faqsSnap = await getDocs(collection(db, 'articles', blog.id!, 'faqs'));
+      const faqs = faqsSnap.docs.map(doc => ({ ...doc.data(), id: doc.id } as FAQ));
+      const reviewsSnap = await getDocs(collection(db, 'articles', blog.id!, 'reviews'));
+      const reviews = reviewsSnap.docs.map(doc => ({ ...doc.data(), id: doc.id } as Review));
+      setNewBlog({ ...blog, faqs, reviews });
+      setFormMode('edit');
+      const saved = localStorage.getItem(`autosave_article_${blog.id}`);
+      if (saved && window.confirm('Restore draft?')) setNewBlog(JSON.parse(saved));
+      setShowBlogForm(true);
+    } catch (e) {
+      setNewBlog(blog); setFormMode('edit'); setShowBlogForm(true);
+    }
+  };
+
+  const handleDelete = async (id: string | undefined) => {
+    if (!id || !window.confirm('Delete article?')) return;
+    try {
+      const blogRef = doc(db, 'articles', id);
+      const blogDoc = await getDoc(blogRef);
+      if (blogDoc.exists() && blogDoc.data().image) {
+        try {
+          const imgRef = ref(storage, blogDoc.data().image);
+          await deleteObject(imgRef);
+        } catch (e) {}
+      }
+      await deleteDoc(blogRef);
+      fetchBlogs();
+    } catch (error) { console.error(error); }
+  };
+
+  const resetForm = () => {
+    setNewBlog({
+      title: '', subtitle: '', description: '',
+      date: new Date().toISOString().split('T')[0],
+      image: '', created: Date.now(),
+      metaTitle: '', metaDescription: '', slug: '',
+      faqs: [], reviews: [], author: 'Anuj Anand Malik'
+    });
+    setFormMode('add');
+    setShowBlogForm(false);
+    setImagePreview(null);
+    setGeneratedImageUrl(null);
+    setImagePrompt('');
+    setExpansionPrompt('');
+    localStorage.removeItem('autosave_article_new');
+    if (newBlog.id) localStorage.removeItem(`autosave_article_${newBlog.id}`);
+  };
+
+  const handlePreviousPage = () => setCurrentPage(prev => Math.max(prev - 1, 1));
+  const handleNextPage = () => setCurrentPage(prev => Math.min(prev + 1, totalPages));
 
   return (
     <div className="min-h-screen overflow-hidden relative">
@@ -769,7 +564,6 @@ const ArticlesDashboard = () => {
             ))}
           </div>
 
-          {/* Content Container */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -787,7 +581,6 @@ const ArticlesDashboard = () => {
                     resetForm();
                   } else {
                     setFormMode('add');
-                    
                     // Check for saved draft for new article
                     const savedDraft = localStorage.getItem('autosave_article_new');
                     if (savedDraft) {
@@ -795,32 +588,9 @@ const ArticlesDashboard = () => {
                         setNewBlog(JSON.parse(savedDraft));
                       } else {
                         localStorage.removeItem('autosave_article_new');
-                        // setNewBlog to default is not needed as it's the initial state, 
-                        // but if we want to be sure we can reset it, though resetForm is unsafe to call here 
-                        // as it might clear the draft we just found if we were to reorganize logic.
-                        // Since showBlogForm was false, newBlog should ideally be empty, 
-                        // but strictly speaking resetting explicitly is safer if state lingered.
-                        // However, resetForm also clears localStorage, which we just did. 
-                        // The default state is already set in the NewBlog definition or we can rely on manual reset if needed.
-                        // Actually, let's just leave it as is, assuming initial state is clean or handled.
-                        // Better: explicitly reset state to clean slate if discarding draft
-                        setNewBlog({
-                            title: '',
-                            subtitle: '',
-                            description: '',
-                            date: new Date().toISOString().split('T')[0],
-                            image: '',
-                            created: Date.now(),
-                            metaTitle: '',
-                            metaDescription: '',
-                            slug: '',
-                            faqs: [],
-                            reviews: [],
-                            author: 'Anuj Anand Malik'
-                        });
+                        resetForm();
                       }
                     }
-                    
                     setShowBlogForm(true);
                   }
                 }}
@@ -828,24 +598,25 @@ const ArticlesDashboard = () => {
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center px-4 py-2 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white rounded-md font-medium"
               >
-                <FontAwesomeIcon icon={showBlogForm ? faChartLine : faPlus} className="mr-2" />
+                <FontAwesomeIcon icon={showBlogForm ? faClipboardList : faPlus} className="mr-2" />
                 {showBlogForm ? 'View Articles' : 'Add Article'}
               </motion.button>
             </div>
 
             {/* Conditional Rendering: Show either Data Table or Article Form */}
             {showBlogForm ? (
-              // Article Creation/Edit Form with Updated Fields and Tiptap Editor
+              // Article Creation/Edit Form - Matches Blog Form Layout
               <AnimatePresence mode="wait">
-                <motion.form
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
+                <h2 className="text-xl font-bold mb-6 text-[#5A4C33] flex items-center">
+                  <FontAwesomeIcon icon={formMode === 'add' ? faPlus : faEdit} className="mr-3" />
+                  {formMode === 'add' ? 'Add New Article' : 'Edit Article'}
+                </h2>
+                
+                <form 
                   onSubmit={handleSubmitBlog}
                   className="space-y-6"
                 >
-                  {/* AI Generator Section */}
+                  {/* AI Generator Section - Exactly like Blog */}
                   <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-200 mb-6">
                     <h3 className="text-indigo-800 font-medium mb-2 flex items-center">
                       <FontAwesomeIcon icon={faMagic} className="mr-2" />
@@ -858,7 +629,7 @@ const ArticlesDashboard = () => {
                             type="text"
                             value={primaryKeyword}
                             onChange={(e) => setPrimaryKeyword(e.target.value)}
-                            placeholder="e.g., 'Get freed from loan'"
+                            placeholder="e.g., 'Divorce Law in India'"
                             className="w-full px-4 py-2 border border-indigo-200 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
                             disabled={isGenerating}
                           />
@@ -869,7 +640,7 @@ const ArticlesDashboard = () => {
                             type="text"
                             value={secondaryKeyword}
                             onChange={(e) => setSecondaryKeyword(e.target.value)}
-                            placeholder="e.g., 'loan settlement process'"
+                            placeholder="e.g., 'legal rights, alimony'"
                             className="w-full px-4 py-2 border border-indigo-200 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
                             disabled={isGenerating}
                           />
@@ -882,6 +653,7 @@ const ArticlesDashboard = () => {
                       >
                         {isGenerating ? (
                           <>
+                            <span className="animate-spin mr-2">💫</span>
                             Generating...
                           </>
                         ) : (
@@ -904,14 +676,13 @@ const ArticlesDashboard = () => {
                         id="title"
                         name="title"
                         value={newBlog.title}
-                        onChange={handleTitleChange}
+                        onChange={handleInputChange}
                         required
                         className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
                         placeholder="Enter article title"
                       />
                     </div>
                     
-                   
                     <div>
                       <label htmlFor="slug" className="block text-sm font-medium text-[#5A4C33] mb-1">URL Slug</label>
                       <input
@@ -922,15 +693,14 @@ const ArticlesDashboard = () => {
                         onChange={handleInputChange}
                         required
                         className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                        placeholder="url-friendly-slug"
+                        placeholder="url-friendly-article-name"
                       />
-                      <p className="mt-1 text-xs text-gray-500">Auto-generated from title. You can edit it if needed.</p>
+                      <p className="mt-1 text-xs text-gray-500">Will be used in the URL: /articles/{newBlog.slug}</p>
                     </div>
                   </div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    
-                  <div>
+                    <div>
                       <label htmlFor="subtitle" className="block text-sm font-medium text-[#5A4C33] mb-1">Subtitle/SEO Keywords</label>
                       <input
                         type="text"
@@ -943,6 +713,7 @@ const ArticlesDashboard = () => {
                         placeholder="Enter subtitle or SEO keywords"
                       />
                     </div>
+                    
                     <div>
                       <label htmlFor="metaTitle" className="block text-sm font-medium text-[#5A4C33] mb-1">Meta Title</label>
                       <input
@@ -1005,9 +776,8 @@ const ArticlesDashboard = () => {
                           </div>
                         )}
                         
-                        {/* Image preview */}
                         {(imagePreview || newBlog.image) && (
-                          <div className="mt-2">
+                          <div className="mt-2 text-black">
                             <img 
                               src={imagePreview || newBlog.image} 
                               alt="Article image preview" 
@@ -1016,12 +786,43 @@ const ArticlesDashboard = () => {
                           </div>
                         )}
                         
-                        <input
-                          type="hidden"
-                          id="image"
-                          name="image"
-                          value={newBlog.image}
-                        />
+                        {/* AI Image Generation Studio - Inlined like Blog */}
+                        <div className="mt-4 p-3 bg-purple-50 border border-purple-200 rounded-md">
+                          <label className="block text-xs font-medium text-purple-800 mb-1">AI Image Generation Prompt</label>
+                          <textarea
+                            value={imagePrompt}
+                            onChange={(e) => setImagePrompt(e.target.value)}
+                            rows={3}
+                            className="text-black w-full px-3 py-2 text-sm border border-purple-200 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"
+                            placeholder="Describe the article image you want to generate..."
+                          />
+                          <button
+                            type="button"
+                            onClick={handleGenerateImage}
+                            disabled={isGeneratingImage || !imagePrompt}
+                            className="mt-2 w-full px-4 py-2 bg-purple-600 text-white rounded-md text-sm font-medium disabled:bg-purple-300"
+                          >
+                            {isGeneratingImage ? 'Generating Image...' : 'Generate Image with DALL-E'}
+                          </button>
+                          
+                          {generatedImageUrl && (
+                            <div className="mt-4 flex flex-col items-center">
+                              <img 
+                                src={generatedImageUrl} 
+                                alt="Generated" 
+                                className="w-full max-w-xs rounded-lg shadow-lg mb-2"
+                              />
+                              <button
+                                type="button"
+                                onClick={handleUploadGeneratedImage}
+                                disabled={isUploadingGenerated}
+                                className="w-full px-4 py-2 bg-green-600 text-white rounded-md text-sm font-medium"
+                              >
+                                {isUploadingGenerated ? 'Uploading...' : 'Upload this Image to Firebase'}
+                              </button>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1055,167 +856,88 @@ const ArticlesDashboard = () => {
                       </select>
                     </div>
                   </div>
-                   {/* Add the FAQ section before the form submit buttons */}
-                   <div>
+                  
+                  <div>
                     <label className="block text-sm font-medium text-[#5A4C33] mb-1">FAQs</label>
                     <div className="border border-gray-300 rounded-md p-4 bg-gray-50">
-                      {/* Display existing FAQs */}
                       {(newBlog.faqs || []).map((faq, index) => (
                         <div key={index} className="mb-4 p-4 bg-white rounded-md shadow-sm">
                           <div className="flex justify-between items-center mb-2">
-                            <h3 className="text-sm font-medium text-[#5A4C33]">FAQ #{index + 1}</h3>
-                            <motion.button
-                              type="button"
-                              onClick={() => removeFaq(index)}
-                              whileHover={{ scale: 1.05 }}
-                              whileTap={{ scale: 0.95 }}
-                              className="px-2 py-1 bg-red-500 text-white text-xs rounded-md"
-                            >
-                              Remove
-                            </motion.button>
+                             <h3 className="text-sm font-medium text-[#5A4C33]">FAQ #{index + 1}</h3>
+                             <button type="button" onClick={() => removeFaq(index)} className="px-2 py-1 bg-red-500 text-white text-xs rounded-md">Remove</button>
                           </div>
                           <div className="mb-2">
                             <label className="block text-xs font-medium text-[#5A4C33] mb-1">Question</label>
-                            <input
-                              type="text"
-                              value={faq.question}
-                              onChange={(e) => handleFaqChange(index, 'question', e.target.value)}
-                              className="text-black w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                              placeholder="Enter FAQ question"
-                            />
+                            <input type="text" value={faq.question} onChange={(e) => handleFaqChange(index, 'question', e.target.value)} className="text-black w-full px-3 py-2 text-sm border border-gray-300 rounded-md" />
                           </div>
                           <div>
                             <label className="block text-xs font-medium text-[#5A4C33] mb-1">Answer</label>
-                            <textarea
-                              value={faq.answer}
-                              onChange={(e) => handleFaqChange(index, 'answer', e.target.value)}
-                              rows={3}
-                              className="text-black w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                              placeholder="Enter FAQ answer"
-                            />
+                            <textarea value={faq.answer} onChange={(e) => handleFaqChange(index, 'answer', e.target.value)} rows={3} className="text-black w-full px-3 py-2 text-sm border border-gray-300 rounded-md" />
                           </div>
                         </div>
                       ))}
-                      
-                      {/* Add FAQ button */}
-                      <motion.button
-                        type="button"
-                        onClick={addFaq}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="mt-2 px-4 py-2 bg-[#D2A02A] text-white rounded-md text-sm font-medium flex items-center"
-                      >
-                        <FontAwesomeIcon icon={faPlus} className="mr-2" />
-                        Add FAQ
-                      </motion.button>
-                      <p className="mt-2 text-xs text-gray-500">Add frequently asked questions related to this article.</p>
+                      <button type="button" onClick={addFaq} className="mt-2 px-4 py-2 bg-[#D2A02A] text-white rounded-md text-sm font-medium">Add FAQ</button>
                     </div>
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-[#5A4C33] mb-1">Review Snippets</label>
                     <div className="border border-gray-300 rounded-md p-4 bg-gray-50">
-                      {/* Display existing Reviews */}
                       {(newBlog.reviews || []).map((review, index) => (
                         <div key={index} className="mb-4 p-4 bg-white rounded-md shadow-sm relative">
-                          <button
-                            type="button"
-                            onClick={() => removeReview(index)}
-                            className="absolute top-2 right-2 text-red-500 hover:text-red-700"
-                          >
-                            <FontAwesomeIcon icon={faTrash} />
-                          </button>
+                          <button type="button" onClick={() => removeReview(index)} className="absolute top-2 right-2 text-red-500"><FontAwesomeIcon icon={faTrash} /></button>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
-                            <div>
-                              <label className="block text-xs font-medium text-[#5A4C33] mb-1">Reviewer Name</label>
-                              <input
-                                type="text"
-                                value={review.name}
-                                onChange={(e) => handleReviewChange(index, 'name', e.target.value)}
-                                className="text-black w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                                placeholder="Name"
-                              />
-                            </div>
-                            <div>
-                              <label className="block text-xs font-medium text-[#5A4C33] mb-1">Rating</label>
-                              <select
-                                value={review.rating}
-                                onChange={(e) => handleReviewChange(index, 'rating', parseInt(e.target.value))}
-                                className="text-black w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                              >
-                                {[1, 2, 3, 4, 5].map(num => (
-                                  <option key={num} value={num}>{num} Stars</option>
-                                ))}
-                              </select>
-                            </div>
+                            <input type="text" value={review.name} onChange={(e) => handleReviewChange(index, 'name', e.target.value)} placeholder="Name" className="text-black px-3 py-2 text-sm border border-gray-300 rounded-md" />
+                            <select value={review.rating} onChange={(e) => handleReviewChange(index, 'rating', parseInt(e.target.value))} className="text-black px-3 py-2 text-sm border border-gray-300 rounded-md">
+                              {[1,2,3,4,5].map(num => <option key={num} value={num}>{num} Stars</option>)}
+                            </select>
                           </div>
-                          <div>
-                            <label className="block text-xs font-medium text-[#5A4C33] mb-1">Review Text</label>
-                            <textarea
-                              value={review.review}
-                              onChange={(e) => handleReviewChange(index, 'review', e.target.value)}
-                              rows={2}
-                              className="text-black w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                              placeholder="Enter review text"
-                            />
-                          </div>
+                          <textarea value={review.review} onChange={(e) => handleReviewChange(index, 'review', e.target.value)} rows={2} placeholder="Review" className="text-black w-full px-3 py-2 text-sm border border-gray-300 rounded-md" />
                         </div>
                       ))}
-                      
-                      {/* Add Review button */}
-                      <motion.button
-                        type="button"
-                        onClick={addReview}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="mt-2 px-4 py-2 bg-[#D2A02A] text-white rounded-md text-sm font-medium flex items-center"
-                      >
-                        <FontAwesomeIcon icon={faPlus} className="mr-2" />
-                        Add Review
-                      </motion.button>
-                      <p className="mt-2 text-xs text-gray-500">Add client reviews to display on the article page.</p>
+                      <button type="button" onClick={addReview} className="mt-2 px-4 py-2 bg-[#D2A02A] text-white rounded-md text-sm font-medium">Add Review</button>
                     </div>
                   </div>
+
                   <div>
                     <label htmlFor="description" className="block text-sm font-medium text-[#5A4C33] mb-1">Article Content</label>
-                    {/* Tiptap Editor Integration */}
-                    <div className="border border-gray-300 rounded-md">
-                      {typeof window !== 'undefined' && (
-                        <TiptapEditor
-                          content={newBlog.description}
-                          onChange={handleEditorChange}
-                          className="bg-white text-black min-h-[10px]"
-                        />
-                      )}
+                    <div className="border border-gray-300 rounded-md overflow-hidden">
+                      <TiptapEditor content={newBlog.description} onChange={handleEditorChange} className="bg-white text-black h-[500px]" />
                     </div>
-                    <p className="mt-1 text-xs text-gray-500">Use the toolbar above to format your content.</p>
+                    
+                    <div className="mt-4 p-4 bg-orange-50 border border-orange-200 rounded-md">
+                      <h3 className="text-sm font-medium text-orange-800 mb-2 flex items-center">
+                        <FontAwesomeIcon icon={faMagic} className="mr-2" />
+                        Expand Content to 5000+ Words
+                      </h3>
+                      <textarea
+                        value={expansionPrompt}
+                        onChange={(e) => setExpansionPrompt(e.target.value)}
+                        rows={3}
+                        className="text-black w-full px-3 py-2 text-sm border border-orange-200 rounded-md"
+                        placeholder="Instructions for expansion..."
+                      />
+                      <button
+                        type="button"
+                        onClick={handleExpandContent}
+                        disabled={isExpanding || !newBlog.description}
+                        className="mt-2 w-full px-4 py-2 bg-orange-600 text-white rounded-md text-sm font-medium"
+                      >
+                        {isExpanding ? 'Expanding content...' : 'Expand Content to 5000 Words'}
+                      </button>
+                    </div>
                   </div>
-                  
-                 
-                  
+
                   <div className="flex justify-end space-x-3">
-                    <motion.button
-                      type="button"
-                      onClick={handleCancelForm}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md font-medium"
-                    >
-                      Cancel
-                    </motion.button>
-                    <motion.button
-                      type="submit"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="px-4 py-2 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white rounded-md font-medium"
-                    >
+                    <button type="button" onClick={resetForm} className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md font-medium">Cancel</button>
+                    <button type="submit" className="px-4 py-2 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white rounded-md font-medium">
                       {formMode === 'add' ? 'Publish Article' : 'Update Article'}
-                    </motion.button>
+                    </button>
                   </div>
-                </motion.form>
+                </form>
               </AnimatePresence>
             ) : (
-              // Articles Table
+              // Articles Table - Exactly like Blog
               <AnimatePresence mode="wait">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -1227,78 +949,40 @@ const ArticlesDashboard = () => {
                   <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-[#F0EAD6]">
                       <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Date</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Date</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Title</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Subtitle</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Image</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Author</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="bg-white divide-y divide-gray-200">
-                      {blogs.length > 0 ? (
-                        blogs.map((blog) => (
+                    <tbody className="bg-white divide-y divide-gray-200 text-black">
+                      {currentBlogs.length > 0 ? (
+                        currentBlogs.map((blog) => (
                           <tr key={blog.id} className="hover:bg-[#F8F5EC] transition-colors duration-150">
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{new Date(blog.date).toLocaleDateString()}</td>
-                            <td className="px-6 py-4 text-sm font-medium text-[#5A4C33] max-w-xs truncate">{blog.title}</td>
-                            <td className="px-6 py-4 text-sm text-[#5A4C33] max-w-xs truncate">{blog.subtitle}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]"><img src={blog.image} className="w-20 h-20 rounded-full" alt="" /></td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{blog.author}</td> 
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
+                            <td className="px-6 py-4 whitespace-nowrap text-sm">{new Date(blog.date).toLocaleDateString()}</td>
+                            <td className="px-6 py-4 text-sm font-medium max-w-xs truncate">{blog.title}</td>
+                            <td className="px-6 py-4 text-sm max-w-xs truncate">{blog.subtitle}</td>
+                            <td className="px-6 py-4 whitespace-nowrap"><img src={blog.image} alt="" className="w-20 h-20 rounded-full object-cover" /></td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm">
                               <div className="flex space-x-2">
-                                <motion.button
-                                  onClick={() => handleEdit(blog)}
-                                  whileHover={{ scale: 1.1 }}
-                                  whileTap={{ scale: 0.9 }}
-                                  className="px-3 py-1 bg-blue-500 text-white rounded-md text-xs flex items-center"
-                                >
-                                  <FontAwesomeIcon icon={faEdit} className="mr-1" />
-                                  Edit
-                                </motion.button>
-                                <motion.button
-                                  onClick={() => handleDelete(blog.id)}
-                                  whileHover={{ scale: 1.1 }}
-                                  whileTap={{ scale: 0.9 }}
-                                  className="px-3 py-1 bg-red-500 text-white rounded-md text-xs flex items-center"
-                                >
-                                  <FontAwesomeIcon icon={faTrash} className="mr-1" />
-                                  Delete
-                                </motion.button>
+                                <button onClick={() => handleEdit(blog)} className="px-3 py-1 bg-blue-500 text-white rounded-md text-xs flex items-center"><FontAwesomeIcon icon={faEdit} className="mr-1" /> Edit</button>
+                                <button onClick={() => handleDelete(blog.id)} className="px-3 py-1 bg-red-500 text-white rounded-md text-xs flex items-center"><FontAwesomeIcon icon={faTrash} className="mr-1" /> Delete</button>
                               </div>
                             </td>
                           </tr>
                         ))
                       ) : (
-                        <tr>
-                          <td colSpan={7} className="px-6 py-4 text-center text-sm text-gray-500">
-                            No articles found. Click Add Article to create a new article.
-                          </td>
-                        </tr>
+                        <tr><td colSpan={5} className="px-6 py-4 text-center text-sm text-gray-500">No articles found.</td></tr>
                       )}
                     </tbody>
                   </table>
 
-                  <div className="mt-4 flex justify-between items-center">
-                    <div className="text-sm text-[#5A4C33]">
-                      Showing <span className="font-medium">1</span> to <span className="font-medium">{blogs.length}</span> of <span className="font-medium">{blogs.length}</span> results
-                    </div>
+                  <div className="mt-4 flex justify-between items-center text-black">
+                    <div className="text-sm">Page <span className="font-medium">{currentPage}</span> of <span className="font-medium">{totalPages || 1}</span></div>
                     <div className="flex space-x-2">
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="px-3 py-1 bg-[#F0EAD6] text-[#5A4C33] rounded-md text-sm"
-                        disabled
-                      >
-                        Previous
-                      </motion.button>
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="px-3 py-1 bg-[#F0EAD6] text-[#5A4C33] rounded-md text-sm"
-                        disabled
-                      >
-                        Next
-                      </motion.button>
+                      <button onClick={handlePreviousPage} disabled={currentPage === 1} className="px-3 py-1 bg-[#F0EAD6] rounded-md text-sm disabled:opacity-50">Previous</button>
+                      <button onClick={handleNextPage} disabled={currentPage === totalPages} className="px-3 py-1 bg-[#F0EAD6] rounded-md text-sm disabled:opacity-50">Next</button>
                     </div>
                   </div>
                 </motion.div>
