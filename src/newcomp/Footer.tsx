@@ -64,6 +64,10 @@ const Footer = () => {
         { name: 'Legal Notice Uttar Pradesh', href: '/send-legal-notice-in-uttar-pradesh' },
         { name: 'Legal Notice Punjab', href: '/send-legal-notice-in-punjab' },
         { name: 'How to Send Notice', href: '/how-can-i-send-legal-notice' },
+        { name: 'Legal Services in Gurgaon', href: '/legal-services-in-gurgaon'},
+        { name: 'Legal Services in Noida', href: '/legal-services-in-noida'},
+        { name: 'Legal Services in Delhi', href: '/legal-services-in-delhi'},
+        { name: 'Legal Services in Ghaziabad', href: '/legal-services-in-ghaziabad'}
       ]
     },
     {

@@ -222,6 +222,7 @@ export default function Footer() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
                 { href: "/services/loan-settlement/what-is-loan-settlement", label: "What is Loan Settlement?" },
+                { href: "/legal-services-in-gurgaon", label: "Legal Services in Gurgaon" },
                 { href: "/services/intellectual-property-rights", label: "Intellectual Property Rights" },
                 { href: "/trademark-registration-fees", label: "Trademark Registration Fees" },
                 { href: "/trademark-objection-reply-procedure", label: "Trademark Objection Reply" },
