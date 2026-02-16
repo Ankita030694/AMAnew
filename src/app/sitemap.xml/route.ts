@@ -142,6 +142,7 @@ export async function GET(): Promise<Response> {
     '/services/loan-settlement/pune',
     '/services/loan-settlement/Surat',
     '/services/loan-settlement/what-is-loan-settlement',
+    '/free-loan-settlement-guide',
     '/how-to-negotiate-a-loan-settlement-with-lenders-online',
     '/not-being-paid-fnf-want-to-send-legal-notice',
     '/is-trademark-registration-one-time',

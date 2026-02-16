@@ -221,6 +221,7 @@ export default function Footer() {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
+                { href: "/free-loan-settlement-guide", label: "Free Loan Settlement Guide" },
                 { href: "/services/loan-settlement/what-is-loan-settlement", label: "What is Loan Settlement?" },
                 { href: "/legal-services-in-gurgaon", label: "Legal Services in Gurgaon" },
                 { href: "/services/intellectual-property-rights", label: "Intellectual Property Rights" },

@@ -80,6 +80,7 @@ const Footer = () => {
         { name: 'HDFC Bank Settlement', href: '/services/loan-settlement/hdfc-bank' },
         { name: 'Axis Bank Settlement', href: '/services/loan-settlement/axis-bank' },
         { name: 'Kotak Mahindra Settlement', href: '/services/loan-settlement/kotak-mahindra' },
+        {name: 'Free Loan Settlement', href: '/free-loan-settlement-guide'}
       ]
     },
     {
