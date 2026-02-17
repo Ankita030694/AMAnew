@@ -85,7 +85,9 @@ const Footer = () => {
         { name: 'Reliable Settlement', href: '/where-can-i-find-reliable-loan-settlement-services-with-flexible-payment-options' },
         { name: 'Best Settlement Companies', href: '/which-companies-offer-the-best-loan-settlement-plans-for-personal-loans' },
         { name: 'Low Fee Settlement', href: '/who-provides-loan-settlement-solutions-with-minimal-processing-fees' },
-        { name: 'Free Loan Settlement', href: '/free-loan-settlement-guide'}
+        { name: 'Unsecured Loan Specialists', href: '/which-firms-specialize-in-negotiating-settlements-for-unsecured-loans' },
+        { name: 'Good Customer Support', href: '/what-loan-settlement-services-have-good-customer-support-in-india' },
+        { name: 'Home Loan Dues', href: '/can-i-get-a-loan-settlement-service-that-handles-home-loan-dues' },
       ]
     },
     {
