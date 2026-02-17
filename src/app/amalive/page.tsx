@@ -1,8 +1,13 @@
-'use client'
+import { Metadata } from 'next';
 import { Suspense } from 'react';
 import AmaLiveClient from './client';
 
 import Navbar from "@/newcomp/Navbar";
+
+export const metadata: Metadata = {
+  title: "AMA Live | Legal Sessions & Video Advice",
+  description: "Watch the latest legal sessions and video advice from AMA Legal Solutions. Expert insights on trademark registration, loan settlement, and business laws.",
+};
 
 // This is now a Client Component that will always fetch fresh data
 export default function AmaLivePage() {

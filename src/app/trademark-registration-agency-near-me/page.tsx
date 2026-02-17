@@ -4,6 +4,12 @@ import Image from "next/image";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { FaStar, FaQuoteLeft, FaCheckCircle, FaExclamationTriangle, FaFileAlt, FaBalanceScale, FaUserShield, FaGlobeAmericas, FaSearchPlus, FaGavel, FaMapMarkerAlt, FaShieldAlt, FaCertificate, FaBuilding, FaGlobe } from "react-icons/fa";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Trademark Registration Agency Near Me | Expert IP Services",
+  description: "Looking for a trademark registration agency near me? AMA Legal Solutions provides forensic search, Madrid Protocol filings, and aggressive brand enforcement services.",
+};
 
 // FAQ data for rendering and Schema
 const faqs = [

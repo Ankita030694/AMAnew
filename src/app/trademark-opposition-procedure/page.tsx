@@ -4,6 +4,12 @@ import Image from "next/image";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { FaStar, FaQuoteLeft, FaCheckCircle, FaExclamationTriangle, FaFileAlt, FaBalanceScale, FaUserShield, FaGlobeAmericas, FaSearchPlus, FaGavel, FaMapMarkerAlt, FaShieldAlt, FaCertificate, FaBuilding, FaGlobe } from "react-icons/fa";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Trademark Opposition Procedure in India | Section 21 Guide",
+  description: "Expert guide on trademark opposition procedure in India. Learn about Section 21 filings, counter-statements, Rule 45-47 evidence, and landmark IP cases for 2026.",
+};
 
 // FAQ data for rendering and Schema
 const faqs = [
