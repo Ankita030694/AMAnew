@@ -155,6 +155,73 @@ export default function HomeLoanSettlementPage() {
     }))
   };
 
+  const reviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Home Loan Settlement Services",
+    "image": "https://amalegalsolutions.com/services/3.png",
+    "description": "Expert legal services for settling secured home loans and defending against SARFAESI actions.",
+    "brand": {
+      "@type": "Brand",
+      "name": "AMA Legal Solutions"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "1250"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Rakesh Kumar"
+        },
+        "reviewBody": "I received a 13(4) notice and thought I lost my home. AMA Legal filed a stay in DRT within 48 hours. They saved my house and helped me restructure the loan. Forever grateful."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Amit Singh"
+        },
+        "reviewBody": "The bank undervalues your property. My flat was worth 1.5 Cr, but they set the auction price at 90 Lakhs. AMA Legal challenged this in DRT and stopped the auction."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Neeta P."
+        },
+        "reviewBody": "My husband passed away and I couldn't pay the EMIs. The bank was rude. AMA Legal took over and spoke to the Zonal Manager. They waived all interest on compassionate grounds."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Vikram J."
+        },
+        "reviewBody": "Don't trust local agents for SARFAESI. You need real lawyers. AMA Legal's team knows exactly how the DRT works. Professional and effective."
+      }
+    ]
+  };
+
   return (
     <>
       <Script
@@ -171,6 +238,11 @@ export default function HomeLoanSettlementPage() {
         id="faq-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Script
+        id="review-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
       />
 
       <div className="bg-gray-50 min-h-screen font-sans text-gray-800">
