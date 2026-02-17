@@ -10,6 +10,7 @@ const Footer = () => {
       links: [
         { name: 'Home', href: '/' },
         { name: 'About Us', href: '/about' },
+        { name: 'Careers', href: '/careers' },
         { name: 'Contact Us', href: '/contact' },
         { name: 'Success Stories', href: '/success-stories' },
         { name: 'Privacy Policy', href: '/privacy-policy' },

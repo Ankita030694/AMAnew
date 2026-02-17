@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUsers, faChartLine, faClipboardList, faCog, faEye, faTrash, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUsers, faChartLine, faClipboardList, faCog, faEye, faTrash, faTimes, faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { db, auth } from '../../../lib/firebase'; // adjust the path as needed
@@ -135,6 +135,8 @@ const AdminDashboard = () => {
         router.push('/admin/users')
     }else if (itemId === 'amalive'){
         router.push('/admin/amalive')
+    }else if (itemId === 'careers'){
+        router.push('/admin/careers')
     }else{
         setActiveTab(itemId);
     }
@@ -232,7 +234,8 @@ const AdminDashboard = () => {
               { id: 'users', label: 'Users', icon: faUsers },
               { id: 'blogs', label: 'Blogs', icon: faChartLine },
               { id: 'articles', label: 'Articles', icon: faClipboardList },
-              { id: 'amalive', label: 'AMA Live', icon: faCog }
+              { id: 'amalive', label: 'AMA Live', icon: faCog },
+              { id: 'careers', label: 'Careers', icon: faBriefcase }
             ].map((item) => (
               <motion.button
                 key={item.id}
