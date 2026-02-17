@@ -844,7 +844,7 @@ export default function OTSPage() {
                   <ul className="space-y-5">
                     {[
                       { name: "Loan Settlement Steps", href: "/services/loan-settlement" },
-                      { name: "SBI OTS Schemes", href: "/services/loan-settlement/sbi" },
+                      { name: "SBI OTS Schemes", href: "/services/loan-settlement/sbi-bank" },
                       { name: "Negotiation Guide", href: "/how-to-negotiate-a-loan-settlement-with-lenders-online" },
                       { name: "Job Loss Support", href: "/job-lost-loan-settlement" },
                       { name: "Lok Adalat Helper", href: "/special-lok-adalat-for-loan-settlement" },

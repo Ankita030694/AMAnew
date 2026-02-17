@@ -735,8 +735,8 @@ export default function TrademarkOppositionPage() {
                   {[
                     { label: "Opposition Agency Near Me", href: "/trademark-registration-agency-near-me" },
                     { label: "Step-by-Step Guide India", href: "/steps-to-trademark-registration" },
-                    { label: "DIY Self-Registration", href: "/how-to-register-trademark-yourself" },
-                    { label: "GST Compliance & TM", href: "/gst-required-for-trademark" },
+                    { label: "DIY Self-Registration", href: "/can-i-register-my-trademark-by-myself" },
+                    { label: "GST Compliance & TM", href: "/is-gst-required-for-trademarks" },
                     { label: "StartUp Fee Rebates", href: "/trademark-registration-fees" },
                     { label: "Objection Response Cell", href: "/trademark-objection-reply-procedure" },
                     { label: "TM vs R Regulation", href: "/which-is-better-tm-or-r" }

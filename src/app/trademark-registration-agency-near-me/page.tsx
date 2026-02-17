@@ -566,8 +566,8 @@ export default function TrademarkAgencyPage() {
                   {[
                     { label: "IP Rights Strategy", href: "/services/intellectual-property-rights" },
                     { label: "Registration Steps", href: "/steps-to-trademark-registration" },
-                    { label: "DIY Guide", href: "/how-to-register-trademark-yourself" },
-                    { label: "GST & Trademark", href: "/gst-required-for-trademark" },
+                    { label: "DIY Guide", href: "/can-i-register-my-trademark-by-myself" },
+                    { label: "GST & Trademark", href: "/is-gst-required-for-trademarks" },
                     { label: "MSME Fee Benefits", href: "/trademark-registration-fees" },
                     { label: "Objection Strategies", href: "/trademark-objection-reply-procedure" }
                   ].map((item, idx) => (

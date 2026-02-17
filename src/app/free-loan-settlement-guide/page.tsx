@@ -1065,7 +1065,7 @@ export default function FreeLoanSettlementGuidePage() {
                             { href: "/services/loan-settlement", label: "General Loan Settlement" },
                             { href: "/services/loan-settlement/icici-bank", label: "ICICI Bank Settlement" },
                             { href: "/services/loan-settlement/hdfc-bank", label: "HDFC Bank Settlement" },
-                            { href: "/services/loan-settlement/sbi", label: "SBI Bank OTS Schemes" },
+                            { href: "/services/loan-settlement/sbi-bank", label: "SBI Bank OTS Schemes" },
                             { href: "/services/loan-settlement/credit-card", label: "Credit Card Debt Relief" },
                             { href: "/legal-services-in-noida", label: "Legal Support in Noida" },
                             { href: "/contact", label: "Find a Lawyer Near You" }

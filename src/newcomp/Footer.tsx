@@ -76,7 +76,7 @@ const Footer = () => {
       links: [
         { name: 'Settlement Services', href: '/services/loan-settlement' },
         { name: 'Debt Consolidation', href: '/services/debt-consolidation' },
-        { name: 'SBI Loan Settlement', href: '/services/loan-settlement/sbi' },
+        { name: 'SBI Loan Settlement', href: '/services/loan-settlement/sbi-bank' },
         { name: 'ICICI Bank Settlement', href: '/services/loan-settlement/icici-bank' },
         { name: 'HDFC Bank Settlement', href: '/services/loan-settlement/hdfc-bank' },
         { name: 'Axis Bank Settlement', href: '/services/loan-settlement/axis-bank' },
