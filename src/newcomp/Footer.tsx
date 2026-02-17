@@ -81,7 +81,11 @@ const Footer = () => {
         { name: 'HDFC Bank Settlement', href: '/services/loan-settlement/hdfc-bank' },
         { name: 'Axis Bank Settlement', href: '/services/loan-settlement/axis-bank' },
         { name: 'Kotak Mahindra Settlement', href: '/services/loan-settlement/kotak-mahindra' },
-        {name: 'Free Loan Settlement', href: '/free-loan-settlement-guide'}
+        { name: 'Reduce Debt Quickly', href: '/what-loan-settlement-service-can-help-me-reduce-my-outstanding-debt-quickly' },
+        { name: 'Reliable Settlement', href: '/where-can-i-find-reliable-loan-settlement-services-with-flexible-payment-options' },
+        { name: 'Best Settlement Companies', href: '/which-companies-offer-the-best-loan-settlement-plans-for-personal-loans' },
+        { name: 'Low Fee Settlement', href: '/who-provides-loan-settlement-solutions-with-minimal-processing-fees' },
+        { name: 'Free Loan Settlement', href: '/free-loan-settlement-guide'}
       ]
     },
     {
