@@ -29,10 +29,26 @@ interface FirebaseError {
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('home');
   const [tableData, setTableData] = useState<TableData[]>([]);
+  const [selectedFilter, setSelectedFilter] = useState('All Leads');
   const [selectedLead, setSelectedLead] = useState<TableData | null>(null);
   const [showViewModal, setShowViewModal] = useState(false);
   const [isDeleting, setIsDeleting] = useState<string | null>(null);
   const router = useRouter();
+
+  const FILTER_OPTIONS = [
+    'All Leads',
+    'Loan Settlement',
+    'Other than Loan Settlement',
+    'IPR/Trademark/Copyright/Patent',
+    'Arbitration',
+    'Drafting',
+    'Real Estate',
+    'Entertainment Law',
+    'Corporate Law',
+    'Cyber and IT Law',
+    'Litigation',
+    'Civil/Family/Divorce',
+  ];
 
   // Check if user is logged in; if not, redirect to login page
   useEffect(() => {
@@ -242,6 +258,32 @@ const AdminDashboard = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-white rounded-lg p-6 shadow-md"
           >
+            {/* Filter Dropdown */}
+            <div className="mb-6 flex items-center gap-4">
+              <label htmlFor="serviceFilter" className="text-sm font-medium text-[#5A4C33]">
+                Filter by Service:
+              </label>
+              <div className="relative w-64">
+                <select
+                  id="serviceFilter"
+                  value={selectedFilter}
+                  onChange={(e) => setSelectedFilter(e.target.value)}
+                  className="w-full bg-[#F8F5EC] text-[#5A4C33] px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:border-[#D2A02A] transition-colors appearance-none"
+                >
+                  {FILTER_OPTIONS.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+                <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#5A4C33]">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
             <div className="overflow-x-auto">
               <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-[#F0EAD6]">
@@ -270,58 +312,83 @@ const AdminDashboard = () => {
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                  {tableData.map((row) => (
-                    <tr 
-                      key={row.id} 
-                      className="hover:bg-[#F8F5EC] transition-colors duration-150 cursor-pointer"
-                      onClick={() => handleRowClick(row)}
-                    >
-                      <td className="px-4 py-4 text-sm font-medium text-[#5A4C33]">
-                        {truncateText(row.timestamp, 20)}
-                      </td>
-                      <td className="px-4 py-4 text-sm text-[#5A4C33]">
-                        {truncateText(row.name, 20)}
-                      </td>
-                      <td className="px-4 py-4 text-sm text-[#5A4C33]">
-                        {truncateText(row.email, 25)}
-                      </td>
-                      <td className="px-4 py-4 text-sm text-[#5A4C33]">
-                        {truncateText(row.phone, 15)}
-                      </td>
-                      <td className="px-4 py-4 text-sm text-[#5A4C33]">
-                        {truncateText(row.serviceRequired, 20)}
-                      </td>
-                      <td className="px-4 py-4 text-sm text-[#5A4C33]">
-                        {truncateText(row.message, 40)}
-                      </td>
-                      <td className="px-4 py-4 text-sm text-[#5A4C33]">
-                        <div className="flex space-x-2">
-                          <motion.button
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                            onClick={(e) => handleDelete(row.id, e)}
-                            disabled={isDeleting === row.id}
-                            className={`px-3 py-1 text-white rounded-md text-xs flex items-center space-x-1 ${
-                              isDeleting === row.id 
-                                ? 'bg-gray-400 cursor-not-allowed' 
-                                : 'bg-red-500 hover:bg-red-600'
-                            }`}
+                  {(() => {
+                    const filteredData = tableData.filter((row) => {
+                      if (selectedFilter === 'All Leads') return true;
+                      if (selectedFilter === 'Other than Loan Settlement') {
+                        return row.serviceRequired !== 'Loan Settlement';
+                      }
+                      return row.serviceRequired === selectedFilter;
+                    });
+
+                    return (
+                      <>
+                        {filteredData.map((row) => (
+                          <tr 
+                            key={row.id} 
+                            className="hover:bg-[#F8F5EC] transition-colors duration-150 cursor-pointer"
+                            onClick={() => handleRowClick(row)}
                           >
-                            <FontAwesomeIcon icon={faTrash} className="text-xs" />
-                            <span>{isDeleting === row.id ? 'Deleting...' : 'Delete'}</span>
-                          </motion.button>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
+                            <td className="px-4 py-4 text-sm font-medium text-[#5A4C33]">
+                              {truncateText(row.timestamp, 20)}
+                            </td>
+                            <td className="px-4 py-4 text-sm text-[#5A4C33]">
+                              {truncateText(row.name, 20)}
+                            </td>
+                            <td className="px-4 py-4 text-sm text-[#5A4C33]">
+                              {truncateText(row.email, 25)}
+                            </td>
+                            <td className="px-4 py-4 text-sm text-[#5A4C33]">
+                              {truncateText(row.phone, 15)}
+                            </td>
+                            <td className="px-4 py-4 text-sm text-[#5A4C33]">
+                              {truncateText(row.serviceRequired, 20)}
+                            </td>
+                            <td className="px-4 py-4 text-sm text-[#5A4C33]">
+                              {truncateText(row.message, 40)}
+                            </td>
+                            <td className="px-4 py-4 text-sm text-[#5A4C33]">
+                              <div className="flex space-x-2">
+                                <motion.button
+                                  whileHover={{ scale: 1.1 }}
+                                  whileTap={{ scale: 0.9 }}
+                                  onClick={(e) => handleDelete(row.id, e)}
+                                  disabled={isDeleting === row.id}
+                                  className={`px-3 py-1 text-white rounded-md text-xs flex items-center space-x-1 ${
+                                    isDeleting === row.id 
+                                      ? 'bg-gray-400 cursor-not-allowed' 
+                                      : 'bg-red-500 hover:bg-red-600'
+                                  }`}
+                                >
+                                  <FontAwesomeIcon icon={faTrash} className="text-xs" />
+                                  <span>{isDeleting === row.id ? 'Deleting...' : 'Delete'}</span>
+                                </motion.button>
+                              </div>
+                            </td>
+                          </tr>
+                        ))}
+                      </>
+                    );
+                  })()}
                 </tbody>
               </table>
             </div>
 
             <div className="mt-4 flex justify-between items-center">
-              <div className="text-sm text-[#5A4C33]">
-                Showing <span className="font-medium">1</span> to <span className="font-medium">{tableData.length}</span> of <span className="font-medium">{tableData.length}</span> results
-              </div>
+              {(() => {
+                const filteredData = tableData.filter((row) => {
+                  if (selectedFilter === 'All Leads') return true;
+                  if (selectedFilter === 'Other than Loan Settlement') {
+                    return row.serviceRequired !== 'Loan Settlement';
+                  }
+                  return row.serviceRequired === selectedFilter;
+                });
+                return (
+                  <div className="text-sm text-[#5A4C33]">
+                    Showing <span className="font-medium">{filteredData.length > 0 ? 1 : 0}</span> to <span className="font-medium">{filteredData.length}</span> of <span className="font-medium">{filteredData.length}</span> results
+                  </div>
+                );
+              })()}
               <div className="flex space-x-2">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
