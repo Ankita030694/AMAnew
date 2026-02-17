@@ -101,9 +101,9 @@ export default function Locations() {
   return (
     <div className="w-full relative z-10 mt-10">
       <div className="text-center mb-10">
-        <h2 className="text-[32px] md:text-[65px] font-semibold text-[#30261C] leading-[40px] md:leading-[65px] mb-[30px] opacity-100" style={{ fontFamily: "var(--font-polysans)" }}>
+        <h1 className="text-[32px] md:text-[65px] font-semibold text-[#30261C] leading-[40px] md:leading-[65px] mb-[30px] opacity-100" style={{ fontFamily: "var(--font-polysans)" }}>
           Our Locations
-        </h2>
+        </h1>
         <p className="max-w-4xl mx-auto mt-6 text-[13px] md:text-[20px] leading-[24px] md:leading-[29px] font-normal opacity-85 text-[#30261C]">
         AMA Legal Solutions is a trusted law firm in India. It is headquartered in Gurugram with offices strategically located throughout the region, including as a law firm in Delhi, Mumbai, Bangalore, and Chennai. We make legal services accessible in India wherever you are.
         </p>

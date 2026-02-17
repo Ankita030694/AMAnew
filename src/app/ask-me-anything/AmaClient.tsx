@@ -397,7 +397,7 @@ export default function AmaClient({ initialQuestions = [] }: { initialQuestions?
             {/* Disclaimer / Intro Card */}
              <div className="bg-[#30261C] text-[#EBE9E4] p-6 rounded-xl shadow-sm mb-6 relative overflow-hidden">
                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#D29E0D] opacity-10 rounded-full blur-3xl -mr-10 -mt-10"></div>
-                   <h2 className="text-2xl font-light mb-2 relative z-10">Welcome to AMA Legal</h2>
+                   <h1 className="text-2xl font-light mb-2 relative z-10">Ask Me Anything - Legal Solutions</h1>
                    <p className="text-[#EBE9E4]/80 font-light relative z-10">
                        A community-driven platform for legal and financial guidance. Get expert answers from our panel of enrolled advocates.
                    </p>
