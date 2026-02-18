@@ -99,7 +99,7 @@ export default function Navbar() {
                       Blog
                     </Link>
                     <Link
-                      href="/amalive"
+                      href="/ama-live"
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
                       onClick={handleLinkClick}
                     >
@@ -260,7 +260,7 @@ export default function Navbar() {
                   Blog
                 </Link>
                 <Link
-                  href="/amalive"
+                  href="/ama-live"
                   className="text-gray-300 hover:text-white block px-3 py-2 transform transition-all duration-300 hover:translate-x-2"
                   onClick={handleLinkClick}
                 >

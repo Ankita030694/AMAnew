@@ -168,7 +168,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Can I Register My Trademark By Myself? | 7500+ Word Expert Guide 2024",
+  title: "Can I Register My Trademark Myself? | Expert Guide",
   description: "The ultimate 7500+ word DIY guide to trademark registration in India. Learn legal history, opposition strategies, Madrid Protocol, and self-filing secrets.",
   keywords: ["register trademark by myself", "DIY trademark registration india", "trademark registration process", "self trademark filing", "Madrid Protocol India", "trademark opposition process", "well known trademarks india"],
   alternates: {

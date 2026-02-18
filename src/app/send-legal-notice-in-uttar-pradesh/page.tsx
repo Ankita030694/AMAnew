@@ -191,7 +191,7 @@ const organizationSchema = {
 };
 
 export const metadata = {
-  title: "Send Legal Notice in Uttar Pradesh | Top Lawyers in Noida & Lucknow",
+  title: "Send Legal Notice in Uttar Pradesh | Top Lawyers",
   description: "Want to send a legal notice in Uttar Pradesh? AMA Legal Solutions provides expert drafting and dispatch in Noida, Lucknow, and all UP districts. Fast & professional.",
   keywords: [
     "send legal notice in Uttar Pradesh",

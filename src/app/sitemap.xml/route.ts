@@ -26,7 +26,7 @@ export async function GET(): Promise<Response> {
     '/careers/sde-intern',
     '/blog',
     '/articles',
-    '/amalive',
+    '/ama-live',
     '/ask-me-anything',
     '/locations',
     '/best-advocate-near-me',

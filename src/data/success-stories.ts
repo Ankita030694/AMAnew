@@ -32,7 +32,7 @@ export const successStories: SuccessStory[] = [
         quote: "Medical emergencies don't knock before entering. When hospital bills piled up, my ₹20L loan became a trap. Drowning in EMI demands and harassment, I thought I’d lose everything... until AMA stepped in.",
         heroImage: "/newAssets/amit-success.jpg",
         seo: {
-            title: "How an IT Pro Settled ₹20 Lakh Loan & Stopped Harassment in Bengaluru",
+            title: "IT Pro Settled ₹20 Lakh Loan | Bengaluru Case Study",
             description: "Read the detailed case study of how AMA Legal Solutions helped Aditya, a Bengaluru techie, settle his ₹20 Lakh debt for just ₹10.5 Lakhs after a medical crisis.",
             keywords: [
                 "loan settlement success story",
@@ -171,7 +171,7 @@ export const successStories: SuccessStory[] = [
         quote: "Living in Mumbai on a teacher's salary is hard enough. A personal loan of ₹8L for my brother's education spiraled out of control. The constant recovery calls were humiliating during school hours. AMA silenced the noise.",
         heroImage: "/newAssets/priya-success.jpg", // Placeholder
         seo: {
-            title: "How Mumbai Teacher Settled ₹8 Lakh Loan & Stopped School Harassment",
+            title: "Mumbai Teacher Settled ₹8 Lakh Loan | Case Study",
             description: "Case Study: Learn how a Mumbai school teacher settled her ₹8 Lakh education loan debt and stopped recovery agents from harassing her at school.",
             keywords: [
                 "loan settlement mumbai",
@@ -301,7 +301,7 @@ export const successStories: SuccessStory[] = [
         quote: "I took a ₹5L loan for a dream wedding that got cancelled. The emotional toll was bad, but the bank's aggression was worse. AMA handled the legal side with such empathy, settling it for just ₹2.4L and giving me peace.",
         heroImage: "/newAssets/sneha-success.jpg", // Placeholder
         seo: {
-            title: "How Pune Marketing Exec Settled ₹5 Lakh Loan After Wedding Cancelled",
+            title: "Pune Exec Settled ₹5 Lakh Loan | AMA Legal",
             description: "Case Study: A personal story of how a Pune woman settled a ₹5 Lakh personal loan after a cancelled wedding and stopped harassment from recovery agents.",
             keywords: [
                 "personal loan settlement pune",

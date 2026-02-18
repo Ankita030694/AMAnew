@@ -144,7 +144,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Comprehensive Trademark Registration Guide India 2026 | rank #1 IP Advice",
+  title: "Trademark Registration Guide India 2026 | AMA Legal",
   description: "Master the complexities of Trademark Registration in India. Deep dive into Vienna Code, Madrid Protocol, Well-Known Marks, and Section 9/11 Objection Replies.",
   keywords: [
     "trademark registration india guide",

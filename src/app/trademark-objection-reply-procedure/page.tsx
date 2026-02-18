@@ -93,7 +93,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "I Received Trademark Objection: What to Do? | Reply Procedure Guide",
+  title: "Trademark Objection Received? | Reply Procedure Guide",
   description: "Received a trademark objection? Learn the official procedure for filing a reply, overcoming Section 9 & 11 grounds, and securing your brand registration.",
   keywords: ["trademark objection reply", "trademark examination report", "overcoming trademark objection", "section 9 section 11 trademark objection", "trademark objection procedure india", "trademark hearing"],
   alternates: { canonical: 'https://www.amalegalsolutions.com/trademark-objection-reply-procedure' }

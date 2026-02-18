@@ -9,7 +9,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "IPR Services in Kerala | Expert Intellectual Property Registration",
+  title: "IPR Services in Kerala | Intellectual Property Experts",
   description:
     "Leading IPR services in Kerala. We assist with Trademark, Patent, Copyright, and GI registration. Protect your innovations with expert legal guidance in God's Own Country.",
   keywords: [
@@ -25,7 +25,7 @@ export const metadata = {
     "Trade Secret protection Kerala",
   ],
   openGraph: {
-    title: "IPR Services in Kerala | Expert Intellectual Property Registration",
+    title: "IPR Services in Kerala | Intellectual Property Experts",
     description:
       "Secure your intellectual property in Kerala with our expert services. From Trademarks to GI tags, we provide comprehensive legal support.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/kerala",

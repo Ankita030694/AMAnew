@@ -26,7 +26,7 @@ import {
 } from "react-icons/fa";
 
 export const metadata: Metadata = {
-  title: "Expert Vakil Search for Trademark Registration | Find Top IP Lawyers",
+  title: "Expert Vakil for Trademark Registration | AMA Legal",
   description: "Conducting a Vakil search for trademark registration? Comprehensive guide on finding the right legal expert (Vakil) vs automated bots. Learn the risks, verify credentials, and protect your brand.",
   keywords: [
     "vakil search",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.amalegalsolutions.com/services/expert-vakil-search-for-trademark-registration',
   },
   openGraph: {
-    title: "Expert Vakil Search for Trademark Registration | Find Top IP Lawyers",
+    title: "Expert Vakil for Trademark Registration | AMA Legal",
     description: "Don't trust your brand to a bot. Master the art of 'Vakil Search' to find a dedicated IP attorney who can defend your trademark in court.",
     url: "https://www.amalegalsolutions.com/services/expert-vakil-search-for-trademark-registration",
     siteName: "AMA Legal Solutions",

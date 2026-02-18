@@ -7,6 +7,9 @@ import Navbar from "@/newcomp/Navbar";
 export const metadata: Metadata = {
   title: "AMA Live | Legal Sessions & Video Advice",
   description: "Watch the latest legal sessions and video advice from AMA Legal Solutions. Expert insights on trademark registration, loan settlement, and business laws.",
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/ama-live',
+  },
 };
 
 // This is now a Client Component that will always fetch fresh data

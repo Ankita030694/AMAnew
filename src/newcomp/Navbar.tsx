@@ -283,7 +283,7 @@ const Navbar = () => {
                           </span>
                         </Link>
                         
-                        <Link href="/amalive" className="flex items-center gap-6 group hover:opacity-80 transition-opacity">
+                        <Link href="/ama-live" className="flex items-center gap-6 group hover:opacity-80 transition-opacity">
                           <div className="w-[40px] h-[40px] relative flex-shrink-0">
                             <Image 
                               src="/live.svg" 
@@ -560,7 +560,7 @@ const Navbar = () => {
                                            Blog
                                        </Link>
                                        <Link 
-                                           href="/amalive"
+                                           href="/ama-live"
                                            className="text-[#30261C]/80 font-[400] tracking-wide"
                                            style={{ fontFamily: "var(--font-polysans)", fontSize: "28px", lineHeight: "28px" }}
                                            onClick={() => setIsMobileMenuOpen(false)}

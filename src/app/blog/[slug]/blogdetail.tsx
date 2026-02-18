@@ -68,7 +68,7 @@ const authorBios = {
 const processContent = (html: string) => {
   const sections: { id: string, title: string }[] = [];
   // Regex to match h2 and h3 tags
-  const modifiedContent = html.replace(/<(h[23])(.*?)>(.*?)<\/\1>/g, (match, tag, attrs, title) => {
+  let modifiedContent = html.replace(/<(h[23])(.*?)>(.*?)<\/\1>/g, (match, tag, attrs, title) => {
     // Strip HTML from title for the TOC label
     const cleanTitle = title.replace(/<[^>]*>/g, '').trim();
     // Generate ID from title
@@ -83,9 +83,40 @@ const processContent = (html: string) => {
     
     return `<${tag} id="${id}"${attrs}>${title}</${tag}>`;
   });
+
+  // Strip nofollow from internal links (links to our own domain or relative paths)
+  // This prevents SEO tools from flagging our own pages as "blocked by nofollow"
+  modifiedContent = modifiedContent.replace(
+    /<a\s([^>]*?)>/gi,
+    (match, attrs) => {
+      const hrefMatch = attrs.match(/href=["']([^"']*)["']/i);
+      const href = hrefMatch ? hrefMatch[1] : '';
+      const isInternal =
+        href.startsWith('/') ||
+        href.includes('amalegalsolutions.com');
+
+      if (isInternal) {
+        // Remove nofollow from rel attribute for internal links
+        const cleanedAttrs = attrs.replace(
+          /rel=["']([^"']*)["']/gi,
+          (relMatch: string, relValue: string) => {
+            const newRel = relValue
+              .split(/\s+/)
+              .filter((r: string) => r.toLowerCase() !== 'nofollow')
+              .join(' ')
+              .trim();
+            return newRel ? `rel="${newRel}"` : '';
+          }
+        );
+        return `<a ${cleanedAttrs}>`;
+      }
+      return match;
+    }
+  );
   
   return { content: modifiedContent, sections };
 };
+
 
 const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, relatedBlogs }: BlogDetailProps) {
   const [currentUrl, setCurrentUrl] = useState('');

@@ -114,10 +114,18 @@ const nextConfig = {
 
   async redirects() {
     return [
+      // ── SEO Fix: /amalive → /ama-live (hyphenated URL is SEO-friendly) ───
+      {
+        source: '/amalive',
+        destination: '/ama-live',
+        permanent: true,
+      },
+
+      // ── Existing redirects ──────────────────────────────────────────────
       {
         source: "/blogs/:slug",
         destination: "/blog/:slug",
-        permanent: true, // 301 Redirect
+        permanent: true,
       },
       {
         source: "/blogs",
@@ -159,6 +167,119 @@ const nextConfig = {
         destination: '/blog/get-loan-mukt-in-180-days-loan-settlement-',
         permanent: true,
       },
+
+      // ── SEO Fix: Old / wrong service URLs → correct pages ───────────────
+      {
+        source: '/services/banking',
+        destination: '/services/banking-and-finance',
+        permanent: true,
+      },
+      {
+        source: '/services/criminal',
+        destination: '/services/criminal-law',
+        permanent: true,
+      },
+      {
+        source: '/services/legal-notices',
+        destination: '/send-legal-notice',
+        permanent: true,
+      },
+
+      // ── SEO Fix: Missing standalone pages → closest relevant page ────────
+      {
+        source: '/credit-card-legal-help',
+        destination: '/services/banking-and-finance',
+        permanent: true,
+      },
+      {
+        source: '/legal-rights-against-recovery-agents',
+        destination: '/services/banking-and-finance',
+        permanent: true,
+      },
+      {
+        source: '/loan-settlement-services',
+        destination: '/services/loan-settlement',
+        permanent: true,
+      },
+
+      // ── SEO Fix: Malformed URLs (www. inside path) → home ───────────────
+      {
+        source: '/articles/www.amalegalsolutions.com',
+        destination: '/articles',
+        permanent: true,
+      },
+      {
+        source: '/blog/www.amalegalsolutions.com',
+        destination: '/blog',
+        permanent: true,
+      },
+
+      // ── SEO Fix: Loan-settlement bank slugs (wrong case / old names) ──────
+      // Uppercase variants → correct lowercase slugs
+      { source: '/services/loan-settlement/HDFC', destination: '/services/loan-settlement/hdfc-bank', permanent: true },
+      { source: '/services/loan-settlement/ICICI', destination: '/services/loan-settlement/icici-bank', permanent: true },
+      { source: '/services/loan-settlement/IDFC', destination: '/services/loan-settlement/idfc-bank', permanent: true },
+      { source: '/services/loan-settlement/SBI', destination: '/services/loan-settlement/sbi-bank', permanent: true },
+
+      // Lowercase short-form → full slug
+      { source: '/services/loan-settlement/hdfc', destination: '/services/loan-settlement/hdfc-bank', permanent: true },
+      { source: '/services/loan-settlement/icici', destination: '/services/loan-settlement/icici-bank', permanent: true },
+      { source: '/services/loan-settlement/idfc', destination: '/services/loan-settlement/idfc-bank', permanent: true },
+      { source: '/services/loan-settlement/idfc-first', destination: '/services/loan-settlement/idfc-bank', permanent: true },
+      { source: '/services/loan-settlement/sbi', destination: '/services/loan-settlement/sbi-bank', permanent: true },
+      { source: '/services/loan-settlement/indusind', destination: '/services/loan-settlement/indusind-bank', permanent: true },
+      { source: '/services/loan-settlement/l-t-finance', destination: '/services/loan-settlement/l-and-t-finance', permanent: true },
+
+      // Old / alternate brand names → correct slug
+      { source: '/services/loan-settlement/fibe-earlysalary', destination: '/services/loan-settlement/fibe', permanent: true },
+      { source: '/services/loan-settlement/si-creva-kissht-ring', destination: '/services/loan-settlement/si-creva', permanent: true },
+      { source: '/services/loan-settlement/true-credits-truebalance', destination: '/services/loan-settlement/true-credits', permanent: true },
+      { source: '/services/loan-settlement/au-small-finance-bank', destination: '/services/loan-settlement/au-small-finance', permanent: true },
+
+      // Banks with spaces in URL (URL-encoded) → correct slug
+      { source: '/services/loan-settlement/punjab-national%20bank', destination: '/services/loan-settlement/pnb-bank', permanent: true },
+      { source: '/services/loan-settlement/city-union%20bank', destination: '/services/loan-settlement', permanent: true },
+
+      // Banks with no dedicated page → parent loan-settlement page
+      { source: '/services/loan-settlement/canara-bank', destination: '/services/loan-settlement', permanent: true },
+      { source: '/services/loan-settlement/indian-bank', destination: '/services/loan-settlement', permanent: true },
+      { source: '/services/loan-settlement/union-bank', destination: '/services/loan-settlement', permanent: true },
+      { source: '/services/loan-settlement/credit-card', destination: '/services/loan-settlement', permanent: true },
+
+      // ── SEO Fix: Loan-settlement state slugs (wrong case / spaces) ────────
+      // Uppercase/spaced state names → correct folder names
+      { source: '/services/loan-settlement/Himachal%20Pradesh', destination: '/services/loan-settlement/himachal-pradesh', permanent: true },
+      { source: '/services/loan-settlement/West%20Bengal', destination: '/services/loan-settlement/west-bengal', permanent: true },
+
+      // Note: Next.js normalizes all paths to lowercase regardless of folder casing
+      // The Meghalaya/Odisha/Puducherry/Tripura folders are served at lowercase URLs
+
+      // Regional bank variants → parent state page (lowercase, as Next.js serves them)
+      { source: '/services/loan-settlement/odisha-gramya-bank', destination: '/services/loan-settlement/odisha', permanent: true },
+      { source: '/services/loan-settlement/tripura-gramin-bank', destination: '/services/loan-settlement/tripura', permanent: true },
+
+      // Debt consolidation is its own service page
+      { source: '/services/loan-settlement/debt-consolidation', destination: '/services/debt-consolidation', permanent: true },
+
+      // ── SEO Fix: Missing /services/* pages → closest existing page ────────
+      { source: '/services/cheque-bounce', destination: '/services/criminal-law', permanent: true },
+      { source: '/services/cheque-bounce-lawyer', destination: '/services/criminal-law', permanent: true },
+      { source: '/services/civil-litigation', destination: '/services/civil', permanent: true },
+      { source: '/services/company-incorporation', destination: '/services/corporate', permanent: true },
+      { source: '/services/contract', destination: '/services/corporate', permanent: true },
+      { source: '/services/corporate-law', destination: '/services/corporate', permanent: true },
+      { source: '/services/cyber-crime', destination: '/services/cyber', permanent: true },
+      { source: '/services/family-law', destination: '/services/civil', permanent: true },
+      { source: '/services/gst-registration', destination: '/services/corporate', permanent: true },
+      { source: '/services/legal-notice', destination: '/send-legal-notice', permanent: true },
+      { source: '/services/tax-and-compliance', destination: '/services/corporate', permanent: true },
+
+      // ── SEO Fix: Missing standalone pages → closest existing page ─────────
+      { source: '/check-bounce-lawyer', destination: '/services/criminal-law', permanent: true },
+      { source: '/divorce-lawyer-delhi', destination: '/services/civil', permanent: true },
+      { source: '/ignoring-calls-of-recovery-agent', destination: '/services/banking-and-finance', permanent: true },
+      { source: '/msme-trademark-registration-delhi', destination: '/msme-registration', permanent: true },
+      { source: '/trademark-hearing-delhi', destination: '/services/intellectual-property-rights', permanent: true },
     ];
   },
 

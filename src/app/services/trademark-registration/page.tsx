@@ -233,7 +233,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Trademark Registration & Objection Reply | Trademark Registration Experts",
+  title: "Trademark Registration & Objection Reply | AMA Legal",
   description:
     "Secure your brand with expert Trademark Registration services. We handle Objection Replies, Hearings, Renewals, and Oppositions. Fast, affordable, and legal.",
   keywords: [
@@ -256,7 +256,7 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/services/trademark-registration',
   },
   openGraph: {
-    title: "Trademark Registration & Objection Reply | Trademark Registration Experts",
+    title: "Trademark Registration & Objection Reply | AMA Legal",
     description: "Secure your brand with expert Trademark Registration services. We handle Objection Replies, Hearings, and Oppositions.",
     url: "https://amalegalsolutions.com/services/trademark-registration",
     type: "website",

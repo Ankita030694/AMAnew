@@ -2,11 +2,11 @@ import React from "react";
 import AndhraPradeshBankingClient from "./AndhraPradeshBankingClient";
 
 export const metadata = {
-  title: "Banking and Finance Services in Andhra Pradesh | AMA Legal Solutions",
+  title: "Banking & Finance Services in Andhra Pradesh | AMA",
   description:
     "Expert legal consultancy for banking and finance in Andhra Pradesh. NBFC registration, Fintech compliance in Vizag, and agricultural finance services.",
   openGraph: {
-    title: "Banking and Finance Services in Andhra Pradesh | AMA Legal Solutions",
+    title: "Banking & Finance Services in Andhra Pradesh | AMA",
     description:
       "Expert legal consultancy for banking and finance in Andhra Pradesh. NBFC registration, Fintech compliance in Vizag, and agricultural finance services.",
     url: "https://amalegalsolutions.com/services/banking-and-finance/andhra-pradesh",

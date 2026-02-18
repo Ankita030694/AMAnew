@@ -191,7 +191,7 @@ const organizationSchema = {
 };
 
 export const metadata = {
-  title: "How to Send a Legal Notice in India | Step-by-Step Expert Guide 2026",
+  title: "How to Send a Legal Notice in India | Expert Guide",
   description: "Learn how to send a legal notice effectively. Our comprehensive guide covers drafting, procedure, costs, and types of legal notices in India for 2026.",
   keywords: [
     "how to send legal notice in India",
