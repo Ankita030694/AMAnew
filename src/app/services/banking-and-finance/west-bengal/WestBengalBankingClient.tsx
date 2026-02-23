@@ -109,7 +109,7 @@ const reviewSchema = {
   ],
 };
 
-export default function WestBengalBankingClient() {
+export default function west-bengalBankingClient() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "kolkata-hub", title: "Kolkata: Financial Hub of the East" },

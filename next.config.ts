@@ -266,6 +266,7 @@ const nextConfig = {
       { source: '/services/cheque-bounce-lawyer', destination: '/services/criminal-law', permanent: true },
       { source: '/services/civil-litigation', destination: '/services/civil', permanent: true },
       { source: '/services/company-incorporation', destination: '/services/corporate', permanent: true },
+      { source: '/services/contact', destination: '/contact', permanent: true },
       { source: '/services/contract', destination: '/services/corporate', permanent: true },
       { source: '/services/corporate-law', destination: '/services/corporate', permanent: true },
       { source: '/services/cyber-crime', destination: '/services/cyber', permanent: true },

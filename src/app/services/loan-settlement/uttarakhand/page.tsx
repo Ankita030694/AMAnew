@@ -95,7 +95,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 4,
       "name": "Uttarakhand",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/Uttrakhand"
+      "item": "https://amalegalsolutions.com/services/loan-settlement/uttarakhand"
     }
   ]
 };
@@ -124,7 +124,7 @@ const articleSchema = {
   "dateModified": "2024-11-21",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://amalegalsolutions.com/services/loan-settlement/Uttrakhand"
+    "@id": "https://amalegalsolutions.com/services/loan-settlement/uttarakhand"
   }
 };
 
@@ -191,12 +191,12 @@ export const metadata = {
   description:
     "Expert loan settlement services in Uttarakhand. We help you settle personal loans and credit card debt in Dehradun, Haridwar, and Haldwani. Stop harassment today.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/Uttrakhand',
+    canonical: 'https://amalegalsolutions.com/services/loan-settlement/uttarakhand',
   },
   openGraph: {
     title: "Loan Settlement in Uttarakhand | Debt Settlement Lawyers Dehradun",
     description: "Struggling with debt in Uttarakhand? We negotiate with banks to reduce your debt and stop harassment. Legal, safe, and effective services in Dehradun.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/Uttrakhand",
+    url: "https://amalegalsolutions.com/services/loan-settlement/uttarakhand",
     type: "website",
     images: [
       {
@@ -221,7 +221,7 @@ export default function UttarakhandLoanSettlementPage() {
   const breadcrumbItems = [
     { label: "Services", href: "/services" },
     { label: "Loan Settlement", href: "/services/loan-settlement" },
-    { label: "Uttarakhand", href: "/services/loan-settlement/Uttrakhand" },
+    { label: "Uttarakhand", href: "/services/loan-settlement/uttarakhand" },
   ];
 
   return (
@@ -648,7 +648,7 @@ export default function UttarakhandLoanSettlementPage() {
               serviceName="Loan Settlement" 
               servicePath="loan-settlement" 
               customSlugs={{
-                "Andhra Pradesh": "AndhraPradesh",
+                "Andhra Pradesh": "andhra-pradesh",
                 "Arunachal Pradesh": "arunachal-pradesh",
                 "Assam": "Assam",
                 "Bihar": "Bihar",
@@ -674,8 +674,8 @@ export default function UttarakhandLoanSettlementPage() {
                 "Tamil Nadu": "tamil-nadu",
                 "Telangana": "Telangana",
                 "Tripura": "Tripura",
-                "Uttar Pradesh": "UttarPradesh",
-                "Uttarakhand": "Uttrakhand",
+                "Uttar Pradesh": "uttar-pradesh",
+                "Uttarakhand": "uttarakhand",
                 "West Bengal": "west-bengal"
               }}
             />

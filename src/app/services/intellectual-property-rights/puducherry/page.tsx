@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Secure your brand in Puducherry. AMA Legal Solutions offers expert IPR services for Tourism, Handicrafts (GI Tags), and Pharma industries. Litigation support at Madras High Court.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/intellectual-property-rights/pudducherry',
+    canonical: 'https://amalegalsolutions.com/services/intellectual-property-rights/puducherry',
   },
   openGraph: {
     title: "Intellectual Property Rights in Puducherry | Trademark & Patent Attorneys",
     description: "Secure your brand in Puducherry. AMA Legal Solutions offers expert IPR services for Tourism, Handicrafts (GI Tags), and Pharma industries.",
-    url: "https://amalegalsolutions.com/services/intellectual-property-rights/pudducherry",
+    url: "https://amalegalsolutions.com/services/intellectual-property-rights/puducherry",
     type: "website",
     images: [
       {
@@ -54,7 +54,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 4,
       "name": "Puducherry",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights/pudducherry"
+      "item": "https://amalegalsolutions.com/services/intellectual-property-rights/puducherry"
     }
   ]
 };
@@ -184,7 +184,7 @@ export default function PudducherryIPRPage() {
   const breadcrumbItems = [
     { label: "Services", href: "/services" },
     { label: "Intellectual Property Rights", href: "/services/intellectual-property-rights" },
-    { label: "Puducherry", href: "/services/intellectual-property-rights/pudducherry" },
+    { label: "Puducherry", href: "/services/intellectual-property-rights/puducherry" },
   ];
 
   return (
@@ -664,9 +664,9 @@ export default function PudducherryIPRPage() {
                 "Maharashtra": "Maharashtra",
                 "Punjab": "Punjab",
                 "Rajasthan": "Rajasthan",
-                "Tamil Nadu": "TamilNadu",
-                "Uttar Pradesh": "UttarPradesh",
-                "Puducherry": "pudducherry"
+                "Tamil Nadu": "tamil-nadu",
+                "Uttar Pradesh": "uttar-pradesh",
+                "Puducherry": "puducherry"
               }}
             />
           </div>

@@ -109,7 +109,7 @@ const reviewSchema = {
   ],
 };
 
-export default function AndhraPradeshBankingClient() {
+export default function andhra-pradeshBankingClient() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "ap-advantage", title: "The Andhra Pradesh Advantage" },

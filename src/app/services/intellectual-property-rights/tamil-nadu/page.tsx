@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Protect your innovation in Tamil Nadu. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Chennai, Coimbatore & Tirupur. Litigation support at Madras High Court.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/intellectual-property-rights/TamilNadu',
+    canonical: 'https://amalegalsolutions.com/services/intellectual-property-rights/tamil-nadu',
   },
   openGraph: {
     title: "Intellectual Property Rights in Tamil Nadu | IP Lawyers Chennai",
     description: "Protect your innovation in Tamil Nadu. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Chennai, Coimbatore & Tirupur. Litigation support at Madras High Court.",
-    url: "https://amalegalsolutions.com/services/intellectual-property-rights/TamilNadu",
+    url: "https://amalegalsolutions.com/services/intellectual-property-rights/tamil-nadu",
     type: "website",
     images: [
       {
@@ -54,7 +54,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 4,
       "name": "Tamil Nadu",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights/TamilNadu"
+      "item": "https://amalegalsolutions.com/services/intellectual-property-rights/tamil-nadu"
     }
   ]
 };
@@ -125,7 +125,7 @@ const reviewSchema = {
   ]
 };
 
-export default function TamilNaduIPRPage() {
+export default function tamil-naduIPRPage() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "industrial-hub", title: "Tamil Nadu's IP Landscape" },
@@ -143,7 +143,7 @@ export default function TamilNaduIPRPage() {
   const breadcrumbItems = [
     { label: "Services", href: "/services" },
     { label: "Intellectual Property Rights", href: "/services/intellectual-property-rights" },
-    { label: "Tamil Nadu", href: "/services/intellectual-property-rights/TamilNadu" },
+    { label: "Tamil Nadu", href: "/services/intellectual-property-rights/tamil-nadu" },
   ];
 
   return (
@@ -654,9 +654,9 @@ export default function TamilNaduIPRPage() {
                 "Maharashtra": "Maharashtra",
                 "Punjab": "Punjab",
                 "Rajasthan": "Rajasthan",
-                "Tamil Nadu": "TamilNadu",
-                "Uttar Pradesh": "UttarPradesh",
-                "Puducherry": "pudducherry"
+                "Tamil Nadu": "tamil-nadu",
+                "Uttar Pradesh": "uttar-pradesh",
+                "Puducherry": "puducherry"
               }}
             />
           </div>

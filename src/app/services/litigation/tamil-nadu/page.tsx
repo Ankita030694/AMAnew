@@ -217,7 +217,7 @@ export const metadata = {
   },
 };
 
-export default function TamilNaduLitigationPage() {
+export default function tamil-naduLitigationPage() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "madras-high-court", title: "Madras High Court Practice" },

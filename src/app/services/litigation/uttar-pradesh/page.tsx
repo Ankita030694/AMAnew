@@ -217,7 +217,7 @@ export const metadata = {
   },
 };
 
-export default function UttarPradeshLitigationPage() {
+export default function uttar-pradeshLitigationPage() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "allahabad-high-court", title: "High Court Practice" },

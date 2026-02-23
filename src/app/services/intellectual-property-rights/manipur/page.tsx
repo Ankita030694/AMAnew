@@ -576,9 +576,9 @@ export default function ManipurIPRPage() {
                 "Maharashtra": "Maharashtra",
                 "Punjab": "Punjab",
                 "Rajasthan": "Rajasthan",
-                "Tamil Nadu": "TamilNadu",
-                "Uttar Pradesh": "UttarPradesh",
-                "Puducherry": "pudducherry"
+                "Tamil Nadu": "tamil-nadu",
+                "Uttar Pradesh": "uttar-pradesh",
+                "Puducherry": "puducherry"
               }}
             />
           </div>

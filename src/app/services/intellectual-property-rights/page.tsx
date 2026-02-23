@@ -793,17 +793,6 @@ export default function IntellectualPropertyPage() {
               overrideUnionTerritories={[
                 "Chandigarh", "Delhi", "Jammu and Kashmir", "Puducherry"
               ]}
-              customSlugs={{
-                "Tamil Nadu": "TamilNadu",
-                "Uttar Pradesh": "UttarPradesh",
-                "Puducherry": "pudducherry",
-                "Delhi": "Delhi",
-                "Gujarat": "Gujarat",
-                "Maharashtra": "Maharashtra",
-                "Punjab": "Punjab",
-                "Rajasthan": "Rajasthan",
-                "Kerala": "kerala"
-              }}
             />
           </div>
         </div>

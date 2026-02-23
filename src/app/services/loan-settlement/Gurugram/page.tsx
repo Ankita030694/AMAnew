@@ -579,7 +579,7 @@ export default function GurugramLoanSettlementPage() {
               serviceName="Loan Settlement" 
               servicePath="loan-settlement" 
               customSlugs={{
-                "Andhra Pradesh": "AndhraPradesh",
+                "Andhra Pradesh": "andhra-pradesh",
                 "Arunachal Pradesh": "arunachal-pradesh",
                 "Assam": "Assam",
                 "Bihar": "Bihar",
@@ -605,8 +605,8 @@ export default function GurugramLoanSettlementPage() {
                 "Tamil Nadu": "tamil-nadu",
                 "Telangana": "Telangana",
                 "Tripura": "Tripura",
-                "Uttar Pradesh": "UttarPradesh",
-                "Uttarakhand": "Uttrakhand",
+                "Uttar Pradesh": "uttar-pradesh",
+                "Uttarakhand": "uttarakhand",
                 "West Bengal": "west-bengal"
               }}
             />

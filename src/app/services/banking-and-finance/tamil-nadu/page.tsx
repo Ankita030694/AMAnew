@@ -1,6 +1,6 @@
 import React from "react";
 import Script from "next/script";
-import TamilNaduBankingClient from "./TamilNaduBankingClient";
+import tamil-naduBankingClient from "./tamil-naduBankingClient";
 
 export const metadata = {
   title: "Banking and Finance Services in Tamil Nadu | Chit Funds & Nidhi Company",
@@ -154,7 +154,7 @@ const reviewSchema = {
   ],
 };
 
-export default function TamilNaduBankingPage() {
+export default function tamil-naduBankingPage() {
   return (
     <>
       <Script
@@ -172,7 +172,7 @@ export default function TamilNaduBankingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
       />
-      <TamilNaduBankingClient />
+      <tamil-naduBankingClient />
     </>
   );
 }

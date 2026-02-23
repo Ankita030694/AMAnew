@@ -125,7 +125,7 @@ const reviewSchema = {
   ]
 };
 
-export default function WestBengalLoanSettlementPage() {
+export default function west-bengalLoanSettlementPage() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "what-is-settlement", title: "What is Loan Settlement?" },
@@ -605,7 +605,7 @@ export default function WestBengalLoanSettlementPage() {
               serviceName="Loan Settlement" 
               servicePath="loan-settlement" 
               customSlugs={{
-                "Andhra Pradesh": "AndhraPradesh",
+                "Andhra Pradesh": "andhra-pradesh",
                 "Arunachal Pradesh": "arunachal-pradesh",
                 "Assam": "Assam",
                 "Bihar": "Bihar",
@@ -631,8 +631,8 @@ export default function WestBengalLoanSettlementPage() {
                 "Tamil Nadu": "tamil-nadu",
                 "Telangana": "Telangana",
                 "Tripura": "Tripura",
-                "Uttar Pradesh": "UttarPradesh",
-                "Uttarakhand": "Uttrakhand",
+                "Uttar Pradesh": "uttar-pradesh",
+                "Uttarakhand": "uttarakhand",
                 "West Bengal": "west-bengal"
               }}
             />

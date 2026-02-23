@@ -109,7 +109,7 @@ const reviewSchema = {
   ],
 };
 
-export default function UttarPradeshBankingClient() {
+export default function uttar-pradeshBankingClient() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "up-advantage", title: "The Uttar Pradesh Advantage" },

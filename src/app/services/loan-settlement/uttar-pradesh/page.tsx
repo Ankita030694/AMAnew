@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Expert loan settlement services in Uttar Pradesh (Noida, Kanpur, Lucknow). Settle debt legally through UPSLSA Lok Adalat & DRT. Stop harassment & save 50%.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/UttarPradesh',
+    canonical: 'https://amalegalsolutions.com/services/loan-settlement/uttar-pradesh',
   },
   openGraph: {
     title: "Loan Settlement in Uttar Pradesh | DRT Lucknow & Allahabad Lawyers",
     description: "Expert loan settlement services in Uttar Pradesh (Noida, Kanpur, Lucknow). Settle debt legally through UPSLSA Lok Adalat & DRT. Stop harassment & save 50%.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/UttarPradesh",
+    url: "https://amalegalsolutions.com/services/loan-settlement/uttar-pradesh",
     type: "website",
     images: [
       {
@@ -54,7 +54,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 4,
       "name": "Uttar Pradesh",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/UttarPradesh"
+      "item": "https://amalegalsolutions.com/services/loan-settlement/uttar-pradesh"
     }
   ]
 };
@@ -144,7 +144,7 @@ export default function UPLoanSettlementPage() {
   const breadcrumbItems = [
     { label: "Services", href: "/services" },
     { label: "Loan Settlement", href: "/services/loan-settlement" },
-    { label: "Uttar Pradesh", href: "/services/loan-settlement/UttarPradesh" },
+    { label: "Uttar Pradesh", href: "/services/loan-settlement/uttar-pradesh" },
   ];
 
   return (
@@ -632,7 +632,7 @@ export default function UPLoanSettlementPage() {
               serviceName="Loan Settlement" 
               servicePath="loan-settlement" 
               customSlugs={{
-                "Andhra Pradesh": "AndhraPradesh",
+                "Andhra Pradesh": "andhra-pradesh",
                 "Arunachal Pradesh": "arunachal-pradesh",
                 "Assam": "Assam",
                 "Bihar": "Bihar",
@@ -658,8 +658,8 @@ export default function UPLoanSettlementPage() {
                 "Tamil Nadu": "tamil-nadu",
                 "Telangana": "Telangana",
                 "Tripura": "Tripura",
-                "Uttar Pradesh": "UttarPradesh",
-                "Uttarakhand": "Uttrakhand",
+                "Uttar Pradesh": "uttar-pradesh",
+                "Uttarakhand": "uttarakhand",
                 "West Bengal": "west-bengal"
               }}
             />

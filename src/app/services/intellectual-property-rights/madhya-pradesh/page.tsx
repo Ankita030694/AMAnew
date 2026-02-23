@@ -125,7 +125,7 @@ const reviewSchema = {
   ]
 };
 
-export default function MadhyaPradeshIPRPage() {
+export default function madhya-pradeshIPRPage() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "mp-economy", title: "MP's Economic Landscape" },
@@ -601,9 +601,9 @@ export default function MadhyaPradeshIPRPage() {
                 "Maharashtra": "Maharashtra",
                 "Punjab": "Punjab",
                 "Rajasthan": "Rajasthan",
-                "Tamil Nadu": "TamilNadu",
-                "Uttar Pradesh": "UttarPradesh",
-                "Puducherry": "pudducherry"
+                "Tamil Nadu": "tamil-nadu",
+                "Uttar Pradesh": "uttar-pradesh",
+                "Puducherry": "puducherry"
               }}
             />
           </div>

@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Expert loan settlement services in Andhra Pradesh (Visakhapatnam, Vijayawada, Guntur). Settle debt legally through APSLSA Lok Adalat & DRT Vizag. Stop harassment.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/AndhraPradesh',
+    canonical: 'https://amalegalsolutions.com/services/loan-settlement/andhra-pradesh',
   },
   openGraph: {
     title: "Loan Settlement in Andhra Pradesh | DRT Visakhapatnam Lawyers",
     description: "Expert loan settlement services in Andhra Pradesh (Visakhapatnam, Vijayawada, Guntur). Settle debt legally through APSLSA Lok Adalat & DRT Vizag. Stop harassment.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/AndhraPradesh",
+    url: "https://amalegalsolutions.com/services/loan-settlement/andhra-pradesh",
     type: "website",
     images: [
       {
@@ -54,7 +54,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 4,
       "name": "Andhra Pradesh",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/AndhraPradesh"
+      "item": "https://amalegalsolutions.com/services/loan-settlement/andhra-pradesh"
     }
   ]
 };
@@ -125,7 +125,7 @@ const reviewSchema = {
   ]
 };
 
-export default function AndhraPradeshLoanSettlementPage() {
+export default function andhra-pradeshLoanSettlementPage() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "city-solutions", title: "Vizag, Vijayawada & Guntur" },
@@ -143,7 +143,7 @@ export default function AndhraPradeshLoanSettlementPage() {
   const breadcrumbItems = [
     { label: "Services", href: "/services" },
     { label: "Loan Settlement", href: "/services/loan-settlement" },
-    { label: "Andhra Pradesh", href: "/services/loan-settlement/AndhraPradesh" },
+    { label: "Andhra Pradesh", href: "/services/loan-settlement/andhra-pradesh" },
   ];
 
   return (
@@ -623,7 +623,7 @@ export default function AndhraPradeshLoanSettlementPage() {
               serviceName="Loan Settlement" 
               servicePath="loan-settlement" 
               customSlugs={{
-                "Andhra Pradesh": "AndhraPradesh",
+                "Andhra Pradesh": "andhra-pradesh",
                 "Arunachal Pradesh": "arunachal-pradesh",
                 "Assam": "Assam",
                 "Bihar": "Bihar",
@@ -648,8 +648,8 @@ export default function AndhraPradeshLoanSettlementPage() {
                 "Tamil Nadu": "tamil-nadu",
                 "Telangana": "Telangana",
                 "Tripura": "Tripura",
-                "Uttar Pradesh": "UttarPradesh",
-                "Uttarakhand": "Uttrakhand",
+                "Uttar Pradesh": "uttar-pradesh",
+                "Uttarakhand": "uttarakhand",
                 "West Bengal": "west-bengal"
               }}
             />

@@ -76,6 +76,7 @@ const Footer = () => {
       links: [
         { name: 'Settlement Services', href: '/services/loan-settlement' },
         { name: 'Debt Consolidation', href: '/services/debt-consolidation' },
+        { name: 'Loan & Debt Consolidation', href: '/services/loan-and-debt-consolidation' },
         { name: 'SBI Loan Settlement', href: '/services/loan-settlement/sbi-bank' },
         { name: 'ICICI Bank Settlement', href: '/services/loan-settlement/icici-bank' },
         { name: 'HDFC Bank Settlement', href: '/services/loan-settlement/hdfc-bank' },
@@ -146,7 +147,11 @@ const Footer = () => {
         {name:"Legal Notice for Unpaid F&F",href:"/not-being-paid-fnf-want-to-send-legal-notice"},
         {name:"What is OTS? - Comprehensive Guide",href:"/what-is-ots"},
         {name:"Procedure of Sending Legal Notice",href:"/procedure-of-sending-legal-notice"},
+        {name: "Does Foreclosure Affect CIBIL?", href: "/does-foreclosure-of-loan-affect-cibil"},
         {name:"Compare Loan Settlement Companies",href:"/compare-loan-settlement-companies-that-work-with-personal-loans"},
+        {name: "Loan for CIBIL Defaulters", href: "/which-bank-provide-personal-loan-for-cibil-defaulters"},
+        {name: "Stop Recovery Harassment", href: "/loan-recovery-agent-harassment-complaint-online"},
+        {name: "Legal Relief from Harassment", href: "/loan-recovery-agents-harassment-complaint"},
         {name: "Employer not paying salary", href: "/employer-not-paying-salary-after-resignation"},
         {name: "Where to File Salary Complaint", href: "/where-to-file-a-complaint-if-your-employer-doesnt-pay-you"},
         {name: "Can Company Hold Salary?", href: "/can-company-hold-my-salary-after-resignation"}

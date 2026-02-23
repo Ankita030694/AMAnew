@@ -1,5 +1,5 @@
 import React from "react";
-import UttarPradeshBankingClient from "./UttarPradeshBankingClient";
+import uttar-pradeshBankingClient from "./uttar-pradeshBankingClient";
 
 export const metadata = {
   title: "Banking & Finance Services in Uttar Pradesh | AMA",
@@ -16,6 +16,6 @@ export const metadata = {
   },
 };
 
-export default function UttarPradeshBankingPage() {
-  return <UttarPradeshBankingClient />;
+export default function uttar-pradeshBankingPage() {
+  return <uttar-pradeshBankingClient />;
 }

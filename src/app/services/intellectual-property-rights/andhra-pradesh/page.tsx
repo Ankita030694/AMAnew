@@ -1,4 +1,4 @@
-import AndhraPradeshClient from "./AndhraPradeshClient";
+import AndhraPradeshClient from "./andhra-pradeshClient";
 
 export const metadata = {
   title: "Intellectual Property Rights Services in Andhra Pradesh | Trademark & Patent",
@@ -54,14 +54,14 @@ const breadcrumbSchema = {
   ]
 };
 
-export default function AndhraPradeshIPRPage() {
+export default function andhra-pradeshIPRPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <AndhraPradeshClient />
+      <andhra-pradeshClient />
     </>
   );
 }

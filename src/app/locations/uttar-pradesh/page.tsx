@@ -208,7 +208,7 @@ export const metadata = {
   },
 };
 
-export default function UttarPradeshLocationPage() {
+export default function uttar-pradeshLocationPage() {
   const tocSections = [
     { id: "introduction", title: "Legal Landscape of Uttar Pradesh" },
     { id: "loan-settlement", title: "Loan Settlement in UP" },

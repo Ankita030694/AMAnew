@@ -28,7 +28,7 @@ const tocSections = [
   { id: "faqs", title: "FAQs" },
 ];
 
-export default function AndhraPradeshClient() {
+export default function andhra-pradeshClient() {
   return (
     <>
       <div className="bg-gray-50 min-h-screen font-sans text-gray-800">
@@ -441,9 +441,9 @@ export default function AndhraPradeshClient() {
                 "Maharashtra": "Maharashtra",
                 "Punjab": "Punjab",
                 "Rajasthan": "Rajasthan",
-                "Tamil Nadu": "TamilNadu",
-                "Uttar Pradesh": "UttarPradesh",
-                "Puducherry": "pudducherry"
+                "Tamil Nadu": "tamil-nadu",
+                "Uttar Pradesh": "uttar-pradesh",
+                "Puducherry": "puducherry"
               }}
             />
           </div>

@@ -235,7 +235,7 @@ export const metadata = {
   },
 };
 
-export default function TamilNaduLocationPage() {
+export default function tamil-naduLocationPage() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "legal-landscape", title: "Legal Landscape" },

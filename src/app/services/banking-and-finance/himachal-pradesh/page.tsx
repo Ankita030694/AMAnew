@@ -1,6 +1,6 @@
 import React from "react";
 import Script from "next/script";
-import HimachalPradeshBankingClient from "./HimachalPradeshBankingClient";
+import himachal-pradeshBankingClient from "./himachal-pradeshBankingClient";
 
 export const metadata = {
   title: "Banking and Finance Services in Himachal Pradesh | NBFC & MFI Registration",
@@ -155,7 +155,7 @@ const reviewSchema = {
   ],
 };
 
-export default function HimachalPradeshBankingPage() {
+export default function himachal-pradeshBankingPage() {
   return (
     <>
       <Script
@@ -173,7 +173,7 @@ export default function HimachalPradeshBankingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
       />
-      <HimachalPradeshBankingClient />
+      <himachal-pradeshBankingClient />
     </>
   );
 }

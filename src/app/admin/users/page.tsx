@@ -93,7 +93,7 @@ const UsersDashboard = () => {
     }else if (itemId === 'users'){
         router.push('/admin/users')
     }else if (itemId === 'amalive'){
-        router.push('/admin/amalive')
+        router.push('/admin/ama-live')
     }else{
         setActiveTab(itemId);
     }

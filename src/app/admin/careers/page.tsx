@@ -88,7 +88,7 @@ const CareersAdmin = () => {
     else if (itemId === 'users') router.push('/admin/users');
     else if (itemId === 'blogs') router.push('/admin/blogs');
     else if (itemId === 'articles') router.push('/admin/articles');
-    else if (itemId === 'amalive') router.push('/admin/amalive');
+    else if (itemId === 'amalive') router.push('/admin/ama-live');
     else if (itemId === 'careers') setActiveTab('careers');
   };
 

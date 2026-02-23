@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Protect your business in UP. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Noida, Lucknow, Kanpur & Varanasi. Litigation support at Allahabad High Court.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/intellectual-property-rights/UttarPradesh',
+    canonical: 'https://amalegalsolutions.com/services/intellectual-property-rights/uttar-pradesh',
   },
   openGraph: {
     title: "Intellectual Property Rights in Uttar Pradesh | IP Lawyers Noida & Lucknow",
     description: "Protect your business in UP. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Noida, Lucknow, Kanpur & Varanasi. Litigation support at Allahabad High Court.",
-    url: "https://amalegalsolutions.com/services/intellectual-property-rights/UttarPradesh",
+    url: "https://amalegalsolutions.com/services/intellectual-property-rights/uttar-pradesh",
     type: "website",
     images: [
       {
@@ -54,7 +54,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 4,
       "name": "Uttar Pradesh",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights/UttarPradesh"
+      "item": "https://amalegalsolutions.com/services/intellectual-property-rights/uttar-pradesh"
     }
   ]
 };
@@ -125,7 +125,7 @@ const reviewSchema = {
   ]
 };
 
-export default function UttarPradeshIPRPage() {
+export default function uttar-pradeshIPRPage() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "economic-context", title: "UP's Economic Renaissance & IP" },
@@ -145,7 +145,7 @@ export default function UttarPradeshIPRPage() {
   const breadcrumbItems = [
     { label: "Services", href: "/services" },
     { label: "Intellectual Property Rights", href: "/services/intellectual-property-rights" },
-    { label: "Uttar Pradesh", href: "/services/intellectual-property-rights/UttarPradesh" },
+    { label: "Uttar Pradesh", href: "/services/intellectual-property-rights/uttar-pradesh" },
   ];
 
   return (
@@ -697,9 +697,9 @@ export default function UttarPradeshIPRPage() {
                 "Maharashtra": "Maharashtra",
                 "Punjab": "Punjab",
                 "Rajasthan": "Rajasthan",
-                "Tamil Nadu": "TamilNadu",
-                "Uttar Pradesh": "UttarPradesh",
-                "Puducherry": "pudducherry"
+                "Tamil Nadu": "tamil-nadu",
+                "Uttar Pradesh": "uttar-pradesh",
+                "Puducherry": "puducherry"
               }}
             />
           </div>

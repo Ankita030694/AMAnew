@@ -172,7 +172,7 @@ export const metadata = {
   },
 };
 
-export default function LoanSettlementTamilNaduPage() {
+export default function LoanSettlementtamil-naduPage() {
   const tocSections = [
     { id: "introduction", title: "Tamil Nadu's Debt Reality" },
     { id: "what-is-settlement", title: "Understanding OTS" },
@@ -672,7 +672,7 @@ export default function LoanSettlementTamilNaduPage() {
               serviceName="Loan Settlement" 
               servicePath="loan-settlement" 
               customSlugs={{
-                "Andhra Pradesh": "AndhraPradesh",
+                "Andhra Pradesh": "andhra-pradesh",
                 "Arunachal Pradesh": "arunachal-pradesh",
                 "Assam": "Assam",
                 "Bihar": "Bihar",
@@ -698,8 +698,8 @@ export default function LoanSettlementTamilNaduPage() {
                 "Tamil Nadu": "tamil-nadu",
                 "Telangana": "Telangana",
                 "Tripura": "tripura",
-                "Uttar Pradesh": "UttarPradesh",
-                "Uttarakhand": "Uttrakhand",
+                "Uttar Pradesh": "uttar-pradesh",
+                "Uttarakhand": "uttarakhand",
                 "West Bengal": "west-bengal"
               }}
             />

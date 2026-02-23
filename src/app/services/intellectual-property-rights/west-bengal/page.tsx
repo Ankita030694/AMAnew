@@ -35,7 +35,7 @@ export const metadata = {
   },
 };
 
-const WestBengalIPRPage = () => {
+const west-bengalIPRPage = () => {
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -803,9 +803,9 @@ const WestBengalIPRPage = () => {
                 "Maharashtra": "Maharashtra",
                 "Punjab": "Punjab",
                 "Rajasthan": "Rajasthan",
-                "Tamil Nadu": "TamilNadu",
-                "Uttar Pradesh": "UttarPradesh",
-                "Puducherry": "pudducherry",
+                "Tamil Nadu": "tamil-nadu",
+                "Uttar Pradesh": "uttar-pradesh",
+                "Puducherry": "puducherry",
                 "Kerala": "kerala"
               }}
             />
@@ -816,4 +816,4 @@ const WestBengalIPRPage = () => {
   );
 };
 
-export default WestBengalIPRPage;
+export default west-bengalIPRPage;

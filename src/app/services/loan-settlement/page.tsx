@@ -1092,38 +1092,6 @@ export default function LoanSettlementPage() {
             <GenericStatesGrid 
               serviceName="Loan Settlement" 
               servicePath="loan-settlement" 
-              customSlugs={{
-                "Andhra Pradesh": "AndhraPradesh",
-                "Arunachal Pradesh": "arunachal-pradesh",
-                "Assam": "Assam",
-                "Bihar": "Bihar",
-                "Chhattisgarh": "Chhattisgarh",
-                "Delhi": "Delhi",
-                "Goa": "Goa",
-                "Gujarat": "Gujarat",
-                "Haryana": "Haryana",
-                "Himachal Pradesh": "himachal-pradesh",
-                "Hyderabad": "Hyderabad",
-                "Jharkhand": "Jharkhand",
-                "Karnataka": "Karnataka",
-                "Kerala": "Kerala",
-                "Madhya Pradesh": "madhya-pradesh",
-                "Maharashtra": "Maharashtra",
-                "Manipur": "Manipur",
-                "Meghalaya": "Meghalaya",
-                "Mizoram": "Mizoram",
-                "Odisha": "Odisha",
-                "Puducherry": "Puducherry",
-                "Punjab": "Punjab",
-                "Rajasthan": "Rajasthan",
-                "Sikkim": "Sikkim",
-                "Tamil Nadu": "tamil-nadu",
-                "Telangana": "Telangana",
-                "Tripura": "Tripura",
-                "Uttar Pradesh": "UttarPradesh",
-                "Uttarakhand": "Uttrakhand",
-                "West Bengal": "west-bengal"
-              }}
             />
           </div>
         </div>

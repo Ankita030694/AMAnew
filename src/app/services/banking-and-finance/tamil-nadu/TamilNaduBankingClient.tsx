@@ -8,7 +8,7 @@ import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
-const TamilNaduBankingClient = () => {
+const tamil-naduBankingClient = () => {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "banking-landscape", title: "Tamil Nadu's Financial Landscape" },
@@ -481,6 +481,6 @@ const TamilNaduBankingClient = () => {
   );
 };
 
-export default TamilNaduBankingClient;
+export default tamil-naduBankingClient;
 
 

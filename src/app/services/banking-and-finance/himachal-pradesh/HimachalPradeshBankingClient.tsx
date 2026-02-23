@@ -8,7 +8,7 @@ import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
-const HimachalPradeshBankingClient = () => {
+const himachal-pradeshBankingClient = () => {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "banking-landscape", title: "Banking Landscape: Tourism & Horticulture" },
@@ -564,5 +564,5 @@ const HimachalPradeshBankingClient = () => {
   );
 };
 
-export default HimachalPradeshBankingClient;
+export default himachal-pradeshBankingClient;
 
