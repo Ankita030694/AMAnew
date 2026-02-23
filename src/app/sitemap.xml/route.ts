@@ -160,6 +160,7 @@ export async function GET(): Promise<Response> {
     '/procedure-of-sending-legal-notice',
     '/compare-loan-settlement-companies-that-work-with-personal-loans',
     '/does-foreclosure-of-loan-affect-cibil',
+    '/expert-panel-loan-settlement-reviews',
     '/which-bank-provide-personal-loan-for-cibil-defaulters',
     '/loan-recovery-agent-harassment-complaint-online',
     '/loan-recovery-agents-harassment-complaint',

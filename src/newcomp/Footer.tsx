@@ -154,7 +154,8 @@ const Footer = () => {
         {name: "Legal Relief from Harassment", href: "/loan-recovery-agents-harassment-complaint"},
         {name: "Employer not paying salary", href: "/employer-not-paying-salary-after-resignation"},
         {name: "Where to File Salary Complaint", href: "/where-to-file-a-complaint-if-your-employer-doesnt-pay-you"},
-        {name: "Can Company Hold Salary?", href: "/can-company-hold-my-salary-after-resignation"}
+        {name: "Can Company Hold Salary?", href: "/can-company-hold-my-salary-after-resignation"},
+        {name: "Expert Panel Reviews", href: "/expert-panel-loan-settlement-reviews"}
       ]
     }
   ];

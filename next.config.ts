@@ -94,15 +94,18 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
-    ],
-    domains: [
-      'www.amalegalsolutions.com',
-      'amalegalsolutionss.firebasestorage.app',
-      'res.cloudinary.com',
-      'cloudinary.com',
-      'img.youtube.com',
-      'fonts.googleapis.com',
-      'fonts.gstatic.com'
+      {
+        protocol: 'https',
+        hostname: 'www.amalegalsolutions.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'amalegalsolutionss.firebasestorage.app',
+        port: '',
+        pathname: '/**',
+      },
     ],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],

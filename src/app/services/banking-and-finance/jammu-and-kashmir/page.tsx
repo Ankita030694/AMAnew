@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
 };
 
-const page = () => {
+const JammuKashmirBankingPage = () => {
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -191,6 +191,6 @@ const page = () => {
   );
 };
 
-export default page;
+export default JammuKashmirBankingPage;
 
 
