@@ -28,7 +28,7 @@ const tocSections = [
   { id: "faqs", title: "FAQs" },
 ];
 
-export default function arunachal-pradeshClient() {
+export default function ArunachalPradeshClient() {
   return (
     <>
       <div className="bg-gray-50 min-h-screen font-sans text-gray-800">

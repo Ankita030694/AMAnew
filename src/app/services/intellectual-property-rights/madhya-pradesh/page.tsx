@@ -125,7 +125,7 @@ const reviewSchema = {
   ]
 };
 
-export default function madhya-pradeshIPRPage() {
+export default function MadhyaPradeshIPRPage() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "mp-economy", title: "MP's Economic Landscape" },

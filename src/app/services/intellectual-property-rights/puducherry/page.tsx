@@ -165,7 +165,7 @@ const reviewSchema = {
   ]
 };
 
-export default function PudducherryIPRPage() {
+export default function PuducherryIPRPage() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "importance-ipr", title: "Why IPR Matters Here" },

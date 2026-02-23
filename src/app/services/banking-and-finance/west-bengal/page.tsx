@@ -1,5 +1,5 @@
 import React from "react";
-import west-bengalBankingClient from "./west-bengalBankingClient";
+import WestBengalBankingClient from "./WestBengalBankingClient";
 
 export const metadata = {
   title: "Banking and Finance Services in West Bengal | AMA Legal Solutions",
@@ -27,6 +27,6 @@ export const metadata = {
   },
 };
 
-export default function west-bengalBankingPage() {
-  return <west-bengalBankingClient />;
+export default function WestBengalBankingPage() {
+  return <WestBengalBankingClient />;
 }

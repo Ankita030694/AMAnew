@@ -1,4 +1,4 @@
-import arunachal-pradeshClient from "./arunachal-pradeshClient";
+import ArunachalPradeshClient from "./ArunachalPradeshClient";
 
 export const metadata = {
   title: "Intellectual Property Rights Services in Arunachal Pradesh | Trademark & Patent",
@@ -54,14 +54,14 @@ const breadcrumbSchema = {
   ]
 };
 
-export default function arunachal-pradeshIPRPage() {
+export default function ArunachalPradeshIPRPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <arunachal-pradeshClient />
+      <ArunachalPradeshClient />
     </>
   );
 }

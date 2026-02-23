@@ -109,7 +109,7 @@ const reviewSchema = {
   ],
 };
 
-export default function madhya-pradeshBankingClient() {
+export default function MadhyaPradeshBankingClient() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "mp-advantage", title: "The Madhya Pradesh Advantage" },

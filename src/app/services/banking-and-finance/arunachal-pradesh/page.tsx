@@ -1,6 +1,6 @@
 import React from "react";
 import Script from "next/script";
-import arunachal-pradeshBankingClient from "./arunachal-pradeshBankingClient";
+import ArunachalPradeshBankingClient from "./ArunachalPradeshBankingClient";
 
 export const metadata = {
   title: "Banking and Finance Services in Arunachal Pradesh | NBFC & LPC Loans",
@@ -154,7 +154,7 @@ const reviewSchema = {
   ],
 };
 
-export default function arunachal-pradeshBankingPage() {
+export default function ArunachalPradeshBankingPage() {
   return (
     <>
       <Script
@@ -172,7 +172,7 @@ export default function arunachal-pradeshBankingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
       />
-      <arunachal-pradeshBankingClient />
+      <ArunachalPradeshBankingClient />
     </>
   );
 }

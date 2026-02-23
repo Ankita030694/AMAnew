@@ -172,7 +172,7 @@ export const metadata = {
   },
 };
 
-export default function LoanSettlementtamil-naduPage() {
+export default function TamilNaduLoanSettlementPage() {
   const tocSections = [
     { id: "introduction", title: "Tamil Nadu's Debt Reality" },
     { id: "what-is-settlement", title: "Understanding OTS" },

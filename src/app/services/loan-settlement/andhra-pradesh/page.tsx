@@ -125,7 +125,7 @@ const reviewSchema = {
   ]
 };
 
-export default function andhra-pradeshLoanSettlementPage() {
+export default function AndhraPradeshLoanSettlementPage() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "city-solutions", title: "Vizag, Vijayawada & Guntur" },

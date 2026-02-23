@@ -35,7 +35,7 @@ export const metadata = {
   },
 };
 
-const west-bengalIPRPage = () => {
+const WestBengalIPRPage = () => {
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -816,4 +816,4 @@ const west-bengalIPRPage = () => {
   );
 };
 
-export default west-bengalIPRPage;
+export default WestBengalIPRPage;

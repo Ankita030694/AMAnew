@@ -125,7 +125,7 @@ const reviewSchema = {
   ]
 };
 
-export default function west-bengalLoanSettlementPage() {
+export default function WestBengalLoanSettlementPage() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "what-is-settlement", title: "What is Loan Settlement?" },

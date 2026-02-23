@@ -8,7 +8,7 @@ import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
-const arunachal-pradeshBankingClient = () => {
+const ArunachalPradeshBankingClient = () => {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "banking-landscape", title: "Financial Landscape: The Last Frontier" },
@@ -464,5 +464,5 @@ const arunachal-pradeshBankingClient = () => {
   );
 };
 
-export default arunachal-pradeshBankingClient;
+export default ArunachalPradeshBankingClient;
 

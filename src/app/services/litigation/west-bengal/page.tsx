@@ -217,7 +217,7 @@ export const metadata = {
   },
 };
 
-export default function west-bengalLitigationPage() {
+export default function WestBengalLitigationPage() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "calcutta-high-court", title: "Calcutta High Court Practice" },

@@ -125,7 +125,7 @@ const reviewSchema = {
   ]
 };
 
-export default function tamil-naduIPRPage() {
+export default function TamilNaduIPRPage() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "industrial-hub", title: "Tamil Nadu's IP Landscape" },

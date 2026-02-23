@@ -125,7 +125,7 @@ const reviewSchema = {
   ]
 };
 
-export default function uttar-pradeshIPRPage() {
+export default function UttarPradeshIPRPage() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "economic-context", title: "UP's Economic Renaissance & IP" },
