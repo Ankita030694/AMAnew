@@ -700,11 +700,11 @@ export default function JharkhandIPRPage() {
               serviceName="Intellectual Property Rights" 
               servicePath="intellectual-property-rights"
               customSlugs={{
-                "Delhi": "Delhi",
-                "Gujarat": "Gujarat",
-                "Maharashtra": "Maharashtra",
-                "Punjab": "Punjab",
-                "Rajasthan": "Rajasthan",
+                "Delhi": "delhi",
+                "Gujarat": "gujarat",
+                "Maharashtra": "maharashtra",
+                "Punjab": "punjab",
+                "Rajasthan": "rajasthan",
                 "Tamil Nadu": "tamil-nadu",
                 "Uttar Pradesh": "uttar-pradesh",
                 "Puducherry": "puducherry"
