@@ -244,7 +244,10 @@ export default function Footer() {
     { href: "/trademark-registration-office-delhi", label: "Trademark Registration Office Delhi" },
     { href:    '/is-trademark-registration-one-time', label: "Is Trademark Registration One Time?" },
     { href: "/not-being-paid-fnf-want-to-send-legal-notice", label: "Legal Notice for Unpaid F&F" },
-    { href: "/employer-not-paying-salary-after-resignation", label: "Salary Not Paid After Resignation" }
+    { href: "/employer-not-paying-salary-after-resignation", label: "Salary Not Paid After Resignation" },
+    { href: "/how-do-i-stop-recovery-agent-from-coming-home", label: "Stop Recovery Agent Home Visits" },
+    { href: "/bajaj-finance-agent-visiting-home", label: "Bajaj Finance Agent Help" }
+
               ].map((query) => (
                 <Link
                   key={query.href}

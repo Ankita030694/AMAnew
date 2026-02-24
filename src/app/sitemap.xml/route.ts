@@ -164,7 +164,10 @@ export async function GET(): Promise<Response> {
     '/which-bank-provide-personal-loan-for-cibil-defaulters',
     '/loan-recovery-agent-harassment-complaint-online',
     '/loan-recovery-agents-harassment-complaint',
+    '/how-do-i-stop-recovery-agent-from-coming-home',
+    '/bajaj-finance-agent-visiting-home',
     '/special-lok-adalat-for-loan-settlement',
+
     '/trademark-infringement-without-registration',
     '/is-registering-a-name-instead-of-the-logo-enough',
     '/is-trademark-internationally-valid',

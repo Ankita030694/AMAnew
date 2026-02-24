@@ -155,8 +155,11 @@ const Footer = () => {
         {name: "Employer not paying salary", href: "/employer-not-paying-salary-after-resignation"},
         {name: "Where to File Salary Complaint", href: "/where-to-file-a-complaint-if-your-employer-doesnt-pay-you"},
         {name: "Can Company Hold Salary?", href: "/can-company-hold-my-salary-after-resignation"},
-        {name: "Expert Panel Reviews", href: "/expert-panel-loan-settlement-reviews"}
+        {name: "Expert Panel Reviews", href: "/expert-panel-loan-settlement-reviews"},
+        {name: "Stop Recovery Agent Home Visits", href: "/how-do-i-stop-recovery-agent-from-coming-home"},
+        {name: "Bajaj Finance Agent Help", href: "/bajaj-finance-agent-visiting-home"}
       ]
+
     }
   ];
 
