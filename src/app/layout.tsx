@@ -6,6 +6,7 @@ import "./globals.css";
 import Navbar from "@/newcomp/Navbar";
 import Footer from "@/newcomp/Footer";
 import WhatsAppWidget from "@/newcomp/WhatsAppWidget";
+import GlobalPopupForm from "@/newcomp/GlobalPopupForm";
 import { Toaster } from "react-hot-toast";
 import Script from 'next/script'
 
@@ -243,6 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
         {/* End Google Tag Manager (noscript) */}
         <Navbar />
         {children}
+        <GlobalPopupForm />
         <Footer />
         <WhatsAppWidget />
         <Toaster position="top-right" />
