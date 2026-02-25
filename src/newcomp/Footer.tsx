@@ -89,6 +89,7 @@ const Footer = () => {
         { name: 'Unsecured Loan Specialists', href: '/which-firms-specialize-in-negotiating-settlements-for-unsecured-loans' },
         { name: 'Good Customer Support', href: '/what-loan-settlement-services-have-good-customer-support-in-india' },
         { name: 'Home Loan Dues', href: '/can-i-get-a-loan-settlement-service-that-handles-home-loan-dues' },
+        { name: '10 Lakhs Settlement', href: '/10-lakhs-loan-settlement' },
       ]
     },
     {
@@ -158,7 +159,9 @@ const Footer = () => {
         {name: "Expert Panel Reviews", href: "/expert-panel-loan-settlement-reviews"},
         {name: "Stop Recovery Agent Home Visits", href: "/how-do-i-stop-recovery-agent-from-coming-home"},
         {name: "Bajaj Finance Agent Help", href: "/bajaj-finance-agent-visiting-home"},
-        {name: "How to Settle Loans Above 1 Cr", href: "/how-to-settle-loans-above-1-crore"}
+        {name: "How to Settle Loans Above 1 Cr", href: "/how-to-settle-loans-above-1-crore"},
+        {name: "How to Settle Loans Above 5 Cr", href: "/how-to-settle-loans-above-5-crore"},
+        {name: "10 Lakhs Settlement", href: "/10-lakhs-loan-settlement"},
       ]
 
     }

@@ -34,6 +34,7 @@ export async function GET(): Promise<Response> {
     '/legal-services-near-me',
     '/delhi-ncr-law-firm',
     '/job-lost-loan-settlement',
+    '/10-lakhs-loan-settlement',
     '/locations/bengaluru',
     '/trademark-registration-agency-near-me',
     '/trademark-registration-office-delhi',
@@ -169,6 +170,7 @@ export async function GET(): Promise<Response> {
     '/special-lok-adalat-for-loan-settlement',
     '/virtual-inhouse-councel',
     '/how-to-settle-loans-above-1-crore',
+    '/how-to-settle-loans-above-5-crore',
 
     '/trademark-infringement-without-registration',
     '/is-registering-a-name-instead-of-the-logo-enough',

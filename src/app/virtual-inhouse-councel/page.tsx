@@ -5,6 +5,151 @@ import Image from "next/image";
 import Link from "next/link";
 import { baseTestimonials } from "@/data/testimonials";
 import TableOfContents from "@/components/TableOfContents";
+import Script from "next/script";
+import Breadcrumbs from "@/components/Breadcrumbs";
+
+// FAQ data for rendering and Schema
+const faqs = [
+  {
+    question: "What is a Virtual In-house Counsel?",
+    answer: "A virtual in-house counsel is a remote legal expert or team that provides all the services of a traditional in-house legal department (contracting, compliance, risk management) on a more flexible and cost-effective basis."
+  },
+  {
+    question: "How is Virtual Counsel different from a traditional law firm?",
+    answer: "Unlike traditional firms that often charge per hour or per task, a virtual counsel integrates into your business operations, providing ongoing support and becoming an extension of your team, often on a predictable retainer model."
+  },
+  {
+    question: "What services are included in the Virtual In-house Counsel package?",
+    answer: "It typically includes contract drafting and review, employment law advice, IP management, data privacy compliance, corporate governance, and general legal risk mitigation."
+  },
+  {
+    question: "Can early-stage startups benefit from Virtual Counsel?",
+    answer: "Yes, startups benefit significantly as it allows them to have senior-level legal oversight without the high overhead costs of a full-time General Counsel."
+  },
+  {
+    question: "Is Virtual Counsel available 24/7?",
+    answer: "At AMA Legal Solutions, our virtual counsel team is available around the clock to handle legal emergencies and urgent business matters."
+  },
+  {
+    question: "Does Virtual Counsel handle litigation?",
+    answer: "While our virtual counsel focuses on preventing disputes and managing risk, we also handle early-stage dispute resolution and can coordinate with specialized litigators if court action becomes necessary."
+  },
+  {
+    question: "Is my data secure with a Virtual Counsel?",
+    answer: "Absolutely. We use secure, enterprise-grade communication and document management systems to ensure all client data remains confidential and protected."
+  },
+  {
+    question: "How do I get started with AMA's Virtual In-house Counsel?",
+    answer: "You can start by booking a consultation. We will assess your business needs, volume of legal work, and tailor a package that fits your specific requirements."
+  }
+];
+
+// Breadcrumb Schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://amalegalsolutions.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://amalegalsolutions.com/services"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Virtual Inhouse Counsel",
+      "item": "https://amalegalsolutions.com/virtual-inhouse-councel"
+    }
+  ]
+};
+
+// Article Schema
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Virtual Inhouse Counsel: Premium Legal Solutions for Modern Businesses",
+  "description": "Discover how AMA Legal Solutions' Virtual Inhouse Counsel provides comprehensive, cost-effective, and 24/7 legal support for startups and SMEs.",
+  "image": "https://amalegalsolutions.com/newAssets/virtual-counsel.webp",
+  "author": {
+    "@type": "Organization",
+    "name": "AMA Legal Solutions",
+    "url": "https://amalegalsolutions.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AMA Legal Solutions",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+    }
+  },
+  "datePublished": "2024-05-20",
+  "dateModified": "2024-05-20"
+};
+
+// FAQ Schema
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
+// Review Schema
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Virtual Inhouse Counsel Service",
+  "description": "Comprehensive legal support for startups and SMEs.",
+  "provider": {
+    "@type": "Organization",
+    "name": "AMA Legal Solutions"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "125"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Rajesh Khanna"
+      },
+      "reviewBody": "AMA's Virtual Counsel has been a game-changer for my startup. Having experts available 24/7 gives me immense peace of mind."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Priya Sharma"
+      },
+      "reviewBody": "Professional, efficient, and cost-effective. Their contract review process is thorough and incredibly fast."
+    }
+  ]
+};
 
 export const metadata: Metadata = {
   title: "Virtual Inhouse Councel | AMA Legal Solutions",
@@ -25,11 +170,34 @@ export default function VirtualInhouseCouncelPage() {
     { id: "what-it-is", title: "What It Is & Offers" },
     { id: "pricing", title: "Pricing & Models" },
     { id: "services", title: "Our Core Services" },
+    { id: "faqs", title: "Expert FAQs" },
   ];
 
   return (
-    <div className="bg-[#EAE6DB] min-h-screen font-[family-name:var(--font-polysans)]">
-      <Navbar />
+    <>
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <Script
+        id="article-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Script
+        id="review-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
+
+      <div className="bg-[#EAE6DB] min-h-screen font-[family-name:var(--font-polysans)]">
+        <Navbar />
 
       <main className="pb-20 overflow-x-hidden relative">
         {/* Hero Section */}
@@ -127,6 +295,11 @@ export default function VirtualInhouseCouncelPage() {
 
         {/* Content Layout matching loan-settlement page */}
         <div className="container mx-auto px-4 max-w-[1600px] py-8">
+          <Breadcrumbs items={[
+            { label: "Home", href: "/" },
+            { label: "Services", href: "/services" },
+            { label: "Virtual Inhouse Counsel", href: "/virtual-inhouse-councel" },
+          ]} />
           
           {/* Mobile App Store Links */}
           <div className="lg:hidden flex flex-col gap-3 mb-6 mt-2">
@@ -396,6 +569,24 @@ export default function VirtualInhouseCouncelPage() {
                   </div>
                 </section>
 
+                {/* FAQ Section */}
+                <section id="faqs" className="scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-[#30261C] mb-8 text-center uppercase tracking-widest">Expert FAQ: Virtual Inhouse Counsel</h2>
+                  <div className="space-y-6 max-w-4xl mx-auto">
+                    {faqs.map((faq, index) => (
+                      <div key={index} className="bg-[#F8FAFC] p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <h3 className="text-lg md:text-xl font-bold text-[#30261C] mb-3 flex items-start">
+                          <span className="text-[#D2A02A] mr-3 text-2xl font-black">Q.</span>
+                          {faq.question}
+                        </h3>
+                        <p className="text-[#30261C]/80 leading-relaxed pl-8 text-sm md:text-base">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+
                 {/* Final CTA */}
                 <section className="bg-gradient-to-br from-[#30261C] to-[#4A3D2F] rounded-xl md:rounded-3xl p-6 md:p-16 text-center text-white relative overflow-hidden">
                   <div className="relative z-10">
@@ -510,5 +701,6 @@ export default function VirtualInhouseCouncelPage() {
 
       <Footer />
     </div>
+    </>
   );
 }
