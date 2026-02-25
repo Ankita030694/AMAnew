@@ -251,7 +251,7 @@ const Navbar = () => {
                     style={{ top: "100%" }}
                   >
                     <div 
-                      className="flex w-full p-8 gap-8"
+                      className="flex w-full p-4 gap-8"
                       style={{
                         borderRadius: "25px",
                         background: "rgba(255, 255, 255, 1)",
@@ -367,34 +367,60 @@ const Navbar = () => {
                                 <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                               </svg>
                             </div>
-                          
                           </Link>
                         </div>
 
-                        {/* AMA Container (Bottom Half) */}
-                        <div 
-                          className="flex-1 p-6 flex flex-col justify-center gap-2" 
-                          style={{
-                            borderRadius: "10px",
-                            background: "#30261C" // Brown from brand
-                          }}
-                        >
-                          <Link href="/ask-me-anything" className="block w-full group">
-                            <div className="flex justify-between items-start">
-                              <h3 
-                                className="text-[25px] font-normal mb-1 text-[#EBE9E4] group-hover:opacity-80 transition-opacity"
-                                style={{ fontFamily: "var(--font-polysans)" }}
-                              >
-                                Ask Me Anything
-                              </h3>
-                              <div className="w-8 h-8 flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EBE9E4" className="transform transition-transform">
-                                    <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                  </svg>
+                        {/* Bottom Half - Split into two side-by-side */}
+                        <div className="flex-1 flex flex-row gap-4">
+                          {/* AMA Container */}
+                          <div 
+                            className="flex-1 p-4 lg:p-6 flex flex-col justify-center gap-2" 
+                            style={{
+                              borderRadius: "10px",
+                              background: "#30261C" // Brown from brand
+                            }}
+                          >
+                            <Link href="/ask-me-anything" className="block w-full group">
+                              <div className="flex justify-between items-start gap-2">
+                                <h3 
+                                  className="text-[20px] lg:text-[23px] font-normal leading-tight mb-1 text-[#EBE9E4] group-hover:opacity-80 transition-opacity whitespace-normal"
+                                  style={{ fontFamily: "var(--font-polysans)" }}
+                                >
+                                  AMA
+                                </h3>
+                                <div className="w-6 h-6 shrink-0 flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EBE9E4" className="transform transition-transform">
+                                      <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
+                                </div>
                               </div>
-                            </div>
-                         
-                          </Link>
+                            </Link>
+                          </div>
+
+                          {/* Virtual Counsel Container */}
+                          <div 
+                            className="flex-1 p-4 lg:p-6 flex flex-col justify-center gap-2" 
+                            style={{
+                              borderRadius: "10px",
+                              background: "#EAE6DB" // Light background
+                            }}
+                          >
+                            <Link href="/virtual-inhouse-councel" className="block w-full group">
+                              <div className="flex justify-between items-start gap-2">
+                                <h3 
+                                  className="text-[20px] lg:text-[23px] font-normal leading-tight mb-1 text-[#30261C] group-hover:opacity-80 transition-opacity whitespace-normal"
+                                  style={{ fontFamily: "var(--font-polysans)" }}
+                                >
+                                  Virtual<br/>Counsel
+                                </h3>
+                                <div className="w-6 h-6 shrink-0 flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#30261C" className="transform transition-transform">
+                                      <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
+                                </div>
+                              </div>
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -581,7 +607,15 @@ const Navbar = () => {
                                              style={{ fontFamily: "var(--font-polysans)", fontSize: "28px", lineHeight: "28px" }}
                                              onClick={() => setIsMobileMenuOpen(false)}
                                          >
-                                             Ask Me Anything
+                                             AMA
+                                         </Link>
+                                         <Link 
+                                             href="/virtual-inhouse-councel"
+                                             className="text-[#30261C]/80 font-[400] tracking-wide"
+                                             style={{ fontFamily: "var(--font-polysans)", fontSize: "28px", lineHeight: "28px" }}
+                                             onClick={() => setIsMobileMenuOpen(false)}
+                                         >
+                                             Virtual Counsel
                                          </Link>
                                          <Link 
                                              href="/careers"

@@ -1,6 +1,7 @@
 import AmaClient from "./AmaClient";
 import { db } from "@/lib/app-firebase";
 import { collection, query, orderBy, limit, getDocs } from "firebase/firestore";
+import Link from "next/link";
 
 export const metadata = {
   title: "Ask Me Anything (AMA) | AMA Legal Solutions",
@@ -60,6 +61,7 @@ export default async function AmaPage() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
+
       <AmaClient initialQuestions={answeredQuestions} />
 
       {/* SEO Content Section - Static text for search engine crawlers */}

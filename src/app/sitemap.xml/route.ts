@@ -167,6 +167,7 @@ export async function GET(): Promise<Response> {
     '/how-do-i-stop-recovery-agent-from-coming-home',
     '/bajaj-finance-agent-visiting-home',
     '/special-lok-adalat-for-loan-settlement',
+    '/virtual-inhouse-councel',
 
     '/trademark-infringement-without-registration',
     '/is-registering-a-name-instead-of-the-logo-enough',
