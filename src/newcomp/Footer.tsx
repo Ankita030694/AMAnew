@@ -157,7 +157,8 @@ const Footer = () => {
         {name: "Can Company Hold Salary?", href: "/can-company-hold-my-salary-after-resignation"},
         {name: "Expert Panel Reviews", href: "/expert-panel-loan-settlement-reviews"},
         {name: "Stop Recovery Agent Home Visits", href: "/how-do-i-stop-recovery-agent-from-coming-home"},
-        {name: "Bajaj Finance Agent Help", href: "/bajaj-finance-agent-visiting-home"}
+        {name: "Bajaj Finance Agent Help", href: "/bajaj-finance-agent-visiting-home"},
+        {name: "How to Settle Loans Above 1 Cr", href: "/how-to-settle-loans-above-1-crore"}
       ]
 
     }
