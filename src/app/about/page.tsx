@@ -17,6 +17,9 @@ export const metadata = {
     canonical: 'https://amalegalsolutions.com/about', // Add your canonical URL here
   },
 }
+
+export const revalidate = 0;
+
 export default async function About() {
     const attorneys = await fetchAttorneys();
     
