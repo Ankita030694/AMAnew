@@ -699,8 +699,6 @@ export default function VirtualInhouseCouncelPage() {
         </div>
 
       </main>
-
-      <Footer />
     </div>
     </>
   );
