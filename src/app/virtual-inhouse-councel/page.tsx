@@ -111,11 +111,12 @@ const faqSchema = {
 // Review Schema
 const reviewSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
+  "@type": "Product",
   "name": "Virtual Inhouse Counsel Service",
+  "image": "https://amalegalsolutions.com/services/3.png",
   "description": "Comprehensive legal support for startups and SMEs.",
-  "provider": {
-    "@type": "Organization",
+  "brand": {
+    "@type": "Brand",
     "name": "AMA Legal Solutions"
   },
   "aggregateRating": {

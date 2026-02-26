@@ -116,10 +116,12 @@ const faqSchema = {
 
 const reviewSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
+  "@type": "Product",
   "name": "10 Lakhs Loan Settlement Service",
-  "provider": {
-    "@type": "Organization",
+  "image": "https://amalegalsolutions.com/services/3.png",
+  "description": "Expert assistance in settling personal loans of 10 lakhs with high waiver offers.",
+  "brand": {
+    "@type": "Brand",
     "name": "AMA Legal Solutions"
   },
   "aggregateRating": {
@@ -130,24 +132,53 @@ const reviewSchema = {
   "review": [
     {
       "@type": "Review",
-      "author": "Sandeep Verma",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Sandeep Verma"
+      },
       "reviewBody": "AMA Legal Solutions helped me settle my 10 lakh personal loan from HDFC. They stopped the recovery calls within 2 days and got a 55% waiver. The process was stress-free and professional."
     },
     {
       "@type": "Review",
-      "author": "Meenal Gupta",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Meenal Gupta"
+      },
       "reviewBody": "Professional and transparent. They handled my credit card debt of 12 lakhs very effectively. Highly recommended for anyone in financial trouble. They saved me from a major financial crisis."
     },
     {
       "@type": "Review",
-      "author": "Rahul Sharma",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Rahul Sharma"
+      },
       "reviewBody": "I was drowning in multiple personal loans totaling around 10 lakhs. AMA Legal Solutions consolidated my cases and negotiated a settlement that I could actually afford. Highly grateful."
     },
     {
       "@type": "Review",
-      "author": "Anjali Singh",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Anjali Singh"
+      },
       "reviewBody": "The recovery agents were calling my office and neighbors. AMA's legal notice stopped them immediately. They eventually settled my 8.5 lakh loan for just 3.2 lakhs. A life saver!"
     }
+
   ]
 };
 
