@@ -23,6 +23,8 @@ const GridBackground = () => {
 
   useEffect(() => {
     // Define forbidden cells (middle area where content is located)
+    // On mobile the grid is 5 cols, on desktop 10 cols — but the CSS handles that.
+    // We still use 100 cells; on mobile half are off-screen, which is fine.
     const isForbidden = (cellIndex: number) => {
       const row = Math.floor(cellIndex / 10);
       const col = cellIndex % 10;
@@ -39,7 +41,7 @@ const GridBackground = () => {
 
         for (let i = 0; i < count; i++) {
           let cell = Math.floor(Math.random() * 100);
-          
+
           // Retry if we picked a forbidden cell
           let attempts = 0;
           while (isForbidden(cell) && attempts < 10) {
@@ -74,7 +76,8 @@ const GridBackground = () => {
 
   return (
     <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-[0.16]">
-      <div className="grid grid-cols-10 grid-rows-10 w-full h-full">
+      {/* Fewer columns on mobile for a cleaner look */}
+      <div className="grid grid-cols-5 sm:grid-cols-8 md:grid-cols-10 grid-rows-10 w-full h-full">
         {Array.from({ length: 100 }).map((_, i) => (
           <div
             key={i}
@@ -116,11 +119,11 @@ const Hero = () => {
     <section className="relative w-full overflow-hidden">
       <GridBackground />
       {/* Hero Content - takes full screen height minus navbar */}
-      <div className="relative flex flex-col items-center justify-center min-h-screen px-6">
-        <div className="max-w-[1400px] mx-auto relative flex flex-col items-center">
+      <div className="relative flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 pb-10">
+        <div className="w-full max-w-[1400px] mx-auto relative flex flex-col items-center">
           {/* Content Area */}
-          <div className="relative z-10 px-4 sm:px-12 max-w-6xl mx-auto flex flex-col items-center text-center">
-            <h1 className="text-[36px] md:text-[70px] font-normal text-[#30261C] leading-[48px] md:leading-[85px] mb-[40px] opacity-100">
+          <div className="relative z-10 px-2 sm:px-6 md:px-12 max-w-6xl mx-auto flex flex-col items-center text-center">
+            <h1 className="text-2xl sm:text-[32px] md:text-[50px] lg:text-[60px] xl:text-[70px] font-normal text-[#30261C] leading-[34px] sm:leading-[44px] md:leading-[62px] lg:leading-[74px] xl:leading-[85px] mb-6 sm:mb-8 md:mb-10 opacity-100">
               Empowering{" "}
               <span style={{ color: "#D29E0D", fontWeight: 400 }}>
                 Legal Expertise
@@ -130,7 +133,7 @@ const Hero = () => {
               Law Firm In India
             </h1>
 
-            <p className="text-[18px] md:text-[26px] text-[#30261C] leading-[28px] md:leading-[42px] font-normal mb-[60px] max-w-5xl mx-auto opacity-85">
+            <p className="text-base sm:text-lg md:text-xl lg:text-[24px] xl:text-[26px] text-[#30261C] leading-[26px] sm:leading-[30px] md:leading-[34px] lg:leading-[38px] xl:leading-[42px] font-normal mb-8 sm:mb-10 md:mb-12 lg:mb-[60px] max-w-5xl mx-auto opacity-85">
               AMA Legal Solutions embodies a culture rooted in values and
               principles that prioritize excellence, integrity, and client
               satisfaction.
@@ -138,7 +141,7 @@ const Hero = () => {
 
             <Link
               href="/contact"
-              className="inline-block px-14 py-5 rounded-xl text-white text-xl font-normal transition-all hover:opacity-90 shadow-lg"
+              className="inline-block px-8 sm:px-10 md:px-12 lg:px-14 py-3 sm:py-4 md:py-5 rounded-xl text-white text-base sm:text-lg md:text-xl font-normal transition-all hover:opacity-90 shadow-lg"
               style={{
                 background: "#30261C",
               }}
@@ -147,7 +150,7 @@ const Hero = () => {
             </Link>
 
             {/* App Store & Play Store Icons */}
-            <div className="flex justify-center gap-[30px] mt-20">
+            <div className="flex justify-center gap-4 sm:gap-5 md:gap-[30px] mt-10 sm:mt-14 md:mt-16 lg:mt-20">
               <Link
                 href="https://apps.apple.com/in/app/ama-legal-solutions/id6755156186"
                 target="_blank"
@@ -158,7 +161,7 @@ const Hero = () => {
                   alt="App Store"
                   width={200}
                   height={60}
-                  className="w-[150px] md:w-[250px] h-auto"
+                  className="w-[120px] sm:w-[150px] md:w-[180px] lg:w-[220px] xl:w-[250px] h-auto"
                 />
               </Link>
               <Link
@@ -171,7 +174,7 @@ const Hero = () => {
                   alt="Google Play"
                   width={200}
                   height={60}
-                  className="w-[150px] md:w-[250px] h-auto"
+                  className="w-[120px] sm:w-[150px] md:w-[180px] lg:w-[220px] xl:w-[250px] h-auto"
                 />
               </Link>
             </div>
@@ -180,9 +183,9 @@ const Hero = () => {
       </div>
 
       {/* Media Coverage Section - now below the full height hero */}
-      <div className="w-full px-4 pb-20 flex justify-center">
+      <div className="w-full px-3 sm:px-4 pb-12 sm:pb-16 md:pb-20 flex justify-center">
         <div
-          className="w-full max-w-7xl rounded-[35px] flex flex-col justify-center items-center gap-10 py-10"
+          className="w-full max-w-7xl rounded-2xl sm:rounded-3xl md:rounded-[35px] flex flex-col justify-center items-center gap-6 sm:gap-8 md:gap-10 py-6 sm:py-8 md:py-10"
           style={{
             background: "rgba(255, 255, 255, 0.15)",
             boxShadow: "3px 4px 30.5px 0 rgba(0, 0, 0, 0.05)",
@@ -190,13 +193,13 @@ const Hero = () => {
           }}
         >
           <h2
-            className="text-[#30261C] text-center text-3xl md:text-[40px] font-normal leading-tight md:leading-[44px]"
+            className="text-[#30261C] text-center text-2xl sm:text-3xl md:text-[36px] lg:text-[40px] font-normal leading-tight md:leading-[44px] px-4"
             style={{ fontFamily: '"PolySans Trial", sans-serif' }}
           >
             Our media coverages
           </h2>
 
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 px-4">
+          <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 md:gap-12 lg:gap-16 px-4 sm:px-6">
             <Link
               href="https://yourstory.com/companies/ama-legal-solutions"
               target="_blank"
@@ -207,7 +210,7 @@ const Hero = () => {
                 alt="YourStory"
                 width={180}
                 height={50}
-                className="h-8 md:h-20 w-auto object-contain"
+                className="h-8 sm:h-10 md:h-14 lg:h-16 xl:h-20 w-auto object-contain"
               />
             </Link>
             <Link
@@ -220,7 +223,7 @@ const Hero = () => {
                 alt="LiveMint"
                 width={180}
                 height={50}
-                className="h-8 md:h-20 w-auto object-contain"
+                className="h-8 sm:h-10 md:h-14 lg:h-16 xl:h-20 w-auto object-contain"
               />
             </Link>
             <Link
@@ -233,7 +236,7 @@ const Hero = () => {
                 alt="Bar and Bench"
                 width={180}
                 height={50}
-                className="h-8 md:h-20 w-auto object-contain"
+                className="h-8 sm:h-10 md:h-14 lg:h-16 xl:h-20 w-auto object-contain"
               />
             </Link>
             <Link
@@ -246,7 +249,7 @@ const Hero = () => {
                 alt="Medium"
                 width={180}
                 height={50}
-                className="h-8 md:h-20 w-auto object-contain"
+                className="h-8 sm:h-10 md:h-14 lg:h-16 xl:h-20 w-auto object-contain"
               />
             </Link>
             <Link
@@ -259,7 +262,7 @@ const Hero = () => {
                 alt="Mid-day"
                 width={180}
                 height={50}
-                className="h-8 md:h-20 w-auto object-contain"
+                className="h-8 sm:h-10 md:h-14 lg:h-16 xl:h-20 w-auto object-contain"
               />
             </Link>
           </div>
@@ -270,3 +273,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
