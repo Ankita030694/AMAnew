@@ -22,9 +22,9 @@ const GridBackground = () => {
   const [activeIcons, setActiveIcons] = useState<Record<number, string>>({});
 
   useEffect(() => {
+    const isMobile = window.innerWidth < 640;
+
     // Define forbidden cells (middle area where content is located)
-    // On mobile the grid is 5 cols, on desktop 10 cols — but the CSS handles that.
-    // We still use 100 cells; on mobile half are off-screen, which is fine.
     const isForbidden = (cellIndex: number) => {
       const row = Math.floor(cellIndex / 10);
       const col = cellIndex % 10;
@@ -32,9 +32,12 @@ const GridBackground = () => {
       return col >= 2 && col <= 7 && row >= 1 && row <= 8;
     };
 
+    // Slower interval & fewer icons on mobile for smoother performance
+    const intervalMs = isMobile ? 800 : 400;
+    const spawnCount = isMobile ? 1 : Math.floor(Math.random() * 2) + 2;
+
     const interval = setInterval(() => {
-      // Pick 2-3 icons to spawn
-      const count = Math.floor(Math.random() * 2) + 2;
+      const count = isMobile ? 1 : Math.floor(Math.random() * 2) + 2;
 
       setActiveIcons((prev) => {
         const next = { ...prev };
@@ -57,40 +60,50 @@ const GridBackground = () => {
           if (!next[cell]) {
             next[cell] = icon;
 
-            // Set timeout to remove this icon after some time
+            // Longer display time on mobile to reduce re-renders
+            const displayTime = isMobile
+              ? 2500 + Math.random() * 1000
+              : 1500 + Math.random() * 1000;
+
             setTimeout(() => {
               setActiveIcons((current) => {
                 const updated = { ...current };
                 delete updated[cell];
                 return updated;
               });
-            }, 1500 + Math.random() * 1000);
+            }, displayTime);
           }
         }
         return next;
       });
-    }, 400);
+    }, intervalMs);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-[0.16]">
-      {/* Fewer columns on mobile for a cleaner look */}
-      <div className="grid grid-cols-5 sm:grid-cols-8 md:grid-cols-10 grid-rows-10 w-full h-full">
-        {Array.from({ length: 100 }).map((_, i) => (
+      {/* 
+        Ensuring the grid rows match the column/item count to prevent layout shifts.
+        Mobile: 5 cols * 20 rows = 100
+        Tablet: 8 cols * 13 rows = 104
+        Desktop: 10 cols * 10 rows = 100
+      */}
+      <div className="grid grid-cols-5 grid-rows-[repeat(20,minmax(0,1fr))] sm:grid-cols-8 sm:grid-rows-[repeat(13,minmax(0,1fr))] md:grid-cols-10 md:grid-rows-10 w-full h-full border-collapse">
+        {Array.from({ length: 104 }).map((_, i) => (
           <div
             key={i}
-            className="relative flex items-center justify-center border-[0.5px] border-[#30261C]/10"
+            className="relative flex items-center justify-center border-[0.5px] border-[#30261C]/10 overflow-hidden h-full w-full"
           >
             <AnimatePresence>
               {activeIcons[i] && (
                 <motion.div
+                  key={`icon-${i}`}
                   initial={{ opacity: 0, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.5 }}
-                  transition={{ duration: 0.5 }}
-                  className="w-1/2 h-1/2"
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                  className="w-1/2 h-1/2 will-change-transform flex items-center justify-center"
                 >
                   <img
                     src={activeIcons[i]}
@@ -119,11 +132,11 @@ const Hero = () => {
     <section className="relative w-full overflow-hidden">
       <GridBackground />
       {/* Hero Content - takes full screen height minus navbar */}
-      <div className="relative flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 pb-10">
+      <div className="relative flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 sm:pt-32 pb-10">
         <div className="w-full max-w-[1400px] mx-auto relative flex flex-col items-center">
           {/* Content Area */}
           <div className="relative z-10 px-2 sm:px-6 md:px-12 max-w-6xl mx-auto flex flex-col items-center text-center">
-            <h1 className="text-2xl sm:text-[32px] md:text-[50px] lg:text-[60px] xl:text-[70px] font-normal text-[#30261C] leading-[34px] sm:leading-[44px] md:leading-[62px] lg:leading-[74px] xl:leading-[85px] mb-6 sm:mb-8 md:mb-10 opacity-100">
+            <h1 className="text-3xl sm:text-[26px] md:text-[40px] lg:text-[48px] xl:text-[56px] font-normal text-[#30261C] leading-[34px] sm:leading-[35px] md:leading-[50px] lg:leading-[59px] xl:leading-[68px] mb-6 sm:mb-6 md:mb-8 opacity-100">
               Empowering{" "}
               <span style={{ color: "#D29E0D", fontWeight: 400 }}>
                 Legal Expertise
@@ -133,7 +146,7 @@ const Hero = () => {
               Law Firm In India
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl lg:text-[24px] xl:text-[26px] text-[#30261C] leading-[26px] sm:leading-[30px] md:leading-[34px] lg:leading-[38px] xl:leading-[42px] font-normal mb-8 sm:mb-10 md:mb-12 lg:mb-[60px] max-w-5xl mx-auto opacity-85">
+            <p className="text-[17px] sm:text-base md:text-base lg:text-[19px] xl:text-[21px] text-[#30261C] leading-[25px] sm:leading-[24px] md:leading-[27px] lg:leading-[30px] xl:leading-[34px] font-normal mb-7 sm:mb-8 md:mb-10 lg:mb-12 max-w-4xl mx-auto opacity-85">
               AMA Legal Solutions embodies a culture rooted in values and
               principles that prioritize excellence, integrity, and client
               satisfaction.
@@ -141,7 +154,7 @@ const Hero = () => {
 
             <Link
               href="/contact"
-              className="inline-block px-8 sm:px-10 md:px-12 lg:px-14 py-3 sm:py-4 md:py-5 rounded-xl text-white text-base sm:text-lg md:text-xl font-normal transition-all hover:opacity-90 shadow-lg"
+              className="inline-block px-7 sm:px-8 md:px-10 lg:px-11 py-3 sm:py-3 md:py-4 rounded-xl text-white text-base sm:text-base md:text-lg font-normal transition-all hover:opacity-90 shadow-lg"
               style={{
                 background: "#30261C",
               }}
@@ -150,7 +163,7 @@ const Hero = () => {
             </Link>
 
             {/* App Store & Play Store Icons */}
-            <div className="flex justify-center gap-4 sm:gap-5 md:gap-[30px] mt-10 sm:mt-14 md:mt-16 lg:mt-20">
+            <div className="flex justify-center gap-4 sm:gap-4 md:gap-6 mt-10 sm:mt-10 md:mt-12 lg:mt-16">
               <Link
                 href="https://apps.apple.com/in/app/ama-legal-solutions/id6755156186"
                 target="_blank"
@@ -161,7 +174,8 @@ const Hero = () => {
                   alt="App Store"
                   width={200}
                   height={60}
-                  className="w-[120px] sm:w-[150px] md:w-[180px] lg:w-[220px] xl:w-[250px] h-auto"
+                  unoptimized
+                  className="w-[150px] sm:w-[150px] md:w-[144px] lg:w-[176px] xl:w-[200px] h-auto"
                 />
               </Link>
               <Link
@@ -174,7 +188,8 @@ const Hero = () => {
                   alt="Google Play"
                   width={200}
                   height={60}
-                  className="w-[120px] sm:w-[150px] md:w-[180px] lg:w-[220px] xl:w-[250px] h-auto"
+                  unoptimized
+                  className="w-[150px] sm:w-[150px] md:w-[144px] lg:w-[176px] xl:w-[200px] h-auto"
                 />
               </Link>
             </div>
