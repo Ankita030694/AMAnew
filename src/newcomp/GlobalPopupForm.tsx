@@ -42,19 +42,23 @@ const GlobalPopupForm = () => {
   });
 
   useEffect(() => {
-    // Check if the current path is admin or login
-    const isExcludedPage = pathname.includes("/login") || pathname.includes("/admin");
-    
-    if (!isExcludedPage) {
-      const timer = setTimeout(() => {
-        // Only open if it hasn't been submitted or closed in this session (optional, but good UX)
-        // For now, just follow the "5 seconds after land" rule strictly.
-        setIsOpen(true);
-      }, 5000);
+    // Only trigger once per session
+    const hasBeenShown = sessionStorage.getItem("global_popup_shown");
+    if (hasBeenShown) return;
 
-      return () => clearTimeout(timer);
-    }
-  }, [pathname]);
+    const timer = setTimeout(() => {
+      // Check current pathname to ensure we don't open on excluded pages
+      const currentPath = window.location.pathname;
+      const isExcludedPage = currentPath.includes("/login") || currentPath.includes("/admin") || currentPath.includes("/thank-you");
+      
+      if (!isExcludedPage) {
+        setIsOpen(true);
+        sessionStorage.setItem("global_popup_shown", "true");
+      }
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []); // Empty dependency array means it only runs once when the app mounts
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
