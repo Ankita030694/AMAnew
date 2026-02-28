@@ -7,15 +7,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Cormorant } from "next/font/google";
 
 const ICONS = [
-  "/heroicons/Group 259.svg",
-  "/heroicons/Group 260.svg",
-  "/heroicons/Group 261.svg",
-  "/heroicons/Group 262.svg",
-  "/heroicons/Group 263(1).svg",
-  "/heroicons/Group 263.svg",
-  "/heroicons/Group 264.svg",
-  "/heroicons/Group.svg",
-  "/heroicons/Vector.svg",
+  "/heroicons/hero-icon-1.svg",
+  "/heroicons/hero-icon-2.svg",
+  "/heroicons/hero-icon-3.svg",
+  "/heroicons/hero-icon-4.svg",
+  "/heroicons/hero-icon-5.svg",
+  "/heroicons/hero-icon-6.svg",
+  "/heroicons/hero-icon-7.svg",
+  "/heroicons/hero-icon-8.svg",
+  "/heroicons/hero-icon-9.svg",
 ];
 
 const GridBackground = () => {
