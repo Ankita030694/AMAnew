@@ -171,6 +171,9 @@ export async function GET(): Promise<Response> {
     '/virtual-inhouse-councel',
     '/how-to-settle-loans-above-1-crore',
     '/how-to-settle-loans-above-5-crore',
+    '/loan-settlement-near-me',
+    '/loan-settlement-amount-calculator',
+    '/how-to-settle-loan-with-bank',
 
     '/trademark-infringement-without-registration',
     '/is-registering-a-name-instead-of-the-logo-enough',

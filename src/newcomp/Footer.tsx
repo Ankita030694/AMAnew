@@ -90,6 +90,9 @@ const Footer = () => {
         { name: 'Good Customer Support', href: '/what-loan-settlement-services-have-good-customer-support-in-india' },
         { name: 'Home Loan Dues', href: '/can-i-get-a-loan-settlement-service-that-handles-home-loan-dues' },
         { name: '10 Lakhs Settlement', href: '/10-lakhs-loan-settlement' },
+        { name: 'Loan Settlement Near Me', href: '/loan-settlement-near-me' },
+        { name: 'Settlement Calculator', href: '/loan-settlement-amount-calculator' },
+        { name: 'How to Settle with Bank', href: '/how-to-settle-loan-with-bank' },
       ]
     },
     {
