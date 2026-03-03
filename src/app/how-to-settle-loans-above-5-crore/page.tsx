@@ -18,7 +18,7 @@ const faqs = [
   {
     question: "What is the role of a forensic audit in high value loan settlements?",
     answer: "For loans above 5 crore, banks almost always conduct a forensic audit before considering a One Time Settlement (OTS). The purpose is to ensure that there has been no diversion of funds or fraudulent activity. If the forensic audit comes back 'clean,' it significantly strengthens the borrower's position for negotiation. Conversely, any 'negative observations' must be legally addressed before a settlement proposal can be successfully moved. Our legal team specializes in reviewing forensic reports and providing rebuttals to ensure the settlement process remains on track."
-  },
+  }, 
   {
     question: "How does the SARFAESI Act impact 5 crore plus loan recovery?",
     answer: "The SARFAESI Act allows banks to take possession of secured assets without court intervention for loans above 1 lakh. For a 5 crore exposure, the stakes are very high. Banks will typically issue a Section 13(2) notice followed by a Section 13(4) possession notice. However, borrowers can challenge these notices in the Debt Recovery Tribunal (DRT) through a Securitization Application. Effective litigation can stay the auction of the property, creating the necessary leverage to force the bank to the negotiating table for an OTS."
