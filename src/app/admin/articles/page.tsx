@@ -305,66 +305,102 @@ const ArticlesDashboard = () => {
   };
 
   const handleGenerate = async () => {
-    if (!primaryKeyword.trim()) { alert('Enter primary keyword'); return; }
+    if (!primaryKeyword.trim()) {
+      alert('Please enter a primary keyword.');
+      return;
+    }
+
     try {
       setIsGenerating(true);
       const response = await fetch('/api/generate-article', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({ primaryKeyword, secondaryKeyword }),
       });
-      if (!response.ok) throw new Error('Failed');
+
+      if (!response.ok) {
+        throw new Error('Failed to generate article');
+      }
+
+      // Handle streaming response
       const reader = response.body?.getReader();
-      if (!reader) return;
-      let fullText = '';
+      if (!reader) {
+        throw new Error('No reader available');
+      }
+
+      let accumulatedDetails = '';
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
-        fullText += new TextDecoder().decode(value);
-        try {
-          const parts = fullText.split('\n\n');
-          for (const part of parts) {
-            if (part.startsWith('data: ')) {
-              const jsonStr = part.replace('data: ', '');
-              const data = JSON.parse(jsonStr);
-              if (data.type === 'content') {
-                setNewBlog(prev => ({
-                  ...prev,
-                  title: data.data.title || prev.title,
-                  subtitle: data.data.subtitle || prev.subtitle,
-                  description: data.data.description || prev.description,
-                  metaTitle: data.data.metaTitle || prev.metaTitle,
-                  metaDescription: data.data.metaDescription || prev.metaDescription,
-                  slug: data.data.title ? generateSlug(data.data.title) : prev.slug,
-                  faqs: data.data.faqs || prev.faqs,
-                  reviews: data.data.reviews || prev.reviews
-                }));
-              }
-            }
-          }
-        } catch (e) {}
+        accumulatedDetails += new TextDecoder().decode(value);
       }
+
+      const generatedData = JSON.parse(accumulatedDetails);
+
+      setNewBlog(prevState => ({
+        ...prevState,
+        title: generatedData.title || prevState.title,
+        subtitle: generatedData.subtitle || prevState.subtitle,
+        description: generatedData.description || prevState.description, // HTML content
+        metaTitle: generatedData.metaTitle || prevState.metaTitle,
+        metaDescription: generatedData.metaDescription || prevState.metaDescription,
+        slug: generatedData.slug || prevState.slug, // Or generate from title
+        faqs: generatedData.faqs || prevState.faqs,
+        reviews: generatedData.reviews || prevState.reviews,
+      }));
+
+      // If slug wasn't provided but title was, generate one
+      if (!generatedData.slug && generatedData.title) {
+        const generatedSlug = generatedData.title
+          .toLowerCase()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/\s+/g, '-')
+          .replace(/-+/g, '-');
+          
+        setNewBlog(prev => ({ ...prev, slug: generatedSlug }));
+      }
+      
+      // Also set the image prompt if suggested
+      if (generatedData.suggestedImagePrompt) {
+        setImagePrompt(generatedData.suggestedImagePrompt);
+      }
+      
+      alert('Article generated successfully! Please review and add an image.');
     } catch (error) {
-      console.error(error);
+      console.error('Error generating article:', error);
+      alert('Failed to generate article. Please try again.');
     } finally {
       setIsGenerating(false);
     }
   };
 
   const handleGenerateImage = async () => {
-    if (!imagePrompt.trim()) { alert('Enter prompt'); return; }
+    if (!imagePrompt.trim()) {
+      alert('Please enter an image prompt.');
+      return;
+    }
+
     try {
       setIsGeneratingImage(true);
       const response = await fetch('/api/generate-image', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({ prompt: imagePrompt }),
       });
+
+      if (!response.ok) {
+        throw new Error('Failed to generate image');
+      }
+
       const data = await response.json();
-      if (data.url) setGeneratedImageUrl(data.url);
-      else alert(data.error || 'Failed to generate');
+      setGeneratedImageUrl(data.imageUrl);
     } catch (error) {
-      console.error(error);
+      console.error('Error generating image:', error);
+      alert('Failed to generate image. Please try again.');
     } finally {
       setIsGeneratingImage(false);
     }
@@ -372,41 +408,76 @@ const ArticlesDashboard = () => {
 
   const handleUploadGeneratedImage = async () => {
     if (!generatedImageUrl) return;
+
     try {
       setIsUploadingGenerated(true);
-      const proxyResponse = await fetch(`/api/proxy-image?url=${encodeURIComponent(generatedImageUrl)}`);
-      const blob = await proxyResponse.blob();
+      
+      // Fetch the image from the URL via proxy to avoid CORS issues
+      const response = await fetch(`/api/proxy-image?url=${encodeURIComponent(generatedImageUrl)}`);
+      const blob = await response.blob();
       const file = new File([blob], `generated_${Date.now()}.png`, { type: 'image/png' });
-      const storageRef = ref(storage, `article-images/${file.name}`);
+
+      const storageRef = ref(storage, `article-images/${Date.now()}_generated.png`);
       const snapshot = await uploadBytes(storageRef, file);
-      const url = await getDownloadURL(snapshot.ref);
-      setNewBlog(prev => ({ ...prev, image: url }));
-      setGeneratedImageUrl(null);
-      alert('Image uploaded successfully');
+      const downloadURL = await getDownloadURL(snapshot.ref);
+
+      setNewBlog(prevState => ({
+        ...prevState,
+        image: downloadURL
+      }));
+      setImagePreview(downloadURL);
+      setGeneratedImageUrl(null); // Clear the preview once uploaded
+      alert('Image uploaded to Firebase successfully!');
     } catch (error) {
-      console.error(error);
-      alert('Failed to upload');
+      console.error('Error uploading generated image:', error);
+      alert('Failed to upload image to Firebase.');
     } finally {
       setIsUploadingGenerated(false);
     }
   };
 
   const handleExpandContent = async () => {
-    if (!newBlog.description) return;
+    if (!newBlog.description) {
+      alert('Please have some content in the editor first.');
+      return;
+    }
+
     try {
       setIsExpanding(true);
       const response = await fetch('/api/expand-content', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content: newBlog.description, instructions: expansionPrompt }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          content: newBlog.description, 
+          prompt: expansionPrompt 
+        }),
       });
-      const data = await response.json();
-      if (data.expandedContent) {
-        setNewBlog(prev => ({ ...prev, description: data.expandedContent }));
-        alert('Content expanded');
-      } else alert('Failed to expand');
+
+      if (!response.ok) {
+        throw new Error('Failed to expand content');
+      }
+
+      const reader = response.body?.getReader();
+      if (!reader) throw new Error('No reader');
+
+      let expandedContent = '';
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        expandedContent += new TextDecoder().decode(value);
+      }
+
+      setNewBlog(prevState => ({
+        ...prevState,
+        description: expandedContent
+      }));
+      
+      alert('Content expanded successfully! (Targeting 5000 words)');
     } catch (error) {
-      console.error(error);
+      console.error('Error expanding content:', error);
+      alert('Failed to expand content.');
     } finally {
       setIsExpanding(false);
     }
