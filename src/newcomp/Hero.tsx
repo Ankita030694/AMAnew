@@ -132,7 +132,7 @@ const Hero = () => {
     <section className="relative w-full overflow-hidden">
       <GridBackground />
       {/* Hero Content - takes full screen height minus navbar */}
-      <div className="relative flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 sm:pt-32 pb-10">
+      <div className="relative flex flex-col items-center justify-center pt-40 sm:pt-32 pb-10 min-h-0 sm:min-h-screen px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-[1400px] mx-auto relative flex flex-col items-center">
           {/* Content Area */}
           <div className="relative z-10 px-2 sm:px-6 md:px-12 max-w-6xl mx-auto flex flex-col items-center text-center">
