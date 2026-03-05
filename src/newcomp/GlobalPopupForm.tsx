@@ -7,6 +7,7 @@ import { collection, addDoc, db } from "../lib/firebase";
 import { serverTimestamp } from "firebase/firestore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import payu from "../../public/payu.png";
 
 const SERVICE_OPTIONS = [
   { label: "Loan Settlement", description: "Negotiating and settling outstanding debts and controlling harassment." },
@@ -129,6 +130,8 @@ const GlobalPopupForm = () => {
       }
 
       setSubmitted(true);
+      window.location.href = "https://pmny.in/DIMRKGkGQz6L";
+      
       setTimeout(() => {
         setIsOpen(false);
         setSubmitted(false);
@@ -139,7 +142,7 @@ const GlobalPopupForm = () => {
           serviceRequired: "",
           message: "",
         });
-      }, 3000);
+      }, 5000);
     } catch (error) {
       console.error("Error submitting form:", error);
     } finally {
@@ -186,9 +189,15 @@ const GlobalPopupForm = () => {
                   <h3 className="text-2xl font-bold text-[#30261C] mb-2">
                     Thank You!
                   </h3>
-                  <p className="text-[#30261C]/80">
+                  <p className="text-[#30261C]/80 mb-8">
                     Your message has been received. We'll get back to you shortly.
                   </p>
+                  <a
+                    href="https://pmny.in/DIMRKGkGQz6L"
+                    className="w-full bg-[#E19100] text-white text-center font-bold py-3 px-6 rounded-lg hover:bg-[#d08600] transition-colors duration-300"
+                  >
+                    Proceed to Payment
+                  </a>
                 </div>
               ) : (
                 <>
@@ -301,6 +310,12 @@ const GlobalPopupForm = () => {
                         "Get Free Assistance Now"
                       )}
                     </button>
+                    
+                    <div className="flex flex-col items-center gap-4 pt-2">
+                      <div className="opacity-80 hover:opacity-100 transition-opacity">
+                        <img src={payu.src} alt="Secured by PayU" className="w-32" />
+                      </div>
+                    </div>
                   </form>
                 </>
               )}
