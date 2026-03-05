@@ -93,6 +93,8 @@ const Footer = () => {
         { name: 'Loan Settlement Near Me', href: '/loan-settlement-near-me' },
         { name: 'Settlement Calculator', href: '/loan-settlement-amount-calculator' },
         { name: 'How to Settle with Bank', href: '/how-to-settle-loan-with-bank' },
+        { name: 'Settled Tag Duration', href: '/how-long-does-a-settled-tag-stay-on-my-report' },
+        { name: 'Documents Needed for Loan Settlement NOC', href: '/documents-needed-for-loan-settlement-noc' },
       ]
     },
     {

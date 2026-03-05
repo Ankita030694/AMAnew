@@ -247,7 +247,8 @@ export default function Footer() {
     { href: "/employer-not-paying-salary-after-resignation", label: "Salary Not Paid After Resignation" },
     { href: "/how-do-i-stop-recovery-agent-from-coming-home", label: "Stop Recovery Agent Home Visits" },
     { href: "/bajaj-finance-agent-visiting-home", label: "Bajaj Finance Agent Help" },
-    { href: "/how-to-settle-loans-above-1-crore", label: "Settle Loans Above 1 Crore" }
+    { href: "/how-to-settle-loans-above-1-crore", label: "Settle Loans Above 1 Crore" },
+    { href: "/documents-needed-for-loan-settlement-noc", label: "Documents for Loan Settlement NOC" }
 
               ].map((query) => (
                 <Link
