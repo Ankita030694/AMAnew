@@ -57,19 +57,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Corporate Law",
-      "item": "https://amalegalsolutions.com/services/corporate"
+      "item": "https://www.amalegalsolutions.com/services/corporate"
     }
   ]
 };
@@ -80,18 +80,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Corporate Lawyers in India: Expert Legal Services for Businesses",
   "description": "Premier corporate legal services in India. Our expert corporate lawyers assist with company registration, compliance, M&A, and business litigation.",
-  "image": "https://amalegalsolutions.com/services/8.png",
+  "image": "https://www.amalegalsolutions.com/services/8.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-10-05",
@@ -117,7 +117,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Corporate Legal Services",
-  "image": "https://amalegalsolutions.com/services/8.png",
+  "image": "https://www.amalegalsolutions.com/services/8.png",
   "description": "Expert corporate law services for startups and established businesses in India.",
   "brand": {
     "@type": "Brand",
@@ -161,12 +161,12 @@ export const metadata = {
   description:
     "Looking for expert corporate lawyers in India? AMA Legal Solutions offers comprehensive corporate legal services including incorporation, compliance, M&A, and dispute resolution. Consult now.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/corporate',
+    canonical: 'https://www.amalegalsolutions.com/services/corporate',
   },
   openGraph: {
     title: "Corporate Lawyers in India | Top Corporate Law Firm – AMA Legal Solutions",
     description: "Looking for expert corporate lawyers in India? AMA Legal Solutions offers comprehensive corporate legal services including incorporation, compliance, M&A, and dispute resolution.",
-    url: "https://amalegalsolutions.com/services/corporate",
+    url: "https://www.amalegalsolutions.com/services/corporate",
     type: "website",
     images: [
       {

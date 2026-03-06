@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Struggling with debt in Ghaziabad? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok Adalat at Raj Nagar Court.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/Ghaziabad',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/ghaziabad',
   },
   openGraph: {
     title: "Loan Settlement in Ghaziabad | Expert Debt Relief Lawyers",
     description: "Struggling with debt in Ghaziabad? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok Adalat at Raj Nagar Court.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/Ghaziabad",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/Ghaziabad",
     type: "website",
     images: [
       {
@@ -36,25 +36,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Ghaziabad",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/Ghaziabad"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/Ghaziabad"
     }
   ]
 };
@@ -64,18 +64,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Loan Settlement Services in Ghaziabad: Expert Legal Help for Debt Relief",
   "description": "Comprehensive guide to loan settlement in Ghaziabad. Learn how to legally settle personal loans, business loans, and handle recovery agents in Indirapuram, Raj Nagar, and Sahibabad.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-21",
@@ -86,7 +86,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Loan Settlement Services Ghaziabad",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Expert legal loan settlement services in Ghaziabad.",
   "brand": {
     "@type": "Brand",

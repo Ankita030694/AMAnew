@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Struggling with debt in J&K? AMA Legal Solutions offers expert loan settlement services in Srinagar, Jammu & across the UT. Stop harassment & settle legally.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/jammu-and-kashmir',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/jammu-and-kashmir',
   },
   openGraph: {
     title: "Loan Settlement in Jammu & Kashmir | Expert Debt Relief Lawyers",
     description: "Struggling with debt in J&K? AMA Legal Solutions offers expert loan settlement services in Srinagar, Jammu & across the UT. Stop harassment & settle legally.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/jammu-and-kashmir",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/jammu-and-kashmir",
     type: "website",
     images: [
       {
@@ -36,25 +36,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Jammu & Kashmir",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/jammu-and-kashmir"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/jammu-and-kashmir"
     }
   ]
 };
@@ -64,18 +64,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Loan Settlement Services in Jammu & Kashmir: Legal Debt Relief",
   "description": "Comprehensive guide to loan settlement in Jammu & Kashmir. Learn how to legally settle personal loans and credit card debt in J&K using Lok Adalat and DRT Chandigarh jurisdiction.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-21",
@@ -86,7 +86,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Loan Settlement Services Jammu & Kashmir",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Expert legal loan settlement services in Jammu & Kashmir.",
   "brand": {
     "@type": "Brand",

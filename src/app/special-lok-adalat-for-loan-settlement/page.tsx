@@ -276,25 +276,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
         "@type": "ListItem",
         "position": 4,
         "name": "Special Lok Adalat for Loan Settlement",
-        "item": "https://amalegalsolutions.com/special-lok-adalat-for-loan-settlement"
+        "item": "https://www.amalegalsolutions.com/special-lok-adalat-for-loan-settlement"
     }
   ]
 };
@@ -305,18 +305,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Special Lok Adalat for Loan Settlement: The Ultimate Guide to Speed Justice and Debt Relief in India",
   "description": "Exhaustive legal guide to Special Lok Adalat for loan settlement. Learn about NALSA guidelines, SARFAESI interactions, 2025 schedules, and how to negotiate massive waivers on bank debts legally.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-10",
@@ -342,7 +342,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Special Lok Adalat Settlement Services",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Premium legal assistance for settling NPAs and defaulting loans through National and Special Lok Adalats.",
   "brand": {
     "@type": "Brand",
@@ -385,7 +385,7 @@ export const metadata = {
     "legal services authority loan settlement"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/special-lok-adalat-for-loan-settlement',
+    canonical: 'https://www.amalegalsolutions.com/special-lok-adalat-for-loan-settlement',
   }
 };
 

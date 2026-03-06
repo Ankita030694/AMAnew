@@ -77,19 +77,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Arbitration",
-      "item": "https://amalegalsolutions.com/services/arbitration"
+      "item": "https://www.amalegalsolutions.com/services/arbitration"
     }
   ]
 };
@@ -100,18 +100,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Arbitration Services in India: The Complete Guide to Dispute Resolution",
   "description": "A comprehensive guide to arbitration in India. Understand the process, legal framework under the 1996 Act, and why it is the best choice for commercial disputes.",
-  "image": "https://amalegalsolutions.com/services/9.png",
+  "image": "https://www.amalegalsolutions.com/services/9.png",
   "author": {
     "@type": "Person",
     "name": "Anuj Anand Malik",
-    "url": "https://amalegalsolutions.com/author/anuj-anand-malik"
+    "url": "https://www.amalegalsolutions.com/author/anuj-anand-malik"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-01-20",
@@ -137,7 +137,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Arbitration Legal Services",
-  "image": "https://amalegalsolutions.com/services/9.png",
+  "image": "https://www.amalegalsolutions.com/services/9.png",
   "description": "Expert arbitration and dispute resolution services in India.",
   "brand": {
     "@type": "Brand",
@@ -181,12 +181,12 @@ export const metadata = {
   description:
     "Leading arbitration lawyers in India. We provide expert legal representation for domestic and international commercial arbitration. Secure, fast, and binding dispute resolution.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/arbitration',
+    canonical: 'https://www.amalegalsolutions.com/services/arbitration',
   },
   openGraph: {
     title: "Arbitration Services in India | Expert Arbitration Lawyers",
     description: "Leading arbitration lawyers in India. We provide expert legal representation for domestic and international commercial arbitration.",
-    url: "https://amalegalsolutions.com/services/arbitration",
+    url: "https://www.amalegalsolutions.com/services/arbitration",
     type: "website",
     images: [
       {

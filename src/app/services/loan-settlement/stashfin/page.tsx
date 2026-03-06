@@ -13,12 +13,12 @@ export const metadata = {
   title: "Stashfin Loan Settlement | Credit Line OTS | AMA Legal Solutions",
   description: "Struggling with Stashfin (Akara Capital) loan repayment? Expert legal help for settling credit lines and personal loans. Stop harassment and legal notices.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/stashfin',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/stashfin',
   },
   openGraph: {
     title: "Stashfin Loan Settlement | Credit Line OTS | AMA Legal Solutions",
     description: "Struggling with Stashfin (Akara Capital) loan repayment? Expert legal help for settling credit lines and personal loans. Stop harassment and legal notices.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/stashfin",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/stashfin",
     type: "website",
     images: [
       {
@@ -40,25 +40,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Stashfin Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/stashfin"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/stashfin"
     }
   ]
 };
@@ -68,18 +68,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Stashfin Loan Settlement: Guide to Akara Capital OTS",
   "description": "Comprehensive guide on how to settle Stashfin credit lines and personal loans. Learn about the One Time Settlement (OTS) process and how to stop legal action.",
-  "image": "https://amalegalsolutions.com/services/11.png",
+  "image": "https://www.amalegalsolutions.com/services/11.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -103,7 +103,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Stashfin Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/11.png",
+  "image": "https://www.amalegalsolutions.com/services/11.png",
   "description": "Legal settlement services for Stashfin loans.",
   "brand": {
     "@type": "Brand",

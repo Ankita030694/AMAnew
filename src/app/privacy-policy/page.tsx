@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Privacy Policy | AMA Legal Solutions',
   description: 'Read AMA Legal Solutions Privacy Policy to understand how we collect, use, and protect your personal information. Learn about data security, rights, and disclosures',
   alternates: {
-    canonical: 'https://amalegalsolutions.com/privacypolicy', // Add your canonical URL here
+    canonical: 'https://www.amalegalsolutions.com/privacypolicy', // Add your canonical URL here
   },
 }
 
@@ -61,7 +61,7 @@ export default function Services() {
           <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100">
             <h2 className="text-2xl font-bold text-[#5A4C33] mb-4">1. Introduction</h2>
             <p className="text-gray-700 leading-relaxed">
-              Welcome to AMA Legal Solutions. We are committed to protecting your privacy and ensuring that your personal information is handled with care and transparency. This Privacy Policy outlines how we collect, use, disclose, and protect your information when you visit our website (www.amalegalsolutions.com) or engage with our legal services.
+              Welcome to AMA Legal Solutions. We are committed to protecting your privacy and ensuring that your personal information is handled with care and transparency. This Privacy Policy outlines how we collect, use, disclose, and protect your information when you visit our website (https://www.amalegalsolutions.com) or engage with our legal services.
             </p>
             <p className="text-gray-700 leading-relaxed mt-4">
               By using our website or services, you agree to the collection and use of information in accordance with this policy.

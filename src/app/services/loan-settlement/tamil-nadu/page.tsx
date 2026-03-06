@@ -57,25 +57,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Tamil Nadu",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/tamil-nadu"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/tamil-nadu"
     }
   ]
 };
@@ -86,25 +86,25 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Loan Settlement in Tamil Nadu | Stop Kanduvatti & Harassment",
   "description": "Expert debt relief in Tamil Nadu. Settle loans under the 2003 Kanduvatti Act & 2025 Coercive Actions Act. Specialized help for Chennai IT professionals & Tirupur MSMEs.",
-  "image": "https://amalegalsolutions.com/services/chennai-central.jpg",
+  "image": "https://www.amalegalsolutions.com/services/chennai-central.jpg",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-20",
   "dateModified": "2025-05-20",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://amalegalsolutions.com/services/loan-settlement/tamil-nadu"
+    "@id": "https://www.amalegalsolutions.com/services/loan-settlement/tamil-nadu"
   },
   "about": {
     "@type": "Thing",
@@ -154,12 +154,12 @@ export const metadata = {
     "Tamil Nadu Money Lending Entities Act 2025"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/tamil-nadu',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/tamil-nadu',
   },
    openGraph: {
     title: "Loan Settlement in Tamil Nadu | Stop Kanduvatti & Harassment",
     description: "Burdened by debt in Chennai or Coimbatore? Use the 2003 Kanduvatti Act to stop harassment and settle loans for less. We protect IT staff and MSMEs.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/tamil-nadu",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/tamil-nadu",
     type: "website",
     images: [
       {

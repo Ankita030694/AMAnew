@@ -93,7 +93,8 @@ const processContent = (html: string) => {
       const href = hrefMatch ? hrefMatch[1] : '';
       const isInternal =
         href.startsWith('/') ||
-        href.includes('amalegalsolutions.com');
+        href.includes('://www.amalegalsolutions.com') ||
+        href.includes('://amalegalsolutions.com');
 
       if (isInternal) {
         // Remove nofollow from rel attribute for internal links

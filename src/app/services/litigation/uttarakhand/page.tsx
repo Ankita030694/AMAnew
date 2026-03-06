@@ -77,25 +77,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Litigation Services",
-      "item": "https://amalegalsolutions.com/services/litigation"
+      "item": "https://www.amalegalsolutions.com/services/litigation"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Uttarakhand",
-      "item": "https://amalegalsolutions.com/services/litigation/uttarakhand"
+      "item": "https://www.amalegalsolutions.com/services/litigation/uttarakhand"
     }
   ]
 };
@@ -106,18 +106,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Litigation Services in Uttarakhand: Nainital High Court Lawyers",
   "description": "Expert litigation services in Uttarakhand. Representing clients in Nainital High Court, NGT, and District Courts in Dehradun, Haridwar, and Haldwani.",
-  "image": "https://amalegalsolutions.com/services/litigation-uttarakhand.png", // Placeholder
+  "image": "https://www.amalegalsolutions.com/services/litigation-uttarakhand.png", // Placeholder
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-12-02",
@@ -143,7 +143,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Litigation Services Uttarakhand",
-  "image": "https://amalegalsolutions.com/services/litigation-uttarakhand.png",
+  "image": "https://www.amalegalsolutions.com/services/litigation-uttarakhand.png",
   "description": "Top-tier litigation services for Nainital High Court and District Courts.",
   "brand": {
     "@type": "Brand",
@@ -199,12 +199,12 @@ export const metadata = {
     "rera lawyer dehradun"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/litigation/uttarakhand',
+    canonical: 'https://www.amalegalsolutions.com/services/litigation/uttarakhand',
   },
   openGraph: {
     title: "Litigation Services in Uttarakhand | Nainital High Court Lawyers",
     description: "Expert litigation services in Uttarakhand. Representing clients in Nainital High Court and District Courts.",
-    url: "https://amalegalsolutions.com/services/litigation/uttarakhand",
+    url: "https://www.amalegalsolutions.com/services/litigation/uttarakhand",
     type: "website",
     images: [
       {

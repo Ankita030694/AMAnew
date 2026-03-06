@@ -7,13 +7,13 @@ export const metadata = {
   description:
     "Expert legal consultancy for Banking & Finance in Goa. Services include NBFC Registration, Casino & Tourism Finance, Nidhi Company, Money Lenders License & DRT Litigation in Panaji.",
   alternates: {
-    canonical: "https://amalegalsolutions.com/services/banking-and-finance/goa",
+    canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/goa",
   },
   openGraph: {
     title: "Banking and Finance Services in Goa | NBFC Registration & Casino Finance Law",
     description:
       "Expert legal consultancy for Banking & Finance in Goa. Services include NBFC Registration, Casino & Tourism Finance, Nidhi Company, Money Lenders License & DRT Litigation in Panaji.",
-    url: "https://amalegalsolutions.com/services/banking-and-finance/goa",
+    url: "https://www.amalegalsolutions.com/services/banking-and-finance/goa",
     siteName: "AMA Legal Solutions",
     locale: "en_US",
     type: "article",
@@ -36,25 +36,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://amalegalsolutions.com",
+      item: "https://www.amalegalsolutions.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Services",
-      item: "https://amalegalsolutions.com/services",
+      item: "https://www.amalegalsolutions.com/services",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Banking & Finance",
-      item: "https://amalegalsolutions.com/services/banking-and-finance",
+      item: "https://www.amalegalsolutions.com/services/banking-and-finance",
     },
     {
       "@type": "ListItem",
       position: 4,
       name: "Goa",
-      item: "https://amalegalsolutions.com/services/banking-and-finance/goa",
+      item: "https://www.amalegalsolutions.com/services/banking-and-finance/goa",
     },
   ],
 };
@@ -65,18 +65,18 @@ const articleSchema = {
   headline: "Banking and Finance Services in Goa: Legal Registration & Compliance",
   description:
     "Comprehensive guide to banking and finance laws in Goa. Learn how to register NBFC, Microfinance, and Nidhi Companies in Panaji with expert legal help.",
-  image: "https://amalegalsolutions.com/services/3.png",
+  image: "https://www.amalegalsolutions.com/services/3.png",
   author: {
     "@type": "Organization",
     name: "AMA Legal Solutions",
-    url: "https://amalegalsolutions.com",
+    url: "https://www.amalegalsolutions.com",
   },
   publisher: {
     "@type": "Organization",
     name: "AMA Legal Solutions",
     logo: {
       "@type": "ImageObject",
-      url: "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+      url: "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
     },
   },
   datePublished: "2024-11-27",
@@ -87,12 +87,12 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "Banking and Finance Legal Services Goa",
-  image: "https://amalegalsolutions.com/services/3.png",
+  image: "https://www.amalegalsolutions.com/services/3.png",
   description: "Expert legal registration and compliance services for financial institutions in Goa.",
   brand: {
     "@type": "Brand",
     name: "AMA Legal Solutions",
-    url: "https://amalegalsolutions.com"
+    url: "https://www.amalegalsolutions.com"
   },
   aggregateRating: {
     "@type": "AggregateRating",

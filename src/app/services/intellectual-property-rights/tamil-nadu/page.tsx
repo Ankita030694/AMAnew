@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Protect your innovation in Tamil Nadu. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Chennai, Coimbatore & Tirupur. Litigation support at Madras High Court.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/intellectual-property-rights/tamil-nadu',
+    canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/tamil-nadu',
   },
   openGraph: {
     title: "Intellectual Property Rights in Tamil Nadu | IP Lawyers Chennai",
     description: "Protect your innovation in Tamil Nadu. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Chennai, Coimbatore & Tirupur. Litigation support at Madras High Court.",
-    url: "https://amalegalsolutions.com/services/intellectual-property-rights/tamil-nadu",
+    url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/tamil-nadu",
     type: "website",
     images: [
       {
@@ -36,25 +36,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Intellectual Property Rights",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Tamil Nadu",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights/tamil-nadu"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights/tamil-nadu"
     }
   ]
 };
@@ -64,18 +64,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Intellectual Property Rights Services in Tamil Nadu: Secure Your Innovation",
   "description": "Comprehensive guide to IPR protection in Tamil Nadu. Learn about trademark registration in Guindy, patent filing for SaaS, and IP litigation at the Madras High Court.",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -86,7 +86,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "IPR Services Tamil Nadu",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "description": "Expert intellectual property legal services in Tamil Nadu.",
   "brand": {
     "@type": "Brand",

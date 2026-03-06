@@ -10,7 +10,7 @@ export const metadata = {
   title: 'Legal Blogs | Expert Opinions by AMA Legal Solutions',
   description: 'Explore expert legal blogs from AMA Legal Solutions, featuring insights on corporate law, compliance, contracts, and more to keep you informed.',
   alternates: {
-    canonical: 'https://amalegalsolutions.com/blog',
+    canonical: 'https://www.amalegalsolutions.com/blog',
   },
 }
 

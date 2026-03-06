@@ -25,19 +25,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Can Company Hold My Salary After Resignation",
-      "item": "https://amalegalsolutions.com/can-company-hold-my-salary-after-resignation"
+      "item": "https://www.amalegalsolutions.com/can-company-hold-my-salary-after-resignation"
     }
   ]
 };
@@ -48,18 +48,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Can Company Hold My Salary After Resignation? Legal Limits and Your Recovery Rights",
   "description": "Exhaustive legal guide on whether an employer can legally withhold your salary after resignation in India. Covers labor laws, constitutional rights, and recovery steps.",
-  "image": "https://amalegalsolutions.com/og-salary-hold.png",
+  "image": "https://www.amalegalsolutions.com/og-salary-hold.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-11",
@@ -85,7 +85,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Salary Recovery Consultation",
-  "image": "https://amalegalsolutions.com/og-salary-hold.png",
+  "image": "https://www.amalegalsolutions.com/og-salary-hold.png",
   "description": "Expert legal representation for employees facing salary withholding or FNF delays after resignation.",
   "brand": {
     "@type": "Brand",
@@ -121,7 +121,7 @@ export const metadata = {
     "legal action for salary hold"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/can-company-hold-my-salary-after-resignation',
+    canonical: 'https://www.amalegalsolutions.com/can-company-hold-my-salary-after-resignation',
   },
 };
 

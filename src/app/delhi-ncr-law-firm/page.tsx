@@ -57,13 +57,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Delhi NCR Law Firm",
-      "item": "https://amalegalsolutions.com/delhi-ncr-law-firm"
+      "item": "https://www.amalegalsolutions.com/delhi-ncr-law-firm"
     }
   ]
 };
@@ -74,18 +74,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Top Law Firm in Delhi NCR: Expert Legal Services | AMA Legal Solutions",
   "description": "Looking for the best law firm in Delhi NCR? AMA Legal Solutions offers expert legal representation in Civil, Criminal, Corporate, and Family Law. Top lawyers in Delhi, Noida, & Gurugram.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-04",
@@ -111,7 +111,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Delhi NCR",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Premier legal services in Delhi NCR region.",
   "brand": {
     "@type": "Brand",
@@ -167,12 +167,12 @@ export const metadata = {
     "legal services delhi ncr"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/delhi-ncr-law-firm',
+    canonical: 'https://www.amalegalsolutions.com/delhi-ncr-law-firm',
   },
   openGraph: {
     title: "Best Law Firm in Delhi NCR | Top Lawyers in Delhi, Noida, Gurugram",
     description: "AMA Legal Solutions is a leading law firm in Delhi NCR providing expert legal services in Corporate, Civil, Criminal, Family, and Property Law.",
-    url: "https://amalegalsolutions.com/delhi-ncr-law-firm",
+    url: "https://www.amalegalsolutions.com/delhi-ncr-law-firm",
     type: "website",
     images: [
       {

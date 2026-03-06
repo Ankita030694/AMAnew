@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Expert loan settlement services in Uttar Pradesh (Noida, Kanpur, Lucknow). Settle debt legally through UPSLSA Lok Adalat & DRT. Stop harassment & save 50%.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/uttar-pradesh',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/uttar-pradesh',
   },
   openGraph: {
     title: "Loan Settlement in Uttar Pradesh | DRT Lucknow & Allahabad Lawyers",
     description: "Expert loan settlement services in Uttar Pradesh (Noida, Kanpur, Lucknow). Settle debt legally through UPSLSA Lok Adalat & DRT. Stop harassment & save 50%.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/uttar-pradesh",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/uttar-pradesh",
     type: "website",
     images: [
       {
@@ -36,25 +36,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Uttar Pradesh",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/uttar-pradesh"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/uttar-pradesh"
     }
   ]
 };
@@ -64,18 +64,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Loan Settlement Services in Uttar Pradesh: Legal Debt Relief",
   "description": "Comprehensive guide to loan settlement in UP. Learn how to legally settle personal loans and credit card debt in Noida, Lucknow, and Kanpur using Lok Adalat.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-21",
@@ -86,7 +86,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Loan Settlement Services Uttar Pradesh",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Expert legal loan settlement services in Uttar Pradesh.",
   "brand": {
     "@type": "Brand",

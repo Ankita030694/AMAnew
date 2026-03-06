@@ -56,19 +56,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Locations",
-      "item": "https://amalegalsolutions.com/locations"
+      "item": "https://www.amalegalsolutions.com/locations"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Mizoram",
-      "item": "https://amalegalsolutions.com/locations/mizoram"
+      "item": "https://www.amalegalsolutions.com/locations/mizoram"
     }
   ]
 };
@@ -78,7 +78,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "AMA Legal Solutions Mizoram",
-  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+  "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Leading law firm in Mizoram specializing in Aizawl Bench Litigation, Customary Law, Border Trade, and Government Contracts.",
   "address": {
     "@type": "PostalAddress",
@@ -92,7 +92,7 @@ const articleSchema = {
     { "@type": "City", "name": "Kolasib" },
     { "@type": "State", "name": "Mizoram" }
   ],
-  "url": "https://amalegalsolutions.com/locations/mizoram",
+  "url": "https://www.amalegalsolutions.com/locations/mizoram",
   "telephone": "+918448512333",
   "priceRange": "₹₹",
   "openingHoursSpecification": [
@@ -136,7 +136,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Mizoram",
-  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+  "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Expert legal services in Mizoram by AMA Legal Solutions.",
   "brand": {
     "@type": "Brand",
@@ -204,12 +204,12 @@ export const metadata = {
     "Family Law Mizoram"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/locations/mizoram',
+    canonical: 'https://www.amalegalsolutions.com/locations/mizoram',
   },
   openGraph: {
     title: "Lawyers in Mizoram | Aizawl High Court & Customary Law",
     description: "Expert legal representation in Mizoram. Serving clients in Civil, Criminal, and Government Contract matters.",
-    url: "https://amalegalsolutions.com/locations/mizoram",
+    url: "https://www.amalegalsolutions.com/locations/mizoram",
     type: "website",
     images: [
       {

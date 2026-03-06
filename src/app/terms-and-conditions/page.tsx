@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Terms and Conditions | AMA Legal Solutions',
   description: 'Read the Terms and Conditions of AMA Legal Solutions. Understand our legal services, client obligations, fees, confidentiality, and governing law.',
   alternates: {
-    canonical: 'https://amalegalsolutions.com/termscondition', // Add your canonical URL here
+    canonical: 'https://www.amalegalsolutions.com/termscondition', // Add your canonical URL here
   },
 }
 
@@ -61,7 +61,7 @@ export default function Services() {
           <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100">
             <h2 className="text-2xl font-bold text-[#5A4C33] mb-4">1. Introduction</h2>
             <p className="text-gray-700 leading-relaxed">
-              Welcome to AMA Legal Solutions. These Terms and Conditions govern your use of our website (www.amalegalsolutions.com) and the legal services we provide. By accessing our website or engaging our services, you agree to comply with and be bound by these Terms and Conditions.
+              Welcome to AMA Legal Solutions. These Terms and Conditions govern your use of our website (https://www.amalegalsolutions.com) and the legal services we provide. By accessing our website or engaging our services, you agree to comply with and be bound by these Terms and Conditions.
             </p>
           </div>
 

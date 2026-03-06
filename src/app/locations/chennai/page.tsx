@@ -189,9 +189,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://amalegalsolutions.com" },
-    { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://amalegalsolutions.com/locations" },
-    { "@type": "ListItem", "position": 3, "name": "Chennai", "item": "https://amalegalsolutions.com/locations/chennai" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.amalegalsolutions.com" },
+    { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://www.amalegalsolutions.com/locations" },
+    { "@type": "ListItem", "position": 3, "name": "Chennai", "item": "https://www.amalegalsolutions.com/locations/chennai" }
   ]
 };
 
@@ -200,11 +200,11 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "AMA Legal Solutions Chennai",
-  "image": "https://amalegalsolutions.com/city6.svg",
+  "image": "https://www.amalegalsolutions.com/city6.svg",
   "description": "Leading law firm in Chennai providing expert legal services in Madras High Court Litigation, Corporate Law, and Real Estate.",
   "address": { "@type": "PostalAddress", "addressLocality": "Chennai", "addressRegion": "Tamil Nadu", "addressCountry": "IN" },
   "geo": { "@type": "GeoCoordinates", "latitude": "13.0827", "longitude": "80.2707" },
-  "url": "https://amalegalsolutions.com/locations/chennai",
+  "url": "https://www.amalegalsolutions.com/locations/chennai",
   "telephone": "+918700343611",
   "priceRange": "$$",
   "openingHoursSpecification": [
@@ -224,7 +224,7 @@ const serviceSchemas = servicesData.map(service => ({
   "provider": {
     "@type": "LegalService",
     "name": "AMA Legal Solutions",
-    "image": "https://amalegalsolutions.com/city6.svg",
+    "image": "https://www.amalegalsolutions.com/city6.svg",
     "description": "Leading law firm in Chennai providing expert legal services.",
     "address": {
       "@type": "PostalAddress",
@@ -265,7 +265,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Chennai",
-  "image": "https://amalegalsolutions.com/city6.svg",
+  "image": "https://www.amalegalsolutions.com/city6.svg",
   "description": "Top-rated legal services in Chennai by AMA Legal Solutions.",
   "brand": { "@type": "Brand", "name": "AMA Legal Solutions" },
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "195" },
@@ -302,12 +302,12 @@ export const metadata = {
     "labour law experts chennai"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/locations/chennai',
+    canonical: 'https://www.amalegalsolutions.com/locations/chennai',
   },
   openGraph: {
     title: "Lawyers in Chennai | Expert Legal Services Tamil Nadu",
     description: "Leading legal representation in Chennai. Specializing in Madras High Court writs, Corporate Law, and Real Estate.",
-    url: "https://amalegalsolutions.com/locations/chennai",
+    url: "https://www.amalegalsolutions.com/locations/chennai",
     type: "website",
     images: [
       {

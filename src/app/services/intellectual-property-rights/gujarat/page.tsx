@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Secure your innovations in Gujarat. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Ahmedabad, Surat & Vadodara. Litigation support at Gujarat High Court.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/intellectual-property-rights/Gujarat',
+    canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/gujarat',
   },
   openGraph: {
     title: "Intellectual Property Rights in Gujarat | IP Lawyers Ahmedabad",
     description: "Secure your innovations in Gujarat. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Ahmedabad, Surat & Vadodara. Litigation support at Gujarat High Court.",
-    url: "https://amalegalsolutions.com/services/intellectual-property-rights/Gujarat",
+    url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/Gujarat",
     type: "website",
     images: [
       {
@@ -36,25 +36,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Intellectual Property Rights",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Gujarat",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights/Gujarat"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights/Gujarat"
     }
   ]
 };
@@ -64,18 +64,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Intellectual Property Rights Services in Gujarat: Powering Innovation",
   "description": "Comprehensive guide to IPR protection in Gujarat. Learn about patent filing for pharma in Ahmedabad, trademark registration in Surat, and IP litigation at the Gujarat High Court.",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -86,7 +86,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "IPR Services Gujarat",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "description": "Expert intellectual property legal services in Gujarat.",
   "brand": {
     "@type": "Brand",

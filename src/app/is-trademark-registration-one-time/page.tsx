@@ -65,19 +65,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Trademark Registration",
-      "item": "https://amalegalsolutions.com/services/trademark-registration"
+      "item": "https://www.amalegalsolutions.com/services/trademark-registration"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Is Trademark Registration One Time",
-      "item": "https://amalegalsolutions.com/is-trademark-registration-one-time"
+      "item": "https://www.amalegalsolutions.com/is-trademark-registration-one-time"
     }
   ]
 };
@@ -88,18 +88,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Is Trademark Registration a One-Time Process? Complete Guide on Validity and Renewal",
   "description": "Understand the full lifecycle of trademark registration in India. Is it a one-time cost? Learn about 10-year validity, renewal fees, and how to maintain your brand protection indefinitely.",
-  "image": "https://amalegalsolutions.com/services/trademark.png",
+  "image": "https://www.amalegalsolutions.com/services/trademark.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-10",
@@ -125,7 +125,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Trademark Maintenance & Renewal Services",
-  "image": "https://amalegalsolutions.com/services/trademark.png",
+  "image": "https://www.amalegalsolutions.com/services/trademark.png",
   "description": "Comprehensive legal support for initial trademark registration and periodic renewals in India.",
   "brand": {
     "@type": "Brand",
@@ -181,12 +181,12 @@ export const metadata = {
     "ama legal solutions trademark"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/is-trademark-registration-one-time',
+    canonical: 'https://www.amalegalsolutions.com/is-trademark-registration-one-time',
   },
   openGraph: {
     title: "Is Trademark Registration One Time? | Validity & Renewal Guide",
     description: "Discover the truth about trademark validity in India. Is registration a one-time cost? Learn about the 10-year renewal cycle.",
-    url: "https://amalegalsolutions.com/is-trademark-registration-one-time",
+    url: "https://www.amalegalsolutions.com/is-trademark-registration-one-time",
     type: "website",
     images: [
       {

@@ -13,12 +13,12 @@ export const metadata = {
   title: "American Express Settlement | Amex Credit Card OTS | AMA Legal Solutions",
   description: "Struggling with American Express (Amex) debt? Expert legal help for settling Charge Cards and Credit Cards. Stop arbitration and legal notices.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/american-express',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/american-express',
   },
   openGraph: {
     title: "American Express Settlement | Amex Credit Card OTS | AMA Legal Solutions",
     description: "Struggling with American Express (Amex) debt? Expert legal help for settling Charge Cards and Credit Cards. Stop arbitration and legal notices.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/american-express",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/american-express",
     type: "website",
     images: [
       {
@@ -40,25 +40,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "American Express Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/american-express"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/american-express"
     }
   ]
 };
@@ -68,18 +68,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "American Express Settlement: The Complete Guide to Amex OTS",
   "description": "A comprehensive guide on settling American Express credit card and charge card debts. Learn about the legal implications, arbitration, and how to negotiate a One Time Settlement.",
-  "image": "https://amalegalsolutions.com/services/13.png",
+  "image": "https://www.amalegalsolutions.com/services/13.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -103,7 +103,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "American Express Settlement Services",
-  "image": "https://amalegalsolutions.com/services/13.png",
+  "image": "https://www.amalegalsolutions.com/services/13.png",
   "description": "Legal settlement services for American Express cards.",
   "brand": {
     "@type": "Brand",

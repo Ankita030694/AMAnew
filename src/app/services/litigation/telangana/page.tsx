@@ -77,25 +77,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Litigation Services",
-      "item": "https://amalegalsolutions.com/services/litigation"
+      "item": "https://www.amalegalsolutions.com/services/litigation"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Telangana",
-      "item": "https://amalegalsolutions.com/services/litigation/telangana"
+      "item": "https://www.amalegalsolutions.com/services/litigation/telangana"
     }
   ]
 };
@@ -106,18 +106,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Litigation Services in Telangana: Expert Lawyers for High Court & District Courts",
   "description": "Comprehensive guide to litigation services in Telangana. Expert legal representation for Civil, Criminal, Property, and Commercial disputes in Telangana High Court, Hyderabad Civil Courts, and across the state.",
-  "image": "https://amalegalsolutions.com/services/litigation-telangana.png", // Placeholder or generic image
+  "image": "https://www.amalegalsolutions.com/services/litigation-telangana.png", // Placeholder or generic image
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-12-02",
@@ -143,7 +143,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Litigation Services Telangana",
-  "image": "https://amalegalsolutions.com/services/litigation-telangana.png",
+  "image": "https://www.amalegalsolutions.com/services/litigation-telangana.png",
   "description": "Top-tier litigation services for Telangana High Court and District Courts.",
   "brand": {
     "@type": "Brand",
@@ -199,12 +199,12 @@ export const metadata = {
     "dharani portal lawyer"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/litigation/telangana',
+    canonical: 'https://www.amalegalsolutions.com/services/litigation/telangana',
   },
   openGraph: {
     title: "Litigation Services in Telangana | High Court Lawyers Hyderabad",
     description: "Expert litigation services in Telangana. Representing clients in High Court, City Civil Courts, and District Courts.",
-    url: "https://amalegalsolutions.com/services/litigation/telangana",
+    url: "https://www.amalegalsolutions.com/services/litigation/telangana",
     type: "website",
     images: [
       {

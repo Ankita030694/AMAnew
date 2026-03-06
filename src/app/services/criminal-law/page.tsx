@@ -57,19 +57,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Criminal Law",
-      "item": "https://amalegalsolutions.com/services/criminal-law"
+      "item": "https://www.amalegalsolutions.com/services/criminal-law"
     }
   ]
 };
@@ -80,18 +80,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Criminal Lawyers in India: Expert Defense for Bail, FIR & Trials",
   "description": "Comprehensive guide to criminal law services in India. Expert legal defense for bail, FIR quashing, cyber crime, and criminal trials by top criminal lawyers.",
-  "image": "https://amalegalsolutions.com/services/7.png",
+  "image": "https://www.amalegalsolutions.com/services/7.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-15",
@@ -117,7 +117,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Criminal Law Services",
-  "image": "https://amalegalsolutions.com/services/7.png",
+  "image": "https://www.amalegalsolutions.com/services/7.png",
   "description": "Expert criminal defense legal services in India.",
   "brand": {
     "@type": "Brand",
@@ -161,12 +161,12 @@ export const metadata = {
   description:
     "Top-rated criminal lawyers in India. Expert legal defense for FIR, bail, cyber crime, and criminal litigation. 24/7 emergency support. Call now for consultation.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/criminal-law',
+    canonical: 'https://www.amalegalsolutions.com/services/criminal-law',
   },
   openGraph: {
     title: "Criminal Lawyers in India | Expert Defense & Bail Services",
     description: "Top-rated criminal lawyers in India. Expert legal defense for FIR, bail, cyber crime, and criminal litigation. 24/7 emergency support.",
-    url: "https://amalegalsolutions.com/services/criminal-law",
+    url: "https://www.amalegalsolutions.com/services/criminal-law",
     type: "website",
     images: [
       {

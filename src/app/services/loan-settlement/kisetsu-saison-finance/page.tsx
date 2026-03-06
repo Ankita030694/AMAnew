@@ -12,12 +12,12 @@ export const metadata = {
   title: "Kisetsu Saison Finance Loan Settlement | OTS Scheme & Process | AMA Legal Solutions",
   description: "Struggling with Kisetsu Saison Finance (Credit Saison) loan repayment? Expert legal help for loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/kisetsu-saison-finance',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/kisetsu-saison-finance',
   },
   openGraph: {
     title: "Kisetsu Saison Finance Loan Settlement | OTS Scheme & Process | AMA Legal Solutions",
     description: "Struggling with Kisetsu Saison Finance (Credit Saison) loan repayment? Expert legal help for loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/kisetsu-saison-finance",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/kisetsu-saison-finance",
     type: "website",
     images: [
       {
@@ -39,25 +39,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Kisetsu Saison Finance Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/kisetsu-saison-finance"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/kisetsu-saison-finance"
     }
   ]
 };
@@ -67,18 +67,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Kisetsu Saison Finance Loan Settlement: A Comprehensive Guide to Debt Relief",
   "description": "Learn how to settle your Kisetsu Saison Finance (Credit Saison) loan debt through the One Time Settlement (OTS) scheme. Expert legal advice to stop harassment and reduce debt.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -102,7 +102,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Kisetsu Saison Finance Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Expert legal services for settling Kisetsu Saison Finance loans.",
   "brand": {
     "@type": "Brand",

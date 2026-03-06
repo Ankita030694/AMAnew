@@ -395,8 +395,8 @@ export default function RealEstateClient({ content, faqs }: RealEstateClientProp
               <span className="text-2xl">🌐</span>
               <div>
                 <p className="font-semibold">Visit Online</p>
-                <a href="http://www.amalegalsolutions.com" className="text-lg hover:underline">
-                  www.amalegalsolutions.com
+                <a href="https://www.amalegalsolutions.com" className="text-lg hover:underline">
+                  https://www.amalegalsolutions.com
                 </a>
               </div>
             </div>

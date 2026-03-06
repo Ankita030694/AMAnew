@@ -15,25 +15,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "HSBC Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/hsbc"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/hsbc"
     }
   ]
 };
@@ -44,18 +44,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "HSBC Loan Settlement Process & Policy 2025: Complete Legal Guide",
   "description": "Struggling with HSBC Bank loan repayment? Learn about the HSBC loan settlement process, OTS policies, settlement letter format, and how to settle your personal loan or credit card debt legally.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -67,7 +67,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "HSBC Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Expert legal assistance for settling HSBC Bank personal loans and credit card dues.",
   "brand": {
     "@type": "Brand",
@@ -111,12 +111,12 @@ export const metadata = {
   description:
     "Expert guide on HSBC loan settlement. Learn how to settle HSBC personal loans and credit cards. Get legal help to negotiate OTS, stop harassment, and save up to 50%.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/hsbc',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/hsbc',
   },
   openGraph: {
     title: "HSBC Loan Settlement Process | HSBC Personal Loan Settlement Letter Format",
     description: "Expert guide on HSBC loan settlement. Learn how to settle HSBC personal loans and credit cards. Get legal help to negotiate OTS, stop harassment, and save up to 50%.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/hsbc",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/hsbc",
     type: "website",
     images: [
       {

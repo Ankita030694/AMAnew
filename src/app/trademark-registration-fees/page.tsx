@@ -77,19 +77,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Trademark Registration Fees",
-      "item": "https://amalegalsolutions.com/trademark-registration-fees"
+      "item": "https://www.amalegalsolutions.com/trademark-registration-fees"
     }
   ]
 };
@@ -100,18 +100,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Trademark Registration Fees in India 2026: A Comprehensive Fee Guide",
   "description": "Exhaustive guide on trademark registration costs in India. Learn about government fees, professional charges, and concessions for startups and MSMEs.",
-  "image": "https://amalegalsolutions.com/services/trademark.png",
+  "image": "https://www.amalegalsolutions.com/services/trademark.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2026-01-31",
@@ -137,7 +137,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Trademark Registration Services",
-  "image": "https://amalegalsolutions.com/services/trademark.png",
+  "image": "https://www.amalegalsolutions.com/services/trademark.png",
   "description": "Professional trademark registration and IP services in India.",
   "brand": {
     "@type": "Brand",
@@ -193,12 +193,12 @@ export const metadata = {
     "ip india portal fees"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/trademark-registration-fees',
+    canonical: 'https://www.amalegalsolutions.com/trademark-registration-fees',
   },
   openGraph: {
     title: "Trademark Registration Fees India 2026 | #1 Cost Guide",
     description: "Official guide to trademark registration fees in India. Complete breakdown of government costs and professional fees.",
-    url: "https://amalegalsolutions.com/trademark-registration-fees",
+    url: "https://www.amalegalsolutions.com/trademark-registration-fees",
     type: "website",
     images: [
       {

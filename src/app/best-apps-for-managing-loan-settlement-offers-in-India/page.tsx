@@ -21,12 +21,12 @@ export const metadata: Metadata = {
     "negotiate loan settlement online"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/best-apps-for-managing-loan-settlement-offers-in-India',
+    canonical: 'https://www.amalegalsolutions.com/best-apps-for-managing-loan-settlement-offers-in-India',
   },
   openGraph: {
       title: "Best Apps for Managing Loan Settlement Offers in India | Expert Guide",
       description: "Looking for the best apps for managing loan settlement offers in India? We review the top digital platforms and legal services to help you settle your debt.",
-      url: "https://amalegalsolutions.com/best-apps-for-managing-loan-settlement-offers-in-India",
+      url: "https://www.amalegalsolutions.com/best-apps-for-managing-loan-settlement-offers-in-India",
       type: "article",
       images: [
         {
@@ -91,13 +91,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Best Apps for Loan Settlement",
-      "item": "https://amalegalsolutions.com/best-apps-for-managing-loan-settlement-offers-in-India"
+      "item": "https://www.amalegalsolutions.com/best-apps-for-managing-loan-settlement-offers-in-India"
     }
   ]
 };
@@ -107,18 +107,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Best Apps for Managing Loan Settlement Offers in India: A Comprehensive Guide",
   "description": "Explore the best apps and services for managing loan settlement in India. Legal insights, app reviews, and expert advice on regaining financial freedom.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-06",

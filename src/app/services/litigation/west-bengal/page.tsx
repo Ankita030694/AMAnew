@@ -77,25 +77,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Litigation Services",
-      "item": "https://amalegalsolutions.com/services/litigation"
+      "item": "https://www.amalegalsolutions.com/services/litigation"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "West Bengal",
-      "item": "https://amalegalsolutions.com/services/litigation/west-bengal"
+      "item": "https://www.amalegalsolutions.com/services/litigation/west-bengal"
     }
   ]
 };
@@ -106,18 +106,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Litigation Services in West Bengal: Expert Lawyers for Calcutta High Court",
   "description": "Comprehensive guide to litigation services in West Bengal. Expert legal representation for Civil, Criminal, Property, and Commercial disputes in Calcutta High Court, Alipore Court, and across the state.",
-  "image": "https://amalegalsolutions.com/services/litigation-west-bengal.png", // Placeholder
+  "image": "https://www.amalegalsolutions.com/services/litigation-west-bengal.png", // Placeholder
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-12-02",
@@ -143,7 +143,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Litigation Services West Bengal",
-  "image": "https://amalegalsolutions.com/services/litigation-west-bengal.png",
+  "image": "https://www.amalegalsolutions.com/services/litigation-west-bengal.png",
   "description": "Top-tier litigation services for Calcutta High Court and District Courts.",
   "brand": {
     "@type": "Brand",
@@ -199,12 +199,12 @@ export const metadata = {
     "wb premises tenancy act lawyer"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/litigation/west-bengal',
+    canonical: 'https://www.amalegalsolutions.com/services/litigation/west-bengal',
   },
   openGraph: {
     title: "Litigation Services in West Bengal | Calcutta High Court Lawyers",
     description: "Expert litigation services in West Bengal. Representing clients in Calcutta High Court, City Civil Court, and District Courts.",
-    url: "https://amalegalsolutions.com/services/litigation/west-bengal",
+    url: "https://www.amalegalsolutions.com/services/litigation/west-bengal",
     type: "website",
     images: [
       {

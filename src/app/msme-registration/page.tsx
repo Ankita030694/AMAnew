@@ -98,19 +98,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "MSME Registration",
-      "item": "https://amalegalsolutions.com/msme-registration"
+      "item": "https://www.amalegalsolutions.com/msme-registration"
     }
   ]
 };
@@ -121,18 +121,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Full Guide to MSME (Udyam) Registration in India 2026: Process, Benefits, and Updates",
   "description": "Comprehensive 2026 guide for MSME registration in India. Learn about the updated classification criteria, online Udyam process, and government benefits for small businesses.",
-  "image": "https://amalegalsolutions.com/services/msme-hero.png",
+  "image": "https://www.amalegalsolutions.com/services/msme-hero.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-01-01",
@@ -158,7 +158,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "MSME Registration Services",
-  "image": "https://amalegalsolutions.com/services/msme-icon.png",
+  "image": "https://www.amalegalsolutions.com/services/msme-icon.png",
   "description": "Expert legal assistance for Udyam and MSME registration in India.",
   "brand": {
     "@type": "Brand",
@@ -214,12 +214,12 @@ export const metadata = {
     "msme startup benefits"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/msme-registration',
+    canonical: 'https://www.amalegalsolutions.com/msme-registration',
   },
   openGraph: {
     title: "MSME Registration India 2026 | #1 Legal Assistance for Startups",
     description: "Secure your business growth with MSME (Udyam) Registration. Access subsidies, credit schemes, and legal protection with AMA Legal Solutions.",
-    url: "https://amalegalsolutions.com/msme-registration",
+    url: "https://www.amalegalsolutions.com/msme-registration",
     type: "website",
     images: [
       {

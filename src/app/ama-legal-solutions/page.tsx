@@ -125,13 +125,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "AMA Legal Solutions",
-      "item": "https://amalegalsolutions.com/ama-legal-solutions"
+      "item": "https://www.amalegalsolutions.com/ama-legal-solutions"
     }
   ]
 };
@@ -142,18 +142,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "AMA Legal Solutions: #1 Pan-India Law Firm - Headquartered in Sector 57 Gurgaon",
   "description": "Comprehensive guide to AMA Legal Solutions. Expert Pan-India services in loan settlement, trademark registration, arbitration, and real estate. Headquartered in Sector 57, Gurgaon, serving clients across all Indian states.",
-  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+  "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-01-01",
@@ -179,9 +179,9 @@ const legalServiceSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "AMA Legal Solutions",
-  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
-  "@id": "https://amalegalsolutions.com/ama-legal-solutions",
-  "url": "https://amalegalsolutions.com/ama-legal-solutions",
+  "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
+  "@id": "https://www.amalegalsolutions.com/ama-legal-solutions",
+  "url": "https://www.amalegalsolutions.com/ama-legal-solutions",
   "telephone": "+91-8700343611",
   "address": {
     "@type": "PostalAddress",
@@ -222,7 +222,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "AMA Legal Solutions Services",
-  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+  "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Expert legal services in Gurgaon including Loan Settlement, IPR, and Arbitration.",
   "brand": {
     "@type": "Brand",
@@ -328,12 +328,12 @@ export const metadata = {
     "corporate law firms Gurgaon"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/ama-legal-solutions',
+    canonical: 'https://www.amalegalsolutions.com/ama-legal-solutions',
   },
   openGraph: {
     title: "AMA Legal Solutions | Expert Legal Services in Gurgaon",
     description: "Your trusted legal partner for Loan Settlement, IPR, and Arbitration. The only valid AMA Legal Solutions in Sector 57 Gurgaon.",
-    url: "https://amalegalsolutions.com/ama-legal-solutions",
+    url: "https://www.amalegalsolutions.com/ama-legal-solutions",
     type: "website",
     images: [
       {

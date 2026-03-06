@@ -19,7 +19,7 @@ export const metadata = {
     "OTS for home loan"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/can-i-get-a-loan-settlement-service-that-handles-home-loan-dues',
+    canonical: 'https://www.amalegalsolutions.com/can-i-get-a-loan-settlement-service-that-handles-home-loan-dues',
   },
 };
 
@@ -137,7 +137,7 @@ export default function HomeLoanSettlementPage() {
       "name": "AMA Legal Solutions",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+        "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
       }
     }
   };
@@ -159,7 +159,7 @@ export default function HomeLoanSettlementPage() {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Home Loan Settlement Services",
-    "image": "https://amalegalsolutions.com/services/3.png",
+    "image": "https://www.amalegalsolutions.com/services/3.png",
     "description": "Expert legal services for settling secured home loans and defending against SARFAESI actions.",
     "brand": {
       "@type": "Brand",
@@ -714,7 +714,7 @@ function breadcrumbSchemaWithId(items: { label: string; href: string }[]) {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.label,
-      "item": `https://amalegalsolutions.com${item.href}`
+      "item": `https://www.amalegalsolutions.com${item.href}`
     }))
   };
 }

@@ -57,25 +57,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Madhya Pradesh",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/madhya-pradesh"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/madhya-pradesh"
     }
   ]
 };
@@ -86,25 +86,25 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Loan Settlement Services in Madhya Pradesh: Expert Legal Help",
   "description": "Struggling with debt in Madhya Pradesh? Get expert legal help for loan settlement in Indore, Bhopal, and across MP. Stop harassment and reduce debt by up to 50%.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-15",
   "dateModified": "2025-01-20",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://amalegalsolutions.com/services/loan-settlement/madhya-pradesh"
+    "@id": "https://www.amalegalsolutions.com/services/loan-settlement/madhya-pradesh"
   }
 };
 
@@ -138,12 +138,12 @@ export const metadata = {
     "bank harassment complaint MP"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/madhya-pradesh',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/madhya-pradesh',
   },
   openGraph: {
     title: "Loan Settlement in Madhya Pradesh | Expert Debt Relief",
     description: "Struggling with debt in MP? Our expert lawyers in Indore and Bhopal negotiate with banks to settle your loans and stop harassment.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/madhya-pradesh",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/madhya-pradesh",
     type: "website",
     images: [
       {

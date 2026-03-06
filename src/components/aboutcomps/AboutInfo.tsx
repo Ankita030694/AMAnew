@@ -60,7 +60,7 @@ const AboutInfo = () => {
           href="https://www.amalegalsolutions.com"
           className="text-lg leading-relaxed text-danger px-5"
         >
-          www.amalegalsolutions.com
+          https://www.amalegalsolutions.com
         </a>
       </p>
     </motion.div>

@@ -97,19 +97,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Trademark Registration",
-      "item": "https://amalegalsolutions.com/services/trademark-registration"
+      "item": "https://www.amalegalsolutions.com/services/trademark-registration"
     }
   ]
 };
@@ -120,18 +120,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Trademark Registration Services: Protect Your Brand Identity",
   "description": "Expert trademark registration, objection reply, and hearing services. Secure your brand name with India's top IP lawyers.",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-01-15",
@@ -157,7 +157,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Trademark Registration Services",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "description": "Comprehensive trademark services including search, filing, objection reply, and litigation.",
   "brand": {
     "@type": "Brand",
@@ -258,7 +258,7 @@ export const metadata = {
   openGraph: {
     title: "Trademark Registration & Objection Reply | AMA Legal",
     description: "Secure your brand with expert Trademark Registration services. We handle Objection Replies, Hearings, and Oppositions.",
-    url: "https://amalegalsolutions.com/services/trademark-registration",
+    url: "https://www.amalegalsolutions.com/services/trademark-registration",
     type: "website",
     images: [
       {

@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Expert Intellectual Property Rights (IPR) services in Odisha. We assist with Trademark, Patent, Copyright, and GI registration in Bhubaneswar, Cuttack & across the state. Protect your innovation today.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/intellectual-property-rights/odisha',
+    canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/odisha',
   },
   openGraph: {
     title: "IPR Services in Odisha | Trademark, Patent & GI Registration",
     description: "Expert Intellectual Property Rights (IPR) services in Odisha. We assist with Trademark, Patent, Copyright, and GI registration in Bhubaneswar, Cuttack & across the state. Protect your innovation today.",
-    url: "https://amalegalsolutions.com/services/intellectual-property-rights/odisha",
+    url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/odisha",
     type: "website",
     images: [
       {
@@ -36,25 +36,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Intellectual Property Rights",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Odisha",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights/odisha"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights/odisha"
     }
   ]
 };
@@ -64,18 +64,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Intellectual Property Rights Services in Odisha: A Comprehensive Guide",
   "description": "Complete guide to IPR in Odisha, covering Trademarks, Patents, GI Tags, and Copyrights. Learn about the legal framework and registration process in the state.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -86,7 +86,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "IPR Services Odisha",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Professional IPR registration and legal services in Odisha.",
   "brand": {
     "@type": "Brand",

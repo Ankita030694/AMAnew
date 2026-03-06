@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     title: "Banking and Finance Legal Services in Assam",
     description:
       "Expert legal support for financial institutions in Assam. From NBFC setup in Guwahati to DRT litigation and Tea Industry finance.",
-    url: "https://amalegalsolutions.com/services/banking-and-finance/assam",
+    url: "https://www.amalegalsolutions.com/services/banking-and-finance/assam",
     siteName: "AMA Legal Solutions",
     locale: "en_US",
     type: "article",
     images: [
       {
-        url: "https://amalegalsolutions.com/services/banking-and-finance/assam/og-image.png", // Placeholder if no specific image
+        url: "https://www.amalegalsolutions.com/services/banking-and-finance/assam/og-image.png", // Placeholder if no specific image
         width: 1200,
         height: 630,
         alt: "Banking and Finance Services Assam",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
       "Specialized legal services for NBFCs, MFIs, and Banks in Assam. Expert in DRT Guwahati and local financial regulations.",
   },
   alternates: {
-    canonical: "https://amalegalsolutions.com/services/banking-and-finance/assam",
+    canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/assam",
   },
 };
 
@@ -55,25 +55,25 @@ const page = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://amalegalsolutions.com",
+        "item": "https://www.amalegalsolutions.com",
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Services",
-        "item": "https://amalegalsolutions.com/services",
+        "item": "https://www.amalegalsolutions.com/services",
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Banking & Finance",
-        "item": "https://amalegalsolutions.com/services/banking-and-finance",
+        "item": "https://www.amalegalsolutions.com/services/banking-and-finance",
       },
       {
         "@type": "ListItem",
         "position": 4,
         "name": "Assam",
-        "item": "https://amalegalsolutions.com/services/banking-and-finance/assam",
+        "item": "https://www.amalegalsolutions.com/services/banking-and-finance/assam",
       },
     ],
   };
@@ -87,14 +87,14 @@ const page = () => {
     "author": {
       "@type": "Organization",
       "name": "AMA Legal Solutions",
-      "url": "https://amalegalsolutions.com",
+      "url": "https://www.amalegalsolutions.com",
     },
     "publisher": {
       "@type": "Organization",
       "name": "AMA Legal Solutions",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+        "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
       },
     },
     "datePublished": "2025-11-27",
@@ -105,7 +105,7 @@ const page = () => {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Banking and Finance Legal Services Assam",
-    "image": "https://amalegalsolutions.com/services/3.png",
+    "image": "https://www.amalegalsolutions.com/services/3.png",
     "description": "Expert legal registration and compliance services for financial institutions in Assam.",
     "brand": {
       "@type": "Brand",

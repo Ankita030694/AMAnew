@@ -13,12 +13,12 @@ export const metadata = {
   title: "Vivriti Capital Loan Settlement | SME & Personal Loan OTS | AMA Legal Solutions",
   description: "Struggling with Vivriti Capital loan repayment? Expert legal help for settling business loans and personal loans. Stop arbitration and legal action.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/vivriti-capital',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/vivriti-capital',
   },
   openGraph: {
     title: "Vivriti Capital Loan Settlement | SME & Personal Loan OTS | AMA Legal Solutions",
     description: "Struggling with Vivriti Capital loan repayment? Expert legal help for settling business loans and personal loans. Stop arbitration and legal action.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/vivriti-capital",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/vivriti-capital",
     type: "website",
     images: [
       {
@@ -40,25 +40,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Vivriti Capital Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/vivriti-capital"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/vivriti-capital"
     }
   ]
 };
@@ -68,18 +68,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Vivriti Capital Loan Settlement: Guide to NBFC OTS",
   "description": "Comprehensive guide on how to settle Vivriti Capital personal and business loans. Learn about the One Time Settlement (OTS) process, arbitration defense, and debt restructuring.",
-  "image": "https://amalegalsolutions.com/services/17.png",
+  "image": "https://www.amalegalsolutions.com/services/17.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -103,7 +103,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Vivriti Capital Settlement Services",
-  "image": "https://amalegalsolutions.com/services/17.png",
+  "image": "https://www.amalegalsolutions.com/services/17.png",
   "description": "Legal settlement services for Vivriti Capital loans.",
   "brand": {
     "@type": "Brand",

@@ -64,19 +64,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Locations",
-      "item": "https://amalegalsolutions.com/locations"
+      "item": "https://www.amalegalsolutions.com/locations"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Punjab",
-      "item": "https://amalegalsolutions.com/locations/punjab"
+      "item": "https://www.amalegalsolutions.com/locations/punjab"
     }
   ]
 };
@@ -86,7 +86,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "AMA Legal Solutions Punjab",
-  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+  "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Leading law firm in Punjab specializing in NRI Legal Services, High Court Litigation, RERA, and Industrial Disputes.",
   "address": {
     "@type": "PostalAddress",
@@ -101,7 +101,7 @@ const articleSchema = {
     { "@type": "City", "name": "Chandigarh" },
     { "@type": "State", "name": "Punjab" }
   ],
-  "url": "https://amalegalsolutions.com/locations/punjab",
+  "url": "https://www.amalegalsolutions.com/locations/punjab",
   "telephone": "+918448512333",
   "priceRange": "₹₹",
   "openingHoursSpecification": [
@@ -145,7 +145,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Punjab",
-  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+  "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Top-tier legal services in Punjab by AMA Legal Solutions.",
   "brand": {
     "@type": "Brand",
@@ -225,12 +225,12 @@ export const metadata = {
     "Immigration Fraud Lawyer Punjab"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/locations/punjab',
+    canonical: 'https://www.amalegalsolutions.com/locations/punjab',
   },
   openGraph: {
     title: "Lawyers in Punjab | NRI & High Court Legal Services",
     description: "Expert legal representation in Punjab. NRI Services, Civil, Criminal, and RERA services by AMA Legal Solutions.",
-    url: "https://amalegalsolutions.com/locations/punjab",
+    url: "https://www.amalegalsolutions.com/locations/punjab",
     type: "website",
     images: [
       {

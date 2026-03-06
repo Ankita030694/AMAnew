@@ -58,19 +58,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Locations",
-      "item": "https://amalegalsolutions.com/locations"
+      "item": "https://www.amalegalsolutions.com/locations"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Uttar Pradesh",
-      "item": "https://amalegalsolutions.com/locations/uttar-pradesh"
+      "item": "https://www.amalegalsolutions.com/locations/uttar-pradesh"
     }
   ]
 };
@@ -82,14 +82,14 @@ const articleSchema = {
   "name": "Legal Services in Uttar Pradesh",
   "headline": "Expert Lawyers in Uttar Pradesh: Loan Settlement, Trademarks & High Court",
   "description": "Premiere legal services in Uttar Pradesh. Specialized in Loan Settlement, Trademark Registration, and litigation at Allahabad High Court & Lucknow Bench.",
-  "image": "https://amalegalsolutions.com/uttar-pradesh-legal.svg",
+  "image": "https://www.amalegalsolutions.com/uttar-pradesh-legal.svg",
   "address": {
     "@type": "PostalAddress",
     "addressRegion": "Uttar Pradesh",
     "addressCountry": "IN"
   },
   "telephone": "+918700343611",
-  "url": "https://amalegalsolutions.com/locations/uttar-pradesh",
+  "url": "https://www.amalegalsolutions.com/locations/uttar-pradesh",
   "priceRange": "₹₹"
 };
 
@@ -112,7 +112,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Uttar Pradesh",
-  "image": "https://amalegalsolutions.com/uttar-pradesh-legal.svg",
+  "image": "https://www.amalegalsolutions.com/uttar-pradesh-legal.svg",
   "description": "Top-rated legal services for Loan Settlement, Property Disputes, and Corporate Law in Uttar Pradesh.",
   "brand": {
     "@type": "Brand",
@@ -204,7 +204,7 @@ export const metadata = {
     "Property Lawyer in UP"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/locations/uttar-pradesh',
+    canonical: 'https://www.amalegalsolutions.com/locations/uttar-pradesh',
   },
 };
 

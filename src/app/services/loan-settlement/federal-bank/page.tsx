@@ -29,12 +29,12 @@ export const metadata = {
   title: "Federal Bank Loan Settlement | NRI & Agri Loan OTS | AMA Legal Solutions",
   description: "Struggling with Federal Bank loan repayment? Expert legal help for Federal Bank loan settlement, including NRI, Agricultural, and Personal loans. Stop harassment and settle debt.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/federal-bank',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/federal-bank',
   },
   openGraph: {
     title: "Federal Bank Loan Settlement | NRI & Agri Loan OTS | AMA Legal Solutions",
     description: "Struggling with Federal Bank loan repayment? Expert legal help for Federal Bank loan settlement, including NRI, Agricultural, and Personal loans. Stop harassment and settle debt.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/federal-bank",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/federal-bank",
     type: "website",
     images: [
       {
@@ -56,25 +56,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Federal Bank Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/federal-bank"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/federal-bank"
     }
   ]
 };
@@ -84,18 +84,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Federal Bank Loan Settlement: A Guide for NRIs and Residents",
   "description": "Learn how to settle your Federal Bank personal, agricultural, or NRI loan through the One Time Settlement (OTS) scheme. Expert legal advice to stop harassment.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -119,7 +119,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Federal Bank Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Expert legal services for settling Federal Bank loans and dues.",
   "brand": {
     "@type": "Brand",

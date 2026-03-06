@@ -57,19 +57,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Job Lost Loan Settlement",
-      "item": "https://amalegalsolutions.com/job-lost-loan-settlement"
+      "item": "https://www.amalegalsolutions.com/job-lost-loan-settlement"
     }
   ]
 };
@@ -80,18 +80,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Job Lost Loan Settlement: Expert Legal Help for Unemployed Borrowers",
   "description": "Lost your job and can't pay your loan? Learn how to settle your debt legally. Expert lawyers for job loss loan settlement in India. Stop harassment today.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-04",
@@ -117,7 +117,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Job Lost Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Specialized loan settlement services for individuals facing job loss.",
   "brand": {
     "@type": "Brand",
@@ -172,12 +172,12 @@ export const metadata = {
     "stop recovery harassment"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/job-lost-loan-settlement',
+    canonical: 'https://www.amalegalsolutions.com/job-lost-loan-settlement',
   },
   openGraph: {
     title: "Job Lost Loan Settlement | Settle Debt After Job Loss India",
     description: "Struggling with loans after job loss? AMA Legal Solutions offers expert loan settlement services. We negotiate with banks to reduce your debt.",
-    url: "https://amalegalsolutions.com/job-lost-loan-settlement",
+    url: "https://www.amalegalsolutions.com/job-lost-loan-settlement",
     type: "website",
     images: [
       {

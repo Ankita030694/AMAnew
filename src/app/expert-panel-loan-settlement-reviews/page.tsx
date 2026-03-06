@@ -59,13 +59,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Expert Panel Loan Settlement Reviews",
-      "item": "https://amalegalsolutions.com/expert-panel-loan-settlement-reviews"
+      "item": "https://www.amalegalsolutions.com/expert-panel-loan-settlement-reviews"
     }
   ]
 };
@@ -75,18 +75,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "AMA Legal Solutions Expert Panel Loan Settlement Reviews: The Ultimate Guide",
   "description": "Comprehensive analysis of the AMA Legal Solutions expert panel loan settlement reviews in India. Learn the hidden legal strategies our panel uses to negotiate debt and stop harassment.",
-  "image": "https://amalegalsolutions.com/assets/loan-settlement-expert-panel.png",
+  "image": "https://www.amalegalsolutions.com/assets/loan-settlement-expert-panel.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-23",
@@ -110,7 +110,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "AMA Legal Solutions Expert Panel Loan Settlement",
-  "image": "https://amalegalsolutions.com/assets/loan-settlement-icon.png",
+  "image": "https://www.amalegalsolutions.com/assets/loan-settlement-icon.png",
   "description": "Professional legal and financial advisory by the AMA Legal Solutions Expert Panel for negotiating and settling personal and unsecured loan defaults.",
   "brand": {
     "@type": "Brand",
@@ -198,7 +198,7 @@ export const metadata = {
     "credit card settlement process"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/expert-panel-loan-settlement-reviews',
+    canonical: 'https://www.amalegalsolutions.com/expert-panel-loan-settlement-reviews',
   }
 };
 

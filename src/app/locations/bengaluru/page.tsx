@@ -57,19 +57,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Locations",
-      "item": "https://amalegalsolutions.com/locations"
+      "item": "https://www.amalegalsolutions.com/locations"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Bengaluru",
-      "item": "https://amalegalsolutions.com/locations/bengaluru"
+      "item": "https://www.amalegalsolutions.com/locations/bengaluru"
     }
   ]
 };
@@ -79,7 +79,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "AMA Legal Solutions Bengaluru",
-  "image": "https://amalegalsolutions.com/city3.svg",
+  "image": "https://www.amalegalsolutions.com/city3.svg",
   "description": "Leading law firm in Bengaluru providing expert legal services in Startup Law, Real Estate, and High Court Litigation.",
   "address": {
     "@type": "PostalAddress",
@@ -92,7 +92,7 @@ const articleSchema = {
     "latitude": "12.9716",
     "longitude": "77.5946"
   },
-  "url": "https://amalegalsolutions.com/locations/bengaluru",
+  "url": "https://www.amalegalsolutions.com/locations/bengaluru",
   "telephone": "+918700343611",
   "priceRange": "$$",
   "openingHoursSpecification": [
@@ -136,7 +136,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Bengaluru",
-  "image": "https://amalegalsolutions.com/city3.svg",
+  "image": "https://www.amalegalsolutions.com/city3.svg",
   "description": "Top-rated legal services in Bengaluru by AMA Legal Solutions.",
   "brand": {
     "@type": "Brand",
@@ -218,12 +218,12 @@ export const metadata = {
     "property registration lawyer"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/locations/bengaluru',
+    canonical: 'https://www.amalegalsolutions.com/locations/bengaluru',
   },
   openGraph: {
     title: "Lawyers in Bengaluru | Top Legal Services Bangalore",
     description: "Expert legal representation in Bengaluru. Corporate, Civil, Real Estate, and Family Law services by AMA Legal Solutions.",
-    url: "https://amalegalsolutions.com/locations/bengaluru",
+    url: "https://www.amalegalsolutions.com/locations/bengaluru",
     type: "website",
     images: [
       {

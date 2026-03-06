@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Struggling with high-interest loans? Explore debt consolidation, settlement, and credit counseling options. Expert legal help to reduce your debt burden and avoid bankruptcy.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/debt-consolidation',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/debt-consolidation',
   },
   openGraph: {
     title: "Debt Consolidation & Loan Settlement Services | Expert Debt Relief",
     description: "Struggling with high-interest loans? Explore debt consolidation, settlement, and credit counseling options. Expert legal help to reduce your debt burden and avoid bankruptcy.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/debt-consolidation",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/debt-consolidation",
     type: "website",
     images: [
       {
@@ -36,25 +36,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Debt Consolidation",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/debt-consolidation"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/debt-consolidation"
     }
   ]
 };
@@ -64,18 +64,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Complete Guide to Debt Consolidation and Loan Settlement",
   "description": "A comprehensive guide on how to get out of debt using consolidation, settlement, and management strategies. Learn about credit scores, bankruptcy alternatives, and legal relief.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-12-09",
@@ -86,7 +86,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Debt Consolidation & Settlement Services",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Professional debt consolidation and loan settlement services to help you become debt-free.",
   "brand": {
     "@type": "Brand",

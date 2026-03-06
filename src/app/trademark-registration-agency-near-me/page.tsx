@@ -292,7 +292,7 @@ export default function TrademarkAgencyPage() {
           "@type": "ListItem",
           "position": idx + 1,
           "name": item.label,
-          "item": `https://amalegalsolutions.com${item.href}`
+          "item": `https://www.amalegalsolutions.com${item.href}`
         }))
       }) }} />
       <Script id="article-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />

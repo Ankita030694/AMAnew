@@ -93,9 +93,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://amalegalsolutions.com" },
-    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://amalegalsolutions.com/services" },
-    { "@type": "ListItem", "position": 3, "name": "Comprehensive Trademark Guide", "item": "https://amalegalsolutions.com/services/comprehensive-guide-trademark-registration-india" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.amalegalsolutions.com" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.amalegalsolutions.com/services" },
+    { "@type": "ListItem", "position": 3, "name": "Comprehensive Trademark Guide", "item": "https://www.amalegalsolutions.com/services/comprehensive-guide-trademark-registration-india" }
   ]
 };
 
@@ -104,7 +104,7 @@ const articleSchema = {
   "@type": "Article",
   "headline": "The 2026 Comprehensive Guide to Trademark Registration in India",
   "description": "An exhaustive legal guide for businesses: From Vienna classification and Madrid Protocol to Well-Known mark status and high-stakes infringement litigation.",
-  "author": { "@type": "Organization", "name": "AMA Legal Solutions", "url": "https://amalegalsolutions.com" },
+  "author": { "@type": "Organization", "name": "AMA Legal Solutions", "url": "https://www.amalegalsolutions.com" },
   "publisher": { "@type": "Organization", "name": "AMA Legal Solutions" },
   "datePublished": "2026-01-31",
   "dateModified": "2026-01-31"

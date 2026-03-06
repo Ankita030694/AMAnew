@@ -57,19 +57,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Knowledge Base",
-      "item": "https://amalegalsolutions.com/articles"
+      "item": "https://www.amalegalsolutions.com/articles"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Does Foreclosure of Loan Affect CIBIL",
-      "item": "https://amalegalsolutions.com/does-foreclosure-of-loan-affect-cibil"
+      "item": "https://www.amalegalsolutions.com/does-foreclosure-of-loan-affect-cibil"
     }
   ]
 };
@@ -80,18 +80,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Does Foreclosure of Loan Affect CIBIL Score? Legal & Financial Guide",
   "description": "Examine the impact of loan foreclosure on your CIBIL score. Learn about voluntary vs involuntary foreclosure, interest savings, and legal rights in India.",
-  "image": "https://amalegalsolutions.com/assets/foreclosure-impact-cibil.png",
+  "image": "https://www.amalegalsolutions.com/assets/foreclosure-impact-cibil.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-23",
@@ -117,7 +117,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Loan Foreclosure Advisory",
-  "image": "https://amalegalsolutions.com/assets/foreclosure-icon.png",
+  "image": "https://www.amalegalsolutions.com/assets/foreclosure-icon.png",
   "description": "Legal advisory services for loan foreclosure and credit score management.",
   "brand": {
     "@type": "Brand",
@@ -206,7 +206,7 @@ export const metadata = {
     "loan preclosure benefits"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/does-foreclosure-of-loan-affect-cibil',
+    canonical: 'https://www.amalegalsolutions.com/does-foreclosure-of-loan-affect-cibil',
   }
 };
 

@@ -56,19 +56,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Locations",
-      "item": "https://amalegalsolutions.com/locations"
+      "item": "https://www.amalegalsolutions.com/locations"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Haryana",
-      "item": "https://amalegalsolutions.com/locations/haryana"
+      "item": "https://www.amalegalsolutions.com/locations/haryana"
     }
   ]
 };
@@ -78,7 +78,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "AMA Legal Solutions Haryana",
-  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+  "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Leading law firm in Haryana providing expert legal services in High Court Litigation, Loan Settlement, RERA, and Corporate Law.",
   "address": {
     "@type": "PostalAddress",
@@ -92,7 +92,7 @@ const articleSchema = {
     { "@type": "City", "name": "Panipat" },
     { "@type": "State", "name": "Haryana" }
   ],
-  "url": "https://amalegalsolutions.com/locations/haryana",
+  "url": "https://www.amalegalsolutions.com/locations/haryana",
   "telephone": "+918448512333",
   "priceRange": "₹₹",
   "openingHoursSpecification": [
@@ -136,7 +136,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Haryana",
-  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+  "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Top-tier legal services in Haryana by AMA Legal Solutions.",
   "brand": {
     "@type": "Brand",
@@ -216,12 +216,12 @@ export const metadata = {
     "Property Lawyers Haryana"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/locations/haryana',
+    canonical: 'https://www.amalegalsolutions.com/locations/haryana',
   },
   openGraph: {
     title: "Lawyers in Haryana | High Court & Corporate Legal Services",
     description: "Expert legal representation in Haryana. Corporate, Civil, Criminal, and RERA services by AMA Legal Solutions.",
-    url: "https://amalegalsolutions.com/locations/haryana",
+    url: "https://www.amalegalsolutions.com/locations/haryana",
     type: "website",
     images: [
       {

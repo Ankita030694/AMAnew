@@ -111,7 +111,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Ipindia Trademark Registration Guide",
-  "image": "https://amalegalsolutions.com/future.png",
+  "image": "https://www.amalegalsolutions.com/future.png",
   "description": "Comprehensive guide to Ipindia trademark registration, DSC, and public search.",
   "brand": {
     "@type": "Brand",

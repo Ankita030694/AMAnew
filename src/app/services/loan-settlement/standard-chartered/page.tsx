@@ -13,12 +13,12 @@ export const metadata = {
   title: "Standard Chartered Loan Settlement | Credit Card OTS | AMA Legal Solutions",
   description: "Struggling with Standard Chartered Bank loan or credit card dues? Expert legal help for One Time Settlement (OTS). Stop harassment and legal action.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/standard-chartered',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/standard-chartered',
   },
   openGraph: {
     title: "Standard Chartered Loan Settlement | Credit Card OTS | AMA Legal Solutions",
     description: "Struggling with Standard Chartered Bank loan or credit card dues? Expert legal help for One Time Settlement (OTS). Stop harassment and legal action.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/standard-chartered",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/standard-chartered",
     type: "website",
     images: [
       {
@@ -40,25 +40,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Standard Chartered Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/standard-chartered"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/standard-chartered"
     }
   ]
 };
@@ -68,18 +68,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Standard Chartered Loan Settlement: Guide to SCB OTS",
   "description": "Comprehensive guide on how to settle Standard Chartered Bank credit cards and personal loans. Learn about the One Time Settlement (OTS) process and legal protection.",
-  "image": "https://amalegalsolutions.com/services/14.png",
+  "image": "https://www.amalegalsolutions.com/services/14.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -103,7 +103,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Standard Chartered Settlement Services",
-  "image": "https://amalegalsolutions.com/services/14.png",
+  "image": "https://www.amalegalsolutions.com/services/14.png",
   "description": "Legal settlement services for Standard Chartered Bank loans.",
   "brand": {
     "@type": "Brand",

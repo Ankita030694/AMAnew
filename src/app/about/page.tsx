@@ -14,7 +14,7 @@ export const metadata = {
   title: 'About AMA Legal Solutions: Experienced Law Firm in Gurugram',
   description: 'Learn about AMA Legal Solutions legacy and expertise in providing exceptional legal services across various domains in Gurugram, India.',
   alternates: {
-    canonical: 'https://amalegalsolutions.com/about', // Add your canonical URL here
+    canonical: 'https://www.amalegalsolutions.com/about', // Add your canonical URL here
   },
 }
 

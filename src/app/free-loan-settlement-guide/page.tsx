@@ -57,13 +57,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Free Loan Settlement Guide",
-      "item": "https://amalegalsolutions.com/free-loan-settlement-guide"
+      "item": "https://www.amalegalsolutions.com/free-loan-settlement-guide"
     }
   ]
 };
@@ -74,18 +74,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Ultimate Free Loan Settlement Guide 2024-2025: Expert Legal Debt Relief",
   "description": "Comprehensive 5000+ word guide on loan settlement in India. Learn legal strategies to settle personal loans, credit cards, and business debts with RBI updates.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2026-02-16",
@@ -111,7 +111,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Loan Settlement Consultation",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Expert legal guidance for loan settlement and debt relief in India.",
   "brand": {
     "@type": "Brand",
@@ -167,12 +167,12 @@ export const metadata = {
     "debt relief india"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/free-loan-settlement-guide',
+    canonical: 'https://www.amalegalsolutions.com/free-loan-settlement-guide',
   },
   openGraph: {
     title: "Free Loan Settlement Guide 2024-2025 | Legal Debt Relief India",
     description: "Expert strategies to settle your bank loans legally. Stop harassment and regain financial freedom. Updated for current RBI rules.",
-    url: "https://amalegalsolutions.com/free-loan-settlement-guide",
+    url: "https://www.amalegalsolutions.com/free-loan-settlement-guide",
     type: "website",
     images: [
       {

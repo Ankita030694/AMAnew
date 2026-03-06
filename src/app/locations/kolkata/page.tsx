@@ -56,19 +56,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Locations",
-      "item": "https://amalegalsolutions.com/locations"
+      "item": "https://www.amalegalsolutions.com/locations"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Kolkata",
-      "item": "https://amalegalsolutions.com/locations/kolkata"
+      "item": "https://www.amalegalsolutions.com/locations/kolkata"
     }
   ]
 };
@@ -78,7 +78,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "AMA Legal Solutions Kolkata",
-  "image": "https://amalegalsolutions.com/city4.svg",
+  "image": "https://www.amalegalsolutions.com/city4.svg",
   "description": "Leading law firm in Kolkata providing expert legal services in High Court Litigation, Corporate Law, Real Estate, and Family Disputes.",
   "address": {
     "@type": "PostalAddress",
@@ -91,7 +91,7 @@ const articleSchema = {
     "latitude": "22.5726",
     "longitude": "88.3639"
   },
-  "url": "https://amalegalsolutions.com/locations/kolkata",
+  "url": "https://www.amalegalsolutions.com/locations/kolkata",
   "telephone": "+918700343611",
   "priceRange": "$$",
   "openingHoursSpecification": [
@@ -135,7 +135,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Kolkata",
-  "image": "https://amalegalsolutions.com/city4.svg",
+  "image": "https://www.amalegalsolutions.com/city4.svg",
   "description": "Top-tier legal services in Kolkata by AMA Legal Solutions.",
   "brand": {
     "@type": "Brand",
@@ -216,12 +216,12 @@ export const metadata = {
     "legal consultant salt lake"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/locations/kolkata',
+    canonical: 'https://www.amalegalsolutions.com/locations/kolkata',
   },
   openGraph: {
     title: "Lawyers in Kolkata | Premier Legal Counsel West Bengal",
     description: "Expert legal representation in Kolkata. Corporate, Civil, Criminal, and Property Law services by AMA Legal Solutions.",
-    url: "https://amalegalsolutions.com/locations/kolkata",
+    url: "https://www.amalegalsolutions.com/locations/kolkata",
     type: "website",
     images: [
       {

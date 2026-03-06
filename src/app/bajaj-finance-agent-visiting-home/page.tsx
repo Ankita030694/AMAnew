@@ -46,13 +46,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Bajaj Finance Agent Visiting Home",
-      "item": "https://amalegalsolutions.com/bajaj-finance-agent-visiting-home"
+      "item": "https://www.amalegalsolutions.com/bajaj-finance-agent-visiting-home"
     }
   ]
 };
@@ -72,7 +72,7 @@ const articleSchema = {
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-03-24",
@@ -98,7 +98,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Protection Against Bajaj Finance Harassment",
-  "image": "https://amalegalsolutions.com/services/bajaj-harassment-relief.png",
+  "image": "https://www.amalegalsolutions.com/services/bajaj-harassment-relief.png",
   "description": "Expert legal services to stop Bajaj Finance recovery agents from visiting your residence or workplace using RBI and judicial frameworks.",
   "brand": {
     "@type": "Brand",
@@ -129,7 +129,7 @@ export const metadata = {
     "ama legal solutions bajaj finance help"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/bajaj-finance-agent-visiting-home',
+    canonical: 'https://www.amalegalsolutions.com/bajaj-finance-agent-visiting-home',
   }
 };
 

@@ -9,7 +9,7 @@ export const metadata = {
     title: "Banking and Finance Services in Uttarakhand | AMA Legal Solutions",
     description:
       "Expert legal consultancy for banking and finance in Uttarakhand. NBFC registration in Dehradun, tourism finance, and hydropower project lending.",
-    url: "https://amalegalsolutions.com/services/banking-and-finance/uttarakhand",
+    url: "https://www.amalegalsolutions.com/services/banking-and-finance/uttarakhand",
     siteName: "AMA Legal Solutions",
     locale: "en_US",
     type: "article",

@@ -56,19 +56,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Locations",
-      "item": "https://amalegalsolutions.com/locations"
+      "item": "https://www.amalegalsolutions.com/locations"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Tamil Nadu",
-      "item": "https://amalegalsolutions.com/locations/tamil-nadu"
+      "item": "https://www.amalegalsolutions.com/locations/tamil-nadu"
     }
   ]
 };
@@ -78,7 +78,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "AMA Legal Solutions Tamil Nadu",
-  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+  "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Leading law firm in Tamil Nadu specializing in Madras High Court Litigation, Corporate Law, Maritime Law, and IP for SaaS.",
   "address": {
     "@type": "PostalAddress",
@@ -93,7 +93,7 @@ const articleSchema = {
     { "@type": "City", "name": "Salem" },
     { "@type": "State", "name": "Tamil Nadu" }
   ],
-  "url": "https://amalegalsolutions.com/locations/tamil-nadu",
+  "url": "https://www.amalegalsolutions.com/locations/tamil-nadu",
   "telephone": "+918448512333",
   "priceRange": "₹₹",
   "openingHoursSpecification": [
@@ -137,7 +137,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Tamil Nadu",
-  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+  "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Expert legal services in Tamil Nadu by AMA Legal Solutions.",
   "brand": {
     "@type": "Brand",
@@ -217,12 +217,12 @@ export const metadata = {
     "Civil Lawyers Madurai"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/locations/tamil-nadu',
+    canonical: 'https://www.amalegalsolutions.com/locations/tamil-nadu',
   },
   openGraph: {
     title: "Lawyers in Tamil Nadu | High Court & Corporate Legal Services",
     description: "Expert legal representation in Tamil Nadu. Civil, Criminal, Corporate, and Maritime services by AMA Legal Solutions.",
-    url: "https://amalegalsolutions.com/locations/tamil-nadu",
+    url: "https://www.amalegalsolutions.com/locations/tamil-nadu",
     type: "website",
     images: [
       {

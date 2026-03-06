@@ -57,25 +57,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Mizoram",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/Mizoram"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/Mizoram"
     }
   ]
 };
@@ -86,25 +86,25 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Loan Settlement Services in Mizoram: Expert Legal Debt Relief",
   "description": "Struggling with debt in Mizoram? Get expert legal help for loan settlement in Aizawl, Lunglei, and across the state. Stop harassment and settle your loans legally.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-11-21",
   "dateModified": "2024-11-21",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://amalegalsolutions.com/services/loan-settlement/Mizoram"
+    "@id": "https://www.amalegalsolutions.com/services/loan-settlement/Mizoram"
   }
 };
 
@@ -127,7 +127,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Loan Settlement Services Mizoram",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Top-rated loan settlement and debt relief services in Mizoram.",
   "brand": {
     "@type": "Brand",
@@ -171,12 +171,12 @@ export const metadata = {
   description:
     "Expert loan settlement services in Mizoram. We help you settle personal and business loans in Aizawl, Lunglei, and Champhai. Stop harassment and reduce debt.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/Mizoram',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/mizoram',
   },
   openGraph: {
     title: "Loan Settlement in Mizoram | Debt Settlement Lawyers Aizawl",
     description: "Struggling with debt in Mizoram? We negotiate with banks to reduce your debt and stop harassment. Legal, safe, and effective services in Aizawl.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/Mizoram",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/Mizoram",
     type: "website",
     images: [
       {

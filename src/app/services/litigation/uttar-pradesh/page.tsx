@@ -77,25 +77,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Litigation Services",
-      "item": "https://amalegalsolutions.com/services/litigation"
+      "item": "https://www.amalegalsolutions.com/services/litigation"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Uttar Pradesh",
-      "item": "https://amalegalsolutions.com/services/litigation/uttar-pradesh"
+      "item": "https://www.amalegalsolutions.com/services/litigation/uttar-pradesh"
     }
   ]
 };
@@ -106,18 +106,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Litigation Services in Uttar Pradesh: Allahabad High Court & Lucknow Bench",
   "description": "Expert litigation services in Uttar Pradesh. Representing clients in Allahabad High Court, Lucknow Bench, NCLT, and District Courts in Noida, Ghaziabad, Kanpur, and Lucknow.",
-  "image": "https://amalegalsolutions.com/services/litigation-uttar-pradesh.png", // Placeholder
+  "image": "https://www.amalegalsolutions.com/services/litigation-uttar-pradesh.png", // Placeholder
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-12-02",
@@ -143,7 +143,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Litigation Services Uttar Pradesh",
-  "image": "https://amalegalsolutions.com/services/litigation-uttar-pradesh.png",
+  "image": "https://www.amalegalsolutions.com/services/litigation-uttar-pradesh.png",
   "description": "Top-tier litigation services for Allahabad High Court and UP District Courts.",
   "brand": {
     "@type": "Brand",
@@ -199,12 +199,12 @@ export const metadata = {
     "up revenue code lawyer"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/litigation/uttar-pradesh',
+    canonical: 'https://www.amalegalsolutions.com/services/litigation/uttar-pradesh',
   },
   openGraph: {
     title: "Litigation Services in Uttar Pradesh | Allahabad High Court Lawyers",
     description: "Expert litigation services in Uttar Pradesh. Representing clients in Allahabad High Court, Lucknow Bench, and District Courts.",
-    url: "https://amalegalsolutions.com/services/litigation/uttar-pradesh",
+    url: "https://www.amalegalsolutions.com/services/litigation/uttar-pradesh",
     type: "website",
     images: [
       {

@@ -113,19 +113,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Employer Not Paying Salary After Resignation",
-      "item": "https://amalegalsolutions.com/employer-not-paying-salary-after-resignation"
+      "item": "https://www.amalegalsolutions.com/employer-not-paying-salary-after-resignation"
     }
   ]
 };
@@ -136,18 +136,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Employer Not Paying Salary After Resignation? Legal Remedies for Salary Recovery in India",
   "description": "Comprehensive guide on what to do when your employer refuses to pay your salary or FNF after resignation. Learn about legal notices, labor court procedures, and your rights.",
-  "image": "https://amalegalsolutions.com/og-salary-recovery.png",
+  "image": "https://www.amalegalsolutions.com/og-salary-recovery.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-11",
@@ -173,7 +173,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Salary Recovery Legal Services",
-  "image": "https://amalegalsolutions.com/og-salary-recovery.png",
+  "image": "https://www.amalegalsolutions.com/og-salary-recovery.png",
   "description": "Expert legal assistance for recovering unpaid salary and FNF dues from employers in India.",
   "brand": {
     "@type": "Brand",
@@ -229,7 +229,7 @@ export const metadata = {
     "how to track unpaid salary"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/employer-not-paying-salary-after-resignation',
+    canonical: 'https://www.amalegalsolutions.com/employer-not-paying-salary-after-resignation',
   },
 };
 

@@ -16,25 +16,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://amalegalsolutions.com",
+      item: "https://www.amalegalsolutions.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Services",
-      item: "https://amalegalsolutions.com/services",
+      item: "https://www.amalegalsolutions.com/services",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Banking and Finance",
-      item: "https://amalegalsolutions.com/services/banking-and-finance",
+      item: "https://www.amalegalsolutions.com/services/banking-and-finance",
     },
     {
       "@type": "ListItem",
       position: 4,
       name: "Madhya Pradesh",
-      item: "https://amalegalsolutions.com/services/banking-and-finance/madhya-pradesh",
+      item: "https://www.amalegalsolutions.com/services/banking-and-finance/madhya-pradesh",
     },
   ],
 };
@@ -45,18 +45,18 @@ const articleSchema = {
   headline: "Banking and Finance Services in Madhya Pradesh: The Heart of India's Economy",
   description:
     "Expert legal consultancy for banking and finance services in Madhya Pradesh. Assistance with NBFC registration in Indore, MSME finance in Pithampur, and agricultural lending compliance.",
-  image: "https://amalegalsolutions.com/services/banking-finance-madhya-pradesh.png",
+  image: "https://www.amalegalsolutions.com/services/banking-finance-madhya-pradesh.png",
   author: {
     "@type": "Organization",
     name: "AMA Legal Solutions",
-    url: "https://amalegalsolutions.com",
+    url: "https://www.amalegalsolutions.com",
   },
   publisher: {
     "@type": "Organization",
     name: "AMA Legal Solutions",
     logo: {
       "@type": "ImageObject",
-      url: "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+      url: "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
     },
   },
   datePublished: "2024-11-27",
@@ -67,7 +67,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "Banking and Finance Legal Services Madhya Pradesh",
-  image: "https://amalegalsolutions.com/services/banking-finance-madhya-pradesh.png",
+  image: "https://www.amalegalsolutions.com/services/banking-finance-madhya-pradesh.png",
   description:
     "Premier legal consultancy for the banking and finance sector in Indore, Bhopal, and across Madhya Pradesh.",
   brand: {

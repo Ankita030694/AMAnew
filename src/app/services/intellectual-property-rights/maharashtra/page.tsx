@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Protect your brand & innovation in Maharashtra. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Mumbai, Pune & across the state.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/intellectual-property-rights/Maharashtra',
+    canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/maharashtra',
   },
   openGraph: {
     title: "Intellectual Property Rights in Maharashtra | Expert IP Lawyers Mumbai",
     description: "Protect your brand & innovation in Maharashtra. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Mumbai, Pune & across the state.",
-    url: "https://amalegalsolutions.com/services/intellectual-property-rights/Maharashtra",
+    url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/Maharashtra",
     type: "website",
     images: [
       {
@@ -36,25 +36,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Intellectual Property Rights",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Maharashtra",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights/Maharashtra"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights/Maharashtra"
     }
   ]
 };
@@ -64,18 +64,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Intellectual Property Rights Services in Maharashtra: Secure Your Innovation",
   "description": "Comprehensive guide to IPR protection in Maharashtra. Learn about trademark registration, patent filing, and copyright laws in Mumbai and Pune.",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -86,7 +86,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "IPR Services Maharashtra",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "description": "Expert intellectual property legal services in Maharashtra.",
   "brand": {
     "@type": "Brand",

@@ -58,13 +58,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "How to Stop Recovery Agent from Coming Home",
-      "item": "https://amalegalsolutions.com/how-do-i-stop-recovery-agent-from-coming-home"
+      "item": "https://www.amalegalsolutions.com/how-do-i-stop-recovery-agent-from-coming-home"
     }
   ]
 };
@@ -84,7 +84,7 @@ const articleSchema = {
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-03-22",
@@ -110,7 +110,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Protection Against Recovery Visits",
-  "image": "https://amalegalsolutions.com/services/harassment-relief-icon.png",
+  "image": "https://www.amalegalsolutions.com/services/harassment-relief-icon.png",
   "description": "Expert legal services to stop recovery agents from visiting your residence or workplace using RBI and judicial frameworks.",
   "brand": {
     "@type": "Brand",
@@ -141,7 +141,7 @@ export const metadata = {
     "ama legal solutions recovery agent help"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/how-do-i-stop-recovery-agent-from-coming-home',
+    canonical: 'https://www.amalegalsolutions.com/how-do-i-stop-recovery-agent-from-coming-home',
   }
 };
 

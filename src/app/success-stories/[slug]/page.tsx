@@ -60,7 +60,7 @@ export default async function SuccessStoryPage({ params }: Props) {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.label,
-      "item": `https://amalegalsolutions.com${item.href}`
+      "item": `https://www.amalegalsolutions.com${item.href}`
     }))
   };
 
@@ -69,18 +69,18 @@ export default async function SuccessStoryPage({ params }: Props) {
     "@type": "Article",
     "headline": story.seo.title,
     "description": story.seo.description,
-    "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png", // Fallback or specific image
+    "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png", // Fallback or specific image
     "author": {
       "@type": "Organization",
       "name": "AMA Legal Solutions",
-      "url": "https://amalegalsolutions.com"
+      "url": "https://www.amalegalsolutions.com"
     },
      "publisher": {
       "@type": "Organization",
       "name": "AMA Legal Solutions",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+        "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
       }
     },
   };

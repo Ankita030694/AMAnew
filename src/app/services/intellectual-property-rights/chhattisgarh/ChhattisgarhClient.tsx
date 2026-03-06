@@ -451,18 +451,18 @@ export default function ChhattisgarhClient() {
             "@type": "Article",
             "headline": "Intellectual Property Rights Services in Chhattisgarh",
             "description": "Comprehensive IPR services in Chhattisgarh including Trademark, Patent, and Copyright registration. Protect your brand and innovations with expert legal support.",
-            "image": "https://amalegalsolutions.com/services/ipr-chhattisgarh.jpg",
+            "image": "https://www.amalegalsolutions.com/services/ipr-chhattisgarh.jpg",
             "author": {
               "@type": "Organization",
               "name": "AMA Legal Solutions",
-              "url": "https://amalegalsolutions.com"
+              "url": "https://www.amalegalsolutions.com"
             },
             "publisher": {
               "@type": "Organization",
               "name": "AMA Legal Solutions",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+                "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
               }
             },
             "datePublished": "2024-11-26",
@@ -478,7 +478,7 @@ export default function ChhattisgarhClient() {
             "@context": "https://schema.org",
             "@type": "Product",
             "name": "IPR Services Chhattisgarh",
-            "image": "https://amalegalsolutions.com/services/ipr-chhattisgarh.jpg",
+            "image": "https://www.amalegalsolutions.com/services/ipr-chhattisgarh.jpg",
             "description": "Expert Intellectual Property Rights registration and protection services in Chhattisgarh.",
             "brand": {
               "@type": "Brand",

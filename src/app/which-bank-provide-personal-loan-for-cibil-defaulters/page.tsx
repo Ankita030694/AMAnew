@@ -58,13 +58,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Personal Loan for CIBIL Defaulters",
-      "item": "https://amalegalsolutions.com/which-bank-provide-personal-loan-for-cibil-defaulters"
+      "item": "https://www.amalegalsolutions.com/which-bank-provide-personal-loan-for-cibil-defaulters"
     }
   ]
 };
@@ -75,18 +75,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Which Bank Provides Personal Loan for CIBIL Defaulters in India? (2025 Guide)",
   "description": "Struggling with a low credit score? Discover which banks and NBFCs provide personal loans for CIBIL defaulters. Learn about interest rates, eligibility, and legal rights.",
-  "image": "https://amalegalsolutions.com/og-cibil-defaulter-loan.png",
+  "image": "https://www.amalegalsolutions.com/og-cibil-defaulter-loan.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-23",
@@ -112,7 +112,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "CIBIL Defaulter Loan Assistance",
-  "image": "https://amalegalsolutions.com/services/loan-assistance-icon.png",
+  "image": "https://www.amalegalsolutions.com/services/loan-assistance-icon.png",
   "description": "Expert legal and financial guidance for securing loans with low CIBIL scores in India.",
   "brand": {
     "@type": "Brand",
@@ -177,12 +177,12 @@ export const metadata = {
     "credit score for personal loan india"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/which-bank-provide-personal-loan-for-cibil-defaulters',
+    canonical: 'https://www.amalegalsolutions.com/which-bank-provide-personal-loan-for-cibil-defaulters',
   },
   openGraph: {
     title: "Which Bank Provide Personal Loan for CIBIL Defaulters India (2025)",
     description: "Expert guide on securing personal loans despite a history of CIBIL defaults. Learn which banks and NBFCs are lending today.",
-    url: "https://amalegalsolutions.com/which-bank-provide-personal-loan-for-cibil-defaulters",
+    url: "https://www.amalegalsolutions.com/which-bank-provide-personal-loan-for-cibil-defaulters",
     type: "article",
     images: [
       {

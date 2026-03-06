@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Leading IPR firm in Madhya Pradesh. Expert legal services for Trademark Registration, Patent Filing, and Copyright protection in Indore, Bhopal, Gwalior, and Pithampur.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/intellectual-property-rights/madhya-pradesh',
+    canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/madhya-pradesh',
   },
   openGraph: {
     title: "IPR Services in Madhya Pradesh | Trademark & Patent Consultants",
     description: "Leading IPR firm in Madhya Pradesh. Expert legal services for Trademark Registration, Patent Filing, and Copyright protection in Indore, Bhopal, Gwalior, and Pithampur.",
-    url: "https://amalegalsolutions.com/services/intellectual-property-rights/madhya-pradesh",
+    url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/madhya-pradesh",
     type: "website",
     images: [
       {
@@ -36,25 +36,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Intellectual Property Rights",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Madhya Pradesh",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights/madhya-pradesh"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights/madhya-pradesh"
     }
   ]
 };
@@ -64,18 +64,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Intellectual Property Rights Services in Madhya Pradesh: Protecting the Heart of India",
   "description": "Comprehensive guide to IPR in Madhya Pradesh. From automobile patents in Pithampur to textile trademarks in Indore, we cover all legal aspects of IP protection.",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-11-27",
@@ -86,7 +86,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "IPR Services Madhya Pradesh",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "description": "Expert legal services for intellectual property in MP.",
   "brand": {
     "@type": "Brand",

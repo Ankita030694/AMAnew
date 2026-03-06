@@ -58,19 +58,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "How to Settle Loans Above 5 Crore",
-      "item": "https://amalegalsolutions.com/how-to-settle-loans-above-5-crore"
+      "item": "https://www.amalegalsolutions.com/how-to-settle-loans-above-5-crore"
     }
   ]
 };
@@ -81,18 +81,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "How to Settle Loans Above 5 Crore in India: A Comprehensive Legal Guide",
   "description": "The ultimate guide to settling high-value loans above 5 crore in India. Expert insights on RBI guidelines, OTS schemes, NCLT withdrawals, and legal strategies.",
-  "image": "https://amalegalsolutions.com/newAssets/high-value-debt-resolution.webp",
+  "image": "https://www.amalegalsolutions.com/newAssets/high-value-debt-resolution.webp",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-05-15",
@@ -118,7 +118,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Corporate Loan Settlement Advisory",
-  "image": "https://amalegalsolutions.com/newAssets/corporate-loan-settlement.webp",
+  "image": "https://www.amalegalsolutions.com/newAssets/corporate-loan-settlement.webp",
   "description": "Elite legal advisory for settling corporate and high-value loans exceeding 5 crore with Indian banks and ARCs.",
   "brand": {
     "@type": "Brand",
@@ -173,7 +173,7 @@ export const metadata = {
     "bank settlement management committee"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/how-to-settle-loans-above-5-crore',
+    canonical: 'https://www.amalegalsolutions.com/how-to-settle-loans-above-5-crore',
   },
 };
 

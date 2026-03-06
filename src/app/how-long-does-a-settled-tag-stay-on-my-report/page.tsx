@@ -58,19 +58,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "CIBIL Resources",
-      "item": "https://amalegalsolutions.com/resources"
+      "item": "https://www.amalegalsolutions.com/resources"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "How Long Does a Settled Tag Stay on My Report",
-      "item": "https://amalegalsolutions.com/how-long-does-a-settled-tag-stay-on-my-report"
+      "item": "https://www.amalegalsolutions.com/how-long-does-a-settled-tag-stay-on-my-report"
     }
   ]
 };
@@ -81,18 +81,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "How Long Does a Settled Tag Stay on My Report? Complete Guide to CIBIL Settlement",
   "description": "Exhaustive guide on the duration of settled status on credit reports in India. Learn about the 7-year rule, impact on credit scores, and legal methods to remove settled tags.",
-  "image": "https://amalegalsolutions.com/newAssets/cibil-settlement-guide.webp",
+  "image": "https://www.amalegalsolutions.com/newAssets/cibil-settlement-guide.webp",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-06-10",
@@ -118,7 +118,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Credit Report Restoration Service",
-  "image": "https://amalegalsolutions.com/newAssets/credit-repair-india.webp",
+  "image": "https://www.amalegalsolutions.com/newAssets/credit-repair-india.webp",
   "description": "Professional legal assistance to resolve credit report issues, including settlement to closure transitions and CIBIL dispute resolution.",
   "brand": {
     "@type": "Brand",
@@ -197,7 +197,7 @@ export const metadata = {
     "cibil dispute for settled tag"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/how-long-does-a-settled-tag-stay-on-my-report',
+    canonical: 'https://www.amalegalsolutions.com/how-long-does-a-settled-tag-stay-on-my-report',
   },
 };
 

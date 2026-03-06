@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Expert Intellectual Property Rights services in Jharkhand. Secure your Trademark, Patent, and Copyright in Ranchi, Jamshedpur, and Dhanbad with AMA Legal Solutions.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/intellectual-property-rights/jharkhand',
+    canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/jharkhand',
   },
   openGraph: {
     title: "IPR Services in Jharkhand | Trademark & Patent Attorneys Ranchi",
     description: "Expert Intellectual Property Rights services in Jharkhand. Secure your Trademark, Patent, and Copyright in Ranchi, Jamshedpur, and Dhanbad with AMA Legal Solutions.",
-    url: "https://amalegalsolutions.com/services/intellectual-property-rights/jharkhand",
+    url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/jharkhand",
     type: "website",
     images: [
       {
@@ -36,25 +36,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Intellectual Property Rights",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Jharkhand",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights/jharkhand"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights/jharkhand"
     }
   ]
 };
@@ -64,18 +64,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Intellectual Property Rights Services in Jharkhand: Mining Innovation",
   "description": "A complete guide to IPR protection in Jharkhand. From industrial patents in Jamshedpur to tribal art GI tags, we cover all legal aspects of IP in the state.",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-11-27",
@@ -86,7 +86,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "IPR Services Jharkhand",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "description": "Professional IP legal services in Jharkhand.",
   "brand": {
     "@type": "Brand",

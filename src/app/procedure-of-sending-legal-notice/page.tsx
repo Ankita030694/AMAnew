@@ -65,13 +65,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Procedure of Sending Legal Notice",
-      "item": "https://amalegalsolutions.com/procedure-of-sending-legal-notice"
+      "item": "https://www.amalegalsolutions.com/procedure-of-sending-legal-notice"
     }
   ]
 };
@@ -82,18 +82,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Detailed Procedure of Sending legal notice in India: A Comprehensive Guide",
   "description": "Learn the step by step procedure of sending a legal notice in India. Understand the legal requirements, importance, and common pitfalls in legal drafting.",
-  "image": "https://amalegalsolutions.com/newAssets/hero-bg.jpg",
+  "image": "https://www.amalegalsolutions.com/newAssets/hero-bg.jpg",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-01-10",
@@ -119,7 +119,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Notice Services",
-  "image": "https://amalegalsolutions.com/newAssets/hero-bg.jpg",
+  "image": "https://www.amalegalsolutions.com/newAssets/hero-bg.jpg",
   "description": "Expert legal notice drafting and dispatch services in India.",
   "brand": {
     "@type": "Brand",
@@ -641,12 +641,12 @@ export const metadata = {
     "section 138 ni act notice"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/procedure-of-sending-legal-notice',
+    canonical: 'https://www.amalegalsolutions.com/procedure-of-sending-legal-notice',
   },
   openGraph: {
     title: "Procedure of Sending Legal Notice in India | Detailed Guide",
     description: "Step by step guide on the procedure of sending legal notice in India. Ensure your legal notices are valid and effective.",
-    url: "https://amalegalsolutions.com/procedure-of-sending-legal-notice",
+    url: "https://www.amalegalsolutions.com/procedure-of-sending-legal-notice",
     type: "article",
     images: [
       {

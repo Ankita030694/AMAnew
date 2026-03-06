@@ -77,25 +77,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Litigation Services",
-      "item": "https://amalegalsolutions.com/services/litigation"
+      "item": "https://www.amalegalsolutions.com/services/litigation"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Delhi",
-      "item": "https://amalegalsolutions.com/services/litigation/delhi"
+      "item": "https://www.amalegalsolutions.com/services/litigation/delhi"
     }
   ]
 };
@@ -106,18 +106,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Litigation Services in Delhi: Expert Lawyers for High Court & District Courts",
   "description": "Comprehensive guide to litigation services in Delhi. Expert legal representation for Civil, Criminal, Commercial, and IPR disputes in Delhi High Court, Tis Hazari, Patiala House, and all District Courts.",
-  "image": "https://amalegalsolutions.com/services/13.png",
+  "image": "https://www.amalegalsolutions.com/services/13.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-25",
@@ -143,7 +143,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Litigation Services Delhi",
-  "image": "https://amalegalsolutions.com/services/13.png",
+  "image": "https://www.amalegalsolutions.com/services/13.png",
   "description": "Top-tier litigation services for Delhi High Court and District Courts.",
   "brand": {
     "@type": "Brand",
@@ -199,12 +199,12 @@ export const metadata = {
     "bail lawyer delhi"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/litigation/delhi',
+    canonical: 'https://www.amalegalsolutions.com/services/litigation/delhi',
   },
   openGraph: {
     title: "Litigation Services in Delhi | Delhi High Court & District Court Lawyers",
     description: "Expert litigation services in Delhi. Representing clients in Delhi High Court and all District Courts.",
-    url: "https://amalegalsolutions.com/services/litigation/delhi",
+    url: "https://www.amalegalsolutions.com/services/litigation/delhi",
     type: "website",
     images: [
       {

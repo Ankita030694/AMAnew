@@ -13,12 +13,12 @@ export const metadata = {
   title: "South Indian Bank Loan Settlement | Gold & Personal Loan OTS | AMA Legal Solutions",
   description: "Struggling with South Indian Bank loan repayment? Expert legal help for settling Gold Loans, Personal Loans, and Business Loans. Stop auction and harassment.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/south-indian-bank',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/south-indian-bank',
   },
   openGraph: {
     title: "South Indian Bank Loan Settlement | Gold & Personal Loan OTS | AMA Legal Solutions",
     description: "Struggling with South Indian Bank loan repayment? Expert legal help for settling Gold Loans, Personal Loans, and Business Loans. Stop auction and harassment.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/south-indian-bank",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/south-indian-bank",
     type: "website",
     images: [
       {
@@ -40,25 +40,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "South Indian Bank Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/south-indian-bank"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/south-indian-bank"
     }
   ]
 };
@@ -68,18 +68,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "South Indian Bank Loan Settlement: A Complete Guide to OTS",
   "description": "Learn how to settle your South Indian Bank gold, personal, or business loan through the One Time Settlement (OTS) scheme. Expert legal advice to stop auctions and legal action.",
-  "image": "https://amalegalsolutions.com/services/9.png",
+  "image": "https://www.amalegalsolutions.com/services/9.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -103,7 +103,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "South Indian Bank Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/9.png",
+  "image": "https://www.amalegalsolutions.com/services/9.png",
   "description": "Legal settlement services for South Indian Bank loans.",
   "brand": {
     "@type": "Brand",

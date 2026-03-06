@@ -5,12 +5,12 @@ export const metadata = {
   description:
     "Expert IPR services in Tripura. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets today.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/intellectual-property-rights/tripura',
+    canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/tripura',
   },
   openGraph: {
     title: "Intellectual Property Rights Services in Tripura | Trademark & Patent",
     description: "Expert IPR services in Tripura. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets today.",
-    url: "https://amalegalsolutions.com/services/intellectual-property-rights/tripura",
+    url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/tripura",
     type: "website",
     images: [
       {
@@ -31,25 +31,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Intellectual Property Rights",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Tripura",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights/tripura"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights/tripura"
     }
   ]
 };

@@ -57,19 +57,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement Services",
-      "item": "https://amalegalsolutions.com/what-loan-settlement-service-can-help-me-reduce-my-outstanding-debt-quickly"
+      "item": "https://www.amalegalsolutions.com/what-loan-settlement-service-can-help-me-reduce-my-outstanding-debt-quickly"
     }
   ]
 };
@@ -80,18 +80,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "What Loan Settlement Service Can Help Me Reduce My Outstanding Debt Quickly?",
   "description": "Discover the best loan settlement service to reduce your outstanding debt quickly. Learn about the process, benefits, and how AMA Legal Solutions can help you become debt-free.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-15",
@@ -117,7 +117,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Expert legal loan settlement services in India to reduce outstanding debt quickly.",
   "brand": {
     "@type": "Brand",
@@ -173,12 +173,12 @@ export const metadata = {
     "npa management"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/what-loan-settlement-service-can-help-me-reduce-my-outstanding-debt-quickly',
+    canonical: 'https://www.amalegalsolutions.com/what-loan-settlement-service-can-help-me-reduce-my-outstanding-debt-quickly',
   },
   openGraph: {
     title: "What Loan Settlement Service Can Help Me Reduce My Outstanding Debt Quickly?",
     description: "Looking for a loan settlement service to reduce outstanding debt quickly? AMA Legal Solutions offers expert legal negotiation.",
-    url: "https://amalegalsolutions.com/what-loan-settlement-service-can-help-me-reduce-my-outstanding-debt-quickly",
+    url: "https://www.amalegalsolutions.com/what-loan-settlement-service-can-help-me-reduce-my-outstanding-debt-quickly",
     type: "article",
     images: [
       {

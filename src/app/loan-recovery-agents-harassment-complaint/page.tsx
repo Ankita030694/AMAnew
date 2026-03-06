@@ -58,13 +58,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Loan Recovery Agents Harassment Complaint",
-      "item": "https://amalegalsolutions.com/loan-recovery-agents-harassment-complaint"
+      "item": "https://www.amalegalsolutions.com/loan-recovery-agents-harassment-complaint"
     }
   ]
 };
@@ -84,7 +84,7 @@ const articleSchema = {
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-03-20",
@@ -110,7 +110,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Relief from Recovery Harassment",
-  "image": "https://amalegalsolutions.com/services/harassment-relief-icon.png",
+  "image": "https://www.amalegalsolutions.com/services/harassment-relief-icon.png",
   "description": "Professional legal services for filing complaints against bank recovery agents and obtaining court stay orders.",
   "brand": {
     "@type": "Brand",
@@ -144,7 +144,7 @@ export const metadata = {
     "harassment by nbfc recovery agents"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/loan-recovery-agents-harassment-complaint',
+    canonical: 'https://www.amalegalsolutions.com/loan-recovery-agents-harassment-complaint',
   }
 };
 

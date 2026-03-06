@@ -79,13 +79,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Best Law Firm Near Me",
-      "item": "https://amalegalsolutions.com/best-law-firm-near-me"
+      "item": "https://www.amalegalsolutions.com/best-law-firm-near-me"
     }
   ]
 };
@@ -96,18 +96,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Best Law Firm Near Me: Top-Tier Legal Services in India",
   "description": "Comprehensive guide to finding the best law firm in India. Expert legal services in civil, criminal, family, and corporate law. Consult with top advocates today.",
-  "image": "https://amalegalsolutions.com/newAssets/hero-bg.jpg",
+  "image": "https://www.amalegalsolutions.com/newAssets/hero-bg.jpg",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-04",
@@ -133,7 +133,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services - Best Law Firm Near Me",
-  "image": "https://amalegalsolutions.com/newAssets/hero-bg.jpg",
+  "image": "https://www.amalegalsolutions.com/newAssets/hero-bg.jpg",
   "description": "Expert legal services in India covering civil, criminal, family, and corporate law.",
   "brand": {
     "@type": "Brand",
@@ -174,7 +174,7 @@ export const metadata = {
     "matrimonial law firm"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/best-law-firm-near-me',
+    canonical: 'https://www.amalegalsolutions.com/best-law-firm-near-me',
   },
 };
 

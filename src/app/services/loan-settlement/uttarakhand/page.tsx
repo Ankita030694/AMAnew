@@ -77,25 +77,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Uttarakhand",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/uttarakhand"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/uttarakhand"
     }
   ]
 };
@@ -106,25 +106,25 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Loan Settlement Services in Uttarakhand: Expert Legal Debt Relief",
   "description": "Struggling with debt in Uttarakhand? Get expert legal help for loan settlement in Dehradun, Haridwar, and across the state. Stop harassment and reduce your debt.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-11-21",
   "dateModified": "2024-11-21",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://amalegalsolutions.com/services/loan-settlement/uttarakhand"
+    "@id": "https://www.amalegalsolutions.com/services/loan-settlement/uttarakhand"
   }
 };
 
@@ -147,7 +147,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Loan Settlement Services Uttarakhand",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Top-rated loan settlement and debt relief services in Uttarakhand.",
   "brand": {
     "@type": "Brand",
@@ -191,12 +191,12 @@ export const metadata = {
   description:
     "Expert loan settlement services in Uttarakhand. We help you settle personal loans and credit card debt in Dehradun, Haridwar, and Haldwani. Stop harassment today.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/uttarakhand',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/uttarakhand',
   },
   openGraph: {
     title: "Loan Settlement in Uttarakhand | Debt Settlement Lawyers Dehradun",
     description: "Struggling with debt in Uttarakhand? We negotiate with banks to reduce your debt and stop harassment. Legal, safe, and effective services in Dehradun.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/uttarakhand",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/uttarakhand",
     type: "website",
     images: [
       {

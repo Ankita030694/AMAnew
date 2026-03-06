@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Struggling with debt in Chhattisgarh? AMA Legal Solutions offers expert loan settlement. We protect Tribal Land (CGLRC Sec 165), help Farmers in the Rice Bowl, and stop harassment.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/Chhattisgarh',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/chhattisgarh',
   },
   openGraph: {
     title: "Loan Settlement in Chhattisgarh | Debt Relief Lawyers Raipur, Bilaspur, Bhilai",
     description: "Struggling with debt in Chhattisgarh? AMA Legal Solutions offers expert loan settlement. We protect Tribal Land (CGLRC Sec 165), help Farmers in the Rice Bowl, and stop harassment.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/Chhattisgarh",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/Chhattisgarh",
     type: "website",
     images: [
       {
@@ -36,25 +36,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Chhattisgarh",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/Chhattisgarh"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/Chhattisgarh"
     }
   ]
 };
@@ -64,18 +64,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Loan Settlement Services in Chhattisgarh: Protecting the Rice Bowl",
   "description": "Comprehensive guide to loan settlement in Chhattisgarh. Learn how to legally settle loans, protect tribal land under CGLRC, and resolve mining/agriculture debt.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-21",
@@ -86,7 +86,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Loan Settlement Services Chhattisgarh",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Expert legal loan settlement services in Chhattisgarh.",
   "brand": {
     "@type": "Brand",

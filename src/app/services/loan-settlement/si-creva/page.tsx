@@ -13,12 +13,12 @@ export const metadata = {
   title: "Si Creva Loan Settlement | Kissht & Ring App Loan OTS | AMA Legal Solutions",
   description: "Unable to repay Si Creva (Kissht/Ring) loan? Stop harassment and legal threats. Expert legal help for One Time Settlement (OTS) of digital loans.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/si-creva',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/si-creva',
   },
   openGraph: {
     title: "Si Creva Loan Settlement | Kissht & Ring App Loan OTS | AMA Legal Solutions",
     description: "Unable to repay Si Creva (Kissht/Ring) loan? Stop harassment and legal threats. Expert legal help for One Time Settlement (OTS) of digital loans.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/si-creva",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/si-creva",
     type: "website",
     images: [
       {
@@ -40,25 +40,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Si Creva Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/si-creva"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/si-creva"
     }
   ]
 };
@@ -68,18 +68,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Si Creva (Kissht/Ring) Loan Settlement: A Complete Guide",
   "description": "Learn how to settle your Si Creva Capital Services loan (Kissht/Ring apps) through the One Time Settlement (OTS) scheme. Stop recovery harassment legally.",
-  "image": "https://amalegalsolutions.com/services/10.png",
+  "image": "https://www.amalegalsolutions.com/services/10.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -103,7 +103,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Si Creva Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/10.png",
+  "image": "https://www.amalegalsolutions.com/services/10.png",
   "description": "Legal settlement services for Si Creva (Kissht/Ring) loans.",
   "brand": {
     "@type": "Brand",

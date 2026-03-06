@@ -76,7 +76,7 @@ const webPageSchema = {
   "@type": "WebPage",
   "name": "Entertainment Lawyers in India | AMA Legal Solutions",
   "description": "Top-rated entertainment lawyers in India. Expert legal services for film, music, media, and digital content. Contract drafting, IP protection, and dispute resolution.",
-  "url": "https://amalegalsolutions.com/services/entertainment",
+  "url": "https://www.amalegalsolutions.com/services/entertainment",
   "mainEntity": {
     "@type": "FAQPage",
     "mainEntity": faqs.map(faq => ({
@@ -105,7 +105,7 @@ const articleSchema = {
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-10-27",
@@ -121,19 +121,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Entertainment Law",
-      "item": "https://amalegalsolutions.com/services/entertainment"
+      "item": "https://www.amalegalsolutions.com/services/entertainment"
     }
   ]
 };
@@ -153,12 +153,12 @@ export const metadata = {
     "intellectual property rights entertainment"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/entertainment',
+    canonical: 'https://www.amalegalsolutions.com/services/entertainment',
   },
   openGraph: {
     title: "Entertainment Lawyers in India | AMA Legal Solutions",
     description: "Expert legal counsel for the entertainment industry. From Bollywood to digital creators, we protect your art and business.",
-    url: "https://amalegalsolutions.com/services/entertainment",
+    url: "https://www.amalegalsolutions.com/services/entertainment",
     siteName: "AMA Legal Solutions",
     locale: "en_IN",
     type: "website",

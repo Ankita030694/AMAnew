@@ -15,25 +15,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "PNB Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/pnb-bank"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/pnb-bank"
     }
   ]
 };
@@ -44,18 +44,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "PNB Loan Settlement 2025: Special OTS Scheme & Lok Adalat Process",
   "description": "Settle your Punjab National Bank (PNB) loan legally. Learn about the Special OTS Scheme 2024-25, Lok Adalat settlement for Agriculture/MSME loans, and how to stop SARFAESI action.",
-  "image": "https://amalegalsolutions.com/services/6.png",
+  "image": "https://www.amalegalsolutions.com/services/6.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -67,7 +67,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "PNB Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/6.png",
+  "image": "https://www.amalegalsolutions.com/services/6.png",
   "description": "Legal settlement services for PNB Personal, MSME, and Agriculture loans.",
   "brand": {
     "@type": "Brand",
@@ -111,12 +111,12 @@ export const metadata = {
   description:
     "Expert legal help for PNB loan settlement. Settle Personal, MSME & Agriculture loans under Special OTS Scheme. Stop SARFAESI & DRT action.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/pnb-bank',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/pnb-bank',
   },
   openGraph: {
     title: "PNB Loan Settlement | Special OTS Scheme 2025 & Lok Adalat",
     description: "Expert legal help for PNB loan settlement. Settle Personal, MSME & Agriculture loans under Special OTS Scheme. Stop SARFAESI & DRT action.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/pnb-bank",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/pnb-bank",
     type: "website",
     images: [
       {

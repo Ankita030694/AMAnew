@@ -15,25 +15,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Navi Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/navi"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/navi"
     }
   ]
 };
@@ -44,18 +44,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Navi Loan Settlement: Legal Guide to Stop Harassment & Arbitration",
   "description": "Struggling with Navi Finserv loan? Learn about your digital rights, how to stop contact calling harassment, handle arbitration notices, and legally settle your debt.",
-  "image": "https://amalegalsolutions.com/services/5.png",
+  "image": "https://www.amalegalsolutions.com/services/5.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -67,7 +67,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Navi Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/5.png",
+  "image": "https://www.amalegalsolutions.com/services/5.png",
   "description": "Legal settlement services for Navi Finserv personal loans.",
   "brand": {
     "@type": "Brand",
@@ -111,12 +111,12 @@ export const metadata = {
   description:
     "Expert legal help for Navi Finserv loan settlement. Stop contact list harassment, handle arbitration notices, and negotiate a One Time Settlement (OTS).",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/navi',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/navi',
   },
   openGraph: {
     title: "Navi Loan Settlement | Stop Harassment & Arbitration Legal Help",
     description: "Expert legal help for Navi Finserv loan settlement. Stop contact list harassment, handle arbitration notices, and negotiate a One Time Settlement (OTS).",
-    url: "https://amalegalsolutions.com/services/loan-settlement/navi",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/navi",
     type: "website",
     images: [
       {

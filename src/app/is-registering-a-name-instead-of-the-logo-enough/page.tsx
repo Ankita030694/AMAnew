@@ -57,19 +57,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Queries",
-      "item": "https://amalegalsolutions.com/queries"
+      "item": "https://www.amalegalsolutions.com/queries"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Is Registering a Name Instead of the Logo Enough?",
-      "item": "https://amalegalsolutions.com/is-registering-a-name-instead-of-the-logo-enough"
+      "item": "https://www.amalegalsolutions.com/is-registering-a-name-instead-of-the-logo-enough"
     }
   ]
 };
@@ -80,18 +80,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Is Registering a Name Instead of the Logo Enough? A Complete Legal Guide",
   "description": "Explore whether registering a word mark (name) provides sufficient protection for your brand compared to a design mark (logo). Expert legal insights from AMA Legal Solutions.",
-  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+  "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
   "author": {
     "@type": "Organization",
     "name": "Team IPRKaro",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2026-02-07",
@@ -117,7 +117,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Trademark Registration Services",
-  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+  "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Expert legal assistance for trademarking brand names and logos in India.",
   "brand": {
     "@type": "Brand",
@@ -159,7 +159,7 @@ export const metadata = {
     "design mark limitations"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/is-registering-a-name-instead-of-the-logo-enough',
+    canonical: 'https://www.amalegalsolutions.com/is-registering-a-name-instead-of-the-logo-enough',
   }
 };
 

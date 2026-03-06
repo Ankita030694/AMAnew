@@ -77,19 +77,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Cyber Law",
-      "item": "https://amalegalsolutions.com/services/cyber"
+      "item": "https://www.amalegalsolutions.com/services/cyber"
     }
   ]
 };
@@ -100,18 +100,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Cyber Lawyers in India: Expert Legal Protection for Digital Crimes",
   "description": "Top-rated cyber lawyers in India. We provide expert legal services for cyber crime defense, online fraud recovery, data protection, and social media defamation.",
-  "image": "https://amalegalsolutions.com/services/10.png",
+  "image": "https://www.amalegalsolutions.com/services/10.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-10-01",
@@ -137,7 +137,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Cyber Law Services",
-  "image": "https://amalegalsolutions.com/services/10.png",
+  "image": "https://www.amalegalsolutions.com/services/10.png",
   "description": "Expert cyber law and digital crime legal services in India.",
   "brand": {
     "@type": "Brand",
@@ -181,12 +181,12 @@ export const metadata = {
   description:
     "Looking for the best cyber lawyers in India? AMA Legal Solutions offers expert legal help for cyber crimes, online fraud, data protection, and IT Act compliance. Secure your digital rights today.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/cyber',
+    canonical: 'https://www.amalegalsolutions.com/services/cyber',
   },
   openGraph: {
     title: "Cyber Lawyers in India | Cyber Crime & Data Protection Experts",
     description: "Looking for the best cyber lawyers in India? AMA Legal Solutions offers expert legal help for cyber crimes, online fraud, data protection, and IT Act compliance.",
-    url: "https://amalegalsolutions.com/services/cyber",
+    url: "https://www.amalegalsolutions.com/services/cyber",
     type: "website",
     images: [
       {

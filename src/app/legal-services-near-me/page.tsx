@@ -119,13 +119,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Legal Services Near Me",
-      "item": "https://amalegalsolutions.com/legal-services-near-me"
+      "item": "https://www.amalegalsolutions.com/legal-services-near-me"
     }
   ]
 };
@@ -136,18 +136,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Legal Services Near Me: Expert Consultation & Support in India",
   "description": "Find top-rated legal services near you. Expert advocates for civil, criminal, family, and corporate law. Get professional legal advice and representation today.",
-  "image": "https://amalegalsolutions.com/newAssets/hero-bg.jpg",
+  "image": "https://www.amalegalsolutions.com/newAssets/hero-bg.jpg",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-04",
@@ -173,7 +173,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Near Me",
-  "image": "https://amalegalsolutions.com/newAssets/hero-bg.jpg",
+  "image": "https://www.amalegalsolutions.com/newAssets/hero-bg.jpg",
   "description": "Comprehensive legal services and consultation in India.",
   "brand": {
     "@type": "Brand",
@@ -203,9 +203,9 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "AMA Legal Solutions",
-  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+  "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
   "telephone": "+918700343611",
-  "url": "https://amalegalsolutions.com/legal-services-near-me",
+  "url": "https://www.amalegalsolutions.com/legal-services-near-me",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Legal Solutions Tower",
@@ -247,7 +247,7 @@ export const metadata = {
     "property legal help"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/legal-services-near-me',
+    canonical: 'https://www.amalegalsolutions.com/legal-services-near-me',
   },
 };
 

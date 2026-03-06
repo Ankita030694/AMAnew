@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Leading IPR firm for Manipur. We secure Trademarks, Patents, and GI tags for Imphal's startups, handloom weavers, and agricultural producers. Expert legal guidance.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/intellectual-property-rights/manipur',
+    canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/manipur',
   },
   openGraph: {
     title: "IPR Services in Manipur | Trademark & Patent Consultants Imphal",
     description: "Leading IPR firm for Manipur. We secure Trademarks, Patents, and GI tags for Imphal's startups, handloom weavers, and agricultural producers. Expert legal guidance.",
-    url: "https://amalegalsolutions.com/services/intellectual-property-rights/manipur",
+    url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/manipur",
     type: "website",
     images: [
       {
@@ -36,25 +36,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Intellectual Property Rights",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Manipur",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights/manipur"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights/manipur"
     }
   ]
 };
@@ -64,18 +64,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Intellectual Property Rights Services in Manipur: Protecting Heritage & Innovation",
   "description": "A comprehensive guide to IPR in Manipur. From GI tags for Chak-Hao to trademarks for Imphal startups, we cover all legal aspects of IP protection.",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-11-27",
@@ -86,7 +86,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "IPR Services Manipur",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "description": "Professional IP legal services in Manipur.",
   "brand": {
     "@type": "Brand",

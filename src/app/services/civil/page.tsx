@@ -77,19 +77,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Civil Lawyers",
-      "item": "https://amalegalsolutions.com/services/civil"
+      "item": "https://www.amalegalsolutions.com/services/civil"
     }
   ]
 };
@@ -100,18 +100,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Civil Lawyers in India: Expert Legal Representation for Civil Disputes",
   "description": "Looking for top civil lawyers in India? AMA Legal Solutions offers expert legal services for property disputes, family law, contracts, and civil litigation. Get a free consultation.",
-  "image": "https://amalegalsolutions.com/services/13.png",
+  "image": "https://www.amalegalsolutions.com/services/13.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-15",
@@ -137,7 +137,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Civil Legal Services",
-  "image": "https://amalegalsolutions.com/services/13.png",
+  "image": "https://www.amalegalsolutions.com/services/13.png",
   "description": "Professional civil law services in India.",
   "brand": {
     "@type": "Brand",
@@ -181,12 +181,12 @@ export const metadata = {
   description:
     "Need expert civil lawyers in India? AMA Legal Solutions provides top-tier legal representation for property disputes, family law, contract breaches, and more. Secure your rights today.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/civil',
+    canonical: 'https://www.amalegalsolutions.com/services/civil',
   },
   openGraph: {
     title: "Civil Lawyers in India | Top Civil Litigation Services & Legal Advice",
     description: "Need expert civil lawyers in India? AMA Legal Solutions provides top-tier legal representation for property disputes, family law, contract breaches, and more.",
-    url: "https://amalegalsolutions.com/services/civil",
+    url: "https://www.amalegalsolutions.com/services/civil",
     type: "website",
     images: [
       {

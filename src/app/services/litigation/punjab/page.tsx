@@ -77,25 +77,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Litigation Services",
-      "item": "https://amalegalsolutions.com/services/litigation"
+      "item": "https://www.amalegalsolutions.com/services/litigation"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Punjab",
-      "item": "https://amalegalsolutions.com/services/litigation/punjab"
+      "item": "https://www.amalegalsolutions.com/services/litigation/punjab"
     }
   ]
 };
@@ -106,18 +106,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Litigation Services in Punjab: High Court Lawyers in Chandigarh",
   "description": "Expert litigation services in Punjab. Representing clients in Punjab & Haryana High Court, District Courts in Ludhiana, Jalandhar, Amritsar. Specializing in NRI legal services.",
-  "image": "https://amalegalsolutions.com/services/litigation-punjab.png", // Placeholder
+  "image": "https://www.amalegalsolutions.com/services/litigation-punjab.png", // Placeholder
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-12-02",
@@ -143,7 +143,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Litigation Services Punjab",
-  "image": "https://amalegalsolutions.com/services/litigation-punjab.png",
+  "image": "https://www.amalegalsolutions.com/services/litigation-punjab.png",
   "description": "Top-tier litigation services for Punjab & Haryana High Court and District Courts.",
   "brand": {
     "@type": "Brand",
@@ -199,12 +199,12 @@ export const metadata = {
     "writ petition punjab high court"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/litigation/punjab',
+    canonical: 'https://www.amalegalsolutions.com/services/litigation/punjab',
   },
   openGraph: {
     title: "Litigation Services in Punjab | Punjab & Haryana High Court Lawyers",
     description: "Expert litigation services in Punjab. Representing clients in Punjab & Haryana High Court and District Courts.",
-    url: "https://amalegalsolutions.com/services/litigation/punjab",
+    url: "https://www.amalegalsolutions.com/services/litigation/punjab",
     type: "website",
     images: [
       {

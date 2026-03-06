@@ -57,19 +57,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Locations",
-      "item": "https://amalegalsolutions.com/locations"
+      "item": "https://www.amalegalsolutions.com/locations"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Jaipur",
-      "item": "https://amalegalsolutions.com/locations/jaipur"
+      "item": "https://www.amalegalsolutions.com/locations/jaipur"
     }
   ]
 };
@@ -79,7 +79,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "AMA Legal Solutions Jaipur",
-  "image": "https://amalegalsolutions.com/city1.svg",
+  "image": "https://www.amalegalsolutions.com/city1.svg",
   "description": "Premier law firm in Jaipur providing expert legal services in High Court Litigation, Real Estate, and Heritage Property Law.",
   "address": {
     "@type": "PostalAddress",
@@ -92,7 +92,7 @@ const articleSchema = {
     "latitude": "26.9124",
     "longitude": "75.7873"
   },
-  "url": "https://amalegalsolutions.com/locations/jaipur",
+  "url": "https://www.amalegalsolutions.com/locations/jaipur",
   "telephone": "+918700343611",
   "priceRange": "$$",
   "openingHoursSpecification": [
@@ -136,7 +136,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Jaipur",
-  "image": "https://amalegalsolutions.com/city1.svg",
+  "image": "https://www.amalegalsolutions.com/city1.svg",
   "description": "Top-rated legal services in Jaipur by AMA Legal Solutions.",
   "brand": {
     "@type": "Brand",
@@ -218,12 +218,12 @@ export const metadata = {
     "rera rajasthan lawyer"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/locations/jaipur',
+    canonical: 'https://www.amalegalsolutions.com/locations/jaipur',
   },
   openGraph: {
     title: "Lawyers in Jaipur | Expert Legal Services Rajasthan",
     description: "Leading legal representation in Jaipur. Specializing in High Court writs, Real Estate, and Heritage Law.",
-    url: "https://amalegalsolutions.com/locations/jaipur",
+    url: "https://www.amalegalsolutions.com/locations/jaipur",
     type: "website",
     images: [
       {

@@ -57,25 +57,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Hyderabad",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/Hyderabad"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/Hyderabad"
     }
   ]
 };
@@ -86,18 +86,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Loan Settlement Services in Hyderabad: Expert Legal Debt Relief",
   "description": "Comprehensive guide to loan settlement in Hyderabad. Learn how to legally settle personal loans, credit cards, and business debts with expert legal help in Telangana.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-01-24",
@@ -123,7 +123,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Loan Settlement Services Hyderabad",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Expert legal loan settlement services in Hyderabad, Telangana.",
   "brand": {
     "@type": "Brand",
@@ -178,12 +178,12 @@ export const metadata = {
     "stop recovery harassment Hyderabad"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/Hyderabad',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/hyderabad',
   },
   openGraph: {
     title: "Loan Settlement in Hyderabad | Expert Debt Relief Lawyers",
     description: "Struggling with debt in Hyderabad? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok Adalat and DRT.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/Hyderabad",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/Hyderabad",
     type: "website",
     images: [
       {

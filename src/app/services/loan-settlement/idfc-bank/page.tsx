@@ -15,25 +15,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "IDFC Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/IDFC"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/IDFC"
     }
   ]
 };
@@ -44,18 +44,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "IDFC FIRST Bank Loan Settlement Process 2025: Legal Guide",
   "description": "Expert guide on IDFC FIRST Bank loan settlement. Learn how to settle IDFC personal loans and credit cards, stop harassment, and understand the OTS process.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-21",
@@ -67,7 +67,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "IDFC Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Professional legal services for settling IDFC FIRST Bank loans and credit cards.",
   "brand": {
     "@type": "Brand",
@@ -111,12 +111,12 @@ export const metadata = {
   description:
     "Complete guide to IDFC FIRST Bank loan settlement. Negotiate OTS, stop recovery harassment, and settle your personal loan or credit card debt legally.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/IDFC',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/idfc-bank',
   },
   openGraph: {
     title: "IDFC Loan Settlement Process | IDFC Credit Card Settlement Letter",
     description: "Complete guide to IDFC FIRST Bank loan settlement. Negotiate OTS, stop recovery harassment, and settle your personal loan or credit card debt legally.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/IDFC",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/IDFC",
     type: "website",
     images: [
       {

@@ -53,19 +53,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Virtual Inhouse Counsel",
-      "item": "https://amalegalsolutions.com/virtual-inhouse-councel"
+      "item": "https://www.amalegalsolutions.com/virtual-inhouse-councel"
     }
   ]
 };
@@ -76,18 +76,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Virtual Inhouse Counsel: Premium Legal Solutions for Modern Businesses",
   "description": "Discover how AMA Legal Solutions' Virtual Inhouse Counsel provides comprehensive, cost-effective, and 24/7 legal support for startups and SMEs.",
-  "image": "https://amalegalsolutions.com/newAssets/virtual-counsel.webp",
+  "image": "https://www.amalegalsolutions.com/newAssets/virtual-counsel.webp",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-05-20",
@@ -113,7 +113,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Virtual Inhouse Counsel Service",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Comprehensive legal support for startups and SMEs.",
   "brand": {
     "@type": "Brand",

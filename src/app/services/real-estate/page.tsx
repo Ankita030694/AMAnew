@@ -57,19 +57,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Real Estate Legal Services",
-      "item": "https://amalegalsolutions.com/services/real-estate"
+      "item": "https://www.amalegalsolutions.com/services/real-estate"
     }
   ]
 };
@@ -80,18 +80,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Real Estate Legal Services in India: Expert Property Lawyers",
   "description": "Comprehensive guide to real estate laws in India. Expert legal services for property disputes, RERA compliance, title verification, and conveyance.",
-  "image": "https://amalegalsolutions.com/services/6.png",
+  "image": "https://www.amalegalsolutions.com/services/6.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-10",
@@ -117,7 +117,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Real Estate Legal Services",
-  "image": "https://amalegalsolutions.com/services/6.png",
+  "image": "https://www.amalegalsolutions.com/services/6.png",
   "description": "Expert real estate lawyers for property disputes, RERA, and registration.",
   "brand": {
     "@type": "Brand",
@@ -162,7 +162,7 @@ const webPageSchema = {
   "@type": "WebPage",
   "name": "Real Estate Lawyers in India | Property Dispute & RERA Services",
   "description": "Expert real estate lawyers in India. AMA Legal Solutions provides property dispute resolution, RERA compliance, property registration, and real estate litigation services.",
-  "url": "https://amalegalsolutions.com/services/real-estate",
+  "url": "https://www.amalegalsolutions.com/services/real-estate",
 };
 
 export const metadata = {
@@ -170,12 +170,12 @@ export const metadata = {
   description:
     "Expert real estate lawyers in India. AMA Legal Solutions provides property dispute resolution, RERA compliance, property registration, and real estate litigation services. Book your consultation now.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/real-estate',
+    canonical: 'https://www.amalegalsolutions.com/services/real-estate',
   },
   openGraph: {
     title: "Real Estate Lawyers in India | Property Dispute & RERA Compliance",
     description: "Secure your property interests with our comprehensive real estate legal services in India. Expert lawyers for disputes, RERA, and registration.",
-    url: "https://amalegalsolutions.com/services/real-estate",
+    url: "https://www.amalegalsolutions.com/services/real-estate",
     type: "website",
     images: [
       {

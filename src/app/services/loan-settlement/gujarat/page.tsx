@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Struggling with debt in Gujarat? AMA Legal Solutions offers expert loan settlement for Diamond workers, MSMEs & traders. Stop harassment & settle legally.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/Gujarat',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/gujarat',
   },
   openGraph: {
     title: "Loan Settlement in Gujarat | Debt Relief Lawyers Ahmedabad, Surat, Vadodara",
     description: "Struggling with debt in Gujarat? AMA Legal Solutions offers expert loan settlement for Diamond workers, MSMEs & traders. Stop harassment & settle legally.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/Gujarat",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/Gujarat",
     type: "website",
     images: [
       {
@@ -36,25 +36,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Gujarat",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/Gujarat"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/Gujarat"
     }
   ]
 };
@@ -64,18 +64,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Loan Settlement Services in Gujarat: Restoring the Business Spirit",
   "description": "Comprehensive guide to loan settlement in Gujarat. Learn how to legally settle personal and business loans, protect your MSME, and resolve debt issues.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-21",
@@ -86,7 +86,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Loan Settlement Services Gujarat",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Expert legal loan settlement services in Gujarat.",
   "brand": {
     "@type": "Brand",

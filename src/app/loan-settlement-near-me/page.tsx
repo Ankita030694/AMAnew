@@ -57,13 +57,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Loan Settlement Near Me",
-      "item": "https://amalegalsolutions.com/loan-settlement-near-me"
+      "item": "https://www.amalegalsolutions.com/loan-settlement-near-me"
     }
   ]
 };
@@ -74,18 +74,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Loan Settlement Near Me: Premier Debt Relief Services Across All India",
   "description": "Are you searching for loan settlement near me? AMA Legal Solutions provides expert debt relief and loan settlement services in every city and state in India. Negotiate with banks and stop harassment legally.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-03-02",
@@ -111,7 +111,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Expert legal loan settlement and debt relief services available across India.",
   "brand": {
     "@type": "Brand",
@@ -166,7 +166,7 @@ export const metadata = {
     "stop recovery agent harassment"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/loan-settlement-near-me',
+    canonical: 'https://www.amalegalsolutions.com/loan-settlement-near-me',
   },
 };
 

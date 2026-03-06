@@ -13,12 +13,12 @@ export const metadata = {
   title: "DMI Finance Loan Settlement | Samsung Finance+ & GPay Loans | AMA Legal Solutions",
   description: "Struggling with DMI Finance loans (Samsung Finance+, Google Pay)? Expert legal settlement services to stop phone locking, harassment, and reduce debt.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/dmi-finance',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/dmi-finance',
   },
   openGraph: {
     title: "DMI Finance Loan Settlement | Samsung Finance+ & GPay Loans | AMA Legal Solutions",
     description: "Struggling with DMI Finance loans (Samsung Finance+, Google Pay)? Expert legal settlement services to stop phone locking, harassment, and reduce debt.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/dmi-finance",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/dmi-finance",
     type: "website",
     images: [
       {
@@ -40,25 +40,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "DMI Finance Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/dmi-finance"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/dmi-finance"
     }
   ]
 };
@@ -68,18 +68,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "DMI Finance Loan Settlement: Guide for Samsung Finance+ & Digital Loans",
   "description": "Comprehensive guide on how to settle DMI Finance loans, including those taken for Samsung phones or via Google Pay. Learn about the OTS process.",
-  "image": "https://amalegalsolutions.com/services/6.png",
+  "image": "https://www.amalegalsolutions.com/services/6.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -103,7 +103,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "DMI Finance Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/6.png",
+  "image": "https://www.amalegalsolutions.com/services/6.png",
   "description": "Legal settlement services for DMI Finance loans.",
   "brand": {
     "@type": "Brand",

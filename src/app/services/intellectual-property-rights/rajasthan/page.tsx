@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Secure your brand in Rajasthan. AMA Legal Solutions offers expert IPR services for Jewelry, Handicrafts (GI Tags), and Tourism industries. Ahmedabad Registry & High Court support.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/intellectual-property-rights/Rajasthan',
+    canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/rajasthan',
   },
   openGraph: {
     title: "Intellectual Property Rights in Rajasthan | Jaipur, Jodhpur & Udaipur IP Lawyers",
     description: "Secure your brand in Rajasthan. AMA Legal Solutions offers expert IPR services for Jewelry, Handicrafts (GI Tags), and Tourism industries.",
-    url: "https://amalegalsolutions.com/services/intellectual-property-rights/Rajasthan",
+    url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/Rajasthan",
     type: "website",
     images: [
       {
@@ -36,25 +36,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Intellectual Property Rights",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Rajasthan",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights/Rajasthan"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights/Rajasthan"
     }
   ]
 };
@@ -64,18 +64,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Intellectual Property Rights Services in Rajasthan: Protecting Heritage & Innovation",
   "description": "Comprehensive IPR guide for Rajasthan. Covering GI Tags for Blue Pottery, Trademark Registration for Hotels, and Copyrights for Textile Prints.",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -97,7 +97,7 @@ const webPageSchema = {
     "provider": {
       "@type": "LegalService",
       "name": "AMA Legal Solutions",
-      "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+      "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "New Delhi",
@@ -114,7 +114,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "IPR Legal Services Rajasthan",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "description": "Specialized Intellectual Property Rights services for Rajasthan industries including Gems & Jewelry, Handicrafts, and Tourism.",
   "brand": {
     "@type": "Brand",

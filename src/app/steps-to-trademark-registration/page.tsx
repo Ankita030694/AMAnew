@@ -212,19 +212,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Steps to Trademark Registration",
-      "item": "https://amalegalsolutions.com/steps-to-trademark-registration"
+      "item": "https://www.amalegalsolutions.com/steps-to-trademark-registration"
     }
   ]
 };
@@ -234,18 +234,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Step by Step Guide to Trademark Registration in India 2026 | 5000+ Words Expert Analysis",
   "description": "Comprehensive 5000+ word legal analysis on the steps to trademark registration in India. Covers Section 9, Section 11, Case Laws, Madrid Protocol, and Vienna Classification.",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-05-10",
@@ -269,7 +269,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Trademark Registration Legal Service",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "description": "Expert legal assistance for comprehensive trademark registration in India and internationally.",
   "brand": {
     "@type": "Brand",

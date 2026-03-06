@@ -5,13 +5,13 @@ export const metadata = {
   description:
     "Expert legal services for Banking, Finance, and NBFC registration in Maharashtra. We assist with RBI compliance, Fintech regulations, and Money Lending licenses in Mumbai and Pune.",
   alternates: {
-    canonical: "https://amalegalsolutions.com/services/banking-and-finance/Maharashtra",
+    canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/maharashtra",
   },
   openGraph: {
     title: "Banking and Finance Services in Maharashtra | NBFC & Fintech Legal Experts",
     description:
       "Expert legal services for Banking, Finance, and NBFC registration in Maharashtra. We assist with RBI compliance, Fintech regulations, and Money Lending licenses in Mumbai and Pune.",
-    url: "https://amalegalsolutions.com/services/banking-and-finance/Maharashtra",
+    url: "https://www.amalegalsolutions.com/services/banking-and-finance/Maharashtra",
     type: "website",
     images: [
       {

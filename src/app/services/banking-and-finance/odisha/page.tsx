@@ -9,7 +9,7 @@ export const metadata = {
     title: "Banking and Finance Services in Odisha | AMA Legal Solutions",
     description:
       "Expert legal consultancy for banking and finance in Odisha. NBFC registration in Bhubaneswar, mining finance, and SHG lending compliance.",
-    url: "https://amalegalsolutions.com/services/banking-and-finance/odisha",
+    url: "https://www.amalegalsolutions.com/services/banking-and-finance/odisha",
     siteName: "AMA Legal Solutions",
     locale: "en_US",
     type: "article",

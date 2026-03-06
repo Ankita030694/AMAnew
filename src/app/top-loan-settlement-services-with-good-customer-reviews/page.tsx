@@ -13,19 +13,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Top Loan Settlement Services",
-      "item": "https://amalegalsolutions.com/top-loan-settlement-services-with-good-customer-reviews"
+      "item": "https://www.amalegalsolutions.com/top-loan-settlement-services-with-good-customer-reviews"
     }
   ]
 };
@@ -130,18 +130,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Top Loan Settlement Services with Good Customer Reviews in India",
   "description": "Discover the top loan settlement services in India with excellent customer reviews. Compare services, fees, and success rates to choose the best partner for your debt freedom.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-15",
@@ -153,7 +153,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Expert legal loan settlement services highly rated by customers in India.",
   "brand": {
     "@type": "Brand",
@@ -207,12 +207,12 @@ export const metadata = {
     "settle loans india"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/top-loan-settlement-services-with-good-customer-reviews',
+    canonical: 'https://www.amalegalsolutions.com/top-loan-settlement-services-with-good-customer-reviews',
   },
   openGraph: {
     title: "Top Loan Settlement Services with Good Customer Reviews",
     description: "Compare the best loan settlement services in India. Read why customers rate AMA Legal Solutions as the top choice for ethical and legal debt settlement.",
-    url: "https://amalegalsolutions.com/top-loan-settlement-services-with-good-customer-reviews",
+    url: "https://www.amalegalsolutions.com/top-loan-settlement-services-with-good-customer-reviews",
     type: "website",
     images: [
       {

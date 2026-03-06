@@ -77,25 +77,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Litigation Services",
-      "item": "https://amalegalsolutions.com/services/litigation"
+      "item": "https://www.amalegalsolutions.com/services/litigation"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Tamil Nadu",
-      "item": "https://amalegalsolutions.com/services/litigation/tamil-nadu"
+      "item": "https://www.amalegalsolutions.com/services/litigation/tamil-nadu"
     }
   ]
 };
@@ -106,18 +106,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Litigation Services in Tamil Nadu: Expert Lawyers for Madras High Court",
   "description": "Comprehensive guide to litigation services in Tamil Nadu. Expert legal representation for Civil, Criminal, Property, and Commercial disputes in Madras High Court, Madurai Bench, and District Courts.",
-  "image": "https://amalegalsolutions.com/services/litigation-tamil-nadu.png", // Placeholder
+  "image": "https://www.amalegalsolutions.com/services/litigation-tamil-nadu.png", // Placeholder
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-12-02",
@@ -143,7 +143,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Litigation Services Tamil Nadu",
-  "image": "https://amalegalsolutions.com/services/litigation-tamil-nadu.png",
+  "image": "https://www.amalegalsolutions.com/services/litigation-tamil-nadu.png",
   "description": "Top-tier litigation services for Madras High Court and District Courts.",
   "brand": {
     "@type": "Brand",
@@ -199,12 +199,12 @@ export const metadata = {
     "commercial court chennai"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/litigation/tamil-nadu',
+    canonical: 'https://www.amalegalsolutions.com/services/litigation/tamil-nadu',
   },
   openGraph: {
     title: "Litigation Services in Tamil Nadu | Madras High Court Lawyers",
     description: "Expert litigation services in Tamil Nadu. Representing clients in Madras High Court, City Civil Court, and District Courts.",
-    url: "https://amalegalsolutions.com/services/litigation/tamil-nadu",
+    url: "https://www.amalegalsolutions.com/services/litigation/tamil-nadu",
     type: "website",
     images: [
       {

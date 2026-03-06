@@ -65,25 +65,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Karnataka",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/karnataka"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/karnataka"
     }
   ]
 };
@@ -94,25 +94,25 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Loan Settlement Services in Karnataka | 2025 Ordinance Protection",
   "description": "Expert debt relief in Karnataka. Settle loans under the 2025 Micro Loan Ordinance. Specialized support for Bangalore IT professionals and rural farmers. Stop harassment legally.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-20",
   "dateModified": "2025-05-15",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://amalegalsolutions.com/services/loan-settlement/karnataka"
+    "@id": "https://www.amalegalsolutions.com/services/loan-settlement/karnataka"
   },
   "about": {
     "@type": "Thing",
@@ -162,12 +162,12 @@ export const metadata = {
     "Lok Adalat Bangalore schedule 2025"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/karnataka',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/karnataka',
   },
   openGraph: {
     title: "Loan Settlement in Karnataka | Stop Harassment Legally",
     description: "Burdened by debt in Bangalore? We use the 2025 Karnataka Ordinance to stop harassment and settle your loans for up to 50% less.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/karnataka",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/karnataka",
     type: "website",
     images: [
       {

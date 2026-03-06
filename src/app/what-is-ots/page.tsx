@@ -57,13 +57,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "What is OTS?",
-      "item": "https://amalegalsolutions.com/what-is-ots"
+      "item": "https://www.amalegalsolutions.com/what-is-ots"
     }
   ]
 };
@@ -74,18 +74,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "What is One Time Settlement (OTS)? Comprehensive Guide to Debt Relief in India",
   "description": "Learn everything about One Time Settlement (OTS) for bank loans in India. Understand eligibility, RBI guidelines, process, and how to negotiate for maximum waiver.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-10",
@@ -111,7 +111,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "OTS Legal Consultancy",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Expert legal assistance for One Time Settlement (OTS) with major Indian banks.",
   "brand": {
     "@type": "Brand",
@@ -167,7 +167,7 @@ export const metadata = {
     "loan waiver schemes india"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/what-is-ots',
+    canonical: 'https://www.amalegalsolutions.com/what-is-ots',
   },
 };
 

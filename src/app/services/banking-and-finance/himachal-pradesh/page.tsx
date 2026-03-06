@@ -7,13 +7,13 @@ export const metadata = {
   description:
     "Expert legal consultancy for Banking & Finance in Himachal Pradesh. Services include NBFC Registration, Microfinance setup, Nidhi Company, Money Lenders License & DRT Litigation in Shimla.",
   alternates: {
-    canonical: "https://amalegalsolutions.com/services/banking-and-finance/himachal-pradesh",
+    canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/himachal-pradesh",
   },
   openGraph: {
     title: "Banking and Finance Services in Himachal Pradesh | NBFC & MFI Registration",
     description:
       "Expert legal consultancy for Banking & Finance in Himachal Pradesh. Services include NBFC Registration, Microfinance setup, Nidhi Company, Money Lenders License & DRT Litigation in Shimla.",
-    url: "https://amalegalsolutions.com/services/banking-and-finance/himachal-pradesh",
+    url: "https://www.amalegalsolutions.com/services/banking-and-finance/himachal-pradesh",
     siteName: "AMA Legal Solutions",
     locale: "en_US",
     type: "article",
@@ -36,25 +36,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://amalegalsolutions.com",
+      item: "https://www.amalegalsolutions.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Services",
-      item: "https://amalegalsolutions.com/services",
+      item: "https://www.amalegalsolutions.com/services",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Banking & Finance",
-      item: "https://amalegalsolutions.com/services/banking-and-finance",
+      item: "https://www.amalegalsolutions.com/services/banking-and-finance",
     },
     {
       "@type": "ListItem",
       position: 4,
       name: "Himachal Pradesh",
-      item: "https://amalegalsolutions.com/services/banking-and-finance/himachal-pradesh",
+      item: "https://www.amalegalsolutions.com/services/banking-and-finance/himachal-pradesh",
     },
   ],
 };
@@ -65,18 +65,18 @@ const articleSchema = {
   headline: "Banking and Finance Services in Himachal Pradesh: Legal Registration & Compliance",
   description:
     "Comprehensive guide to banking and finance laws in Himachal Pradesh. Learn how to register NBFC, Microfinance, and Nidhi Companies in Shimla with expert legal help.",
-  image: "https://amalegalsolutions.com/services/3.png",
+  image: "https://www.amalegalsolutions.com/services/3.png",
   author: {
     "@type": "Organization",
     name: "AMA Legal Solutions",
-    url: "https://amalegalsolutions.com",
+    url: "https://www.amalegalsolutions.com",
   },
   publisher: {
     "@type": "Organization",
     name: "AMA Legal Solutions",
     logo: {
       "@type": "ImageObject",
-      url: "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+      url: "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
     },
   },
   datePublished: "2024-11-27",
@@ -87,12 +87,12 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "Banking and Finance Legal Services Himachal Pradesh",
-  image: "https://amalegalsolutions.com/services/3.png",
+  image: "https://www.amalegalsolutions.com/services/3.png",
   description: "Expert legal registration and compliance services for financial institutions in Himachal Pradesh.",
   brand: {
     "@type": "Brand",
     name: "AMA Legal Solutions",
-    url: "https://amalegalsolutions.com"
+    url: "https://www.amalegalsolutions.com"
   },
   aggregateRating: {
     "@type": "AggregateRating",

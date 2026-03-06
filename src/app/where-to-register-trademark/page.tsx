@@ -85,19 +85,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Where to Register Trademark",
-      "item": "https://amalegalsolutions.com/where-to-register-trademark"
+      "item": "https://www.amalegalsolutions.com/where-to-register-trademark"
     }
   ]
 };
@@ -108,18 +108,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Where to Register Trademark in India: A Comprehensive Guide for Brands",
   "description": "Discover where and how to register a trademark in India. Detailed information on regional offices, online filing via IP India, documents, and the registration process.",
-  "image": "https://amalegalsolutions.com/services/trademark.png",
+  "image": "https://www.amalegalsolutions.com/services/trademark.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-03",
@@ -145,7 +145,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Trademark Registration Services",
-  "image": "https://amalegalsolutions.com/services/trademark.png",
+  "image": "https://www.amalegalsolutions.com/services/trademark.png",
   "description": "Professional trademark registration and IPR services in India.",
   "brand": {
     "@type": "Brand",
@@ -186,7 +186,7 @@ export const metadata = {
     "trademark application process"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/where-to-register-trademark',
+    canonical: 'https://www.amalegalsolutions.com/where-to-register-trademark',
   },
 };
 

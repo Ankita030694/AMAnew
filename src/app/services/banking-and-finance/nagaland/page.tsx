@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     title: "Banking and Finance Legal Services in Nagaland",
     description:
       "Expert legal support for financial institutions in Nagaland. From Article 371A compliance to DRT litigation and CMMFI schemes.",
-    url: "https://amalegalsolutions.com/services/banking-and-finance/nagaland",
+    url: "https://www.amalegalsolutions.com/services/banking-and-finance/nagaland",
     siteName: "AMA Legal Solutions",
     locale: "en_US",
     type: "article",
     images: [
       {
-        url: "https://amalegalsolutions.com/services/banking-and-finance/nagaland/og-image.png", // Placeholder
+        url: "https://www.amalegalsolutions.com/services/banking-and-finance/nagaland/og-image.png", // Placeholder
         width: 1200,
         height: 630,
         alt: "Banking and Finance Services Nagaland",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
       "Specialized legal services for NBFCs, Startups, and Banks in Nagaland. Expert in DRT Guwahati and Article 371A.",
   },
   alternates: {
-    canonical: "https://amalegalsolutions.com/services/banking-and-finance/nagaland",
+    canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/nagaland",
   },
 };
 
@@ -55,25 +55,25 @@ const page = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://amalegalsolutions.com",
+        "item": "https://www.amalegalsolutions.com",
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Services",
-        "item": "https://amalegalsolutions.com/services",
+        "item": "https://www.amalegalsolutions.com/services",
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Banking & Finance",
-        "item": "https://amalegalsolutions.com/services/banking-and-finance",
+        "item": "https://www.amalegalsolutions.com/services/banking-and-finance",
       },
       {
         "@type": "ListItem",
         "position": 4,
         "name": "Nagaland",
-        "item": "https://amalegalsolutions.com/services/banking-and-finance/nagaland",
+        "item": "https://www.amalegalsolutions.com/services/banking-and-finance/nagaland",
       },
     ],
   };
@@ -87,14 +87,14 @@ const page = () => {
     "author": {
       "@type": "Organization",
       "name": "AMA Legal Solutions",
-      "url": "https://amalegalsolutions.com",
+      "url": "https://www.amalegalsolutions.com",
     },
     "publisher": {
       "@type": "Organization",
       "name": "AMA Legal Solutions",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+        "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
       },
     },
     "datePublished": "2025-11-27",
@@ -105,7 +105,7 @@ const page = () => {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Banking and Finance Legal Services Nagaland",
-    "image": "https://amalegalsolutions.com/services/3.png",
+    "image": "https://www.amalegalsolutions.com/services/3.png",
     "description": "Expert legal registration and compliance services for financial institutions in Nagaland.",
     "brand": {
       "@type": "Brand",

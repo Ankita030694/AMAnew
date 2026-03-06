@@ -56,19 +56,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Locations",
-      "item": "https://amalegalsolutions.com/locations"
+      "item": "https://www.amalegalsolutions.com/locations"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Chandigarh",
-      "item": "https://amalegalsolutions.com/locations/chandigarh"
+      "item": "https://www.amalegalsolutions.com/locations/chandigarh"
     }
   ]
 };
@@ -78,7 +78,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "AMA Legal Solutions Chandigarh",
-  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+  "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Premier law firm in Chandigarh specializing in High Court Litigation, NCLT, Estate Office matters, and Corporate Law.",
   "address": {
     "@type": "PostalAddress",
@@ -94,7 +94,7 @@ const articleSchema = {
     { "@type": "State", "name": "Punjab" },
     { "@type": "State", "name": "Haryana" }
   ],
-  "url": "https://amalegalsolutions.com/locations/chandigarh",
+  "url": "https://www.amalegalsolutions.com/locations/chandigarh",
   "telephone": "+918448512333",
   "priceRange": "₹₹",
   "openingHoursSpecification": [
@@ -138,7 +138,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Chandigarh",
-  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+  "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Expert legal services in Chandigarh by AMA Legal Solutions.",
   "brand": {
     "@type": "Brand",
@@ -218,12 +218,12 @@ export const metadata = {
     "NRI Legal Services Chandigarh"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/locations/chandigarh',
+    canonical: 'https://www.amalegalsolutions.com/locations/chandigarh',
   },
   openGraph: {
     title: "Lawyers in Chandigarh | High Court & Corporate Legal Services",
     description: "Expert legal representation in Chandigarh. High Court, NCLT, Civil, Criminal, and Property services by AMA Legal Solutions.",
-    url: "https://amalegalsolutions.com/locations/chandigarh",
+    url: "https://www.amalegalsolutions.com/locations/chandigarh",
     type: "website",
     images: [
       {

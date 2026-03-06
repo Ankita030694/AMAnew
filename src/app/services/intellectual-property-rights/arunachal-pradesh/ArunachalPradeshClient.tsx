@@ -450,18 +450,18 @@ export default function ArunachalPradeshClient() {
             "@type": "Article",
             "headline": "Intellectual Property Rights Services in Arunachal Pradesh",
             "description": "Comprehensive IPR services in Arunachal Pradesh including Trademark, Patent, and Copyright registration. Protect your brand and innovations with expert legal support.",
-            "image": "https://amalegalsolutions.com/services/ipr-arunachal-pradesh.jpg",
+            "image": "https://www.amalegalsolutions.com/services/ipr-arunachal-pradesh.jpg",
             "author": {
               "@type": "Organization",
               "name": "AMA Legal Solutions",
-              "url": "https://amalegalsolutions.com"
+              "url": "https://www.amalegalsolutions.com"
             },
             "publisher": {
               "@type": "Organization",
               "name": "AMA Legal Solutions",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+                "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
               }
             },
             "datePublished": "2024-11-26",
@@ -477,7 +477,7 @@ export default function ArunachalPradeshClient() {
             "@context": "https://schema.org",
             "@type": "Product",
             "name": "IPR Services Arunachal Pradesh",
-            "image": "https://amalegalsolutions.com/services/ipr-arunachal-pradesh.jpg",
+            "image": "https://www.amalegalsolutions.com/services/ipr-arunachal-pradesh.jpg",
             "description": "Expert Intellectual Property Rights registration and protection services in Arunachal Pradesh.",
             "brand": {
               "@type": "Brand",

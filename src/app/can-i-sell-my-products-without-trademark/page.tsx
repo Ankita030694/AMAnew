@@ -85,19 +85,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Resources",
-      "item": "https://amalegalsolutions.com/articles"
+      "item": "https://www.amalegalsolutions.com/articles"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Sell Products Without Trademark",
-      "item": "https://amalegalsolutions.com/can-i-sell-my-products-without-trademark"
+      "item": "https://www.amalegalsolutions.com/can-i-sell-my-products-without-trademark"
     }
   ]
 };
@@ -108,18 +108,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Can I Sell My Products Without Trademark in India? Risks and Legal Guide",
   "description": "Exhaustive guide on whether you can sell products without a trademark in India. Learn about the legal risks, prior use rights, and why registration is critical for business growth.",
-  "image": "https://amalegalsolutions.com/assets/trademark-guide.png",
+  "image": "https://www.amalegalsolutions.com/assets/trademark-guide.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-03",
@@ -145,7 +145,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Trademark Registration & Protection Services",
-  "image": "https://amalegalsolutions.com/assets/trademark-protection.png",
+  "image": "https://www.amalegalsolutions.com/assets/trademark-protection.png",
   "description": "Expert legal assistance for trademark registration and brand protection in India.",
   "brand": {
     "@type": "Brand",
@@ -186,12 +186,12 @@ export const metadata = {
     "protect brand name india"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/can-i-sell-my-products-without-trademark',
+    canonical: 'https://www.amalegalsolutions.com/can-i-sell-my-products-without-trademark',
   },
   openGraph: {
     title: "Can I Sell My Products Without Trademark? | Legal Risks in India",
     description: "Selling without a trademark is legal but extremely risky. Learn how to safeguard your brand from competitors and legal threats.",
-    url: "https://amalegalsolutions.com/can-i-sell-my-products-without-trademark",
+    url: "https://www.amalegalsolutions.com/can-i-sell-my-products-without-trademark",
     type: "article",
     images: [
       {

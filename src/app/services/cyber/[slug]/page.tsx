@@ -342,12 +342,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: content.title,
     description: content.description,
     alternates: {
-      canonical: `https://amalegalsolutions.com/services/cyber/${slug}`,
+      canonical: `https://www.amalegalsolutions.com/services/cyber/${slug}`,
     },
     openGraph: {
       title: content.title,
       description: content.description,
-      url: `https://amalegalsolutions.com/services/cyber/${slug}`,
+      url: `https://www.amalegalsolutions.com/services/cyber/${slug}`,
       siteName: 'AMA Legal Solutions',
       locale: 'en_IN',
       type: 'website',
@@ -367,7 +367,7 @@ function generateWebPageSchema(content: any) {
     "@type": "WebPage",
     "name": content.title,
     "description": content.description,
-    "url": `https://amalegalsolutions.com/services/cyber/${content.slug}`,
+    "url": `https://www.amalegalsolutions.com/services/cyber/${content.slug}`,
     "mainEntity": {
       "@type": "FAQPage",
       "name": "Cyber Law Services FAQs",

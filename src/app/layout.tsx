@@ -44,6 +44,7 @@ const polySans = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.amalegalsolutions.com'),
   title: "AMA Legal Solutions | Top Law Firm in India",
   description: "Top-rated Indian law firm for loan settlement, intellectual property rights, and corporate law. Contact us for expert legal consultation.",
   icons: {
@@ -164,6 +165,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Script
           id="attorney-structured-data"
           type="application/ld+json"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",

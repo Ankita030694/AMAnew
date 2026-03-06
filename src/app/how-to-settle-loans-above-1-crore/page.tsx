@@ -57,19 +57,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "How to Settle Loans Above 1 Crore",
-      "item": "https://amalegalsolutions.com/how-to-settle-loans-above-1-crore"
+      "item": "https://www.amalegalsolutions.com/how-to-settle-loans-above-1-crore"
     }
   ]
 };
@@ -80,18 +80,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "How to Settle Loans Above 1 Crore in India: The Ultimate Legal Guide",
   "description": "Comprehensive guide on settling high-value loans above 1 crore in India. Learn about RBI guidelines, OTS schemes, ARC negotiations, and legal strategies to manage large debt.",
-  "image": "https://amalegalsolutions.com/newAssets/high-value-loan.webp",
+  "image": "https://www.amalegalsolutions.com/newAssets/high-value-loan.webp",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-03-20",
@@ -117,7 +117,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "High Value Loan Settlement Service",
-  "image": "https://amalegalsolutions.com/newAssets/high-value-loan.webp",
+  "image": "https://www.amalegalsolutions.com/newAssets/high-value-loan.webp",
   "description": "Expert legal help for settling loans above 1 crore with banks and ARCs.",
   "brand": {
     "@type": "Brand",
@@ -172,7 +172,7 @@ export const metadata = {
     "SME loan settlement"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/how-to-settle-loans-above-1-crore',
+    canonical: 'https://www.amalegalsolutions.com/how-to-settle-loans-above-1-crore',
   },
 };
 

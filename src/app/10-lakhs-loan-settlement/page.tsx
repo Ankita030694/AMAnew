@@ -67,13 +67,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "10 Lakhs Loan Settlement",
-      "item": "https://amalegalsolutions.com/10-lakhs-loan-settlement"
+      "item": "https://www.amalegalsolutions.com/10-lakhs-loan-settlement"
     }
   ]
 };
@@ -83,18 +83,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "10 Lakhs Loan Settlement Guide: Legal Process, Savings, and CIBIL Impact",
   "description": "Exhaustive guide on 10 lakhs loan settlement in India. Learn the legal steps, how much you can save, and how to stop bank harassment with expert legal help.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-25",
@@ -118,7 +118,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "10 Lakhs Loan Settlement Service",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Expert assistance in settling personal loans of 10 lakhs with high waiver offers.",
   "brand": {
     "@type": "Brand",

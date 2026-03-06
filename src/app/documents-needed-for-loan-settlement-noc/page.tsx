@@ -58,19 +58,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Loan Settlement Resources",
-      "item": "https://amalegalsolutions.com/resources"
+      "item": "https://www.amalegalsolutions.com/resources"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Documents Needed for Loan Settlement NOC",
-      "item": "https://amalegalsolutions.com/documents-needed-for-loan-settlement-noc"
+      "item": "https://www.amalegalsolutions.com/documents-needed-for-loan-settlement-noc"
     }
   ]
 };
@@ -81,18 +81,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Documents Needed for Loan Settlement & NOC: The Ultimate All-India Guide",
   "description": "Comprehensive guide on all documents required for loan settlement and obtaining a No Objection Certificate (NOC) in India. Covers individual, business, and secured loan requirements.",
-  "image": "https://amalegalsolutions.com/newAssets/loan-settlement-docs.webp",
+  "image": "https://www.amalegalsolutions.com/newAssets/loan-settlement-docs.webp",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-06-15",
@@ -118,7 +118,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Documentation for Loan Settlement",
-  "image": "https://amalegalsolutions.com/newAssets/legal-docs-service.webp",
+  "image": "https://www.amalegalsolutions.com/newAssets/legal-docs-service.webp",
   "description": "Expert legal assistance in gathering and vetting documents for loan settlement and ensuring valid NOC issuance across India.",
   "brand": {
     "@type": "Brand",
@@ -173,7 +173,7 @@ export const metadata = {
     "credit card settlement documents"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/documents-needed-for-loan-settlement-noc',
+    canonical: 'https://www.amalegalsolutions.com/documents-needed-for-loan-settlement-noc',
   },
 };
 

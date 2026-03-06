@@ -13,12 +13,12 @@ export const metadata = {
   title: "True Credits Loan Settlement | TrueBalance App OTS | AMA Legal Solutions",
   description: "Struggling with True Credits (TrueBalance) loan repayment? Expert legal help for settling app loans. Stop harassment and legal notices.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/true-credits',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/true-credits',
   },
   openGraph: {
     title: "True Credits Loan Settlement | TrueBalance App OTS | AMA Legal Solutions",
     description: "Struggling with True Credits (TrueBalance) loan repayment? Expert legal help for settling app loans. Stop harassment and legal notices.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/true-credits",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/true-credits",
     type: "website",
     images: [
       {
@@ -40,25 +40,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "True Credits Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/true-credits"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/true-credits"
     }
   ]
 };
@@ -68,18 +68,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "True Credits Loan Settlement: Guide to TrueBalance OTS",
   "description": "Comprehensive guide on how to settle True Credits (TrueBalance) loans. Learn about the One Time Settlement (OTS) process and how to stop harassment.",
-  "image": "https://amalegalsolutions.com/services/15.png",
+  "image": "https://www.amalegalsolutions.com/services/15.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -103,7 +103,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "True Credits Settlement Services",
-  "image": "https://amalegalsolutions.com/services/15.png",
+  "image": "https://www.amalegalsolutions.com/services/15.png",
   "description": "Legal settlement services for True Credits loans.",
   "brand": {
     "@type": "Brand",

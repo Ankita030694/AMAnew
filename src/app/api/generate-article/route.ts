@@ -15,7 +15,7 @@ export async function POST(request: Request) {
         }
 
         const systemPrompt = `
-      You are a professional SEO and AEO expert and legal content strategist for AMA Legal Solutions (www.amalegalsolutions.com).
+      You are a professional SEO and AEO expert and legal content strategist for AMA Legal Solutions (https://www.amalegalsolutions.com).
       
       **Role**: Create a fully human-written, SEO-optimized, and authority-building blog article.
       

@@ -134,13 +134,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Best Advocate Near Me",
-      "item": "https://amalegalsolutions.com/best-advocate-near-me"
+      "item": "https://www.amalegalsolutions.com/best-advocate-near-me"
     }
   ]
 };
@@ -150,25 +150,25 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Best Advocate Near Me: Expert Legal Help in India",
   "description": "Looking for the best advocate near you? AMA Legal Solutions provides expert legal services in civil, criminal, family, and corporate law across India. Consult with top-rated lawyers today.",
-  "image": "https://amalegalsolutions.com/newAssets/hero-bg.jpg",
+  "image": "https://www.amalegalsolutions.com/newAssets/hero-bg.jpg",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-04",
   "dateModified": "2024-02-04",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://amalegalsolutions.com/best-advocate-near-me"
+    "@id": "https://www.amalegalsolutions.com/best-advocate-near-me"
   }
 };
 
@@ -234,7 +234,7 @@ export const metadata = {
     "hire an advocate"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/best-advocate-near-me',
+    canonical: 'https://www.amalegalsolutions.com/best-advocate-near-me',
   },
 };
 

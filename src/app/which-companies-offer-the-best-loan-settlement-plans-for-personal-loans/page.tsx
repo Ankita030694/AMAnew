@@ -57,19 +57,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Best Loan Settlement Companies",
-      "item": "https://amalegalsolutions.com/which-companies-offer-the-best-loan-settlement-plans-for-personal-loans"
+      "item": "https://www.amalegalsolutions.com/which-companies-offer-the-best-loan-settlement-plans-for-personal-loans"
     }
   ]
 };
@@ -80,18 +80,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Which Companies Offer the Best Loan Settlement Plans for Personal Loans in India?",
   "description": "Compare the best loan settlement companies for personal loans in India. Review of AMA Legal Solutions, FREED, SettleMyLoan, and more. Find the right plan to become debt-free.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-20",
@@ -117,7 +117,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Personal Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Expert comparison and legal services for personal loan settlement in India.",
   "brand": {
     "@type": "Brand",
@@ -175,12 +175,12 @@ export const metadata = {
     "debt relief plans"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/which-companies-offer-the-best-loan-settlement-plans-for-personal-loans',
+    canonical: 'https://www.amalegalsolutions.com/which-companies-offer-the-best-loan-settlement-plans-for-personal-loans',
   },
   openGraph: {
     title: "Best Personal Loan Settlement Companies & Plans India (2025 Review)",
     description: "Who offers the best loan settlement plans? Detailed comparison of top companies in India.",
-    url: "https://amalegalsolutions.com/which-companies-offer-the-best-loan-settlement-plans-for-personal-loans",
+    url: "https://www.amalegalsolutions.com/which-companies-offer-the-best-loan-settlement-plans-for-personal-loans",
     type: "article",
     images: [
       {

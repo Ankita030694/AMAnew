@@ -13,12 +13,12 @@ export const metadata = {
   title: "L&T Finance Loan Settlement | Two-Wheeler & Tractor Loan OTS | AMA Legal Solutions",
   description: "Unable to repay L&T Finance loan? Expert legal help for settling Two-Wheeler, Tractor, and Microfinance loans. Stop repossession and legal action.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/l-and-t-finance',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/l-and-t-finance',
   },
   openGraph: {
     title: "L&T Finance Loan Settlement | Two-Wheeler & Tractor Loan OTS | AMA Legal Solutions",
     description: "Unable to repay L&T Finance loan? Expert legal help for settling Two-Wheeler, Tractor, and Microfinance loans. Stop repossession and legal action.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/l-and-t-finance",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/l-and-t-finance",
     type: "website",
     images: [
       {
@@ -40,25 +40,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "L&T Finance Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/l-and-t-finance"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/l-and-t-finance"
     }
   ]
 };
@@ -68,18 +68,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "L&T Finance Loan Settlement: Guide to Two-Wheeler & Farm Loan OTS",
   "description": "Comprehensive guide on how to settle L&T Finance loans. Learn about the One Time Settlement (OTS) process for vehicle and microfinance loans.",
-  "image": "https://amalegalsolutions.com/services/12.png",
+  "image": "https://www.amalegalsolutions.com/services/12.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -103,7 +103,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "L&T Finance Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/12.png",
+  "image": "https://www.amalegalsolutions.com/services/12.png",
   "description": "Legal settlement services for L&T Finance loans.",
   "brand": {
     "@type": "Brand",

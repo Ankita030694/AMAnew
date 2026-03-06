@@ -61,13 +61,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "How to Settle Loan with Bank",
-      "item": "https://amalegalsolutions.com/how-to-settle-loan-with-bank"
+      "item": "https://www.amalegalsolutions.com/how-to-settle-loan-with-bank"
     }
   ]
 };
@@ -77,7 +77,7 @@ const articleSchema = {
   "@type": "Article",
   "headline": "How to Settle Loan with Bank in India (2025 Guide): Legal Process & RBI Rules",
   "description": "Master the legal process of loan settlement in India with our comprehensive 2025 guide. Learn about RBI guidelines, OTS schemes, and borrower rights to settle your debts.",
-  "image": "https://amalegalsolutions.com/newAssets/legal-hero.jpg",
+  "image": "https://www.amalegalsolutions.com/newAssets/legal-hero.jpg",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions"

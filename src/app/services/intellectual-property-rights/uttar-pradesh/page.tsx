@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Protect your business in UP. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Noida, Lucknow, Kanpur & Varanasi. Litigation support at Allahabad High Court.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/intellectual-property-rights/uttar-pradesh',
+    canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/uttar-pradesh',
   },
   openGraph: {
     title: "Intellectual Property Rights in Uttar Pradesh | IP Lawyers Noida & Lucknow",
     description: "Protect your business in UP. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Noida, Lucknow, Kanpur & Varanasi. Litigation support at Allahabad High Court.",
-    url: "https://amalegalsolutions.com/services/intellectual-property-rights/uttar-pradesh",
+    url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/uttar-pradesh",
     type: "website",
     images: [
       {
@@ -36,25 +36,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Intellectual Property Rights",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Uttar Pradesh",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights/uttar-pradesh"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights/uttar-pradesh"
     }
   ]
 };
@@ -64,18 +64,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Intellectual Property Rights Services in Uttar Pradesh: Securing Growth",
   "description": "Comprehensive guide to IPR protection in Uttar Pradesh. Learn about software patents in Noida, leather trademarks in Kanpur, and IP litigation at the Allahabad High Court.",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -86,7 +86,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "IPR Services Uttar Pradesh",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "description": "Expert intellectual property legal services in Uttar Pradesh.",
   "brand": {
     "@type": "Brand",

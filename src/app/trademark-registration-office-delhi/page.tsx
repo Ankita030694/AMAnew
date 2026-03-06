@@ -82,19 +82,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Trademark Registration Office Delhi",
-      "item": "https://amalegalsolutions.com/trademark-registration-office-delhi"
+      "item": "https://www.amalegalsolutions.com/trademark-registration-office-delhi"
     }
   ]
 };
@@ -105,18 +105,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Trademark Registration Office Delhi: Comprehensive Guide to Dwarka Registry (2025)",
   "description": "Exclusive guide on trademark registration in Delhi. Learn about the Dwarka Registry office, filing procedures, fees, and legal requirements with expert legal assistance from AMA Legal Solutions.",
-  "image": "https://amalegalsolutions.com/services/trademark-registration.png",
+  "image": "https://www.amalegalsolutions.com/services/trademark-registration.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-10",
@@ -142,7 +142,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Trademark Registration Services Delhi",
-  "image": "https://amalegalsolutions.com/services/trademark-registration.png",
+  "image": "https://www.amalegalsolutions.com/services/trademark-registration.png",
   "description": "Top-rated trademark registration and IPR consultancy services in Delhi NCR.",
   "brand": {
     "@type": "Brand",
@@ -200,12 +200,12 @@ export const metadata = {
     "trademark opposition delhi"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/trademark-registration-office-delhi',
+    canonical: 'https://www.amalegalsolutions.com/trademark-registration-office-delhi',
   },
   openGraph: {
     title: "Trademark Registration Office Delhi | Expert Brand Protection",
     description: "Secure your brand at the New Delhi Trademark Office. Learn the complete filing process, fees, and legal steps in our comprehensive guide.",
-    url: "https://amalegalsolutions.com/trademark-registration-office-delhi",
+    url: "https://www.amalegalsolutions.com/trademark-registration-office-delhi",
     type: "website",
     images: [
       {

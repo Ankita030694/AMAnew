@@ -15,25 +15,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Paytm Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/paytm"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/paytm"
     }
   ]
 };
@@ -44,18 +44,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Paytm Postpaid & Personal Loan Settlement: The Complete Legal Guide 2025",
   "description": "Unable to pay Paytm Postpaid or Personal Loan? Learn how to legally settle your debt with lending partners like Aditya Birla & Hero FinCorp. Stop harassment and save up to 50%.",
-  "image": "https://amalegalsolutions.com/services/5.png",
+  "image": "https://www.amalegalsolutions.com/services/5.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -67,7 +67,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Paytm Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/5.png",
+  "image": "https://www.amalegalsolutions.com/services/5.png",
   "description": "Legal settlement services for Paytm Postpaid and Personal Loans.",
   "brand": {
     "@type": "Brand",
@@ -111,12 +111,12 @@ export const metadata = {
   description:
     "Expert legal help for Paytm Postpaid & Personal Loan settlement. Negotiate with Aditya Birla/Hero FinCorp, stop recovery harassment, and close your loan with an NDC.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/paytm',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/paytm',
   },
   openGraph: {
     title: "Paytm Loan Settlement | Settle Paytm Postpaid & Personal Loan",
     description: "Expert legal help for Paytm Postpaid & Personal Loan settlement. Negotiate with Aditya Birla/Hero FinCorp, stop recovery harassment, and close your loan with an NDC.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/paytm",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/paytm",
     type: "website",
     images: [
       {

@@ -451,18 +451,18 @@ export default function MizoramClient() {
             "@type": "Article",
             "headline": "Intellectual Property Rights Services in Mizoram",
             "description": "Comprehensive IPR services in Mizoram including Trademark, Patent, and Copyright registration. Protect your brand and innovations with expert legal support.",
-            "image": "https://amalegalsolutions.com/services/ipr-mizoram.jpg",
+            "image": "https://www.amalegalsolutions.com/services/ipr-mizoram.jpg",
             "author": {
               "@type": "Organization",
               "name": "AMA Legal Solutions",
-              "url": "https://amalegalsolutions.com"
+              "url": "https://www.amalegalsolutions.com"
             },
             "publisher": {
               "@type": "Organization",
               "name": "AMA Legal Solutions",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+                "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
               }
             },
             "datePublished": "2024-11-26",
@@ -478,7 +478,7 @@ export default function MizoramClient() {
             "@context": "https://schema.org",
             "@type": "Product",
             "name": "IPR Services Mizoram",
-            "image": "https://amalegalsolutions.com/services/ipr-mizoram.jpg",
+            "image": "https://www.amalegalsolutions.com/services/ipr-mizoram.jpg",
             "description": "Expert Intellectual Property Rights registration and protection services in Mizoram.",
             "brand": {
               "@type": "Brand",

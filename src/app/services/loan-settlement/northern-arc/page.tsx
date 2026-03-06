@@ -13,12 +13,12 @@ export const metadata = {
   title: "Northern Arc Capital Loan Settlement | Slice, Uni & Fintech Loans | AMA Legal Solutions",
   description: "Unable to pay Northern Arc Capital loans (Slice, Uni, KreditBee)? We provide expert legal settlement services to stop harassment, handle arbitration, and close your debt.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/northern-arc',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/northern-arc',
   },
   openGraph: {
     title: "Northern Arc Capital Loan Settlement | Slice, Uni & Fintech Loans | AMA Legal Solutions",
     description: "Unable to pay Northern Arc Capital loans (Slice, Uni, KreditBee)? We provide expert legal settlement services to stop harassment, handle arbitration, and close your debt.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/northern-arc",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/northern-arc",
     type: "website",
     images: [
       {
@@ -40,25 +40,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Northern Arc Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/northern-arc"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/northern-arc"
     }
   ]
 };
@@ -68,18 +68,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Northern Arc Capital Loan Settlement: Complete Guide for Fintech Loans",
   "description": "A comprehensive guide on settling loans with Northern Arc Capital, the lender behind Slice, Uni, and other fintech apps. Learn about the OTS process and legal protection.",
-  "image": "https://amalegalsolutions.com/services/6.png",
+  "image": "https://www.amalegalsolutions.com/services/6.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-12-15",
@@ -103,7 +103,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Northern Arc Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/6.png",
+  "image": "https://www.amalegalsolutions.com/services/6.png",
   "description": "Legal settlement services for Northern Arc Capital loans.",
   "brand": {
     "@type": "Brand",

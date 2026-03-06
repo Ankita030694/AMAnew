@@ -57,19 +57,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Intellectual Property Rights",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights"
     }
   ]
 };
@@ -80,18 +80,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Trademark Registration in India: The Ultimate Guide to IP Protection",
   "description": "Comprehensive guide to trademark registration in India. Learn about the process, documents, fees, and legal protection for your brand with AMA Legal Solutions.",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-15",
@@ -117,7 +117,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Trademark Registration Services",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "description": "Expert trademark registration and IP protection services in India.",
   "brand": {
     "@type": "Brand",
@@ -162,7 +162,7 @@ const webPageSchema = {
   "@type": "WebPage",
   "name": "Trademark Registration in India | IP Rights Services",
   "description": "Secure your brand with expert trademark registration services in India. AMA Legal Solutions offers comprehensive IP protection, patent filing, and copyright registration.",
-  "url": "https://amalegalsolutions.com/services/intellectual-property-rights",
+  "url": "https://www.amalegalsolutions.com/services/intellectual-property-rights",
 };
 
 export const metadata = {
@@ -170,12 +170,12 @@ export const metadata = {
   description:
     "Protect your brand with AMA Legal Solutions. We provide expert trademark registration in India, patent filing, copyright protection, and IP litigation services. Secure your intellectual property today.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/intellectual-property-rights',
+    canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights',
   },
   openGraph: {
     title: "Trademark Registration in India | Expert IP Rights Lawyers",
     description: "Secure your brand identity with our comprehensive trademark registration and intellectual property services in India.",
-    url: "https://amalegalsolutions.com/services/intellectual-property-rights",
+    url: "https://www.amalegalsolutions.com/services/intellectual-property-rights",
     type: "website",
     images: [
       {

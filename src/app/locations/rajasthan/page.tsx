@@ -56,19 +56,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Locations",
-      "item": "https://amalegalsolutions.com/locations"
+      "item": "https://www.amalegalsolutions.com/locations"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Rajasthan",
-      "item": "https://amalegalsolutions.com/locations/rajasthan"
+      "item": "https://www.amalegalsolutions.com/locations/rajasthan"
     }
   ]
 };
@@ -78,7 +78,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "AMA Legal Solutions Rajasthan",
-  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+  "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Leading law firm in Rajasthan specializing in High Court Litigation (Jaipur/Jodhpur), Mining Laws, Hospitality, and RERA.",
   "address": {
     "@type": "PostalAddress",
@@ -93,7 +93,7 @@ const articleSchema = {
     { "@type": "City", "name": "Bhiwadi" },
     { "@type": "State", "name": "Rajasthan" }
   ],
-  "url": "https://amalegalsolutions.com/locations/rajasthan",
+  "url": "https://www.amalegalsolutions.com/locations/rajasthan",
   "telephone": "+918448512333",
   "priceRange": "₹₹",
   "openingHoursSpecification": [
@@ -137,7 +137,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Rajasthan",
-  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+  "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Top-tier legal services in Rajasthan by AMA Legal Solutions.",
   "brand": {
     "@type": "Brand",
@@ -217,12 +217,12 @@ export const metadata = {
     "Cheque Bounce Lawyer Jaipur"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/locations/rajasthan',
+    canonical: 'https://www.amalegalsolutions.com/locations/rajasthan',
   },
   openGraph: {
     title: "Lawyers in Rajasthan | High Court & Corporate Legal Services",
     description: "Expert legal representation in Rajasthan. Mining, Hospitality, Civil, Criminal, and RERA services by AMA Legal Solutions.",
-    url: "https://amalegalsolutions.com/locations/rajasthan",
+    url: "https://www.amalegalsolutions.com/locations/rajasthan",
     type: "website",
     images: [
       {

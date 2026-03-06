@@ -9,7 +9,7 @@ export const metadata = {
     title: "Banking & Finance Services in Uttar Pradesh | AMA",
     description:
       "Expert legal consultancy for banking and finance in Uttar Pradesh. NBFC registration in Noida, ODOP finance, and infrastructure project lending.",
-    url: "https://amalegalsolutions.com/services/banking-and-finance/uttar-pradesh",
+    url: "https://www.amalegalsolutions.com/services/banking-and-finance/uttar-pradesh",
     siteName: "AMA Legal Solutions",
     locale: "en_US",
     type: "article",

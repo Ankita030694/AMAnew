@@ -117,13 +117,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Validity of Trademark Registration",
-      "item": "https://amalegalsolutions.com/validity-of-trademark-registration"
+      "item": "https://www.amalegalsolutions.com/validity-of-trademark-registration"
     }
   ]
 };
@@ -134,18 +134,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Validity of Trademark Registration in India | Renewal & Restoration Guide",
   "description": "Comprehensive guide to the validity and renewal of trademark registration in India. Learn about the 10-year period, grace periods, restoration, and non-use grounds.",
-  "image": "https://amalegalsolutions.com/services/trademark.png",
+  "image": "https://www.amalegalsolutions.com/services/trademark.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-03",
@@ -171,7 +171,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Trademark Registration Services",
-  "image": "https://amalegalsolutions.com/services/trademark.png",
+  "image": "https://www.amalegalsolutions.com/services/trademark.png",
   "description": "Expert legal trademark registration and renewal services in India.",
   "brand": {
     "@type": "Brand",
@@ -237,12 +237,12 @@ export const metadata = {
     "how to renew trademark online"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/validity-of-trademark-registration',
+    canonical: 'https://www.amalegalsolutions.com/validity-of-trademark-registration',
   },
   openGraph: {
     title: "Validity of Trademark Registration India | Renewal & Restoration",
     description: "Expert legal guide on maintaining your trademark's validity in India. Learn about renewals, grace periods, and protecting your brand assets.",
-    url: "https://amalegalsolutions.com/validity-of-trademark-registration",
+    url: "https://www.amalegalsolutions.com/validity-of-trademark-registration",
     type: "website",
     images: [
       {

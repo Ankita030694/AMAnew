@@ -77,19 +77,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Banking & Finance",
-      "item": "https://amalegalsolutions.com/services/banking-and-finance"
+      "item": "https://www.amalegalsolutions.com/services/banking-and-finance"
     }
   ]
 };
@@ -100,18 +100,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Banking and Finance Lawyers in India | Expert Legal Services",
   "description": "Top-rated banking and finance lawyers in India. We provide expert legal solutions for loan disputes, DRT cases, cheque bounce, and regulatory compliance.",
-  "image": "https://amalegalsolutions.com/services/2.png",
+  "image": "https://www.amalegalsolutions.com/services/2.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-10-01",
@@ -137,7 +137,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Banking and Finance Legal Services",
-  "image": "https://amalegalsolutions.com/services/2.png",
+  "image": "https://www.amalegalsolutions.com/services/2.png",
   "description": "Expert banking and finance legal services in India.",
   "brand": {
     "@type": "Brand",
@@ -181,12 +181,12 @@ export const metadata = {
   description:
     "Looking for expert banking and finance lawyers in India? AMA Legal Solutions offers top-tier legal services for loan disputes, DRT cases, cheque bounce, and corporate finance. Consult now.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/banking-and-finance',
+    canonical: 'https://www.amalegalsolutions.com/services/banking-and-finance',
   },
   openGraph: {
     title: "Banking & Finance Lawyers in India | DRT & Cheque Bounce Experts",
     description: "Looking for expert banking and finance lawyers in India? AMA Legal Solutions offers top-tier legal services for loan disputes, DRT cases, cheque bounce, and corporate finance.",
-    url: "https://amalegalsolutions.com/services/banking-and-finance",
+    url: "https://www.amalegalsolutions.com/services/banking-and-finance",
     type: "website",
     images: [
       {

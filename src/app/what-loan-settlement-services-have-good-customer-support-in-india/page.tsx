@@ -18,12 +18,12 @@ export const metadata = {
     "personal loan settlement contact"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/what-loan-settlement-services-have-good-customer-support-in-india',
+    canonical: 'https://www.amalegalsolutions.com/what-loan-settlement-services-have-good-customer-support-in-india',
   },
   openGraph: {
     title: "What Loan Settlement Services Have Good Customer Support in India?",
     description: "Don't face the bank alone. Find settlement firms that actually pick up the phone and fight for you.",
-    url: "https://amalegalsolutions.com/what-loan-settlement-services-have-good-customer-support-in-india",
+    url: "https://www.amalegalsolutions.com/what-loan-settlement-services-have-good-customer-support-in-india",
     type: "article",
     images: [
       {
@@ -81,7 +81,7 @@ const articleSchema = {
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/logo.png"
+      "url": "https://www.amalegalsolutions.com/logo.png"
     }
   },
   "datePublished": "2025-02-18",
@@ -602,7 +602,7 @@ function breadcrumbSchemaWithId(items: { label: string; href: string }[]) {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.label,
-      "item": `https://amalegalsolutions.com${item.href}`
+      "item": `https://www.amalegalsolutions.com${item.href}`
     }))
   };
 }

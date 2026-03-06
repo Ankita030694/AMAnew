@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Struggling with debt in Haryana? AMA Legal Solutions offers expert loan settlement services in Gurugram, Faridabad & across the state. Stop harassment & settle legally.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/Haryana',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/haryana',
   },
   openGraph: {
     title: "Loan Settlement in Haryana | Expert Debt Relief Lawyers Gurugram",
     description: "Struggling with debt in Haryana? AMA Legal Solutions offers expert loan settlement services in Gurugram, Faridabad & across the state. Stop harassment & settle legally.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/Haryana",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/Haryana",
     type: "website",
     images: [
       {
@@ -36,25 +36,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Haryana",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/Haryana"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/Haryana"
     }
   ]
 };
@@ -64,18 +64,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Loan Settlement Services in Haryana: Expert Legal Help",
   "description": "Comprehensive guide to loan settlement in Haryana. Learn how to legally settle personal loans and credit card debt in Gurugram, Faridabad, and other cities.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-21",
@@ -86,7 +86,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Loan Settlement Services Haryana",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Expert legal loan settlement services in Haryana.",
   "brand": {
     "@type": "Brand",

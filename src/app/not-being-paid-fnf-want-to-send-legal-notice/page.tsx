@@ -57,19 +57,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Unpaid F&F Legal Notice",
-      "item": "https://amalegalsolutions.com/not-being-paid-fnf-want-to-send-legal-notice"
+      "item": "https://www.amalegalsolutions.com/not-being-paid-fnf-want-to-send-legal-notice"
     }
   ]
 };
@@ -80,18 +80,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Recover Your Unpaid F&F Settlement: A Comprehensive Legal Guide for Employees in India",
   "description": "Facing delays in your Full and Final settlement? Learn how to legally recover unpaid salary, leave encashment, and gratuity from your employer with expert legal advice.",
-  "image": "https://amalegalsolutions.com/services/legal-notice-fnf.png",
+  "image": "https://www.amalegalsolutions.com/services/legal-notice-fnf.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-10",
@@ -117,7 +117,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "F&F Settlement Legal Recovery Services",
-  "image": "https://amalegalsolutions.com/services/legal-notice-fnf.png",
+  "image": "https://www.amalegalsolutions.com/services/legal-notice-fnf.png",
   "description": "Expert legal assistance for recovering unpaid Full and Final settlement dues in India.",
   "brand": {
     "@type": "Brand",
@@ -170,7 +170,7 @@ export const metadata = {
     "full and final settlement rules India"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/not-being-paid-fnf-want-to-send-legal-notice',
+    canonical: 'https://www.amalegalsolutions.com/not-being-paid-fnf-want-to-send-legal-notice',
   },
 };
 

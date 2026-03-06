@@ -20,12 +20,12 @@ export const metadata = {
     "unsecured debt relief expert"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/which-firms-specialize-in-negotiating-settlements-for-unsecured-loans',
+    canonical: 'https://www.amalegalsolutions.com/which-firms-specialize-in-negotiating-settlements-for-unsecured-loans',
   },
   openGraph: {
     title: "Which Firms Specialize in Negotiating Settlements for Unsecured Loans?",
     description: "Expert guide to settling unsecured debt without legal risks. Compare top specialists.",
-    url: "https://amalegalsolutions.com/which-firms-specialize-in-negotiating-settlements-for-unsecured-loans",
+    url: "https://www.amalegalsolutions.com/which-firms-specialize-in-negotiating-settlements-for-unsecured-loans",
     type: "article",
     images: [
       {
@@ -83,7 +83,7 @@ const articleSchema = {
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/logo.png"
+      "url": "https://www.amalegalsolutions.com/logo.png"
     }
   },
   "datePublished": "2025-02-18",
@@ -540,7 +540,7 @@ function breadcrumbSchemaWithId(items: { label: string; href: string }[]) {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.label,
-      "item": `https://amalegalsolutions.com${item.href}`
+      "item": `https://www.amalegalsolutions.com${item.href}`
     }))
   };
 }

@@ -97,19 +97,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Trademark Registration",
-      "item": "https://amalegalsolutions.com/services/trademark-registration"
+      "item": "https://www.amalegalsolutions.com/services/trademark-registration"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Is Trademark Mandatory for Amazon",
-      "item": "https://amalegalsolutions.com/is-trademark-registration-mandatory-to-sell-on-amazon"
+      "item": "https://www.amalegalsolutions.com/is-trademark-registration-mandatory-to-sell-on-amazon"
     }
   ]
 };
@@ -120,18 +120,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Is Trademark Registration Mandatory to Sell on Amazon? A Guide for Indian Sellers",
   "description": "Discover if trademark registration is mandatory to sell on Amazon India. Learn about Brand Registry benefits, risks of selling without a trademark, and how to protect your brand.",
-  "image": "https://amalegalsolutions.com/services/trademark.png",
+  "image": "https://www.amalegalsolutions.com/services/trademark.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-09",
@@ -157,7 +157,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "E-commerce Trademark Services",
-  "image": "https://amalegalsolutions.com/services/trademark.png",
+  "image": "https://www.amalegalsolutions.com/services/trademark.png",
   "description": "Legal services for trademark registration and Amazon Brand Registry protection.",
   "brand": {
     "@type": "Brand",
@@ -213,12 +213,12 @@ export const metadata = {
     "ecommerce legal compliance"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/is-trademark-registration-mandatory-to-sell-on-amazon',
+    canonical: 'https://www.amalegalsolutions.com/is-trademark-registration-mandatory-to-sell-on-amazon',
   },
   openGraph: {
     title: "Is Trademark Registration Mandatory to Sell on Amazon? | Expert Guide",
     description: "Planning to sell on Amazon? Find out if trademark registration is mandatory. Learn about Amazon Brand Registry and protecting your listings.",
-    url: "https://amalegalsolutions.com/is-trademark-registration-mandatory-to-sell-on-amazon",
+    url: "https://www.amalegalsolutions.com/is-trademark-registration-mandatory-to-sell-on-amazon",
     type: "website",
     images: [
       {

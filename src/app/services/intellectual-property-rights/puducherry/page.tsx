@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Secure your brand in Puducherry. AMA Legal Solutions offers expert IPR services for Tourism, Handicrafts (GI Tags), and Pharma industries. Litigation support at Madras High Court.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/intellectual-property-rights/puducherry',
+    canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/puducherry',
   },
   openGraph: {
     title: "Intellectual Property Rights in Puducherry | Trademark & Patent Attorneys",
     description: "Secure your brand in Puducherry. AMA Legal Solutions offers expert IPR services for Tourism, Handicrafts (GI Tags), and Pharma industries.",
-    url: "https://amalegalsolutions.com/services/intellectual-property-rights/puducherry",
+    url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/puducherry",
     type: "website",
     images: [
       {
@@ -36,25 +36,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Intellectual Property Rights",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Puducherry",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights/puducherry"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights/puducherry"
     }
   ]
 };
@@ -64,18 +64,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Intellectual Property Rights Services in Puducherry: Protecting Heritage & Innovation",
   "description": "Comprehensive IPR guide for Puducherry. Covering GI Tags for Terracotta, Trademark Registration for Hotels, and Patents for Pharma innovation.",
-  "image": "https://amalegalsolutions.com/services/ipr-puducherry.jpg",
+  "image": "https://www.amalegalsolutions.com/services/ipr-puducherry.jpg",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-26",
@@ -97,7 +97,7 @@ const webPageSchema = {
     "provider": {
       "@type": "LegalService",
       "name": "AMA Legal Solutions",
-      "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+      "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "New Delhi",
@@ -114,7 +114,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "IPR Legal Services Puducherry",
-  "image": "https://amalegalsolutions.com/services/ipr-puducherry.jpg",
+  "image": "https://www.amalegalsolutions.com/services/ipr-puducherry.jpg",
   "description": "Specialized Intellectual Property Rights services for Puducherry industries including Tourism, Handicrafts, and Pharma.",
   "brand": {
     "@type": "Brand",

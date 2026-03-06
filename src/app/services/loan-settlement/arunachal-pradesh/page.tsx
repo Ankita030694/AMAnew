@@ -57,25 +57,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Arunachal Pradesh",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/arunachal-pradesh"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/arunachal-pradesh"
     }
   ]
 };
@@ -86,25 +86,25 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Loan Settlement Services in Arunachal Pradesh: Expert Legal Help",
   "description": "Facing debt issues in Arunachal Pradesh? Our expert lawyers in Itanagar & Pasighat help you settle loans, stop harassment, and save up to 50% on dues.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-20",
   "dateModified": "2025-01-20",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://amalegalsolutions.com/services/loan-settlement/arunachal-pradesh"
+    "@id": "https://www.amalegalsolutions.com/services/loan-settlement/arunachal-pradesh"
   }
 };
 
@@ -138,12 +138,12 @@ export const metadata = {
     "Lok Adalat Itanagar loan"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/arunachal-pradesh',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/arunachal-pradesh',
   },
   openGraph: {
     title: "Loan Settlement in Arunachal Pradesh | Expert Debt Relief",
     description: "Struggling with debt in Arunachal Pradesh? We negotiate with banks to reduce your debt and stop harassment in Itanagar and across the state.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/arunachal-pradesh",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/arunachal-pradesh",
     type: "website",
     images: [
       {

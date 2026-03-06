@@ -57,19 +57,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Reliable & Flexible Loan Settlement",
-      "item": "https://amalegalsolutions.com/where-can-i-find-reliable-loan-settlement-services-with-flexible-payment-options"
+      "item": "https://www.amalegalsolutions.com/where-can-i-find-reliable-loan-settlement-services-with-flexible-payment-options"
     }
   ]
 };
@@ -80,18 +80,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Where to Find Reliable Loan Settlement Services with Flexible Payment Options in India?",
   "description": "Discover reliable loan settlement companies that offer flexible EMI payment plans. expert guide on AMA Legal, FREED, CredSettle, and SettleLoans.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-25",
@@ -117,7 +117,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Flexible Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Legal and financial loan settlement services with flexible EMI options.",
   "brand": {
     "@type": "Brand",
@@ -173,12 +173,12 @@ export const metadata = {
     "debt relief companies India"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/where-can-i-find-reliable-loan-settlement-services-with-flexible-payment-options',
+    canonical: 'https://www.amalegalsolutions.com/where-can-i-find-reliable-loan-settlement-services-with-flexible-payment-options',
   },
   openGraph: {
     title: "Reliable Loan Settlement Services with Flexible Payment Options (EMI Plans)",
     description: "Settle your debt with flexible EMI options. Find the most reliable services in India.",
-    url: "https://amalegalsolutions.com/where-can-i-find-reliable-loan-settlement-services-with-flexible-payment-options",
+    url: "https://www.amalegalsolutions.com/where-can-i-find-reliable-loan-settlement-services-with-flexible-payment-options",
     type: "article",
     images: [
       {

@@ -115,9 +115,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://amalegalsolutions.com" },
-    { "@type": "ListItem", "position": 2, "name": "Expertise", "item": "https://amalegalsolutions.com/services" },
-    { "@type": "ListItem", "position": 3, "name": "Trademark Infringement Without Registration", "item": "https://amalegalsolutions.com/trademark-infringement-without-registration" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.amalegalsolutions.com" },
+    { "@type": "ListItem", "position": 2, "name": "Expertise", "item": "https://www.amalegalsolutions.com/services" },
+    { "@type": "ListItem", "position": 3, "name": "Trademark Infringement Without Registration", "item": "https://www.amalegalsolutions.com/trademark-infringement-without-registration" }
   ]
 };
 
@@ -144,7 +144,7 @@ const faqSchema = {
 export const metadata = {
   title: "Trademark Infringement Without Registration India | 8250+ Word Guide",
   description: "Comprehensive 2025 guide on protecting unregistered brands in India. Learn about Passing Off, Section 27, Prior Use, and advanced IP litigation strategies.",
-  alternates: { canonical: 'https://amalegalsolutions.com/trademark-infringement-without-registration' },
+  alternates: { canonical: 'https://www.amalegalsolutions.com/trademark-infringement-without-registration' },
 };
 
 export default function TrademarkInfringementPage() {

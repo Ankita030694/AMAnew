@@ -57,19 +57,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan and Debt Consolidation",
-      "item": "https://amalegalsolutions.com/services/loan-and-debt-consolidation"
+      "item": "https://www.amalegalsolutions.com/services/loan-and-debt-consolidation"
     }
   ]
 };
@@ -80,18 +80,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Ultimate Guide to Loan and Debt Consolidation in India (2025)",
   "description": "Master your finances with our comprehensive guide to debt consolidation in India. Learn about interest rates, top lenders, and legal strategies to simplify your EMIs.",
-  "image": "https://amalegalsolutions.com/services/debt-consolidation-hero.png",
+  "image": "https://www.amalegalsolutions.com/services/debt-consolidation-hero.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-01-15",
@@ -117,7 +117,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Debt Consolidation Services",
-  "image": "https://amalegalsolutions.com/services/debt-consolidation-icon.png",
+  "image": "https://www.amalegalsolutions.com/services/debt-consolidation-icon.png",
   "description": "Specialized legal and financial guidance for debt consolidation in India.",
   "brand": {
     "@type": "Brand",
@@ -184,12 +184,12 @@ export const metadata = {
     "nbfc debt consolidation india"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-and-debt-consolidation',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-and-debt-consolidation',
   },
   openGraph: {
     title: "Loan and Debt Consolidation India | Expert Debt Relief Guide",
     description: "Struggling with multiple EMIs? Our 5000 word guide explains everything you need to know about debt consolidation in India to regain your financial freedom.",
-    url: "https://amalegalsolutions.com/services/loan-and-debt-consolidation",
+    url: "https://www.amalegalsolutions.com/services/loan-and-debt-consolidation",
     type: "website",
     images: [
       {

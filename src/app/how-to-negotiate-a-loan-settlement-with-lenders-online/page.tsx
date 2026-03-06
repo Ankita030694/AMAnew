@@ -98,19 +98,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "How to Negotiate a Loan Settlement",
-      "item": "https://amalegalsolutions.com/how-to-negotiate-a-loan-settlement-with-lenders-online"
+      "item": "https://www.amalegalsolutions.com/how-to-negotiate-a-loan-settlement-with-lenders-online"
     }
   ]
 };
@@ -121,18 +121,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "How to Negotiate a Loan Settlement with Lenders Online: A Comprehensive Guide",
   "description": "Learn the expert strategies to negotiate loan settlements with lenders online in India. A step-by-step guide to reducing debt, stopping harassment, and settling loans legally.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-01-15",
@@ -158,7 +158,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Online Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Professional online loan negotiation and settlement services.",
   "brand": {
     "@type": "Brand",
@@ -214,12 +214,12 @@ export const metadata = {
     "loan settlement lawyer online"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/how-to-negotiate-a-loan-settlement-with-lenders-online',
+    canonical: 'https://www.amalegalsolutions.com/how-to-negotiate-a-loan-settlement-with-lenders-online',
   },
   openGraph: {
     title: "How to Negotiate a Loan Settlement with Lenders Online | Expert Guide",
     description: "Struggling with debt? Learn how to negotiate a loan settlement with lenders online effectively. Get expert tips and legal strategies.",
-    url: "https://amalegalsolutions.com/how-to-negotiate-a-loan-settlement-with-lenders-online",
+    url: "https://www.amalegalsolutions.com/how-to-negotiate-a-loan-settlement-with-lenders-online",
     type: "website",
     images: [
       {

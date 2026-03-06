@@ -162,7 +162,7 @@ export default function Page({ initialBlogs = [] }: BlogPageProps) {
       },
       {
         question: "How can I contact AMA Legal Solutions for legal consultation?",
-        answer: "You can contact AMA Legal Solutions for legal consultation through multiple channels. Visit our website at www.amalegalsolutions.com, email us at notify@amalegalsolutions.com, or call our office directly. Our experienced legal team is available to discuss your legal needs and provide professional legal services tailored to your requirements."
+        answer: "You can contact AMA Legal Solutions for legal consultation through multiple channels. Visit our website at https://www.amalegalsolutions.com, email us at notify@amalegalsolutions.com, or call our office directly. Our experienced legal team is available to discuss your legal needs and provide professional legal services tailored to your requirements."
       },
       {
         question: "Do you provide legal services across all major cities in India?",
@@ -179,7 +179,7 @@ export default function Page({ initialBlogs = [] }: BlogPageProps) {
       "@type": "WebPage",
       "name": "Legal Blog - AMA Legal Solutions | Legal Insights & Articles India",
       "description": `Stay informed with the latest legal insights, case studies, and legal developments in India. AMA Legal Solutions blog provides expert legal articles on ${blogsData.slice(0, 3).map(blog => blog.title.toLowerCase()).join(', ')} and more.`,
-      "url": "https://amalegalsolutions.com/blog",
+      "url": "https://www.amalegalsolutions.com/blog",
       "mainEntity": {
         "@type": "FAQPage",
         "name": "Legal Blog FAQs",
@@ -816,7 +816,7 @@ export default function Page({ initialBlogs = [] }: BlogPageProps) {
           <h3 className="text-[#5A4C33] text-xl font-medium mb-4 text-center">Disclaimer</h3>
           <div className="text-gray-700 text-sm leading-relaxed space-y-4">
             <p>
-              The information provided on this website www.amalegalsolutions.com is for general informational purposes only
+              The information provided on this website https://www.amalegalsolutions.com is for general informational purposes only
               and should not be considered legal, financial, or professional advice. While we strive to ensure that the content is accurate and
               up to date, we do not guarantee the completeness, reliability, or accuracy of any information.
             </p>

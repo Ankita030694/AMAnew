@@ -16,25 +16,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://amalegalsolutions.com",
+      item: "https://www.amalegalsolutions.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Services",
-      item: "https://amalegalsolutions.com/services",
+      item: "https://www.amalegalsolutions.com/services",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Banking and Finance",
-      item: "https://amalegalsolutions.com/services/banking-and-finance",
+      item: "https://www.amalegalsolutions.com/services/banking-and-finance",
     },
     {
       "@type": "ListItem",
       position: 4,
       name: "Rajasthan",
-      item: "https://amalegalsolutions.com/services/banking-and-finance/rajasthan",
+      item: "https://www.amalegalsolutions.com/services/banking-and-finance/rajasthan",
     },
   ],
 };
@@ -45,18 +45,18 @@ const articleSchema = {
   headline: "Banking and Finance Services in Rajasthan: Financing the Land of Kings",
   description:
     "Expert legal consultancy for banking and finance services in Rajasthan. Assistance with NBFC registration in Jaipur, tourism finance, and solar project lending compliance.",
-  image: "https://amalegalsolutions.com/services/banking-finance-rajasthan.png",
+  image: "https://www.amalegalsolutions.com/services/banking-finance-rajasthan.png",
   author: {
     "@type": "Organization",
     name: "AMA Legal Solutions",
-    url: "https://amalegalsolutions.com",
+    url: "https://www.amalegalsolutions.com",
   },
   publisher: {
     "@type": "Organization",
     name: "AMA Legal Solutions",
     logo: {
       "@type": "ImageObject",
-      url: "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+      url: "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
     },
   },
   datePublished: "2024-11-27",
@@ -67,7 +67,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "Banking and Finance Legal Services Rajasthan",
-  image: "https://amalegalsolutions.com/services/banking-finance-rajasthan.png",
+  image: "https://www.amalegalsolutions.com/services/banking-finance-rajasthan.png",
   description:
     "Premier legal consultancy for the banking and finance sector in Jaipur, Jodhpur, and across Rajasthan.",
   brand: {

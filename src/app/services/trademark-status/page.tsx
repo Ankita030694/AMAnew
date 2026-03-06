@@ -93,9 +93,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://amalegalsolutions.com" },
-    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://amalegalsolutions.com/services" },
-    { "@type": "ListItem", "position": 3, "name": "Trademark Status Guide", "item": "https://amalegalsolutions.com/services/trademark-status" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.amalegalsolutions.com" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.amalegalsolutions.com/services" },
+    { "@type": "ListItem", "position": 3, "name": "Trademark Status Guide", "item": "https://www.amalegalsolutions.com/services/trademark-status" }
   ]
 };
 
@@ -104,7 +104,7 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Understanding Trademark Status in India: The 2026 Master Guide",
   "description": "Comprehensive guide to tracking and interpreting trademark statuses on the IP India Registry. Learn how to handle Objections, Oppositions, and Refusals.",
-  "author": { "@type": "Organization", "name": "AMA Legal Solutions", "url": "https://amalegalsolutions.com" },
+  "author": { "@type": "Organization", "name": "AMA Legal Solutions", "url": "https://www.amalegalsolutions.com" },
   "publisher": { "@type": "Organization", "name": "AMA Legal Solutions" },
   "datePublished": "2026-01-31",
   "dateModified": "2026-01-31"

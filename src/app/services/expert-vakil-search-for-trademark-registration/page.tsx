@@ -113,7 +113,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Expert Vakil Search for Trademark Registration",
-  "image": "https://amalegalsolutions.com/future.png",
+  "image": "https://www.amalegalsolutions.com/future.png",
   "description": "Guide to finding expert IP lawyers (Vakil) for trademark registration in India.",
   "brand": {
     "@type": "Brand",

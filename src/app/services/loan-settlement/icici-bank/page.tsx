@@ -15,25 +15,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "ICICI Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/ICICI"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/ICICI"
     }
   ]
 };
@@ -44,18 +44,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "ICICI Loan Settlement Process 2025: Legal Guide & Letter Format",
   "description": "Complete guide to ICICI Bank loan settlement. Learn how to settle ICICI personal loans and credit cards, understand OTS policies, and get legal help to stop harassment.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-21",
@@ -67,7 +67,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "ICICI Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Expert legal assistance for settling ICICI Bank personal loans and credit card dues.",
   "brand": {
     "@type": "Brand",
@@ -111,12 +111,12 @@ export const metadata = {
   description:
     "Expert guide on ICICI loan settlement. Learn how to settle ICICI personal loans and credit cards. Get legal help to negotiate OTS, stop harassment, and save up to 50%.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/ICICI',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/icici-bank',
   },
   openGraph: {
     title: "ICICI Loan Settlement Process | ICICI Personal Loan Settlement Letter Format",
     description: "Expert guide on ICICI loan settlement. Learn how to settle ICICI personal loans and credit cards. Get legal help to negotiate OTS, stop harassment, and save up to 50%.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/ICICI",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/ICICI",
     type: "website",
     images: [
       {

@@ -266,19 +266,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Traffic Challan Settlement",
-      "item": "https://amalegalsolutions.com/special-lok-adalat-for-challan"
+      "item": "https://www.amalegalsolutions.com/special-lok-adalat-for-challan"
     }
   ]
 };
@@ -299,7 +299,7 @@ export const metadata = {
     "traffic police challan waiver"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/special-lok-adalat-for-challan',
+    canonical: 'https://www.amalegalsolutions.com/special-lok-adalat-for-challan',
   }
 };
 
@@ -339,8 +339,8 @@ export default function ChallanLokAdalatPage() {
           "headline": "Special Lok Adalat for Traffic Challan 2025: Clear Online Challans",
           "description": "Exhaustive guide to settling traffic challans in Lok Adalat 2025. Learn about waivers, online disposal, and legal rights.",
           "author": { "@type": "Organization", "name": "AMA Legal Solutions" },
-          "publisher": { "@type": "Organization", "name": "AMA Legal Solutions", "logo": { "@type": "ImageObject", "url": "https://amalegalsolutions.com/logo.png" } },
-          "mainEntityOfPage": { "@type": "WebPage", "@id": "https://amalegalsolutions.com/special-lok-adalat-for-challan" }
+          "publisher": { "@type": "Organization", "name": "AMA Legal Solutions", "logo": { "@type": "ImageObject", "url": "https://www.amalegalsolutions.com/logo.png" } },
+          "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.amalegalsolutions.com/special-lok-adalat-for-challan" }
         }) }}
       />
       <Script

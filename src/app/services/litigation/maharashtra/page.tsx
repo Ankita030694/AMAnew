@@ -77,25 +77,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Litigation Services",
-      "item": "https://amalegalsolutions.com/services/litigation"
+      "item": "https://www.amalegalsolutions.com/services/litigation"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Maharashtra",
-      "item": "https://amalegalsolutions.com/services/litigation/maharashtra"
+      "item": "https://www.amalegalsolutions.com/services/litigation/maharashtra"
     }
   ]
 };
@@ -106,18 +106,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Litigation Services in Maharashtra: Expert Lawyers for Bombay High Court & District Courts",
   "description": "Comprehensive guide to litigation services in Maharashtra. Expert legal representation for Civil, Criminal, Property, and Commercial disputes in Bombay High Court, Mumbai City Civil Court, and across the state.",
-  "image": "https://amalegalsolutions.com/services/13.png",
+  "image": "https://www.amalegalsolutions.com/services/13.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-25",
@@ -143,7 +143,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Litigation Services Maharashtra",
-  "image": "https://amalegalsolutions.com/services/13.png",
+  "image": "https://www.amalegalsolutions.com/services/13.png",
   "description": "Top-tier litigation services for Bombay High Court and Maharashtra District Courts.",
   "brand": {
     "@type": "Brand",
@@ -199,12 +199,12 @@ export const metadata = {
     "sra dispute lawyer"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/litigation/maharashtra',
+    canonical: 'https://www.amalegalsolutions.com/services/litigation/maharashtra',
   },
   openGraph: {
     title: "Litigation Services in Maharashtra | Bombay High Court Lawyers",
     description: "Expert litigation services in Maharashtra. Representing clients in Bombay High Court, City Civil Court, and District Courts.",
-    url: "https://amalegalsolutions.com/services/litigation/maharashtra",
+    url: "https://www.amalegalsolutions.com/services/litigation/maharashtra",
     type: "website",
     images: [
       {

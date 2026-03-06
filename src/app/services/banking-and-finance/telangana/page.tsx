@@ -5,13 +5,13 @@ export const metadata = {
   description:
     "Expert legal services for Banking, Finance, and NBFC registration in Telangana. We assist with RBI compliance, Fintech regulations, and Money Lending licenses in Hyderabad and T-Hub.",
   alternates: {
-    canonical: "https://amalegalsolutions.com/services/banking-and-finance/telangana",
+    canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/telangana",
   },
   openGraph: {
     title: "Banking and Finance Services in Telangana | NBFC & Fintech Legal Experts",
     description:
       "Expert legal services for Banking, Finance, and NBFC registration in Telangana. We assist with RBI compliance, Fintech regulations, and Money Lending licenses in Hyderabad and T-Hub.",
-    url: "https://amalegalsolutions.com/services/banking-and-finance/telangana",
+    url: "https://www.amalegalsolutions.com/services/banking-and-finance/telangana",
     type: "website",
     images: [
       {

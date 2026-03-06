@@ -15,25 +15,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "SBI Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/SBI"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/SBI"
     }
   ]
 };
@@ -44,18 +44,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "SBI Loan Settlement Process 2025: Rinn Samadhan & OTS Scheme Guide",
   "description": "Struggling with SBI loan repayment? Learn about the SBI loan settlement process, Rinn Samadhan scheme, OTS policies, and how to settle your personal loan or credit card debt legally.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-21",
@@ -67,7 +67,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "SBI Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Expert legal assistance for settling SBI personal loans and credit card dues under Rinn Samadhan and OTS schemes.",
   "brand": {
     "@type": "Brand",
@@ -111,12 +111,12 @@ export const metadata = {
   description:
     "Expert guide on SBI loan settlement. Learn about Rinn Samadhan scheme, OTS policies for personal loans. Get legal help to negotiate, stop harassment, and save up to 50%.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/SBI',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/sbi-bank',
   },
   openGraph: {
     title: "SBI Loan Settlement Process 2025 | SBI OTS Scheme & Rinn Samadhan Details",
     description: "Expert guide on SBI loan settlement. Learn about Rinn Samadhan scheme, OTS policies for personal loans. Get legal help to negotiate, stop harassment, and save up to 50%.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/SBI",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/SBI",
     type: "website",
     images: [
       {

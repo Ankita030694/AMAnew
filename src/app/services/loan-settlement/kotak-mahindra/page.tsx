@@ -15,25 +15,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Kotak Mahindra Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/kotak-mahindra"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/kotak-mahindra"
     }
   ]
 };
@@ -44,18 +44,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Kotak Mahindra Bank Loan Settlement Process 2025: Complete Guide",
   "description": "Expert legal guide on Kotak Mahindra Bank loan settlement. Learn how to settle Kotak personal loans and credit cards, stop harassment, and negotiate OTS.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-21",
@@ -67,7 +67,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Kotak Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Professional legal services for settling Kotak Mahindra Bank loans and credit cards.",
   "brand": {
     "@type": "Brand",
@@ -111,12 +111,12 @@ export const metadata = {
   description:
     "Complete guide to Kotak Mahindra Bank loan settlement. Negotiate OTS, stop recovery harassment, and settle your personal loan or credit card debt legally.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/kotak-mahindra',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/kotak-mahindra',
   },
   openGraph: {
     title: "Kotak Mahindra Loan Settlement Process | Kotak Credit Card Settlement",
     description: "Complete guide to Kotak Mahindra Bank loan settlement. Negotiate OTS, stop recovery harassment, and settle your personal loan or credit card debt legally.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/kotak-mahindra",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/kotak-mahindra",
     type: "website",
     images: [
       {

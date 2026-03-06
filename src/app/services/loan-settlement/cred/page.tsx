@@ -15,25 +15,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Cred Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/cred"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/cred"
     }
   ]
 };
@@ -44,18 +44,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Cred Cash Loan Settlement Process 2025: Complete Legal Guide",
   "description": "Struggling with Cred Cash loan repayment? Learn about the Cred loan settlement process, OTS policies, settlement letter format, and how to settle your personal loan debt legally.",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -67,7 +67,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Cred Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "description": "Expert legal assistance for settling Cred Cash personal loans.",
   "brand": {
     "@type": "Brand",
@@ -111,12 +111,12 @@ export const metadata = {
   description:
     "Expert guide on Cred (Cred Cash) loan settlement. Learn how to settle Cred personal loans. Get legal help to negotiate OTS, stop harassment, and save up to 50%.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/cred',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/cred',
   },
   openGraph: {
     title: "Cred Loan Settlement Process | Cred Cash Loan Settlement Letter Format",
     description: "Expert guide on Cred (Cred Cash) loan settlement. Learn how to settle Cred personal loans. Get legal help to negotiate OTS, stop harassment, and save up to 50%.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/cred",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/cred",
     type: "website",
     images: [
       {

@@ -85,19 +85,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Articles",
-      "item": "https://amalegalsolutions.com/articles"
+      "item": "https://www.amalegalsolutions.com/articles"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "How to Get Trademark Certificate",
-      "item": "https://amalegalsolutions.com/how-can-i-get-trademark-certificate"
+      "item": "https://www.amalegalsolutions.com/how-can-i-get-trademark-certificate"
     }
   ]
 };
@@ -108,18 +108,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "How Can I Get Trademark Certificate in India? Step-by-Step Legal Guide",
   "description": "Learn the complete process to obtain a trademark registration certificate in India. Comprehensive guide on search, filing, objections, and final certificate download.",
-  "image": "https://amalegalsolutions.com/assets/trademark-certificate-guide.png",
+  "image": "https://www.amalegalsolutions.com/assets/trademark-certificate-guide.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-03",
@@ -145,7 +145,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Trademark Registration Services",
-  "image": "https://amalegalsolutions.com/assets/tm-certificate.png",
+  "image": "https://www.amalegalsolutions.com/assets/tm-certificate.png",
   "description": "Expert assistance in obtaining trademark registration certificates in India.",
   "brand": {
     "@type": "Brand",
@@ -186,12 +186,12 @@ export const metadata = {
     "brand registration certificate"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/how-can-i-get-trademark-certificate',
+    canonical: 'https://www.amalegalsolutions.com/how-can-i-get-trademark-certificate',
   },
   openGraph: {
     title: "How Can I Get Trademark Certificate? | Step-by-Step India Guide",
     description: "The definitive guide to obtaining your brand's trademark certificate. From search to final issuance.",
-    url: "https://amalegalsolutions.com/how-can-i-get-trademark-certificate",
+    url: "https://www.amalegalsolutions.com/how-can-i-get-trademark-certificate",
     type: "article",
     images: [
       {

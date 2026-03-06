@@ -9,11 +9,11 @@ export const metadata = {
     title: "Banking and Finance Services in Chandigarh | AMA Legal Solutions",
     description:
       "Expert legal consultancy for banking and finance in Chandigarh. NBFC registration, Wealth Management compliance, and financial services in the Tri-City area.",
-    url: "https://amalegalsolutions.com/services/banking-and-finance/chandigarh",
+    url: "https://www.amalegalsolutions.com/services/banking-and-finance/chandigarh",
     siteName: "AMA Legal Solutions",
     images: [
       {
-        url: "https://amalegalsolutions.com/services/banking-finance-chandigarh.png",
+        url: "https://www.amalegalsolutions.com/services/banking-finance-chandigarh.png",
         width: 800,
         height: 600,
         alt: "Banking and Finance Services in Chandigarh",
@@ -23,7 +23,7 @@ export const metadata = {
     type: "article",
   },
   alternates: {
-    canonical: "https://amalegalsolutions.com/services/banking-and-finance/chandigarh",
+    canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/chandigarh",
   },
 };
 

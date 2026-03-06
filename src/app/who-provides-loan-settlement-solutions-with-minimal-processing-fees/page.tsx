@@ -42,19 +42,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Minimal Fee Loan Settlement",
-      "item": "https://amalegalsolutions.com/who-provides-loan-settlement-solutions-with-minimal-processing-fees"
+      "item": "https://www.amalegalsolutions.com/who-provides-loan-settlement-solutions-with-minimal-processing-fees"
     }
   ]
 };
@@ -65,18 +65,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Who Provides Loan Settlement Solutions with Minimal Processing Fees?",
   "description": "Stop paying high fees! Find loan settlement agencies with minimal processing charges. Compare AMA Legal, FREED, and SettleLoans fees.",
-  "image": "https://amalegalsolutions.com/services/cheap-settlement.png",
+  "image": "https://www.amalegalsolutions.com/services/cheap-settlement.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-28",
@@ -102,7 +102,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Low Cost Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/cheap-settlement.png",
+  "image": "https://www.amalegalsolutions.com/services/cheap-settlement.png",
   "description": "Affordable loan settlement services with transparent fee structures.",
   "brand": {
     "@type": "Brand",
@@ -182,12 +182,12 @@ export const metadata = {
     "affordable debt relief companies"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/who-provides-loan-settlement-solutions-with-minimal-processing-fees',
+    canonical: 'https://www.amalegalsolutions.com/who-provides-loan-settlement-solutions-with-minimal-processing-fees',
   },
   openGraph: {
     title: "Who Provides Loan Settlement Solutions with Minimal Processing Fees?",
     description: "Save money on your settlement. Find the most affordable and transparent loan settlement services in India.",
-    url: "https://amalegalsolutions.com/who-provides-loan-settlement-solutions-with-minimal-processing-fees",
+    url: "https://www.amalegalsolutions.com/who-provides-loan-settlement-solutions-with-minimal-processing-fees",
     type: "article",
     images: [
       {

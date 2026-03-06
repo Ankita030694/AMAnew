@@ -11,12 +11,12 @@ export const metadata = {
   description:
     "Understand what loan settlement is, how it works, its benefits, and its impact on your credit score. A comprehensive guide by AMA Legal Solutions.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/what-is-loan-settlement',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/what-is-loan-settlement',
   },
   openGraph: {
     title: "What is Loan Settlement? | Complete Guide to Debt Relief in India",
     description: "Understand what loan settlement is, how it works, its benefits, and its impact on your credit score. A comprehensive guide by AMA Legal Solutions.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/what-is-loan-settlement",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/what-is-loan-settlement",
     type: "article",
     images: [
       {
@@ -37,25 +37,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "What is Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/what-is-loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/what-is-loan-settlement"
     }
   ]
 };
@@ -65,18 +65,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "What is Loan Settlement? The Ultimate Guide for Borrowers",
   "description": "A detailed explanation of loan settlement (OTS), its process, pros and cons, and legal aspects in India.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-12-02",
@@ -87,7 +87,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Loan Settlement Advisory Services",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Expert legal advice and representation for loan settlement.",
   "brand": {
     "@type": "Brand",

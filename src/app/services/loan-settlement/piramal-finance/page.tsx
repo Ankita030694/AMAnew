@@ -13,12 +13,12 @@ export const metadata = {
   title: "Piramal Finance Loan Settlement | Housing & Business Loan OTS | AMA Legal Solutions",
   description: "Struggling with Piramal Finance loan repayment? Expert legal help for settling Housing Loans, Business Loans, and Personal Loans. Stop SARFAESI and harassment.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/piramal-finance',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/piramal-finance',
   },
   openGraph: {
     title: "Piramal Finance Loan Settlement | Housing & Business Loan OTS | AMA Legal Solutions",
     description: "Struggling with Piramal Finance loan repayment? Expert legal help for settling Housing Loans, Business Loans, and Personal Loans. Stop SARFAESI and harassment.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/piramal-finance",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/piramal-finance",
     type: "website",
     images: [
       {
@@ -40,25 +40,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Piramal Finance Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/piramal-finance"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/piramal-finance"
     }
   ]
 };
@@ -68,18 +68,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Piramal Finance Loan Settlement: A Comprehensive Guide to OTS and Debt Relief",
   "description": "An in-depth guide on how to settle your Piramal Finance housing or business loan through the One Time Settlement (OTS) scheme. Learn about SARFAESI, arbitration, and your legal rights.",
-  "image": "https://amalegalsolutions.com/services/7.png",
+  "image": "https://www.amalegalsolutions.com/services/7.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -103,7 +103,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Piramal Finance Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/7.png",
+  "image": "https://www.amalegalsolutions.com/services/7.png",
   "description": "Legal settlement services for Piramal Finance loans.",
   "brand": {
     "@type": "Brand",

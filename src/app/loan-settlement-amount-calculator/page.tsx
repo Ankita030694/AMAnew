@@ -61,13 +61,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Loan Settlement Amount Calculator",
-      "item": "https://amalegalsolutions.com/loan-settlement-amount-calculator"
+      "item": "https://www.amalegalsolutions.com/loan-settlement-amount-calculator"
     }
   ]
 };
@@ -77,7 +77,7 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Loan Settlement Amount Calculator India: Estimate Your Debt Relief Range",
   "description": "Calculate your potential loan settlement amount with our advanced India-specific calculator. Understand OTS ranges for personal loans and credit cards.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions"

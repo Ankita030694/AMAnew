@@ -98,19 +98,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     }
   ]
 };
@@ -121,18 +121,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Loan Settlement Services in India: Expert Legal Help for Debt Relief",
   "description": "Comprehensive guide to loan settlement in India. Learn how to legally settle personal loans and credit card debt with expert legal assistance.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-10-01",
@@ -158,7 +158,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Expert legal loan settlement services in India.",
   "brand": {
     "@type": "Brand",
@@ -214,12 +214,12 @@ export const metadata = {
     "settle loan with bank"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement',
   },
   openGraph: {
     title: "Loan Settlement Services India | #1 Debt Settlement Lawyers",
     description: "Struggling with debt? AMA Legal Solutions offers expert loan settlement services in India. We negotiate with banks to reduce your debt and stop harassment.",
-    url: "https://amalegalsolutions.com/services/loan-settlement",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement",
     type: "website",
     images: [
       {

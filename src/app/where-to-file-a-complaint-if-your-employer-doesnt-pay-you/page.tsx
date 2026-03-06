@@ -25,19 +25,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "File Complaint Against Employer",
-      "item": "https://amalegalsolutions.com/where-to-file-a-complaint-if-your-employer-doesnt-pay-you"
+      "item": "https://www.amalegalsolutions.com/where-to-file-a-complaint-if-your-employer-doesnt-pay-you"
     }
   ]
 };
@@ -48,18 +48,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Where to File a Complaint if Your Employer Doesn't Pay You? Step-by-Step Recovery Guide",
   "description": "Exhaustive legal guide on the best forums to recover unpaid salary in India. Covers SAMADHAN portal, Labour Court, Summary Suits, and Criminal Action options.",
-  "image": "https://amalegalsolutions.com/og-complaint-employer.png",
+  "image": "https://www.amalegalsolutions.com/og-complaint-employer.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-02-11",
@@ -85,7 +85,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Salary Recovery Legal Services",
-  "image": "https://amalegalsolutions.com/og-complaint-employer.png",
+  "image": "https://www.amalegalsolutions.com/og-complaint-employer.png",
   "description": "Expert legal assistance for recovering unpaid salary, F&F settlements, and wrongful termination disputes.",
   "brand": {
     "@type": "Brand",
@@ -139,7 +139,7 @@ export const metadata = {
     "filing complaint in labour department delhi"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/where-to-file-a-complaint-if-your-employer-doesnt-pay-you',
+    canonical: 'https://www.amalegalsolutions.com/where-to-file-a-complaint-if-your-employer-doesnt-pay-you',
   },
 };
 

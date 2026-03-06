@@ -80,7 +80,7 @@ export default function SuccessStoriesPage() {
       "name": "AMA Legal Solutions",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+        "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
       }
     },
     "hasPart": stories.map(story => ({

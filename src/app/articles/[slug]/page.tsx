@@ -165,7 +165,7 @@ export async function generateMetadata(
   let image = "";
   let author = "AMA Legal Solutions";
 
-  const baseUrl = "https://amalegalsolutions.com";
+  const baseUrl = "https://www.amalegalsolutions.com";
 
   try {
     const articleData = await getArticleBySlug(slug);
@@ -285,7 +285,7 @@ export default async function Page({
 }
 
 function generateCombinedSchema(articleData: any, faqs: any[], reviews: any[]) {
-  const baseUrl = "https://amalegalsolutions.com";
+  const baseUrl = "https://www.amalegalsolutions.com";
   const articleUrl = `${baseUrl}/articles/${articleData.slug}`;
   const isOrganizationAuthor = !articleData.author || articleData.author === "AMA Legal Solutions";
 

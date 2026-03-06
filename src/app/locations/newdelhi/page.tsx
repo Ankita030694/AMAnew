@@ -56,19 +56,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Locations",
-      "item": "https://amalegalsolutions.com/locations"
+      "item": "https://www.amalegalsolutions.com/locations"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "New Delhi",
-      "item": "https://amalegalsolutions.com/locations/newdelhi"
+      "item": "https://www.amalegalsolutions.com/locations/newdelhi"
     }
   ]
 };
@@ -78,7 +78,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "AMA Legal Solutions New Delhi",
-  "image": "https://amalegalsolutions.com/city1.svg",
+  "image": "https://www.amalegalsolutions.com/city1.svg",
   "description": "Leading law firm in New Delhi providing expert legal services in Corporate Law, Litigation, and Arbitration.",
   "address": {
     "@type": "PostalAddress",
@@ -91,7 +91,7 @@ const articleSchema = {
     "latitude": "28.6139",
     "longitude": "77.2090"
   },
-  "url": "https://amalegalsolutions.com/locations/newdelhi",
+  "url": "https://www.amalegalsolutions.com/locations/newdelhi",
   "telephone": "+918700343611",
   "priceRange": "$$",
   "openingHoursSpecification": [
@@ -135,7 +135,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services New Delhi",
-  "image": "https://amalegalsolutions.com/city1.svg",
+  "image": "https://www.amalegalsolutions.com/city1.svg",
   "description": "Top-tier legal services in New Delhi by AMA Legal Solutions.",
   "brand": {
     "@type": "Brand",
@@ -218,12 +218,12 @@ export const metadata = {
     "nri legal services delhi"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/locations/newdelhi',
+    canonical: 'https://www.amalegalsolutions.com/locations/newdelhi',
   },
   openGraph: {
     title: "Lawyers in New Delhi | Top Legal Services Delhi NCR",
     description: "Expert legal representation in New Delhi. Corporate, Civil, Criminal, and Family Law services by AMA Legal Solutions.",
-    url: "https://amalegalsolutions.com/locations/newdelhi",
+    url: "https://www.amalegalsolutions.com/locations/newdelhi",
     type: "website",
     images: [
       {

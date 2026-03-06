@@ -57,19 +57,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Legal Drafting",
-      "item": "https://amalegalsolutions.com/services/drafting"
+      "item": "https://www.amalegalsolutions.com/services/drafting"
     }
   ]
 };
@@ -80,18 +80,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Legal Drafting Services in India: Expert Contract & Document Preparation",
   "description": "Professional legal drafting services in India. Expert lawyers for contracts, agreements, legal notices, and corporate documentation. Ensure legal safety with AMA Legal Solutions.",
-  "image": "https://amalegalsolutions.com/services/12.png",
+  "image": "https://www.amalegalsolutions.com/services/12.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-01",
@@ -117,7 +117,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Drafting Services",
-  "image": "https://amalegalsolutions.com/services/12.png",
+  "image": "https://www.amalegalsolutions.com/services/12.png",
   "description": "Expert legal document drafting and review services in India.",
   "brand": {
     "@type": "Brand",
@@ -161,12 +161,12 @@ export const metadata = {
   description:
     "Looking for professional legal drafting services in India? AMA Legal Solutions offers expert drafting for contracts, agreements, notices, and corporate documents. legally binding and secure.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/drafting',
+    canonical: 'https://www.amalegalsolutions.com/services/drafting',
   },
   openGraph: {
     title: "Legal Drafting Services India | Expert Contract & Agreement Lawyers",
     description: "Professional legal drafting services in India. Expert lawyers for contracts, agreements, legal notices, and corporate documentation.",
-    url: "https://amalegalsolutions.com/services/drafting",
+    url: "https://www.amalegalsolutions.com/services/drafting",
     type: "website",
     images: [
       {

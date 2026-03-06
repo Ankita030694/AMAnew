@@ -117,6 +117,14 @@ const nextConfig = {
 
   async redirects() {
     return [
+      // ── SEO Fix: Enforce www. subdomain ───
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'amalegalsolutions.com' }],
+        destination: 'https://www.amalegalsolutions.com/:path*',
+        permanent: true,
+      },
+
       // ── SEO Fix: /amalive → /ama-live (hyphenated URL is SEO-friendly) ───
       {
         source: '/amalive',

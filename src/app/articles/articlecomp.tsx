@@ -324,7 +324,7 @@ export default function Page() {
           <h3 className="text-[#5A4C33] text-xl font-medium mb-4 text-center">Disclaimer</h3>
           <div className="text-gray-700 text-sm leading-relaxed space-y-4">
             <p>
-              The information provided on this website www.amalegalsolutions.com is for general informational purposes only
+              The information provided on this website https://www.amalegalsolutions.com is for general informational purposes only
               and should not be considered legal, financial, or professional advice. While we strive to ensure that the content is accurate and
               up to date, we do not guarantee the completeness, reliability, or accuracy of any information.
             </p>

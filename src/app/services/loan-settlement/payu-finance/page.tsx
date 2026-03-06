@@ -29,12 +29,12 @@ export const metadata = {
   title: "PayU Finance Loan Settlement | LazyPay OTS Scheme | AMA Legal Solutions",
   description: "Struggling with LazyPay or PayU Finance loan repayment? Expert legal help for PayU Finance loan settlement. Stop digital harassment and settle BNPL debt.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/payu-finance',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/payu-finance',
   },
   openGraph: {
     title: "PayU Finance Loan Settlement | LazyPay OTS Scheme | AMA Legal Solutions",
     description: "Struggling with LazyPay or PayU Finance loan repayment? Expert legal help for PayU Finance loan settlement. Stop digital harassment and settle BNPL debt.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/payu-finance",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/payu-finance",
     type: "website",
     images: [
       {
@@ -56,25 +56,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "PayU Finance Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/payu-finance"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/payu-finance"
     }
   ]
 };
@@ -84,18 +84,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "PayU Finance & LazyPay Loan Settlement: A Digital Debt Relief Guide",
   "description": "Learn how to settle your LazyPay BNPL or PayU Finance personal loan through the One Time Settlement (OTS) scheme. Expert legal advice to stop digital harassment.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -119,7 +119,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "PayU Finance Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Expert legal services for settling PayU Finance and LazyPay loans.",
   "brand": {
     "@type": "Brand",

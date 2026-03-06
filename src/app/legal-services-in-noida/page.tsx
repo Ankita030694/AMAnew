@@ -57,13 +57,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Legal Services in Noida",
-      "item": "https://amalegalsolutions.com/legal-services-in-noida"
+      "item": "https://www.amalegalsolutions.com/legal-services-in-noida"
     }
   ]
 };
@@ -74,18 +74,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Top Legal Services in Noida: Expert Law Firm for All Your Needs",
   "description": "Looking for the best legal services in Noida? AMA Legal Solutions offers expert legal representation in Corporate, Civil, Criminal, Family, and Property Law. Top lawyers in Noida.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2026-02-14",
@@ -111,7 +111,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Noida",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Premier legal services in Noida region.",
   "brand": {
     "@type": "Brand",
@@ -167,12 +167,12 @@ export const metadata = {
     "top law firm noida"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/legal-services-in-noida',
+    canonical: 'https://www.amalegalsolutions.com/legal-services-in-noida',
   },
   openGraph: {
     title: "Best Legal Services in Noida | Top Law Firm & Lawyers in Noida",
     description: "AMA Legal Solutions is a leading law firm in Noida providing expert legal services in Corporate, Civil, Criminal, Family, and Property Law.",
-    url: "https://amalegalsolutions.com/legal-services-in-noida",
+    url: "https://www.amalegalsolutions.com/legal-services-in-noida",
     type: "website",
     images: [
       {

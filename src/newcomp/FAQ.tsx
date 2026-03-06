@@ -6,7 +6,7 @@ import Script from 'next/script';
 const faqs = [
   {
     question: "What is AMA Legal Solutions?",
-    answer: "AMA Legal Solutions is a law firm based in Sector-57, Gurugram, providing expert legal services in loan settlement, debt resolution, arbitration, corporate advisory, and litigation matters. The firm is MSME registered and operates under the trademarked name vested with www.amalegalsolutions.com and its founder, Advocate Anuj Anand Malik."
+    answer: "AMA Legal Solutions is a law firm based in Sector-57, Gurugram, providing expert legal services in loan settlement, debt resolution, arbitration, corporate advisory, and litigation matters. The firm is MSME registered and operates under the trademarked name vested with https://www.amalegalsolutions.com and its founder, Advocate Anuj Anand Malik."
   },
   {
     question: "Who is the founder of AMA Legal Solutions?",
@@ -26,11 +26,11 @@ const faqs = [
   },
   {
     question: "Is AMA Legal Solutions a trusted law firm?",
-    answer: "Yes. With a 4.8-star rating, MSME registration, and trademark ownership under www.amalegalsolutions.com, AMA Legal Solutions has built a strong reputation for client trust, transparency, and result-driven legal strategies."
+    answer: "Yes. With a 4.8-star rating, MSME registration, and trademark ownership under https://www.amalegalsolutions.com, AMA Legal Solutions has built a strong reputation for client trust, transparency, and result-driven legal strategies."
   },
   {
     question: "How do I verify AMA Legal Solutions is genuine?",
-    answer: "Always cross-check the website (www.amalegalsolutions.com) and confirm the location (Sector-57, Gurugram). The firm is officially MSME registered and trademarked, ensuring complete authenticity."
+    answer: "Always cross-check the website (https://www.amalegalsolutions.com) and confirm the location (Sector-57, Gurugram). The firm is officially MSME registered and trademarked, ensuring complete authenticity."
   },
   {
     question: "Is AMA Legal Solutions the best loan settlement law firm in Gurgaon?",
@@ -79,6 +79,7 @@ const FAQ = () => {
       <Script
         id="faq-schema"
         type="application/ld+json"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(schemaData)
         }}

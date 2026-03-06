@@ -56,19 +56,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Locations",
-      "item": "https://amalegalsolutions.com/locations"
+      "item": "https://www.amalegalsolutions.com/locations"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Kerala",
-      "item": "https://amalegalsolutions.com/locations/kerala"
+      "item": "https://www.amalegalsolutions.com/locations/kerala"
     }
   ]
 };
@@ -78,7 +78,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "AMA Legal Solutions Kerala",
-  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+  "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Leading law firm in Kerala specializing in NRI Legal Services, High Court Litigation, Maritime Law, and Property Disputes.",
   "address": {
     "@type": "PostalAddress",
@@ -93,7 +93,7 @@ const articleSchema = {
     { "@type": "City", "name": "Kottayam" },
     { "@type": "State", "name": "Kerala" }
   ],
-  "url": "https://amalegalsolutions.com/locations/kerala",
+  "url": "https://www.amalegalsolutions.com/locations/kerala",
   "telephone": "+918448512333",
   "priceRange": "₹₹",
   "openingHoursSpecification": [
@@ -137,7 +137,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Kerala",
-  "image": "https://amalegalsolutions.com/ama-legal-solutions-logo.png",
+  "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Expert legal services in Kerala by AMA Legal Solutions.",
   "brand": {
     "@type": "Brand",
@@ -217,12 +217,12 @@ export const metadata = {
     "Cheque Bounce Lawyer Kerala"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/locations/kerala',
+    canonical: 'https://www.amalegalsolutions.com/locations/kerala',
   },
   openGraph: {
     title: "Lawyers in Kerala | Kochi High Court & NRI Legal Services",
     description: "Premier legal firm in Kerala. Serving NRIs, Startups, and Litigants in Civil, Criminal, and Maritime matters.",
-    url: "https://amalegalsolutions.com/locations/kerala",
+    url: "https://www.amalegalsolutions.com/locations/kerala",
     type: "website",
     images: [
       {

@@ -64,19 +64,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Locations",
-      "item": "https://amalegalsolutions.com/locations"
+      "item": "https://www.amalegalsolutions.com/locations"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Mumbai",
-      "item": "https://amalegalsolutions.com/locations/mumbai"
+      "item": "https://www.amalegalsolutions.com/locations/mumbai"
     }
   ]
 };
@@ -89,9 +89,9 @@ const articleSchema = {
   "founder": {
     "@type": "Person",
     "name": "Anuj Anand Malik",
-    "url": "https://amalegalsolutions.com/author/anuj-anand-malik"
+    "url": "https://www.amalegalsolutions.com/author/anuj-anand-malik"
   },
-  "image": "https://amalegalsolutions.com/city2.svg",
+  "image": "https://www.amalegalsolutions.com/city2.svg",
   "description": "Leading law firm in Mumbai providing expert legal services in Corporate Law, Media Law, Real Estate, and Litigation.",
   "address": {
     "@type": "PostalAddress",
@@ -104,7 +104,7 @@ const articleSchema = {
     "latitude": "19.0760",
     "longitude": "72.8777"
   },
-  "url": "https://amalegalsolutions.com/locations/mumbai",
+  "url": "https://www.amalegalsolutions.com/locations/mumbai",
   "telephone": "+918700343611",
   "priceRange": "$$",
   "openingHoursSpecification": [
@@ -148,7 +148,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Mumbai",
-  "image": "https://amalegalsolutions.com/city2.svg",
+  "image": "https://www.amalegalsolutions.com/city2.svg",
   "description": "Top-tier legal services in Mumbai by AMA Legal Solutions.",
   "brand": {
     "@type": "Brand",
@@ -231,12 +231,12 @@ export const metadata = {
     "deemed conveyance lawyer"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/locations/mumbai',
+    canonical: 'https://www.amalegalsolutions.com/locations/mumbai',
   },
   openGraph: {
     title: "Lawyers in Mumbai | Top Legal Services Financial Capital",
     description: "Expert legal representation in Mumbai. Corporate, Civil, Criminal, and Media Law services by AMA Legal Solutions.",
-    url: "https://amalegalsolutions.com/locations/mumbai",
+    url: "https://www.amalegalsolutions.com/locations/mumbai",
     type: "website",
     images: [
       {

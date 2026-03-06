@@ -58,19 +58,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Locations",
-      "item": "https://amalegalsolutions.com/locations"
+      "item": "https://www.amalegalsolutions.com/locations"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Uttarakhand",
-      "item": "https://amalegalsolutions.com/locations/uttarakhand"
+      "item": "https://www.amalegalsolutions.com/locations/uttarakhand"
     }
   ]
 };
@@ -82,14 +82,14 @@ const articleSchema = {
   "name": "Legal Services in Uttarakhand",
   "headline": "Expert Lawyers in Uttarakhand: Loan Settlement, Trademarks & Nainital High Court",
   "description": "Premiere legal services in Uttarakhand. Specialized in Loan Settlement, Trademark Registration, and litigation at Nainital High Court & District Courts.",
-  "image": "https://amalegalsolutions.com/uttarakhand-legal.svg",
+  "image": "https://www.amalegalsolutions.com/uttarakhand-legal.svg",
   "address": {
     "@type": "PostalAddress",
     "addressRegion": "Uttarakhand",
     "addressCountry": "IN"
   },
   "telephone": "+918700343611",
-  "url": "https://amalegalsolutions.com/locations/uttarakhand",
+  "url": "https://www.amalegalsolutions.com/locations/uttarakhand",
   "priceRange": "₹₹"
 };
 
@@ -112,7 +112,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Uttarakhand",
-  "image": "https://amalegalsolutions.com/uttarakhand-legal.svg",
+  "image": "https://www.amalegalsolutions.com/uttarakhand-legal.svg",
   "description": "Top-rated legal services for Loan Settlement, Property Disputes, and Corporate Law in Uttarakhand.",
   "brand": {
     "@type": "Brand",
@@ -204,7 +204,7 @@ export const metadata = {
     "Property Lawyer in Rishikesh"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/locations/uttarakhand',
+    canonical: 'https://www.amalegalsolutions.com/locations/uttarakhand',
   },
 };
 

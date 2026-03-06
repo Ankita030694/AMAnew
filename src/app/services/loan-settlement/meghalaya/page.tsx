@@ -57,25 +57,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Meghalaya",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/meghalaya"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/meghalaya"
     }
   ]
 };
@@ -86,25 +86,25 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Loan Settlement in Meghalaya | Protect Tribal Land & Rights",
   "description": "Expert debt relief in Meghalaya. Settle loans under the 1971 Land Transfer Act protection. Specialized help for Shillong, Tura, Jowai. Stop harassment now.",
-  "image": "https://amalegalsolutions.com/services/shillong-cherry-blossom.jpg", // Placeholder - ensure image exists or use generic
+  "image": "https://www.amalegalsolutions.com/services/shillong-cherry-blossom.jpg", // Placeholder - ensure image exists or use generic
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-20",
   "dateModified": "2025-05-20",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://amalegalsolutions.com/services/loan-settlement/meghalaya"
+    "@id": "https://www.amalegalsolutions.com/services/loan-settlement/meghalaya"
   },
   "about": {
     "@type": "Thing",
@@ -154,12 +154,12 @@ export const metadata = {
     "personal loan settlement Jowai"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/meghalaya',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/meghalaya',
   },
   openGraph: {
     title: "Loan Settlement in Meghalaya | Protect Tribal Land & Rights",
     description: "Burdened by debt in Shillong or Tura? Use the 1971 Land Act to stop harassment and settle loans for less. We protect tribal rights.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/meghalaya",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/meghalaya",
     type: "website",
     images: [
       {

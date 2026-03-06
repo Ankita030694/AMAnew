@@ -11,12 +11,12 @@ export const metadata = {
   description:
     "Complete guide to Loan Settlement in Lok Adalat. Learn the process, benefits, eligibility, and how to legally settle your debt with no court fees and binding results.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/loan-settlement/lok-adalat',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/lok-adalat',
   },
   openGraph: {
     title: "Loan Settlement in Lok Adalat | Legal Process & Benefits",
     description: "Complete guide to Loan Settlement in Lok Adalat. Learn the process, benefits, eligibility, and how to legally settle your debt with no court fees and binding results.",
-    url: "https://amalegalsolutions.com/services/loan-settlement/lok-adalat",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/lok-adalat",
     type: "article",
     images: [
       {
@@ -37,25 +37,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Loan Settlement",
-      "item": "https://amalegalsolutions.com/services/loan-settlement"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Lok Adalat",
-      "item": "https://amalegalsolutions.com/services/loan-settlement/lok-adalat"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/lok-adalat"
     }
   ]
 };
@@ -65,18 +65,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Loan Settlement in Lok Adalat: A Comprehensive Legal Guide",
   "description": "In-depth guide on how to settle loans through Lok Adalat in India. Covers process, eligibility, benefits, and legal framework.",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-12-02",
@@ -87,7 +87,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Lok Adalat Loan Settlement Services",
-  "image": "https://amalegalsolutions.com/services/3.png",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "description": "Legal assistance for settling loans through Lok Adalat.",
   "brand": {
     "@type": "Brand",

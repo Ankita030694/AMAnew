@@ -451,18 +451,18 @@ export default function TripuraClient() {
             "@type": "Article",
             "headline": "Intellectual Property Rights Services in Tripura",
             "description": "Comprehensive IPR services in Tripura including Trademark, Patent, and Copyright registration. Protect your brand and innovations with expert legal support.",
-            "image": "https://amalegalsolutions.com/services/ipr-tripura.jpg",
+            "image": "https://www.amalegalsolutions.com/services/ipr-tripura.jpg",
             "author": {
               "@type": "Organization",
               "name": "AMA Legal Solutions",
-              "url": "https://amalegalsolutions.com"
+              "url": "https://www.amalegalsolutions.com"
             },
             "publisher": {
               "@type": "Organization",
               "name": "AMA Legal Solutions",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+                "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
               }
             },
             "datePublished": "2024-11-26",
@@ -478,7 +478,7 @@ export default function TripuraClient() {
             "@context": "https://schema.org",
             "@type": "Product",
             "name": "IPR Services Tripura",
-            "image": "https://amalegalsolutions.com/services/ipr-tripura.jpg",
+            "image": "https://www.amalegalsolutions.com/services/ipr-tripura.jpg",
             "description": "Expert Intellectual Property Rights registration and protection services in Tripura.",
             "brand": {
               "@type": "Brand",

@@ -77,25 +77,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://amalegalsolutions.com/services"
+      "item": "https://www.amalegalsolutions.com/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Intellectual Property Rights",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Delhi",
-      "item": "https://amalegalsolutions.com/services/intellectual-property-rights/Delhi"
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights/Delhi"
     }
   ]
 };
@@ -106,18 +106,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Intellectual Property Rights Services in Delhi NCR: Protect Your Brand",
   "description": "Comprehensive guide to IPR protection in Delhi. Learn about trademark registration in Dwarka, patent filing, and IP litigation at the Delhi High Court.",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2023-11-24",
@@ -143,7 +143,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "IPR Services Delhi",
-  "image": "https://amalegalsolutions.com/services/4.png",
+  "image": "https://www.amalegalsolutions.com/services/4.png",
   "description": "Expert intellectual property legal services in Delhi NCR.",
   "brand": {
     "@type": "Brand",
@@ -188,7 +188,7 @@ const webPageSchema = {
   "@type": "WebPage",
   "name": "Intellectual Property Rights Services in Delhi NCR | Top IP Lawyers",
   "description": "Secure your IP in India's capital. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Delhi, Gurgaon & Noida. Litigation support at Delhi High Court.",
-  "url": "https://amalegalsolutions.com/services/intellectual-property-rights/Delhi",
+  "url": "https://www.amalegalsolutions.com/services/intellectual-property-rights/Delhi",
 };
 
 export const metadata = {
@@ -196,12 +196,12 @@ export const metadata = {
   description:
     "Secure your IP in India's capital. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Delhi, Gurgaon & Noida. Litigation support at Delhi High Court.",
   alternates: {
-    canonical: 'https://amalegalsolutions.com/services/intellectual-property-rights/Delhi',
+    canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/delhi',
   },
   openGraph: {
     title: "Intellectual Property Rights in Delhi NCR | Top IP Lawyers",
     description: "Secure your IP in India's capital. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Delhi, Gurgaon & Noida. Litigation support at Delhi High Court.",
-    url: "https://amalegalsolutions.com/services/intellectual-property-rights/Delhi",
+    url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/Delhi",
     type: "website",
     images: [
       {

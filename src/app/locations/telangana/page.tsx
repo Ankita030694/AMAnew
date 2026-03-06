@@ -56,19 +56,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Locations",
-      "item": "https://amalegalsolutions.com/locations"
+      "item": "https://www.amalegalsolutions.com/locations"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Telangana",
-      "item": "https://amalegalsolutions.com/locations/telangana"
+      "item": "https://www.amalegalsolutions.com/locations/telangana"
     }
   ]
 };
@@ -81,9 +81,9 @@ const articleSchema = {
   "founder": {
     "@type": "Person",
     "name": "Anuj Anand Malik",
-    "url": "https://amalegalsolutions.com/author/anuj-anand-malik"
+    "url": "https://www.amalegalsolutions.com/author/anuj-anand-malik"
   },
-  "image": "https://amalegalsolutions.com/hyderabad.svg", // Assuming you might have or use a generic city image if not specific
+  "image": "https://www.amalegalsolutions.com/hyderabad.svg", // Assuming you might have or use a generic city image if not specific
   "description": "Leading law firm in Telangana providing expert legal services in Loan Settlement, Trademark Registration, and Corporate Law.",
   "address": {
     "@type": "PostalAddress",
@@ -96,7 +96,7 @@ const articleSchema = {
     "latitude": "17.3850",
     "longitude": "78.4867"
   },
-  "url": "https://amalegalsolutions.com/locations/telangana",
+  "url": "https://www.amalegalsolutions.com/locations/telangana",
   "telephone": "+918700343611",
   "priceRange": "$$",
   "openingHoursSpecification": [
@@ -140,7 +140,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legal Services Telangana",
-  "image": "https://amalegalsolutions.com/hyderabad.svg",
+  "image": "https://www.amalegalsolutions.com/hyderabad.svg",
   "description": "Top-tier legal services in Hyderabad and Telangana by AMA Legal Solutions.",
   "brand": {
     "@type": "Brand",
@@ -234,12 +234,12 @@ export const metadata = {
     "lok adalat settlement hyderabad"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/locations/telangana',
+    canonical: 'https://www.amalegalsolutions.com/locations/telangana',
   },
   openGraph: {
     title: "Best Lawyers in Telangana | Loan Settlement & IP Experts",
     description: "Navigate legal challenges in Telangana with confidence. Expert support for Loan Settlement, Trademarks, and Litigation in Hyderabad.",
-    url: "https://amalegalsolutions.com/locations/telangana",
+    url: "https://www.amalegalsolutions.com/locations/telangana",
     type: "website",
     images: [
       {

@@ -58,13 +58,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com"
+      "item": "https://www.amalegalsolutions.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Recovery Agent Harassment Complaint",
-      "item": "https://amalegalsolutions.com/loan-recovery-agent-harassment-complaint-online"
+      "item": "https://www.amalegalsolutions.com/loan-recovery-agent-harassment-complaint-online"
     }
   ]
 };
@@ -75,18 +75,18 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Stop Recovery Agent Harassment Online India: File Complaint at ₹999",
   "description": "Facing illegal calls or threats from recovery agents? Get your complaint filed by expert lawyers for just ₹999. Learn about RBI guidelines, legal rights, and how to stop harassment in 24 hours.",
-  "image": "https://amalegalsolutions.com/og-harassment-complaint.png",
+  "image": "https://www.amalegalsolutions.com/og-harassment-complaint.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
-    "url": "https://amalegalsolutions.com"
+    "url": "https://www.amalegalsolutions.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://amalegalsolutions.com/ama-legal-solutions-logo.png"
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
   "datePublished": "2024-03-01",
@@ -112,7 +112,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Recovery Harassment Protection",
-  "image": "https://amalegalsolutions.com/services/harassment-protection-icon.png",
+  "image": "https://www.amalegalsolutions.com/services/harassment-protection-icon.png",
   "description": "Legal protection against loan recovery agent harassment and debt management services.",
   "brand": {
     "@type": "Brand",
@@ -172,12 +172,12 @@ export const metadata = {
     "ama legal solutions harassment complaint"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/loan-recovery-agent-harassment-complaint-online',
+    canonical: 'https://www.amalegalsolutions.com/loan-recovery-agent-harassment-complaint-online',
   },
   openGraph: {
     title: "Stop Loan Recovery Agent Harassment Online India | File Complaint ₹999",
     description: "Expert legal help to stop recovery agent harassment. ₹999 for full portal filing and legal notice. Reclaim your peace today.",
-    url: "https://amalegalsolutions.com/loan-recovery-agent-harassment-complaint-online",
+    url: "https://www.amalegalsolutions.com/loan-recovery-agent-harassment-complaint-online",
     type: "article",
     images: [
       {
