@@ -213,6 +213,48 @@ export default function SuccessStoriesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Featured App Story */}
+            <Link
+              href="/success-stories/ama-connect-app"
+              className="flex flex-col justify-start items-start p-[24px] rounded-[20px] bg-[#30261C] border-[1px] border-[#D2A02A]/30 shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.2)] backdrop-blur-[2px] w-full min-h-[320px] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group col-span-1 md:col-span-2 lg:col-span-1 relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#D2A02A]/10 blur-3xl -mr-16 -mt-16"></div>
+              
+              <div className="mb-4 w-full relative z-10">
+                  <div className="flex justify-between items-start mb-2">
+                      <h3 className="text-[#D2A02A] font-bold text-2xl leading-tight">
+                          #1 Legal App in India
+                      </h3>
+                      <div className="bg-[#D2A02A] text-[#30261C] text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-tighter">Featured</div>
+                  </div>
+                  <div className="inline-block px-3 py-1 rounded-full bg-white/10 border border-white/20">
+                      <p className="text-xs text-white/90 font-bold uppercase tracking-wider">
+                          100,000+ Success Stories
+                      </p>
+                  </div>
+              </div>
+
+              <p
+                className="text-white/80 text-sm sm:text-base leading-[1.6] mb-auto italic relative z-10"
+                style={{ fontFamily: "var(--font-polysans)" }}
+              >
+                "AMA Connect has revolutionized how we help our clients. The 'AMA' (Ask Me Anything) section has empowered over 50,000 users to get instant legal guidance from our advocates, saving crores in illegal harassment and interest."
+              </p>
+
+              <div className="w-full mt-[24px] pt-[16px] border-t border-white/10 relative z-10">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-[#D2A02A] rounded-full flex items-center justify-center font-bold text-[#30261C]">A</div>
+                    <div>
+                      <h4 className="text-white text-md font-bold leading-tight">AMA Connect</h4>
+                      <p className="text-[11px] text-white/50 font-medium uppercase tracking-wide">Digital Success Story</p>
+                    </div>
+                  </div>
+                  <span className="text-[#D2A02A] text-lg font-bold group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+              </div>
+            </Link>
+
             {stories.map((story, idx) => (
               <Link
                 href={`/success-stories/${story.slug}`}

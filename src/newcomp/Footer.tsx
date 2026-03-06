@@ -13,6 +13,7 @@ const Footer = () => {
         { name: 'Careers', href: '/careers' },
         { name: 'Contact Us', href: '/contact' },
         { name: 'Success Stories', href: '/success-stories' },
+        { name: 'AMA Connect App Success', href: '/success-stories/ama-connect-app' },
         { name: 'Privacy Policy', href: '/privacy-policy' },
         { name: 'Terms of Service', href: '/terms-and-conditions' },
       ]
@@ -168,6 +169,8 @@ const Footer = () => {
         { name: 'Settled Tag Duration', href: '/how-long-does-a-settled-tag-stay-on-my-report' },
         { name: 'Documents Needed for Loan Settlement NOC', href: '/documents-needed-for-loan-settlement-noc' },
         { name: 'Charities That Pay Off Debt', href: '/charities-that-pay-off-debt' },
+        {name:"Best Time for Loan Settlement",href:"/best-time-for-loan-settlement"},
+        { name: "Benefits of Settling Your Loan in March", href: "/benefits-of-settling-your-loan-in-march" }
       ]
 
     }
