@@ -86,15 +86,6 @@ const Footer = () => {
         { name: 'Reliable Settlement', href: '/where-can-i-find-reliable-loan-settlement-services-with-flexible-payment-options' },
         { name: 'Best Settlement Companies', href: '/which-companies-offer-the-best-loan-settlement-plans-for-personal-loans' },
         { name: 'Low Fee Settlement', href: '/who-provides-loan-settlement-solutions-with-minimal-processing-fees' },
-        { name: 'Unsecured Loan Specialists', href: '/which-firms-specialize-in-negotiating-settlements-for-unsecured-loans' },
-        { name: 'Good Customer Support', href: '/what-loan-settlement-services-have-good-customer-support-in-india' },
-        { name: 'Home Loan Dues', href: '/can-i-get-a-loan-settlement-service-that-handles-home-loan-dues' },
-        { name: '10 Lakhs Settlement', href: '/10-lakhs-loan-settlement' },
-        { name: 'Loan Settlement Near Me', href: '/loan-settlement-near-me' },
-        { name: 'Settlement Calculator', href: '/loan-settlement-amount-calculator' },
-        { name: 'How to Settle with Bank', href: '/how-to-settle-loan-with-bank' },
-        { name: 'Settled Tag Duration', href: '/how-long-does-a-settled-tag-stay-on-my-report' },
-        { name: 'Documents Needed for Loan Settlement NOC', href: '/documents-needed-for-loan-settlement-noc' },
       ]
     },
     {
@@ -166,7 +157,15 @@ const Footer = () => {
         {name: "Bajaj Finance Agent Help", href: "/bajaj-finance-agent-visiting-home"},
         {name: "How to Settle Loans Above 1 Cr", href: "/how-to-settle-loans-above-1-crore"},
         {name: "How to Settle Loans Above 5 Cr", href: "/how-to-settle-loans-above-5-crore"},
-        {name: "10 Lakhs Settlement", href: "/10-lakhs-loan-settlement"},
+        { name: 'Unsecured Loan Specialists', href: '/which-firms-specialize-in-negotiating-settlements-for-unsecured-loans' },
+        { name: 'Good Customer Support', href: '/what-loan-settlement-services-have-good-customer-support-in-india' },
+        { name: 'Home Loan Dues', href: '/can-i-get-a-loan-settlement-service-that-handles-home-loan-dues' },
+        { name: '10 Lakhs Settlement', href: '/10-lakhs-loan-settlement' },
+        { name: 'Loan Settlement Near Me', href: '/loan-settlement-near-me' },
+        { name: 'Settlement Calculator', href: '/loan-settlement-amount-calculator' },
+        { name: 'How to Settle with Bank', href: '/how-to-settle-loan-with-bank' },
+        { name: 'Settled Tag Duration', href: '/how-long-does-a-settled-tag-stay-on-my-report' },
+        { name: 'Documents Needed for Loan Settlement NOC', href: '/documents-needed-for-loan-settlement-noc' },
       ]
 
     }
