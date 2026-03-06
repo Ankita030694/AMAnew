@@ -86,6 +86,7 @@ const Footer = () => {
         { name: 'Reliable Settlement', href: '/where-can-i-find-reliable-loan-settlement-services-with-flexible-payment-options' },
         { name: 'Best Settlement Companies', href: '/which-companies-offer-the-best-loan-settlement-plans-for-personal-loans' },
         { name: 'Low Fee Settlement', href: '/who-provides-loan-settlement-solutions-with-minimal-processing-fees' },
+        { name: 'Top Settlement Companies', href: '/loan-settlement-companies' },
       ]
     },
     {
@@ -166,6 +167,7 @@ const Footer = () => {
         { name: 'How to Settle with Bank', href: '/how-to-settle-loan-with-bank' },
         { name: 'Settled Tag Duration', href: '/how-long-does-a-settled-tag-stay-on-my-report' },
         { name: 'Documents Needed for Loan Settlement NOC', href: '/documents-needed-for-loan-settlement-noc' },
+        { name: 'Charities That Pay Off Debt', href: '/charities-that-pay-off-debt' },
       ]
 
     }

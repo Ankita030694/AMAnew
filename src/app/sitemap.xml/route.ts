@@ -176,7 +176,8 @@ export async function GET(): Promise<Response> {
     '/how-to-settle-loan-with-bank',
     '/how-long-does-a-settled-tag-stay-on-my-report',
     '/documents-needed-for-loan-settlement-noc',
-
+    '/loan-settlement-companies',
+    '/charities-that-pay-off-debt',
     '/trademark-infringement-without-registration',
     '/is-registering-a-name-instead-of-the-logo-enough',
     '/is-trademark-internationally-valid',
