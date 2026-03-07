@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faEdit, faTrash, faUpload, faMagic } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faEdit, faTrash, faUpload, faMagic, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, getDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
@@ -93,9 +93,23 @@ const ArticlesDashboard = () => {
   // RSS Debug - for parity with blogs even if articles doesn't use it yet
   const [isLoadingRss, setIsLoadingRss] = useState(false);
   const [rssDebugInfo, setRssDebugInfo] = useState<string | null>(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
-  const totalPages = Math.ceil(blogs.length / itemsPerPage);
-  const currentBlogs = blogs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+  // Filter articles based on search term
+  const filteredArticles = blogs.filter(article => 
+    article.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+    article.subtitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    article.slug.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    article.author.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const totalPages = Math.ceil(filteredArticles.length / itemsPerPage);
+  const currentBlogs = filteredArticles.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+  // Reset pagination when search term changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm]);
 
   // Check if user is logged in
   useEffect(() => {
@@ -1017,6 +1031,28 @@ const ArticlesDashboard = () => {
                   transition={{ duration: 0.3 }}
                   className="overflow-x-auto"
                 >
+                  {/* Search Bar */}
+                  <div className="mb-4 relative">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <FontAwesomeIcon icon={faSearch} className="text-gray-400" />
+                    </div>
+                    <input
+                      type="text"
+                      placeholder="Search articles by title, subtitle, slug, or author..."
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-[#D2A02A] focus:border-[#D2A02A] sm:text-sm text-black"
+                    />
+                    {searchTerm && (
+                      <button
+                        onClick={() => setSearchTerm('')}
+                        className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
+                      >
+                        <FontAwesomeIcon icon={faTrash} className="text-xs" />
+                      </button>
+                    )}
+                  </div>
+
                   <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-[#F0EAD6]">
                       <tr>
@@ -1050,7 +1086,9 @@ const ArticlesDashboard = () => {
                   </table>
 
                   <div className="mt-4 flex justify-between items-center text-black">
-                    <div className="text-sm">Page <span className="font-medium">{currentPage}</span> of <span className="font-medium">{totalPages || 1}</span></div>
+                    <div className="text-sm">
+                      Showing <span className="font-medium">{filteredArticles.length > 0 ? (currentPage - 1) * itemsPerPage + 1 : 0}</span> to <span className="font-medium">{Math.min(currentPage * itemsPerPage, filteredArticles.length)}</span> of <span className="font-medium">{filteredArticles.length}</span> results
+                    </div>
                     <div className="flex space-x-2">
                       <button onClick={handlePreviousPage} disabled={currentPage === 1} className="px-3 py-1 bg-[#F0EAD6] rounded-md text-sm disabled:opacity-50">Previous</button>
                       <button onClick={handleNextPage} disabled={currentPage === totalPages} className="px-3 py-1 bg-[#F0EAD6] rounded-md text-sm disabled:opacity-50">Next</button>

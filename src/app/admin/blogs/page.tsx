@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faEdit, faTrash, faUpload, faMagic } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faEdit, faTrash, faUpload, faMagic, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, getDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
@@ -76,6 +76,7 @@ const BlogsDashboard = () => {
   const itemsPerPage = 10; // Set the number of items per page
   const [rssDebugInfo, setRssDebugInfo] = useState<string>('');
   const [isLoadingRss, setIsLoadingRss] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
 
   // AI Generation state
   const [primaryKeyword, setPrimaryKeyword] = useState('');
@@ -90,11 +91,24 @@ const BlogsDashboard = () => {
   const [expansionPrompt, setExpansionPrompt] = useState('');
   const [isExpanding, setIsExpanding] = useState(false);
 
-  // Calculate the total number of pages
-  const totalPages = Math.ceil(blogs.length / itemsPerPage);
+  // Filter blogs based on search term
+  const filteredBlogs = blogs.filter(blog => 
+    blog.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+    blog.subtitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    blog.slug.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    blog.author.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  // Calculate the total number of pages based on filtered blogs
+  const totalPages = Math.ceil(filteredBlogs.length / itemsPerPage);
 
   // Get the current blogs to display based on the current page
-  const currentBlogs = blogs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+  const currentBlogs = filteredBlogs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+  // Reset pagination when search term changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm]);
 
   // Check if user is logged in; if not, redirect to login page
   useEffect(() => {
@@ -1512,6 +1526,28 @@ const BlogsDashboard = () => {
                   transition={{ duration: 0.3 }}
                   className="overflow-x-auto"
                 >
+                  {/* Search Bar */}
+                  <div className="mb-4 relative">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <FontAwesomeIcon icon={faSearch} className="text-gray-400" />
+                    </div>
+                    <input
+                      type="text"
+                      placeholder="Search blogs by title, subtitle, slug, or author..."
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-[#D2A02A] focus:border-[#D2A02A] sm:text-sm text-black"
+                    />
+                    {searchTerm && (
+                      <button
+                        onClick={() => setSearchTerm('')}
+                        className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
+                      >
+                        <FontAwesomeIcon icon={faTrash} className="text-xs" />
+                      </button>
+                    )}
+                  </div>
+
                   <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-[#F0EAD6]">
                       <tr>
@@ -1566,7 +1602,7 @@ const BlogsDashboard = () => {
 
                   <div className="mt-4 flex justify-between items-center">
                     <div className="text-sm text-[#5A4C33]">
-                      Showing <span className="font-medium">{(currentPage - 1) * itemsPerPage + 1}</span> to <span className="font-medium">{Math.min(currentPage * itemsPerPage, blogs.length)}</span> of <span className="font-medium">{blogs.length}</span> results
+                      Showing <span className="font-medium">{filteredBlogs.length > 0 ? (currentPage - 1) * itemsPerPage + 1 : 0}</span> to <span className="font-medium">{Math.min(currentPage * itemsPerPage, filteredBlogs.length)}</span> of <span className="font-medium">{filteredBlogs.length}</span> results
                     </div>
                     <div className="flex space-x-2">
                       <motion.button
