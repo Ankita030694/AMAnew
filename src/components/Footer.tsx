@@ -248,6 +248,8 @@ export default function Footer() {
     { href: "/how-do-i-stop-recovery-agent-from-coming-home", label: "Stop Recovery Agent Home Visits" },
     { href: "/bajaj-finance-agent-visiting-home", label: "Bajaj Finance Agent Help" },
     { href: "/documents-needed-for-loan-settlement-noc", label: "Documents for Loan Settlement NOC" },
+    { href: "/can-bank-file-case-for-personal-loan", label: "Can Bank File Case for Personal Loan" },
+    { href: "/credit-card-settlement-process-india", label: "Credit Card Settlement Process India" },
     { href: "/best-time-for-loan-settlement", label: "Best Time for Loan Settlement" },
     { href: "/benefits-of-settling-your-loan-in-march", label: "Benefits of Settling Loan in March" }
   ].map((query) => (

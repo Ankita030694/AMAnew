@@ -170,7 +170,10 @@ const Footer = () => {
         { name: 'Documents Needed for Loan Settlement NOC', href: '/documents-needed-for-loan-settlement-noc' },
         { name: 'Charities That Pay Off Debt', href: '/charities-that-pay-off-debt' },
         {name:"Best Time for Loan Settlement",href:"/best-time-for-loan-settlement"},
-        { name: "Benefits of Settling Your Loan in March", href: "/benefits-of-settling-your-loan-in-march" }
+        { name: "Benefits of Settling Your Loan in March", href: "/benefits-of-settling-your-loan-in-march" },
+        { name: "Can Bank File Case for Personal Loan", href: "/can-bank-file-case-for-personal-loan" },
+        { name: "Credit Card Settlement Process India", href: "/credit-card-settlement-process-india" },
+
       ]
 
     }
