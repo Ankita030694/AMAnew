@@ -109,6 +109,8 @@ const Footer = () => {
     {
       title: "Additional Services",
       links: [
+        {name:"Get FSSAI Licence in 7 Days",href:"/get-fssai-licence-in-7-days"},
+        {name:"How to Register FSSAI Licence",href:"/how-to-register-fssai-licence"},
         {name:"Trademark Registration Fees",href:"/trademark-registration-fees"},
         {name:"MSME Registration",href:"/msme-registration"},
         {name:"DIY Trademark Registration",href:"/can-i-register-my-trademark-by-myself"},

@@ -77,6 +77,8 @@ export async function GET(): Promise<Response> {
     '/steps-to-trademark-registration',
     '/trademark-registration-fees',
     '/how-much-time-it-takes-to-get-your-trademark-registered',
+    '/get-fssai-licence-in-7-days',
+    '/how-to-register-fssai-licence',
     '/where-to-register-trademark',
     '/msme-registration',
     '/can-i-register-my-trademark-by-myself',
