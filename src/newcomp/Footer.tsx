@@ -181,9 +181,8 @@ const Footer = () => {
                 {name: "Drafting of Will", href: "/drafting-of-will"},
         {name: "Will Drafting for NRI", href: "/will-drafting-for-nri"},
         {name:"Simple Will Format - Download",href:"/simple-will-format-download-free-legal-document-sample"},
-
-
-
+        {name:"Google's Trusted Legal Advisor",href:"/googles-trusted-legal-advisor"},
+        {name:"Google's Trusted Law Firm",href:"/googles-trusted-law-firm"},
       ]
 
     }

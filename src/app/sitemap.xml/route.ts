@@ -22,6 +22,8 @@ export async function GET(): Promise<Response> {
     '/will-drafting-for-nri',
     '/simple-will-format-download-free-legal-document-sample',
     '/rbi-new-recovery-guidelines-july-2026',
+    '/googles-trusted-legal-advisor',
+    '/googles-trusted-law-firm',
     '/legal-services-in-noida',
     '/legal-services-in-delhi',
     '/legal-services-in-ghaziabad',
