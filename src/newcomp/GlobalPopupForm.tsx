@@ -43,22 +43,29 @@ const GlobalPopupForm = () => {
   });
 
   useEffect(() => {
-    // Only trigger once per session
+    const handleOpenPopup = () => setIsOpen(true);
+    window.addEventListener("openGlobalPopup", handleOpenPopup);
+
+    // Only trigger once per session automatically
     const hasBeenShown = sessionStorage.getItem("global_popup_shown");
-    if (hasBeenShown) return;
+    if (!hasBeenShown) {
+      const timer = setTimeout(() => {
+        const currentPath = window.location.pathname;
+        const isExcludedPage = currentPath.includes("/login") || currentPath.includes("/admin") || currentPath.includes("/thank-you");
+        
+        if (!isExcludedPage) {
+          setIsOpen(true);
+          sessionStorage.setItem("global_popup_shown", "true");
+        }
+      }, 5000);
 
-    const timer = setTimeout(() => {
-      // Check current pathname to ensure we don't open on excluded pages
-      const currentPath = window.location.pathname;
-      const isExcludedPage = currentPath.includes("/login") || currentPath.includes("/admin") || currentPath.includes("/thank-you");
-      
-      if (!isExcludedPage) {
-        setIsOpen(true);
-        sessionStorage.setItem("global_popup_shown", "true");
-      }
-    }, 5000);
+      return () => {
+        clearTimeout(timer);
+        window.removeEventListener("openGlobalPopup", handleOpenPopup);
+      };
+    }
 
-    return () => clearTimeout(timer);
+    return () => window.removeEventListener("openGlobalPopup", handleOpenPopup);
   }, []); // Empty dependency array means it only runs once when the app mounts
 
   const handleChange = (

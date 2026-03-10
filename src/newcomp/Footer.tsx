@@ -179,6 +179,8 @@ const Footer = () => {
                 {name:"Telecaller Vacancies in Gurgaon",href:"/telecaller-vacancies-in-gurgaon"},
                 {name: "RBI Recovery Guidelines July 2026", href: "/rbi-new-recovery-guidelines-july-2026"},
                 {name: "Drafting of Will", href: "/drafting-of-will"},
+        {name:"Simple Will Format - Download",href:"/simple-will-format-download-free-legal-document-sample"},
+
 
 
       ]
