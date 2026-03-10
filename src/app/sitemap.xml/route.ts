@@ -19,6 +19,7 @@ export async function GET(): Promise<Response> {
     '/sales-job-vacancies-in-gurgaon',
     '/telecaller-vacancies-in-gurgaon',
     '/drafting-of-will',
+    '/will-drafting-for-nri',
     '/simple-will-format-download-free-legal-document-sample',
     '/rbi-new-recovery-guidelines-july-2026',
     '/legal-services-in-noida',
