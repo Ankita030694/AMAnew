@@ -18,6 +18,7 @@ export async function GET(): Promise<Response> {
     '/legal-services-in-gurgaon',
     '/sales-job-vacancies-in-gurgaon',
     '/telecaller-vacancies-in-gurgaon',
+    '/rbi-new-recovery-guidelines-july-2026',
     '/legal-services-in-noida',
     '/legal-services-in-delhi',
     '/legal-services-in-ghaziabad',

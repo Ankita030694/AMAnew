@@ -177,6 +177,7 @@ const Footer = () => {
         { name: "Credit Card Settlement Process India", href: "/credit-card-settlement-process-india" },
                 {name:"Sales Job Vacancies in Gurgaon",href:"/sales-job-vacancies-in-gurgaon"},
                 {name:"Telecaller Vacancies in Gurgaon",href:"/telecaller-vacancies-in-gurgaon"},
+                {name: "RBI Recovery Guidelines July 2026", href: "/rbi-new-recovery-guidelines-july-2026"},
 
 
       ]
