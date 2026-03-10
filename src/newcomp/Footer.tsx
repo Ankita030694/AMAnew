@@ -456,7 +456,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <p className="text-[rgba(255,255,255,0.75)] text-[12px] md:text-[14px] font-light leading-[14px] text-center mt-8">
-          © 2025 AMA Legal Solutions. All Rights Reserved.
+          © 2022 AMA Legal Solutions. All Rights Reserved.
         </p>
       </div>
     </footer>
