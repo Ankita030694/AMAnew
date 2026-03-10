@@ -175,6 +175,8 @@ const Footer = () => {
         { name: "Benefits of Settling Your Loan in March", href: "/benefits-of-settling-your-loan-in-march" },
         { name: "Can Bank File Case for Personal Loan", href: "/can-bank-file-case-for-personal-loan" },
         { name: "Credit Card Settlement Process India", href: "/credit-card-settlement-process-india" },
+                {name:"Sales Job Vacancies in Gurgaon",href:"/sales-job-vacancies-in-gurgaon"},
+
 
       ]
 
