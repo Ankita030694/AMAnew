@@ -176,6 +176,7 @@ const Footer = () => {
         { name: "Can Bank File Case for Personal Loan", href: "/can-bank-file-case-for-personal-loan" },
         { name: "Credit Card Settlement Process India", href: "/credit-card-settlement-process-india" },
                 {name:"Sales Job Vacancies in Gurgaon",href:"/sales-job-vacancies-in-gurgaon"},
+                {name:"Telecaller Vacancies in Gurgaon",href:"/telecaller-vacancies-in-gurgaon"},
 
 
       ]

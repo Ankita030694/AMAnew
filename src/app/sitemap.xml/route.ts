@@ -17,6 +17,7 @@ export async function GET(): Promise<Response> {
     '/ama-legal-solutions',
     '/legal-services-in-gurgaon',
     '/sales-job-vacancies-in-gurgaon',
+    '/telecaller-vacancies-in-gurgaon',
     '/legal-services-in-noida',
     '/legal-services-in-delhi',
     '/legal-services-in-ghaziabad',
