@@ -19,22 +19,22 @@ const inter = Inter({
 const polySans = localFont({
   src: [
     {
-      path: '../../public/newAssets/font/polysanstrial-slim.otf',
+      path: '../../public/newAssets/font/polysanstrial-slim.woff2',
       weight: '300',
       style: 'normal',
     },
     {
-      path: '../../public/newAssets/font/polysanstrial-neutral.otf',
+      path: '../../public/newAssets/font/polysanstrial-neutral.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../../public/newAssets/font/polysanstrial-median.otf',
+      path: '../../public/newAssets/font/polysanstrial-median.woff2',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../../public/newAssets/font/polysanstrial-bulky.otf',
+      path: '../../public/newAssets/font/polysanstrial-bulky.woff2',
       weight: '700',
       style: 'normal',
     },

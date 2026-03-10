@@ -4,6 +4,7 @@ import BlogPage from './blogcomp';
 import { Suspense } from 'react';
 import PerformanceMonitor from '../../components/PerformanceMonitor';
 import Navbar from "@/newcomp/Navbar";
+import Link from 'next/link';
 import { unstable_cache } from 'next/cache';
 
 export const metadata = {
@@ -27,7 +28,7 @@ const BlogLoading = () => (
 // Helper function
 const truncateWords = (text: string, wordCount: number) => {
   if (!text) return '';
-  const strippedText = text.replace(/<[^>]*>/g, ' ');
+  const strippedText = text.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
   const words = strippedText.split(/\s+/);
   if (words.length <= wordCount) return strippedText;
   return words.slice(0, wordCount).join(' ') + '...';
@@ -46,6 +47,7 @@ const getBlogs = unstable_cache(async () => {
                 title: data.title || '',
                 subtitle: data.subtitle || '',
                 description: truncateWords(data.description || '', 20),
+                fullDescription: truncateWords(data.description || '', 150),
                 date: data.date || '',
                 image: data.image || '',
                 // Handle different timestamp formats or missing created date
@@ -72,6 +74,29 @@ export default async function Page() {
       <Suspense fallback={<BlogLoading />}>
         <BlogPage initialBlogs={blogs} />
       </Suspense>
+
+      {/* SSR-rendered crawlable content — visible to search engines, hidden from users */}
+      {blogs.length > 0 && (
+        <section
+          aria-hidden="true"
+          className="sr-only"
+          data-nosnippet
+        >
+          <h2>All Legal Blogs by AMA Legal Solutions</h2>
+          <ul>
+            {blogs.map((blog) => (
+              <li key={blog.id}>
+                <Link href={`/blog/${blog.slug}`}>
+                  <h3>{blog.title}</h3>
+                </Link>
+                {blog.date && <time>{blog.date}</time>}
+                {blog.subtitle && <p>{blog.subtitle}</p>}
+                <p>{blog.fullDescription}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </main>
   );
 }

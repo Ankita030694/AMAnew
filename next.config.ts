@@ -115,6 +115,31 @@ const nextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 
+  async headers() {
+    return [
+      {
+        // Cache video & image assets under /newAssets/ for 1 year
+        source: '/newAssets/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        // Cache video & image assets under /testivid/ for 1 year
+        source: '/testivid/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+    ];
+  },
+
   async redirects() {
     return [
       // ── SEO Fix: Enforce www. subdomain ───

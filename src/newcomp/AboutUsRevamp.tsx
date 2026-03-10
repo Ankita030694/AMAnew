@@ -332,6 +332,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
                   width={400}
                   height={550}
                   className="w-full h-full object-cover"
+                  priority
                 />
               </div>
 

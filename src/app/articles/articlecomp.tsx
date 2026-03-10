@@ -1,9 +1,7 @@
 'use client'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
-import { collection, getDocs, query, orderBy } from 'firebase/firestore';
-import { db } from '../../lib/firebase'; // Make sure you have this file set up with your Firebase config
 import Image from 'next/image';
 
 
@@ -47,7 +45,12 @@ interface Article {
   created: number;
   metaTitle?: string;
   metaDescription?: string;
-  slug?: string; // Existing slug field in the interface
+  slug?: string;
+  fullDescription?: string;
+}
+
+interface ArticlePageProps {
+  initialArticles?: Article[];
 }
 
 // Helper function to truncate text to a specific number of words
@@ -59,45 +62,9 @@ const truncateWords = (text: string, wordCount: number) => {
   return words.slice(0, wordCount).join(' ') + '...';
 };
 
-export default function Page() {
-  const [articles, setArticles] = useState<Article[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchArticles = async () => {
-      try {
-        const articlesCollection = collection(db, 'articles');
-        const articlesQuery = query(articlesCollection, orderBy('created', 'desc'));
-        const querySnapshot = await getDocs(articlesQuery);
-        
-        const articlesData = querySnapshot.docs.map(doc => {
-          const data = doc.data();
-          const title = data.title || '';
-          
-          return {
-            id: doc.id,
-            title: title,
-            subtitle: data.subtitle || '',
-            description: truncateWords(data.description || '', 20),
-            date: data.date || '',
-            image: data.image || '',
-            created: data.created || Date.now(),
-            metaTitle: data.metaTitle || '',
-            metaDescription: data.metaDescription || '',
-            slug: data.slug || '' // Use slug from the database instead of generating it
-          };
-        });
-        
-        setArticles(articlesData);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching articles:", error);
-        setLoading(false);
-      }
-    };
-
-    fetchArticles();
-  }, []);
+export default function Page({ initialArticles = [] }: ArticlePageProps) {
+  const [articles, setArticles] = useState<Article[]>(initialArticles);
+  const [loading, setLoading] = useState(false);
 
   // Helper function to shuffle array (Fisher-Yates algorithm)
   const shuffleArray = (array: any[]) => {

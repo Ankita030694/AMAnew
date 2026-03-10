@@ -48,21 +48,25 @@ const testimonialVideos = [
     id: 1,
     title: "Client Testimonial 1",
     videoSrc: "/testivid/testivid1.mp4",
+    poster: "/testivid/posters/testivid1.jpg",
   },
   {
     id: 2,
     title: "Client Testimonial 2", 
     videoSrc: "/testivid/testivid2.mp4",
+    poster: "/testivid/posters/testivid2.jpg",
   },
   {
     id: 3,
     title: "Client Testimonial 3",
     videoSrc: "/testivid/testivid3.mp4",
+    poster: "/testivid/posters/testivid3.jpg",
   },
   {
     id: 4,
     title: "Client Testimonial 4",
     videoSrc: "/testivid/testivid4.mp4",
+    poster: "/testivid/posters/testivid4.jpg",
   },
 ];
 
@@ -72,12 +76,14 @@ const videoCache = new Map<string, HTMLVideoElement>();
 // Optimized video component with caching
 const OptimizedVideo = ({ 
   src, 
+  poster,
   className, 
   onLoadedData, 
   videoRef, 
   ...props 
 }: {
   src: string;
+  poster?: string;
   className: string;
   onLoadedData?: (e: React.SyntheticEvent<HTMLVideoElement>) => void;
   videoRef?: (el: HTMLVideoElement | null) => void;
@@ -124,6 +130,8 @@ const OptimizedVideo = ({
         ref={handleVideoRef}
         className={`${className} transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
         src={src}
+        poster={poster}
+        preload="none"
         onLoadedData={handleLoadingComplete}
         onLoadedMetadata={handleLoadingComplete}
         onCanPlay={handleLoadingComplete}
@@ -283,12 +291,13 @@ export default function LegalExcellence() {
                   }}
                   className="w-full h-full object-cover"
                   src={video.videoSrc}
+                  poster={video.poster}
                   muted={unmutedVideo !== index}
                   autoPlay
                   loop
                   playsInline
                   controls={false}
-                  preload="metadata"
+                  preload="none"
                   onLoadedData={() => {
                     // Auto-play when video is loaded
                     const video = videoRefs.current[index];

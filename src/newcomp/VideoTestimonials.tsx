@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import { Play, Volume2, VolumeX, ChevronLeft, ChevronRight } from "lucide-react";
 
 const videos = [
-  { id: 1, src: "/newAssets/testivid/testivid1.mp4" },
-  { id: 2, src: "/newAssets/testivid/testivid2.mp4" },
-  { id: 3, src: "/newAssets/testivid/testivid3.mp4" },
-  { id: 4, src: "/newAssets/testivid/testivid4.mp4" },
+  { id: 1, src: "/newAssets/testivid/testivid1.mp4", poster: "/newAssets/testivid/posters/testivid1.jpg" },
+  { id: 2, src: "/newAssets/testivid/testivid2.mp4", poster: "/newAssets/testivid/posters/testivid2.jpg" },
+  { id: 3, src: "/newAssets/testivid/testivid3.mp4", poster: "/newAssets/testivid/posters/testivid3.jpg" },
+  { id: 4, src: "/newAssets/testivid/testivid4.mp4", poster: "/newAssets/testivid/posters/testivid4.jpg" },
 ];
 
 export default function VideoTestimonials() {
@@ -80,11 +80,13 @@ export default function VideoTestimonials() {
               <video
                 ref={(el) => { videoRefs.current[video.id] = el; }}
                 src={video.src}
+                poster={video.poster}
                 className="w-full h-full object-cover"
                 autoPlay
                 muted
                 loop
                 playsInline
+                preload="none"
                 crossOrigin="anonymous"
               />
               
