@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import app from "next/app";
 
 const Footer = () => {
   const footerColumns = [
@@ -13,7 +14,7 @@ const Footer = () => {
         { name: 'Careers', href: '/careers' },
         { name: 'Contact Us', href: '/contact' },
         { name: 'Success Stories', href: '/success-stories' },
-        { name: 'AMA Connect App Success', href: '/success-stories/ama-connect-app' },
+        { name: 'AMA Legal Solutions App', href: '/ama-legal-solutions-application' },
         { name: 'Privacy Policy', href: '/privacy-policy' },
         { name: 'Terms of Service', href: '/terms-and-conditions' },
       ]
@@ -75,10 +76,16 @@ const Footer = () => {
     {
       title: "Loan Settlement",
       links: [
+        { name: 'Personal Loan Settlement', href: '/personal-loan-settlement' },
+        { name: 'Credit Card Settlement', href: '/credit-card-settlement' },
+        { name: 'Business Loan Settlement', href: '/business-loan-settlement' },
+        { name: 'Car Loan Settlement', href: '/car-loan-settlement' },
+        { name: 'App Loan Settlement', href: '/app-loan-settlement' },
         { name: 'Settlement Services', href: '/services/loan-settlement' },
         { name: 'Debt Consolidation', href: '/services/debt-consolidation' },
         { name: 'Loan & Debt Consolidation', href: '/services/loan-and-debt-consolidation' },
         { name: 'SBI Loan Settlement', href: '/services/loan-settlement/sbi-bank' },
+
         { name: 'ICICI Bank Settlement', href: '/services/loan-settlement/icici-bank' },
         { name: 'HDFC Bank Settlement', href: '/services/loan-settlement/hdfc-bank' },
         { name: 'Axis Bank Settlement', href: '/services/loan-settlement/axis-bank' },
@@ -87,6 +94,7 @@ const Footer = () => {
         { name: 'Reliable Settlement', href: '/where-can-i-find-reliable-loan-settlement-services-with-flexible-payment-options' },
         { name: 'Best Settlement Companies', href: '/which-companies-offer-the-best-loan-settlement-plans-for-personal-loans' },
         { name: 'Low Fee Settlement', href: '/who-provides-loan-settlement-solutions-with-minimal-processing-fees' },
+        { name: 'Reasonable Settlement Offer', href: '/what-is-a-reasonable-settlement-offer' },
         { name: 'Top Settlement Companies', href: '/loan-settlement-companies' },
       ]
     },
