@@ -369,7 +369,6 @@ function generateWebPageSchema(content: any) {
     "description": content.description,
     "url": `https://www.amalegalsolutions.com/services/criminal-law/${content.slug}`,
     "mainEntity": {
-      "@type": "FAQPage",
       "name": "Criminal Law Services FAQs",
       "description": "Frequently asked questions about criminal law services, criminal defense, and bail applications",
       "mainEntity": faqs.map(faq => ({

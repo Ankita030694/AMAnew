@@ -9,6 +9,7 @@
 
 import AboutUsRevamp from "@/newcomp/AboutUsRevamp";
 import { fetchAttorneys } from "@/lib/attorneys";
+import Script from "next/script";
 
 export const metadata = {
   title: 'About AMA Legal Solutions: Experienced Law Firm in Gurugram',
@@ -18,6 +19,33 @@ export const metadata = {
   },
 }
 
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://www.amalegalsolutions.com/about#webpage",
+      "url": "https://www.amalegalsolutions.com/about",
+      "name": "About AMA Legal Solutions",
+      "description": "Learn about the legacy and expertise of AMA Legal Solutions in providing exceptional legal services across India.",
+      "publisher": { "@id": "https://www.amalegalsolutions.com/" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.amalegalsolutions.com/#person",
+      "name": "Anuj Anand Malik",
+      "jobTitle": "Founder & Managing Partner",
+      "url": "https://www.amalegalsolutions.com/",
+      "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/ama-legal-solutions/",
+        "https://www.instagram.com/amalegalsolutions/"
+      ],
+      "worksFor": { "@id": "https://www.amalegalsolutions.com/" }
+    }
+  ]
+};
+
 export const revalidate = 0;
 
 export default async function About() {
@@ -25,39 +53,13 @@ export default async function About() {
     
     return (
       <>
+        <Script
+          id="about-page-schema"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+        />
         <AboutUsRevamp attorneys={attorneys} />
       </>
-      /*
-      <div>
-        <Hero />
-        <Clients />
-        <AboutInfo />
-
-        <div className="text-white py-10 relative">
-        <div className="absolute inset-0">
-          <Image
-            src="/bannerbg.png"
-            alt="Background"
-            fill
-            className="object-cover"
-            quality={100}
-          /> 
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <AnimatedCounter end={3000} label="Cases Handled" />
-            <AnimatedCounter end={5000} label="Clients Served" />
-            <AnimatedCounter end={40} label="Years Experience" />
-            <AnimatedCounter end={20} label="Our Offices" />
-          </div>
-        </div>
-      </div>
-        <AnujBhiya />
-
-        <TabbedTimeline />
-        <OurAttorneys />
-
-      </div>
-      */
     );
-  }
+}

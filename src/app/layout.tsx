@@ -163,6 +163,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
         <Script
+          id="website-structured-data"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "AMA Legal Solutions",
+              "url": "https://www.amalegalsolutions.com/",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.amalegalsolutions.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            })
+          }}
+        />
+        <Script
           id="attorney-structured-data"
           type="application/ld+json"
           strategy="beforeInteractive"
@@ -174,11 +192,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
               "@id": "https://www.amalegalsolutions.com/",
               "url": "https://www.amalegalsolutions.com/",
-              "telephone": "8700343611",
-              "priceRange": "$$",
+              "telephone": "+91-8700343611",
+              "priceRange": "₹₹",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "2493AP, Block G, Sushant Lok 2, Sector 57,",
+                "streetAddress": "2493AP, Block G, Sushant Lok 2, Sector 57",
                 "addressLocality": "Gurugram",
                 "postalCode": "122001",
                 "addressCountry": "IN"
@@ -211,25 +229,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 "closes": "18:00"
               },
               "sameAs": [
+                "https://www.facebook.com/amalegalsolutions/",
                 "https://www.youtube.com/@amalegalsolution",
                 "https://www.instagram.com/amalegalsolutions/",
                 "https://www.linkedin.com/company/ama-legal-solutions/",
                 "https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions",
                 "https://apps.apple.com/in/app/ama-legal-solutions/id6755156186"
               ],
-              "department": {
-                "@type": "LegalService",
-                "name": "AMA Legal Solutions - Legal Services",
-                "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
-                "telephone": "8700343611",
-                "priceRange": "₹₹",
-                "address": {
-                  "@type": "PostalAddress",
-                  "streetAddress": "2493AP, Block G, Sushant Lok 2, Sector 57",
-                  "addressLocality": "Gurugram",
-                  "postalCode": "122001",
-                  "addressCountry": "IN"
-                }
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "1250"
               }
             })
           }}

@@ -369,7 +369,6 @@ function generateWebPageSchema(content: any) {
     "description": content.description,
     "url": `https://www.amalegalsolutions.com/services/drafting/${content.slug}`,
     "mainEntity": {
-      "@type": "FAQPage",
       "name": "Legal Drafting Services FAQs",
       "description": "Frequently asked questions about legal drafting services, contract drafting, and legal document writing",
       "mainEntity": faqs.map(faq => ({

@@ -120,7 +120,6 @@ const articleSchema = {
 // FAQ Schema
 const faqSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
   "mainEntity": faqs.map(faq => ({
     "@type": "Question",
     "name": faq.question,
@@ -134,7 +133,7 @@ const faqSchema = {
 // Review Schema
 const reviewSchema = {
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "LegalService",
   "name": "Legal Services Jaipur",
   "image": "https://www.amalegalsolutions.com/city1.svg",
   "description": "Top-rated legal services in Jaipur by AMA Legal Solutions.",
@@ -261,22 +260,22 @@ export default function JaipurLocationPage() {
 
   return (
     <>
-      <Script
+      <Script strategy="beforeInteractive"
         id="breadcrumb-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <Script
+      <Script strategy="beforeInteractive"
         id="article-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      <Script
+      <Script strategy="beforeInteractive"
         id="faq-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <Script
+      <Script strategy="beforeInteractive"
         id="review-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}

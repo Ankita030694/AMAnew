@@ -369,7 +369,6 @@ function generateWebPageSchema(content: any) {
     "description": content.description,
     "url": `https://www.amalegalsolutions.com/services/entertainment/${content.slug}`,
     "mainEntity": {
-      "@type": "FAQPage",
       "name": "Entertainment Law Services FAQs",
       "description": "Frequently asked questions about entertainment law services, media law, and entertainment industry legal support",
       "mainEntity": faqs.map(faq => ({

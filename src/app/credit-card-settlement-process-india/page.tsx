@@ -72,7 +72,6 @@ const articleSchema = {
 
 const faqSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
   "mainEntity": faqs.map(faq => ({
     "@type": "Question",
     "name": faq.question,

@@ -412,7 +412,6 @@ function generateCombinedSchema(articleData: any, faqs: any[], reviews: any[]) {
   // 4. FAQ Schema (if present)
   if (faqs.length > 0) {
     graph.push({
-      "@type": "FAQPage",
       "@id": `${articleUrl}#faq`,
       "name": `${articleData.title} - Frequently Asked Questions`,
       "description": `Frequently asked questions about ${articleData.title}`,

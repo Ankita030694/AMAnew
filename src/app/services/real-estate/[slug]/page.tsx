@@ -369,7 +369,6 @@ function generateWebPageSchema(content: any) {
     "description": content.description,
     "url": `https://www.amalegalsolutions.com/services/real-estate/${content.slug}`,
     "mainEntity": {
-      "@type": "FAQPage",
       "name": "Real Estate Services FAQs",
       "description": "Frequently asked questions about real estate services, property law, and real estate transactions",
       "mainEntity": faqs.map(faq => ({

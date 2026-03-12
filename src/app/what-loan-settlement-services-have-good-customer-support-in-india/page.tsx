@@ -38,7 +38,6 @@ export const metadata = {
 
 const faqSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",

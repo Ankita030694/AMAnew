@@ -224,7 +224,6 @@ export default function VakilSearchPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "FAQPage",
             "mainEntity": faqs.map(faq => ({
               "@type": "Question",
               "name": faq.question,

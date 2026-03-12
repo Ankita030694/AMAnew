@@ -43,13 +43,53 @@ const breadcrumbSchema = (baseUrl: string) => ({
 
 const faqSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
   "mainEntity": faqs.map(faq => ({
     "@type": "Question",
     "name": faq.question,
     "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
   }))
 };
+
+const jobPostingSchema = (baseUrl: string) => ({
+  "@context": "https://schema.org/",
+  "@type": "JobPosting",
+  "title": "Software Development Engineer (SDE) Intern",
+  "description": "Apply for SDE Internship at AMA Legal Solutions. Work on Next.js, React, and build the future of Legal Tech in Gurugram.",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "AMA Legal Solutions",
+    "value": "SDEI2024"
+  },
+  "datePosted": "2024-03-12",
+  "validThrough": "2024-06-12T00:00",
+  "employmentType": "INTERN",
+  "hiringOrganization" : {
+    "@type" : "Organization",
+    "name" : "AMA Legal Solutions",
+    "sameAs" : baseUrl,
+    "logo" : `${baseUrl}/ama-legal-solutions-logo.png`
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2493AP, Block G, Sushant Lok 2, Sector 57",
+      "addressLocality": "Gurugram",
+      "addressRegion": "Haryana",
+      "postalCode": "122001",
+      "addressCountry": "IN"
+    }
+  },
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "INR",
+    "value": {
+      "@type": "QuantitativeValue",
+      "value": 15000,
+      "unitText": "MONTH"
+    }
+  }
+});
 
 const articleSchema = (baseUrl: string) => ({
   "@context": "https://schema.org",
@@ -95,6 +135,7 @@ export default function SDEInternPage() {
       <Script id="breadcrumb-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema(baseUrl)) }} />
       <Script id="article-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema(baseUrl)) }} />
       <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <Script id="job-posting-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPostingSchema(baseUrl)) }} />
 
       <div className="bg-[#F8F5EC] min-h-screen font-[family-name:var(--font-polysans)]">
         <Navbar />

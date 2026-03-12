@@ -369,7 +369,6 @@ function generateWebPageSchema(content: any) {
     "description": content.description,
     "url": `https://www.amalegalsolutions.com/services/corporate/${content.slug}`,
     "mainEntity": {
-      "@type": "FAQPage",
       "name": "Corporate Law Services FAQs",
       "description": "Frequently asked questions about corporate law services, company registration, and business legal services",
       "mainEntity": faqs.map(faq => ({

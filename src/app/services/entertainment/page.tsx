@@ -78,7 +78,6 @@ const webPageSchema = {
   "description": "Top-rated entertainment lawyers in India. Expert legal services for film, music, media, and digital content. Contract drafting, IP protection, and dispute resolution.",
   "url": "https://www.amalegalsolutions.com/services/entertainment",
   "mainEntity": {
-    "@type": "FAQPage",
     "mainEntity": faqs.map(faq => ({
       "@type": "Question",
       "name": faq.question,

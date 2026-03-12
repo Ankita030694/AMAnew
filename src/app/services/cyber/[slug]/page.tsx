@@ -369,7 +369,6 @@ function generateWebPageSchema(content: any) {
     "description": content.description,
     "url": `https://www.amalegalsolutions.com/services/cyber/${content.slug}`,
     "mainEntity": {
-      "@type": "FAQPage",
       "name": "Cyber Law Services FAQs",
       "description": "Frequently asked questions about cyber law services, cyber crime defense, and data protection",
       "mainEntity": faqs.map(faq => ({

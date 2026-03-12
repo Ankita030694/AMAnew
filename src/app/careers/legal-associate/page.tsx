@@ -39,13 +39,54 @@ const breadcrumbSchema = (baseUrl: string) => ({
 
 const faqSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
   "mainEntity": faqs.map(faq => ({
     "@type": "Question",
     "name": faq.question,
     "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
   }))
 };
+
+const jobPostingSchema = (baseUrl: string) => ({
+  "@context": "https://schema.org/",
+  "@type": "JobPosting",
+  "title": "Legal Associate",
+  "description": "Join the legal team at AMA Legal Solutions as a Legal Associate. Work on high-impact litigation, IPR, and loan settlement cases.",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "AMA Legal Solutions",
+    "value": "LA2024"
+  },
+  "datePosted": "2024-03-12",
+  "validThrough": "2024-06-12T00:00",
+  "employmentType": "FULL_TIME",
+  "hiringOrganization" : {
+    "@type" : "Organization",
+    "name" : "AMA Legal Solutions",
+    "sameAs" : baseUrl,
+    "logo" : `${baseUrl}/ama-legal-solutions-logo.png`
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2493AP, Block G, Sushant Lok 2, Sector 57",
+      "addressLocality": "Gurugram",
+      "addressRegion": "Haryana",
+      "postalCode": "122001",
+      "addressCountry": "IN"
+    }
+  },
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "INR",
+    "value": {
+      "@type": "QuantitativeValue",
+      "minValue": 400000,
+      "maxValue": 800000,
+      "unitText": "YEAR"
+    }
+  }
+});
 
 const articleSchema = (baseUrl: string) => ({
   "@context": "https://schema.org",
@@ -91,6 +132,7 @@ export default function LegalAssociatePage() {
       <Script id="breadcrumb-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema(baseUrl)) }} />
       <Script id="article-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema(baseUrl)) }} />
       <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <Script id="job-posting-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPostingSchema(baseUrl)) }} />
 
       <div className="bg-gray-50 min-h-screen font-sans text-gray-800">
         

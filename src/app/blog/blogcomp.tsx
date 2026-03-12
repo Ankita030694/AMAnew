@@ -181,7 +181,6 @@ export default function Page({ initialBlogs = [] }: BlogPageProps) {
       "description": `Stay informed with the latest legal insights, case studies, and legal developments in India. AMA Legal Solutions blog provides expert legal articles on ${blogsData.slice(0, 3).map(blog => blog.title.toLowerCase()).join(', ')} and more.`,
       "url": "https://www.amalegalsolutions.com/blog",
       "mainEntity": {
-        "@type": "FAQPage",
         "name": "Legal Blog FAQs",
         "description": "Frequently asked questions about AMA Legal Solutions blog, legal articles, and legal services in India",
         "mainEntity": blogFaqs.map(faq => ({

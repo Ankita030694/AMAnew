@@ -369,7 +369,6 @@ function generateWebPageSchema(content: any) {
     "description": content.description,
     "url": `https://www.amalegalsolutions.com/services/civil/${content.slug}`,
     "mainEntity": {
-      "@type": "FAQPage",
       "name": "Civil Law Services FAQs",
       "description": "Frequently asked questions about civil law services, civil litigation, and contract disputes",
       "mainEntity": faqs.map(faq => ({

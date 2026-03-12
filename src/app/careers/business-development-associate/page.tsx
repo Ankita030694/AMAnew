@@ -57,13 +57,54 @@ const articleSchema = (baseUrl: string) => ({
 
 const faqSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
   "mainEntity": faqs.map(faq => ({
     "@type": "Question",
     "name": faq.question,
     "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
   }))
 };
+
+const jobPostingSchema = (baseUrl: string) => ({
+  "@context": "https://schema.org/",
+  "@type": "JobPosting",
+  "title": "Business Development Associate",
+  "description": "Join AMA Legal Solutions as a Business Development Associate. Lead strategic growth, client acquisition, and help expand India's top law firm.",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "AMA Legal Solutions",
+    "value": "BDA2024"
+  },
+  "datePosted": "2024-03-12",
+  "validThrough": "2024-06-12T00:00",
+  "employmentType": "FULL_TIME",
+  "hiringOrganization" : {
+    "@type" : "Organization",
+    "name" : "AMA Legal Solutions",
+    "sameAs" : baseUrl,
+    "logo" : `${baseUrl}/ama-legal-solutions-logo.png`
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2493AP, Block G, Sushant Lok 2, Sector 57",
+      "addressLocality": "Gurugram",
+      "addressRegion": "Haryana",
+      "postalCode": "122001",
+      "addressCountry": "IN"
+    }
+  },
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "INR",
+    "value": {
+      "@type": "QuantitativeValue",
+      "minValue": 300000,
+      "maxValue": 600000,
+      "unitText": "YEAR"
+    }
+  }
+});
 
 export const metadata: Metadata = {
   title: "Business Development Associate | AMA Legal Solutions",
@@ -95,6 +136,7 @@ export default function BDACareerPage() {
       <Script id="breadcrumb-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema(baseUrl)) }} />
       <Script id="article-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema(baseUrl)) }} />
       <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <Script id="job-posting-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPostingSchema(baseUrl)) }} />
 
       <div className="bg-[#F8F5EC] min-h-screen font-[family-name:var(--font-polysans)]">
         <Navbar />

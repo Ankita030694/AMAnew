@@ -49,122 +49,81 @@ export default function Home() {
       
       {/* SEO Structured Data */}
       <Script
-        id="structured-data"
+        id="homepage-video-schema"
         type="application/ld+json"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Attorney",
-            "@id": "https://www.amalegalsolutions.com/",
-            "name": "AMA Legal Solutions",
-            "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
-            "url": "https://www.amalegalsolutions.com/",
-            "telephone": "8700343611",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "2493AP, Block G, Sushant Lok 2, Sector 57,",
-              "addressLocality": "Gurugram",
-              "postalCode": "122001",
-              "addressCountry": "IN"
-            },
-            
-            // 1. Service Schema
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Legal Services",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Loan Settlement",
-                    "description": "Credit Card | Personal Loan | Business Loan | Vehicle Loan | Bank Loan Default",
-                    "url": "https://www.amalegalsolutions.com/services/loan-settlement"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Intellectual Property Rights",
-                    "description": "Trademark Registration | Copyright Protection | Patent Filing | Brand Protection",
-                    "url": "https://www.amalegalsolutions.com/services/intellectual-property-rights"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Corporate Law",
-                    "description": "Company Incorporation | Compliance | Mergers & Acquisitions | Corporate Litigation",
-                    "url": "https://www.amalegalsolutions.com/services/corporate"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Banking & Finance",
-                    "description": "Financial Fraud | Financial Scam | Banking Regulatory Compliance | Commercial Banking Issues",
-                    "url": "https://www.amalegalsolutions.com/services/banking-and-finance"
-                  }
-                }
-              ]
-            },
-
-            // 2. Review Snippets (Generated from shared data)
-            "review": baseTestimonials.map(t => ({
-              "@type": "Review",
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
+            "@graph": [
+              {
+                "@type": "WebPage",
+                "@id": "https://www.amalegalsolutions.com/#webpage",
+                "url": "https://www.amalegalsolutions.com/",
+                "name": "AMA Legal Solutions: Top Law Firm in India",
+                "description": "AMA Legal Solutions is a trusted law firm in India offering legal consultation, dispute resolution, and advisory services.",
+                "about": { "@id": "https://www.amalegalsolutions.com/" }
               },
-              "author": {
-                "@type": "Person",
-                "name": t.author
+              {
+                "@type": "ItemList",
+                "name": "Client Testimonials",
+                "itemListElement": baseTestimonials.slice(0, 10).map((t, i) => ({
+                  "@type": "ListItem",
+                  "position": i + 1,
+                  "item": {
+                    "@type": "Review",
+                    "reviewRating": {
+                      "@type": "Rating",
+                      "ratingValue": "5",
+                      "bestRating": "5"
+                    },
+                    "author": {
+                      "@type": "Person",
+                      "name": t.author
+                    },
+                    "reviewBody": t.text
+                  }
+                }))
               },
-              "reviewBody": t.text
-            })),
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": baseTestimonials.length.toString()
-            },
-
-            // 3. Video Object Schema
-            "subjectOf": [
               {
                 "@type": "VideoObject",
                 "name": "AMA Legal Solutions Client Testimonial 1",
                 "description": "Client success story and review of AMA Legal Solutions services.",
-                "thumbnailUrl": "https://www.amalegalsolutions.com/newAssets/hero.png", 
-                "uploadDate": "2024-01-01", 
-                "contentUrl": "https://www.amalegalsolutions.com/newAssets/testivid/testivid1.mp4"
+                "thumbnailUrl": "https://www.amalegalsolutions.com/newAssets/hero.png",
+                "uploadDate": "2024-03-01T08:00:00+08:00",
+                "duration": "PT1M20S",
+                "contentUrl": "https://www.amalegalsolutions.com/newAssets/testivid/testivid1.mp4",
+                "embedUrl": "https://www.youtube.com/embed/testivid1"
               },
               {
                 "@type": "VideoObject",
                 "name": "AMA Legal Solutions Client Testimonial 2",
                 "description": "Client success story and review of AMA Legal Solutions services.",
                 "thumbnailUrl": "https://www.amalegalsolutions.com/newAssets/hero.png",
-                "uploadDate": "2024-01-01",
-                "contentUrl": "https://www.amalegalsolutions.com/newAssets/testivid/testivid2.mp4"
+                "uploadDate": "2024-03-02T09:00:00+08:00",
+                "duration": "PT1M45S",
+                "contentUrl": "https://www.amalegalsolutions.com/newAssets/testivid/testivid2.mp4",
+                "embedUrl": "https://www.youtube.com/embed/testivid2"
               },
               {
                 "@type": "VideoObject",
                 "name": "AMA Legal Solutions Client Testimonial 3",
                 "description": "Client success story and review of AMA Legal Solutions services.",
                 "thumbnailUrl": "https://www.amalegalsolutions.com/newAssets/hero.png",
-                "uploadDate": "2024-01-01",
-                "contentUrl": "https://www.amalegalsolutions.com/newAssets/testivid/testivid3.mp4"
+                "uploadDate": "2024-03-03T10:00:00+08:00",
+                "duration": "PT2M10S",
+                "contentUrl": "https://www.amalegalsolutions.com/newAssets/testivid/testivid3.mp4",
+                "embedUrl": "https://www.youtube.com/embed/testivid3"
               },
               {
                 "@type": "VideoObject",
                 "name": "AMA Legal Solutions Client Testimonial 4",
                 "description": "Client success story and review of AMA Legal Solutions services.",
                 "thumbnailUrl": "https://www.amalegalsolutions.com/newAssets/hero.png",
-                "uploadDate": "2024-01-01",
-                "contentUrl": "https://www.amalegalsolutions.com/newAssets/testivid/testivid4.mp4"
+                "uploadDate": "2024-03-04T11:00:00+08:00",
+                "duration": "PT1M55S",
+                "contentUrl": "https://www.amalegalsolutions.com/newAssets/testivid/testivid4.mp4",
+                "embedUrl": "https://www.youtube.com/embed/testivid4"
               }
             ]
           })

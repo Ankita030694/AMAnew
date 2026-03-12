@@ -369,7 +369,6 @@ function generateWebPageSchema(content: any) {
     "description": content.description,
     "url": `https://www.amalegalsolutions.com/services/arbitration/${content.slug}`,
     "mainEntity": {
-      "@type": "FAQPage",
       "name": "Arbitration Services FAQs",
       "description": "Frequently asked questions about arbitration services, alternative dispute resolution, and arbitration legal services",
       "mainEntity": faqs.map(faq => ({
