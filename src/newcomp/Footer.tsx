@@ -111,7 +111,7 @@ const Footer = () => {
         {name:"Trademark Registration India",href:"/services/comprehensive-guide-trademark-registration-india"},
          {name:"Validity of Trademark Registration",href:"/validity-of-trademark-registration"},
         {name:"Trademark Registration Timeline",href:"/how-much-time-it-takes-to-get-your-trademark-registered"},
-        
+        {name:"Expedited Trademark Process",href:"/expedited-process-for-trademark-registration"},
       ]
     },
     {
