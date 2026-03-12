@@ -26,6 +26,7 @@ export async function GET(): Promise<Response> {
     '/googles-trusted-legal-advisor',
     '/googles-trusted-law-firm',
     '/what-is-a-reasonable-settlement-offer',
+    '/get-your-trademark-in-180-days',
     '/expedited-process-for-trademark-registration',
     '/personal-loan-settlement',
     '/business-loan-settlement',
