@@ -247,7 +247,7 @@ const Legacy = () => {
                   className={`${
                     currentSlide.objectFit === "cover"
                       ? "object-cover"
-                      : "object-contain"
+                      : "object-cover"
                   } object-bottom`}
                   priority
                 />
