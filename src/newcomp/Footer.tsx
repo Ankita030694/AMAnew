@@ -128,6 +128,8 @@ const Footer = () => {
         {name:"TM vs R: Which is Better?",href:"/which-is-better-tm-or-r"},
         {name:"Trademark Objection Reply Procedure",href:"/trademark-objection-reply-procedure"},
         {name:"Can I Sell Without Trademark?",href:"/can-i-sell-my-products-without-trademark"},
+        { name: "Got an Arbitration Notice? Don't Worry", href: "/got-an-arbitration-notice-dont-worry-we-got-you" }
+
       ]
     },
     {
