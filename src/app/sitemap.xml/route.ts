@@ -36,6 +36,8 @@ export async function GET(): Promise<Response> {
     '/legal-services-in-delhi',
     '/legal-services-in-ghaziabad',
     '/got-an-arbitration-notice-dont-worry-we-got-you',
+    '/unsecured-loan-settlement',
+    '/secured-loan-settlement',
     '/contact',
     '/careers',
     '/careers/business-development-associate',

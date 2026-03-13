@@ -255,7 +255,9 @@ export default function Footer() {
     { href: "/credit-card-settlement-process-india", label: "Credit Card Settlement Process India" },
     { href: "/best-time-for-loan-settlement", label: "Best Time for Loan Settlement" },
     { href: "/benefits-of-settling-your-loan-in-march", label: "Benefits of Settling Loan in March" },
-    { href: "/got-an-arbitration-notice-dont-worry-we-got-you", label: "Got an Arbitration Notice? Don't Worry" }
+    { href: "/got-an-arbitration-notice-dont-worry-we-got-you", label: "Got an Arbitration Notice? Don't Worry" },
+    { href: "/unsecured-loan-settlement", label: "Unsecured Loan Settlement" },
+    { href: "/secured-loan-settlement", label: "Secured Loan Settlement" }
   ].map((query) => (
                 <Link
                   key={query.href}

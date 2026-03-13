@@ -85,7 +85,8 @@ const Footer = () => {
         { name: 'Debt Consolidation', href: '/services/debt-consolidation' },
         { name: 'Loan & Debt Consolidation', href: '/services/loan-and-debt-consolidation' },
         { name: 'SBI Loan Settlement', href: '/services/loan-settlement/sbi-bank' },
-
+        { name: "Unsecured Loan Settlement", href: "/unsecured-loan-settlement" },
+        { name: "Secured Loan Settlement", href: "/secured-loan-settlement" },
         { name: 'ICICI Bank Settlement', href: '/services/loan-settlement/icici-bank' },
         { name: 'HDFC Bank Settlement', href: '/services/loan-settlement/hdfc-bank' },
         { name: 'Axis Bank Settlement', href: '/services/loan-settlement/axis-bank' },
