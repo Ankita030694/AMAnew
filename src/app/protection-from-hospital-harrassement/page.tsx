@@ -85,6 +85,7 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Protection from Hospital Harassment in India: Legal Rights & Remedies",
   "description": "Are you facing harassment from a hospital? Learn about your legal rights against body holding, illegal detention, and aggressive billing. Expert guide on patient protection in India.",
+  "image": "https://www.amalegalsolutions.com/newAssets/logo/ama-white.svg",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
@@ -121,6 +122,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Patient Protection Services",
+  "image": "https://www.amalegalsolutions.com/newAssets/logo/ama-white.svg",
   "description": "Legal assistance for patients facing hospital harassment and billing disputes in India.",
   "brand": {
     "@type": "Brand",
@@ -129,19 +131,33 @@ const reviewSchema = {
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
+    "bestRating": "5",
+    "worstRating": "1",
     "reviewCount": "1420"
   },
   "review": [
     {
       "@type": "Review",
+      "name": "Fast intervention",
       "author": { "@type": "Person", "name": "Vikram Singh" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+      "reviewRating": { 
+        "@type": "Rating", 
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
       "reviewBody": "A private hospital refused to release my father's body due to a billing issue. AMA Legal Solutions intervened immediately, and we got the body released within 2 hours. Truly grateful."
     },
     {
       "@type": "Review",
+      "name": "Stopped harassment",
       "author": { "@type": "Person", "name": "Meera Iyer" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+      "reviewRating": { 
+        "@type": "Rating", 
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
       "reviewBody": "Facing recovery agent pressure for a medical loan was traumatizing. The legal team at AMA stopped the harassment and helped me negotiate a fair settlement."
     }
   ]

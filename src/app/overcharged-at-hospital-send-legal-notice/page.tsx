@@ -81,6 +81,7 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Overcharged at Hospital? Send a Legal Notice for Refund | Complete Guide",
   "description": "Exhaustive guide on dealing with hospital overcharging in India. Learn about your rights, relevant laws like CPA 2019, and the exact process to send a legal notice for medical billing errors.",
+  "image": "https://www.amalegalsolutions.com/newAssets/logo/ama-white.svg",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
@@ -117,6 +118,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Hospital Billing Legal Services",
+  "image": "https://www.amalegalsolutions.com/newAssets/logo/ama-white.svg",
   "description": "Legal assistance for patients overcharged by hospitals. Expert services for sending legal notices and filing consumer court cases in India.",
   "brand": {
     "@type": "Brand",
@@ -125,19 +127,33 @@ const reviewSchema = {
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
+    "bestRating": "5",
+    "worstRating": "1",
     "reviewCount": "2450"
   },
   "review": [
     {
       "@type": "Review",
+      "name": "Professional and effective",
       "author": { "@type": "Person", "name": "Rajesh Khanna" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+      "reviewRating": { 
+        "@type": "Rating", 
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
       "reviewBody": "AMA Legal Solutions helped me recover over 2 lakhs that a private hospital had overcharged for COVID treatment. Their notice was very professional and effective."
     },
     {
       "@type": "Review",
+      "name": "Shocked by charges",
       "author": { "@type": "Person", "name": "Meera Joshi" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+      "reviewRating": { 
+        "@type": "Rating", 
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
       "reviewBody": "I was shocked to see charges for medicines never used. AMA Legal drafted a powerful notice that forced the hospital to apologize and refund the amount."
     }
   ]

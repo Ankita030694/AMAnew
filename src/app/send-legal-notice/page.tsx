@@ -205,14 +205,19 @@ const reviewSchema = {
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
+    "bestRating": "5",
+    "worstRating": "1",
     "reviewCount": "1540"
   },
   "review": [
     {
       "@type": "Review",
+      "name": "Easy and effective",
       "reviewRating": {
         "@type": "Rating",
-        "ratingValue": "5"
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
       },
       "author": {
         "@type": "Person",
@@ -222,9 +227,12 @@ const reviewSchema = {
     },
     {
       "@type": "Review",
+      "name": "Professional and fast",
       "reviewRating": {
         "@type": "Rating",
-        "ratingValue": "5"
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
       },
       "author": {
         "@type": "Person",

@@ -81,6 +81,7 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Workplace Harassment Legal Notice Service in India: A Comprehensive Legal Guide",
   "description": "Expert legal assistance for workplace harassment cases in India. Learn about POSH Act compliance, employee rights, and how to send a legal notice for mental, physical, or sexual harassment.",
+  "image": "https://www.amalegalsolutions.com/newAssets/logo/ama-white.svg",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
@@ -115,29 +116,44 @@ const faqSchema = {
 // Review Schema
 const reviewSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
+  "@type": "Product",
   "name": "Workplace Harassment Legal Services",
+  "image": "https://www.amalegalsolutions.com/newAssets/logo/ama-white.svg",
   "description": "Professional legal drafting and consultation for workplace harassment notices and POSH litigation.",
-  "provider": {
-    "@type": "Organization",
+  "brand": {
+    "@type": "Brand",
     "name": "AMA Legal Solutions"
   },
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
+    "bestRating": "5",
+    "worstRating": "1",
     "reviewCount": "1240"
   },
   "review": [
     {
       "@type": "Review",
+      "name": "Excellent legal support",
       "author": { "@type": "Person", "name": "Priya Sharma" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+      "reviewRating": { 
+        "@type": "Rating", 
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
       "reviewBody": "AMA Legal Solutions provided me with a safe space to discuss my ordeal. Their legal notice was clear, firm, and resulted in a favorable settlement from my former employer within 10 days."
     },
     {
       "@type": "Review",
+      "name": "Highly professional experts",
       "author": { "@type": "Person", "name": "Rahul Mehta" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+      "reviewRating": { 
+        "@type": "Rating", 
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
       "reviewBody": "Dealing with mental harassment at work was breaking me. The team at AMA helped me understand that I had rights beyond just sexual harassment laws. Highly professional experts."
     }
   ]

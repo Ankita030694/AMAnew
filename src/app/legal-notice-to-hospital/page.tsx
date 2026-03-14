@@ -81,6 +81,7 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Legal Notice to Hospital for Medical Negligence | Complete Guide",
   "description": "Expert guide on sending a legal notice to a hospital in India. Learn about patient rights, compensation calculation, and the step-by-step procedure for medical negligence cases.",
+  "image": "https://www.amalegalsolutions.com/newAssets/logo/ama-white.svg",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
@@ -117,6 +118,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Medical Negligence Legal Services",
+  "image": "https://www.amalegalsolutions.com/newAssets/logo/ama-white.svg",
   "description": "Professional legal assistance for medical negligence and hospital legal notices in India.",
   "brand": {
     "@type": "Brand",
@@ -125,19 +127,33 @@ const reviewSchema = {
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
+    "bestRating": "5",
+    "worstRating": "1",
     "reviewCount": "1580"
   },
   "review": [
     {
       "@type": "Review",
+      "name": "Justice after surgery",
       "author": { "@type": "Person", "name": "Amit Verma" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+      "reviewRating": { 
+        "@type": "Rating", 
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
       "reviewBody": "AMA Legal Solutions helped me get justice after a botched surgery. Their expertise in medical laws is unmatched in India."
     },
     {
       "@type": "Review",
+      "name": "Powerful legal notice",
       "author": { "@type": "Person", "name": "Sneha Kapoor" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+      "reviewRating": { 
+        "@type": "Rating", 
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
       "reviewBody": "The legal notice they drafted was so powerful that the hospital agreed to an out-of-court settlement within 15 days."
     }
   ]

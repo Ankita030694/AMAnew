@@ -137,11 +137,45 @@ export default function TradingLoanSettlementPage() {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Trading Loan Settlement Services",
+    "image": "https://www.amalegalsolutions.com/newAssets/logo/ama-white.svg",
+    "description": "Expert legal assistance for settling loans taken for stock market trading and intra-day losses.",
+    "brand": {
+      "@type": "Brand",
+      "name": "AMA Legal Solutions"
+    },
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
       "reviewCount": "1240"
-    }
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "name": "Life saver for traders",
+        "author": { "@type": "Person", "name": "Arjun Mehta" },
+        "reviewRating": { 
+          "@type": "Rating", 
+          "ratingValue": "5",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "reviewBody": "Lost everything in options trading and had massive loans. AMA Legal Solutions helped me settle with the banks and stopped the recovery calls. Life saver!"
+      },
+      {
+        "@type": "Review",
+        "name": "Highly professional",
+        "author": { "@type": "Person", "name": "Deepak Singh" },
+        "reviewRating": { 
+          "@type": "Rating", 
+          "ratingValue": "5",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "reviewBody": "Their understanding of the financial crisis traders go through is profound. They handled my case with extreme professionalism and got me a great settlement."
+      }
+    ]
   };
 
   return (
