@@ -87,6 +87,7 @@ const Footer = () => {
         { name: 'SBI Loan Settlement', href: '/services/loan-settlement/sbi-bank' },
         { name: "Unsecured Loan Settlement", href: "/unsecured-loan-settlement" },
         { name: "Secured Loan Settlement", href: "/secured-loan-settlement" },
+        { name: "Trading Loan Settlement", href: "/trading-loan-settlement" },
         { name: 'ICICI Bank Settlement', href: '/services/loan-settlement/icici-bank' },
         { name: 'HDFC Bank Settlement', href: '/services/loan-settlement/hdfc-bank' },
         { name: 'Axis Bank Settlement', href: '/services/loan-settlement/axis-bank' },
@@ -195,6 +196,10 @@ const Footer = () => {
         {name:"Simple Will Format - Download",href:"/simple-will-format-download-free-legal-document-sample"},
         {name:"Google's Trusted Legal Advisor",href:"/googles-trusted-legal-advisor"},
         {name:"Google's Trusted Law Firm",href:"/googles-trusted-law-firm"},
+        {name:"Legal Notice to Hospital",href:"/legal-notice-to-hospital"},
+        {name:"Hospital Harassment Protection",href:"/protection-from-hospital-harrassement"},
+         {name:"Overcharged at Hospital - Legal Notice",href:"/overcharged-at-hospital-send-legal-notice"},
+         {name:"Workplace Harassment Notice",href:"/workplace-harassment-legal-notice-service"},
       ]
 
     }
