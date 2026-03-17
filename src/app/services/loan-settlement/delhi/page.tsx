@@ -15,7 +15,7 @@ export const metadata = {
   openGraph: {
     title: "Loan Settlement in Delhi | Expert Debt Relief Lawyers",
     description: "Struggling with debt in Delhi NCR? AMA Legal Solutions offers expert loan settlement services. Stop harassment & settle legally through Lok Adalat & DRT Delhi.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Delhi",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/delhi",
     type: "website",
     images: [
       {
@@ -54,7 +54,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 4,
       "name": "Delhi",
-      "item": "https://www.amalegalsolutions.com/services/loan-settlement/Delhi"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/delhi"
     }
   ]
 };
@@ -144,7 +144,7 @@ export default function DelhiLoanSettlementPage() {
   const breadcrumbItems = [
     { label: "Services", href: "/services" },
     { label: "Loan Settlement", href: "/services/loan-settlement" },
-    { label: "Delhi", href: "/services/loan-settlement/Delhi" },
+    { label: "Delhi", href: "/services/loan-settlement/delhi" },
   ];
 
   return (

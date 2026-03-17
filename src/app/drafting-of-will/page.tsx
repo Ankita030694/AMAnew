@@ -673,7 +673,7 @@ export default function DraftingOfWillPage() {
                   {[
                     { href: "/services/drafting", label: "Legal Drafting Service" },
                     { href: "/services/civil", label: "Civil Law Expertise" },
-                    { href: "/services/success-stories", label: "Our Success Stories" },
+                    { href: "/success-stories", label: "Our Success Stories" },
                     { href: "/best-advocate-near-me", label: "Expert Advocates Near You" },
                     { href: "/delhi-ncr-law-firm", label: "Delhi NCR Law Firm" },
                     { href: "/locations", label: "Pan India Presence" },

@@ -84,6 +84,15 @@ const processContent = (html: string) => {
     return `<${tag} id="${id}"${attrs}>${title}</${tag}>`;
   });
 
+  // Fix known broken links in blog content (from database)
+  modifiedContent = modifiedContent
+    .replace(/href=["']https:\/\/www\.amalegalsolutions\.com\/services\/legal-strategy["']/gi, 'href="/services"')
+    .replace(/href=["']\/services\/legal-strategy["']/gi, 'href="/services"')
+    .replace(/href=["']https:\/\/www\.amalegalsolutions\.com\/legal-notice-to-bank-format["']/gi, 'href="/how-can-i-send-legal-notice"')
+    .replace(/href=["']\/legal-notice-to-bank-format["']/gi, 'href="/how-can-i-send-legal-notice"')
+    .replace(/href=["']https:\/\/www\.amalegalsolutions\.com\/resources["']/gi, 'href="/blog"')
+    .replace(/href=["']\/resources["']/gi, 'href="/blog"');
+
   // Strip nofollow from internal links (links to our own domain or relative paths)
   // This prevents SEO tools from flagging our own pages as "blocked by nofollow"
   modifiedContent = modifiedContent.replace(

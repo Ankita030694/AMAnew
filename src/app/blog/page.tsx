@@ -71,9 +71,18 @@ export default async function Page() {
       <Navbar />
       <PerformanceMonitor />
       
-      <Suspense fallback={<BlogLoading />}>
-        <BlogPage initialBlogs={blogs} />
-      </Suspense>
+      <div className="container mx-auto px-4 py-8">
+        <h1 
+          className="text-[32px] md:text-[45px] font-semibold text-center mb-[80px] mt-[120px] leading-[40px] md:leading-[65px] opacity-100 h1-seo-fix"
+          style={{ color: '#5A4C33', fontFamily: "var(--font-polysans)" }}
+        >
+          Legal Blogs & Expert Insights
+        </h1>
+
+        <Suspense fallback={<BlogLoading />}>
+          <BlogPage initialBlogs={blogs} />
+        </Suspense>
+      </div>
 
       {/* SSR-rendered crawlable content — visible to search engines, hidden from users */}
       {blogs.length > 0 && (
@@ -82,7 +91,7 @@ export default async function Page() {
           className="sr-only"
           data-nosnippet
         >
-          <h2>All Legal Blogs by AMA Legal Solutions</h2>
+          <h2 className="sr-only">All Legal Blogs by AMA Legal Solutions</h2>
           <ul>
             {blogs.map((blog) => (
               <li key={blog.id}>

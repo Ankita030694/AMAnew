@@ -579,7 +579,7 @@ export default function SalesJobsInGurgaonPage() {
                     { href: "/job-lost-loan-settlement", label: "Job Loss & Debt Help" },
                     { href: "/send-legal-notice-in-gurugram", label: "Send Legal Notice" },
                     { href: "/best-advocate-near-me", label: "Best Advocates Gurgaon" },
-                    { href: "/employer-not-paying-salary", label: "Unpaid Salary Relief" },
+                    { href: "/employer-not-paying-salary-after-resignation", label: "Unpaid Salary Relief" },
                     { href: "/delhi-ncr-law-firm", label: "Top Law Firm in NCR" }
                   ].map((link) => (
                     <li key={link.href}>

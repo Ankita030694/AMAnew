@@ -702,7 +702,7 @@ export default function FssaiRegisterPage() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/shop-and-establishment" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                      <Link href="/services/corporate" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
                         <span className="mr-2">›</span> Gumasta/Shop License
                       </Link>
                     </li>

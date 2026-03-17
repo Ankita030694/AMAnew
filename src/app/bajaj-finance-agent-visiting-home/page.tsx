@@ -158,14 +158,14 @@ export default function BajajFinanceAgentPage() {
 
   const breadcrumbItems = [
     { label: "Home", href: "/" },
-    { label: "Resources", href: "/resources" },
+    { label: "Resources", href: "/blog" },
     { label: "Bajaj Finance Recovery", href: "/bajaj-finance-agent-visiting-home" },
   ];
 
   const relatedPages = [
     { name: "Stop Recovery Agents", href: "/how-do-i-stop-recovery-agent-from-coming-home" },
-    { name: "Personal Loan Settlement", href: "/services/loan-settlement/personal-loan" },
-    { name: "Legal Notice to Bank", href: "/legal-notice-to-bank-format" },
+    { name: "Personal Loan Settlement", href: "/personal-loan-settlement" },
+    { name: "Legal Notice to Bank", href: "/how-can-i-send-legal-notice" },
     { name: "Contact Legal Expert", href: "/contact" },
   ];
 

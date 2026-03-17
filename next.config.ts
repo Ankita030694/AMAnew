@@ -317,6 +317,26 @@ const nextConfig = {
       { source: '/ignoring-calls-of-recovery-agent', destination: '/services/banking-and-finance', permanent: true },
       { source: '/msme-trademark-registration-delhi', destination: '/msme-registration', permanent: true },
       { source: '/trademark-hearing-delhi', destination: '/services/intellectual-property-rights', permanent: true },
+
+      // ── SEO Fix: Common 404s reported by user ──────────────────────────
+      { source: '/cibil-repair', destination: '/how-long-does-a-settled-tag-stay-on-my-report', permanent: true },
+      { source: '/cibil-score-repair-guide', destination: '/how-long-does-a-settled-tag-stay-on-my-report', permanent: true },
+      { source: '/does-loan-settlement-affect-cibil', destination: '/does-foreclosure-of-loan-affect-cibil', permanent: true },
+      { source: '/employer-not-paying-salary', destination: '/employer-not-paying-salary-after-resignation', permanent: true },
+      { source: '/how-negotiate-loan-settlement-lenders-online', destination: '/how-to-negotiate-a-loan-settlement-with-lenders-online', permanent: true },
+      { source: '/legal-notice-for-harassment', destination: '/workplace-harassment-legal-notice-service', permanent: true },
+      { source: '/legal-notice-to-bank-format', destination: '/send-legal-notice', permanent: true },
+      { source: '/resources', destination: '/blog', permanent: true },
+      { source: '/sarfaesi-rights', destination: '/services/banking-and-finance', permanent: true },
+      { source: '/services/credit-card-settlement', destination: '/credit-card-settlement', permanent: true },
+      { source: '/services/intellectual-property', destination: '/services/intellectual-property-rights', permanent: true },
+      { source: '/services/legal-strategy', destination: '/services', permanent: true },
+      { source: '/services/loan-settlement/Delhi', destination: '/services/loan-settlement/delhi', permanent: true },
+      { source: '/services/loan-settlement/Ghaziabad', destination: '/services/loan-settlement/ghaziabad', permanent: true },
+      { source: '/services/loan-settlement/Noida', destination: '/services/loan-settlement/noida', permanent: true },
+      { source: '/services/loan-settlement/personal-loan', destination: '/personal-loan-settlement', permanent: true },
+      { source: '/services/success-stories', destination: '/success-stories', permanent: true },
+      { source: '/shop-and-establishment', destination: '/employer-not-paying-salary-after-resignation', permanent: true },
     ];
   },
 

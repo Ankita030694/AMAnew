@@ -346,7 +346,7 @@ export default function Page({ initialBlogs = [] }: BlogPageProps) {
   };
   
   return (
-    <div className="container mx-auto px-4 py-8">
+    <>
       {/* Schema.org FAQ Markup for SEO */}
       {webPageSchema && (
         <Script
@@ -358,14 +358,7 @@ export default function Page({ initialBlogs = [] }: BlogPageProps) {
         />
       )}
       
-      {/* Page Title */}
-      <h1 
-        className="text-[32px] md:text-[45px] font-semibold text-center mb-[80px] mt-[120px] leading-[40px] md:leading-[65px] opacity-100"
-        style={{ color: '#5A4C33', fontFamily: "var(--font-polysans)" }}
-        id="blog-page-title"
-      >
-        Legal Blogs | Expert Opinions by AMA Legal Solutions
-      </h1>
+
 
       {/* Search Bar */}
       <motion.div 
@@ -844,6 +837,6 @@ export default function Page({ initialBlogs = [] }: BlogPageProps) {
             </p>
           </div>
         </motion.div>
-    </div>
+    </>
   );
 }

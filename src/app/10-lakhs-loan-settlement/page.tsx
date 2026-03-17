@@ -52,7 +52,7 @@ const faqs = [
 const relatedPages = [
   { name: "Loan Settlement Services", href: "/services/loan-settlement" },
   { name: "What is OTS (One Time Settlement)?", href: "/what-is-ots" },
-  { name: "Impact of Settlement on CIBIL", href: "/does-loan-settlement-affect-cibil" },
+  { name: "Impact of Settlement on CIBIL", href: "/how-long-does-a-settled-tag-stay-on-my-report" },
   { name: "How to Negotiate with Banks", href: "/how-to-negotiate-a-loan-settlement-with-lenders-online" },
   { name: "Harassment Complaint Guide", href: "/loan-recovery-agents-harassment-complaint" },
   { name: "Stop Recovery Home Visits", href: "/how-do-i-stop-recovery-agent-from-coming-home" },

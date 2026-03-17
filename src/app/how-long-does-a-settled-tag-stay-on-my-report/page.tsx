@@ -64,7 +64,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 2,
       "name": "CIBIL Resources",
-      "item": "https://www.amalegalsolutions.com/resources"
+      "item": "https://www.amalegalsolutions.com/blog"
     },
     {
       "@type": "ListItem",
@@ -220,7 +220,7 @@ export default function SettledTagDurationPage() {
 
   const breadcrumbItems = [
     { label: "Home", href: "/" },
-    { label: "Resources", href: "/resources" },
+    { label: "Resources", href: "/blog" },
     { label: "How Long Does a Settled Tag Stay on My Report", href: "/how-long-does-a-settled-tag-stay-on-my-report" },
   ];
 

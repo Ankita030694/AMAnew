@@ -176,14 +176,14 @@ export default function StopRecoveryAgentPage() {
 
   const breadcrumbItems = [
     { label: "Home", href: "/" },
-    { label: "Resources", href: "/resources" },
+    { label: "Resources", href: "/blog" },
     { label: "Stop Recovery Agents", href: "/how-do-i-stop-recovery-agent-from-coming-home" },
   ];
 
   const relatedPages = [
     { name: "Harassment Complaint Guide", href: "/loan-recovery-agents-harassment-complaint" },
     { name: "CIBIL Defaulter Loans", href: "/which-bank-provide-personal-loan-for-cibil-defaulters" },
-    { name: "Legal Notice Format", href: "/legal-notice-to-bank-format" },
+    { name: "Legal Notice Format", href: "/how-can-i-send-legal-notice" },
     { name: "Contact Legal Expert", href: "/contact" },
   ];
 

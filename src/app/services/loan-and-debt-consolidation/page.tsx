@@ -994,10 +994,10 @@ export default function DebtConsolidationPage() {
                 <ul className="space-y-5">
                   {[
                     { label: "Loan Settlement", href: "/services/loan-settlement" },
-                    { label: "Credit Card Settlement", href: "/services/credit-card-settlement" },
+                    { label: "Credit Card Settlement", href: "/services/loan-settlement" },
                     { label: "Banking & Finance Law", href: "/services/banking-and-finance" },
-                    { label: "Recovery Agent Harassment", href: "/legal-notice-for-harassment" },
-                    { label: "CIBIL Score Repair", href: "/cibil-score-repair-guide" }
+                    { label: "Recovery Agent Harassment", href: "/loan-recovery-agent-harassment-complaint-online" },
+                    { label: "CIBIL Score Repair", href: "/how-long-does-a-settled-tag-stay-on-my-report" }
                   ].map((page, idx) => (
                     <li key={idx}>
                       <Link 

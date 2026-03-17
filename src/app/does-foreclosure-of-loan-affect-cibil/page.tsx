@@ -603,9 +603,9 @@ export default function ForeclosureImpactPage() {
                 <ul className="space-y-5">
                   {[
                     { label: "Loan Settlement vs Foreclosure", href: "/services/loan-settlement" },
-                    { label: "CIBIL Score Repair", href: "/cibil-repair" },
+                    { label: "CIBIL Impact Guide", href: "/how-long-does-a-settled-tag-stay-on-my-report" },
                     { label: "Legal Notice for Harassment", href: "/not-being-paid-fnf-want-to-send-legal-notice" },
-                    { label: "SARFAESI Act Rights", href: "/sarfaesi-rights" }
+                    { label: "What is OTS?", href: "/what-is-ots" }
                   ].map((page, idx) => (
                     <li key={idx}>
                       <Link href={page.href} className="group flex items-center justify-between text-gray-700 hover:text-[#D2A02A] transition-colors">

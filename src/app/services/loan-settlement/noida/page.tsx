@@ -15,7 +15,7 @@ export const metadata = {
   openGraph: {
     title: "Loan Settlement in Noida | Expert Debt Relief Lawyers",
     description: "Struggling with debt in Noida? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok Adalat at Surajpur Court.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Noida",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/noida",
     type: "website",
     images: [
       {
@@ -54,7 +54,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 4,
       "name": "Noida",
-      "item": "https://www.amalegalsolutions.com/services/loan-settlement/Noida"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/noida"
     }
   ]
 };
@@ -145,7 +145,7 @@ export default function NoidaLoanSettlementPage() {
   const breadcrumbItems = [
     { label: "Services", href: "/services" },
     { label: "Loan Settlement", href: "/services/loan-settlement" },
-    { label: "Noida", href: "/services/loan-settlement/Noida" },
+    { label: "Noida", href: "/services/loan-settlement/noida" },
   ];
 
   return (

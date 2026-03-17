@@ -64,7 +64,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 2,
       "name": "Loan Settlement Resources",
-      "item": "https://www.amalegalsolutions.com/resources"
+      "item": "https://www.amalegalsolutions.com/blog"
     },
     {
       "@type": "ListItem",
@@ -203,7 +203,7 @@ export default function LoanSettlementDocsPage() {
 
   const breadcrumbItems = [
     { label: "Home", href: "/" },
-    { label: "Resources", href: "/resources" },
+    { label: "Resources", href: "/blog" },
     { label: "Documents Needed for Loan Settlement NOC", href: "/documents-needed-for-loan-settlement-noc" },
   ];
 

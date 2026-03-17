@@ -15,7 +15,7 @@ export const metadata = {
   openGraph: {
     title: "Loan Settlement in Ghaziabad | Expert Debt Relief Lawyers",
     description: "Struggling with debt in Ghaziabad? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok Adalat at Raj Nagar Court.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Ghaziabad",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/ghaziabad",
     type: "website",
     images: [
       {
@@ -54,7 +54,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 4,
       "name": "Ghaziabad",
-      "item": "https://www.amalegalsolutions.com/services/loan-settlement/Ghaziabad"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/ghaziabad"
     }
   ]
 };
@@ -145,7 +145,7 @@ export default function GhaziabadLoanSettlementPage() {
   const breadcrumbItems = [
     { label: "Services", href: "/services" },
     { label: "Loan Settlement", href: "/services/loan-settlement" },
-    { label: "Ghaziabad", href: "/services/loan-settlement/Ghaziabad" },
+    { label: "Ghaziabad", href: "/services/loan-settlement/ghaziabad" },
   ];
 
   return (

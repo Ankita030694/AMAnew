@@ -662,7 +662,7 @@ export default function BestTimeForLoanSettlement() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/how-negotiate-loan-settlement-lenders-online" className="text-gray-700 hover:text-[#D2A02A] flex items-center group font-medium text-sm">
+                      <Link href="/how-to-negotiate-a-loan-settlement-with-lenders-online" className="text-gray-700 hover:text-[#D2A02A] flex items-center group font-medium text-sm">
                         <span className="mr-2 text-[#D2A02A] group-hover:translate-x-1 transition-transform">→</span> 
                         How to Negotiate Online
                       </Link>
