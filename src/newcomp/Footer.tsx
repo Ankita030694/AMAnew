@@ -98,6 +98,11 @@ const Footer = () => {
         { name: 'Low Fee Settlement', href: '/who-provides-loan-settlement-solutions-with-minimal-processing-fees' },
         { name: 'Reasonable Settlement Offer', href: '/what-is-a-reasonable-settlement-offer' },
         { name: 'Top Settlement Companies', href: '/loan-settlement-companies' },
+        { name: 'Steps to Apply for Settlement', href: '/steps-to-apply-for-a-loan-settlement-through-a-financial-service-provider' },
+        { name: 'Benefits & Drawbacks of Settlement', href: '/key-benefits-and-drawbacks-of-persuing-loan-settlement' },
+        { name: 'Initiate Settlement Discussion', href: '/how-can-i-initiate-a-full-and-final-settlement-discussion-with-bank' },
+        { name: 'Check Genuine Settlement Offer', href: '/how-to-check-if-a-loan-settlement-offer-is-genuine-on-digital-platforms' },
+        { name: 'Effective Negotiation Services', href: '/find-debt-settlement-services-known-for-effective-negotiation' },
       ]
     },
     {
@@ -200,6 +205,8 @@ const Footer = () => {
         {name:"Hospital Harassment Protection",href:"/protection-from-hospital-harrassement"},
          {name:"Overcharged at Hospital - Legal Notice",href:"/overcharged-at-hospital-send-legal-notice"},
          {name:"Workplace Harassment Notice",href:"/workplace-harassment-legal-notice-service"},
+         {name:"Best Law Firms in India for Corporate Law",href:"/best-law-firms-in-india-for-corporate-law"},
+         {name:"Reputable Debt Relief Agencies Bangalore",href:"/reputable-debt-relief-agencies-specializing-in-unsecured-loans-in-banglore"},
       ]
 
     }

@@ -254,7 +254,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
               </div>
 
                {/* Mobile Image - Absolute Bottom Right (Matching Legacy.tsx) */}
-               <div className="md:hidden absolute bottom-0 -right-10 z-10 pointer-events-none w-[70%] h-[370px] translate-y-[20px]">
+               <div className="md:hidden absolute bottom-0 -right-5 z-10 pointer-events-none w-[40%] h-[370px] translate-y-[20px]">
                   <Image
                     src="/newAssets/bhiya.png"
                     alt="Anuj Anand Malik"
@@ -265,25 +265,25 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
                </div>
 
               {/* Right Content (Text) - Swapped Position */}
-              <div className="flex-1 p-5 md:p-10 flex flex-col justify-start md:justify-center items-start md:items-end z-20 max-w-full md:max-w-2xl text-left md:text-right h-full md:ml-auto">
+              <div className="flex-1 p-5 md:p-10 flex flex-col justify-start md:justify-start items-start md:items-start z-20 max-w-full md:max-w-2xl text-left md:text-left h-full md:ml-auto md:-translate-x-20">
                 {/* Top Section: Header Info */}
-                <div className="w-full flex flex-col items-start md:items-end gap-1 md:gap-[30px] mb-[5px] text-left md:text-right z-30 relative">
-                   <div className="flex flex-col md:flex-row md:items-baseline justify-end gap-1">
+                <div className="w-full flex flex-col items-start md:items-start gap-1 md:gap-[30px] mb-[5px] text-left md:text-left z-30 relative">
+                   <div className="flex flex-col md:flex-row md:items-baseline justify-start gap-1">
                       <h3 className="text-[#30261C] text-[26px] md:text-[34px] font-semibold leading-tight opacity-100">
                       Anuj Anand Malik
                       </h3>
-                   </div>
+                   </div> 
 
-                  <div className="space-y-1 w-full flex flex-col items-start md:items-end">
-                      <p className="text-[#D29E0D] text-[13px] md:text-[20px] font-medium w-full text-left md:text-right mb-[5px]">
+                  <div className="space-y-1 w-full flex flex-col items-start md:items-start">
+                      <p className="text-[#D29E0D] text-[13px] md:text-[20px] font-medium w-full text-left md:text-left mb-[5px]">
                           Advocate, Legal Consultant, Banking Lawyer, and Loan Settlement Expert
                       </p>
                   </div>
                 </div>
 
                 {/* Bottom Section: Description */}
-                <div className="w-full flex-1 relative min-h-0 flex flex-col items-start md:items-end">
-                  <div className="w-[90%] md:w-full text-[#30261C] text-[13px] md:text-[20px] leading-[19px] md:leading-[28px] opacity-80 z-20 h-full overflow-y-auto md:overflow-visible pb-[340px] md:pb-2 content-start pr-1 text-left md:text-right">
+                <div className="w-full flex-1 relative min-h-0 flex flex-col items-start md:items-start">
+                  <div className="w-[90%] md:w-full text-[#30261C] text-[13px] md:text-[20px] leading-[19px] md:leading-[28px] opacity-80 z-20 h-full overflow-y-auto md:overflow-visible pb-[340px] md:pb-2 content-start pr-1 text-left md:text-left">
                       <div className="space-y-4">
                         <p>
                           I am Anuj Anand Malik, an advocate, legal consultant, banking lawyer,
