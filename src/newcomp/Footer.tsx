@@ -103,6 +103,8 @@ const Footer = () => {
         { name: 'Initiate Settlement Discussion', href: '/how-can-i-initiate-a-full-and-final-settlement-discussion-with-bank' },
         { name: 'Check Genuine Settlement Offer', href: '/how-to-check-if-a-loan-settlement-offer-is-genuine-on-digital-platforms' },
         { name: 'Effective Negotiation Services', href: '/find-debt-settlement-services-known-for-effective-negotiation' },
+        { name: 'Third Party Credit Card Settlement', href: '/can-i-settle-my-credit-card-dues-using-third-party-loan-settlement-companies' },
+        { name: 'Debt Resolution Companies India', href: '/get-contact-details-for-top-rated-debt-resolution-companies-in-india' },
       ]
     },
     {
@@ -207,6 +209,10 @@ const Footer = () => {
          {name:"Workplace Harassment Notice",href:"/workplace-harassment-legal-notice-service"},
          {name:"Best Law Firms in India for Corporate Law",href:"/best-law-firms-in-india-for-corporate-law"},
          {name:"Reputable Debt Relief Agencies Bangalore",href:"/reputable-debt-relief-agencies-specializing-in-unsecured-loans-in-banglore"},
+           { name: "Tax Implications of Settled Debt", href: "/what-are-the-income-tax-implications-of-a-settled-debt-amount" },
+            { name: "Credit Counseling Chennai", href: "/where-can-i-locate-government-approved-consumer-credit-counseling-services-in-chennai" },
+            { name: "Settle Credit Card Using Third Party", href: "/can-i-settle-my-credit-card-dues-using-third-party-loan-settlement-companies" },
+            { name: "CFP specialized in Debt Restructuring", href: "/certified-financial-planners-who-specialize-in-debt-restructuring-and-settlement" }
       ]
 
     }
