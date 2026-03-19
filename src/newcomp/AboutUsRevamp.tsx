@@ -265,7 +265,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
                </div>
 
               {/* Right Content (Text) - Swapped Position */}
-              <div className="flex-1 p-5 md:p-10 flex flex-col justify-start md:justify-start items-start md:items-start z-20 max-w-full md:max-w-2xl text-left md:text-left h-full md:ml-auto md:-translate-x-20">
+              <div className="flex-1 p-5 md:p-10 flex flex-col justify-start md:justify-start items-start md:items-start z-20 max-w-full md:max-w-2xl text-left md:text-left h-full md:ml-auto">
                 {/* Top Section: Header Info */}
                 <div className="w-full flex flex-col items-start md:items-start gap-1 md:gap-[30px] mb-[5px] text-left md:text-left z-30 relative">
                    <div className="flex flex-col md:flex-row md:items-baseline justify-start gap-1">
