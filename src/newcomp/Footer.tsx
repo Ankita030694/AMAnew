@@ -1,20 +1,22 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FaInstagram, FaFacebookF, FaLinkedinIn, FaYoutube } from "react-icons/fa";
-import app from "next/app";
+import { FaInstagram, FaFacebookF, FaLinkedinIn, FaYoutube, FaChevronDown } from "react-icons/fa";
 
 const Footer = () => {
+  const [queriesOpen, setQueriesOpen] = useState(false);
   const footerColumns = [
     // ROW 1
     {
-      title: "",
+      title: "Quick Links",
       links: [
         { name: 'Home', href: '/' },
         { name: 'About Us', href: '/about' },
         { name: 'Careers', href: '/careers' },
         { name: 'Contact Us', href: '/contact' },
-        { name: 'Success Stories', href: '/success-stories' },
-        { name: 'AMA Legal Solutions App', href: '/ama-legal-solutions-application' },
+        { name: 'AMA Connect App', href: '/ama-legal-solutions-application' },
         { name: 'Privacy Policy', href: '/privacy-policy' },
         { name: 'Terms of Service', href: '/terms-and-conditions' },
       ]
@@ -88,23 +90,6 @@ const Footer = () => {
         { name: "Unsecured Loan Settlement", href: "/unsecured-loan-settlement" },
         { name: "Secured Loan Settlement", href: "/secured-loan-settlement" },
         { name: "Trading Loan Settlement", href: "/trading-loan-settlement" },
-        { name: 'ICICI Bank Settlement', href: '/services/loan-settlement/icici-bank' },
-        { name: 'HDFC Bank Settlement', href: '/services/loan-settlement/hdfc-bank' },
-        { name: 'Axis Bank Settlement', href: '/services/loan-settlement/axis-bank' },
-        { name: 'Kotak Mahindra Settlement', href: '/services/loan-settlement/kotak-mahindra' },
-        { name: 'Reduce Debt Quickly', href: '/what-loan-settlement-service-can-help-me-reduce-my-outstanding-debt-quickly' },
-        { name: 'Reliable Settlement', href: '/where-can-i-find-reliable-loan-settlement-services-with-flexible-payment-options' },
-        { name: 'Best Settlement Companies', href: '/which-companies-offer-the-best-loan-settlement-plans-for-personal-loans' },
-        { name: 'Low Fee Settlement', href: '/who-provides-loan-settlement-solutions-with-minimal-processing-fees' },
-        { name: 'Reasonable Settlement Offer', href: '/what-is-a-reasonable-settlement-offer' },
-        { name: 'Top Settlement Companies', href: '/loan-settlement-companies' },
-        { name: 'Steps to Apply for Settlement', href: '/steps-to-apply-for-a-loan-settlement-through-a-financial-service-provider' },
-        { name: 'Benefits & Drawbacks of Settlement', href: '/key-benefits-and-drawbacks-of-persuing-loan-settlement' },
-        { name: 'Initiate Settlement Discussion', href: '/how-can-i-initiate-a-full-and-final-settlement-discussion-with-bank' },
-        { name: 'Check Genuine Settlement Offer', href: '/how-to-check-if-a-loan-settlement-offer-is-genuine-on-digital-platforms' },
-        { name: 'Effective Negotiation Services', href: '/find-debt-settlement-services-known-for-effective-negotiation' },
-        { name: 'Third Party Credit Card Settlement', href: '/can-i-settle-my-credit-card-dues-using-third-party-loan-settlement-companies' },
-        { name: 'Debt Resolution Companies India', href: '/get-contact-details-for-top-rated-debt-resolution-companies-in-india' },
       ]
     },
     {
@@ -144,6 +129,26 @@ const Footer = () => {
     {
       title: "Queries",
       links: [
+        // Moved from Loan Settlement (after ICICI Bank)
+        { name: 'HDFC Bank Settlement', href: '/services/loan-settlement/hdfc-bank' },
+        { name: 'ICICI Bank Settlement', href: '/services/loan-settlement/icici-bank' },
+
+        { name: 'Axis Bank Settlement', href: '/services/loan-settlement/axis-bank' },
+        { name: 'Kotak Mahindra Settlement', href: '/services/loan-settlement/kotak-mahindra' },
+        { name: 'Reduce Debt Quickly', href: '/what-loan-settlement-service-can-help-me-reduce-my-outstanding-debt-quickly' },
+        { name: 'Reliable Settlement', href: '/where-can-i-find-reliable-loan-settlement-services-with-flexible-payment-options' },
+        { name: 'Best Settlement Companies', href: '/which-companies-offer-the-best-loan-settlement-plans-for-personal-loans' },
+        { name: 'Low Fee Settlement', href: '/who-provides-loan-settlement-solutions-with-minimal-processing-fees' },
+        { name: 'Reasonable Settlement Offer', href: '/what-is-a-reasonable-settlement-offer' },
+        { name: 'Top Settlement Companies', href: '/loan-settlement-companies' },
+        { name: 'Steps to Apply for Settlement', href: '/steps-to-apply-for-a-loan-settlement-through-a-financial-service-provider' },
+        { name: 'Benefits & Drawbacks of Settlement', href: '/key-benefits-and-drawbacks-of-persuing-loan-settlement' },
+        { name: 'Initiate Settlement Discussion', href: '/how-can-i-initiate-a-full-and-final-settlement-discussion-with-bank' },
+        { name: 'Check Genuine Settlement Offer', href: '/how-to-check-if-a-loan-settlement-offer-is-genuine-on-digital-platforms' },
+        { name: 'Effective Negotiation Services', href: '/find-debt-settlement-services-known-for-effective-negotiation' },
+        { name: 'Third Party Credit Card Settlement', href: '/can-i-settle-my-credit-card-dues-using-third-party-loan-settlement-companies' },
+        { name: 'Debt Resolution Companies India', href: '/get-contact-details-for-top-rated-debt-resolution-companies-in-india' },
+        // Original Queries links
         {name:"How to Get Trademark Certificate",href:"/how-can-i-get-trademark-certificate"},
         {name:"Registration Office Locations",href:"/where-to-register-trademark"},
         {name:"Best Advocate Near Me",href:"/best-advocate-near-me"},
@@ -229,11 +234,24 @@ const Footer = () => {
           }}
         />
 
+        {/* Logo - Centered on Desktop */}
+        <div className="hidden lg:flex justify-center mb-[48px]">
+          <Link href="/ama-legal-solutions">
+            <Image 
+              src="/newAssets/logo/ama-white.svg" 
+              alt="AMA Legal Solutions" 
+              width={206} 
+              height={40}
+              className="w-[206px] h-[40px]"
+            />
+          </Link>
+        </div>
+
         {/* Row 1 Content */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[48px] md:gap-[40px] mb-[64px]">
-          {/* Logo & Branding - Part of Column 1 */}
+          {/* Logo on Mobile Only + Column 1 Links */}
           <div className="flex flex-col gap-[24px]">
-            <Link href="/ama-legal-solutions">
+            <Link href="/ama-legal-solutions" className="lg:hidden">
               <Image 
                 src="/newAssets/logo/ama-white.svg" 
                 alt="AMA Legal Solutions" 
@@ -242,9 +260,11 @@ const Footer = () => {
                 className="w-[206px] h-[40px] mb-4"
               />
             </Link>
-            <h3 className="text-white text-[18px] md:text-[20px] font-semibold leading-[20px] border-b border-white/10 pb-4">
-              {footerColumns[0].title}
-            </h3>
+            {footerColumns[0].title && (
+              <h3 className="text-white text-[18px] md:text-[20px] font-semibold leading-[20px] border-b border-white/10 pb-4">
+                {footerColumns[0].title}
+              </h3>
+            )}
             <ul className="flex flex-col gap-[12px]">
               {footerColumns[0].links.map((link) => (
                 <li key={link.href}>
@@ -317,12 +337,25 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Row 3 - Queries Grid */}
+        {/* Row 3 - Queries Collapsible Section */}
         <div className="mb-[48px]">
-          <h3 className="text-white text-[18px] md:text-[20px] font-semibold leading-[20px] border-b border-white/10 pb-4 mb-[24px]">
-            {footerColumns[8].title}
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[24px]">
+          <button
+            onClick={() => setQueriesOpen(!queriesOpen)}
+            className="w-full flex items-center justify-between text-white text-[18px] md:text-[20px] font-semibold leading-[20px] border-b border-white/10 pb-4 mb-[24px] cursor-pointer bg-transparent hover:opacity-80 transition-opacity"
+            aria-expanded={queriesOpen}
+          >
+            <span>{footerColumns[8].title}</span>
+            <FaChevronDown
+              className={`text-[14px] text-white/70 transition-transform duration-300 ${
+                queriesOpen ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+          <div
+            className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[24px] overflow-hidden transition-all duration-500 ease-in-out ${
+              queriesOpen ? "max-h-[5000px] opacity-100" : "max-h-0 opacity-0"
+            }`}
+          >
              {footerColumns[8].links.map((link) => (
                 <div key={link.href}>
                    <Link 
