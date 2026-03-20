@@ -141,6 +141,7 @@ export async function GET(): Promise<Response> {
     '/terms-and-conditions',
     '/author/anuj-anand-malik',
     '/author/shrey-arora',
+    '/which-one-is-the-real-amalegalsolutions',
     // Specific Loan Settlement State Pages
     '/services/loan-settlement/andhra-pradesh',
     '/services/loan-settlement/assam',
