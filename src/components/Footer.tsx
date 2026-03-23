@@ -260,7 +260,9 @@ export default function Footer() {
                 { href: "/secured-loan-settlement", label: "Secured Loan Settlement" },
                 { href: "/what-are-the-income-tax-implications-of-a-settled-debt-amount", label: "Tax Implications of Settled Debt" },
                 { href: "/is-loan-settlement-in-installments-possible", label: "Is Loan Settlement in Installments Possible" },
-                { href: "/loan-settlement-process-in-hindi", label: "Loan Settlement Process in Hindi" }
+                { href: "/loan-settlement-process-in-hindi", label: "Loan Settlement Process in Hindi" },
+                { href: "/can-i-settle-my-loan-without-a-lawyer", label: "Can I Settle My Loan Without A Lawyer?" },
+                { href: "/does-settlement-impact-a-co-borrower", label: "Does Settlement Impact a Co-borrower" }
               ].map((query) => (
                 <Link
                   key={query.href}

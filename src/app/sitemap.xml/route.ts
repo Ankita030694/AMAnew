@@ -230,6 +230,9 @@ export async function GET(): Promise<Response> {
     '/ama-legal-solutions',
     '/is-loan-settlement-in-installments-possible',
     '/loan-settlement-process-in-hindi',
+    '/can-i-settle-my-loan-without-a-lawyer',
+    '/does-settlement-impact-a-co-borrower',
+    '/can-i-convert-settled-to-closed-later',
     // Bank Specific Pages
     '/services/loan-settlement/sbi-bank',
     '/services/loan-settlement/hdfc-bank',

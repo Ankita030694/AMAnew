@@ -220,7 +220,11 @@ const Footer = () => {
             { name: "CFP specialized in Debt Restructuring", href: "/certified-financial-planners-who-specialize-in-debt-restructuring-and-settlement" },
             { name: "Which one is REAL AMA?", href: "/which-one-is-the-real-amalegalsolutions" },
             { name: "Is Loan Settlement in Installments Possible", href: "/is-loan-settlement-in-installments-possible" },
-            { name: "Loan Settlement Process in Hindi", href: "/loan-settlement-process-in-hindi" }
+            { name: "Loan Settlement Process in Hindi", href: "/loan-settlement-process-in-hindi" },
+            { name: "Can I Settle My Loan Without A Lawyer?", href: "/can-i-settle-my-loan-without-a-lawyer" },
+            { name: "Does Settlement Impact a Co-borrower", href: "/does-settlement-impact-a-co-borrower" },
+            { name: "Can I Convert Settled To Closed Later", href: "/can-i-convert-settled-to-closed-later" }
+
 
       ]
 
