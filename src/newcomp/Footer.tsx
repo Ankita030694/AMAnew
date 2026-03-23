@@ -218,7 +218,10 @@ const Footer = () => {
             { name: "Credit Counseling Chennai", href: "/where-can-i-locate-government-approved-consumer-credit-counseling-services-in-chennai" },
             { name: "Settle Credit Card Using Third Party", href: "/can-i-settle-my-credit-card-dues-using-third-party-loan-settlement-companies" },
             { name: "CFP specialized in Debt Restructuring", href: "/certified-financial-planners-who-specialize-in-debt-restructuring-and-settlement" },
-            { name: "Which one is REAL AMA?", href: "/which-one-is-the-real-amalegalsolutions" }
+            { name: "Which one is REAL AMA?", href: "/which-one-is-the-real-amalegalsolutions" },
+            { name: "Is Loan Settlement in Installments Possible", href: "/is-loan-settlement-in-installments-possible" },
+            { name: "Loan Settlement Process in Hindi", href: "/loan-settlement-process-in-hindi" }
+
       ]
 
     }

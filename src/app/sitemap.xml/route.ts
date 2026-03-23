@@ -228,6 +228,8 @@ export async function GET(): Promise<Response> {
     '/can-company-hold-my-salary-after-resignation',
     '/where-to-file-a-complaint-if-your-employer-doesnt-pay-you',
     '/ama-legal-solutions',
+    '/is-loan-settlement-in-installments-possible',
+    '/loan-settlement-process-in-hindi',
     // Bank Specific Pages
     '/services/loan-settlement/sbi-bank',
     '/services/loan-settlement/hdfc-bank',

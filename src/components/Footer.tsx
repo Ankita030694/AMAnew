@@ -258,7 +258,9 @@ export default function Footer() {
     { href: "/got-an-arbitration-notice-dont-worry-we-got-you", label: "Got an Arbitration Notice? Don't Worry" },
     { href: "/unsecured-loan-settlement", label: "Unsecured Loan Settlement" },
                 { href: "/secured-loan-settlement", label: "Secured Loan Settlement" },
-                { href: "/what-are-the-income-tax-implications-of-a-settled-debt-amount", label: "Tax Implications of Settled Debt" }
+                { href: "/what-are-the-income-tax-implications-of-a-settled-debt-amount", label: "Tax Implications of Settled Debt" },
+                { href: "/is-loan-settlement-in-installments-possible", label: "Is Loan Settlement in Installments Possible" },
+                { href: "/loan-settlement-process-in-hindi", label: "Loan Settlement Process in Hindi" }
               ].map((query) => (
                 <Link
                   key={query.href}
