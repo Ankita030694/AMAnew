@@ -223,7 +223,11 @@ const Footer = () => {
             { name: "Loan Settlement Process in Hindi", href: "/loan-settlement-process-in-hindi" },
             { name: "Can I Settle My Loan Without A Lawyer?", href: "/can-i-settle-my-loan-without-a-lawyer" },
             { name: "Does Settlement Impact a Co-borrower", href: "/does-settlement-impact-a-co-borrower" },
-            { name: "Can I Convert Settled To Closed Later", href: "/can-i-convert-settled-to-closed-later" }
+            { name: "Can I Convert Settled To Closed Later", href: "/can-i-convert-settled-to-closed-later" },
+            {name:"Trademark Class 35",href:"/trademark-registration-in-class-35"},
+            {name:"Trademark Class 38",href:"/trademark-registration-in-class-38"},
+            {name:"Trademark Class 14",href:"/trademark-registration-in-class-14"},
+            {name:"Trademark Class 45",href:"/trademark-registration-in-class-45"},
 
 
       ]
