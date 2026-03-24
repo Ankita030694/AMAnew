@@ -14,15 +14,15 @@ import Script from "next/script";
 import { baseTestimonials } from "@/data/testimonials";
 
 export const metadata = {
-  title: 'AMA Legal Solutions: Top Law Firm in India',
-  description: 'AMA Legal Solutions is a trusted law firm in India offering legal consultation, dispute resolution, and advisory services in finance, corporate law, and more',
+  title: 'AMA Legal | AMA Legal Solutions: Top Law Firm in India',
+  description: 'AMA Legal & AMA Legal Solutions - Leading law firm in India. AMA Legal Solutions offers expert legal consultation, dispute resolution, and advisory services. Trust AMA Legal for all your legal needs.',
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/',
   },
   // Add Open Graph metadata for better social sharing
   openGraph: {
-    title: 'AMA Legal Solutions: Top Law Firm in India',
-    description: 'AMA Legal Solutions is a trusted law firm in India offering legal consultation, dispute resolution, and advisory services in finance, corporate law, and more',
+    title: 'AMA Legal | AMA Legal Solutions: Top Law Firm in India',
+    description: 'AMA Legal & AMA Legal Solutions are trusted names in the Indian legal landscape. AMA Legal Solutions is a top law firm in India offering expert legal consultation, dispute resolution, and advisory services.',
     url: 'https://www.amalegalsolutions.com/',
     siteName: 'AMA Legal Solutions',
     type: 'website',
@@ -30,8 +30,8 @@ export const metadata = {
   // Add Twitter metadata
   twitter: {
     card: 'summary_large_image',
-    title: 'AMA Legal Solutions: Top Law Firm in India',
-    description: 'AMA Legal Solutions is a trusted law firm in India offering legal consultation, dispute resolution, and advisory services in finance, corporate law, and more',
+    title: 'AMA Legal | AMA Legal Solutions: Top Law Firm in India',
+    description: 'AMA Legal & AMA Legal Solutions offers expert legal consultation and dispute resolution in India. Choose AMA Legal Solutions for trusted legal advice.',
   },
 }
 
@@ -60,13 +60,13 @@ export default function Home() {
                 "@type": "WebPage",
                 "@id": "https://www.amalegalsolutions.com/#webpage",
                 "url": "https://www.amalegalsolutions.com/",
-                "name": "AMA Legal Solutions: Top Law Firm in India",
-                "description": "AMA Legal Solutions is a trusted law firm in India offering legal consultation, dispute resolution, and advisory services.",
+                "name": "AMA Legal & AMA Legal Solutions: Top Law Firm in India",
+                "description": "AMA Legal and AMA Legal Solutions are trusted law firms in India offering legal consultation, dispute resolution, and advisory services.",
                 "about": { "@id": "https://www.amalegalsolutions.com/" }
               },
               {
                 "@type": "ItemList",
-                "name": "Client Testimonials",
+                "name": "Client Testimonials for AMA Legal Solutions",
                 "itemListElement": baseTestimonials.slice(0, 10).map((t, i) => ({
                   "@type": "ListItem",
                   "position": i + 1,
@@ -88,7 +88,7 @@ export default function Home() {
               {
                 "@type": "VideoObject",
                 "name": "AMA Legal Solutions Client Testimonial 1",
-                "description": "Client success story and review of AMA Legal Solutions services.",
+                "description": "AMA Legal Solutions client success story and review.",
                 "thumbnailUrl": "https://www.amalegalsolutions.com/newAssets/hero.png",
                 "uploadDate": "2024-03-01T08:00:00+08:00",
                 "duration": "PT1M20S",
@@ -98,7 +98,7 @@ export default function Home() {
               {
                 "@type": "VideoObject",
                 "name": "AMA Legal Solutions Client Testimonial 2",
-                "description": "Client success story and review of AMA Legal Solutions services.",
+                "description": "AMA Legal Solutions client success story and review.",
                 "thumbnailUrl": "https://www.amalegalsolutions.com/newAssets/hero.png",
                 "uploadDate": "2024-03-02T09:00:00+08:00",
                 "duration": "PT1M45S",
@@ -108,7 +108,7 @@ export default function Home() {
               {
                 "@type": "VideoObject",
                 "name": "AMA Legal Solutions Client Testimonial 3",
-                "description": "Client success story and review of AMA Legal Solutions services.",
+                "description": "AMA Legal Solutions client success story and review.",
                 "thumbnailUrl": "https://www.amalegalsolutions.com/newAssets/hero.png",
                 "uploadDate": "2024-03-03T10:00:00+08:00",
                 "duration": "PT2M10S",
@@ -118,7 +118,7 @@ export default function Home() {
               {
                 "@type": "VideoObject",
                 "name": "AMA Legal Solutions Client Testimonial 4",
-                "description": "Client success story and review of AMA Legal Solutions services.",
+                "description": "AMA Legal Solutions client success story and review.",
                 "thumbnailUrl": "https://www.amalegalsolutions.com/newAssets/hero.png",
                 "uploadDate": "2024-03-04T11:00:00+08:00",
                 "duration": "PT1M55S",
@@ -142,6 +142,31 @@ export default function Home() {
       </div>
       
       <VideoTestimonials />
+
+      {/* SEO Keyword Infusion Section */}
+      <section className="max-w-7xl mx-auto px-6 py-16 text-center border-t border-black/5">
+        <h2 className="text-3xl md:text-4xl font-normal text-[#30261C] mb-8" style={{ fontFamily: 'var(--font-polysans)' }}>
+          Why Choose AMA Legal & AMA Legal Solutions?
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+          <div className="space-y-4">
+            <h3 className="text-xl font-medium text-[#D29E0D]">Expertise at AMA Legal</h3>
+            <p className="text-[#30261C]/80 leading-relaxed">
+              At <strong>AMA Legal</strong>, we provide unparalleled legal expertise. Our team at <strong>AMA Legal Solutions</strong> is committed to delivering results. As a premier <strong>AMA Legal</strong> firm, we understand the complexities of the Indian legal system. Choosing <strong>AMA Legal Solutions</strong> ensures that your legal matters are handled with the utmost precision and care.
+            </p>
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-xl font-medium text-[#D29E0D]">AMA Legal Solutions: Tailored for You</h3>
+            <p className="text-[#30261C]/80 leading-relaxed">
+              <strong>AMA Legal Solutions</strong> offers a wide range of services including corporate law, finance, and dispute resolution. <strong>AMA Legal</strong> is known for its integrity and client-centric approach. When you search for <strong>AMA Legal Solutions</strong>, you are looking for the best in the industry. Trust <strong>AMA Legal</strong> and <strong>AMA Legal Solutions</strong> for your legal journey.
+            </p>
+          </div>
+        </div>
+        <p className="mt-8 text-[#30261C]/70 italic">
+          Experience the difference with <strong>AMA Legal</strong>. Your search for <strong>AMA Legal Solutions</strong> ends here.
+        </p>
+      </section>
+
       <FAQ />
       <CTA />
 
