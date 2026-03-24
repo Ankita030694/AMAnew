@@ -5,14 +5,13 @@ const AnujBhiya = () => {
   return (
     <div className="flex flex-col md:flex-row items-center gap-8 max-w-7xl mx-auto px-4 py-12">
       {/* Image Section */}
-      <div className="relative w-full md:w-1/2 aspect-[4/4] max-w-md">
-        <div className="absolute inset-0 rounded-tr-[100px] -z-10 translate-x-4 translate-y-4" />
+      <div className="relative w-full md:w-1/2 h-[400px] md:h-[600px]">
         <div className="relative h-full w-full">
           <Image
-            src="/anujbhiya.png"
+            src="/newAssets/bhiya.png"
             alt="Anuj Anand Malik - Founder of AMA Legal Solutions"
             fill
-            className="object-cover object-center rounded-lg p-2"
+            className="object-contain object-bottom"
             priority
           />
         </div>

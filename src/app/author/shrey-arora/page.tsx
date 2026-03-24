@@ -18,7 +18,7 @@ export default function AuthorSecPage() {
           <div className="flex flex-col md:flex-row items-center md:items-start gap-10">
             <div className="w-64 h-64 relative rounded-full overflow-hidden border-4 border-[#D2A02A] shadow-lg flex-shrink-0">
               <Image 
-                src="/shreychad.svg"
+                src="/shrey.png"
                 alt="Shrey Arora"
                 fill
                 className="object-cover"
