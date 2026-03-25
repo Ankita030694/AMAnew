@@ -348,6 +348,7 @@ export default function ChallanLokAdalatPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
+          "@type": "FAQPage",
           "mainEntity": faqs.map(f => ({
             "@type": "Question",
             "name": f.question,

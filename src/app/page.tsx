@@ -65,25 +65,30 @@ export default function Home() {
                 "about": { "@id": "https://www.amalegalsolutions.com/" }
               },
               {
-                "@type": "ItemList",
-                "name": "Client Testimonials for AMA Legal Solutions",
-                "itemListElement": baseTestimonials.slice(0, 10).map((t, i) => ({
-                  "@type": "ListItem",
-                  "position": i + 1,
-                  "item": {
-                    "@type": "Review",
-                    "reviewRating": {
-                      "@type": "Rating",
-                      "ratingValue": "5",
-                      "bestRating": "5"
-                    },
-                    "author": {
-                      "@type": "Person",
-                      "name": t.author
-                    },
-                    "reviewBody": t.text
-                  }
-                }))
+                "@type": "LegalService",
+                "name": "AMA Legal Solutions",
+                "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
+                "@id": "https://www.amalegalsolutions.com/",
+                "url": "https://www.amalegalsolutions.com/",
+                "telephone": "+91-8700343611",
+                "review": baseTestimonials.slice(0, 10).map((t, i) => ({
+                  "@type": "Review",
+                  "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                  },
+                  "author": {
+                    "@type": "Person",
+                    "name": t.author
+                  },
+                  "reviewBody": t.text
+                })),
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "reviewCount": "1250"
+                }
               },
               {
                 "@type": "VideoObject",

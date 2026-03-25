@@ -40,6 +40,7 @@ const faqs = [
 
 const faqSchema = {
   "@context": "https://schema.org",
+  "@type": "FAQPage",
   "mainEntity": faqs.map(f => ({
     "@type": "Question",
     "name": f.question,

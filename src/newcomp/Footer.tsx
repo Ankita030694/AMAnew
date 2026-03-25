@@ -381,14 +381,12 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* NAP Block — Name, Address, Phone (Local SEO) */}
+        {/* NAP Block — Name, Address, Phone (Social Proof & Contact) */}
         <div 
           className="mb-[48px] border border-white/10 rounded-2xl p-6 md:p-8"
-          itemScope 
-          itemType="https://schema.org/LegalService"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-            {/* Name */}
+            {/* Phone */}
             <div className="flex items-start gap-3">
               <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                <svg className="w-5 h-5 text-[#D2A02A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -401,7 +399,6 @@ const Footer = () => {
                   <a 
                     href="tel:+918700343611" 
                     className="text-white/60 text-[13px] hover:text-white/90 transition-colors"
-                    itemProp="telephone"
                   >
                     +91-8700343611
                   </a>
@@ -412,9 +409,6 @@ const Footer = () => {
             {/* Address */}
             <div 
               className="flex items-start gap-3"
-              itemProp="address" 
-              itemScope 
-              itemType="https://schema.org/PostalAddress"
             >
               <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                 <svg className="w-5 h-5 text-[#D2A02A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -430,20 +424,18 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-white/60 text-[13px] leading-relaxed hover:text-white/90 transition-colors block"
                 >
-                  <span itemProp="streetAddress">2493AP, Block G, Sushant Lok 2, Sector 57</span>,{' '}
-                  <span itemProp="addressLocality">Gurugram</span>,{' '}
-                  <span itemProp="addressRegion">Haryana</span>{' '}
-                  <span itemProp="postalCode">122001</span>,{' '}
-                  <span itemProp="addressCountry">India</span>
+                  <span>2493AP, Block G, Sushant Lok 2, Sector 57</span>,{' '}
+                  <span>Gurugram</span>,{' '}
+                  <span>Haryana</span>{' '}
+                  <span>122001</span>,{' '}
+                  <span>India</span>
                 </a>
               </div>
             </div>
 
-            {/* Phone & Email */}
+            {/* Email */}
             <div>
               <div className="flex items-start gap-3 mb-4">
-               
-                
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -456,7 +448,6 @@ const Footer = () => {
                   <a 
                     href="mailto:notify@amalegalsolutions.com" 
                     className="text-white/60 text-[13px] hover:text-white/90 transition-colors"
-                    itemProp="email"
                   >
                     notify@amalegalsolutions.com
                   </a>
@@ -464,8 +455,6 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <meta itemProp="url" content="https://www.amalegalsolutions.com" />
-          <meta itemProp="priceRange" content="$$" />
         </div>
 
         {/* LocalBusiness JSON-LD for consistent NAP on every page */}

@@ -38,6 +38,7 @@ const FaqSection = () => {
 
   const faqSchema = {
     "@context": "https://schema.org",
+    "@type": "FAQPage",
     "mainEntity": faqItems.map((item) => ({
       "@type": "Question",
       "name": item.question,

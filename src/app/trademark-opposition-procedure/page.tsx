@@ -418,6 +418,7 @@ export default function TrademarkOppositionPage() {
       <Script id="article-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
+        "@type": "FAQPage",
         "mainEntity": faqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,
