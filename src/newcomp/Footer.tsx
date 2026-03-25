@@ -457,47 +457,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* LocalBusiness JSON-LD for consistent NAP on every page */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LegalService",
-              "name": "AMA Legal Solutions",
-              "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
-              "url": "https://www.amalegalsolutions.com",
-              "telephone": "+918700343611",
-              "email": "notify@amalegalsolutions.com",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "2493AP, Block G, Sushant Lok 2, Sector 57",
-                "addressLocality": "Gurugram",
-                "addressRegion": "Haryana",
-                "postalCode": "122001",
-                "addressCountry": "IN"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 28.4167,
-                "longitude": 77.0500
-              },
-              "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                "opens": "10:00",
-                "closes": "19:00"
-              },
-              "priceRange": "$$",
-              "sameAs": [
-                "https://www.instagram.com/amalegalsolutions/",
-                "https://www.facebook.com/amalegalsolutions/",
-                "https://in.linkedin.com/company/ama-legal-solutions",
-                "https://www.youtube.com/@amalegalsolution"
-              ]
-            })
-          }}
-        />
+        {/* Footer info already covered by global schema in layout.tsx */}
 
         {/* Apps & Socials Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center py-8 border-t border-white/10 gap-8">

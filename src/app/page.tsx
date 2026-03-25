@@ -65,12 +65,8 @@ export default function Home() {
                 "about": { "@id": "https://www.amalegalsolutions.com/" }
               },
               {
-                "@type": "LegalService",
-                "name": "AMA Legal Solutions",
-                "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
+                "@type": "Attorney",
                 "@id": "https://www.amalegalsolutions.com/",
-                "url": "https://www.amalegalsolutions.com/",
-                "telephone": "+91-8700343611",
                 "review": baseTestimonials.slice(0, 10).map((t, i) => ({
                   "@type": "Review",
                   "reviewRating": {
@@ -83,12 +79,7 @@ export default function Home() {
                     "name": t.author
                   },
                   "reviewBody": t.text
-                })),
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "4.9",
-                    "reviewCount": "1250"
-                }
+                }))
               },
               {
                 "@type": "VideoObject",

@@ -74,13 +74,17 @@ const breadcrumbSchema = {
   ]
 };
 
-// Article Schema
-const articleSchema = {
+// Combined Location Schema to avoid multiple aggregate ratings
+const locationSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "AMA Legal Solutions Bengaluru",
   "image": "https://www.amalegalsolutions.com/city3.svg",
   "description": "Leading law firm in Bengaluru providing expert legal services in Startup Law, Real Estate, and High Court Litigation.",
+  "@id": "https://www.amalegalsolutions.com/locations/bengaluru#organization",
+  "url": "https://www.amalegalsolutions.com/locations/bengaluru",
+  "telephone": "+918700343611",
+  "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Bengaluru",
@@ -92,20 +96,10 @@ const articleSchema = {
     "latitude": "12.9716",
     "longitude": "77.5946"
   },
-  "url": "https://www.amalegalsolutions.com/locations/bengaluru",
-  "telephone": "+918700343611",
-  "priceRange": "$$",
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-      ],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
       "opens": "09:00",
       "closes": "20:00"
     }
@@ -114,7 +108,32 @@ const articleSchema = {
     "@type": "AggregateRating",
     "ratingValue": "4.8",
     "reviewCount": "340"
-  }
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+      "author": { "@type": "Person", "name": "Rohan Deshpande" },
+      "reviewBody": "Their understanding of startup equity structuring is phenomenal. Helped us close our seed round with a very clean SHA."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+      "author": { "@type": "Person", "name": "Priya Menon" },
+      "reviewBody": "We had a nightmare issue with a 'B' Khata property in Whitefield. AMA Legal Solutions guided us through the regularization process perfectly."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+      "author": { "@type": "Person", "name": "Suresh Reddy" },
+      "reviewBody": "Highly competent lawyers for Karnataka High Court matters. They got our writ petition allowed in record time."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+      "reviewBody": "Very professional approach to family court cases. They handled my divorce petition with empathy and efficiency."
+    }
+  ]
 };
 
 // FAQ Schema
@@ -129,74 +148,6 @@ const faqSchema = {
       "text": faq.answer
     }
   }))
-};
-
-// Review Schema
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "LegalService",
-  "name": "Legal Services Bengaluru",
-  "image": "https://www.amalegalsolutions.com/city3.svg",
-  "description": "Top-rated legal services in Bengaluru by AMA Legal Solutions.",
-  "brand": {
-    "@type": "Brand",
-    "name": "AMA Legal Solutions"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "340"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Rohan Deshpande"
-      },
-      "reviewBody": "Their understanding of startup equity structuring is phenomenal. Helped us close our seed round with a very clean SHA."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Priya Menon"
-      },
-      "reviewBody": "We had a nightmare issue with a 'B' Khata property in Whitefield. AMA Legal Solutions guided us through the regularization process perfectly."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Suresh Reddy"
-      },
-      "reviewBody": "Highly competent lawyers for Karnataka High Court matters. They got our writ petition allowed in record time."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Meghna Gowda"
-      },
-      "reviewBody": "Very professional approach to family court cases. They handled my divorce petition with empathy and efficiency."
-    }
-  ]
 };
 
 export const metadata = {
@@ -268,19 +219,14 @@ export default function BengaluruLocationPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Script strategy="beforeInteractive"
-        id="article-schema"
+        id="location-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(locationSchema) }}
       />
       <Script strategy="beforeInteractive"
         id="faq-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <Script strategy="beforeInteractive"
-        id="review-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
       />
 
       <div className="bg-gray-50 min-h-screen font-sans text-gray-800">
