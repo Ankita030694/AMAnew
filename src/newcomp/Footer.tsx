@@ -90,6 +90,7 @@ const Footer = () => {
         { name: "Unsecured Loan Settlement", href: "/unsecured-loan-settlement" },
         { name: "Secured Loan Settlement", href: "/secured-loan-settlement" },
         { name: "Trading Loan Settlement", href: "/trading-loan-settlement" },
+        { name: "Medical Loan Settlement Support", href: "/support-for-loan-settlement-during-medical-emergencies" },
       ]
     },
     {
@@ -228,7 +229,8 @@ const Footer = () => {
             {name:"Trademark Class 38",href:"/trademark-registration-in-class-38"},
             {name:"Trademark Class 14",href:"/trademark-registration-in-class-14"},
             {name:"Trademark Class 45",href:"/trademark-registration-in-class-45"},
-
+            {name:"Support During Medical Emergencies",href:"/support-for-loan-settlement-during-medical-emergencies"},
+            {name:"How to Get 800 Credit Score in India",href:"/how-to-get-800-credit-score-in-india"},
 
       ]
 

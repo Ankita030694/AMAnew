@@ -54,6 +54,7 @@ export async function GET(): Promise<Response> {
     '/protection-from-hospital-harrassement',
     '/overcharged-at-hospital-send-legal-notice',
     '/workplace-harassment-legal-notice-service',
+    '/support-for-loan-settlement-during-medical-emergencies',
     '/contact',
     '/careers',
     '/careers/business-development-associate',
@@ -282,6 +283,7 @@ export async function GET(): Promise<Response> {
     '/services/loan-settlement/smfg-india-credit',
     '/services/debt-consolidation',
     '/services/loan-and-debt-consolidation',
+    '/how-to-get-800-credit-score-in-india',
     // Specific Banking and Finance State Pages
     '/services/banking-and-finance/andhra-pradesh',
     '/services/banking-and-finance/arunachal-pradesh',
