@@ -91,6 +91,7 @@ const Footer = () => {
         { name: "Secured Loan Settlement", href: "/secured-loan-settlement" },
         { name: "Trading Loan Settlement", href: "/trading-loan-settlement" },
         { name: "Medical Loan Settlement Support", href: "/support-for-loan-settlement-during-medical-emergencies" },
+        { name: "Stop Bank Harassment", href: "/services/best-lawyer-for-bank-harassment" },
       ]
     },
     {

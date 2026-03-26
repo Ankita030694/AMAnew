@@ -179,6 +179,9 @@ export async function GET(): Promise<Response> {
     '/services/loan-settlement/jammu-and-kashmir',
     '/services/loan-settlement/ladakh',
     '/services/loan-settlement/lakshadweep',
+    '/services/loan-settlement/andaman-nicobar',
+    '/services/loan-settlement/chandigarh',
+    '/services/loan-settlement/daman-diu',
     // Specific Loan Settlement City Pages
     '/services/loan-settlement/ghaziabad',
     '/services/loan-settlement/gurugram',
@@ -283,6 +286,7 @@ export async function GET(): Promise<Response> {
     '/services/loan-settlement/smfg-india-credit',
     '/services/debt-consolidation',
     '/services/loan-and-debt-consolidation',
+    '/services/best-lawyer-for-bank-harassment',
     '/how-to-get-800-credit-score-in-india',
     // Specific Banking and Finance State Pages
     '/services/banking-and-finance/andhra-pradesh',

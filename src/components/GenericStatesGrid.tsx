@@ -62,6 +62,8 @@ export default function GenericStatesGrid({
 
   // Function to convert state/territory name to slug
   const createSlug = (name: string) => {
+    if (name === "Andaman and Nicobar") return "andaman-nicobar";
+    if (name === "Dadra and Nagar Haveli and Daman and Diu") return "daman-diu";
     return name.toLowerCase()
       .replace(/\s+/g, '-')
       .replace(/and/g, 'and');
