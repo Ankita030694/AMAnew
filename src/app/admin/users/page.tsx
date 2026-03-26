@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faUpload, faUser, faGripVertical } from '@fortawesome/free-solid-svg-icons';
 import { collection, getDocs, addDoc, doc, deleteDoc, updateDoc, writeBatch } from 'firebase/firestore';
-import { signOut, onAuthStateChanged } from 'firebase/auth';
+import { onAuthStateChanged } from 'firebase/auth';
 import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
 import { db, auth, storage } from '../../../lib/firebase'; // adjust the path as needed
 import { useRouter } from 'next/navigation';
@@ -72,33 +72,6 @@ const UsersDashboard = () => {
     return () => unsubscribe();
   }, [router]);
 
-  // Logout handler using Firebase Auth
-  const handleLogout = async () => {
-    try {
-      await signOut(auth);
-      router.push('/login');
-    } catch (error) {
-      console.error('Error logging out:', error);
-    }
-  };
-
-  // Navigation handler: Redirect for Blogs and Articles
-  const handleNavigation = (itemId: string) => {
-    if (itemId === 'blogs') {
-      router.push('/admin/blogs');
-    } else if (itemId === 'articles') {
-      router.push('/admin/articles');
-    } else if (itemId === 'home'){
-        router.push('/admin/dashboard')
-    }else if (itemId === 'users'){
-        router.push('/admin/users')
-    }else if (itemId === 'amalive'){
-        router.push('/admin/ama-live')
-    }else{
-        setActiveTab(itemId);
-    }
-  };
-
   // Fetch Firebase data from the "users" collection
   const fetchData = async () => {
     try {
@@ -110,19 +83,18 @@ const UsersDashboard = () => {
           name: docData.name || '-',
           position: docData.position || '-',
           role: docData.role || '-',
-          image: docData.image || '', // Assuming 'image' field exists
+          image: docData.image || '',
           sort: docData.sort || 0
         };
       });
       
-      // Sort by sort field to maintain order
-      const sortedData = data.sort((a, b) => a.sort - b.sort);
+      const sortedData = data.sort((a, b) => (a.sort || 0) - (b.sort || 0));
       setTableData(sortedData);
 
       // Group users by role
-      const lawyers = sortedData.filter(user => user.role === 'lawyer').sort((a, b) => a.sort - b.sort);
-      const tech = sortedData.filter(user => user.role === 'tech').sort((a, b) => a.sort - b.sort);
-      const business = sortedData.filter(user => user.role === 'business_development').sort((a, b) => a.sort - b.sort);
+      const lawyers = sortedData.filter(user => user.role === 'lawyer');
+      const tech = sortedData.filter(user => user.role === 'tech');
+      const business = sortedData.filter(user => user.role === 'business_development');
 
       setLawyerUsers(lawyers);
       setTechUsers(tech);
@@ -150,7 +122,6 @@ const UsersDashboard = () => {
     const file = e.target.files?.[0];
     if (file) {
       setSelectedFile(file);
-      // Create preview URL
       const url = URL.createObjectURL(file);
       setPreviewUrl(url);
     }
@@ -160,11 +131,8 @@ const UsersDashboard = () => {
   const uploadImage = async (file: File): Promise<string> => {
     const fileName = `${Date.now()}_${file.name}`;
     const storageRef = ref(storage, `users/${fileName}`);
-    
     const snapshot = await uploadBytes(storageRef, file);
-    const downloadURL = await getDownloadURL(snapshot.ref);
-    
-    return downloadURL;
+    return await getDownloadURL(snapshot.ref);
   };
 
   // Delete old image from Firebase Storage
@@ -187,11 +155,8 @@ const UsersDashboard = () => {
     try {
       let imageUrl = newUser.image;
       
-      // Upload new image if selected
       if (selectedFile) {
         imageUrl = await uploadImage(selectedFile);
-        
-        // Delete old image if updating
         if (isEditMode && newUser.image) {
           await deleteOldImage(newUser.image);
         }
@@ -203,17 +168,11 @@ const UsersDashboard = () => {
       };
       
       if (isEditMode) {
-        // Update existing user
-        const userRef = doc(db, 'users', currentUserId);
-        await updateDoc(userRef, userData);
-        setIsEditMode(false);
-        setCurrentUserId('');
+        await updateDoc(doc(db, 'users', currentUserId), userData);
       } else {
-        // Add new user
         await addDoc(collection(db, 'users'), userData);
       }
       
-      // Reset form and show table
       setNewUser({
         name: '',
         position: '',
@@ -224,8 +183,7 @@ const UsersDashboard = () => {
       setSelectedFile(null);
       setPreviewUrl('');
       setShowUserForm(false);
-      
-      // Fetch the updated users
+      setIsEditMode(false);
       await fetchData();
       
     } catch (error) {
@@ -235,7 +193,6 @@ const UsersDashboard = () => {
     }
   };
 
-  // Handle edit button click
   const handleEditUser = (user: TableData) => {
     setIsEditMode(true);
     setCurrentUserId(user.id);
@@ -250,16 +207,13 @@ const UsersDashboard = () => {
     setShowUserForm(true);
   };
 
-  // Handle delete confirmation
   const handleConfirmDelete = async () => {
     if (userToDelete) {
       try {
-        // Get user data to delete associated image
         const userToDeleteData = tableData.find(user => user.id === userToDelete);
         if (userToDeleteData?.image) {
           await deleteOldImage(userToDeleteData.image);
         }
-        
         await deleteDoc(doc(db, 'users', userToDelete));
         setShowDeleteModal(false);
         setUserToDelete(null);
@@ -270,7 +224,6 @@ const UsersDashboard = () => {
     }
   };
 
-  // Cancel edit mode
   const handleCancelEdit = () => {
     setIsEditMode(false);
     setCurrentUserId('');
@@ -286,7 +239,6 @@ const UsersDashboard = () => {
     setShowUserForm(false);
   };
 
-  // Handle drag end event to reorder users within their role
   const handleDragEnd = async (event: DragEndEvent, role: string) => {
     const { active, over } = event;
 
@@ -294,9 +246,8 @@ const UsersDashboard = () => {
       setIsUpdatingOrder(true);
       
       let currentUsers: TableData[] = [];
-      let setUsers: (users: TableData[]) => void = () => {};
+      let setUsers: React.Dispatch<React.SetStateAction<TableData[]>> | null = null;
       
-      // Determine which role section we're working with
       switch (role) {
         case 'lawyer':
           currentUsers = [...lawyerUsers];
@@ -312,32 +263,24 @@ const UsersDashboard = () => {
           break;
       }
 
+      if (!setUsers) return;
+
       const oldIndex = currentUsers.findIndex((user) => user.id === active.id);
       const newIndex = currentUsers.findIndex((user) => user.id === over?.id);
 
       const newUsersOrder = arrayMove(currentUsers, oldIndex, newIndex);
-      
-      // Update local state immediately for better UX
       setUsers(newUsersOrder);
 
-      // Update sort values in database for this role only
       try {
         const batch = writeBatch(db);
-        
         newUsersOrder.forEach((user, index) => {
           const userRef = doc(db, 'users', user.id);
           batch.update(userRef, { sort: index + 1 });
         });
-
         await batch.commit();
-        console.log(`Sort order updated successfully for ${role}`);
-        
-        // Refresh all data to ensure consistency
         await fetchData();
-        
       } catch (error) {
         console.error('Error updating sort order:', error);
-        // Revert local state if database update fails
         await fetchData();
       } finally {
         setIsUpdatingOrder(false);
@@ -345,26 +288,11 @@ const UsersDashboard = () => {
     }
   };
 
-  // Configure sensors for drag and drop
-  const sensors = useSensors(
-    useSensor(PointerSensor),
-    useSensor(KeyboardSensor, {
-      coordinateGetter: sortableKeyboardCoordinates,
-    })
-  );
-
   return (
-    <div className="min-h-screen overflow-hidden relative">
-
-      {/* Delete Confirmation Modal */}
+    <div className="min-h-screen relative">
       <AnimatePresence>
         {showDeleteModal && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-          >
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -374,499 +302,200 @@ const UsersDashboard = () => {
               <h3 className="text-xl font-bold text-[#5A4C33] mb-4">Confirm Deletion</h3>
               <p className="text-gray-600 mb-6">Are you sure you want to delete this user? This action cannot be undone.</p>
               <div className="flex justify-end space-x-3">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                <button
                   onClick={() => setShowDeleteModal(false)}
                   className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md font-medium"
                 >
                   Cancel
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                </button>
+                <button
                   onClick={handleConfirmDelete}
                   className="px-4 py-2 bg-red-500 text-white rounded-md font-medium"
                 >
                   Delete
-                </motion.button>
+                </button>
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
 
-      {/* Main Dashboard */}
-      <motion.div 
-        className="min-h-screen bg-[#F8F5EC] flex flex-col mt-20"
-        initial={{ opacity: 1 }}
-        transition={{ duration: 0.7 }}
+      <div className="bg-white rounded-lg p-6 shadow-sm border-l-4 border-[#D2A02A] mb-8 flex justify-between items-center">
+        <div>
+          <h1 className="text-3xl font-bold text-[#5A4C33]">User Management</h1>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mt-2"></div>
+        </div>
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="bg-white rounded-lg p-6 shadow-md"
       >
-        {/* Decorative background elements */}
-        <motion.div 
-          className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#D2A02A] opacity-5"
-          animate={{ x: [0, 30, 0], y: [0, -30, 0] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        />
-        <motion.div 
-          className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-[#5A4C33] opacity-5"
-          animate={{ x: [0, -20, 0], y: [0, 20, 0] }}
-          transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-        />
-
-        {/* Dashboard Content */}
-        <div className="flex-1 p-6 relative z-10">
-          {/* Dashboard Header */}
-          <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-[#D2A02A] mb-6 flex justify-between items-center">
-            <div>
-              <h1 className="text-3xl font-bold text-[#5A4C33]">Users Dashboard</h1>
-              <div className="w-32 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mt-2"></div>
-            </div>
-            {/* Logout Button */}
-            <button 
-              onClick={handleLogout}
-              className="px-4 py-2 bg-red-500 text-white rounded-md font-medium"
-            >
-              Logout
-            </button>
+        <div className="flex justify-between items-center mb-6">
+          <div>
+            <h2 className="text-xl font-semibold text-[#5A4C33]">
+              {isEditMode ? 'Edit User' : showUserForm ? 'Add New User' : 'Team Members'}
+            </h2>
           </div>
-
-          {/* Navigation Buttons */}
-          <div className="grid grid-cols-5 gap-4 mb-6">
-            {[
-              { id: 'home', label: 'Home', icon: faHome },
-              { id: 'users', label: 'Users', icon: faUsers },
-              { id: 'blogs', label: 'Blogs', icon: faChartLine },
-              { id: 'articles', label: 'Articles', icon: faClipboardList },
-              { id: 'amalive', label: 'AMA Live', icon: faCog }
-            ].map((item) => (
-              <motion.button
-                key={item.id}
-                onClick={() => handleNavigation(item.id)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`flex flex-col items-center justify-center p-4 rounded-lg shadow-md transition-colors duration-300 ${
-                  activeTab === item.id 
-                    ? 'bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white' 
-                    : 'bg-white text-[#5A4C33] hover:bg-[#F0EAD6]'
-                }`}
-              >
-                <FontAwesomeIcon icon={item.icon} className="text-xl mb-2" />
-                <span className="font-medium">{item.label}</span>
-              </motion.button>
-            ))}
-          </div>
-
-          {/* Content Container */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white rounded-lg p-6 shadow-md"
+          <button
+            onClick={() => {
+              if (isEditMode) {
+                handleCancelEdit();
+              } else {
+                setShowUserForm(!showUserForm);
+              }
+            }}
+            className="flex items-center px-4 py-2 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white rounded-md font-medium"
           >
-            {/* Header with Add User Button */}
-            <div className="flex justify-between items-center mb-6">
+            <FontAwesomeIcon icon={faPlus} className="mr-2" />
+            {isEditMode ? 'Cancel Edit' : showUserForm ? 'View Users' : 'Add User'}
+          </button>
+        </div>
+
+        {showUserForm ? (
+          <form onSubmit={handleSubmitUser} className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h2 className="text-xl font-semibold text-[#5A4C33]">
-                  {isEditMode ? 'Edit User' : showUserForm ? 'Add New User' : 'User Management'}
-                </h2>
-                {!showUserForm && !isEditMode && (
-                  <p className="text-sm text-gray-600 mt-1">
-                    <FontAwesomeIcon icon={faGripVertical} className="mr-1" />
-                    Drag and drop rows to reorder users. Changes are saved automatically.
-                    {isUpdatingOrder && (
-                      <span className="ml-2 text-blue-600">
-                        <svg className="animate-spin -ml-1 mr-1 h-3 w-3 text-blue-600 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        Saving order...
-                      </span>
-                    )}
-                  </p>
+                <label className="block text-sm font-medium text-[#5A4C33] mb-1">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={newUser.name}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#D2A02A] text-black"
+                  placeholder="Enter full name"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-[#5A4C33] mb-1">Position</label>
+                <input
+                  type="text"
+                  name="position"
+                  value={newUser.position}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#D2A02A] text-black"
+                  placeholder="e.g. Senior Advocate"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-[#5A4C33] mb-1">Role</label>
+                <select
+                  name="role"
+                  value={newUser.role}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#D2A02A] text-black"
+                >
+                  <option value="">Select Role</option>
+                  <option value="lawyer">Lawyer</option>
+                  <option value="business_development">Business Development</option>
+                  <option value="tech">Tech</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-[#5A4C33] mb-1">Sort Order</label>
+                <input
+                  type="number"
+                  name="sort"
+                  value={newUser.sort}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#D2A02A] text-black"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-[#5A4C33] mb-1">Profile Image</label>
+              <div className="flex items-center space-x-6">
+                <div className="flex-1">
+                  <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+                    <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                      <FontAwesomeIcon icon={faUpload} className="w-8 h-8 mb-3 text-gray-400" />
+                      <p className="text-sm text-gray-500">Click to upload image</p>
+                    </div>
+                    <input type="file" className="hidden" accept="image/*" onChange={handleFileSelect} />
+                  </label>
+                </div>
+                {previewUrl && (
+                  <div className="relative">
+                    <img src={previewUrl} alt="Preview" className="h-32 w-32 rounded-lg object-cover border" />
+                    <button
+                      type="button"
+                      onClick={() => { setSelectedFile(null); setPreviewUrl(''); }}
+                      className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center"
+                    >
+                      ×
+                    </button>
+                  </div>
                 )}
               </div>
-              <motion.button
-                onClick={() => {
-                  if (isEditMode) {
-                    handleCancelEdit();
-                  } else {
-                    setShowUserForm(!showUserForm);
-                  }
-                }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center px-4 py-2 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white rounded-md font-medium"
-              >
-                <FontAwesomeIcon icon={faPlus} className="mr-2" />
-                {isEditMode ? 'Cancel Edit' : showUserForm ? 'View Users' : 'Add User'}
-              </motion.button>
             </div>
 
-            {/* Conditional Rendering: Show either Data Table or User Form */}
-            {showUserForm ? (
-              // User Creation/Edit Form
-              <AnimatePresence mode="wait">
-                <motion.form
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
-                  onSubmit={handleSubmitUser}
-                  className="space-y-6"
-                >
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-[#5A4C33] mb-1">Name</label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={newUser.name}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent text-black"
-                      placeholder="Enter user's name"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="position" className="block text-sm font-medium text-[#5A4C33] mb-1">Position</label>
-                    <input
-                      type="text"
-                      id="position"
-                      name="position"
-                      value={newUser.position}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent text-black"
-                      placeholder="Enter user's position"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="image" className="block text-sm font-medium text-[#5A4C33] mb-1">Profile Image</label>
-                    <div className="space-y-4">
-                      <div className="flex items-center justify-center w-full">
-                        <label htmlFor="image-upload" className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
-                          <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                            <FontAwesomeIcon icon={faUpload} className="w-8 h-8 mb-3 text-gray-400" />
-                            <p className="mb-2 text-sm text-gray-500">
-                              <span className="font-semibold">Click to upload</span> or drag and drop
-                            </p>
-                            <p className="text-xs text-gray-500">PNG, JPG, JPEG (MAX. 5MB)</p>
-                          </div>
-                          <input
-                            id="image-upload"
-                            type="file"
-                            accept="image/*"
-                            onChange={handleFileSelect}
-                            className="hidden"
-                          />
-                        </label>
-                      </div>
-                      
-                      {previewUrl && (
-                        <div className="flex justify-center">
-                          <div className="relative">
-                            <img 
-                              src={previewUrl} 
-                              alt="Preview" 
-                              className="h-32 w-32 rounded-lg object-cover border-2 border-gray-200"
-                            />
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setSelectedFile(null);
-                                setPreviewUrl('');
-                                if (previewUrl && previewUrl.startsWith('blob:')) {
-                                  URL.revokeObjectURL(previewUrl);
-                                }
-                              }}
-                              className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs hover:bg-red-600"
-                            >
-                              ×
-                            </button>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="role" className="block text-sm font-medium text-[#5A4C33] mb-1">Role</label>
-                    <select
-                      id="role"
-                      name="role"
-                      value={newUser.role}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent text-black"
-                    >
-                      <option value="">Select Role</option>
-                      <option value="lawyer">Lawyer</option>
-                      <option value="business_development">Business Development</option>
-                      <option value="tech">Tech</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label htmlFor="sort" className="block text-sm font-medium text-[#5A4C33] mb-1">Sort Order</label>
-                    <input
-                      type="number"
-                      id="sort"
-                      name="sort"
-                      value={newUser.sort}
-                      onChange={handleInputChange}
-                      min="0"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent text-black"
-                      placeholder="Enter sort order (0, 1, 2, etc.)"
-                    />
-                    <p className="text-sm text-gray-500 mt-1">Lower numbers will appear first within the role section</p>
-                  </div>
-                  
-                  <div className="flex justify-end space-x-3">
-                    <motion.button
-                      type="button"
-                      onClick={handleCancelEdit}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md font-medium"
-                    >
-                      Cancel
-                    </motion.button>
-                    <motion.button
-                      type="submit"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`px-4 py-2 ${isEditMode 
-                        ? 'bg-blue-500' 
-                        : 'bg-gradient-to-r from-[#D2A02A] to-[#5A4C33]'} text-white rounded-md font-medium flex items-center`}
-                      disabled={uploading}
-                    >
-                      {uploading ? (
-                        <>
-                          <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                          </svg>
-                          Uploading...
-                        </>
-                      ) : (
-                        isEditMode ? 'Update User' : 'Add User'
-                      )}
-                    </motion.button>
-                  </div>
-                </motion.form>
-              </AnimatePresence>
-            ) : (
-              // Role-based Sections
-              <AnimatePresence mode="wait">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
-                  className="space-y-8"
-                >
-                  {/* Lawyers Section */}
-                  <RoleSection
-                    title="Lawyers"
-                    users={lawyerUsers}
-                    role="lawyer"
-                    onDragEnd={handleDragEnd}
-                    onEdit={handleEditUser}
-                    onDelete={(id) => {
-                      setUserToDelete(id);
-                      setShowDeleteModal(true);
-                    }}
-                    isUpdating={isUpdatingOrder}
-                  />
-
-                  {/* Tech Section */}
-                  <RoleSection
-                    title="Tech Team"
-                    users={techUsers}
-                    role="tech"
-                    onDragEnd={handleDragEnd}
-                    onEdit={handleEditUser}
-                    onDelete={(id) => {
-                      setUserToDelete(id);
-                      setShowDeleteModal(true);
-                    }}
-                    isUpdating={isUpdatingOrder}
-                  />
-
-                  {/* Business Development Section */}
-                  <RoleSection
-                    title="Business Development"
-                    users={businessUsers}
-                    role="business_development"
-                    onDragEnd={handleDragEnd}
-                    onEdit={handleEditUser}
-                    onDelete={(id) => {
-                      setUserToDelete(id);
-                      setShowDeleteModal(true);
-                    }}
-                    isUpdating={isUpdatingOrder}
-                  />
-                </motion.div>
-              </AnimatePresence>
-            )}
-          </motion.div>
-        </div>
+            <div className="flex justify-end space-x-3">
+              <button
+                type="button"
+                onClick={handleCancelEdit}
+                className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                disabled={uploading}
+                className="px-6 py-2 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white rounded-md font-medium disabled:opacity-50"
+              >
+                {uploading ? 'Processing...' : (isEditMode ? 'Update User' : 'Add User')}
+              </button>
+            </div>
+          </form>
+        ) : (
+          <div className="space-y-12">
+            <RoleSection title="Lawyers" users={lawyerUsers} role="lawyer" onDragEnd={handleDragEnd} onEdit={handleEditUser} onDelete={(id: string) => { setUserToDelete(id); setShowDeleteModal(true); }} isUpdating={isUpdatingOrder} />
+            <RoleSection title="Tech Team" users={techUsers} role="tech" onDragEnd={handleDragEnd} onEdit={handleEditUser} onDelete={(id: string) => { setUserToDelete(id); setShowDeleteModal(true); }} isUpdating={isUpdatingOrder} />
+            <RoleSection title="Business Development" users={businessUsers} role="business_development" onDragEnd={handleDragEnd} onEdit={handleEditUser} onDelete={(id: string) => { setUserToDelete(id); setShowDeleteModal(true); }} isUpdating={isUpdatingOrder} />
+          </div>
+        )}
       </motion.div>
     </div>
   );
 };
 
-// Sortable Row Component
-const SortableTableRow = ({ user, onEdit, onDelete, isUpdating }: { 
-  user: TableData, 
-  onEdit: (user: TableData) => void, 
-  onDelete: (id: string) => void,
-  isUpdating?: boolean 
-}) => {
-  const {
-    attributes,
-    listeners,
-    setNodeRef,
-    transform,
-    transition,
-    isDragging,
-  } = useSortable({ 
-    id: user.id,
-    disabled: isUpdating 
-  });
-
-  const style = {
-    transform: CSS.Transform.toString(transform),
-    transition,
-    opacity: isDragging ? 0.5 : 1,
-  };
+const RoleSection = ({ title, users, role, onDragEnd, onEdit, onDelete, isUpdating }: any) => {
+  const sensors = useSensors(useSensor(PointerSensor), useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates }));
 
   return (
-    <tr 
-      ref={setNodeRef} 
-      style={style} 
-      className={`hover:bg-[#F8F5EC] transition-colors duration-150 ${isDragging ? 'bg-gray-100' : ''}`}
-    >
-      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#5A4C33]">
-        <div className="flex items-center">
-          <button
-            {...attributes}
-            {...listeners}
-            disabled={isUpdating}
-            className={`mr-2 ${isUpdating ? 'cursor-not-allowed text-gray-300' : 'cursor-grab active:cursor-grabbing text-gray-400 hover:text-gray-600'}`}
-          >
-            <FontAwesomeIcon icon={faGripVertical} />
-          </button>
-          {user.id}
-        </div>
-      </td>
-      <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
-        {user.image ? (
-          <img src={user.image} alt={user.name} className="h-10 w-10 rounded-full object-cover" />
-        ) : (
-          <FontAwesomeIcon icon={faUser} className="h-5 w-5 text-gray-500" />
-        )}
-      </td>
-      <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{user.name}</td>
-      <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{user.position}</td>
-      <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{user.sort}</td>
-      <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
-        <div className="flex space-x-2">
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => onEdit(user)}
-            className="px-3 py-1 bg-blue-500 text-white rounded-md text-xs"
-          >
-            Edit
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => onDelete(user.id)}
-            className="px-3 py-1 bg-red-500 text-white rounded-md text-xs"
-          >
-            Delete
-          </motion.button>
-        </div>
-      </td>
-    </tr>
-  );
-};
-
-// Role Section Component
-const RoleSection = ({ 
-  title, 
-  users, 
-  role, 
-  onDragEnd, 
-  onEdit, 
-  onDelete, 
-  isUpdating 
-}: {
-  title: string;
-  users: TableData[];
-  role: string;
-  onDragEnd: (event: DragEndEvent, role: string) => void;
-  onEdit: (user: TableData) => void;
-  onDelete: (id: string) => void;
-  isUpdating: boolean;
-}) => {
-  const sensors = useSensors(
-    useSensor(PointerSensor),
-    useSensor(KeyboardSensor, {
-      coordinateGetter: sortableKeyboardCoordinates,
-    })
-  );
-
-  return (
-    <div className="bg-gray-50 rounded-lg p-6">
-      <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-semibold text-[#5A4C33] flex items-center">
+    <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+      <div className="flex items-center justify-between mb-6">
+        <h3 className="text-lg font-bold text-[#5A4C33] flex items-center">
           {title}
-          <span className="ml-2 bg-[#D2A02A] text-white text-sm px-2 py-1 rounded-full">
+          <span className="ml-3 bg-[#D2A02A]/10 text-[#D2A02A] text-xs px-2.5 py-1 rounded-full border border-[#D2A02A]/20">
             {users.length}
           </span>
         </h3>
-        <p className="text-sm text-gray-600">
-          <FontAwesomeIcon icon={faGripVertical} className="mr-1" />
-          Drag to reorder within {title.toLowerCase()}
-        </p>
+        <p className="text-xs text-gray-400 italic">Drag rows to reorder</p>
       </div>
 
       {users.length > 0 ? (
         <div className="overflow-x-auto">
-          <DndContext
-            sensors={sensors}
-            collisionDetection={closestCenter}
-            onDragEnd={(event) => onDragEnd(event, role)}
-          >
-            <table className="min-w-full divide-y divide-gray-200 bg-white rounded-lg shadow-sm">
-              <thead className="bg-[#F0EAD6]">
+          <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={(event) => onDragEnd(event, role)}>
+            <table className="min-w-full divide-y divide-gray-200 bg-white rounded-lg shadow-sm border border-gray-100">
+              <thead className="bg-[#F0EAD6]/50">
                 <tr>
-                  {['ID', 'Image', 'Name', 'Position', 'Sort', 'Actions'].map((header, index) => (
-                    <th key={index} className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">
-                      {header}
+                  {['Sort', 'Image', 'Name', 'Position', 'Actions'].map((h) => (
+                    <th key={h} className="px-6 py-4 text-left text-[10px] font-bold text-[#5A4C33] uppercase tracking-widest">
+                      {h}
                     </th>
                   ))}
                 </tr>
               </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
-                <SortableContext 
-                  items={users.map(user => user.id)}
-                  strategy={verticalListSortingStrategy}
-                >
-                  {users.map((user) => (
-                    <SortableTableRow
-                      key={user.id}
-                      user={user}
-                      onEdit={onEdit}
-                      onDelete={onDelete}
-                      isUpdating={isUpdating}
-                    />
+              <tbody className="divide-y divide-gray-100">
+                <SortableContext items={users.map((u: any) => u.id)} strategy={verticalListSortingStrategy}>
+                  {users.map((user: any) => (
+                    <SortableTableRow key={user.id} user={user} onEdit={onEdit} onDelete={onDelete} isUpdating={isUpdating} />
                   ))}
                 </SortableContext>
               </tbody>
@@ -874,12 +503,49 @@ const RoleSection = ({
           </DndContext>
         </div>
       ) : (
-        <div className="text-center py-8 bg-white rounded-lg">
-          <FontAwesomeIcon icon={faUser} className="h-12 w-12 text-gray-300 mb-4" />
-          <p className="text-gray-500">No {title.toLowerCase()} added yet</p>
+        <div className="text-center py-10 bg-white rounded-lg border border-dashed border-gray-200">
+          <p className="text-gray-400 text-sm">No members added to {title}</p>
         </div>
       )}
     </div>
+  );
+};
+
+const SortableTableRow = ({ user, onEdit, onDelete, isUpdating }: any) => {
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: user.id, disabled: isUpdating });
+  
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    zIndex: isDragging ? 10 : 1,
+    boxShadow: isDragging ? '0 10px 15px -3px rgba(0, 0, 0, 0.1)' : 'none'
+  };
+
+  return (
+    <tr ref={setNodeRef} style={style} className={`hover:bg-[#F8F5EC]/50 transition-colors ${isDragging ? 'bg-white' : ''}`}>
+      <td className="px-6 py-4">
+        <button {...attributes} {...listeners} className="text-gray-400 hover:text-[#D2A02A] cursor-grab active:cursor-grabbing p-1">
+          <FontAwesomeIcon icon={faGripVertical} />
+        </button>
+      </td>
+      <td className="px-6 py-4">
+        {user.image ? (
+          <img src={user.image} alt="" className="h-10 w-10 rounded-full object-cover ring-2 ring-gray-50" />
+        ) : (
+          <div className="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-400">
+            <FontAwesomeIcon icon={faUser} />
+          </div>
+        )}
+      </td>
+      <td className="px-6 py-4 font-medium text-[#5A4C33]">{user.name}</td>
+      <td className="px-6 py-4 text-[#5A4C33]/70">{user.position}</td>
+      <td className="px-6 py-4">
+        <div className="flex space-x-3">
+          <button onClick={() => onEdit(user)} className="text-blue-600 hover:text-blue-800 text-sm font-medium">Edit</button>
+          <button onClick={() => onDelete(user.id)} className="text-red-600 hover:text-red-800 text-sm font-medium">Delete</button>
+        </div>
+      </td>
+    </tr>
   );
 };
 

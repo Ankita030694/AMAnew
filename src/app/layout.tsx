@@ -3,10 +3,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/newcomp/Navbar";
-import Footer from "@/newcomp/Footer";
-import WhatsAppWidget from "@/newcomp/WhatsAppWidget";
-import GlobalPopupForm from "@/newcomp/GlobalPopupForm";
+import ConditionalLayout from "@/newcomp/ConditionalLayout";
 import { Toaster } from "react-hot-toast";
 import Script from 'next/script'
 
@@ -254,11 +251,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
           }}
         />
         {/* End Google Tag Manager (noscript) */}
-        <Navbar />
-        {children}
-        <GlobalPopupForm />
-        <Footer />
-        <WhatsAppWidget />
+        <ConditionalLayout>
+          {children}
+        </ConditionalLayout>
         <Toaster position="top-right" />
         {process.env.NEXT_PUBLIC_GA_TRACKING_ID && (
           <>

@@ -90,6 +90,7 @@ const BlogsDashboard = () => {
   const [isUploadingGenerated, setIsUploadingGenerated] = useState(false);
   const [expansionPrompt, setExpansionPrompt] = useState('');
   const [isExpanding, setIsExpanding] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Filter blogs based on search term
   const filteredBlogs = blogs.filter(blog => 
@@ -643,6 +644,8 @@ const BlogsDashboard = () => {
   // Handle blog form submission (Create or Update)
   const handleSubmitBlog = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
+    setIsSubmitting(true);
     try {
       // Add timestamp and format the date
       const blogWithMetadata = {
@@ -734,6 +737,9 @@ const BlogsDashboard = () => {
       
     } catch (error) {
       console.error("Error processing blog:", error);
+      alert("Error processing blog: " + (error instanceof Error ? error.message : String(error)));
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -947,76 +953,26 @@ const BlogsDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen overflow-hidden relative">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="relative"
+    >
+      {/* Dashboard Header */}
+      <div className="bg-white rounded-lg p-6 shadow-sm border-l-4 border-[#D2A02A] mb-8 flex justify-between items-center">
+        <div>
+          <h1 className="text-3xl font-bold text-[#5A4C33]">Blogs Dashboard</h1>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mt-2"></div>
+        </div>
+      </div>
 
-      {/* Main Dashboard */}
-      <motion.div 
-        className="min-h-screen bg-[#F8F5EC] flex flex-col mt-20"
-        initial={{ opacity: 1 }}
-        transition={{ duration: 0.7 }}
+      {/* Content Container */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="bg-white rounded-lg p-6 shadow-md"
       >
-        {/* Decorative background elements */}
-        <motion.div 
-          className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#D2A02A] opacity-5"
-          animate={{ x: [0, 30, 0], y: [0, -30, 0] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        />
-        <motion.div 
-          className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-[#5A4C33] opacity-5"
-          animate={{ x: [0, -20, 0], y: [0, 20, 0] }}
-          transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-        />
-
-        {/* Dashboard Content */}
-        <div className="flex-1 p-6 relative z-10">
-          {/* Dashboard Header */}
-          <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-[#D2A02A] mb-6 flex justify-between items-center">
-            <div>
-              <h1 className="text-3xl font-bold text-[#5A4C33]">Blogs Dashboard</h1>
-              <div className="w-32 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mt-2"></div>
-            </div>
-            {/* Logout Button */}
-            <button 
-              onClick={handleLogout}
-              className="px-4 py-2 bg-red-500 text-white rounded-md font-medium"
-            >
-              Logout
-            </button>
-          </div>
-
-          {/* Navigation Buttons */}
-          <div className="grid grid-cols-5 gap-4 mb-6">
-            {[
-              { id: 'home', label: 'Home', icon: faHome },
-              { id: 'users', label: 'Users', icon: faUsers },
-              { id: 'blogs', label: 'Blogs', icon: faChartLine },
-              { id: 'articles', label: 'Articles', icon: faClipboardList },
-              { id: 'amalive', label: 'AMA Live', icon: faCog }
-            ].map((item) => (
-              <motion.button
-                key={item.id}
-                onClick={() => handleNavigation(item.id)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`flex flex-col items-center justify-center p-4 rounded-lg shadow-md transition-colors duration-300 ${
-                  activeTab === item.id 
-                    ? 'bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white' 
-                    : 'bg-white text-[#5A4C33] hover:bg-[#F0EAD6]'
-                }`}
-              >
-                <FontAwesomeIcon icon={item.icon} className="text-xl mb-2" />
-                <span className="font-medium">{item.label}</span>
-              </motion.button>
-            ))}
-          </div>
-
-          {/* Content Container */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white rounded-lg p-6 shadow-md"
-          >
             {/* Header with Add Blog Button */}
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-semibold text-[#5A4C33]">
@@ -1507,11 +1463,26 @@ const BlogsDashboard = () => {
                     </motion.button>
                     <motion.button
                       type="submit"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="px-4 py-2 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white rounded-md font-medium"
+                      disabled={isSubmitting}
+                      whileHover={isSubmitting ? {} : { scale: 1.05 }}
+                      whileTap={isSubmitting ? {} : { scale: 0.95 }}
+                      className={`px-4 py-2 text-white rounded-md font-medium flex items-center justify-center min-w-[120px] ${
+                        isSubmitting 
+                          ? 'bg-gray-400 cursor-not-allowed' 
+                          : 'bg-gradient-to-r from-[#D2A02A] to-[#5A4C33]'
+                      }`}
                     >
-                      {formMode === 'add' ? 'Publish Blog' : 'Update Blog'}
+                      {isSubmitting ? (
+                        <>
+                          <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Processing...
+                        </>
+                      ) : (
+                        formMode === 'add' ? 'Publish Blog' : 'Update Blog'
+                      )}
                     </motion.button>
                   </div>
                 </form>
@@ -1682,10 +1653,8 @@ const BlogsDashboard = () => {
                 </p>
               </motion.div>
             )}
-          </motion.div>
-        </div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

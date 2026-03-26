@@ -586,75 +586,26 @@ const ArticlesDashboard = () => {
   const handleNextPage = () => setCurrentPage(prev => Math.min(prev + 1, totalPages));
 
   return (
-    <div className="min-h-screen overflow-hidden relative">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="relative"
+    >
+      {/* Dashboard Header */}
+      <div className="bg-white rounded-lg p-6 shadow-sm border-l-4 border-[#D2A02A] mb-8 flex justify-between items-center">
+        <div>
+          <h1 className="text-3xl font-bold text-[#5A4C33]">Articles Dashboard</h1>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mt-2"></div>
+        </div>
+      </div>
 
-      {/* Main Dashboard */}
-      <motion.div 
-        className="min-h-screen bg-[#F8F5EC] flex flex-col mt-20"
-        initial={{ opacity: 1 }}
-        transition={{ duration: 0.7 }}
+      {/* Content Container */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="bg-white rounded-lg p-6 shadow-md"
       >
-        {/* Decorative background elements */}
-        <motion.div 
-          className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#D2A02A] opacity-5"
-          animate={{ x: [0, 30, 0], y: [0, -30, 0] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        />
-        <motion.div 
-          className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-[#5A4C33] opacity-5"
-          animate={{ x: [0, -20, 0], y: [0, 20, 0] }}
-          transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-        />
-
-        {/* Dashboard Content */}
-        <div className="flex-1 p-6 relative z-10">
-          {/* Dashboard Header */}
-          <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-[#D2A02A] mb-6 flex justify-between items-center">
-            <div>
-              <h1 className="text-3xl font-bold text-[#5A4C33]">Articles Dashboard</h1>
-              <div className="w-32 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mt-2"></div>
-            </div>
-            {/* Logout Button */}
-            <button 
-              onClick={handleLogout}
-              className="px-4 py-2 bg-red-500 text-white rounded-md font-medium"
-            >
-              Logout
-            </button>
-          </div>
-
-          {/* Navigation Buttons */}
-          <div className="grid grid-cols-5 gap-4 mb-6">
-            {[
-              { id: 'home', label: 'Home', icon: faHome },
-              { id: 'users', label: 'Users', icon: faUsers },
-              { id: 'blogs', label: 'Blogs', icon: faChartLine },
-              { id: 'articles', label: 'Articles', icon: faClipboardList },
-              { id: 'amalive', label: 'AMA Live', icon: faCog }
-            ].map((item) => (
-              <motion.button
-                key={item.id}
-                onClick={() => handleNavigation(item.id)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`flex flex-col items-center justify-center p-4 rounded-lg shadow-md transition-colors duration-300 ${
-                  activeTab === item.id 
-                    ? 'bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white' 
-                    : 'bg-white text-[#5A4C33] hover:bg-[#F0EAD6]'
-                }`}
-              >
-                <FontAwesomeIcon icon={item.icon} className="text-xl mb-2" />
-                <span className="font-medium">{item.label}</span>
-              </motion.button>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white rounded-lg p-6 shadow-md"
-          >
             {/* Header with Add Article Button */}
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-semibold text-[#5A4C33]">
@@ -1097,10 +1048,8 @@ const ArticlesDashboard = () => {
                 </motion.div>
               </AnimatePresence>
             )}
-          </motion.div>
-        </div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 
