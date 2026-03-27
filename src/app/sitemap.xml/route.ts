@@ -55,7 +55,12 @@ export async function GET(): Promise<Response> {
     '/overcharged-at-hospital-send-legal-notice',
     '/workplace-harassment-legal-notice-service',
     '/support-for-loan-settlement-during-medical-emergencies',
+    '/loan-settlement-letter-format-noc-format' ,
+    '/home-loan-eligibility-after-settlement',
+    '/legal-notice-for-loan-settlement-harassment',
+    '/p2p-crypto-scam-unfreeze-bank-account',
     '/contact',
+
     '/careers',
     '/careers/business-development-associate',
     '/careers/legal-associate',

@@ -72,7 +72,8 @@ const Footer = () => {
         { name: 'Legal Services in Gurgaon', href: '/legal-services-in-gurgaon'},
         { name: 'Legal Services in Noida', href: '/legal-services-in-noida'},
         { name: 'Legal Services in Delhi', href: '/legal-services-in-delhi'},
-        { name: 'Legal Services in Ghaziabad', href: '/legal-services-in-ghaziabad'}
+        { name: 'Legal Services in Ghaziabad', href: '/legal-services-in-ghaziabad'},
+        { name: 'Harassment Legal Notice', href: '/legal-notice-for-loan-settlement-harassment' }
       ]
     },
     {
@@ -92,8 +93,12 @@ const Footer = () => {
         { name: "Trading Loan Settlement", href: "/trading-loan-settlement" },
         { name: "Medical Loan Settlement Support", href: "/support-for-loan-settlement-during-medical-emergencies" },
         { name: "Stop Bank Harassment", href: "/services/best-lawyer-for-bank-harassment" },
+        { name: "Home Loan Eligibility After Settlement", href: "/home-loan-eligibility-after-settlement" },
+        { name: "Harassment Protection", href: "/legal-notice-for-loan-settlement-harassment" },
+        { name: "P2P Crypto Scam Unfreeze", href: "/p2p-crypto-scam-unfreeze-bank-account" },
       ]
     },
+
     {
       title: "IPR & Trademark",
       links: [
@@ -232,6 +237,8 @@ const Footer = () => {
             {name:"Trademark Class 45",href:"/trademark-registration-in-class-45"},
             {name:"Support During Medical Emergencies",href:"/support-for-loan-settlement-during-medical-emergencies"},
             {name:"How to Get 800 Credit Score in India",href:"/how-to-get-800-credit-score-in-india"},
+            {name: "Loan Settlement & NOC Formats", href: "/loan-settlement-letter-format-noc-format"},
+            {name: "Legal Notice for Harassment", href: "/legal-notice-for-loan-settlement-harassment"},
 
       ]
 
