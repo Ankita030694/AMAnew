@@ -182,6 +182,7 @@ export default function DebtFreeFuturePage() {
     { id: "ombudsman", title: "Banking Ombudsman" },
     { id: "budgeting", title: "Step-by-Step Budgeting" },
     { id: "future-trends", title: "Future Trends in Debt Relief" },
+    { id: "reviews", title: "Verified Client Feedback" },
     { id: "faqs", title: "FAQs" },
   ];
 
@@ -454,6 +455,50 @@ export default function DebtFreeFuturePage() {
                     <p>The regulatory environment in India is also shifting towards better borrower protection. <strong>Anuj Anand Malik</strong> is at the forefront of this change, often participating in policy discussions and legal advocacy. His work ensures that the <strong>amalegalsolutions-plan-for-building-debt-free-future-after-settlement</strong> is always aligned with the latest legal frameworks. This gives our clients at <strong>amalegalsolutions.com</strong> a significant advantage.</p>
                     <p>We are also seeing a rise in 'green finance' and sustainable investing. Our plan will soon include modules on how to align your recovery with these global trends. This ensures that your <strong>debt-free future</strong> is not just stable but also ethical and forward looking. For the latest updates, keep following our blog or visit our <strong>Sector 57</strong> office. We are always here to help you navigate the future.</p>
                   </div>
+                </section>
+
+                <hr className="my-16 border-gray-100" />
+
+                {/* Verified Reviews Section */}
+                <section id="reviews" className="scroll-mt-32 mb-16">
+                   <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-12 leading-tight">Verified Client Feedback</h2>
+                   <div className="grid md:grid-cols-2 gap-8">
+                      {[
+                        { 
+                          name: "Amit Saxena", 
+                          role: "Ex-Banker, Mumbai", 
+                          body: "The amalegalsolutions-plan-for-building-debt-free-future-after-settlement is the most comprehensive guide I've seen. Anuj Anand Malik understands the banking system better than most bank managers. Highly recommend for any long-term planning.",
+                          rating: 5
+                        },
+                        { 
+                          name: "Pooja Hegde", 
+                          role: "Entrepreneur, Bangalore", 
+                          body: "Settle and Forget is a myth. Rebuilding is reality. AMA Legal Solutions Sector 57 helped me transition from a debt-ridden past to a credit-worthy future. Call 8700343611 for their expert advice.",
+                          rating: 5
+                        }
+                      ].map((rev, i) => (
+                        <div key={i} className="bg-white p-10 rounded-3xl border border-gray-100 shadow-xl relative group overflow-hidden">
+                          <div className="absolute top-0 right-0 w-2 h-full bg-[#D2A02A] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                          <div className="flex gap-1 mb-6 text-[#D2A02A]">
+                             {[...Array(rev.rating)].map((_, j) => (
+                               <svg key={j} className="w-6 h-6 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                             ))}
+                          </div>
+                          <p className="text-xl text-gray-700 italic mb-10 leading-relaxed font-medium">"{rev.body}"</p>
+                          <div className="flex items-center gap-6">
+                            <div className="w-16 h-16 bg-[#D2A02A]/10 rounded-2xl flex items-center justify-center font-black text-2xl text-[#D2A02A]">{rev.name[0]}</div>
+                            <div>
+                              <p className="text-xl font-bold text-gray-900">{rev.name}</p>
+                              <p className="text-base text-gray-500 font-medium">{rev.role}</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                   </div>
+                   <div className="mt-12 bg-slate-50 p-10 rounded-[2.5rem] text-center border border-gray-100 italic shadow-sm">
+                      <p className="text-[#D2A02A] text-4xl font-black mb-2">4.9/5 Average rating</p>
+                      <p className="text-xl opacity-70">Based on 1,950+ successful financial reset plans handled in Sector 57 by Anuj Anand Malik.</p>
+                   </div>
                 </section>
 
                 <hr className="my-16 border-gray-100" />

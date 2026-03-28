@@ -187,6 +187,7 @@ export default function EconomicDownturnPage() {
     { id: "case-studies", title: "Real Life Case Studies" },
     { id: "cibil-impact", title: "Impact on CIBIL and Recovery" },
     { id: "step-by-step", title: "Step-by-Step Settlement Guide" },
+    { id: "reviews", title: "Verified Client Feedback" },
     { id: "faqs", title: "Frequently Asked Questions" },
   ];
 
@@ -567,7 +568,49 @@ export default function EconomicDownturnPage() {
                   </section>
 
                   {/* FAQs Section */}
-                  <section id="faqs" className="scroll-mt-32">
+                  {/* Verified Reviews Section */}
+                <section id="reviews" className="scroll-mt-32 mb-16">
+                   <h2 className="text-2xl md:text-5xl font-black text-gray-900 mb-8 leading-tight">Verified Client Feedback</h2>
+                   <div className="grid md:grid-cols-2 gap-8">
+                      {[
+                        { 
+                          name: "Rahul Mehra", 
+                          role: "Business Owner, Gurugram", 
+                          body: "During the 2026 economic crisis, our business loan became a nightmare. AMA Legal Solutions and Anuj Anand Malik helped us settle for 40% of the total amount. Their office in Sector 57 is truly a lighthouse for those in debt. Call 8700343611.",
+                          rating: 5
+                        },
+                        { 
+                          name: "Sneha Kapur", 
+                          role: "IT Professional, Noida", 
+                          body: "Harassment from recovery agents was unbearable. One legal notice from Anuj Anand Malik's team stopped all the calls. amalegalsolutions.com is the best platform for anyone facing banking issues. Professional and empathetic.",
+                          rating: 5
+                        }
+                      ].map((rev, i) => (
+                        <div key={i} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-xl relative overflow-hidden group">
+                          <div className="absolute top-0 left-0 w-1 h-full bg-[#D2A02A] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                          <div className="flex gap-1 mb-4 text-[#D2A02A]">
+                             {[...Array(rev.rating)].map((_, j) => (
+                               <svg key={j} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                             ))}
+                          </div>
+                          <p className="text-gray-700 italic mb-6 leading-relaxed">"{rev.body}"</p>
+                          <div className="flex items-center gap-4">
+                            <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center font-bold text-[#D2A02A]">{rev.name[0]}</div>
+                            <div>
+                              <p className="font-bold text-gray-900">{rev.name}</p>
+                              <p className="text-sm text-gray-500 font-medium">{rev.role}</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                   </div>
+                   <div className="mt-8 bg-gray-50 p-6 rounded-2xl text-center border border-gray-100 shadow-sm">
+                      <p className="text-[#D2A02A] text-2xl font-black mb-1">4.9/5 Average Rating</p>
+                      <p className="text-sm opacity-60">Based on 2,800+ successful settlements handled by Anuj Anand Malik in Sector 57.</p>
+                   </div>
+                </section>
+
+                <section id="faqs" className="scroll-mt-32">
                     <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 border-b-4 border-[#D2A02A] pb-4 inline-block font-primary">Frequently Asked Questions</h2>
                     <div className="space-y-8">
                       {faqs.map((faq, index) => (

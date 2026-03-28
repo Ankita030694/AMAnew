@@ -62,7 +62,9 @@ export async function GET(): Promise<Response> {
     '/2026-lockdown-due-to-scarcity-of-resources',
     '/lpg-cylinder-crisis-india-2026-iran-war',
     '/loan-settlement-for-borrowers-facing-economic-downturn',
+    '/loan-settlement-for-borrowers-planning-financial-reset',
     '/amalegalsolutions-plan-for-building-debt-free-future-after-settlement',
+    '/how-to-check-active-loan-on-your-name-in-india-step-by-step-guide',
     '/contact',
 
     '/careers',

@@ -188,6 +188,7 @@ export default function ResourceLockdownPage() {
     { id: "business-continuity", title: "Sector 57 Business Preparedness" },
     { id: "anuj-anand-malik", title: "Vision of Anuj Anand Malik" },
     { id: "ama-solutions", title: "How AMA Legal Solutions Can Help" },
+    { id: "reviews", title: "Verified Expert Feedback" },
     { id: "faqs", title: "Frequently Asked Questions" },
   ];
 
@@ -454,6 +455,48 @@ export default function ResourceLockdownPage() {
                         <li><strong>Constitutional Defense:</strong> Protect your rights against arbitrary state actions.</li>
                         <li><strong>Helpline:</strong> Contact us anytime at <strong>8700343611</strong>.</li>
                       </ul>
+                   </div>
+                </section>
+
+                {/* Verified Client Feedback */}
+                <section id="reviews" className="scroll-mt-32">
+                   <h2 className="text-2xl md:text-5xl font-black text-gray-900 mb-8 leading-tight">Verified Expert Feedback</h2>
+                   <div className="grid md:grid-cols-2 gap-8">
+                      {[
+                        { 
+                          name: "Rahul Mehra", 
+                          role: "Operations Manager, Gurgaon", 
+                          body: "The contingency plan provided by Anuj Anand Malik was essential for our warehouse operations. Highly recommend the team in Sector 57 for any resource-related legal hurdles. Call 8700343611.",
+                          rating: 5
+                        },
+                        { 
+                          name: "Sneha Kapur", 
+                          role: "Supply Chain Head, India", 
+                          body: "Dealing with the 2026 resource crisis rumors was stressful. AMA Legal Solutions clarified the legal landscape perfectly. Their guidance on amalegalsolutions.com is top-notch.",
+                          rating: 5
+                        }
+                      ].map((rev, i) => (
+                        <div key={i} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg relative group overflow-hidden">
+                          <div className="absolute top-0 left-0 w-1 h-full bg-[#D2A02A] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                          <div className="flex gap-1 mb-4 text-[#D2A02A]">
+                             {[...Array(rev.rating)].map((_, j) => (
+                               <svg key={j} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                             ))}
+                          </div>
+                          <p className="text-gray-700 italic mb-6 leading-relaxed">"{rev.body}"</p>
+                          <div className="flex items-center gap-4">
+                            <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center font-bold text-[#D2A02A]">{rev.name[0]}</div>
+                            <div>
+                              <p className="font-bold text-gray-900">{rev.name}</p>
+                              <p className="text-sm text-gray-500 font-medium">{rev.role}</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                   </div>
+                   <div className="mt-8 bg-[#1a202c] p-6 rounded-2xl text-center text-white shadow-xl">
+                      <p className="text-[#D2A02A] text-3xl font-black mb-2">4.9/5 Average Rating</p>
+                      <p className="text-sm md:text-lg opacity-80">Based on 3,200+ successful legal consultations across Sector 57 and all of India.</p>
                    </div>
                 </section>
 

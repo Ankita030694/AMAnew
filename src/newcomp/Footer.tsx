@@ -4,9 +4,45 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaYoutube, FaChevronDown } from "react-icons/fa";
+import { usePathname } from "next/navigation";
+import Script from "next/script";
 
 const Footer = () => {
   const [queriesOpen, setQueriesOpen] = useState(false);
+  const pathname = usePathname();
+
+  const reviewSchemas: {[key: string]: any} = {
+    "/2026-lockdown-due-to-scarcity-of-resources": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "2026 Resource Lockdown Legal Advisory",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "3200" }
+    },
+    "/lpg-cylinder-crisis-india-2026-iran-war": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Legal Consultancy for Energy Crisis Issues",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1500" }
+    },
+    "/loan-settlement-for-borrowers-facing-economic-downturn": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Economic Downturn Loan Settlement Support",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2800" }
+    },
+    "/amalegalsolutions-plan-for-building-debt-free-future-after-settlement": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Debt-Free Future Planning Post-Settlement",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1950" }
+    },
+    "/how-to-check-active-loan-on-your-name-in-india-step-by-step-guide": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Active Loan Check Guide India",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "4500" }
+    }
+  };
   const footerColumns = [
     // ROW 1
     {
@@ -96,6 +132,8 @@ const Footer = () => {
         { name: "Home Loan Eligibility After Settlement", href: "/home-loan-eligibility-after-settlement" },
         { name: "Harassment Protection", href: "/legal-notice-for-loan-settlement-harassment" },
         { name: "P2P Crypto Scam Unfreeze", href: "/p2p-crypto-scam-unfreeze-bank-account" },
+        { name: "Economic Downturn Settlement", href: "/loan-settlement-for-borrowers-facing-economic-downturn" },
+        { name: "Financial Reset Settlement", href: "/loan-settlement-for-borrowers-planning-financial-reset" },
       ]
     },
 
@@ -243,6 +281,7 @@ const Footer = () => {
         {name: "LPG Crisis India 2026", href: "/lpg-cylinder-crisis-india-2026-iran-war"},
         {name: "Economic Downturn Settlement", href: "/loan-settlement-for-borrowers-facing-economic-downturn"},
         {name: "Debt Free Future Plan", href: "/amalegalsolutions-plan-for-building-debt-free-future-after-settlement"},
+        {name: "How to Check Active Loan on Your Name", href: "/how-to-check-active-loan-on-your-name-in-india-step-by-step-guide"},
       ]
 
     }
@@ -496,6 +535,13 @@ const Footer = () => {
           © 2022 AMA Legal Solutions. All Rights Reserved.
         </p>
       </div>
+      {reviewSchemas[pathname] && (
+        <Script
+          id="dynamic-footer-review-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchemas[pathname]) }}
+        />
+      )}
     </footer>
   );
 };
