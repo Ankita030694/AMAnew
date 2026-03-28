@@ -239,7 +239,10 @@ const Footer = () => {
             {name:"How to Get 800 Credit Score in India",href:"/how-to-get-800-credit-score-in-india"},
             {name: "Loan Settlement & NOC Formats", href: "/loan-settlement-letter-format-noc-format"},
             {name: "Legal Notice for Harassment", href: "/legal-notice-for-loan-settlement-harassment"},
-
+            {name: "2026 Resource Lockdown", href: "/2026-lockdown-due-to-scarcity-of-resources"},
+        {name: "LPG Crisis India 2026", href: "/lpg-cylinder-crisis-india-2026-iran-war"},
+        {name: "Economic Downturn Settlement", href: "/loan-settlement-for-borrowers-facing-economic-downturn"},
+        {name: "Debt Free Future Plan", href: "/amalegalsolutions-plan-for-building-debt-free-future-after-settlement"},
       ]
 
     }

@@ -59,6 +59,10 @@ export async function GET(): Promise<Response> {
     '/home-loan-eligibility-after-settlement',
     '/legal-notice-for-loan-settlement-harassment',
     '/p2p-crypto-scam-unfreeze-bank-account',
+    '/2026-lockdown-due-to-scarcity-of-resources',
+    '/lpg-cylinder-crisis-india-2026-iran-war',
+    '/loan-settlement-for-borrowers-facing-economic-downturn',
+    '/amalegalsolutions-plan-for-building-debt-free-future-after-settlement',
     '/contact',
 
     '/careers',
