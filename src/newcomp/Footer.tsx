@@ -41,6 +41,12 @@ const Footer = () => {
       "@type": "Product",
       "name": "Active Loan Check Guide India",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "4500" }
+    },
+    "/why-does-my-credit-score-drop-even-though-i-pay-on-time": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Credit Score Drop Legal Advisory",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1450" }
     }
   };
   const footerColumns = [
@@ -282,6 +288,7 @@ const Footer = () => {
         {name: "Economic Downturn Settlement", href: "/loan-settlement-for-borrowers-facing-economic-downturn"},
         {name: "Debt Free Future Plan", href: "/amalegalsolutions-plan-for-building-debt-free-future-after-settlement"},
         {name: "How to Check Active Loan on Your Name", href: "/how-to-check-active-loan-on-your-name-in-india-step-by-step-guide"},
+        {name: "Why Credit Score Drops Even When Paying On Time", href: "/why-does-my-credit-score-drop-even-though-i-pay-on-time"},
       ]
 
     }

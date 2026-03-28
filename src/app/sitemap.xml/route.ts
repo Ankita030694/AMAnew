@@ -65,6 +65,7 @@ export async function GET(): Promise<Response> {
     '/loan-settlement-for-borrowers-planning-financial-reset',
     '/amalegalsolutions-plan-for-building-debt-free-future-after-settlement',
     '/how-to-check-active-loan-on-your-name-in-india-step-by-step-guide',
+    '/why-does-my-credit-score-drop-even-though-i-pay-on-time',
     '/contact',
 
     '/careers',
