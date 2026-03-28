@@ -439,7 +439,7 @@ export default function Page({ initialBlogs = [] }: BlogPageProps) {
                   </h2>
                 </motion.div>
                 
-                <Link href={`/blog/${spotlightArticle.slug}`} prefetch={true}>
+                <Link href={`/blog/${spotlightArticle.slug}`}>
                   <motion.div 
                     className="rounded-xl overflow-hidden border border-gray-100"
                     variants={hoverVariants}
@@ -555,7 +555,7 @@ export default function Page({ initialBlogs = [] }: BlogPageProps) {
                       key={article.id}
                       variants={itemVariants}
                     >
-                      <Link href={`/blog/${article.slug}`} prefetch={true}>
+                      <Link href={`/blog/${article.slug}`}>
                         <motion.div 
                           className="rounded-xl overflow-hidden border border-gray-100 h-full"
                           variants={hoverVariants}
@@ -759,7 +759,7 @@ export default function Page({ initialBlogs = [] }: BlogPageProps) {
                     key={article.id}
                     variants={itemVariants}
                   >
-                    <Link href={`/blog/${article.slug}`} prefetch={true}>
+                    <Link href={`/blog/${article.slug}`}>
                       <motion.div 
                         className="flex gap-4 p-2 rounded-lg" 
                         variants={hoverVariants}

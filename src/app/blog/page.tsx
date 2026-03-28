@@ -5,7 +5,6 @@ import { Suspense } from 'react';
 import PerformanceMonitor from '../../components/PerformanceMonitor';
 import Navbar from "@/newcomp/Navbar";
 import Link from 'next/link';
-import { unstable_cache } from 'next/cache';
 
 export const metadata = {
   title: 'Legal Blogs | Expert Opinions by AMA Legal Solutions',
@@ -25,6 +24,8 @@ const BlogLoading = () => (
   </div>
 );
 
+export const dynamic = 'force-dynamic';
+
 // Helper function
 const truncateWords = (text: string, wordCount: number) => {
   if (!text) return '';
@@ -34,7 +35,7 @@ const truncateWords = (text: string, wordCount: number) => {
   return words.slice(0, wordCount).join(' ') + '...';
 };
 
-const getBlogs = unstable_cache(async () => {
+const getBlogs = async () => {
     try {
         const blogsCollection = collection(db, 'blogs');
         const blogsQuery = query(blogsCollection, orderBy('created', 'desc'));
@@ -61,7 +62,7 @@ const getBlogs = unstable_cache(async () => {
         console.error("Error fetching blogs:", error);
         return [];
     }
-}, ['all-blogs'], { revalidate: 300 }); // Cache for 5 mins
+};
 
 export default async function Page() {
   const blogs = await getBlogs();

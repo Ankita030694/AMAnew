@@ -171,12 +171,8 @@ const BlogsDashboard = () => {
             author: docData.author || 'Anuj Anand Malik'
           };
         });
-        // Sort blogs by date in descending order (newest first)
-        const sortedData = data.sort((a, b) => {
-          const dateA = new Date(a.date).getTime();
-          const dateB = new Date(b.date).getTime();
-          return dateB - dateA;
-        });
+        // Sort blogs by created timestamp in descending order (newest first)
+        const sortedData = data.sort((a, b) => (b.created || 0) - (a.created || 0));
         setBlogs(sortedData);
       } catch (error) {
         console.error("Error fetching blogs data:", error);
@@ -733,7 +729,9 @@ const BlogsDashboard = () => {
           author: docData.author || 'Anuj Anand Malik' // Default author changed from 'Team AMA'
         };
       });
-      setBlogs(updatedBlogs);
+      // Sort updated blogs by created timestamp in descending order
+      const sortedUpdatedBlogs = updatedBlogs.sort((a, b) => (b.created || 0) - (a.created || 0));
+      setBlogs(sortedUpdatedBlogs);
       
     } catch (error) {
       console.error("Error processing blog:", error);

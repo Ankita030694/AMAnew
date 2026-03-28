@@ -186,6 +186,7 @@ const Footer = () => {
 
         { name: 'Axis Bank Settlement', href: '/services/loan-settlement/axis-bank' },
         { name: 'Kotak Mahindra Settlement', href: '/services/loan-settlement/kotak-mahindra' },
+        { name: 'MAS Financial Settlement', href: '/services/loan-settlement/mas-financial' },
         { name: 'Reduce Debt Quickly', href: '/what-loan-settlement-service-can-help-me-reduce-my-outstanding-debt-quickly' },
         { name: 'Reliable Settlement', href: '/where-can-i-find-reliable-loan-settlement-services-with-flexible-payment-options' },
         { name: 'Best Settlement Companies', href: '/which-companies-offer-the-best-loan-settlement-plans-for-personal-loans' },
