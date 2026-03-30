@@ -47,6 +47,30 @@ const Footer = () => {
       "@type": "Product",
       "name": "Credit Score Drop Legal Advisory",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1450" }
+    },
+    "/can-recovery-agents-abuse-you-legally-india": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Recovery Agent Abuse Legal Protection",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "3850" }
+    },
+    "/is-loan-settlement-illegal-in-india-truth": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Loan Settlement Legality Legality Truth",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "5200" }
+    },
+    "/do-banks-file-fir-for-credit-card-dues": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Credit Card FIR Legal Reality Check",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "3450" }
+    },
+    "/understanding-90-day-loan-default-india": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "90-Day Loan Default Legal Understanding",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2450" }
     }
   };
   const footerColumns = [
@@ -140,6 +164,7 @@ const Footer = () => {
         { name: "P2P Crypto Scam Unfreeze", href: "/p2p-crypto-scam-unfreeze-bank-account" },
         { name: "Economic Downturn Settlement", href: "/loan-settlement-for-borrowers-facing-economic-downturn" },
         { name: "Financial Reset Settlement", href: "/loan-settlement-for-borrowers-planning-financial-reset" },
+        { name: "Understanding 90 Day Default", href: "/understanding-90-day-loan-default-india" },
       ]
     },
 
@@ -290,6 +315,10 @@ const Footer = () => {
         {name: "Debt Free Future Plan", href: "/amalegalsolutions-plan-for-building-debt-free-future-after-settlement"},
         {name: "How to Check Active Loan on Your Name", href: "/how-to-check-active-loan-on-your-name-in-india-step-by-step-guide"},
         {name: "Why Credit Score Drops Even When Paying On Time", href: "/why-does-my-credit-score-drop-even-though-i-pay-on-time"},
+        {name: "Is CIBIL Ruined Forever?", href: "/is-cibil-ruined-forever-after-settlement" },
+        {name: "Can Recovery Agents Abuse You Legally India", href: "/can-recovery-agents-abuse-you-legally-india" },
+        {name: "Is Loan Settlement Illegal in India Truth", href: "/is-loan-settlement-illegal-in-india-truth" },
+        {name: "Do Banks File FIR for Credit Card Dues", href: "/do-banks-file-fir-for-credit-card-dues" },
       ]
 
     }

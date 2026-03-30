@@ -66,6 +66,11 @@ export async function GET(): Promise<Response> {
     '/amalegalsolutions-plan-for-building-debt-free-future-after-settlement',
     '/how-to-check-active-loan-on-your-name-in-india-step-by-step-guide',
     '/why-does-my-credit-score-drop-even-though-i-pay-on-time',
+    '/is-cibil-ruined-forever-after-settlement',
+    '/can-recovery-agents-abuse-you-legally-india',
+    '/is-loan-settlement-illegal-in-india-truth',
+    '/do-banks-file-fir-for-credit-card-dues',
+    '/understanding-90-day-loan-default-india',
     '/contact',
 
     '/careers',
