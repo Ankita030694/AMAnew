@@ -66,11 +66,35 @@ const Footer = () => {
       "name": "Credit Card FIR Legal Reality Check",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "3450" }
     },
+    "/how-to-identify-fake-settlement-letter": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "How to Identify Fake Settlement Letter",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1200" }
+    },
+    "/how-to-know-if-the-settlement-letter-is-valid": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "How to Know If Settlement Letter is Valid",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "850" }
+    },
+    "/can-I-go-for-settlement-of-loan-now-and-remove-it-later-when-im-financially-stable": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Settle Now Remove Later Strategy",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1650" }
+    },
     "/understanding-90-day-loan-default-india": {
       "@context": "https://schema.org",
       "@type": "Product",
       "name": "90-Day Loan Default Legal Understanding",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2450" }
+    },
+    "/40L-unsecured-debt-in-india-what-to-do-self-vs-debt-settlement-program": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "40L Debt Resolution Strategy",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "3150" }
     }
   };
   const footerColumns = [
@@ -165,6 +189,7 @@ const Footer = () => {
         { name: "Economic Downturn Settlement", href: "/loan-settlement-for-borrowers-facing-economic-downturn" },
         { name: "Financial Reset Settlement", href: "/loan-settlement-for-borrowers-planning-financial-reset" },
         { name: "Understanding 90 Day Default", href: "/understanding-90-day-loan-default-india" },
+        { name: "40L Debt Resolution Plan", href: "/40L-unsecured-debt-in-india-what-to-do-self-vs-debt-settlement-program" },
       ]
     },
 
@@ -319,6 +344,9 @@ const Footer = () => {
         {name: "Can Recovery Agents Abuse You Legally India", href: "/can-recovery-agents-abuse-you-legally-india" },
         {name: "Is Loan Settlement Illegal in India Truth", href: "/is-loan-settlement-illegal-in-india-truth" },
         {name: "Do Banks File FIR for Credit Card Dues", href: "/do-banks-file-fir-for-credit-card-dues" },
+        {name: "How to Identify Fake Settlement Letter", href: "/how-to-identify-fake-settlement-letter" },
+        {name: "Is Settlement Letter Valid?", href: "/how-to-know-if-the-settlement-letter-is-valid" },
+        {name: "Settle Now and Remove Later?", href: "/can-I-go-for-settlement-of-loan-now-and-remove-it-later-when-im-financially-stable" },
       ]
 
     }

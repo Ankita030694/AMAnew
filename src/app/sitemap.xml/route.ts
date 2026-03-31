@@ -71,6 +71,10 @@ export async function GET(): Promise<Response> {
     '/is-loan-settlement-illegal-in-india-truth',
     '/do-banks-file-fir-for-credit-card-dues',
     '/understanding-90-day-loan-default-india',
+    '/how-to-identify-fake-settlement-letter',
+    '/how-to-know-if-the-settlement-letter-is-valid',
+    '/can-I-go-for-settlement-of-loan-now-and-remove-it-later-when-im-financially-stable',
+    '/40L-unsecured-debt-in-india-what-to-do-self-vs-debt-settlement-program',
     '/contact',
 
     '/careers',
