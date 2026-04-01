@@ -79,6 +79,13 @@ export async function GET(): Promise<Response> {
     '/can-guarantor-be-liable-after-settlement',
     '/40L-unsecured-debt-in-india-what-to-do-self-vs-debt-settlement-program',
     '/loan-settlement-before-auction',
+    '/loan-settlement-after-npa-classification',
+    '/loan-settlement-vs-repayment',
+    '/what-happens-after-bank-issues-recall-notice',
+    '/how-to-challenge-bank-statement-account-statement',
+    '/legal-rights-after-loan-default',
+    '/when-to-choose-loan-settlement',
+    '/reply-to-recovery-notice-format',
     '/contact',
 
     '/careers',
