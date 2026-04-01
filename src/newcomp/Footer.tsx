@@ -95,6 +95,30 @@ const Footer = () => {
       "@type": "Product",
       "name": "40L Debt Resolution Strategy",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "3150" }
+    },
+    "/can-bank-reject-settlement-request": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Loan Settlement Rejection Consultation",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2150" }
+    },
+    "/can-settlement-be-done-in-installments": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Installment-Based Loan Settlement Consultation",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1850" }
+    },
+    "/can-guarantor-be-liable-after-settlement": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Guarantor Liability Settlement Consultation",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2100" }
+    },
+    "/loan-settlement-before-auction": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Loan Settlement Before Auction Consultation",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1850" }
     }
   };
   const footerColumns = [
@@ -190,6 +214,7 @@ const Footer = () => {
         { name: "Financial Reset Settlement", href: "/loan-settlement-for-borrowers-planning-financial-reset" },
         { name: "Understanding 90 Day Default", href: "/understanding-90-day-loan-default-india" },
         { name: "40L Debt Resolution Plan", href: "/40L-unsecured-debt-in-india-what-to-do-self-vs-debt-settlement-program" },
+        { name: "Settlement Before Auction", href: "/loan-settlement-before-auction" },
       ]
     },
 
@@ -347,6 +372,9 @@ const Footer = () => {
         {name: "How to Identify Fake Settlement Letter", href: "/how-to-identify-fake-settlement-letter" },
         {name: "Is Settlement Letter Valid?", href: "/how-to-know-if-the-settlement-letter-is-valid" },
         {name: "Settle Now and Remove Later?", href: "/can-I-go-for-settlement-of-loan-now-and-remove-it-later-when-im-financially-stable" },
+        {name: "Can Bank Reject Settlement?", href: "/can-bank-reject-settlement-request" },
+        {name: "Can Settlement Be Done in Installments?", href: "/can-settlement-be-done-in-installments" },
+        {name: "Can Guarantor Be Liable After Settlement?", href: "/can-guarantor-be-liable-after-settlement" },
       ]
 
     }

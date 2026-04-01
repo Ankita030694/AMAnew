@@ -74,7 +74,11 @@ export async function GET(): Promise<Response> {
     '/how-to-identify-fake-settlement-letter',
     '/how-to-know-if-the-settlement-letter-is-valid',
     '/can-I-go-for-settlement-of-loan-now-and-remove-it-later-when-im-financially-stable',
+    '/can-bank-reject-settlement-request',
+    '/can-settlement-be-done-in-installments',
+    '/can-guarantor-be-liable-after-settlement',
     '/40L-unsecured-debt-in-india-what-to-do-self-vs-debt-settlement-program',
+    '/loan-settlement-before-auction',
     '/contact',
 
     '/careers',
