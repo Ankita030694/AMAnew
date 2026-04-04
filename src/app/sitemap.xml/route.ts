@@ -3,6 +3,7 @@
 import { db } from '@/lib/firebase'
 import { collection, getDocs } from 'firebase/firestore'
 import { successStories } from '@/data/success-stories'
+import { locationData } from '@/app/lawyer-by-city/locationData'
 
 export async function GET(): Promise<Response> {
   const blogs = await fetchAllBlogs()
@@ -86,6 +87,7 @@ export async function GET(): Promise<Response> {
     '/legal-rights-after-loan-default',
     '/when-to-choose-loan-settlement',
     '/reply-to-recovery-notice-format',
+    '/lawyer-by-city',
     '/contact',
 
     '/careers',
@@ -423,8 +425,16 @@ export async function GET(): Promise<Response> {
     priority: 0.8
   }))
 
+  // Build lawyer-by-city routes
+  const lawyerByCityRoutes = locationData.map(loc => ({
+    url: `${baseUrl}/lawyer-by-city/${loc.slug}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: 'weekly',
+    priority: 0.7
+  }))
+
   // Combine all routes
-  const allRoutes = [...staticRoutes, ...serviceSlugRoutes, ...blogRoutes, ...articleRoutes, ...successStoryRoutes]
+  const allRoutes = [...staticRoutes, ...serviceSlugRoutes, ...blogRoutes, ...articleRoutes, ...successStoryRoutes, ...lawyerByCityRoutes]
 
   // Generate XML
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
