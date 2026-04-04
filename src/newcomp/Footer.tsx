@@ -175,6 +175,7 @@ const Footer = () => {
         { name: 'AMA Connect App', href: '/ama-legal-solutions-application' },
         { name: 'Privacy Policy', href: '/privacy-policy' },
         { name: 'Terms of Service', href: '/terms-and-conditions' },
+        {name: 'Lawyer by City', href: '/lawyer-by-city'}
       ]
     },
     {
