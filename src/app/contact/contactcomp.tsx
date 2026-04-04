@@ -138,7 +138,8 @@ const ContactComp = () => {
     try {
       await addDoc(collection(db, "form"), {
         ...formState,
-        timestamp: serverTimestamp()
+        timestamp: serverTimestamp(),
+        submissionUrl: window.location.href
       });
 
       // Send WATI Message

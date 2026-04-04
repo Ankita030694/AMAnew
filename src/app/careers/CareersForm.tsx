@@ -38,6 +38,7 @@ const CareersForm = () => {
         ...formState,
         resumeUrl: downloadURL,
         appliedAt: serverTimestamp(),
+        submissionUrl: window.location.href
       });
 
       setSubmitted(true);

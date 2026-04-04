@@ -117,7 +117,8 @@ const GlobalPopupForm = () => {
       await addDoc(collection(db, "form"), {
         ...formState,
         timestamp: serverTimestamp(),
-        source: "Global Popup"
+        source: "Global Popup",
+        submissionUrl: window.location.href
       });
 
       // Send WATI Message (matching contactcomp logic)

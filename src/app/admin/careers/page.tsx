@@ -17,6 +17,7 @@ interface CareerApplication {
   resumeUrl: string;
   appliedAt: any;
   formattedDate: string;
+  submissionUrl?: string;
 }
 
 const CareersDashboard = () => {
@@ -57,7 +58,8 @@ const CareersDashboard = () => {
           position: docData.position || '-',
           resumeUrl: docData.resumeUrl || '',
           appliedAt: docData.appliedAt,
-          formattedDate: formattedDate
+          formattedDate: formattedDate,
+          submissionUrl: docData.submissionUrl || '-'
         };
       });
 
@@ -136,7 +138,7 @@ const CareersDashboard = () => {
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-[#F0EAD6]/50">
               <tr>
-                {['Date', 'Name', 'Position', 'Location', 'Resume', 'Actions'].map((h) => (
+                {['Date', 'Name', 'Position', 'Location', 'Resume', 'Submission URL', 'Actions'].map((h) => (
                   <th key={h} className="px-6 py-4 text-left text-[10px] font-bold text-[#5A4C33] uppercase tracking-widest">
                     {h}
                   </th>
@@ -155,6 +157,11 @@ const CareersDashboard = () => {
                     <td className="px-6 py-4">
                       <a href={app.resumeUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} className="text-[#D2A02A] hover:underline flex items-center gap-1 font-medium">
                         <FontAwesomeIcon icon={faFileDownload} /> PDF
+                      </a>
+                    </td>
+                    <td className="px-6 py-4 text-xs text-[#5A4C33]/70">
+                      <a href={app.submissionUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} className="text-blue-500 hover:underline break-all">
+                        {app.submissionUrl && app.submissionUrl.length > 20 ? app.submissionUrl.substring(0, 20) + '...' : app.submissionUrl || '-'}
                       </a>
                     </td>
                     <td className="px-6 py-4">
@@ -201,10 +208,19 @@ const CareersDashboard = () => {
                   { label: 'Location', value: selectedApp.location },
                   { label: 'Position', value: selectedApp.position },
                   { label: 'Applied At', value: selectedApp.formattedDate },
+                  { label: 'Submission URL', value: selectedApp.submissionUrl },
                 ].map(item => (
-                  <div key={item.label}>
+                  <div key={item.label} className={item.label === 'Submission URL' ? 'col-span-2' : ''}>
                     <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{item.label}</label>
-                    <p className="text-[#5A4C33] font-medium break-all">{item.value}</p>
+                    <p className="text-[#5A4C33] font-medium break-all">
+                      {item.label === 'Submission URL' && item.value !== '-' ? (
+                        <a href={item.value} target="_blank" rel="noreferrer" className="text-blue-500 hover:underline">
+                          {item.value}
+                        </a>
+                      ) : (
+                        item.value
+                      )}
+                    </p>
                   </div>
                 ))}
               </div>

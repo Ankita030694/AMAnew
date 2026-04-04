@@ -18,6 +18,7 @@ interface TableData {
   serviceRequired: string;
   timestamp: string;
   originalTimestamp: any;
+  submissionUrl?: string;
 }
 
 interface FirebaseError {
@@ -87,7 +88,8 @@ const AdminDashboard = () => {
             phone: docData.phone || '-',
             serviceRequired: docData.serviceRequired || '-',
             timestamp: timestamp,
-            originalTimestamp: originalTimestamp // Keep original for sorting
+            originalTimestamp: originalTimestamp, // Keep original for sorting
+            submissionUrl: docData.submissionUrl || '-'
           };
         });
 
@@ -226,6 +228,9 @@ const AdminDashboard = () => {
                 <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider w-24">
                   Service Required
                 </th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider w-32">
+                  Submission URL
+                </th>
                 <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">
                   Message
                 </th>
@@ -264,6 +269,11 @@ const AdminDashboard = () => {
                     </td>
                     <td className="px-4 py-4 text-sm text-[#5A4C33]">
                       {truncateText(row.serviceRequired, 20)}
+                    </td>
+                    <td className="px-4 py-4 text-sm text-[#5A4C33]">
+                      <a href={row.submissionUrl} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline" onClick={(e) => e.stopPropagation()}>
+                        {truncateText(row.submissionUrl || '-', 30)}
+                      </a>
                     </td>
                     <td className="px-4 py-4 text-sm text-[#5A4C33]">
                       {truncateText(row.message, 40)}
@@ -391,6 +401,15 @@ const AdminDashboard = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-2">Service Required</label>
                   <div className="p-3 bg-gray-50 rounded-md text-[#5A4C33]">
                     {selectedLead.serviceRequired}
+                  </div>
+                </div>
+
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Submission URL</label>
+                  <div className="p-3 bg-gray-50 rounded-md text-[#5A4C33]">
+                    <a href={selectedLead.submissionUrl} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline break-all">
+                      {selectedLead.submissionUrl}
+                    </a>
                   </div>
                 </div>
               </div>
