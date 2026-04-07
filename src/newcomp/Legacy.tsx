@@ -102,10 +102,6 @@ const Legacy = () => {
         <div className="relative w-full min-h-[700px] md:min-h-[560px] flex items-center justify-center">
           <div
             className="absolute inset-0 opacity-30"
-            style={{
-              backgroundImage: "url('/newAssets/bg1.jpg')",
-              backgroundRepeat: "repeat",
-            }}
           />
 
           {/* Navigation Arrows - Adjusted for Mobile overlay or bottom */}
