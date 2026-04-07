@@ -3,8 +3,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { collection, addDoc, db } from "../lib/firebase";
-import { serverTimestamp } from "firebase/firestore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import payu from "../../public/payu.png";
@@ -114,6 +112,9 @@ const GlobalPopupForm = () => {
 
     setIsSubmitting(true);
     try {
+      const { collection, addDoc, db } = await import("../lib/firebase");
+      const { serverTimestamp } = await import("firebase/firestore");
+      
       await addDoc(collection(db, "form"), {
         ...formState,
         timestamp: serverTimestamp(),

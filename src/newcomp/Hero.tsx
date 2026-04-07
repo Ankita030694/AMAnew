@@ -167,7 +167,7 @@ const Hero = () => {
               <Link
                 href="https://apps.apple.com/in/app/ama-legal-solutions/id6755156186"
                 target="_blank"
-                className="hover:opacity-80 transition-opacity"
+                className="block"
               >
                 <Image
                   src="/apptrans.svg"
@@ -181,7 +181,7 @@ const Hero = () => {
               <Link
                 href="https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions"
                 target="_blank"
-                className="hover:opacity-80 transition-opacity"
+                className="block"
               >
                 <Image
                   src="/playtrans.svg"
@@ -218,65 +218,65 @@ const Hero = () => {
             <Link
               href="https://yourstory.com/companies/ama-legal-solutions"
               target="_blank"
-              className="hover:opacity-80 transition-opacity"
+              className="block"
             >
               <Image
                 src="/newAssets/media/yourstory.png"
                 alt="YourStory"
                 width={180}
-                height={50}
+                height={80}
                 className="h-8 sm:h-10 md:h-14 lg:h-16 xl:h-20 w-auto object-contain"
               />
             </Link>
             <Link
               href="https://www.livemint.com/"
               target="_blank"
-              className="hover:opacity-80 transition-opacity"
+              className="block"
             >
               <Image
                 src="/newAssets/media/livemint.png"
                 alt="LiveMint"
                 width={180}
-                height={50}
+                height={80}
                 className="h-8 sm:h-10 md:h-14 lg:h-16 xl:h-20 w-auto object-contain"
               />
             </Link>
             <Link
               href="https://www.barandbench.com/news/ama-legal-solutions-launches-indias-first-law-firm-backed-pro-bono-driven-mobile-app"
               target="_blank"
-              className="hover:opacity-80 transition-opacity"
+              className="block"
             >
               <Image
                 src="/newAssets/media/barandbench.png"
                 alt="Bar and Bench"
                 width={180}
-                height={50}
+                height={80}
                 className="h-8 sm:h-10 md:h-14 lg:h-16 xl:h-20 w-auto object-contain"
               />
             </Link>
             <Link
               href="https://medium.com/@amalegalsolutions"
               target="_blank"
-              className="hover:opacity-80 transition-opacity"
+              className="block"
             >
               <Image
                 src="/newAssets/media/medium.png"
                 alt="Medium"
                 width={180}
-                height={50}
+                height={80}
                 className="h-8 sm:h-10 md:h-14 lg:h-16 xl:h-20 w-auto object-contain"
               />
             </Link>
             <Link
               href="https://www.mid-day.com/"
               target="_blank"
-              className="hover:opacity-80 transition-opacity"
+              className="block"
             >
               <Image
                 src="/newAssets/media/mid_day.png"
                 alt="Mid-day"
                 width={180}
-                height={50}
+                height={80}
                 className="h-8 sm:h-10 md:h-14 lg:h-16 xl:h-20 w-auto object-contain"
               />
             </Link>

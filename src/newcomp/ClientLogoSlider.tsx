@@ -169,12 +169,12 @@ const ClientLogoSlider = () => {
           padding: 12px 18px;
           box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06),
             0 2px 8px rgba(0, 0, 0, 0.03);
-          transition: box-shadow 0.25s ease, transform 0.25s ease;
+          transition: transform 0.25s ease, filter 0.25s ease;
+          will-change: transform;
         }
         .logo-card:hover {
-          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1),
-            0 2px 6px rgba(0, 0, 0, 0.06);
           transform: translateY(-2px);
+          filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
         }
 
         @media (min-width: 768px) {

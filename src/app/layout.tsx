@@ -111,11 +111,8 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//www.youtube.com" />
         <link rel="dns-prefetch" href="//firebasestorage.googleapis.com" />
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
-        {/* Critical resource preloads */}
-        <link rel="preload" href="/bannerbg.png" as="image" type="image/png" />
+        <link rel="preconnect" href="https://amalegalsolutionss.firebaseapp.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googleapis.com" crossOrigin="anonymous" />
         
         {/* Performance hints */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
