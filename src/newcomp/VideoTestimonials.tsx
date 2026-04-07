@@ -12,8 +12,10 @@ const videos = [
 
 export default function VideoTestimonials() {
   const [unmutedId, setUnmutedId] = useState<number | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
   const videoRefs = useRef<{ [key: number]: HTMLVideoElement | null }>({});
   const scrollRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const handleVideoClick = (id: number) => {
     if (unmutedId === id) {
@@ -35,6 +37,26 @@ export default function VideoTestimonials() {
   };
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
     Object.entries(videoRefs.current).forEach(([id, video]) => {
       if (video) {
         if (parseInt(id) === unmutedId) {
@@ -47,7 +69,7 @@ export default function VideoTestimonials() {
   }, [unmutedId]);
 
   return (
-    <section className="py-12 bg-[#EBE9E4]">
+    <section ref={sectionRef} className="py-12 bg-[#EBE9E4]">
       <div className="w-full px-4 lg:px-6 relative group">
         
         {/* Mobile Navigation Arrows */}
@@ -77,18 +99,26 @@ export default function VideoTestimonials() {
               className="relative aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer border border-[#30261C]/10 transition-transform duration-500 hover:scale-[1.02] z-10 hover:z-20 min-w-full md:min-w-0 snap-center"
               onClick={() => handleVideoClick(video.id)}
             >
-              <video
-                ref={(el) => { videoRefs.current[video.id] = el; }}
-                src={video.src}
-                poster={video.poster}
-                className="w-full h-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="none"
-                crossOrigin="anonymous"
-              />
+              {isVisible ? (
+                <video
+                  ref={(el) => { videoRefs.current[video.id] = el; }}
+                  src={video.src}
+                  poster={video.poster}
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  crossOrigin="anonymous"
+                />
+              ) : (
+                <img
+                  src={video.poster}
+                  alt={`Video thumbnail ${video.id}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              )}
               
               {/* Overlay Overlay */}
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
