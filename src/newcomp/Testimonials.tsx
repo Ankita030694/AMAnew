@@ -51,12 +51,12 @@ const TestimonialCard = ({
           </div>
 
           <div className="flex flex-col gap-1">
-            <h4
+            <h3
               className="text-[#30261C] text-lg sm:text-[20px] leading-[20px]"
               style={{ fontFamily: "var(--font-polysans)" }}
             >
               {testimonial.author}
-            </h4>
+            </h3>
             <Image
               src={testimonial.rating}
               alt="Rating"
@@ -200,9 +200,9 @@ const Testimonials = () => {
               </div>
 
               <div className="flex flex-col gap-1">
-                <h4 className="text-[#30261C] text-lg sm:text-[20px] leading-[20px]">
+                <h3 className="text-[#30261C] text-lg sm:text-[20px] leading-[20px]">
                   {hoveredData.data.author}
-                </h4>
+                </h3>
                 <Image
                   src={hoveredData.data.rating}
                   alt="Rating"

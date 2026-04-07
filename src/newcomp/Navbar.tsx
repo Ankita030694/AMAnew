@@ -137,7 +137,7 @@ const Navbar = () => {
                 }}
                 className="hidden md:flex relative items-center justify-center origin-center"
               >
-                <Link href="/" className="block relative" onClick={() => setIsMobileMenuOpen(false)}>
+                <Link href="/" aria-label="Home" className="block relative" onClick={() => setIsMobileMenuOpen(false)}>
                   {/* Original Logo */}
                   <motion.div
                     style={{
@@ -177,7 +177,7 @@ const Navbar = () => {
 
               {/* Mobile Static Logo */}
               <div className="md:hidden">
-                  <Link href="/" className="block" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Link href="/" aria-label="Home mobile" className="block" onClick={() => setIsMobileMenuOpen(false)}>
                       <img
                       src="/newAssets/logo/ama.svg"
                       alt="AMA Legal Solutions"
@@ -455,6 +455,7 @@ const Navbar = () => {
             {/* Mobile Right: Burger Menu */}
             <div className="md:hidden relative z-50">
               <button
+                 aria-label="Toggle mobile menu"
                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                  className="w-[50px] h-[50px] flex items-center justify-center rounded-full"
                  style={{

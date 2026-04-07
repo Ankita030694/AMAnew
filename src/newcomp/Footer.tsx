@@ -462,7 +462,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[48px] md:gap-[40px] mb-[64px]">
           {/* Logo on Mobile Only + Column 1 Links */}
           <div className="flex flex-col gap-[24px]">
-            <Link href="/ama-legal-solutions" className="lg:hidden">
+            <Link href="/ama-legal-solutions" aria-label="Home" className="lg:hidden">
               <Image 
                 src="/newAssets/logo/ama-white.svg" 
                 alt="AMA Legal Solutions" 
