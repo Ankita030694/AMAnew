@@ -176,7 +176,9 @@ const Footer = () => {
         { name: 'Privacy Policy', href: '/privacy-policy' },
         { name: 'Terms of Service', href: '/terms-and-conditions' },
         {name: 'Lawyer by City', href: '/lawyer-by-city'},
-        {name: 'Lawyer by Expertise', href: '/lawyer-by-expertise'}
+        {name: 'Lawyer by Expertise', href: '/lawyer-by-expertise'},
+        {name: 'AMAs Expertise', href: '/expertise'}
+        
       ]
     },
     {
@@ -250,20 +252,7 @@ const Footer = () => {
         { name: "Secured Loan Settlement", href: "/secured-loan-settlement" },
         { name: "Trading Loan Settlement", href: "/trading-loan-settlement" },
         { name: "Medical Loan Settlement Support", href: "/support-for-loan-settlement-during-medical-emergencies" },
-        { name: "Stop Bank Harassment", href: "/services/best-lawyer-for-bank-harassment" },
-        { name: "Home Loan Eligibility After Settlement", href: "/home-loan-eligibility-after-settlement" },
-        { name: "Harassment Protection", href: "/legal-notice-for-loan-settlement-harassment" },
-        { name: "P2P Crypto Scam Unfreeze", href: "/p2p-crypto-scam-unfreeze-bank-account" },
-        { name: "Economic Downturn Settlement", href: "/loan-settlement-for-borrowers-facing-economic-downturn" },
-        { name: "Financial Reset Settlement", href: "/loan-settlement-for-borrowers-planning-financial-reset" },
-        { name: "Understanding 90 Day Default", href: "/understanding-90-day-loan-default-india" },
-        { name: "40L Debt Resolution Plan", href: "/40L-unsecured-debt-in-india-what-to-do-self-vs-debt-settlement-program" },
-        { name: "Settlement Before Auction", href: "/loan-settlement-before-auction" },
-        { name: "NPA Loan Settlement", href: "/loan-settlement-after-npa-classification" },
-        { name: "Settlement vs Repayment", href: "/loan-settlement-vs-repayment" },
-        { name: "Legal Rights After Default", href: "/legal-rights-after-loan-default" },
-        { name: "When to Choose Settlement", href: "/when-to-choose-loan-settlement" },
-        { name: "Recovery Notice Reply Format", href: "/reply-to-recovery-notice-format" },
+        
       ]
     },
 
@@ -426,6 +415,20 @@ const Footer = () => {
         {name: "Can Guarantor Be Liable After Settlement?", href: "/can-guarantor-be-liable-after-settlement" },
         {name: "What Happens After Bank Issues Recall Notice?", href: "/what-happens-after-bank-issues-recall-notice" },
         {name: "How to Challenge Bank Statement?", href: "/how-to-challenge-bank-statement-account-statement" },
+        { name: "Stop Bank Harassment", href: "/services/best-lawyer-for-bank-harassment" },
+        { name: "Home Loan Eligibility After Settlement", href: "/home-loan-eligibility-after-settlement" },
+        { name: "Harassment Protection", href: "/legal-notice-for-loan-settlement-harassment" },
+        { name: "P2P Crypto Scam Unfreeze", href: "/p2p-crypto-scam-unfreeze-bank-account" },
+        { name: "Economic Downturn Settlement", href: "/loan-settlement-for-borrowers-facing-economic-downturn" },
+        { name: "Financial Reset Settlement", href: "/loan-settlement-for-borrowers-planning-financial-reset" },
+        { name: "Understanding 90 Day Default", href: "/understanding-90-day-loan-default-india" },
+        { name: "40L Debt Resolution Plan", href: "/40L-unsecured-debt-in-india-what-to-do-self-vs-debt-settlement-program" },
+        { name: "Settlement Before Auction", href: "/loan-settlement-before-auction" },
+        { name: "NPA Loan Settlement", href: "/loan-settlement-after-npa-classification" },
+        { name: "Settlement vs Repayment", href: "/loan-settlement-vs-repayment" },
+        { name: "Legal Rights After Default", href: "/legal-rights-after-loan-default" },
+        { name: "When to Choose Settlement", href: "/when-to-choose-loan-settlement" },
+        { name: "Recovery Notice Reply Format", href: "/reply-to-recovery-notice-format" },
       ]
 
     }
