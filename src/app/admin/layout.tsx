@@ -26,8 +26,9 @@ import { auth } from '../../lib/firebase'
 
 const navItems = [
   { id: 'dashboard', label: 'Dashboard', icon: faHome, href: '/admin/dashboard' },
+  { id: 'analytics', label: 'Analytics', icon: faChartLine, href: '/admin/analytics' },
   { id: 'users', label: 'Users', icon: faUsers, href: '/admin/users' },
-  { id: 'blogs', label: 'Blogs', icon: faChartLine, href: '/admin/blogs' },
+  { id: 'blogs', label: 'Blogs', icon: faGlobe, href: '/admin/blogs' },
   { id: 'articles', label: 'Articles', icon: faClipboardList, href: '/admin/articles' },
   { id: 'amalive', label: 'AMA Live', icon: faCog, href: '/admin/ama-live' },
   { id: 'careers', label: 'Careers', icon: faBriefcase, href: '/admin/careers' },
@@ -111,8 +112,8 @@ export default function AdminLayout({
             exit={isMobile ? { x: -300 } : { width: 0, opacity: 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className={`
-              ${isMobile ? 'fixed inset-y-0 left-0 z-50' : 'sticky top-0 h-screen'}
-              bg-[#5A4C33] text-white shadow-2xl flex flex-col overflow-hidden whitespace-nowrap
+              ${isMobile ? 'fixed inset-y-0 left-0 z-50' : 'relative min-h-screen'}
+              bg-[#5A4C33] text-white shadow-2xl flex flex-col whitespace-nowrap
             `}
             style={{ width: isMobile ? '288px' : undefined }}
           >
