@@ -1,8 +1,5 @@
 "use client";
 import React, { useState, useRef } from "react";
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { db, storage } from "../../lib/firebase";
 import toast from "react-hot-toast";
 
 const CareersForm = () => {
@@ -28,6 +25,11 @@ const CareersForm = () => {
 
     setIsSubmitting(true);
     try {
+      const { collection, addDoc } = await import("firebase/firestore");
+      const { serverTimestamp } = await import("firebase/firestore");
+      const { ref, uploadBytes, getDownloadURL } = await import("firebase/storage");
+      const { db, storage } = await import("../../lib/firebase");
+
       // 1. Upload Resume PDF to Firebase Storage
       const storageRef = ref(storage, `careers/resumes/${Date.now()}_${resume.name}`);
       const snapshot = await uploadBytes(storageRef, resume);

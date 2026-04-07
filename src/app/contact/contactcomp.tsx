@@ -9,9 +9,7 @@ import {
   faEnvelope,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
-import { collection, addDoc } from "../../lib/firebase";
-import { serverTimestamp } from "firebase/firestore";
-import { db } from "../../lib/firebase";
+// Firebase imports are lazy loaded
 import payu from "../../../public/payu.png";
 import Navbar from "@/newcomp/Navbar";
 
@@ -136,6 +134,9 @@ const ContactComp = () => {
     setIsSubmitting(true);
 
     try {
+      const { collection, addDoc, db } = await import("../../lib/firebase");
+      const { serverTimestamp } = await import("firebase/firestore");
+
       await addDoc(collection(db, "form"), {
         ...formState,
         timestamp: serverTimestamp(),
@@ -528,7 +529,7 @@ const ContactComp = () => {
                   </div>
                   <div className="flex flex-col items-center gap-4 pt-2">
                     <div className="opacity-80 hover:opacity-100 transition-opacity">
-                      <img src={payu.src} alt="Secured by PayU" className="w-32" />
+                      <Image src={payu} alt="Secured by PayU" className="w-32 h-auto" />
                     </div>
                     <div className="flex flex-col items-center gap-2">
                       <p className="text-xl font-semibold mb-2" style={{ color: 'rgba(210, 158, 13, 0.8)' }}>Download Our App Today</p>

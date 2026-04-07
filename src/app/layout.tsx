@@ -111,8 +111,10 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//www.youtube.com" />
         <link rel="dns-prefetch" href="//firebasestorage.googleapis.com" />
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-        <link rel="preconnect" href="https://amalegalsolutionss.firebaseapp.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.googleapis.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://n.clarity.ms" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.clarity.ms" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://scripts.clarity.ms" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         
         {/* Performance hints */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />

@@ -158,6 +158,7 @@ const Services = () => {
               src="/newAssets/aff5.png"
               alt="MCIA"
               fill
+              sizes="(max-width: 768px) 120px, 200px"
               className="object-contain"
             />
           </Link>
@@ -166,6 +167,7 @@ const Services = () => {
               src="/newAssets/aff2.png"
               alt="WIPO"
               fill
+              sizes="(max-width: 768px) 120px, 200px"
               className="object-contain"
             />
           </Link>
@@ -174,6 +176,7 @@ const Services = () => {
               src="/newAssets/aff3.png"
               alt="IACC"
               fill
+              sizes="(max-width: 768px) 120px, 200px"
               className="object-contain"
             />
           </Link>
@@ -182,6 +185,7 @@ const Services = () => {
               src="/newAssets/aff4.png"
               alt="IAMCH"
               fill
+              sizes="(max-width: 768px) 120px, 200px"
               className="object-contain"
             />
           </Link>

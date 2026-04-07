@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import payu from "../../public/payu.png";
+import Image from "next/image";
 
 const SERVICE_OPTIONS = [
   { label: "Loan Settlement", description: "Negotiating and settling outstanding debts and controlling harassment." },
@@ -322,7 +323,7 @@ const GlobalPopupForm = () => {
                     
                     <div className="flex flex-col items-center gap-2 md:gap-4 pt-1 md:pt-2">
                       <div className="opacity-80 hover:opacity-100 transition-opacity">
-                        <img src={payu.src} alt="Secured by PayU" className="w-24 md:w-32" />
+                        <Image src={payu} alt="Secured by PayU" className="w-24 md:w-32 h-auto" />
                       </div>
                     </div>
                   </form>
