@@ -676,14 +676,7 @@ export default async function BankSlugPage({ params }: { params: any }) {
 
           </div> 
            
-          {/* States Grid at the bottom */} 
-          <div className="mt-24 border-t border-gray-200 pt-16"> 
-            <h2 className="text-3xl font-bold text-center mb-10 text-gray-900">Providing Loan Settlement for {bankName} Across India</h2>
-            <GenericStatesGrid  
-              serviceName={`Loan Settlement for ${bankName}`}  
-              servicePath={`loan-settlement-by-bank/${resolvedParams.slug}`}  
-            /> 
-          </div> 
+          
 
         </div> 
       </div> 
