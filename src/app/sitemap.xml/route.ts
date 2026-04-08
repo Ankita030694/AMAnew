@@ -4,6 +4,16 @@ import { db } from '@/lib/firebase'
 import { collection, getDocs } from 'firebase/firestore'
 import { successStories } from '@/data/success-stories'
 import { locationData } from '@/app/lawyer-by-city/locationData'
+import fs from 'fs';
+import path from 'path';
+
+// Reusable slugify function to perfectly match the dynamic route URLs
+const slugify = (text: string) => {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)+/g, '');
+};
 
 export async function GET(): Promise<Response> {
   const blogs = await fetchAllBlogs()
@@ -56,7 +66,7 @@ export async function GET(): Promise<Response> {
     '/overcharged-at-hospital-send-legal-notice',
     '/workplace-harassment-legal-notice-service',
     '/support-for-loan-settlement-during-medical-emergencies',
-    '/loan-settlement-letter-format-noc-format' ,
+    '/loan-settlement-letter-format-noc-format',
     '/home-loan-eligibility-after-settlement',
     '/legal-notice-for-loan-settlement-harassment',
     '/p2p-crypto-scam-unfreeze-bank-account',
@@ -89,7 +99,6 @@ export async function GET(): Promise<Response> {
     '/reply-to-recovery-notice-format',
     '/lawyer-by-city',
     '/contact',
-
     '/careers',
     '/careers/business-development-associate',
     '/careers/legal-associate',
@@ -275,7 +284,7 @@ export async function GET(): Promise<Response> {
     '/can-i-settle-my-loan-without-a-lawyer',
     '/does-settlement-impact-a-co-borrower',
     '/can-i-convert-settled-to-closed-later',
-    // Bank Specific Pages
+    // Hardcoded Bank Specific Pages (left intact for backwards compatibility)
     '/services/loan-settlement/sbi-bank',
     '/services/loan-settlement/hdfc-bank',
     '/services/loan-settlement/idfc-bank',
@@ -388,15 +397,34 @@ export async function GET(): Promise<Response> {
     '/services/intellectual-property-rights/telangana',
     '/services/intellectual-property-rights/tripura',
     '/services/intellectual-property-rights/uttarakhand',
-    '/services/intellectual-property-rights/west-bengal',
-    // Specific Litigation State Pages - Covered by generator
-    // Removed redundant static entries
+    '/services/intellectual-property-rights/west-bengal'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
     changeFrequency: 'weekly',
     priority: route === '' ? 1.0 : 0.8
   }))
+
+  // Parse Banks JSON for Dynamic Bank Pages
+  let dynamicBankRoutes: { url: string; lastModified: string; changeFrequency: string; priority: number; }[] = [];
+  try {
+    const dataPath = path.join(process.cwd(), "src/app/loan-settlement-by-bank/banks.json");
+    if (fs.existsSync(dataPath)) {
+      const rawData = fs.readFileSync(dataPath, "utf-8");
+      const banksData = JSON.parse(rawData);
+
+      dynamicBankRoutes = banksData.map((bank: any) => ({
+        url: `${baseUrl}/loan-settlement-by-bank/${slugify(bank.company)}`,
+        lastModified: new Date().toISOString(),
+        changeFrequency: 'weekly',
+        priority: 0.7
+      }));
+    } else {
+      console.warn(`banks.json not found at ${dataPath}`);
+    }
+  } catch (error) {
+    console.error('Error generating bank routes for sitemap:', error);
+  }
 
   // Build service slug routes
   const serviceSlugRoutes = generateServiceSlugRoutes(baseUrl)
@@ -433,8 +461,16 @@ export async function GET(): Promise<Response> {
     priority: 0.7
   }))
 
-  // Combine all routes
-  const allRoutes = [...staticRoutes, ...serviceSlugRoutes, ...blogRoutes, ...articleRoutes, ...successStoryRoutes, ...lawyerByCityRoutes]
+  // Combine all routes, including dynamicBankRoutes
+  const allRoutes = [
+    ...staticRoutes,
+    ...dynamicBankRoutes,
+    ...serviceSlugRoutes,
+    ...blogRoutes,
+    ...articleRoutes,
+    ...successStoryRoutes,
+    ...lawyerByCityRoutes
+  ]
 
   // Generate XML
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -494,16 +530,13 @@ async function fetchAllArticles() {
 function generateServiceSlugRoutes(baseUrl: string) {
   const services = [
     'arbitration',
-    // 'banking-and-finance', // Removed as it now has specific pages
     'civil',
     'corporate',
     'criminal-law',
     'cyber',
     'drafting',
     'entertainment',
-    // 'intellectual-property-rights', // Has specific state pages
     'litigation',
-    // 'loan-settlement', // Removed as it now has specific pages
     'real-estate'
   ]
 
