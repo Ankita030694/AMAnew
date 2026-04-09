@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
 const OurAttorneys = dynamic(() => import("../components/aboutcomps/OurAttorneys"));
 import { Attorney } from "@/lib/attorneys";
-
+import Legacy2 from "./Legacy2";
 const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
   return (
     <main className="w-full bg-[#EAE6DB]">
@@ -221,93 +221,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
       </section>
 
       {/* Legacy Section */}
-      <section className="w-full -mt-15 md:mt-0 py-8 flex flex-col items-center bg-[#EAE6DB] overflow-hidden">
-        {/* Main Heading */}
-       
-       
-        {/* Content Section with Background */}
-        <div className="w-full relative px-4 md:px-0">
-          {/* Background Image Container */}
-          <div className="relative w-full min-h-[700px] md:min-h-[560px] flex items-center justify-center">
-            <div
-              className="absolute inset-0 opacity-30"
-              style={{
-                backgroundImage: "url('/newAssets/bg1.jpg')",
-                backgroundRepeat: "repeat",
-              }}
-            />
-
-            {/* White Border Container & Content */}
-            <div className="relative w-full md:w-[95%] max-w-[95vw] md:max-w-none h-auto md:h-[480px] border-[8px] md:border-[16px] border-white/60 z-10 flex flex-col md:flex-row overflow-hidden md:overflow-visible">
-                  
-              {/* Desktop Middle Divider */}
-              <div className="hidden md:block absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[16px] h-full bg-white/60 z-10" />
-
-              {/* Left Content (Image) - Swapped Position */}
-              <div className="hidden md:block absolute bottom-0 left-0 h-[530px] z-[25] pointer-events-none w-[50%]">
-                 <div className="relative w-full h-full"> 
-                    <Image
-                      src="/newAssets/bhiya.png"
-                      alt="Anuj Anand Malik"
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-contain object-bottom"
-                      priority
-                    />
-                 </div>
-              </div>
-
-               {/* Mobile Image - Absolute Bottom Right (Matching Legacy.tsx) */}
-               <div className="md:hidden absolute bottom-0 -right-5 z-10 pointer-events-none w-[40%] h-[370px] translate-y-[20px]">
-                  <Image
-                    src="/newAssets/bhiya.png"
-                    alt="Anuj Anand Malik"
-                    fill
-                    className="object-cover object-bottom"
-                    priority
-                  />
-               </div>
-
-              {/* Right Content (Text) - Swapped Position */}
-              <div className="flex-1 p-5 md:p-10 flex flex-col justify-start md:justify-start items-start md:items-start z-20 max-w-full md:max-w-2xl text-left md:text-left h-full md:ml-auto">
-                {/* Top Section: Header Info */}
-                <div className="w-full flex flex-col items-start md:items-start gap-1 md:gap-[30px] mb-[5px] text-left md:text-left z-30 relative">
-                   <div className="flex flex-col md:flex-row md:items-baseline justify-start gap-1">
-                      <h3 className="text-[#30261C] text-[26px] md:text-[34px] font-semibold leading-tight opacity-100">
-                      Anuj Anand Malik
-                      </h3>
-                   </div> 
-
-                  <div className="space-y-1 w-full flex flex-col items-start md:items-start">
-                      <p className="text-[#D29E0D] text-[13px] md:text-[20px] font-medium w-full text-left md:text-left mb-[5px]">
-                          Advocate, Legal Consultant, Banking Lawyer, and Loan Settlement Expert
-                      </p>
-                  </div>
-                </div>
-
-                {/* Bottom Section: Description */}
-                <div className="w-full flex-1 relative min-h-0 flex flex-col items-start md:items-start">
-                  <div className="w-[90%] md:w-full text-[#30261C] text-[13px] md:text-[20px] leading-[19px] md:leading-[28px] opacity-80 z-20 h-full overflow-y-auto md:overflow-visible pb-[340px] md:pb-2 content-start pr-1 text-left md:text-left">
-                      <div className="space-y-4">
-                        <p>
-                          I am Anuj Anand Malik, an advocate, legal consultant, banking lawyer,
-                          and loan settlement expert, committed to helping individuals,
-                          startups, and businesses overcome financial challenges and achieve
-                          legal security. With in-depth expertise in loan settlements, corporate
-                          compliance, business contracts, dispute resolution, and financial
-                          litigation, I provide strategic legal counsel and expert
-                          representation to safeguard clients’ interests through risk
-                          mitigation, regulatory compliance, and financial stability.
-                        </p>
-                      </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <Legacy2 />
       {/* Our Journey Through Time Section */}
       <section className="w-full px-4 md:px-8 py-8 flex flex-col items-center gap-[50px] md:gap-[80px]">
         {/* Section Header */}

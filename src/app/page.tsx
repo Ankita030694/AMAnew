@@ -1,7 +1,7 @@
 
 import Hero from "@/newcomp/Hero";
 import ClientLogoSlider from "@/newcomp/ClientLogoSlider";
-import Legacy from "@/newcomp/Legacy";
+import Legacy2 from "@/newcomp/Legacy2";
 import Counter from "@/newcomp/Counter";
 import Services from "@/newcomp/Services";
 import Testimonials2 from "@/newcomp/Testimonials2";
@@ -128,7 +128,7 @@ export default function Home() {
       
       <Hero />
       <ClientLogoSlider />
-      <Legacy />
+      <Legacy2 />
       <Counter />
       <Services />
       
