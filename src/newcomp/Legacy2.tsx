@@ -160,7 +160,7 @@ const Legacy2 = () => {
               {/* Timeline Items */}
               <div className="flex flex-col gap-10 relative pb-12 lg:pb-0">
                 {/* Dotted connecting line */}
-                <div className="absolute left-[44px] top-[30px] bottom-[30px] border-l-[2.5px] border-dotted border-[#A88322] opacity-50 z-0 block" />
+                <div className="absolute left-[44px] top-[40px] bottom-[40px] w-[2px] border-l-[3px] border-dotted border-[#A88322] opacity-50 z-[1] block" />
 
                 {currentSlide.timelineItems.map((item, index) => (
                   <motion.div
