@@ -94,9 +94,16 @@ const Legacy2 = () => {
           A journey of vision, integrity, and legal excellence carried forward
           across generations.
         </p>
+        
+        {/* Mobile Swipe Hint */}
+        <div className="flex lg:hidden justify-center items-center gap-3 mt-6 text-[#A88322] font-semibold text-xs tracking-wider uppercase animate-pulse">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 17l-5-5 5-5M18 17l-5-5 5-5"/></svg>
+          <span>Swipe to see more</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 17l5-5-5-5M6 17l5-5-5-5"/></svg>
+        </div>
       </div>
 
-      <div className="max-w-[1440px] mx-auto w-full flex flex-col lg:flex-row min-h-[800px] mt-8 md:mt-12 mb-12 relative overflow-hidden">
+      <div className="max-w-[1440px] mx-auto w-full flex flex-col lg:flex-row mt-8 md:mt-12 relative pb-24">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide.id}
@@ -104,18 +111,30 @@ const Legacy2 = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="flex flex-col lg:flex-row w-full absolute inset-0"
+            className="flex flex-col-reverse lg:flex-row w-full"
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.2}
+            onDragEnd={(e, { offset, velocity }) => {
+              const swipe = Math.abs(offset.x) * velocity.x;
+              if (swipe < -500 || offset.x < -50) {
+                nextSlide();
+              } else if (swipe > 500 || offset.x > 50) {
+                prevSlide();
+              }
+            }}
           >
             {/* Left Content Container */}
-            <div className="flex-1 px-6 py-8 md:py-12 md:px-16 lg:px-24 flex flex-col justify-center relative z-10 w-full mb-[80px] lg:mb-0 h-full overflow-y-auto lg:overflow-visible">
+            <div className="flex-1 px-6 py-8 md:py-12 md:px-16 lg:px-24 flex flex-col justify-center relative z-10 w-full mb-[80px] lg:mb-0">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
+                className="flex flex-col items-center lg:items-start w-full"
               >
                 {/* Individual Slide Heading */}
                 <h2
-                  className="text-[#30261C] mb-6"
+                  className="text-[#30261C] mb-6 text-center lg:text-left"
                   style={{
                     fontFamily: "var(--font-polysans)",
                     fontSize: "clamp(32px, 5vw, 56px)",
@@ -128,7 +147,7 @@ const Legacy2 = () => {
 
                 {/* Introductory Paragraph */}
                 <p
-                  className="mb-14 max-w-2xl text-[15px] md:text-[18px]"
+                  className="mb-14 max-w-2xl text-[15px] md:text-[18px] text-center lg:text-left"
                   style={{
                     color: "rgba(48, 38, 28, 0.8)",
                     lineHeight: "1.6",
@@ -141,7 +160,7 @@ const Legacy2 = () => {
               {/* Timeline Items */}
               <div className="flex flex-col gap-10 relative pb-12 lg:pb-0">
                 {/* Dotted connecting line */}
-                <div className="absolute left-[44px] top-[30px] bottom-[30px] border-l-[2.5px] border-dotted border-[#A88322] opacity-50 z-0 hidden sm:block" />
+                <div className="absolute left-[44px] top-[30px] bottom-[30px] border-l-[2.5px] border-dotted border-[#A88322] opacity-50 z-0 block" />
 
                 {currentSlide.timelineItems.map((item, index) => (
                   <motion.div
@@ -149,7 +168,7 @@ const Legacy2 = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                    className="flex flex-col sm:flex-row gap-5 sm:gap-8 items-start relative z-10"
+                    className="flex flex-row gap-5 sm:gap-8 items-start relative z-10 w-full"
                   >
                     {/* Fixed-width Year Pill for perfect line alignment */}
                     <div
@@ -171,7 +190,7 @@ const Legacy2 = () => {
                     </div>
 
                     {/* Text Content */}
-                    <div className="flex-1 mt-1 sm:mt-0">
+                    <div className="flex-1 mt-0 text-left">
                       <h3
                         className="text-[#30261C] text-[20px] md:text-[24px] mb-2"
                         style={{
@@ -198,26 +217,55 @@ const Legacy2 = () => {
             </div>
 
             {/* Right Image Container */}
-            <div className="w-full lg:w-[45%] xl:w-[48%] relative min-h-[400px] lg:min-h-full shrink-0">
-              <Image
-                src={currentSlide.image}
-                alt={currentSlide.overlayName}
-                fill
-                className="object-cover object-top"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                priority
-              />
+            <div className="w-full lg:w-[45%] xl:w-[48%] relative flex flex-col shrink-0 mb-8 lg:mb-0">
+              {/* Image Box */}
+              <div className="relative w-full h-[400px] lg:h-full lg:min-h-[800px]">
+                <Image
+                  src={currentSlide.image}
+                  alt={currentSlide.overlayName}
+                  fill
+                  className="object-contain lg:object-cover object-bottom lg:object-top"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
 
-              {/* Bottom Gradient Overlay */}
-              <div className="absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-black via-[#111111]/60 to-transparent pointer-events-none" />
+                {/* Bottom Gradient Overlay (Desktop only) */}
+                <div className="hidden lg:block absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-black via-[#111111]/80 to-transparent pointer-events-none" />
 
-              {/* Image Overlay Text */}
-              <div className="absolute bottom-[20px] lg:bottom-[40px] left-0 w-full p-8 md:p-12 z-20">
+                {/* Desktop Image Overlay Text */}
+                <div className="hidden lg:flex absolute bottom-[40px] left-0 w-full p-12 z-20 flex-col items-start">
+                  <span
+                    className="block mb-2 uppercase"
+                    style={{
+                      color: "#D29E0D",
+                      fontSize: "14px",
+                      letterSpacing: "0.1em",
+                      fontWeight: 600,
+                    }}
+                  >
+                    {currentSlide.overlayTag}
+                  </span>
+                  <h3
+                    className="text-white"
+                    style={{
+                      fontFamily: "var(--font-polysans)",
+                      fontSize: "clamp(28px, 4vw, 40px)",
+                      fontWeight: 400,
+                      lineHeight: "1.1",
+                    }}
+                  >
+                    {currentSlide.overlayName}
+                  </h3>
+                </div>
+              </div>
+
+              {/* Mobile Image Label (Renders structurally below the image) */}
+              <div className="block lg:hidden w-full text-center mt-6 px-4">
                 <span
-                  className="block mb-2 uppercase"
+                  className="block mb-1 uppercase"
                   style={{
                     color: "#D29E0D",
-                    fontSize: "14px",
+                    fontSize: "13px",
                     letterSpacing: "0.1em",
                     fontWeight: 600,
                   }}
@@ -225,10 +273,10 @@ const Legacy2 = () => {
                   {currentSlide.overlayTag}
                 </span>
                 <h3
-                  className="text-white"
+                  className="text-[#30261C]"
                   style={{
                     fontFamily: "var(--font-polysans)",
-                    fontSize: "clamp(28px, 4vw, 40px)",
+                    fontSize: "26px",
                     fontWeight: 400,
                     lineHeight: "1.1",
                   }}
@@ -243,7 +291,7 @@ const Legacy2 = () => {
         {/* Global Navigation Arrows placed at the left and right edges */}
         <button
           onClick={prevSlide}
-          className="absolute left-2 lg:left-6 top-1/2 -translate-y-1/2 z-50 p-2 md:p-4 rounded-full bg-white/40 md:bg-white/20 hover:bg-white/80 transition-colors group shadow-lg pointer-events-auto"
+          className="hidden lg:flex absolute left-2 lg:left-6 top-1/2 -translate-y-1/2 z-50 p-2 md:p-4 rounded-full bg-white/40 md:bg-white/20 hover:bg-white/80 transition-colors group shadow-lg pointer-events-auto"
           aria-label="Previous slide"
         >
           <svg
@@ -263,7 +311,7 @@ const Legacy2 = () => {
 
         <button
           onClick={nextSlide}
-          className="absolute right-2 lg:right-6 top-1/2 -translate-y-1/2 z-50 p-2 md:p-4 rounded-full bg-white/40 md:bg-white/20 hover:bg-[#A88322] transition-colors group shadow-lg pointer-events-auto group-hover:stroke-white stroke-[#30261C] hover:stroke-white"
+          className="hidden lg:flex absolute right-2 lg:right-6 top-1/2 -translate-y-1/2 z-50 p-2 md:p-4 rounded-full bg-white/40 md:bg-white/20 hover:bg-[#A88322] transition-colors group shadow-lg pointer-events-auto group-hover:stroke-white stroke-[#30261C] hover:stroke-white"
           aria-label="Next slide"
         >
           <svg
