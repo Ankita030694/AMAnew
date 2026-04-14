@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import payu from "../../public/payu.png";
 import Image from "next/image";
+import { FaWhatsapp } from "react-icons/fa";
 
 const SERVICE_OPTIONS = [
   { label: "Loan Settlement", description: "Negotiating and settling outstanding debts and controlling harassment." },
@@ -301,18 +302,24 @@ const GlobalPopupForm = () => {
                         {errors.email && <p className="text-red-500 text-[10px] md:text-xs mt-0.5 md:mt-1">{errors.email}</p>}
                       </div>
                       <div className="relative">
-                        <input
-                          type="tel"
-                          name="phone"
-                          value={formState.phone}
-                          onChange={handleChange}
-                          maxLength={10}
-                          className={`w-full bg-white text-[#30261C] px-3 py-2 md:px-4 md:py-3 rounded-lg border text-sm md:text-base ${
-                            errors.phone ? "border-red-500" : "border-gray-200"
-                          } focus:outline-none focus:border-[#D2A02A] transition-colors`}
-                          placeholder="Your Phone Number"
-                          disabled={otpSent}
-                        />
+                        <div className="relative flex items-center">
+                          <input
+                            type="tel"
+                            name="phone"
+                            value={formState.phone}
+                            onChange={handleChange}
+                            maxLength={10}
+                            className={`w-full bg-white text-[#30261C] pl-3 pr-10 py-2 md:pl-4 md:pr-12 md:py-3 rounded-lg border text-sm md:text-base ${
+                              errors.phone ? "border-red-500" : "border-gray-200"
+                            } focus:outline-none focus:border-[#D2A02A] transition-colors`}
+                            placeholder="Your Phone Number"
+                            disabled={otpSent}
+                          />
+                          <FaWhatsapp 
+                            className="absolute right-3 md:right-4 text-[#25D366] text-lg md:text-xl pointer-events-none" 
+                            title="OTP will be sent on WhatsApp"
+                          />
+                        </div>
                         {errors.phone && <p className="text-red-500 text-[10px] md:text-xs mt-0.5 md:mt-1">{errors.phone}</p>}
                       </div>
                     </div>
@@ -391,7 +398,7 @@ const GlobalPopupForm = () => {
                           {otpSent ? "Verifying..." : "Sending OTP..."}
                         </span>
                       ) : (
-                        otpSent ? "Verify OTP" : "Get OTP"
+                        otpSent ? "Verify OTP" : "Register"
                       )}
                     </button>
                     

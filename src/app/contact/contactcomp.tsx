@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaWhatsapp } from "react-icons/fa";
+
 import {
   faMapMarkerAlt,
   faEnvelope,
@@ -12,6 +14,7 @@ import {
 // Firebase imports are lazy loaded
 import payu from "../../../public/payu.png";
 import Navbar from "@/newcomp/Navbar";
+import Footer from "@/newcomp/Footer";
 
 // Generate array of logo paths: 1.png to 17.png
 const clientLogos = Array.from({ length: 17 }, (_, i) => `/newAssets/clientLogos/${i + 1}.png`);
@@ -444,7 +447,7 @@ const ContactComp = () => {
                     )}
                   </div>
 
-                  <div className="relative">
+                  <div className="relative flex items-center">
                     <input
                       type="tel"
                       name="phone"
@@ -459,17 +462,21 @@ const ContactComp = () => {
                           phone: validatePhone(formState.phone),
                         });
                       }}
-                      className={`w-full bg-[#F8F5EC] text-[#30261C] px-4 py-3 rounded-lg border ${
+                      className={`w-full bg-[#F8F5EC] text-[#30261C] pl-4 pr-12 py-3 rounded-lg border ${
                         errors.phone ? "border-red-500" : "border-gray-200"
                       } focus:outline-none focus:border-[#D2A02A] transition-colors`}
                       placeholder="Your Phone Number"
                       maxLength={10}
                       disabled={otpSent}
                     />
-                    {errors.phone && (
-                      <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
-                    )}
+                    <FaWhatsapp 
+                      className="absolute right-4 text-[#25D366] text-xl pointer-events-none" 
+                      title="OTP will be sent on WhatsApp"
+                    />
                   </div>
+                  {errors.phone && (
+                    <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                  )}
 
                   {otpSent && (
                     <motion.div 
@@ -588,7 +595,7 @@ const ContactComp = () => {
                           {otpSent ? "Verifying..." : "Sending OTP..."}
                         </span>
                       ) : (
-                        otpSent ? "Verify OTP" : "Get OTP"
+                        otpSent ? "Verify OTP" : "Register"
                       )}
                     </a>
                   </div>
@@ -649,6 +656,7 @@ const ContactComp = () => {
           className="grayscale hover:grayscale-0 transition-all duration-500"
         />
       </div>
+    <Footer/> 
 
     </div>
   );

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { FaWhatsapp } from 'react-icons/fa'
 
 const services = [
   "Civil Law",
@@ -62,12 +63,18 @@ export default function Form() {
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
                     Phone
                   </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    placeholder="Your Phone"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#6B5B3D] focus:border-[#6B5B3D] placeholder-gray-400"
-                  />
+                  <div className="relative flex items-center">
+                    <input
+                      type="tel"
+                      id="phone"
+                      placeholder="Your Phone"
+                      className="w-full pl-4 pr-10 py-2 border border-gray-300 rounded-md focus:ring-[#6B5B3D] focus:border-[#6B5B3D] placeholder-gray-400"
+                    />
+                    <FaWhatsapp 
+                      className="absolute right-3 text-[#25D366] text-lg pointer-events-none" 
+                      title="OTP will be sent on WhatsApp"
+                    />
+                  </div>
                 </div>
               </div>
 
