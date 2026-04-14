@@ -13,7 +13,7 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
   const pathname = usePathname();
   
   // Exclude common components for admin and login routes
-  const isExcluded = pathname?.startsWith('/admin') || pathname?.startsWith('/login');
+  const isExcluded = pathname?.startsWith('/admin') || pathname?.startsWith('/login') || pathname === '/contact';
 
   if (isExcluded) {
     return <>{children}</>;

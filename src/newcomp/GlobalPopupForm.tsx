@@ -59,7 +59,8 @@ const GlobalPopupForm = () => {
           currentPath.includes("/admin") || 
           currentPath.includes("/thank-you") ||
           currentPath.includes("/payment-success") ||
-          currentPath.includes("/failure");
+          currentPath.includes("/failure") ||
+          currentPath.includes("/contact");
         
         if (!isExcludedPage) {
           setIsOpen(true);
