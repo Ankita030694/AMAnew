@@ -54,7 +54,12 @@ const GlobalPopupForm = () => {
     if (!hasBeenShown) {
       const timer = setTimeout(() => {
         const currentPath = window.location.pathname;
-        const isExcludedPage = currentPath.includes("/login") || currentPath.includes("/admin") || currentPath.includes("/thank-you");
+        const isExcludedPage = 
+          currentPath.includes("/login") || 
+          currentPath.includes("/admin") || 
+          currentPath.includes("/thank-you") ||
+          currentPath.includes("/payment-success") ||
+          currentPath.includes("/failure");
         
         if (!isExcludedPage) {
           setIsOpen(true);
