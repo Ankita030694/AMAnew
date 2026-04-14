@@ -49,9 +49,11 @@ const GlobalPopupForm = () => {
     const handleOpenPopup = () => setIsOpen(true);
     window.addEventListener("openGlobalPopup", handleOpenPopup);
 
-    // Only trigger once per session automatically
+    // Check if user has already submitted the form or it has been shown in this session
+    const hasBeenSubmitted = localStorage.getItem("global_popup_submitted");
     const hasBeenShown = sessionStorage.getItem("global_popup_shown");
-    if (!hasBeenShown) {
+
+    if (!hasBeenSubmitted && !hasBeenShown) {
       const timer = setTimeout(() => {
         const currentPath = window.location.pathname;
         const isExcludedPage = 
@@ -137,6 +139,7 @@ const GlobalPopupForm = () => {
         const data = await response.json();
         if (response.status === 409 && data.error === "DUPLICATE_LEAD") {
           setIsDuplicate(true);
+          localStorage.setItem("global_popup_submitted", "true");
           return;
         }
         if (!response.ok) throw new Error(data.error || "Failed to send OTP");
@@ -166,6 +169,7 @@ const GlobalPopupForm = () => {
         if (!response.ok) throw new Error(data.error || "Invalid OTP");
 
         setSubmitted(true);
+        localStorage.setItem("global_popup_submitted", "true");
         window.location.href = data.redirectUrl || "https://pmny.in/DIMRKGkGQz6L";
       } catch (error) {
         console.error("Error verifying OTP:", error);
