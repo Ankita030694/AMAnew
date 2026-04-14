@@ -19,7 +19,8 @@ import {
   faTimes,
   faChevronRight,
   faChevronLeft,
-  faGlobe
+  faGlobe,
+  faClock
 } from '@fortawesome/free-solid-svg-icons'
 import { signOut } from 'firebase/auth'
 import { auth } from '../../lib/firebase'
@@ -32,6 +33,7 @@ const navItems = [
   { id: 'articles', label: 'Articles', icon: faClipboardList, href: '/admin/articles' },
   { id: 'amalive', label: 'AMA Live', icon: faCog, href: '/admin/ama-live' },
   { id: 'careers', label: 'Careers', icon: faBriefcase, href: '/admin/careers' },
+  { id: 'pending-leads', label: 'Pending Leads', icon: faClock, href: '/admin/pending-leads' },
 ]
 
 export default function AdminLayout({
