@@ -568,8 +568,8 @@ const Footer = () => {
               queriesOpen ? "max-h-[5000px] opacity-100" : "max-h-0 opacity-0"
             }`}
           >
-             {footerColumns[8].links.map((link) => (
-                <div key={link.href}>
+             {footerColumns[8].links.map((link, idx) => (
+                <div key={`${link.href}-${idx}`}>
                    <Link 
                      href={link.href}
                      className="text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors"

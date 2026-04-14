@@ -37,6 +37,10 @@ const ContactComp = () => {
     serviceRequired: "",
     message: "",
   });
+  const [otpSent, setOtpSent] = useState(false);
+  const [otp, setOtp] = useState("");
+  const [pendingId, setPendingId] = useState("");
+  const [isDuplicate, setIsDuplicate] = useState(false);
 
   const [errors, setErrors] = useState({
     name: "",
@@ -127,58 +131,63 @@ const ContactComp = () => {
   };
 
   const validateAndSaveForm = async () => {
-    if (!validateForm()) {
-      return false;
-    }
-
-    setIsSubmitting(true);
-
-    try {
-      const { collection, addDoc, db } = await import("../../lib/firebase");
-      const { serverTimestamp } = await import("firebase/firestore");
-
-      await addDoc(collection(db, "form"), {
-        ...formState,
-        timestamp: serverTimestamp(),
-        submissionUrl: window.location.href
-      });
-
-      // Send WATI Message
+    if (!otpSent) {
+      if (!validateForm()) return false;
+      setIsSubmitting(true);
       try {
-        await fetch("/api/send-wati-message", {
+        const response = await fetch("/api/otp/send", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            phoneNumber: formState.phone,
-            name: formState.name,
+            ...formState,
+            source: "Contact Page",
+            submissionUrl: window.location.href
           }),
         });
-      } catch (watiError) {
-        console.error("Error sending WATI message:", watiError);
-        // We don't block the UI success state if WATI fails
+
+        const data = await response.json();
+        if (response.status === 409 && data.error === "DUPLICATE_LEAD") {
+          setIsDuplicate(true);
+          return false;
+        }
+        if (!response.ok) throw new Error(data.error || "Failed to send OTP");
+
+        setOtpSent(true);
+        setPendingId(data.pendingId);
+        return false; // Don't redirect yet
+      } catch (error) {
+        console.error("Error sending OTP:", error);
+        alert(error instanceof Error ? error.message : "Failed to send OTP");
+        return false;
+      } finally {
+        setIsSubmitting(false);
       }
-
-      setSubmitted(true);
-
-      setTimeout(() => {
-        setSubmitted(false);
-        setFormState({
-          name: "",
-          email: "",
-          phone: "",
-          serviceRequired: "",
-          message: "",
+    } else {
+      if (!otp || otp.length !== 6) {
+        setErrors({ ...errors, message: "Please enter a 6-digit OTP" });
+        return false;
+      }
+      setIsSubmitting(true);
+      try {
+        const response = await fetch("/api/otp/verify", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ pendingId, otp }),
         });
-      }, 3000);
 
-      return true;
-    } catch (error) {
-      console.error("Error adding document: ", error);
-      return false;
-    } finally {
-      setIsSubmitting(false);
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error || "Invalid OTP");
+
+        setSubmitted(true);
+        window.location.href = data.redirectUrl || "https://pmny.in/DIMRKGkGQz6L";
+        return true;
+      } catch (error) {
+        console.error("Error verifying OTP:", error);
+        setErrors({ ...errors, message: error instanceof Error ? error.message : "Invalid OTP" });
+        return false;
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -348,6 +357,37 @@ const ContactComp = () => {
                     Proceed to Payment
                   </a>
                 </div>
+              ) : isDuplicate ? (
+                <div className="flex flex-col items-center justify-center py-12 text-center">
+                  <div className="w-20 h-20 bg-blue-500/10 rounded-full flex items-center justify-center mb-6">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-10 w-10 text-blue-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#30261C] mb-4">
+                    Already Submitted!
+                  </h3>
+                  <p className="text-[#30261C]/80 mb-8 leading-relaxed">
+                    You have already submitted your info with us. To connect again, check your whatsapp for your assigned executive to contact them again.
+                  </p>
+                  <button
+                    onClick={() => setIsDuplicate(false)}
+                    className="w-full bg-[#30261C] text-white text-center font-bold py-3 px-6 rounded-lg hover:bg-[#4a3b2b] transition-colors duration-300"
+                  >
+                    Close
+                  </button>
+                </div>
               ) : (
                 <form onSubmit={(e) => e.preventDefault()} className="space-y-6">
                   <h2 className="text-2xl font-bold text-[#30261C] mb-6">
@@ -419,16 +459,40 @@ const ContactComp = () => {
                           phone: validatePhone(formState.phone),
                         });
                       }}
-                       className={`w-full bg-[#F8F5EC] text-[#30261C] px-4 py-3 rounded-lg border ${
+                      className={`w-full bg-[#F8F5EC] text-[#30261C] px-4 py-3 rounded-lg border ${
                         errors.phone ? "border-red-500" : "border-gray-200"
                       } focus:outline-none focus:border-[#D2A02A] transition-colors`}
                       placeholder="Your Phone Number"
                       maxLength={10}
+                      disabled={otpSent}
                     />
                     {errors.phone && (
                       <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
                     )}
                   </div>
+
+                  {otpSent && (
+                    <motion.div 
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="relative"
+                    >
+                      <input
+                        type="text"
+                        name="otp"
+                        value={otp}
+                        onChange={(e) => setOtp(e.target.value.replace(/\D/g, "").slice(0, 6))}
+                        className={`w-full bg-[#F8F5EC] text-[#30261C] px-4 py-3 rounded-lg border ${
+                          errors.message && otpSent ? "border-red-500" : "border-gray-200"
+                        } focus:outline-none focus:border-[#D2A02A] transition-colors font-bold tracking-[0.5em] text-center`}
+                        placeholder="ENTER OTP"
+                        maxLength={6}
+                      />
+                      {errors.message && otpSent && (
+                        <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                      )}
+                    </motion.div>
+                  )}
 
                   <div className="relative">
                     <div className="relative">
@@ -437,6 +501,7 @@ const ContactComp = () => {
                         value={formState.serviceRequired}
                         onChange={handleChange}
                         required
+                        disabled={otpSent}
                         onFocus={() => setFocusedField("serviceRequired")}
                         onBlur={() => {
                           setFocusedField(null);
@@ -520,10 +585,10 @@ const ContactComp = () => {
                               d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                             ></path>
                           </svg>
-                          Processing...
+                          {otpSent ? "Verifying..." : "Sending OTP..."}
                         </span>
                       ) : (
-                        "Send Message"
+                        otpSent ? "Verify OTP" : "Get OTP"
                       )}
                     </a>
                   </div>

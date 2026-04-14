@@ -33,6 +33,10 @@ const GlobalPopupForm = () => {
     serviceRequired: "",
     message: "",
   });
+  const [otpSent, setOtpSent] = useState(false);
+  const [otp, setOtp] = useState("");
+  const [pendingId, setPendingId] = useState("");
+  const [isDuplicate, setIsDuplicate] = useState(false);
   const [errors, setErrors] = useState({
     name: "",
     email: "",
@@ -109,54 +113,60 @@ const GlobalPopupForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!validateForm()) return;
-
-    setIsSubmitting(true);
-    try {
-      const { collection, addDoc, db } = await import("../lib/firebase");
-      const { serverTimestamp } = await import("firebase/firestore");
-      
-      await addDoc(collection(db, "form"), {
-        ...formState,
-        timestamp: serverTimestamp(),
-        source: "Global Popup",
-        submissionUrl: window.location.href
-      });
-
-      // Send WATI Message (matching contactcomp logic)
+    
+    if (!otpSent) {
+      if (!validateForm()) return;
+      setIsSubmitting(true);
       try {
-        await fetch("/api/send-wati-message", {
+        const response = await fetch("/api/otp/send", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            phoneNumber: formState.phone,
-            name: formState.name,
+            ...formState,
+            source: "Global Popup",
+            submissionUrl: window.location.href
           }),
         });
-      } catch (watiError) {
-        console.error("Error sending WATI message:", watiError);
-      }
 
-      setSubmitted(true);
-      window.location.href = "https://pmny.in/DIMRKGkGQz6L";
-      
-      setTimeout(() => {
-        setIsOpen(false);
-        setSubmitted(false);
-        setFormState({
-          name: "",
-          email: "",
-          phone: "",
-          serviceRequired: "",
-          message: "",
+        const data = await response.json();
+        if (response.status === 409 && data.error === "DUPLICATE_LEAD") {
+          setIsDuplicate(true);
+          return;
+        }
+        if (!response.ok) throw new Error(data.error || "Failed to send OTP");
+
+        setOtpSent(true);
+        setPendingId(data.pendingId);
+      } catch (error) {
+        console.error("Error sending OTP:", error);
+        alert(error instanceof Error ? error.message : "Failed to send OTP. Please try again.");
+      } finally {
+        setIsSubmitting(false);
+      }
+    } else {
+      if (!otp || otp.length !== 6) {
+        setErrors({ ...errors, message: "Please enter a valid 6-digit OTP" });
+        return;
+      }
+      setIsSubmitting(true);
+      try {
+        const response = await fetch("/api/otp/verify", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ pendingId, otp }),
         });
-      }, 5000);
-    } catch (error) {
-      console.error("Error submitting form:", error);
-    } finally {
-      setIsSubmitting(false);
+
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error || "Invalid OTP");
+
+        setSubmitted(true);
+        window.location.href = data.redirectUrl || "https://pmny.in/DIMRKGkGQz6L";
+      } catch (error) {
+        console.error("Error verifying OTP:", error);
+        setErrors({ ...errors, message: error instanceof Error ? error.message : "Invalid OTP" });
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -209,6 +219,37 @@ const GlobalPopupForm = () => {
                     Proceed to Payment
                   </a>
                 </div>
+              ) : isDuplicate ? (
+                <div className="flex flex-col items-center justify-center py-8 md:py-12 text-center">
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-blue-500/10 rounded-full flex items-center justify-center mb-4 md:mb-6">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-8 w-8 md:h-10 md:w-10 text-blue-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-bold text-[#30261C] mb-4">
+                    Already Submitted!
+                  </h3>
+                  <p className="text-sm md:text-base text-[#30261C]/80 mb-6 md:mb-8 leading-relaxed">
+                    You have already submitted your info with us. To connect again, check your whatsapp for your assigned executive to contact them again.
+                  </p>
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="w-full bg-[#30261C] text-white text-center font-bold py-2.5 md:py-3 px-6 rounded-lg hover:bg-[#4a3b2b] transition-colors duration-300 text-sm md:text-base"
+                  >
+                    Got it
+                  </button>
+                </div>
               ) : (
                 <>
                   <div className="mb-4 md:mb-6">
@@ -260,16 +301,39 @@ const GlobalPopupForm = () => {
                             errors.phone ? "border-red-500" : "border-gray-200"
                           } focus:outline-none focus:border-[#D2A02A] transition-colors`}
                           placeholder="Your Phone Number"
+                          disabled={otpSent}
                         />
                         {errors.phone && <p className="text-red-500 text-[10px] md:text-xs mt-0.5 md:mt-1">{errors.phone}</p>}
                       </div>
                     </div>
+
+                    {otpSent && (
+                      <motion.div 
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="relative"
+                      >
+                        <input
+                          type="text"
+                          name="otp"
+                          value={otp}
+                          onChange={(e) => setOtp(e.target.value.replace(/\D/g, "").slice(0, 6))}
+                          className={`w-full bg-white text-[#30261C] px-3 py-2 md:px-4 md:py-3 rounded-lg border text-sm md:text-base ${
+                            errors.message && otpSent ? "border-red-500" : "border-gray-200"
+                          } focus:outline-none focus:border-[#D2A02A] transition-colors font-bold tracking-[0.5em] text-center`}
+                          placeholder="ENTER OTP"
+                          maxLength={6}
+                        />
+                        {errors.message && otpSent && <p className="text-red-500 text-[10px] md:text-xs mt-0.5 md:mt-1">{errors.message}</p>}
+                      </motion.div>
+                    )}
 
                     <div className="relative">
                       <select
                         name="serviceRequired"
                         value={formState.serviceRequired}
                         onChange={handleChange}
+                        disabled={otpSent}
                         className={`w-full bg-white text-[#30261C] px-3 py-2 md:px-4 md:py-3 rounded-lg border appearance-none text-sm md:text-base ${
                           errors.serviceRequired ? "border-red-500" : "border-gray-200"
                         } focus:outline-none focus:border-[#D2A02A] transition-colors`}
@@ -314,10 +378,10 @@ const GlobalPopupForm = () => {
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                           </svg>
-                          Submitting...
+                          {otpSent ? "Verifying..." : "Sending OTP..."}
                         </span>
                       ) : (
-                        "Get Free Assistance Now"
+                        otpSent ? "Verify OTP" : "Get OTP"
                       )}
                     </button>
                     

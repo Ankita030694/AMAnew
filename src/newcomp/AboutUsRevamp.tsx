@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
 const OurAttorneys = dynamic(() => import("../components/aboutcomps/OurAttorneys"));
 import { Attorney } from "@/lib/attorneys";
-import Legacy2 from "./Legacy2";
+import Legacy from "./Legacy";
 const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
   return (
     <main className="w-full bg-[#EAE6DB]">
@@ -221,7 +221,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
       </section>
 
       {/* Legacy Section */}
-      <Legacy2 />
+      <Legacy />
       {/* Our Journey Through Time Section */}
       <section className="w-full px-4 md:px-8 py-8 flex flex-col items-center gap-[50px] md:gap-[80px]">
         {/* Section Header */}
