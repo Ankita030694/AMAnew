@@ -263,7 +263,9 @@ export default function Footer() {
                 { href: "/is-loan-settlement-in-installments-possible", label: "Is Loan Settlement in Installments Possible" },
                 { href: "/loan-settlement-process-in-hindi", label: "Loan Settlement Process in Hindi" },
                 { href: "/can-i-settle-my-loan-without-a-lawyer", label: "Can I Settle My Loan Without A Lawyer?" },
-                { href: "/does-settlement-impact-a-co-borrower", label: "Does Settlement Impact a Co-borrower" }
+                { href: "/does-settlement-impact-a-co-borrower", label: "Does Settlement Impact a Co-borrower" },
+                { href: "/will-drafting-for-indians-living-in-australia", label: "Will Drafting for Indians in Australia" },
+    { href: "/will-drafting-for-indians-living-in-germany", label: "Will Drafting for Indians in Germany" }
               ].map((query) => (
                 <Link
                   key={query.href}
