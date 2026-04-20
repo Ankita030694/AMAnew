@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUsers, faChartLine, faClipboardList, faCog, faEye, faTrash, faTimes, faBriefcase, faClock, faCheckCircle, faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
-import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
+import { faHome, faUsers, faChartLine, faClipboardList, faCog, faEye, faTrash, faTimes, faBriefcase, faClock, faCheckCircle, faExclamationCircle, faUserCheck, faSync } from '@fortawesome/free-solid-svg-icons';
+import { collection, getDocs, deleteDoc, doc, query, where, addDoc, serverTimestamp } from 'firebase/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
 import { db, auth } from '../../../lib/firebase'; // adjust the path as needed
 import { useRouter } from 'next/navigation';
@@ -35,6 +35,7 @@ const PendingLeadsDashboard = () => {
   const [selectedLead, setSelectedLead] = useState<TableData | null>(null);
   const [showViewModal, setShowViewModal] = useState(false);
   const [isDeleting, setIsDeleting] = useState<string | null>(null);
+  const [isVerifying, setIsVerifying] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
 
@@ -141,6 +142,76 @@ const PendingLeadsDashboard = () => {
   const closeViewModal = () => {
     setShowViewModal(false);
     setSelectedLead(null);
+  };
+
+  // Handle lead verification and transfer to main database
+  const handleVerify = async (lead: TableData, e?: React.MouseEvent) => {
+    if (e) e.stopPropagation(); // Prevent row click when clicking verify button
+    
+    if (isVerifying === lead.id) return;
+    
+    setIsVerifying(lead.id);
+    
+    try {
+      // 1. Check for duplicate in main database (form collection)
+      const q = query(collection(db, 'form'), where('phone', '==', lead.phone.toString().trim()));
+      const querySnapshot = await getDocs(q);
+      
+      let proceed = true;
+      
+      if (!querySnapshot.empty) {
+        // Lead already exists
+        const existingLead = querySnapshot.docs[0].data();
+        let existingDate = 'unknown date';
+        
+        if (existingLead.timestamp) {
+          existingDate = existingLead.timestamp.toDate ? 
+            existingLead.timestamp.toDate().toLocaleString() : 
+            new Date(existingLead.timestamp).toLocaleString();
+        }
+        
+        proceed = confirm(
+          `A lead with this phone number (${lead.phone}) already exists in the main database.\n\n` +
+          `Original Entry Date: ${existingDate}\n\n` +
+          `Do you still want to verify and move this lead to the main database?`
+        );
+      }
+      
+      if (proceed) {
+        // 2. Map data to form collection format
+        const mainLeadData = {
+          name: lead.name,
+          email: lead.email,
+          phone: lead.phone,
+          serviceRequired: lead.serviceRequired,
+          message: lead.message,
+          source: lead.source,
+          submissionUrl: lead.submissionUrl || '',
+          timestamp: serverTimestamp(),
+          verifiedFromPending: true, // Tag it as verified from pending
+          originalPendingId: lead.id
+        };
+        
+        // 3. Add to "form" collection
+        await addDoc(collection(db, 'form'), mainLeadData);
+        
+        // 4. Delete from "pending_leads" collection
+        await deleteDoc(doc(db, 'pending_leads', lead.id));
+        
+        // 5. Update local state
+        setTableData(prevData => prevData.filter(item => item.id !== lead.id));
+        
+        if (showViewModal) closeViewModal();
+        
+        alert('Lead verified and moved to main database successfully!');
+      }
+    } catch (error) {
+      const firebaseError = error as FirebaseError;
+      console.error("Error verifying lead:", firebaseError);
+      alert('Failed to verify lead: ' + firebaseError.message);
+    } finally {
+      setIsVerifying(null);
+    }
   };
 
   // Handle document deletion
@@ -272,8 +343,22 @@ const PendingLeadsDashboard = () => {
                         <motion.button
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
+                          onClick={(e) => handleVerify(row, e)}
+                          disabled={isVerifying === row.id || isDeleting === row.id}
+                          className={`px-3 py-1 text-white rounded-md text-xs flex items-center space-x-1 ${
+                            isVerifying === row.id 
+                              ? 'bg-gray-400 cursor-not-allowed' 
+                              : 'bg-green-600 hover:bg-green-700'
+                          }`}
+                        >
+                          <FontAwesomeIcon icon={isVerifying === row.id ? faSync : faUserCheck} className={`text-xs ${isVerifying === row.id ? 'animate-spin' : ''}`} />
+                          <span>{isVerifying === row.id ? '...' : 'Verify'}</span>
+                        </motion.button>
+                        <motion.button
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
                           onClick={(e) => handleDelete(row.id, e)}
-                          disabled={isDeleting === row.id}
+                          disabled={isDeleting === row.id || isVerifying === row.id}
                           className={`px-3 py-1 text-white rounded-md text-xs flex items-center space-x-1 ${
                             isDeleting === row.id 
                               ? 'bg-gray-400 cursor-not-allowed' 
@@ -424,8 +509,22 @@ const PendingLeadsDashboard = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={(e) => handleVerify(selectedLead, e)}
+                disabled={isVerifying === selectedLead.id || isDeleting === selectedLead.id}
+                className={`px-4 py-2 text-white rounded-md font-medium flex items-center space-x-2 ${
+                  isVerifying === selectedLead.id 
+                    ? 'bg-gray-400 cursor-not-allowed' 
+                    : 'bg-green-600 hover:bg-green-700'
+                }`}
+              >
+                <FontAwesomeIcon icon={isVerifying === selectedLead.id ? faSync : faUserCheck} className={isVerifying === selectedLead.id ? 'animate-spin' : ''} />
+                <span>{isVerifying === selectedLead.id ? 'Verifying...' : 'Verify & Move to Main DB'}</span>
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 onClick={(e) => handleDelete(selectedLead.id, e)}
-                disabled={isDeleting === selectedLead.id}
+                disabled={isDeleting === selectedLead.id || isVerifying === selectedLead.id}
                 className={`px-4 py-2 text-white rounded-md font-medium flex items-center space-x-2 ${
                   isDeleting === selectedLead.id 
                     ? 'bg-gray-400 cursor-not-allowed' 
