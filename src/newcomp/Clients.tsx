@@ -21,6 +21,27 @@ const ALL_LOGOS = [
   "/newAssets/clientLogos/15.png", // Globaton
 ];
 
+const LOGO_NAMES: Record<string, string> = {
+  "/newAssets/clientLogos/16.png": "Globaton",
+  "/newAssets/clientLogos/3.png": "HDFC Bank",
+  "/newAssets/clientLogos/11.png": "Billcut",
+  "/newAssets/clientLogos/10.png": "9Consultants",
+  "/newAssets/clientLogos/1.png": "BCB",
+  "/newAssets/clientLogos/7.png": "Hero Fincorp",
+  "/newAssets/clientLogos/14.png": "SettleLoans",
+  "/newAssets/clientLogos/9.png": "Born Hi",
+  "/newAssets/clientLogos/4.png": "IPR Karo",
+  "/newAssets/clientLogos/5.png": "DNM",
+  "/newAssets/clientLogos/8.png": "Jivo Energy",
+  "/newAssets/clientLogos/2.png": "Designncode",
+  "/newAssets/clientLogos/13.png": "Milsipp",
+  "/newAssets/clientLogos/6.png": "CredSettle",
+  "/newAssets/clientLogos/12.png": "Pinecone",
+  "/newAssets/clientLogos/17.png": "Jivo Solutions",
+  "/newAssets/clientLogos/15.png": "Globaton",
+  "/newAssets/clientLogos/1.png ": "BCB",
+};
+
 const Clients = () => {
   // Unit percentage for staggering (approx width of one logo + separator space)
   const UNIT_PCT = 22; // 18% logo + 4% separator space approx
@@ -71,7 +92,7 @@ const Clients = () => {
                         <div className="relative w-[28%] h-[50px] flex items-center justify-center">
                           <Image 
                             src={src} 
-                            alt="Client Logo" 
+                            alt={`${LOGO_NAMES[src] || 'Client'} Logo`} 
                             fill
                             className="object-contain"
                           />
@@ -204,7 +225,7 @@ const LogoCard = ({ src, className = "" }: { src: string, className?: string }) 
     <div className={`w-[18%] aspect-[220/130] flex items-center justify-center px-[1%] ${className}`}>
       <Image 
         src={src} 
-        alt="Client Logo" 
+        alt={`${LOGO_NAMES[src] || 'Client'} Logo`} 
         width={250} 
         height={70}
         className="w-full h-auto object-contain"

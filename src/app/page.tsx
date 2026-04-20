@@ -14,15 +14,15 @@ import Script from "next/script";
 import { baseTestimonials } from "@/data/testimonials";
 
 export const metadata = {
-  title: 'AMA Legal | AMA Legal Solutions: Top Law Firm in India',
-  description: 'AMA Legal & AMA Legal Solutions - Leading law firm in India. AMA Legal Solutions offers expert legal consultation, dispute resolution, and advisory services. Trust AMA Legal for all your legal needs.',
+  title: 'AMA Legal Solutions | Top Full-Service Law Firm in India',
+  description: 'AMA Legal Solutions is a premier law firm in India, providing expert legal consultation, dispute resolution, and advisory services for individuals and corporations.',
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/',
   },
   // Add Open Graph metadata for better social sharing
   openGraph: {
-    title: 'AMA Legal | AMA Legal Solutions: Top Law Firm in India',
-    description: 'AMA Legal & AMA Legal Solutions are trusted names in the Indian legal landscape. AMA Legal Solutions is a top law firm in India offering expert legal consultation, dispute resolution, and advisory services.',
+    title: 'AMA Legal Solutions | Top Full-Service Law Firm in India',
+    description: 'Expert legal consultation and dispute resolution services in India. AMA Legal Solutions provides trustworthy advisory for all your legal needs.',
     url: 'https://www.amalegalsolutions.com/',
     siteName: 'AMA Legal Solutions',
     type: 'website',
@@ -30,8 +30,8 @@ export const metadata = {
   // Add Twitter metadata
   twitter: {
     card: 'summary_large_image',
-    title: 'AMA Legal | AMA Legal Solutions: Top Law Firm in India',
-    description: 'AMA Legal & AMA Legal Solutions offers expert legal consultation and dispute resolution in India. Choose AMA Legal Solutions for trusted legal advice.',
+    title: 'AMA Legal Solutions | Top Full-Service Law Firm in India',
+    description: 'Premier law firm in India offering expert legal consultation and dispute resolution services. Trust AMA Legal Solutions for professional legal advice.',
   },
 }
 
@@ -139,27 +139,27 @@ export default function Home() {
       
       <VideoTestimonials />
 
-      {/* SEO Keyword Infusion Section */}
+      {/* SEO Information Section */}
       <section className="max-w-7xl mx-auto px-6 py-16 text-center border-t border-black/5">
         <h2 className="text-3xl md:text-4xl font-normal text-[#30261C] mb-8" style={{ fontFamily: 'var(--font-polysans)' }}>
-          Why Choose AMA Legal & AMA Legal Solutions?
+          Why Choose AMA Legal Solutions?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
           <div className="space-y-4">
-            <h3 className="text-xl font-medium text-[#D29E0D]">Expertise at AMA Legal</h3>
+            <h3 className="text-xl font-medium text-[#D29E0D]">Expertise You Can Trust</h3>
             <p className="text-[#30261C]/80 leading-relaxed">
-              At <strong>AMA Legal</strong>, we provide unparalleled legal expertise. Our team at <strong>AMA Legal Solutions</strong> is committed to delivering results. As a premier <strong>AMA Legal</strong> firm, we understand the complexities of the Indian legal system. Choosing <strong>AMA Legal Solutions</strong> ensures that your legal matters are handled with the utmost precision and care.
+              At <strong>AMA Legal Solutions</strong>, we provide unparalleled primary legal expertise. Our team is committed to delivering results by navigating the complexities of the Indian legal system. We ensure that your legal matters are handled with the utmost precision, care, and professional integrity.
             </p>
           </div>
           <div className="space-y-4">
-            <h3 className="text-xl font-medium text-[#D29E0D]">AMA Legal Solutions: Tailored for You</h3>
+            <h3 className="text-xl font-medium text-[#D29E0D]">Tailored Legal Services</h3>
             <p className="text-[#30261C]/80 leading-relaxed">
-              <strong>AMA Legal Solutions</strong> offers a wide range of services including corporate law, finance, and dispute resolution. <strong>AMA Legal</strong> is known for its integrity and client-centric approach. When you search for <strong>AMA Legal Solutions</strong>, you are looking for the best in the industry. Trust <strong>AMA Legal</strong> and <strong>AMA Legal Solutions</strong> for your legal journey.
+              We offer a wide range of specialized services including corporate law, finance, and dispute resolution. <strong>AMA Legal Solutions</strong> is recognized for its client-centric approach, providing strategic guidance tailored to your unique challenges in the modern legal landscape.
             </p>
           </div>
         </div>
         <p className="mt-8 text-[#30261C]/70 italic">
-          Experience the difference with <strong>AMA Legal</strong>. Your search for <strong>AMA Legal Solutions</strong> ends here.
+          Experience the professional difference with our expert practitioners. Your search for comprehensive legal solutions ends here.
         </p>
       </section>
 

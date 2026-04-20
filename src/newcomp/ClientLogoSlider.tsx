@@ -29,6 +29,26 @@ const INVERTED_LOGOS = [
   "/newAssets/clientLogos/5.png",  // DNM
 ];
 
+const LOGO_NAMES: Record<string, string> = {
+  "/newAssets/clientLogos/16.png": "Globaton",
+  "/newAssets/clientLogos/3.png": "HDFC Bank",
+  "/newAssets/clientLogos/11.png": "Billcut",
+  "/newAssets/clientLogos/10.png": "9Consultants",
+  "/newAssets/clientLogos/1.png": "BCB",
+  "/newAssets/clientLogos/7.png": "Hero Fincorp",
+  "/newAssets/clientLogos/14.png": "SettleLoans",
+  "/newAssets/clientLogos/9.png": "Born Hi",
+  "/newAssets/clientLogos/4.png": "IPR Karo",
+  "/newAssets/clientLogos/5.png": "DNM",
+  "/newAssets/clientLogos/8.png": "Jivo Energy",
+  "/newAssets/clientLogos/2.png": "Designncode",
+  "/newAssets/clientLogos/13.png": "Milsipp",
+  "/newAssets/clientLogos/6.png": "CredSettle",
+  "/newAssets/clientLogos/12.png": "Pinecone",
+  "/newAssets/clientLogos/17.png": "Jivo Solutions",
+  "/newAssets/clientLogos/15.png": "Globaton",
+};
+
 /* ─── single logo card ─── */
 const LogoCard = ({ src }: { src: string }) => {
   const isInverted = INVERTED_LOGOS.includes(src);
@@ -36,7 +56,7 @@ const LogoCard = ({ src }: { src: string }) => {
     <div className="logo-card">
       <Image
         src={src}
-        alt="Client Logo"
+        alt={`${LOGO_NAMES[src] || 'Client'} Logo`}
         width={200}
         height={60}
         className={`logo-card-img ${isInverted ? "invert-logo" : ""}`}

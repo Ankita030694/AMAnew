@@ -19,6 +19,26 @@ import Footer from "@/newcomp/Footer";
 // Generate array of logo paths: 1.png to 17.png
 const clientLogos = Array.from({ length: 17 }, (_, i) => `/newAssets/clientLogos/${i + 1}.png`);
 
+const LOGO_NAMES: Record<string, string> = {
+  "/newAssets/clientLogos/1.png": "BCB",
+  "/newAssets/clientLogos/2.png": "Designncode",
+  "/newAssets/clientLogos/3.png": "HDFC Bank",
+  "/newAssets/clientLogos/4.png": "IPR Karo",
+  "/newAssets/clientLogos/5.png": "DNM",
+  "/newAssets/clientLogos/6.png": "CredSettle",
+  "/newAssets/clientLogos/7.png": "Hero Fincorp",
+  "/newAssets/clientLogos/8.png": "Jivo Energy",
+  "/newAssets/clientLogos/9.png": "Born Hi",
+  "/newAssets/clientLogos/10.png": "9Consultants",
+  "/newAssets/clientLogos/11.png": "Billcut",
+  "/newAssets/clientLogos/12.png": "Pinecone",
+  "/newAssets/clientLogos/13.png": "Milsipp",
+  "/newAssets/clientLogos/14.png": "SettleLoans",
+  "/newAssets/clientLogos/15.png": "Globaton",
+  "/newAssets/clientLogos/16.png": "Globaton",
+  "/newAssets/clientLogos/17.png": "Jivo Solutions",
+};
+
 const SERVICE_OPTIONS = [
   { label: "Loan Settlement", description: "Negotiating and settling outstanding debts and controlling harassment." },
   { label: "IPR/Trademark/Copyright/Patent", description: "Protecting intellectual property rights." },
@@ -249,7 +269,7 @@ const ContactComp = () => {
                     <div key={index} className="relative w-32 h-20 flex-shrink-0 flex items-center justify-center">
                       <Image
                         src={src}
-                        alt={`Client Logo ${index + 1}`}
+                        alt={`${LOGO_NAMES[src] || 'Client'} Logo`}
                         fill
                         className="object-contain opacity-80 hover:opacity-100 transition-opacity"
                       />
