@@ -232,11 +232,7 @@ const nextConfig = {
         destination: '/services/banking-and-finance',
         permanent: true,
       },
-      {
-        source: '/loan-settlement-services',
-        destination: '/services/loan-settlement',
-        permanent: true,
-      },
+
 
       // ── SEO Fix: Malformed URLs (www. inside path) → home ───────────────
       {

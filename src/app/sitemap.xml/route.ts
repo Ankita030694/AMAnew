@@ -58,6 +58,7 @@ export async function GET(): Promise<Response> {
     '/personal-loan-settlement',
     '/business-loan-settlement',
     '/car-loan-settlement',
+    '/loan-settlement-services',
     '/credit-card-settlement',
     '/legal-services-in-noida',
     '/legal-services-in-delhi',
@@ -432,6 +433,7 @@ export async function GET(): Promise<Response> {
   }
 
   // Build service slug routes
+  const loanSettlementServiceRoutes = generateLoanSettlementServiceRoutes(baseUrl)
   const serviceSlugRoutes = generateServiceSlugRoutes(baseUrl)
 
   // Build dynamic blog routes
@@ -470,6 +472,7 @@ export async function GET(): Promise<Response> {
   const allRoutes = [
     ...staticRoutes,
     ...dynamicBankRoutes,
+    ...loanSettlementServiceRoutes,
     ...serviceSlugRoutes,
     ...blogRoutes,
     ...articleRoutes,
@@ -603,4 +606,117 @@ function generateServiceSlugRoutes(baseUrl: string) {
   }
 
   return serviceSlugRoutes
+}
+
+function generateLoanSettlementServiceRoutes(baseUrl: string) {
+  const services = [
+    "Debt Recovery Tribunal (DRT) Lawyer",
+    "Appeal Against DRT Order",
+    "DRT Stay Petition Filing",
+    "Writ Petition in High Court Against Bank",
+    "Review Petition in DRT or High Court (Loan-Related)",
+    "Contempt of Court in Loan Recovery Cases",
+    "Civil Suit for Recovery",
+    "Recovery Case by Bank",
+    "Case for Over Recovery By Bank",
+    "Legal Representation in Lok Adalat for Loan Matters",
+    "Loan Restructuring & Financial Strategy",
+    "Loan & EMI Settlement Lawyer",
+    "Loan Restructuring Lawyer",
+    "Bad Loan Recovery Strategy",
+    "Overdue Loan Legal Protection",
+    "EMI Default Legal Advice",
+    "Loan Foreclosure Assistance",
+    "Strategic Negotiation & Representation",
+    "Negotiation with Banks/NBFCs for Reduced Settlement Amount",
+    "Secured vs Unsecured Loan Legal Strategy for Businesses",
+    "Bank, NBFC & Harassment Legal Defense",
+    "Bank Harassment Legal Action",
+    "Recovery Agent Complaints",
+    "Legal Notices to Banks & NBFCs",
+    "RBI/Banking Complaints",
+    "RBI and NBFC Compliance Advisory",
+    "Legal Advice on RBI Ombudsman Scheme",
+    "Excess Interest Charge Complaint",
+    "Hidden Loan Charges Legal Support",
+    "Wrong Loan Recovery Complaint Filing",
+    "Fraud in Loan by Agent",
+    "Fraud by Bank Case",
+    "Bank Account Freezing Due to Loan Default - Legal Help",
+    "Salary Garnishment Protection in Loan Case",
+    "SARFAESI & Property Protection",
+    "Sarfaesi Act Legal Defense",
+    "Property Attachment Stay Order (Loan Default)",
+    "Auction Prevention Legal Strategy",
+    "Home Auction Stay & Objection",
+    "Loan Against Property Dispute Lawyer",
+    "Borrower Disputes & Consumer Complaints",
+    "Legal for Loan Disputes",
+    "Cheque Bounce (Section 138) Lawyer",
+    "Co-applicant Loan Dispute Resolution",
+    "Guarantor Loan Dispute Assistance",
+    "Credit Score Settlement Lawyer",
+    "CIBIL Score Dispute Resolution",
+    "Credit Limit Misuse Dispute Resolution",
+    "Wrong Loan Account Mapping/Multiple Loans Issue",
+    "Unsecured Loan Legal Advisory",
+    "Auto-Debit or NACH Dispute Legal Help",
+    "Loan Closure Certificate Dispute Resolution",
+    "Legal Help for Non-Closure of Settled Loan",
+    "Settlement Letter & No-Due Certificate Dispute",
+    "CIBIL Update After Settlement or OTS",
+    "Consumer Court & Loan Fraud Cases",
+    "Consumer Court Case for Mis-sold Loan",
+    "Filing Consumer Case Against NBFC/Bank",
+    "Case Against Loan Agent Misrepresentation",
+    "Filing FIR for Loan Fraud",
+    "Cyber Fraud Related to Loans & EMI Apps",
+    "Online Loan Scam & Fraud Case Lawyer",
+    "Instant Loan App Harassment Legal Help",
+    "Digital & Online Loan Disputes",
+    "Identity Theft & Forgery Cases",
+    "Financial Abuse & Identity Theft",
+    "Loan Taken in Someone Else's Name (Identity Theft Case)",
+    "Dispute Over Forged Loan Signatures",
+    "Legal Case for Loan Sanction Without Consent",
+    "Wrong PAN or Aadhaar Usage in Loan - Legal Help",
+    "Business & Corporate Loan Matters",
+    "Corporate Loan Matters",
+    "SME Loan Dispute Resolution",
+    "Working Capital Loan Legal Help",
+    "Pre/Post Loan Legal Services",
+    "Legal Due Diligence for Loans",
+    "Pre-loan Legal Verification",
+    "Loan Agreement Drafting & Review",
+    "Post-Settlement & Compliance Services",
+    "Loan & Banking Legal Issues",
+    "Litigation & Consumer Court Expansion",
+    "Enforcement & Garnishee Protection",
+    "Borrower Protection & Rights",
+    "Borrower Rights Under RBI Guidelines Advisory",
+    "NPA Account Legal Consultation",
+    "Written Off Loan Settlement Support",
+    "Debt Consolidation Legal Services",
+    "Settlement Notice Drafting",
+    "NBFC Fraud Complaint Handling",
+    "Credit Card Settlement Legal Help",
+    "Startup Loan Legal Advisory",
+    "Mudra Loan Settlement Legal Help",
+    "Stop Harassment by Loan Recovery Agents – Legal Protection",
+    "Legal Remedies if Your Co-Signer or Guarantor Refuses to Pay the Loan"
+  ];
+
+  return services.map(service => {
+    const slug = service
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)+/g, '');
+
+    return {
+      url: `${baseUrl}/loan-settlement-services/${slug}`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8
+    };
+  });
 }

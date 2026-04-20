@@ -245,6 +245,7 @@ const Footer = () => {
         { name: 'Business Loan Settlement', href: '/business-loan-settlement' },
         { name: 'Car Loan Settlement', href: '/car-loan-settlement' },
         { name: 'App Loan Settlement', href: '/app-loan-settlement' },
+        { name: 'Loan Settlement Services', href: '/loan-settlement-services' },
         { name: 'Settlement Services', href: '/services/loan-settlement' },
         { name: 'Debt Consolidation', href: '/services/debt-consolidation' },
         { name: 'Loan & Debt Consolidation', href: '/services/loan-and-debt-consolidation' },
