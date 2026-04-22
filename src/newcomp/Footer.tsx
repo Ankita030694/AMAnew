@@ -161,6 +161,24 @@ const Footer = () => {
       "@type": "Product",
       "name": "Reply to Recovery Notice Consultation",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1250" }
+    },
+    "/bajaj-recovery-agent-calling-references": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Bajaj Reference Calling Legal Protection",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1850" }
+    },
+    "/bajaj-recovery-agent-hacked-my-contact-list": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Bajaj Contact Hacking Legal Protection",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1450" }
+    },
+    "/bajaj-recovery-agent-abusing": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Bajaj Recovery Abuse Legal Protection",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
     }
   };
   const footerColumns = [
@@ -435,6 +453,9 @@ const Footer = () => {
         { name: "Legal Rights After Default", href: "/legal-rights-after-loan-default" },
         { name: "When to Choose Settlement", href: "/when-to-choose-loan-settlement" },
         { name: "Recovery Notice Reply Format", href: "/reply-to-recovery-notice-format" },
+        { name: "Bajaj Reference Calling Help", href: "/bajaj-recovery-agent-calling-references" },
+        { name: "Bajaj Contact Hacking Help", href: "/bajaj-recovery-agent-hacked-my-contact-list" },
+        { name: "Stop Bajaj Recovery Abuse", href: "/bajaj-recovery-agent-abusing" },
       ]
 
     }

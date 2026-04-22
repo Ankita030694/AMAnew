@@ -63,8 +63,8 @@ const GlobalPopupForm = () => {
           currentPath.includes("/thank-you") ||
           currentPath.includes("/payment-success") ||
           currentPath.includes("/failure") ||
-          currentPath.includes("/contact");
-          currentPath.includes("/careers")
+          currentPath.includes("/contact") ||
+          currentPath.includes("/careers");
         
         if (!isExcludedPage) {
           setIsOpen(true);
@@ -403,6 +403,8 @@ const GlobalPopupForm = () => {
                         <Image src={payu} alt="Secured by PayU" className="w-24 md:w-32 h-auto" />
                       </div>
                     </div>
+
+                    
                   </form>
                 </>
               )}

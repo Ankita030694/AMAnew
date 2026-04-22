@@ -248,6 +248,7 @@ export default function Footer() {
     { href: "/not-being-paid-fnf-want-to-send-legal-notice", label: "Legal Notice for Unpaid F&F" },
     { href: "/employer-not-paying-salary-after-resignation", label: "Salary Not Paid After Resignation" },
     { href: "/how-do-i-stop-recovery-agent-from-coming-home", label: "Stop Recovery Agent Home Visits" },
+    { href: "/how-to-stop-bajaj-recovery-agent-harassment-instantly", label: "Stop Bajaj Recovery Agent Harassment" },
     { href: "/bajaj-finance-agent-visiting-home", label: "Bajaj Finance Agent Help" },
     { href: "/documents-needed-for-loan-settlement-noc", label: "Documents for Loan Settlement NOC" },
     { href: "/can-bank-file-case-for-personal-loan", label: "Can Bank File Case for Personal Loan" },
