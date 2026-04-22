@@ -51,7 +51,7 @@ const GlobalPopupForm = () => {
     window.addEventListener("openGlobalPopup", handleOpenPopup);
 
     // Check if user has already submitted the form or it has been shown in this session
-    const hasBeenSubmitted = localStorage.getItem("global_popup_submitted");
+    const hasBeenSubmitted = localStorage.getItem("form_submitted") || localStorage.getItem("global_popup_submitted");
     const hasBeenShown = sessionStorage.getItem("global_popup_shown");
 
     if (!hasBeenSubmitted && !hasBeenShown) {
@@ -141,7 +141,7 @@ const GlobalPopupForm = () => {
         const data = await response.json();
         if (response.status === 409 && data.error === "DUPLICATE_LEAD") {
           setIsDuplicate(true);
-          localStorage.setItem("global_popup_submitted", "true");
+          localStorage.setItem("form_submitted", "true");
           return;
         }
         if (!response.ok) throw new Error(data.error || "Failed to send OTP");
@@ -171,7 +171,7 @@ const GlobalPopupForm = () => {
         if (!response.ok) throw new Error(data.error || "Invalid OTP");
 
         setSubmitted(true);
-        localStorage.setItem("global_popup_submitted", "true");
+        localStorage.setItem("form_submitted", "true");
         window.location.href = data.redirectUrl || "https://pmny.in/DIMRKGkGQz6L";
       } catch (error) {
         console.error("Error verifying OTP:", error);
@@ -218,12 +218,7 @@ const GlobalPopupForm = () => {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-[#30261C] mb-2">
-                    Thank You!
-                  </h3>
-                  <p className="text-sm md:text-base text-[#30261C]/80 mb-6 md:mb-8">
-                    Your message has been received. We'll get back to you shortly.
-                  </p>
+      
                   <a
                     href="https://pmny.in/DIMRKGkGQz6L"
                     className="w-full bg-[#E19100] text-white text-center font-bold py-2.5 md:py-3 px-6 rounded-lg hover:bg-[#d08600] transition-colors duration-300 text-sm md:text-base"

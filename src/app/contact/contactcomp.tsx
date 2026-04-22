@@ -171,6 +171,7 @@ const ContactComp = () => {
         const data = await response.json();
         if (response.status === 409 && data.error === "DUPLICATE_LEAD") {
           setIsDuplicate(true);
+          localStorage.setItem("form_submitted", "true");
           return false;
         }
         if (!response.ok) throw new Error(data.error || "Failed to send OTP");
@@ -202,6 +203,7 @@ const ContactComp = () => {
         if (!response.ok) throw new Error(data.error || "Invalid OTP");
 
         setSubmitted(true);
+        localStorage.setItem("form_submitted", "true");
         window.location.href = data.redirectUrl || "https://pmny.in/DIMRKGkGQz6L";
         return true;
       } catch (error) {
