@@ -22,11 +22,10 @@ allServices.forEach(service => {
 });
 
 const relatedPages = [
-  { title: "Complete Loan Settlement Process", href: "/loan-settlement-services/loan-settlement-process" },
-  { title: "Stop Bank Harassment Instantly", href: "/how-to-stop-bank-harassment-instantly" },
-  { title: "RBI New Recovery Guidelines 2026", href: "/rbi-new-recovery-guidelines-july-2026" },
-  { title: "One-Time Settlement (OTS) Guide", href: "/loan-settlement-services/one-time-settlement-process" },
-  { title: "Improve CIBIL After Settlement", href: "/how-to-improve-cibil-score-after-loan-settlement" },
+  { title: "Complete Loan Settlement Process", href: "/services/loan-settlement" },
+  { title: "Which Bank Provide Personal Loan for CIBIL Defaulters", href: "/which-bank-provide-personal-loan-for-cibil-defaulters" },
+  { title: "How Do I Stop Recovery Agent From Coming Home", href: "/how-do-i-stop-recovery-agent-from-coming-home" },
+  { title: "Loan Recovery Agents Harassment Complaint", href: "/loan-recovery-agents-harassment-complaint" },
 ];
 
 export async function generateStaticParams() {
