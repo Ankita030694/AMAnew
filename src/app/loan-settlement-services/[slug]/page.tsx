@@ -214,7 +214,7 @@ export default async function DynamicServicePage({ params }: { params: Promise<{
                   <FaShieldAlt /> Shield Your Future
                 </button>
               </Link>
-              <a href="tel:+919654961599">
+              <a href="tel:+918700343611">
                 <button className="bg-white border-2 border-[#D29E0D] text-[#D29E0D] hover:bg-[#D29E0D] hover:text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-md flex items-center justify-center gap-2">
                   <FaPhone /> Legal Helpline
                 </button>
