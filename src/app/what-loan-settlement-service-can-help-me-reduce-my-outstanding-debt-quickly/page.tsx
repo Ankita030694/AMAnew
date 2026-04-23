@@ -758,17 +758,17 @@ export default function DebtReductionPage() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/loan-settlement/sbi-bank" className="text-gray-600 hover:text-[#D2A02A] text-sm block transition-colors">
+                      <Link href="/loan-settlement-by-bank/sbi-bank" className="text-gray-600 hover:text-[#D2A02A] text-sm block transition-colors">
                         SBI Loan Settlement
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/loan-settlement/hdfc-bank" className="text-gray-600 hover:text-[#D2A02A] text-sm block transition-colors">
+                      <Link href="/loan-settlement-by-bank/hdfc-bank" className="text-gray-600 hover:text-[#D2A02A] text-sm block transition-colors">
                         HDFC Loan Settlement
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/loan-settlement/icici-bank" className="text-gray-600 hover:text-[#D2A02A] text-sm block transition-colors">
+                      <Link href="/loan-settlement-by-bank/icici-bank" className="text-gray-600 hover:text-[#D2A02A] text-sm block transition-colors">
                         ICICI Bank Settlement
                       </Link>
                     </li>
@@ -778,7 +778,7 @@ export default function DebtReductionPage() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/loan-settlement/credit-card" className="text-gray-600 hover:text-[#D2A02A] text-sm block transition-colors">
+                      <Link href="/services/loan-settlement" className="text-gray-600 hover:text-[#D2A02A] text-sm block transition-colors">
                         Credit Card Settlement
                       </Link>
                     </li>

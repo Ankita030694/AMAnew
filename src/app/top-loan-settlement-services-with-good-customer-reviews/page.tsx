@@ -747,12 +747,12 @@ export default function TopLoanSettlementPage() {
                         </Link>
                      </li>
                      <li>
-                        <Link href="/ignoring-calls-of-recovery-agent" className="text-gray-700 hover:text-[#D2A02A] block transition-colors">
+                        <Link href="/loan-recovery-agents-harassment-complaint" className="text-gray-700 hover:text-[#D2A02A] block transition-colors">
                            Stop Recovery Harassment
                         </Link>
                      </li>
                      <li>
-                        <Link href="/services/cheque-bounce-lawyer" className="text-gray-700 hover:text-[#D2A02A] block transition-colors">
+                        <Link href="/services/criminal-law" className="text-gray-700 hover:text-[#D2A02A] block transition-colors">
                            Cheque Bounce Cases
                         </Link>
                      </li>

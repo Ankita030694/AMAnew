@@ -534,12 +534,12 @@ export default function ManipurIPRPage() {
                 <h3 className="text-lg font-bold text-gray-900 mb-4">Our Services</h3>
                 <ul className="space-y-3 text-sm">
                   <li>
-                    <Link href="/services/company-incorporation" className="text-gray-600 hover:text-[#D2A02A] flex items-center transition-colors">
+                    <Link href="/services/corporate" className="text-gray-600 hover:text-[#D2A02A] flex items-center transition-colors">
                       <span className="text-[#D2A02A] mr-2">›</span> Company Registration
                     </Link>
                   </li>
                    <li>
-                    <Link href="/services/tax-and-compliance" className="text-gray-600 hover:text-[#D2A02A] flex items-center transition-colors">
+                    <Link href="/services/corporate" className="text-gray-600 hover:text-[#D2A02A] flex items-center transition-colors">
                       <span className="text-[#D2A02A] mr-2">›</span> Tax & GST Filing
                     </Link>
                   </li>

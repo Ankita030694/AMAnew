@@ -643,7 +643,7 @@ export default function PuducherryIPRPage() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/cyber-crime" className="text-gray-600 hover:text-[#D2A02A] flex items-center group">
+                    <Link href="/services/cyber" className="text-gray-600 hover:text-[#D2A02A] flex items-center group">
                       <span className="w-1.5 h-1.5 bg-gray-300 rounded-full mr-3 group-hover:bg-[#D2A02A] transition-colors"></span>
                       Cyber Crime
                     </Link>

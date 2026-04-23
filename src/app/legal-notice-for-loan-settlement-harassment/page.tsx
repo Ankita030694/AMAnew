@@ -734,7 +734,7 @@ export default function LoanHarassmentPage() {
                   <h3 className="text-xl font-bold text-gray-900 mb-6">Expert Services</h3>
                   <div className="flex flex-wrap gap-2">
                     <Link href="/services/loan-settlement" className="text-xs bg-gray-100 hover:bg-[#D2A02A] hover:text-white px-4 py-2 rounded-full transition-colors font-medium">Loan Settlement</Link>
-                    <Link href="/services/loan-settlement/credit-card" className="text-xs bg-gray-100 hover:bg-[#D2A02A] hover:text-white px-4 py-2 rounded-full transition-colors font-medium">Credit Card</Link>
+                    <Link href="/services/loan-settlement" className="text-xs bg-gray-100 hover:bg-[#D2A02A] hover:text-white px-4 py-2 rounded-full transition-colors font-medium">Credit Card</Link>
                     <Link href="/contact" className="text-xs bg-gray-100 hover:bg-[#D2A02A] hover:text-white px-4 py-2 rounded-full transition-colors font-medium">Legal Notice</Link>
                   </div>
                </div>

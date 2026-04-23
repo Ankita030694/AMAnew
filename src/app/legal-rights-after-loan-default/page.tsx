@@ -561,8 +561,8 @@ export default function LegalRightsPage() {
                     <Link href="/is-loan-settlement-illegal-in-india-truth" className="block text-sm text-gray-600 hover:text-[#D2A02A] transition-colors border-b border-gray-50 pb-2">
                         Is Loan Settlement Legal?
                     </Link>
-                    <Link href="/how-to-stop-recovery-agent-from-coming-home" className="block text-sm text-gray-600 hover:text-[#D2A02A] transition-colors pb-2">
-                        Stop Recovery Agent Visits
+                    <Link href="/how-do-i-stop-recovery-agent-from-coming-home" className="text-gray-600 hover:text-[#D2A02A] transition-colors flex items-center">
+                      <span className="mr-2">›</span> Stop Agents Visiting Home
                     </Link>
                   </div>
                 </div>

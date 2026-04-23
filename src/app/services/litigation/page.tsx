@@ -768,7 +768,7 @@ export default function LitigationPage() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/family-law" className="group flex items-center text-gray-600 hover:text-[#D2A02A] transition-colors">
+                      <Link href="/services/civil" className="group flex items-center text-gray-600 hover:text-[#D2A02A] transition-colors">
                         <span className="w-2 h-2 bg-gray-300 rounded-full mr-3 group-hover:bg-[#D2A02A]"></span>
                         Family Law
                       </Link>

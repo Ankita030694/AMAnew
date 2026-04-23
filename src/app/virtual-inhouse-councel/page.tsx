@@ -645,7 +645,7 @@ export default function VirtualInhouseCouncelPage() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/corporate-law" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                      <Link href="/services/corporate" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
                         <span className="mr-2">›</span> Corporate Law
                       </Link>
                     </li>

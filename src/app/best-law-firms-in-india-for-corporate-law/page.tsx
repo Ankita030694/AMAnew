@@ -561,19 +561,19 @@ export default function BestCorporateLawFirmsPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-6 border-b border-gray-100 pb-4">Corporate Services</h3>
                 <ul className="space-y-4 text-base font-medium">
                   <li>
-                    <Link href="/services/mergers-and-acquisitions" className="text-gray-600 hover:text-[#D2A02A] flex items-center group transition-colors">
-                      <span className="mr-3 text-[#D2A02A] transform group-hover:translate-x-1 transition-transform">→</span> 
-                      Mergers & Acquisitions
-                    </Link>
-                  </li>
-                  <li>
                     <Link href="/services/banking-and-finance" className="text-gray-600 hover:text-[#D2A02A] flex items-center group transition-colors">
                       <span className="mr-3 text-[#D2A02A] transform group-hover:translate-x-1 transition-transform">→</span> 
                       Banking & Finance Law
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/intellectual-property" className="text-gray-600 hover:text-[#D2A02A] flex items-center group transition-colors">
+                    <Link href="/services/corporate" className="text-gray-600 hover:text-[#D2A02A] flex items-center group transition-colors">
+                      <span className="mr-3 text-[#D2A02A] transform group-hover:translate-x-1 transition-transform">→</span> 
+                      Corporate & Commercial
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/services/intellectual-property-rights" className="text-gray-600 hover:text-[#D2A02A] flex items-center group transition-colors">
                       <span className="mr-3 text-[#D2A02A] transform group-hover:translate-x-1 transition-transform">→</span> 
                       Intellectual Property Rights
                     </Link>
@@ -585,7 +585,7 @@ export default function BestCorporateLawFirmsPage() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/startup-advisory" className="text-gray-600 hover:text-[#D2A02A] flex items-center group transition-colors">
+                    <Link href="/services/corporate" className="text-gray-600 hover:text-[#D2A02A] flex items-center group transition-colors">
                       <span className="mr-3 text-[#D2A02A] transform group-hover:translate-x-1 transition-transform">→</span> 
                       Startup Legal Advisory
                     </Link>

@@ -734,13 +734,13 @@ export default function ArbitrationPage() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/contract" className="group flex items-center text-gray-600 hover:text-[#D2A02A] transition-colors">
+                      <Link href="/services/drafting" className="group flex items-center text-gray-600 hover:text-[#D2A02A] transition-colors">
                         <span className="w-2 h-2 bg-gray-300 rounded-full mr-3 group-hover:bg-[#D2A02A]"></span>
                         Contract Drafting
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/cheque-bounce" className="group flex items-center text-gray-600 hover:text-[#D2A02A] transition-colors">
+                      <Link href="/services/criminal-law" className="group flex items-center text-gray-600 hover:text-[#D2A02A] transition-colors">
                         <span className="w-2 h-2 bg-gray-300 rounded-full mr-3 group-hover:bg-[#D2A02A]"></span>
                         Cheque Bounce
                       </Link>

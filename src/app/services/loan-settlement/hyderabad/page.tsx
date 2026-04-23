@@ -637,7 +637,7 @@ export default function HyderabadLoanSettlementPage() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/cheque-bounce-lawyer" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                      <Link href="/services/criminal-law" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
                         <span className="mr-2">›</span> Cheque Bounce
                       </Link>
                     </li>

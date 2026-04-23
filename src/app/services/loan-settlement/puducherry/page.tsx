@@ -548,18 +548,18 @@ export default function LoanSettlementPuducherryPage() {
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                   <h3 className="text-lg font-bold text-gray-900 mb-4">Related Services</h3>
                   <ul className="space-y-3 text-sm">
-                   <li>
-                      <Link href="/services/debt-consolidation" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Debt Consolidation
+                    <li>
+                      <Link href="/loan-settlement-by-bank/indian-bank" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">›</span> Indian Bank Settlement
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/cheque-bounce-lawyer" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                      <Link href="/services/criminal-law" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
                         <span className="mr-2">›</span> Cheque Bounce Lawyer
                       </Link>
                     </li>
                      <li>
-                      <Link href="/services/legal-notice" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                      <Link href="/services/drafting" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
                         <span className="mr-2">›</span> Legal Notice
                       </Link>
                     </li>
@@ -630,7 +630,7 @@ export default function LoanSettlementPuducherryPage() {
                   <span className="text-gray-800 font-medium text-sm leading-tight block">Bank of Baroda</span>
                 </Link>
                   <Link 
-                  href="/services/loan-settlement/indian-bank"
+                  href="/loan-settlement-by-bank/indian-bank"
                   className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
                 >
                   <span className="text-gray-800 font-medium text-sm leading-tight block">Indian Bank</span>

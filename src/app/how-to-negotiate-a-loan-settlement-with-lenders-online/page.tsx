@@ -726,7 +726,7 @@ Sincerely,
                       </Link>
                     </li>
                     <li>
-                      <Link href="/ignoring-calls-of-recovery-agent" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                      <Link href="/loan-recovery-agents-harassment-complaint" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
                         <span className="mr-2">›</span> Handling Recovery Agents
                       </Link>
                     </li>
@@ -736,7 +736,7 @@ Sincerely,
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/cheque-bounce-lawyer" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                      <Link href="/services/criminal-law" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
                         <span className="mr-2">›</span> Cheque Bounce Cases
                       </Link>
                     </li>

@@ -109,6 +109,7 @@ export async function GET(): Promise<Response> {
     '/bajaj-recovery-agent-hacked-my-contact-list',
     '/bajaj-recovery-agent-abusing',
     '/can-debt-settlement-hurt-your-credit',
+    '/can-loan-repayment-be-done-in-cash',
     '/lawyer-by-city',
     '/contact',
     '/careers',

@@ -633,8 +633,9 @@ export default function JobLostLoanSettlementPage() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/check-bounce-lawyer" className="text-gray-600 hover:text-[#D2A02A] transition-colors flex items-center">
-                      <span className="mr-2">›</span> Cheque Bounce Lawyer
+                    <Link href="/services/criminal-law" className="text-gray-600 hover:text-[#D29E0D] transition-colors flex items-center">
+                      <span className="w-1.5 h-1.5 bg-[#D29E0D] rounded-full mr-2"></span>
+                      Cheque Bounce Lawyer
                     </Link>
                   </li>
                   <li>

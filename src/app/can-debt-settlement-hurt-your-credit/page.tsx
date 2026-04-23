@@ -34,9 +34,9 @@ const sections = [
 const relatedPages = [
   { title: "Does Loan Settlement Affect CIBIL?", href: "/does-loan-settlement-affect-cibil-score" },
   { title: "Loan Settlement Services India", href: "/services/loan-settlement" },
-  { title: "Stop Recovery Agent Harassment", href: "/how-to-stop-recovery-agent-harassment-instantly" },
+  { title: "Stop Bajaj Harassment Instantly", href: "/how-to-stop-bajaj-recovery-agent-harassment-instantly" },
   { title: "RBI Guidelines for Debt Recovery", href: "/rbi-new-recovery-guidelines-july-2026" },
-  { title: "Legal Notice for Loan Default", href: "/legal-notice-for-loan-default" },
+  { title: "Legal Rights After Loan Default", href: "/legal-rights-after-loan-default" },
 ];
 
 export default function DebtSettlementImpactGuide() {

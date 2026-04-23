@@ -666,13 +666,13 @@ export default function LoanSettlementMPPage() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/cheque-bounce-lawyer" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Cheque Bounce Lawyer
+                      <Link href="/services/criminal-law" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="text-[#D2A02A] mr-2">›</span> Section 138 Defense
                       </Link>
                     </li>
                      <li>
-                      <Link href="/services/legal-notice" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                        <span className="mr-2">›</span> Legal Notice
+                      <Link href="/services/drafting" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="text-[#D2A02A] mr-2">›</span> Legal Notice Drafting
                       </Link>
                     </li>
                   </ul>

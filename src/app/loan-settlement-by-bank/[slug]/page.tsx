@@ -643,17 +643,17 @@ export default async function BankSlugPage({ params }: { params: any }) {
                     </Link> 
                   </li> 
                   <li> 
-                    <Link href="/services/credit-card-settlement" className="text-gray-700 hover:text-[#D2A02A] flex items-center font-medium transition-colors group"> 
+                    <Link href="/services/loan-settlement" className="text-gray-700 hover:text-[#D2A02A] flex items-center font-medium transition-colors group"> 
                       <span className="text-[#D2A02A] mr-3 text-2xl group-hover:translate-x-1 transition-transform">›</span> Credit Card Default Resolution 
                     </Link> 
                   </li> 
                   <li> 
-                    <Link href="/services/anti-harassment" className="text-gray-700 hover:text-[#D2A02A] flex items-center font-medium transition-colors group"> 
+                    <Link href="/services/best-lawyer-for-bank-harassment" className="text-gray-700 hover:text-[#D2A02A] flex items-center font-medium transition-colors group"> 
                       <span className="text-[#D2A02A] mr-3 text-2xl group-hover:translate-x-1 transition-transform">›</span> Legal Anti-Harassment Notice 
                     </Link> 
                   </li> 
                   <li> 
-                    <Link href="/services/cheque-bounce" className="text-gray-700 hover:text-[#D2A02A] flex items-center font-medium transition-colors group"> 
+                    <Link href="/services/criminal-law" className="text-gray-700 hover:text-[#D2A02A] flex items-center font-medium transition-colors group"> 
                       <span className="text-[#D2A02A] mr-3 text-2xl group-hover:translate-x-1 transition-transform">›</span> Section 138 Cheque Bounce Defense 
                     </Link> 
                   </li> 

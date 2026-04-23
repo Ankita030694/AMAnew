@@ -559,19 +559,19 @@ export default function BankHarassmentPage() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/loan-settlement/what-is-loan-settlement" className="text-gray-600 hover:text-[#D2A02A] flex items-center gap-2 group transition-all">
+                    <Link href="/services/loan-settlement" className="text-gray-600 hover:text-[#D2A02A] flex items-center gap-2 group transition-all">
                       <span className="w-1.5 h-1.5 bg-gray-300 rounded-full group-hover:bg-[#D2A02A]"></span>
                       One Time Settlement (OTS)
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/loan-settlement/credit-card-settlement" className="text-gray-600 hover:text-[#D2A02A] flex items-center gap-2 group transition-all">
+                    <Link href="/services/loan-settlement" className="text-gray-600 hover:text-[#D2A02A] flex items-center gap-2 group transition-all">
                       <span className="w-1.5 h-1.5 bg-gray-300 rounded-full group-hover:bg-[#D2A02A]"></span>
                       Credit Card Debt Relief
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/loan-settlement/personal-loan" className="text-gray-600 hover:text-[#D2A02A] flex items-center gap-2 group transition-all">
+                    <Link href="/services/loan-settlement" className="text-gray-600 hover:text-[#D2A02A] flex items-center gap-2 group transition-all">
                       <span className="w-1.5 h-1.5 bg-gray-300 rounded-full group-hover:bg-[#D2A02A]"></span>
                       Personal Loan Defense
                     </Link>
