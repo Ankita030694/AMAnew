@@ -650,7 +650,7 @@ export default function LoanSettlementPage() {
                     </div>
                   </div>
                   <p className="mt-4 md:mt-6 text-xs md:text-sm text-gray-500 italic">
-                    *Note: Secured loans (Home Loans, Car Loans) are harder to settle as banks can seize the asset. However, we provide legal consultancy for these cases to explore options like restructuring or time-extension.
+                    *Note: Secured loans (Home Loans, Car Loans) are harder to settle as banks can seize the asset. Read our complete guide on <Link href="/can-we-do-home-loan-settlement" className="text-[#D2A02A] underline font-bold">Home Loan Settlement</Link>. However, we provide legal consultancy for these cases to explore options like restructuring or time-extension.
                   </p>
                 </section>
 
