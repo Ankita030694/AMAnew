@@ -194,7 +194,7 @@ export default function BajajContactHackingGuide() {
                   <FaShieldAlt /> Protect My Privacy
                 </button>
               </Link>
-              <a href="tel:+919654961599">
+              <a href="tel:+918700343611">
                 <button className="bg-white border-2 border-[#D29E0D] text-[#D29E0D] hover:bg-[#D29E0D] hover:text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-md flex items-center justify-center gap-2">
                   <FaPhone /> Legal Consultation
                 </button>
@@ -593,7 +593,7 @@ export default function BajajContactHackingGuide() {
                     Get Free Legal Help
                   </button>
                 </Link>
-                <a href="https://wa.me/919654961599" target="_blank" className="flex items-center gap-2">
+                <a href="https://wa.me/918700343611" target="_blank" className="flex items-center gap-2">
                   <button className="bg-[#25D366] text-white px-8 py-4 rounded-full font-bold hover:bg-[#128C7E] transition-all shadow-lg flex items-center gap-2">
                     <FaWhatsapp size={20} /> WhatsApp Us
                   </button>
@@ -663,8 +663,8 @@ export default function BajajContactHackingGuide() {
 
             <div className="p-6 border border-[#D29E0D]/20 rounded-2xl bg-[#D29E0D]/5 text-center">
               <p className="text-xs text-gray-500 mb-2 uppercase tracking-widest font-bold">Privacy Helpline</p>
-              <a href="tel:+919654961599" className="text-xl font-bold text-[#30261C] hover:text-[#D29E0D] transition-colors">
-                +91 96549 61599
+              <a href="tel:+918700343611" className="text-xl font-bold text-[#30261C] hover:text-[#D29E0D] transition-colors">
+                +91 8700343611
               </a>
               <p className="text-[10px] text-gray-400 mt-2 italic">Secure & Confidential</p>
             </div>

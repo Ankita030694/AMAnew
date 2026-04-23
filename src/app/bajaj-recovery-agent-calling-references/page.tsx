@@ -193,7 +193,7 @@ export default function BajajReferenceCallingGuide() {
                   <FaShieldAlt /> Protect Your Reputation
                 </button>
               </Link>
-              <a href="tel:+919654961599">
+              <a href="tel:+918700343611">
                 <button className="bg-white border-2 border-[#D29E0D] text-[#D29E0D] hover:bg-[#D29E0D] hover:text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-md flex items-center justify-center gap-2">
                   <FaPhone /> Legal Help Now
                 </button>
@@ -644,7 +644,7 @@ export default function BajajReferenceCallingGuide() {
                     Free Legal Consultation
                   </button>
                 </Link>
-                <a href="https://wa.me/919654961599" target="_blank" className="flex items-center gap-2">
+                <a href="https://wa.me/918700343611" target="_blank" className="flex items-center gap-2">
                   <button className="bg-[#25D366] text-white px-10 py-5 rounded-full font-bold hover:bg-[#128C7E] transition-all shadow-xl flex items-center justify-center gap-3 text-lg">
                     <FaWhatsapp size={24} /> Chat on WhatsApp
                   </button>

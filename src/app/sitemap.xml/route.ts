@@ -84,6 +84,7 @@ export async function GET(): Promise<Response> {
     '/how-to-check-active-loan-on-your-name-in-india-step-by-step-guide',
     '/why-does-my-credit-score-drop-even-though-i-pay-on-time',
     '/is-cibil-ruined-forever-after-settlement',
+    '/does-loan-settlement-affect-cibil-score',
     '/can-recovery-agents-abuse-you-legally-india',
     '/is-loan-settlement-illegal-in-india-truth',
     '/do-banks-file-fir-for-credit-card-dues',
