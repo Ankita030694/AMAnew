@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import fs from "fs";
-import path from "path";
+import { getExpertiseData, slugify } from "./expertiseData";
 
 export const metadata = {
   title: "Lawyers by Expertise | AMA Legal Solutions",
@@ -10,14 +9,6 @@ export const metadata = {
 };
 
 const ITEMS_PER_PAGE = 500;
-
-// Helper to convert expertise string to URL slug
-const slugify = (text: string) => {
-  return text
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)+/g, '');
-};
 
 export default async function LawyerByExpertise({
   searchParams,
@@ -29,10 +20,7 @@ export default async function LawyerByExpertise({
     typeof resolvedSearchParams?.page === "string" ? parseInt(resolvedSearchParams.page, 10) : 1;
   const currentPage = isNaN(page) || page < 1 ? 1 : page;
 
-  // Read data
-  const dataPath = path.join(process.cwd(), "src/app/lawyer-by-expertise/expertiseData.json");
-  const rawData = fs.readFileSync(dataPath, "utf-8");
-  const expertiseData: string[] = JSON.parse(rawData);
+  const { array: expertiseData } = getExpertiseData();
 
   const totalItems = expertiseData.length;
   const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);

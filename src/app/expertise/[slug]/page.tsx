@@ -1,6 +1,4 @@
 import React from 'react';
-import fs from 'fs';
-import path from 'path';
 import Link from 'next/link';
 import Script from 'next/script';
 import Image from 'next/image';
@@ -8,36 +6,17 @@ import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 
-const slugify = (text: string) => {
-  return text
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)+/g, '');
-};
+import { getMatchedExpertise } from '../expertiseData';
 
-type ExpertiseCategory = {
-  category: string;
-  items: string[];
-};
+export async function generateStaticParams() {
+  return [];
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  const dataPath = path.join(process.cwd(), "src/app/expertise/expertiseData.json");
-  const rawData = fs.readFileSync(dataPath, "utf-8");
-  const groupedData: ExpertiseCategory[] = JSON.parse(rawData);
-  
-  let matchedExpertise = "";
-  for (const group of groupedData) {
-    const found = group.items.find((e: string) => slugify(e) === resolvedParams.slug);
-    if (found) {
-      matchedExpertise = found;
-      break;
-    }
-  }
-
-  if (!matchedExpertise) {
-    matchedExpertise = resolvedParams.slug.split('-').map((word: string) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-  }
+  const match = getMatchedExpertise(resolvedParams.slug);
+  let matchedExpertise = match?.item || 
+    resolvedParams.slug.split('-').map((word: string) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
   return {
     title: `Expert ${matchedExpertise} Associates | AMA Legal Solutions`,
@@ -50,21 +29,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function ExpertiseSlugPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  const dataPath = path.join(process.cwd(), "src/app/expertise/expertiseData.json");
-  const rawData = await fs.promises.readFile(dataPath, "utf-8");
-  const groupedData: ExpertiseCategory[] = JSON.parse(rawData);
-  
-  let matchedExpertise = "";
-  let matchedCategory = "";
-
-  for (const group of groupedData) {
-    const found = group.items.find((e: string) => slugify(e) === resolvedParams.slug);
-    if (found) {
-      matchedExpertise = found;
-      matchedCategory = group.category;
-      break;
-    }
-  }
+  const match = getMatchedExpertise(resolvedParams.slug);
+  const matchedExpertise = match?.item || "";
+  const matchedCategory = match?.category || "";
 
   if (!matchedExpertise) {
     return (

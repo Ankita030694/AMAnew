@@ -1,6 +1,4 @@
 import React from 'react';
-import fs from 'fs';
-import path from 'path';
 import Link from 'next/link';
 import Script from 'next/script';
 import Image from 'next/image';
@@ -8,20 +6,17 @@ import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 
-const slugify = (text: string) => {
-  return text
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)+/g, '');
-};
+import { getMatchedExpertise } from '../expertiseData';
+
+export async function generateStaticParams() {
+  // Return empty array to support On-Demand Static Generation.
+  // This avoids increasing build time while still giving the cost benefits of static files.
+  return [];
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  const dataPath = path.join(process.cwd(), "src/app/lawyer-by-expertise/expertiseData.json");
-  const rawData = fs.readFileSync(dataPath, "utf-8");
-  const expertiseData: string[] = JSON.parse(rawData);
-  
-  const matchedExpertise = expertiseData.find(e => slugify(e) === resolvedParams.slug) || 
+  const matchedExpertise = getMatchedExpertise(resolvedParams.slug) || 
     resolvedParams.slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
   return {
@@ -35,11 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function ExpertiseSlugPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  const dataPath = path.join(process.cwd(), "src/app/lawyer-by-expertise/expertiseData.json");
-  const rawData = fs.readFileSync(dataPath, "utf-8");
-  const expertiseData: string[] = JSON.parse(rawData);
-  
-  const matchedExpertise = expertiseData.find(e => slugify(e) === resolvedParams.slug);
+  const matchedExpertise = getMatchedExpertise(resolvedParams.slug);
 
   if (!matchedExpertise) {
     return (

@@ -6,6 +6,10 @@ import Script from "next/script";
 import { unstable_cache } from 'next/cache';
 import Navbar from "@/newcomp/Navbar";
 
+export async function generateStaticParams() {
+  return [];
+}
+
 // Enhanced cache with TTL (Time To Live)
 const articleCache = new Map<string, { data: any; timestamp: number }>();
 const faqCache = new Map<string, { data: any[]; timestamp: number }>();
