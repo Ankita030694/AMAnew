@@ -215,34 +215,45 @@ const Footer = () => {
     "/zero-balance": {
       "@context": "https://schema.org",
       "@type": "Product",
+      "@id": "https://www.amalegalsolutions.com/zero-balance",
       "name": "Zero Balance Account Legal Advisory",
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2150" },
-      "review": [
-        {
-          "@type": "Review",
-          "author": { "@type": "Person", "name": "Rahul Verma" },
-          "reviewBody": "AMA Legal Solutions helped me recover penalties wrongly deducted from my zero balance account.",
-          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
-        },
-        {
-          "@type": "Review",
-          "author": { "@type": "Person", "name": "Deepika Iyer" },
-          "reviewBody": "Clear and concise guide on ZBAs. The legal support for banking grievances is top-notch.",
-          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
-        },
-        {
-          "@type": "Review",
-          "author": { "@type": "Person", "name": "Amit Saxena" },
-          "reviewBody": "Highly recommend AMA for any banking related legal issues. Very professional.",
-          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
-        },
-        {
-          "@type": "Review",
-          "author": { "@type": "Person", "name": "Sneha Reddy" },
-          "reviewBody": "The most comprehensive guide on zero balance accounts I've found online.",
-          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
-        }
-      ]
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2150" }
+    },
+    "/compare-different-debt-management-and-settlement-programs-available-to-indian-consumers": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Debt Management vs Settlement Comparison",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2150" }
+    },
+    "/find-reputable-debt-relief-agencies-specializing-in-unsecured-loans-in-bangalore": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Bangalore Debt Relief Agency Finder",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+    },
+    "/how-can-I-negotiate-a-personal-loan-settlement-with-lenders": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Personal Loan Negotiation Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1650" }
+    },
+    "/what-are-the-best-loan-settlement-services-near-me": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Best Loan Settlement Services Finder",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1450" }
+    },
+    "/what-is-the-typical-process-for-settling-a-personal-loan-in-india": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Loan Settlement Process Guide India",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1250" }
+    },
+    "/which-companies-offer-professional-debt-settlement-services-for-personal-loans": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Professional Debt Settlement Company Finder",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1540" }
     }
   };
   const footerColumns = [
@@ -466,7 +477,7 @@ const Footer = () => {
          {name:"Overcharged at Hospital - Legal Notice",href:"/overcharged-at-hospital-send-legal-notice"},
          {name:"Workplace Harassment Notice",href:"/workplace-harassment-legal-notice-service"},
          {name:"Best Law Firms in India for Corporate Law",href:"/best-law-firms-in-india-for-corporate-law"},
-         {name:"Reputable Debt Relief Agencies Bangalore",href:"/reputable-debt-relief-agencies-specializing-in-unsecured-loans-in-banglore"},
+         {name:"Reputable Debt Relief Agencies Bangalore",href:"/find-reputable-debt-relief-agencies-specializing-in-unsecured-loans-in-bangalore"},
            { name: "Tax Implications of Settled Debt", href: "/what-are-the-income-tax-implications-of-a-settled-debt-amount" },
             { name: "Credit Counseling Chennai", href: "/where-can-i-locate-government-approved-consumer-credit-counseling-services-in-chennai" },
             { name: "Settle Credit Card Using Third Party", href: "/can-i-settle-my-credit-card-dues-using-third-party-loan-settlement-companies" },
@@ -523,7 +534,12 @@ const Footer = () => {
         { name: "Check Loan Status Online", href: "/how-to-check-your-loan-status-without-visiting-the-bank" },
         { name: "Top 10 Instant Loan Apps", href: "/top-10-instant-loan-apps-revolutionizing-access-to-credit-in-india" },
         { name: "Understanding NPA Guide", href: "/understanding-non-performing-assets-npa-what-happens-next-your-complete-guide" },
-        { name: "Zero Balance Account Guide", href: "/zero-balance" }
+        { name: "Zero Balance Account Guide", href: "/zero-balance" },
+        { name: "Compare Debt Management vs Settlement", href: "/compare-different-debt-management-and-settlement-programs-available-to-indian-consumers" },
+        { name: "Negotiate Personal Loan Settlement", href: "/how-can-I-negotiate-a-personal-loan-settlement-with-lenders" },
+        { name: "Best Settlement Services Near Me", href: "/what-are-the-best-loan-settlement-services-near-me" },
+        { name: "Personal Loan Settlement Process", href: "/what-is-the-typical-process-for-settling-a-personal-loan-in-india" },
+        { name: "Professional Debt Settlement Companies", href: "/which-companies-offer-professional-debt-settlement-services-for-personal-loans" }
       ]
 
     }
