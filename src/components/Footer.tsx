@@ -267,7 +267,8 @@ export default function Footer() {
                 { href: "/does-settlement-impact-a-co-borrower", label: "Does Settlement Impact a Co-borrower" },
                 { href: "/will-drafting-for-indians-living-in-australia", label: "Will Drafting for Indians in Australia" },
     { href: "/will-drafting-for-indians-living-in-germany", label: "Will Drafting for Indians in Germany" },
-    { href: "/how-to-check-your-loan-status-without-visiting-the-bank", label: "Check Loan Status Online" }
+    { href: "/how-to-check-your-loan-status-without-visiting-the-bank", label: "Check Loan Status Online" },
+    { href: "/what-are-the-best-loan-settlement-services-near-me", label: "Best Loan Settlement Services Near Me" }
               ].map((query) => (
                 <Link
                   key={query.href}
