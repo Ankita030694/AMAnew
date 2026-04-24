@@ -5,7 +5,7 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaBalanceScale, FaUserShield, FaHandshake, FaChartLine, FaHistory, FaPercentage } from "react-icons/fa";
 
 export const metadata = {
-  title: "Can We Do Home Loan Settlement? Process, CIBIL Impact & Legal Rights",
+  title: "Can We Do Home Loan Settlement? | Expert Legal Guide",
   description:
     "Wondering if you can settle your home loan? Learn the step-by-step process of home loan settlement in India, SARFAESI Act rules, CIBIL impact, and how to negotiate waivers with banks.",
   keywords: "can we do home loan settlement, home loan settlement process india, home loan one time settlement, impact of home loan settlement on cibil, legal rights in home loan default, sarfaesi act home loan settlement, SBI home loan settlement, HDFC home loan closure",

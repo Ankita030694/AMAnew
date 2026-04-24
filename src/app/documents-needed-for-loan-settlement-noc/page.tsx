@@ -158,7 +158,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Documents Needed for Loan Settlement & NOC | Full Guide 2024",
+  title: "Documents for Loan Settlement & NOC | Legal Guide",
   description: "Complete list of documents required for successful loan settlement and obtaining an NOC in India. Hardship proof, KYC, and legal requirements explained in detail.",
   keywords: [
     "documents needed for loan settlement noc",

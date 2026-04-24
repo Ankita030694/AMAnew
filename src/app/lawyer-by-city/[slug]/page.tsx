@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!location) return { title: "Not Found" };
 
   return {
-    title: `${location.title} | AMA Legal Solutions`,
+    title: `${location.title} | AMA Legal`,
     description: location.description,
     keywords: [
       `loan settlement ${location.name}`,

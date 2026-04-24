@@ -171,7 +171,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Can I Settle My Credit Card Dues Using Third Party Loan Settlement Companies?",
+  title: "Settle Credit Card via Third Party Companies | Legal Guide",
   description: "Learn if you can settle credit card dues using third party loan settlement companies in India. Explore RBI guidelines, pros and cons, and stop harassment today.",
   keywords: [
     "can i settle my credit card dues using third party loan settlement companies",

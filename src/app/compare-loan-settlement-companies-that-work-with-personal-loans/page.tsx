@@ -6,7 +6,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 
 // SEO Metadata
 export const metadata = {
-  title: "Compare Loan Settlement Companies for Personal Loans",
+  title: "Compare Loan Settlement Companies | Personal Loans",
   description: "Comprehensive comparison of top loan settlement companies in India. Compare CredSettle, FREED, SettleMyLoan, and more. Find the best debt settlement lawyers for personal loans.",
   keywords: [
     "compare loan settlement companies",

@@ -136,7 +136,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Certified Financial Planners Specialize in Debt Restructuring & Settlement",
+  title: "CFPs for Debt Restructuring & Settlement | Expert Advice",
   description: "Find expert Certified Financial Planners (CFPs) for debt restructuring and settlement in India. Reduce EMIs, settle loans legally, and stop recovery harassment today.",
   keywords: [
     "certified financial planners debt restructuring",

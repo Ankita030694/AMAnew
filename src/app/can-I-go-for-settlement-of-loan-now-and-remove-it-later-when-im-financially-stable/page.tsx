@@ -5,7 +5,7 @@ import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 const pageUrl = "https://www.amalegalsolutions.com/can-I-go-for-settlement-of-loan-now-and-remove-it-later-when-im-financially-stable";
-const pageTitle = "Can I Go for Settlement of Loan Now and Remove It Later When I'm Financially Stable?";
+const pageTitle = "Settle Loan Now, Remove Later? | Financial Stability FAQ";
 const pageDescription = "Explore if you can settle your loan now and remove the 'settled' status later when financially stable. Learn the legal process, CIBIL impact, and how AMA Legal Solutions helps.";
 
 const faqs = [

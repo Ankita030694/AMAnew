@@ -5,7 +5,7 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaCreditCard, FaChartLine, FaHistory, FaHandshake, FaRegFileAlt } from "react-icons/fa";
 
 export const metadata = {
-  title: "Can Debt Settlement Hurt Your Credit Score? CIBIL Impact Explained",
+  title: "Debt Settlement & Credit Score | CIBIL Impact Explained",
   description:
     "Does debt settlement hurt your credit? Learn how a 'settled' status affects your CIBIL score, why it stays for 7 years, and how to rebuild your credit after settlement.",
   keywords: "can debt settlement hurt your credit, debt settlement impact on cibil score, settled vs closed loan status, rebuilding credit after settlement, debt relief india",

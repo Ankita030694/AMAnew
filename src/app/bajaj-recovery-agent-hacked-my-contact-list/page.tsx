@@ -5,7 +5,7 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield } from "react-icons/fa";
 
 export const metadata = {
-  title: "Bajaj Recovery Agent Hacked My Contact List | How to Stop Harassment",
+  title: "Bajaj Agent Hacked Contact List | Stop Harassment",
   description:
     "Has a Bajaj recovery agent hacked your contact list? Learn your legal rights under RBI guidelines and IT Act 2000. Stop illegal calls to family and friends today.",
   keywords: "bajaj recovery agent hacked my contact list, stop recovery agent calling contacts, rbi guidelines for recovery agents privacy, illegal debt collection tactics india, how to deal with contact list harassment",

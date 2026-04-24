@@ -149,7 +149,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Amalegalsolutions Plan for Building Debt Free Future After Settlement | AMA Legal",
+  title: "Building Debt Free Future After Settlement | AMA Legal",
   description: "Join the amalegalsolutions-plan-for-building-debt-free-future-after-settlement. Expert guidance by Anuj Anand Malik at Sector 57 to rebuild your credit score and financial life.",
   keywords: [
     "amalegalsolutions-plan-for-building-debt-free-future-after-settlement",

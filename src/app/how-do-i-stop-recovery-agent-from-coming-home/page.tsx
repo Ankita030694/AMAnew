@@ -124,7 +124,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "How to Stop Recovery Agent from Coming Home | Legal Guide 2025",
+  title: "How to Stop Recovery Agents Coming Home | Legal Guide",
   description: "Stop illegal home visits from recovery agents today for ₹999. Learn your rights under RBI guidelines, IPC 441, and High Court precedents. Protect your family now.",
   keywords: [
     "how do i stop recovery agent from coming home",

@@ -5,7 +5,7 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaCreditCard, FaHome, FaCalculator, FaHistory, FaUserGraduate, FaGlobe } from "react-icons/fa";
 
 export const metadata = {
-  title: "Does Loan Settlement Affect CIBIL Score? Long-Term Impact & Recovery",
+  title: "Does Loan Settlement Affect CIBIL? | Expert Analysis",
   description:
     "Understand how loan settlement impacts your CIBIL score in India. Learn the difference between settled and closed status, how to remove the remark, and rebuild your credit.",
   keywords: "does loan settlement affect cibil score, loan settlement vs closure, remove settled status cibil, impact of debt settlement on credit score, rebuild cibil score after settlement",

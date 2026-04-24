@@ -151,7 +151,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Can Guarantor Be Liable After Settlement? | Guarantor Liability Guide",
+  title: "Can Guarantor Be Liable After Settlement? | Legal Guide",
   description:
     "Does a loan settlement release the guarantor? Understand guarantor liability under Indian law, Section 128, and IBC rulings with AMA Legal Solutions.",
   keywords: [
