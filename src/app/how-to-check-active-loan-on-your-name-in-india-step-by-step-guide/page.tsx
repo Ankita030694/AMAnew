@@ -62,8 +62,8 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Guides",
-      "item": "https://www.amalegalsolutions.com/guides"
+      "name": "Articles",
+      "item": "https://www.amalegalsolutions.com/articles"
     },
     {
       "@type": "ListItem",

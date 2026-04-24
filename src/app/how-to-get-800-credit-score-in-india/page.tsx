@@ -62,8 +62,8 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Guides",
-      "item": "https://www.amalegalsolutions.com/guides"
+      "name": "Articles",
+      "item": "https://www.amalegalsolutions.com/articles"
     },
     {
       "@type": "ListItem",
@@ -183,7 +183,7 @@ export default function CreditScoreGuidePage() {
   ];
 
   const breadcrumbItems = [
-    { label: "Guides", href: "/blog" },
+    { label: "Articles", href: "/articles" },
     { label: "How to Get 800 Credit Score", href: "/how-to-get-800-credit-score-in-india" },
   ];
 

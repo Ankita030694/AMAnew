@@ -65,8 +65,8 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Guides",
-      "item": "https://www.amalegalsolutions.com/guides"
+      "name": "Articles",
+      "item": "https://www.amalegalsolutions.com/articles"
     },
     {
       "@type": "ListItem",
@@ -192,7 +192,7 @@ export default function BankStatementChallengePage() {
   ];
 
   const breadcrumbItems = [
-    { label: "Guides", href: "/guides" },
+    { label: "Articles", href: "/articles" },
     { label: "Challenge Bank Statement", href: "/how-to-challenge-bank-statement-account-statement" },
   ];
 

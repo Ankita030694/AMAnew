@@ -66,8 +66,8 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Guides",
-      "item": "https://www.amalegalsolutions.com/guides"
+      "name": "Articles",
+      "item": "https://www.amalegalsolutions.com/articles"
     },
     {
       "@type": "ListItem",
@@ -180,7 +180,7 @@ export default function RecoveryAbusePage() {
   ];
 
   const breadcrumbItems = [
-    { label: "Guides", href: "/guides" },
+    { label: "Articles", href: "/articles" },
     { label: "Recovery Agent Abuse Rights", href: "/can-recovery-agents-abuse-you-legally-india" },
   ];
 
