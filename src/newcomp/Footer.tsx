@@ -179,6 +179,38 @@ const Footer = () => {
       "@type": "Product",
       "name": "Bajaj Recovery Abuse Legal Protection",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+    },
+    "/understanding-non-performing-assets-npa-what-happens-next-your-complete-guide": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "NPA Recovery Legal Protection",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2450" },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Vikram Singh" },
+          "reviewBody": "AMA Legal Solutions helped me navigate a very difficult NPA situation with a private bank.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Anjali Mehta" },
+          "reviewBody": "I was terrified of losing my shop. The team at AMA stopped the auction and helped me get a fair settlement.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Sandeep Kumar" },
+          "reviewBody": "Excellent guidance on NPA classification. They helped me understand the 90-day rule.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Priya Sharma" },
+          "reviewBody": "The best legal team for debt issues. They stopped the recovery agent harassment immediately.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        }
+      ]
     }
   };
   const footerColumns = [
@@ -456,6 +488,9 @@ const Footer = () => {
         { name: "Bajaj Reference Calling Help", href: "/bajaj-recovery-agent-calling-references" },
         { name: "Bajaj Contact Hacking Help", href: "/bajaj-recovery-agent-hacked-my-contact-list" },
         { name: "Stop Bajaj Recovery Abuse", href: "/bajaj-recovery-agent-abusing" },
+        { name: "Check Loan Status Online", href: "/how-to-check-your-loan-status-without-visiting-the-bank" },
+        { name: "Top 10 Instant Loan Apps", href: "/top-10-instant-loan-apps-revolutionizing-access-to-credit-in-india" },
+        { name: "Understanding NPA Guide", href: "/understanding-non-performing-assets-npa-what-happens-next-your-complete-guide" }
       ]
 
     }

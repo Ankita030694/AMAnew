@@ -266,7 +266,8 @@ export default function Footer() {
                 { href: "/can-i-settle-my-loan-without-a-lawyer", label: "Can I Settle My Loan Without A Lawyer?" },
                 { href: "/does-settlement-impact-a-co-borrower", label: "Does Settlement Impact a Co-borrower" },
                 { href: "/will-drafting-for-indians-living-in-australia", label: "Will Drafting for Indians in Australia" },
-    { href: "/will-drafting-for-indians-living-in-germany", label: "Will Drafting for Indians in Germany" }
+    { href: "/will-drafting-for-indians-living-in-germany", label: "Will Drafting for Indians in Germany" },
+    { href: "/how-to-check-your-loan-status-without-visiting-the-bank", label: "Check Loan Status Online" }
               ].map((query) => (
                 <Link
                   key={query.href}
