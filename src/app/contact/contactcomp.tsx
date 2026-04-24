@@ -663,6 +663,44 @@ const ContactComp = () => {
           </div>
         </div>
 
+        {/* SEO Content Section */}
+        <section className="mt-24 border-t border-[#30261C]/5 pt-16">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-[28px] md:text-[36px] font-semibold text-[#30261C] mb-8 text-center" style={{ fontFamily: "var(--font-polysans)" }}>
+              Expert Legal Consultation at AMA Legal Solutions
+            </h2>
+            
+            <div className="space-y-8 text-[#30261C]/80 leading-relaxed text-lg">
+              <div>
+                <h3 className="text-xl font-bold text-[#30261C] mb-3">Why Reach Out to Our Legal Team?</h3>
+                <p>
+                  When you face complex legal challenges, having a trusted partner can make all the difference. <strong>AMA Legal Solutions</strong> is more than just a law firm; we are your strategic advocates in navigating the intricacies of the Indian legal system. Whether you are dealing with a debt-related crisis, seeking to protect your intellectual property, or requiring corporate legal guidance, our team is equipped with the knowledge and experience to provide clarity and results.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold text-[#30261C] mb-3">Our Comprehensive Legal Consultation Process</h3>
+                <p>
+                  We believe that every legal matter deserves a personalized approach. When you contact us, our process begins with a thorough understanding of your specific situation.
+                </p>
+                <ul className="list-disc pl-6 space-y-3 mt-4">
+                  <li><strong>Discovery:</strong> We listen to your concerns and gather all necessary details to understand the scope of the legal challenge.</li>
+                  <li><strong>Analysis:</strong> Our experts analyze the relevant laws, precedents, and regulations to determine the strongest possible legal position.</li>
+                  <li><strong>Strategy:</strong> We develop a tailored action plan designed to achieve the best possible outcome, whether through negotiation, litigation, or alternative dispute resolution.</li>
+                  <li><strong>Execution:</strong> Our team works tirelessly to implement the strategy, keeping you informed at every stage of the process.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold text-[#30261C] mb-3">Dedicated Support Across India</h3>
+                <p>
+                  Headquartered in Gurugram, <strong>AMA Legal Solutions</strong> serves clients across the entire country. Our network of empanelled advocates ensures that you receive local expertise combined with national standards of excellence. From the initial consultation to the final resolution, our commitment to professional integrity and client satisfaction remains unwavering.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </main>
 
       {/* Full Width Map Section */}

@@ -63,6 +63,35 @@ export default function LoanSettlementByBank() {
           ))}
         </div>
       </div>
+
+      {/* SEO Content Section */}
+      <section className="mt-24 max-w-5xl mx-auto relative z-10 border-t border-[#30261C]/5 pt-16 px-6 pb-12">
+        <h2 className="text-[28px] md:text-[40px] font-semibold text-[#30261C] mb-8 text-center" style={{ fontFamily: "var(--font-polysans)" }}>
+          Expert Legal Assistance for Bank & NBFC Loan Settlements
+        </h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-[#30261C]/80 leading-relaxed text-lg">
+          <div className="space-y-6">
+            <h3 className="text-xl font-bold text-[#30261C]">Navigating One-Time Settlement (OTS) Policies</h3>
+            <p>
+              Loan settlement, often referred to as a One-Time Settlement (OTS), is a process where a borrower and a lender agree on a final payment amount that is less than the total outstanding debt. While this can provide significant relief for borrowers in financial distress, navigating the specific policies of different banks and NBFCs in India requires expert guidance.
+            </p>
+            <p>
+              Each financial institution has its own criteria for eligibility, settlement percentages, and procedural requirements. Our advocates at <strong>AMA Legal Solutions</strong> are well-versed in RBI guidelines, the SARFAESI Act, and the latest banking regulations, ensuring you receive the best possible advice for your specific lender.
+            </p>
+          </div>
+          
+          <div className="space-y-6">
+            <h3 className="text-xl font-bold text-[#30261C]">Why You Need Legal Advocacy for Settlements</h3>
+            <p>
+              Negotiating with banks can be an intimidating and complex process. Lenders often have strict recovery protocols and may use aggressive tactics to recover dues. Having a legal expert on your side ensures that your rights as a borrower are protected. We help you present a strong case for settlement, negotiate the best possible terms, and ensure that the final agreement is legally sound.
+            </p>
+            <p>
+              Whether you are dealing with HDFC Bank, ICICI Bank, SBI, or NBFCs like Bajaj Finance and Hero Fincorp, our team is equipped to handle your case. At <strong>AMA Legal Solutions</strong>, our goal is to help you resolve your debt burden ethically and efficiently, allowing you to move toward a more stable financial future.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

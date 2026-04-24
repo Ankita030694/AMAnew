@@ -56,6 +56,37 @@ export default function LoanSettlementServices() {
           ))}
         </div>
 
+        {/* SEO Content Section */}
+        <section className="mt-24 border-t border-[#30261C]/5 pt-16">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-[28px] md:text-[40px] font-semibold text-[#30261C] mb-10 text-center" style={{ fontFamily: "var(--font-polysans)" }}>
+              Expert Loan Settlement Services: Your Path to Financial Recovery
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-[#30261C]/80 leading-relaxed text-lg">
+              <div className="space-y-6">
+                <h3 className="text-xl font-bold text-[#30261C]">The Role of Professional Debt Resolution</h3>
+                <p>
+                  In today&apos;s complex financial world, unexpected life events can sometimes lead to unmanageable debt. Whether due to business losses, medical emergencies, or job instability, falling behind on loan repayments can be a stressful experience. Professional loan settlement services are designed to help borrowers navigate these challenges by providing a legal and structured path to debt resolution.
+                </p>
+                <p>
+                  <strong>AMA Legal Solutions</strong> specializes in helping individuals and businesses regain their financial footing through strategic negotiation and expert legal advocacy. We offer a wide range of specialized services tailored to meet the unique needs of borrowers, including handling matters before the Debt Recovery Tribunal (DRT).
+                </p>
+              </div>
+              
+              <div className="space-y-6">
+                <h3 className="text-xl font-bold text-[#30261C]">Empowering Borrowers Through Legal Knowledge</h3>
+                <p>
+                  Our expertise includes protecting clients from bank harassment and providing a robust defense against SARFAESI Act proceedings. We also assist with credit card debt resolution, personal and business loan settlements, and financial restructuring. Our approach is always rooted in the latest RBI guidelines and legal precedents.
+                </p>
+                <p>
+                  At <strong>AMA Legal Solutions</strong>, we believe that an informed borrower is a protected borrower. Beyond just negotiation, we aim to educate our clients about their legal rights and the options available to them. Let us help you break the cycle of debt and start fresh with confidence.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Contact Info Footer */}
         <div className="mt-24 p-8 bg-[#30261C] text-[#EBE9E4] rounded-3xl text-center shadow-2xl relative overflow-hidden">
             <div className="relative z-10">

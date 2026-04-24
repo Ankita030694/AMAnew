@@ -101,6 +101,35 @@ export default async function LawyerByExpertise({
           </div>
         )}
       </div>
+
+      {/* SEO Content Section */}
+      <section className="mt-24 max-w-5xl mx-auto relative z-10 border-t border-[#30261C]/5 pt-16 px-6 pb-12">
+        <h2 className="text-[28px] md:text-[40px] font-semibold text-[#30261C] mb-8 text-center" style={{ fontFamily: "var(--font-polysans)" }}>
+          Strategic Legal Solutions Through Specialized Expertise
+        </h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-[#30261C]/80 leading-relaxed text-lg">
+          <div className="space-y-6">
+            <h3 className="text-xl font-bold text-[#30261C]">The Power of Specialization in Law</h3>
+            <p>
+              The legal field is vast, and no single advocate can be a master of every domain. This is why specialization is so critical in the modern legal landscape. A lawyer who focuses exclusively on a particular area—be it intellectual property, banking law, or matrimonial disputes—brings a level of depth and tactical awareness that a general practitioner may not possess.
+            </p>
+            <p>
+              <strong>AMA Legal Solutions</strong> connects you with specialists who have dedicated their careers to mastering specific legal domains. By choosing an expert with focused experience, you ensure that your legal strategy is built on a foundation of deep knowledge and successful precedents.
+            </p>
+          </div>
+          
+          <div className="space-y-6">
+            <h3 className="text-xl font-bold text-[#30261C]">Finding the Right Expert for Your Unique Case</h3>
+            <p>
+              Every legal challenge has its own set of rules, precedents, and procedural requirements. For instance, a trademark infringement case requires a deep understanding of IP laws and the registry&apos;s procedures, while a debt recovery case involves the specific regulations of the RBI and the Debt Recovery Tribunal.
+            </p>
+            <p>
+              At <strong>AMA Legal Solutions</strong>, we meticulously vet our network of advocates to ensure they meet our high standards of professionalism and expertise. Our goal is to empower individuals and businesses by providing a platform where they can easily find and connect with the right legal experts for their needs.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

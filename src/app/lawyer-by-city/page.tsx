@@ -57,6 +57,35 @@ export default function LawyerByCity() {
           ))}
         </div>
       </div>
+
+      {/* SEO Content Section */}
+      <section className="mt-24 max-w-5xl mx-auto relative z-10 border-t border-[#30261C]/5 pt-16 px-6 pb-12">
+        <h2 className="text-[28px] md:text-[40px] font-semibold text-[#30261C] mb-8 text-center" style={{ fontFamily: "var(--font-polysans)" }}>
+          Expert Legal Representation Across Major Cities in India
+        </h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-[#30261C]/80 leading-relaxed text-lg">
+          <div className="space-y-6">
+            <h3 className="text-xl font-bold text-[#30261C]">The Importance of Local Legal Knowledge</h3>
+            <p>
+              Legal matters are deeply influenced by regional regulations, local court procedures, and the specific nuances of state-level laws. Finding a lawyer who is not only an expert in their field but also well-versed in the local legal environment is crucial for success. <strong>AMA Legal Solutions</strong> provides a curated directory of top-rated advocates across major Indian cities, including New Delhi, Mumbai, Bengaluru, Chennai, Kolkata, and beyond.
+            </p>
+            <p>
+              Each city in India has its own judicial landscape, from District Courts and High Courts to specialized tribunals like the NCLT, DRT, and Consumer Commissions. Our local legal experts understand how these institutions operate in their respective regions.
+            </p>
+          </div>
+          
+          <div className="space-y-6">
+            <h3 className="text-xl font-bold text-[#30261C]">Navigating Local Courts and Tribunals</h3>
+            <p>
+              This localized approach allows us to provide more strategic and efficient legal services, as our advocates can navigate the procedural requirements of local courts with ease. Whether you need assistance with property documentation in Jaipur, a loan settlement in Delhi, or corporate compliance in Mumbai, our city-specific legal directory is here to help.
+            </p>
+            <p>
+              We understand that finding a reliable lawyer in a new city or for a specific local matter can be daunting. Our platform is designed to simplify this process by connecting you with experienced professionals who have a proven track record in their respective cities. At <strong>AMA Legal Solutions</strong>, we bridge the gap between clients and quality advocacy.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -85,6 +85,35 @@ export default async function ExpertiseDirectory() {
           ))}
         </div>
       </div>
+
+      {/* SEO Content Section */}
+      <section className="mt-24 max-w-5xl mx-auto relative z-10 border-t border-[#30261C]/5 pt-16 px-6">
+        <h2 className="text-[28px] md:text-[40px] font-semibold text-[#30261C] mb-8 text-center" style={{ fontFamily: "var(--font-polysans)" }}>
+          Professional Legal Expertise Across Diverse Domains
+        </h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-[#30261C]/80 leading-relaxed text-lg">
+          <div className="space-y-6">
+            <h3 className="text-xl font-bold text-[#30261C]">Navigating the Complexities of Indian Law</h3>
+            <p>
+              In an ever-evolving legal landscape, having access to specialized knowledge is essential for protecting your rights and interests. <strong>AMA Legal Solutions</strong> offers a comprehensive directory of legal expertise, covering everything from family law and civil disputes to complex corporate litigation and intellectual property protection. Our firm is dedicated to providing high-quality legal advice that is both practical and results-oriented.
+            </p>
+            <p>
+              The legal system in India is vast and intricate, with specialized courts and tribunals handling different types of cases. Whether it&apos;s the Debt Recovery Tribunal (DRT) for banking matters, the RERA authorities for real estate disputes, or the Trade Marks Registry for IP protection, each domain requires a specific set of skills and experience.
+            </p>
+          </div>
+          
+          <div className="space-y-6">
+            <h3 className="text-xl font-bold text-[#30261C]">Why Specialized Legal Representation Matters</h3>
+            <p>
+              By choosing an advocate with deep expertise in your specific legal challenge, you increase the likelihood of a favorable outcome. Specialized representation ensures that every nuance of the law is considered, every procedural requirement is met, and every strategic advantage is leveraged in your favor.
+            </p>
+            <p>
+              At <strong>AMA Legal Solutions</strong>, we pride ourselves on our client-centric approach. We understand that every legal situation is unique, which is why we offer tailored solutions across dozens of practice areas. Our team of experienced advocates combines local knowledge with national standards of excellence, ensuring that our clients receive the best possible representation regardless of the complexity of their case.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

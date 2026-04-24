@@ -263,6 +263,37 @@ const ServicesClient = () => {
           </div>
       </section>
 
+      {/* SEO Content Section */}
+      <section className="w-full px-4 md:px-8 max-w-[1200px] mx-auto z-10 relative mb-[120px] border-t border-[#30261C]/5 pt-16">
+          <div className="text-center mb-[60px]">
+              <h2 className="text-[28px] md:text-[50px] font-semibold text-[#30261C] mb-[30px]" style={{ fontFamily: "var(--font-polysans)" }}>
+                  Comprehensive Legal Solutions for Individuals and Businesses
+              </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-[#30261C]/80 leading-relaxed text-lg">
+            <div className="space-y-6">
+              <h3 className="text-xl font-bold text-[#30261C]">Our Client-Centric Legal Philosophy</h3>
+              <p>
+                At <strong>AMA Legal Solutions</strong>, we believe that effective legal representation is built on a foundation of trust, clarity, and results. Our firm is dedicated to providing high-quality legal services that are tailored to the unique needs of each client. Whether you are an individual seeking justice in a personal matter or a corporation navigating complex regulatory landscapes, our team is committed to delivering strategic advice and robust advocacy.
+              </p>
+              <p>
+                We combine decades of experience with a modern, technology-driven approach to ensure that our clients receive the best possible outcomes. Our firm is recognized for its deep expertise in several specialized areas, including banking and finance law, loan settlements, and corporate compliance.
+              </p>
+            </div>
+            
+            <div className="space-y-6">
+              <h3 className="text-xl font-bold text-[#30261C]">Strategic Advocacy Across Multiple Jurisdictions</h3>
+              <p>
+                With a strong presence in India and specialized expertise in international legal matters, <strong>AMA Legal Solutions</strong> is uniquely positioned to handle cross-border legal challenges. Our multidisciplinary team works collaboratively to provide comprehensive solutions across various practice areas, from corporate law and arbitration to real estate and intellectual property.
+              </p>
+              <p>
+                Our pan-India network ensures that we can provide local expertise combined with national standards of excellence. From drafting complex business contracts to representing clients in high-stakes litigation, our commitment to professional integrity and legal excellence remains unwavering. Experience the difference that expert, dedicated legal support can make for your interests.
+              </p>
+            </div>
+          </div>
+      </section>
+
       {/* Locations Component */}
       <div className="w-full px-4 md:px-8 max-w-[1400px] mx-auto mb-20 z-10 relative">
          <Locations />
