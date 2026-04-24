@@ -116,6 +116,7 @@ export async function GET(): Promise<Response> {
     '/how-to-check-your-loan-status-without-visiting-the-bank',
     '/top-10-instant-loan-apps-revolutionizing-access-to-credit-in-india',
     '/understanding-non-performing-assets-npa-what-happens-next-your-complete-guide',
+    '/zero-balance',
     '/lawyer-by-city',
     '/contact',
     '/careers',

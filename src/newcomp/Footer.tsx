@@ -211,6 +211,38 @@ const Footer = () => {
           "reviewRating": { "@type": "Rating", "ratingValue": "5" }
         }
       ]
+    },
+    "/zero-balance": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Zero Balance Account Legal Advisory",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2150" },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Rahul Verma" },
+          "reviewBody": "AMA Legal Solutions helped me recover penalties wrongly deducted from my zero balance account.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Deepika Iyer" },
+          "reviewBody": "Clear and concise guide on ZBAs. The legal support for banking grievances is top-notch.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Amit Saxena" },
+          "reviewBody": "Highly recommend AMA for any banking related legal issues. Very professional.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Sneha Reddy" },
+          "reviewBody": "The most comprehensive guide on zero balance accounts I've found online.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        }
+      ]
     }
   };
   const footerColumns = [
@@ -490,7 +522,8 @@ const Footer = () => {
         { name: "Stop Bajaj Recovery Abuse", href: "/bajaj-recovery-agent-abusing" },
         { name: "Check Loan Status Online", href: "/how-to-check-your-loan-status-without-visiting-the-bank" },
         { name: "Top 10 Instant Loan Apps", href: "/top-10-instant-loan-apps-revolutionizing-access-to-credit-in-india" },
-        { name: "Understanding NPA Guide", href: "/understanding-non-performing-assets-npa-what-happens-next-your-complete-guide" }
+        { name: "Understanding NPA Guide", href: "/understanding-non-performing-assets-npa-what-happens-next-your-complete-guide" },
+        { name: "Zero Balance Account Guide", href: "/zero-balance" }
       ]
 
     }
