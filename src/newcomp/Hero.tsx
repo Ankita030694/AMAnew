@@ -174,7 +174,7 @@ const Hero = () => {
                   alt="App Store"
                   width={200}
                   height={60}
-                  unoptimized
+                  priority={true}
                   className="w-[150px] sm:w-[150px] md:w-[144px] lg:w-[176px] xl:w-[200px] h-auto"
                 />
               </Link>
@@ -188,7 +188,7 @@ const Hero = () => {
                   alt="Google Play"
                   width={200}
                   height={60}
-                  unoptimized
+                  priority={true}
                   className="w-[150px] sm:w-[150px] md:w-[144px] lg:w-[176px] xl:w-[200px] h-auto"
                 />
               </Link>

@@ -116,37 +116,20 @@ export default function RootLayout({
         <link rel="preconnect" href="https://scripts.clarity.ms" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         
-        {/* Performance hints */}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        
-        {/* Additional Open Graph meta tags for better link sharing */}
-        <meta property="og:image" content="https://www.amalegalsolutions.com/future.png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:alt" content="AMA Legal Solutions - Top Law Firm in India" />
-        
-        {/* Twitter Card meta tags */}
-        <meta name="twitter:image" content="https://www.amalegalsolutions.com/future.png" />
-        <meta name="twitter:image:alt" content="AMA Legal Solutions - Top Law Firm in India" />
-        
-        {/* Social Media Profile Links */}
-        <meta property="og:see_also" content="https://www.facebook.com/amalegalsolutions/" />
-        <meta property="og:see_also" content="https://www.instagram.com/amalegalsolutions/" />
-        <meta property="og:see_also" content="https://in.linkedin.com/company/ama-legal-solutions" />
-        
-        {/* Additional Social Media Meta Tags */}
-        <meta name="facebook:page_id" content="amalegalsolutions" />
-        <meta name="instagram:username" content="amalegalsolutions" />
-        <meta name="linkedin:company" content="ama-legal-solutions" />
-        
+        {/* Favicons and PWA */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#1a365d" />
+
         <link
           rel="alternate" 
           type="application/rss+xml" 
           title="AMA Legal Solutions Blog" 
           href="/api/rss" 
         />
+        
         <Script
           id="gtm-script"
           strategy="lazyOnload"
@@ -161,7 +144,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Script
           id="website-structured-data"
           type="application/ld+json"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -179,7 +162,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Script
           id="attorney-structured-data"
           type="application/ld+json"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
