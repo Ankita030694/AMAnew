@@ -111,7 +111,7 @@ const GlobalPopupForm = () => {
 
     const newErrors = {
       name: !formState.name ? "Name is required" : !nameRegex.test(formState.name) ? "Name should contain only alphabets and spaces" : "",
-      email: !formState.email ? "Email is required" : !emailRegex.test(formState.email) || !formState.email.includes(".com") ? "Please enter a valid email address with .com" : "",
+      email: !formState.email ? "Email is required" : !emailRegex.test(formState.email) ? "Please enter a valid email address" : "",
       phone: !formState.phone ? "Phone number is required" : !phoneRegex.test(formState.phone) ? "Phone number must be exactly 10 digits" : "",
       serviceRequired: !formState.serviceRequired ? "Please select a service" : "",
       message: !formState.message ? "Message is required" : "",

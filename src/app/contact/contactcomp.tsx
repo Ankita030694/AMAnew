@@ -90,7 +90,6 @@ const ContactComp = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email) return "Email is required";
     if (!emailRegex.test(email)) return "Please enter a valid email address";
-    if (!email.includes(".com")) return "Email must include .com";
     return "";
   };
 
