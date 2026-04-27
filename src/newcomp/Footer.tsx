@@ -271,8 +271,8 @@ const Footer = () => {
         {name: 'Lawyer by City', href: '/lawyer-by-city'},
         {name: 'Lawyer by Expertise', href: '/lawyer-by-expertise'},
         {name: 'AMAs Expertise', href: '/expertise'},
-        {name: 'Loan Settlement by Bank', href: '/loan-settlement-by-bank'}
-        
+        {name: 'Loan Settlement by Bank', href: '/loan-settlement-by-bank'},
+        { name: "Lawyer Resources", href: "/lawyer"}
       ]
     },
     {

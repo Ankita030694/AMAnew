@@ -277,7 +277,8 @@ export default function Footer() {
     { href: "/debt-recovery-money-recovery-notice", label: "Debt Recovery Notice" },
     { href: "/gst-show-cause-notice-scn", label: "GST Show Cause Notice" },
     { href: "/income-tax-demand-notice", label: "Income Tax Demand Notice" },
-    { href: "/data-breach-privacy-notice", label: "Data Breach Privacy Notice" }
+    { href: "/data-breach-privacy-notice", label: "Data Breach Privacy Notice" },
+    { href: "/lawyer", label: "Lawyer Resources & Opportunities" }
               ].map((query) => (
                 <Link
                   key={query.href}
