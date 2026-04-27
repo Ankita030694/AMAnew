@@ -5,7 +5,7 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUniversity, FaFileInvoiceDollar, FaUserShield, FaBalanceScale, FaChartLine, FaHandsHelping } from "react-icons/fa";
 
 export const metadata = {
-  title: "Understanding Non-Performing Assets (NPA): What Happens Next? Complete Guide",
+  title: "Non-Performing Assets (NPA): What Happens Next?",
   description:
     "Classification of NPAs, RBI guidelines, and the recovery process in India. Learn what happens when a loan becomes an NPA and how to protect your assets legally.",
   keywords: "non performing assets india, what is npa, rbi guidelines for npa, sarfaesi act recovery process, loan default consequences india, npa classification sub standard doubtful loss",

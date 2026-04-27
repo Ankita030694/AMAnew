@@ -5,7 +5,7 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaRegHandshake, FaChartLine, FaQuoteLeft } from "react-icons/fa";
 
 export const metadata = {
-  title: "Which Companies Offer Professional Debt Settlement Services for Personal Loans?",
+  title: "Debt Settlement Services for Personal Loans India",
   description:
     "Looking for professional debt settlement services for personal loans in India? Explore top companies, legal protections, and how to settle your debt legally with our expert guide.",
   keywords: "debt settlement companies india, personal loan settlement services, professional debt relief, one time settlement india, stop recovery agent harassment, loan settlement lawyer",

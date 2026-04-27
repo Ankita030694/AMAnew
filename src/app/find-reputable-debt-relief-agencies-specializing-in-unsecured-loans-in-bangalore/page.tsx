@@ -5,7 +5,7 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaBuilding, FaMapMarkerAlt, FaHandshake, FaUserTie } from "react-icons/fa";
 
 export const metadata = {
-  title: "Find Reputable Debt Relief Agencies Specializing in Unsecured Loans in Bangalore",
+  title: "Debt Relief Agencies for Unsecured Loans Bangalore",
   description:
     "Struggling with debt? Find reputable debt relief agencies specializing in unsecured loans in Bangalore. Learn how to settle personal loans and credit cards legally.",
   keywords: "find reputable debt relief agencies specializing in unsecured loans in bangalore, debt relief bangalore, unsecured loan settlement bangalore, debt settlement companies bangalore, personal loan relief bangalore",

@@ -5,7 +5,7 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaSearchLocation, FaMapMarkerAlt, FaStar, FaHandshake, FaRegFileAlt } from "react-icons/fa";
 
 export const metadata = {
-  title: "Best Loan Settlement Services Near Me | Top Debt Resolution in India",
+  title: "Best Loan Settlement Services Near Me | India",
   description:
     "Looking for the best loan settlement services near you? AMA Legal Solutions provides expert legal aid to settle personal loans, credit cards, and business debts with banks. Stop harassment and get debt relief now.",
   keywords: "best loan settlement services near me, loan settlement companies india, debt resolution services, settle personal loan with bank, credit card settlement lawyer, ama legal solutions debt settlement",

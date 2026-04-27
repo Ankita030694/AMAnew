@@ -5,7 +5,7 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaRegFileAlt, FaHandshake, FaChartLine } from "react-icons/fa";
 
 export const metadata = {
-  title: "Debt Recovery Money Recovery Notice India: Legal Step-by-Step Guide",
+  title: "Debt Recovery Notice India: Legal Step-by-Step",
   description:
     "Need to recover money? Learn the complete legal process for debt recovery in India. Draft a powerful money recovery notice, understand CPC rules, and get your dues back legally.",
   keywords: "debt recovery money recovery notice, legal notice for money recovery india, how to recover money from a friend legally, recovery of money under CPC, summary suit for money recovery, legal notice for non payment of dues",

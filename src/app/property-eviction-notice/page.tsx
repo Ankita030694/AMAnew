@@ -5,7 +5,7 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaHome, FaFileAlt, FaBalanceScaleRight } from "react-icons/fa";
 
 export const metadata = {
-  title: "Property Eviction Notice India: Legal Procedure & Grounds for Eviction",
+  title: "Property Eviction Notice India: Legal Procedure",
   description:
     "Planning to evict a tenant in India? Learn the legal procedure for property eviction notice, valid grounds under Rent Control Acts, and how to reclaim possession legally.",
   keywords: "property eviction notice, legal notice for eviction india, how to evict a tenant in india, grounds for eviction of tenant, rent control act eviction procedure",

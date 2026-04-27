@@ -18,7 +18,7 @@ import {
 } from "react-icons/fa";
 
 export const metadata = {
-  title: "Top 10 Instant Loan Apps Revolutionizing Access to Credit in India (2025)",
+  title: "Top 10 Instant Loan Apps in India (2025)",
   description:
     "Discover the top 10 instant loan apps in India for 2025. Compare interest rates, features, and eligibility for apps like MoneyView, KreditBee, and Navi. Get quick credit access today.",
   keywords: "top 10 instant loan apps india, best instant loan apps 2025, quick personal loan india, kreditbee vs moneyview, instant credit access india, personal loan app reviews india",
