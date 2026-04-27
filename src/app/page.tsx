@@ -1,5 +1,6 @@
-
+// Triggering type regeneration
 import Hero from "@/newcomp/Hero";
+
 import ClientLogoSlider from "@/newcomp/ClientLogoSlider";
 import Legacy2 from "@/newcomp/Legacy2";
 import Counter from "@/newcomp/Counter";

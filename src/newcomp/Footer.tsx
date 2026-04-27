@@ -539,7 +539,16 @@ const Footer = () => {
         { name: "Negotiate Personal Loan Settlement", href: "/how-can-I-negotiate-a-personal-loan-settlement-with-lenders" },
         { name: "Best Settlement Services Near Me", href: "/what-are-the-best-loan-settlement-services-near-me" },
         { name: "Personal Loan Settlement Process", href: "/what-is-the-typical-process-for-settling-a-personal-loan-in-india" },
-        { name: "Professional Debt Settlement Companies", href: "/which-companies-offer-professional-debt-settlement-services-for-personal-loans" }
+        { name: "Professional Debt Settlement Companies", href: "/which-companies-offer-professional-debt-settlement-services-for-personal-loans" },
+        { name: "Cheque Bounce Notice", href: "/cheque-bounce-notice" },
+        { name: "Breach of Contract Notice", href: "/breach-of-contract-notice" },
+        { name: "Consumer Complaint Notice", href: "/consumer-complaint-notice" },
+        { name: "Property Eviction Notice", href: "/property-eviction-notice" },
+        { name: "IP Cease & Desist Notice", href: "/ip-cease-desist-notice" },
+        { name: "Debt Recovery Notice", href: "/debt-recovery-money-recovery-notice" },
+        { name: "GST Show Cause Notice", href: "/gst-show-cause-notice-scn" },
+        { name: "Income Tax Demand Notice", href: "/income-tax-demand-notice" },
+        { name: "Data Breach Privacy Notice", href: "/data-breach-privacy-notice" }
       ]
 
     }

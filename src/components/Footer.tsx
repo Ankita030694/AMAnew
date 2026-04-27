@@ -268,7 +268,16 @@ export default function Footer() {
                 { href: "/will-drafting-for-indians-living-in-australia", label: "Will Drafting for Indians in Australia" },
     { href: "/will-drafting-for-indians-living-in-germany", label: "Will Drafting for Indians in Germany" },
     { href: "/how-to-check-your-loan-status-without-visiting-the-bank", label: "Check Loan Status Online" },
-    { href: "/what-are-the-best-loan-settlement-services-near-me", label: "Best Loan Settlement Services Near Me" }
+    { href: "/what-are-the-best-loan-settlement-services-near-me", label: "Best Loan Settlement Services Near Me" },
+    { href: "/cheque-bounce-notice", label: "Cheque Bounce Notice" },
+    { href: "/breach-of-contract-notice", label: "Breach of Contract Notice" },
+    { href: "/consumer-complaint-notice", label: "Consumer Complaint Notice" },
+    { href: "/property-eviction-notice", label: "Property Eviction Notice" },
+    { href: "/ip-cease-desist-notice", label: "IP Cease & Desist Notice" },
+    { href: "/debt-recovery-money-recovery-notice", label: "Debt Recovery Notice" },
+    { href: "/gst-show-cause-notice-scn", label: "GST Show Cause Notice" },
+    { href: "/income-tax-demand-notice", label: "Income Tax Demand Notice" },
+    { href: "/data-breach-privacy-notice", label: "Data Breach Privacy Notice" }
               ].map((query) => (
                 <Link
                   key={query.href}
