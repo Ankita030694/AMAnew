@@ -254,6 +254,72 @@ const Footer = () => {
       "@type": "Product",
       "name": "Professional Debt Settlement Company Finder",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1540" }
+    },
+    "/demand-notice-for-recovery-of-money": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Recovery of Money Legal Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1100" }
+    },
+    "/demand-notice-for-loan-repayment": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Loan Repayment Legal Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "950" }
+    },
+    "/notice-for-for-dishonoured-cheque": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Dishonoured Cheque Legal Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1300" }
+    },
+    "/notice-for-recovery-of-unpaid-salary": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Salary Recovery Legal Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1200" }
+    },
+    "/notice-for-recovery-of-security-deposit": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Security Deposit Recovery Legal Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "850" }
+    },
+    "/notice-for-recovery-of-outstanding-business-dues": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Business Dues Recovery Legal Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1050" }
+    },
+    "/notice-for-recovery-of-professional-fees": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Professional Fee Recovery Legal Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "750" }
+    },
+    "/notice-for-recovery-from-tenant-landlord": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Tenant Landlord Dispute Legal Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1400" }
+    },
+    "/notice-to-employer-for-wrongful-termination": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Wrongful Termination Legal Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1150" }
+    },
+    "/notice-to-employer-for-non-payment-of-salary-or-benefits": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Salary & Benefits Dispute Legal Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "900" }
+    },
+    "/notice-to-employer-for-workplace-harassment": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Workplace Harassment Legal Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1250" }
     }
   };
   const footerColumns = [
@@ -388,6 +454,17 @@ const Footer = () => {
     {
       title: "Queries",
       links: [
+        { name: 'Recovery of Money Notice', href: '/demand-notice-for-recovery-of-money' },
+        { name: 'Loan Repayment Demand Notice', href: '/demand-notice-for-loan-repayment' },
+        { name: 'Dishonoured Cheque Notice', href: '/notice-for-for-dishonoured-cheque' },
+        { name: 'Unpaid Salary Recovery Notice', href: '/notice-for-recovery-of-unpaid-salary' },
+        { name: 'Security Deposit Recovery Notice', href: '/notice-for-recovery-of-security-deposit' },
+        { name: 'Business Dues Recovery Notice', href: '/notice-for-recovery-of-outstanding-business-dues' },
+        { name: 'Professional Fee Recovery Notice', href: '/notice-for-recovery-of-professional-fees' },
+        { name: 'Tenant/Landlord Recovery Notice', href: '/notice-for-recovery-from-tenant-landlord' },
+        { name: 'Wrongful Termination Notice', href: '/notice-to-employer-for-wrongful-termination' },
+        { name: 'Non-Payment of Salary Notice', href: '/notice-to-employer-for-non-payment-of-salary-or-benefits' },
+        { name: 'Workplace Harassment Notice', href: '/notice-to-employer-for-workplace-harassment' },
         // Moved from Loan Settlement (after ICICI Bank)
         { name: 'HDFC Bank Settlement', href: '/services/loan-settlement/hdfc-bank' },
         { name: 'ICICI Bank Settlement', href: '/services/loan-settlement/icici-bank' },

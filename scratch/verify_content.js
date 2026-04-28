@@ -1,11 +1,18 @@
 const fs = require('fs');
-const content = fs.readFileSync('/Users/amalegalsolutions/Desktop/AMAWORK/AMA/ama/src/app/what-are-the-best-loan-settlement-services-near-me/page.tsx', 'utf8');
+const path = require('path');
 
-// Strip out JSX tags and just get the text
-const text = content.replace(/<[^>]*>/g, ' ').replace(/\{[\s\S]*?\}/g, ' ');
-const words = text.split(/\s+/).filter(w => w.length > 0);
+const filePath = '/Users/amalegalsolutions/Desktop/AMAWORK/AMA/ama/src/app/notice-for-recovery-of-unpaid-salary/page.tsx';
+const content = fs.readFileSync(filePath, 'utf8');
 
-console.log('Word count (approx):', words.length);
+// Simple word count (approximated for JSX content)
+const words = content.split(/\s+/).length;
+console.log(`Word Count (approx): ${words}`);
 
-const emDashes = (content.match(/—/g) || []).length;
-console.log('Em dashes found:', emDashes);
+// Check for em dashes
+const emDashRegex = /—/g;
+const emDashMatches = content.match(emDashRegex);
+if (emDashMatches) {
+    console.log(`Found ${emDashMatches.length} em dashes!`);
+} else {
+    console.log('No em dashes found.');
+}

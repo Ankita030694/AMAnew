@@ -29,6 +29,7 @@ const sections = [
 ];
 
 const relatedPages = [
+  { title: "Demand Notice for Loan Repayment", href: "/demand-notice-for-loan-repayment" },
   { title: "Bajaj Agent Hacked My Contacts", href: "/bajaj-recovery-agent-hacked-my-contact-list" },
   { title: "Stop Bajaj Harassment Instantly", href: "/how-to-stop-bajaj-recovery-agent-harassment-instantly" },
   { title: "Stop Recovery Agent Home Visits", href: "/how-do-i-stop-recovery-agent-from-coming-home" },
