@@ -320,6 +320,30 @@ const Footer = () => {
       "@type": "Product",
       "name": "Workplace Harassment Legal Service",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1250" }
+    },
+    "/notice-to-employee-for-misconduct": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Employee Misconduct Legal Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "1540" }
+    },
+    "/notice-to-employee-for-breach-of-employment-contract": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Employment Contract Breach Legal Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1320" }
+    },
+    "/notice-to-employee-for-absenteeism-negligence": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Absenteeism & Negligence Legal Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "980" }
+    },
+    "/notice-for-recovery-of-company-assets-from-employee": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Asset Recovery Legal Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1120" }
     }
   };
   const footerColumns = [
@@ -465,6 +489,10 @@ const Footer = () => {
         { name: 'Wrongful Termination Notice', href: '/notice-to-employer-for-wrongful-termination' },
         { name: 'Non-Payment of Salary Notice', href: '/notice-to-employer-for-non-payment-of-salary-or-benefits' },
         { name: 'Workplace Harassment Notice', href: '/notice-to-employer-for-workplace-harassment' },
+        { name: 'Employee Misconduct Notice', href: '/notice-to-employee-for-misconduct' },
+        { name: 'Breach of Contract Notice', href: '/notice-to-employee-for-breach-of-employment-contract' },
+        { name: 'Absenteeism & Negligence Notice', href: '/notice-to-employee-for-absenteeism-negligence' },
+        { name: 'Asset Recovery Notice', href: '/notice-for-recovery-of-company-assets-from-employee' },
         // Moved from Loan Settlement (after ICICI Bank)
         { name: 'HDFC Bank Settlement', href: '/services/loan-settlement/hdfc-bank' },
         { name: 'ICICI Bank Settlement', href: '/services/loan-settlement/icici-bank' },
