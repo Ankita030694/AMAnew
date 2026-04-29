@@ -160,7 +160,21 @@ export default function BajajAbuseGuide() {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Borrower Protection Legal Service",
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Vikas S." },
+        "reviewBody": "AMA Legal Solutions stopped the illegal calls from Bajaj recovery agents within 48 hours of sending the legal notice. Peace of mind restored.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Sangeeta R." },
+        "reviewBody": "They know the RBI guidelines perfectly. The agents were threatening me at my office, but AMA's legal intervention stopped it instantly.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+      }
+    ]
   };
 
   return (
