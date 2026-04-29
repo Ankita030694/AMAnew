@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
-import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaLaptop, FaMobileAlt, FaDatabase } from "react-icons/fa";
+import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaLaptop, FaMobileAlt, FaDatabase, FaFileSignature } from "react-icons/fa";
 
 export const metadata = {
   title: "Notice for Recovery of Company Assets from Employee: Legal Guide",
