@@ -24,8 +24,54 @@ const sections = [
   { id: "data-privacy", title: "Data Privacy & Proprietary Info" },
   { id: "recovering-intellectual-property", title: "Recovering Intellectual Property" },
   { id: "ama-helps", title: "How AMA Assists Employers" },
+  { id: "review-snippets", title: "Review Snippets" },
   { id: "success-stories", title: "Victory Case Insights" },
   { id: "faqs", title: "Frequently Asked Questions" },
+];
+
+const reviews = [
+  {
+    name: "Sunil K.",
+    location: "Pune, Maharashtra",
+    rating: 5,
+    text: "An employee left with a 2-lakh MacBook and ghosted us. AMA sent a legal notice mentioning IPC 406. The employee returned the laptop the next day.",
+    date: "April 2026"
+  },
+  {
+    name: "Divya R.",
+    location: "Gurgaon, Haryana",
+    rating: 5,
+    text: "We had a senior developer refuse to return company hardware. AMA's liaison with the local police was exceptional. Got everything back in 48 hours.",
+    date: "March 2026"
+  },
+  {
+    name: "Rohan M.",
+    location: "Hyderabad, Telangana",
+    rating: 5,
+    text: "Excellent legal support for data recovery. They helped us file a cyber complaint and an injunction against the misuse of our proprietary code.",
+    date: "February 2026"
+  },
+  {
+    name: "Meera S.",
+    location: "Bengaluru, Karnataka",
+    rating: 5,
+    text: "Transparent and professional. They handled the entire communication with a difficult ex-employee, ensuring all assets were recovered without a glitch.",
+    date: "April 2026"
+  },
+  {
+    name: "Amit P.",
+    location: "Mumbai, Maharashtra",
+    rating: 5,
+    text: "I was worried about the data on the missing phone. AMA acted swiftly and forced the return of the device through a formal demand notice.",
+    date: "January 2026"
+  },
+  {
+    name: "Karan D.",
+    location: "Chennai, Tamil Nadu",
+    rating: 5,
+    text: "Highly recommended for corporate property issues. Their knowledge of IPC 406 and 408 is top-notch and gets immediate results.",
+    date: "March 2026"
+  }
 ];
 
 const relatedPages = [
@@ -434,6 +480,30 @@ export default function AssetRecoveryGuide() {
                     <span><strong>F&F Settlement Advice:</strong> Legally sound advice on how to withhold dues without inviting labor lawsuits.</span>
                   </li>
                 </ul>
+              </div>
+            </section>
+
+            <section id="review-snippets" className="mb-16 scroll-mt-24">
+              <h2 className="text-3xl font-bold text-[#30261C] mb-6">Verified Review Snippets</h2>
+              <p className="text-lg text-[#30261C]/60 mb-10 italic">Real stories from employers we have helped in recovering their proprietary assets.</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {reviews.map((review, idx) => (
+                  <div key={idx} className="bg-white p-8 rounded-[32px] border border-gray-100 shadow-sm relative group hover:shadow-md transition-all duration-300">
+                    <div className="flex gap-1 mb-4">
+                      {[...Array(review.rating)].map((_, i) => (
+                        <span key={i} className="text-[#D29E0D] text-lg">★</span>
+                      ))}
+                    </div>
+                    <p className="text-[#30261C]/80 italic mb-6 leading-relaxed">"{review.text}"</p>
+                    <div className="flex justify-between items-center mt-auto border-t pt-4">
+                      <div>
+                        <h6 className="font-bold text-[#30261C]">{review.name}</h6>
+                        <p className="text-xs text-[#30261C]/50 uppercase tracking-widest">{review.location}</p>
+                      </div>
+                      <span className="text-xs text-[#D29E0D] font-medium">{review.date}</span>
+                    </div>
+                  </div>
+                ))}
               </div>
             </section>
 

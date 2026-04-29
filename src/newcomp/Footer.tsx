@@ -344,6 +344,78 @@ const Footer = () => {
       "@type": "Product",
       "name": "Asset Recovery Legal Service",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1120" }
+    },
+    "/legal-notice-for-experience-letter-and-releiving-letter": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Experience Letter & Relieving Letter Legal Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1450" }
+    },
+    "/legal-help-for-loan-defaulters": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Legal Help for Loan Defaulters",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2150" }
+    },
+    "/legal-notice-for-partnership-dispute": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Partnership Dispute Legal Notice Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "920" }
+    },
+    "/best-law-firms-in-india-for-corporate-law": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Corporate Law Firm Consultancy",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+    },
+    "/consumer-complaint-against-finance-company": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Consumer Complaint Legal Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1100" }
+    },
+    "/one-time-settlement-ots-legal-assistance": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "OTS Legal Assistance Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2350" }
+    },
+    "/legal-notice-against-nbfc": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Legal Notice Against NBFC Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1540" }
+    },
+    "/legal-notice-for-illegal-termination": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Illegal Termination Legal Notice Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1240" }
+    },
+    "/legal-notice-for-credit-card-recovery-harassment-dues": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Credit Card Harassment Legal Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2850" }
+    },
+    "/rbi-guideline-violation-complaint": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "RBI Violation Complaint Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1650" }
+    },
+    "/debt-settlement-agreement-drafting": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Debt Settlement Drafting Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1120" }
+    },
+    "/notice-for-cibil-correction-after-settlement": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "CIBIL Correction Legal Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "940" }
     }
   };
   const footerColumns = [
@@ -493,6 +565,18 @@ const Footer = () => {
         { name: 'Breach of Contract Notice', href: '/notice-to-employee-for-breach-of-employment-contract' },
         { name: 'Absenteeism & Negligence Notice', href: '/notice-to-employee-for-absenteeism-negligence' },
         { name: 'Asset Recovery Notice', href: '/notice-for-recovery-of-company-assets-from-employee' },
+        { name: 'Illegal Termination Notice', href: '/legal-notice-for-illegal-termination' },
+        { name: 'Experience & Relieving Letter Help', href: '/legal-notice-for-experience-letter-and-releiving-letter' },
+        { name: 'Partnership Dispute Help', href: '/legal-notice-for-partnership-dispute' },
+        { name: 'Loan Defaulter Legal Help', href: '/legal-help-for-loan-defaulters' },
+        { name: 'Consumer Complaint Finance', href: '/consumer-complaint-against-finance-company' },
+        { name: 'OTS Legal Assistance', href: '/one-time-settlement-ots-legal-assistance' },
+        { name: 'Legal Notice Against NBFC', href: '/legal-notice-against-nbfc' },
+        { name: 'Credit Card Harassment Help', href: '/legal-notice-for-credit-card-recovery-harassment-dues' },
+        { name: 'RBI Guideline Violation Help', href: '/rbi-guideline-violation-complaint' },
+        { name: 'Debt Settlement Drafting', href: '/debt-settlement-agreement-drafting' },
+        { name: 'CIBIL Correction Notice', href: '/notice-for-cibil-correction-after-settlement' },
+        { name: 'Best Corporate Law Firms', href: '/best-law-firms-in-india-for-corporate-law' },
         // Moved from Loan Settlement (after ICICI Bank)
         { name: 'HDFC Bank Settlement', href: '/services/loan-settlement/hdfc-bank' },
         { name: 'ICICI Bank Settlement', href: '/services/loan-settlement/icici-bank' },
