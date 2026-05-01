@@ -82,13 +82,13 @@ const Counter = () => {
 
   return (
     <section 
-      className="w-full h-auto md:h-[120px] flex items-center px-4 md:px-12 py-6 md:py-0 relative z-20 -mt-20"
+      className="w-full h-auto md:h-[120px] flex items-center px-4 md:px-12 py-6 md:py-0 relative z-20 -mt-20 md:mt-0"
       style={{ background: "rgba(255, 255, 255, 0.15)" }}
     >
       <div className="flex flex-col md:flex-row items-center justify-between md:justify-around w-full mx-auto gap-6 md:gap-0">
         {/* Heading */}
         <div 
-          className="text-[#30261C] font-sans text-[31px] md:text-[38px] font-medium leading-tight text-center md:text-left"
+          className="text-[#30261C] font-sans text-[24px] md:text-[38px] font-medium leading-tight text-center md:text-left"
         >
           Legal Excellence, <br className="hidden md:block" />
           <span className="md:hidden"> </span>
@@ -96,7 +96,7 @@ const Counter = () => {
         </div>
 
         {/* Stats */}
-        <div className="flex items-center justify-between w-full md:w-auto md:gap-16">
+        <div className="grid grid-cols-2 gap-y-8 gap-x-4 w-full md:flex md:items-center md:justify-between md:w-auto md:gap-16">
           {stats.map((stat, index) => ( 
             <StatCounter key={index} label={stat.label} value={stat.value} />
           ))}

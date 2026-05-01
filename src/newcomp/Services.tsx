@@ -152,40 +152,40 @@ const Services = () => {
           Affiliations That Strengthen Our Practice
         </h2>
         
-        <div className="flex flex-row flex-nowrap justify-between md:justify-center items-center gap-0 md:gap-8 lg:gap-[140px] w-full overflow-x-hidden">
-          <Link href="https://mcia.org.in/" target="_blank" className="relative flex-shrink-0 w-[22%] h-[38px] -ml-3 sm:ml-0 sm:w-[120px] sm:h-[60px] lg:w-[200px] lg:h-[100px] hover:opacity-80 transition-opacity">
+        <div className="grid grid-cols-2 md:flex md:flex-row md:flex-nowrap md:justify-center items-center gap-6 md:gap-8 lg:gap-[140px] w-full">
+          <Link href="https://mcia.org.in/" target="_blank" className="relative w-full h-[45px] sm:w-[120px] sm:h-[60px] lg:w-[200px] lg:h-[100px] hover:opacity-80 transition-opacity">
             <Image
               src="/newAssets/aff5.png"
               alt="MCIA"
               fill
-              sizes="(max-width: 768px) 120px, 200px"
+              sizes="(max-width: 768px) 140px, 200px"
               className="object-contain"
             />
           </Link>
-          <Link href="https://www.wipo.int/portal/en/index.html" target="_blank" className="relative flex-shrink-0 w-[22%] h-[38px] sm:w-[120px] sm:h-[60px] lg:w-[200px] lg:h-[100px] hover:opacity-80 transition-opacity">
+          <Link href="https://www.wipo.int/portal/en/index.html" target="_blank" className="relative w-full h-[45px] sm:w-[120px] sm:h-[60px] lg:w-[200px] lg:h-[100px] hover:opacity-80 transition-opacity">
             <Image
               src="/newAssets/aff2.png"
               alt="WIPO"
               fill
-              sizes="(max-width: 768px) 120px, 200px"
+              sizes="(max-width: 768px) 140px, 200px"
               className="object-contain"
             />
           </Link>
-          <Link href="https://www.iaccindia.com/" target="_blank" className="relative flex-shrink-0 w-[22%] h-[38px] sm:w-[120px] sm:h-[60px] lg:w-[200px] lg:h-[100px] hover:opacity-80 transition-opacity">
+          <Link href="https://www.iaccindia.com/" target="_blank" className="relative w-full h-[45px] sm:w-[120px] sm:h-[60px] lg:w-[200px] lg:h-[100px] hover:opacity-80 transition-opacity">
             <Image
               src="/newAssets/aff3.png"
               alt="IACC"
               fill
-              sizes="(max-width: 768px) 120px, 200px"
+              sizes="(max-width: 768px) 140px, 200px"
               className="object-contain"
             />
           </Link>
-          <Link href="https://iamch.org.in/" target="_blank" className="relative flex-shrink-0 w-[22%] h-[38px] sm:w-[120px] sm:h-[60px] lg:w-[200px] lg:h-[100px] hover:opacity-80 transition-opacity">
+          <Link href="https://iamch.org.in/" target="_blank" className="relative w-full h-[45px] sm:w-[120px] sm:h-[60px] lg:w-[200px] lg:h-[100px] hover:opacity-80 transition-opacity">
              <Image
               src="/newAssets/aff4.png"
               alt="IAMCH"
               fill
-              sizes="(max-width: 768px) 120px, 200px"
+              sizes="(max-width: 768px) 140px, 200px"
               className="object-contain"
             />
           </Link>

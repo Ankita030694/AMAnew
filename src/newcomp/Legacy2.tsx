@@ -7,60 +7,41 @@ import { motion, AnimatePresence } from "framer-motion";
 const slidesData = [
   {
     id: 1,
-    heading: "Architect of Public Accountability",
-    description:
-      "Inspired by a deep-seated passion for justice and a transformative vision to serve the community, R.C. Malik pursued the legal profession with an unwavering commitment to excellence and public service. Guided by absolute integrity and a steadfast ethical compass, he dedicated his life to providing trusted, effective, and principled legal counsel.",
-    timelineItems: [
-      {
-        year: "1982",
-        title: "Public Service Foundation",
-        description:
-          "Began his professional journey with a deep-rooted dedication to justice and accountability in public administration.",
-      },
-      {
-        year: "1990",
-        title: "Distinguished Leadership",
-        description:
-          "Served as Ex-Comptroller and Auditor General of India and Director General of Audit (Central-Receipt), strengthening financial governance.",
-      },
-      {
-        year: "2016",
-        title: "Legacy of Integrity",
-        description:
-          "Laid a robust foundation for the practice, built on the pillars of trust, credibility, and enduring legal values.",
-      },
-    ],
+    heading: "The Foundation",
+    description: (
+      <div className="space-y-4">
+        <h3 className="text-[24px] lg:text-[28px] text-[#30261C] font-medium leading-tight">
+
+        </h3>
+        <div className="space-y-1">
+          <p className="text-[#D29E0D] text-[18px] lg:text-[20px] font-medium">Ex-Comptroller and Auditor General of India</p>
+          <p className="text-[#30261C]/70 text-[16px] lg:text-[18px]">Director General of Audit (Central-Receipt)</p>
+        </div>
+        <p className="mt-6 text-[#30261C]/85 leading-relaxed text-[15px] md:text-[18px]">
+          R.C. Malik started his professional journey as a gazetted officer at DGACR, progressing through different roles within the Income Tax Department before taking on administrative duties at the Office of the Comptroller and Auditor General (CAG) of India. After retiring from the CAG office, R.C. Malik transitioned into a legal career as an advocate specializing in taxation, leveraging the extensive experience gained during his tenure as an officer.
+        </p>
+      </div>
+    ),
     image: "/dadaji2.jpg",
-    overlayTag: "FOUNDING INSPIRATION",
+    overlayTag: "",
     overlayName: "Late Adv. R.C. Malik",
   },
   {
     id: 2,
-    heading: "Champion of Legal Security",
-    description:
-      "I am Anuj Anand Malik, an advocate, legal consultant, banking lawyer, and loan settlement expert, committed to helping individuals, startups, and businesses overcome financial challenges and achieve legal security.",
-    timelineItems: [
-      {
-        year: "2016",
-        title: "Corporate Compliance",
-        description:
-          "Providing strategic legal counsel and expert representation to safeguard clients' interests through risk mitigation.",
-      },
-      {
-        year: "2019",
-        title: "Dispute Resolution",
-        description:
-          "Expertise in business contracts, dispute resolution, and financial litigation to ensure regulatory compliance.",
-      },
-      {
-        year: "2023",
-        title: "Loan Settlement Expert",
-        description:
-          "In-depth specialization in loan settlements, helping clients overcome complex financial challenges and achieve stability.",
-      },
-    ],
+    heading: "The Vision",
+    description: (
+      <div className="space-y-4">
+        <div className="space-y-1">
+          <p className="text-[#D29E0D] text-[18px] lg:text-[20px] font-medium">Founder, AMA Legal Solutions</p>
+          <p className="text-[#30261C]/70 text-[16px] lg:text-[18px]">Advocate &amp; Legal Strategist</p>
+        </div>
+        <p className="mt-6 text-[#30261C]/85 leading-relaxed text-[15px] md:text-[18px]">
+          Anuj Anand Malik works at the intersection of law, finance, and business strategy, specializing in banking disputes and debt resolution. Driven by the vision to make quality legal assistance accessible across India, he recently launched the country&apos;s first pro-bono law firm–backed legal assistance app. His mission is to provide fast, reliable legal guidance and awareness to everyone when they need it most.
+        </p>
+      </div>
+    ),
     image: "/newAssets/bhiya.png",
-    overlayTag: "MANAGING PARTNER",
+    overlayTag: "Founder",
     overlayName: "Anuj Anand Malik",
   },
 ];
@@ -146,74 +127,18 @@ const Legacy2 = () => {
                 </h2>
 
                 {/* Introductory Paragraph */}
-                <p
-                  className="mb-14 max-w-2xl text-[15px] md:text-[18px] text-center lg:text-left"
+                <div
+                  className="mb-14 max-w-2xl text-[15px] md:text-[18px] text-left lg:text-left h-full max-h-[400px] md:max-h-[500px] overflow-y-auto pr-4 custom-scrollbar"
                   style={{
                     color: "rgba(48, 38, 28, 0.8)",
                     lineHeight: "1.6",
                   }}
                 >
                   {currentSlide.description}
-                </p>
+                </div>
               </motion.div>
 
-              {/* Timeline Items */}
-              <div className="flex flex-col gap-10 relative pb-12 lg:pb-0">
-                {/* Dotted connecting line */}
-                <div className="absolute left-[44px] top-[40px] bottom-[40px] w-[2px] border-l-[3px] border-dotted border-[#A88322] opacity-50 z-[1] block" />
 
-                {currentSlide.timelineItems.map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                    className="flex flex-row gap-5 sm:gap-8 items-start relative z-10 w-full"
-                  >
-                    {/* Fixed-width Year Pill for perfect line alignment */}
-                    <div
-                      className="flex-shrink-0 flex items-center justify-center w-[90px] py-1.5 rounded-full relative"
-                      style={{
-                        background:
-                          "linear-gradient(135deg, #A88322 0%, #5D4811 100%)",
-                        boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.25)",
-                      }}
-                    >
-                      <span className="text-white text-[18px] font-medium tracking-wider drop-shadow-md">
-                        {item.year}
-                      </span>
-                      {/* Outer subtle glow matching the design */}
-                      <div
-                        className="absolute inset-0 rounded-full blur-[8px] -z-10"
-                        style={{ background: "rgba(168, 131, 34, 0.5)" }}
-                      />
-                    </div>
-
-                    {/* Text Content */}
-                    <div className="flex-1 mt-0 text-left">
-                      <h3
-                        className="text-[#30261C] text-[20px] md:text-[24px] mb-2"
-                        style={{
-                          fontFamily: "var(--font-polysans)",
-                          fontWeight: 400,
-                          lineHeight: "1.2",
-                        }}
-                      >
-                        {item.title}
-                      </h3>
-                      <p
-                        className="text-[14px] md:text-[15px] max-w-xl"
-                        style={{
-                          color: "rgba(48, 38, 28, 0.75)",
-                          lineHeight: "1.5",
-                        }}
-                      >
-                        {item.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
             </div>
 
             {/* Right Image Container */}
