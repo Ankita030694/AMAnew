@@ -227,8 +227,8 @@ export default function CorporatePage() {
             className="absolute inset-0 bg-cover bg-center z-0" 
             style={{ background: "black" }}
           ></div>
-          <div className="relative z-20 container mx-auto px-4 py-12 md:py-32 text-center">
-            <h1 className="text-2xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-10">
+          <div className="relative z-20 container mx-auto px-4 py-16 md:py-32 text-center">
+            <h1 className="text-2xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-20">
               Strategic <span className="text-[#D2A02A]">Corporate Law</span> Solutions
             </h1>
             <p className="text-sm md:text-2xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
@@ -258,7 +258,7 @@ export default function CorporatePage() {
                 <TableOfContents sections={tocSections} />
               </div>
 
-              <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
+              <div className="bg-white p-5 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
@@ -266,59 +266,59 @@ export default function CorporatePage() {
                   <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     In the dynamic landscape of modern business, navigating the legal complexities of corporate governance, compliance, and transactions is a significant challenge. Whether you are a startup looking to incorporate, an established firm planning a merger, or a company facing regulatory scrutiny, having robust legal counsel is critical.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     At AMA Legal Solutions, we understand that business and law are intrinsically linked. Our approach is not just about solving legal problems but preventing them. We provide proactive, business-centric legal advice that aligns with your strategic goals. Our team of seasoned corporate attorneys brings a wealth of experience across diverse sectors, offering a holistic suite of services that covers the entire lifecycle of a business—from inception and funding to growth, restructuring, and exit strategies.
                   </p>
-                  <p className="text-lg leading-relaxed text-gray-700">
+                  <p className="text-sm md:text-lg leading-relaxed text-gray-700">
                     We pride ourselves on being more than just legal advisors; we are your strategic partners. In a regulatory environment that is constantly shifting, having a dedicated legal team ensures that your business remains compliant, competitive, and resilient against risks.
                   </p>
                 </section>
 
                 {/* Role of Corporate Lawyer */}
                 <section id="role-of-corporate-lawyer" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">The Strategic Role of Corporate Lawyers</h2>
-                  <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
-                    <p className="text-lg text-blue-900 italic">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">The Strategic Role of Corporate Lawyers</h2>
+                  <div className="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 mb-6 md:mb-8 rounded-r-lg">
+                    <p className="text-sm md:text-lg text-blue-900 italic">
                       "A corporate lawyer is not just a defender in court but a guardian of business integrity and a facilitator of commercial growth."
                     </p>
                   </div>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     The perception of lawyers as merely litigators is outdated in the corporate world. Today, <strong>corporate lawyers in India</strong> are integral to the decision-making process. They act as the bridge between commercial intent and legal reality. Their role encompasses a broad spectrum of activities designed to protect the company's interests and maximize its value.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     One of the primary functions is <strong>Risk Management</strong>. Every business decision, from hiring an employee to signing a vendor contract, carries inherent legal risks. Our lawyers meticulously analyze these risks and implement safeguards—such as robust contracts, compliance protocols, and insurance strategies—to mitigate potential liabilities.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     Another critical aspect is <strong>Regulatory Navigation</strong>. India's regulatory framework is vast, involving multiple authorities like the Ministry of Corporate Affairs (MCA), Reserve Bank of India (RBI), Securities and Exchange Board of India (SEBI), and various industry-specific regulators. Navigating this maze requires specialized knowledge. We ensure that your business stays on the right side of the law, avoiding penalties and reputational damage associated with non-compliance.
                   </p>
                 </section>
 
                 {/* Legal Framework */}
                 <section id="legal-framework" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">The Legal Framework Governing Corporate India</h2>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">The Legal Framework Governing Corporate India</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     Corporate law in India is governed by a complex web of statutes, regulations, and judicial precedents. Understanding this framework is essential for any business operating in the country.
                   </p>
                   
-                  <div className="grid md:grid-cols-2 gap-6 mb-8">
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                      <h4 className="font-bold text-lg mb-2 text-[#D2A02A]">The Companies Act, 2013</h4>
-                      <p className="text-gray-600">The backbone of corporate legislation, this Act regulates the incorporation, governance, and dissolution of companies. It mandates corporate social responsibility (CSR), enhances auditor accountability, and protects minority shareholders.</p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
+                    <div className="bg-gray-50 p-4 md:p-6 rounded-xl border border-gray-200">
+                      <h4 className="font-bold text-base md:text-lg mb-2 text-[#D2A02A]">The Companies Act, 2013</h4>
+                      <p className="text-xs md:text-sm text-gray-600">The backbone of corporate legislation, this Act regulates the incorporation, governance, and dissolution of companies. It mandates corporate social responsibility (CSR), enhances auditor accountability, and protects minority shareholders.</p>
                     </div>
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                      <h4 className="font-bold text-lg mb-2 text-[#D2A02A]">FEMA & FDI Policy</h4>
-                      <p className="text-gray-600">The Foreign Exchange Management Act (FEMA) and Foreign Direct Investment (FDI) policies regulate cross-border transactions and foreign investments, crucial for international businesses and startups raising foreign capital.</p>
+                    <div className="bg-gray-50 p-4 md:p-6 rounded-xl border border-gray-200">
+                      <h4 className="font-bold text-base md:text-lg mb-2 text-[#D2A02A]">FEMA & FDI Policy</h4>
+                      <p className="text-xs md:text-sm text-gray-600">The Foreign Exchange Management Act (FEMA) and Foreign Direct Investment (FDI) policies regulate cross-border transactions and foreign investments, crucial for international businesses and startups raising foreign capital.</p>
                     </div>
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                      <h4 className="font-bold text-lg mb-2 text-[#D2A02A]">Contract Act & Specific Relief Act</h4>
-                      <p className="text-gray-600">These laws govern the validity and enforceability of commercial contracts. A well-drafted contract under these acts is the best defense against business disputes.</p>
+                    <div className="bg-gray-50 p-4 md:p-6 rounded-xl border border-gray-200">
+                      <h4 className="font-bold text-base md:text-lg mb-2 text-[#D2A02A]">Contract Act & Specific Relief Act</h4>
+                      <p className="text-xs md:text-sm text-gray-600">These laws govern the validity and enforceability of commercial contracts. A well-drafted contract under these acts is the best defense against business disputes.</p>
                     </div>
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                      <h4 className="font-bold text-lg mb-2 text-[#D2A02A]">Insolvency and Bankruptcy Code (IBC)</h4>
-                      <p className="text-gray-600">A game-changer in the Indian corporate landscape, the IBC provides a time-bound process for resolving insolvency, maximizing asset value, and promoting entrepreneurship.</p>
+                    <div className="bg-gray-50 p-4 md:p-6 rounded-xl border border-gray-200">
+                      <h4 className="font-bold text-base md:text-lg mb-2 text-[#D2A02A]">Insolvency and Bankruptcy Code (IBC)</h4>
+                      <p className="text-xs md:text-sm text-gray-600">A game-changer in the Indian corporate landscape, the IBC provides a time-bound process for resolving insolvency, maximizing asset value, and promoting entrepreneurship.</p>
                     </div>
                   </div>
-                  <p className="text-lg leading-relaxed text-gray-700">
+                  <p className="text-sm md:text-lg leading-relaxed text-gray-700">
                     Our team stays abreast of the latest amendments and judicial interpretations of these laws to provide you with up-to-date and effective legal counsel.
                   </p>
                 </section>
@@ -496,15 +496,15 @@ export default function CorporatePage() {
 
                 {/* FAQs */}
                 <section id="faqs" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
-                  <div className="space-y-6">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8">Frequently Asked Questions</h2>
+                  <div className="space-y-4 md:space-y-6">
                     {faqs.map((faq, index) => (
-                      <div key={index} className="border-b border-gray-200 pb-6 last:border-0">
-                        <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-start">
-                          <span className="text-[#D2A02A] mr-3">Q.</span>
+                      <div key={index} className="border-b border-gray-200 pb-4 md:pb-6 last:border-0">
+                        <h3 className="text-base md:text-xl font-bold text-gray-900 mb-2 md:mb-3 flex items-start">
+                          <span className="text-[#D2A02A] mr-2 md:mr-3">Q.</span>
                           {faq.question}
                         </h3>
-                        <p className="text-gray-700 leading-relaxed pl-8">
+                        <p className="text-sm md:text-lg text-gray-700 leading-relaxed pl-6 md:pl-8">
                           {faq.answer}
                         </p>
                       </div>

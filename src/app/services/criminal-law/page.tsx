@@ -228,8 +228,8 @@ export default function CriminalLawPage() {
             className="absolute inset-0 bg-cover bg-center z-0" 
 
           ></div>
-          <div className="relative z-20 container mx-auto px-4 py-12 md:py-32 text-center">
-            <h1 className="text-2xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-10">
+          <div className="relative z-20 container mx-auto px-4 py-16 md:py-32 text-center">
+            <h1 className="text-2xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-20">
               Expert <span className="text-[#D2A02A]">Criminal Defense</span> Lawyers in India
             </h1>
             <p className="text-sm md:text-2xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
@@ -259,7 +259,7 @@ export default function CriminalLawPage() {
                 <TableOfContents sections={tocSections} />
               </div>
 
-              <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
+              <div className="bg-white p-5 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
@@ -267,26 +267,26 @@ export default function CriminalLawPage() {
                   <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     Facing a criminal charge is undoubtedly one of the most stressful and frightening experiences a person can go through. The mere accusation of a crime can tarnish a reputation built over a lifetime, disrupt family life, and threaten one's career and liberty. In India, the criminal justice system is complex, vast, and often intimidating for the uninitiated. From the moment an FIR is registered or an arrest is made, the clock starts ticking, and every decision made can have long-lasting consequences on the outcome of the case.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     At <strong>AMA Legal Solutions</strong>, we understand the gravity of the situation. We believe that every individual is innocent until proven guilty and deserves a robust legal defense. Our team of seasoned <strong>criminal lawyers in India</strong> brings decades of experience in handling complex criminal matters across trial courts, High Courts, and the Supreme Court of India. We do not just represent clients; we fight for them. We meticulously analyze evidence, challenge procedural lapses, and build compelling arguments to protect your rights and secure the best possible outcome.
                   </p>
-                  <p className="text-lg leading-relaxed text-gray-700">
+                  <p className="text-sm md:text-lg leading-relaxed text-gray-700">
                     Whether you are dealing with a police investigation, seeking bail, or facing a full-fledged trial, having an expert criminal defense attorney by your side is not a luxury; it is a necessity. We provide comprehensive legal support that covers every stage of the criminal process, ensuring that you are never alone in your legal battle.
                   </p>
                 </section>
 
                 {/* Defense Services */}
                 <section id="defense-services" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Comprehensive Criminal Defense Services</h2>
-                  <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
-                    <p className="text-lg text-blue-900 italic">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Comprehensive Criminal Defense Services</h2>
+                  <div className="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 mb-6 md:mb-8 rounded-r-lg">
+                    <p className="text-sm md:text-lg text-blue-900 italic">
                       "Justice cannot be for one side alone, but must be for both." - Eleanor Roosevelt
                     </p>
                   </div>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     Criminal law is a broad field encompassing various types of offenses and legal procedures. Our practice is structured to provide specialized attention to different categories of criminal cases. We offer end-to-end legal services ranging from pre-litigation advisory to post-conviction appeals.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     Our primary objective is to prevent the filing of false cases and, where cases are filed, to ensure they are quashed or result in an acquittal. We work closely with forensic experts, private investigators, and subject matter specialists to strengthen the defense strategy. Our services are not limited to individuals; we also represent corporations and directors facing criminal liability in white-collar crimes and regulatory offenses.
                   </p>
                 </section>
@@ -298,40 +298,40 @@ export default function CriminalLawPage() {
                     Our expertise spans the entire spectrum of criminal law. We have successfully defended clients in a wide array of matters, ensuring personalized strategies for each unique case type.
                   </p>
                   
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">White Collar Crimes</h3>
-                      <p className="text-gray-700">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-lg md:text-xl font-bold text-[#D2A02A] mb-2 md:mb-3">White Collar Crimes</h3>
+                      <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
                         We specialize in defending complex financial crimes including money laundering (PMLA), corporate fraud, embezzlement, bribery, and tax evasion. These cases often involve voluminous documentation and require a keen understanding of both law and finance.
                       </p>
                     </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Cyber Crimes</h3>
-                      <p className="text-gray-700">
+                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-lg md:text-xl font-bold text-[#D2A02A] mb-2 md:mb-3">Cyber Crimes</h3>
+                      <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
                         With the rise of digital technology, cyber crimes like hacking, identity theft, online financial fraud, and data breaches have become common. We provide expert defense under the IT Act, helping clients navigate technical evidence and digital forensics.
                       </p>
                     </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Bodily Offenses</h3>
-                      <p className="text-gray-700">
+                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-lg md:text-xl font-bold text-[#D2A02A] mb-2 md:mb-3">Bodily Offenses</h3>
+                      <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
                         We handle serious charges related to bodily harm, including assault, murder, attempt to murder, and kidnapping. These cases require aggressive cross-examination and a deep understanding of medical jurisprudence.
                       </p>
                     </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Women & Child Related Laws</h3>
-                      <p className="text-gray-700">
+                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-lg md:text-xl font-bold text-[#D2A02A] mb-2 md:mb-3">Women & Child Related Laws</h3>
+                      <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
                         We represent clients in cases involving dowry harassment (498A), domestic violence, sexual harassment (POSH), and POCSO Act matters. We handle these sensitive cases with the utmost confidentiality and care.
                       </p>
                     </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">NDPS & Drug Offenses</h3>
-                      <p className="text-gray-700">
+                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-lg md:text-xl font-bold text-[#D2A02A] mb-2 md:mb-3">NDPS & Drug Offenses</h3>
+                      <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
                         Cases under the Narcotic Drugs and Psychotropic Substances (NDPS) Act are stringent with tough bail conditions. Our lawyers are experts in challenging search and seizure procedures to protect clients from harsh penalties.
                       </p>
                     </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Cheque Bounce & Economic Offenses</h3>
-                      <p className="text-gray-700">
+                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-lg md:text-xl font-bold text-[#D2A02A] mb-2 md:mb-3">Cheque Bounce & Economic Offenses</h3>
+                      <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
                         We handle cases under Section 138 of the Negotiable Instruments Act (Cheque Bounce) and other economic offenses, aiming for quick resolution or settlement to avoid criminal conviction for civil liabilities.
                       </p>
                     </div>
@@ -506,15 +506,15 @@ export default function CriminalLawPage() {
 
                 {/* FAQs */}
                 <section id="faqs" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
-                  <div className="space-y-6">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8">Frequently Asked Questions</h2>
+                  <div className="space-y-4 md:space-y-6">
                     {faqs.map((faq, index) => (
-                      <div key={index} className="border-b border-gray-200 pb-6 last:border-0">
-                        <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-start">
-                          <span className="text-[#D2A02A] mr-3">Q.</span>
+                      <div key={index} className="border-b border-gray-200 pb-4 md:pb-6 last:border-0">
+                        <h3 className="text-base md:text-xl font-bold text-gray-900 mb-2 md:mb-3 flex items-start">
+                          <span className="text-[#D2A02A] mr-2 md:mr-3">Q.</span>
                           {faq.question}
                         </h3>
-                        <p className="text-gray-700 leading-relaxed pl-8">
+                        <p className="text-sm md:text-lg text-gray-700 leading-relaxed pl-6 md:pl-8">
                           {faq.answer}
                         </p>
                       </div>

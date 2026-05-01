@@ -82,7 +82,7 @@ const Counter = () => {
 
   return (
     <section 
-      className="w-full h-auto md:h-[120px] flex items-center px-4 md:px-12 py-6 md:py-0 relative z-20"
+      className="w-full h-auto md:h-[120px] flex items-center px-4 md:px-12 py-6 md:py-0 relative z-20 -mt-20"
       style={{ background: "rgba(255, 255, 255, 0.15)" }}
     >
       <div className="flex flex-col md:flex-row items-center justify-between md:justify-around w-full mx-auto gap-6 md:gap-0">

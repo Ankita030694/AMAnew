@@ -161,6 +161,7 @@ export async function GET(): Promise<Response> {
     '/best-law-firms-in-india-for-corporate-law',
     '/legal-notice-for-partnership-dispute',
     '/legal-notice-for-experience-letter-and-releiving-letter',
+    '/legal-notice-for-freelance-payment-recovery',
     '/lawyer-by-city',
     '/contact',
     '/careers',

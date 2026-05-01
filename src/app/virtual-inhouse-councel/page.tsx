@@ -1,5 +1,6 @@
 import Navbar from "@/newcomp/Navbar";
 import Footer from "@/newcomp/Footer";
+import { FaStar, FaPlay, FaQuoteLeft } from "react-icons/fa";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -234,8 +235,11 @@ export default function VirtualInhouseCouncelPage() {
                                  </div>
                                  <div className="text-left">
                                     <div className="text-[#D2A02A] font-bold text-xs md:text-sm">{t.author}</div>
-                                    <Image src="/newAssets/stars.png" alt="Stars" width={50} height={8} className="mt-1 block md:hidden" />
-                                     <Image src="/newAssets/stars.png" alt="Stars" width={60} height={10} className="mt-1 hidden md:block" />
+                                    <div className="flex items-center gap-0.5 mt-1">
+                                      {[...Array(5)].map((_, i) => (
+                                        <FaStar key={i} className="text-[#FFC107] text-[12px] md:text-[14px]" />
+                                      ))}
+                                    </div>
                                  </div>
                               </div>
                               

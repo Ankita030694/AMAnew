@@ -231,8 +231,8 @@ export default function DraftingPage() {
             className="absolute inset-0 bg-cover bg-center z-0" 
             
           ></div>
-          <div className="relative z-20 container mx-auto px-4 py-12 md:py-32 text-center">
-            <h1 className="text-2xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-10">
+          <div className="relative z-20 container mx-auto px-4 py-16 md:py-32 text-center">
+            <h1 className="text-2xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-20">
               Precision in Every Word: Expert <span className="text-[#D2A02A]">Legal Drafting Services</span>
             </h1>
             <p className="text-sm md:text-2xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
@@ -263,7 +263,7 @@ export default function DraftingPage() {
                 <TableOfContents sections={tocSections} />
               </div>
 
-              <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
+              <div className="bg-white p-5 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
@@ -271,29 +271,29 @@ export default function DraftingPage() {
                   <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     In the world of law and business, words are your most powerful weapon and your strongest shield. Every transaction, every partnership, and every dispute resolution hinges on the quality of the underlying documentation. <strong>Legal drafting</strong> is not merely about writing; it is about foreseeing the future. It involves anticipating potential risks, defining rights and obligations with absolute clarity, and ensuring that there is no room for ambiguity that could lead to costly litigation.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     At AMA Legal Solutions, we understand that a well-drafted document is the foundation of legal security. Whether you are a startup founder entering into a co-founder agreement, a landlord leasing out a commercial property, or a corporation negotiating a multi-million dollar merger, the strength of your position depends on the strength of your contract. Our team of expert <strong>legal drafting lawyers in India</strong> combines deep legal knowledge with impeccable language skills to create documents that are legally sound, commercially viable, and practically enforceable.
                   </p>
-                  <p className="text-lg leading-relaxed text-gray-700">
+                  <p className="text-sm md:text-lg leading-relaxed text-gray-700">
                     We move beyond standard templates. We believe that every client's situation is unique, and therefore, every document must be tailored to address specific needs, industry nuances, and legal requirements. With AMA Legal Solutions, you get more than just a document; you get a legal strategy codified in writing.
                   </p>
                 </section>
 
                 {/* What is Legal Drafting */}
                 <section id="what-is-drafting" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">What is Legal Drafting?</h2>
-                  <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
-                    <p className="text-lg text-blue-900 italic">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">What is Legal Drafting?</h2>
+                  <div className="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 mb-6 md:mb-8 rounded-r-lg">
+                    <p className="text-sm md:text-lg text-blue-900 italic">
                       "Legal drafting is the crystallization of legal intent into written form. It is the bridge between a client's desire and the law's requirement."
                     </p>
                   </div>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     Legal drafting is a specialized skill that involves the creation of legal documents such as contracts, deeds, wills, statutes, and regulations. It requires a dual focus: the macro view of the law and the micro view of the specific transaction. A skilled draftsman must understand the relevant statutes (like the Indian Contract Act, Transfer of Property Act, Companies Act) and apply them to the facts at hand.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     There are primarily two types of legal drafting that we specialize in:
                   </p>
-                  <ul className="list-disc pl-6 space-y-4 text-gray-700 mb-6">
+                  <ul className="list-disc pl-6 space-y-2 md:space-y-4 text-sm md:text-lg text-gray-700 mb-6">
                     <li>
                       <strong>Transactional Drafting:</strong> This involves creating documents that facilitate business and personal transactions. Examples include Sale Deeds, Lease Agreements, Employment Contracts, and Joint Venture Agreements. The goal here is to facilitate a smooth transaction while protecting the client's interests.
                     </li>
@@ -538,15 +538,15 @@ export default function DraftingPage() {
 
                 {/* FAQs */}
                 <section id="faqs" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
-                  <div className="space-y-6">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8">Frequently Asked Questions</h2>
+                  <div className="space-y-4 md:space-y-6">
                     {faqs.map((faq, index) => (
-                      <div key={index} className="border-b border-gray-200 pb-6 last:border-0">
-                        <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-start">
-                          <span className="text-[#D2A02A] mr-3">Q.</span>
+                      <div key={index} className="border-b border-gray-200 pb-4 md:pb-6 last:border-0">
+                        <h3 className="text-base md:text-xl font-bold text-gray-900 mb-2 md:mb-3 flex items-start">
+                          <span className="text-[#D2A02A] mr-2 md:mr-3">Q.</span>
                           {faq.question}
                         </h3>
-                        <p className="text-gray-700 leading-relaxed pl-8">
+                        <p className="text-sm md:text-lg text-gray-700 leading-relaxed pl-6 md:pl-8">
                           {faq.answer}
                         </p>
                       </div>

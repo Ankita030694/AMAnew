@@ -203,7 +203,7 @@ const ContactComp = () => {
 
         setSubmitted(true);
         localStorage.setItem("form_submitted", "true");
-        window.location.href = data.redirectUrl || "https://pmny.in/DIMRKGkGQz6L";
+        // window.location.href = data.redirectUrl || "https://pmny.in/DIMRKGkGQz6L";
         return true;
       } catch (error) {
         console.error("Error verifying OTP:", error);
@@ -219,7 +219,7 @@ const ContactComp = () => {
     e.preventDefault();
     const isValid = await validateAndSaveForm();
     if (isValid) {
-      window.location.href = "https://pmny.in/DIMRKGkGQz6L";
+      // window.location.href = "https://pmny.in/DIMRKGkGQz6L";
     }
   };
 
@@ -306,9 +306,9 @@ const ContactComp = () => {
                       </div>
                     </Link>
 
-                    {/* Pay Now Box */}
+                    {/* Call Us Box */}
                     <Link
-                      href="https://pmny.in/DIMRKGkGQz6L"
+                      href="tel:+918700343611"
                       className="flex-1 p-2 rounded-[25px] border border-white/20 transition-transform hover:-translate-y-1"
                       style={{
                         background: "rgba(225, 145, 0, 0.15)",
@@ -318,8 +318,8 @@ const ContactComp = () => {
                       }}
                     >
                       <div className="flex flex-col h-full justify-between">
-                        <h3 className="text-base font-bold text-[#E19100] mb-0.5 pl-3">Pay Now</h3>
-                        <p className="text-[#E19100]/80 text-sm pl-3">Swift & Secure Payments</p>
+                        <h3 className="text-base font-bold text-[#E19100] mb-0.5 pl-3">Call Us</h3>
+                        <p className="text-[#E19100]/80 text-sm pl-3">+91 87003 43611</p>
                       </div>
                     </Link>
                   </div>
@@ -375,10 +375,10 @@ const ContactComp = () => {
                     Your message has been received. We'll get back to you shortly.
                   </p>
                   <a
-                    href="https://pmny.in/DIMRKGkGQz6L"
-                    className="w-full bg-[#E19100] text-white text-center font-bold py-3 px-6 rounded-lg hover:bg-[#d08600] transition-colors duration-300"
+                    href="tel:+918700343611"
+                    className="w-full bg-[#E19100] text-white text-center font-bold py-3 px-6 rounded-lg hover:bg-[#d08600] transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center transform hover:-translate-y-0.5"
                   >
-                    Proceed to Payment
+                    Call Us Now
                   </a>
                 </div>
               ) : isDuplicate ? (
@@ -587,7 +587,7 @@ const ContactComp = () => {
 
                   <div className="pt-2">
                     <a
-                      href="https://pmny.in/DIMRKGkGQz6L"
+                      href="#"
                       onClick={handlePayUClick}
                       className="block w-full bg-[#E19100] text-white text-center font-bold py-3.5 rounded-lg hover:bg-[#d08600] transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center transform hover:-translate-y-0.5"
                     >

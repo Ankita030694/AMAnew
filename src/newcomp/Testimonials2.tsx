@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { FaStar } from "react-icons/fa";
 
 const Testimonials2 = () => {
   return (
@@ -82,14 +83,12 @@ const Testimonials2 = () => {
             </div>
             <div className="flex flex-col items-center lg:items-start gap-1 sm:gap-[12px] self-stretch relative">
               <div className="flex items-center gap-2 sm:gap-[10px] self-stretch relative justify-center lg:justify-start">
-                <div className="relative w-[80px] h-[16px] sm:w-[100px] sm:h-[20px]">
-                    <Image
-                    src="/newAssets/stars.png"
-                    alt="5 stars"
-                    fill
-                    className="object-contain"
-                    />
+                <div className="flex items-center gap-0.5 sm:gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <FaStar key={i} className="text-[#FFC107] text-[16px] sm:text-[20px]" />
+                  ))}
                 </div>
+
                 <div 
                     className="text-black text-[14px] sm:text-[20px] font-light leading-none"
                     style={{ fontFamily: "var(--font-polysans)" }}

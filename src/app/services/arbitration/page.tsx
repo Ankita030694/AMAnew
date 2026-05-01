@@ -251,11 +251,11 @@ export default function ArbitrationPage() {
             className="absolute inset-0 bg-cover bg-center z-0" 
             style={{ backgroundImage: "url('/services/arbitration-hero.jpg')", backgroundColor: "#1a1a1a" }} 
           ></div>
-          <div className="relative z-20 container mx-auto px-4 py-20 md:py-32 text-center">
-            <h1 className="text-3xl md:text-6xl font-bold mb-6 leading-tight mt-10">
+          <div className="relative z-20 container mx-auto px-4 py-16 md:py-32 text-center">
+            <h1 className="text-2xl md:text-6xl font-bold mb-6 leading-tight mt-20">
               Expert Legal Representation for <span className="text-[#D2A02A]">Arbitration in India</span>
             </h1>
-            <p className="text-lg md:text-2xl mb-10 max-w-4xl mx-auto text-gray-200 font-light">
+            <p className="text-base md:text-2xl mb-10 max-w-4xl mx-auto text-gray-200 font-light">
               Navigate complex commercial disputes with confidence. We provide strategic, results driven arbitration services designed to secure your business interests efficiently.
             </p>
             <Link href="/contact">
@@ -269,7 +269,7 @@ export default function ArbitrationPage() {
         <div className="container mx-auto px-4 max-w-[1600px] py-12">
           <Breadcrumbs items={breadcrumbItems} />
           
-          <div className="grid grid-cols-1 lg:grid-cols-[250px_1fr_300px] gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[250px_1fr_300px] gap-8 lg:gap-12 items-start">
             {/* Left Sidebar - TOC (Desktop) */}
             <div className="hidden lg:block sticky top-28 self-start">
               <TableOfContents sections={tocSections} orientation="vertical" />
@@ -282,11 +282,11 @@ export default function ArbitrationPage() {
                 <TableOfContents sections={tocSections} />
               </div>
 
-              <div className="bg-white p-6 md:p-12 rounded-2xl shadow-sm space-y-12 border border-gray-100">
+              <div className="bg-white p-5 md:p-12 rounded-2xl shadow-sm space-y-10 md:space-y-12 border border-gray-100">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-20 after:h-1 after:bg-[#D2A02A]">
+                  <h2 className="text-xl md:text-4xl font-bold text-gray-900 mb-6 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-20 after:h-1 after:bg-[#D2A02A]">
                     The Modern Approach to Commercial Dispute Resolution
                   </h2>
                   <div className="prose prose-lg text-gray-700 max-w-none space-y-4">
@@ -304,9 +304,9 @@ export default function ArbitrationPage() {
 
                 {/* Understanding Arbitration */}
                 <section id="understanding-arbitration" className="scroll-mt-32">
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">What is Arbitration?</h2>
-                  <div className="bg-gradient-to-r from-blue-50 to-white border-l-8 border-blue-600 p-8 mb-8 rounded-r-xl">
-                    <p className="text-xl text-blue-900 font-medium italic">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6">What is Arbitration?</h2>
+                  <div className="bg-gradient-to-r from-blue-50 to-white border-l-8 border-blue-600 p-6 md:p-8 mb-8 rounded-r-xl">
+                    <p className="text-lg md:text-xl text-blue-900 font-medium italic">
                       "Arbitration is a private, consensual legal process where parties agree to submit their dispute to a neutral third party (the arbitrator) rather than a court judge. The decision of the arbitrator, known as the Arbitral Award, is final, binding, and enforceable as a decree of the court."
                     </p>
                   </div>
@@ -322,44 +322,44 @@ export default function ArbitrationPage() {
 
                 {/* Arbitration vs Litigation */}
                 <section id="arbitration-vs-litigation" className="scroll-mt-32">
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Arbitration vs. Litigation: A Comparative Analysis</h2>
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6">Arbitration vs. Litigation: A Comparative Analysis</h2>
                   <p className="text-lg text-gray-700 mb-8">
                     Choosing between arbitration and seeking redress through the courts is a critical strategic decision. While courts are essential for certain types of relief, arbitration offers distinct advantages for commercial entities. The table below outlines the key differences.
                   </p>
                   <div className="overflow-x-auto">
                     <table className="w-full border-collapse border border-gray-200 min-w-[600px]">
                       <thead>
-                        <tr className="bg-gray-800 text-white text-left">
-                          <th className="p-4 border border-gray-700 w-1/4">Feature</th>
-                          <th className="p-4 border border-gray-700 w-1/3">Litigation (Civil Courts)</th>
-                          <th className="p-4 border border-gray-700 w-1/3">Arbitration</th>
+                        <tr className="bg-gray-800 text-white text-left text-sm md:text-base">
+                          <th className="p-3 md:p-4 border border-gray-700 w-1/4">Feature</th>
+                          <th className="p-3 md:p-4 border border-gray-700 w-1/3">Litigation (Civil Courts)</th>
+                          <th className="p-3 md:p-4 border border-gray-700 w-1/3">Arbitration</th>
                         </tr>
                       </thead>
-                      <tbody className="text-gray-700">
+                      <tbody className="text-gray-700 text-xs md:text-base">
                         <tr className="bg-white hover:bg-gray-50">
-                          <td className="p-4 border border-gray-200 font-bold">Time Taken</td>
-                          <td className="p-4 border border-gray-200">Indefinite; cases often drag on for 5 to 10 years or more due to court backlog.</td>
-                          <td className="p-4 border border-gray-200">Time bound; the Act mandates completion within 12 months (extendable by 6 months).</td>
+                          <td className="p-3 md:p-4 border border-gray-200 font-bold text-gray-900">Time Taken</td>
+                          <td className="p-3 md:p-4 border border-gray-200">Indefinite; cases often drag on for 5 to 10 years or more due to court backlog.</td>
+                          <td className="p-3 md:p-4 border border-gray-200">Time bound; the Act mandates completion within 12 months (extendable by 6 months).</td>
                         </tr>
                         <tr className="bg-gray-50 hover:bg-gray-100">
-                          <td className="p-4 border border-gray-200 font-bold">Privacy</td>
-                          <td className="p-4 border border-gray-200">Public proceedings; anyone can attend hearings and access judgements.</td>
-                          <td className="p-4 border border-gray-200">Strictly confidential; sensitive commercial data and trade secrets remain private.</td>
+                          <td className="p-3 md:p-4 border border-gray-200 font-bold text-gray-900">Privacy</td>
+                          <td className="p-3 md:p-4 border border-gray-200">Public proceedings; anyone can attend hearings and access judgements.</td>
+                          <td className="p-3 md:p-4 border border-gray-200">Strictly confidential; sensitive commercial data and trade secrets remain private.</td>
                         </tr>
                         <tr className="bg-white hover:bg-gray-50">
-                          <td className="p-4 border border-gray-200 font-bold">Expertise</td>
-                          <td className="p-4 border border-gray-200">Judges are generalists handling all types of cases, from crime to family law.</td>
-                          <td className="p-4 border border-gray-200">Parties can select arbitrators with specific industry or technical expertise.</td>
+                          <td className="p-3 md:p-4 border border-gray-200 font-bold text-gray-900">Expertise</td>
+                          <td className="p-3 md:p-4 border border-gray-200">Judges are generalists handling all types of cases, from crime to family law.</td>
+                          <td className="p-3 md:p-4 border border-gray-200">Parties can select arbitrators with specific industry or technical expertise.</td>
                         </tr>
                         <tr className="bg-gray-50 hover:bg-gray-100">
-                          <td className="p-4 border border-gray-200 font-bold">Procedure</td>
-                          <td className="p-4 border border-gray-200">Rigid; strictly bound by the CPC and Evidence Act.</td>
-                          <td className="p-4 border border-gray-200">Flexible; parties can agree on a procedure that suits the case's complexity.</td>
+                          <td className="p-3 md:p-4 border border-gray-200 font-bold text-gray-900">Procedure</td>
+                          <td className="p-3 md:p-4 border border-gray-200">Rigid; strictly bound by the CPC and Evidence Act.</td>
+                          <td className="p-3 md:p-4 border border-gray-200">Flexible; parties can agree on a procedure that suits the case's complexity.</td>
                         </tr>
                         <tr className="bg-white hover:bg-gray-50">
-                          <td className="p-4 border border-gray-200 font-bold">Appeal</td>
-                          <td className="p-4 border border-gray-200">Multiple levels of appeal (District, High Court, Supreme Court) causing delays.</td>
-                          <td className="p-4 border border-gray-200">Very limited grounds for challenge; the award is final and binding.</td>
+                          <td className="p-3 md:p-4 border border-gray-200 font-bold text-gray-900">Appeal</td>
+                          <td className="p-3 md:p-4 border border-gray-200">Multiple levels of appeal (District, High Court, Supreme Court) causing delays.</td>
+                          <td className="p-3 md:p-4 border border-gray-200">Very limited grounds for challenge; the award is final and binding.</td>
                         </tr>
                       </tbody>
                     </table>
@@ -368,29 +368,29 @@ export default function ArbitrationPage() {
 
                 {/* Key Benefits */}
                 <section id="key-benefits" className="scroll-mt-32">
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Key Benefits for Your Business</h2>
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-8">Key Benefits for Your Business</h2>
                   <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-gray-50 p-8 rounded-xl border-l-4 border-green-500 hover:shadow-lg transition-all">
-                      <h3 className="text-xl font-bold mb-3 text-gray-900">Speed and Efficiency</h3>
-                      <p className="text-gray-600">
+                    <div className="bg-gray-50 p-6 md:p-8 rounded-xl border-l-4 border-green-500 hover:shadow-lg transition-all">
+                      <h3 className="text-lg md:text-xl font-bold mb-3 text-gray-900">Speed and Efficiency</h3>
+                      <p className="text-gray-600 text-sm md:text-base">
                         The statutory time limit of 12 months for domestic arbitration ensures that your capital is not locked up in disputes for decades. Faster resolution means faster recovery of dues.
                       </p>
                     </div>
-                    <div className="bg-gray-50 p-8 rounded-xl border-l-4 border-blue-500 hover:shadow-lg transition-all">
-                      <h3 className="text-xl font-bold mb-3 text-gray-900">Confidentiality</h3>
-                      <p className="text-gray-600">
+                    <div className="bg-gray-50 p-6 md:p-8 rounded-xl border-l-4 border-blue-500 hover:shadow-lg transition-all">
+                      <h3 className="text-lg md:text-xl font-bold mb-3 text-gray-900">Confidentiality</h3>
+                      <p className="text-gray-600 text-sm md:text-base">
                         Reputation is everything. Arbitration ensures that allegations, financial details, and internal matters discussed during the dispute do not become public record or media fodder.
                       </p>
                     </div>
-                    <div className="bg-gray-50 p-8 rounded-xl border-l-4 border-purple-500 hover:shadow-lg transition-all">
-                      <h3 className="text-xl font-bold mb-3 text-gray-900">Cost Effectiveness</h3>
-                      <p className="text-gray-600">
+                    <div className="bg-gray-50 p-6 md:p-8 rounded-xl border-l-4 border-purple-500 hover:shadow-lg transition-all">
+                      <h3 className="text-lg md:text-xl font-bold mb-3 text-gray-900">Cost Effectiveness</h3>
+                      <p className="text-gray-600 text-sm md:text-base">
                         While arbitrator fees can be high, the expedited nature of the process significantly reduces the long term legal costs associated with prolonged litigation and multiple appeals.
                       </p>
                     </div>
-                    <div className="bg-gray-50 p-8 rounded-xl border-l-4 border-red-500 hover:shadow-lg transition-all">
-                      <h3 className="text-xl font-bold mb-3 text-gray-900">Enforceability</h3>
-                      <p className="text-gray-600">
+                    <div className="bg-gray-50 p-6 md:p-8 rounded-xl border-l-4 border-red-500 hover:shadow-lg transition-all">
+                      <h3 className="text-lg md:text-xl font-bold mb-3 text-gray-900">Enforceability</h3>
+                      <p className="text-gray-600 text-sm md:text-base">
                         An arbitral award has the same status as a court decree. Furthermore, Indian arbitral awards are enforceable in over 160 countries under the New York Convention, aiding global business.
                       </p>
                     </div>
@@ -399,52 +399,52 @@ export default function ArbitrationPage() {
 
                 {/* Our Services */}
                 <section id="our-services" className="scroll-mt-32">
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Our Comprehensive Arbitration Services</h2>
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6">Our Comprehensive Arbitration Services</h2>
                   <p className="text-lg text-gray-700 mb-8">
                     AMA Legal Solutions covers the entire spectrum of alternative dispute resolution. We do not just act as lawyers; we act as strategic partners to guide you through the complexities of the Act.
                   </p>
                   
                   <div className="space-y-8">
-                    <div className="flex flex-col md:flex-row gap-6">
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-6">
                       <div className="md:w-1/3">
-                        <div className="bg-[#fff9e6] p-6 rounded-xl h-full border border-[#faeec7]">
-                          <h3 className="text-xl font-bold text-[#b08d55] mb-2">Domestic Arbitration</h3>
-                          <p className="text-sm text-gray-700">Handling disputes between Indian entities.</p>
+                        <div className="bg-[#fff9e6] p-5 md:p-6 rounded-xl h-full border border-[#faeec7]">
+                          <h3 className="text-lg md:text-xl font-bold text-[#b08d55] mb-2">Domestic Arbitration</h3>
+                          <p className="text-xs md:text-sm text-gray-700">Handling disputes between Indian entities.</p>
                         </div>
                       </div>
                       <div className="md:w-2/3">
-                        <h4 className="text-xl font-bold text-gray-900 mb-2">Ad Hoc and Institutional arbitration</h4>
-                        <p className="text-gray-700 leading-relaxed">
+                        <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-2">Ad Hoc and Institutional arbitration</h4>
+                        <p className="text-gray-700 leading-relaxed text-sm md:text-base">
                           We represent clients in both ad hoc arbitrations, where procedures are self regulated, and institutional arbitrations administered by bodies like the Delhi International Arbitration Centre (DIAC). We assist in drafting the arbitration agreement, appointing the arbitrator, and managing the entire trial process.
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex flex-col md:flex-row gap-6">
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-6">
                       <div className="md:w-1/3">
-                        <div className="bg-[#e6f0ff] p-6 rounded-xl h-full border border-[#c7d9fa]">
-                          <h3 className="text-xl font-bold text-[#4a7ac7] mb-2">International Commercial Arbitration</h3>
-                          <p className="text-sm text-gray-700">Cross border dispute resolution.</p>
+                        <div className="bg-[#e6f0ff] p-5 md:p-6 rounded-xl h-full border border-[#c7d9fa]">
+                          <h3 className="text-lg md:text-xl font-bold text-[#4a7ac7] mb-2">International Commercial Arbitration</h3>
+                          <p className="text-xs md:text-sm text-gray-700">Cross border dispute resolution.</p>
                         </div>
                       </div>
                       <div className="md:w-2/3">
-                        <h4 className="text-xl font-bold text-gray-900 mb-2">Global Expertise</h4>
-                        <p className="text-gray-700 leading-relaxed">
+                        <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-2">Global Expertise</h4>
+                        <p className="text-gray-700 leading-relaxed text-sm md:text-base">
                           When disputes involve foreign parties, the rules change. We have expertise in International Commercial Arbitration (ICA) where the seat is in India or abroad. We understand the nuances of the New York Convention and help clients enforce foreign awards within Indian jurisdiction or defend against unjust claims from foreign entities.
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex flex-col md:flex-row gap-6">
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-6">
                       <div className="md:w-1/3">
-                        <div className="bg-[#f0fff4] p-6 rounded-xl h-full border border-[#c7fad0]">
-                          <h3 className="text-xl font-bold text-[#4ac76d] mb-2">Court Assistance (Sec 9, 11, 34)</h3>
-                          <p className="text-sm text-gray-700">Litigation support for arbitration.</p>
+                        <div className="bg-[#f0fff4] p-5 md:p-6 rounded-xl h-full border border-[#c7fad0]">
+                          <h3 className="text-lg md:text-xl font-bold text-[#4ac76d] mb-2">Court Assistance (Sec 9, 11, 34)</h3>
+                          <p className="text-xs md:text-sm text-gray-700">Litigation support for arbitration.</p>
                         </div>
                       </div>
                       <div className="md:w-2/3">
-                        <h4 className="text-xl font-bold text-gray-900 mb-2">Judicial Intervention Support</h4>
-                        <p className="text-gray-700 leading-relaxed">
+                        <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-2">Judicial Intervention Support</h4>
+                        <p className="text-gray-700 leading-relaxed text-sm md:text-base">
                           Often, arbitration needs court support. We file fast tracked petitions under Section 9 for interim relief (stay orders, asset freezing) to protect your interests before the tribunal is formed. We also result oriented Section 11 petitions for the appointment of arbitrators when the other party obstructs the process, and Section 34 petitions to challenge illegal awards.
                         </p>
                       </div>
@@ -454,53 +454,53 @@ export default function ArbitrationPage() {
 
                 {/* The Process */}
                 <section id="process-steps" className="scroll-mt-32">
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Step-by-Step: The Arbitration Lifecycle</h2>
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-8">Step-by-Step: The Arbitration Lifecycle</h2>
                   <div className="relative border-l-4 border-gray-200 ml-4 md:ml-8 space-y-12">
                     
                     <div className="relative pl-8 md:pl-12">
                       <div className="absolute -left-[14px] top-0 w-6 h-6 rounded-full bg-[#D2A02A] border-4 border-white shadow-sm"></div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">1. Notice of Arbitration</h3>
-                      <p className="text-gray-700">
+                      <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">1. Notice of Arbitration</h3>
+                      <p className="text-gray-700 text-sm md:text-base">
                         The process commences by issuing a formal legal notice invoking the arbitration clause. This notice must clearly state the dispute and nominate an arbitrator. This is a critical step; a defective notice can derail the entire claim.
                       </p>
                     </div>
 
                     <div className="relative pl-8 md:pl-12">
                       <div className="absolute -left-[14px] top-0 w-6 h-6 rounded-full bg-[#D2A02A] border-4 border-white shadow-sm"></div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">2. Appointment of Tribunal</h3>
-                      <p className="text-gray-700">
+                      <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">2. Appointment of Tribunal</h3>
+                      <p className="text-gray-700 text-sm md:text-base">
                         If the other party agrees, the tribunal is constituted. If they fail to respond within 30 days, we typically approach the High Court under Section 11 to have an independent arbitrator appointed by the judiciary.
                       </p>
                     </div>
 
                     <div className="relative pl-8 md:pl-12">
                       <div className="absolute -left-[14px] top-0 w-6 h-6 rounded-full bg-[#D2A02A] border-4 border-white shadow-sm"></div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">3. Pleadings & Evidence</h3>
-                      <p className="text-gray-700">
+                      <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">3. Pleadings & Evidence</h3>
+                      <p className="text-gray-700 text-sm md:text-base">
                         The claimant files a Statement of Claim, and the respondent files a Statement of Defense. Unlike courts, evidence is often by way of affidavit. We meticulously draft these documents to ensure every factual and legal ground is covered.
                       </p>
                     </div>
 
                     <div className="relative pl-8 md:pl-12">
                       <div className="absolute -left-[14px] top-0 w-6 h-6 rounded-full bg-[#D2A02A] border-4 border-white shadow-sm"></div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">4. Oral Arguments</h3>
-                      <p className="text-gray-700">
+                      <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">4. Oral Arguments</h3>
+                      <p className="text-gray-700 text-sm md:text-base">
                         Lawyers from both sides argue the matter before the arbitrator. Witnesses may be cross examined. Our team excels in oral advocacy, breaking down complex facts into compelling arguments.
                       </p>
                     </div>
 
                     <div className="relative pl-8 md:pl-12">
                       <div className="absolute -left-[14px] top-0 w-6 h-6 rounded-full bg-[#D2A02A] border-4 border-white shadow-sm"></div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">5. The Award</h3>
-                      <p className="text-gray-700">
+                      <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">5. The Award</h3>
+                      <p className="text-gray-700 text-sm md:text-base">
                         The arbitrator passes a written, reasoned award. This award marks the end of the mandate of the tribunal. It is binding on both parties.
                       </p>
                     </div>
 
                     <div className="relative pl-8 md:pl-12">
                       <div className="absolute -left-[14px] top-0 w-6 h-6 rounded-full bg-[#D2A02A] border-4 border-white shadow-sm"></div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">6. Enforcement or Challenge</h3>
-                      <p className="text-gray-700">
+                      <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">6. Enforcement or Challenge</h3>
+                      <p className="text-gray-700 text-sm md:text-base">
                         If successful, we move for execution of the award under Section 36 to recover assets. If unsuccessful, we assess grounds to challenge the award in court under Section 34 within the strict 3 month limitation period.
                       </p>
                     </div>
@@ -510,7 +510,7 @@ export default function ArbitrationPage() {
 
                 {/* Legal Framework */}
                 <section id="legal-framework" className="scroll-mt-32">
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">The Legal Framework: Arbitration and Conciliation Act, 1996</h2>
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6">The Legal Framework: Arbitration and Conciliation Act, 1996</h2>
                   <p className="text-lg text-gray-700 mb-6">
                     A thorough understanding of the Act is non negotiable for success. The 1996 Act is a self contained code. Here are the most vital sections that every business owner should be aware of:
                   </p>
@@ -544,78 +544,78 @@ export default function ArbitrationPage() {
 
                 {/* Sectors */}
                 <section id="sectors" className="scroll-mt-32">
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Sectors We Serve</h2>
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6">Sectors We Serve</h2>
                   <p className="text-lg text-gray-700 mb-8">
                     Disputes are unique to each industry. Our team has domain specific knowledge across various high value sectors.
                   </p>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100">
-                      <div className="text-3xl mb-2">🏗️</div>
-                      <h3 className="font-bold text-gray-900">Construction & Infrastructure</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <div className="text-center p-3 md:p-4 bg-white shadow-sm rounded-xl border border-gray-100 flex flex-col justify-center items-center h-full">
+                      <div className="text-2xl md:text-3xl mb-2">🏗️</div>
+                      <h3 className="font-bold text-gray-900 text-xs md:text-sm">Construction & Infrastructure</h3>
                     </div>
-                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100">
-                      <div className="text-3xl mb-2">🏢</div>
-                      <h3 className="font-bold text-gray-900">Real Estate & Development</h3>
+                    <div className="text-center p-3 md:p-4 bg-white shadow-sm rounded-xl border border-gray-100 flex flex-col justify-center items-center h-full">
+                      <div className="text-2xl md:text-3xl mb-2">🏢</div>
+                      <h3 className="font-bold text-gray-900 text-xs md:text-sm">Real Estate & Development</h3>
                     </div>
-                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100">
-                      <div className="text-3xl mb-2">🚢</div>
-                      <h3 className="font-bold text-gray-900">Shipping & Logistics</h3>
+                    <div className="text-center p-3 md:p-4 bg-white shadow-sm rounded-xl border border-gray-100 flex flex-col justify-center items-center h-full">
+                      <div className="text-2xl md:text-3xl mb-2">🚢</div>
+                      <h3 className="font-bold text-gray-900 text-xs md:text-sm">Shipping & Logistics</h3>
                     </div>
-                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100">
-                      <div className="text-3xl mb-2">💰</div>
-                      <h3 className="font-bold text-gray-900">Banking & Finance</h3>
+                    <div className="text-center p-3 md:p-4 bg-white shadow-sm rounded-xl border border-gray-100 flex flex-col justify-center items-center h-full">
+                      <div className="text-2xl md:text-3xl mb-2">💰</div>
+                      <h3 className="font-bold text-gray-900 text-xs md:text-sm">Banking & Finance</h3>
                     </div>
-                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100">
-                      <div className="text-3xl mb-2">⚡</div>
-                      <h3 className="font-bold text-gray-900">Energy & Power</h3>
+                    <div className="text-center p-3 md:p-4 bg-white shadow-sm rounded-xl border border-gray-100 flex flex-col justify-center items-center h-full">
+                      <div className="text-2xl md:text-3xl mb-2">⚡</div>
+                      <h3 className="font-bold text-gray-900 text-xs md:text-sm">Energy & Power</h3>
                     </div>
-                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100">
-                      <div className="text-3xl mb-2">💊</div>
-                      <h3 className="font-bold text-gray-900">Pharmaceuticals</h3>
+                    <div className="text-center p-3 md:p-4 bg-white shadow-sm rounded-xl border border-gray-100 flex flex-col justify-center items-center h-full">
+                      <div className="text-2xl md:text-3xl mb-2">💊</div>
+                      <h3 className="font-bold text-gray-900 text-xs md:text-sm">Pharmaceuticals</h3>
                     </div>
-                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100">
-                      <div className="text-3xl mb-2">💻</div>
-                      <h3 className="font-bold text-gray-900">IT & Technology</h3>
+                    <div className="text-center p-3 md:p-4 bg-white shadow-sm rounded-xl border border-gray-100 flex flex-col justify-center items-center h-full">
+                      <div className="text-2xl md:text-3xl mb-2">💻</div>
+                      <h3 className="font-bold text-gray-900 text-xs md:text-sm">IT & Technology</h3>
                     </div>
-                    <div className="text-center p-4 bg-white shadow-sm rounded-xl border border-gray-100">
-                      <div className="text-3xl mb-2">🤝</div>
-                      <h3 className="font-bold text-gray-900">Partnership Disputes</h3>
+                    <div className="text-center p-3 md:p-4 bg-white shadow-sm rounded-xl border border-gray-100 flex flex-col justify-center items-center h-full">
+                      <div className="text-2xl md:text-3xl mb-2">🤝</div>
+                      <h3 className="font-bold text-gray-900 text-xs md:text-sm">Partnership Disputes</h3>
                     </div>
                   </div>
                 </section>
 
                 {/* Testimonials */}
                 <section id="testimonials" className="scroll-mt-32">
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Client Success Stories</h2>
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-8">Client Success Stories</h2>
                   <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl border border-gray-100 shadow-sm relative">
-                      <div className="text-6xl text-gray-100 absolute top-4 left-4 font-serif">"</div>
-                      <p className="text-gray-700 italic mb-6 relative z-10 text-lg leading-relaxed">
+                    <div className="bg-gradient-to-br from-white to-gray-50 p-6 md:p-8 rounded-xl border border-gray-100 shadow-sm relative">
+                      <div className="text-5xl md:text-6xl text-gray-100 absolute top-4 left-4 font-serif">"</div>
+                      <p className="text-gray-700 italic mb-6 relative z-10 text-base md:text-lg leading-relaxed">
                         AMA Legal Solutions handled our complex commercial arbitration with exceptional skill. Their strategic approach and deep understanding of the Arbitration Act led to a favorable award for our company.
                       </p>
-                      <div className="flex items-center">
-                        <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">V</div>
+                      <div className="flex items-center relative z-10">
+                        <div className="w-10 h-10 md:w-12 md:h-12 bg-[#D2A02A] rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl mr-4">V</div>
                         <div>
-                          <p className="font-bold text-gray-900">Vikram Malhotra</p>
-                          <p className="text-sm text-gray-500">Director, Tech Solutions Pvt Ltd</p>
-                          <div className="flex text-[#D2A02A] text-sm mt-1">
+                          <p className="font-bold text-gray-900 text-sm md:text-base">Vikram Malhotra</p>
+                          <p className="text-xs md:text-sm text-gray-500">Director, Tech Solutions Pvt Ltd</p>
+                          <div className="flex text-[#D2A02A] text-xs md:text-sm mt-1">
                             ★★★★★
                           </div>
                         </div>
                       </div>
                     </div>
                     
-                    <div className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl border border-gray-100 shadow-sm relative">
-                      <div className="text-6xl text-gray-100 absolute top-4 left-4 font-serif">"</div>
-                      <p className="text-gray-700 italic mb-6 relative z-10 text-lg leading-relaxed">
+                    <div className="bg-gradient-to-br from-white to-gray-50 p-6 md:p-8 rounded-xl border border-gray-100 shadow-sm relative">
+                      <div className="text-5xl md:text-6xl text-gray-100 absolute top-4 left-4 font-serif">"</div>
+                      <p className="text-gray-700 italic mb-6 relative z-10 text-base md:text-lg leading-relaxed">
                         We were facing a deadlock in a partnership dispute. The arbitration team at AMA guided us through the process efficiently. Their professionalism and dedication are commendable.
                       </p>
-                      <div className="flex items-center">
-                        <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">S</div>
+                      <div className="flex items-center relative z-10">
+                        <div className="w-10 h-10 md:w-12 md:h-12 bg-[#D2A02A] rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl mr-4">S</div>
                         <div>
-                          <p className="font-bold text-gray-900">Suresh Reddy</p>
-                          <p className="text-sm text-gray-500">Partner, Reddy Constructions</p>
-                          <div className="flex text-[#D2A02A] text-sm mt-1">
+                          <p className="font-bold text-gray-900 text-sm md:text-base">Suresh Reddy</p>
+                          <p className="text-xs md:text-sm text-gray-500">Partner, Reddy Constructions</p>
+                          <div className="flex text-[#D2A02A] text-xs md:text-sm mt-1">
                             ★★★★★
                           </div>
                         </div>
@@ -628,8 +628,8 @@ export default function ArbitrationPage() {
                 <section id="why-ama" className="scroll-mt-32">
                   <div className="bg-[#1a202c] text-white p-8 md:p-12 rounded-2xl relative overflow-hidden">
                     <div className="relative z-10">
-                      <h2 className="text-2xl md:text-3xl font-bold mb-6">Why Choose AMA Legal Solutions?</h2>
-                      <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+                      <h2 className="text-xl md:text-3xl font-bold mb-6">Why Choose AMA Legal Solutions?</h2>
+                      <p className="text-base md:text-lg text-gray-300 mb-8 leading-relaxed">
                         Arbitration is distinct from litigation. It involves a different mindset, strategy, and skill set. At AMA Legal Solutions, we bridge the gap between complex legal theory and practical business necessities. Our attorneys are not just litigators; they are arbitration specialists who understand the nuances of tribunal psychology, technical evidence, and cross border enforcement. We are committed to securing the best possible awards for our clients while keeping costs predictable and transparent.
                       </p>
                       <div className="flex flex-wrap gap-4">
@@ -657,11 +657,11 @@ export default function ArbitrationPage() {
 
                 {/* FAQs */}
                 <section id="faqs" className="scroll-mt-32">
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
                   <div className="grid gap-6">
                     {faqs.map((faq, index) => (
-                      <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
-                        <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-start">
+                      <div key={index} className="bg-white border border-gray-200 rounded-xl p-5 md:p-6 hover:shadow-md transition-shadow">
+                        <h3 className="text-base md:text-lg font-bold text-gray-900 mb-3 flex items-start">
                           <span className="text-[#D2A02A] mr-3 mt-1">Q.</span>
                           {faq.question}
                         </h3>
@@ -675,8 +675,8 @@ export default function ArbitrationPage() {
 
                 {/* Final CTA */}
                 <section className="bg-gradient-to-r from-[#D2A02A] to-[#b88a22] rounded-xl md:rounded-3xl p-8 md:p-16 text-center text-white shadow-2xl">
-                  <h2 className="text-2xl md:text-4xl font-bold mb-6">Ready to Resolve Your Dispute?</h2>
-                  <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+                  <h2 className="text-xl md:text-4xl font-bold mb-6">Ready to Resolve Your Dispute?</h2>
+                  <p className="text-base md:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
                     Don't let commercial conflicts stagnate your business growth. Contact our expert arbitration team today for a preliminary assessment of your case.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">

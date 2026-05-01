@@ -243,7 +243,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
           <Link href="/ourhistory" className="group">
             <div className="relative w-full h-[460px] md:h-[480px] rounded-[24px] bg-white/15 shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] overflow-hidden">
               {/* Image */}
-              <div className="absolute top-[-140px] left-0 w-full h-[470px]">
+              <div className="absolute top-[-120px] left-0 w-full h-[470px]">
                 <Image
                   src="/newAssets/dadaji1.png"
                   alt="Our History"

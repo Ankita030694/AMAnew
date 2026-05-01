@@ -140,7 +140,7 @@ const Legacy = () => {
                <div 
                   className={`absolute -bottom-3 z-10 pointer-events-none ${
                     currentSlide.id === 1 
-                      ? "-right-4 lg:-right-4 w-[85%] lg:w-[55%] h-[400px] lg:h-[480px]" 
+                      ? "-right-4 lg:-right-4 w-[85%] lg:w-[55%] h-[300px] lg:h-[480px]" 
                       : "-right-4 lg:-right-12 xl:-right-35 w-[80%] lg:w-[48%] h-[420px] lg:h-[500px]"
                   }`}
                 > 
@@ -148,7 +148,7 @@ const Legacy = () => {
                         src={currentSlide.image}
                         alt={currentSlide.name}
                         fill
-                        className={`${currentSlide.id === 1 ? "object-cover" : "object-contain"} object-bottom`}
+                        className={`${currentSlide.id === 1 ? "object-cover mt-13 -ml-4" : "object-contain"} object-bottom`}
                         priority
                     />
                 </div>

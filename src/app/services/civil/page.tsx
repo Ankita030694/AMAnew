@@ -246,8 +246,8 @@ export default function CivilPage() {
           <div 
             className="absolute inset-0 bg-cover bg-center z-0" 
           ></div>
-          <div className="relative z-20 container mx-auto px-4 py-12 md:py-32 text-center">
-            <h1 className="text-2xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-10">
+          <div className="relative z-20 container mx-auto px-4 py-16 md:py-32 text-center">
+            <h1 className="text-2xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-20">
               Top <span className="text-[#D2A02A]">Civil Lawyers</span> in India
             </h1>
             <p className="text-sm md:text-2xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
@@ -277,7 +277,7 @@ export default function CivilPage() {
                 <TableOfContents sections={tocSections} />
               </div>
 
-              <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
+              <div className="bg-white p-5 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
@@ -285,19 +285,19 @@ export default function CivilPage() {
                   <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     Civil law in India encompasses a vast array of disputes between individuals, organizations, and even government bodies. Unlike criminal law, which deals with offenses against the state, civil law focuses on resolving conflicts and providing remedies—usually in the form of compensation or specific performance—to the aggrieved party.
                   </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     At AMA Legal Solutions, we understand that every civil case is unique and carries its own set of emotional and financial burdens. Whether you are fighting for your rightful share in an ancestral property, seeking justice for a breach of trust, or navigating the complexities of a divorce, you need more than just a lawyer; you need a strategic partner. Our team of expert <strong>civil lawyers in India</strong> is dedicated to providing you with robust legal representation that is both ethical and effective.
                   </p>
-                  <p className="text-lg leading-relaxed text-gray-700">
+                  <p className="text-sm md:text-lg leading-relaxed text-gray-700">
                     The Indian judicial system can be intimidating with its procedural intricacies and delays. However, with the right legal counsel, you can navigate this maze with confidence. We believe in a results-oriented approach, prioritizing out-of-court settlements where possible to save you time and money, while being fully prepared to fight aggressively in court to protect your rights.
                   </p>
                 </section>
 
                 {/* What is Civil Law */}
                 <section id="what-is-civil-law" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">What is Civil Law?</h2>
-                  <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
-                    <p className="text-lg text-blue-900 italic">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">What is Civil Law?</h2>
+                  <div className="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 mb-6 md:mb-8 rounded-r-lg">
+                    <p className="text-sm md:text-lg text-blue-900 italic">
                       "Civil law is the body of law that deals with the private rights of individuals and provides remedies for civil wrongs, distinct from criminal proceedings."
                     </p>
                   </div>
@@ -328,40 +328,40 @@ export default function CivilPage() {
                     Civil law is a broad umbrella covering various specialized fields. Our team comprises subject matter experts in each of these domains, ensuring that you get specialized advice for your specific problem.
                   </p>
                   
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Property Disputes</h3>
-                      <p className="text-gray-700">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-lg md:text-xl font-bold text-[#D2A02A] mb-2 md:mb-3">Property Disputes</h3>
+                      <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
                         Property litigation is one of the most common types of civil cases in India. We handle Title Suits, Partition Suits for ancestral property, disputes related to wills and probate, illegal possession, and landlord-tenant conflicts. We ensure your property rights are legally secured.
                       </p>
                     </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Family Law</h3>
-                      <p className="text-gray-700">
+                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-lg md:text-xl font-bold text-[#D2A02A] mb-2 md:mb-3">Family Law</h3>
+                      <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
                         Family disputes require a sensitive yet firm legal approach. We provide representation for Divorce (mutual and contested), Child Custody, Alimony, Restitution of Conjugal Rights, and Domestic Violence cases. Our focus is on resolving these personal matters with dignity.
                       </p>
                     </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Contractual Disputes</h3>
-                      <p className="text-gray-700">
+                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-lg md:text-xl font-bold text-[#D2A02A] mb-2 md:mb-3">Contractual Disputes</h3>
+                      <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
                         Contracts are the foundation of business and personal dealings. We represent clients in cases of Breach of Contract, Specific Performance, recovery of dues, and disputes arising from commercial agreements, partnership deeds, and employment contracts.
                       </p>
                     </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Tort Claims</h3>
-                      <p className="text-gray-700">
+                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-lg md:text-xl font-bold text-[#D2A02A] mb-2 md:mb-3">Tort Claims</h3>
+                      <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
                         Torts involve civil wrongs that cause harm or loss. We handle cases related to Defamation, Negligence, Nuisance, and Trespass. If you have suffered harm due to someone else's action or inaction, we help you claim the compensation you deserve.
                       </p>
                     </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Consumer Protection</h3>
-                      <p className="text-gray-700">
+                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-lg md:text-xl font-bold text-[#D2A02A] mb-2 md:mb-3">Consumer Protection</h3>
+                      <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
                         If you have been cheated by a seller or service provider, we help you file complaints in Consumer Commissions (District, State, or National). We fight against unfair trade practices, defective goods, and deficiency in services.
                       </p>
                     </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-bold text-[#D2A02A] mb-3">Recovery Suits</h3>
-                      <p className="text-gray-700">
+                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-lg md:text-xl font-bold text-[#D2A02A] mb-2 md:mb-3">Recovery Suits</h3>
+                      <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
                         Recovering money from defaulters can be challenging. We file Summary Suits (Order 37 CPC) and ordinary money recovery suits to help you get your hard-earned money back, along with interest and legal costs.
                       </p>
                     </div>
@@ -515,15 +515,15 @@ export default function CivilPage() {
 
                 {/* FAQs */}
                 <section id="faqs" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
-                  <div className="space-y-6">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8">Frequently Asked Questions</h2>
+                  <div className="space-y-4 md:space-y-6">
                     {faqs.map((faq, index) => (
-                      <div key={index} className="border-b border-gray-200 pb-6 last:border-0">
-                        <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-start">
-                          <span className="text-[#D2A02A] mr-3">Q.</span>
+                      <div key={index} className="border-b border-gray-200 pb-4 md:pb-6 last:border-0">
+                        <h3 className="text-base md:text-xl font-bold text-gray-900 mb-2 md:mb-3 flex items-start">
+                          <span className="text-[#D2A02A] mr-2 md:mr-3">Q.</span>
                           {faq.question}
                         </h3>
-                        <p className="text-gray-700 leading-relaxed pl-8">
+                        <p className="text-sm md:text-lg text-gray-700 leading-relaxed pl-6 md:pl-8">
                           {faq.answer}
                         </p>
                       </div>

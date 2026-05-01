@@ -146,15 +146,15 @@ export default function BDACareerPage() {
         <div className="relative bg-[#1a202c] text-white overflow-hidden">
           <div className="absolute inset-0 bg-black/60 z-10"></div>
           <div className="absolute inset-0 bg-[url('/bannerbg.png')] bg-cover bg-center opacity-40"></div>
-          <div className="relative z-20 container mx-auto px-4 py-20 md:py-32 text-center">
-            <h1 className="text-3xl md:text-6xl font-bold mb-6 leading-tight mt-10">
+          <div className="relative z-20 container mx-auto px-4 py-16 md:py-32 text-center">
+            <h1 className="text-2xl md:text-6xl font-bold mb-5 md:mb-6 leading-tight mt-8 md:mt-10">
               Drive the Future of Legal Services as our <span className="text-[#D2A02A]">Business Development Associate</span>
             </h1>
-            <p className="text-sm md:text-2xl mb-10 max-w-3xl mx-auto text-gray-200">
+            <p className="text-xs md:text-2xl mb-8 md:mb-10 max-w-3xl mx-auto text-gray-200">
               Join India's premier law firm and lead the charge in redefining how legal solutions are delivered. High impact, strategic growth, and professional excellence.
             </p>
             <Link href="/careers#application-form">
-              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg">
+              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-8 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-base md:text-lg">
                 Apply for this Position
               </button>
             </Link>
@@ -171,14 +171,14 @@ export default function BDACareerPage() {
             </aside>
 
             {/* Main Content */}
-            <article className="min-w-0 bg-white p-6 md:p-12 rounded-2xl shadow-sm space-y-12">
+            <article className="min-w-0 bg-white p-5 md:p-12 rounded-2xl shadow-sm space-y-10 md:space-y-12">
               
               {/* Introduction */}
               <section id="introduction" className="scroll-mt-32">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] mb-6 border-b border-[#D2A02A]/20 pb-4">
+                <h2 className="text-xl md:text-3xl font-bold text-[#30261C] mb-5 md:mb-6 border-b border-[#D2A02A]/20 pb-3 md:pb-4">
                   Strategic Growth at AMA Legal Solutions
                 </h2>
-                <p className="text-lg leading-relaxed text-[#30261C]/80 mb-6">
+                <p className="text-sm md:text-lg leading-relaxed text-[#30261C]/80 mb-5 md:mb-6">
                   At AMA Legal Solutions, we don't just solve legal problems; we create lasting value for our clients. As a <strong>Business Development Associate (BDA)</strong>, you are the face of our firm, often being the first touchpoint for individuals and businesses seeking justice and resolution. This role is pivotal in scaling our impact across India, particularly in our high-growth sectors like loan settlement and intellectual property.
                 </p>
                 <div className="bg-[#F8F5EC] border-l-4 border-[#D2A02A] p-6 rounded-r-xl">
@@ -190,15 +190,15 @@ export default function BDACareerPage() {
 
               {/* The Role */}
               <section id="the-role" className="scroll-mt-32">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] mb-6">The Role</h2>
-                <p className="text-lg leading-relaxed text-[#30261C]/80">
+                <h2 className="text-xl md:text-3xl font-bold text-[#30261C] mb-5 md:mb-6">The Role</h2>
+                <p className="text-sm md:text-lg leading-relaxed text-[#30261C]/80">
                   This isn't your typical sales role. You will be working at the intersection of law and business, identifying opportunities where AMA's expertise can solve critical pain points for clients. Whether it's helping a family trapped in debt through our <strong>loan settlement services</strong> or assisting a startup in protecting their brand through <strong>trademark registration</strong>, your goal is to build trust and facilitate solutions.
                 </p>
               </section>
 
               {/* Responsibilities */}
               <section id="responsibilities" className="scroll-mt-32">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] mb-6">Key Responsibilities</h2>
+                <h2 className="text-xl md:text-3xl font-bold text-[#30261C] mb-5 md:mb-6">Key Responsibilities</h2>
                 <ul className="space-y-4">
                   {[
                     "Identify and reach out to prospective clients through strategic channels and networking.",
@@ -219,11 +219,11 @@ export default function BDACareerPage() {
 
               {/* Requirements */}
               <section id="requirements" className="scroll-mt-32">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] mb-6">Skills & Qualifications</h2>
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="bg-[#F8F5EC]/50 p-6 rounded-xl border border-[#D2A02A]/10">
-                    <h3 className="font-bold text-[#30261C] mb-4">Core Competencies</h3>
-                    <ul className="space-y-2 text-[#30261C]/80 text-sm">
+                <h2 className="text-xl md:text-3xl font-bold text-[#30261C] mb-5 md:mb-6">Skills & Qualifications</h2>
+                <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+                  <div className="bg-[#F8F5EC]/50 p-5 md:p-6 rounded-xl border border-[#D2A02A]/10">
+                    <h3 className="text-sm md:text-base font-bold text-[#30261C] mb-3 md:mb-4">Core Competencies</h3>
+                    <ul className="space-y-2 text-[#30261C]/80 text-xs md:text-sm">
                       <li>Strategic communication and persuasion</li>
                       <li>Relationship management and CRM handling</li>
                       <li>Consultative sales approach</li>
@@ -244,8 +244,8 @@ export default function BDACareerPage() {
 
               {/* Why Join */}
               <section id="why-join" className="scroll-mt-32">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] mb-6">Why Join AMA?</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <h2 className="text-xl md:text-3xl font-bold text-[#30261C] mb-5 md:mb-6">Why Join AMA?</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
                   {[
                     { title: "Compensation", text: "Competitive salary as per industry standards with high-growth incentives." },
                     { title: "Culture", text: "A vibrant, collaborative environment where business meet law." },

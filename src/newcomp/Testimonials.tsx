@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { FaStar } from "react-icons/fa";
 
 import { baseTestimonials, Testimonial } from "@/data/testimonials";
 
@@ -57,13 +58,11 @@ const TestimonialCard = ({
             >
               {testimonial.author}
             </h3>
-            <Image
-              src={testimonial.rating}
-              alt="Rating"
-              width={92}
-              height={16}
-              className="h-auto w-auto max-w-[92px]"
-            />
+            <div className="flex items-center gap-1">
+              {[...Array(5)].map((_, i) => (
+                <FaStar key={i} className="text-[#FFC107] text-[14px]" />
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -203,13 +202,11 @@ const Testimonials = () => {
                 <h3 className="text-[#30261C] text-lg sm:text-[20px] leading-[20px]">
                   {hoveredData.data.author}
                 </h3>
-                <Image
-                  src={hoveredData.data.rating}
-                  alt="Rating"
-                  width={92}
-                  height={16}
-                  className="h-auto w-auto max-w-[92px]"
-                />
+                <div className="flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <FaStar key={i} className="text-[#FFC107] text-[14px]" />
+                  ))}
+                </div>
               </div>
             </div>
           </div>

@@ -103,7 +103,7 @@ const Legacy2 = () => {
         </div>
       </div>
 
-      <div className="max-w-[1440px] mx-auto w-full flex flex-col lg:flex-row mt-8 md:mt-12 relative pb-24">
+      <div className="max-w-[1440px] mx-auto w-full flex flex-col lg:flex-row mt-8 md:mt-12 relative">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide.id}

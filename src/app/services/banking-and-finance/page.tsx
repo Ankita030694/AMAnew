@@ -250,7 +250,7 @@ export default function BankingFinancePage() {
             style={{ background: "black" }}
           ></div>
           <div className="relative z-20 container mx-auto px-4 py-12 md:py-32 text-center">
-            <h1 className="text-2xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-10">
+            <h1 className="text-2xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-20">
               Expert <span className="text-[#D2A02A]">Banking & Finance</span> Legal Solutions in India
             </h1>
             <p className="text-sm md:text-2xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
