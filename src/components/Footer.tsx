@@ -280,7 +280,8 @@ export default function Footer() {
     { href: "/data-breach-privacy-notice", label: "Data Breach Privacy Notice" },
     { href: "/lawyer", label: "Lawyer Resources & Opportunities" },
     { href: "/rbi-beware-misleading-loan-waiver-campaigns", label: "RBI Warns Against Misleading Loan Waiver Campaigns" },
-    { href: "/can-bank-issue-look-out-notice-loan-default", label: "Can Bank Issue Look Out Notice for Loan Default?" }
+    { href: "/can-bank-issue-look-out-notice-loan-default", label: "Can Bank Issue Look Out Notice for Loan Default?" },
+    { href: "/loan-settlement-application", label: "Loan Settlement Application Guide" }
               ].map((query) => (
                 <Link
                   key={query.href}

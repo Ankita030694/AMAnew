@@ -40,6 +40,7 @@ export async function GET(): Promise<Response> {
     '/certified-financial-planners-who-specialize-in-debt-restructuring-and-settlement',
     '/get-contact-details-for-top-rated-debt-resolution-companies-in-india',
     '/ama-legal-solutions-application',
+    '/loan-settlement-app',
     '/legal-services-in-gurgaon',
     '/sales-job-vacancies-in-gurgaon',
     '/telecaller-vacancies-in-gurgaon',
@@ -177,6 +178,7 @@ export async function GET(): Promise<Response> {
     '/best-law-firm-near-me',
     '/legal-services-near-me',
     '/delhi-ncr-law-firm',
+    '/how-to-settle-credit-card-debt',
     '/job-lost-loan-settlement',
     '/10-lakhs-loan-settlement',
     '/locations/bengaluru',
@@ -262,6 +264,12 @@ export async function GET(): Promise<Response> {
     '/does-foreclosure-of-loan-affect-cibil',
     '/unsecured-personal-loan-definition',
     '/hdfc-debt-consolidation-loan',
+    '/loan-settlement-application',
+    '/expert-panel-loan-settlement',
+    '/what-is-loan-settlement',
+    '/loan-moratorium-meaning',
+    '/minimum-amount-due-in-credit-card-meaning',
+    '/section-25-payment-and-settlement-act-bailable-or-not'
     // Specific Loan Settlement State Pages
     '/services/loan-settlement/andhra-pradesh',
     '/services/loan-settlement/assam',

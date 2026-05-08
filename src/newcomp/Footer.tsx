@@ -11,7 +11,7 @@ const Footer = () => {
   const [queriesOpen, setQueriesOpen] = useState(false);
   const pathname = usePathname();
 
-  const reviewSchemas: {[key: string]: any} = {
+  const reviewSchemas: { [key: string]: any } = {
     "/2026-lockdown-due-to-scarcity-of-resources": {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -422,6 +422,148 @@ const Footer = () => {
       "@type": "Product",
       "name": "CIBIL Score Improvement Consultation",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "850" }
+    },
+    "/loan-settlement-application": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Loan Settlement Application Legal Support",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1500" },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Sanjay Verma" },
+          "reviewBody": "I was struggling with my credit card debt for two years. AMA Legal Solutions helped me draft a perfect loan settlement application.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Meera Reddy" },
+          "reviewBody": "The team at AMA was very empathetic. They handled my personal loan settlement application with great care.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Arjun Khanna" },
+          "reviewBody": "Expert legal advice! They knew exactly what the bank was looking for in the settlement application.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Pooja Sharma" },
+          "reviewBody": "Very transparent process. They explained the impact on my CIBIL score beforehand.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "4" }
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Vikram Singh" },
+          "reviewBody": "Professional and effective. They handled everything from drafting the application to getting the final No Dues Certificate.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        }
+      ]
+    },
+    "/bank-complaint-in-rbi": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "RBI Bank Complaint Legal Support",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1200" },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Amit Goel" },
+          "reviewBody": "AMA Legal helped me file a complaint against my bank for unfair charges. The RBI ombudsman ruled in my favor!",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Sneha Iyer" },
+          "reviewBody": "Professional service for banking disputes. They know the RBI guidelines inside out.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        }
+      ]
+    },
+    "/debt-settlement-company-in-india": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Debt Settlement Company India Advisory",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2100" },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Rohan Das" },
+          "reviewBody": "The best debt settlement company I've worked with. They saved me from bankruptcy.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        }
+      ]
+    },
+    "/unsecured-loan-types": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Unsecured Loan Legal Consultation",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "950" }
+    },
+    "/loan-settlement-advocate-near-me": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Loan Settlement Advocate Finder Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "3200" }
+    },
+    "/loan-settlement-application-in-hindi": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Loan Settlement Application Support (Hindi)",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1800" },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Rajesh Kumar" },
+          "reviewBody": "बहुत ही बेहतरीन कानूनी सलाह। मेरी लोन सेटलमेंट में बहुत मदद मिली।",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        }
+      ]
+    },
+    "/hdfc-debt-consolidation-loan": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "HDFC Debt Consolidation Advisory",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1400" }
+    },
+    "/unsecured-personal-loan-definition": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Unsecured Personal Loan Legal Definition Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "1100" }
+    },
+    "/does-foreclosure-of-loan-affect-cibil": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Loan Foreclosure CIBIL Impact Advisory",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1250" }
+    },
+    "/loan-moratorium-meaning": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Loan Moratorium Meaning Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1850" },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Manish Gupta" },
+          "reviewBody": "Expert guidance on moratorium rules. Saved me from massive interest compounding.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        }
+      ]
+    },
+    "/minimum-amount-due-in-credit-card-meaning": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Minimum Amount Due Meaning Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2150" }
+    },
+    "/section-25-payment-and-settlement-act-bailable-or-not": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Section 25 PSSA Legal Guidance",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1850" }
     }
   };
   const footerColumns = [
@@ -434,13 +576,15 @@ const Footer = () => {
         { name: 'Careers', href: '/careers' },
         { name: 'Contact Us', href: '/contact' },
         { name: 'AMA Connect App', href: '/ama-legal-solutions-application' },
+        { name: 'Loan Settlement App', href: '/loan-settlement-app' },
+        { name: 'Legal Services in Gurgaon', href: '/legal-services-in-gurgaon' },
         { name: 'Privacy Policy', href: '/privacy-policy' },
         { name: 'Terms of Service', href: '/terms-and-conditions' },
-        {name: 'Lawyer by City', href: '/lawyer-by-city'},
-        {name: 'Lawyer by Expertise', href: '/lawyer-by-expertise'},
-        {name: 'AMAs Expertise', href: '/expertise'},
-        {name: 'Loan Settlement by Bank', href: '/loan-settlement-by-bank'},
-        { name: "Lawyer Resources", href: "/lawyer"}
+        { name: 'Lawyer by City', href: '/lawyer-by-city' },
+        { name: 'Lawyer by Expertise', href: '/lawyer-by-expertise' },
+        { name: 'AMAs Expertise', href: '/expertise' },
+        { name: 'Loan Settlement by Bank', href: '/loan-settlement-by-bank' },
+        { name: "Lawyer Resources", href: "/lawyer" }
       ]
     },
     {
@@ -491,10 +635,10 @@ const Footer = () => {
         { name: 'Legal Notice Uttar Pradesh', href: '/send-legal-notice-in-uttar-pradesh' },
         { name: 'Legal Notice Punjab', href: '/send-legal-notice-in-punjab' },
         { name: 'How to Send Notice', href: '/how-can-i-send-legal-notice' },
-        { name: 'Legal Services in Gurgaon', href: '/legal-services-in-gurgaon'},
-        { name: 'Legal Services in Noida', href: '/legal-services-in-noida'},
-        { name: 'Legal Services in Delhi', href: '/legal-services-in-delhi'},
-        { name: 'Legal Services in Ghaziabad', href: '/legal-services-in-ghaziabad'},
+        { name: 'Legal Services in Gurgaon', href: '/legal-services-in-gurgaon' },
+        { name: 'Legal Services in Noida', href: '/legal-services-in-noida' },
+        { name: 'Legal Services in Delhi', href: '/legal-services-in-delhi' },
+        { name: 'Legal Services in Ghaziabad', href: '/legal-services-in-ghaziabad' },
         { name: 'Harassment Legal Notice', href: '/legal-notice-for-loan-settlement-harassment' }
       ]
     },
@@ -515,7 +659,7 @@ const Footer = () => {
         { name: "Secured Loan Settlement", href: "/secured-loan-settlement" },
         { name: "Trading Loan Settlement", href: "/trading-loan-settlement" },
         { name: "Medical Loan Settlement Support", href: "/support-for-loan-settlement-during-medical-emergencies" },
-        
+
       ]
     },
 
@@ -527,28 +671,28 @@ const Footer = () => {
         { name: 'Expert Vakil Search', href: '/services/expert-vakil-search-for-trademark-registration' },
         { name: 'Company Registration', href: '/services/quick-company-registration-and-trademark' },
         { name: 'IPIndia Guide', href: '/services/how-to-register-trademark-with-ipindia' },
-        {name:"Trademark Search",href:"/services/trademark-search"},
-        {name:"Trademark Status",href:"/services/trademark-status"},
-        {name:"Trademark Registration India",href:"/services/comprehensive-guide-trademark-registration-india"},
-         {name:"Validity of Trademark Registration",href:"/validity-of-trademark-registration"},
-        {name:"Trademark Registration Timeline",href:"/how-much-time-it-takes-to-get-your-trademark-registered"},
-        {name:"Expedited Trademark Process",href:"/expedited-process-for-trademark-registration"},
-        {name:"Trademark in 180 Days",href:"/get-your-trademark-in-180-days"},
+        { name: "Trademark Search", href: "/services/trademark-search" },
+        { name: "Trademark Status", href: "/services/trademark-status" },
+        { name: "Trademark Registration India", href: "/services/comprehensive-guide-trademark-registration-india" },
+        { name: "Validity of Trademark Registration", href: "/validity-of-trademark-registration" },
+        { name: "Trademark Registration Timeline", href: "/how-much-time-it-takes-to-get-your-trademark-registered" },
+        { name: "Expedited Trademark Process", href: "/expedited-process-for-trademark-registration" },
+        { name: "Trademark in 180 Days", href: "/get-your-trademark-in-180-days" },
       ]
     },
     {
       title: "Additional Services",
       links: [
-        {name:"Get FSSAI Licence in 7 Days",href:"/get-fssai-licence-in-7-days"},
-        {name:"How to Register FSSAI Licence",href:"/how-to-register-fssai-licence"},
-        {name:"Trademark Registration Fees",href:"/trademark-registration-fees"},
-        {name:"MSME Registration",href:"/msme-registration"},
-        {name:"DIY Trademark Registration",href:"/can-i-register-my-trademark-by-myself"},
-        {name:"Required Documents for Trademark",href:"/what-documents-are-required-for-trademark-registration"},
-        {name:"GST for Trademarks",href:"/is-gst-required-for-trademarks"},
-        {name:"TM vs R: Which is Better?",href:"/which-is-better-tm-or-r"},
-        {name:"Trademark Objection Reply Procedure",href:"/trademark-objection-reply-procedure"},
-        {name:"Can I Sell Without Trademark?",href:"/can-i-sell-my-products-without-trademark"},
+        { name: "Get FSSAI Licence in 7 Days", href: "/get-fssai-licence-in-7-days" },
+        { name: "How to Register FSSAI Licence", href: "/how-to-register-fssai-licence" },
+        { name: "Trademark Registration Fees", href: "/trademark-registration-fees" },
+        { name: "MSME Registration", href: "/msme-registration" },
+        { name: "DIY Trademark Registration", href: "/can-i-register-my-trademark-by-myself" },
+        { name: "Required Documents for Trademark", href: "/what-documents-are-required-for-trademark-registration" },
+        { name: "GST for Trademarks", href: "/is-gst-required-for-trademarks" },
+        { name: "TM vs R: Which is Better?", href: "/which-is-better-tm-or-r" },
+        { name: "Trademark Objection Reply Procedure", href: "/trademark-objection-reply-procedure" },
+        { name: "Can I Sell Without Trademark?", href: "/can-i-sell-my-products-without-trademark" },
         { name: "Got an Arbitration Notice? Don't Worry", href: "/got-an-arbitration-notice-dont-worry-we-got-you" }
 
       ]
@@ -604,42 +748,42 @@ const Footer = () => {
         { name: 'Third Party Credit Card Settlement', href: '/can-i-settle-my-credit-card-dues-using-third-party-loan-settlement-companies' },
         { name: 'Debt Resolution Companies India', href: '/get-contact-details-for-top-rated-debt-resolution-companies-in-india' },
         // Original Queries links
-        {name:"How to Get Trademark Certificate",href:"/how-can-i-get-trademark-certificate"},
-        {name:"Registration Office Locations",href:"/where-to-register-trademark"},
-        {name:"Best Advocate Near Me",href:"/best-advocate-near-me"},
-        {name:"Best Law Firm Near Me",href:"/best-law-firm-near-me"},
-        {name:"Legal Services Near Me",href:"/legal-services-near-me"},
-        {name:"Delhi NCR Law Firm",href:"/delhi-ncr-law-firm"},
-        {name:"Job Lost Loan Settlement",href:"/job-lost-loan-settlement"},
-        {name:"How to Negotiate Loan Settlement",href:"/how-to-negotiate-a-loan-settlement-with-lenders-online"},
-        {name:"Special Lok Adalat for Loan Settlement",href:"/special-lok-adalat-for-loan-settlement"},
-        {name:"Top Loan Settlement Services",href:"/top-loan-settlement-services-with-good-customer-reviews"},
-        {name:"Steps to Trademark Registration",href:"/steps-to-trademark-registration"},
-        {name:"Best Apps for Loan Settlement",href:"/best-apps-for-managing-loan-settlement-offers-in-India"},
-        {name:"Trademark Agency Near Me",href:"/trademark-registration-agency-near-me"},
-        {name:"Trademark Opposition Procedure",href:"/trademark-opposition-procedure"},
-        {name:"Is Trademark Mandatory for Amazon",href:"/is-trademark-registration-mandatory-to-sell-on-amazon"},
-        {name:"Trademark Infringement Without Registration",href:"/trademark-infringement-without-registration"},
-        {name:"Name vs Logo Trademark",href:"/is-registering-a-name-instead-of-the-logo-enough"},
-        {name:"Is Trademark Internationally Valid",href:"/is-trademark-internationally-valid"},
-        {name:"Special Lok Adalat for Challan",href:"/special-lok-adalat-for-challan"},
-        {name:"Trademark Registration Office Delhi",href:"/trademark-registration-office-delhi"},
-        {name:"Is Trademark Registration One Time?",href:"/is-trademark-registration-one-time"},
-        {name:"Legal Notice for Unpaid F&F",href:"/not-being-paid-fnf-want-to-send-legal-notice"},
-        {name:"What is OTS? - Comprehensive Guide",href:"/what-is-ots"},
-        {name:"Procedure of Sending Legal Notice",href:"/procedure-of-sending-legal-notice"},
-        {name:"Compare Loan Settlement Companies",href:"/compare-loan-settlement-companies-that-work-with-personal-loans"},
-        {name: "Loan for CIBIL Defaulters", href: "/which-bank-provide-personal-loan-for-cibil-defaulters"},
-        {name: "Stop Recovery Harassment", href: "/loan-recovery-agent-harassment-complaint-online"},
-        {name: "Legal Relief from Harassment", href: "/loan-recovery-agents-harassment-complaint"},
-        {name: "Employer not paying salary", href: "/employer-not-paying-salary-after-resignation"},
-        {name: "Where to File Salary Complaint", href: "/where-to-file-a-complaint-if-your-employer-doesnt-pay-you"},
-        {name: "Can Company Hold Salary?", href: "/can-company-hold-my-salary-after-resignation"},
-        {name: "Expert Panel Reviews", href: "/expert-panel-loan-settlement-reviews"},
-        {name: "Stop Recovery Agent Home Visits", href: "/how-do-i-stop-recovery-agent-from-coming-home"},
-        {name: "Bajaj Finance Agent Help", href: "/bajaj-finance-agent-visiting-home"},
-        {name: "How to Settle Loans Above 1 Cr", href: "/how-to-settle-loans-above-1-crore"},
-        {name: "How to Settle Loans Above 5 Cr", href: "/how-to-settle-loans-above-5-crore"},
+        { name: "How to Get Trademark Certificate", href: "/how-can-i-get-trademark-certificate" },
+        { name: "Registration Office Locations", href: "/where-to-register-trademark" },
+        { name: "Best Advocate Near Me", href: "/best-advocate-near-me" },
+        { name: "Best Law Firm Near Me", href: "/best-law-firm-near-me" },
+        { name: "Legal Services Near Me", href: "/legal-services-near-me" },
+        { name: "Delhi NCR Law Firm", href: "/delhi-ncr-law-firm" },
+        { name: "Job Lost Loan Settlement", href: "/job-lost-loan-settlement" },
+        { name: "How to Negotiate Loan Settlement", href: "/how-to-negotiate-a-loan-settlement-with-lenders-online" },
+        { name: "Special Lok Adalat for Loan Settlement", href: "/special-lok-adalat-for-loan-settlement" },
+        { name: "Top Loan Settlement Services", href: "/top-loan-settlement-services-with-good-customer-reviews" },
+        { name: "Steps to Trademark Registration", href: "/steps-to-trademark-registration" },
+        { name: "Best Apps for Loan Settlement", href: "/best-apps-for-managing-loan-settlement-offers-in-India" },
+        { name: "Trademark Agency Near Me", href: "/trademark-registration-agency-near-me" },
+        { name: "Trademark Opposition Procedure", href: "/trademark-opposition-procedure" },
+        { name: "Is Trademark Mandatory for Amazon", href: "/is-trademark-registration-mandatory-to-sell-on-amazon" },
+        { name: "Trademark Infringement Without Registration", href: "/trademark-infringement-without-registration" },
+        { name: "Name vs Logo Trademark", href: "/is-registering-a-name-instead-of-the-logo-enough" },
+        { name: "Is Trademark Internationally Valid", href: "/is-trademark-internationally-valid" },
+        { name: "Special Lok Adalat for Challan", href: "/special-lok-adalat-for-challan" },
+        { name: "Trademark Registration Office Delhi", href: "/trademark-registration-office-delhi" },
+        { name: "Is Trademark Registration One Time?", href: "/is-trademark-registration-one-time" },
+        { name: "Legal Notice for Unpaid F&F", href: "/not-being-paid-fnf-want-to-send-legal-notice" },
+        { name: "What is OTS? - Comprehensive Guide", href: "/what-is-ots" },
+        { name: "Procedure of Sending Legal Notice", href: "/procedure-of-sending-legal-notice" },
+        { name: "Compare Loan Settlement Companies", href: "/compare-loan-settlement-companies-that-work-with-personal-loans" },
+        { name: "Loan for CIBIL Defaulters", href: "/which-bank-provide-personal-loan-for-cibil-defaulters" },
+        { name: "Stop Recovery Harassment", href: "/loan-recovery-agent-harassment-complaint-online" },
+        { name: "Legal Relief from Harassment", href: "/loan-recovery-agents-harassment-complaint" },
+        { name: "Employer not paying salary", href: "/employer-not-paying-salary-after-resignation" },
+        { name: "Where to File Salary Complaint", href: "/where-to-file-a-complaint-if-your-employer-doesnt-pay-you" },
+        { name: "Can Company Hold Salary?", href: "/can-company-hold-my-salary-after-resignation" },
+        { name: "Expert Panel Reviews", href: "/expert-panel-loan-settlement-reviews" },
+        { name: "Stop Recovery Agent Home Visits", href: "/how-do-i-stop-recovery-agent-from-coming-home" },
+        { name: "Bajaj Finance Agent Help", href: "/bajaj-finance-agent-visiting-home" },
+        { name: "How to Settle Loans Above 1 Cr", href: "/how-to-settle-loans-above-1-crore" },
+        { name: "How to Settle Loans Above 5 Cr", href: "/how-to-settle-loans-above-5-crore" },
         { name: 'Unsecured Loan Specialists', href: '/which-firms-specialize-in-negotiating-settlements-for-unsecured-loans' },
         { name: 'Good Customer Support', href: '/what-loan-settlement-services-have-good-customer-support-in-india' },
         { name: 'Home Loan Dues', href: '/can-i-get-a-loan-settlement-service-that-handles-home-loan-dues' },
@@ -650,64 +794,64 @@ const Footer = () => {
         { name: 'Settled Tag Duration', href: '/how-long-does-a-settled-tag-stay-on-my-report' },
         { name: 'Documents Needed for Loan Settlement NOC', href: '/documents-needed-for-loan-settlement-noc' },
         { name: 'Charities That Pay Off Debt', href: '/charities-that-pay-off-debt' },
-        {name:"Best Time for Loan Settlement",href:"/best-time-for-loan-settlement"},
+        { name: "Best Time for Loan Settlement", href: "/best-time-for-loan-settlement" },
         { name: "Benefits of Settling Your Loan in March", href: "/benefits-of-settling-your-loan-in-march" },
         { name: "Can Bank File Case for Personal Loan", href: "/can-bank-file-case-for-personal-loan" },
         { name: "Credit Card Settlement Process India", href: "/credit-card-settlement-process-india" },
-        {name:"Sales Job Vacancies in Gurgaon",href:"/sales-job-vacancies-in-gurgaon"},
-                {name:"Telecaller Vacancies in Gurgaon",href:"/telecaller-vacancies-in-gurgaon"},
-                {name: "RBI Recovery Guidelines July 2026", href: "/rbi-new-recovery-guidelines-july-2026"},
-                {name: "Drafting of Will", href: "/drafting-of-will"},
-        {name: "Will Drafting for NRI", href: "/will-drafting-for-nri"},
-        {name: "Will Drafting for Indians in Canada", href: "/will-drafting-for-indians-living-in-canada"},
-        {name: "Will Drafting for Indians in USA", href: "/will-drafting-for-indians-living-in-usa"},
-        {name: "Will Drafting for Indians in Australia", href: "/will-drafting-for-indians-living-in-australia"},
-        {name: "Will Drafting for Indians in Dubai", href: "/will-drafting-for-indians-living-in-dubai"},
-        {name: "Simple Will Format - Download", href: "/simple-will-format-download-free-legal-document-sample"},
-        {name:"Google's Trusted Legal Advisor",href:"/googles-trusted-legal-advisor"},
-        {name:"Google's Trusted Law Firm",href:"/googles-trusted-law-firm"},
-        {name:"Legal Notice to Hospital",href:"/legal-notice-to-hospital"},
-        {name:"Hospital Harassment Protection",href:"/protection-from-hospital-harrassement"},
-         {name:"Overcharged at Hospital - Legal Notice",href:"/overcharged-at-hospital-send-legal-notice"},
-         {name:"Workplace Harassment Notice",href:"/workplace-harassment-legal-notice-service"},
-         {name:"Best Law Firms in India for Corporate Law",href:"/best-law-firms-in-india-for-corporate-law"},
-         {name:"Reputable Debt Relief Agencies Bangalore",href:"/find-reputable-debt-relief-agencies-specializing-in-unsecured-loans-in-bangalore"},
-           { name: "Tax Implications of Settled Debt", href: "/what-are-the-income-tax-implications-of-a-settled-debt-amount" },
-            { name: "Credit Counseling Chennai", href: "/where-can-i-locate-government-approved-consumer-credit-counseling-services-in-chennai" },
-            { name: "Settle Credit Card Using Third Party", href: "/can-i-settle-my-credit-card-dues-using-third-party-loan-settlement-companies" },
-            { name: "CFP specialized in Debt Restructuring", href: "/certified-financial-planners-who-specialize-in-debt-restructuring-and-settlement" },
-            { name: "Which one is REAL AMA?", href: "/which-one-is-the-real-amalegalsolutions" },
-            { name: "Is Loan Settlement in Installments Possible", href: "/is-loan-settlement-in-installments-possible" },
-            { name: "Loan Settlement Process in Hindi", href: "/loan-settlement-process-in-hindi" },
-            { name: "Can I Settle My Loan Without A Lawyer?", href: "/can-i-settle-my-loan-without-a-lawyer" },
-            { name: "Does Settlement Impact a Co-borrower", href: "/does-settlement-impact-a-co-borrower" },
-            { name: "Can I Convert Settled To Closed Later", href: "/can-i-convert-settled-to-closed-later" },
-            {name:"Trademark Class 35",href:"/trademark-registration-in-class-35"},
-            {name:"Trademark Class 38",href:"/trademark-registration-in-class-38"},
-            {name:"Trademark Class 14",href:"/trademark-registration-in-class-14"},
-            {name:"Trademark Class 45",href:"/trademark-registration-in-class-45"},
-            {name:"Support During Medical Emergencies",href:"/support-for-loan-settlement-during-medical-emergencies"},
-            {name:"How to Get 800 Credit Score in India",href:"/how-to-get-800-credit-score-in-india"},
-            {name: "Loan Settlement & NOC Formats", href: "/loan-settlement-letter-format-noc-format"},
-            {name: "Legal Notice for Harassment", href: "/legal-notice-for-loan-settlement-harassment"},
-            {name: "2026 Resource Lockdown", href: "/2026-lockdown-due-to-scarcity-of-resources"},
-        {name: "LPG Crisis India 2026", href: "/lpg-cylinder-crisis-india-2026-iran-war"},
-        {name: "Economic Downturn Settlement", href: "/loan-settlement-for-borrowers-facing-economic-downturn"},
-        {name: "Debt Free Future Plan", href: "/amalegalsolutions-plan-for-building-debt-free-future-after-settlement"},
-        {name: "How to Check Active Loan on Your Name", href: "/how-to-check-active-loan-on-your-name-in-india-step-by-step-guide"},
-        {name: "Why Credit Score Drops Even When Paying On Time", href: "/why-does-my-credit-score-drop-even-though-i-pay-on-time"},
-        {name: "Is CIBIL Ruined Forever?", href: "/is-cibil-ruined-forever-after-settlement" },
-        {name: "Can Recovery Agents Abuse You Legally India", href: "/can-recovery-agents-abuse-you-legally-india" },
-        {name: "Is Loan Settlement Illegal in India Truth", href: "/is-loan-settlement-illegal-in-india-truth" },
-        {name: "Do Banks File FIR for Credit Card Dues", href: "/do-banks-file-fir-for-credit-card-dues" },
-        {name: "How to Identify Fake Settlement Letter", href: "/how-to-identify-fake-settlement-letter" },
-        {name: "Is Settlement Letter Valid?", href: "/how-to-know-if-the-settlement-letter-is-valid" },
-        {name: "Settle Now and Remove Later?", href: "/can-I-go-for-settlement-of-loan-now-and-remove-it-later-when-im-financially-stable" },
-        {name: "Can Bank Reject Settlement?", href: "/can-bank-reject-settlement-request" },
-        {name: "Can Settlement Be Done in Installments?", href: "/can-settlement-be-done-in-installments" },
-        {name: "Can Guarantor Be Liable After Settlement?", href: "/can-guarantor-be-liable-after-settlement" },
-        {name: "What Happens After Bank Issues Recall Notice?", href: "/what-happens-after-bank-issues-recall-notice" },
-        {name: "How to Challenge Bank Statement?", href: "/how-to-challenge-bank-statement-account-statement" },
+        { name: "Sales Job Vacancies in Gurgaon", href: "/sales-job-vacancies-in-gurgaon" },
+        { name: "Telecaller Vacancies in Gurgaon", href: "/telecaller-vacancies-in-gurgaon" },
+        { name: "RBI Recovery Guidelines July 2026", href: "/rbi-new-recovery-guidelines-july-2026" },
+        { name: "Drafting of Will", href: "/drafting-of-will" },
+        { name: "Will Drafting for NRI", href: "/will-drafting-for-nri" },
+        { name: "Will Drafting for Indians in Canada", href: "/will-drafting-for-indians-living-in-canada" },
+        { name: "Will Drafting for Indians in USA", href: "/will-drafting-for-indians-living-in-usa" },
+        { name: "Will Drafting for Indians in Australia", href: "/will-drafting-for-indians-living-in-australia" },
+        { name: "Will Drafting for Indians in Dubai", href: "/will-drafting-for-indians-living-in-dubai" },
+        { name: "Simple Will Format - Download", href: "/simple-will-format-download-free-legal-document-sample" },
+        { name: "Google's Trusted Legal Advisor", href: "/googles-trusted-legal-advisor" },
+        { name: "Google's Trusted Law Firm", href: "/googles-trusted-law-firm" },
+        { name: "Legal Notice to Hospital", href: "/legal-notice-to-hospital" },
+        { name: "Hospital Harassment Protection", href: "/protection-from-hospital-harrassement" },
+        { name: "Overcharged at Hospital - Legal Notice", href: "/overcharged-at-hospital-send-legal-notice" },
+        { name: "Workplace Harassment Notice", href: "/workplace-harassment-legal-notice-service" },
+        { name: "Best Law Firms in India for Corporate Law", href: "/best-law-firms-in-india-for-corporate-law" },
+        { name: "Reputable Debt Relief Agencies Bangalore", href: "/find-reputable-debt-relief-agencies-specializing-in-unsecured-loans-in-bangalore" },
+        { name: "Tax Implications of Settled Debt", href: "/what-are-the-income-tax-implications-of-a-settled-debt-amount" },
+        { name: "Credit Counseling Chennai", href: "/where-can-i-locate-government-approved-consumer-credit-counseling-services-in-chennai" },
+        { name: "Settle Credit Card Using Third Party", href: "/can-i-settle-my-credit-card-dues-using-third-party-loan-settlement-companies" },
+        { name: "CFP specialized in Debt Restructuring", href: "/certified-financial-planners-who-specialize-in-debt-restructuring-and-settlement" },
+        { name: "Which one is REAL AMA?", href: "/which-one-is-the-real-amalegalsolutions" },
+        { name: "Is Loan Settlement in Installments Possible", href: "/is-loan-settlement-in-installments-possible" },
+        { name: "Loan Settlement Process in Hindi", href: "/loan-settlement-process-in-hindi" },
+        { name: "Can I Settle My Loan Without A Lawyer?", href: "/can-i-settle-my-loan-without-a-lawyer" },
+        { name: "Does Settlement Impact a Co-borrower", href: "/does-settlement-impact-a-co-borrower" },
+        { name: "Can I Convert Settled To Closed Later", href: "/can-i-convert-settled-to-closed-later" },
+        { name: "Trademark Class 35", href: "/trademark-registration-in-class-35" },
+        { name: "Trademark Class 38", href: "/trademark-registration-in-class-38" },
+        { name: "Trademark Class 14", href: "/trademark-registration-in-class-14" },
+        { name: "Trademark Class 45", href: "/trademark-registration-in-class-45" },
+        { name: "Support During Medical Emergencies", href: "/support-for-loan-settlement-during-medical-emergencies" },
+        { name: "How to Get 800 Credit Score in India", href: "/how-to-get-800-credit-score-in-india" },
+        { name: "Loan Settlement & NOC Formats", href: "/loan-settlement-letter-format-noc-format" },
+        { name: "Legal Notice for Harassment", href: "/legal-notice-for-loan-settlement-harassment" },
+        { name: "2026 Resource Lockdown", href: "/2026-lockdown-due-to-scarcity-of-resources" },
+        { name: "LPG Crisis India 2026", href: "/lpg-cylinder-crisis-india-2026-iran-war" },
+        { name: "Economic Downturn Settlement", href: "/loan-settlement-for-borrowers-facing-economic-downturn" },
+        { name: "Debt Free Future Plan", href: "/amalegalsolutions-plan-for-building-debt-free-future-after-settlement" },
+        { name: "How to Check Active Loan on Your Name", href: "/how-to-check-active-loan-on-your-name-in-india-step-by-step-guide" },
+        { name: "Why Credit Score Drops Even When Paying On Time", href: "/why-does-my-credit-score-drop-even-though-i-pay-on-time" },
+        { name: "Is CIBIL Ruined Forever?", href: "/is-cibil-ruined-forever-after-settlement" },
+        { name: "Can Recovery Agents Abuse You Legally India", href: "/can-recovery-agents-abuse-you-legally-india" },
+        { name: "Is Loan Settlement Illegal in India Truth", href: "/is-loan-settlement-illegal-in-india-truth" },
+        { name: "Do Banks File FIR for Credit Card Dues", href: "/do-banks-file-fir-for-credit-card-dues" },
+        { name: "How to Identify Fake Settlement Letter", href: "/how-to-identify-fake-settlement-letter" },
+        { name: "Is Settlement Letter Valid?", href: "/how-to-know-if-the-settlement-letter-is-valid" },
+        { name: "Settle Now and Remove Later?", href: "/can-I-go-for-settlement-of-loan-now-and-remove-it-later-when-im-financially-stable" },
+        { name: "Can Bank Reject Settlement?", href: "/can-bank-reject-settlement-request" },
+        { name: "Can Settlement Be Done in Installments?", href: "/can-settlement-be-done-in-installments" },
+        { name: "Can Guarantor Be Liable After Settlement?", href: "/can-guarantor-be-liable-after-settlement" },
+        { name: "What Happens After Bank Issues Recall Notice?", href: "/what-happens-after-bank-issues-recall-notice" },
+        { name: "How to Challenge Bank Statement?", href: "/how-to-challenge-bank-statement-account-statement" },
         { name: "Stop Bank Harassment", href: "/services/best-lawyer-for-bank-harassment" },
         { name: "Home Loan Eligibility After Settlement", href: "/home-loan-eligibility-after-settlement" },
         { name: "Harassment Protection", href: "/legal-notice-for-loan-settlement-harassment" },
@@ -754,7 +898,15 @@ const Footer = () => {
         { name: 'Loan Settlement Advocate Near Me', href: '/loan-settlement-advocate-near-me' },
         { name: 'Unsecured Loan Types', href: '/unsecured-loan-types' },
         { name: 'Loan Settlement Application in Hindi', href: '/loan-settlement-application-in-hindi' },
-        { name: 'Debt Settlement Company in India', href: '/debt-settlement-company-in-india' }
+        { name: 'Debt Settlement Company in India', href: '/debt-settlement-company-in-india' },
+        { name: 'Loan Settlement Application', href: '/loan-settlement-application' },
+        { name: 'Expert Panel Loan Settlement', href: '/expert-panel-loan-settlement' },
+        { name: 'Loan Settlement App', href: '/loan-settlement-app' },
+        { name: 'What is Loan Settlement', href: '/what-is-loan-settlement' },
+        { name: 'How to Settle Credit Card Debt', href: '/how-to-settle-credit-card-debt' },
+        { name: 'Loan Moratorium Meaning', href: '/loan-moratorium-meaning' },
+        { name: 'Minimum Amount Due in Credit Card Meaning', href: '/minimum-amount-due-in-credit-card-meaning' },
+        { name: 'Section 25 Payment and Settlement Act Bailable or Not', href: '/section-25-payment-and-settlement-act-bailable-or-not' }
       ]
 
     }
@@ -764,7 +916,7 @@ const Footer = () => {
     <footer className="relative py-[64px] px-[24px] md:px-[72px] bg-[#30261C]">
       <div className="max-w-8xl mx-auto relative">
         {/* Radial Gradient */}
-        <div 
+        <div
           className="absolute top-1/2 left-1/2 md:left-[40%] -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] pointer-events-none"
           style={{
             background: 'radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0) 0%)',
@@ -774,10 +926,10 @@ const Footer = () => {
         {/* Logo - Centered on Desktop */}
         <div className="hidden lg:flex justify-center mb-[48px]">
           <Link href="/ama-legal-solutions">
-            <Image 
-              src="/newAssets/logo/ama-white.svg" 
-              alt="AMA Legal Solutions" 
-              width={206} 
+            <Image
+              src="/newAssets/logo/ama-white.svg"
+              alt="AMA Legal Solutions"
+              width={206}
               height={40}
               className="w-[206px] h-[40px]"
             />
@@ -789,10 +941,10 @@ const Footer = () => {
           {/* Logo on Mobile Only + Column 1 Links */}
           <div className="flex flex-col gap-[24px]">
             <Link href="/ama-legal-solutions" aria-label="Home" className="lg:hidden">
-              <Image 
-                src="/newAssets/logo/ama-white.svg" 
-                alt="AMA Legal Solutions" 
-                width={206} 
+              <Image
+                src="/newAssets/logo/ama-white.svg"
+                alt="AMA Legal Solutions"
+                width={206}
                 height={40}
                 className="w-[206px] h-[40px] mb-4"
               />
@@ -805,7 +957,7 @@ const Footer = () => {
             <ul className="flex flex-col gap-[12px]">
               {footerColumns[0].links.map((link) => (
                 <li key={link.href}>
-                  <Link 
+                  <Link
                     href={link.href}
                     className="text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors"
                   >
@@ -826,16 +978,16 @@ const Footer = () => {
                 {column.links.map((link) => (
                   <li key={link.href}>
                     {link.external ? (
-                      <a 
-                        href={link.href} 
-                        target="_blank" 
+                      <a
+                        href={link.href}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors"
                       >
                         {link.name}
                       </a>
                     ) : (
-                      <Link 
+                      <Link
                         href={link.href}
                         className="text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors"
                       >
@@ -861,7 +1013,7 @@ const Footer = () => {
               <ul className="flex flex-col gap-[12px]">
                 {column.links.map((link) => (
                   <li key={link.href}>
-                    <Link 
+                    <Link
                       href={link.href}
                       className="text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors"
                     >
@@ -883,46 +1035,44 @@ const Footer = () => {
           >
             <span>{footerColumns[8].title}</span>
             <FaChevronDown
-              className={`text-[14px] text-white/70 transition-transform duration-300 ${
-                queriesOpen ? "rotate-180" : ""
-              }`}
+              className={`text-[14px] text-white/70 transition-transform duration-300 ${queriesOpen ? "rotate-180" : ""
+                }`}
             />
           </button>
           <div
-            className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[24px] overflow-hidden transition-all duration-500 ease-in-out ${
-              queriesOpen ? "max-h-[5000px] opacity-100" : "max-h-0 opacity-0"
-            }`}
+            className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[24px] overflow-hidden transition-all duration-500 ease-in-out ${queriesOpen ? "max-h-[5000px] opacity-100" : "max-h-0 opacity-0"
+              }`}
           >
-             {footerColumns[8].links.map((link, idx) => (
-                <div key={`${link.href}-${idx}`}>
-                   <Link 
-                     href={link.href}
-                     className="text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors"
-                   >
-                     {link.name}
-                   </Link>
-                </div>
-             ))}
+            {footerColumns[8].links.map((link, idx) => (
+              <div key={`${link.href}-${idx}`}>
+                <Link
+                  href={link.href}
+                  className="text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors"
+                >
+                  {link.name}
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* NAP Block — Name, Address, Phone (Social Proof & Contact) */}
-        <div 
+        <div
           className="mb-[48px] border border-white/10 rounded-2xl p-6 md:p-8"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {/* Phone */}
             <div className="flex items-start gap-3">
               <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-               <svg className="w-5 h-5 text-[#D2A02A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
+                <svg className="w-5 h-5 text-[#D2A02A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
               </div>
               <div>
-               <div>
+                <div>
                   <h4 className="text-white text-[16px] font-semibold mb-1">Call Us</h4>
-                  <a 
-                    href="tel:+918700343611" 
+                  <a
+                    href="tel:+918700343611"
                     className="text-white/60 text-[13px] hover:text-white/90 transition-colors"
                   >
                     +91-8700343611
@@ -932,7 +1082,7 @@ const Footer = () => {
             </div>
 
             {/* Address */}
-            <div 
+            <div
               className="flex items-start gap-3"
             >
               <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -943,9 +1093,9 @@ const Footer = () => {
               </div>
               <div>
                 <h4 className="text-white text-[16px] font-semibold mb-1">Office Address</h4>
-                <a 
-                  href="https://maps.app.goo.gl/C11eKgqm46oUwdio9" 
-                  target="_blank" 
+                <a
+                  href="https://maps.app.goo.gl/C11eKgqm46oUwdio9"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/60 text-[13px] leading-relaxed hover:text-white/90 transition-colors block"
                 >
@@ -970,8 +1120,8 @@ const Footer = () => {
                 </div>
                 <div>
                   <h4 className="text-white text-[16px] font-semibold mb-1">Email</h4>
-                  <a 
-                    href="mailto:notify@amalegalsolutions.com" 
+                  <a
+                    href="mailto:notify@amalegalsolutions.com"
                     className="text-white/60 text-[13px] hover:text-white/90 transition-colors"
                   >
                     notify@amalegalsolutions.com
@@ -986,21 +1136,21 @@ const Footer = () => {
 
         {/* Apps & Socials Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center py-8 border-t border-white/10 gap-8">
-           <div className="flex items-center gap-[12px]">
-              <Link href="https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions" target="_blank">
-                <Image src="/newAssets/appstore.svg" alt="Play Store" width={130} height={36} className="w-[130px] h-[36px]" />
-              </Link>
-              <Link href="https://apps.apple.com/in/app/ama-legal-solutions/id6755156186" target="_blank">
-                <Image src="/newAssets/playstore.svg" alt="App Store" width={130} height={36} className="w-[130px] h-[36px]" />
-              </Link>
-           </div>
-           
-           <div className="flex items-center gap-6">
-              <a href="https://www.instagram.com/amalegalsolutions/" target="_blank" className="text-white/60 hover:text-white"><FaInstagram size={20} /></a>
-              <a href="https://www.facebook.com/amalegalsolutions/" target="_blank" className="text-white/60 hover:text-white"><FaFacebookF size={20} /></a>
-              <a href="https://in.linkedin.com/company/ama-legal-solutions" target="_blank" className="text-white/60 hover:text-white"><FaLinkedinIn size={20} /></a>
-              <a href="https://www.youtube.com/@amalegalsolution" target="_blank" className="text-white/60 hover:text-white"><FaYoutube size={20} /></a>
-           </div>
+          <div className="flex items-center gap-[12px]">
+            <Link href="https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions" target="_blank">
+              <Image src="/newAssets/appstore.svg" alt="Play Store" width={130} height={36} className="w-[130px] h-[36px]" />
+            </Link>
+            <Link href="https://apps.apple.com/in/app/ama-legal-solutions/id6755156186" target="_blank">
+              <Image src="/newAssets/playstore.svg" alt="App Store" width={130} height={36} className="w-[130px] h-[36px]" />
+            </Link>
+          </div>
+
+          <div className="flex items-center gap-6">
+            <a href="https://www.instagram.com/amalegalsolutions/" target="_blank" className="text-white/60 hover:text-white"><FaInstagram size={20} /></a>
+            <a href="https://www.facebook.com/amalegalsolutions/" target="_blank" className="text-white/60 hover:text-white"><FaFacebookF size={20} /></a>
+            <a href="https://in.linkedin.com/company/ama-legal-solutions" target="_blank" className="text-white/60 hover:text-white"><FaLinkedinIn size={20} /></a>
+            <a href="https://www.youtube.com/@amalegalsolution" target="_blank" className="text-white/60 hover:text-white"><FaYoutube size={20} /></a>
+          </div>
         </div>
 
         {/* Copyright */}
