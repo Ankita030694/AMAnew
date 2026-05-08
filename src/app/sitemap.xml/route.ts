@@ -269,7 +269,7 @@ export async function GET(): Promise<Response> {
     '/what-is-loan-settlement',
     '/loan-moratorium-meaning',
     '/minimum-amount-due-in-credit-card-meaning',
-    '/section-25-payment-and-settlement-act-bailable-or-not'
+    '/section-25-payment-and-settlement-act-bailable-or-not',
     // Specific Loan Settlement State Pages
     '/services/loan-settlement/andhra-pradesh',
     '/services/loan-settlement/assam',
