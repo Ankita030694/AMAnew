@@ -278,7 +278,9 @@ export default function Footer() {
     { href: "/gst-show-cause-notice-scn", label: "GST Show Cause Notice" },
     { href: "/income-tax-demand-notice", label: "Income Tax Demand Notice" },
     { href: "/data-breach-privacy-notice", label: "Data Breach Privacy Notice" },
-    { href: "/lawyer", label: "Lawyer Resources & Opportunities" }
+    { href: "/lawyer", label: "Lawyer Resources & Opportunities" },
+    { href: "/rbi-beware-misleading-loan-waiver-campaigns", label: "RBI Warns Against Misleading Loan Waiver Campaigns" },
+    { href: "/can-bank-issue-look-out-notice-loan-default", label: "Can Bank Issue Look Out Notice for Loan Default?" }
               ].map((query) => (
                 <Link
                   key={query.href}

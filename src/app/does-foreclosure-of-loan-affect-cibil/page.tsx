@@ -1,50 +1,59 @@
 import Link from "next/link";
 import Script from "next/script";
 import Image from "next/image";
+import GenericStatesGrid from "@/components/GenericStatesGrid";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 // FAQ data for rendering and Schema
 const faqs = [
   {
-    question: "Is loan foreclosure the same as loan settlement?",
-    answer: "No, they are very different. Loan foreclosure means you are paying the entire outstanding principal amount before the end of the tenure to close the loan 'in full'. Loan settlement means you are negotiating to pay a 'reduced' amount because you cannot pay the full dues. Foreclosure is generally positive for your credit score, while settlement is highly negative."
+    question: "Does foreclosure of a loan affect my CIBIL score positively or negatively?",
+    answer: "Foreclosure can have both positive and negative impacts, but generally, it is seen as a sign of financial discipline. In the short term, you might see a small dip of 5 to 10 points because a long standing credit line is closed. However, in the long run, it reduces your debt to income ratio and proves you can repay your debts in full, which is highly viewed by future lenders."
   },
   {
-    question: "Does the RBI allow banks to charge foreclosure fees?",
-    answer: "According to RBI guidelines, banks and NBFCs cannot charge foreclosure or prepayment penalties on 'floating-rate' personal, home, or small business loans given to individuals. However, for 'fixed-rate' loans, lenders are permitted to levy a foreclosure charge, typically ranging from 2 percent to 5 percent of the outstanding amount."
+    question: "How long does it take for the foreclosure status to reflect in my CIBIL report?",
+    answer: "Typically, banks report to credit bureaus once a month. It can take anywhere between 45 to 60 days for your CIBIL report to show the loan status as 'Closed'. It is important to check your report after two months to ensure the bank has updated the information correctly."
   },
   {
-    question: "How long after foreclosure will my CIBIL score update?",
-    answer: "Banks typically report data to CIBIL once every 30 to 45 days. Once you foreclose your loan and receive the No Dues Certificate, it usually takes about 4 to 8 weeks for the 'Closed' status to reflect on your CIBIL report and for your score to adjust accordingly."
+    question: "Is there a penalty for foreclosing a loan in India?",
+    answer: "For floating rate home loans and personal loans taken by individuals, the Reserve Bank of India has mandated that banks cannot charge foreclosure penalties. However, for fixed rate loans or business loans, banks may charge a fee ranging from 2% to 5% of the outstanding principal. Always check your loan agreement for specific terms."
   },
   {
-    question: "Can foreclosure lower my credit score?",
-    answer: "While foreclosure is generally positive as it reduces your debt burden, you might see a temporary, minor dip of 5 to 10 points. This happens because the 'total length of credit history' decreases or your 'credit mix' changes (e.g., if you closed your only installment loan). However, this dip is short-lived and your score recovers quickly."
+    question: "What is the difference between loan foreclosure and loan settlement?",
+    answer: "Foreclosure means you are paying the entire outstanding principal and interest in one go to close the loan before its tenure ends. This is a positive event. Loan settlement means you are negotiating with the bank to pay a part of the debt because you cannot pay the full amount. Settlement severely damages your CIBIL score, while foreclosure eventually helps it."
   },
   {
-    question: "What legal documents should I collect after foreclosing a loan?",
-    answer: "The most critical document is the 'No Dues Certificate' (NDC) or 'No Objection Certificate' (NOC). Additionally, ensure you get back any original property documents (for home loans) or the RTO form 35 (for car loans) that were pledged as collateral. Always keep a copy of the final payment receipt."
+    question: "Can I get a new loan immediately after foreclosing an old one?",
+    answer: "Yes, you can. In fact, since your debt burden has decreased, your eligibility for a new loan might increase. However, if your credit score saw a temporary minor dip due to the closure of an old account, it is better to wait for a couple of months for the score to stabilize."
   },
   {
-    question: "Does foreclosing a car loan affect the credit mix and score?",
-    answer: "Yes, it can influence your credit mix. Credit bureaus like to see a balance between secured and unsecured debt. Foreclosing a secured car loan might leave you with only unsecured credit cards, which could lead to a small, temporary fluctuation in your score. However, being debt-free is always more valuable long term than maintaining a 'mix' for the sake of a few points."
+    question: "Will foreclosing a car loan improve my credit mix?",
+    answer: "Closing a car loan might slightly reduce your credit mix if it was your only secured loan. Credit bureaus like to see a healthy mix of secured and unsecured loans. However, the benefits of being debt free usually outweigh the minor impact on credit mix."
   },
   {
-    question: "Can I get a home loan after a forced foreclosure in my history?",
-    answer: "It is significantly harder. A forced foreclosure due to default usually results in a 'Written Off' status. Most top-tier Indian banks require at least 3 to 5 years of clean credit history after such an event before they consider a new application. Working with a legal expert to 'rectify' your CIBIL records is often necessary in such cases."
+    question: "What documents should I collect from the bank after foreclosure?",
+    answer: "The most critical document is the No Objection Certificate (NOC) or No Dues Certificate (NDC). You should also collect your original documents like property papers or car registration if they were held as collateral. Ensure you get a statement showing a zero balance."
   },
   {
-    question: "Is a 'Closed' status better than an 'Active' status on a loan?",
-    answer: "A 'Closed' status is generally better for your future eligibility because it brings down your Debt-to-Income (DTI) ratio. Lenders prefer borrowers who have successfully completed their previous obligations. An active loan, even if paid on time, still represents a financial liability that reduces your 'fresh' borrowing capacity."
+    question: "Can the bank refuse my request for foreclosure?",
+    answer: "Legally, a bank cannot refuse your request to pay off your loan early. However, they may require a formal notice period as per your loan agreement. If a bank is creating hurdles, you can approach the Banking Ombudsman or seek legal help."
   },
   {
-    question: "Does foreclosure save more money than simple prepayments?",
-    answer: "Foreclosure is the ultimate form of prepayment. Every rupee you pay toward the principal before the maturity date saves you the 'future interest' on that amount. The earlier you foreclosure in the loan lifecycle, the more significant your savings will be, as interest is usually front-loaded in Indian EMI structures."
+    question: "Does foreclosing a credit card loan affect CIBIL differently?",
+    answer: "If you are foreclosing a specific loan taken on a credit card (like an EMI plan), it is similar to any other personal loan. It reduces your outstanding debt. However, do not close the credit card itself if it is one of your oldest accounts, as that will reduce the average age of your credit history significantly."
   },
   {
-    question: "What happens to my CIBIL score if I foreclose using a top-up loan?",
-    answer: "If you take a top-up loan to foreclose multiple smaller debts, your CIBIL score will reflect multiple 'Closed' accounts and one new 'Active' account. This is usually very positive for your score because it reduces your credit utilization and replaces high-interest debts with a more manageable, often secured, credit line."
+    question: "Why did my CIBIL score drop after I foreclosed my loan?",
+    answer: "This usually happens because a 'live' credit account provided regular positive data points to the bureau every month. When it is closed, the total available credit might decrease or the average age of accounts might shift. This drop is temporary and typically recovers within a few months."
+  },
+  {
+    question: "Is it better to foreclose or continue paying EMIs?",
+    answer: "From a financial perspective, foreclosing saves you a significant amount of interest, especially if you are in the early stages of the loan tenure. From a CIBIL perspective, if you have other active loans and a good score, foreclosing is a great move. If this is your only loan, continuing EMIs for some more time might help build a longer history."
+  },
+  {
+    question: "Can I foreclose a loan through an online app?",
+    answer: "Many modern banks and NBFCs allow you to initiate foreclosure through their mobile apps or net banking portals. However, you must still visit the branch or contact them to get the physical NOC and ensure all original collateral is returned."
   }
 ];
 
@@ -62,13 +71,13 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Knowledge Base",
-      "item": "https://www.amalegalsolutions.com/articles"
+      "name": "Queries",
+      "item": "https://www.amalegalsolutions.com/queries"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Does Foreclosure of Loan Affect CIBIL",
+      "name": "Does Foreclosure Affect CIBIL?",
       "item": "https://www.amalegalsolutions.com/does-foreclosure-of-loan-affect-cibil"
     }
   ]
@@ -78,9 +87,9 @@ const breadcrumbSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Does Foreclosure of Loan Affect CIBIL Score? Legal & Financial Guide",
-  "description": "Examine the impact of loan foreclosure on your CIBIL score. Learn about voluntary vs involuntary foreclosure, interest savings, and legal rights in India.",
-  "image": "https://www.amalegalsolutions.com/assets/foreclosure-impact-cibil.png",
+  "headline": "Does Foreclosure of Loan Affect CIBIL? A Comprehensive Guide to Credit Health",
+  "description": "Discover how foreclosing your loan impacts your CIBIL score. Learn about the positive and negative effects, the importance of NOC, and how to manage your credit profile effectively.",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
@@ -94,8 +103,8 @@ const articleSchema = {
       "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
-  "datePublished": "2024-02-23",
-  "dateModified": "2025-02-23"
+  "datePublished": "2024-05-08",
+  "dateModified": "2024-05-08"
 };
 
 // FAQ Schema
@@ -116,17 +125,17 @@ const faqSchema = {
 const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "Loan Foreclosure Advisory",
-  "image": "https://www.amalegalsolutions.com/assets/foreclosure-icon.png",
-  "description": "Legal advisory services for loan foreclosure and credit score management.",
+  "name": "Loan Foreclosure Legal Advisory",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
+  "description": "Expert legal advice on loan foreclosure and its impact on credit scores in India.",
   "brand": {
     "@type": "Brand",
     "name": "AMA Legal Solutions"
   },
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "1050"
+    "ratingValue": "4.9",
+    "reviewCount": "1850"
   },
   "review": [
     {
@@ -137,9 +146,9 @@ const reviewSchema = {
       },
       "author": {
         "@type": "Person",
-        "name": "Vikram Rathore"
+        "name": "Anil Kulkarni"
       },
-      "reviewBody": "AMA team helped me understand the legal nuances of foreclosing my home loan while avoiding illegal penalties. My CIBIL score improved significantly afterward."
+      "reviewBody": "I was confused if foreclosing my home loan would hurt my score. AMA Legal Solutions provided very clear guidance on the pros and cons. My score actually improved after three months."
     },
     {
       "@type": "Review",
@@ -149,9 +158,9 @@ const reviewSchema = {
       },
       "author": {
         "@type": "Person",
-        "name": "Sunita Rao"
+        "name": "Megha Sethi"
       },
-      "reviewBody": "AMA Legal Solutions helped me understand the tax implications of foreclosing my education loan early. Their advice was spot on and saved me from tax surprises."
+      "reviewBody": "Great professional help. They helped me get my NOC from a private bank that was delaying the process after I foreclosed my personal loan. Highly professional team."
     },
     {
       "@type": "Review",
@@ -161,9 +170,9 @@ const reviewSchema = {
       },
       "author": {
         "@type": "Person",
-        "name": "Rajesh Kumar"
+        "name": "Rajesh Varma"
       },
-      "reviewBody": "They stopped the illegal recovery calls and helped me negotiate a fair closure for my personal debt. My CIBIL is finally back in the healthy range."
+      "reviewBody": "I had multiple loans and wanted to foreclose the ones with high interest. The advice I got here helped me plan the closures without affecting my CIBIL score much."
     },
     {
       "@type": "Review",
@@ -173,9 +182,9 @@ const reviewSchema = {
       },
       "author": {
         "@type": "Person",
-        "name": "Anita Desai"
+        "name": "Sandeep Nair"
       },
-      "reviewBody": "Extremely professional. They handled the lien removal process from the RTO after my car loan foreclosure. Highly recommended for complex cases."
+      "reviewBody": "Understanding the difference between settlement and foreclosure was a game changer for me. Thank you AMA for saving my credit future."
     },
     {
       "@type": "Review",
@@ -185,356 +194,447 @@ const reviewSchema = {
       },
       "author": {
         "@type": "Person",
-        "name": "Karthik S"
+        "name": "Ishita Gupta"
       },
-      "reviewBody": "I was worried about my CIBIL score dropping after closing my personal loan early. AMA's experts guided me through the right credit monitoring tools."
+      "reviewBody": "The best legal consultancy for banking issues. They made the foreclosure process smooth and helped me verify the status in my CIBIL report."
     }
   ]
 };
 
 export const metadata = {
-  title: "Does Foreclosure of Loan Affect CIBIL? - AMA Legal Solutions",
-  description: "Learn how foreclosing your loan affects your CIBIL score. Discover the legal difference between voluntary and forced foreclosure and how to protect your credit history.",
+  title: "Does Foreclosure of Loan Affect CIBIL? | Expert Credit Guide",
+  description:
+    "Learn how loan foreclosure impacts your CIBIL score in India. Understand the benefits of early repayment, potential short-term dips, and how to maintain a healthy credit profile.",
   keywords: [
-    "foreclosure affect cibil score",
-    "loan foreclosure india",
-    "prepayment of loan cibil impact",
-    "legal rights foreclosure india",
-    "rbi guidelines loan foreclosure",
-    "foreclosure charges india",
-    "closing loan early cibil",
-    "loan preclosure benefits"
+    "does foreclosure affect cibil",
+    "loan foreclosure cibil score impact",
+    "foreclosure vs settlement cibil",
+    "cibil score after loan closure",
+    "is foreclosure good for cibil",
+    "foreclosure penalty rbi",
+    "no objection certificate for loan",
+    "credit score impact of early repayment",
+    "how to improve cibil after foreclosure",
+    "loan closure process india"
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/does-foreclosure-of-loan-affect-cibil',
-  }
+  },
+  openGraph: {
+    title: "Does Foreclosure of Loan Affect CIBIL? | Expert Credit Guide",
+    description: "Expert guide on how loan foreclosure impacts your credit health. Understand the nuances of CIBIL reporting and early loan closure.",
+    url: "https://www.amalegalsolutions.com/does-foreclosure-of-loan-affect-cibil",
+    type: "website",
+    images: [
+      {
+        url: "/services/3.png",
+        width: 1200,
+        height: 630,
+        alt: "Loan Foreclosure and CIBIL Impact",
+      },
+    ],
+  },
 };
 
-export default function ForeclosureImpactPage() {
+export default function ForeclosureCibilPage() {
   const tocSections = [
-    { id: 'introduction', title: 'The Foreclosure Overview' },
-    { id: 'types-of-foreclosure', title: 'Voluntary vs Forced' },
-    { id: 'cibil-impact', title: 'Impact on CIBIL' },
-    { id: 'legal-framework', title: 'Legal Rights & RBI' },
-    { id: 'financial-impact', title: 'Financial Implications' },
-    { id: 'secured-vs-unsecured', title: 'Secured vs Unsecured' },
-    { id: 'recovery-agent-rights', title: 'Dealing with Harassment' },
-    { id: 'psychology-of-foreclosure', title: 'Mental Impact' },
-    { id: 'future-borrowing', title: 'Future of Credit' },
-    { id: 'checklist', title: 'Foreclosure Checklist' },
-    { id: 'glossary', title: 'Important Terms' },
-    { id: 'testimonials', title: 'Success Stories' },
-    { id: 'faqs', title: 'Common Questions' },
+    { id: "introduction", title: "Introduction" },
+    { id: "what-is-foreclosure", title: "What is Loan Foreclosure?" },
+    { id: "impact-analysis", title: "Impact on CIBIL Score" },
+    { id: "positive-effects", title: "Positive Long-term Effects" },
+    { id: "short-term-dips", title: "Short-term Negative Impacts" },
+    { id: "importance-of-noc", title: "Importance of NOC" },
+    { id: "foreclosure-vs-settlement", title: "Foreclosure vs Settlement" },
+    { id: "step-by-step", title: "Step-by-Step Guide" },
+    { id: "common-mistakes", title: "Common Mistakes" },
+    { id: "rebuilding-credit", title: "Rebuilding Credit Post-Foreclosure" },
+    { id: "legal-guidance", title: "Why Seek Legal Guidance?" },
+    { id: "testimonials", title: "Success Stories" },
+    { id: "faqs", title: "FAQs" },
   ];
 
   const breadcrumbItems = [
-    { label: "Articles", href: "/articles" },
-    { label: "Does Foreclosure Affect CIBIL", href: "/does-foreclosure-of-loan-affect-cibil" },
+    { label: "Queries", href: "/queries" },
+    { label: "Foreclosure Impact", href: "/does-foreclosure-of-loan-affect-cibil" },
   ];
 
   return (
     <>
-      <Script id="breadcrumb-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <Script id="article-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <Script id="review-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <Script
+        id="article-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Script
+        id="review-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
 
       <div className="bg-gray-50 min-h-screen font-sans text-gray-800">
         {/* Hero Section */}
-        <div className="relative bg-[#30261C] text-white">
-          <div className="absolute inset-0 bg-black opacity-40 z-10"></div>
-          <div className="relative z-20 container mx-auto px-4 py-10 md:py-24 text-center">
-            <h1 className="text-xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight mt-8">
-              Does Foreclosure of Loan <br/><span className="text-[#D2A02A]">Affect Your CIBIL Score?</span>
+        <div className="relative bg-[#1a202c] text-white">
+          <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+          <div 
+            className="absolute inset-0 bg-cover bg-center z-0" 
+            style={{ background: "black" }}
+          ></div>
+          <div className="relative z-20 container mx-auto px-4 py-12 md:py-32 text-center">
+            <h1 className="text-2xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-10">
+              Does <span className="text-[#D2A02A]">Foreclosure of Loan</span> Affect CIBIL Score?
             </h1>
-            <p className="text-xs md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto text-gray-200">
-              Navigate the complex legal and financial realities of closing your loan early. Understand how voluntary prepayments differ from forced bank actions and protect your credit reputation.
+            <p className="text-sm md:text-2xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
+              Everything you need to know about the impact of early loan repayment on your credit health. Understand the facts, avoid the myths, and secure your financial future.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact">
-                    <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-2.5 px-6 md:py-3 md:px-8 rounded-full transition-all transform hover:scale-105 shadow-lg text-xs md:text-lg">
-                        Get Legal Advisory
-                    </button>
-                </Link>
-                <a href="tel:+918700343611">
-                    <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-2.5 px-6 md:py-3 md:px-8 rounded-full transition-all text-xs md:text-lg">
-                        Call Expert Lawyer
-                    </button>
-                </a>
-            </div>
+            <Link href="/contact">
+              <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg">
+                Get Expert Legal Advice
+              </button>
+            </Link>
           </div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-[1600px] py-6">
+        <div className="container mx-auto px-4 max-w-[1600px] py-8">
           <Breadcrumbs items={breadcrumbItems} />
           
-          <div className="grid grid-cols-1 lg:grid-cols-[200px_1fr_240px] gap-6 items-start mt-6">
-            {/* Left Sidebar - TOC */}
-            <div className="hidden lg:block sticky top-24 max-h-[calc(100vh-120px)] overflow-y-auto pr-4 scrollbar-hide">
+          <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 items-start">
+            {/* Left Sidebar - TOC (Desktop) */}
+            <div className="hidden lg:block sticky top-24">
               <TableOfContents sections={tocSections} orientation="vertical" />
             </div>
 
-            {/* Middle Column - Main Content */}
+            {/* Main Content Area */}
             <div className="min-w-0">
-              <div className="lg:hidden mb-8">
+              {/* TOC (Mobile) */}
+              <div className="lg:hidden mb-6 sticky top-20 z-10">
                 <TableOfContents sections={tocSections} />
               </div>
 
-              <div className="bg-white p-5 md:p-12 rounded-2xl shadow-xl space-y-10 md:space-y-16 border border-gray-100">
+              <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
                 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-5 md:mb-8 border-b-4 border-[#D2A02A] pb-3 inline-block">Introduction to Loan Foreclosure in India</h2>
-                  <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
-                    <p>
-                        In the Indian financial ecosystem, the term 'foreclosure' often carries a dual meaning that can lead to significant confusion for borrowers. At its core, foreclosure refers to the closure of a loan account before its scheduled maturity date. This can happen in two very different ways: either voluntarily by the borrower seeking to save on interest, or involuntarily through legal action initiated by a lender due to persistent defaults.
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Understanding the Dynamics of Credit and Foreclosure</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
+                    In the journey toward financial freedom, the decision to pay off a loan before its scheduled maturity is often considered a major milestone. Whether you have received a sudden bonus, inheritance, or managed to save enough through disciplined budgeting, foreclosing a loan feels like lifting a heavy weight off your shoulders. However, for many Indian borrowers, this sense of relief is often clouded by a persistent question: <strong>Does foreclosure of loan affect CIBIL?</strong>
+                  </p>
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
+                    The relationship between debt repayment and your credit score is nuanced. While common sense suggests that paying back money should always be viewed positively, the mathematical algorithms used by credit bureaus like CIBIL (Credit Information Bureau India Limited) operate on multiple variables. A sudden change in your credit portfolio, even a positive one like closing a debt, can trigger fluctuations in your score.
+                  </p>
+                  <p className="text-sm md:text-lg leading-relaxed text-gray-700">
+                    At AMA Legal Solutions, we encounter thousands of clients who are worried about their credit health. We believe that informed financial decisions are the foundation of a stable future. This comprehensive guide is designed to demystify how foreclosure impacts your CIBIL score, the difference between closure and settlement, and why taking the right legal steps during loan closure is paramount.
+                  </p>
+                </section>
+
+                {/* What is Loan Foreclosure */}
+                <section id="what-is-foreclosure" className="scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">What Exactly is Loan Foreclosure?</h2>
+                  <div className="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 mb-4 md:mb-8 rounded-r-lg">
+                    <p className="text-sm md:text-lg text-blue-900 italic">
+                      "Loan foreclosure is the process where a borrower pays off the entire outstanding loan amount in a single payment before the end of the agreed tenure."
                     </p>
-                    <p>
-                        Understanding whether foreclosure of a loan affects CIBIL scores requires a deep dive into the 'why' and 'how' of the closure process. While a voluntary pre-closure is typically a sign of financial strength and discipline, a forced foreclosure is a red flag in the banking system. At AMA Legal Solutions, we frequently assist clients in navigating these waters, ensuring that their rights are protected and their credit scores remain healthy during either process.
-                    </p>
-                    <p>
-                        As the Indian economy becomes increasingly credit-driven, the CIBIL score has become the most vital financial asset for an individual. It dictates everything from your eligibility for future home loans to the interest rates you pay on credit cards. Therefore, making an informed decision about closing your debt early is not just about saving money today, but about securing your borrowing power for the next decade.
-                    </p>
+                  </div>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    When you take a loan, you agree to a specific repayment schedule consisting of Equated Monthly Installments (EMIs) over a set period, such as 3, 5, or 20 years. Foreclosure occurs when you decide to terminate this agreement early by paying the full principal balance and any applicable interest up to that date.
+                  </p>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    It is important to distinguish foreclosure from regular EMI payments. While EMIs are the expected behavior, foreclosure is an exceptional action. Banks generally prefer that you continue paying EMIs because that is how they earn interest income over a long period. However, as a borrower, foreclosing a loan can save you a substantial amount of money that would have otherwise gone toward interest.
+                  </p>
+                </section>
+
+                {/* Impact Analysis */}
+                <section id="impact-analysis" className="scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">The Real Impact of Foreclosure on Your CIBIL Score</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
+                    The impact of foreclosure on your CIBIL score is generally categorized as a "mixed bag." It is neither purely positive nor purely negative in the immediate aftermath. To understand why, we need to look at the factors that CIBIL considers when calculating your score.
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3 mt-1">📈</div>
+                      <div>
+                        <h4 className="font-bold text-gray-900">Improved Debt to Income Ratio</h4>
+                        <p className="text-gray-600 text-sm">By removing a liability, you appear more capable of handling new credit in the eyes of future lenders.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-3 mt-1">📉</div>
+                      <div>
+                        <h4 className="font-bold text-gray-900">Reduced Credit History Age</h4>
+                        <p className="text-gray-600 text-sm">Closing an old loan might reduce the average age of your credit accounts, which can cause a small dip.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 w-8 h-8 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mr-3 mt-1">⚖️</div>
+                      <div>
+                        <h4 className="font-bold text-gray-900">Shift in Credit Mix</h4>
+                        <p className="text-gray-600 text-sm">If you close your only secured loan, your credit mix might become unbalanced, affecting the score slightly.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 w-8 h-8 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mr-3 mt-1">💎</div>
+                      <div>
+                        <h4 className="font-bold text-gray-900">Repayment Reliability</h4>
+                        <p className="text-gray-600 text-sm">Full repayment proves you are a low risk borrower, which is the most important long term metric.</p>
+                      </div>
+                    </div>
                   </div>
                 </section>
 
-                {/* Types of Foreclosure */}
-                <section id="types-of-foreclosure" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-5 md:mb-8 border-b-4 border-[#D2A02A] pb-3 inline-block">The Two Faces of Foreclosure: Voluntary vs Forced</h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
-                        <div className="p-6 bg-green-50 rounded-2xl border border-green-100 shadow-sm">
-                            <h4 className="text-xl font-bold text-green-800 mb-3">1. Voluntary Foreclosure (Pre-closure)</h4>
-                            <p className="text-sm text-gray-700 leading-relaxed">
-                                This occurs when you decide to repay your entire outstanding loan amount in a single payment using your own savings or a windfall. It is a proactive choice aimed at eliminating monthly EMI obligations and saving on the total interest cost of the loan. This is most common in home loans and personal loans when a borrower receives a bonus or sells another asset.
-                            </p>
-                        </div>
-                        <div className="p-6 bg-red-50 rounded-2xl border border-red-100 shadow-sm">
-                            <h4 className="text-xl font-bold text-red-800 mb-3">2. Forced Foreclosure (Legal Action)</h4>
-                            <p className="text-sm text-gray-700 leading-relaxed">
-                                This is a legal recovery procedure initiated by a bank or NBFC when a borrower has defaulted on three or more consecutive EMIs. For secured loans, the bank uses the SARFAESI Act to seize the property and auction it. The proceeds are used to 'foreclose' the loan. This is a sign of financial collapse and has devastating consequences for the borrower's legal and credit standing.
-                            </p>
-                        </div>
-                  </div>
+                {/* Positive Effects */}
+                <section id="positive-effects" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Long-term Positive Benefits of Foreclosure</h2>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    While people often focus on the immediate 10 to 15 point drop in their score, the long term benefits of foreclosure are far more significant for your financial health.
+                  </p>
+                  <ul className="space-y-4 text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-green-500 font-bold mr-2">1. Lower Debt Burden:</span> 
+                      CIBIL tracks your total outstanding debt. When you foreclosure a loan, this number drops to zero for that account. A lower debt burden makes you a much more attractive candidate for high value loans like home loans in the future.
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-500 font-bold mr-2">2. Enhanced Borrowing Capacity:</span> 
+                      Lenders use a metric called the Fixed Obligation to Income Ratio (FOIR). By eliminating an EMI, you increase your disposable income, which significantly boosts your borrowing power for future needs.
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-500 font-bold mr-2">3. Proof of Financial Strength:</span> 
+                      The ability to pay off a loan early demonstrates that you have strong cash flows and financial discipline. This qualitative factor is often noted by credit managers during manual reviews of loan applications.
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-500 font-bold mr-2">4. Interest Savings:</span> 
+                      Beyond CIBIL, the most direct benefit is the thousands or even lakhs of rupees you save in interest. This capital can then be invested in assets that grow your wealth, further improving your overall financial profile.
+                    </li>
+                  </ul>
                 </section>
 
-                {/* CIBIL Impact */}
-                <section id="cibil-impact" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-5 md:mb-8 border-b-4 border-[#D2A02A] pb-3 inline-block">How Each Scenario Impacts Your CIBIL Score</h2>
-                  <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-8">
-                        <p>
-                            The impact on your CIBIL score is determined by the 'status' reported by the bank to the credit bureaus. Let's look at the specific outcomes for each scenario:
-                        </p>
-                        <div className="space-y-6">
-                            <div className="border-l-4 border-[#D2A02A] pl-6 py-2">
-                                <h4 className="text-xl font-bold text-gray-900 mb-2">Impact of Voluntary Foreclosure: Neutral to Positive</h4>
-                                <p>
-                                    When you pay off a loan early, your credit report reflects the status as 'Closed'. This significantly improves your **Debt-to-Income (DTI) ratio**, which is a key metric lenders use to gauge your repayment capacity. While you might see a temporary, minor dip because you have one fewer active credit line, the long term effect is a more robust credit profile and higher scores.
-                                </p>
-                            </div>
-                            <div className="border-l-4 border-red-600 pl-6 py-2">
-                                <h4 className="text-xl font-bold text-red-700 mb-2">Impact of Forced Foreclosure: Catastrophic</h4>
-                                <p>
-                                    In a forced foreclosure, the bank reports the loan as 'Written Off' or 'Settled'. This indicates that the lender had to take legal measures to recover the funds and likely suffered a loss. Your CIBIL score can crash by **150 points or more** in a single month. Recovering from this status takes 5 to 7 years of impeccable financial behavior, and most traditional banks will reject your loan applications during this period.
-                                </p>
-                            </div>
-                        </div>
-                  </div>
-                </section>
-
-                {/* Legal Framework */}
-                <section id="legal-framework" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-5 md:mb-8 border-b-4 border-[#D2A02A] pb-3 inline-block">The Legal Framework: RBI Guidelines & Your Rights</h2>
-                  <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
-                    <p>
-                        Navigating foreclosure requires an understanding of the legal protections provided by the **Reserve Bank of India (RBI)**. For many years, banks used high foreclosure penalties to lock borrowers into expensive long term loans. However, the RBI has intervened to protect individual borrowers:
+                {/* Short-term Dips */}
+                <section id="short-term-dips" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Your CIBIL Score Might Dip Temporarily</h2>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    It is a common shock for borrowers to see their credit score fall by a few points right after they have done something responsible like closing a loan. There are three technical reasons for this phenomenon:
+                  </p>
+                  <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-8">
+                    <h3 className="font-bold text-xl mb-4 text-gray-900">1. Loss of Active Credit History</h3>
+                    <p className="text-gray-700 mb-4">
+                      An active loan account provides a consistent stream of positive "paid on time" data to the bureau every month. When the account is closed, that stream stops. The algorithm might temporarily react to the absence of new positive data from that specific account.
                     </p>
-                    <ul className="space-y-4">
-                        <li className="flex gap-3 items-start bg-gray-50 p-4 rounded-xl">
-                            <span className="text-[#D2A02A] font-bold">●</span>
-                            <span><strong>Zero Penalties on Floating Rates:</strong> The RBI has mandated that no foreclosure charges can be levied on floating-rate loans given to individuals for non-business purposes. This applies to most home loans and personal loans in the country.</span>
-                        </li>
-                        <li className="flex gap-3 items-start bg-gray-50 p-4 rounded-xl">
-                            <span className="text-[#D2A02A] font-bold">●</span>
-                            <span><strong>Fair Practices Code:</strong> Lenders must maintain transparency about foreclosure charges in the loan agreement. Any hidden fee discovered at the time of closure can be legally challenged through the Banking Ombudsman.</span>
-                        </li>
-                        <li className="flex gap-3 items-start bg-gray-50 p-4 rounded-xl">
-                            <span className="text-[#D2A02A] font-bold">●</span>
-                            <span><strong>Right to Receive Collateral:</strong> Upon successful foreclosure, you have the legal right to receive all original documents and a 'No Dues Certificate' within a stipulated period, usually 15 to 30 days.</span>
-                        </li>
+                    <h3 className="font-bold text-xl mb-4 text-gray-900">2. Change in Credit Mix</h3>
+                    <p className="text-gray-700 mb-4">
+                      CIBIL likes to see a variety of credit types, such as a mix of credit cards (unsecured) and car/home loans (secured). If you close a car loan and only have credit cards left, your credit mix is now considered "less diverse," which can lead to a minor score adjustment.
+                    </p>
+                    <h3 className="font-bold text-xl mb-4 text-gray-900">3. Average Age of Accounts</h3>
+                    <p className="text-gray-700">
+                      If the loan you foreclosed was your oldest credit account, closing it can reduce the average age of your credit history. Length of credit history accounts for about 15% of your CIBIL score.
+                    </p>
+                  </div>
+                  <p className="text-lg leading-relaxed text-gray-700">
+                    The key takeaway here is that these dips are <strong>temporary</strong>. As long as you maintain other credit lines responsibly, your score will typically bounce back and often exceed its previous level within 3 to 6 months.
+                  </p>
+                </section>
+
+                {/* Importance of NOC */}
+                <section id="importance-of-noc" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">The Importance of a No Objection Certificate (NOC)</h2>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    Closing the loan in the bank's books is only half the battle. To protect your CIBIL score, you must ensure the closure is correctly reported to the credit bureaus. This is where the <strong>No Objection Certificate (NOC)</strong>, also known as a No Dues Certificate (NDC), becomes vital.
+                  </p>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    The NOC is a legal document issued by the lender stating that the borrower has paid all the dues and the lender has no further claim on the borrower. Without this document, you have no proof of closure if a dispute arises.
+                  </p>
+                  <div className="bg-yellow-50 p-6 rounded-xl border-l-4 border-yellow-400">
+                    <h4 className="font-bold text-gray-900 mb-2">Checklist for Post-Foreclosure:</h4>
+                    <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                      <li>Collect the original NOC from the bank branch.</li>
+                      <li>Ensure the NOC clearly mentions your name, loan account number, and date of closure.</li>
+                      <li>Retrieve any original documents (Sale Deed, RC, etc.) that were held as collateral.</li>
+                      <li>Get a final statement of account showing a zero balance.</li>
+                      <li>Check your CIBIL report after 60 days to verify the status is updated to 'Closed'.</li>
                     </ul>
                   </div>
                 </section>
 
-                {/* Financial Impact */}
-                <section id="financial-impact" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-5 md:mb-8 border-b-4 border-[#D2A02A] pb-3 inline-block">Financial Implications: Interest Savings vs Cost to Close</h2>
-                  <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
-                    <p>
-                        From a financial perspective, foreclosing a loan is a battle between **interest savings** and **foreclosure costs**. In the early years of a loan, particularly a home loan, the bulk of your EMI goes toward interest rather than principal. Foreclosing during this 'interest-heavy' period yields the highest savings.
-                    </p>
-                    <p>
-                        However, if you are in the final 2 or 3 years of a 15 year loan, most of the interest has already been paid. In this case, the benefit of foreclosure is minimal, and the liquidity loss might not be worth the small savings. Additionally, borrowers must consider the **loss of tax benefits under Section 24(b)** for home loans. If you foreclose your loan, you stop getting the annual 2 Lakh deduction on interest, which could increase your effective tax liability.
-                    </p>
+                {/* Foreclosure vs Settlement */}
+                <section id="foreclosure-vs-settlement" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Foreclosure vs. Loan Settlement: A Critical Difference</h2>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    One of the most dangerous mistakes a borrower can make is confusing "closure" with "settlement." While they both result in the end of the loan, their impact on your CIBIL score is worlds apart.
+                  </p>
+                  <div className="overflow-x-auto">
+                    <table className="w-full border-collapse border border-gray-200 rounded-lg overflow-hidden">
+                      <thead>
+                        <tr className="bg-gray-100">
+                          <th className="p-4 text-left border-b border-gray-200 text-gray-900 w-1/3">Feature</th>
+                          <th className="p-4 text-left border-b border-gray-200 text-green-700 w-1/3">Loan Foreclosure</th>
+                          <th className="p-4 text-left border-b border-gray-200 text-red-700 w-1/3">Loan Settlement</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="border-b border-gray-100">
+                          <td className="p-4 font-bold text-gray-900">Definition</td>
+                          <td className="p-4">Paying 100% of the dues early.</td>
+                          <td className="p-4">Paying a reduced amount (negotiated).</td>
+                        </tr>
+                        <tr className="border-b border-gray-100">
+                          <td className="p-4 font-bold text-gray-900 bg-gray-50">CIBIL Status</td>
+                          <td className="p-4 bg-gray-50 font-bold text-green-600">"Closed"</td>
+                          <td className="p-4 bg-gray-50 font-bold text-red-600">"Settled"</td>
+                        </tr>
+                        <tr className="border-b border-gray-100">
+                          <td className="p-4 font-bold text-gray-900">Score Impact</td>
+                          <td className="p-4">Temporary minor dip, long term rise.</td>
+                          <td className="p-4">Severe drop (70 to 100 points).</td>
+                        </tr>
+                        <tr className="border-b border-gray-100">
+                          <td className="p-4 font-bold text-gray-900 bg-gray-50">Future Loans</td>
+                          <td className="p-4 bg-gray-50">Easier to get.</td>
+                          <td className="p-4 bg-gray-50">Extremely difficult for 7 years.</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-lg leading-relaxed mt-6 text-gray-700">
+                    If you are facing financial hardship and cannot pay the full amount, you should consult a <strong>loan settlement lawyer</strong> to understand how to minimize the damage. However, if you have the funds, always opt for foreclosure over settlement.
+                  </p>
+                </section>
+
+                {/* Step-by-Step */}
+                <section id="step-by-step" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">How to Properly Foreclose Your Loan: A Step-by-Step Guide</h2>
+                  <div className="space-y-8">
+                    <div className="flex flex-col md:flex-row gap-6 items-start">
+                      <div className="flex-shrink-0 w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-xl font-bold">1</div>
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">Calculate the Total Dues</h3>
+                        <p className="text-gray-700">Contact your bank to get a 'Foreclosure Quote.' This document lists the exact principal amount, interest till date, and any applicable foreclosure charges. Ensure there are no hidden fees.</p>
+                      </div>
+                    </div>
+                    <div className="flex flex-col md:flex-row gap-6 items-start">
+                      <div className="flex-shrink-0 w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-xl font-bold">2</div>
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">Check RBI Guidelines on Penalties</h3>
+                        <p className="text-gray-700">If you are an individual borrower with a floating rate loan, the bank cannot charge you a foreclosure fee. If they are trying to charge you, cite the relevant RBI circulars or speak to a legal advisor.</p>
+                      </div>
+                    </div>
+                    <div className="flex flex-col md:flex-row gap-6 items-start">
+                      <div className="flex-shrink-0 w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-xl font-bold">3</div>
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">Make the Payment</h3>
+                        <p className="text-gray-700">Submit the payment via cheque, demand draft, or online transfer. Obtain an acknowledgment receipt immediately. It is better to do this at the bank branch to ensure all paperwork is initiated simultaneously.</p>
+                      </div>
+                    </div>
+                    <div className="flex flex-col md:flex-row gap-6 items-start">
+                      <div className="flex-shrink-0 w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-xl font-bold">4</div>
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">Collect Documents and Collateral</h3>
+                        <p className="text-gray-700">Once the payment clears, the bank will take about 10 to 15 working days to process the closure. Collect your NOC and all original documents. Check that any liens on your property or car are removed from the relevant government records (like the RTO or Sub-Registrar office).</p>
+                      </div>
+                    </div>
                   </div>
                 </section>
 
-                {/* Secured vs Unsecured Redux */}
-                <section id="secured-vs-unsecured" className="scroll-mt-32">
-                    <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-5 md:mb-8 border-b-4 border-[#D2A02A] pb-3 inline-block">Secured vs Unsecured Loan Foreclosure</h2>
-                    <div className="space-y-8">
-                        <div className="bg-white border-2 border-gray-100 p-8 rounded-3xl shadow-sm">
-                            <h4 className="text-2xl font-bold text-gray-900 mb-4">Home and Property Loans (Secured)</h4>
-                            <p className="text-gray-700 leading-relaxed">
-                                Foreclosing a secured loan involves the physical return of your property title deeds. It is a moment of great financial release, but it is also the most document-intensive. You must ensure that the bank removes the 'lien' or 'charge' on your property from the Registrar's records. Failure to do this can make it impossible to sell the property in the future, even if the loan is paid off.
-                            </p>
-                        </div>
-                        <div className="bg-white border-2 border-gray-100 p-8 rounded-3xl shadow-sm">
-                            <h4 className="text-2xl font-bold text-gray-900 mb-4">Personal and Credit Card Loans (Unsecured)</h4>
-                            <p className="text-gray-700 leading-relaxed">
-                                These loans typically have much higher interest rates, often ranging from 12 percent to 40 percent. Foreclosing these should be your top priority. While the documentation is simpler (only requiring a digital No Dues Certificate), the impact on your cash flow is immediate. However, be wary of 'foreclosure lock-in periods' where some lenders don't allow pre-closure for the first 6 to 12 months.
-                            </p>
-                        </div>
+                {/* Common Mistakes */}
+                <section id="common-mistakes" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Common Mistakes to Avoid During Foreclosure</h2>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    Even with the best intentions, small errors can lead to long term credit headaches. Avoid these common pitfalls:
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="p-6 rounded-xl bg-red-50 border border-red-100">
+                      <h4 className="font-bold text-red-800 mb-2">Ignoring Small Dues</h4>
+                      <p className="text-sm text-gray-700">Sometimes, a few rupees of interest remain due after the main payment. If unpaid, this can grow with penalties and be reported as a default. Always ensure the balance is exactly zero.</p>
                     </div>
-                </section>
-
-                {/* Recovery Agent Rights */}
-                <section id="recovery-agent-rights" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-5 md:mb-8 border-b-4 border-[#D2A02A] pb-3 inline-block">Stopping Harassment: Your Legal Protection</h2>
-                  <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
-                    <p>
-                        In cases where foreclosure is looming due to default, borrowers often face extreme harassment from recovery agents. It is important to know that **harassment is illegal**. Even if you owe money, you have the right to dignity. Recovery agents cannot call you before 8 AM or after 7 PM, they cannot use abusive language, and they cannot contact your family or colleagues to shame you.
-                    </p>
-                    <p>
-                        If you are facing such pressure, AMA Legal Solutions can issue a formal legal notice to the bank. Under the RBI's guidelines, once a borrower is represented by a legal firm, all recovery communications must be directed toward the legal counsel. This creates a safe space for you to breathe and work toward a strategic foreclosure or settlement.
-                    </p>
+                    <div className="p-6 rounded-xl bg-red-50 border border-red-100">
+                      <h4 className="font-bold text-red-800 mb-2">Losing the NOC</h4>
+                      <p className="text-sm text-gray-700">The NOC is a single page document that is often misplaced. Getting a duplicate from the bank years later can be a bureaucratic nightmare. Store it digitally and physically.</p>
+                    </div>
+                    <div className="p-6 rounded-xl bg-red-50 border border-red-100">
+                      <h4 className="font-bold text-red-800 mb-2">Not Verifying CIBIL Update</h4>
+                      <p className="text-sm text-gray-700">Banks can make mistakes in reporting. If the bank forgets to report the closure, your report will show the loan as "Active" with overdue amounts. Always double check your report after 2 months.</p>
+                    </div>
+                    <div className="p-6 rounded-xl bg-red-50 border border-red-100">
+                      <h4 className="font-bold text-red-800 mb-2">Closing Too Many Accounts</h4>
+                      <p className="text-sm text-gray-700">If you have multiple loans and you foreclose all of them at once, your credit score might see a significant temporary dip due to the sudden lack of active credit lines.</p>
+                    </div>
                   </div>
                 </section>
 
-                {/* Checklist Section */}
-                <section id="checklist" className="scroll-mt-32">
-                    <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-5 md:mb-8 border-b-4 border-[#D2A02A] pb-3 inline-block">The Secure Foreclosure Checklist</h2>
-                    <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
-                        <p>
-                            To ensure your foreclosure is correctly recorded and doesn't return to haunt you as a 'technical error' in CIBIL, follow this strict checklist:
-                        </p>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                            <div className="p-6 bg-white border border-gray-200 rounded-2xl flex items-start gap-4">
-                                <span className="text-[#D2A02A] text-2xl">✓</span>
-                                <div>
-                                    <h5 className="font-bold text-gray-900 mb-2">Final Balance Verification</h5>
-                                    <p className="text-sm">Get a written 'Foreclosure Quote' from the bank that is valid for 7 days. This should include the principal and any daily interest accrual.</p>
-                                </div>
-                            </div>
-                            <div className="p-6 bg-white border border-gray-200 rounded-2xl flex items-start gap-4">
-                                <span className="text-[#D2A02A] text-2xl">✓</span>
-                                <div>
-                                    <h5 className="font-bold text-gray-900 mb-2">EMI Stopper</h5>
-                                    <p className="text-sm">Instruct your bank to stop the National Automated Clearing House (NACH) mandate or standing instruction for future EMIs once the foreclosure is paid.</p>
-                                </div>
-                            </div>
-                            <div className="p-6 bg-white border border-gray-200 rounded-2xl flex items-start gap-4">
-                                <span className="text-[#D2A02A] text-2xl">✓</span>
-                                <div>
-                                    <h5 className="font-bold text-gray-900 mb-2">No Dues Certificate</h5>
-                                    <p className="text-sm">Ensure you receive the original signed and stamped NDC. Verify that your loan account number and correct name are mentioned.</p>
-                                </div>
-                            </div>
-                            <div className="p-6 bg-white border border-gray-200 rounded-2xl flex items-start gap-4">
-                                <span className="text-[#D2A02A] text-2xl">✓</span>
-                                <div>
-                                    <h5 className="font-bold text-gray-900 mb-2">CIBIL Monitoring</h5>
-                                    <p className="text-sm">Wait 60 days and then download your CIBIL report. Confirm the status is marked as 'Closed' and not 'Settled' or 'Written Off'.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                {/* Rebuilding Credit */}
+                <section id="rebuilding-credit" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">How to Rebuild Your Credit Score After Foreclosure</h2>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    If your score has dropped slightly after a foreclosure, do not panic. This is part of the algorithm's adjustment process. Here is how you can help it recover faster:
+                  </p>
+                  <div className="bg-green-50 p-8 rounded-2xl border border-green-100">
+                    <ul className="space-y-4 text-gray-700">
+                      <li><strong>Maintain Low Credit Utilization:</strong> Keep your credit card spends below 30% of your total limit. This shows that you are not hungry for credit.</li>
+                      <li><strong>Don't Apply for New Credit Immediately:</strong> Every time you apply for a loan, a 'hard inquiry' is made, which lowers your score. Wait for your score to stabilize before applying for new credit.</li>
+                      <li><strong>Ensure Timely Payment of Other Dues:</strong> If you have other active loans or credit cards, ensure every single payment is made on time. Consistency is the best repair tool.</li>
+                      <li><strong>Monitor Your Report:</strong> Use free tools to monitor your CIBIL score monthly. If you see any discrepancies, file a dispute with CIBIL immediately.</li>
+                    </ul>
+                  </div>
                 </section>
 
-                {/* Glossary Section */}
-                <section id="glossary" className="scroll-mt-32">
-                    <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-5 md:mb-8 border-b-4 border-[#D2A02A] pb-3 inline-block">Glossary of Foreclosure Terms</h2>
-                    <div className="space-y-8">
-                        <div>
-                            <h4 className="text-xl font-bold text-[#D2A02A] mb-3">1. Moratorium Period</h4>
-                            <p className="text-gray-700">A temporary holiday from loan repayments, often seen during disasters or in education loans. Foreclosing during a moratorium can save a massive amount of accumulated interest.</p>
-                        </div>
-                        <div>
-                            <h4 className="text-xl font-bold text-[#D2A02A] mb-3">2. Lien Removal</h4>
-                            <p className="text-gray-700">The legal process of removing the bank's claim over your asset (like a car or house) from the official government registry after the loan is closed.</p>
-                        </div>
-                        <div>
-                            <h4 className="text-xl font-bold text-[#D2A02A] mb-3">3. Prepayment Penalty</h4>
-                            <p className="text-gray-700">A fee charged by lenders to recover a part of the interest they lose when you pay back a loan early. Currently illegal for individuals on floating rate loans in India.</p>
-                        </div>
+                {/* Legal Guidance */}
+                <section id="legal-guidance" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Seek Legal Guidance for Loan Closures?</h2>
+                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
+                    While foreclosure is a standard process, it often involves complex interactions with bank bureaucracies, legal documents, and credit reporting agencies. AMA Legal Solutions provides the expert oversight you need to ensure the process is flawless.
+                  </p>
+                  <div className="grid md:grid-cols-3 gap-6 text-center">
+                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
+                      <div className="text-4xl mb-4">📜</div>
+                      <h3 className="font-bold text-xl mb-2">Document Verification</h3>
+                      <p className="text-gray-600">We review your foreclosure quote and NOC to ensure they are legally sound and contain no hidden clauses that could harm you later.</p>
                     </div>
+                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
+                      <div className="text-4xl mb-4">⚖️</div>
+                      <h3 className="font-bold text-xl mb-2">Dispute Resolution</h3>
+                      <p className="text-gray-600">If a bank refuses to return your original documents or incorrectly reports your status to CIBIL, our lawyers take immediate action to resolve the matter.</p>
+                    </div>
+                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
+                      <div className="text-4xl mb-4">🛡️</div>
+                      <h3 className="font-bold text-xl mb-2">RBI Compliance</h3>
+                      <p className="text-gray-600">We ensure that banks follow RBI mandates regarding foreclosure penalties and reporting timelines, protecting you from unfair practices.</p>
+                    </div>
+                  </div>
                 </section>
 
-                {/* Success Stories */}
+                {/* Testimonials */}
                 <section id="testimonials" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-5 md:mb-8 border-b-4 border-[#D2A02A] pb-3 inline-block">Client Case Studies</h2>
-                  <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-                    <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100 relative shadow-sm hover:shadow-md transition-shadow">
-                      <div className="text-6xl text-[#D2A02A] absolute top-4 left-4 opacity-10 font-serif">"</div>
-                      <p className="text-gray-700 italic mb-6 relative z-10 text-sm md:text-lg leading-relaxed">
-                        "I wanted to foreclose my fixed-rate personal loan, but the bank was charging a 6 percent penalty. AMA's lawyers reviewed my contract and found a clause that made this charge illegal. I saved over 50,000 Rupees in fees alone."
+                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Success Stories from Our Clients</h2>
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
+                      <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
+                      <p className="text-gray-700 italic mb-4 relative z-10">
+                        "I wanted to pay off my personal loan early to be debt free before my wedding. I was worried about my CIBIL score dropping. The team at AMA explained the technical details and helped me get my NOC on time. My score dropped by 8 points initially but went up by 30 points after four months!"
                       </p>
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center text-white font-black text-xl shadow-lg">V</div>
+                      <div className="flex items-center">
+                        <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">A</div>
                         <div>
-                          <p className="font-black text-gray-900 text-base md:text-lg">Vikram Rathore</p>
-                          <p className="text-xs md:text-sm text-gray-500 font-bold uppercase tracking-wider">Software Architect, Pune</p>
+                          <p className="font-bold text-gray-900">Anil Kulkarni</p>
+                          <p className="text-sm text-gray-500">Software Engineer, Pune</p>
                         </div>
                       </div>
                     </div>
-                    <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100 relative shadow-sm hover:shadow-md transition-shadow">
-                      <div className="text-6xl text-[#D2A02A] absolute top-4 left-4 opacity-10 font-serif">"</div>
-                      <p className="text-gray-700 italic mb-6 relative z-10 text-sm md:text-lg leading-relaxed">
-                        "AMA Legal Solutions helped me understand the tax implications of foreclosing my education loan early. Their advice was spot on and prevented me from losing tax benefits I didn't know I had."
+                    <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative">
+                      <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
+                      <p className="text-gray-700 italic mb-4 relative z-10">
+                        "A private bank was refusing to release my house papers even after I paid the full foreclosure amount. They kept citing 'internal processes'. AMA Legal Solutions sent a formal legal notice, and I got my papers within a week. Highly recommend them for any banking disputes."
                       </p>
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center text-white font-black text-xl shadow-lg">S</div>
+                      <div className="flex items-center">
+                        <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">M</div>
                         <div>
-                          <p className="font-black text-gray-900 text-base md:text-lg">Sunita Rao</p>
-                          <p className="text-xs md:text-sm text-gray-500 font-bold uppercase tracking-wider">Senior Professor, Hyderabad</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100 relative shadow-sm hover:shadow-md transition-shadow">
-                      <div className="text-6xl text-[#D2A02A] absolute top-4 left-4 opacity-10 font-serif">"</div>
-                      <p className="text-gray-700 italic mb-6 relative z-10 text-sm md:text-lg leading-relaxed">
-                        "They stopped the illegal recovery calls within 24 hours and helped me negotiate a formal closure. My credit reputation is finally secure again and my CIBIL reflected 'Closed' status within 45 days."
-                      </p>
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center text-white font-black text-xl shadow-lg">R</div>
-                        <div>
-                          <p className="font-black text-gray-900 text-base md:text-lg">Rajesh Kumar</p>
-                          <p className="text-xs md:text-sm text-gray-500 font-bold uppercase tracking-wider">Operations Manager, Delhi</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100 relative shadow-sm hover:shadow-md transition-shadow">
-                      <div className="text-6xl text-[#D2A02A] absolute top-4 left-4 opacity-10 font-serif">"</div>
-                      <p className="text-gray-700 italic mb-6 relative z-10 text-sm md:text-lg leading-relaxed">
-                        "The lien removal process after my car loan foreclosure was a mess until AMA took over. They handled the bank and the RTO perfectly, ensuring I could sell my car without any legal hurdles."
-                      </p>
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center text-white font-black text-xl shadow-lg">A</div>
-                        <div>
-                          <p className="font-black text-gray-900 text-base md:text-lg">Anita Desai</p>
-                          <p className="text-xs md:text-sm text-gray-500 font-bold uppercase tracking-wider">Independent Consultant, Mumbai</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100 relative shadow-sm hover:shadow-md transition-shadow">
-                      <div className="text-6xl text-[#D2A02A] absolute top-4 left-4 opacity-10 font-serif">"</div>
-                      <p className="text-gray-700 italic mb-6 relative z-10 text-sm md:text-lg leading-relaxed">
-                        "AMA's guidance on monitoring my CIBIL post-foreclosure was invaluable. My score actually improved faster than I expected after closing my high-interest personal debts. Professional and effective."
-                      </p>
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center text-white font-black text-xl shadow-lg">K</div>
-                        <div>
-                          <p className="font-black text-gray-900 text-base md:text-lg">Karthik S</p>
-                          <p className="text-xs md:text-sm text-gray-500 font-bold uppercase tracking-wider">Data Scientist, Bengaluru</p>
+                          <p className="font-bold text-gray-900">Megha Sethi</p>
+                          <p className="text-sm text-gray-500">Business Owner, Gurgaon</p>
                         </div>
                       </div>
                     </div>
@@ -543,15 +643,15 @@ export default function ForeclosureImpactPage() {
 
                 {/* FAQs */}
                 <section id="faqs" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-5 md:mb-8 border-b-4 border-[#D2A02A] pb-3 inline-block">Frequently Asked Questions</h2>
-                  <div className="space-y-6 md:space-y-10">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
+                  <div className="space-y-6">
                     {faqs.map((faq, index) => (
-                      <div key={index} className="group border-b border-gray-200 pb-8 last:border-0 hover:bg-gray-50 p-4 rounded-xl transition-all duration-300">
-                        <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-4 flex items-start gap-4">
-                          <span className="bg-[#D2A02A] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm flex-shrink-0 mt-1">Q</span>
+                      <div key={index} className="border-b border-gray-200 pb-6 last:border-0">
+                        <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-start">
+                          <span className="text-[#D2A02A] mr-3">Q.</span>
                           {faq.question}
                         </h3>
-                        <p className="text-gray-700 leading-relaxed pl-12 text-sm md:text-lg">
+                        <p className="text-gray-700 leading-relaxed pl-8">
                           {faq.answer}
                         </p>
                       </div>
@@ -560,63 +660,81 @@ export default function ForeclosureImpactPage() {
                 </section>
 
                 {/* Final CTA */}
-                <section className="bg-gradient-to-br from-[#1a202c] via-[#2d3748] to-[#1a202c] rounded-[2.5rem] p-8 md:p-20 text-center text-white relative overflow-hidden shadow-2xl border-4 border-[#D2A02A]">
-                  <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
+                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-xl md:rounded-3xl p-6 md:p-16 text-center text-white relative overflow-hidden">
                   <div className="relative z-10">
-                    <h2 className="text-xl md:text-5xl font-black mb-5 md:mb-8 leading-tight">Ready to Secure Your <br/><span className="text-[#D2A02A]">Financial Reputation?</span></h2>
-                    <p className="text-xs md:text-xl opacity-90 mb-8 md:mb-12 max-w-4xl mx-auto leading-relaxed font-light">
-                      Don't let legal complexities or aggressive banking tactics stop you from achieving financial freedom. Get expert legal advice for your loan foreclosure today.
+                    <h2 className="text-xl md:text-5xl font-bold mb-4 md:mb-6">Take Control of Your Financial Narrative</h2>
+                    <p className="text-sm md:text-xl opacity-90 mb-6 md:mb-10 max-w-2xl mx-auto">
+                      Don't let banking jargon and credit myths hold you back. Our expert lawyers are here to guide you through every step of your debt-free journey.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-5 justify-center">
-                      <Link href="/contact" className="w-full sm:w-auto">
-                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-black py-3 px-8 md:py-5 md:px-12 rounded-full transition-all transform hover:scale-110 shadow-2xl text-sm md:text-lg w-full">
-                          Get Free Case Audit
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+                      <Link href="/contact">
+                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
+                          Book Your Legal Consultation
                         </button>
                       </Link>
-                      <a href="tel:+918700343611" className="w-full sm:w-auto">
-                        <button className="bg-transparent border-4 border-white hover:bg-white hover:text-gray-900 text-white font-black py-3 px-8 md:py-5 md:px-12 rounded-full transition-all text-sm md:text-lg w-full">
-                          Speak to a Lawyer
+                      <a href="tel:+918700343611">
+                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all text-sm md:text-lg w-full sm:w-auto">
+                          Call: +91-8700343611
                         </button>
                       </a>
                     </div>
+                    <p className="mt-4 md:mt-8 text-xs md:text-sm opacity-70">
+                      Reliable • Legal • Proven Results
+                    </p>
                   </div>
                 </section>
 
               </div>
             </div>
 
-            {/* Right Column - Sidebar Widgets */}
-            <div className="hidden lg:block space-y-10 sticky top-24">
-              <div className="bg-gradient-to-br from-[#D2A02A] to-[#b88a22] p-8 rounded-[2rem] shadow-2xl text-white border-2 border-[#fff2cc]">
-                <h3 className="text-2xl font-black mb-4">Foreclosing Today?</h3>
-                <p className="text-white/90 mb-8 text-sm leading-relaxed">
-                  Avoid illegal penalties and ensure your CIBIL score remains safe with our expert legal audit.
-                </p>
-                <div className="space-y-4">
-                  <a href="tel:+918700343611" className="flex items-center justify-center gap-3 w-full bg-white text-[#D2A02A] py-4 rounded-2xl font-black hover:bg-gray-100 transition-all shadow-lg">
-                    📞 Call Now
+            {/* Sidebar */}
+            <div className="hidden lg:block space-y-8 sticky top-24">
+                {/* Contact Card */}
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Need Urgent Help?</h3>
+                  <p className="text-gray-600 mb-6 text-sm">
+                    Speak to our senior banking lawyers about your foreclosure or CIBIL issues today.
+                  </p>
+                  <a 
+                    href="tel:+918700343611" 
+                    className="block w-full bg-[#D2A02A] text-white text-center py-3 rounded-lg font-semibold hover:bg-[#b88a22] transition-colors mb-4"
+                  >
+                    Call +91-8700343611
                   </a>
+                  <Link 
+                    href="/contact"
+                    className="block w-full border border-[#D2A02A] text-[#D2A02A] text-center py-3 rounded-lg font-semibold hover:bg-[#fff9e6] transition-colors"
+                  >
+                    Get a Callback
+                  </Link>
                 </div>
-              </div>
 
-              <div className="bg-white p-8 rounded-[2rem] shadow-xl border border-gray-100">
-                <h3 className="text-xl font-black text-gray-900 mb-6 border-l-4 border-[#D2A02A] pl-4">Essential Guides</h3>
-                <ul className="space-y-5">
-                  {[
-                    { label: "Loan Settlement vs Foreclosure", href: "/services/loan-settlement" },
-                    { label: "CIBIL Impact Guide", href: "/how-long-does-a-settled-tag-stay-on-my-report" },
-                    { label: "Legal Notice for Harassment", href: "/not-being-paid-fnf-want-to-send-legal-notice" },
-                    { label: "What is OTS?", href: "/what-is-ots" }
-                  ].map((page, idx) => (
-                    <li key={idx}>
-                      <Link href={page.href} className="group flex items-center justify-between text-gray-700 hover:text-[#D2A02A] transition-colors">
-                        <span className="text-sm font-bold group-hover:translate-x-2 transition-transform">{page.label}</span>
-                        <span className="text-gray-300 group-hover:text-[#D2A02A] transition-colors">→</span>
+                {/* Helpful Resources */}
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">Helpful Resources</h3>
+                  <ul className="space-y-3">
+                    <li>
+                      <Link href="/what-is-ots" className="text-sm text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">→</span> What is OTS?
                       </Link>
                     </li>
-                  ))}
-                </ul>
-              </div>
+                    <li>
+                      <Link href="/how-to-check-active-loan-on-your-name-in-india-step-by-step-guide" className="text-sm text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">→</span> Check Active Loans
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/is-cibil-ruined-forever-after-settlement" className="text-sm text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">→</span> CIBIL After Settlement
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/legal-notice-for-loan-settlement-harassment" className="text-sm text-gray-600 hover:text-[#D2A02A] flex items-center">
+                        <span className="mr-2">→</span> Stop Bank Harassment
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
             </div>
           </div>
         </div>

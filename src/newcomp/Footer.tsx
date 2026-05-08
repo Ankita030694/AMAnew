@@ -416,6 +416,12 @@ const Footer = () => {
       "@type": "Product",
       "name": "CIBIL Correction Legal Service",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "940" }
+    },
+    "/how-to-improve-cibil-score-after-loan-settlement": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "CIBIL Score Improvement Consultation",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "850" }
     }
   };
   const footerColumns = [
@@ -622,7 +628,6 @@ const Footer = () => {
         {name:"Legal Notice for Unpaid F&F",href:"/not-being-paid-fnf-want-to-send-legal-notice"},
         {name:"What is OTS? - Comprehensive Guide",href:"/what-is-ots"},
         {name:"Procedure of Sending Legal Notice",href:"/procedure-of-sending-legal-notice"},
-        {name: "Does Foreclosure Affect CIBIL?", href: "/does-foreclosure-of-loan-affect-cibil"},
         {name:"Compare Loan Settlement Companies",href:"/compare-loan-settlement-companies-that-work-with-personal-loans"},
         {name: "Loan for CIBIL Defaulters", href: "/which-bank-provide-personal-loan-for-cibil-defaulters"},
         {name: "Stop Recovery Harassment", href: "/loan-recovery-agent-harassment-complaint-online"},
@@ -737,7 +742,19 @@ const Footer = () => {
         { name: "Debt Recovery Notice", href: "/debt-recovery-money-recovery-notice" },
         { name: "GST Show Cause Notice", href: "/gst-show-cause-notice-scn" },
         { name: "Income Tax Demand Notice", href: "/income-tax-demand-notice" },
-        { name: "Data Breach Privacy Notice", href: "/data-breach-privacy-notice" }
+        { name: "Data Breach Privacy Notice", href: "/data-breach-privacy-notice" },
+        { name: "RBI Warns Against Misleading Loan Waiver Campaigns", href: "/rbi-beware-misleading-loan-waiver-campaigns" },
+        { name: "Can Bank Issue Look Out Notice for Loan Default?", href: "/can-bank-issue-look-out-notice-loan-default" },
+        { name: "Bank Loan Settlement Rules", href: "/bank-loan-settlement-rules" },
+        { name: "Bank Complaint in RBI", href: "/bank-complaint-in-rbi" },
+        { name: "Does Foreclosure of Loan Affect CIBIL?", href: "/does-foreclosure-of-loan-affect-cibil" },
+        { name: "Unsecured Personal Loan Definition", href: "/unsecured-personal-loan-definition" },
+        { name: 'HDFC Debt Consolidation Loan', href: '/hdfc-debt-consolidation-loan' },
+        { name: 'How to Improve CIBIL Score After Loan Settlement', href: '/how-to-improve-cibil-score-after-loan-settlement' },
+        { name: 'Loan Settlement Advocate Near Me', href: '/loan-settlement-advocate-near-me' },
+        { name: 'Unsecured Loan Types', href: '/unsecured-loan-types' },
+        { name: 'Loan Settlement Application in Hindi', href: '/loan-settlement-application-in-hindi' },
+        { name: 'Debt Settlement Company in India', href: '/debt-settlement-company-in-india' }
       ]
 
     }

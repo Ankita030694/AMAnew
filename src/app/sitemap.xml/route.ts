@@ -255,6 +255,13 @@ export async function GET(): Promise<Response> {
     '/author/anuj-anand-malik',
     '/author/shrey-arora',
     '/which-one-is-the-real-amalegalsolutions',
+    '/rbi-beware-misleading-loan-waiver-campaigns',
+    '/can-bank-issue-look-out-notice-loan-default',
+    '/bank-loan-settlement-rules',
+    '/bank-complaint-in-rbi',
+    '/does-foreclosure-of-loan-affect-cibil',
+    '/unsecured-personal-loan-definition',
+    '/hdfc-debt-consolidation-loan',
     // Specific Loan Settlement State Pages
     '/services/loan-settlement/andhra-pradesh',
     '/services/loan-settlement/assam',
