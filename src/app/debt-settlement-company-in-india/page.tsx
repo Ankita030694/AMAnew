@@ -740,7 +740,7 @@ export default function DebtSettlementCompanyPage() {
 
           <div className="mt-20">
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-10 text-center">Our Reach Across India</h2>
-            <GenericStatesGrid serviceName="Debt Settlement" />
+            <GenericStatesGrid serviceName="Debt Settlement" servicePath="loan-settlement" />
           </div>
         </div>
       </div>
