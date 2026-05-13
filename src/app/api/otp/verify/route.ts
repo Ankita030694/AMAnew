@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import { db, collection, addDoc } from '../../../../lib/firebase';
-import { doc, getDoc, deleteDoc, serverTimestamp } from 'firebase/firestore';
+import { adminDb } from '../../../../lib/firebase-admin';
+import * as admin from 'firebase-admin';
 
 export async function POST(request: Request) {
     try {
@@ -12,14 +12,17 @@ export async function POST(request: Request) {
         }
 
         // 1. Fetch the pending lead
-        const pendingRef = doc(db, 'pending_leads', pendingId);
-        const pendingSnap = await getDoc(pendingRef);
+        const pendingRef = adminDb.collection('pending_leads').doc(pendingId);
+        const pendingSnap = await pendingRef.get();
 
-        if (!pendingSnap.exists()) {
+        if (!pendingSnap.exists) {
             return NextResponse.json({ error: 'Invalid or expired OTP session' }, { status: 400 });
         }
 
         const data = pendingSnap.data();
+        if (!data) {
+            return NextResponse.json({ error: 'No data found' }, { status: 400 });
+        }
 
         // 2. Verify OTP
         if (data.otp !== otp) {
@@ -30,7 +33,7 @@ export async function POST(request: Request) {
         const now = new Date();
         const expiresAt = data.expiresAt.toDate();
         if (now > expiresAt) {
-            await deleteDoc(pendingRef);
+            await pendingRef.delete();
             return NextResponse.json({ error: 'OTP has expired' }, { status: 400 });
         }
 
@@ -38,15 +41,15 @@ export async function POST(request: Request) {
         const { otp: _, createdAt: __, expiresAt: ___, ...formData } = data;
         const mainData = {
             ...formData,
-            timestamp: serverTimestamp(),
+            timestamp: admin.firestore.FieldValue.serverTimestamp(),
             verified: true
         };
 
-        const docRef = await addDoc(collection(db, 'form'), mainData);
+        const docRef = await adminDb.collection('form').add(mainData);
         console.log('Lead verified and saved: ', docRef.id);
 
         // 5. Delete pending record
-        await deleteDoc(pendingRef);
+        await pendingRef.delete();
 
         return NextResponse.json({
             success: true,

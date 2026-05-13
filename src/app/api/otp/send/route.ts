@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import { db, collection, addDoc } from '../../../../lib/firebase';
-import { serverTimestamp, query, where, getDocs, limit } from 'firebase/firestore';
+import { adminDb } from '../../../../lib/firebase-admin';
+import * as admin from 'firebase-admin';
 import crypto from 'crypto';
 
 export async function POST(request: Request) {
@@ -24,11 +24,8 @@ export async function POST(request: Request) {
         const oneWeekAgo = new Date();
         oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
 
-        const q = query(
-            collection(db, 'form'), 
-            where('phone', '==', phone)
-        );
-        const querySnapshot = await getDocs(q);
+        const q = adminDb.collection('form').where('phone', '==', phone);
+        const querySnapshot = await q.get();
         
         const isDuplicate = querySnapshot.docs.some(doc => {
             const data = doc.data();
@@ -56,11 +53,11 @@ export async function POST(request: Request) {
             source: source || 'Contact Form',
             submissionUrl: submissionUrl || '',
             otp,
-            createdAt: serverTimestamp(),
-            expiresAt: new Date(Date.now() + 10 * 60 * 1000), // 10 minutes
+            createdAt: admin.firestore.FieldValue.serverTimestamp(),
+            expiresAt: admin.firestore.Timestamp.fromDate(new Date(Date.now() + 10 * 60 * 1000)), // 10 minutes
         };
 
-        const docRef = await addDoc(collection(db, 'pending_leads'), pendingData);
+        const docRef = await adminDb.collection('pending_leads').add(pendingData);
         console.log('Pending lead created: ', docRef.id);
 
         // 2. Send WATI OTP Message

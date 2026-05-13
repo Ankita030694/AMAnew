@@ -1,5 +1,4 @@
-import { db } from '../../../lib/firebase';
-import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore';
+import { adminDb } from '../../../lib/firebase-admin';
 import { NextResponse } from 'next/server';
 
 // Add a Blog interface
@@ -16,13 +15,11 @@ interface Blog {
 export async function GET() {
   try {
     // Fetch the most recent blogs (limit to 20)
-    const blogsQuery = query(
-      collection(db, 'blogs'),
-      orderBy('created', 'desc'),
-      limit(20)
-    );
+    const blogsSnapshot = await adminDb.collection('blogs')
+      .orderBy('created', 'desc')
+      .limit(20)
+      .get();
     
-    const blogsSnapshot = await getDocs(blogsQuery);
     // Use type assertion with the interface
     const blogs = blogsSnapshot.docs.map(doc => ({
       id: doc.id,

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import { db, collection, addDoc } from '../../../lib/firebase';
-import { serverTimestamp } from 'firebase/firestore';
+import { adminDb } from '../../../lib/firebase-admin';
+import * as admin from 'firebase-admin';
 
 export async function POST(request: Request) {
     try {
@@ -29,10 +29,10 @@ export async function POST(request: Request) {
             message: message || '',
             source: source || 'Contact Form',
             submissionUrl: submissionUrl || '',
-            timestamp: serverTimestamp(),
+            timestamp: admin.firestore.FieldValue.serverTimestamp(),
         };
 
-        const docRef = await addDoc(collection(db, 'form'), formData);
+        const docRef = await adminDb.collection('form').add(formData);
         
         // 3. Trigger WATI Message (WhatsApp)
         try {

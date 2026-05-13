@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
-import { collection, getDocs, orderBy, query } from 'firebase/firestore';
-import { db } from '../../../../lib/firebase';
+import { adminDb } from '../../../../lib/firebase-admin';
 
 export async function GET(request: Request) {
   try {
@@ -9,9 +8,7 @@ export async function GET(request: Request) {
 
     // Fetch all form submissions from Firestore (ON THE SERVER)
     // In a real production app with millions of records, we'd use indexes or a dedicated aggregation table
-    const formRef = collection(db, 'form');
-    const q = query(formRef, orderBy('timestamp', 'desc'));
-    const querySnapshot = await getDocs(q);
+    const querySnapshot = await adminDb.collection('form').orderBy('timestamp', 'desc').get();
 
     const urlCounts: Record<string, number> = {};
     let totalLeads = 0;
