@@ -330,6 +330,9 @@ const BlogsDashboard = () => {
       setUploadProgress(0);
       
       // Create a reference to the file in Firebase Storage
+      if (!storage) {
+        throw new Error("Firebase Storage is not initialized");
+      }
       const storageRef = ref(storage, `blog-images/${Date.now()}_${file.name}`);
       
       // Create a local preview of the image
@@ -502,7 +505,9 @@ const BlogsDashboard = () => {
       // Use the existing upload logic (indirectly or directly)
       // Since handleFileUpload expects an event, we should extract the core upload logic
       // But for simplicity, we'll repeat the core Firebase upload here
-      
+      if (!storage) {
+        throw new Error("Firebase Storage is not initialized");
+      }
       const storageRef = ref(storage, `blog-images/${Date.now()}_generated.png`);
       const snapshot = await uploadBytes(storageRef, file);
       const downloadURL = await getDownloadURL(snapshot.ref);

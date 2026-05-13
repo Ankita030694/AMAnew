@@ -141,6 +141,9 @@ const MenuBar = ({ editor }: { editor: any }) => {
       const filename = `${timestamp}_${file.name}`;
 
       // Create a reference to the file in Firebase Storage
+      if (!storage) {
+        throw new Error("Firebase Storage is not initialized");
+      }
       const storageRef = ref(storage, `blog-content-images/${filename}`);
       
       // Upload with retry logic

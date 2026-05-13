@@ -301,6 +301,9 @@ const ArticlesDashboard = () => {
     try {
       setUploading(true);
       setUploadProgress(0);
+      if (!storage) {
+        throw new Error("Firebase Storage is not initialized");
+      }
       const storageRef = ref(storage, `article-images/${Date.now()}_${file.name}`);
       const reader = new FileReader();
       reader.onload = (event) => setImagePreview(event.target?.result as string);
@@ -431,6 +434,9 @@ const ArticlesDashboard = () => {
       const blob = await response.blob();
       const file = new File([blob], `generated_${Date.now()}.png`, { type: 'image/png' });
 
+      if (!storage) {
+        throw new Error("Firebase Storage is not initialized");
+      }
       const storageRef = ref(storage, `article-images/${Date.now()}_generated.png`);
       const snapshot = await uploadBytes(storageRef, file);
       const downloadURL = await getDownloadURL(snapshot.ref);
@@ -555,6 +561,9 @@ const ArticlesDashboard = () => {
       const blogDoc = await getDoc(blogRef);
       if (blogDoc.exists() && blogDoc.data().image) {
         try {
+          if (!storage) {
+            throw new Error("Firebase Storage is not initialized");
+          }
           const imgRef = ref(storage, blogDoc.data().image);
           await deleteObject(imgRef);
         } catch (e) {}

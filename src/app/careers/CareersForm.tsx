@@ -29,6 +29,9 @@ const CareersForm = () => {
       const { serverTimestamp } = await import("firebase/firestore");
       const { ref, uploadBytes, getDownloadURL } = await import("firebase/storage");
       const { db, storage } = await import("../../lib/firebase");
+      if (!storage) {
+        throw new Error("Firebase Storage is not initialized");
+      }
 
       // 1. Upload Resume PDF to Firebase Storage
       const storageRef = ref(storage, `careers/resumes/${Date.now()}_${resume.name}`);

@@ -129,6 +129,9 @@ const UsersDashboard = () => {
 
   // Upload file to Firebase Storage
   const uploadImage = async (file: File): Promise<string> => {
+    if (!storage) {
+      throw new Error("Firebase Storage is not initialized");
+    }
     const fileName = `${Date.now()}_${file.name}`;
     const storageRef = ref(storage, `users/${fileName}`);
     const snapshot = await uploadBytes(storageRef, file);
@@ -139,6 +142,9 @@ const UsersDashboard = () => {
   const deleteOldImage = async (imageUrl: string) => {
     try {
       if (imageUrl && imageUrl.includes('firebase')) {
+        if (!storage) {
+          throw new Error("Firebase Storage is not initialized");
+        }
         const imageRef = ref(storage, imageUrl);
         await deleteObject(imageRef);
       }
