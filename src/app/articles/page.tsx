@@ -1,5 +1,4 @@
-import { collection, getDocs, query, orderBy } from 'firebase/firestore';
-import { db } from '../../lib/firebase';
+import { adminDb } from '../../lib/firebase-admin';
 import ArticlePage from './articlecomp';
 import { Suspense } from 'react';
 import Navbar from "@/newcomp/Navbar";
@@ -35,9 +34,7 @@ const truncateWords = (text: string, wordCount: number) => {
 
 const getArticles = unstable_cache(async () => {
   try {
-    const articlesCollection = collection(db, 'articles');
-    const articlesQuery = query(articlesCollection, orderBy('created', 'desc'));
-    const querySnapshot = await getDocs(articlesQuery);
+    const querySnapshot = await adminDb.collection('articles').orderBy('created', 'desc').get();
 
     return querySnapshot.docs.map(doc => {
       const data = doc.data();

@@ -1,5 +1,4 @@
-import { collection, getDocs, query, where, limit, orderBy } from "firebase/firestore";
-import { db } from "../../../lib/firebase";
+import { adminDb } from "../../../lib/firebase-admin";
 import type { Metadata, ResolvingMetadata } from "next";
 import ArticleDetail, { Blog, FAQ, Review } from "./blogdetail";
 import Script from "next/script";
@@ -12,19 +11,15 @@ const getBlogBySlug = async (slug: string) => {
   console.log(`[getBlogBySlug] Fetching blog for slug: "${slug}"`);
 
   try {
-    const blogsCollection = collection(db, "blogs");
-    
     // Try exact match first
-    let q = query(blogsCollection, where("slug", "==", slug), limit(1));
-    let querySnapshot = await getDocs(q);
+    let querySnapshot = await adminDb.collection("blogs").where("slug", "==", slug).limit(1).get();
 
     // If not found, try decoded slug
     if (querySnapshot.empty) {
         const decodedSlug = decodeURIComponent(slug);
         if (decodedSlug !== slug) {
             console.log(`[getBlogBySlug] Retrying with decoded slug: "${decodedSlug}"`);
-            q = query(blogsCollection, where("slug", "==", decodedSlug), limit(1));
-            querySnapshot = await getDocs(q);
+            querySnapshot = await adminDb.collection("blogs").where("slug", "==", decodedSlug).limit(1).get();
         }
     }
     
@@ -33,14 +28,13 @@ const getBlogBySlug = async (slug: string) => {
         const trimmedSlug = slug.trim();
         if (trimmedSlug !== slug) {
             console.log(`[getBlogBySlug] Retrying with trimmed slug: "${trimmedSlug}"`);
-            q = query(blogsCollection, where("slug", "==", trimmedSlug), limit(1));
-            querySnapshot = await getDocs(q);
+            querySnapshot = await adminDb.collection("blogs").where("slug", "==", trimmedSlug).limit(1).get();
         }
     }
 
     if (!querySnapshot.empty) {
       const doc = querySnapshot.docs[0];
-      const data = { id: doc.id, ...doc.data() } as Blog;
+      const data = { id: doc.id, ...doc.data() } as unknown as Blog;
       
       console.log(`[getBlogBySlug] Found blog: ${doc.id}`);
 
@@ -58,7 +52,7 @@ const getBlogBySlug = async (slug: string) => {
 // Function to fetch FAQs server-side
 const getBlogFAQs = async (blogId: string) => {
   try {
-    const faqsSnapshot = await getDocs(collection(db, 'blogs', blogId, 'faqs'));
+    const faqsSnapshot = await adminDb.collection('blogs').doc(blogId).collection('faqs').get();
     const faqs = faqsSnapshot.docs.map(doc => ({
       id: doc.id,
       question: doc.data().question || '',
@@ -75,7 +69,7 @@ const getBlogFAQs = async (blogId: string) => {
 // Function to fetch Reviews server-side
 const getBlogReviews = async (blogId: string) => {
   try {
-    const reviewsSnapshot = await getDocs(collection(db, 'blogs', blogId, 'reviews'));
+    const reviewsSnapshot = await adminDb.collection('blogs').doc(blogId).collection('reviews').get();
     const reviews = reviewsSnapshot.docs.map(doc => ({
       id: doc.id,
       name: doc.data().name || '',
@@ -93,18 +87,15 @@ const getBlogReviews = async (blogId: string) => {
 // Function to fetch Related Blogs
 const getRelatedBlogs = async (excludeId: string) => {
   try {
-    const blogsCollection = collection(db, 'blogs');
-    const q = query(
-      blogsCollection, 
-      orderBy('created', 'desc'), 
-      limit(6) // Fetch a few more to filter
-    );
-    const querySnapshot = await getDocs(q);
+    const querySnapshot = await adminDb.collection('blogs')
+      .orderBy('created', 'desc')
+      .limit(6)
+      .get();
     
     const allBlogs = querySnapshot.docs.map(doc => ({
       id: doc.id,
       ...doc.data()
-    })) as Blog[];
+    })) as unknown as Blog[];
     
     // Filter out current blog and take top 3
     return allBlogs.filter(blog => blog.id !== excludeId).slice(0, 3);

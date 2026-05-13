@@ -1,5 +1,4 @@
-import { collection, getDocs, query, orderBy } from 'firebase/firestore';
-import { db } from '../../lib/firebase';
+import { adminDb } from '../../lib/firebase-admin';
 import BlogPage from './blogcomp';
 import { Suspense } from 'react';
 import PerformanceMonitor from '../../components/PerformanceMonitor';
@@ -37,9 +36,7 @@ const truncateWords = (text: string, wordCount: number) => {
 
 const getBlogs = async () => {
     try {
-        const blogsCollection = collection(db, 'blogs');
-        const blogsQuery = query(blogsCollection, orderBy('created', 'desc'));
-        const querySnapshot = await getDocs(blogsQuery);
+        const querySnapshot = await adminDb.collection('blogs').orderBy('created', 'desc').get();
 
         return querySnapshot.docs.map(doc => {
             const data = doc.data();

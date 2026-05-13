@@ -38,7 +38,9 @@ if (typeof window !== "undefined") {
 }
 
 // Initialize Cloud Firestore and get a reference to the service
-import { getFirestore } from "firebase/firestore";
-const db = getFirestore(app);
+import { initializeFirestore } from "firebase/firestore";
+const db = initializeFirestore(app, {
+  experimentalForceLongPolling: true,
+});
 
 export { app, analytics, db };

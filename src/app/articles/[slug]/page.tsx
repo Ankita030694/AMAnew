@@ -1,5 +1,4 @@
-import { collection, getDocs, query, where, limit, orderBy } from "firebase/firestore";
-import { db } from "../../../lib/firebase";
+import { adminDb } from "../../../lib/firebase-admin";
 import type { Metadata, ResolvingMetadata } from "next";
 import ArticleDetail, { Article, FAQ, Review } from "./articledetail";
 import Script from "next/script";
@@ -32,19 +31,15 @@ const getArticleBySlug = unstable_cache(async (slug: string) => {
   console.log(`[getArticleBySlug] Fetching article for slug: "${slug}"`);
 
   try {
-    const articlesCollection = collection(db, "articles");
-    
     // Try exact match first
-    let q = query(articlesCollection, where("slug", "==", slug), limit(1));
-    let querySnapshot = await getDocs(q);
+    let querySnapshot = await adminDb.collection("articles").where("slug", "==", slug).limit(1).get();
 
     // If not found, try decoded slug
     if (querySnapshot.empty) {
         const decodedSlug = decodeURIComponent(slug);
         if (decodedSlug !== slug) {
             console.log(`[getArticleBySlug] Retrying with decoded slug: "${decodedSlug}"`);
-            q = query(articlesCollection, where("slug", "==", decodedSlug), limit(1));
-            querySnapshot = await getDocs(q);
+            querySnapshot = await adminDb.collection("articles").where("slug", "==", decodedSlug).limit(1).get();
         }
     }
     
@@ -53,8 +48,7 @@ const getArticleBySlug = unstable_cache(async (slug: string) => {
         const trimmedSlug = slug.trim();
         if (trimmedSlug !== slug) {
             console.log(`[getArticleBySlug] Retrying with trimmed slug: "${trimmedSlug}"`);
-            q = query(articlesCollection, where("slug", "==", trimmedSlug), limit(1));
-            querySnapshot = await getDocs(q);
+            querySnapshot = await adminDb.collection("articles").where("slug", "==", trimmedSlug).limit(1).get();
         }
     }
 
@@ -88,7 +82,7 @@ const getArticleFAQs = unstable_cache(async (articleId: string) => {
   }
 
   try {
-    const faqsSnapshot = await getDocs(collection(db, 'articles', articleId, 'faqs'));
+    const faqsSnapshot = await adminDb.collection('articles').doc(articleId).collection('faqs').get();
     const faqs = faqsSnapshot.docs.map(doc => ({
       id: doc.id,
       question: doc.data().question || '',
@@ -114,7 +108,7 @@ const getArticleReviews = unstable_cache(async (articleId: string) => {
   }
 
   try {
-    const reviewsSnapshot = await getDocs(collection(db, 'articles', articleId, 'reviews'));
+    const reviewsSnapshot = await adminDb.collection('articles').doc(articleId).collection('reviews').get();
     const reviews = reviewsSnapshot.docs.map(doc => ({
       id: doc.id,
       name: doc.data().name || '',
@@ -136,18 +130,15 @@ const getArticleReviews = unstable_cache(async (articleId: string) => {
 // Function to fetch Related Articles
 const getRelatedArticles = async (excludeId: string) => {
   try {
-    const articlesCollection = collection(db, 'articles');
-    const q = query(
-      articlesCollection, 
-      orderBy('date', 'desc'), // Assuming 'date' is used for ordering, or use 'created'
-      limit(6) 
-    );
-    const querySnapshot = await getDocs(q);
+    const querySnapshot = await adminDb.collection('articles')
+      .orderBy('date', 'desc')
+      .limit(6)
+      .get();
     
     const allArticles = querySnapshot.docs.map(doc => ({
       id: doc.id,
       ...doc.data()
-    })) as Article[];
+    })) as unknown as Article[];
     
     // Filter out current article and take top 3
     return allArticles.filter(article => article.id !== excludeId).slice(0, 3);
