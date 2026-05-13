@@ -832,6 +832,9 @@ const BlogsDashboard = () => {
             const imageData = imageDoc.data();
             try {
               // Delete from Storage
+              if (!storage) {
+                throw new Error("Firebase Storage is not initialized");
+              }
               const imageRef = ref(storage, imageData.path);
               await deleteObject(imageRef);
               
