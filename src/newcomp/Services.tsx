@@ -141,8 +141,8 @@ const Services = () => {
              </div>
           </Link>
         </div>
-        </div>
-
+        </div> 
+ 
       {/* Affiliations Section */}
       <div className="mt-12 w-full rounded-[35px] bg-[rgba(255,255,255,0.15)] shadow-[3px_4px_30.5px_0_rgba(0,0,0,0.05)] backdrop-blur-[2px] p-6 lg:p-12 flex flex-col items-center gap-6 lg:gap-12">
         <h2 
