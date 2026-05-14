@@ -1,6 +1,5 @@
 
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from './firebase';
+import { adminDb } from './firebase-admin';
 
 // Define the attorney type
 export type Attorney = {
@@ -18,7 +17,7 @@ export type Attorney = {
 
 export const fetchAttorneys = async (): Promise<Attorney[]> => {
     try {
-        const querySnapshot = await getDocs(collection(db, 'users'));
+        const querySnapshot = await adminDb.collection('users').get();
         const users = querySnapshot.docs.map(doc => {
             const data = doc.data();
             return {
@@ -33,7 +32,7 @@ export const fetchAttorneys = async (): Promise<Attorney[]> => {
                     instagram: "https://www.instagram.com/amalegalsolutions/?hl=en",
                     linkedin: "https://in.linkedin.com/company/ama-legal-solutions"
                 }
-            };
+            } as Attorney;
         });
 
         // Define role priority for sorting
@@ -61,3 +60,4 @@ export const fetchAttorneys = async (): Promise<Attorney[]> => {
         return [];
     }
 };
+
