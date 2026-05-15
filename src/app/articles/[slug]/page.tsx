@@ -5,6 +5,8 @@ import Script from "next/script";
 import { unstable_cache } from 'next/cache';
 import Navbar from "@/newcomp/Navbar";
 
+export const revalidate = 3600; // Cache the page at the Edge for 1 hour
+
 export async function generateStaticParams() {
   return [];
 }

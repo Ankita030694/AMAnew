@@ -4,7 +4,12 @@ import ArticleDetail, { Blog, FAQ, Review } from "./blogdetail";
 import Script from "next/script";
 import PerformanceMonitor from '../../../components/PerformanceMonitor';
 import Navbar from "@/newcomp/Navbar";
-export const dynamic = 'force-dynamic';
+export const revalidate = 3600; // Cache the page at the Edge for 1 hour
+
+export async function generateStaticParams() {
+  // On-demand static generation. Returns empty array so it builds when first visited.
+  return [];
+}
 
 // Optimized function to fetch blog by slug
 const getBlogBySlug = async (slug: string) => {

@@ -8,6 +8,8 @@ import GenericStatesGrid from "@/components/GenericStatesGrid";
 
 import { getMatchedExpertise } from '../expertiseData';
 
+export const revalidate = 86400; // Cache for 24 hours since expertise pages change rarely
+
 export async function generateStaticParams() {
   // Return empty array to support On-Demand Static Generation.
   // This avoids increasing build time while still giving the cost benefits of static files.
