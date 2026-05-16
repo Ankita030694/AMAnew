@@ -40,6 +40,31 @@ export async function POST(request: Request) {
             }, { status: 409 });
         }
 
+        // 0.5 Phone Number Rate Limiting (Max 2 OTPs per 10 mins)
+        // We filter in-memory to avoid requiring a composite index in Firestore
+        const rateLimitQuery = adminDb.collection('pending_leads').where('phone', '==', phone);
+        const rateLimitSnapshot = await rateLimitQuery.get();
+        
+        const tenMinsAgoMs = Date.now() - 10 * 60 * 1000;
+        let recentOtpCount = 0;
+        
+        rateLimitSnapshot.forEach(doc => {
+            const data = doc.data();
+            if (data.createdAt && typeof data.createdAt.toDate === 'function') {
+                const createdAtMs = data.createdAt.toDate().getTime();
+                if (createdAtMs > tenMinsAgoMs) {
+                    recentOtpCount++;
+                }
+            }
+        });
+
+        if (recentOtpCount >= 2) {
+            return NextResponse.json({
+                error: 'RATE_LIMIT_EXCEEDED',
+                message: 'You have requested too many OTPs recently. Please wait 10 minutes before trying again.'
+            }, { status: 429 });
+        }
+
         // Generate 6-digit OTP
         const otp = crypto.randomInt(100000, 999999).toString();
 
