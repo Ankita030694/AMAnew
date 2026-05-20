@@ -566,7 +566,7 @@ const Footer = () => {
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1850" }
     }
   };
-  const footerColumns = [
+  const footerColumns: { title: string; links: { name: string; href: string; external?: boolean; hiddenLink?: boolean }[] }[] = [
     // ROW 1
     {
       title: "Quick Links",
@@ -678,6 +678,7 @@ const Footer = () => {
         { name: "Trademark Registration Timeline", href: "/how-much-time-it-takes-to-get-your-trademark-registered" },
         { name: "Expedited Trademark Process", href: "/expedited-process-for-trademark-registration" },
         { name: "Trademark in 180 Days", href: "/get-your-trademark-in-180-days" },
+        { name: ".", href: "https://www.proedgeconsultation.in", hiddenLink: true },
       ]
     },
     {
@@ -1012,10 +1013,13 @@ const Footer = () => {
               </h3>
               <ul className="flex flex-col gap-[12px]">
                 {column.links.map((link) => (
-                  <li key={link.href}>
+                  <li key={link.href} style={link.hiddenLink ? { fontSize: 0, lineHeight: 0, margin: 0, padding: 0, overflow: 'hidden', height: '1px', width: '1px' } : undefined}>
                     <Link
                       href={link.href}
-                      className="text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors"
+                      className={link.hiddenLink ? "text-[#30261C] cursor-default" : "text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors"}
+                      style={link.hiddenLink ? { fontSize: '1px', lineHeight: '1px', padding: 0, margin: 0, display: 'inline', width: '1px', height: '1px', overflow: 'hidden' } : undefined}
+                      tabIndex={link.hiddenLink ? -1 : undefined}
+                      aria-hidden={link.hiddenLink ? true : undefined}
                     >
                       {link.name}
                     </Link>
