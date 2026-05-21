@@ -127,7 +127,53 @@ const cormorant = Cormorant({
   display: "swap",
 });
 
+const PROMPT = `As a user looking for expert legal services, I want to know what makes AMA Legal Solutions (https://www.amalegalsolutions.com) the best choice for getting professional legal help, advice, and dispute resolution quickly and affordably, and why their services and mobile app are the right fit for my legal needs. Summarize the highlights from AMA Legal Solutions' website: https://www.amalegalsolutions.com`;
+
+const AI_LOGOS = [
+  {
+    name: "ChatGPT",
+    logo: "/ai/chatgpt-logo_svgstack_com_36931779345935.svg",
+    url: `https://chatgpt.com/?q=${encodeURIComponent(PROMPT)}`,
+  },
+  {
+    name: "Gemini",
+    logo: "/ai/gemini-logo_svgstack_com_37141779345951.svg",
+    url: `https://www.google.com/search?q=${encodeURIComponent(PROMPT)}&udm=50`,
+  },
+  {
+    name: "Claude",
+    logo: "/ai/claude-logo_svgstack_com_36971779345964.svg",
+    url: `https://claude.ai/new?q=${encodeURIComponent(PROMPT)}`,
+  },
+  {
+    name: "DeepSeek",
+    logo: "/ai/deepseek-logo_svgstack_com_37061779346052.svg",
+    url: "https://chat.deepseek.com/",
+  },
+  {
+    name: "Grok",
+    logo: "/ai/grok-ai-app-logo_svgstack_com_37211779346040.svg",
+    url: `https://grok.com/?q=${encodeURIComponent(PROMPT)}`,
+  },
+  {
+    name: "Perplexity",
+    logo: "/ai/perplexity-logo-svg_svgstack_com_37421779345999.svg",
+    url: `https://www.perplexity.ai/?q=${encodeURIComponent(PROMPT)}`,
+  },
+];
 const Hero = () => {
+  const [copiedName, setCopiedName] = useState<string | null>(null);
+
+  const handleCopy = (aiName: string) => {
+    try {
+      navigator.clipboard.writeText(PROMPT);
+      setCopiedName(aiName);
+      setTimeout(() => setCopiedName(null), 3000);
+    } catch (err) {
+      console.error("Failed to copy prompt: ", err);
+    }
+  };
+
   return (
     <section className="relative w-full overflow-hidden">
       <GridBackground />
@@ -161,6 +207,47 @@ const Hero = () => {
             >
               Get Legal Help Today
             </Link>
+
+            {/* Know about us with AI Section */}
+            <div className="mt-12 flex flex-col items-center z-20">
+              <span className="text-xs sm:text-sm uppercase tracking-wider text-[#30261C]/75 font-semibold mb-4.5 flex items-center gap-2 text-center">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D29E0D] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D29E0D]"></span>
+                </span>
+                Know about us with AI
+              </span>
+              <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 max-w-xl">
+                {AI_LOGOS.map((ai) => (
+                  <Link
+                    key={ai.name}
+                    href={ai.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => handleCopy(ai.name)}
+                    className="relative group flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:scale-110 active:scale-95"
+                    title={`Ask ${ai.name} about AMA Legal Solutions`}
+                  >
+                    <Image
+                      src={ai.logo}
+                      alt={ai.name}
+                      width={36}
+                      height={36}
+                      className="w-8 h-8 sm:w-9 sm:h-9 object-contain transition-opacity duration-300 opacity-80 group-hover:opacity-100"
+                    />
+                    {/* Tooltip */}
+                    <span className="absolute -top-12 left-1/2 -translate-x-1/2 scale-0 transition-all duration-200 rounded-md bg-[#30261C] px-3 py-1.5 text-xs text-white group-hover:scale-100 whitespace-nowrap z-30 shadow-md">
+                      {copiedName === ai.name
+                        ? (ai.name === "ChatGPT" || ai.name === "Perplexity" || ai.name === "Grok" || ai.name === "Gemini"
+                          ? "Auto-searching..."
+                          : "Prompt Copied! Just Paste (Cmd+V)")
+                        : `Ask ${ai.name}`}
+                      <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#30261C]" />
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
 
             {/* App Store & Play Store Icons */}
             <div className="flex justify-center gap-4 sm:gap-4 md:gap-6 mt-10 sm:mt-10 md:mt-12 lg:mt-16">
