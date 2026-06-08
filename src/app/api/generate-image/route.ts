@@ -14,18 +14,17 @@ export async function POST(request: Request) {
         }
 
         const response = await openai.images.generate({
-            model: "dall-e-3",
+            model: "gpt-image-2",
             prompt: prompt,
             n: 1,
             size: "1024x1024",
-            quality: "standard",
         });
 
         if (!response.data || response.data.length === 0) {
             throw new Error('No data returned from OpenAI');
         }
 
-        const imageUrl = response.data[0]?.url;
+        const imageUrl = response.data[0]?.url || (response.data[0]?.b64_json ? `data:image/png;base64,${response.data[0].b64_json}` : null);
 
         if (!imageUrl) {
             throw new Error('No image URL returned from OpenAI');

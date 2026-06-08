@@ -429,8 +429,10 @@ const ArticlesDashboard = () => {
     try {
       setIsUploadingGenerated(true);
       
-      // Fetch the image from the URL via proxy to avoid CORS issues
-      const response = await fetch(`/api/proxy-image?url=${encodeURIComponent(generatedImageUrl)}`);
+      // Fetch the image from the URL directly (if data URI) or via proxy (if remote URL) to avoid CORS issues
+      const response = generatedImageUrl.startsWith('data:')
+        ? await fetch(generatedImageUrl)
+        : await fetch(`/api/proxy-image?url=${encodeURIComponent(generatedImageUrl)}`);
       const blob = await response.blob();
       const file = new File([blob], `generated_${Date.now()}.png`, { type: 'image/png' });
 
