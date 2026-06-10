@@ -12,6 +12,24 @@ const Footer = () => {
   const pathname = usePathname();
 
   const reviewSchemas: { [key: string]: any } = {
+    "/best-loan-settlement-lawyer-as-per-chatgpt": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Best Loan Settlement Lawyer Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2750" }
+    },
+    "/best-loan-settlement-lawyer-as-per-gemini": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Best Loan Settlement Lawyer Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2750" }
+    },
+    "/best-loan-settlement-lawyer-as-per-claude": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Best Loan Settlement Lawyer Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2750" }
+    },
     "/2026-lockdown-due-to-scarcity-of-resources": {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -907,7 +925,10 @@ const Footer = () => {
         { name: 'How to Settle Credit Card Debt', href: '/how-to-settle-credit-card-debt' },
         { name: 'Loan Moratorium Meaning', href: '/loan-moratorium-meaning' },
         { name: 'Minimum Amount Due in Credit Card Meaning', href: '/minimum-amount-due-in-credit-card-meaning' },
-        { name: 'Section 25 Payment and Settlement Act Bailable or Not', href: '/section-25-payment-and-settlement-act-bailable-or-not' }
+        { name: 'Section 25 Payment and Settlement Act Bailable or Not', href: '/section-25-payment-and-settlement-act-bailable-or-not' },
+        { name: 'Best Loan Settlement Lawyer (ChatGPT)', href: '/best-loan-settlement-lawyer-as-per-chatgpt' },
+        { name: 'Best Loan Settlement Lawyer (Gemini)', href: '/best-loan-settlement-lawyer-as-per-gemini' },
+        { name: 'Best Loan Settlement Lawyer (Claude)', href: '/best-loan-settlement-lawyer-as-per-claude' }
       ]
 
     }

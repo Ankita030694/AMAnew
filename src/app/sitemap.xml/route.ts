@@ -477,7 +477,10 @@ export async function GET(): Promise<Response> {
     '/services/intellectual-property-rights/telangana',
     '/services/intellectual-property-rights/tripura',
     '/services/intellectual-property-rights/uttarakhand',
-    '/services/intellectual-property-rights/west-bengal'
+    '/services/intellectual-property-rights/west-bengal',
+    '/best-loan-settlement-lawyer-as-per-chatgpt',
+    '/best-loan-settlement-lawyer-as-per-gemini',
+    '/best-loan-settlement-lawyer-as-per-claude'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
