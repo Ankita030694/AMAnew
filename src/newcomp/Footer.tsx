@@ -12,6 +12,42 @@ const Footer = () => {
   const pathname = usePathname();
 
   const reviewSchemas: { [key: string]: any } = {
+    "/loan-settlement-for-doctors-healthcare": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Doctor Loan Settlement Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "850" }
+    },
+    "/loan-settlement-for-real-estate-agents": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Real Estate Agent Loan Settlement Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "340" }
+    },
+    "/loan-settlement-for-freelancers": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Freelancer Loan Settlement Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "210" }
+    },
+    "/loan-settlement-for-it-professionals": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "IT Professional Loan Settlement Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1850" }
+    },
+    "/loan-settlement-for-restaurant-owners": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Restaurant Loan Settlement Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "184" }
+    },
+    "/loan-settlement-for-kirana-and-shop-owners": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Kirana & Shop Owner Loan Settlement Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1100" }
+    },
     "/best-loan-settlement-lawyer-as-per-chatgpt": {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -677,6 +713,7 @@ const Footer = () => {
         { name: "Secured Loan Settlement", href: "/secured-loan-settlement" },
         { name: "Trading Loan Settlement", href: "/trading-loan-settlement" },
         { name: "Medical Loan Settlement Support", href: "/support-for-loan-settlement-during-medical-emergencies" },
+ 
 
       ]
     },
@@ -928,7 +965,14 @@ const Footer = () => {
         { name: 'Section 25 Payment and Settlement Act Bailable or Not', href: '/section-25-payment-and-settlement-act-bailable-or-not' },
         { name: 'Best Loan Settlement Lawyer (ChatGPT)', href: '/best-loan-settlement-lawyer-as-per-chatgpt' },
         { name: 'Best Loan Settlement Lawyer (Gemini)', href: '/best-loan-settlement-lawyer-as-per-gemini' },
-        { name: 'Best Loan Settlement Lawyer (Claude)', href: '/best-loan-settlement-lawyer-as-per-claude' }
+        { name: 'Best Loan Settlement Lawyer (Claude)', href: '/best-loan-settlement-lawyer-as-per-claude' },
+        { name: 'IT Professional Loan Settlement', href: '/loan-settlement-for-it-professionals' },
+        { name: 'Kirana & Shop Owner Loan Settlement', href: '/loan-settlement-for-kirana-and-shop-owners' },
+        { name: 'Restaurant Owner Loan Settlement', href: '/loan-settlement-for-restaurant-owners' },
+        { name: 'Trader and Wholesaler Loan Settlement' , href: '/loan-settlement-for-traders-and-wholesalers' },
+        { name: 'Freelancer Loan Settlement', href: '/loan-settlement-for-freelancers' },
+        { name: 'Doctor & Healthcare Loan Settlement', href: '/loan-settlement-for-doctors-healthcare' },
+        { name: 'Real Estate Agent Loan Settlement', href: '/loan-settlement-for-real-estate-agents' }
       ]
 
     }

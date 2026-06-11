@@ -135,6 +135,7 @@
 /loan-settlement-companies
 /loan-settlement-for-borrowers-facing-economic-downturn
 /loan-settlement-for-borrowers-planning-financial-reset
+/loan-settlement-for-kirana-and-shop-owners
 /loan-settlement-letter-format-noc-format
 /loan-settlement-near-me
 /loan-settlement-process-in-hindi
