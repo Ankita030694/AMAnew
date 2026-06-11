@@ -69,6 +69,7 @@ const relatedPages = [
   { title: "Legal Rights After Loan Default", href: "/legal-rights-after-loan-default" },
   { title: "Doctor Loan Settlement Guide", href: "/loan-settlement-for-doctors-healthcare" },
   { title: "Real Estate Agent Loan Settlement Guide", href: "/loan-settlement-for-real-estate-agents" },
+  { title: "Student & Graduate Loan Settlement Guide", href: "/loan-settlement-for-students-and-graduates" },
 ];
 
 const faqs = [

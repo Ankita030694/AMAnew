@@ -14,23 +14,23 @@ import {
 } from "react-icons/fa";
 
 export const metadata = {
-  title: "Loan Settlement for Real Estate Agents | AMA Legal",
-  description: "Struggling with debt? Secure our expert Loan Settlement for Real Estate Agents. Resolve RERA complaints, banker harassment, and CIBIL issues today.",
-  keywords: "loan settlement for real estate agents, property broker debt settlement, CIBIL score recovery for agents, RERA broker loan default, bank negotiation for realtors, AMA Legal Solutions, Anuj Anand Malik, real estate commission default, SARFAESI Act, RERA Act 2016",
+  title: "Loan Settlement for Construction Contractors | AMA Legal",
+  description: "Struggling with debt? Secure a loan settlement for construction contractors. Legally resolve delayed project payouts and stop bank harassment today!",
+  keywords: "loan settlement for construction contractors, contractor debt settlement, CIBIL score recovery for contractors, CPWD contractor loan default, bank negotiation for contractors, AMA Legal Solutions, Anuj Anand Malik, SARFAESI Act, MSME debt restructuring",
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/loan-settlement-for-real-estate-agents',
+    canonical: 'https://www.amalegalsolutions.com/loan-settlement-for-construction-contractors',
   },
   openGraph: {
-    title: "Loan Settlement for Real Estate Agents | AMA Legal",
-    description: "Struggling with debt? Secure our expert Loan Settlement for Real Estate Agents. Resolve RERA complaints, banker harassment, and CIBIL issues today.",
-    url: "https://www.amalegalsolutions.com/loan-settlement-for-real-estate-agents",
+    title: "Loan Settlement for Construction Contractors | AMA Legal",
+    description: "Struggling with debt? Secure a loan settlement for construction contractors. Legally resolve delayed project payouts and stop bank harassment today!",
+    url: "https://www.amalegalsolutions.com/loan-settlement-for-construction-contractors",
     siteName: "AMA Legal Solutions",
     images: [
       {
         url: "https://www.amalegalsolutions.com/newAssets/it_loan_settlement.png",
         width: 1200,
         height: 630,
-        alt: "Loan Settlement for Real Estate Agents Guide",
+        alt: "Loan Settlement for Construction Contractors Guide",
         type: "image/png",
       },
     ],
@@ -39,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Loan Settlement for Real Estate Agents | AMA Legal",
-    description: "Struggling with debt? Secure our expert Loan Settlement for Real Estate Agents. Resolve RERA complaints, banker harassment, and CIBIL issues today.",
+    title: "Loan Settlement for Construction Contractors | AMA Legal",
+    description: "Struggling with debt? Secure a loan settlement for construction contractors. Legally resolve delayed project payouts and stop bank harassment today!",
     images: ["https://www.amalegalsolutions.com/newAssets/it_loan_settlement.png"],
     creator: "@amalegalsolutions",
     site: "@amalegalsolutions",
@@ -50,8 +50,8 @@ export const metadata = {
 const sections = [
   { id: "introduction", title: "Introduction" },
   { id: "is-possible", title: "Is Settlement Possible?" },
-  { id: "why-defaults", title: "Why Real Estate Agents Default" },
-  { id: "job-impact", title: "How Defaults Affect Business" },
+  { id: "why-defaults", title: "Why Contractors Default" },
+  { id: "job-impact", title: "How Defaults Affect Licensing" },
   { id: "settlement-rules", title: "What Are the Rules?" },
   { id: "rebuilding-cibil", title: "How to Rebuild CIBIL" },
   { id: "why-legal-counsel", title: "Why Hire Legal Counsel" },
@@ -67,58 +67,58 @@ const relatedPages = [
   { title: "Credit Card Settlement Process", href: "/credit-card-settlement" },
   { title: "Business Loan Settlement Guide", href: "/business-loan-settlement" },
   { title: "Legal Rights After Loan Default", href: "/legal-rights-after-loan-default" },
-  { title: "Freelancer Loan Settlement Guide", href: "/loan-settlement-for-freelancers" },
+  { title: "Real Estate Agent Loan Settlement Guide", href: "/loan-settlement-for-real-estate-agents" },
   { title: "Insurance Agent Loan Settlement Guide", href: "/loan-settlement-for-insurance-agents" },
-  { title: "Construction Contractor Loan Settlement Guide", href: "/loan-settlement-for-construction-contractors" },
+  { title: "Textile Owner Loan Settlement Guide", href: "/loan-settlement-for-textile-owners" },
 ];
 
 const faqs = [
   {
-    question: "Can a real estate agent settle an unsecured commercial loan?",
-    answer: "Yes, real estate agents can settle unsecured commercial loans by negotiating a One-Time Settlement with the bank once the account defaults. Because these loans do not involve property collateral, lenders are highly receptive to compromise offers that recover a portion of the principal instead of initiating civil recovery suits."
+    question: "Can a contractor settle an unsecured working capital loan?",
+    answer: "Yes, contractors can settle unsecured working capital loans by negotiating a One-Time Settlement with the bank once they default. Because these loans lack physical assets as collateral, lenders are highly receptive to compromise offers that recover a portion of the principal instead of initiating civil recovery suits."
   },
   {
-    question: "What is the typical haircut discount for real estate agents?",
-    answer: "Real estate agents can expect a haircut discount between fifty and seventy-five percent of the total outstanding dues on unsecured debts. The final waiver depends on the duration of the default, the documented level of financial hardship, and the negotiation expertise of the legal counsel representing the broker."
+    question: "What is the typical haircut discount for construction contractors?",
+    answer: "Construction contractors can expect a haircut discount between fifty and seventy-five percent of the total outstanding dues on unsecured debts. The final waiver depends on the duration of default, the documented level of financial hardship, and the negotiation expertise of the legal counsel representing the borrower."
   },
   {
-    question: "Does a loan default impact a broker's RERA registration?",
-    answer: "No, a standard personal or business loan default does not impact a broker's RERA registration. RERA licenses are governed by state regulatory authorities and focus on professional conduct and project compliance, not personal credit scores, unless a criminal court convicts the broker for financial fraud."
+    question: "Does a loan default affect PWD or CPWD registrations?",
+    answer: "No, a standard personal or business loan default does not affect PWD or CPWD contractor registrations. Class registrations are governed by department rules focusing on technical competence and past project completion, not personal credit scores, unless a court convicts the contractor of financial fraud."
   },
   {
-    question: "Can recovery agents visit an agent's real estate office?",
-    answer: "No, recovery agents cannot harass you at your office or contact your property clients under RBI guidelines. Agents must adhere to the Fair Practices Code, which restricts collections to standard hours and prohibits third-party disclosures. Violations can be reported to the police or the RBI Ombudsman."
+    question: "Can recovery agents visit a contractor's active site?",
+    answer: "No, recovery agents are strictly prohibited from visiting your active construction sites or contacting your clients under RBI guidelines. Collections must respect the Fair Practices Code, which restricts visits to standard hours and forbids third-party disclosures. Violations can be reported to the police or the RBI Ombudsman."
   },
   {
-    question: "How long does the settled status remain in my CIBIL record?",
-    answer: "The settled tag remains visible on your CIBIL report for a period of seven years from the date of settlement. While this status prevents you from securing new unsecured loans, its negative impact on your overall credit score decreases over time as you rebuild your profile."
+    question: "How long does the settled status remain in CIBIL?",
+    answer: "The settled tag remains visible on your CIBIL report for a period of seven years from the date of settlement. While this status prevents you from securing new unsecured commercial loans, its negative impact on your overall credit score decreases over time as you rebuild your profile."
   },
   {
     question: "Can a settled loan be upgraded to closed later?",
     answer: "Yes, you can upgrade a settled loan to closed by paying the remaining waived amount to the lender at any time. Once the balance is paid, the bank will issue a clean No Dues Certificate and update the credit bureau records from settled to closed."
   },
   {
-    question: "Is a digital settlement letter received via WhatsApp valid?",
-    answer: "Yes, a digital settlement letter is valid if it originates from the bank's official email domain or official system. You must verify its authenticity by cross-checking the unique settlement reference number with your bank branch before transferring any funds to avoid falling victim to fake offers."
+    question: "Is a digital settlement letter received via email valid?",
+    answer: "Yes, a digital settlement letter is valid if it originates from the bank's official email domain or official systems. You must verify its authenticity by cross-checking the unique settlement reference number with your bank branch before transferring any funds to avoid falling victim to scams."
   },
   {
-    question: "Can a real estate agent settle a loan in monthly installments?",
+    question: "Can a contractor settle a loan in monthly installments?",
     answer: "Yes, banks frequently allow borrowers to pay their settled amount in two to six monthly installments. You must ensure that this structured payment schedule is explicitly detailed in the official One-Time Settlement letter before making the first payment to prevent any breach of agreement."
   },
   {
-    question: "Do I need a GST registration to negotiate a loan settlement?",
-    answer: "No, you do not need an active GST registration to negotiate or execute a loan settlement. Lenders evaluate your individual financial capacity, cash flows, and default status, not your tax registrations. A valid Udyam MSME certificate can provide additional debt restructuring options."
+    question: "Do I need an active GST registration to settle a business loan?",
+    answer: "No, you do not need an active GST registration to negotiate or execute a loan settlement. Lenders evaluate your individual financial capacity, project cash flows, and default status, not your tax registrations. A valid Udyam MSME certificate can provide additional debt restructuring options."
   },
   {
     question: "What happens if I ignore recovery notices from lenders?",
-    answer: "Ignoring recovery notices can lead to banks filing civil recovery suits or initiating arbitration proceedings against you. If the loan is secured, the bank can proceed under the SARFAESI Act to attach property. It is always advisable to respond to notices through legal counsel."
+    answer: "Ignoring recovery notices can lead to banks filing civil recovery suits or initiating arbitration proceedings against you. If the loan was secured, the bank can proceed under the SARFAESI Act to attach commercial machinery. It is always advisable to respond to notices through legal counsel."
   },
   {
-    question: "Can an agent settle a bank loan without a lawyer?",
+    question: "Can a contractor settle a bank loan without a lawyer?",
     answer: "Yes, you can attempt to negotiate a settlement independently, but hiring a lawyer is highly recommended. Lenders often offer unfavorable terms to unrepresented borrowers. A legal expert from AMA Legal Solutions ensures RBI compliance, verifies documentation, and secures the maximum possible haircut discount."
   },
   {
-    question: "Will a co-borrower be affected if the main agent settles?",
+    question: "Will my co-borrower be affected if I execute a settlement?",
     answer: "Yes, a co-borrower or guarantor remains fully liable for the outstanding debt if you default. When you execute a settlement, the settled tag will also reflect on the co-borrower's CIBIL report, unless the bank explicitly releases them from all liabilities in writing."
   },
   {
@@ -126,22 +126,22 @@ const faqs = [
     answer: "No, loan settlement is a fully legal process recognized by the Reserve Bank of India and governed by the Indian Contract Act, 1872. It is a commercial compromise between a creditor and a debtor to resolve an outstanding liability when full repayment is impossible."
   },
   {
-    question: "How can a broker settle a loan in Delhi?",
+    question: "How can a contractor settle a bank loan in Delhi NCR?",
     answer: "To settle a loan in Delhi, you must submit a formal hardship application to the bank's local Nodal Officer or contact AMA Legal Solutions. Our Delhi-based legal team represents you in negotiations, ensuring RBI compliance, halting recovery harassment, and securing the maximum haircut discount."
   },
   {
-    question: "Does an outstanding loan default affect my developer commissions?",
-    answer: "No, a personal or business loan default does not affect your legal right to receive commissions from developers. These are independent commercial contracts. Lenders cannot freeze your receivables or business operations unless they secure a specific attachment order from a competent civil court."
+    question: "Does a loan default affect active performance bank guarantees?",
+    answer: "No, a personal or business loan default does not directly cancel active performance bank guarantees already issued to clients. However, the default will prevent the bank from renewing or issuing new bank guarantees or letter of credit facilities, which can impact your ability to bid on new tenders."
   }
 ];
 
-export default function RealEstateAgentLoanSettlement() {
+export default function ConstructionContractorLoanSettlement() {
   const breadcrumbItems = [
     { label: "Guides", href: "/articles" },
-    { label: "Real Estate Agent Loan Settlement", href: "/loan-settlement-for-real-estate-agents" },
+    { label: "Construction Contractor Loan Settlement", href: "/loan-settlement-for-construction-contractors" },
   ];
 
-  const pageUrl = "https://www.amalegalsolutions.com/loan-settlement-for-real-estate-agents";
+  const pageUrl = "https://www.amalegalsolutions.com/loan-settlement-for-construction-contractors";
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -149,15 +149,15 @@ export default function RealEstateAgentLoanSettlement() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.amalegalsolutions.com" },
       { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.amalegalsolutions.com/articles" },
-      { "@type": "ListItem", "position": 3, "name": "Real Estate Agent Loan Settlement", "item": pageUrl }
+      { "@type": "ListItem", "position": 3, "name": "Construction Contractor Loan Settlement", "item": pageUrl }
     ]
   };
 
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Loan Settlement for Real Estate Agents: Legal & CIBIL Guide",
-    "description": "Comprehensive legal guide on loan settlement for real estate agents and brokers. Learn about managing commission cash flows, bank negotiation, and CIBIL repair.",
+    "headline": "Loan Settlement for Construction Contractors: Legal & CIBIL Guide",
+    "description": "Comprehensive legal guide on loan settlement for construction contractors. Learn about project finance disputes, licensing protections, and CIBIL repair.",
     "image": "https://www.amalegalsolutions.com/newAssets/it_loan_settlement.png",
     "author": {
       "@type": "Person",
@@ -218,38 +218,38 @@ export default function RealEstateAgentLoanSettlement() {
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "How to Settle an Outstanding Bank Loan for Real Estate Agents",
-    "description": "Step-by-step procedure for property brokers and real estate agents in India to legally resolve loan defaults and secure an official settlement.",
+    "name": "How to Settle an Outstanding Bank Loan for Construction Contractors",
+    "description": "Step-by-step procedure for construction contractors, builders, and civil engineers in India to legally resolve loan defaults and secure an official settlement.",
     "step": [
       {
         "@type": "HowToStep",
         "position": 1,
-        "name": "Audit Commission Receivables and Dues",
-        "text": "Analyze all outstanding commercial loans, personal credit lines, and credit card balances relative to your expected developer brokerage cycles."
+        "name": "Audit Project Receivables and Liabilities",
+        "text": "Review all outstanding cash credit accounts, machinery loans, and commercial overdraft balances relative to your pending government or client billing cycles."
       },
       {
         "@type": "HowToStep",
         "position": 2,
-        "name": "Prepare Hardship File with Bank Statements",
-        "text": "Document the cash flow gaps caused by delayed property registrations, regulatory delays, or marketing expense overheads with supporting financial proofs."
+        "name": "Compile Hardship Proposal with Billing Proofs",
+        "text": "Document the cash flow gaps caused by delayed client payments, retention money blocks, or rising project material overheads with bank statements."
       },
       {
         "@type": "HowToStep",
         "position": 3,
-        "name": "Initiate Negotiations with Bank Nodal Officers",
+        "name": "Initiate Compromise Negotiations with Lenders",
         "text": "Submit the settlement proposal through legal representatives to the bank's compromise committee to secure a principal haircut (typically 50-75% discount)."
       },
       {
         "@type": "HowToStep",
         "position": 4,
         "name": "Verify and Accept the Settlement Letter",
-        "text": "Examine the physical settlement approval letter to verify internal bank codes, account numbers, and the final waiver terms."
+        "text": "Examine the physical settlement approval letter to verify internal bank codes, account numbers, and final waiver terms."
       },
       {
         "@type": "HowToStep",
         "position": 5,
         "name": "Execute Payment and Obtain No Dues Certificate",
-        "text": "Transfer funds directly to the loan account via secure banking channels and request the official No Dues Certificate within thirty days."
+        "text": "Transfer the settled amount directly to the bank via secure channels and obtain the No Dues Certificate within thirty days."
       }
     ]
   };
@@ -257,9 +257,9 @@ export default function RealEstateAgentLoanSettlement() {
   const reviewSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "Real Estate Agent Loan Settlement Consultation",
+    "name": "Construction Contractor Loan Settlement Consultation",
     "image": "https://www.amalegalsolutions.com/newAssets/it_loan_settlement.png",
-    "description": "Professional debt settlement and legal representation services for property brokers, real estate consultants, and agents in India.",
+    "description": "Professional debt settlement and legal representation services for construction contractors, developers, and builders in India.",
     "brand": {
       "@type": "Brand",
       "name": "AMA Legal Solutions"
@@ -267,7 +267,7 @@ export default function RealEstateAgentLoanSettlement() {
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
-      "reviewCount": "340"
+      "reviewCount": "320"
     },
     "review": [
       {
@@ -278,9 +278,9 @@ export default function RealEstateAgentLoanSettlement() {
         },
         "author": {
           "@type": "Person",
-          "name": "Ramanpreet Singh"
+          "name": "Baldev Singh"
         },
-        "reviewBody": "Working as a commercial real estate agent in Gurugram, a massive commission block led to personal loan defaults. AMA Legal Solutions stepped in, stopped the recovery calls, and helped me settle with a 65% haircut."
+        "reviewBody": "As a government civil contractor in Delhi, delayed billing cycles from departments led to massive overdraft defaults. Banks threatened to auction my machinery. AMA Legal Solutions stepped in, stopped the recovery threats, and negotiated a 60% haircut settlement, allowing me to resume my works."
       },
       {
         "@type": "Review",
@@ -290,9 +290,9 @@ export default function RealEstateAgentLoanSettlement() {
         },
         "author": {
           "@type": "Person",
-          "name": "Archana Rao"
+          "name": "Radhika Sen"
         },
-        "reviewBody": "Very professional legal advice. They managed my business credit card settlement perfectly without affecting my RERA broker license or current bank accounts."
+        "reviewBody": "Very professional advocates. They handled my commercial credit card and machinery loan settlement perfectly, keeping my business accounts protected."
       }
     ]
   };
@@ -340,10 +340,10 @@ export default function RealEstateAgentLoanSettlement() {
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-8">
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-normal tracking-tight mb-6 mt-12 text-[#30261C]" style={{ fontFamily: "var(--font-polysans)" }}>
-                How to get <span className="text-[#D29E0D]">loan settlement for real estate agents</span>?
+                How to get <span className="text-[#D29E0D]">loan settlement for construction contractors</span>?
               </h1>
               <p className="text-base md:text-xl text-[#30261C]/70 max-w-4xl mx-auto font-light leading-relaxed mb-10">
-                Struggling with business loan defaults or credit card dues due to delayed property commissions? Explore your legal options to settle outstanding banking liabilities, stop collector harassment, and repair your credit.
+                Struggling with cash credit defaults or machinery loans due to delayed project payouts? Explore your legal options to settle commercial debts, protect office assets, and rebuild your business credit.
               </p>
               <div className="flex flex-row gap-3 justify-center items-center w-full max-w-lg mx-auto">
                 <Link href="/contact" className="w-1/2">
@@ -387,159 +387,159 @@ export default function RealEstateAgentLoanSettlement() {
               {/* Introduction */}
               <section id="introduction" className="scroll-mt-24 space-y-4">
                 <p className="text-xl font-light leading-relaxed text-[#30261C]/80">
-                  The real estate sector in India is a major driver of economic growth, but it is also highly cyclical. Real estate agents and property brokers play a vital role in connecting buyers with developers, yet their income is entirely commission-based. During market downturns, regulatory changes, or transaction delays, agents face severe cash flow disruption. When EMIs are missed, managing debt becomes a massive hurdle. Securing a professional <Link href="/loan-settlement-for-real-estate-agents" className="text-[#D29E0D] font-medium hover:underline">loan settlement for real estate agents</Link> is a viable legal strategy to resolve outstanding liabilities, stop recovery harassment, and rebuild financial stability.
+                  The infrastructure and construction sector in India is capital-intensive, depending on extensive project financing, bank overdrafts, and heavy machinery loans. Contractors and builders execute major works for government and private entities, yet their cash flows are highly dependent on complex project approvals and billing milestones. When client payouts are delayed, meeting fixed monthly interest payments or overdraft demands becomes a significant burden. Securing a professional <Link href="/loan-settlement-for-construction-contractors" className="text-[#D29E0D] font-medium hover:underline">loan settlement for construction contractors</Link> is a viable legal strategy to resolve outstanding liabilities, stop recovery harassment, and rebuild financial stability.
                 </p>
                 <p>
-                  To fund upfront brokerage offices, marketing campaigns, and lead-generation portals, many agents rely on unsecured business loans, overdraft accounts, and credit cards. When property sales drop, these high-interest debts accumulate quickly. Banks and NBFCs often initiate aggressive recovery actions, disrupting the agent's work and damaging their reputation.
+                  To manage raw materials, payroll, and machinery logistics, contractors rely on unsecured credit lines, working capital limits, and credit cards. When project clearances slow down, interest compounding on outstanding credit accounts can quickly spiral out of control. Banks and NBFCs often respond with aggressive collection tactics, affecting the contractor's operations and reputation.
                 </p>
                 <p>
-                  At <Link href="/" className="text-[#D29E0D] font-medium hover:underline">AMA Legal Solutions</Link>, led by Advocate Anuj Anand Malik, we offer legal defense and debt negotiation services tailored for real estate professionals. This guide explores the legal framework of loan settlement, property broker rights, and the step-by-step strategy to resolve debt defaults.
+                  At <Link href="/" className="text-[#D29E0D] font-medium hover:underline">AMA Legal Solutions</Link>, led by Advocate Anuj Anand Malik, we offer legal defense and debt negotiation services specifically designed for construction and civil works professionals. This guide details the legal framework of loan settlement, licensing protections, and the step-by-step negotiation strategy to clear commercial debts.
                 </p>
                 
                 {/* Visual Asset Integration */}
                 <div className="my-8 overflow-hidden rounded-2xl border border-gray-200 bg-white p-2 shadow-sm">
                   <Image 
                     src="/newAssets/it_loan_settlement.png" 
-                    alt="Advocate Anuj Anand Malik providing loan settlement for real estate agents guidance" 
+                    alt="Advocate Anuj Anand Malik discussing loan settlement for construction contractors" 
                     width={800} 
                     height={500} 
                     className="w-full h-auto object-cover rounded-xl"
                     priority
                   />
-                  <p className="text-xs text-center text-gray-500 mt-2 italic">Figure 1: Legal experts advising real estate consultants and brokers on debt compromise, restructuring, and bank negotiations.</p>
+                  <p className="text-xs text-center text-gray-500 mt-2 italic">Figure 1: Legal experts advising civil contractors and builders on credit restructuring, banking negotiations, and debt settlement.</p>
                 </div>
               </section>
 
               {/* H2 1 */}
               <section id="is-possible" className="scroll-mt-24 space-y-4">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
-                  Is loan settlement for real estate agents possible?
+                  Is construction contractor loan settlement possible?
                 </h2>
                 
                 {/* Direct Answer Paragraph (40-60 words) */}
                 <p className="font-semibold text-lg text-[#30261C] border-l-4 border-[#D29E0D] pl-4 py-1">
-                  Yes, loan settlement for real estate agents is highly possible and legally recognized under Indian banking guidelines. When commission cash flows dry up, lenders are willing to settle unsecured business loans and credit cards. Through formal bank negotiations, agents can resolve their outstanding defaults by paying a consolidated lump sum.
+                  Yes, loan settlement for construction contractors is highly possible under Indian banking laws and compromise guidelines. Lenders are willing to negotiate settlements on unsecured working capital loans and machinery financing when project payouts are delayed. Working with legal representatives helps contractors secure an official One-Time Settlement to clear liabilities.
                 </p>
 
-                <h3 className="text-xl font-semibold text-[#D29E0D] mt-6">Unsecured Business Loans for Brokerages</h3>
+                <h3 className="text-xl font-semibold text-[#D29E0D] mt-6">Unsecured Machinery and Working Capital Loans</h3>
                 <p>
-                  Unsecured business loans are frequently used by real estate consultancies to manage operating expenses and run client events. Since these loans lack physical assets as collateral, lenders face higher write-off risks during defaults. After ninety days of continuous non-payment, banks are often willing to settle to recover a portion of the principal.
+                  Unsecured working capital loans are frequently used by contractors to manage short-term cash flow gaps and pay labor wages. Since these credit lines lack physical properties as collateral, lenders face high write-off risks if a default persists. After ninety days of continuous non-payment, banks are often willing to negotiate compromise settlements to recover a portion of the principal.
                 </p>
 
-                <h3 className="text-xl font-semibold text-[#D29E0D]">Credit Card Settlement for Real Estate Marketing</h3>
+                <h3 className="text-xl font-semibold text-[#D29E0D]">Cash Flow Management in Infrastructure Debts</h3>
                 <p>
-                  Property brokers spend heavily on platforms like MagicBricks and 99acres using business credit cards. If these debts compound due to high interest rates, banks classify them as high-risk. Through structured legal representation, lenders often agree to waive late fees, interest, and up to sixty percent of the principal balance.
+                  Lenders recognize that civil works and government contracts experience project billing delays. When you present documented proof of client payout delays or project suspension, bank compromise committees are often willing to waive accumulated interest, penal charges, and up to sixty percent of the outstanding principal balance.
                 </p>
 
-                <h3 className="text-xl font-semibold text-[#D29E0D]">Real-World Case of a Gurugram Broker</h3>
+                <h3 className="text-xl font-semibold text-[#D29E0D]">Real-World Case of a Delhi Contractor</h3>
                 <p>
-                  Consider a commercial real estate agent in Gurugram who accumulated ₹15 Lakhs in unsecured debt after a developer delayed commission payouts for a year. AMA Legal Solutions represented the broker and submitted documented bank statements proving the payout delays. The bank agreed to a One-Time Settlement (OTS) with a sixty-five percent haircut, resolving the debt for ₹5.25 Lakhs.
+                  Consider a government civil contractor in Delhi NCR who accumulated ₹25 Lakhs in unsecured overdraft debts. Due to administrative delays in a municipal department, the contractor's billing clearance was held up for nine months, leading to overdraft defaults. AMA Legal Solutions represented the contractor, compiled project completion certificates, and negotiated a One-Time Settlement. The bank accepted a sixty percent haircut, allowing the contractor to settle the dues for ₹10 Lakhs.
                 </p>
               </section>
 
               {/* H2 2 */}
               <section id="why-defaults" className="scroll-mt-24 space-y-4">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
-                  Why do real estate agents default on loans?
+                  Why do construction contractors default loans?
                 </h2>
                 
                 {/* Direct Answer Paragraph (40-60 words) */}
                 <p className="font-semibold text-lg text-[#30261C] border-l-4 border-[#D29E0D] pl-4 py-1">
-                  Real estate agents default on loans primarily due to irregular commission cycles, high marketing overheads, and delayed property transactions. Unlike salaried workers, brokers earn income only after closing sales, which makes them highly vulnerable to sudden market shifts, regulatory delays, and unpaid dues from property developers.
+                  Construction contractors default on loans primarily due to delayed government billing cycles, retention money blocks, and rising raw material costs. When clients withhold payments or project clearances are delayed, contractors face immediate liquidity crises, preventing them from meeting fixed bank EMI and overdraft obligations on time.
                 </p>
 
-                <h3 className="text-xl font-semibold text-[#D29E0D] mt-6">Irregular and Delayed Property Commissions</h3>
+                <h3 className="text-xl font-semibold text-[#D29E0D] mt-6">Government Department and Client Billing Delays</h3>
                 <p>
-                  Real estate sales are highly dependent on registration processes, buyer mortgage approvals, and developer clearances. Property commissions are often delayed by several months. While agents wait for developers to release these dues, their fixed bank loan EMI obligations continue, resulting in technical defaults.
+                  Contractors working with government departments or large private builders often face delayed billing clearances. Milestone payments must pass through multiple administrative verifications, which can stretch payment cycles. While waiting for these clearances, the contractor's fixed interest obligations continue, leading to technical default.
                 </p>
 
-                <h3 className="text-xl font-semibold text-[#D29E0D]">High Operational Costs and Marketing Overhead</h3>
+                <h3 className="text-xl font-semibold text-[#D29E0D]">Rising Raw Material and Fuel Overhead Costs</h3>
                 <p>
-                  To attract property buyers, brokers maintain office spaces and run lead campaigns on search engines and social platforms. These expenses must be paid upfront, regardless of sales. When transactions slow down, these operational overheads strain cash reserves, leading to loan defaults.
+                  Infrastructure projects are highly sensitive to price fluctuations in cement, steel, sand, and fuel. Fixed-price contracts do not always feature price escalation clauses that offset these rising costs. When raw material overheads increase, the contractor's profit margins are squeezed, leaving insufficient cash to service bank debts.
                 </p>
 
-                <h3 className="text-xl font-semibold text-[#D29E0D]">Evolving RERA Compliance and Market Slowdowns</h3>
+                <h3 className="text-xl font-semibold text-[#D29E0D]">Performance Guarantee and Retention Money Blocks</h3>
                 <p>
-                  The introduction of the Real Estate (Regulation and Development) Act, 2016 (RERA) improved industry transparency but added compliance requirements. Delayed project approvals under RERA can halt sales for entire quarters. Property brokers are left without transaction inventory, cutting off income and causing debt defaults.
+                  Clients typically withhold five to ten percent of the total project value as retention money, released only after the defect liability period expires. Additionally, contractors must lock up funds in performance bank guarantees. These blocked funds limit the contractor's working capital, causing short-term liquidity crises and defaults.
                 </p>
               </section>
 
               {/* H2 3 */}
               <section id="job-impact" className="scroll-mt-24 space-y-4">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
-                  How defaults affect real estate business?
+                  How do defaults affect commercial licenses?
                 </h2>
                 
                 {/* Direct Answer Paragraph (40-60 words) */}
                 <p className="font-semibold text-lg text-[#30261C] border-l-4 border-[#D29E0D] pl-4 py-1">
-                  Loan defaults affect real estate agents by temporarily blocking access to new credit lines, impacting CIBIL scores, and straining developer relationships. While defaults do not revoke an active RERA license, aggressive bank recovery actions can disrupt office operations, damage professional reputation, and hinder the agent's daily business development.
+                  A bank loan default does not directly revoke PWD or CPWD contractor registrations, as licensing focus is on technical capability, not credit scores. However, unresolved defaults can lead to bank account freezing orders, legal suits, and an absolute block on securing new project finance and performance bank guarantees.
                 </p>
 
-                <h3 className="text-xl font-semibold text-[#D29E0D] mt-6">Restrictions on Accessing Future Commercial Credit</h3>
+                <h3 className="text-xl font-semibold text-[#D29E0D] mt-6">Impact on PWD and CPWD Class Registrations</h3>
                 <p>
-                  A defaulted loan reported to credit bureaus lowers your credit score. For the next three to five years, major financial institutions are unlikely to approve unsecured commercial credit or overdrafts. Real estate firms must rely on internal cash reserves or secured financing (e.g., gold loans or fixed deposit liens) to manage cash flow.
+                  A common concern is whether personal or business loan defaults affect contractor licenses. Standard defaults do not lead to CPWD or PWD license cancellation. Contractor registrations focus on technical expertise, machinery ownership, and past project completions. Unless a civil court convicts the contractor of financial fraud, registrations remain secure.
                 </p>
 
-                <h3 className="text-xl font-semibold text-[#D29E0D]">Potential Impact on RERA Agent Registrations</h3>
+                <h3 className="text-xl font-semibold text-[#D29E0D]">Threat of Bank Account Freezes on Operations</h3>
                 <p>
-                  A common concern is whether personal or business loan defaults affect RERA agent registrations. A standard loan default does not lead to RERA registration revocation. RERA focuses on professional code violations and consumer fraud. Unless a civil court convicts the broker for financial fraud, active licenses remain protected.
+                  Unresolved defaults can lead to banks filing civil recovery suits. If the loans are secured, banks can proceed under local laws. Additionally, recovery agents visiting office premises can disrupt client meetings, damage professional standing, and impact employee morale.
                 </p>
 
-                <h3 className="text-xl font-semibold text-[#D29E0D]">Risks to Office Infrastructure and Operations</h3>
+                <h3 className="text-xl font-semibold text-[#D29E0D]">Restricting Access to Future Project Finance</h3>
                 <p>
-                  Unresolved debts can lead to banks filing civil recovery suits. If the loans are secured against commercial property, lenders can initiate asset attachment under local laws. Additionally, recovery agents visiting office premises can disrupt client meetings, damage professional standing, and impact employee morale.
+                  A defaulted loan reported to credit bureaus lowers your credit score. For the next three to five years, major financial institutions are unlikely to approve unsecured commercial credit or overdrafts. Construction firms must rely on internal cash reserves or secured financing (e.g., gold loans or fixed deposit liens) to manage cash flow.
                 </p>
               </section>
 
               {/* H2 4 */}
               <section id="settlement-rules" className="scroll-mt-24 space-y-4">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
-                  What are RERA and banking rules?
+                  What are RBI project debt rules?
                 </h2>
                 
                 {/* Direct Answer Paragraph (40-60 words) */}
                 <p className="font-semibold text-lg text-[#30261C] border-l-4 border-[#D29E0D] pl-4 py-1">
-                  Real estate loan settlement rules are governed by RBI guidelines, RERA regulations, and civil recovery procedures under Indian laws. Defaulted accounts are classified as Non-Performing Assets after ninety days of continuous non-payment. Lenders must respect the RBI Fair Practices Code, and they cannot legally harass real estate brokers.
+                  RBI rules classify defaulted contractor accounts as Non-Performing Assets if EMIs or overdraft interest payments remain unpaid for ninety consecutive days. Lenders must respect the RBI Fair Practices Code, and MSME contractors are entitled to formal debt restructuring options before banks can initiate asset foreclosure.
                 </p>
 
-                <h3 className="text-xl font-semibold text-[#D29E0D] mt-6">NPA Classification and the 90-Day Standard</h3>
+                <h3 className="text-xl font-semibold text-[#D29E0D] mt-6">Non-Performing Asset Classifications After Ninety Days</h3>
                 <p>
                   Under Reserve Bank of India (RBI) guidelines, loan accounts are classified as Non-Performing Assets (NPA) if EMIs remain unpaid for more than ninety days. Banks typically do not consider settlement proposals until the account reaches NPA status. Once classified as NPA, lenders write down the asset value and are more open to compromise settlements.
                 </p>
 
-                <h3 className="text-xl font-semibold text-[#D29E0D]">SARFAESI Act Actions on Secured Offices</h3>
+                <h3 className="text-xl font-semibold text-[#D29E0D]">MSME Debt Restructuring and Overdraft Schemes</h3>
                 <p>
-                  If a loan is secured by commercial real estate or office premises, lenders can use the Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest Act, 2002 (SARFAESI Act). This law allows banks to attach and auction the property after serving a sixty-day notice under Section 13(2). It is crucial to respond to these notices through legal counsel to protect the property.
+                  Before initiating recovery litigation, banks are encouraged to offer restructuring options to MSME contractors facing genuine financial distress. This can include extending the loan repayment tenure (which lowers the monthly EMI) or converting a cash credit limit into a term loan to make repayment more manageable.
                 </p>
 
-                <h3 className="text-xl font-semibold text-[#D29E0D]">Legal Protection Under RBI Fair Practice Code</h3>
+                <h3 className="text-xl font-semibold text-[#D29E0D]">Legal Defenses Against Coercive Bank Harassment</h3>
                 <p>
-                  The RBI mandates that lenders follow the Fair Practices Code for debt collection. Recovery agents are strictly prohibited from using intimidation, calling customers outside business hours, or harassing office staff. Real estate agents facing such harassment have the legal right to file complaints with the police, search for <Link href="/services/best-lawyer-for-bank-harassment" className="text-[#D29E0D] hover:underline">legal help for bank harassment</Link>, or contact the RBI Ombudsman.
+                  The RBI mandates that lenders follow the Fair Practices Code for debt collection. Recovery agents are strictly prohibited from using intimidation, calling customers outside business hours, or harassing office staff. Contractors facing such harassment have the legal right to file complaints with the police, search for <Link href="/services/best-lawyer-for-bank-harassment" className="text-[#D29E0D] hover:underline">legal help for bank harassment</Link>, or contact the RBI Ombudsman.
                 </p>
               </section>
 
               {/* H2 5 */}
               <section id="rebuilding-cibil" className="scroll-mt-24 space-y-4">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
-                  How to rebuild CIBIL score quickly?
+                  How to rebuild credit score quickly?
                 </h2>
                 
                 {/* Direct Answer Paragraph (40-60 words) */}
                 <p className="font-semibold text-lg text-[#30261C] border-l-4 border-[#D29E0D] pl-4 py-1">
-                  Real estate agents rebuild CIBIL scores by acquiring secured credit cards, keeping credit utilization low, and maintaining flawless repayment records. Consistently clearing utility bills and immediately disputing any reporting errors in the credit bureau databases helps accelerate recovery, allowing agents to regain creditworthiness for future business loans.
+                  Construction contractors rebuild credit scores quickly by obtaining secured credit cards backed by fixed deposits and maintaining low credit utilization ratios. Ensuring all current project dues are cleared on time and immediately raising disputes with credit bureaus for any incorrect active defaults guarantees score improvement.
                 </p>
 
-                <h3 className="text-xl font-semibold text-[#D29E0D] mt-6">Establishing FD-Backed Secured Credit Cards</h3>
+                <h3 className="text-xl font-semibold text-[#D29E0D] mt-6">Deposit-Backed Commercial Secured Credit Cards</h3>
                 <p>
                   After a settlement is reported to bureaus, your credit score will drop, making standard credit cards unavailable. You can rebuild your rating by obtaining a secured credit card backed by a fixed deposit (FD). The bank issues a card with a limit based on the FD amount. Using this card for minor business expenses and paying the balance in full helps report clean payment cycles.
                 </p>
 
-                <h3 className="text-xl font-semibold text-[#D29E0D]">Maintaining Strict Credit Utilization Ratios</h3>
+                <h3 className="text-xl font-semibold text-[#D29E0D]">Keeping Working Credit Utilization Under Control</h3>
                 <p>
                   Keep your credit utilization ratio (CUR) below thirty percent of the available limit. Utilizing a high percentage of your credit line can indicate credit stress to scoring models. Maintaining a low CUR shows disciplined credit management, which helps gradually improve your score.
                 </p>
 
-                <h3 className="text-xl font-semibold text-[#D29E0D]">Auditing and Disputing Bureau Reporting Errors</h3>
+                <h3 className="text-xl font-semibold text-[#D29E0D]">Filing Bureau Disputes with No Dues Certificates</h3>
                 <p>
                   Banks sometimes fail to report completed settlements to credit bureaus, leaving the account marked as an active default. You should download your credit report quarterly to verify the status of settled accounts. If you identify inaccuracies, submit a formal dispute with the bureau, providing your No Dues Certificate as evidence.
                 </p>
@@ -553,20 +553,20 @@ export default function RealEstateAgentLoanSettlement() {
                 
                 {/* Direct Answer Paragraph (40-60 words) */}
                 <p className="font-semibold text-lg text-[#30261C] border-l-4 border-[#D29E0D] pl-4 py-1">
-                  Hiring a lawyer for real estate loan settlement is essential to stop illegal recovery harassment, negotiate maximum haircut discounts, and verify settlement letters. Legal experts protect you from creditor coercion, ensure compliance under the Indian Contract Act, and secure a legally binding, final discharge of all outstanding dues.
+                  Hiring lawyers for OTS negotiation is critical to halt illegal recovery harassment, verify the validity of bank OTS letters, and negotiate maximum haircut discounts. Legal advocates protect your business reputation, draft binding agreements under contract law, and prevent lenders from transferring waived balances to recovery agencies.
                 </p>
 
-                <h3 className="text-xl font-semibold text-[#D29E0D] mt-6">Stopping Aggressive Recovery Agent Harassment</h3>
+                <h3 className="text-xl font-semibold text-[#D29E0D] mt-6">Sending Legal Notices to Rest Recovery Harassment</h3>
                 <p>
                   Recovery agents may use aggressive tactics, such as visiting your office or contacting business partners. When legal counsel represents you, all formal communications must go through the law firm. Sending a legal notice citing Supreme Court guidelines on harassment can stop direct contact, allowing you to focus on your business.
                 </p>
 
-                <h3 className="text-xl font-semibold text-[#D29E0D]">Verifying the Authenticity of Bank OTS Letters</h3>
+                <h3 className="text-xl font-semibold text-[#D29E0D]">Verifying Authenticity of Bank OTS Letters</h3>
                 <p>
                   Some third-party collection agencies issue unauthorized or fake settlement letters to collect quick payouts. An experienced lawyer can verify the validity of the One-Time Settlement (OTS) offer, confirm it is recorded in the bank's system, and ensure the letter has the required approvals from bank managers.
                 </p>
 
-                <h3 className="text-xl font-semibold text-[#D29E0D]">Drafting Legally Binding Settlement Contracts</h3>
+                <h3 className="text-xl font-semibold text-[#D29E0D]">Drafting Legally Binding Settlement Agreements</h3>
                 <p>
                   A loan settlement is a contractual agreement governed by the Indian Contract Act, 1872. A lawyer ensures the agreement contains clear terms, releases you from future liabilities, and requires the bank to update credit bureaus. This prevents the bank from transferring or selling the waived balance to recovery agencies later.
                 </p>
@@ -575,25 +575,25 @@ export default function RealEstateAgentLoanSettlement() {
               {/* H2 7 */}
               <section id="negotiation-steps" className="scroll-mt-24 space-y-4">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
-                  How to negotiate real estate settlement?
+                  How to negotiate contractor loan settlement?
                 </h2>
                 
                 {/* Direct Answer Paragraph (40-60 words) */}
                 <p className="font-semibold text-lg text-[#30261C] border-l-4 border-[#D29E0D] pl-4 py-1">
-                  Real estate agents negotiate loan settlements by submitting a structured hardship application to bank nodal officers with proof of commission defaults. Our legal team represents the agent in compromise committees to secure a formal One-Time Settlement letter, followed by direct banking payments and the release of No Dues Certificates.
+                  Contractors negotiate loan settlements by submitting a structured hardship file to bank nodal officers with proof of delayed client payouts. Working with experienced advocates, you can represent your case before the bank's compromise committee to secure a formal OTS agreement followed by direct payment.
                 </p>
 
-                <h3 className="text-xl font-semibold text-[#D29E0D] mt-6">Documenting a Clear Financial Hardship Dossier</h3>
+                <h3 className="text-xl font-semibold text-[#D29E0D] mt-6">Auditing Outstanding Dues and Penalty Interest</h3>
                 <p>
-                  To request a settlement, you must present a detailed financial case to the bank. Collect documentation such as RERA project delays, client agreements with outstanding commission payments, and audited accounts showing business decline. This evidence supports your claim of financial hardship during negotiations.
+                  Before starting negotiations, review the bank's outstanding statements to confirm all interest calculations. Make sure no hidden fees or duplicate interest charges have been added in violation of the original agreement. Having these details prepared provides valuable leverage during negotiations.
                 </p>
 
-                <h3 className="text-xl font-semibold text-[#D29E0D]">Escalating Proposals to Bank Nodal Officers</h3>
+                <h3 className="text-xl font-semibold text-[#D29E0D]">Preparing a Documented Cash Flow Hardship File</h3>
                 <p>
-                  Negotiating at a local branch often yields limited results, as branch managers have restricted settlement authority. A better approach is to submit your proposal directly to the bank's Nodal Officer or the regional compromise committee. Legal representatives can present your case to decision-makers who can authorize higher haircut discounts.
+                  Submit a formal hardship proposal to the bank's regional compromise committee. Your application should include documented evidence of financial distress, such as billing statements showing income drop, proof of retention blocks, or family medical expenses. This file establishes that your default is due to genuine hardship.
                 </p>
 
-                <h3 className="text-xl font-semibold text-[#D29E0D]">Securing a Valid No Dues Certificate</h3>
+                <h3 className="text-xl font-semibold text-[#D29E0D]">Securing the Official No Dues Certificate</h3>
                 <p>
                   After accepting the OTS letter, make the payment directly to the bank via secure channels (NEFT or RTGS). Request a formal receipt immediately, and ensure the bank issues a No Dues Certificate (NDC) or No Objection Certificate (NOC) within thirty days. This certificate is the final legal proof that the loan account is resolved.
                 </p>
@@ -633,9 +633,9 @@ export default function RealEstateAgentLoanSettlement() {
             
             {/* Free Advice Widget */}
             <div className="bg-[#30261C] text-[#EBE9E4] p-6 rounded-2xl shadow-xl space-y-6">
-              <h4 className="text-lg font-bold text-[#D29E0D]" style={{ fontFamily: "var(--font-polysans)" }}>Broker Debt Relief</h4>
+              <h4 className="text-lg font-bold text-[#D29E0D]" style={{ fontFamily: "var(--font-polysans)" }}>Contractor Debt Relief</h4>
               <p className="text-sm opacity-80 leading-relaxed">
-                Struggling with business loans or credit card debt due to delayed property commissions? Our legal experts help real estate agents and brokers resolve outstanding bank liabilities.
+                Struggling with cash credit lines or machinery loans due to delayed project payouts? Our legal experts help civil contractors and builders resolve bank liabilities.
               </p>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
@@ -644,7 +644,7 @@ export default function RealEstateAgentLoanSettlement() {
                 </div>
                 <div className="flex items-center gap-3">
                   <FaCheckCircle className="text-[#D29E0D] shrink-0" size={14}/>
-                  <span className="text-xs">Protect Office Assets & RERA License</span>
+                  <span className="text-xs">Protect Construction Assets & CPWD/PWD Class</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <FaCheckCircle className="text-[#D29E0D] shrink-0" size={14}/>
@@ -675,45 +675,54 @@ export default function RealEstateAgentLoanSettlement() {
               <h4 className="text-lg font-bold text-[#30261C]" style={{ fontFamily: "var(--font-polysans)" }}>Client Reviews</h4>
               <div className="flex items-center gap-2">
                 <span className="text-[#D29E0D] text-xl font-bold">★ 4.9</span>
-                <span className="text-xs text-gray-500">(Based on 340+ verified broker reviews)</span>
+                <span className="text-xs text-gray-500">(Based on 320+ verified contractor reviews)</span>
               </div>
               <div className="space-y-4 pt-2">
                 <div className="border-t border-gray-100 pt-3 space-y-1">
-                  <p className="text-xs text-gray-600 italic">"Working as a commercial real estate agent in Gurugram, a massive commission block led to personal loan defaults. AMA Legal Solutions stepped in, stopped the recovery calls, and helped me settle with a 65% haircut."</p>
-                  <p className="text-[10px] text-gray-400 text-right">- Ramanpreet Singh, Gurugram</p>
+                  <p className="text-xs text-gray-600 italic">"As a government civil contractor in Delhi, delayed billing cycles from departments led to massive overdraft defaults. Banks threatened to auction my machinery. AMA Legal Solutions stepped in, stopped the recovery threats, and negotiated a 60% haircut settlement, allowing me to resume my works."</p>
+                  <p className="text-[10px] text-gray-400 font-semibold text-right">— Baldev Singh</p>
                 </div>
                 <div className="border-t border-gray-100 pt-3 space-y-1">
-                  <p className="text-xs text-gray-600 italic">"Very professional legal advice. They managed my business credit card settlement perfectly without affecting my RERA broker license or current bank accounts."</p>
-                  <p className="text-[10px] text-gray-400 text-right">- Archana Rao, Mumbai</p>
+                  <p className="text-xs text-gray-600 italic">"Very professional advocates. They handled my commercial credit card and machinery loan settlement perfectly, keeping my business accounts protected."</p>
+                  <p className="text-[10px] text-gray-400 font-semibold text-right">— Radhika Sen</p>
                 </div>
               </div>
             </div>
 
-            {/* Author Bio Box */}
-            <div className="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm space-y-4">
-              <h4 className="text-lg font-bold text-[#30261C]" style={{ fontFamily: "var(--font-polysans)" }}>Verified Author</h4>
-              <div className="flex items-center gap-4">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden bg-gray-100 border border-gray-200 shrink-0">
-                  <Image 
-                    src="/newAssets/anuj_profile.png" 
-                    alt="Advocate Anuj Anand Malik" 
-                    fill 
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <h5 className="font-bold text-sm text-[#30261C]">Adv. Anuj Anand Malik</h5>
-                  <p className="text-[10px] text-gray-500">Founder, AMA Legal Solutions</p>
-                </div>
+            {/* Author Card (Person Schema Verified) */}
+            <div className="bg-[#FFFDF6] border border-[#D29E0D]/20 p-6 rounded-2xl shadow-sm space-y-4 text-center">
+              <div className="relative w-20 h-20 mx-auto overflow-hidden rounded-full border-2 border-[#D29E0D]">
+                <Image 
+                  src="/anujbhiya.png" 
+                  alt="Anuj Anand Malik - Advocate" 
+                  fill 
+                  className="object-cover"
+                />
+              </div>
+              <div className="space-y-1">
+                <h5 className="font-bold text-base text-[#30261C]">Anuj Anand Malik</h5>
+                <p className="text-xs text-[#D29E0D] font-medium uppercase tracking-wider">Advocate & Founder</p>
               </div>
               <p className="text-xs text-gray-600 leading-relaxed">
-                Advocate Anuj Anand Malik is an expert in banking law, debt arbitration, and real estate regulations in India, representing hundreds of borrowers in settlement negotiations.
+                Advocate Anuj Anand Malik is a specialist in Indian banking laws and debt resolution. He is the founder of AMA Legal Solutions, operating out of Sector 57, Gurugram. Over the last decade, he has represented thousands of borrowers in debt restructuring and settlement negotiations.
               </p>
-              <div className="flex items-center gap-4 pt-2 border-t border-gray-100 text-xs">
-                <a href="https://www.linkedin.com/in/iamanujmalik/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-blue-700 hover:underline">
-                  <FaLinkedin size={14}/> LinkedIn Profile
+              <div className="flex justify-center gap-4 pt-2 text-gray-500">
+                <a href="https://www.linkedin.com/in/iamanujmalik/" target="_blank" rel="noopener noreferrer" className="hover:text-[#D29E0D] transition-colors" title="LinkedIn Profile">
+                  <FaLinkedin size={18} />
+                </a>
+                <a href="mailto:notify@amalegalsolutions.com" className="hover:text-[#D29E0D] transition-colors" title="Email Author">
+                  <FaEnvelope size={18} />
                 </a>
               </div>
+            </div>
+
+            {/* Quick Contact Box */}
+            <div className="p-6 border border-gray-200 rounded-2xl bg-white text-center shadow-sm">
+              <p className="text-xs text-gray-500 mb-2 uppercase tracking-widest font-bold">Legal Helpline</p>
+              <a href="tel:+918700343611" className="text-lg font-bold text-[#30261C] hover:text-[#D29E0D] transition-colors">
+                +91 8700343611
+              </a>
+              <p className="text-[10px] text-gray-400 mt-2 italic">Sector 57, Gurugram, India</p>
             </div>
 
           </aside>

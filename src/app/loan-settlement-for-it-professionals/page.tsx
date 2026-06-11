@@ -73,6 +73,7 @@ const relatedPages = [
   { title: "Personal Loan Settlement Guide", href: "/personal-loan-settlement" },
   { title: "Credit Card Settlement Process", href: "/credit-card-settlement" },
   { title: "Doctor Loan Settlement Guide", href: "/loan-settlement-for-doctors-healthcare" },
+  { title: "Student & Graduate Loan Settlement Guide", href: "/loan-settlement-for-students-and-graduates" },
 ];
 
 const faqs = [

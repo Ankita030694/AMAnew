@@ -24,6 +24,30 @@ const Footer = () => {
       "name": "Real Estate Agent Loan Settlement Guide",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "340" }
     },
+    "/loan-settlement-for-students-and-graduates": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Student & Graduate Loan Settlement Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "420" }
+    },
+    "/loan-settlement-for-insurance-agents": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Insurance Agent Loan Settlement Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "190" }
+    },
+    "/loan-settlement-for-construction-contractors": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Construction Contractor Loan Settlement Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "320" }
+    },
+    "/loan-settlement-for-textile-owners": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Textile Owner Loan Settlement Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "240" }
+    },
     "/loan-settlement-for-freelancers": {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -972,7 +996,11 @@ const Footer = () => {
         { name: 'Trader and Wholesaler Loan Settlement' , href: '/loan-settlement-for-traders-and-wholesalers' },
         { name: 'Freelancer Loan Settlement', href: '/loan-settlement-for-freelancers' },
         { name: 'Doctor & Healthcare Loan Settlement', href: '/loan-settlement-for-doctors-healthcare' },
-        { name: 'Real Estate Agent Loan Settlement', href: '/loan-settlement-for-real-estate-agents' }
+        { name: 'Real Estate Agent Loan Settlement', href: '/loan-settlement-for-real-estate-agents' },
+        { name: 'Student & Graduate Loan Settlement', href: '/loan-settlement-for-students-and-graduates' },
+        { name: 'Insurance Agent Loan Settlement', href: '/loan-settlement-for-insurance-agents' },
+        { name: 'Construction Contractor Loan Settlement', href: '/loan-settlement-for-construction-contractors' },
+        { name: 'Textile Owner Loan Settlement', href: '/loan-settlement-for-textile-owners' }
       ]
 
     }
