@@ -79,6 +79,8 @@ export async function GET(): Promise<Response> {
     '/arbitration-for-yes-bank',
     '/arbitration-for-rbl-bank',
     '/arbitration-for-indusind-bank',
+    '/what-is-section-21-of-arbitration-and-conciliation-act',
+    '/what-is-meant-by-invocation-of-arbitration',
     '/unsecured-loan-settlement',
     '/secured-loan-settlement',
     '/trading-loan-settlement',

@@ -1076,6 +1076,8 @@ const Footer = () => {
         { name: "Yes Bank Arbitration", href: "/arbitration-for-yes-bank" },
         { name: "RBL Bank Arbitration", href: "/arbitration-for-rbl-bank" },
         { name: "IndusInd Bank Arbitration", href: "/arbitration-for-indusind-bank" },
+        { name: "Arbitration Act Section 21", href: "/what-is-section-21-of-arbitration-and-conciliation-act" },
+        { name: "Invocation of Arbitration", href: "/what-is-meant-by-invocation-of-arbitration" },
       ]
 
     }

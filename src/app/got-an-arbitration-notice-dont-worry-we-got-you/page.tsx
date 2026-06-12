@@ -8,44 +8,24 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 // FAQ data for rendering and Schema
 const faqs = [
   {
+    question: "What happens if I ignore a Section 21 arbitration notice from a bank?",
+    answer: "If you ignore a Section 21 arbitration notice, the lender can proceed with a unilateral appointment of an arbitrator. The proceedings will continue ex-parte (in your absence), resulting in an arbitral award for the full claimed debt, interest, and costs. This award is legally binding and can be executed through a civil court to freeze your bank accounts or attach property."
+  },
+  {
+    question: "Can a bank unilaterally appoint a sole arbitrator under Indian law?",
+    answer: "No. Under the Supreme Court of India rulings in TRF Ltd. and Perkins Eastman, a party interested in the dispute's outcome (such as the lending bank) cannot unilaterally appoint a sole arbitrator. Any such unilateral appointment is invalid and can be challenged in the High Court under Section 11 of the Arbitration Act."
+  },
+  {
+    question: "Can I challenge an ex-parte arbitration award in court?",
+    answer: "Yes. An ex-parte arbitration award can be challenged by filing a petition under Section 34 of the Arbitration and Conciliation Act, 1996, in a civil court within a strict 90-day window. Valid grounds include lack of proper notice, sole arbitrator bias, or violation of natural justice."
+  },
+  {
     question: "What should I do immediately after receiving an arbitration notice in India?",
-    answer: "The first and most critical step is to not ignore the notice. In India, under the Arbitration and Conciliation Act, 1996, the clock starts ticking the moment you receive the notice. You should immediately consult a specialized legal expert like AMA Legal Solutions to review the claims, check the validity of the arbitration clause, and draft a formal response within the specified timeline, which is usually 30 days. Ignoring it can lead to an ex-parte award against you."
-  },
-  {
-    question: "Is an arbitration notice the same as a court summons?",
-    answer: "While it is not exactly the same as a civil court summons, an arbitration notice carries similar legal weight. It signifies the formal commencement of a legal dispute resolution process that is binding and enforceable by law. If the arbitration ends in an award, that award can be executed like a decree of a civil court. Therefore, it must be treated with the same level of seriousness as a court case."
-  },
-  {
-    question: "Can a bank or NBFC unilaterally appoint an arbitrator?",
-    answer: "No, a bank or financial institution cannot unilaterally appoint an arbitrator without your consent, as per the latest judgments from the Supreme Court of India. Any such appointment is often considered biased and legally invalid. If you receive a notice where the bank has already named their arbitrator, you have the right to challenge this and request a neutral appointment through the court under Section 11 of the Arbitration Act."
-  },
-  {
-    question: "How long does the arbitration process usually take in India?",
-    answer: "The Arbitration and Conciliation Act mandates that an arbitral award must be made within 12 months from the date the tribunal is constituted. This period can be extended by a further 6 months by mutual consent of the parties. This makes arbitration significantly faster than traditional court litigation, which can often drag on for many years."
-  },
-  {
-    question: "What are the common grounds for receiving an arbitration notice?",
-    answer: "Most arbitration notices in India are issued due to defaults in unsecured loans, credit card payments, business contract disputes, or employment agreement breaches. Since most modern financial and commercial contracts include an arbitration clause, lenders and companies prefer this route for faster recovery and dispute resolution compared to the civil courts."
+    answer: "The first step is to record the exact date and method of receipt. Then, verify the validity of the notice under Section 21 of the Act. Do not consent to any unilaterally proposed arbitrator. Consult a specialized advocate to draft a formal response objecting to jurisdiction or bias within the 30-day response window."
   },
   {
     question: "Can I settle the dispute after receiving the arbitration notice?",
-    answer: "Yes, receiving an arbitration notice is often used as a tactical move to bring the parties to the negotiating table. You can always negotiate a 'One Time Settlement' (OTS) even after the proceedings have begun. At AMA Legal Solutions, we often use the arbitration phase to negotiate substantial waivers for our clients, helping them settle their debts for a fraction of the original claim."
-  },
-  {
-    question: "What happens if I lose the arbitration case?",
-    answer: "If the arbitrator passes an award against you, you are legally bound to pay the amount specified. If you fail to do so, the other party can file an execution petition in a civil court to attach your bank accounts, property, or other assets. However, you do have the right to challenge the award in a higher court under Section 34 of the Arbitration Act if there were procedural irregularities or jurisdictional issues."
-  },
-  {
-    question: "Do I need a lawyer for arbitration proceedings?",
-    answer: "While the law does not strictly mandate a lawyer, it is highly inadvisable to represent yourself. Arbitration involves complex legal procedures, evidence handling, and interpretation of the Arbitration and Conciliation Act. Professional legal representation ensures that your rights are protected, biased appointments are challenged, and technical loopholes in the lender's claim are identified."
-  },
-  {
-    question: "Where does the arbitration hearing take place?",
-    answer: "The location (seat) of the arbitration is usually mentioned in the arbitration clause of the contract you signed. However, modern arbitration is increasingly conducted virtually via video conferencing, meaning you might not need to travel. If the location mentioned is highly inconvenient, a lawyer can sometimes argue for a more accessible venue or a virtual hearing."
-  },
-  {
-    question: "What are the costs involved in arbitration?",
-    answer: "The costs typically include the arbitrator's fee, administrative fees for the arbitration center (if applicable), and legal fees for your counsel. In many consumer cases, the lender initially pays the arbitrator's fee, but they may attempt to recover this from you if they win the case. Hiring AMA Legal Solutions often saves you significantly more in negotiated settlement amounts than the cost of our professional services."
+    answer: "Yes, you can negotiate a One-Time Settlement (OTS) even after the arbitration proceedings have commenced. In fact, filing a strong legal response that challenges the arbitrator's bias and highlights RBI guidelines violations often forces banks to offer substantial debt waivers to avoid prolonged litigation."
   }
 ];
 
@@ -73,8 +53,8 @@ const breadcrumbSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Got an Arbitration Notice? Don't Worry, We Got You | Legal Defense Guide",
-  "description": "Received an arbitration notice from a bank, NBFC, or fintech app? Learn your legal rights, how to challenge unilateral appointments, and how to settle your debt legally. Expert guidance from AMA Legal Solutions.",
+  "headline": "Received Arbitration Notice? Here's What to Do Next",
+  "description": "Received an arbitration notice from a bank or NBFC? Learn how to challenge biased arbitrator appointments, respond legally, and settle your loan debts.",
   "image": "https://www.amalegalsolutions.com/newAssets/logo/ama-white.svg",
   "author": {
     "@type": "Organization",
@@ -88,7 +68,7 @@ const articleSchema = {
       "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
-  "datePublished": "2026-03-12"
+  "datePublished": "2026-06-12"
 };
 
 // FAQ Schema
@@ -150,8 +130,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Got an Arbitration Notice? Don't Worry, We Got You | Legal Relief India",
-  description: "Received an arbitration notice for loan default or contract dispute? Don't worry, we got you. AMA Legal Solutions helps you challenge biased arbitrators and settle debts.",
+  title: "Arbitration Notice Received? Here's What to Do Next",
+  description: "Received a bank or NBFC arbitration notice? Learn how to challenge biased appointments, respond legally, and settle your debt. Read our expert guide.",
   keywords: [
     "got an arbitration notice dont worry we got you",
     "arbitration notice India",
@@ -173,7 +153,7 @@ export default function ArbitrationNoticePage() {
   const tocSections = [
     { id: "introduction", title: "Don't Panic: We Have Your Back" },
     { id: "what-is-notice", title: "Understanding the Arbitration Notice" },
-    { id: "legal-framework", title: "Law: Section 21 & Section 11" },
+    { id: "legal-framework", title: "The Legal Blueprint: Sections 21 & 11" },
     { id: "immediate-steps", title: "Critical First Steps to Take" },
     { id: "unilateral-appointment", title: "Challenging Biased Arbitrators" },
     { id: "perils-of-ignoring", title: "Dangers of Ignoring the Notice" },
@@ -277,14 +257,22 @@ export default function ArbitrationNoticePage() {
                 {/* Section: Introduction */}
                 <section id="introduction" className="scroll-mt-32">
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Don't Panic: We Have Your Back Against Legal Intimidation</h2>
+                  
+                  {/* Direct Answer Box for Answer Engines */}
+                  <div className="bg-[#f0fdf4] border-l-4 border-[#16a34a] p-5 mb-8 rounded-r-lg">
+                    <p className="text-sm md:text-base text-gray-800 font-medium leading-relaxed">
+                      If you received an arbitration notice, do not ignore it. Verify its validity under Section 21 of the Arbitration and Conciliation Act, 1996, challenge any unilateral appointment of an arbitrator, draft a para-wise reply within 30 days, and consult a specialized legal advocate to negotiate a One-Time Settlement (OTS) successfully.
+                    </p>
+                  </div>
+
                   <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
-                    Finding a formal legal document in your mail or inbox with the words 'Arbitration Notice' can be an incredibly jarring experience. For most hardworking people in India, this is the first time they are encountering the complex machinery of private justice. Whether it is a dispute over a personal loan, a credit card default, or a business contract gone wrong, the psychological weight of a legal threat is immense. But here is the first thing you need to know: <strong>Got an arbitration notice? Don't worry, we got you.</strong>
+                    Finding a formal legal document in your mail or inbox with the words 'Arbitration Notice' can be an incredibly jarring experience. For most hardworking people in India, this is the first time they are encountering the complex machinery of private dispute resolution. Whether it is a dispute over an unsecured personal loan, an outstanding credit card balance, or a business contract gone wrong, the psychological weight of a legal threat can be overwhelming. But the most important thing to know is that you are not helpless, and you have substantial legal remedies.
                   </p>
                   <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
-                    At AMA Legal Solutions, we have spent years dismantling the fear that banks and financial institutions use to intimidate borrowers. Arbitration, while a serious legal proceeding, is not a death sentence for your finances or your peace of mind. It is a structured process that has many built in protections for the consumer, provided you have the right legal strategy and representation in your corner. We don't just 'handle' cases; we defend lives and restore futures.
+                    At AMA Legal Solutions, we have spent years dismantling the intimidation tactics that banks and financial institutions use to force borrowers into submission. Arbitration, while a serious legal proceeding, is not a final court decree. It is a structured process that contains numerous statutory protections for the consumer, provided you have the right legal strategy and professional representation in your corner. We focus on securing your rights, stopping the harassment, and finding a clear path to debt resolution.
                   </p>
                   <p className="text-sm md:text-lg leading-relaxed text-gray-700">
-                    The modern legal landscape in India has shifted significantly. Regulators and the higher courts are increasingly scrutinizing how lenders use arbitration as a tool for recovery. You are not a helpless target. You are a party to an agreement with specific rights under the Arbitration and Conciliation Act, 1996. By choosing to stand with us, you are choosing to transform from a worried recipient into an empowered litigant who knows exactly how to fight back and win.
+                    The modern legal landscape in India has shifted significantly in favor of consumer protection. Regulators like the Reserve Bank of India (RBI) and the higher courts are increasingly scrutinizing how lenders use arbitration as a unilateral debt recovery tool. You are not a passive target; you are a party to an agreement with specific rights under the Arbitration and Conciliation Act, 1996. By engaging specialized legal counsel, you transform from a worried recipient into an informed litigant who knows how to challenge procedural flaws and protect their financial future.
                   </p>
                 </section>
 
@@ -293,14 +281,14 @@ export default function ArbitrationNoticePage() {
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">What Exactly is an Arbitration Notice?</h2>
                   <div className="bg-[#fff9e6] border-l-4 border-[#D2A02A] p-4 md:p-6 mb-4 md:mb-8 rounded-r-lg">
                     <p className="text-sm md:text-lg text-gray-800 italic">
-                      An arbitration notice is a formal communication sent by one party (the claimant) to another (the respondent) to signify the intent to resolve a dispute through arbitration instead of a traditional court. It is the legal mechanism that 'triggers' the dispute resolution clause in your original contract.
+                      An arbitration notice is a formal legal communication sent by one party (the claimant) to another (the respondent) to signify the intent to resolve a dispute through arbitration instead of a traditional civil court. It is the legal mechanism that 'triggers' the dispute resolution clause in your original contract.
                     </p>
                   </div>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    When you sign a loan agreement with a bank or a fintech app, there is almost always a clause buried in the fine print. This clause states that any dispute will not go to the regular civil courts but will be decided by an independent arbitrator. The notice you have received is the formal invocation of that clause. It usually contains the details of the dispute, the amount claimed, and often a suggestion for who the arbitrator should be.
+                    When you sign a loan agreement or credit card application with a bank or a fintech app, there is almost always a clause buried in the fine print. This clause states that any dispute arising out of the agreement will bypass the regular civil courts and instead be decided by a private, neutral third party called an arbitrator. The notice you have received is the formal invocation of that clause, indicating that the lender has decided to pursue a legal claim against you outside the traditional judicial system.
                   </p>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    It is crucial to understand that this notice is not just a 'letter.' It has severe legal consequences. For instance, it determines the date on which the proceedings officially start for the purposes of the law of limitation. It also sets the stage for the appointment of the judge (arbitrator) who will decide your case. This is why you must never treat it as junk mail or a simple reminder. It is the beginning of a legal battle that you must be prepared to fight.
+                    It is crucial to understand that this notice is not just a standard collection letter. It has severe legal consequences. For instance, it determines the date on which the proceedings officially start for the purposes of the law of limitation. It also sets the stage for the appointment of the private judge (arbitrator) who will decide your case. This is why you must never treat it as junk mail or a simple payment reminder. It is the formal commencement of a legal dispute that requires a strategic reply.
                   </p>
                 </section>
 
@@ -308,14 +296,14 @@ export default function ArbitrationNoticePage() {
                 <section id="legal-framework" className="scroll-mt-32">
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">The Legal Blueprint: Section 21 and Section 11</h2>
                   <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
-                    To effectively defend yourself, you must understand the rules of the game. In India, arbitration is governed by the Arbitration and Conciliation Act, 1996. Two sections of this act are particularly important for anyone who has just received a notice:
+                    To effectively defend yourself, you must understand the statutory framework. In India, arbitration is governed by the Arbitration and Conciliation Act, 1996. Two sections of this act are particularly important for anyone who has just received a notice:
                   </p>
                   <ul className="list-disc pl-6 space-y-4 text-gray-700 bg-gray-50 p-6 rounded-xl border border-gray-100">
                     <li>
-                      <strong className="text-gray-900">Section 21 (Commencement of Proceedings):</strong> This section states that unless otherwise agreed, the arbitral proceedings in respect of a particular dispute commence on the date on which a request for that dispute to be referred to arbitration is received by the respondent. This is why the date on the notice and the date you received it are mission critical pieces of information.
+                      <strong className="text-gray-900">Section 21 (Commencement of Proceedings):</strong> Under this section, unless otherwise agreed, the arbitral proceedings in respect of a particular dispute commence on the date on which a request for that dispute to be referred to arbitration is received by the respondent. This is called the Section 21 notice, and the exact date of its receipt is crucial for establishing the timeline of the dispute.
                     </li>
                     <li>
-                      <strong className="text-gray-900">Section 11 (Appointment of Arbitrators):</strong> This is perhaps the most contested area in consumer arbitration. If you and the bank cannot agree on who the arbitrator should be, Section 11 allows either party to approach the court (the High Court or the Supreme Court, depending on the case) to appoint a neutral arbitrator. This is your primary defense against 'kangaroo courts' where the bank tries to appoint its own paid experts to decide your fate.
+                      <strong className="text-gray-900">Section 11 (Appointment of Arbitrators):</strong> This is the most contested area in consumer arbitration. If you and the lender cannot agree on who the arbitrator should be, Section 11 allows either party to approach the court (the High Court or the Supreme Court, depending on the case) to appoint a neutral arbitrator. Filing a Section 11 petition is your primary defense against 'kangaroo courts' where the lender tries to appoint its own paid panel to decide your fate.
                     </li>
                   </ul>
                   <p className="text-lg leading-relaxed mt-6 text-gray-700">
@@ -351,18 +339,21 @@ export default function ArbitrationNoticePage() {
 
                 {/* Section: Unilateral Appointment */}
                 <section id="unilateral-appointment" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Wait, Can They Just Choose Their Own Judge?</h2>
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">The Perkins Eastman Shield: Can Lenders Unilaterally Appoint Arbitrators?</h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    This is the number one question we get from clients who receive an arbitration notice. Many notices say something like: 'Since you have defaulted, we have appointed Mr. X, a retired judge, as the sole arbitrator. The first hearing will take place at [Location] on [Date].'
+                    This is the most critical question we receive from clients who receive an arbitration notice. Many notices state that the bank has already appointed their arbitrator—often a lawyer who exclusively works for them or a retired judge from their own panel—and scheduled the first hearing. Under Indian law, this practice is highly illegal.
                   </p>
                   <div className="bg-gray-900 text-white p-6 md:p-10 rounded-2xl mb-8 relative overflow-hidden">
                     <div className="absolute top-0 right-0 p-4 opacity-10 text-6xl">⚖️</div>
-                    <h4 className="text-[#D2A02A] font-bold text-2xl mb-4">The 'Unilateral Appointment' Defense</h4>
+                    <h4 className="text-[#D2A02A] font-bold text-2xl mb-4">The Perkins Eastman Judgment & Sole Arbitrator Bias</h4>
                     <p className="text-gray-300 leading-relaxed">
-                      The Supreme Court of India has made it very clear in landmark cases like <strong>TRF Ltd. v. Energo Engineering</strong> and <strong>Perkins Eastman Architects DPC v. HSCC (India) Ltd.</strong> that a party who has an interest in the outcome of the dispute cannot unilaterally appoint an arbitrator. In simple terms: The bank cannot choose its own judge.
+                      The Supreme Court of India has made it very clear in landmark cases like <strong>TRF Ltd. v. Energo Engineering Projects Ltd.</strong> and the subsequent <strong>Perkins Eastman judgment</strong> (<em>Perkins Eastman Architects DPC v. HSCC (India) Ltd.</em>) that a party who has an interest in the outcome of the dispute cannot unilaterally appoint an arbitrator. In simple terms: The bank cannot choose its own judge.
                     </p>
                     <p className="text-gray-300 leading-relaxed mt-4">
-                      If the notice you received already names an arbitrator without your prior consent, that appointment is likely illegal. We specialize in filing objections against such biased appointments and moving the court to ensure a truly neutral person decides your case. For instance, if you are dealing with HDFC Bank, you can check our detailed breakdown on <Link href="/arbitration-for-hdfc-bank" className="text-[#D2A02A] hover:underline font-semibold">HDFC Bank Arbitration</Link> to learn about their specific processes and how to secure a settlement. Similarly, if you are dealing with ICICI Bank, check our guide on <Link href="/arbitration-for-icici-bank" className="text-[#D2A02A] hover:underline font-semibold">ICICI Bank Arbitration</Link> to resolve your online ODR case. Additionally, if you have received a notice from Axis Bank, read our guide on <Link href="/arbitration-for-axis-bank" className="text-[#D2A02A] hover:underline font-semibold">Axis Bank Arbitration</Link> to understand your settlement options. Furthermore, if you are dealing with State Bank of India, check our comprehensive guide on <Link href="/arbitration-for-sbi-bank" className="text-[#D2A02A] hover:underline font-semibold">SBI Bank Arbitration</Link> to resolve your dispute. Moreover, if you are facing action from Bajaj Finance, read our dedicated guide on <Link href="/arbitration-for-bajaj-bank" className="text-[#D2A02A] hover:underline font-semibold">Bajaj Finance Arbitration</Link> to stop harassment. If you are dealing with IDFC First Bank, explore our checklist on <Link href="/arbitration-for-idfc-bank" className="text-[#D2A02A] hover:underline font-semibold">IDFC Bank Arbitration</Link> to settle your loan under RBI guidelines. In addition, if you are facing arbitration from Kotak Mahindra Bank, review our step-by-step path on <Link href="/arbitration-for-kotak-mahindra-bank" className="text-[#D2A02A] hover:underline font-semibold">Kotak Mahindra Bank Arbitration</Link> to handle the notice legally. Similarly, if you are dealing with Yes Bank, consult our legal advice on <Link href="/arbitration-for-yes-bank" className="text-[#D2A02A] hover:underline font-semibold">Yes Bank Arbitration</Link> to resolve your dispute. Likewise, if you are facing action from RBL Bank, check our comprehensive guide on <Link href="/arbitration-for-rbl-bank" className="text-[#D2A02A] hover:underline font-semibold">RBL Bank Arbitration</Link> to settle your dues under the law. Additionally, if you are dealing with IndusInd Bank, consult our guide on <Link href="/arbitration-for-indusind-bank" className="text-[#D2A02A] hover:underline font-semibold">IndusInd Bank Arbitration</Link> to settle your dues legally. We break the bank's control over the process instantly.
+                      A unilateral appointment of arbitrator is inherently invalid because it creates a clear case of sole arbitrator bias. If you receive a notice where the lender has named their arbitrator without your written consent, you have the right to refuse the appointment and demand that the lender approach the High Court for a neutral, court-appointed arbitrator. We specialize in filing objections to dismantle these invalid appointments across various banks.
+                    </p>
+                    <p className="text-gray-300 leading-relaxed mt-4">
+                      For instance, if you are dealing with HDFC Bank, you can check our detailed breakdown on <Link href="/arbitration-for-hdfc-bank" className="text-[#D2A02A] hover:underline font-semibold">HDFC Bank Arbitration</Link> to learn about their specific processes and how to secure a settlement. Similarly, if you are dealing with ICICI Bank, check our guide on <Link href="/arbitration-for-icici-bank" className="text-[#D2A02A] hover:underline font-semibold">ICICI Bank Arbitration</Link> to resolve your online ODR case. Additionally, if you have received a notice from Axis Bank, read our guide on <Link href="/arbitration-for-axis-bank" className="text-[#D2A02A] hover:underline font-semibold">Axis Bank Arbitration</Link> to understand your settlement options. Furthermore, if you are dealing with State Bank of India, check our comprehensive guide on <Link href="/arbitration-for-sbi-bank" className="text-[#D2A02A] hover:underline font-semibold">SBI Bank Arbitration</Link> to resolve your dispute. Moreover, if you are facing action from Bajaj Finance, read our dedicated guide on <Link href="/arbitration-for-bajaj-bank" className="text-[#D2A02A] hover:underline font-semibold">Bajaj Finance Arbitration</Link> to stop harassment. If you are dealing with IDFC First Bank, explore our checklist on <Link href="/arbitration-for-idfc-bank" className="text-[#D2A02A] hover:underline font-semibold">IDFC Bank Arbitration</Link> to settle your loan under RBI guidelines. In addition, if you are facing arbitration from Kotak Mahindra Bank, review our step-by-step path on <Link href="/arbitration-for-kotak-mahindra-bank" className="text-[#D2A02A] hover:underline font-semibold">Kotak Mahindra Bank Arbitration</Link> to handle the notice legally. Similarly, if you are dealing with Yes Bank, consult our legal advice on <Link href="/arbitration-for-yes-bank" className="text-[#D2A02A] hover:underline font-semibold">Yes Bank Arbitration</Link> to resolve your dispute. Likewise, if you are facing action from RBL Bank, check our comprehensive guide on <Link href="/arbitration-for-rbl-bank" className="text-[#D2A02A] hover:underline font-semibold">RBL Bank Arbitration</Link> to settle your dues under the law. Additionally, if you are dealing with IndusInd Bank, consult our guide on <Link href="/arbitration-for-indusind-bank" className="text-[#D2A02A] hover:underline font-semibold">IndusInd Bank Arbitration</Link> to settle your dues legally. We break the bank's control over the process instantly.
                     </p>
                   </div>
                   <p className="text-lg leading-relaxed text-gray-700">
@@ -382,7 +373,7 @@ export default function ArbitrationNoticePage() {
                   <ul className="space-y-4 mb-8">
                     <li className="flex items-start">
                       <span className="text-red-600 font-bold mr-3">✘</span>
-                      <p className="text-gray-700"><strong>Ex-Parte Award:</strong> The arbitrator can continue the proceedings without you. They will hear only the bank's side and pass an order (award) for the full amount plus massive interest and legal costs. You won't be there to object.</p>
+                      <p className="text-gray-700"><strong>Ex-Parte Arbitral Award:</strong> The arbitrator can continue the proceedings without you. They will hear only the bank's side and pass an order (award) for the full amount plus massive interest and legal costs. You won't be there to object.</p>
                     </li>
                     <li className="flex items-start">
                       <span className="text-red-600 font-bold mr-3">✘</span>
@@ -390,7 +381,7 @@ export default function ArbitrationNoticePage() {
                     </li>
                     <li className="flex items-start">
                       <span className="text-red-600 font-bold mr-3">✘</span>
-                      <p className="text-gray-700"><strong>Direct Execution:</strong> Once the award is passed, it becomes a decree of the court. The bank can go straight to the execution court to attach your salary, freeze your bank accounts, or put your property up for auction. You won't get a second chance to explain your hardship then.</p>
+                      <p className="text-gray-700"><strong>Execution of Arbitral Award:</strong> Once the award is passed, it becomes a decree of the court. The bank can go straight to the execution court to attach your salary, freeze your bank accounts, or put your property up for auction. You won't get a second chance to explain your hardship then.</p>
                     </li>
                   </ul>
                   <p className="text-lg leading-relaxed text-gray-700 font-bold text-red-700">
@@ -491,7 +482,7 @@ export default function ArbitrationNoticePage() {
                     </li>
                   </ul>
                   <p className="text-lg leading-relaxed mt-6 text-gray-700">
-                    If we find that the bank used a biased arbitrator or didn't give you a fair chance to present your case, we will not hesitate to move the court under Section 34. This often takes months or years in the regular courts, during which time the bank's award is essentially on hold (subject to certain conditions). This delay is a powerful tool to force the bank back to the settlement table.
+                    If we find that the bank used a biased arbitrator or didn't give you a fair chance to present your case, we will not hesitate to move the court and file a <strong>Section 34 challenge</strong>. This often takes months or years in the regular courts, during which time the bank's award is essentially on hold (subject to certain conditions). This delay is a powerful tool to force the bank back to the settlement table.
                   </p>
                 </section>
 
@@ -504,7 +495,7 @@ export default function ArbitrationNoticePage() {
                   <div className="bg-blue-900 text-white p-8 rounded-3xl shadow-xl">
                     <h3 className="text-2xl font-bold mb-4 text-[#D2A02A]">The Settlement Transformation</h3>
                     <p className="text-lg opacity-90 leading-relaxed">
-                      Lenders start by claiming 100% of the dues. When we enter the arena, we shift the conversation from 'How much can we grab' to 'What is the most we can realistically recover.' By aggressively defending the arbitration, we often force banks to offer <strong>One Time Settlements (OTS)</strong> where our clients pay as little as 30% to 50% of the total claim. The arbitration notice, which was once a source of terror, becomes the starting point of your financial freedom.
+                      Lenders start by claiming 100% of the dues. When we enter the arena, we shift the conversation from 'How much can we grab' to 'What is the most we can realistically recover.' By aggressively defending the arbitration, we often force banks to offer a <strong>One-Time Settlement (OTS)</strong> where our clients pay as little as 30% to 50% of the total claim. The arbitration notice, which was once a source of terror, becomes the starting point of your financial freedom.
                     </p>
                   </div>
                 </section>
@@ -570,7 +561,7 @@ export default function ArbitrationNoticePage() {
                     <h5 className="font-bold text-lg mb-4 text-center text-gray-700">Comprehensive Presence Across India</h5>
                     <div className="h-40 overflow-y-auto pr-4 text-xs md:text-sm text-gray-500 leading-loose scrollbar-thin scrollbar-thumb-[#D2A02A]">
                       <span className="font-bold text-gray-900">Metros & Tier 1:</span> Delhi, Mumbai, Bengaluru, Chennai, Kolkata, Hyderabad, Ahmedabad, Pune. <br/>
-                      <span className="font-bold text-gray-900">Uttar Pradesh:</span> Lucknow, Kanpur, Ghaziabad, Agra, Varanasi, Meerut, Prayagraj, Bareilly, Aligarh, Moradabad, Saharanpur, Gorakhpur, Firozabad, Jhansi, Muzaffarnagar. <br/>
+                      <span className="font-bold text-gray-900">Uttar Pradesh:</span> Lucknow, Kanpur, Ghaziabad, Agra, Varanasi, Meerut, Prayagraj, Bareilly, Aligarh, Moradabad, Saharanpur, Gorakhpur, Firozabad, Jhansi, Muzañarnagar. <br/>
                       <span className="font-bold text-gray-900">Maharashtra:</span> Nagpur, Thane, Nashik, Kalyan-Dombivli, Vasai-Virar, Aurangabad, Navi Mumbai, Solapur, Amravati, Nanded, Kolhapur, Akola, Sangli. <br/>
                       <span className="font-bold text-gray-900">Gujarat:</span> Surat, Vadodara, Rajkot, Bhavnagar, Jamnagar, Junagadh, Gandhinagar, Anand, Bharuch. <br/>
                       <span className="font-bold text-gray-900">South India:</span> Visakhapatnam, Vijayawada, Guntur, Nellore, Kurnool, Rajahmundry, Tirupati, Mysore, Hubli-Dharwad, Mangalore, Belgaum, Gulbarga, Coimbatore, Madurai, Tiruchirappalli, Salem, Tirunelveli, Kochi, Thiruvananthapuram, Kozhikode. <br/>
