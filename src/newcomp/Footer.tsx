@@ -12,6 +12,12 @@ const Footer = () => {
   const pathname = usePathname();
 
   const reviewSchemas: { [key: string]: any } = {
+    "/loan-settlement-letter-from-bank": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Bank Loan Settlement Letter Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1450" }
+    },
     "/loan-settlement-for-doctors-healthcare": {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -642,6 +648,60 @@ const Footer = () => {
       "@type": "Product",
       "name": "Section 25 PSSA Legal Guidance",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1850" }
+    },
+    "/arbitration-for-icici-bank": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "ICICI Bank Arbitration & Loan Settlement Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1950" }
+    },
+    "/arbitration-for-axis-bank": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Axis Bank Arbitration & Loan Settlement Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+    },
+    "/arbitration-for-sbi-bank": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "SBI Bank Arbitration & Loan Settlement Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1980" }
+    },
+    "/arbitration-for-bajaj-bank": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Bajaj Finance Arbitration & Loan Settlement Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1890" }
+    },
+    "/arbitration-for-idfc-bank": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "IDFC Bank Arbitration & Loan Settlement Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1820" }
+    },
+    "/arbitration-for-kotak-mahindra-bank": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Kotak Mahindra Bank Arbitration & Loan Settlement Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1740" }
+    },
+    "/arbitration-for-yes-bank": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Yes Bank Arbitration & Loan Settlement Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1680" }
+    },
+    "/arbitration-for-rbl-bank": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "RBL Bank Arbitration & Loan Settlement Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1590" }
+    },
+    "/arbitration-for-indusind-bank": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "IndusInd Bank Arbitration & Loan Settlement Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1610" }
     }
   };
   const footerColumns: { title: string; links: { name: string; href: string; external?: boolean; hiddenLink?: boolean }[] }[] = [
@@ -723,6 +783,7 @@ const Footer = () => {
     {
       title: "Loan Settlement",
       links: [
+        { name: 'Loan Settlement Guide', href: '/loan-settlement' },
         { name: 'Personal Loan Settlement', href: '/personal-loan-settlement' },
         { name: 'Credit Card Settlement', href: '/credit-card-settlement' },
         { name: 'Business Loan Settlement', href: '/business-loan-settlement' },
@@ -737,8 +798,8 @@ const Footer = () => {
         { name: "Secured Loan Settlement", href: "/secured-loan-settlement" },
         { name: "Trading Loan Settlement", href: "/trading-loan-settlement" },
         { name: "Medical Loan Settlement Support", href: "/support-for-loan-settlement-during-medical-emergencies" },
- 
-
+        { name: "Settlement Letter From Bank", href: "/loan-settlement-letter-from-bank" },
+        
       ]
     },
 
@@ -1000,7 +1061,21 @@ const Footer = () => {
         { name: 'Student & Graduate Loan Settlement', href: '/loan-settlement-for-students-and-graduates' },
         { name: 'Insurance Agent Loan Settlement', href: '/loan-settlement-for-insurance-agents' },
         { name: 'Construction Contractor Loan Settlement', href: '/loan-settlement-for-construction-contractors' },
-        { name: 'Textile Owner Loan Settlement', href: '/loan-settlement-for-textile-owners' }
+        { name: 'Textile Owner Loan Settlement', href: '/loan-settlement-for-textile-owners' },
+        { name: 'Loan Settlement Kya Hota Hai', href: '/loan-settlement-kya-hota-hai' },
+        { name: 'Loan Settlement Kitne Din Me Hota Hai', href: '/loan-settlement-kitne-din-me-hota-hai' },
+        { name: 'Loan Settlement Kitne Percent', href: '/loan-settlement-kitne-percent-hota-hai' },
+        { name: 'PL Loan Settlement Guide', href: '/pl-loan-settlement' },
+        { name: "HDFC Bank Arbitration", href: "/arbitration-for-hdfc-bank" },
+        { name: "ICICI Bank Arbitration", href: "/arbitration-for-icici-bank" },
+        { name: "Axis Bank Arbitration", href: "/arbitration-for-axis-bank" },
+        { name: "SBI Bank Arbitration", href: "/arbitration-for-sbi-bank" },
+        { name: "Bajaj Finance Arbitration", href: "/arbitration-for-bajaj-bank" },
+        { name: "IDFC Bank Arbitration", href: "/arbitration-for-idfc-bank" },
+        { name: "Kotak Bank Arbitration", href: "/arbitration-for-kotak-mahindra-bank" },
+        { name: "Yes Bank Arbitration", href: "/arbitration-for-yes-bank" },
+        { name: "RBL Bank Arbitration", href: "/arbitration-for-rbl-bank" },
+        { name: "IndusInd Bank Arbitration", href: "/arbitration-for-indusind-bank" },
       ]
 
     }

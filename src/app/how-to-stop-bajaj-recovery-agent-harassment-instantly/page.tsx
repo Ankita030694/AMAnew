@@ -26,6 +26,7 @@ const sections = [
 ];
 
 const relatedPages = [
+  { title: "Bajaj Bank Arbitration Guide", href: "/arbitration-for-bajaj-bank" },
   { title: "Loan Settlement Process in India", href: "/loan-settlement-process-in-hindi" },
   { title: "Stop Recovery Agent Home Visits", href: "/how-do-i-stop-recovery-agent-from-coming-home" },
   { title: "RBI New Recovery Guidelines 2026", href: "/rbi-new-recovery-guidelines-july-2026" },
@@ -456,7 +457,7 @@ export default function BajajHarassmentGuide() {
 
               <h3 className="text-2xl font-semibold mb-4 mt-8 text-[#D29E0D]">The Role of a Cease and Desist Notice</h3>
               <p>
-                A formal legal notice from a lawyer acts as a powerful deterrent. It signals to Bajaj and their collection agency that you are legally represented and ready to litigate. In 90% of cases, a well-drafted legal notice from AMA Legal Solutions stops the harassment within 48 hours. The bank's legal department usually orders the collection agency to "freeze" the account and stop all contact to avoid further liability.
+                A formal legal notice from a lawyer acts as a powerful deterrent. It signals to Bajaj and their collection agency that you are legally represented and ready to litigate. In 90% of cases, a well-drafted legal notice from AMA Legal Solutions stops the harassment within 48 hours. If the dispute has escalated to the stage of online dispute resolution or arbitration, sending a timely reply is essential; read our dedicated guide on <Link href="/arbitration-for-bajaj-bank" className="text-[#D29E0D] hover:underline font-semibold">Bajaj Bank arbitration</Link> to learn how to contest unilateral proceedings and negotiate a safe compromise. The bank's legal department usually orders the collection agency to "freeze" the account and stop all contact to avoid further liability.
               </p>
             </section>
 

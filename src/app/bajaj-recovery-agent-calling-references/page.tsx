@@ -27,6 +27,7 @@ const sections = [
 ];
 
 const relatedPages = [
+  { title: "Bajaj Bank Arbitration Guide", href: "/arbitration-for-bajaj-bank" },
   { title: "How to Stop Bajaj Harassment Instantly", href: "/how-to-stop-bajaj-recovery-agent-harassment-instantly" },
   { title: "Stop Recovery Agent Home Visits", href: "/how-do-i-stop-recovery-agent-from-coming-home" },
   { title: "Legal Rights After Loan Default", href: "/legal-rights-after-loan-default" },
@@ -471,7 +472,7 @@ export default function BajajReferenceCallingGuide() {
 
               <h3 className="text-2xl font-semibold mb-4 text-[#D29E0D]">The Power of a Legal Notice</h3>
               <p>
-                A formal legal notice is often the most effective way to stop harassment instantly. It is a written document drafted by a lawyer and sent to the bank and the recovery agency. A well drafted notice does several things:
+                A formal legal notice is often the most effective way to stop harassment instantly. It is a written document drafted by a lawyer and sent to the bank and the recovery agency. If you have received an online arbitration reference notice through portals like Sama ODR, responding legally is critical to prevent an ex-parte award; you can read our comprehensive guide on <Link href="/arbitration-for-bajaj-bank" className="text-[#D29E0D] hover:underline font-semibold">Bajaj Bank arbitration</Link> to understand your defense. A well drafted notice does several things:
               </p>
               <ul className="list-disc ml-6 space-y-4 my-8">
                 <li><strong>Establishes a Legal Record:</strong> It creates an official paper trail of the harassment, which can be used later in court or with the RBI Ombudsman.</li>
