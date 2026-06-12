@@ -232,7 +232,7 @@ const Legacy2 = () => {
             {/* Image Container */}
             <div className="w-full h-[240px] relative overflow-hidden bg-[radial-gradient(circle_at_center,_#6e6e6e_0%,_#3a3a3a_100%)]">
               <Image
-                src="/newAssets/dadaji1.png"
+                src="/newAssets/dadaji12.png"
                 alt="Late Adv. R.C. Malik"
                 fill
                 className="object-contain object-bottom transition-all duration-300"

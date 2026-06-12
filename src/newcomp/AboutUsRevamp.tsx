@@ -245,7 +245,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
               {/* Image */}
               <div className="absolute top-[-120px] left-0 w-full h-[470px]">
                 <Image
-                  src="/newAssets/dadaji1.png"
+                  src="/newAssets/dadaji12.png"
                   alt="Our History"
                   width={400}
                   height={550}

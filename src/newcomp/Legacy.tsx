@@ -12,7 +12,7 @@ const slides = [
     ],
     description:
       "Inspired by a deep-seated passion for justice and a transformative vision to serve the community, R.C. Malik pursued the legal profession with an unwavering commitment to excellence and public service. Guided by absolute integrity and a steadfast ethical compass, he dedicated his life to providing trusted, effective, and principled legal counsel. His consistent professionalism, combined with a profound understanding of the law, earned him a highly respected reputation across the fraternity. Through his tireless efforts, he laid a robust foundation for the practice, built on the pillars of trust, credibility, and enduring legal values that continue to inspire generations.",
-    image: "/newAssets/dadaji1.png",
+    image: "/newAssets/dadaji12.png",
     imageWidth: "640px",
     objectFit: "cover",
     year: "1982 - 2016",
