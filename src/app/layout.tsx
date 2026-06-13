@@ -131,6 +131,12 @@ export default function RootLayout({
         />
         
         <Script
+          id="contentsquare-script"
+          src="https://t.contentsquare.net/uxa/8cd680b1c7c61.js"
+          strategy="afterInteractive"
+        />
+        
+        <Script
           id="gtm-script"
           strategy="lazyOnload"
           dangerouslySetInnerHTML={{
