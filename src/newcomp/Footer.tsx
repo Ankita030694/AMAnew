@@ -60,6 +60,12 @@ const Footer = () => {
       "name": "Freelancer Loan Settlement Guide",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "210" }
     },
+    "/freelancer-payment-recovery-guide": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Freelancer Payment Recovery Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1940" }
+    },
     "/loan-settlement-for-it-professionals": {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -344,6 +350,24 @@ const Footer = () => {
       "@type": "Product",
       "name": "Recovery of Money Legal Service",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1100" }
+    },
+    "/how-to-draft-a-legal-notice-for-recovery-of-money": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Money Recovery Notice Drafting",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1100" }
+    },
+    "/how-can-i-send-a-legal-notice-online-to-someone-in-india-without-hiring-a-lawyer": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "DIY Online Legal Notice Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1250" }
+    },
+    "/is-an-email-or-whatsApp-message-considered-a-valid-legal-notice-in-indian-courts": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Email & WhatsApp Legal Notice Validity Vetting",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1890" }
     },
     "/demand-notice-for-loan-repayment": {
       "@context": "https://schema.org",
@@ -842,6 +866,7 @@ const Footer = () => {
       title: "Queries",
       links: [
         { name: 'Recovery of Money Notice', href: '/demand-notice-for-recovery-of-money' },
+        { name: 'Draft Money Recovery Notice', href: '/how-to-draft-a-legal-notice-for-recovery-of-money' },
         { name: 'Loan Repayment Demand Notice', href: '/demand-notice-for-loan-repayment' },
         { name: 'Dishonoured Cheque Notice', href: '/notice-for-for-dishonoured-cheque' },
         { name: 'Unpaid Salary Recovery Notice', href: '/notice-for-recovery-of-unpaid-salary' },
@@ -1078,6 +1103,12 @@ const Footer = () => {
         { name: "IndusInd Bank Arbitration", href: "/arbitration-for-indusind-bank" },
         { name: "Arbitration Act Section 21", href: "/what-is-section-21-of-arbitration-and-conciliation-act" },
         { name: "Invocation of Arbitration", href: "/what-is-meant-by-invocation-of-arbitration" },
+        { name: "Loan Settlement Arbitration", href: "/arbitration-process-for-loan-settlement" },
+        { name: "Loan Settlement Mediation", href: "/mediation-process-for-loan-settlement" },
+        { name: "Loan Settlement Conciliation", href: "/conciliation-process-for-loan-settlement" },
+        { name: "Send Legal Notice Online Without Lawyer", href: "/how-can-i-send-a-legal-notice-online-to-someone-in-india-without-hiring-a-lawyer" },
+        { name: "Email & WhatsApp Legal Notice Validity", href: "/is-an-email-or-whatsApp-message-considered-a-valid-legal-notice-in-indian-courts" },
+        { name: "Freelancer Payment Recovery Guide", href: "/freelancer-payment-recovery-guide" },
       ]
 
     }
