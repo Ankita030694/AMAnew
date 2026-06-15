@@ -12,6 +12,54 @@ const Footer = () => {
   const pathname = usePathname();
 
   const reviewSchemas: { [key: string]: any } = {
+    "/services-offered-by-ama-legal-solutions": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "AMA Legal Solutions Services Offered",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1940" }
+    },
+    "/family-lawyer": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Family Law Legal Representation Services",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1940" }
+    },
+    "/ama-legal-solutions-reviews": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "AMA Legal Solutions Reviews & Testimonials",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1790" }
+    },
+    "/hdfc-credit-card-payment-online": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "HDFC Credit Card Payment Online Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1620" }
+    },
+    "/hdfc-credit-card-payment-billdesk": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "HDFC Credit Card Payment BillDesk Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1530" }
+    },
+    "/hdfc-credit-card-settlement-department-contact-number": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "HDFC Credit Card Settlement Contact Details",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+    },
+    "/hdfc-credit-card-settlement-percentage": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "HDFC Credit Card Settlement Percentage Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1720" }
+    },
+    "/hdfc-credit-card-settlement-process": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "HDFC Credit Card Settlement Process Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1910" }
+    },
     "/loan-settlement-letter-from-bank": {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -65,6 +113,12 @@ const Footer = () => {
       "@type": "Product",
       "name": "Freelancer Payment Recovery Guide",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1940" }
+    },
+    "/top-10-instant-loan-apps-in-india": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Top 10 Instant Loan Apps in India Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "2450" }
     },
     "/loan-settlement-for-it-professionals": {
       "@context": "https://schema.org",
@@ -739,6 +793,10 @@ const Footer = () => {
         { name: 'Contact Us', href: '/contact' },
         { name: 'AMA Connect App', href: '/ama-legal-solutions-application' },
         { name: 'Loan Settlement App', href: '/loan-settlement-app' },
+        { name: 'Lowest Charges Loan Settlement App', href: '/loan-settlement-app-with-lowest-charges-in-india' },
+        { name: 'Settle Loans with AMA Legal Solutions', href: '/settle-loans-with-ama-legal-solutions' },
+        { name: 'Settle Loans with Expert Legal Panel', href: '/settle-your-loans-with-expert-panel-of-lawyer-of-ama-legal-solutions' },
+        { name: 'Get Freed From Your Loan', href: '/get-freed-from-your-loan-with-ama-legal-solutions' },
         { name: 'Legal Services in Gurgaon', href: '/legal-services-in-gurgaon' },
         { name: 'Privacy Policy', href: '/privacy-policy' },
         { name: 'Terms of Service', href: '/terms-and-conditions' },
@@ -925,7 +983,7 @@ const Footer = () => {
         { name: "Special Lok Adalat for Loan Settlement", href: "/special-lok-adalat-for-loan-settlement" },
         { name: "Top Loan Settlement Services", href: "/top-loan-settlement-services-with-good-customer-reviews" },
         { name: "Steps to Trademark Registration", href: "/steps-to-trademark-registration" },
-        { name: "Best Apps for Loan Settlement", href: "/best-apps-for-managing-loan-settlement-offers-in-India" },
+        { name: "Best Apps for Loan Settlement", href: "/best-apps-for-loan-settlement-in-india" },
         { name: "Trademark Agency Near Me", href: "/trademark-registration-agency-near-me" },
         { name: "Trademark Opposition Procedure", href: "/trademark-opposition-procedure" },
         { name: "Is Trademark Mandatory for Amazon", href: "/is-trademark-registration-mandatory-to-sell-on-amazon" },
@@ -1068,7 +1126,12 @@ const Footer = () => {
         { name: 'Loan Settlement Application', href: '/loan-settlement-application' },
         { name: 'Expert Panel Loan Settlement', href: '/expert-panel-loan-settlement' },
         { name: 'Loan Settlement App', href: '/loan-settlement-app' },
+        { name: 'Lowest Charges Loan Settlement App', href: '/loan-settlement-app-with-lowest-charges-in-india' },
+        { name: 'Settle Loans with AMA Legal Solutions', href: '/settle-loans-with-ama-legal-solutions' },
+        { name: 'Settle Loans with Expert Legal Panel', href: '/settle-your-loans-with-expert-panel-of-lawyer-of-ama-legal-solutions' },
+        { name: 'Get Freed From Your Loan', href: '/get-freed-from-your-loan-with-ama-legal-solutions' },
         { name: 'What is Loan Settlement', href: '/what-is-loan-settlement' },
+        { name: 'How is Loan Settlement Done', href: '/how-is-loan-settlement-done' },
         { name: 'How to Settle Credit Card Debt', href: '/how-to-settle-credit-card-debt' },
         { name: 'Loan Moratorium Meaning', href: '/loan-moratorium-meaning' },
         { name: 'Minimum Amount Due in Credit Card Meaning', href: '/minimum-amount-due-in-credit-card-meaning' },
@@ -1109,6 +1172,18 @@ const Footer = () => {
         { name: "Send Legal Notice Online Without Lawyer", href: "/how-can-i-send-a-legal-notice-online-to-someone-in-india-without-hiring-a-lawyer" },
         { name: "Email & WhatsApp Legal Notice Validity", href: "/is-an-email-or-whatsApp-message-considered-a-valid-legal-notice-in-indian-courts" },
         { name: "Freelancer Payment Recovery Guide", href: "/freelancer-payment-recovery-guide" },
+        { name: "Top 10 Instant Loan Apps in India", href: "/top-10-instant-loan-apps-in-india" },
+        { name: "Family Lawyer Services", href: "/family-lawyer" },
+        { name: "AMA Legal Solutions Reviews", href: "/ama-legal-solutions-reviews" },
+        { name: "Services Offered by AMA Legal Solutions", href: "/services-offered-by-ama-legal-solutions" },
+        { name: "AMA Legal Solutions Sector 57 Gurgaon", href: "/ama-legal-solutions-sector-57-gurgaon" },
+        { name: "HDFC Credit Card Payment Online", href: "/hdfc-credit-card-payment-online" },
+        { name: "HDFC Credit Card Payment BillDesk", href: "/hdfc-credit-card-payment-billdesk" },
+        { name: "HDFC Credit Card Settlement Department Contact", href: "/hdfc-credit-card-settlement-department-contact-number" },
+        { name: "HDFC Credit Card Settlement Percentage", href: "/hdfc-credit-card-settlement-percentage" },
+        { name: "HDFC Credit Card Settlement Process", href: "/hdfc-credit-card-settlement-process" },
+        { name: "Become Loan Mukt in 60 Days", href: "/how-to-become-loan-mukt-in-60-days" },
+        { name: "Settle Debt Single-Handed & Independent", href: "/how-to-single-handedly-settle-debt-and-become-independent" },
       ]
 
     }
