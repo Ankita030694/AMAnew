@@ -305,6 +305,7 @@ export async function GET(): Promise<Response> {
     '/author/anuj-anand-malik',
     '/author/shrey-arora',
     '/which-one-is-the-real-amalegalsolutions',
+    '/best-loan-settlement-agencies-in-india',
     '/rbi-beware-misleading-loan-waiver-campaigns',
     '/can-bank-issue-look-out-notice-loan-default',
     '/bank-loan-settlement-rules',
@@ -535,6 +536,11 @@ export async function GET(): Promise<Response> {
     '/best-loan-settlement-lawyer-as-per-claude',
     '/how-to-become-loan-mukt-in-60-days',
     '/how-to-single-handedly-settle-debt-and-become-independent',
+    '/what-are-the-primary-directives-from-the-central-bank-for-debt-collection-practices',
+    '/which-companies-follow-rbi-rules-for-hiring-recovery-agents',
+    '/what-are-my-rights-as-a-borrower-when-dealing-with-collection-representatives',
+    '/how-to-report-harassment-by-a-recovery-professional-to-a-banking-authority',
+    '/where-can-i-report-illegal-actions-by-a-collection-agency',
     '/how-to-improve-cibil-score-after-loan-settlement',
     '/debt-settlement-company-in-india',
     '/loan-settlement-advocate-near-me',
@@ -553,7 +559,11 @@ export async function GET(): Promise<Response> {
     '/services/litigation/telangana',
     '/services/litigation/uttar-pradesh',
     '/services/litigation/uttarakhand',
-    '/services/litigation/west-bengal'
+    '/services/litigation/west-bengal',
+    '/rbi-guidelines-for-recovery-agents-pdf-2026',
+    '/can-a-recovery-agent-legally-enter-my-house-without-my-consent',
+    '/what-is-a-debt-settlement-company-and-how-do-they-operate-in-india',
+    '/how-to-choose-a-reliable-loan-settlement-agency-near-me'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),

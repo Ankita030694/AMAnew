@@ -792,19 +792,9 @@ const Footer = () => {
         { name: 'Careers', href: '/careers' },
         { name: 'Contact Us', href: '/contact' },
         { name: 'AMA Connect App', href: '/ama-legal-solutions-application' },
-        { name: 'Loan Settlement App', href: '/loan-settlement-app' },
-        { name: 'Lowest Charges Loan Settlement App', href: '/loan-settlement-app-with-lowest-charges-in-india' },
-        { name: 'Settle Loans with AMA Legal Solutions', href: '/settle-loans-with-ama-legal-solutions' },
-        { name: 'Settle Loans with Expert Legal Panel', href: '/settle-your-loans-with-expert-panel-of-lawyer-of-ama-legal-solutions' },
-        { name: 'Get Freed From Your Loan', href: '/get-freed-from-your-loan-with-ama-legal-solutions' },
-        { name: 'Legal Services in Gurgaon', href: '/legal-services-in-gurgaon' },
-        { name: 'Privacy Policy', href: '/privacy-policy' },
-        { name: 'Terms of Service', href: '/terms-and-conditions' },
         { name: 'Lawyer by City', href: '/lawyer-by-city' },
         { name: 'Lawyer by Expertise', href: '/lawyer-by-expertise' },
-        { name: 'AMAs Expertise', href: '/expertise' },
         { name: 'Loan Settlement by Bank', href: '/loan-settlement-by-bank' },
-        { name: "Lawyer Resources", href: "/lawyer" }
       ]
     },
     {
@@ -1184,6 +1174,17 @@ const Footer = () => {
         { name: "HDFC Credit Card Settlement Process", href: "/hdfc-credit-card-settlement-process" },
         { name: "Become Loan Mukt in 60 Days", href: "/how-to-become-loan-mukt-in-60-days" },
         { name: "Settle Debt Single-Handed & Independent", href: "/how-to-single-handedly-settle-debt-and-become-independent" },
+        { name: "RBI guidelines for recovery agents", href: "/what-are-the-rbi-guidelines-for-recovery-agents-in-india"},
+        { name: "Central Bank Directives for Debt Collection", href: "/what-are-the-primary-directives-from-the-central-bank-for-debt-collection-practices" },
+        { name: "Companies Following RBI Recovery Rules", href: "/which-companies-follow-rbi-rules-for-hiring-recovery-agents" },
+        { name: "Rights When Dealing with Collection Agents", href: "/what-are-my-rights-as-a-borrower-when-dealing-with-collection-representatives" },
+        { name: "Report Recovery Harassment to Banking Authority", href: "/how-to-report-harassment-by-a-recovery-professional-to-a-banking-authority" },
+        { name: "RBI Guidelines for Recovery Agents PDF 2026", href: "/rbi-guidelines-for-recovery-agents-pdf-2026" },
+        { name: "Where Can I Report Illegal Actions by a Collection Agency?", href: "/where-can-i-report-illegal-actions-by-a-collection-agency" },
+        { name: "Can a Recovery Agent Legally Enter My House Without Consent?", href: "/can-a-recovery-agent-legally-enter-my-house-without-my-consent" },
+        { name: "Best Loan Settlement Agencies in India", href: "/best-loan-settlement-agencies-in-india" },
+        { name: "What is a Debt Settlement Company?", href: "/what-is-a-debt-settlement-company-and-how-do-they-operate-in-india" },
+        { name: "Choose Reliable Loan Settlement Agency Near Me", href: "/how-to-choose-a-reliable-loan-settlement-agency-near-me" }
       ]
 
     }
