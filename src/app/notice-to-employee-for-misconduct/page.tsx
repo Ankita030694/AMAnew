@@ -390,7 +390,7 @@ export default function EmployeeMisconductGuide() {
                 One of the most common reasons employers lose cases in labor courts is "disproportionate punishment." If you fire an employee with ten years of service for being late for three days, the court will likely view it as excessive and set it aside.
               </p>
               <p>
-                The management must consider the employee's past record, the nature of the misconduct, and any "mitigating circumstances" (e.g., family issues or health problems). A graduated scale of punishment—starting with a verbal warning, then a written warning, then a salary cut, and finally termination—is much easier to defend in court than immediate dismissal.
+                The management must consider the employee's past record, the nature of the misconduct, and any "mitigating circumstances" (e.g., family issues or health problems). A graduated scale of punishment-starting with a verbal warning, then a written warning, then a salary cut, and finally termination-is much easier to defend in court than immediate dismissal.
               </p>
             </section>
 

@@ -246,7 +246,7 @@ export default function AndamanNicobarLoanSettlementPage() {
                     The Union Territory of Andaman and Nicobar Islands is a unique economic landscape. While tourism and fisheries drive the local economy, the reliance on mainland banking and credit has increased significantly over the last decade. From the administrative heart of **Port Blair** to the remote outposts of **Campbell Bay**, many residents and entrepreneurs find themselves caught in a cycle of debt due to unforeseen financial setbacks, market seasonality, or personal emergencies.
                   </p>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Managing debt in the islands presents its own set of challenges—geographical distance from mainland legal hubs, limited awareness of legal debt restructuring, and aggressive recovery practices by mainland banks. At AMA Legal Solutions, we bridge this gap. We provide specialized **Loan Settlement services** tailored for the islands, leveraging the **District Legal Services Authority (DLSA) in Port Blair** and the **Debt Recovery Tribunal (DRT-2) in Kolkata** to help you close your loans legally and with dignity.
+                    Managing debt in the islands presents its own set of challenges-geographical distance from mainland legal hubs, limited awareness of legal debt restructuring, and aggressive recovery practices by mainland banks. At AMA Legal Solutions, we bridge this gap. We provide specialized **Loan Settlement services** tailored for the islands, leveraging the **District Legal Services Authority (DLSA) in Port Blair** and the **Debt Recovery Tribunal (DRT-2) in Kolkata** to help you close your loans legally and with dignity.
                   </p>
                 </section>
 
@@ -309,7 +309,7 @@ export default function AndamanNicobarLoanSettlementPage() {
                     </p>
                   </div>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    When you default on your loan for over 90 days, it is classified as a Non-Performing Asset (NPA). At this stage, instead of fearing the bank, you can use the law to your advantage. A legal settlement involves documenting your financial hardship—due to job loss, medical issues, or business failure—and negotiating a waiver of penal interest and a significant portion of the principal.
+                    When you default on your loan for over 90 days, it is classified as a Non-Performing Asset (NPA). At this stage, instead of fearing the bank, you can use the law to your advantage. A legal settlement involves documenting your financial hardship-due to job loss, medical issues, or business failure-and negotiating a waiver of penal interest and a significant portion of the principal.
                   </p>
                 </section>
 

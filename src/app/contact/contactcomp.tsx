@@ -545,7 +545,7 @@ const ContactComp = () => {
                         <option value="" disabled>Select Service Required</option>
                         {SERVICE_OPTIONS.map((service) => (
                           <option key={service.label} value={service.label}>
-                            {service.label} — {service.description}
+                            {service.label} - {service.description}
                           </option>
                         ))}
                       </select>

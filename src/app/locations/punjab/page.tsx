@@ -345,7 +345,7 @@ export default function PunjabLocationPage() {
                      <strong>AMA Legal Solutions</strong> provides world-class legal services in this dynamic environment. We understand the specific challenges faced by the people of Punjab, especially the Non-Resident Indian (NRI) community, businesses, and landowners. Our approach combines traditional legal wisdom with modern efficiency, ensuring that our clients receive representation that is not only legally sound but also practically effective.
                   </p>
                   <p className="text-lg leading-relaxed text-gray-700">
-                    With our base in Chandigarh, we are perfectly positioned to represent you in the <strong>Punjab & Haryana High Court</strong> while maintaining a strong presence in local District Courts across the state, including Amritsar, Jalandhar, Ludhiana, Patiala, and Bathinda. We believe in proactive litigation management—anticipating moves, securing interim reliefs, and pushing for timely disposal of cases.
+                    With our base in Chandigarh, we are perfectly positioned to represent you in the <strong>Punjab & Haryana High Court</strong> while maintaining a strong presence in local District Courts across the state, including Amritsar, Jalandhar, Ludhiana, Patiala, and Bathinda. We believe in proactive litigation management-anticipating moves, securing interim reliefs, and pushing for timely disposal of cases.
                   </p>
                 </section>
 

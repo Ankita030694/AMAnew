@@ -342,7 +342,7 @@ export default function WorkplaceHarassmentGuide() {
                 The notice should begin with a clear subject line indicating that it is a "Legal Notice for Workplace Harassment and Violation of the POSH Act." It must detail the incidents of harassment with specific dates, times, and the names of the individuals involved.
               </p>
               <p>
-                It is crucial to mention any previous attempts you made to report the matter and how the management responded (or failed to respond). The notice must then cite the specific sections of the POSH Act and the Indian Penal Code that are applicable. Finally, it must state the "demand"—whether it is a fair investigation, the suspension of the harasser, compensation for mental agony, or a safe environment for your return.
+                It is crucial to mention any previous attempts you made to report the matter and how the management responded (or failed to respond). The notice must then cite the specific sections of the POSH Act and the Indian Penal Code that are applicable. Finally, it must state the "demand"-whether it is a fair investigation, the suspension of the harasser, compensation for mental agony, or a safe environment for your return.
               </p>
             </section>
 
@@ -589,7 +589,7 @@ export default function WorkplaceHarassmentGuide() {
               Workplace harassment can feel like an insurmountable wall, but the law is the hammer that can break it down. Remember that you are protected by the Constitution of India, the POSH Act, and the criminal laws of the land. You have more power than you think.
             </p>
             <p>
-              Do not suffer in silence. The first step—issuing a legal notice—is often the hardest, but it is the one that sets you on the path to justice. By taking action, you are sending a clear message: your dignity is not for sale, and your safety is non-negotiable.
+              Do not suffer in silence. The first step-issuing a legal notice-is often the hardest, but it is the one that sets you on the path to justice. By taking action, you are sending a clear message: your dignity is not for sale, and your safety is non-negotiable.
             </p>
             <p>
               At AMA Legal Solutions, we are honored to stand with victims and help them navigate these complex legal waters. Let us handle the legal burden so you can focus on healing and moving forward in your career. Your workplace should be a place of pride, not pain. Take that step today, and let us help you build a safer tomorrow.

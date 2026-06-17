@@ -202,7 +202,7 @@ export default function MaharashtraIPRPage() {
                 <section id="introduction" className="scroll-mt-32">
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">Securing Intellectual Property in Maharashtra: A Strategic Necessity</h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Maharashtra stands as the undisputed economic powerhouse of India, contributing over 14% to the national GDP. With a state economy exceeding $400 billion, it is a fertile ground for innovation, creativity, and commerce. However, in such a high-stakes environment, the risk of intellectual property theft is equally high. Whether you are a filmmaker in Mumbai, a software developer in Pune, or an industrialist in Aurangabad, your intangible assets—your brand, your designs, your inventions—are often more valuable than your physical infrastructure.
+                    Maharashtra stands as the undisputed economic powerhouse of India, contributing over 14% to the national GDP. With a state economy exceeding $400 billion, it is a fertile ground for innovation, creativity, and commerce. However, in such a high-stakes environment, the risk of intellectual property theft is equally high. Whether you are a filmmaker in Mumbai, a software developer in Pune, or an industrialist in Aurangabad, your intangible assets-your brand, your designs, your inventions-are often more valuable than your physical infrastructure.
                   </p>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
                     <strong>Intellectual Property Rights (IPR)</strong> are not merely legal formalities; they are business tools that define your market position. In a hyper-competitive market like Maharashtra, a registered trademark distinguishes your product from cheap counterfeits. A patent prevents competitors from copying your hard-earned R&D. A copyright ensures you receive royalties for your creative work. Without these protections, your business is vulnerable to infringement, dilution, and revenue loss.
@@ -301,7 +301,7 @@ export default function MaharashtraIPRPage() {
                       </p>
                       <ul className="list-disc pl-5 text-gray-700 space-y-2">
                         <li><strong>Commercial Division:</strong> Dedicated benches for IP disputes ensure faster disposal of cases compared to regular civil suits.</li>
-                        <li><strong>"John Doe" Orders:</strong> The court frequently grants <em>Ashok Kumar</em> orders, allowing rights holders to raid and seize counterfeit goods from unidentified infringers—a crucial tool for fighting piracy in markets like Crawford Market or Lamington Road.</li>
+                        <li><strong>"John Doe" Orders:</strong> The court frequently grants <em>Ashok Kumar</em> orders, allowing rights holders to raid and seize counterfeit goods from unidentified infringers-a crucial tool for fighting piracy in markets like Crawford Market or Lamington Road.</li>
                         <li><strong>Dynamic Injunctions:</strong> For digital piracy, the court grants dynamic injunctions that force ISPs to block not just the current infringing website but also any mirror links that pop up in the future.</li>
                       </ul>
                     </div>

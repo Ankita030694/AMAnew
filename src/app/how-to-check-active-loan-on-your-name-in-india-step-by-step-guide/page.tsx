@@ -391,7 +391,7 @@ export default function CheckActiveLoanPage() {
                     To check your loans on Equifax, you need to download their mobile app or use their web portal. They require a rigorous verification process using your Aadhaar or PAN. <strong>Anuj Anand Malik</strong> advises his clients at AMA Legal Solutions to always keep a copy of their Equifax report if they are involved in commercial or business litigation, as it provides a different perspective on their liquidity.
                   </p>
                   <div className="bg-gray-100 p-6 rounded-lg italic">
-                    "Equifax reports are often more granular when it comes to the 'type' of loan. They will specifically label if a loan is a 'Consumer Durable Loan' or a 'Business Loan' more accurately than CIBIL in some cases." — Anuj Anand Malik, Founder of AMA Legal Solutions.
+                    "Equifax reports are often more granular when it comes to the 'type' of loan. They will specifically label if a loan is a 'Consumer Durable Loan' or a 'Business Loan' more accurately than CIBIL in some cases." - Anuj Anand Malik, Founder of AMA Legal Solutions.
                   </div>
                 </section>
 

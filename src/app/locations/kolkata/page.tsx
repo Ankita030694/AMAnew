@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     question: "How much do legal services cost in Kolkata?",
-    answer: "Legal fees depend on the nature and complexity of the case. We offer transparent billing models—whether fixed fees for drafting and registration or retainers for ongoing litigation. We provide a clear cost estimate after the initial consultation."
+    answer: "Legal fees depend on the nature and complexity of the case. We offer transparent billing models-whether fixed fees for drafting and registration or retainers for ongoing litigation. We provide a clear cost estimate after the initial consultation."
   },
   {
     question: "Do you offer online legal consultation?",
@@ -359,7 +359,7 @@ export default function KolkataLocationPage() {
                 <section id="why-expert" className="scroll-mt-32">
                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">The Importance of Specialized Counsel</h2>
                   <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
-                    Navigating Kolkata's courts can be challenging. The procedures in the Alipore Judges Court differ vastly from those in the Bankshall Court or the High Court. A generalized approach often leads to procedural delays—getting a case 'dismissed for default' or stuck in the 'list' for years.
+                    Navigating Kolkata's courts can be challenging. The procedures in the Alipore Judges Court differ vastly from those in the Bankshall Court or the High Court. A generalized approach often leads to procedural delays-getting a case 'dismissed for default' or stuck in the 'list' for years.
                   </p>
                   <p className="text-lg leading-relaxed text-gray-700">
                     Our team provides targeted expertise. We know how to move urgent motions, how to effectively handle caveats, and how to navigate the registry to ensure your files don't gather dust. We combine this procedural mastery with deep substantive knowledge of the law to secure favorable outcomes.

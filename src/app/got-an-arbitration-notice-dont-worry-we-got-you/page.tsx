@@ -341,7 +341,7 @@ export default function ArbitrationNoticePage() {
                 <section id="unilateral-appointment" className="scroll-mt-32">
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">The Perkins Eastman Shield: Can Lenders Unilaterally Appoint Arbitrators?</h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    This is the most critical question we receive from clients who receive an arbitration notice. Many notices state that the bank has already appointed their arbitrator—often a lawyer who exclusively works for them or a retired judge from their own panel—and scheduled the first hearing. Under Indian law, this practice is highly illegal.
+                    This is the most critical question we receive from clients who receive an arbitration notice. Many notices state that the bank has already appointed their arbitrator-often a lawyer who exclusively works for them or a retired judge from their own panel-and scheduled the first hearing. Under Indian law, this practice is highly illegal.
                   </p>
                   <div className="bg-gray-900 text-white p-6 md:p-10 rounded-2xl mb-8 relative overflow-hidden">
                     <div className="absolute top-0 right-0 p-4 opacity-10 text-6xl">⚖️</div>

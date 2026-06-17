@@ -236,13 +236,13 @@ export default function TrademarkSearchPage() {
                   <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-8 leading-tight">1. The Strategic Importance of Trademark Search</h2>
                   <div className="prose prose-lg max-w-none text-gray-700 space-y-6 leading-relaxed">
                     <p>
-                      In the modern marketplace, naming a business is no longer a creative exercise—it is a legal one. Every hour, hundreds of new trademark applications are filed in India. If you launch a brand without a <strong>comprehensive trademark search</strong>, you are essentially building a skyscraper on land you don't own. 
+                      In the modern marketplace, naming a business is no longer a creative exercise-it is a legal one. Every hour, hundreds of new trademark applications are filed in India. If you launch a brand without a <strong>comprehensive trademark search</strong>, you are essentially building a skyscraper on land you don't own. 
                     </p>
                     <p>
-                      A "Trademark Search" is the process of identifying potential conflicts with existing marks registered or pending with the <strong>Controller General of Patents, Designs & Trade Marks (CGPDTM)</strong>. It is the single most important step in the intellectual property lifecycle. Why? Because the cost of re-branding—changing your logo, domain, packaging, and marketing collateral—is often 50 times the cost of a professional legal search.
+                      A "Trademark Search" is the process of identifying potential conflicts with existing marks registered or pending with the <strong>Controller General of Patents, Designs & Trade Marks (CGPDTM)</strong>. It is the single most important step in the intellectual property lifecycle. Why? Because the cost of re-branding-changing your logo, domain, packaging, and marketing collateral-is often 50 times the cost of a professional legal search.
                     </p>
                     <p>
-                      At AMA Legal Solutions, we view a search report not just as a "Yes or No" check, but as a risk assessment tool. We analyze whether your brand name violates <strong>Absolute Grounds (Section 9)</strong>—for being too descriptive—or <strong>Relative Grounds (Section 11)</strong>—for being too similar to someone else. This guide will teach you the technical nuances of conducting these searches like a seasoned IP attorney.
+                      At AMA Legal Solutions, we view a search report not just as a "Yes or No" check, but as a risk assessment tool. We analyze whether your brand name violates <strong>Absolute Grounds (Section 9)</strong>-for being too descriptive-or <strong>Relative Grounds (Section 11)</strong>-for being too similar to someone else. This guide will teach you the technical nuances of conducting these searches like a seasoned IP attorney.
                     </p>
                   </div>
                 </section>

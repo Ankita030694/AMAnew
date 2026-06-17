@@ -306,7 +306,7 @@ export default function LegalNoticeHospitalPage() {
                     The Intensive Care Unit (ICU) and Emergency Room are the most critical environments. Negligence here can be fatal within minutes. Common instances include ventilator failure, incorrect dosage of life-saving drugs like adrenaline, or failure to monitor oxygen levels. When serving a legal notice regarding an ICU death, the focus is on 'continuous monitoring' protocols.
                   </p>
                   <p className="text-lg leading-relaxed text-gray-700">
-                    In the Emergency Room, 'triaging errors' are common—where critical patients are made to wait while minor injuries are treated. This is a direct breach of emergency protocols.
+                    In the Emergency Room, 'triaging errors' are common-where critical patients are made to wait while minor injuries are treated. This is a direct breach of emergency protocols.
                   </p>
                 </section>
 

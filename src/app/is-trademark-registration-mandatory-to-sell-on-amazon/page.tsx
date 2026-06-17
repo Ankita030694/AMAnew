@@ -476,7 +476,7 @@ export default function TrademarkForAmazonPage() {
                   <ul className="list-disc pl-6 space-y-3 text-gray-700 text-lg bg-gray-50 p-6 rounded-xl">
                     <li><strong>Visual Storytelling:</strong> Show, don't just tell. Use images to highlight features.</li>
                     <li><strong>Comparison Charts:</strong> Cross-sell other products in your portfolio by comparing them.</li>
-                    <li><strong>Brand Store:</strong> Get your own amazon.in/yourbrand URL. A dedicated multi-page store where no competitors are shown—just your products.</li>
+                    <li><strong>Brand Store:</strong> Get your own amazon.in/yourbrand URL. A dedicated multi-page store where no competitors are shown-just your products.</li>
                   </ul>
                 </section>
 
@@ -567,7 +567,7 @@ export default function TrademarkForAmazonPage() {
                 <section id="parallel-imports" className="scroll-mt-32">
                   <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6">Gray Market Control: Parallel Imports</h2>
                   <p className="text-base md:text-lg leading-relaxed mb-6 text-gray-700">
-                    India follows the principle of <strong>International Exhaustion</strong>. This means if your product is sold anywhere in the world, someone else can lawfully import and sell it in India without your specific permission—this is known as "Parallel Import."
+                    India follows the principle of <strong>International Exhaustion</strong>. This means if your product is sold anywhere in the world, someone else can lawfully import and sell it in India without your specific permission-this is known as "Parallel Import."
                   </p>
                   <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">How Trademarking Stops This</h3>
                   <p className="text-base md:text-lg leading-relaxed mb-6 text-gray-700">

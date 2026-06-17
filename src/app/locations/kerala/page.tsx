@@ -352,7 +352,7 @@ export default function KeralaLocationPage() {
                      <div className="p-6 bg-gray-50 rounded-xl border border-gray-100">
                         <h4 className="font-bold text-[#D2A02A] mb-2 text-xl">NRI Center</h4>
                         <p className="text-gray-700 mb-2">
-                            A significant portion of litigation involves Non-Resident Indians—property protection, matrimonial disputes, and investment issues.
+                            A significant portion of litigation involves Non-Resident Indians-property protection, matrimonial disputes, and investment issues.
                         </p>
                      </div>
                      <div className="p-6 bg-gray-50 rounded-xl border border-gray-100">

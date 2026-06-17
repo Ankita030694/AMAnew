@@ -69,7 +69,7 @@ const JharkhandBankingClient = () => {
                   Empowering Jharkhand's Financial Ecosystem
                 </h2>
                 <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                  Jharkhand, the land of forests and minerals, is rapidly evolving into an industrial and commercial powerhouse. With cities like Jamshedpur, Dhanbad, and Ranchi leading the charge, the state is seeing a surge in demand for credit—from heavy industrial financing to micro-loans for tribal artisans. The state's GDP growth is fueled by mining, steel, and increasingly, the service sector.
+                  Jharkhand, the land of forests and minerals, is rapidly evolving into an industrial and commercial powerhouse. With cities like Jamshedpur, Dhanbad, and Ranchi leading the charge, the state is seeing a surge in demand for credit-from heavy industrial financing to micro-loans for tribal artisans. The state's GDP growth is fueled by mining, steel, and increasingly, the service sector.
                 </p>
                 <p className="text-lg leading-relaxed mb-6 text-gray-700">
                   However, banking in Jharkhand comes with a unique set of legal complexities. The presence of scheduled areas protected under the <strong>Chotanagpur Tenancy (CNT) Act</strong> and <strong>Santhal Pargana Tenancy (SPT) Act</strong> makes traditional collateral-based lending a legal minefield. Financial institutions often struggle to enforce mortgages on tribal land, leading to a distinct "Credit Gap" in rural areas.

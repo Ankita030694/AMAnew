@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     question: "Can I get a higher waiver in March compared to other months?",
-    answer: "Yes, typically banks are authorized to offer higher waivers on principal and interest in March. This is because closing a bad loan account in March helps the bank avoid high 'provisioning' costs—money they must keep aside for bad debts—which directly increases their reported profitability for the year."
+    answer: "Yes, typically banks are authorized to offer higher waivers on principal and interest in March. This is because closing a bad loan account in March helps the bank avoid high 'provisioning' costs-money they must keep aside for bad debts-which directly increases their reported profitability for the year."
   },
   {
     question: "What is the 'March Madness' in banking recovery?",
@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     question: "Will the bank stop harassment if I show intent to settle in March?",
-    answer: "Yes, once a formal settlement negotiation begins—especially through a legal firm like AMA Legal Solutions—banks often scale back recovery calls to facilitate a successful closure. In March, they prefer a closed deal over a long drawn recovery struggle."
+    answer: "Yes, once a formal settlement negotiation begins-especially through a legal firm like AMA Legal Solutions-banks often scale back recovery calls to facilitate a successful closure. In March, they prefer a closed deal over a long drawn recovery struggle."
   },
   {
     question: "Should I wait until March 31st to finalize my settlement?",
@@ -536,7 +536,7 @@ export default function BenefitsOfSettlingInMarch() {
                   </div>
                   <div className="mt-12 text-center p-10 bg-[#1a202c] rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-[#D2A02A] opacity-10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform"></div>
-                    <p className="text-white text-xl font-medium relative z-10">Join 25,000+ happy clients who regained their life with <strong>AMA Legal Solutions</strong>—The #1 Loan Settlement Firm in India.</p>
+                    <p className="text-white text-xl font-medium relative z-10">Join 25,000+ happy clients who regained their life with <strong>AMA Legal Solutions</strong>-The #1 Loan Settlement Firm in India.</p>
                   </div>
                 </section>
 

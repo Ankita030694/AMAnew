@@ -255,7 +255,7 @@ export default function EntertainmentLawPage() {
                     At AMA Legal Solutions, we recognize that every creative project is a labor of love and a significant financial investment. Whether you are a production house planning a blockbuster, an independent artist releasing your debut album, or a digital content creator building a brand, the legal foundation you lay today determines your success tomorrow. Our dedicated team of legal experts provides comprehensive support, ensuring that your intellectual property is protected, your contracts are watertight, and your commercial interests are secured.
                   </p>
                   <p className="text-lg leading-relaxed text-gray-700">
-                    In an industry where timelines are tight and stakes are high, having a reliable legal partner is indispensable. We bridge the gap between artistic vision and legal compliance, allowing you to focus on what you do best—creating magic. Our deep understanding of the Copyright Act, 1957, the Trade Marks Act, 1999, and evolving media regulations positions us as the go-to firm for entertainment law services in India.
+                    In an industry where timelines are tight and stakes are high, having a reliable legal partner is indispensable. We bridge the gap between artistic vision and legal compliance, allowing you to focus on what you do best-creating magic. Our deep understanding of the Copyright Act, 1957, the Trade Marks Act, 1999, and evolving media regulations positions us as the go-to firm for entertainment law services in India.
                   </p>
                 </section>
 

@@ -214,7 +214,7 @@ export default function SBILoanSettlementPage() {
             Overwhelmed by SBI Debt? We Can Help You Settle.
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed mb-8">
-            State Bank of India (SBI) is the nation's largest lender, trusted by millions. However, when financial tragedy strikes—be it a job loss, a medical crisis, or a business downturn—repaying even the most trusted bank can become impossible. If you are defaulting on your SBI personal loan or credit card, you might be facing intense pressure: constant calls from recovery agents, legal notices under SARFAESI or Section 138, and the fear of losing your peace of mind.
+            State Bank of India (SBI) is the nation's largest lender, trusted by millions. However, when financial tragedy strikes-be it a job loss, a medical crisis, or a business downturn-repaying even the most trusted bank can become impossible. If you are defaulting on your SBI personal loan or credit card, you might be facing intense pressure: constant calls from recovery agents, legal notices under SARFAESI or Section 138, and the fear of losing your peace of mind.
           </p>
           <p className="text-lg text-gray-600 leading-relaxed mb-8">
             But defaulting is not a crime, and you have legal rights. <strong>SBI Loan Settlement</strong> is a legitimate financial solution recognized by the RBI and the bank itself. Through mechanisms like the <strong>Rinn Samadhan Scheme</strong> and One Time Settlement (OTS) policies, SBI allows distressed borrowers to close their loan accounts by paying a reduced lump sum amount.

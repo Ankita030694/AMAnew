@@ -573,7 +573,7 @@ export default function CreditCardSettlementPage() {
                   </p>
                   <div className="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-inner italic font-light text-gray-650 leading-loose">
                       "Recovery agents shall not resort to intimidation or harassment of any kind, either verbal or physical, against any person in their debt collection efforts, including acts intended to humiliate publicly or intrude upon the privacy of the debtors' family members, referees and friends, making threatening and anonymous calls or making false and misleading representations." 
-                      <span className="block mt-4 font-bold text-xs uppercase tracking-widest text-[#D2A02A]">— RBI Master Circular</span>
+                      <span className="block mt-4 font-bold text-xs uppercase tracking-widest text-[#D2A02A]">- RBI Master Circular</span>
                   </div>
                 </section>
 

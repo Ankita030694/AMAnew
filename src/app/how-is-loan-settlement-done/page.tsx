@@ -251,7 +251,7 @@ export default function HowIsLoanSettlementDonePage() {
                 <section id="introduction" className="scroll-mt-32">
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">The Path to Debt Resolution</h2>
                   <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
-                    A loan settlement is done when a borrower facing severe financial hardship negotiates with their lender to pay a single, reduced lump-sum amount—typically 25% to 50% of the outstanding balance—to close the debt. Once agreed, the lender issues a formal settlement letter, cancels the remaining balance, and reports the account as 'Settled' to credit bureaus.
+                    A loan settlement is done when a borrower facing severe financial hardship negotiates with their lender to pay a single, reduced lump-sum amount-typically 25% to 50% of the outstanding balance-to close the debt. Once agreed, the lender issues a formal settlement letter, cancels the remaining balance, and reports the account as 'Settled' to credit bureaus.
                   </p>
                   <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     Navigating debt recovery issues in India is an stressful experience that many individuals face alone. When debt collectors call and interest rates compound daily, it is easy to feel overwhelmed. However, understanding how loan settlement is done enables you to approach banks as an informed client, ensuring you can secure a structured path to recovery.

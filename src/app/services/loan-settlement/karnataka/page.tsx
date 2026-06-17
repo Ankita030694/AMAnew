@@ -378,7 +378,7 @@ export default function LoanSettlementKarnatakaPage() {
                     <div className="relative z-10">
                         <h3 className="text-2xl font-bold mb-4">For IT Professionals & Startup Employees</h3>
                         <p className="text-indigo-100 text-lg mb-6">
-                            "I earn ₹1.5 Lakh a month, but I am broke by the 5th." — A common story in HSR Layout and Whitefield.
+                            "I earn ₹1.5 Lakh a month, but I am broke by the 5th." - A common story in HSR Layout and Whitefield.
                         </p>
                         <div className="grid md:grid-cols-2 gap-6">
                             <div className="bg-indigo-800/50 p-4 rounded-lg backdrop-blur-sm">

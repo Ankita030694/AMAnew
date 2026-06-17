@@ -223,7 +223,7 @@ export default function TataCapitalLoanSettlementPage() {
               Tata Capital is one of India's most trusted financial institutions, known for its ethical practices and wide range of products including <strong>Housing Finance, Personal Loans, and Business Loans</strong>. However, the "Tata" brand name also means they are very strict about compliance and legal recovery. Unlike smaller NBFCs that might rely on aggressive calls, Tata Capital relies on <strong>systematic legal processes</strong> like Arbitration and SARFAESI to recover dues.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              If you have defaulted on a Tata Capital loan due to genuine financial hardship—such as job loss, medical crisis, or business failure—you need a solution that is as professional and legally sound as the lender itself. Ignoring their notices can lead to serious legal consequences, including asset attachment.
+              If you have defaulted on a Tata Capital loan due to genuine financial hardship-such as job loss, medical crisis, or business failure-you need a solution that is as professional and legally sound as the lender itself. Ignoring their notices can lead to serious legal consequences, including asset attachment.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed">
               At AMA Legal Solutions, we specialize in <strong>Loan Settlement (OTS)</strong> with premium lenders like Tata Capital. We match their legal sophistication with our own, ensuring that your rights are protected and that you get a fair chance to clear your debt for a reduced amount.

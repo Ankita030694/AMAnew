@@ -253,7 +253,7 @@ export default function LoanSettlementAPPage() {
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">What is Loan Settlement (OTS)?</h2>
                   <div className="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 mb-4 md:mb-8 rounded-r-lg">
                     <p className="text-sm md:text-lg text-blue-900 italic">
-                      "Loan settlement is a negotiated agreement where the lender accepts a reduced payment—often significantly lower than the total dues—to close a non-performing loan account."
+                      "Loan settlement is a negotiated agreement where the lender accepts a reduced payment-often significantly lower than the total dues-to close a non-performing loan account."
                     </p>
                   </div>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">

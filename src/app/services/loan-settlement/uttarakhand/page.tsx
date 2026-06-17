@@ -392,7 +392,7 @@ export default function UttarakhandLoanSettlementPage() {
                       <div>
                         <h3 className="text-2xl font-bold text-gray-900 mb-3">Case Analysis and Documentation</h3>
                         <p className="text-gray-700 leading-relaxed mb-4">
-                          The first step involves a thorough analysis of your financial situation. We understand that every case in Uttarakhand is unique—whether you are a hotel owner in Mussoorie facing a seasonal slump or a salaried employee in Dehradun affected by job cuts.
+                          The first step involves a thorough analysis of your financial situation. We understand that every case in Uttarakhand is unique-whether you are a hotel owner in Mussoorie facing a seasonal slump or a salaried employee in Dehradun affected by job cuts.
                         </p>
                         <p className="text-gray-700 leading-relaxed">
                           <strong>What we do:</strong>

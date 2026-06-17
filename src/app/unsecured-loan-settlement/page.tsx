@@ -230,7 +230,7 @@ export default function UnsecuredLoanSettlementPage() {
                   <h2 className="text-xl md:text-4xl font-bold text-gray-900 mb-8">What is Unsecured Loan Settlement?</h2>
                   <div className="bg-amber-50 border-l-8 border-[#D2A02A] p-8 mb-10 rounded-r-[40px]">
                     <p className="text-lg md:text-xl text-gray-800 italic leading-relaxed">
-                      "Unsecured loan settlement is a mutual, legally binding agreement where a lender agrees to accept a lump sum amount—often 30% to 50% of the total outstanding—as final payment to close a debt that has no collateral."
+                      "Unsecured loan settlement is a mutual, legally binding agreement where a lender agrees to accept a lump sum amount-often 30% to 50% of the total outstanding-as final payment to close a debt that has no collateral."
                     </p>
                   </div>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
@@ -303,7 +303,7 @@ export default function UnsecuredLoanSettlementPage() {
                   <div className="space-y-12">
                     {[
                       { step: 1, title: "Deep Debt Audit", desc: "We review all loan documents to find illegal clauses, excessive interest rates, and procedural lapses. We determine your 'True Principal' to negotiate from a position of fact." },
-                      { step: 2, title: "Hardship Dossier", desc: "We currate evidence of your financial situation—medical bills, salary cuts, or business loss reports—to prove to the credit committee that your hardship is genuine." },
+                      { step: 2, title: "Hardship Dossier", desc: "We currate evidence of your financial situation-medical bills, salary cuts, or business loss reports-to prove to the credit committee that your hardship is genuine." },
                       { step: 3, title: "Legal Shield Activation", desc: "We formally notify the bank of our representation. This immediately stops harassment and directs all collection efforts to our legal office." },
                       { step: 4, title: "Multi-Tier Negotiation", desc: "Our experts engage with recovery managers and settlement heads to push for the maximum possible waiver on interest and penalties." },
                       { step: 5, title: "Verification of Terms", desc: "We ensure the settlement letter is authentic and contains no hidden clauses that could allow the bank to reopen the case later." },

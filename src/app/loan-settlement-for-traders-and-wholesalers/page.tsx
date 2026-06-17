@@ -665,11 +665,11 @@ export default function TradersWholesalersLoanSettlement() {
               <div className="space-y-4 pt-2">
                 <div className="border-t border-gray-100 pt-3 space-y-1">
                   <p className="text-xs text-gray-600 italic">"Our textile wholesale business in Surat was facing heavy defaults on a CC account of Rs. 85 Lakhs. AMA Legal Solutions stepped in, protected our warehouse from illegal seizure, and settled the account at 45% of the dues. Truly life-saving!"</p>
-                  <p className="text-[10px] text-gray-400 font-semibold text-right">— Harish Chandra Shah</p>
+                  <p className="text-[10px] text-gray-400 font-semibold text-right">- Harish Chandra Shah</p>
                 </div>
                 <div className="border-t border-gray-100 pt-3 space-y-1">
                   <p className="text-xs text-gray-600 italic">"Superb legal representation. They structured our MSME hardship application perfectly, allowing us to settle our overdue overdraft with a nationalized bank efficiently."</p>
-                  <p className="text-[10px] text-gray-400 font-semibold text-right">— Devendra Singhal</p>
+                  <p className="text-[10px] text-gray-400 font-semibold text-right">- Devendra Singhal</p>
                 </div>
               </div>
             </div>

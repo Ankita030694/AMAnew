@@ -674,11 +674,11 @@ export default function KiranaShopOwnerLoanSettlement() {
               <div className="space-y-4 pt-2">
                 <div className="border-t border-gray-100 pt-3 space-y-1">
                   <p className="text-xs text-gray-600 italic">"My Kirana shop in Delhi was facing foreclosure due to CC account default. AMA Legal Solutions stepped in, stopped the recovery agents, and settled the account at 40% of the dues. Relieved!"</p>
-                  <p className="text-[10px] text-gray-400 font-semibold text-right">— Ram Lal Gupta</p>
+                  <p className="text-[10px] text-gray-400 font-semibold text-right">- Ram Lal Gupta</p>
                 </div>
                 <div className="border-t border-gray-100 pt-3 space-y-1">
                   <p className="text-xs text-gray-600 italic">"Excellent legal advice. They helped us understand the MSME debt restructuring guidelines and negotiated an outstanding lump-sum settlement with our bank."</p>
-                  <p className="text-[10px] text-gray-400 font-semibold text-right">— Suresh Mehta</p>
+                  <p className="text-[10px] text-gray-400 font-semibold text-right">- Suresh Mehta</p>
                 </div>
               </div>
             </div>

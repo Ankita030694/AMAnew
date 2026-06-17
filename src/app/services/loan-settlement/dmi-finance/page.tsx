@@ -207,7 +207,7 @@ export default function DmiFinanceLoanSettlementPage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">DMI Finance: The Giant Behind Your Digital Loans</h2>
               <div className="bg-white rounded-xl p-8 shadow-sm border-l-4 border-red-600">
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  <strong>DMI Finance Private Limited</strong> is not your typical bank. It is a technology-first Non-Banking Financial Company (NBFC) that has revolutionized—and in some ways, weaponized—digital lending in India. If you have bought a smartphone on EMI without a credit card, or taken an instant personal loan through an app, chances are DMI Finance is the lender behind the screen.
+                  <strong>DMI Finance Private Limited</strong> is not your typical bank. It is a technology-first Non-Banking Financial Company (NBFC) that has revolutionized-and in some ways, weaponized-digital lending in India. If you have bought a smartphone on EMI without a credit card, or taken an instant personal loan through an app, chances are DMI Finance is the lender behind the screen.
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
                   They are the exclusive lending partner for <strong>Samsung Finance+</strong>, powering the EMI schemes for millions of Samsung devices. Beyond that, they are a primary lender for major fintech platforms like <strong>Google Pay (GPay), Paytm, PhonePe, and Mobikwik</strong>. Their reach is vast, penetrating deep into Tier 2 and Tier 3 cities where traditional banks fear to tread.

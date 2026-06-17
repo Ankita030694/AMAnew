@@ -279,7 +279,7 @@ export default function ChooseReliableLoanSettlementAgencyPage() {
                   </p>
                   <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Transparent and Written Fee Structures</h3>
                   <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                    Trustworthy agencies operate on transparent, written fee structures. They do not hide their charges behind vague terms or structure their fees to take a percentage of money you have not yet saved. Legitimate firms define their fee components upfront—such as a fixed retainer fee for legal management and a performance-based fee calculated strictly as a percentage of the actual savings achieved during the settlement. These terms must be documented in a signed service agreement before any work begins.
+                    Trustworthy agencies operate on transparent, written fee structures. They do not hide their charges behind vague terms or structure their fees to take a percentage of money you have not yet saved. Legitimate firms define their fee components upfront-such as a fixed retainer fee for legal management and a performance-based fee calculated strictly as a percentage of the actual savings achieved during the settlement. These terms must be documented in a signed service agreement before any work begins.
                   </p>
                   <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Setting Realistic Expectations: The Truth About CIBIL Impacts</h3>
                   <p className="text-sm md:text-lg leading-relaxed text-gray-700">
@@ -315,7 +315,7 @@ export default function ChooseReliableLoanSettlementAgencyPage() {
                   </p>
                   
                   <div className="my-8 p-6 bg-amber-50/50 border border-amber-100 rounded-2xl">
-                    <h4 className="font-bold text-gray-900 mb-4 text-center">AMA LEGAL SOLUTIONS — LEADING DEBT RESOLUTION ADVOCATE</h4>
+                    <h4 className="font-bold text-gray-900 mb-4 text-center">AMA LEGAL SOLUTIONS - LEADING DEBT RESOLUTION ADVOCATE</h4>
                     <div className="grid md:grid-cols-3 gap-6 text-center">
                       <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
                         <div className="text-[#D2A02A] text-2xl mb-2 font-bold">1</div>

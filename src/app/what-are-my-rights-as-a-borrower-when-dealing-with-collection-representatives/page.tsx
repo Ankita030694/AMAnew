@@ -92,7 +92,7 @@ export default function BorrowerRightsGuide() {
         "name": "What are the legal calling hours for debt recovery agents in India?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "According to the Reserve Bank of India (RBI) guidelines, debt recovery agents are only allowed to contact borrowers—either via phone calls or physical home visits—between 8:00 AM and 7:00 PM. Any communication outside this timeframe is a clear violation of the code."
+          "text": "According to the Reserve Bank of India (RBI) guidelines, debt recovery agents are only allowed to contact borrowers-either via phone calls or physical home visits-between 8:00 AM and 7:00 PM. Any communication outside this timeframe is a clear violation of the code."
         }
       },
       {
@@ -227,7 +227,7 @@ export default function BorrowerRightsGuide() {
               </p>
               <h3 className="text-2xl font-semibold text-[#30261C] mt-8 mb-4">The Legal Nature of a Loan Default</h3>
               <p>
-                It is a common misconception that failing to repay a loan on time is a criminal offense that can lead to immediate imprisonment. Under Indian law, a <strong>loan default</strong> is fundamentally treated as a civil dispute—specifically, a breach of a financial contract. When an account goes unpaid for a continuous period of 90 days, lenders classify the debt as a <strong>non-performing asset (NPA)</strong>. 
+                It is a common misconception that failing to repay a loan on time is a criminal offense that can lead to immediate imprisonment. Under Indian law, a <strong>loan default</strong> is fundamentally treated as a civil dispute-specifically, a breach of a financial contract. When an account goes unpaid for a continuous period of 90 days, lenders classify the debt as a <strong>non-performing asset (NPA)</strong>. 
               </p>
               <p>
                 While this classification permits the bank or NBFC to initiate civil litigation, invoke arbitration, or execute security recovery procedures under the SARFAESI Act, it does not constitute a criminal act. Lenders cannot use police machinery or threat of arrest to coerce payments, nor can they treat a defaulting borrower as a fugitive. Understanding that your default is a civil contractual issue provides a critical shield against deceptive threats of police actions or criminal prosecution.
@@ -432,7 +432,7 @@ export default function BorrowerRightsGuide() {
                 </div>
                 <div>
                   <h4 className="font-bold text-xl mb-2 text-[#D29E0D]">What are the legal calling hours for debt recovery agents in India?</h4>
-                  <p>According to the Reserve Bank of India (RBI) guidelines, debt recovery agents are only allowed to contact borrowers—either via phone calls or physical home visits—between 8:00 AM and 7:00 PM. Any communication outside this timeframe is a clear violation of the code.</p>
+                  <p>According to the Reserve Bank of India (RBI) guidelines, debt recovery agents are only allowed to contact borrowers-either via phone calls or physical home visits-between 8:00 AM and 7:00 PM. Any communication outside this timeframe is a clear violation of the code.</p>
                 </div>
                 <div>
                   <h4 className="font-bold text-xl mb-2 text-[#D29E0D]">How do I file a complaint against a bank's recovery agent with the RBI?</h4>

@@ -680,11 +680,11 @@ export default function ConstructionContractorLoanSettlement() {
               <div className="space-y-4 pt-2">
                 <div className="border-t border-gray-100 pt-3 space-y-1">
                   <p className="text-xs text-gray-600 italic">"As a government civil contractor in Delhi, delayed billing cycles from departments led to massive overdraft defaults. Banks threatened to auction my machinery. AMA Legal Solutions stepped in, stopped the recovery threats, and negotiated a 60% haircut settlement, allowing me to resume my works."</p>
-                  <p className="text-[10px] text-gray-400 font-semibold text-right">— Baldev Singh</p>
+                  <p className="text-[10px] text-gray-400 font-semibold text-right">- Baldev Singh</p>
                 </div>
                 <div className="border-t border-gray-100 pt-3 space-y-1">
                   <p className="text-xs text-gray-600 italic">"Very professional advocates. They handled my commercial credit card and machinery loan settlement perfectly, keeping my business accounts protected."</p>
-                  <p className="text-[10px] text-gray-400 font-semibold text-right">— Radhika Sen</p>
+                  <p className="text-[10px] text-gray-400 font-semibold text-right">- Radhika Sen</p>
                 </div>
               </div>
             </div>

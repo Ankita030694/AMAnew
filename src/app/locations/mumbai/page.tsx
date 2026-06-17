@@ -47,7 +47,7 @@ const faqs = [
   },
   {
     question: "How much do legal services cost in Mumbai?",
-    answer: "Legal fees in Mumbai vary based on the complexity of the case and the seniority of the counsel. At AMA Legal Solutions, we believe in transparency. We offer a preliminary consultation to understand your case and provide a clear fee structure—whether it's a flat fee for drafting or a stage-wise fee for litigation—suited to your needs."
+    answer: "Legal fees in Mumbai vary based on the complexity of the case and the seniority of the counsel. At AMA Legal Solutions, we believe in transparency. We offer a preliminary consultation to understand your case and provide a clear fee structure-whether it's a flat fee for drafting or a stage-wise fee for litigation-suited to your needs."
   },
   {
     question: "Do you provide online legal consultation?",

@@ -66,7 +66,7 @@ const ChhattisgarhBankingClient = () => {
                   Powering Growth in the Rice Bowl of India
                 </h2>
                 <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                  Chhattisgarh is a land of contrasts—housing massive steel plants and power hubs in Raipur-Bhilai-Korba, while also sustaining a vast agrarian and tribal population in Bastar and Sarguja. The financial needs here are equally diverse: multi-crore syndicated loans for heavy industries versus micro-credit for forest produce collectors.
+                  Chhattisgarh is a land of contrasts-housing massive steel plants and power hubs in Raipur-Bhilai-Korba, while also sustaining a vast agrarian and tribal population in Bastar and Sarguja. The financial needs here are equally diverse: multi-crore syndicated loans for heavy industries versus micro-credit for forest produce collectors.
                 </p>
                 <p className="text-lg leading-relaxed mb-6 text-gray-700">
                   Navigating the legal landscape involves understanding the <strong>Chhattisgarh Land Revenue Code</strong> (especially restrictions on tribal land transfer), compliance with <strong>PESA Act</strong> in scheduled areas, and the nuances of industrial financing.

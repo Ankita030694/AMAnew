@@ -417,7 +417,7 @@ export default function HyderabadLoanSettlementPage() {
                       <div>
                         <h3 className="text-2xl font-bold text-gray-900 mb-3">Assessment & Onboarding</h3>
                         <p className="text-gray-700 leading-relaxed">
-                          We analyze your debt portfolio—credit cards, personal loans, and others. We check your eligibility and calculate the maximum savings possible based on Hyderabad's banking norms.
+                          We analyze your debt portfolio-credit cards, personal loans, and others. We check your eligibility and calculate the maximum savings possible based on Hyderabad's banking norms.
                         </p>
                       </div>
                     </div>

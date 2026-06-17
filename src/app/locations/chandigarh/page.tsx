@@ -327,7 +327,7 @@ export default function ChandigarhLocationPage() {
                 <section id="introduction" className="scroll-mt-32">
                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">The Legal Heart of North India</h2>
                   <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
-                    Chandigarh is not just a union territory; it is the judicial nerve center for two states—Punjab and Haryana—and UT itself. Hosting the <strong>Punjab & Haryana High Court</strong>, it draws litigants and lawyers from across the region. But Chandigarh's legal significance goes beyond the High Court.
+                    Chandigarh is not just a union territory; it is the judicial nerve center for two states-Punjab and Haryana-and UT itself. Hosting the <strong>Punjab & Haryana High Court</strong>, it draws litigants and lawyers from across the region. But Chandigarh's legal significance goes beyond the High Court.
                   </p>
                   <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                      It is home to critical tribunals like the <strong>NCLT (National Company Law Tribunal)</strong>, <strong>DRT (Debts Recovery Tribunal)</strong>, <strong>CAT (Central Administrative Tribunal)</strong>, and <strong>AFT (Armed Forces Tribunal)</strong>. This concentration of judicial power makes Chandigarh a complex playground for legal battles involving corporate insolvency, government service matters, and banking disputes.

@@ -269,7 +269,7 @@ export default function BajajFinanceAgentPage() {
                             If you are being pursued by Bajaj Finance recovery agents, you must know that your financial default does not give them a license to harass you. In the Indian legal landscape of 2025, every borrower is protected by the Reserve Bank of India's (RBI) Fair Practices Code and constitutional rights. Whether it is a small consumer loan or a large personal loan, the recovery process must be civil, documented, and conducted within limited hours.
                         </p>
                         <p>
-                            At AMA Legal Solutions, we specialize in bridging the gap between aggressive institutional collection and the borrower's legal rights. We have seen how Bajaj Finance agents, often working through third-party agencies, use tactics that border on—or explicitly cross into—criminal intimidation. This guide is your comprehensive legal defense, designed to reach over 7000 words of actionable legal wisdom to help you stop the harassment and resolve your debt with dignity.
+                            At AMA Legal Solutions, we specialize in bridging the gap between aggressive institutional collection and the borrower's legal rights. We have seen how Bajaj Finance agents, often working through third-party agencies, use tactics that border on-or explicitly cross into-criminal intimidation. This guide is your comprehensive legal defense, designed to reach over 7000 words of actionable legal wisdom to help you stop the harassment and resolve your debt with dignity.
                         </p>
                     </div>
                   </section>
@@ -398,7 +398,7 @@ export default function BajajFinanceAgentPage() {
                     <h2 className="text-3xl font-black text-gray-900 mb-10 uppercase tracking-widest text-center border-l-8 border-[#D2A02A] pl-10 text-left">The Professional Shield: Stopping Office Visits</h2>
                     <div className="space-y-8 text-lg leading-relaxed">
                         <p>
-                            Perhaps the most damaging tactic is the workplace visit. Agents know that your job is your livelihood and the source of your repayment potential. By harassing you at your office, they jeopardize your current and future income—a self-defeating and illegal tactic.
+                            Perhaps the most damaging tactic is the workplace visit. Agents know that your job is your livelihood and the source of your repayment potential. By harassing you at your office, they jeopardize your current and future income-a self-defeating and illegal tactic.
                         </p>
                         <p>
                             If an agent visits your office, inform them through a registered email that: 1. You are available for meetings at the bank branch only. 2. Any further workplace visits will be treated as "Professional Sabotage" and "Defamation." AMA Legal Solutions can help you send this "Cease and Desist" formally to Bajaj Finance HR and Compliance, which usually puts an end to office harassment immediately.

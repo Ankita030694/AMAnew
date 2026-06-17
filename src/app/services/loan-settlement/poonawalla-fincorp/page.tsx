@@ -254,7 +254,7 @@ export default function PoonawallaFincorpLoanSettlementPage() {
                   While their digital onboarding is seamless, their recovery process is equally automated and relentless. If you have missed an EMI, you might have already experienced the barrage of automated calls, WhatsApp messages, and system-generated legal notices. The speed at which they escalate defaults to <strong>Digital Arbitration</strong> can catch many borrowers off guard.
                 </p>
                 <p className="mb-6">
-                  At <strong>AMA Legal Solutions</strong>, we specialize in navigating this digital debt ecosystem. We understand that financial distress can happen to anyone—due to job loss, medical emergencies, or business downturns. Our mission is to provide you with a legal shield against harassment and a structured path to financial freedom through <strong>One Time Settlement (OTS)</strong>.
+                  At <strong>AMA Legal Solutions</strong>, we specialize in navigating this digital debt ecosystem. We understand that financial distress can happen to anyone-due to job loss, medical emergencies, or business downturns. Our mission is to provide you with a legal shield against harassment and a structured path to financial freedom through <strong>One Time Settlement (OTS)</strong>.
                 </p>
                 <div className="bg-red-50 border-l-4 border-[#E31E24] p-6 rounded-r-lg">
                   <p className="font-bold text-[#E31E24] mb-2">The AMA Promise:</p>

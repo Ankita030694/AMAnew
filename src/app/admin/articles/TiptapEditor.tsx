@@ -397,7 +397,7 @@ const MenuBar = ({ editor }: { editor: any }) => {
           className="p-1 px-2 rounded hover:bg-gray-200"
           title="Horizontal Rule"
         >
-          —
+          -
         </button>
       </div>
 

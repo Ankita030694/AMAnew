@@ -297,7 +297,7 @@ export default function WestBengalLitigationPage() {
                 <section id="introduction" className="scroll-mt-32">
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">Navigating the Legal Landscape of West Bengal</h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    West Bengal, with its rich legal heritage and bustling commercial capital Kolkata, presents a unique and intricate legal environment. Home to the <strong>Calcutta High Court</strong>—the oldest High Court in India—the state's judicial system is steeped in tradition yet evolving to meet modern challenges. Litigation here involves navigating a mix of colonial-era procedures on the Original Side and modern statutory frameworks.
+                    West Bengal, with its rich legal heritage and bustling commercial capital Kolkata, presents a unique and intricate legal environment. Home to the <strong>Calcutta High Court</strong>-the oldest High Court in India-the state's judicial system is steeped in tradition yet evolving to meet modern challenges. Litigation here involves navigating a mix of colonial-era procedures on the Original Side and modern statutory frameworks.
                   </p>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
                     From high-stakes corporate battles in the central business district to complex land reforms and tenancy disputes in the suburbs and districts, the need for specialized legal counsel is critical. <strong>Litigation services in West Bengal</strong> encompass a wide array of fields: Civil disputes, Criminal defense, Constitutional writs, Admiralty, and Intellectual Property rights.

@@ -270,7 +270,7 @@ export default function VivritiCapitalSettlementPage() {
                     <MdBusinessCenter className="text-indigo-600" /> SME / Business Loans
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    These are larger ticket loans for working capital or expansion. They are often backed by personal guarantees of directors. Defaulting here is serious—it can lead to <strong>SARFAESI action</strong> (if secured) or insolvency proceedings against the business, putting personal assets at risk.
+                    These are larger ticket loans for working capital or expansion. They are often backed by personal guarantees of directors. Defaulting here is serious-it can lead to <strong>SARFAESI action</strong> (if secured) or insolvency proceedings against the business, putting personal assets at risk.
                   </p>
                 </div>
               </div>

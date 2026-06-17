@@ -370,7 +370,7 @@ export default function JammuKashmirLoanSettlementPage() {
                       <div>
                         <h3 className="text-2xl font-bold text-gray-900 mb-3">Assessment & Preservation</h3>
                         <p className="text-gray-700 leading-relaxed">
-                          We start by assessing the stage of your default. Is it SMA-2? NPA? Has a 13(2) notice been served? Our first priority is asset preservation—ensuring your home or shop is not immediately sealed. We advise you on handling recovery agents and stopping illegal communication.
+                          We start by assessing the stage of your default. Is it SMA-2? NPA? Has a 13(2) notice been served? Our first priority is asset preservation-ensuring your home or shop is not immediately sealed. We advise you on handling recovery agents and stopping illegal communication.
                         </p>
                       </div>
                     </div>

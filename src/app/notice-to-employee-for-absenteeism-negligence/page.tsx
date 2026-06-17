@@ -288,7 +288,7 @@ export default function AbsenteeismNegligenceGuide() {
                 Many employers tolerate absenteeism because they think, "I'm just not paying them for that day, so I'm not losing money." This is a fundamental error. The hidden costs of absenteeism are massive. There is the cost of missed deadlines, the cost of temporary replacement labor, and the "demoralization cost" to the rest of the team.
               </p>
               <p>
-                Negligence is even more expensive. A single negligent act by a worker in a factory can lead to a fire or a breakdown that stops production for weeks. In the service sector, a negligent mistake can lead to a client lawsuit or a data breach. These are not just HR issues; they are existential threats to a business. This is why a firm legal stand is not "harsh"—it is "essential."
+                Negligence is even more expensive. A single negligent act by a worker in a factory can lead to a fire or a breakdown that stops production for weeks. In the service sector, a negligent mistake can lead to a client lawsuit or a data breach. These are not just HR issues; they are existential threats to a business. This is why a firm legal stand is not "harsh"-it is "essential."
               </p>
             </section>
 
@@ -357,7 +357,7 @@ export default function AbsenteeismNegligenceGuide() {
                 For major negligence cases, a <strong>Domestic Inquiry</strong> is mandatory. This is an internal trial where the management proves the charges through evidence (attendance logs, project reports, witness statements). The employee has a right to defend themselves.
               </p>
               <p>
-                The inquiry must be conducted by an "unbiased" officer—ideally someone who was not involved in the original incident. The goal is to ensure that the "Principle of Natural Justice" is followed: the employee must be heard, and the decision must be based on evidence, not bias.
+                The inquiry must be conducted by an "unbiased" officer-ideally someone who was not involved in the original incident. The goal is to ensure that the "Principle of Natural Justice" is followed: the employee must be heard, and the decision must be based on evidence, not bias.
               </p>
             </section>
 

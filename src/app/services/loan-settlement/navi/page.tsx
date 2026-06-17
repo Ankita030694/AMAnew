@@ -214,7 +214,7 @@ export default function NaviLoanSettlementPage() {
               The Digital Debt Trap: Instant Cash, Instant Stress
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              Navi Finserv has made getting a loan incredibly easy—just a few taps on your phone. However, this convenience often comes with high interest rates and strict repayment terms. Unlike traditional banks, digital lenders like Navi rely heavily on technology for both disbursement and recovery.
+              Navi Finserv has made getting a loan incredibly easy-just a few taps on your phone. However, this convenience often comes with high interest rates and strict repayment terms. Unlike traditional banks, digital lenders like Navi rely heavily on technology for both disbursement and recovery.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
               When you miss an EMI, the algorithm triggers an aggressive recovery process. It's not just about the money anymore; it's about your data privacy, your reputation, and your peace of mind. Many borrowers find themselves borrowing from one app to pay another, falling into a vicious <strong>Digital Debt Trap</strong>.

@@ -225,7 +225,7 @@ export default function RecoveryHouseEntryPage() {
                 <section id="your-home-sanctuary" className="scroll-mt-32">
                   <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6">Your Home is a Sanctuary: The Legality of Unauthorized Entry</h2>
                   <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                    In the eyes of the law, your private residence is a sanctuary. No individual, representative, or corporate entity has the unilateral right to breach the threshold of your home without your express invitation or a valid order issued by a court of competent jurisdiction. When banks or Non-Banking Financial Companies (NBFCs) hire third-party entities to collect outstanding debts, these individuals operate strictly as agents of the lender—they do not possess law enforcement powers, judicial warrants, or executive authority.
+                    In the eyes of the law, your private residence is a sanctuary. No individual, representative, or corporate entity has the unilateral right to breach the threshold of your home without your express invitation or a valid order issued by a court of competent jurisdiction. When banks or Non-Banking Financial Companies (NBFCs) hire third-party entities to collect outstanding debts, these individuals operate strictly as agents of the lender-they do not possess law enforcement powers, judicial warrants, or executive authority.
                   </p>
                   
                   <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8 mb-4">Trespass and Private Space under Indian Civil and Criminal Law</h3>
@@ -276,7 +276,7 @@ export default function RecoveryHouseEntryPage() {
                 <section id="prohibited-conduct" className="scroll-mt-32">
                   <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6">Prohibited Conduct: What Debt Recovery Agents Cannot Do</h2>
                   <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                    The RBI guidelines on recovery agents leave no room for ambiguity regarding the behavior expected of collection representatives. The regulatory body has repeatedly issued circulars warning banks and NBFCs of severe penalties—including temporary bans on employing recovery agencies—if their representatives engage in coercive recovery methods.
+                    The RBI guidelines on recovery agents leave no room for ambiguity regarding the behavior expected of collection representatives. The regulatory body has repeatedly issued circulars warning banks and NBFCs of severe penalties-including temporary bans on employing recovery agencies-if their representatives engage in coercive recovery methods.
                   </p>
 
                   <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8 mb-4">Verbal Abuse, Threats of Jail, and Harassment of Family Members</h3>

@@ -216,8 +216,8 @@ const TelanganaIPRPage = () => {
                       regime attracts foreign investment and encourages local
                       entrepreneurship. From the bustling startup incubators like
                       T-Hub to the traditional clusters of handicrafts, the need
-                      for comprehensive IP protection—spanning Trademarks,
-                      Patents, Copyrights, and Geographical Indications—is more
+                      for comprehensive IP protection-spanning Trademarks,
+                      Patents, Copyrights, and Geographical Indications-is more
                       critical than ever.
                     </p>
                     <p>
@@ -491,7 +491,7 @@ const TelanganaIPRPage = () => {
                   <div className="prose prose-lg text-gray-700 max-w-none">
                     <p>
                       For many businesses, their competitive edge lies in
-                      confidential information—be it a client list, a manufacturing
+                      confidential information-be it a client list, a manufacturing
                       process, or a business strategy. In Telangana's competitive
                       market, safeguarding these trade secrets is essential.
                     </p>

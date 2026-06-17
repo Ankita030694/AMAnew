@@ -949,7 +949,7 @@ export default function ComplaintFilingPage() {
                       },
                       {
                         q: "What is a 'Recovery Certificate' (RC)?",
-                        a: "An RC is a document issued by the Labour Commissioner to the District Collector. It authorizes the Collector to recover your dues as if they were 'Arrears of Land Revenue'—including the power of auctioning property."
+                        a: "An RC is a document issued by the Labour Commissioner to the District Collector. It authorizes the Collector to recover your dues as if they were 'Arrears of Land Revenue'-including the power of auctioning property."
                       },
                       {
                         q: "Can I claim for the loss of a better career opportunity?",

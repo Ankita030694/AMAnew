@@ -452,7 +452,7 @@ export default function LoanSettlementMeghalayaPage() {
                             <div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-2">Financial Hardship Proof</h3>
                                 <p className="text-gray-700">
-                                    We gather evidence of your financial distress—salary slips showing deductions, medical bills, or certified losses in business. We present this to the Zonal Manager in Guwahati or Shillong.
+                                    We gather evidence of your financial distress-salary slips showing deductions, medical bills, or certified losses in business. We present this to the Zonal Manager in Guwahati or Shillong.
                                 </p>
                             </div>
                         </div>

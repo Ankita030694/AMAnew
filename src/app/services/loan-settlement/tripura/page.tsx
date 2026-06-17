@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: "I am a government employee in Tripura. Can I settle my loan?",
-    answer: "We understand that a large portion of Tripura's workforce is employed by the government. While banks are often reluctant to offer settlement to salaried employees due to the stability of their income, it is not impossible. If you can demonstrate genuine financial hardship—such as a medical crisis, loss of a earning family member, or fraud—we can negotiate on your behalf to get a favorable settlement without jeopardizing your job."
+    answer: "We understand that a large portion of Tripura's workforce is employed by the government. While banks are often reluctant to offer settlement to salaried employees due to the stability of their income, it is not impossible. If you can demonstrate genuine financial hardship-such as a medical crisis, loss of a earning family member, or fraud-we can negotiate on your behalf to get a favorable settlement without jeopardizing your job."
   },
   {
     question: "Does AMA Legal Solutions have an office in Agartala?",
@@ -277,7 +277,7 @@ export default function LoanSettlementTripuraPage() {
                   </p>
                   <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
                     <li>Lenders must hold a valid license to operate.</li>
-                    <li>There is a cap on the maximum interest recoverable—often limiting it so the total interest does not exceed the principal amount (Damdupat rule).</li>
+                    <li>There is a cap on the maximum interest recoverable-often limiting it so the total interest does not exceed the principal amount (Damdupat rule).</li>
                     <li>Harassment and intimidation for recovery are strictly prohibited offences.</li>
                   </ul>
 

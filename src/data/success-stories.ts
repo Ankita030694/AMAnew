@@ -48,9 +48,9 @@ export const successStories: SuccessStory[] = [
                 heading: "The Perfect Storm: medical Crisis meets Financial Instability",
                 id: "the-challenge",
                 paragraphs: [
-                    "For Aditya, a 32-year-old Senior Software Engineer living in the bustling tech corridors of Whitefield, Bengaluru, life was following a predictable, upward trajectory. With a stable income and a disciplined financial record, debt was never a concern—until late 2023. The calm was shattered when his father suffered a sudden, severe cardiac arrest requiring immediate bypass surgery and prolonged ICU care.",
-                    "The medical costs were astronomical. While Aditya had corporate health insurance, the coverage limit was exhausted within the first three days of hospitalization. Desperate to ensure the best care for his father, Aditya did what any son would do—he liquidated his savings and, when that wasn't enough, swiped his credit cards and took a high-interest top-up personal loan. In a span of two weeks, his debt obligations skyrocketed to ₹15 Lakhs.",
-                    "He had calculated that he could manage the new EMIs by tightening his monthly budget. However, fate had a cruel twist in store. Just a month later, his company announced a major restructuring due to global market headwinds. While Aditya retained his job, his variable pay and performance incentives—which made up 30% of his take-home salary—were indefinitely paused. The math no longer worked. He found himself in a deficit every month, borrowing from one app to pay another, unknowingly stepping into a vicious debt trap."
+                    "For Aditya, a 32-year-old Senior Software Engineer living in the bustling tech corridors of Whitefield, Bengaluru, life was following a predictable, upward trajectory. With a stable income and a disciplined financial record, debt was never a concern-until late 2023. The calm was shattered when his father suffered a sudden, severe cardiac arrest requiring immediate bypass surgery and prolonged ICU care.",
+                    "The medical costs were astronomical. While Aditya had corporate health insurance, the coverage limit was exhausted within the first three days of hospitalization. Desperate to ensure the best care for his father, Aditya did what any son would do-he liquidated his savings and, when that wasn't enough, swiped his credit cards and took a high-interest top-up personal loan. In a span of two weeks, his debt obligations skyrocketed to ₹15 Lakhs.",
+                    "He had calculated that he could manage the new EMIs by tightening his monthly budget. However, fate had a cruel twist in store. Just a month later, his company announced a major restructuring due to global market headwinds. While Aditya retained his job, his variable pay and performance incentives-which made up 30% of his take-home salary-were indefinitely paused. The math no longer worked. He found himself in a deficit every month, borrowing from one app to pay another, unknowingly stepping into a vicious debt trap."
                 ]
             },
             {
@@ -76,7 +76,7 @@ export const successStories: SuccessStory[] = [
                 id: "settlement-strategy",
                 paragraphs: [
                     "With the immediate threat of harassment neutralized, the focus shifted to the financial resolution. By this time, the total outstanding amount had ballooned to over ₹20 Lakhs. The bank had piled on late payment fees, cheque bounce charges, and penal interest, inflating the debt far beyond the principal amount.",
-                    "AMA's team of financial negotiators opened a channel with the bank's settlement officers. The initial stance of the bank was rigid—they demanded full payment of the ₹20 Lakhs and threatened legal action under the Payment and Settlement Systems Act. However, AMA's experts were prepared. They presented a documented 'Hardship Letter' detailing the medical emergency and the salary restructuring.",
+                    "AMA's team of financial negotiators opened a channel with the bank's settlement officers. The initial stance of the bank was rigid-they demanded full payment of the ₹20 Lakhs and threatened legal action under the Payment and Settlement Systems Act. However, AMA's experts were prepared. They presented a documented 'Hardship Letter' detailing the medical emergency and the salary restructuring.",
                     "The negotiation was intense and spanned three months. AMA Legal Solutions systematically rejected the bank's inflated claims, arguing that the penal charges were unjustified given the genuine hardship. They leveraged their knowledge of the bank's NPA (Non-Performing Asset) provisioning cycles to push for a closure. They insisted on a settlement based on the principal amount, stripping away the exorbitant interest components."
                 ]
             },
@@ -129,7 +129,7 @@ export const successStories: SuccessStory[] = [
                 paragraphs: [
                     "For a business owner, social capital is as important as financial capital. The NBFC's recovery agency understood this vulnerability and exploited it ruthlessly. Unlike the remote harassment faced by salaried professionals, Rahul faced physical intimidation right at his source of livelihood.",
                     "It began with 'field visits.' Recovery agents would arrive at his shop during peak business hours. They wouldn't just ask for money; they would occupy the client chairs, stare at customers, and make loud, disparaging remarks about 'defaulters' and 'thieves.'",
-                    "The situation reached a boiling point on a Tuesday afternoon. Two aggressive agents refused to leave his counter, effectively blocking sales. They shouted threats of seizing his inventory—illegal without a court order—causing a commotion that drew the attention of neighboring shopkeepers. 'I saw my regular customers walking away,' Rahul recalls with a shudder. 'My reputation in the market, built over 20 years, was being dismantled in minutes. I wasn't just losing money; I was losing my dignity.'"
+                    "The situation reached a boiling point on a Tuesday afternoon. Two aggressive agents refused to leave his counter, effectively blocking sales. They shouted threats of seizing his inventory-illegal without a court order-causing a commotion that drew the attention of neighboring shopkeepers. 'I saw my regular customers walking away,' Rahul recalls with a shudder. 'My reputation in the market, built over 20 years, was being dismantled in minutes. I wasn't just losing money; I was losing my dignity.'"
                 ]
             },
             {
@@ -153,7 +153,7 @@ export const successStories: SuccessStory[] = [
                 heading: "A Clean Slate: Settling for 48% of the Demand",
                 id: "the-outcome",
                 paragraphs: [
-                    "After four rounds of intense negotiation, a deal was struck. The NBFC agreed to close the entire loan account for a one-time payment of ₹7.2 Lakhs. This was a massive relief—a settlement at less than 50% of the principal loan amount, and a fraction of the inflated total demand.",
+                    "After four rounds of intense negotiation, a deal was struck. The NBFC agreed to close the entire loan account for a one-time payment of ₹7.2 Lakhs. This was a massive relief-a settlement at less than 50% of the principal loan amount, and a fraction of the inflated total demand.",
                     "Rahul liquidated some dead stock at cost price and borrowed a soft loan from family members to make the payment. AMA Legal Solutions ensured that the settlement letter explicitly stated that the loan was 'Settled in Full' and that the NBFC would issue a No Dues Certificate (NDC).",
                     "Today, Rahul's shop in Karol Bagh is buzzing again. He has shifted his business model to cash-and-carry to avoid future liquidity traps. 'I thought this loan was the end of my business legacy,' Rahul reflects. 'AMA Legal Solutions didn't just settle a debt; they kept my shutters open and gave me a second chance.'"
                 ]
@@ -188,7 +188,7 @@ export const successStories: SuccessStory[] = [
                 id: "the-challenge",
                 paragraphs: [
                     "Priya, a 29-year-old mathematics teacher at a reputed private school in Mumbai's suburbs, has always been the pillar of her family. When her younger brother secured admission to a prestigious engineering college, the family lacked the immediate funds. Without a second thought, Priya took a personal loan of ₹8 Lakhs from a private bank to fund his tuition, confident that her salary and her brother's future job would cover the repayment.",
-                    "However, life in Mumbai is unforgiving. Rising rent, inflation, and unexpected medical expenses for her mother quickly ate into her disposable income. To make matters worse, the job market slowed down, and her brother struggled to find placement after graduation. The burden of the EMI fell entirely on Priya's shoulders. She started using her credit card to pay the loan EMIs—a classic financial mistake that quickly spiraled into a debt trap."
+                    "However, life in Mumbai is unforgiving. Rising rent, inflation, and unexpected medical expenses for her mother quickly ate into her disposable income. To make matters worse, the job market slowed down, and her brother struggled to find placement after graduation. The burden of the EMI fell entirely on Priya's shoulders. She started using her credit card to pay the loan EMIs-a classic financial mistake that quickly spiraled into a debt trap."
                 ]
             },
             {
@@ -219,7 +219,7 @@ export const successStories: SuccessStory[] = [
                 heading: "Peace of Mind Restored",
                 id: "the-outcome",
                 paragraphs: [
-                    "The bank eventually agreed to a settlement of ₹4.1 Lakhs—nearly 50% of the total claim. This amount was manageable. Priya arranged the funds through a soft loan from a close relative.",
+                    "The bank eventually agreed to a settlement of ₹4.1 Lakhs-nearly 50% of the total claim. This amount was manageable. Priya arranged the funds through a soft loan from a close relative.",
                     "AMA Legal Solutions guided her through the final payment process, ensuring she received a settlement letter that protected her from future liabilities. Today, Priya teaches without fear. 'I used to dread the school bell ringing, thinking it was a collection agent,' she says. 'Now, I can focus on my students. AMA Legal Solutions didn't just settle my debt; they saved my dignity as a teacher.'"
                 ]
             }
@@ -253,7 +253,7 @@ export const successStories: SuccessStory[] = [
                 id: "the-challenge",
                 paragraphs: [
                     "Vikram, a 35-year-old Area Sales Manager for a leading FMCG company in Gurugram, lived a life fueled by adrenaline and targets. But the post-COVID market slowdown hit his sector hard. For three consecutive quarters, he missed his sales targets. His base salary covered his rent and EMI for a home loan, but his lifestyle and daily operational expenses relied heavily on the quarterly performance incentives that had suddenly vanished.",
-                    "To bridge the gap, Vikram started rotating credit on three different premium credit cards. 'It felt like a temporary fix,' Vikram explains. 'I thought one good quarter would clear everything.' But with interest rates hitting 42% annually and 'over-limit' fees piling up, his debt ballooned to ₹12 Lakhs within a year. He was borrowing from Card A to pay the minimum due on Card B—a classic debt spiral."
+                    "To bridge the gap, Vikram started rotating credit on three different premium credit cards. 'It felt like a temporary fix,' Vikram explains. 'I thought one good quarter would clear everything.' But with interest rates hitting 42% annually and 'over-limit' fees piling up, his debt ballooned to ₹12 Lakhs within a year. He was borrowing from Card A to pay the minimum due on Card B-a classic debt spiral."
                 ]
             },
             {
@@ -349,7 +349,7 @@ export const successStories: SuccessStory[] = [
                 heading: "Closing a Painful Chapter",
                 id: "the-outcome",
                 paragraphs: [
-                    "The loan was settled for ₹2.4 Lakhs—less than half of the original principal. The bank waived all interest and penalty charges. Sneha paid the amount using her savings and a small help from her parents.",
+                    "The loan was settled for ₹2.4 Lakhs-less than half of the original principal. The bank waived all interest and penalty charges. Sneha paid the amount using her savings and a small help from her parents.",
                     "AMA Legal Solutions ensured the closure was clean, with no lingering claims. 'The money saved was huge, but the real value was the shield they provided,' Sneha says. 'They stood between me and the bullies when I was too weak to fight. They didn't just settle a loan; they helped me move on.'"
                 ]
             }
@@ -390,7 +390,7 @@ export const successStories: SuccessStory[] = [
                 heading: "Harassment: Targeting the Social Circle",
                 id: "harassment-phase",
                 paragraphs: [
-                    "The bank's recovery agents didn't care about his age or his service record. They employed a strategy of 'social shaming.' They scraped his social connections and started calling his relatives—including his son-in-law—telling them that Anil was a 'defaulter' who was 'hiding' from the bank.",
+                    "The bank's recovery agents didn't care about his age or his service record. They employed a strategy of 'social shaming.' They scraped his social connections and started calling his relatives-including his son-in-law-telling them that Anil was a 'defaulter' who was 'hiding' from the bank.",
                     "It got worse. 'They called the Secretary of my Housing Society and told him I was bankrupt,' Anil says, his voice shaking with anger. 'They even threatened to send a notice to my former department to freeze my pension. I built a reputation of honesty over 40 years, and they were destroying it in 4 days by calling everyone I knew.'"
                 ]
             },

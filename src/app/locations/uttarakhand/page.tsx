@@ -301,7 +301,7 @@ export default function UttarakhandLocationPage() {
                     The <strong>High Court of Uttarakhand</strong> situated in the scenic town of Nainital serves as the highest judicial authority. With increasing economic activity in cities like Dehradun and Haldwani, the demand for professional legal services in banking, property, and intellectual property is on the rise.
                   </p>
                   <p className="text-lg leading-relaxed text-gray-700">
-                    <strong>AMA Legal Solutions</strong> brings a team of dedicated advocates who understand the local terrain—both geographical and legal. We bridge the gap between clients in remote hill districts and the High Court, providing accessible and effective legal remedies.
+                    <strong>AMA Legal Solutions</strong> brings a team of dedicated advocates who understand the local terrain-both geographical and legal. We bridge the gap between clients in remote hill districts and the High Court, providing accessible and effective legal remedies.
                   </p>
                 </section>
 

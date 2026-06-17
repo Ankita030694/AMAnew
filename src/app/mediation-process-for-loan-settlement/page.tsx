@@ -327,7 +327,7 @@ export default function LoanMediationProcessPage() {
                     <div className="bg-gray-50 p-5 rounded-xl border border-gray-100">
                       <h4 className="font-bold text-gray-900 mb-2">Section 89 of the Code of Civil Procedure (CPC)</h4>
                       <p className="text-sm">
-                        Under **Section 89 of the CPC**, civil courts and tribunals are legally empowered to refer pending disputes to out-of-court settlement methods—including mediation, arbitration, conciliation, and Lok Adalats. If a bank has filed a recovery suit against you, you can submit an application under Section 89 to request a court referral to the mediation cell.
+                        Under **Section 89 of the CPC**, civil courts and tribunals are legally empowered to refer pending disputes to out-of-court settlement methods-including mediation, arbitration, conciliation, and Lok Adalats. If a bank has filed a recovery suit against you, you can submit an application under Section 89 to request a court referral to the mediation cell.
                       </p>
                     </div>
 

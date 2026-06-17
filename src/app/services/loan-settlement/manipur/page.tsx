@@ -8,7 +8,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 const faqs = [
   {
     question: "Is loan settlement legal in Manipur?",
-    answer: "Yes, loan settlement is a fully legal financial process in Manipur. It is governed by the Reserve Bank of India (RBI) guidelines and applicable state laws. It allows borrowers who are unable to repay their full debt due to genuine hardship—such as the recent conflict or economic disruption—to negotiate a reduced lump sum payment to close their loan accounts."
+    answer: "Yes, loan settlement is a fully legal financial process in Manipur. It is governed by the Reserve Bank of India (RBI) guidelines and applicable state laws. It allows borrowers who are unable to repay their full debt due to genuine hardship-such as the recent conflict or economic disruption-to negotiate a reduced lump sum payment to close their loan accounts."
   },
   {
     question: "Can I settle a loan with Manipur Rural Bank?",
@@ -367,7 +367,7 @@ export default function ManipurLoanSettlementPage() {
                       <div>
                         <h3 className="text-2xl font-bold text-gray-900 mb-3">Negotiation and Settlement</h3>
                         <p className="text-gray-700 leading-relaxed mb-4">
-                          Our experts negotiate with the bank's regional managers. We present a strong case based on your hardship—citing the conflict, displacement, or economic blockade—to justify a significant reduction in the loan amount. We aim for a waiver of all penalties and interest.
+                          Our experts negotiate with the bank's regional managers. We present a strong case based on your hardship-citing the conflict, displacement, or economic blockade-to justify a significant reduction in the loan amount. We aim for a waiver of all penalties and interest.
                         </p>
                       </div>
                     </div>

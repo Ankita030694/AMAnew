@@ -239,7 +239,7 @@ export default function RBIRecoveryAgentsGuide() {
                 Recovery agents are allowed to call you or visit your residence only during the **permitted calling hours** of **8:00 AM to 7:00 PM**. 
               </p>
               <p>
-                Any communication outside this window—whether it is a phone call, a text message, a WhatsApp alert, or a knock on your door—is a clear violation of the guidelines. If an agent calls you at 10:00 PM or 6:00 AM, they are violating the law, and you should document the call details as evidence for a complaint.
+                Any communication outside this window-whether it is a phone call, a text message, a WhatsApp alert, or a knock on your door-is a clear violation of the guidelines. If an agent calls you at 10:00 PM or 6:00 AM, they are violating the law, and you should document the call details as evidence for a complaint.
               </p>
             </section>
 

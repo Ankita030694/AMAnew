@@ -390,7 +390,7 @@ export default function UttarPradeshLocationPage() {
                 <section id="allahabad-high-court" className="scroll-mt-32">
                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Litigation at Allahabad High Court & Lucknow Bench</h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    The High Court of Judicature at Allahabad is the apex judicial body in the state. It has jurisdiction over the entire state of Uttar Pradesh. However, the <strong>Lucknow Bench</strong> has specific jurisdiction over districts in the Awadh region (Lucknow, Unnao, Ayodhya, etc.). Knowing where to file your case—Prayagraj or Lucknow—is the first crucial step.
+                    The High Court of Judicature at Allahabad is the apex judicial body in the state. It has jurisdiction over the entire state of Uttar Pradesh. However, the <strong>Lucknow Bench</strong> has specific jurisdiction over districts in the Awadh region (Lucknow, Unnao, Ayodhya, etc.). Knowing where to file your case-Prayagraj or Lucknow-is the first crucial step.
                   </p>
 
                   <div className="grid md:grid-cols-3 gap-6 text-center mb-8">
@@ -532,7 +532,7 @@ export default function UttarPradeshLocationPage() {
                         </div>
                         <div>
                             <h4 className="text-xl font-bold text-[#D2A02A] mb-2">Result Oriented</h4>
-                            <p className="opacity-80">Our focus is on solving your problem—whether it's settling a loan to save your home or registering a trademark to build your brand.</p>
+                            <p className="opacity-80">Our focus is on solving your problem-whether it's settling a loan to save your home or registering a trademark to build your brand.</p>
                         </div>
                      </div>
                   </div>

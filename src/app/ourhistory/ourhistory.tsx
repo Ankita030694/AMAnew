@@ -124,7 +124,7 @@ const HistoryPage = () => {
 
             With memberships in the <strong>Indo-American Chamber of Commerce (IACC), Mumbai Centre for International Arbitration (MCIA), Bar Council of Delhi, and Bar Council of India</strong>, we bring a global legal perspective to our practice, staying ahead of legal advancements to serve our clients effectively.<br /><br />
 
-            Our journey from a visionary founding to a premier law firm in <strong>Gurugram, India</strong> is a testament to our dedication, perseverance, and the trust our clients place in us. At <strong className="text-[#D2A02A]">AMA Legal Solutions</strong>, we don&apos;t just practice law—we uphold a legacy.<br /><br />
+            Our journey from a visionary founding to a premier law firm in <strong>Gurugram, India</strong> is a testament to our dedication, perseverance, and the trust our clients place in us. At <strong className="text-[#D2A02A]">AMA Legal Solutions</strong>, we don&apos;t just practice law-we uphold a legacy.<br /><br />
 
             📍 Visit us at: <a href="https://www.amalegalsolutions.com" className="text-[#D2A02A] hover:text-[#5a4c33] font-semibold underline">www.amalegalsolutions.com</a>
           </p>

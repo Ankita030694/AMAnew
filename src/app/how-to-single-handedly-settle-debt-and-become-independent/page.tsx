@@ -118,7 +118,7 @@ const reviewSchema = {
         "@type": "Person",
         "name": "Ganesh Pawar"
       },
-      "reviewBody": "I approached AMA Legal Solution during a challenging time, and I must say—it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined."
+      "reviewBody": "I approached AMA Legal Solution during a challenging time, and I must say-it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined."
     },
     {
       "@type": "Review",
@@ -330,7 +330,7 @@ export default function SingleHandedDebtSettlementPage() {
                     <div>
                       <h3 className="font-bold text-gray-900 text-lg mb-2">Step 4: The Art of Negotiating the Write-Off Percentage</h3>
                       <p className="text-gray-700 text-sm md:text-base leading-relaxed mb-3">
-                        Once the bank agrees to consider your settlement request, the negotiation phase begins. Typically, the bank's initial offer will only waive late payment charges and request almost the entire principal. Stand firm. Explain that you do not have the resources to pay the full principal. A realistic settlement target for unsecured credit cards or personal loans that have been delinquent for over 90 to 180 days ranges between 30% to 50% of the total outstanding amount—meaning a write-off of 50% to 70%. Be prepared for multiple rounds of counter-offers. Maintain a calm, polite, yet resolute stance, explaining that a lower lump-sum payment is the maximum amount your family can gather. You can check <Link href="/one-time-settlement-ots-legal-assistance" className="text-[#D2A02A] hover:underline">one-time settlement (OTS) legal assistance</Link> to see standard target ranges.
+                        Once the bank agrees to consider your settlement request, the negotiation phase begins. Typically, the bank's initial offer will only waive late payment charges and request almost the entire principal. Stand firm. Explain that you do not have the resources to pay the full principal. A realistic settlement target for unsecured credit cards or personal loans that have been delinquent for over 90 to 180 days ranges between 30% to 50% of the total outstanding amount-meaning a write-off of 50% to 70%. Be prepared for multiple rounds of counter-offers. Maintain a calm, polite, yet resolute stance, explaining that a lower lump-sum payment is the maximum amount your family can gather. You can check <Link href="/one-time-settlement-ots-legal-assistance" className="text-[#D2A02A] hover:underline">one-time settlement (OTS) legal assistance</Link> to see standard target ranges.
                       </p>
                     </div>
 
@@ -475,7 +475,7 @@ export default function SingleHandedDebtSettlementPage() {
                   <div className="grid md:grid-cols-3 gap-6 my-8">
                     <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between">
                       <p className="text-sm text-gray-600 italic leading-relaxed mb-4">
-                        "I approached AMA Legal Solution during a challenging time, and I must say—it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined."
+                        "I approached AMA Legal Solution during a challenging time, and I must say-it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined."
                       </p>
                       <div>
                         <div className="font-bold text-gray-900 text-sm">Ganesh Pawar</div>

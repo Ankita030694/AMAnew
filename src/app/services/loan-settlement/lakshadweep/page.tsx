@@ -211,7 +211,7 @@ export default function LakshadweepLoanSettlementPage() {
                      The serene beauty of Lakshadweep masks a complex economic reality. Residents of <strong>Kavaratti, Minicoy, Agatti, and Andrott</strong> often face unique financial pressures. The isolation from the mainland, dependence on shipping for basic goods, and an economy heavily reliant on government jobs, fishing, and copra production make cash flows unpredictable.
                   </p>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    When a loan turns sour—due to a bad fishing season, a drop in copra prices, or a delay in contractor payments—borrowers find themselves pitted against large mainland banks. The fear of legal notices coming from Kochi or Ernakulam can be overwhelming.
+                    When a loan turns sour-due to a bad fishing season, a drop in copra prices, or a delay in contractor payments-borrowers find themselves pitted against large mainland banks. The fear of legal notices coming from Kochi or Ernakulam can be overwhelming.
                   </p>
                   <p className="text-lg leading-relaxed text-gray-700">
                     AMA Legal Solutions brings professional <strong>loan settlement services</strong> to your doorstep. You no longer need to travel to the mainland to fight your case. We handle the legal complexities, allowing you to settle your debts with dignity right from the islands.
@@ -239,7 +239,7 @@ export default function LakshadweepLoanSettlementPage() {
                     </div>
                   </div>
                   <p className="text-lg leading-relaxed text-gray-700">
-                    Banks often fail to appreciate these localized risks. We frame your settlement proposal by highlighting these "Act of God" factors—weather patterns and market volatility—that are beyond your control, making a strong case for interest waivers.
+                    Banks often fail to appreciate these localized risks. We frame your settlement proposal by highlighting these "Act of God" factors-weather patterns and market volatility-that are beyond your control, making a strong case for interest waivers.
                   </p>
                 </section>
 
@@ -351,7 +351,7 @@ export default function LakshadweepLoanSettlementPage() {
                     The biggest hurdle for any legal action in Lakshadweep is logistics. Ships are weather-dependent; helicopters are expensive.
                   </p>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    <strong>Our Promise:</strong> You do not need to assume the burden of travel. Our legal team is positioned in the mainland judicial hubs (Ernakulam/Kochi). We act as your mainland proxy. Whether it is filing a writ petition in the High Court or attending a DRT summons, we represent you. This saves you thousands of rupees in travel costs—money that can be better used to settle your loan.
+                    <strong>Our Promise:</strong> You do not need to assume the burden of travel. Our legal team is positioned in the mainland judicial hubs (Ernakulam/Kochi). We act as your mainland proxy. Whether it is filing a writ petition in the High Court or attending a DRT summons, we represent you. This saves you thousands of rupees in travel costs-money that can be better used to settle your loan.
                   </p>
                 </section>
 

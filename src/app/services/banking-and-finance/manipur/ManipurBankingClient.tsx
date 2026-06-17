@@ -73,7 +73,7 @@ const ManipurBankingClient = () => {
                   For entrepreneurs, investors, and financial institutions, Manipur offers a fertile ground that is yet to be fully tapped. Whether it is providing micro-credit to the vibrant handloom clusters in Sualkuchi or financing large-scale infrastructure projects in Imphal, the demand for capital is immense. But this opportunity comes wrapped in a complex layer of legal and regulatory nuances that are unique to this region.
                 </p>
                 <p className="text-lg leading-relaxed text-gray-700">
-                  At <strong>AMA Legal Solutions</strong>, we understand that banking in Manipur is different from banking in Mumbai or Delhi. The socio-political fabric, the land holding laws in hill districts versus the valley, and the specific exemptions available under central laws require a specialized legal approach. We are the leading banking law firm in the region, dedicated to guiding you through every regulatory hoop—from registering your financial entity to recovering your dues through the legal system.
+                  At <strong>AMA Legal Solutions</strong>, we understand that banking in Manipur is different from banking in Mumbai or Delhi. The socio-political fabric, the land holding laws in hill districts versus the valley, and the specific exemptions available under central laws require a specialized legal approach. We are the leading banking law firm in the region, dedicated to guiding you through every regulatory hoop-from registering your financial entity to recovering your dues through the legal system.
                 </p>
               </section>
 

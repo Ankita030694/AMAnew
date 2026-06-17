@@ -389,7 +389,7 @@ export default function LoanSettlementKitnePercentHotaHaiPage() {
 
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Step 2: Pitch a Realistic Settlement Percent</h3>
                   <p className="mb-4">
-                    Start by offering a realistic settlement percentage—usually around twenty-five to thirty percent of the principal amount. The bank will counter with a higher percentage. Reaching a mutually acceptable figure of thirty-five to fifty percent takes time, so patience is key.
+                    Start by offering a realistic settlement percentage-usually around twenty-five to thirty percent of the principal amount. The bank will counter with a higher percentage. Reaching a mutually acceptable figure of thirty-five to fifty percent takes time, so patience is key.
                   </p>
 
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Step 3: Obtain a Formal Written Letter</h3>

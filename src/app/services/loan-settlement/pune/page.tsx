@@ -222,7 +222,7 @@ export default function PuneLoanSettlementPage() {
                   
                   <h3 className="text-2xl font-bold text-gray-800 mb-4 italic">The IT Corridor Crunch (Hinjewadi, Kharadi, Magarpatta)</h3>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    For the thousands of engineers and managers in <strong>Rajiv Gandhi Infotech Park (Hinjewadi)</strong> or <strong>EON IT Park (Kharadi)</strong>, credit is often easy to obtain but difficult to manage during salary freezes or layoffs. Many IT professionals find themselves juggling multiple credit cards and high-value personal loans. The compounding interest on these unsecured debts can quickly exceed a person's take-home pay, leading to a cycle of borrowing to pay off existing EMIs—a classic debt spiral.
+                    For the thousands of engineers and managers in <strong>Rajiv Gandhi Infotech Park (Hinjewadi)</strong> or <strong>EON IT Park (Kharadi)</strong>, credit is often easy to obtain but difficult to manage during salary freezes or layoffs. Many IT professionals find themselves juggling multiple credit cards and high-value personal loans. The compounding interest on these unsecured debts can quickly exceed a person's take-home pay, leading to a cycle of borrowing to pay off existing EMIs-a classic debt spiral.
                   </p>
 
                   <h3 className="text-2xl font-bold text-gray-800 mb-4 italic">The PCMC Manufacturing Pulse (Pimpri, Chinchwad, Bhosari)</h3>
@@ -265,7 +265,7 @@ export default function PuneLoanSettlementPage() {
                   </div>
                   
                   <p className="text-lg leading-relaxed mt-8 text-gray-700">
-                    When these factors meet the volatility of the global tech market—characterized by quarterly layoffs and project shutdowns—the result is a financial impasse that requires legal intervention rather than just financial budgeting.
+                    When these factors meet the volatility of the global tech market-characterized by quarterly layoffs and project shutdowns-the result is a financial impasse that requires legal intervention rather than just financial budgeting.
                   </p>
                 </section>
 

@@ -75,7 +75,7 @@ export default function AndhraPradeshClient() {
                     At AMA Legal Solutions, we recognize the diverse needs of Andhra Pradesh's economy. Whether you are a tech startup in Vizag's Millennium Tower, a pharmaceutical manufacturer in the API clusters, or a traditional artisan in Kondapalli, your creations deserve robust legal protection. Our specialized IPR team provides end-to-end services to identify, register, and enforce your intellectual property rights, ensuring that your hard work translates into exclusive commercial benefits.
                   </p>
                   <p className="text-lg leading-relaxed text-gray-700">
-                    We bridge the gap between local innovators and the national IP framework. While the jurisdictional Patent and Trademark Office is located in Chennai, our digital-first approach ensures that clients across Andhra Pradesh—from Tirupati to Kurnool—receive seamless, expert legal assistance without the need for physical travel.
+                    We bridge the gap between local innovators and the national IP framework. While the jurisdictional Patent and Trademark Office is located in Chennai, our digital-first approach ensures that clients across Andhra Pradesh-from Tirupati to Kurnool-receive seamless, expert legal assistance without the need for physical travel.
                   </p>
                 </section>
 
@@ -203,7 +203,7 @@ export default function AndhraPradeshClient() {
                     Industrial Design Registration
                   </h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    In consumer markets, the visual appeal of a product often drives sales. The <strong>Designs Act, 2000</strong> protects the aesthetic features—shape, pattern, configuration, or ornamentation—of an article.
+                    In consumer markets, the visual appeal of a product often drives sales. The <strong>Designs Act, 2000</strong> protects the aesthetic features-shape, pattern, configuration, or ornamentation-of an article.
                   </p>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
                     For manufacturers in Andhra Pradesh's industrial corridors, protecting the unique look of their products (be it a bottle shape, a textile pattern, or a machine part) is vital to prevent cheap knock-offs. We help you secure these rights efficiently.
@@ -265,7 +265,7 @@ export default function AndhraPradeshClient() {
                       <div>
                         <h3 className="text-2xl font-bold text-gray-900 mb-3">Consultation & Strategy</h3>
                         <p className="text-gray-700 leading-relaxed">
-                          We start by understanding your business goals. We advise on what can be protected—whether it's a trademark, patent, design, or copyright—and the best strategy to do so.
+                          We start by understanding your business goals. We advise on what can be protected-whether it's a trademark, patent, design, or copyright-and the best strategy to do so.
                         </p>
                       </div>
                     </div>

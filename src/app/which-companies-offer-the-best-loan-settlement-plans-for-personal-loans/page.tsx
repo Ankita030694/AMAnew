@@ -287,7 +287,7 @@ export default function BestCompaniesPage() {
                 <section id="introduction" className="scroll-mt-32">
                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Navigating the Debt Settlement Landscape in India</h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    The post-pandemic era has seen a surge in personal loan defaults across India. In response, a new industry of "debt relief" and "loan settlement" companies has emerged. For a borrower drowning in debt, the promise of reducing their liability by 50% is incredibly appealing. However, with so many players entering the market—from tech startups to legal firms and informal agencies—the question arises: <strong>Which companies offer the best loan settlement plans for personal loans?</strong>
+                    The post-pandemic era has seen a surge in personal loan defaults across India. In response, a new industry of "debt relief" and "loan settlement" companies has emerged. For a borrower drowning in debt, the promise of reducing their liability by 50% is incredibly appealing. However, with so many players entering the market-from tech startups to legal firms and informal agencies-the question arises: <strong>Which companies offer the best loan settlement plans for personal loans?</strong>
                   </p>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
                     Choosing the wrong partner can lead to wasted money, continued harassment, and even legal complications. The "best" company isn't just one that promises the highest waiver; it's one that delivers a <strong>legally sound, transparent, and realistic settlement plan</strong>. This guide dissects the top players in the Indian market, compares their approaches, and explains why a legal-first approach is often the safest route for substantial personal loan debts.
@@ -532,7 +532,7 @@ export default function BestCompaniesPage() {
                   </p>
                   <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
                     <li><strong>Secret 1:</strong> Lawyers can hold banks accountable for "Unfair Trade Practices" in consumer court. This leverage often forces banks to settle faster.</li>
-                    <li><strong>Secret 2:</strong> Fees are for time and expertise, not just a cut of the savings. This aligns incentives—the lawyer fights for the best outcome, not just the quickest one.</li>
+                    <li><strong>Secret 2:</strong> Fees are for time and expertise, not just a cut of the savings. This aligns incentives-the lawyer fights for the best outcome, not just the quickest one.</li>
                     <li><strong>Secret 3:</strong> Establishing "Power of Attorney" means the bank legally *cannot* bypass your lawyer to contact you. This provides a genuine shield that no app can offer.</li>
                   </ul>
                 </section>

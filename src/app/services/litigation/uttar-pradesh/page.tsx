@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     question: "Can I file a Writ Petition against the Noida/Greater Noida Authority?",
-    answer: "Yes, the **Noida, Greater Noida, and Yamuna Expressway Authorities** are statutory bodies. If they act arbitrarily—such as cancelling lease deeds, imposing exorbitant penalties, or delaying possession—you can file a Writ Petition in the Allahabad High Court. We frequently represent homebuyers and developers in such administrative law matters."
+    answer: "Yes, the **Noida, Greater Noida, and Yamuna Expressway Authorities** are statutory bodies. If they act arbitrarily-such as cancelling lease deeds, imposing exorbitant penalties, or delaying possession-you can file a Writ Petition in the Allahabad High Court. We frequently represent homebuyers and developers in such administrative law matters."
   },
   {
     question: "How do I file a divorce case in Uttar Pradesh?",

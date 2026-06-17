@@ -16,7 +16,7 @@ const FaqSection = () => {
     },
     {
       question: "How long does it take to register a Patent in Chandigarh?",
-      answer: "The patent registration process typically takes 3 to 5 years from the date of filing. However, by opting for 'Expedited Examination'—available for startups, female applicants, or if India is chosen as the International Searching Authority—the grant can be achieved in as little as 12 to 18 months."
+      answer: "The patent registration process typically takes 3 to 5 years from the date of filing. However, by opting for 'Expedited Examination'-available for startups, female applicants, or if India is chosen as the International Searching Authority-the grant can be achieved in as little as 12 to 18 months."
     },
     {
       question: "Do I need to visit the Delhi Registry personally for my Chandigarh trademark?",

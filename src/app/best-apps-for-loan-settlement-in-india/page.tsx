@@ -329,7 +329,7 @@ export default function BestAppsForLoanSettlementIndiaPage() {
                   </p>
                   <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">\"Settled\" vs. \"Closed\" Status on Your Credit Report</h3>
                   <p className="text-sm md:text-lg leading-relaxed text-gray-700 text-justify mb-4">
-                    When you complete a loan settlement, the lender writes off the remaining outstanding balance and reports the loan to TransUnion CIBIL and other credit bureaus as **\"Settled.\"** Unlike a **\"Closed\"** status—which indicates the loan was paid in full according to the original terms—a \"Settled\" status flags to future lenders that you defaulted on your obligations. This status remains on your credit history for seven years, significantly hindering your ability to secure new credit cards, home loans, or vehicular loans during this period.
+                    When you complete a loan settlement, the lender writes off the remaining outstanding balance and reports the loan to TransUnion CIBIL and other credit bureaus as **\"Settled.\"** Unlike a **\"Closed\"** status-which indicates the loan was paid in full according to the original terms-a \"Settled\" status flags to future lenders that you defaulted on your obligations. This status remains on your credit history for seven years, significantly hindering your ability to secure new credit cards, home loans, or vehicular loans during this period.
                   </p>
                   <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">Rebuilding Your CIBIL Score Post-Settlement</h3>
                   <p className="text-sm md:text-lg leading-relaxed text-gray-700 text-justify">

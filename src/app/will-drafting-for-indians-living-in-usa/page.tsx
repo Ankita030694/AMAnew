@@ -60,7 +60,7 @@ const faqs = [
   },
   {
     question: "How often should an NRI update their cross-border will?",
-    answer: "A review every 3 to 5 years is recommended. Major life changes—such as birth of children, acquisition of new US real estate, or changes in US tax laws (like the TCJA sunset)—should trigger an immediate update. Additionally, changes in Indian property regulations or FEMA rules can affect how your heirs repatriate their inheritance."
+    answer: "A review every 3 to 5 years is recommended. Major life changes-such as birth of children, acquisition of new US real estate, or changes in US tax laws (like the TCJA sunset)-should trigger an immediate update. Additionally, changes in Indian property regulations or FEMA rules can affect how your heirs repatriate their inheritance."
   },
   {
     question: "Why can't I just use a single global will for everything?",
@@ -246,7 +246,7 @@ export default function WillDraftingUSAPage() {
                 <section id="introduction" className="scroll-mt-32">
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 text-balance">Securing Your Indian Heritage While Thriving in the United States</h2>
                   <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
-                    The journey of the Indian diaspora in the USA is a narrative of extraordinary ambition and success. From the bustling tech corridors of Seattle and San Jose to the academic halls of Boston and the financial heart of New York, Indians have built a life defined by prosperity and integration. For many, this success is balanced by a profound connection to their homeland—represented by ancestral properties in Punjab, commercial real estate in Bangalore, or long-held family bank accounts in Mumbai.
+                    The journey of the Indian diaspora in the USA is a narrative of extraordinary ambition and success. From the bustling tech corridors of Seattle and San Jose to the academic halls of Boston and the financial heart of New York, Indians have built a life defined by prosperity and integration. For many, this success is balanced by a profound connection to their homeland-represented by ancestral properties in Punjab, commercial real estate in Bangalore, or long-held family bank accounts in Mumbai.
                   </p>
                   <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     However, this dual identity introduces a significant legal vulnerability: the risk of 'Estate Paralysis.' When a US resident passes away without a clear, jurisdiction-specific plan for their Indian holdings, their heirs often find themselves caught in a bureaucratic nightmare. The process of <strong>will drafting for Indians living in USA</strong> is not merely a formality: it is a vital safeguard against the slow-moving Indian legal system and the potential for family disputes that can span decades.
@@ -423,7 +423,7 @@ export default function WillDraftingUSAPage() {
                   <div className="bg-red-50 p-6 md:p-10 rounded-2xl border-l-8 border-red-500 my-6 shadow-sm">
                       <h4 className="font-bold text-red-900 text-xl mb-4 uppercase tracking-tighter">Automatic Invalidation Threat:</h4>
                       <p className="text-red-800 text-sm md:text-lg leading-relaxed mb-4">
-                        A typical US will states: "I hereby revoke all former wills." If you sign this after establishing an Indian estate plan, you have legally nullified your Indian will. This leaves your Indian property in 'Intestacy'—a legal vacuum that takes years to resolve.
+                        A typical US will states: "I hereby revoke all former wills." If you sign this after establishing an Indian estate plan, you have legally nullified your Indian will. This leaves your Indian property in 'Intestacy'-a legal vacuum that takes years to resolve.
                       </p>
                       <p className="text-red-900 font-bold text-sm md:text-base border-t border-red-200 pt-4 mt-6">
                         The AMA Safeguard: We implement precise 'exclusion clauses' to ensure your US and Indian documents function as a unified, non-conflicting legal shield.
@@ -484,7 +484,7 @@ export default function WillDraftingUSAPage() {
                 <section id="the-path-forward" className="scroll-mt-32">
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 italic">The Path Forward: Navigating Two Jurisdictions Simultaneously</h2>
                   <p className="text-sm md:text-lg leading-relaxed mb-8 text-gray-700 italic border-l-4 border-gray-100 pl-6">
-                    Probate—the official validation of a will—should be a parallel process across continents, not a sequential one.
+                    Probate-the official validation of a will-should be a parallel process across continents, not a sequential one.
                   </p>
                   <div className="space-y-10">
                     <div className="group flex flex-col md:flex-row gap-6 items-start bg-gray-50 p-8 rounded-2xl transition-all hover:bg-white hover:shadow-2xl">

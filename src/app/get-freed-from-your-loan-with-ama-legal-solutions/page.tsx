@@ -111,7 +111,7 @@ const reviewSnippets = [
     name: "Ganesh Pawar",
     initial: "G",
     location: "Maharashtra",
-    comment: "I approached AMA Legal Solution during a challenging time, and I must say—it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined."
+    comment: "I approached AMA Legal Solution during a challenging time, and I must say-it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined."
   },
   {
     name: "deepak",
@@ -301,7 +301,7 @@ export default function GetFreedFromYourLoanPage() {
                   </p>
                   <div className="space-y-6 text-sm md:text-lg leading-relaxed text-gray-700 text-justify">
                     <p>
-                      The socioeconomic dynamics of modern India have driven a massive surge in consumer credit accessibility. Instant personal loan apps, digital credit lines, and aggressive credit card marketing have made debt acquisition remarkably easy. However, when economic volatility strikes—such as sudden organizational layoffs, business closures, or high-cost medical emergencies—the financial burden can become completely unmanageable. Many borrowers quickly find themselves trapped in a vicious debt spiral, where new loans are taken out simply to service the interest of existing ones. 
+                      The socioeconomic dynamics of modern India have driven a massive surge in consumer credit accessibility. Instant personal loan apps, digital credit lines, and aggressive credit card marketing have made debt acquisition remarkably easy. However, when economic volatility strikes-such as sudden organizational layoffs, business closures, or high-cost medical emergencies-the financial burden can become completely unmanageable. Many borrowers quickly find themselves trapped in a vicious debt spiral, where new loans are taken out simply to service the interest of existing ones. 
                     </p>
                     <p>
                       When defaults occur, the psychological toll on the borrower increases exponentially. Banks and financial institutions deploy recovery units that often bypass ethical standards, leaving individuals feeling helpless and isolated. In such situations, navigating the recovery process without legal protection is highly risky. Getting freed from your loan through AMA Legal Solutions ensures you have a certified legal shield, transforming a chaotic credit crisis into a structured, law-compliant path to debt resolution.

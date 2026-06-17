@@ -24,7 +24,7 @@ export const baseTestimonials: Testimonial[] = [
     },
     {
         id: 3,
-        text: "I approached AMA Legal Solution during a challenging time, and I must say—it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined.",
+        text: "I approached AMA Legal Solution during a challenging time, and I must say-it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined.",
         author: "Ganesh Pawar",
         rating: "/newAssets/stars.png",
         size: "tall",

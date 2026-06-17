@@ -678,11 +678,11 @@ export default function DoctorLoanSettlement() {
               <div className="space-y-4 pt-2">
                 <div className="border-t border-gray-100 pt-3 space-y-1">
                   <p className="text-xs text-gray-600 italic">"As a pediatrician running a clinic in Delhi, my equipment loan became unmanageable due to cash flow delays. AMA Legal Solutions stopped the recovery agents' calls and helped me settle with the bank."</p>
-                  <p className="text-[10px] text-gray-400 font-semibold text-right">— Dr. Sandeep Malhotra</p>
+                  <p className="text-[10px] text-gray-400 font-semibold text-right">- Dr. Sandeep Malhotra</p>
                 </div>
                 <div className="border-t border-gray-100 pt-3 space-y-1">
                   <p className="text-xs text-gray-600 italic">"Extremely professional. They negotiated my credit card settlement perfectly without affecting my clinical license. I highly recommend Advocate Anuj Anand Malik."</p>
-                  <p className="text-[10px] text-gray-400 font-semibold text-right">— Dr. Anjali Deshmukh</p>
+                  <p className="text-[10px] text-gray-400 font-semibold text-right">- Dr. Anjali Deshmukh</p>
                 </div>
               </div>
             </div>

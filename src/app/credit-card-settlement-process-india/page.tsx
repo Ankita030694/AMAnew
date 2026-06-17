@@ -450,7 +450,7 @@ export default function CreditCardSettlementPage() {
                     <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-10 uppercase underline decoration-[#D2A02A] decoration-4">Nationwide Debt Resolution: Serving All India</h2>
                     <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-8">
                         <p>
-                            AMA Legal Solutions is proud to be a pan-India law firm. We understand that credit card debt affects people across various geographies—from the bustling metros to tier-2 cities. Our digital-first legal portal ensures that expert legal help is just a click away, no matter where you are.
+                            AMA Legal Solutions is proud to be a pan-India law firm. We understand that credit card debt affects people across various geographies-from the bustling metros to tier-2 cities. Our digital-first legal portal ensures that expert legal help is just a click away, no matter where you are.
                         </p>
                         
                         <div className="bg-[#1a202c] text-white p-10 rounded-2xl shadow-xl">

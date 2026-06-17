@@ -376,7 +376,7 @@ export default async function ExpertiseSlugPage({ params }: { params: Promise<{ 
                       <div>
                         <h3 className="text-2xl font-bold text-gray-900 mb-3">Execution & Advocacy</h3>
                         <p className="text-gray-700 leading-relaxed">
-                          Swift execution through appropriate legal channels—be it robust negotiation drafting or presenting decisive arguments before the bench.
+                          Swift execution through appropriate legal channels-be it robust negotiation drafting or presenting decisive arguments before the bench.
                         </p>
                       </div>
                     </div>

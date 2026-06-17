@@ -277,7 +277,7 @@ export default function AssetRecoveryGuide() {
                 Wrongful retention of company assets is not just a breach of policy; it is a serious legal issue. Under the Indian Penal Code, it can cross the line into "Criminal Breach of Trust." Furthermore, if the employee is accessing or copying data from those devices after their employment has ended, they are violating the Information Technology Act, 2000.
               </p>
               <p>
-                At AMA Legal Solutions, we understand that for a business, a laptop is not just a machine worth fifty thousand rupees; it is a portal to the company's intellectual property. We specialize in rapid asset recovery through a combination of strategic legal notices, police intervention, and civil litigation. This guide will provide you with the legal tools to ensure that your company property remains exactly that—your property.
+                At AMA Legal Solutions, we understand that for a business, a laptop is not just a machine worth fifty thousand rupees; it is a portal to the company's intellectual property. We specialize in rapid asset recovery through a combination of strategic legal notices, police intervention, and civil litigation. This guide will provide you with the legal tools to ensure that your company property remains exactly that-your property.
               </p>
             </section>
 
@@ -362,7 +362,7 @@ export default function AssetRecoveryGuide() {
                 A legal notice for asset recovery must be precise. It should mention the exact serial number of the device, the date it was allocated, and the specific section of the IPC and IT Act that the employee is currently violating. It must provide a final deadline (usually 3 to 7 days) for the return of the property, failing which the employer will initiate criminal proceedings.
               </p>
               <p>
-                At AMA Legal Solutions, our notices are designed to emphasize the "criminal" nature of the act. We find that the fear of a police record—which would destroy their chances of future employment—is the most effective way to ensure the immediate return of assets.
+                At AMA Legal Solutions, our notices are designed to emphasize the "criminal" nature of the act. We find that the fear of a police record-which would destroy their chances of future employment-is the most effective way to ensure the immediate return of assets.
               </p>
             </section>
 
@@ -619,7 +619,7 @@ export default function AssetRecoveryGuide() {
               Take a stand. Document your claims, issue the legal notices, and if necessary, involve the authorities. By being firm today, you are preventing future misappropriations and building a culture of accountability.
             </p>
             <p>
-              Let AMA Legal Solutions be your rapid-response partner in asset recovery. We handle the legal complexity, the police liaison, and the court filings, so you can focus on what you do best—running your business. Your property belongs to you; let us help you get it back.
+              Let AMA Legal Solutions be your rapid-response partner in asset recovery. We handle the legal complexity, the police liaison, and the court filings, so you can focus on what you do best-running your business. Your property belongs to you; let us help you get it back.
             </p>
 
           </article>

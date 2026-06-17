@@ -376,7 +376,7 @@ export default function HaryanaLocationPage() {
                      </div>
                      <div className="p-6 bg-red-50 rounded-xl border border-red-100">
                         <h4 className="font-bold text-red-800 mb-2">Lack of Strategy</h4>
-                        <p className="text-sm text-gray-700">Winning isn't just about the law; it's about strategy—knowing when to settle (OTS), when to fight, and when to appeal.</p>
+                        <p className="text-sm text-gray-700">Winning isn't just about the law; it's about strategy-knowing when to settle (OTS), when to fight, and when to appeal.</p>
                      </div>
                   </div>
                 </section>

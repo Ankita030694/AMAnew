@@ -347,7 +347,7 @@ export default function UnpaidSalaryPage() {
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-5 md:mb-7 border-b-2 border-[#D2A02A] pb-2 inline-block">Introduction</h2>
                   <div className="prose prose-base max-w-none text-gray-700 space-y-4 md:space-y-6 mt-4">
                     <p className="text-sm md:text-base leading-relaxed">
-                      Resigning from a job is often the start of a new chapter—a moment of transition that should ideally be marked by mutual respect and professional closure. You expect a smooth handover, a proper farewell, and the timely receipt of your Full and Final (FNF) settlement. However, for a significant number of employees across India—from the tech hubs of Bangalore and Gurugram to the financial centers of Mumbai—this transition turns into a grueling legal battleground. At AMA Legal Solutions, the most frequent and distress-laden query we encounter is: <strong>"What legal recourse do I have if my employer is withholding my salary after my resignation?"</strong>
+                      Resigning from a job is often the start of a new chapter-a moment of transition that should ideally be marked by mutual respect and professional closure. You expect a smooth handover, a proper farewell, and the timely receipt of your Full and Final (FNF) settlement. However, for a significant number of employees across India-from the tech hubs of Bangalore and Gurugram to the financial centers of Mumbai-this transition turns into a grueling legal battleground. At AMA Legal Solutions, the most frequent and distress-laden query we encounter is: <strong>"What legal recourse do I have if my employer is withholding my salary after my resignation?"</strong>
                     </p>
                     <p className="text-sm md:text-base leading-relaxed">
                       The impact of an unpaid salary extends far beyond mere financial inconvenience. It is a profound breach of the employment contract and a violation of trust that can disrupt your entire financial ecosystem. Many employees rely on their FNF settlement to fund their notice period buy-outs at new companies, clear pending loans, or manage their household expenses during a career break. When a company unilaterally decides to "sit" on these funds, they aren't just withholding money; they are jeopardizing your livelihood and peace of mind.
@@ -356,7 +356,7 @@ export default function UnpaidSalaryPage() {
                       Whether you worked for a high-growth startup that just hit a funding crunch, a legacy conglomerate with slow administrative cycles, or a mid-sized firm using salary as a tool for coercion, your right to receive wages for the work you have performed is absolute. Indian labor laws are some of the most protective in the world for employees, yet they are often poorly understood by the very people they are meant to safeguard.
                     </p>
                     <p className="text-sm md:text-base leading-relaxed">
-                      It is a dangerous and common misconception that an employer has total, arbitrary control over your final payout. We often see HR departments using the notice period, "pending handovers," or "unreturned assets" as ransom to delay or deny payments. This is, in most cases, legally unsustainable. If you have performed the work, the employer is legally obligated to pay you. Our specialized labor law team at AMA Legal Solutions has spent years debunking these corporate myths and ensuring that every single rupee owed to our clients—including interest and damages—is recovered through efficient legal intervention.
+                      It is a dangerous and common misconception that an employer has total, arbitrary control over your final payout. We often see HR departments using the notice period, "pending handovers," or "unreturned assets" as ransom to delay or deny payments. This is, in most cases, legally unsustainable. If you have performed the work, the employer is legally obligated to pay you. Our specialized labor law team at AMA Legal Solutions has spent years debunking these corporate myths and ensuring that every single rupee owed to our clients-including interest and damages-is recovered through efficient legal intervention.
                     </p>
                     <div className="bg-gray-50 p-6 rounded-2xl border-l-4 border-[#D2A02A] italic text-sm">
                       "Wages are not a bounty or a matter of charity; they are the hard-earned remuneration for labor rendered, and any delay in their payment is a direct assault on the employee's right to life and dignity under the Constitution of India."
@@ -394,7 +394,7 @@ export default function UnpaidSalaryPage() {
                       <div>
                         <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-3">2. The Industrial Disputes Act, 1947</h3>
                         <p className="text-sm md:text-base leading-relaxed mb-4">
-                          If you fall under the definition of a "workman"—which includes most non-managerial and technical staff regardless of salary—this Act provides the most streamlined recovery path.
+                          If you fall under the definition of a "workman"-which includes most non-managerial and technical staff regardless of salary-this Act provides the most streamlined recovery path.
                         </p>
                         <ul className="list-disc pl-6 space-y-2 text-sm md:text-base">
                           <li><strong>Section 33-C(2):</strong> This is the most powerful tool in our arsenal. It allows an employee to approach the Labour Court directly to "compute" the money due to them. Once the court quantifies the amount, it issues a recovery certificate to the Collector, who can then recover the money from the employer as arrears of land revenue (including sealing their premises if necessary).</li>
@@ -446,7 +446,7 @@ export default function UnpaidSalaryPage() {
                       },
                       { 
                         title: "Right to Statutory Dues", 
-                        desc: "Gratuity, Bonus, and EPF contributions are not 'perks'—they are statutory mandates. No 'zero-payout' policy can override these central laws." 
+                        desc: "Gratuity, Bonus, and EPF contributions are not 'perks'-they are statutory mandates. No 'zero-payout' policy can override these central laws." 
                       },
                       { 
                         title: "Right to Legal Advocacy", 
@@ -741,7 +741,7 @@ export default function UnpaidSalaryPage() {
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-5 md:mb-7 text-red-600">The Limitation Act: Why Delay is Your Worst Enemy</h2>
                   <div className="bg-red-50 border-l-8 border-red-500 p-8 rounded-r-2xl space-y-6">
                     <p className="text-sm md:text-base text-gray-800 leading-relaxed">
-                      In the legal world, there is a maxim: <em>"Vigilantibus non dormientibus jura subveniunt"</em>—The law assists those who are vigilant, not those who sleep over their rights.
+                      In the legal world, there is a maxim: <em>"Vigilantibus non dormientibus jura subveniunt"</em>-The law assists those who are vigilant, not those who sleep over their rights.
                     </p>
                     
                     <div className="grid md:grid-cols-2 gap-8 mt-4">
@@ -883,7 +883,7 @@ export default function UnpaidSalaryPage() {
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-5 md:mb-7">The Criminal Dimension: EPF Defaults and Section 406 IPC</h2>
                   <div className="prose prose-base max-w-none text-gray-700 space-y-6">
                     <p className="text-sm md:text-base leading-relaxed">
-                      If your employer has deducted the employee's share of Provident Fund (PF) from your previous months' salary but hasn't deposited it into your EPF account, they haven't just "delayed" payment—they have committed <strong>Criminal Breach of Trust (Section 406/409 of the Indian Penal Code).</strong>
+                      If your employer has deducted the employee's share of Provident Fund (PF) from your previous months' salary but hasn't deposited it into your EPF account, they haven't just "delayed" payment-they have committed <strong>Criminal Breach of Trust (Section 406/409 of the Indian Penal Code).</strong>
                     </p>
                     
                     <div className="bg-red-50 p-6 rounded-2xl border-l-4 border-red-500">

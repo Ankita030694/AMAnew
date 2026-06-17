@@ -283,7 +283,7 @@ export default function CivilPage() {
                 <section id="introduction" className="scroll-mt-32">
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Civil Litigation: Protecting Your Rights and Property</h2>
                   <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
-                    Civil law in India encompasses a vast array of disputes between individuals, organizations, and even government bodies. Unlike criminal law, which deals with offenses against the state, civil law focuses on resolving conflicts and providing remedies—usually in the form of compensation or specific performance—to the aggrieved party.
+                    Civil law in India encompasses a vast array of disputes between individuals, organizations, and even government bodies. Unlike criminal law, which deals with offenses against the state, civil law focuses on resolving conflicts and providing remedies-usually in the form of compensation or specific performance-to the aggrieved party.
                   </p>
                   <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
                     At AMA Legal Solutions, we understand that every civil case is unique and carries its own set of emotional and financial burdens. Whether you are fighting for your rightful share in an ancestral property, seeking justice for a breach of trust, or navigating the complexities of a divorce, you need more than just a lawyer; you need a strategic partner. Our team of expert <strong>civil lawyers in India</strong> is dedicated to providing you with robust legal representation that is both ethical and effective.

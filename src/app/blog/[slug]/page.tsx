@@ -232,7 +232,7 @@ export default async function Page({
         />
       )}
 
-      {/* SSR-rendered crawlable content — guaranteed in server HTML */}
+      {/* SSR-rendered crawlable content - guaranteed in server HTML */}
       <article className="sr-only" aria-hidden="true">
         <h1>{blogData.title}</h1>
         {blogData.date && <time dateTime={blogData.date}>{blogData.date}</time>}

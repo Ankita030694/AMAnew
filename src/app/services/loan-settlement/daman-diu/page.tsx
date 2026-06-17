@@ -260,7 +260,7 @@ export default function DamanDiuLoanSettlementPage() {
                   <h2 className="text-2xl md:text-4xl font-black text-gray-900 mb-8 tracking-tight">Navigating the Debt Crisis in India's Strategic Union Territory</h2>
                   <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
                     <p>
-                      The Union Territory of Dadra and Nagar Haveli and Daman and Diu (DNHDD) stands as a testament to India's industrial resilience and tourism beauty. From the bustling industrial estates of **Silvassa** to the serene coastal hubs of **Daman** and the historic shores of **Diu**, this region is a microcosm of India's growth. However, rapid industrial expansion and economic shifts have led many—from MSME owners in Dadra to salaried professionals in Daman—into a complex web of financial debt.
+                      The Union Territory of Dadra and Nagar Haveli and Daman and Diu (DNHDD) stands as a testament to India's industrial resilience and tourism beauty. From the bustling industrial estates of **Silvassa** to the serene coastal hubs of **Daman** and the historic shores of **Diu**, this region is a microcosm of India's growth. However, rapid industrial expansion and economic shifts have led many-from MSME owners in Dadra to salaried professionals in Daman-into a complex web of financial debt.
                     </p>
                     <p>
                       Managing debt in a Union Territory comes with unique jurisdictional challenges. Whether it's dealing with the **Bombay High Court** or traveling to **DRT Ahmedabad** for high-value suits, residents of DNHDD often feel disconnected from the legal hubs of mainland India. At **AMA Legal Solutions**, we bridge this gap. We provide specialized **loan settlement services** tailored for the UT, ensuring that honest borrowers are protected from the aggressive tactics of banks based in Mumbai, Vapi, or Ahmedabad.
@@ -432,7 +432,7 @@ export default function DamanDiuLoanSettlementPage() {
                         Once an account is classified as an NPA, the bank issues a notice under Section 13(2), giving the borrower 60 days to discharge their entire liability. <strong>This is the most critical window for loan settlement.</strong> During these 60 days, we help you file a formal representation or objection under Section 13(3A). The bank is legally mandated to respond to this within 15 days.
                       </p>
                       <p>
-                        Failure to respond properly allows the bank to proceed to Section 13(4)—taking symbolic or physical possession of the property. For residents of Daman and Diu, we often challenge these notices in **DRT Ahmedabad**, arguing on grounds of improper valuation, incorrect NPA classification date, or failure to follow the procedural requirements of the Security Interest (Enforcement) Rules, 2002.
+                        Failure to respond properly allows the bank to proceed to Section 13(4)-taking symbolic or physical possession of the property. For residents of Daman and Diu, we often challenge these notices in **DRT Ahmedabad**, arguing on grounds of improper valuation, incorrect NPA classification date, or failure to follow the procedural requirements of the Security Interest (Enforcement) Rules, 2002.
                       </p>
                     </div>
 
@@ -447,7 +447,7 @@ export default function DamanDiuLoanSettlementPage() {
                     </div>
 
                     <p>
-                      In the Union Territory context, the role of the <strong>District Magistrate (DM)</strong> or **District Collector** in Daman or Silvassa is crucial under Section 14 of the SARFAESI Act. When banks seek physical possession, they must apply to the DM. We represent borrowers at this stage to ensure that the DM’s order is not passed without verifying the bank’s compliance with Section 14’s mandatory declarations—a common area where banks commit procedural errors.
+                      In the Union Territory context, the role of the <strong>District Magistrate (DM)</strong> or **District Collector** in Daman or Silvassa is crucial under Section 14 of the SARFAESI Act. When banks seek physical possession, they must apply to the DM. We represent borrowers at this stage to ensure that the DM’s order is not passed without verifying the bank’s compliance with Section 14’s mandatory declarations-a common area where banks commit procedural errors.
                     </p>
                   </div>
                 </section>
@@ -463,7 +463,7 @@ export default function DamanDiuLoanSettlementPage() {
                       <h4 className="text-2xl font-bold text-gray-900">Credit Restoration Roadmap</h4>
                       <ol className="space-y-4 text-gray-600 list-decimal pl-6">
                         <li><strong>Secured Lines:</strong> Apply for a credit card against a small Fixed Deposit.</li>
-                        <li><strong>Timely Payments:</strong> Pay every single bill—utility, phone, gas—on the due date.</li>
+                        <li><strong>Timely Payments:</strong> Pay every single bill-utility, phone, gas-on the due date.</li>
                         <li><strong>Check Reports:</strong> Monitor CIBIL every quarter for errors or delayed updates.</li>
                         <li><strong>Stay Low:</strong> Maintain a low credit utilization ratio (below 30%).</li>
                       </ol>

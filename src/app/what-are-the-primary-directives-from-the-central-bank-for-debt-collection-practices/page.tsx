@@ -263,7 +263,7 @@ export default function CentralBankDirectivesPage() {
                     Securing a loan or utilizing a credit card comes with a contractual obligation to repay. However, when financial hardships arise, borrowers often find themselves facing not just financial stress, but also aggressive, intimidating recovery tactics. The Reserve Bank of India (RBI), acting as the country's central bank, has established strict regulations to govern debt collection practices. These directives ensure that recovery processes are carried out in a civilized manner, respecting the fundamental dignity and privacy of the borrower.
                   </p>
                   <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                    The bedrock of borrower protection in India is the <strong>Fair Practices Code</strong> formulated by the <strong>Reserve Bank of India (RBI)</strong>. This code outlines the ethical standards that all <strong>Regulated Entities (REs)</strong>—which include commercial banks, cooperative banks, Non-Banking Financial Companies (NBFCs), and Asset Reconstruction Companies (ARCs)—must adhere to during the loan lifecycle. Under this code, lenders must maintain transparency, provide clear communication, and ensure that their recovery practices align with the rule of law.
+                    The bedrock of borrower protection in India is the <strong>Fair Practices Code</strong> formulated by the <strong>Reserve Bank of India (RBI)</strong>. This code outlines the ethical standards that all <strong>Regulated Entities (REs)</strong>-which include commercial banks, cooperative banks, Non-Banking Financial Companies (NBFCs), and Asset Reconstruction Companies (ARCs)-must adhere to during the loan lifecycle. Under this code, lenders must maintain transparency, provide clear communication, and ensure that their recovery practices align with the rule of law.
                   </p>
                   <p className="text-sm md:text-lg leading-relaxed text-gray-700">
                     To address a surge in customer complaints regarding high-handed collection methods, the central bank issued the landmark <strong>August 12, 2022 Circular</strong> (Reference: RBI/2022-23/108, \"Outsourcing of Financial Services – Responsibilities of Regulated Entities Employing Recovery Agents\"). This directive explicitly reinforces that Regulated Entities remain legally responsible for the actions of their outsourced recovery agencies. The RBI made it clear that outsourcing recovery operations does not absolve banks and NBFCs of their regulatory accountability. Under this circular, lenders must ensure that their agents do not cross legal boundaries.
@@ -399,19 +399,19 @@ export default function CentralBankDirectivesPage() {
                       <p className="text-gray-700 italic mb-4">
                         "I can’t thank enough to the team of AMA legal solutions, because of them, my life became easy, and I didn’t have to deal with the harassment calls and certainly helped me to close my loans with a complete legal support and guidance."
                       </p>
-                      <p className="font-bold text-gray-900 text-right">— Surendra Rao</p>
+                      <p className="font-bold text-gray-900 text-right">- Surendra Rao</p>
                     </div>
                     <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 relative">
                       <p className="text-gray-700 italic mb-4">
                         "The Ama legal Solutions staffs demonstrated exceptional professionalism, clarity, and dedication throughout the process. Their team is responsive, knowledgeable, and handles the matter with great attention to detail. I truly appreciate their timely support and effective guidance, and I would recommend their services."
                       </p>
-                      <p className="font-bold text-gray-900 text-right">— Imlitoshi Sangtam</p>
+                      <p className="font-bold text-gray-900 text-right">- Imlitoshi Sangtam</p>
                     </div>
                     <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 col-span-1 md:col-span-2">
                       <p className="text-gray-700 italic mb-4">
                         "I want to thanks the team for handling my case and providing valuable support in distress and supporting at all the steps be it dealing with agents or handling legal notices from bank."
                       </p>
-                      <p className="font-bold text-gray-900 text-right">— SUMITKUMAR KANOUJIYA</p>
+                      <p className="font-bold text-gray-900 text-right">- SUMITKUMAR KANOUJIYA</p>
                     </div>
                   </div>
                 </section>

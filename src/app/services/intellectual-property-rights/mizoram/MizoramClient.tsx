@@ -196,7 +196,7 @@ export default function MizoramClient() {
                     Industrial Design Registration
                   </h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    For Mizoram's handicraft sector, the visual appeal of a product—be it a bamboo craft, a textile pattern, or a furniture design—is its main selling point. The Designs Act protects these aesthetic features.
+                    For Mizoram's handicraft sector, the visual appeal of a product-be it a bamboo craft, a textile pattern, or a furniture design-is its main selling point. The Designs Act protects these aesthetic features.
                   </p>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
                     Registering your design prevents others from copying the look and feel of your product. We help artisans and manufacturers secure these rights to maintain the exclusivity of their craftsmanship.

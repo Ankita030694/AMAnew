@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     question: "What is the role of an executor for an Indian will?",
-    answer: "The executor is responsible for carrying out your will's terms. For Indian assets, we recommend appointing a resident of India or a professional firm. They need to navigate local bureaucracies, deal with municipal offices for mutation, and satisfy bank legal departments—tasks that are nearly impossible for someone living in Australia to manage remotely."
+    answer: "The executor is responsible for carrying out your will's terms. For Indian assets, we recommend appointing a resident of India or a professional firm. They need to navigate local bureaucracies, deal with municipal offices for mutation, and satisfy bank legal departments-tasks that are nearly impossible for someone living in Australia to manage remotely."
   },
   {
     question: "Do I need probate in India for my property?",
@@ -650,7 +650,7 @@ export default function WillDraftingAustraliaPage() {
                     <div className="p-8 rounded-2xl bg-gray-50 hover:bg-[#fffdf5] border-2 border-transparent hover:border-[#D2A02A]/30 transition-all">
                       <div className="text-5xl mb-6">🛡️</div>
                       <h3 className="font-black text-xl mb-3 text-gray-900">Asset Vigilance</h3>
-                      <p className="text-gray-600 text-xs md:text-sm leading-relaxed">Our team provides proactive advice on preventing property encroachments and hostile family takeovers—the most common risks for NRI estates in the subcontinent.</p>
+                      <p className="text-gray-600 text-xs md:text-sm leading-relaxed">Our team provides proactive advice on preventing property encroachments and hostile family takeovers-the most common risks for NRI estates in the subcontinent.</p>
                     </div>
                   </div>
 
@@ -659,7 +659,7 @@ export default function WillDraftingAustraliaPage() {
                     We believe that a will is more than just a list of names and numbers. It is a set of instructions that protects your values and your peace of mind. For our Australian clients, this often means ensuring that their children (who may be growing up with Australian values) are not cheated out of their Indian inheritance by greedy extended family members.
                   </p>
                   <p className="text-sm md:text-lg leading-relaxed text-gray-700">
-                    Our drafting process includes "Family Context Analysis." We talk to you about the family dynamics in India—who are the reliable cousins, and who might try to contest the will? We then build defensive layers into the document to make it as "contest-proof" as possible. This level of care is something you simply cannot get from an automated template or a high-street generalist.
+                    Our drafting process includes "Family Context Analysis." We talk to you about the family dynamics in India-who are the reliable cousins, and who might try to contest the will? We then build defensive layers into the document to make it as "contest-proof" as possible. This level of care is something you simply cannot get from an automated template or a high-street generalist.
                   </p>
                 </section>
 
@@ -667,7 +667,7 @@ export default function WillDraftingAustraliaPage() {
                 <section id="executor-selection" className="scroll-mt-32">
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">The Art of Executor Selection for Indian Assets</h2>
                   <p className="text-sm md:text-lg leading-relaxed mb-6 text-gray-700">
-                    Choosing an executor for your Australian assets is simple—you usually pick your spouse or a adult child. But picking an executor for your Indian assets requires a different set of criteria. The person you pick in India must have "Ground Level Agility."
+                    Choosing an executor for your Australian assets is simple-you usually pick your spouse or a adult child. But picking an executor for your Indian assets requires a different set of criteria. The person you pick in India must have "Ground Level Agility."
                   </p>
                   <div className="grid md:grid-cols-2 gap-8">
                     <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">

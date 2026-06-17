@@ -255,7 +255,7 @@ export default function SouthIndianBankLoanSettlementPage() {
                 <h2 className="text-3xl font-bold text-gray-900">Gold Loan Settlement: Saving Your Family Jewelry</h2>
               </div>
               <p className="text-gray-700 mb-6 text-lg">
-                Gold loans are the most sensitive debt because the collateral—your family jewelry—holds immense sentimental value. South Indian Bank is very aggressive with gold loan recoveries because the asset is liquid and easy to sell.
+                Gold loans are the most sensitive debt because the collateral-your family jewelry-holds immense sentimental value. South Indian Bank is very aggressive with gold loan recoveries because the asset is liquid and easy to sell.
               </p>
               
               <div className="bg-[#FFF8E1] p-8 rounded-2xl border border-[#FFECB3] mb-8">

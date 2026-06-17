@@ -82,7 +82,7 @@ export default async function Page() {
         </Suspense>
       </div>
 
-      {/* SSR-rendered crawlable content — visible to search engines, hidden from users */}
+      {/* SSR-rendered crawlable content - visible to search engines, hidden from users */}
       {blogs.length > 0 && (
         <section
           aria-hidden="true"

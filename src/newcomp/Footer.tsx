@@ -84,6 +84,18 @@ const Footer = () => {
       "name": "Student & Graduate Loan Settlement Guide",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "420" }
     },
+    "/loan-settlement-for-students": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Student Loan Settlement Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "580" }
+    },
+    "/loan-settlement-as-per-rbi": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Loan Settlement as per RBI Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "620" }
+    },
     "/loan-settlement-for-insurance-agents": {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -780,6 +792,50 @@ const Footer = () => {
       "@type": "Product",
       "name": "IndusInd Bank Arbitration & Loan Settlement Guide",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1610" }
+    },
+    "/loan-settlement-for-high-net-worth-individual": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "HNWI Loan Settlement and Stressed Asset Advisory",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1790" }
+    },
+    "/how-does-loan-settlement-process-work-in-india": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "How Does Loan Settlement Process Work in India",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+    },
+    "/settle-loans": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Settle Loans Legally in India",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2450" },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Ganesh Pawar" },
+          "reviewBody": "I approached AMA Legal Solution during a challenging time, and I must say-it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Samrat Basu" },
+          "reviewBody": "Recommending Anuj in itself is not enough. From the very first meeting he had been patient, attentive and genuinely committed to helping me understand everystep of the legal process in regards to settlement. He stood like a rock beside me.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Vinod Marskole" },
+          "reviewBody": "I’m truly impressed with AMA legal solutions, services. They made the loan settlement process so smooth and stress-free. The team is professional, transparent, and genuinely cares about solving customer issues. Highly recommended!",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        }
+      ]
+    },
+    "/recovery-agent-calling-100-times-per-day": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Recovery Agent Harassment Legal Defense",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "910" }
     }
   };
   const footerColumns: { title: string; links: { name: string; href: string; external?: boolean; hiddenLink?: boolean }[] }[] = [
@@ -1044,7 +1100,6 @@ const Footer = () => {
         { name: "Trademark Class 38", href: "/trademark-registration-in-class-38" },
         { name: "Trademark Class 14", href: "/trademark-registration-in-class-14" },
         { name: "Trademark Class 45", href: "/trademark-registration-in-class-45" },
-        { name: "Support During Medical Emergencies", href: "/support-for-loan-settlement-during-medical-emergencies" },
         { name: "How to Get 800 Credit Score in India", href: "/how-to-get-800-credit-score-in-india" },
         { name: "Loan Settlement & NOC Formats", href: "/loan-settlement-letter-format-noc-format" },
         { name: "Legal Notice for Harassment", href: "/legal-notice-for-loan-settlement-harassment" },
@@ -1184,7 +1239,30 @@ const Footer = () => {
         { name: "Can a Recovery Agent Legally Enter My House Without Consent?", href: "/can-a-recovery-agent-legally-enter-my-house-without-my-consent" },
         { name: "Best Loan Settlement Agencies in India", href: "/best-loan-settlement-agencies-in-india" },
         { name: "What is a Debt Settlement Company?", href: "/what-is-a-debt-settlement-company-and-how-do-they-operate-in-india" },
-        { name: "Choose Reliable Loan Settlement Agency Near Me", href: "/how-to-choose-a-reliable-loan-settlement-agency-near-me" }
+        { name: "Choose Reliable Loan Settlement Agency Near Me", href: "/how-to-choose-a-reliable-loan-settlement-agency-near-me" },
+        { name: 'Best Credit Card Settlement Services in India', href: '/recommendations-for-loan-settlement-negotiation-services-that-handle-overdue-credit-card-debts-in-india' },
+        { name: 'Best Loan Settlement Companies Near Me', href: '/best-loan-settlement-companies-near-me-with-customer-success-guaranteed' },
+        { name: 'Best Personal Loan Settlement Negotiation Terms', href: '/which-loan-settlement-company-offers-the-best-negotiation-terms-for-personal-loans-in-india' },
+        { name: 'Flexible Payment Plans for Debt Settlement', href: '/recommendations-for-debt-settlement-firms-that-offer-flexible-payment-plans-in-india' },
+        { name: 'Most Affordable Loan Settlement Plans', href: '/most-affordable-and-pocket-friendly-loan-settlement-plans' },
+        { name: "Loan Settlement Plans for Maximum Savings", href: "/loan-settlement-plans-for-maximum-savings" },
+        { name: "Loan Settlement for High Net Worth Individual", href: "/loan-settlement-for-high-net-worth-individual" },
+        { name: "Settlement of Loan", href: "/settlement-of-loan" },
+        { name: "Loan Settlement in India", href: "/loan-settlement-in-india" },
+        { name: "Support During Medical Emergencies", href: "/support-for-loan-settlement-during-medical-emergencies" },
+        { name: "Payday Loan Settlement", href: "/loan-settlement-for-payday-loans" },
+        { name: "Loan Settlement for Everyone", href: "/loan-settlement-for-everyone" },
+        { name: "Business Loan Settlement For Indians", href: "/business-loan-settlement-for-indians" },
+        { name: "Loan Settlement Process in India", href: "/how-does-loan-settlement-process-work-in-india" },
+        { name: "Loan Settlement Eligibility Guide (Hindi)", href: "/kya-mai-loan-settlement-karwane-ke-liye-eligible-hu" },
+        { name: "Loan Settlement with AMA Legal Solutions", href: "/loan-settlement-with-ama-legal-solutions" },
+        { name: "Settle Loans", href: "/settle-loans" },
+        { name: "Loan Settlement for Salaried People", href: "/loan-settlement-for-salaried-people" },
+        { name: "Loan Settlement for Students", href: "/loan-settlement-for-students" },
+        { name: "Loan Settlement as per RBI", href: "/loan-settlement-as-per-rbi" },
+        { name: "Loan Settlement for Axis Bank", href: "/loan-settlement-for-axis-bank" },
+        { name: "Stop Recovery Morphing & AI Extortion", href: "/recovery-agent-sending-morphed-and-ai-generated-explicit-images-to-relatives" },
+        { name: "Stop Recovery Agent 100 Calls/Day", href: "/recovery-agent-calling-100-times-per-day" }
       ]
 
     }
@@ -1337,7 +1415,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* NAP Block — Name, Address, Phone (Social Proof & Contact) */}
+        {/* NAP Block - Name, Address, Phone (Social Proof & Contact) */}
         <div
           className="mb-[48px] border border-white/10 rounded-2xl p-6 md:p-8"
         >

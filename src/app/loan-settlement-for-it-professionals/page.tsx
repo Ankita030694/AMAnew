@@ -439,7 +439,7 @@ export default function ITProfessionalLoanSettlement() {
 
                 <h3 className="text-xl font-semibold text-[#D29E0D]">Security Clearances for International Client Projects</h3>
                 <p>
-                  Developers assigned to projects in highly regulated sectors—such as international aviation, government defense databases, or healthcare systems—must undergo additional security screening. Lenders and clients in the United States, United Kingdom, and Australia view extreme financial distress or unsettled defaults as a potential security risk, which can lead to project allocation denial.
+                  Developers assigned to projects in highly regulated sectors-such as international aviation, government defense databases, or healthcare systems-must undergo additional security screening. Lenders and clients in the United States, United Kingdom, and Australia view extreme financial distress or unsettled defaults as a potential security risk, which can lead to project allocation denial.
                 </p>
 
                 <h3 className="text-xl font-semibold text-[#D29E0D]">Impact on Financial and Banking Tech Roles</h3>
@@ -637,11 +637,11 @@ export default function ITProfessionalLoanSettlement() {
               <div className="space-y-4 pt-2">
                 <div className="border-t border-gray-100 pt-3 space-y-1">
                   <p className="text-xs text-gray-600 italic">"Struggling with credit card debt after layoffs in Bengaluru. AMA Legal Solutions helped me resolve all bank calls and get a clean settlement."</p>
-                  <p className="text-[10px] text-gray-400 font-semibold text-right">— Vikram Adve</p>
+                  <p className="text-[10px] text-gray-400 font-semibold text-right">- Vikram Adve</p>
                 </div>
                 <div className="border-t border-gray-100 pt-3 space-y-1">
                   <p className="text-xs text-gray-600 italic">"High level of professionalism. They managed bank negotiations during my career break and protected my CIBIL from active defaults."</p>
-                  <p className="text-[10px] text-gray-400 font-semibold text-right">— Meenakshi Sundaram</p>
+                  <p className="text-[10px] text-gray-400 font-semibold text-right">- Meenakshi Sundaram</p>
                 </div>
               </div>
             </div>

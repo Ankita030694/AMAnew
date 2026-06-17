@@ -164,7 +164,7 @@ const MizoramBankingClient = () => {
                   Bamboo Industry Finance
                 </h2>
                 <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                  With 57% of its geographical area under bamboo cover, Mizoram calls bamboo its "Green Gold." Financing the bamboo value chain—from harvesting to processing (flooring, incense sticks, charcoal)—is a priority.
+                  With 57% of its geographical area under bamboo cover, Mizoram calls bamboo its "Green Gold." Financing the bamboo value chain-from harvesting to processing (flooring, incense sticks, charcoal)-is a priority.
                 </p>
                 <p className="text-lg leading-relaxed text-gray-700">
                   <strong>Legal Challenges:</strong> Bamboo forests are often on community land or unclassed state forests. Creating a mortgage on the raw material source is impossible.

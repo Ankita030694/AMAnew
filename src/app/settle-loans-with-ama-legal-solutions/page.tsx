@@ -73,7 +73,7 @@ const reviewSnippets = [
     name: "Ganesh Pawar",
     initial: "G",
     location: "Maharashtra",
-    comment: "I approached AMA Legal Solution during a challenging time, and I must say—it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined."
+    comment: "I approached AMA Legal Solution during a challenging time, and I must say-it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined."
   },
   {
     name: "deepak",
@@ -264,7 +264,7 @@ export default function SettleLoansWithAMALegalSolutionsPage() {
                     Navigating the debt settlement process in India requires a clear understanding of banking practices and legal guidelines. When a borrower defaults on unsecured personal loans or credit card debt for consecutive months, the account is eventually classified as a Non-Performing Asset (NPA). At this stage, financial institutions recognize the high probability of default and become open to negotiating a one-time settlement (OTS).
                   </p>
                   <p className="text-sm md:text-lg leading-relaxed text-gray-700 text-justify mb-4">
-                    An OTS is a formal agreement where the lender accepts a single, reduced payment—often significantly lower than the total outstanding dues—to close the account permanently. While banks present this as a final resort, executing it without legal representation can leave borrowers vulnerable to lopsided terms, hidden charges, or unrecognized verbal agreements. A professional debt resolution company ensures that negotiations are documented, binding, and compliant with standard legal frameworks.
+                    An OTS is a formal agreement where the lender accepts a single, reduced payment-often significantly lower than the total outstanding dues-to close the account permanently. While banks present this as a final resort, executing it without legal representation can leave borrowers vulnerable to lopsided terms, hidden charges, or unrecognized verbal agreements. A professional debt resolution company ensures that negotiations are documented, binding, and compliant with standard legal frameworks.
                   </p>
                   <p className="text-sm md:text-lg leading-relaxed text-gray-700 text-justify">
                     Understanding the core concepts behind <Link href="/what-is-loan-settlement" className="text-[#D2A02A] font-medium hover:underline">what is loan settlement</Link> and how it differs from foreclosure is essential. Lenders are unlikely to accept arbitrary numbers, and borrowers need to know their financial limits.
@@ -353,7 +353,7 @@ export default function SettleLoansWithAMALegalSolutionsPage() {
                 <section id="ama-connect-app" className="scroll-mt-32">
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">The AMA Connect App: Managing Your Debt Settlement Journey</h2>
                   <p className="text-sm md:text-lg leading-relaxed text-gray-700 text-justify mb-6">
-                    To streamline the client experience, AMA Legal Solutions offers access to the **AMA Connect app**—a dedicated platform designed exclusively for our active clients. Navigating multiple debt settlements can feel overwhelming, especially when keeping track of different deadlines, negotiation statuses, and legal documents. The AMA Connect app acts as your centralized digital dashboard, ensuring complete transparency throughout the engagement.
+                    To streamline the client experience, AMA Legal Solutions offers access to the **AMA Connect app**-a dedicated platform designed exclusively for our active clients. Navigating multiple debt settlements can feel overwhelming, especially when keeping track of different deadlines, negotiation statuses, and legal documents. The AMA Connect app acts as your centralized digital dashboard, ensuring complete transparency throughout the engagement.
                   </p>
                   <p className="text-sm md:text-lg leading-relaxed text-gray-700 text-justify mb-4">
                     Through the app, clients can upload copy of legal notices received from banks, view real-time negotiation updates, track the status of draft settlement agreements, and securely communicate with their assigned legal advisor. By centralizing all data within the AMA Connect app, clients no longer have to dig through emails or chat history to verify their payment timelines or track which bank has agreed to the OTS.

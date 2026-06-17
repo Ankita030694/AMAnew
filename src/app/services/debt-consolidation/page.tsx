@@ -253,7 +253,7 @@ export default function DebtConsolidationPage() {
                     <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
                       <h3 className="text-2xl font-bold text-[#D2A02A] mb-4">Debt Consolidation</h3>
                       <p className="text-gray-700 mb-4">
-                        <strong>Consolidate</strong> means to combine. <strong>Debt consolidation</strong> involves taking out a new loan—often called a <strong>debt consolidation loan</strong>—to pay off multiple smaller debts.
+                        <strong>Consolidate</strong> means to combine. <strong>Debt consolidation</strong> involves taking out a new loan-often called a <strong>debt consolidation loan</strong>-to pay off multiple smaller debts.
                       </p>
                       <ul className="list-disc pl-6 space-y-2 text-gray-700">
                         <li><strong>Goal:</strong> Simplify payments and reduce interest rates.</li>
@@ -386,7 +386,7 @@ export default function DebtConsolidationPage() {
                 <section id="national-debt-relief" className="scroll-mt-32">
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">National Debt Relief & Freedom from Debt</h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    You may have heard of organizations like <strong>National Debt Relief</strong> or <strong>Freedom Debt Relief</strong>. These are large US-based companies that specialize in debt settlement. While we operate in India, the principles of <strong>national debt relief</strong>—providing citizens with a pathway out of financial distress—are universal.
+                    You may have heard of organizations like <strong>National Debt Relief</strong> or <strong>Freedom Debt Relief</strong>. These are large US-based companies that specialize in debt settlement. While we operate in India, the principles of <strong>national debt relief</strong>-providing citizens with a pathway out of financial distress-are universal.
                   </p>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
                     In every country, whether tracking the <strong>national debt clock</strong> or managing personal finances, the goal is the same: financial freedom. We provide that same level of professional, structured, and legal debt relief service to our clients. We are your local experts for <strong>national debt</strong> solutions, helping you navigate the legal landscape to find your own freedom from debt.

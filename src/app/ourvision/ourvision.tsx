@@ -532,7 +532,7 @@ const VisionPage = () => {
             <p className="text-[#5A4C33]/80">
               With a 4.8-star rating, 2000+ successful case conclusions, and
               1000+ legal closures, our track record speaks for itself. At AMA
-              Legal Solutions, we don&apos;t just practice law—we deliver
+              Legal Solutions, we don&apos;t just practice law-we deliver
               results-driven legal solutions that make a difference.
             </p>
           </div>

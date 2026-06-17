@@ -292,7 +292,7 @@ export default function HowToSendLegalNoticeWithoutLawyerPage() {
             <section id="notice-compliance-escalation" className="mb-16 scroll-mt-24">
               <h2 className="text-3xl font-bold text-[#30261C] mb-6">7. Waiting Period Compliance and Next Escalation Steps</h2>
               <p>
-                After serving the legal notice, you must wait for the specified 'cure period'—usually 15 days from the date of delivery—to expire. This waiting period is a statutory requirement. It gives the recipient a reasonable opportunity to clear the dues or respond to your claim, preventing them from arguing in court that they were denied natural justice.
+                After serving the legal notice, you must wait for the specified 'cure period'-usually 15 days from the date of delivery-to expire. This waiting period is a statutory requirement. It gives the recipient a reasonable opportunity to clear the dues or respond to your claim, preventing them from arguing in court that they were denied natural justice.
               </p>
               <p>
                 If the 15-day window expires and the recipient refuses to pay or ignores the notice, you can escalate the dispute using the following pathways:
@@ -318,7 +318,7 @@ export default function HowToSendLegalNoticeWithoutLawyerPage() {
             <section id="BSA-digital-compliance" className="mb-16 scroll-mt-24">
               <h2 className="text-3xl font-bold text-[#30261C] mb-6">8. Evidentiary Validation: Certifying Digital Service Under BSA 2023</h2>
               <p>
-                If you choose to serve your legal notice digitally—via email or WhatsApp—you must ensure the delivery proof is legally admissible in court. Under the modern Indian legal framework, electronic evidence is scrutinized to prevent tampering.
+                If you choose to serve your legal notice digitally-via email or WhatsApp-you must ensure the delivery proof is legally admissible in court. Under the modern Indian legal framework, electronic evidence is scrutinized to prevent tampering.
               </p>
               <p>
                 The admissibility of digital evidence is governed by the <strong>Bharatiya Sakshya Adhiniyam (BSA), 2023</strong>. Under Section 63 of the BSA, electronic records are admissible as evidence in court if they are accompanied by a specific certificate. This certificate must declare that the device used was operating properly, records were retrieved without alteration, and must be signed by the person in charge of the system.

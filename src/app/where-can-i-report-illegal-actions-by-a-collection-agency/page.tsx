@@ -109,7 +109,7 @@ const reviewSchema = {
         "@type": "Person",
         "name": "Ganesh Pawar"
       },
-      "reviewBody": "I approached AMA Legal Solution during a challenging time, and I must say—it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined."
+      "reviewBody": "I approached AMA Legal Solution during a challenging time, and I must say-it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined."
     },
     {
       "@type": "Review",
@@ -279,7 +279,7 @@ export default function ReportIllegalActionsPage() {
                     Debt recovery is a legitimate business process, but when a third-party debt collection agency resorts to threats, public shaming, verbal abuse, cyber-harassment, or calling outside of business hours, they cross the line into criminal misconduct. The Reserve Bank of India (RBI) maintains strict regulations governing how financial institutions and their recovery agents interact with borrowers. Knowing your rights and navigating the correct reporting hierarchy is essential to protect your dignity and secure your financial peace.
                   </p>
                   <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                    Many borrowers believe that defaulting on a personal loan, credit card, or digital loan strips them of their civil rights. This is a critical misconception. In India, a loan default is a breach of contract—a civil dispute, not a criminal offense. Consequently, lenders and their representatives have no legal authority to treat borrowers like criminals, violate their privacy, or subject them to physical or mental abuse.
+                    Many borrowers believe that defaulting on a personal loan, credit card, or digital loan strips them of their civil rights. This is a critical misconception. In India, a loan default is a breach of contract-a civil dispute, not a criminal offense. Consequently, lenders and their representatives have no legal authority to treat borrowers like criminals, violate their privacy, or subject them to physical or mental abuse.
                   </p>
                   <h3 className="text-lg md:text-xl font-bold text-gray-900 mt-6 mb-3">The RBI Code of Conduct for Recovery Agents</h3>
                   <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
@@ -475,21 +475,21 @@ export default function ReportIllegalActionsPage() {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 relative">
                       <p className="text-gray-700 italic mb-4">
-                        &quot;I approached AMA Legal Solution during a challenging time, and I must say—it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined.&quot;
+                        &quot;I approached AMA Legal Solution during a challenging time, and I must say-it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined.&quot;
                       </p>
-                      <p className="font-bold text-gray-900 text-right">— Ganesh Pawar</p>
+                      <p className="font-bold text-gray-900 text-right">- Ganesh Pawar</p>
                     </div>
                     <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 relative">
                       <p className="text-gray-700 italic mb-4">
                         &quot;Recommending Anuj in itself is not enough. From the very first meeting he had been patient, attentive and genuinely committed to helping me understand everystep of the legal process in regards to settlement. He stood like a rock beside me.&quot;
                       </p>
-                      <p className="font-bold text-gray-900 text-right">— Samrat Basu</p>
+                      <p className="font-bold text-gray-900 text-right">- Samrat Basu</p>
                     </div>
                     <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 relative">
                       <p className="text-gray-700 italic mb-4">
                         &quot;I can’t thank enough to the team of AMA legal solutions, because of them, my life became easy, and I didn’t have to deal with the harassment calls and certainly helped me to close my loans with a complete legal support and guidance.&quot;
                       </p>
-                      <p className="font-bold text-gray-900 text-right">— Surendra Rao</p>
+                      <p className="font-bold text-gray-900 text-right">- Surendra Rao</p>
                     </div>
                   </div>
                 </section>

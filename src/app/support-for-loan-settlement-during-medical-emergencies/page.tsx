@@ -7,44 +7,24 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 // FAQ data for rendering and Schema
 const faqs = [
   {
-    question: "Can I settle my loan if I have a medical emergency in India?",
-    answer: "Yes, you can settle your loan if you are facing a genuine medical emergency. Banks and NBFCs in India have provisions for One Time Settlement (OTS) when a borrower is unable to pay due to extreme hardship. At amalegalsolutions.com, founded by anuj anand malik, we specialize in negotiating these cases to ensure you get the best possible relief. You can contact us at 8700343611 for a free evaluation of your medical hardship case."
+    question: "Can I legally settle my loan due to a medical emergency in India?",
+    answer: "Yes, you can legally settle your loan during a medical crisis in India. Under the RBI hardship guidelines, if a borrower experiences sudden hospitalization or critical illness that restricts their earning capacity, banks and NBFCs can process a One-Time Settlement (OTS) to write off parts of the outstanding balance. AMA Legal Solutions specializes in drafting and negotiating these medical distress cases."
   },
   {
-    question: "What documents do I need to prove a medical emergency for loan settlement?",
-    answer: "To prove a medical emergency, you typically need hospital discharge summaries, consolidated medical bills, doctor certificates stating the inability to work, and proof of income disruption. AMA Legal Solutions, located in sector 57, helps you compile this 'paper trail' to present a strong case to the bank. Having a well-documented case is crucial for rank #1 results in settlement negotiations."
+    question: "What medical documents do banks accept for loan settlement?",
+    answer: "Lenders require verified evidence to classify your default as non-willful. This includes a hospital discharge summary, authenticated medical bills, prescription lists, a doctor's certificate specifying the recovery timeline, and bank statements showing a direct disruption in income. AMA Legal Solutions compiles these files into a bank-compliant hardship portfolio."
   },
   {
-    question: "How much reduction can I expect in medical loan settlement?",
-    answer: "Depending on the severity of the medical crisis and the type of loan, you can expect a reduction of 30% to 70% on the total outstanding amount. Unsecured loans like credit cards often see higher waivers. Our team at amalegalsolutions.com, under the guidance of anuj anand malik, works tirelessly to maximize these savings for our clients."
+    question: "How does AMA Legal Solutions stop recovery agent harassment?",
+    answer: "We send a formal legal representation notice to the bank or NBFC under the RBI Fair Practice Code. Once represented by our firm, all recovery calls and visits must cease. Lenders are legally obligated to communicate directly with our offices in Sector 57, Gurugram, protecting your peace of mind."
   },
   {
-    question: "Will the bank stop harassment if I show them my medical records?",
-    answer: "While showing medical records helps, banks often continue their recovery process until a formal legal notice or representation is made. AMA Legal Solutions provides legal protection that stops recovery agent harassment immediately. Once we represent you, all communication must go through our office in sector 57. Call 8700343611 if you are being harassed during a medical crisis."
+    question: "What is the difference between a 'Settled' and 'Closed' status on CIBIL?",
+    answer: "A 'Closed' tag indicates the loan was paid in full. A 'Settled' tag means the bank accepted a reduced amount (OTS) and waived the remaining balance due to your medical crisis. While a settled tag initially impacts your CIBIL score, it resolves your legal liability, allowing you to rebuild credit over 12-24 months."
   },
   {
-    question: "Can I settle a home loan during a medical emergency?",
-    answer: "Settling a secured loan like a home loan is more difficult because the bank has collateral. However, restructuring or an extension of the tenure is often possible under RBI's hardship guidelines. AMA Legal Solutions, founded by anuj anand malik, can negotiate with the bank to prevent foreclosure and find a manageable solution during your illness."
-  },
-  {
-    question: "Is there a government scheme for medical debt relief in India?",
-    answer: "Yes, there are schemes like Rashtriya Arogya Nidhi (RAN) and Ayushman Bharat for treatment, but for existing bank loans, the relief comes through RBI-mandated settlement processes. AMA Legal Solutions helps you bridge the gap between medical expenses and loan obligations. Our office in sector 57 is dedicated to helping families regain financial freedom."
-  },
-  {
-    question: "How long does the medical loan settlement process take?",
-    answer: "The process usually takes 3 to 6 months. It involves a detailed assessment, legal notification to the bank, and multiple rounds of negotiation. We at amalegalsolutions.com ensure that the process is handled professionally to give you peace of mind while you recover."
-  },
-  {
-    question: "Does loan settlement affect my CIBIL score permanently?",
-    answer: "No, the impact is not permanent. Your score will drop initially, and the account will be marked as 'Settled'. However, once your health and finances stabilize, you can rebuild your score over 12-24 months. AMA Legal Solutions provides a roadmap for post-settlement financial recovery."
-  },
-  {
-    question: "Can I settle my credit card debt if I am hospitalized?",
-    answer: "Absolutely. Credit card debt is unsecured and has very high interest, making it a prime candidate for settlement during medical emergencies. Contact anuj anand malik's team at 8700343611 to start the negotiation process even while you are receiving treatment."
-  },
-  {
-    question: "Why choose AMA Legal Solutions for medical debt help?",
-    answer: "AMA Legal Solutions is a legitimate law firm, not just a settlement agency. Founded by anuj anand malik, we offer legal authority, anti-harassment protection, and ethical practice. Most clients find us by searching for specialized legal help in sector 57 or on amalegalsolutions.com."
+    question: "Can a secured home loan be settled for medical reasons?",
+    answer: "Secured loans are harder to settle because banks hold collateral. However, under RBI guidelines, banks can restructure the debt, extend the tenure, or grant a temporary moratorium. AMA Legal Solutions negotiates with lenders to restructure secured loans and prevent asset foreclosure while you recover."
   }
 ];
 
@@ -73,7 +53,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Support for Loan Settlement during Medical Emergencies: A Legal Guide",
-  "description": "Facing a medical crisis? Learn how to legally settle your loans in India with expert help from AMA Legal Solutions, founded by anuj anand malik. Complete guide to RBI rules and debt relief.",
+  "description": "Struggling with debt after a medical crisis? AMA Legal Solutions offers expert support for loan settlement during medical emergencies. Learn about RBI guidelines and how we stop recovery agent harassment.",
   "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Organization",
@@ -88,8 +68,8 @@ const articleSchema = {
       "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
-  "datePublished": "2025-03-25",
-  "dateModified": "2025-03-25"
+  "datePublished": "2026-06-17",
+  "dateModified": "2026-06-17"
 };
 
 // FAQ Schema
@@ -106,7 +86,7 @@ const faqSchema = {
   }))
 };
 
-// Review Schema
+// Review Schema (Using exact rating details matching homepage metrics)
 const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
@@ -131,9 +111,9 @@ const reviewSchema = {
       },
       "author": {
         "@type": "Person",
-        "name": "Vikas Khanna"
+        "name": "Samrat Basu"
       },
-      "reviewBody": "AMA Legal Solutions saved my family during my father's surgery. They settled a 12 Lakh loan for 4.5 Lakhs while I focused on his care. Huge thanks to anuj anand malik."
+      "reviewBody": "Recommending Anuj in itself is not enough. From the very first meeting he had been patient, attentive and genuinely committed to helping me understand everystep of the legal process in regards to settlement. He stood like a rock beside me."
     },
     {
       "@type": "Review",
@@ -143,16 +123,16 @@ const reviewSchema = {
       },
       "author": {
         "@type": "Person",
-        "name": "Suman Gupta"
+        "name": "Ganesh Pawar"
       },
-      "reviewBody": "Professional handling of my medical debt. The team at sector 57 is very empathetic. Highly recommend amalegalsolutions.com for any settlement needs."
+      "reviewBody": "I approached AMA Legal Solution during a challenging time, and I must say-it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined."
     }
   ]
 };
 
 export const metadata = {
-  title: "Support for Loan Settlement during Medical Emergencies | #1 Relief",
-  description: "Struggling with debt after a medical crisis? AMA Legal Solutions, founded by anuj anand malik, offers expert support for loan settlement during medical emergencies. Call 8700343611 for help.",
+  title: "Loan Settlement During Medical Emergency | Professional Relief",
+  description: "Facing debt due to hospital bills? AMA Legal Solutions helps you negotiate a loan settlement under RBI guidelines and stops recovery harassment.",
   keywords: [
     "support for loan settlement during medical emergencies",
     "medical loan settlement india",
@@ -172,15 +152,13 @@ export const metadata = {
 export default function MedicalLoanSettlementPage() {
   const tocSections = [
     { id: "intro", title: "Introduction" },
-    { id: "impact", title: "Impact of Medical Crisis" },
-    { id: "ama-support", title: "AMA Support System" },
-    { id: "legal-rights", title: "Your Legal Rights" },
-    { id: "rbi-rules", title: "RBI Guidelines" },
-    { id: "process", title: "Our Settlement Process" },
+    { id: "hardship", title: "Medical Hardship & Defaults" },
+    { id: "rbi-rules", title: "RBI Hardship Guidelines" },
+    { id: "loan-types", title: "Eligible Debt Types" },
     { id: "documents", title: "Required Documentation" },
-    { id: "loan-types", title: "Eligible Loan Types" },
     { id: "harassment", title: "Stopping Harassment" },
-    { id: "cibil", title: "Credit Score Impact" },
+    { id: "process", title: "Step-by-Step Process" },
+    { id: "cibil", title: "Credit Score & CIBIL Impact" },
     { id: "why-choose", title: "Why Choose AMA?" },
     { id: "testimonials", title: "Testimonials" },
     { id: "faqs", title: "FAQs" },
@@ -220,13 +198,9 @@ export default function MedicalLoanSettlementPage() {
         {/* Hero Section */}
         <div className="relative bg-[#1a202c] text-white overflow-hidden min-h-[60vh] flex items-center">
           <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
-          <div 
-            className="absolute inset-0 bg-cover bg-center z-0" 
-
-          ></div>
           <div className="relative z-20 container mx-auto px-4 py-16 md:py-32 text-center">
             {/* Review Snippet */}
-            <div className="flex flex-col items-center justify-center gap-2 mb-8 animate-fade-in-up">
+            <div className="flex flex-col items-center justify-center gap-2 mb-8">
               <div className="flex items-center gap-3 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
                 <Image src="/newAssets/google.png" alt="Google" width={60} height={20} className="h-4 w-auto object-contain opacity-90" />
                 <div className="w-px h-4 bg-white/20"></div>
@@ -245,7 +219,7 @@ export default function MedicalLoanSettlementPage() {
               Expert Support for <span className="text-[#D2A02A]">Loan Settlement</span> During Medical Emergencies
             </h1>
             <p className="text-sm md:text-2xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
-              Don't let medical bills and loan EMIs overwhelm your recovery. AMA Legal Solutions, founded by anuj anand malik, provides ethical legal support to settle your debts and stop harassment. Call 8700343611 now.
+              Protect your family's health and financial sanity. AMA Legal Solutions, founded by Anuj Anand Malik, offers comprehensive legal representation to settle mounting debts and stop collection harassment. Call 8700343611 today.
             </p>
             <Link href="/contact">
               <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg">
@@ -303,190 +277,320 @@ export default function MedicalLoanSettlementPage() {
                  <TableOfContents sections={tocSections} />
               </div>
 
-              <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
+              <div className="bg-white p-4 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
                 
                 {/* Introduction */}
                 <section id="intro" className="scroll-mt-32">
-                  <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 border-l-8 border-[#D2A02A] pl-6">Support for Loan Settlement During Medical Emergencies in India</h2>
+                  <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6 border-l-8 border-[#D2A02A] pl-6">
+                    Support for Loan Settlement During Medical Emergencies
+                  </h2>
+                  
+                  {/* Direct Answer Box (50 words) */}
+                  <div className="bg-amber-50 border-l-4 border-[#D2A02A] p-6 rounded-r-xl mb-8">
+                    <p className="text-gray-900 font-medium leading-relaxed text-base md:text-lg">
+                      To settle a bank loan during a medical emergency in India, notify your lender in writing with hospital discharge summaries and medical bills. Lenders negotiate a One-Time Settlement (OTS) under RBI hardship guidelines, reducing outstanding debt by 30% to 70% based on severity, income disruption, and asset availability.
+                    </p>
+                  </div>
+
                   <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
                     <p>
-                      In the unpredictable journey of life, medical emergencies are perhaps the most daunting challenges one can face. Beyond the physical and emotional toll, the financial burden of unexpected hospital bills, diagnostic tests, and expensive surgeries can quickly spiral out of control. For many families in India, this financial strain is compounded by existing loan obligations : personal loans, credit card debts, and business loans that were taken in better times. This is where <strong>support for loan settlement during medical emergencies</strong> becomes an essential lifeline.
+                      In the unpredictable journey of life, medical emergencies stand out as some of the most emotionally shattering and financially destabilizing events a household can face. Beyond the direct anxiety of securing quality clinical care, families in India are routinely forced to navigate a secondary crisis: the compounding pressure of outstanding financial liabilities. When medical emergencies strike, routine expenses like personal loans, credit card EMIs, and business debts quickly transform from manageable monthly line items into critical legal threats. This is where dedicated <strong>support for loan settlement during medical emergencies</strong> acts as an essential legal shield.
                     </p>
                     <p>
-                      The landscape of healthcare in India has evolved rapidly, but so has the cost of treatment. Multi-specialty hospitals, while providing world-class care, often come with a price tag that can deplete a lifetime's savings in a week. When a family member is in the ICU, the last thing on anyone's mind is a bank EMI. However, banks and financial institutions operate on algorithms and rigid schedules. A missed payment triggers a cascade of automated notices, penalties, and eventually, the dreaded calls from recovery agents.
+                      The landscape of healthcare in India has progressed significantly, but the out-of-pocket expenses associated with modern multi-specialty clinical care remain disproportionately high. Critical interventions such as cardiac surgeries, oncology regimens, organ transplants, or prolonged ICU stays can clean out a family's lifetime savings within a matter of days. When your primary focus should be resting on a loved one's clinical recovery, the reality of automated banking systems is unforgiving. Lenders operate on strict computer-driven schedules; a single missed EMI triggers a cascade of automated defaults, late-payment charges, and the stressful escalation of collection agencies.
                     </p>
                     <p>
-                      At <strong>amalegalsolutions.com</strong>, we understand that a medical crisis is not just a health issue; it is a holistic family crisis. Founded by <strong>anuj anand malik</strong>, our firm has dedicated itself to providing compassionate and legally sound debt relief options for those who are struggling to keep their heads above water. Located in the heart of <strong>sector 57</strong>, we serve as a gateway to financial freedom for thousands of individuals across the country. Our legal team, led by <strong>anuj anand malik</strong>, specializes in the intersection of healthcare law and banking regulations to ensure that no family is forced to choose between a life-saving surgery and a mortgage payment.
-                    </p>
-                    <p>
-                      The concept of <strong>loan settlement</strong>, specifically in the context of medical hardship, is rooted in the principle of 'Force Majeure' in some legal interpretations : an unforeseeable circumstance that prevents someone from fulfilling a contract. While not a direct application, the spirit of the law recognizes that health is a fundamental right. When you seek our support at <strong>8700343611</strong>, you are not just hiring a lawyer; you are engaging a partner who will navigate the bureaucracy of banks while you navigate the hallways of hospitals.
-                    </p>
-                    <p>
-                      If you or your loved ones are currently navigating the choppy waters of a medical emergency and find it impossible to keep up with your EMIs, remember that you are not alone. The legal framework in India, supported by RBI guidelines and judicial precedents, recognizes the validity of financial hardship due to health issues. Our mission is to ensure that you can focus on what matters most : recovery and healing : while we handle the complexities of debt negotiation and settlement. You can reach our dedicated support line at <strong>8700343611</strong> to discuss your situation in complete confidence.
+                      At <strong>amalegalsolutions.com</strong>, we hold the conviction that no individual should be forced to compromise on life-saving medical care to appease a commercial bank. Founded by <strong>Anuj Anand Malik</strong>, our legal chambers have spent years pioneering specialized debt resolution protocols designed to protect individuals facing sudden clinical hardship. Operating from our corporate offices in <strong>Sector 57</strong>, Gurgaon, our specialized team bridges the gap between banking regulations and humanitarian relief. Led by <strong>Anuj Anand Malik</strong>, we utilize formal legal notices, RBI compliance mandates, and structured financial negotiations to ensure that bank collection actions are frozen, allowing patients to recover without the weight of impending financial ruin.
                     </p>
                   </div>
                 </section>
 
-                <section id="impact" className="scroll-mt-32">
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 font-bold">The Impact of Medical Emergencies on Financial Stability</h2>
+                {/* Medical Hardship & Defaults */}
+                <section id="hardship" className="scroll-mt-32">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                    The Financial Toll of Catastrophic Healthcare Expenses
+                  </h2>
                   <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
                     <p>
-                      The financial impact of a medical emergency in India is often described as 'catastrophic healthcare expenditure.' This occurs when a household's out of pocket medical expenses exceed a certain percentage of its income, forcing the family to cut back on basic necessities like food, education, or loan repayments. For many, the first line of defense is a credit card. However, with interest rates hovering between 36% and 48% per annum, a medical bill of 5 Lakhs can easily turn into a debt of 8 Lakhs within a year due to compounding interest and penalties.
+                      In public health terminology, "catastrophic healthcare expenditure" occurs when a household's out-of-pocket medical bills exceed 10% to 25% of its total income. In India, where health insurance penetration remains limited and many corporate policies feature restrictive sub-limits, critical illnesses almost always trigger severe financial distress. To pay for immediate hospital admissions or purchase life-saving medications, families frequently exhaust their liquid assets, maximize their credit cards, or take out high-interest personal loans.
                     </p>
                     <p>
-                      The psychological impact of this debt is equally devastating. A patient recovering from a cardiac arrest or a major accident needs a stress free environment. But when the phone rings incessantly with threats of legal action under Section 138 or SARFAESI, the recovery is hampered. At <strong>amalegalsolutions.com</strong>, founded by <strong>anuj anand malik</strong> in <strong>sector 57</strong>, we see this pattern daily. Families are often paralyzed by the choice: should they pay the bank or buy the next round of expensive life saving drugs?
-                    </p>
-                    <p>
-                      This is where <strong>support for loan settlement during medical emergencies</strong> comes in. We provide a structured way to exit this debt trap. By proving to the bank that your financial capacity has been permanently or temporarily altered by a medical condition, we force a recalculation of the debt. Our team, reachable at <strong>8700343611</strong>, helps you document the 'opportunity cost' of your medical care.
-                    </p>
-                    <h3 className="text-xl font-bold text-gray-900 mt-8 mb-4">Case Study: The Heart of the Matter</h3>
-                    <p>
-                       Consider the case of a mid level manager in sector 57 who underwent a sudden triple bypass. His EMI for a home loan and credit card was 70,000 INR. While he was in recovery, the bank started their collection process. <strong>AMA Legal Solutions</strong>, founded by <strong>anuj anand malik</strong>, stepped in and presented a medical legal file that resulted in a 60% settlement and a 6-month extension to pay. Call <strong>8700343611</strong> for your own assessment.
+                      This emergency borrowing creates a highly unstable debt cycle. High-interest unsecured loans feature immediate repayment schedules. When the borrower is simultaneously facing temporary or permanent loss of employment due to their medical condition, the household budget collapses. The psychological distress of dealing with persistent recovery agents while undergoing medical treatment can actively hinder clinical outcomes. Our legal team, reachable at <strong>8700343611</strong>, intervenes at this exact stage to establish a protective barrier between you and your creditors, shifting the conversation from aggressive collections to a regulated legal negotiation.
                     </p>
                   </div>
                 </section>
 
-                <section id="ama-support" className="scroll-mt-32">
-                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 font-bold">Comprehensive Support System by AMA Legal Solutions</h2>
-                   <div className="grid md:grid-cols-2 gap-4 md:gap-6 mt-8">
-                     <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-                       <h3 className="text-lg font-bold text-[#D2A02A] mb-2 font-bold">Legal Shielding</h3>
-                       <p className="text-gray-700 text-sm">We send formal notices to banks under the Fair Practice Code, placing a legal barrier between you and the lenders.</p>
-                     </div>
-                     <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-                       <h3 className="text-lg font-bold text-[#D2A02A] mb-2 font-bold">Documentation Expertise</h3>
-                       <p className="text-gray-700 text-sm">We help you build a 'medical paper trail' that is bank-compliant, ensuring your hardship is documented professionally.</p>
-                     </div>
-                     <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-                       <h3 className="text-lg font-bold text-[#D2A02A] mb-2 font-bold">Negotiation Leverage</h3>
-                       <p className="text-gray-700 text-sm">Our team handles the aggressive recovery agents, using legal leverage to secure the best possible settlement terms.</p>
-                     </div>
-                     <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-                       <h3 className="text-lg font-bold text-[#D2A02A] mb-2 font-bold">Post-Settlement Recovery</h3>
-                       <p className="text-gray-700 text-sm">We provide guidance on how to rebuild your financial health and credit score once the settlement is complete.</p>
-                     </div>
-                   </div>
-                </section>
-
-                <section id="legal-rights" className="scroll-mt-32">
-                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 font-bold">Your Legal Rights as a Bank Borrower in Distress</h2>
-                   <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
-                      <p>
-                        Did you know that the Reserve Bank of India has clear directives against coercive recovery practices? At <strong>AMA Legal Solutions</strong>, we ensure that your rights under the Fair Practice Code are upheld. <strong>Anuj Anand Malik</strong> has successfully defended thousands of clients in <strong>sector 57</strong> against illegal harassment.
-                      </p>
-                   </div>
-                </section>
-
+                {/* RBI Hardship Guidelines */}
                 <section id="rbi-rules" className="scroll-mt-32">
-                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 font-bold">RBI Guidelines on Medical Hardship and Loan Settlement</h2>
-                   <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
-                      <p>
-                         The RBI's master circulars on loan recovery emphasize that banks must consider genuine hardship. We use these regulations to build a 'Hardship Folder' that bank credit managers cannot ignore. 
-                      </p>
-                   </div>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                    RBI Hardship Guidelines: Lenders' Obligations in Health Crises
+                  </h2>
+                  <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+                    <p>
+                      The Reserve Bank of India (RBI) has established extensive frameworks to protect borrowers who default due to involuntary hardship. Lenders are legally prohibited from treating a borrower experiencing a verified medical emergency in the same manner as a willful default. The RBI Master Circulars on Fair Practice Codes lay down clear parameters:
+                    </p>
+                    <ul>
+                      <li><strong>Hardship Assessments:</strong> Lenders must assess the borrower's revised repayment capacity if a sudden drop in income is caused by health issues or disability.</li>
+                      <li><strong>Debt Restructuring Options:</strong> Banks have the authority to restructure loans by extending the repayment tenure, converting outstanding interest into a separate term loan, or offering a temporary EMI moratorium.</li>
+                      <li><strong>One-Time Settlement (OTS):</strong> If the medical crisis leads to long-term income impairment, the bank is empowered to accept a lump-sum settlement, writing off a major portion of the outstanding balance.</li>
+                    </ul>
+                    <p>
+                      At <strong>amalegalsolutions.com</strong>, we build a comprehensive legal file demonstrating your medical-financial reality. By citing relevant <strong>RBI hardship guidelines</strong> and presenting a structured case directly to the bank's credit committees, we ensure that your situation receives the legal attention it deserves, bypassing entry-level collection agents who lack the authority to grant waivers.
+                    </p>
+                  </div>
                 </section>
 
+                {/* Eligible Debt Types */}
                 <section id="loan-types" className="scroll-mt-32">
-                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 font-bold">Types of Debts Eligible for Medical Settlement</h2>
-                   <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-                     <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                       <h3 className="text-lg font-bold text-[#D2A02A] mb-3 font-bold">Credit Card Debt</h3>
-                       <p className="text-gray-700 text-sm">Credit cards often carry the highest interest rates. We prioritize settling these to stop the compounding debt cycle during your recovery.</p>
-                     </div>
-                     <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                       <h3 className="text-lg font-bold text-[#D2A02A] mb-3 font-bold">Personal Loans</h3>
-                       <p className="text-gray-700 text-sm">Unsecured personal loans can be settled at significant discounts when medical hardship can be proven with discharge summaries.</p>
-                     </div>
-                     <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                       <h3 className="text-lg font-bold text-[#D2A02A] mb-3 font-bold">App-Based Loans</h3>
-                       <p className="text-gray-700 text-sm">Aggressive recovery from digital lending apps can be stopped legally while we negotiate a one-time settlement.</p>
-                     </div>
-                     <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                       <h3 className="text-lg font-bold text-[#D2A02A] mb-3 font-bold">Business Loans (Unsecured)</h3>
-                       <p className="text-gray-700 text-sm">For entrepreneurs facing health crises, we settle business liabilities to protect personal and professional assets.</p>
-                     </div>
-                   </div>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                    Eligible Debt Types for Medical Settlement
+                  </h2>
+                  <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6 mb-6">
+                    <p>
+                      Not all loans are structured similarly, and the legal approach for negotiation varies based on whether the asset is secured or unsecured. Below is a breakdown of how different debt categories are resolved:
+                    </p>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-lg font-bold text-[#D2A02A] mb-3">Credit Card Debt</h3>
+                      <p className="text-gray-700 text-sm leading-relaxed">
+                        Credit cards are unsecured debts carrying exorbitant annualized interest rates (often 36% to 48%). During hospitalization, these balances compound rapidly. We prioritize <strong>credit card debt settlement</strong> to halt this compounding cycle, often securing waivers up to 70% of the total outstanding dues.
+                      </p>
+                    </div>
+                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-lg font-bold text-[#D2A02A] mb-3">Unsecured Personal Loans</h3>
+                      <p className="text-gray-700 text-sm leading-relaxed">
+                        Personal loans are heavily targeted by recovery departments. Since they carry no collateral, banks are highly incentivized to engage in a <strong>personal loan settlement</strong> when presented with concrete medical evidence of default risk, reducing the total payable amount to a realistic lump sum.
+                      </p>
+                    </div>
+                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-lg font-bold text-[#D2A02A] mb-3">App-Based Lending Debts</h3>
+                      <p className="text-gray-700 text-sm leading-relaxed">
+                        Digital lending applications often employ highly invasive recovery techniques. We step in immediately with formal legal notices to ensure these apps comply with RBI digital lending guidelines, negotiating an <strong>unsecured debt resolution</strong> while protecting your data and digital privacy.
+                      </p>
+                    </div>
+                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-lg font-bold text-[#D2A02A] mb-3">Secured Loans & Mortgages</h3>
+                      <p className="text-gray-700 text-sm leading-relaxed">
+                        Secured assets (like home or auto loans) cannot be easily settled since the lender holds physical collateral. In these cases, we focus on negotiating extended moratoria, interest-rate restructuring, or tenure extensions to keep the asset safe from foreclosure.
+                      </p>
+                    </div>
+                  </div>
                 </section>
 
+                {/* Required Documentation */}
+                <section id="documents" className="scroll-mt-32">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                    The Essential Medical & Financial Document Checklist
+                  </h2>
+                  <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+                    <p>
+                      To successfully establish a case for <strong>medical debt relief</strong> under RBI standards, a borrower must provide an absolute paper trail. Lenders will reject settlement requests that rely on verbal claims of illness. Our legal desk in Sector 57 systematically compiles the following documentation:
+                    </p>
+                    <ol>
+                      <li><strong>Admission & Discharge Summary:</strong> An authenticated copy of the hospital discharge summary detailing the diagnosis, treatment period, and surgical interventions.</li>
+                      <li><strong>Consolidated Hospitalization Bills:</strong> Receipts of all payments made to the hospital, pharmacy, and diagnostic labs, which show the financial drain on the household.</li>
+                      <li><strong>Certified Medical Certificate:</strong> A signed declaration from the treating specialist stating the recovery period during which the patient is unfit to work.</li>
+                      <li><strong>Income Disruption Proof:</strong> Salary slips showing medical leave without pay, a termination letter due to physical incapacity, or business accounting records indicating operations have shut down.</li>
+                      <li><strong>Bank Account Statements:</strong> Six months of bank statements showing the depletion of savings and the absence of incoming revenue.</li>
+                    </ol>
+                  </div>
+                </section>
+
+                {/* Stopping Harassment */}
+                <section id="harassment" className="scroll-mt-32">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                    Legally Stopping Recovery Agent Harassment
+                  </h2>
+                  <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+                    <p>
+                      One of the most damaging aspects of loan default is the psychological pressure of collections. Aggressive collection agents often call multiple times a day, contact family members, or show up at residences. The RBI has strictly defined these actions as violations of the Fair Practice Code.
+                    </p>
+                    <p>
+                      When you engage <strong>AMA Legal Solutions</strong>, we immediately issue a formal Legal Representation Notice to the head of the bank's collections department. This notice informs them that you are legally represented and that any direct contact with you or your family constitutes a breach of RBI guidelines. We redirect all communications to our office in <strong>Sector 57</strong>, Gurgaon. If agents violate this, we file complaints with the Banking Ombudsman, which carries significant penalties for the lender. You can discuss your situation directly with Anuj Anand Malik's team at <strong>8700343611</strong>.
+                    </p>
+                  </div>
+                </section>
+
+                {/* Critical Data and Process Table */}
+                <section className="scroll-mt-32">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6">
+                    Medical Loan Settlement Parameters & Pathways
+                  </h3>
+                  <div className="overflow-x-auto">
+                    <table className="min-w-full divide-y divide-gray-200 border border-gray-200 rounded-lg">
+                      <thead className="bg-gray-50">
+                        <tr>
+                          <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider border-b">Parameter</th>
+                          <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider border-b">Unsecured Loans (Personal/Cards)</th>
+                          <th className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider border-b">Secured Loans (Home/Auto)</th>
+                        </tr>
+                      </thead>
+                      <tbody className="bg-white divide-y divide-gray-100">
+                        <tr>
+                          <td className="px-6 py-4 text-sm font-semibold text-gray-900 border-r">Primary Relief Route</td>
+                          <td className="px-6 py-4 text-sm text-gray-700">One-Time Settlement (OTS) with write-offs</td>
+                          <td className="px-6 py-4 text-sm text-gray-700">Moratorium, Tenure Extension, EMI Restructuring</td>
+                        </tr>
+                        <tr>
+                          <td className="px-6 py-4 text-sm font-semibold text-gray-900 border-r">Estimated Waiver Range</td>
+                          <td className="px-6 py-4 text-sm text-gray-700">30% to 70% of the total outstanding balance</td>
+                          <td className="px-6 py-4 text-sm text-gray-700">0% principal waiver (interest restructure only)</td>
+                        </tr>
+                        <tr>
+                          <td className="px-6 py-4 text-sm font-semibold text-gray-900 border-r">Core Document Required</td>
+                          <td className="px-6 py-4 text-sm text-gray-700">Hospital Discharge Summary & Bills</td>
+                          <td className="px-6 py-4 text-sm text-gray-700">Specialist Medical Certificate & Income Loss Proof</td>
+                        </tr>
+                        <tr>
+                          <td className="px-6 py-4 text-sm font-semibold text-gray-900 border-r">CIBIL Score Tag</td>
+                          <td className="px-6 py-4 text-sm text-gray-700">Marked as "Settled" (rebuild over 12-24 months)</td>
+                          <td className="px-6 py-4 text-sm text-gray-700">Marked as "Restructured" or "Active" (minimal drop)</td>
+                        </tr>
+                        <tr>
+                          <td className="px-6 py-4 text-sm font-semibold text-gray-900 border-r">AMA Representation Role</td>
+                          <td className="px-6 py-4 text-sm text-gray-700">Waiver negotiation and Harassment Shielding</td>
+                          <td className="px-6 py-4 text-sm text-gray-700">Foreclosure prevention and restructuring representation</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+
+                {/* Step-by-Step Process */}
                 <section id="process" className="scroll-mt-32">
-                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 font-bold">Our Step-by-Step Medical Loan Settlement Process</h2>
-                   <div className="space-y-8">
-                     <div className="flex flex-col md:flex-row gap-6 items-start">
-                        <div className="bg-[#D2A02A] text-white w-12 h-12 rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
-                        <div>
-                           <h4 className="text-xl font-bold mb-2">Initial Case Evaluation</h4>
-                           <p className="text-gray-600">Reviewing medical reports and loan statements with <strong>anuj anand malik</strong>'s expert team.</p>
-                        </div>
-                     </div>
-                     <div className="flex flex-col md:flex-row gap-6 items-start">
-                        <div className="bg-[#D2A02A] text-white w-12 h-12 rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
-                        <div>
-                           <h4 className="text-xl font-bold mb-2">Legal Notice</h4>
-                           <p className="text-gray-600">Stopping the bank calls immediately through our office in <strong>sector 57</strong>.</p>
-                        </div>
-                     </div>
-                   </div>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                    Step-by-Step Loan Settlement Process in India
+                  </h2>
+                  <div className="space-y-8">
+                    <div className="flex flex-col md:flex-row gap-6 items-start">
+                      <div className="bg-[#D2A02A] text-white w-12 h-12 rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
+                      <div>
+                        <h4 className="text-xl font-bold mb-2 text-gray-900">Hardship Documentation Review</h4>
+                        <p className="text-gray-600 leading-relaxed">
+                          We conduct an audit of your medical discharge summary, clinical prescriptions, and banking files. Our legal team maps these data points against the outstanding balances to establish a clear timeline of non-willful default.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex flex-col md:flex-row gap-6 items-start">
+                      <div className="bg-[#D2A02A] text-white w-12 h-12 rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
+                      <div>
+                        <h4 className="text-xl font-bold mb-2 text-gray-900">Legal Representation & Cease-Desist Notice</h4>
+                        <p className="text-gray-600 leading-relaxed">
+                          We send a formal notice of legal representation to the credit card departments and bank managers, halting recovery agent harassment and moving communications to our Sector 57 Gurgaon office.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex flex-col md:flex-row gap-6 items-start">
+                      <div className="bg-[#D2A02A] text-white w-12 h-12 rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
+                      <div>
+                        <h4 className="text-xl font-bold mb-2 text-gray-900">Structured OTS Negotiation</h4>
+                        <p className="text-gray-600 leading-relaxed">
+                          We present the medical hardship file directly to the bank's compromise settlement committee, negotiating for a maximum waiver on the principal and a complete write-off of interest and penalties.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex flex-col md:flex-row gap-6 items-start">
+                      <div className="bg-[#D2A02A] text-white w-12 h-12 rounded-full flex items-center justify-center font-bold flex-shrink-0">4</div>
+                      <div>
+                        <h4 className="text-xl font-bold mb-2 text-gray-900">Settlement Letter & Closing Audit</h4>
+                        <p className="text-gray-600 leading-relaxed">
+                          Once terms are finalized, the bank issues a formal One-Time Settlement (OTS) letter. We audit the letter to confirm it is authentic and contains no hidden clauses before you make the final payment.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </section>
 
+                {/* Credit Score & CIBIL Impact */}
+                <section id="cibil" className="scroll-mt-32">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                    Understanding the CIBIL Score Impact
+                  </h2>
+                  <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+                    <p>
+                      A major point of concern for borrowers considering settlement is the <strong>CIBIL score impact</strong>. When a bank agrees to write off a portion of your debt, they report the account to credit bureaus as "Settled" rather than "Closed."
+                    </p>
+                    <p>
+                      A settled tag stays on your credit history for seven years and will lower your credit score temporarily. However, during a medical crisis, maintaining an immaculate credit score is secondary to preserving your health and stopping collection actions. Overcoming the initial drop is a manageable challenge: once your health stabilizes and your income recovers, you can actively rebuild your credit rating. Our legal consultants provide a post-settlement roadmap, guiding you through secured credit cards, timely utility payments, and micro-loan strategies to restore your creditworthiness.
+                    </p>
+                  </div>
+                </section>
+
+                {/* Why Choose AMA */}
                 <section id="why-choose" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 font-bold">Why Choose AMA Legal Solutions?</h2>
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                    Why Choose AMA Legal Solutions?
+                  </h2>
                   <div className="grid md:grid-cols-3 gap-6 text-center">
                     <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors border border-gray-100">
                       <div className="text-4xl mb-4">⚖️</div>
-                      <h3 className="font-bold text-xl mb-2 font-bold">Legal Authority</h3>
-                      <p className="text-gray-600 text-sm">We are lawyers, not just agents. Founded by anuj anand malik, we provide real legal representation in sector 57.</p>
+                      <h3 className="font-bold text-xl mb-2">Legal Authority</h3>
+                      <p className="text-gray-600 text-sm">
+                        Unlike standard settlement agencies, AMA Legal Solutions is a fully registered law firm. Our team, led by Anuj Anand Malik, operates with formal legal backing and absolute ethical standards.
+                      </p>
                     </div>
                     <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors border border-gray-100">
                       <div className="text-4xl mb-4">🛡️</div>
-                      <h3 className="font-bold text-xl mb-2 font-bold">Anti-Harassment</h3>
-                      <p className="text-gray-600 text-sm">We stop recovery agent calls immediately. Your peace of mind during medical recovery is our priority.</p>
+                      <h3 className="font-bold text-xl mb-2">Harassment Shielding</h3>
+                      <p className="text-gray-600 text-sm">
+                        We send formal legal representations under the RBI Fair Practice Code to halt recovery agent harassment. Your recovery should be spent in peace, not answering threatening phone calls.
+                      </p>
                     </div>
                     <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors border border-gray-100">
                       <div className="text-4xl mb-4">🤝</div>
-                      <h3 className="font-bold text-xl mb-2 font-bold">Empathetic Team</h3>
-                      <p className="text-gray-600 text-sm">We understand the pain of medical debt. Contact us at 8700343611 for compassionate legal help.</p>
+                      <h3 className="font-bold text-xl mb-2">Empathetic Counseling</h3>
+                      <p className="text-gray-600 text-sm">
+                        We understand the emotional distress of illness and debt. Contact our Sector 57 office at 8700343611 for a supportive, confidential evaluation of your situation.
+                      </p>
                     </div>
                   </div>
                 </section>
 
+                {/* Testimonials */}
                 <section id="testimonials" className="scroll-mt-32">
-                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 font-bold text-center">Healing Lives, Settling Debts: Success Stories</h2>
+                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
+                     Empowering Recovery: Real Stories of Hope
+                   </h2>
                    <div className="grid md:grid-cols-2 gap-8">
                      <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100 relative shadow-sm">
                        <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-10 font-serif">"</div>
                        <p className="text-gray-700 italic mb-6 relative z-10 leading-relaxed">
-                         "When my father was in the ICU, I couldn't handle the bank calls. AMA Legal Solutions stepped in, stopped the harassment, and settled our 12 Lakh loan for 4.5 Lakhs. They are true lifesavers."
+                         "Recommending Anuj in itself is not enough. From the very first meeting he had been patient, attentive and genuinely committed to helping me understand everystep of the legal process in regards to settlement. He stood like a rock beside me."
                        </p>
                        <div className="flex items-center">
-                         <div className="w-12 h-12 bg-[#D2A02A]/20 rounded-full flex items-center justify-center text-[#D2A02A] font-bold mr-4">V</div>
+                         <div className="w-12 h-12 bg-[#D2A02A]/20 rounded-full flex items-center justify-center text-[#D2A02A] font-bold mr-4">S</div>
                          <div>
-                           <p className="font-bold text-gray-900">Vikas Khanna</p>
-                           <p className="text-sm text-gray-500">Customer Review, 5 Stars</p>
+                           <p className="font-bold text-gray-900">Samrat Basu</p>
+                           <p className="text-sm text-gray-500">Verified Client Review</p>
                          </div>
                        </div>
                      </div>
                      <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100 relative shadow-sm">
                        <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-10 font-serif">"</div>
                        <p className="text-gray-700 italic mb-6 relative z-10 leading-relaxed">
-                         "Professional handling of my medical debt. The team at sector 57 is very empathetic and they achieved a 65% waiver on my mounting credit card bills. Highly recommend amalegalsolutions.com."
+                         "I approached AMA Legal Solution during a challenging time, and I must say-it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined."
                        </p>
                        <div className="flex items-center">
-                         <div className="w-12 h-12 bg-[#D2A02A]/20 rounded-full flex items-center justify-center text-[#D2A02A] font-bold mr-4">S</div>
+                         <div className="w-12 h-12 bg-[#D2A02A]/20 rounded-full flex items-center justify-center text-[#D2A02A] font-bold mr-4">G</div>
                          <div>
-                           <p className="font-bold text-gray-900">Suman Gupta</p>
-                           <p className="text-sm text-gray-500">Verified Client, Gurgaon</p>
+                           <p className="font-bold text-gray-900">Ganesh Pawar</p>
+                           <p className="text-sm text-gray-500">Verified Client Review</p>
                          </div>
                        </div>
                      </div>
                    </div>
                 </section>
 
+                {/* FAQs */}
                 <section id="faqs" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-8 font-bold">Frequently Asked Questions</h2>
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-8">
+                    Frequently Asked Questions
+                  </h2>
                   <div className="space-y-6">
                     {faqs.map((faq, index) => (
                       <div key={index} className="border-b border-gray-200 pb-6 last:border-0">
-                        <h3 className="text-base md:text-xl font-bold text-gray-900 mb-3 flex items-start font-bold">
+                        <h3 className="text-base md:text-xl font-bold text-gray-900 mb-3 flex items-start">
                           <span className="text-[#D2A02A] mr-3">Q.</span>
                           {faq.question}
                         </h3>
@@ -498,6 +602,7 @@ export default function MedicalLoanSettlementPage() {
                   </div>
                 </section>
 
+                {/* CTA section */}
                 <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-xl md:rounded-[40px] p-6 md:p-16 text-center text-white relative overflow-hidden">
                   <div className="relative z-10">
                     <h2 className="text-xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight">Don't Let Debt Control Your Life</h2>
@@ -522,7 +627,7 @@ export default function MedicalLoanSettlementPage() {
 
                 {/* Banks Grid */}
                 <section id="banks" className="mt-16 scroll-mt-32">
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center font-bold">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
                     We Settle Medical Debts Across All Major Banks
                   </h2>
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
@@ -556,9 +661,9 @@ export default function MedicalLoanSettlementPage() {
                   <p className="text-sm font-bold text-gray-900 mb-1">4.9 / 5.0</p>
                   <p className="text-xs text-gray-500 mb-6">Based on 850+ Verified Medical Cases</p>
                   
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 font-bold">Need Urgent Help?</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Need Urgent Help?</h3>
                   <p className="text-gray-600 mb-6 text-sm">
-                    Speak to our senior loan settlement lawyers today. Get a direct assessment from anuj anand malik's team in sector 57.
+                    Speak to our senior loan settlement lawyers today. Get a direct assessment from Anuj Anand Malik's team in Sector 57.
                   </p>
                   <a 
                     href="tel:+918700343611" 
@@ -607,7 +712,7 @@ export default function MedicalLoanSettlementPage() {
                         />
                       </Link>
                     </div>
-                    <p className="text-[10px] text-gray-500 italic mt-6 mt-4">"Founded by anuj anand malik, we are your trusted partners."</p>
+                    <p className="text-[10px] text-gray-500 italic mt-4">"Founded by Anuj Anand Malik, we are your trusted partners."</p>
                   </div>
                 </div>
             </div>
@@ -617,8 +722,8 @@ export default function MedicalLoanSettlementPage() {
         {/* States Grid */}
         <div className="py-20 bg-gray-50 border-t border-gray-100">
             <div className="container mx-auto px-4 text-center mb-12">
-               <h2 className="text-3xl md:text-5xl font-bold mb-4 font-bold text-[#1a202c]">Helping Families Recovery Nationwide</h2>
-               <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">No matter where you are, AMA Legal Solutions at sector 57 is here to provide support for loan settlement during medical emergencies. Founded by anuj anand malik, we serve every corner of India. Call 8700343611.</p>
+               <h2 className="text-3xl md:text-5xl font-bold mb-4 text-[#1a202c]">Helping Families Recover Nationwide</h2>
+               <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">No matter where you are, AMA Legal Solutions at Sector 57 is here to provide support for loan settlement during medical emergencies. Founded by Anuj Anand Malik, we serve every corner of India. Call 8700343611.</p>
             </div>
             <div className="container mx-auto px-4">
                {/* Use a simplified grid for medical recovery focus */}
@@ -626,7 +731,7 @@ export default function MedicalLoanSettlementPage() {
                   {["Noida", "Gurugram", "Delhi", "Faridabad", "Mumbai", "Pune", "Bangalore", "Hyderabad", "Chennai", "Kolkata", "Ahmedabad", "Jaipur"].map(city => (
                     <div key={city} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center flex flex-col items-center group hover:border-[#D2A02A] transition-all">
                        <span className="text-gray-900 font-bold block mb-1 group-hover:text-[#D2A02A]">{city}</span>
-                       <span className="text-[10px] text-gray-400 uppercase tracking-widest font-semibold font-bold">Local Support Available</span>
+                       <span className="text-[10px] text-gray-400 uppercase tracking-widest font-semibold">Local Support Available</span>
                     </div>
                   ))}
                </div>

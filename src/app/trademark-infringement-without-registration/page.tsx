@@ -398,7 +398,7 @@ export default function TrademarkInfringementPage() {
                         In the modern entertainment and influencer economy, 'Reputation' extends beyond business names to include fictional characters and the personas of celebrities. **Character Merchandising** involves the commercial exploitation of fictional characters. In India, passing off is the primary tool to protect these characters if they are not specifically registered as trademarks. 
                     </p>
                     <p>
-                      **Personality Rights** protect the name, voice, signature, and likeness of famous individuals. In 2024, the Delhi High Court protected actors from the unauthorized use of their personas on AI-generated apps and merchandise. This is fundamentally a passing off action—protecting the 'Commercial Identity' of an individual from being used to deceive the public into thinking they are associated with a product.
+                      **Personality Rights** protect the name, voice, signature, and likeness of famous individuals. In 2024, the Delhi High Court protected actors from the unauthorized use of their personas on AI-generated apps and merchandise. This is fundamentally a passing off action-protecting the 'Commercial Identity' of an individual from being used to deceive the public into thinking they are associated with a product.
                     </p>
                   </div>
                 </section>

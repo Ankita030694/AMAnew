@@ -69,7 +69,7 @@ const reviewSnippets = [
     name: "Ganesh Pawar",
     initial: "G",
     location: "Maharashtra",
-    comment: "I approached AMA Legal Solution during a challenging time, and I must say—it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined."
+    comment: "I approached AMA Legal Solution during a challenging time, and I must say-it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined."
   },
   {
     name: "Vinod Marskole",
@@ -278,7 +278,7 @@ export default function LowestChargesLoanSettlementAppPage() {
                   </p>
                   <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">Uncovering the Truth About \"Lowest Charges\" in Debt Settlement</h3>
                   <p className="text-sm md:text-lg leading-relaxed text-gray-700 text-justify">
-                    When searching for the \"lowest charges\" in loan settlement, borrowers must proceed with caution. Many unregulated online platforms advertise \"zero-cost\" or \"free\" settlement services, only to lock users into high commissions later. These platforms often charge a percentage of the total outstanding debt—sometimes up to 15%—or take a massive cut of the \"saved\" amount. True cost-effectiveness is not about finding a completely free tool, but choosing a platform with a transparent, flat-fee structure that provides genuine legal representation to defend your interests in court if necessary.
+                    When searching for the \"lowest charges\" in loan settlement, borrowers must proceed with caution. Many unregulated online platforms advertise \"zero-cost\" or \"free\" settlement services, only to lock users into high commissions later. These platforms often charge a percentage of the total outstanding debt-sometimes up to 15%-or take a massive cut of the \"saved\" amount. True cost-effectiveness is not about finding a completely free tool, but choosing a platform with a transparent, flat-fee structure that provides genuine legal representation to defend your interests in court if necessary.
                   </p>
                 </section>
 

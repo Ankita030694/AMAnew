@@ -268,7 +268,7 @@ const PresentPage = () => {
               </h4>
             </div>
             <p className="text-[#5A4C33]/80">
-              With a 4.8-star rating, 2000+ successful case conclusions, and 1000+ legal closures, our track record speaks for itself. At AMA Legal Solutions, we don&apos;t just practice law—we deliver results-driven legal solutions that make a difference.
+              With a 4.8-star rating, 2000+ successful case conclusions, and 1000+ legal closures, our track record speaks for itself. At AMA Legal Solutions, we don&apos;t just practice law-we deliver results-driven legal solutions that make a difference.
             </p>
             <p className="text-[#5A4C33]/80 mt-3">
               Looking for the best law firm in India? Contact us today. Visit us at: www.amalegalsolutions.com

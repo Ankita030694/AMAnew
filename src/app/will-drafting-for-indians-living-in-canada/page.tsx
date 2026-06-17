@@ -381,7 +381,7 @@ export default function WillDraftingCanadaPage() {
                   <div className="bg-red-50 p-6 md:p-10 rounded-2xl border border-red-100 my-6">
                       <h4 className="font-bold text-red-900 text-xl mb-4">Silent Invalidation Warning:</h4>
                       <p className="text-red-800 text-sm md:text-lg leading-relaxed mb-4">
-                        If you sign a Canadian will with this clause, you have legally revoked your Indian will. When you pass away, your Indian heirs will find themselves with an invalid document, forcing the Indian estate into 'Intestacy'—a status that invites disputes and takes years to resolve in Indian civil courts.
+                        If you sign a Canadian will with this clause, you have legally revoked your Indian will. When you pass away, your Indian heirs will find themselves with an invalid document, forcing the Indian estate into 'Intestacy'-a status that invites disputes and takes years to resolve in Indian civil courts.
                       </p>
                       <p className="text-red-900 font-bold text-sm md:text-base">
                         Our Solution: We use specific 'Situate Clauses' ensuring each will clearly identifies its territorial jurisdiction and does NOT revoke the will existing for the other country.
@@ -526,7 +526,7 @@ export default function WillDraftingCanadaPage() {
                     <div className="p-8 rounded-2xl bg-gray-50 hover:bg-[#fffdf5] border-2 border-transparent hover:border-[#D2A02A]/30 transition-all">
                       <div className="text-5xl mb-6">🏛️</div>
                       <h3 className="font-black text-xl mb-3 text-gray-900">Desk Coordination</h3>
-                      <p className="text-gray-600 text-xs md:text-sm leading-relaxed">We handle the coordination with local Sub-Registrars in India while you stay at home in Canada—no travel to India required for will registration.</p>
+                      <p className="text-gray-600 text-xs md:text-sm leading-relaxed">We handle the coordination with local Sub-Registrars in India while you stay at home in Canada-no travel to India required for will registration.</p>
                     </div>
                     <div className="p-8 rounded-2xl bg-gray-50 hover:bg-[#fffdf5] border-2 border-transparent hover:border-[#D2A02A]/30 transition-all">
                       <div className="text-5xl mb-6">🛡️</div>

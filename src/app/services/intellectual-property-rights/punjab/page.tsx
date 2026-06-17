@@ -340,7 +340,7 @@ export default function PunjabIPRPage() {
                       </li>
                       <li className="flex items-start">
                         <span className="text-[#D2A02A] font-bold mr-2">2. Combating Fakes:</span>
-                        <span className="text-gray-700">Jalandhar faces a menace of 'pass off' products—inferior goods sold under famous brand names. We initiate civil suits and criminal raids to cleanse the market of these fakes.</span>
+                        <span className="text-gray-700">Jalandhar faces a menace of 'pass off' products-inferior goods sold under famous brand names. We initiate civil suits and criminal raids to cleanse the market of these fakes.</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-[#D2A02A] font-bold mr-2">3. Hand Tools Industry:</span>

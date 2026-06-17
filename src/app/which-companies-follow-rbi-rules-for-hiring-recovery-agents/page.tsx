@@ -254,7 +254,7 @@ export default function WhichCompaniesFollowRbiRulesPage() {
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Quick Direct Answer</h2>
                   <div className="bg-amber-50 border-l-4 border-[#D2A02A] p-4 md:p-6 rounded-r-lg">
                     <p className="text-sm md:text-lg leading-relaxed text-gray-900 font-semibold">
-                      All Reserve Bank of India (RBI) regulated financial entities—including commercial banks (e.g., Axis Bank, Kotak Mahindra Bank), Non-Banking Financial Companies (NBFCs like Bajaj Finance), co-operative banks, and Asset Reconstruction Companies (ARCs)—are legally mandated to strictly follow RBI rules and circulars when hiring and managing third-party recovery agents.
+                      All Reserve Bank of India (RBI) regulated financial entities-including commercial banks (e.g., Axis Bank, Kotak Mahindra Bank), Non-Banking Financial Companies (NBFCs like Bajaj Finance), co-operative banks, and Asset Reconstruction Companies (ARCs)-are legally mandated to strictly follow RBI rules and circulars when hiring and managing third-party recovery agents.
                     </p>
                   </div>
                 </section>
@@ -301,7 +301,7 @@ export default function WhichCompaniesFollowRbiRulesPage() {
                     Permissible Communication Hours
                   </h3>
                   <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                    Under these directives, recovery agents are bound by strict calling and visiting hours. They are permitted to contact or visit a borrower only between <strong>8:00 AM and 7:00 PM</strong>. Any communication—whether a phone call, WhatsApp text, or physical visit to a home or workplace—initiated before 8:00 AM or after 7:00 PM is a direct violation of the circular. Lenders cannot defend late-night calls by claiming the borrower was unreachable during the day; the window is absolute.
+                    Under these directives, recovery agents are bound by strict calling and visiting hours. They are permitted to contact or visit a borrower only between <strong>8:00 AM and 7:00 PM</strong>. Any communication-whether a phone call, WhatsApp text, or physical visit to a home or workplace-initiated before 8:00 AM or after 7:00 PM is a direct violation of the circular. Lenders cannot defend late-night calls by claiming the borrower was unreachable during the day; the window is absolute.
                   </p>
 
                   <h3 className="text-lg md:text-xl font-bold text-gray-900 mt-6 mb-3">
@@ -494,13 +494,13 @@ export default function WhichCompaniesFollowRbiRulesPage() {
                       <p className="text-gray-700 italic mb-4">
                         "I can’t thank enough to the team of AMA legal solutions, because of them, my life became easy, and I didn’t have to deal with the harassment calls and certainly helped me to close my loans with a complete legal support and guidance."
                       </p>
-                      <p className="font-bold text-gray-900 text-right">— Surendra Rao</p>
+                      <p className="font-bold text-gray-900 text-right">- Surendra Rao</p>
                     </div>
                     <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 relative">
                       <p className="text-gray-700 italic mb-4">
                         "The Ama legal Solutions staffs demonstrated exceptional professionalism, clarity, and dedication throughout the process. Their team is responsive, knowledgeable, and handles the matter with great attention to detail. I truly appreciate their timely support and effective guidance, and I would recommend their services."
                       </p>
-                      <p className="font-bold text-gray-900 text-right">— Imlitoshi Sangtam</p>
+                      <p className="font-bold text-gray-900 text-right">- Imlitoshi Sangtam</p>
                     </div>
                   </div>
                 </section>

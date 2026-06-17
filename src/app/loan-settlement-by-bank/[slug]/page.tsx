@@ -284,7 +284,7 @@ export default async function BankSlugPage({ params }: { params: any }) {
                 <section id="what-is-settlement" className="scroll-mt-32 bg-gray-50 p-8 rounded-xl border border-gray-100"> 
                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">What Exactly is a Loan Settlement for {bankName}?</h2> 
                   <p className="text-base md:text-lg leading-relaxed mb-6 text-gray-700"> 
-                    Many borrowers confuse a settlement with a simple loan closure or an EMI restructuring. To clarify, a <strong>loan settlement for {bankName}</strong>—often officially referred to in the banking sector as a One Time Settlement (OTS)—is a mutual agreement reached between you (the borrower) and the financial institution ({bankName}). 
+                    Many borrowers confuse a settlement with a simple loan closure or an EMI restructuring. To clarify, a <strong>loan settlement for {bankName}</strong>-often officially referred to in the banking sector as a One Time Settlement (OTS)-is a mutual agreement reached between you (the borrower) and the financial institution ({bankName}). 
                   </p>
                   <p className="text-base md:text-lg leading-relaxed mb-6 text-gray-700">
                     When you demonstrate a provable inability to repay the full outstanding amount due to severe financial distress, the bank may agree to accept a final lump-sum payment that is significantly reduced compared to your actual balance. This waiver can sometimes range between 40% to 70% of the total outstanding amount, largely depending on the age of the default and how effectively your case is presented. Once this negotiated amount is paid, {bankName} will officially close the loan account. By initiating a loan settlement for {bankName} through a qualified legal advocate, you shift the dynamic of power, forcing the bank to negotiate on legal terms rather than resorting to intimidation tactics.
@@ -354,7 +354,7 @@ export default async function BankSlugPage({ params }: { params: any }) {
                     <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
                     <p className="text-lg md:text-xl italic text-gray-200 mb-8 font-light relative z-10 border-l-4 border-[#D2A02A] pl-6"> 
                       "The recovery of loans must strictly be executed within the recognized boundaries of the law. Banks, NBFCs, and their authorized agents cannot under any circumstances resort to intimidation, verbal abuse, or physical harassment." <br/>
-                      <span className="text-sm font-bold mt-2 block text-[#D2A02A]">— Master Circular, Reserve Bank of India (RBI)</span>
+                      <span className="text-sm font-bold mt-2 block text-[#D2A02A]">- Master Circular, Reserve Bank of India (RBI)</span>
                     </p> 
                     <div className="grid md:grid-cols-2 gap-6 relative z-10"> 
                       <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 hover:bg-white/20 transition-all"> 
@@ -431,7 +431,7 @@ export default async function BankSlugPage({ params }: { params: any }) {
                       <div className="flex items-center justify-center w-16 h-16 rounded-full border-4 border-white bg-[#2d3748] text-white font-bold text-2xl shadow-lg shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">3</div> 
                       <div className="w-[calc(100%-5rem)] md:w-[calc(50%-4rem)] bg-white p-8 rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition-shadow"> 
                         <h3 className="font-bold text-2xl text-gray-900 mb-3">Aggressive Legal Negotiation</h3> 
-                        <p className="text-gray-600 text-base leading-relaxed">This is where our expertise shines. Our veteran advocates and settlement experts negotiate back-and-forth directly with senior regional recovery managers at {bankName}. We employ legal leverage to aggressively strip away years of accumulated penal interest, hidden charges, and late fees, fighting relentlessly to secure a massive waiver—sometimes up to 60-75%—on the core principal amount.</p> 
+                        <p className="text-gray-600 text-base leading-relaxed">This is where our expertise shines. Our veteran advocates and settlement experts negotiate back-and-forth directly with senior regional recovery managers at {bankName}. We employ legal leverage to aggressively strip away years of accumulated penal interest, hidden charges, and late fees, fighting relentlessly to secure a massive waiver-sometimes up to 60-75%-on the core principal amount.</p> 
                       </div> 
                     </div> 
 

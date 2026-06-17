@@ -345,7 +345,7 @@ export default function LegalServicesPage() {
                 <section id="accessibility" className="scroll-mt-32">
                   <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6">Why Accessible Legal Support Matters</h2>
                   <p className="text-sm md:text-lg leading-relaxed text-gray-700">
-                    Legal issues often touch upon the most personal and critical aspects of our lives—our families, our homes, our businesses, and our freedom. Accessible legal support means having a trusted advisor who can explain your rights in simple terms and guide you through the maze of statutes and regulations. It means having someone to stand by your side when you are vulnerable. At AMA Legal Solutions, we prioritize accessibility by offering multiple channels of communication, including video consultations, phone support, and local office visits, ensuring that expert help is always within your reach.
+                    Legal issues often touch upon the most personal and critical aspects of our lives-our families, our homes, our businesses, and our freedom. Accessible legal support means having a trusted advisor who can explain your rights in simple terms and guide you through the maze of statutes and regulations. It means having someone to stand by your side when you are vulnerable. At AMA Legal Solutions, we prioritize accessibility by offering multiple channels of communication, including video consultations, phone support, and local office visits, ensuring that expert help is always within your reach.
                   </p>
                 </section>
 
@@ -491,7 +491,7 @@ export default function LegalServicesPage() {
                         <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-xl">📝</div>
                         <div>
                           <h4 className="font-bold text-gray-900 text-lg">Cheque Bounce Cases</h4>
-                          <p className="text-sm text-gray-600">Comprehensive legal support for Section 138 NI Act cases—from sending the legal notice to representing you in summary trials.</p>
+                          <p className="text-sm text-gray-600">Comprehensive legal support for Section 138 NI Act cases-from sending the legal notice to representing you in summary trials.</p>
                         </div>
                       </div>
                       <div className="flex gap-4">
@@ -530,7 +530,7 @@ export default function LegalServicesPage() {
                       The digital age has transformed how legal services are delivered. Online legal consultations offer credible, efficient, and cost-effective solutions for many common legal issues. They are ideal for contract reviews, legal advice, drafting notices, and filing trademark applications. You can upload documents securely, chat with a lawyer instantly, and get work done without stepping out of your home.
                     </p>
                     <p>
-                      However, some matters still require a personal touch. Complex litigation, criminal trials, and sensitive family negotiations often benefit from face-to-face interactions. At AMA Legal Solutions, we offer a hybrid model. You can start your journey online for convenience and switch to offline meetings when deep strategic discussions or court appearances are required. This flexibility ensures you get the best of both worlds—efficiency and personalized care.
+                      However, some matters still require a personal touch. Complex litigation, criminal trials, and sensitive family negotiations often benefit from face-to-face interactions. At AMA Legal Solutions, we offer a hybrid model. You can start your journey online for convenience and switch to offline meetings when deep strategic discussions or court appearances are required. This flexibility ensures you get the best of both worlds-efficiency and personalized care.
                     </p>
                   </div>
                 </section>

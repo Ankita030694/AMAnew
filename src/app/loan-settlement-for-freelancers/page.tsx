@@ -680,11 +680,11 @@ export default function FreelancerLoanSettlement() {
               <div className="space-y-4 pt-2">
                 <div className="border-t border-gray-100 pt-3 space-y-1">
                   <p className="text-xs text-gray-600 italic">"As a freelance designer in Noida, my income dried up during a client transition. AMA Legal Solutions stopped the aggressive calls and helped me settle my personal loan."</p>
-                  <p className="text-[10px] text-gray-400 font-semibold text-right">— Rajiv Nambiar</p>
+                  <p className="text-[10px] text-gray-400 font-semibold text-right">- Rajiv Nambiar</p>
                 </div>
                 <div className="border-t border-gray-100 pt-3 space-y-1">
                   <p className="text-xs text-gray-600 italic">"Professional and compassionate. They negotiated my credit card settlement perfectly, keeping my business account active and protecting my rights."</p>
-                  <p className="text-[10px] text-gray-400 font-semibold text-right">— Sneha Kulkarni</p>
+                  <p className="text-[10px] text-gray-400 font-semibold text-right">- Sneha Kulkarni</p>
                 </div>
               </div>
             </div>

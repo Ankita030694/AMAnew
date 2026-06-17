@@ -655,11 +655,11 @@ export default function RestaurantLoanSettlement() {
               <div className="space-y-4 pt-2">
                 <div className="border-t border-gray-100 pt-3 space-y-1">
                   <p className="text-xs text-gray-600 italic">"After lockdowns and aggregator commission hikes, our cafe in Connaught Place was in deep debt. AMA Legal Solutions helped us settle three business loans and stop recovery harassment."</p>
-                  <p className="text-[10px] text-gray-400 font-semibold text-right">— Rajesh Khanna</p>
+                  <p className="text-[10px] text-gray-400 font-semibold text-right">- Rajesh Khanna</p>
                 </div>
                 <div className="border-t border-gray-100 pt-3 space-y-1">
                   <p className="text-xs text-gray-600 italic">"Extremely professional experience. They guided us through the complex corporate guarantee and SARFAESI challenges when our cloud kitchen defaulted."</p>
-                  <p className="text-[10px] text-gray-400 font-semibold text-right">— Karan Gill</p>
+                  <p className="text-[10px] text-gray-400 font-semibold text-right">- Karan Gill</p>
                 </div>
               </div>
             </div>

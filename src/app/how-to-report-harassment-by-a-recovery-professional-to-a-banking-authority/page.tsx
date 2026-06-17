@@ -109,7 +109,7 @@ const reviewSchema = {
         "@type": "Person",
         "name": "Ganesh Pawar"
       },
-      "reviewBody": "I approached AMA Legal Solution during a challenging time, and I must say—it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined."
+      "reviewBody": "I approached AMA Legal Solution during a challenging time, and I must say-it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined."
     },
     {
       "@type": "Review",
@@ -278,7 +278,7 @@ export default function ReportRecoveryHarassmentPage() {
                   </ul>
                   <h3 className="text-lg md:text-xl font-bold text-gray-900 mt-6 mb-3">Designated Calling Hours and Contact Restrictions</h3>
                   <p className="text-sm md:text-lg leading-relaxed text-gray-700">
-                    To prevent recovery professionals from disrupting the personal lives of consumers, the central bank has set rigid boundaries around contact hours. Recovery agents are legally permitted to call or visit you only between <strong>8:00 AM and 7:00 PM</strong>. Calls or visits outside this window—such as late-night threats or early-morning wake-up calls—are severe violations of the <strong>Integrated Ombudsman Scheme</strong> and should be documented immediately. Furthermore, agents are prohibited from calling you at your workplace if you have explicitly requested them to contact you only on your personal phone numbers.
+                    To prevent recovery professionals from disrupting the personal lives of consumers, the central bank has set rigid boundaries around contact hours. Recovery agents are legally permitted to call or visit you only between <strong>8:00 AM and 7:00 PM</strong>. Calls or visits outside this window-such as late-night threats or early-morning wake-up calls-are severe violations of the <strong>Integrated Ombudsman Scheme</strong> and should be documented immediately. Furthermore, agents are prohibited from calling you at your workplace if you have explicitly requested them to contact you only on your personal phone numbers.
                   </p>
                 </section>
 
@@ -421,27 +421,27 @@ export default function ReportRecoveryHarassmentPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 relative">
                       <p className="text-gray-700 italic mb-4">
-                        &quot;I approached AMA Legal Solution during a challenging time, and I must say—it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined.&quot;
+                        &quot;I approached AMA Legal Solution during a challenging time, and I must say-it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined.&quot;
                       </p>
-                      <p className="font-bold text-gray-900 text-right">— Ganesh Pawar</p>
+                      <p className="font-bold text-gray-900 text-right">- Ganesh Pawar</p>
                     </div>
                     <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 relative">
                       <p className="text-gray-700 italic mb-4">
                         &quot;Recommending Anuj in itself is not enough. From the very first meeting he had been patient, attentive and genuinely committed to helping me understand everystep of the legal process in regards to settlement. He stood like a rock beside me.&quot;
                       </p>
-                      <p className="font-bold text-gray-900 text-right">— Samrat Basu</p>
+                      <p className="font-bold text-gray-900 text-right">- Samrat Basu</p>
                     </div>
                     <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 relative">
                       <p className="text-gray-700 italic mb-4">
                         &quot;I sincerely appreciate the support and guidance provided by the expert panel in resolving my credit card settlement process. Their approach was highly professional, transparent, and customer-focused. Every step was explained clearly.&quot;
                       </p>
-                      <p className="font-bold text-gray-900 text-right">— Santharaman Rajarajeswari</p>
+                      <p className="font-bold text-gray-900 text-right">- Santharaman Rajarajeswari</p>
                     </div>
                     <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 relative">
                       <p className="text-gray-700 italic mb-4">
                         &quot;Thanks for the legal advice provided by your team Adv.Anuj Anand Malik and the team. My case and query were resolved within no time and with personal touch they always kept me informed about my case.&quot;
                       </p>
-                      <p className="font-bold text-gray-900 text-right">— Shourya Sharma</p>
+                      <p className="font-bold text-gray-900 text-right">- Shourya Sharma</p>
                     </div>
                   </div>
                 </section>

@@ -271,7 +271,7 @@ export default async function Page({
         />
       )}
 
-      {/* SSR-rendered crawlable content — guaranteed in server HTML */}
+      {/* SSR-rendered crawlable content - guaranteed in server HTML */}
       <article className="sr-only" aria-hidden="true">
         <h1>{articleData.title}</h1>
         {articleData.date && <time dateTime={articleData.date}>{articleData.date}</time>}

@@ -338,7 +338,7 @@ export default function LoanArbitrationProcessPage() {
                     <div className="border-l-2 border-[#D2A02A] pl-4">
                       <h3 className="text-lg font-semibold text-gray-900 mb-2">Stage 2: The Appointment of the Arbitrator</h3>
                       <p className="mb-2">
-                        After the Section 21 notice is served, an arbitrator must be appointed. Historically, banks unilaterally appointed their own panel arbitrators—often retired judges or banking officers who favored the lender. However, recent judicial rulings have heavily restricted this practice, requiring mutual consent or court intervention.
+                        After the Section 21 notice is served, an arbitrator must be appointed. Historically, banks unilaterally appointed their own panel arbitrators-often retired judges or banking officers who favored the lender. However, recent judicial rulings have heavily restricted this practice, requiring mutual consent or court intervention.
                       </p>
                       <p className="text-sm text-gray-500">
                         Borrower Safeguard: You have the right to object to any biased arbitrator appointed unilaterally by the bank.
@@ -402,12 +402,12 @@ export default function LoanArbitrationProcessPage() {
                     Although arbitration represents a formal legal escalation, it is also a highly effective catalyst for negotiating a settlement. For banks and NBFCs, pursuing an arbitration to its final conclusion and executing it in a civil court is an expensive, time-consuming process that can take years.
                   </p>
                   <p className="mb-4">
-                    When you respond to an arbitration notice with a strong, legally sound defense—specifically challenging procedural defects—you signal to the lender that recovering the money will not be easy. Rather than engaging in a prolonged legal battle, lenders are often highly motivated to offer a **One-Time Settlement (OTS)**.
+                    When you respond to an arbitration notice with a strong, legally sound defense-specifically challenging procedural defects-you signal to the lender that recovering the money will not be easy. Rather than engaging in a prolonged legal battle, lenders are often highly motivated to offer a **One-Time Settlement (OTS)**.
                   </p>
 
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Negotiating a Settlement</h3>
                   <p className="mb-4">
-                    In an OTS, the lender agrees to accept a single lump-sum payment—often representing a waiver of 50% to 70% of the total outstanding interest and principal—in exchange for closing the loan account. This is particularly true for unsecured loans (personal loans and credit card debts) where the lender has no physical property to seize easily.
+                    In an OTS, the lender agrees to accept a single lump-sum payment-often representing a waiver of 50% to 70% of the total outstanding interest and principal-in exchange for closing the loan account. This is particularly true for unsecured loans (personal loans and credit card debts) where the lender has no physical property to seize easily.
                   </p>
 
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Recording the OTS as a \"Consent Award\" (Section 30)</h3>
@@ -443,12 +443,12 @@ export default function LoanArbitrationProcessPage() {
                     Under Section 43 of the Arbitration Act, the **Limitation Act, 1963** applies to arbitration proceedings. The limitation period for debt recovery is **three years** from the date the cause of action arises (generally the date of default or NPA classification).
                   </p>
                   <p className="mb-4">
-                    If the lender sends the Section 21 notice more than three years after you defaulted—without you signing any balance confirmation or making payments that extend the limitation period—the claim is legally time-barred. You can raise this as a preliminary objection under Section 16 of the Act, and the arbitrator must dismiss the case.
+                    If the lender sends the Section 21 notice more than three years after you defaulted-without you signing any balance confirmation or making payments that extend the limitation period-the claim is legally time-barred. You can raise this as a preliminary objection under Section 16 of the Act, and the arbitrator must dismiss the case.
                   </p>
 
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">3. Forum Shopping: Arbitration vs. DRT</h3>
                   <p className="mb-4">
-                    Lenders sometimes attempt to initiate multiple legal recovery actions simultaneously—such as filing a case in the Debt Recovery Tribunal (DRT) under the SARFAESI Act, and also starting a private arbitration. While courts generally allow concurrent remedies, you can challenge the bank's actions if they represent an abuse of process or \"forum shopping\" to harass the borrower.
+                    Lenders sometimes attempt to initiate multiple legal recovery actions simultaneously-such as filing a case in the Debt Recovery Tribunal (DRT) under the SARFAESI Act, and also starting a private arbitration. While courts generally allow concurrent remedies, you can challenge the bank's actions if they represent an abuse of process or \"forum shopping\" to harass the borrower.
                   </p>
                 </section>
 

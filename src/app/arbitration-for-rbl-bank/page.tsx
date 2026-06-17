@@ -329,7 +329,7 @@ export default function RBLArbitrationPage() {
 
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">How Sama ODR Platform Handles Disputes</h3>
                   <p className="mb-4 text-gray-700">
-                    RBL Bank utilizes government-recognized Online Dispute Resolution (ODR) portals, primarily Sama, to conduct its arbitration proceedings. Borrowers are notified of these actions via digital channels, receiving emails, WhatsApp messages, or SMS links directing them to the portal. The entire dispute is handled virtually—pleadings are uploaded digitally, and hearings are conducted via online video calls. It is vital to enter a formal appearance on these platforms to ensure your objections are recorded.
+                    RBL Bank utilizes government-recognized Online Dispute Resolution (ODR) portals, primarily Sama, to conduct its arbitration proceedings. Borrowers are notified of these actions via digital channels, receiving emails, WhatsApp messages, or SMS links directing them to the portal. The entire dispute is handled virtually-pleadings are uploaded digitally, and hearings are conducted via online video calls. It is vital to enter a formal appearance on these platforms to ensure your objections are recorded.
                   </p>
                 </section>
 

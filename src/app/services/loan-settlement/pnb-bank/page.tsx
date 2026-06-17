@@ -218,7 +218,7 @@ export default function PNBLoanSettlementPage() {
               Punjab National Bank (PNB) is one of India's largest Public Sector Banks (PSUs). Unlike private banks, PNB follows strict government guidelines and RBI circulars for debt recovery. While this means more bureaucracy, it also means more structured and transparent settlement policies like the <strong>One Time Settlement (OTS)</strong> schemes.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              However, dealing with PNB officials can be daunting. The fear of SARFAESI action (for secured loans) or Section 138 cases (for cheque bounce) is real. At AMA Legal Solutions, we bridge the gap. We understand the internal hierarchy of PNB—from the Branch Manager to the Circle Office—and use this knowledge to negotiate the best settlement for you.
+              However, dealing with PNB officials can be daunting. The fear of SARFAESI action (for secured loans) or Section 138 cases (for cheque bounce) is real. At AMA Legal Solutions, we bridge the gap. We understand the internal hierarchy of PNB-from the Branch Manager to the Circle Office-and use this knowledge to negotiate the best settlement for you.
             </p>
           </div>
 

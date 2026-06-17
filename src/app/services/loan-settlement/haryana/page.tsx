@@ -247,7 +247,7 @@ export default function HaryanaLoanSettlementPage() {
                   
                   <h3 className="text-2xl font-semibold text-gray-900 mb-4">Punjab & Haryana High Court on Harassment</h3>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    The Hon'ble Punjab & Haryana High Court has consistently upheld the dignity of borrowers. In recent judgments (e.g., regarding pension recovery), the Court has emphasized that <strong>recovery cannot be made in an arbitrary manner</strong> without due process. This principle extends to private debt as well—banks cannot use "musclemen" or extra-judicial tactics to recover dues.
+                    The Hon'ble Punjab & Haryana High Court has consistently upheld the dignity of borrowers. In recent judgments (e.g., regarding pension recovery), the Court has emphasized that <strong>recovery cannot be made in an arbitrary manner</strong> without due process. This principle extends to private debt as well-banks cannot use "musclemen" or extra-judicial tactics to recover dues.
                   </p>
 
                   <h3 className="text-2xl font-semibold text-gray-900 mb-4">Gurugram Police & Cyber Cell Action</h3>

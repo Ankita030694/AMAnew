@@ -91,7 +91,7 @@ const reviewSnippets = [
     name: "Ganesh Pawar",
     initial: "G",
     location: "Maharashtra",
-    comment: "I approached AMA Legal Solution during a challenging time, and I must say—it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined."
+    comment: "I approached AMA Legal Solution during a challenging time, and I must say-it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined."
   },
   {
     name: "Sk Nazir",
@@ -280,7 +280,7 @@ export default function SettleYourLoansExpertPanelPage() {
                   </p>
                   <div className="space-y-6 text-sm md:text-lg leading-relaxed text-gray-700 text-justify">
                     <p>
-                      The Indian credit landscape has transformed with the introduction of digital lending platforms and automated credit assessment engines. Borrowers can now secure loans with a few taps on their mobile screens. However, when economic setbacks occur—such as sudden organizational layoffs, business declines, or major medical expenses—the burden of debt can become unmanageable.
+                      The Indian credit landscape has transformed with the introduction of digital lending platforms and automated credit assessment engines. Borrowers can now secure loans with a few taps on their mobile screens. However, when economic setbacks occur-such as sudden organizational layoffs, business declines, or major medical expenses-the burden of debt can become unmanageable.
                     </p>
                     <p>
                       Defaults often lead to significant psychological stress. Borrowers frequently face aggressive, illegal tactics from third-party recovery agencies, including calls at inappropriate hours, visits to workplaces, or calls to references and contacts.
@@ -296,7 +296,7 @@ export default function SettleYourLoansExpertPanelPage() {
                   <h2 className="text-xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-6">What Does It Mean to Settle Your Loans?</h2>
                   <div className="space-y-6 text-sm md:text-lg leading-relaxed text-gray-700 text-justify">
                     <p>
-                      Settling a loan involves a formal agreement where the lender accepts a reduced lump-sum payment—often significantly lower than the total outstanding balance—to close the debt account permanently. Lenders negotiate compromise settlements when they recognize a borrower's genuine financial distress, preferring to recover a portion of the dues over writing off the entire debt as a loss.
+                      Settling a loan involves a formal agreement where the lender accepts a reduced lump-sum payment-often significantly lower than the total outstanding balance-to close the debt account permanently. Lenders negotiate compromise settlements when they recognize a borrower's genuine financial distress, preferring to recover a portion of the dues over writing off the entire debt as a loss.
                     </p>
                     <p>
                       Once a One-Time Settlement (OTS) is paid and the lender issues a No Objection Certificate (NOC), the borrower is protected from future recovery actions, legal notices, or civil suits regarding that specific debt. This agreement helps stop the growth of default interest, penal fees, and administrative charges.

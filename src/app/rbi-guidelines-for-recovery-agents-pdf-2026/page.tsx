@@ -212,7 +212,7 @@ export default function RBIRecoveryAgents2026Guide() {
               </p>
               <h3 className="text-xl font-bold text-[#30261C] mb-3">What is the Legal Authority of RBI Circulars?</h3>
               <p>
-                RBI directives, master circulars, and directions are not mere suggestions; they carry statutory authority. Under Section 21 and Section 35A of the Banking Regulation Act, 1949, alongside relevant provisions of the Reserve Bank of India Act, 1934, and the Non-Banking Financial Companies (NBFC) regulations, these guidelines are legally binding. Lenders classified as Regulated Entities (REs)—which include commercial banks, cooperative banks, NBFCs, and asset reconstruction companies—must comply fully with these directives. Any violation of these codes constitutes a direct regulatory breach, exposing the financial institution to heavy monetary penalties, operational restrictions, and severe reputational damage.
+                RBI directives, master circulars, and directions are not mere suggestions; they carry statutory authority. Under Section 21 and Section 35A of the Banking Regulation Act, 1949, alongside relevant provisions of the Reserve Bank of India Act, 1934, and the Non-Banking Financial Companies (NBFC) regulations, these guidelines are legally binding. Lenders classified as Regulated Entities (REs)-which include commercial banks, cooperative banks, NBFCs, and asset reconstruction companies-must comply fully with these directives. Any violation of these codes constitutes a direct regulatory breach, exposing the financial institution to heavy monetary penalties, operational restrictions, and severe reputational damage.
               </p>
             </section>
 
@@ -290,7 +290,7 @@ export default function RBIRecoveryAgents2026Guide() {
               <h2 className="text-3xl font-bold text-[#30261C] mb-6">Specific Protections for Digital Lending and Loan Apps</h2>
               <h3 className="text-xl font-bold text-[#30261C] mb-3">The Role of Lending Service Providers (LSPs)</h3>
               <p>
-                The rise of digital lending has introduced new operational dynamics. When banks and NBFCs partner with digital lending apps—referred to as Lending Service Providers (LSPs)—they must ensure these digital platforms adhere to the same stringent recovery standards. Under the RBI's Digital Lending Guidelines, the LSP must clearly disclose the name of the empanelled recovery agent to the borrower at the time of loan execution. Any digital communication, automated reminder, or follow-up call initiated by the app must stay within the legal boundary of 8:00 AM to 7:00 PM and avoid invasive digital tracking.
+                The rise of digital lending has introduced new operational dynamics. When banks and NBFCs partner with digital lending apps-referred to as Lending Service Providers (LSPs)-they must ensure these digital platforms adhere to the same stringent recovery standards. Under the RBI's Digital Lending Guidelines, the LSP must clearly disclose the name of the empanelled recovery agent to the borrower at the time of loan execution. Any digital communication, automated reminder, or follow-up call initiated by the app must stay within the legal boundary of 8:00 AM to 7:00 PM and avoid invasive digital tracking.
               </p>
               <h3 className="text-xl font-bold text-[#30261C] mb-3">How to Spot and Handle Unregulated Loan App Scams</h3>
               <p>

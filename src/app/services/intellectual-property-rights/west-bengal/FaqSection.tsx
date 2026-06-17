@@ -17,7 +17,7 @@ const FaqSection = () => {
     {
       question: "What are the famous GI tags of West Bengal?",
       answer:
-        "West Bengal is home to the first GI tag in India—Darjeeling Tea. Other prominent GI tags include Nakshi Kantha, Santiniketan Leather Goods, Baluchari Saree, Dhaniakhali Saree, Joynagarer Moa, and Bardhaman Sitabhog. These tags protect the unique heritage and quality of Bengal's products.",
+        "West Bengal is home to the first GI tag in India-Darjeeling Tea. Other prominent GI tags include Nakshi Kantha, Santiniketan Leather Goods, Baluchari Saree, Dhaniakhali Saree, Joynagarer Moa, and Bardhaman Sitabhog. These tags protect the unique heritage and quality of Bengal's products.",
     },
     {
       question: "Are there any IPR subsidies for startups in West Bengal?",

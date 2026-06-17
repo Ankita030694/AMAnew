@@ -237,7 +237,7 @@ export default function DbsBankLoanSettlementPage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">DBS Bank: The "Asian" Giant with Aggressive Recovery</h2>
               <div className="bg-gray-50 rounded-2xl p-8 border-l-4 border-[#FF3333] mb-8">
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  <strong>DBS Bank India Limited (DBIL)</strong> is a wholly-owned subsidiary of DBS Bank Ltd, Singapore. While they market themselves as "Asia's Safest Bank," their approach to debt recovery in India is anything but gentle. After acquiring the struggling <strong>Lakshmi Vilas Bank (LVB)</strong>, DBS significantly expanded its physical footprint, but its core lending engine remains <strong>Digibank</strong>—a digital-first platform that disburses loans in minutes.
+                  <strong>DBS Bank India Limited (DBIL)</strong> is a wholly-owned subsidiary of DBS Bank Ltd, Singapore. While they market themselves as "Asia's Safest Bank," their approach to debt recovery in India is anything but gentle. After acquiring the struggling <strong>Lakshmi Vilas Bank (LVB)</strong>, DBS significantly expanded its physical footprint, but its core lending engine remains <strong>Digibank</strong>-a digital-first platform that disburses loans in minutes.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
                   This "Click-and-Loan" model has led to a surge in defaults. Borrowers often take personal loans or credit cards (like the <strong>Bajaj Finserv DBS SuperCard</strong>) without fully understanding the high interest rates and strict repayment terms. When financial hardship strikes, DBS Bank's recovery machinery kicks in.

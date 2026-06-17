@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     question: "Where is the Patent Office for Tripura applicants?",
-    answer: "For applicants based in Tripura, the appropriate jurisdiction for patent filing is the Patent Office in Kolkata. However, the entire process—from filing to hearings—can be conducted online. Our digital-first approach ensures that you can secure your patent rights without needing to visit the office physically."
+    answer: "For applicants based in Tripura, the appropriate jurisdiction for patent filing is the Patent Office in Kolkata. However, the entire process-from filing to hearings-can be conducted online. Our digital-first approach ensures that you can secure your patent rights without needing to visit the office physically."
   },
   {
     question: "What are the famous GI Tags from Tripura?",

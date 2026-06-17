@@ -681,11 +681,11 @@ export default function InsuranceAgentLoanSettlement() {
               <div className="space-y-4 pt-2">
                 <div className="border-t border-gray-100 pt-3 space-y-1">
                   <p className="text-xs text-gray-600 italic">"As an insurance advisor in Delhi NCR, a major policy lapse cycle led to personal loan defaults. Lenders started calling my agency clients. AMA Legal Solutions stepped in, stopped the client calls, and helped me settle my unsecured loans with a 60% haircut."</p>
-                  <p className="text-[10px] text-gray-400 font-semibold text-right">— Harish Rawat</p>
+                  <p className="text-[10px] text-gray-400 font-semibold text-right">- Harish Rawat</p>
                 </div>
                 <div className="border-t border-gray-100 pt-3 space-y-1">
                   <p className="text-xs text-gray-600 italic">"Extremely professional advice. They handled my business overdraft settlement perfectly, keeping my agency operations active and protecting my IRDAI license."</p>
-                  <p className="text-[10px] text-gray-400 font-semibold text-right">— Nalini Deshmukh</p>
+                  <p className="text-[10px] text-gray-400 font-semibold text-right">- Nalini Deshmukh</p>
                 </div>
               </div>
             </div>

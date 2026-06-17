@@ -227,7 +227,7 @@ export default function JaipurLoanSettlementPage() {
                   </p>
                   <h3 className="text-2xl font-semibold text-gray-900 mb-4">Why Banks Agree to Settle</h3>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Pursuing a legal case is expensive and time-consuming for banks. If you can prove genuine financial hardship—like a business loss or medical emergency—banks prefer to recover what they can immediately. We help you present this "Proof of Hardship" professionally to maximize your waiver.
+                    Pursuing a legal case is expensive and time-consuming for banks. If you can prove genuine financial hardship-like a business loss or medical emergency-banks prefer to recover what they can immediately. We help you present this "Proof of Hardship" professionally to maximize your waiver.
                   </p>
                 </section>
 

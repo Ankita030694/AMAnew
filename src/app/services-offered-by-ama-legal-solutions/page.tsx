@@ -125,7 +125,7 @@ const reviewSchema = {
         "@type": "Person",
         "name": "Ganesh Pawar"
       },
-      "reviewBody": "I approached AMA Legal Solution during a challenging time, and I must say—it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined."
+      "reviewBody": "I approached AMA Legal Solution during a challenging time, and I must say-it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined."
     },
     {
       "@type": "Review",
@@ -454,31 +454,31 @@ export default function ServicesOfferedPage() {
                       <p className="text-gray-700 italic mb-3">
                         "The Ama legal Solutions staffs demonstrated exceptional professionalism, clarity, and dedication throughout the process. Their team is responsive, knowledgeable, and handles the matter with great attention to detail. I truly appreciate their timely support and effective guidance, and I would highly recommend their services."
                       </p>
-                      <span className="font-bold text-gray-900 text-sm">— Imlitoshi Sangtam</span>
+                      <span className="font-bold text-gray-900 text-sm">- Imlitoshi Sangtam</span>
                     </div>
                     <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100 relative">
                       <p className="text-gray-700 italic mb-3">
-                        "I approached AMA Legal Solution during a challenging time, and I must say—it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined."
+                        "I approached AMA Legal Solution during a challenging time, and I must say-it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined."
                       </p>
-                      <span className="font-bold text-gray-900 text-sm">— Ganesh Pawar</span>
+                      <span className="font-bold text-gray-900 text-sm">- Ganesh Pawar</span>
                     </div>
                     <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100 relative">
                       <p className="text-gray-700 italic mb-3">
                         "Recommending Anuj in itself is not enough. From the very first meeting he had been patient, attentive and genuinely committed to helping me understand everystep of the legal process in regards to settlement. He stood like a rock beside me."
                       </p>
-                      <span className="font-bold text-gray-900 text-sm">— Samrat Basu</span>
+                      <span className="font-bold text-gray-900 text-sm">- Samrat Basu</span>
                     </div>
                     <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100 relative">
                       <p className="text-gray-700 italic mb-3">
                         "I want to clarify that this is real ama legal solutions which deals in loansettlements and other legal services which is situated in sector 57 gurugam run by Anuj Anand Malik who is the only owner."
                       </p>
-                      <span className="font-bold text-gray-900 text-sm">— Bhavya Jain</span>
+                      <span className="font-bold text-gray-900 text-sm">- Bhavya Jain</span>
                     </div>
                     <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100 relative">
                       <p className="text-gray-700 italic mb-3">
                         "I can’t thank enough to the team of AMA legal solutions, because of them, my life became easy, and I didn’t have to deal with the harassment calls and certainly helped me to close my loans with a complete legal support and guidance."
                       </p>
-                      <span className="font-bold text-gray-900 text-sm">— Surendra Rao</span>
+                      <span className="font-bold text-gray-900 text-sm">- Surendra Rao</span>
                     </div>
                   </div>
                 </section>

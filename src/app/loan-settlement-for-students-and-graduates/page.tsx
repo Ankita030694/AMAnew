@@ -679,11 +679,11 @@ export default function StudentAndGraduateLoanSettlement() {
               <div className="space-y-4 pt-2">
                 <div className="border-t border-gray-100 pt-3 space-y-1">
                   <p className="text-xs text-gray-600 italic">"After graduating from an engineering college in Delhi, I struggled to secure a job during the IT downturn. My education loan went into default, and banks started harassing my father. AMA Legal Solutions helped us settle with a 65% haircut, bringing us massive relief."</p>
-                  <p className="text-[10px] text-gray-400 font-semibold text-right">— Aditya Vardhan</p>
+                  <p className="text-[10px] text-gray-400 font-semibold text-right">- Aditya Vardhan</p>
                 </div>
                 <div className="border-t border-gray-100 pt-3 space-y-1">
                   <p className="text-xs text-gray-600 italic">"Highly professional banking advocates. They stopped the abusive recovery calls to our relatives and helped us negotiate a structured installment settlement for my MBA loan."</p>
-                  <p className="text-[10px] text-gray-400 font-semibold text-right">— Priyanka Nair</p>
+                  <p className="text-[10px] text-gray-400 font-semibold text-right">- Priyanka Nair</p>
                 </div>
               </div>
             </div>

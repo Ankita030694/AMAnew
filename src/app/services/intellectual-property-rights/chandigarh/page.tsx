@@ -208,7 +208,7 @@ export default function ChandigarhIPRPage() {
                     Chandigarh, widely celebrated as "The City Beautiful," is the first planned city of modern India and serves as a beacon of progress, urban planning, and economic vitality. As the joint capital of Punjab and Haryana, it is not merely an administrative hub but a pulsating center of commerce, education, and technology. The city's landscape has evolved dramatically, with the rapid expansion of the **Rajiv Gandhi Chandigarh Technology Park (RGCTP)** creating a new silicone valley in the north, and the bustling **Industrial Areas of Phase I and II** continuing to be the backbone of manufacturing.
                   </p>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    In this hyper-competitive environment, where startups are launching daily in Coworking spaces across Sector 17 and Sector 34, and established manufacturers are expanding their global footprint, **Intellectual Property Rights (IPR)** have emerged as the most critical asset. Whether you are a tech startup developing a new SaaS platform in IT Park, a pharmaceutical manufacturer in the vicinity of Baddi (managed from a Chandigarh corporate office), or a heritage retail brand in Sector 22, your intangible assets—brand names, inventions, designs, and creative content—often hold more value than your physical inventory.
+                    In this hyper-competitive environment, where startups are launching daily in Coworking spaces across Sector 17 and Sector 34, and established manufacturers are expanding their global footprint, **Intellectual Property Rights (IPR)** have emerged as the most critical asset. Whether you are a tech startup developing a new SaaS platform in IT Park, a pharmaceutical manufacturer in the vicinity of Baddi (managed from a Chandigarh corporate office), or a heritage retail brand in Sector 22, your intangible assets-brand names, inventions, designs, and creative content-often hold more value than your physical inventory.
                   </p>
                   <p className="text-lg leading-relaxed text-gray-700">
                     At AMA Legal Solutions, we provide specialized, full-spectrum IPR services tailored to the unique needs of the Tri-City region (Chandigarh, Mohali, Panchkula). We understand that protecting your IP is not just a legal formality; it is a strategic business imperative to prevent imitation, secure market share, and ensure long-term growth in a globalized economy.
@@ -237,13 +237,13 @@ export default function ChandigarhIPRPage() {
                     <div className="border-l-4 border-[#D2A02A] pl-6">
                       <h3 className="text-xl font-bold text-gray-900 mb-2">Global Expansion</h3>
                       <p className="text-gray-700">
-                        Many Chandigarh-based businesses are exporters—sending auto parts, textiles, and software to Europe and North America. Securing IP rights ensures you can safely enter these markets without fear of infringing local rights or being copied by international competitors.
+                        Many Chandigarh-based businesses are exporters-sending auto parts, textiles, and software to Europe and North America. Securing IP rights ensures you can safely enter these markets without fear of infringing local rights or being copied by international competitors.
                       </p>
                     </div>
                     <div className="border-l-4 border-[#D2A02A] pl-6">
                       <h3 className="text-xl font-bold text-gray-900 mb-2">Legal Leverage</h3>
                       <p className="text-gray-700">
-                        Without registration, you are left with weak "common law" remedies that require proving reputation in court—a costly and uncertain process. Registration gives you a statutory right to sue for infringement, seize counterfeit goods, and claim damages with much greater ease.
+                        Without registration, you are left with weak "common law" remedies that require proving reputation in court-a costly and uncertain process. Registration gives you a statutory right to sue for infringement, seize counterfeit goods, and claim damages with much greater ease.
                       </p>
                     </div>
                   </div>
@@ -370,7 +370,7 @@ export default function ChandigarhIPRPage() {
                         Chandigarh falls under the territorial jurisdiction of the **Trade Marks Registry located in Dwarka, New Delhi**.
                       </p>
                       <p className="text-gray-700">
-                        **Implication:** You cannot walk into a local office in Sector 17 to file a trademark. All applications are filed electronically to Delhi. All show-cause hearings—where you defend your mark against an objection—are held at the Delhi Registry.
+                        **Implication:** You cannot walk into a local office in Sector 17 to file a trademark. All applications are filed electronically to Delhi. All show-cause hearings-where you defend your mark against an objection-are held at the Delhi Registry.
                         <br />
                         **Our Solution:** AMA Legal Solutions acts as your bridge. Our attorneys are regular practitioners at the Delhi Registry. We handle all filings digitally and appear physically for hearings, saving you the time and cost of travel.
                       </p>

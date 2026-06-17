@@ -207,13 +207,13 @@ export default function JharkhandIPRPage() {
                     Jharkhand is historically known for its rich mineral reserves and heavy industries in **Jamshedpur** (Tatanagar) and **Bokaro**. It is the bedrock of India's industrial might. However, the state is rapidly evolving. **Ranchi** is emerging as a smart city with a growing service sector, **Dhanbad** is diversifying its mining technology, and **Deoghar** is becoming a major tourism and cultural hub.
                   </p>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    In this shifting economic landscape, intangible assets—brand reputation, industrial designs, software innovations, and traditional knowledge—are becoming as valuable as steel and coal. A proprietary manufacturing process in Adityapur or a unique hospitality brand in Ranchi needs legal protection just as much as a physical factory does.
+                    In this shifting economic landscape, intangible assets-brand reputation, industrial designs, software innovations, and traditional knowledge-are becoming as valuable as steel and coal. A proprietary manufacturing process in Adityapur or a unique hospitality brand in Ranchi needs legal protection just as much as a physical factory does.
                   </p>
                   <p className="text-lg leading-relaxed text-gray-700">
                     **Intellectual Property Rights (IPR)** provide the legal framework to monetize these assets. Whether you are an MSME in the **Adityapur Industrial Area** needing to protect a machine design, or a tech startup in Ranchi looking to trademark your app name, securing your IP is the first step towards sustainable growth and creating a "moat" against competition.
                   </p>
                   <p className="text-lg leading-relaxed mt-6 text-gray-700">
-                    AMA Legal Solutions offers specialized IPR counsel for Jharkhand. We understand the local industrial ecosystem—from the coal belts to the tech parks—and provide seamless access to the national IP offices, ensuring your business is protected against unfair competition and infringement.
+                    AMA Legal Solutions offers specialized IPR counsel for Jharkhand. We understand the local industrial ecosystem-from the coal belts to the tech parks-and provide seamless access to the national IP offices, ensuring your business is protected against unfair competition and infringement.
                   </p>
                 </section>
 
@@ -233,7 +233,7 @@ export default function JharkhandIPRPage() {
                     <div className="border-l-4 border-[#D2A02A] pl-6">
                       <h3 className="text-xl font-bold text-gray-900 mb-2">Monetizing Innovation</h3>
                       <p className="text-gray-700">
-                        Jharkhand's MSMEs often innovate on the shop floor—improving machinery efficiency or creating better alloys. Without a patent, these improvements are easily copied. With a patent, you can license this technology to other factories for a royalty fee.
+                        Jharkhand's MSMEs often innovate on the shop floor-improving machinery efficiency or creating better alloys. Without a patent, these improvements are easily copied. With a patent, you can license this technology to other factories for a royalty fee.
                       </p>
                     </div>
                     <div className="border-l-4 border-[#D2A02A] pl-6">

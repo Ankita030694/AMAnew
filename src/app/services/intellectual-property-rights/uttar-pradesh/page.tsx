@@ -229,7 +229,7 @@ export default function UttarPradeshIPRPage() {
                      </p>
                  </div>
                  <p className="text-lg leading-relaxed text-gray-700">
-                    Furthermore, the state's focus on MSMEs (Micro, Small and Medium Enterprises) means that smaller players are now entering the global arena. For an MSME in Moradabad exporting brassware to the US, a registered trademark is not a luxury—it is a mandatory requirement for listing on global e-commerce platforms like Amazon and AliBaba.
+                    Furthermore, the state's focus on MSMEs (Micro, Small and Medium Enterprises) means that smaller players are now entering the global arena. For an MSME in Moradabad exporting brassware to the US, a registered trademark is not a luxury-it is a mandatory requirement for listing on global e-commerce platforms like Amazon and AliBaba.
                  </p>
               </section>
 
@@ -344,7 +344,7 @@ export default function UttarPradeshIPRPage() {
                     <div>
                         <h3 className="font-bold text-lg text-gray-900">The Leather Industry</h3>
                         <p className="text-gray-700 text-sm mt-1">
-                            For leather tanneries and saddlery manufacturers, the biggest threat is <strong>brand counterfeiting</strong> in overseas markets. We handle <strong>International Trademark Registration</strong> (Madrid Protocol) for Kanpur exporters, ensuring their brands are protected in the USA, UK, and Germany—key markets for equestrian gear.
+                            For leather tanneries and saddlery manufacturers, the biggest threat is <strong>brand counterfeiting</strong> in overseas markets. We handle <strong>International Trademark Registration</strong> (Madrid Protocol) for Kanpur exporters, ensuring their brands are protected in the USA, UK, and Germany-key markets for equestrian gear.
                         </p>
                     </div>
                     <div>
@@ -380,7 +380,7 @@ export default function UttarPradeshIPRPage() {
                      <div className="relative pl-8 border-l-4 border-gray-300">
                          <h3 className="text-xl font-bold text-gray-900">1. The High Court of Judicature at Allahabad</h3>
                          <p className="text-gray-700 mt-2">
-                             The Allahabad High Court, along with its Lucknow Bench, has original jurisdiction in certain IPR matters and appellate jurisdiction in others. It is known for granting <strong>John Doe Orders (Ashok Kumar Orders)</strong>, which are critical when the infringer's identity is unknown—a common scenario in wholesale markets like Kanpur and Varanasi.
+                             The Allahabad High Court, along with its Lucknow Bench, has original jurisdiction in certain IPR matters and appellate jurisdiction in others. It is known for granting <strong>John Doe Orders (Ashok Kumar Orders)</strong>, which are critical when the infringer's identity is unknown-a common scenario in wholesale markets like Kanpur and Varanasi.
                          </p>
                      </div>
 

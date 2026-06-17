@@ -367,7 +367,7 @@ export default function MizoramLoanSettlementPage() {
                       <div>
                         <h3 className="text-2xl font-bold text-gray-900 mb-3">Negotiation and Settlement</h3>
                         <p className="text-gray-700 leading-relaxed mb-4">
-                          Our experts negotiate with the bank's regional managers or authorized officers. We present your hardship case—be it medical emergency, business loss, or job loss—to justify a lower settlement amount. We aim for a waiver of all penalties and a significant reduction in the principal.
+                          Our experts negotiate with the bank's regional managers or authorized officers. We present your hardship case-be it medical emergency, business loss, or job loss-to justify a lower settlement amount. We aim for a waiver of all penalties and a significant reduction in the principal.
                         </p>
                       </div>
                     </div>

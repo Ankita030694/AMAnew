@@ -71,7 +71,7 @@ const BiharBankingClient = () => {
                   Bihar is witnessing a silent economic transformation. With a GDP growth rate consistently higher than the national average, the state is shedding its old image and emerging as a hub for agro-industries, food processing, and MSMEs. Central to this growth story is capital. Access to credit is the lifeline of Bihar's burgeoning entrepreneurial ecosystem, from the textile parks in Bhagalpur to the ethanol plants in Bhojpur.
                 </p>
                 <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                  However, the banking penetration in Bihar, though improving, still leaves a massive gap. This "Credit Gap" presents a golden opportunity for private players—Non-Banking Financial Companies (NBFCs), Microfinance Institutions (MFIs), and Nidhi Companies. Yet, operating in Bihar requires a deep understanding of the local regulatory terrain, which can be complex and bureaucratic.
+                  However, the banking penetration in Bihar, though improving, still leaves a massive gap. This "Credit Gap" presents a golden opportunity for private players-Non-Banking Financial Companies (NBFCs), Microfinance Institutions (MFIs), and Nidhi Companies. Yet, operating in Bihar requires a deep understanding of the local regulatory terrain, which can be complex and bureaucratic.
                 </p>
                 <p className="text-lg leading-relaxed text-gray-700">
                   At <strong>AMA Legal Solutions</strong>, we specialize in Bihar's financial laws. With a strong presence in Patna, we guide entrepreneurs through the maze of RBI approvals, RoC filings, and local money lending compliances. We don't just register companies; we build legally fortified financial businesses that can weather regulatory storms and thrive in Bihar's unique market conditions.
@@ -287,7 +287,7 @@ const BiharBankingClient = () => {
                   <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
                     <h3 className="font-bold text-xl text-[#D2A02A] mb-3">Banks & FIs</h3>
                     <p className="text-gray-700">
-                      We represent banks in filing <strong>Original Applications (OA)</strong> for recovery. We also specialize in <strong>SARFAESI</strong> measures—issuing 13(2) notices, 13(4) possession notices, and getting DM orders for physical possession of mortgaged properties.
+                      We represent banks in filing <strong>Original Applications (OA)</strong> for recovery. We also specialize in <strong>SARFAESI</strong> measures-issuing 13(2) notices, 13(4) possession notices, and getting DM orders for physical possession of mortgaged properties.
                     </p>
                   </div>
                   <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">

@@ -356,14 +356,14 @@ export default function BestCorporateLawFirmsPage() {
                         ★★★★★
                       </div>
                       "AMA Legal Solutions provided exceptional guidance during our corporate restructuring. Their attention to detail and strategic foresight were instrumental in the success of our transaction."
-                      <p className="mt-4 font-bold not-italic text-gray-900">— Vikram Singh, CEO of TechCorp India</p>
+                      <p className="mt-4 font-bold not-italic text-gray-900">- Vikram Singh, CEO of TechCorp India</p>
                     </div>
                     <div className="bg-amber-50 p-6 rounded-2xl border border-amber-100 shadow-sm relative italic text-gray-700">
                       <div className="flex text-amber-500 mb-3">
                         ★★★★★
                       </div>
                       "The team's expertise in Foreign Direct Investment is unmatched. They made our entry into the Indian market seamless and compliant at every step."
-                      <p className="mt-4 font-bold not-italic text-gray-900">— Sarah Jenkins, Global Lead at VentureStream</p>
+                      <p className="mt-4 font-bold not-italic text-gray-900">- Sarah Jenkins, Global Lead at VentureStream</p>
                     </div>
                   </div>
 

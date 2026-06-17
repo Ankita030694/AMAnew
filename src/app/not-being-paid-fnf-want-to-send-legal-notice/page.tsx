@@ -429,7 +429,7 @@ export default function FnfLegalNoticePage() {
                      The Survival Guide: Navigating the Financial and Mental Stress
                    </h2>
                    <p className="text-base md:text-lg leading-relaxed text-gray-700 mb-4">
-                     Withholding F&F dues is not just a commercial dispute; it is often a traumatic experience for the employee. Many individuals find their self worth tied to their professional output, and being denied their legitimate earnings can lead to severe anxiety. The feeling of being "ghosted" by a company you served for years is painful. Financially, it disrupts your planning—rent payments, insurance premiums, and SIPs are all dependent on that final paycheck.
+                     Withholding F&F dues is not just a commercial dispute; it is often a traumatic experience for the employee. Many individuals find their self worth tied to their professional output, and being denied their legitimate earnings can lead to severe anxiety. The feeling of being "ghosted" by a company you served for years is painful. Financially, it disrupts your planning-rent payments, insurance premiums, and SIPs are all dependent on that final paycheck.
                    </p>
                    <div className="bg-gray-50 p-6 rounded-xl mb-6">
                       <h4 className="font-bold text-lg mb-3">Actionable Financial Strategies:</h4>
@@ -527,7 +527,7 @@ export default function FnfLegalNoticePage() {
                      </ul>
                    </div>
                    <p className="text-base md:text-lg leading-relaxed text-gray-700 mb-4">
-                      A common mistake employees make is losing access to their company laptop or email <strong>before</strong> taking screenshots of their PL balance or incentive approvals. If you haven't left yet, start backing up these personal records today. If you have already left and find yourself locked out, do not worry—we can demand these records under the discovery process.
+                      A common mistake employees make is losing access to their company laptop or email <strong>before</strong> taking screenshots of their PL balance or incentive approvals. If you haven't left yet, start backing up these personal records today. If you have already left and find yourself locked out, do not worry-we can demand these records under the discovery process.
                    </p>
                 </section>
 
@@ -601,7 +601,7 @@ export default function FnfLegalNoticePage() {
                      Drafting Strategy: What Makes a Legal Notice Effective?
                    </h2>
                    <p className="text-base md:text-lg leading-relaxed text-gray-700 mb-6">
-                     A legal notice should not be a "complaint." It should be a "declaration of facts and law." At AMA Legal Solutions, we use a specific strategy to ensure the notice is taken seriously. We focus on the "Shadow of the Law"—demonstrating to the employer that we know exactly which sections they are violating.
+                     A legal notice should not be a "complaint." It should be a "declaration of facts and law." At AMA Legal Solutions, we use a specific strategy to ensure the notice is taken seriously. We focus on the "Shadow of the Law"-demonstrating to the employer that we know exactly which sections they are violating.
                    </p>
                    <div className="grid md:grid-cols-2 gap-6 mb-8">
                      <div className="bg-gray-50 p-6 rounded-2xl">

@@ -75,7 +75,7 @@ export default function TripuraClient() {
                     At AMA Legal Solutions, we are dedicated to empowering the businesses, artisans, and innovators of Tripura. Whether you are a bamboo artisan in Agartala, a tea planter in Unakoti, or a tech entrepreneur in the capital, securing your intellectual property is essential for sustainable growth. We provide comprehensive legal services to help you identify, register, and enforce your rights.
                   </p>
                   <p className="text-lg leading-relaxed text-gray-700">
-                    We bridge the geographical gap between Tripura and the national IP offices. Our digital-first approach ensures that you receive top-tier legal expertise without the need to travel to Kolkata or Delhi. We handle the complexities of the law so you can focus on what you do best—creating and innovating.
+                    We bridge the geographical gap between Tripura and the national IP offices. Our digital-first approach ensures that you receive top-tier legal expertise without the need to travel to Kolkata or Delhi. We handle the complexities of the law so you can focus on what you do best-creating and innovating.
                   </p>
                 </section>
 
@@ -127,7 +127,7 @@ export default function TripuraClient() {
                   <h3 className="text-2xl font-semibold text-gray-900 mb-4">Our Comprehensive Services:</h3>
                   <ul className="list-disc pl-6 space-y-3 text-gray-700 mb-6">
                     <li><strong>Trademark Search:</strong> We perform deep searches to verify that your chosen mark is available, avoiding potential legal conflicts down the road.</li>
-                    <li><strong>Filing Strategy:</strong> We advise on the best way to file—whether as a word mark, device mark (logo), or composite mark—to ensure maximum protection.</li>
+                    <li><strong>Filing Strategy:</strong> We advise on the best way to file-whether as a word mark, device mark (logo), or composite mark-to ensure maximum protection.</li>
                     <li><strong>Objection Management:</strong> If the Registry raises objections (e.g., on grounds of distinctiveness), our attorneys draft persuasive replies to secure acceptance.</li>
                     <li><strong>Opposition Defense:</strong> We represent you in opposition proceedings if a third party challenges your application.</li>
                     <li><strong>Renewal Services:</strong> We manage your portfolio and ensure timely renewals every 10 years.</li>

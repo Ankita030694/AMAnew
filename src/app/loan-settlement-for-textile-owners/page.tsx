@@ -672,11 +672,11 @@ export default function TextileOwnerLoanSettlement() {
               <div className="space-y-4 pt-2">
                 <div className="border-t border-gray-100 pt-3 space-y-1">
                   <p className="text-xs text-gray-600 italic">"Our powerloom mill in Surat was hit hard by cotton rate hikes. We accumulated massive cash credit defaults. Lenders threatened to auction the machinery. AMA Legal Solutions guided us through the MSME restructuring laws, stopped recovery pressure, and helped us execute a 65% haircut settlement, saving our livelihood."</p>
-                  <p className="text-[10px] text-gray-400 font-semibold">— Satish Maheshwari, Surat</p>
+                  <p className="text-[10px] text-gray-400 font-semibold">- Satish Maheshwari, Surat</p>
                 </div>
                 <div className="border-t border-gray-100 pt-3 space-y-1">
                   <p className="text-xs text-gray-600 italic">"Very professional advocates. They handled our machinery loan default with the bank, securing a clean settlement and protecting our factory accounts."</p>
-                  <p className="text-[10px] text-gray-400 font-semibold">— Gopal Krishnan, Tirupur</p>
+                  <p className="text-[10px] text-gray-400 font-semibold">- Gopal Krishnan, Tirupur</p>
                 </div>
               </div>
             </div>

@@ -230,7 +230,7 @@ const KeralaIPRPage = () => {
                       innovators and creators. We provide end-to-end assistance,
                       ensuring that your ideas, brands, and inventions are
                       legally protected against infringement, allowing you to
-                      focus on what you do best—innovating and creating. Our
+                      focus on what you do best-innovating and creating. Our
                       team of experienced IP attorneys is dedicated to helping
                       you navigate the complex landscape of intellectual
                       property law, ensuring that your rights are secured and
@@ -571,7 +571,7 @@ const KeralaIPRPage = () => {
                     <p>
                       Not all intellectual property needs to be registered. Some
                       of the most valuable assets of a business are its
-                      secrets—recipes, customer lists, manufacturing processes,
+                      secrets-recipes, customer lists, manufacturing processes,
                       and marketing strategies. In Kerala, where traditional
                       family businesses and modern enterprises coexist,
                       protecting trade secrets is essential.

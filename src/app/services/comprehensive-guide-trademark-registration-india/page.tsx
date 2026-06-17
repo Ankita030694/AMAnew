@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     question: "Can I register a sound or a color as a trademark in India?",
-    answer: "Yes, India recognizes 'non-conventional' trademarks. A sound mark (like the MGM lion roar) or a specific color combination (like the purple of Cadbury) can be registered if it has acquired 'secondary meaning'—meaning the public uniquely associates that sound or color with your brand. These require a 'User Affidavit' and significant evidence of market recognition, which our expert attorneys can help you compile."
+    answer: "Yes, India recognizes 'non-conventional' trademarks. A sound mark (like the MGM lion roar) or a specific color combination (like the purple of Cadbury) can be registered if it has acquired 'secondary meaning'-meaning the public uniquely associates that sound or color with your brand. These require a 'User Affidavit' and significant evidence of market recognition, which our expert attorneys can help you compile."
   },
   {
     question: "How does the Madrid Protocol benefit Indian businesses?",
@@ -246,7 +246,7 @@ export default function ComprehensiveTrademarkGuide() {
                       In 2026, the concept of a brand has evolved. It is no longer just a name on a storefront or a digital logo on an app; it is a repository of consumer trust, a legal fortress against competition, and a high-value intangible asset that can be valued at millions of dollars. As the Indian economy surges toward the $5 trillion mark, the stakes for <strong>trademark registration in India</strong> have never been higher.
                     </p>
                     <p>
-                      The digital-first economy has created a global playground, but it has also opened the floodgates to "Brand Squatting" and "Naked Infringement." Businesses that rely on a common-law usage of their name are finding themselves legally outmaneuvered by competitors who understand the statutory power of the <strong>Trade Marks Act, 1999</strong>. Simply put: If you don't own the registration, you don't own the brand—someone else is just waiting for the right moment to claim your hard-earned goodwill.
+                      The digital-first economy has created a global playground, but it has also opened the floodgates to "Brand Squatting" and "Naked Infringement." Businesses that rely on a common-law usage of their name are finding themselves legally outmaneuvered by competitors who understand the statutory power of the <strong>Trade Marks Act, 1999</strong>. Simply put: If you don't own the registration, you don't own the brand-someone else is just waiting for the right moment to claim your hard-earned goodwill.
                     </p>
                     <p>
                       AMA Legal Solutions has authored this comprehensive guide to bridge the gap between "Basic Filing" and "Strategic Intellectual Property Management." We move beyond the clerical work of filling Form TM-A. We delve into the tactical nuances of <strong>Vienna coding</strong>, the strategic advantages of the <strong>Madrid Protocol</strong>, and the legal precision required to win <strong>Section 9 and 11 objection hearings</strong>. This is not just a guide; it is your blueprint for brand dominance in the 21st century.
@@ -288,7 +288,7 @@ export default function ComprehensiveTrademarkGuide() {
                   <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-8 leading-tight">6. The Pinnacle of Protection: Well-Known Marks</h2>
                   <div className="prose prose-lg max-w-none text-gray-700 space-y-6 leading-relaxed">
                     <p>
-                      While a standard trademark registration provides "Territorial and Class-Specific" protection, a <strong>Well-Known Trademark</strong> status is the ultimate "God Mode" of intellectual property in India. Under Section 2(1)(zg) of the Trade Marks Act, a well-known mark is one that is so widely recognized that its use on any goods or services—even those entirely unrelated to the original business—would be seen as indicating a connection.
+                      While a standard trademark registration provides "Territorial and Class-Specific" protection, a <strong>Well-Known Trademark</strong> status is the ultimate "God Mode" of intellectual property in India. Under Section 2(1)(zg) of the Trade Marks Act, a well-known mark is one that is so widely recognized that its use on any goods or services-even those entirely unrelated to the original business-would be seen as indicating a connection.
                     </p>
                     <p>
                       Imagine a local hardware store trying to open under the name "Google Hardware" or a clothing line calling itself "Tata Textiles" without permission. Even if the original Google or Tata haven't registered in those specific classes, their 'Well-Known' status allows them to block such usage immediately.
@@ -328,7 +328,7 @@ export default function ComprehensiveTrademarkGuide() {
                   <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-8 leading-tight">7. Winning the Objection Battle: High-Stakes Tactical Defense</h2>
                   <div className="prose prose-lg max-w-none text-gray-700 space-y-6 leading-relaxed">
                     <p>
-                      Receiving an <strong>Examination Report</strong> with objections under <strong>Section 9 (Absolute Grounds)</strong> or <strong>Section 11 (Relative Grounds)</strong> is not a rejection—it is an invitation to a legal debate. However, many "filing agents" use boilerplate templates that lead to immediate refusal. Our approach is entirely different.
+                      Receiving an <strong>Examination Report</strong> with objections under <strong>Section 9 (Absolute Grounds)</strong> or <strong>Section 11 (Relative Grounds)</strong> is not a rejection-it is an invitation to a legal debate. However, many "filing agents" use boilerplate templates that lead to immediate refusal. Our approach is entirely different.
                     </p>
                     <h4 className="text-2xl font-bold text-gray-900 mt-10">Section 9 Strategy: Proving Distinctiveness</h4>
                     <p>
@@ -344,7 +344,7 @@ export default function ComprehensiveTrademarkGuide() {
                       <li><strong>Honest Concurrent Use:</strong> If you have been using the mark longer than the cited owner, we claim prior rights under Section 34 of the Act.</li>
                     </ol>
                     <p className="bg-gray-100 p-8 rounded-3xl font-medium">
-                      "A Trademark Hearing is essentially a verbal chess match. Our attorneys go in equipped with a 'Case Law Binder'—citing Supreme Court precedents like M/s. Satyam Infoway Ltd. vs. M/s. Sifynet Solutions Pvt. Ltd. to ensure the Registrar's decision is anchored in legal truth."
+                      "A Trademark Hearing is essentially a verbal chess match. Our attorneys go in equipped with a 'Case Law Binder'-citing Supreme Court precedents like M/s. Satyam Infoway Ltd. vs. M/s. Sifynet Solutions Pvt. Ltd. to ensure the Registrar's decision is anchored in legal truth."
                     </p>
                   </div>
                 </section>
@@ -398,7 +398,7 @@ export default function ComprehensiveTrademarkGuide() {
                     </p>
                     <h4 className="text-2xl font-bold text-gray-900 mt-10">Licensing & Franchising Strategy</h4>
                     <p>
-                      Your registered mark is your biggest revenue generator. Want to expand via franchise? We draft iron-clad <strong>Trademark License Agreements</strong> that allow others to use your name while ensuring the quality control—and the legally ownership—stays with you. We record these licenses with the Registry (as a 'Registered User') to ensure they have legal standing against third parties.
+                      Your registered mark is your biggest revenue generator. Want to expand via franchise? We draft iron-clad <strong>Trademark License Agreements</strong> that allow others to use your name while ensuring the quality control-and the legally ownership-stays with you. We record these licenses with the Registry (as a 'Registered User') to ensure they have legal standing against third parties.
                     </p>
                     <p>
                       Failure to use your mark for 5 years can lead to its removal. We advise clients on 'Active Usage' strategies to ensure their portfolio remains immune to 'Non-Use' removal petitions from aggressive competitors.
@@ -416,7 +416,7 @@ export default function ComprehensiveTrademarkGuide() {
                     <div className="grid md:grid-cols-2 gap-8 my-10">
                       <div className="border-l-4 border-green-500 pl-8">
                         <h4 className="font-bold text-xl mb-2">50% Statutory Rebate</h4>
-                        <p className="text-gray-600">Pay ₹4,500 instead of ₹9,000 in government fees. For a startup filing in 5 classes, this is a direct saving of ₹22,500—capital that can go back into product development.</p>
+                        <p className="text-gray-600">Pay ₹4,500 instead of ₹9,000 in government fees. For a startup filing in 5 classes, this is a direct saving of ₹22,500-capital that can go back into product development.</p>
                       </div>
                       <div className="border-l-4 border-green-500 pl-8">
                         <h4 className="font-bold text-xl mb-2">Expedited Examination</h4>
@@ -424,7 +424,7 @@ export default function ComprehensiveTrademarkGuide() {
                       </div>
                     </div>
                     <p>
-                      We don't just help with the trademark; we help you get <strong>MSME and Startup India certification</strong> first to ensure you are eligible for these rebates. Our 'Startup Brand Kit' includes search, certification, filing, and a preliminary objection-audit—all at a consolidated founder-friendly fee.
+                      We don't just help with the trademark; we help you get <strong>MSME and Startup India certification</strong> first to ensure you are eligible for these rebates. Our 'Startup Brand Kit' includes search, certification, filing, and a preliminary objection-audit-all at a consolidated founder-friendly fee.
                     </p>
                     <p className="font-bold text-gray-900 text-center mt-16 p-10 bg-[#fffcf5] rounded-[2rem] border-2 border-dashed border-[#bf9848]">
                       "In the digital race, your trademark is the only thing that cannot be copy-pasted. Secure it today before someone else does it tomorrow. At AMA Legal Solutions, we don't just register marks; we build empires."

@@ -331,22 +331,22 @@ export default function AMALegalSolutionsSector57Page() {
                   <div className="space-y-6">
                     <blockquote className="border-l-4 border-[#D2A02A] pl-4 italic text-gray-700 text-base md:text-lg bg-gray-50 p-6 rounded-r-2xl">
                       &quot;I want to clarify that this is real ama legal solutions which deals in loansettlements and other legal services which is situated in sector 57 gurugam run by Anuj Anand Malik who is the only owner.&quot;
-                      <cite className="block font-bold not-italic text-sm text-gray-900 mt-2">— Bhavya Jain</cite>
+                      <cite className="block font-bold not-italic text-sm text-gray-900 mt-2">- Bhavya Jain</cite>
                     </blockquote>
 
                     <blockquote className="border-l-4 border-[#D2A02A] pl-4 italic text-gray-700 text-base md:text-lg bg-gray-50 p-6 rounded-r-2xl">
                       &quot;Recommending Anuj in itself is not enough. From the very first meeting he had been patient, attentive and genuinely committed to helping me understand everystep of the legal process in regards to settlement. He stood like a rock beside me.&quot;
-                      <cite className="block font-bold not-italic text-sm text-gray-900 mt-2">— Samrat Basu</cite>
+                      <cite className="block font-bold not-italic text-sm text-gray-900 mt-2">- Samrat Basu</cite>
                     </blockquote>
 
                     <blockquote className="border-l-4 border-[#D2A02A] pl-4 italic text-gray-700 text-base md:text-lg bg-gray-50 p-6 rounded-r-2xl">
                       &quot;The Ama legal Solutions staffs demonstrated exceptional professionalism, clarity, and dedication throughout the process. Their team is responsive, knowledgeable, and handles the matter with great attention to detail. I truly appreciate their timely support and effective guidance, and I would highly recommend their services.&quot;
-                      <cite className="block font-bold not-italic text-sm text-gray-900 mt-2">— Imlitoshi Sangtam</cite>
+                      <cite className="block font-bold not-italic text-sm text-gray-900 mt-2">- Imlitoshi Sangtam</cite>
                     </blockquote>
 
                     <blockquote className="border-l-4 border-[#D2A02A] pl-4 italic text-gray-700 text-base md:text-lg bg-gray-50 p-6 rounded-r-2xl">
-                      &quot;I approached AMA Legal Solution during a challenging time, and I must say—it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined.&quot;
-                      <cite className="block font-bold not-italic text-sm text-gray-900 mt-2">— Ganesh Pawar</cite>
+                      &quot;I approached AMA Legal Solution during a challenging time, and I must say-it was the best decision I ever made. Their team is incredibly efficient, responsive, and genuinely invested in resolving queries faster than I ever imagined.&quot;
+                      <cite className="block font-bold not-italic text-sm text-gray-900 mt-2">- Ganesh Pawar</cite>
                     </blockquote>
                   </div>
                   <p className="text-sm md:text-base text-gray-600 mt-6">

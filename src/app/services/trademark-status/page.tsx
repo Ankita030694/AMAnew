@@ -80,7 +80,7 @@ const faqs = [
   },
   {
     question: "What is the 'e-Register'?",
-    answer: "The e-Register is the digital version of the physical trademark registry. When you view the e-Register, you can see 'Extracts'—the full legal history, including the owner's address, the attorney's name, and any renewal history."
+    answer: "The e-Register is the digital version of the physical trademark registry. When you view the e-Register, you can see 'Extracts'-the full legal history, including the owner's address, the attorney's name, and any renewal history."
   },
   {
     question: "How reliable is the online status system?",
@@ -242,7 +242,7 @@ export default function TrademarkStatusPage() {
                       The trademark lifecycle in India is governed by the <strong>Trade Marks Act, 1999</strong>, and the <strong>Trade Marks Rules, 2017</strong>. Under this framework, an application is a dynamic legal entity. It breathes and evolves as it passes through the hands of various stakeholders: clerical officers, substantive examiners, senior registrars, and eventually, the general public.
                     </p>
                     <p>
-                      The "Status" of your trademark is the only window you have into this invisible process. A change from "Marked for Exam" to "Objected" isn't just a notification—it's a legal summons. It indicates that the government has found a reason to potentially deny your brand its most valuable asset. In our experience at AMA Legal Solutions, over 40% of trademark failures in India occur not because the brand was unregistrable, but because the applicant failed to notice a status change in time to provide a statutory response. 
+                      The "Status" of your trademark is the only window you have into this invisible process. A change from "Marked for Exam" to "Objected" isn't just a notification-it's a legal summons. It indicates that the government has found a reason to potentially deny your brand its most valuable asset. In our experience at AMA Legal Solutions, over 40% of trademark failures in India occur not because the brand was unregistrable, but because the applicant failed to notice a status change in time to provide a statutory response. 
                     </p>
                     <p>
                       Understanding these statuses is not just a clerical task; it is a strategic necessity. Whether you are a startup founder, a marketing head, or a corporate legal officer, mastering the "registry language" allows you to anticipate hurdles, manage litigation risks, and secure your market position before competitors can strike.
@@ -306,7 +306,7 @@ export default function TrademarkStatusPage() {
                           </div>
                           <h4 className="font-bold text-2xl text-[#0d1b2a] mb-4">Mastering the 'Vienna Codification' Status</h4>
                           <p>
-                            If your trademark contains any Figurative Element—a logo design, a specific font style, or even a geometric pattern—it will be "Send to Vienna Codification". This is an international classification system (the Vienna Agreement) used to categorize the visual elements of marks. 
+                            If your trademark contains any Figurative Element-a logo design, a specific font style, or even a geometric pattern-it will be "Send to Vienna Codification". This is an international classification system (the Vienna Agreement) used to categorize the visual elements of marks. 
                           </p>
                           <p className="mt-4 text-sm text-gray-500">
                              Registry staff will assign codes like '03.01.08' (Dogs, wolves, foxes) or '26.01.01' (Circles). This allows the examiner to perform a "visual search" later to ensure your logo doesn't infringe on another brand's visual identity, even if the names are different.
@@ -379,7 +379,7 @@ export default function TrademarkStatusPage() {
                   <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-8 leading-tight">5. Publication: Entering the 'Accepted & Advertised' Danger Zone</h2>
                   <div className="prose prose-lg max-w-none text-gray-700 space-y-8 text-justify">
                     <p>
-                      When you see the status <strong>"Accepted & Advertised"</strong>, your mark has crossed the internal hurdles of the Registry. It is now published in the official <strong>Trademark Journal</strong>, which is released every Monday by the IP India office. This is essentially a public challenge: "We intend to register this brand—does anyone have a reason we shouldn't?"
+                      When you see the status <strong>"Accepted & Advertised"</strong>, your mark has crossed the internal hurdles of the Registry. It is now published in the official <strong>Trademark Journal</strong>, which is released every Monday by the IP India office. This is essentially a public challenge: "We intend to register this brand-does anyone have a reason we shouldn't?"
                     </p>
                     <div className="bg-gray-900 text-white p-12 rounded-[2.5rem] relative overflow-hidden shadow-2xl">
                        <FaSyncAlt className="absolute -right-10 -bottom-10 text-[20rem] opacity-5 rotate-12" />
@@ -418,7 +418,7 @@ export default function TrademarkStatusPage() {
                        <div>
                           <h4 className="font-bold text-3xl mb-6 text-gray-900">The Digital Registration Certificate</h4>
                           <p className="text-gray-700 leading-relaxed mb-6">
-                             The Registry no longer sends physical hard copies of certificates. A digital certificate is generated and made available via the status portal. This document is a <strong>Prima Facie Evidence</strong> of your ownership. It lists the registration date, the application date, and the 'User Date'—the date from which your legal rights have been backdated.
+                             The Registry no longer sends physical hard copies of certificates. A digital certificate is generated and made available via the status portal. This document is a <strong>Prima Facie Evidence</strong> of your ownership. It lists the registration date, the application date, and the 'User Date'-the date from which your legal rights have been backdated.
                           </p>
                           <div className="flex gap-4 p-4 bg-white rounded-2xl border border-gray-100 text-sm italic text-gray-500">
                              "You may now legally use the ® Symbol. Using this symbol while the status is still 'Accepted' or 'Pending' is technically a criminal offense under Section 107 of the Act."

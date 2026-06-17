@@ -253,7 +253,7 @@ export default function LoanSettlementOdishaPage() {
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">What is Loan Settlement (OTS)?</h2>
                   <div className="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 mb-4 md:mb-8 rounded-r-lg">
                     <p className="text-sm md:text-lg text-blue-900 italic">
-                      "Loan settlement, or One Time Settlement (OTS), is a legal agreement where the bank agrees to accept a reduced payment—often significantly lower than the total dues—to close a loan account permanently."
+                      "Loan settlement, or One Time Settlement (OTS), is a legal agreement where the bank agrees to accept a reduced payment-often significantly lower than the total dues-to close a loan account permanently."
                     </p>
                   </div>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">

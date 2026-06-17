@@ -365,7 +365,7 @@ export default function LegalNoticeDelhiPage() {
                     </p>
                     <h3>3. Mandatory Statutory Compliance</h3>
                     <p>
-                      In certain scenarios, sending a legal notice is not a choice—it's the law. For instance, under <strong>Section 80 of the Civil Procedure Code</strong>, you cannot sue the Government of India or the Government of NCT of Delhi without giving a 60-day prior notice. Similarly, for <strong>Section 138 (Cheque Bounce)</strong> cases, a 30-day notice period is mandatory from the date you receive information about the dishonor of the cheque.
+                      In certain scenarios, sending a legal notice is not a choice-it's the law. For instance, under <strong>Section 80 of the Civil Procedure Code</strong>, you cannot sue the Government of India or the Government of NCT of Delhi without giving a 60-day prior notice. Similarly, for <strong>Section 138 (Cheque Bounce)</strong> cases, a 30-day notice period is mandatory from the date you receive information about the dishonor of the cheque.
                     </p>
                     <h3>4. Cost Effectiveness</h3>
                     <p>
@@ -494,7 +494,7 @@ export default function LegalNoticeDelhiPage() {
                     <ul className="list-decimal pl-6 space-y-4">
                       <li><strong>Professional Dispatch:</strong> The notice is signed by our authorized lawyer and dispatched. In Delhi, we primarily use <strong>Registered Post Acknowledgment Due (RPAD)</strong> and Speed Post to ensure we get a receipt for tracking.</li>
                       <li><strong>Proof of Service:</strong> We monitor the delivery status. The 'Acknowledgment Due' card or the online tracking report showing 'Item Delivered' is your legal proof of service. If the recipient refuses to accept, the law in Delhi (and many Supreme Court precedents) deems it as 'Deemed Service.'</li>
-                      <li><strong>Handling the Response:</strong> After the stipulated period (15 or 30 days), if the recipient replies, our team helps you draft a counter-reply or assists in settlement negotiations. If they don't reply, we move to the next phase—litigation.</li>
+                      <li><strong>Handling the Response:</strong> After the stipulated period (15 or 30 days), if the recipient replies, our team helps you draft a counter-reply or assists in settlement negotiations. If they don't reply, we move to the next phase-litigation.</li>
                     </ul>
                   </div>
                 </section>

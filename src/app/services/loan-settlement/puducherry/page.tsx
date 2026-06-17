@@ -257,7 +257,7 @@ export default function LoanSettlementPuducherryPage() {
                     </p>
                   </div>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Banks (like Indian Bank, Canara Bank, SBI, etc.) prefer this route for "bad loans" (NPAs) because it saves them the time and cost of litigation. If you have a genuine inability to pay—due to job loss, business failure, or health issues—we can negotiate with the bank to waive off the interest and penalties, and sometimes even a part of the principal.
+                    Banks (like Indian Bank, Canara Bank, SBI, etc.) prefer this route for "bad loans" (NPAs) because it saves them the time and cost of litigation. If you have a genuine inability to pay-due to job loss, business failure, or health issues-we can negotiate with the bank to waive off the interest and penalties, and sometimes even a part of the principal.
                   </p>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
                     Imagine clearing a ₹8 Lakh debt for ₹3.5 Lakhs and ending the harassment forever. That is the power of a professionally negotiated settlement.

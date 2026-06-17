@@ -223,7 +223,7 @@ export default function BreachOfContractGuide() {
             <section id="introduction" className="mb-16">
               <h2 className="text-3xl font-bold text-[#30261C] mb-6">Introduction: The Sacred Nature of the Employment Contract</h2>
               <p>
-                In the world of commerce, a contract is more than just a piece of paper; it is the physical manifestation of trust and mutual agreement. This is especially true for employment contracts. When a company hires an employee, they invest significant resources—time, money, training, and confidential trade secrets. In return, the employee agrees to provide their services under specific terms, including notice periods, non-compete clauses, and confidentiality obligations.
+                In the world of commerce, a contract is more than just a piece of paper; it is the physical manifestation of trust and mutual agreement. This is especially true for employment contracts. When a company hires an employee, they invest significant resources-time, money, training, and confidential trade secrets. In return, the employee agrees to provide their services under specific terms, including notice periods, non-compete clauses, and confidentiality obligations.
               </p>
               <p>
                 However, as the professional market becomes more fluid, "contractual jumping" has become a serious problem for employers in India. Employees often leave without serving their mandatory notice periods, join direct competitors while in possession of sensitive data, or solicit company clients for their own ventures. These are not just "unprofessional" acts; they are clear breaches of the <strong>Indian Contract Act, 1872</strong>.
@@ -340,7 +340,7 @@ export default function BreachOfContractGuide() {
                 It is a common mistake to put "exorbitant" amounts as damages in an employment contract. If a junior developer with a 50k salary is asked to pay 10 lakhs for leaving early, a court will likely view this as an unconscionable "penalty" and refuse to enforce it.
               </p>
               <p>
-                To be enforceable, the liquidated damages must be a "genuine pre-estimate of loss." For example, if you spend 2 lakhs on an employee's international certification and they leave immediately after, a clause asking for that 2 lakhs (plus a reasonable administrative fee) is likely to be upheld. The goal is "indemnity"—making the employer whole—not "retribution."
+                To be enforceable, the liquidated damages must be a "genuine pre-estimate of loss." For example, if you spend 2 lakhs on an employee's international certification and they leave immediately after, a clause asking for that 2 lakhs (plus a reasonable administrative fee) is likely to be upheld. The goal is "indemnity"-making the employer whole-not "retribution."
               </p>
             </section>
 

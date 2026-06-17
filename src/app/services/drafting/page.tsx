@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     question: "How much does legal drafting cost in India?",
-    answer: "The cost of legal drafting varies significantly based on the complexity of the document, the expertise required, and the turnaround time. A simple Legal Notice might cost less than a complex Shareholder Agreement or a Cross-border Joint Venture Contract. At AMA Legal Solutions, we believe in transparency. We offer competitive and clear pricing models—whether fixed-fee for standard documents or hourly rates for complex negotiations. We recommend booking a consultation to get an accurate quote tailored to your specific needs."
+    answer: "The cost of legal drafting varies significantly based on the complexity of the document, the expertise required, and the turnaround time. A simple Legal Notice might cost less than a complex Shareholder Agreement or a Cross-border Joint Venture Contract. At AMA Legal Solutions, we believe in transparency. We offer competitive and clear pricing models-whether fixed-fee for standard documents or hourly rates for complex negotiations. We recommend booking a consultation to get an accurate quote tailored to your specific needs."
   },
   {
     question: "What is the process for getting a document drafted by AMA Legal Solutions?",
@@ -313,7 +313,7 @@ export default function DraftingPage() {
                   <div className="grid md:grid-cols-2 gap-6 mb-8">
                     <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
                       <h4 className="font-bold text-lg mb-2 text-[#D2A02A]">Avoiding Ambiguity</h4>
-                      <p className="text-gray-600">Ambiguity is the mother of all disputes. A vague clause can be interpreted in multiple ways. We use precise legal terminology to ensure there is only one interpretation—the one that favors you.</p>
+                      <p className="text-gray-600">Ambiguity is the mother of all disputes. A vague clause can be interpreted in multiple ways. We use precise legal terminology to ensure there is only one interpretation-the one that favors you.</p>
                     </div>
                     <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
                       <h4 className="font-bold text-lg mb-2 text-[#D2A02A]">Legal Enforceability</h4>

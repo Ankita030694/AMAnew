@@ -482,7 +482,7 @@ export default function DebtSpecialistPage() {
                   <section id="psychosocial-impact" className="scroll-mt-32">
                     <h2 className="text-3xl md:text-4xl font-black mb-8">The Psychosocial Impact of Debt: A Holistic View</h2>
                     <p>
-                        Debt is never just about money. It is about the sleepless nights, the strained relationships with spouses, and the quiet shadow of shame that follows a person into every room. Chronic debt triggers the same physiological response as physical danger — a constant state of 'Fight or Flight.'
+                        Debt is never just about money. It is about the sleepless nights, the strained relationships with spouses, and the quiet shadow of shame that follows a person into every room. Chronic debt triggers the same physiological response as physical danger - a constant state of 'Fight or Flight.'
                     </p>
                     <p>
                         A specialized <strong>Certified Financial Planner</strong> recognizes this. By taking the weight of negotiation off your shoulders, they provide immediate psychological relief. They transform an 'Invisible Monster' into a 'Manageable Project.' 

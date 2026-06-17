@@ -112,7 +112,7 @@ export default async function LawyerByExpertise({
           <div className="space-y-6">
             <h3 className="text-xl font-bold text-[#30261C]">The Power of Specialization in Law</h3>
             <p>
-              The legal field is vast, and no single advocate can be a master of every domain. This is why specialization is so critical in the modern legal landscape. A lawyer who focuses exclusively on a particular area—be it intellectual property, banking law, or matrimonial disputes—brings a level of depth and tactical awareness that a general practitioner may not possess.
+              The legal field is vast, and no single advocate can be a master of every domain. This is why specialization is so critical in the modern legal landscape. A lawyer who focuses exclusively on a particular area-be it intellectual property, banking law, or matrimonial disputes-brings a level of depth and tactical awareness that a general practitioner may not possess.
             </p>
             <p>
               <strong>AMA Legal Solutions</strong> connects you with specialists who have dedicated their careers to mastering specific legal domains. By choosing an expert with focused experience, you ensure that your legal strategy is built on a foundation of deep knowledge and successful precedents.

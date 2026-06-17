@@ -347,7 +347,7 @@ export default function LoanSettlementKyaHotaHaiPage() {
 
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Step 1: Financial Assessment</h3>
                   <p className="mb-4">
-                    Analyze your current income, essential expenses, and available cash reserves. Calculate a realistic settlement amount—usually 30% to 50% of the total outstanding dues—that you can pay in a lump sum or in a few short installments. Read our comprehensive analysis on <Link href="/loan-settlement-kitne-percent-hota-hai" className="text-[#D2A02A] hover:underline font-semibold">loan settlement kitne percent hota hai</Link> to understand bank compromise discount percentages.
+                    Analyze your current income, essential expenses, and available cash reserves. Calculate a realistic settlement amount-usually 30% to 50% of the total outstanding dues-that you can pay in a lump sum or in a few short installments. Read our comprehensive analysis on <Link href="/loan-settlement-kitne-percent-hota-hai" className="text-[#D2A02A] hover:underline font-semibold">loan settlement kitne percent hota hai</Link> to understand bank compromise discount percentages.
                   </p>
 
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Step 2: Submitting Hardship Proof</h3>

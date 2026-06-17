@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     question: "Can I stop a bank from auctioning my property in Telangana?",
-    answer: "Yes, you can potentially stop a property auction by challenging the bank's action in the DRT Hyderabad. If the bank has failed to follow the due process under the SARFAESI Act—such as not serving proper notices (13(2) or 13(4)), undervaluing the property, or not giving sufficient time—you can get a stay order from the Tribunal. Immediate legal intervention is crucial in such cases."
+    answer: "Yes, you can potentially stop a property auction by challenging the bank's action in the DRT Hyderabad. If the bank has failed to follow the due process under the SARFAESI Act-such as not serving proper notices (13(2) or 13(4)), undervaluing the property, or not giving sufficient time-you can get a stay order from the Tribunal. Immediate legal intervention is crucial in such cases."
   },
   {
     question: "How long does it take to register a trademark in Telangana?",
@@ -344,7 +344,7 @@ export default function TelanganaLocationPage() {
                 <section id="introduction" className="scroll-mt-32">
                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 border-l-8 border-[#D2A02A] pl-4">Expert Legal Counsel in the Heart of the Deccan</h2>
                   <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
-                    Telangana, the youngest state in India, has rapidly emerged as a powerhouse of economic growth, innovation, and cultural heritage. Its capital, Hyderabad, is a global nexus for biotechnology, information technology, and pharmaceuticals. With this explosive growth comes a complex web of legal challenges—from intellectual property rights for burgeoning startups in Gachibowli to real estate disputes in the rapidly expanding suburbs of Ranga Reddy district. 
+                    Telangana, the youngest state in India, has rapidly emerged as a powerhouse of economic growth, innovation, and cultural heritage. Its capital, Hyderabad, is a global nexus for biotechnology, information technology, and pharmaceuticals. With this explosive growth comes a complex web of legal challenges-from intellectual property rights for burgeoning startups in Gachibowli to real estate disputes in the rapidly expanding suburbs of Ranga Reddy district. 
                   </p>
                   <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
                     At <strong>AMA Legal Solutions</strong>, we understand the pulse of Telangana. We recognize that the legal needs of a tech entrepreneur in Madhapur are vastly different from those of a traditional business owner in Charminar. Our approach is tailored, blending deep local knowledge with global legal standards. We are not just service providers; we are strategic partners in your personal and professional journey.
@@ -441,7 +441,7 @@ export default function TelanganaLocationPage() {
                        </li>
                        <li className="flex items-start">
                          <span className="text-green-500 mr-2 font-bold">✓</span>
-                         <span className="text-gray-700"><strong>Challenging Procedure:</strong> We scrutinize every step taken by the bank. Even a minor procedural lapse—like incorrect interest calculation or improper service of notice—can be grounds to set aside the bank's actions.</span>
+                         <span className="text-gray-700"><strong>Challenging Procedure:</strong> We scrutinize every step taken by the bank. Even a minor procedural lapse-like incorrect interest calculation or improper service of notice-can be grounds to set aside the bank's actions.</span>
                        </li>
                      </ul>
                    </div>
@@ -472,7 +472,7 @@ export default function TelanganaLocationPage() {
                       <div className="p-6 bg-gray-50 rounded-xl border hover:border-[#D2A02A] transition-colors">
                         <div className="text-4xl mb-3">🛡️</div>
                         <h5 className="font-bold mb-2">Prosecution</h5>
-                        <p className="text-sm text-gray-600">We handle the entire lifecycle—from filing to replying to examination reports and attending hearings.</p>
+                        <p className="text-sm text-gray-600">We handle the entire lifecycle-from filing to replying to examination reports and attending hearings.</p>
                       </div>
                   </div>
                 </section>

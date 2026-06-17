@@ -309,7 +309,7 @@ export default function PLLoanSettlementPage() {
 
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Understanding One-Time Settlement (OTS)</h3>
                   <p className="mb-4">
-                    A One-Time Settlement (OTS) is a formal agreement where the lender writes off accumulated interests, late payment fees, and penalties. The borrower agrees to pay a compromised amount—typically 30% to 50% of the original principal—in a single payment or a short series of installments. Lenders offer these OTS schemes periodically, especially during the end of the financial year.
+                    A One-Time Settlement (OTS) is a formal agreement where the lender writes off accumulated interests, late payment fees, and penalties. The borrower agrees to pay a compromised amount-typically 30% to 50% of the original principal-in a single payment or a short series of installments. Lenders offer these OTS schemes periodically, especially during the end of the financial year.
                   </p>
 
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">The Legal Definition of a Settled Loan</h3>

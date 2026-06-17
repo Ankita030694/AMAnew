@@ -624,7 +624,7 @@ export default function LoanSettlementDocsPage() {
                    <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 uppercase tracking-widest leading-tight">Joint Loans & Co-applicant Documentation</h2>
                    <div className="prose prose-sm text-gray-700 max-w-none space-y-4">
                       <p>
-                         When a loan has multiple applicants—often the case in home loans or education loans—the documentation becomes a shared responsibility. A common pitfall is settling for one applicant while the other remains liable. For a valid NOC that clears both names from CIBIL, you need:
+                         When a loan has multiple applicants-often the case in home loans or education loans-the documentation becomes a shared responsibility. A common pitfall is settling for one applicant while the other remains liable. For a valid NOC that clears both names from CIBIL, you need:
                       </p>
                       <div className="space-y-3">
                          <div className="p-4 bg-white rounded-xl border border-gray-200 shadow-sm">
@@ -676,7 +676,7 @@ export default function LoanSettlementDocsPage() {
                          What happens if your documentation is perfect, but the bank still refuses to settle or issue an NOC? This is where the <strong>Integrated Ombudsman Scheme, 2021</strong> comes in. Our legal team uses your meticulously gathered documents to file complaints with the Ombudsman.
                       </p>
                       <p>
-                         The Ombudsman looks for <strong>'Deficiency in Service'</strong>. If we can prove, through your records, that the bank is being unreasonable or is violating its own settlement policy, we can force a resolution. This is why keeping a 'Paper Trail'—every email, every visit record, every SMS from an agent—is vital.
+                         The Ombudsman looks for <strong>'Deficiency in Service'</strong>. If we can prove, through your records, that the bank is being unreasonable or is violating its own settlement policy, we can force a resolution. This is why keeping a 'Paper Trail'-every email, every visit record, every SMS from an agent-is vital.
                       </p>
                    </div>
                 </section>
@@ -711,7 +711,7 @@ export default function LoanSettlementDocsPage() {
                          <div className="absolute top-0 left-6 px-3 py-1 bg-[#D2A02A] text-white text-[9px] font-black uppercase rounded-b-lg tracking-widest shadow-sm">Delhi NCR Case</div>
                          <h4 className="font-extrabold text-[#1a202c] mb-3 text-lg mt-3">The Medical Hardship Audit</h4>
                          <p className="text-gray-600 text-xs italic leading-relaxed mb-4 flex-grow">
-                            "A client in Noida was facing a major default on 4 credit cards. The bank was refusing to settle. We conducted a deep audit of his medical records from a hospital in South Delhi. By presenting a 'Chronological Hardship Map'—linking his bank balance drops directly to surgery dates—lenders agreed to an 80% waiver on interest. His NOC was issued within 14 days of final payment."
+                            "A client in Noida was facing a major default on 4 credit cards. The bank was refusing to settle. We conducted a deep audit of his medical records from a hospital in South Delhi. By presenting a 'Chronological Hardship Map'-linking his bank balance drops directly to surgery dates-lenders agreed to an 80% waiver on interest. His NOC was issued within 14 days of final payment."
                          </p>
                          <div className="pt-4 border-t border-gray-50 flex items-center justify-between">
                             <span className="text-[10px] font-black text-[#D2A02A] uppercase tracking-widest">Noida, Uttar Pradesh</span>

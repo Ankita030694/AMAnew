@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     question: "Can I file a Writ Petition against the Chennai Corporation?",
-    answer: "Yes, if the **Greater Chennai Corporation (GCC)** or any municipal body acts arbitrarily—such as issuing demolition notices without following due process, failing to maintain roads, or illegal tax assessments—you can file a Writ Petition under Article 226 in the Madras High Court. We specialize in municipal litigation and protecting citizen's rights against state inaction or excess."
+    answer: "Yes, if the **Greater Chennai Corporation (GCC)** or any municipal body acts arbitrarily-such as issuing demolition notices without following due process, failing to maintain roads, or illegal tax assessments-you can file a Writ Petition under Article 226 in the Madras High Court. We specialize in municipal litigation and protecting citizen's rights against state inaction or excess."
   },
   {
     question: "What are the specialized courts in Chennai?",
