@@ -24,6 +24,9 @@ export async function GET(): Promise<Response> {
   // Build static routes
   const staticRoutes = [
     '',
+    '/can-you-go-to-jail-for-not-paying-emi',
+    '/how-to-manage-loan-with-no-job',
+    '/what-is-the-average-time-for-loan-settlement',
     '/loan-settlement-for-salaried-people',
     '/loan-settlement',
     '/how-is-loan-settlement-done',
@@ -585,7 +588,8 @@ export async function GET(): Promise<Response> {
     '/how-does-loan-settlement-process-work-in-india',
     '/loan-settlement-for-axis-bank',
     '/recovery-agent-sending-morphed-and-ai-generated-explicit-images-to-relatives',
-    '/recovery-agent-calling-100-times-per-day'
+    '/recovery-agent-calling-100-times-per-day',
+    '/loan-for-cibil-defaulters'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),

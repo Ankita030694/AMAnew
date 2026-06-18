@@ -12,6 +12,12 @@ const Footer = () => {
   const pathname = usePathname();
 
   const reviewSchemas: { [key: string]: any } = {
+    "/what-is-the-average-time-for-loan-settlement": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Average Time for Loan Settlement Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1845" }
+    },
     "/services-offered-by-ama-legal-solutions": {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -836,6 +842,12 @@ const Footer = () => {
       "@type": "Product",
       "name": "Recovery Agent Harassment Legal Defense",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "910" }
+    },
+    "/can-you-go-to-jail-for-not-paying-emi": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "EMI Default Legal Consultation Services",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1520" }
     }
   };
   const footerColumns: { title: string; links: { name: string; href: string; external?: boolean; hiddenLink?: boolean }[] }[] = [
@@ -1148,6 +1160,7 @@ const Footer = () => {
         { name: "Personal Loan Settlement Process", href: "/what-is-the-typical-process-for-settling-a-personal-loan-in-india" },
         { name: "Professional Debt Settlement Companies", href: "/which-companies-offer-professional-debt-settlement-services-for-personal-loans" },
         { name: "Cheque Bounce Notice", href: "/cheque-bounce-notice" },
+        { name: "Average Time for Settlement", href: "/what-is-the-average-time-for-loan-settlement" },
         { name: "Breach of Contract Notice", href: "/breach-of-contract-notice" },
         { name: "Consumer Complaint Notice", href: "/consumer-complaint-notice" },
         { name: "Property Eviction Notice", href: "/property-eviction-notice" },
@@ -1262,7 +1275,11 @@ const Footer = () => {
         { name: "Loan Settlement as per RBI", href: "/loan-settlement-as-per-rbi" },
         { name: "Loan Settlement for Axis Bank", href: "/loan-settlement-for-axis-bank" },
         { name: "Stop Recovery Morphing & AI Extortion", href: "/recovery-agent-sending-morphed-and-ai-generated-explicit-images-to-relatives" },
-        { name: "Stop Recovery Agent 100 Calls/Day", href: "/recovery-agent-calling-100-times-per-day" }
+        { name: "Stop Recovery Agent 100 Calls/Day", href: "/recovery-agent-calling-100-times-per-day" },
+        { name: "How to Settle 7-Days Loan Apps", href: "/how-to-settle-7-days-loan-apps" },
+        { name: "Can You Go To Jail For Not Paying EMI", href: "/can-you-go-to-jail-for-not-paying-emi" },
+        { name: "How to Manage Loan With No Job", href: "/how-to-manage-loan-with-no-job" },
+        { name: "Loan for CIBIL Defaulters", href: "/loan-for-cibil-defaulters" }
       ]
 
     }
