@@ -12,6 +12,12 @@ const Footer = () => {
   const pathname = usePathname();
 
   const reviewSchemas: { [key: string]: any } = {
+    "/how-can-i-negotiate-a-loan-settlement-with-my-lender": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Loan Settlement Negotiation Services",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1530" }
+    },
     "/what-is-the-average-time-for-loan-settlement": {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -848,6 +854,12 @@ const Footer = () => {
       "@type": "Product",
       "name": "EMI Default Legal Consultation Services",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1520" }
+    },
+    "/what-is-cibil-score": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "AMA Legal Solutions",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2150" }
     }
   };
   const footerColumns: { title: string; links: { name: string; href: string; external?: boolean; hiddenLink?: boolean }[] }[] = [
@@ -1042,6 +1054,7 @@ const Footer = () => {
         { name: "Top Loan Settlement Services", href: "/top-loan-settlement-services-with-good-customer-reviews" },
         { name: "Steps to Trademark Registration", href: "/steps-to-trademark-registration" },
         { name: "Best Apps for Loan Settlement", href: "/best-apps-for-loan-settlement-in-india" },
+        { name: "How Can I Negotiate a Loan Settlement", href: "/how-can-i-negotiate-a-loan-settlement-with-my-lender" },
         { name: "Trademark Agency Near Me", href: "/trademark-registration-agency-near-me" },
         { name: "Trademark Opposition Procedure", href: "/trademark-opposition-procedure" },
         { name: "Is Trademark Mandatory for Amazon", href: "/is-trademark-registration-mandatory-to-sell-on-amazon" },
@@ -1277,9 +1290,17 @@ const Footer = () => {
         { name: "Stop Recovery Morphing & AI Extortion", href: "/recovery-agent-sending-morphed-and-ai-generated-explicit-images-to-relatives" },
         { name: "Stop Recovery Agent 100 Calls/Day", href: "/recovery-agent-calling-100-times-per-day" },
         { name: "How to Settle 7-Days Loan Apps", href: "/how-to-settle-7-days-loan-apps" },
+        { name: "Full and Final Loan Settlement", href: "/what-is-a-full-and-final-loan-settlement" },
         { name: "Can You Go To Jail For Not Paying EMI", href: "/can-you-go-to-jail-for-not-paying-emi" },
         { name: "How to Manage Loan With No Job", href: "/how-to-manage-loan-with-no-job" },
-        { name: "Loan for CIBIL Defaulters", href: "/loan-for-cibil-defaulters" }
+        { name: "Loan for CIBIL Defaulters", href: "/loan-for-cibil-defaulters" },
+        { name: "How to Do Call Forwarding", href: "/how-to-do-call-forwarding" },
+        { name: "What is CIBIL Score?", href: "/what-is-cibil-score" },
+        { name: "Who is Anuj Anand Malik?", href: "/who-is-anuj-anand-malik" },
+        { name: "Apps for Loan Settlement Offers", href: "/which-apps-or-platforms-can-help-with-loan-settlement-offers-in-india" },
+        { name: "Benefits of Settling a Personal Loan", href: "/what-are-the-benefits-of-settling-a-personal-loan" },
+        { name: "Credit Card Settlement Process 2026", href: "/credit-card-settlement-in-june-2026" },
+        { name: "Personal Loan Settlement 2026", href: "/personal-loan-settlement-in-june-2026" }
       ]
 
     }

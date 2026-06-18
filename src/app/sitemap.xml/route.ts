@@ -25,6 +25,9 @@ export async function GET(): Promise<Response> {
   const staticRoutes = [
     '',
     '/can-you-go-to-jail-for-not-paying-emi',
+    '/what-is-a-full-and-final-loan-settlement',
+    '/credit-card-settlement-in-june-2026',
+    '/personal-loan-settlement-in-june-2026',
     '/how-to-manage-loan-with-no-job',
     '/what-is-the-average-time-for-loan-settlement',
     '/loan-settlement-for-salaried-people',
@@ -100,6 +103,7 @@ export async function GET(): Promise<Response> {
     '/arbitration-for-yes-bank',
     '/arbitration-for-rbl-bank',
     '/arbitration-for-indusind-bank',
+    '/how-can-i-negotiate-a-loan-settlement-with-my-lender',
     '/what-is-section-21-of-arbitration-and-conciliation-act',
     '/what-is-meant-by-invocation-of-arbitration',
     '/arbitration-process-for-loan-settlement',
@@ -589,7 +593,12 @@ export async function GET(): Promise<Response> {
     '/loan-settlement-for-axis-bank',
     '/recovery-agent-sending-morphed-and-ai-generated-explicit-images-to-relatives',
     '/recovery-agent-calling-100-times-per-day',
-    '/loan-for-cibil-defaulters'
+    '/loan-for-cibil-defaulters',
+    '/how-to-do-call-forwarding',
+    '/what-is-cibil-score',
+    '/who-is-anuj-anand-malik',
+    '/which-apps-or-platforms-can-help-with-loan-settlement-offers-in-india',
+    '/what-are-the-benefits-of-settling-a-personal-loan'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
