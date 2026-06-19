@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Careers at AMA Legal Solutions | Join Our Team",
-  description: "Join our team at AMA Legal Solutions. Explore open positions for Business Development Associate, Legal Associate, and SDE Intern. Build a meaningful career in legal services.",
+  description: "Join our team at AMA Legal Solutions. Explore open positions for Business Development Associate, Legal Associate, Legal Intern, and Software Development Engineer Intern. Build a meaningful career in legal services.",
 };
 
 const OPEN_POSITIONS = [
@@ -25,11 +25,18 @@ const OPEN_POSITIONS = [
     slug: "legal-associate"
   },
   {
-    title: "SDE Intern",
+    title: "Legal Intern",
+    type: "Internship",
+    location: "Gurugram / In Office",
+    description: "Assist our legal team with research, drafting, and case preparation while gaining hands-on experience in legal practice.",
+    slug: "legal-intern"
+  },
+  {
+    title: "Software Development Engineer Intern",
     type: "Internship",
     location: "In Office",
     description: "Assist in developing and maintaining our digital platforms, focusing on performance, scalability, and user experience.",
-    slug: "sde-intern"
+    slug: "software-development-engineer-intern"
   },
 ];
 

@@ -80,7 +80,6 @@ const BlogsDashboard = () => {
 
   // AI Generation state
   const [primaryKeyword, setPrimaryKeyword] = useState('');
-  const [secondaryKeyword, setSecondaryKeyword] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
 
   // New Image Generation and Content Expansion state
@@ -88,8 +87,6 @@ const BlogsDashboard = () => {
   const [isGeneratingImage, setIsGeneratingImage] = useState(false);
   const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(null);
   const [isUploadingGenerated, setIsUploadingGenerated] = useState(false);
-  const [expansionPrompt, setExpansionPrompt] = useState('');
-  const [isExpanding, setIsExpanding] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Filter blogs based on search term
@@ -402,7 +399,7 @@ const BlogsDashboard = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ primaryKeyword, secondaryKeyword }),
+        body: JSON.stringify({ primaryKeyword }),
       });
 
       if (!response.ok) {
@@ -529,53 +526,6 @@ const BlogsDashboard = () => {
     }
   };
 
-  const handleExpandContent = async () => {
-    if (!newBlog.description) {
-      alert('Please have some content in the editor first.');
-      return;
-    }
-
-    try {
-      setIsExpanding(true);
-      const response = await fetch('/api/expand-content', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ 
-          content: newBlog.description, 
-          prompt: expansionPrompt 
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to expand content');
-      }
-
-      const reader = response.body?.getReader();
-      if (!reader) throw new Error('No reader');
-
-      let expandedContent = '';
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        expandedContent += new TextDecoder().decode(value);
-      }
-
-      setNewBlog(prevState => ({
-        ...prevState,
-        description: expandedContent
-      }));
-      
-      alert('Content expanded successfully! (Targeting 5000 words)');
-    } catch (error) {
-      console.error('Error expanding content:', error);
-      alert('Failed to expand content.');
-    } finally {
-      setIsExpanding(false);
-    }
-  };
-  
   // Helper function to compress images
   const compressImage = (file: File): Promise<File> => {
     return new Promise((resolve, reject) => {
@@ -1060,17 +1010,6 @@ const BlogsDashboard = () => {
                             disabled={isGenerating}
                           />
                       </div>
-                      <div>
-                          <label className="block text-xs text-indigo-800 mb-1">Secondary Keyword (Optional)</label>
-                          <input
-                            type="text"
-                            value={secondaryKeyword}
-                            onChange={(e) => setSecondaryKeyword(e.target.value)}
-                            placeholder="e.g., 'loan settlement process'"
-                            className="w-full px-4 py-2 border border-indigo-200 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
-                            disabled={isGenerating}
-                          />
-                      </div>
                       <button
                         type="button"
                         onClick={handleGenerate}
@@ -1425,28 +1364,7 @@ const BlogsDashboard = () => {
                       )}
                     </div>
                     
-                    {/* Content Expansion Section */}
-                    <div className="mt-4 p-4 bg-orange-50 border border-orange-200 rounded-md">
-                      <h3 className="text-sm font-medium text-orange-800 mb-2 flex items-center">
-                        <FontAwesomeIcon icon={faMagic} className="mr-2" />
-                        Expand Content to 5000+ Words
-                      </h3>
-                      <textarea
-                        value={expansionPrompt}
-                        onChange={(e) => setExpansionPrompt(e.target.value)}
-                        rows={3}
-                        className="text-black w-full px-3 py-2 text-sm border border-orange-200 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400"
-                        placeholder="Instructions for expansion (e.g., 'Add more case studies and deep legal analysis regarding Section 138')"
-                      />
-                      <button
-                        type="button"
-                        onClick={handleExpandContent}
-                        disabled={isExpanding || !newBlog.description}
-                        className="mt-2 w-full px-4 py-2 bg-orange-600 text-white rounded-md text-sm font-medium disabled:bg-orange-300"
-                      >
-                        {isExpanding ? 'Expanding content (please wait, this take a while)...' : 'Expand Content to 5000 Words'}
-                      </button>
-                    </div>
+                    {/* Content Expansion Section Removed */}
                     
                     <p className="mt-1 text-xs text-gray-500 text-black">Use the toolbar above to format your content.</p>
                   </div>

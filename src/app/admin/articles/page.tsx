@@ -79,7 +79,6 @@ const ArticlesDashboard = () => {
   
   // AI Generation state
   const [primaryKeyword, setPrimaryKeyword] = useState('');
-  const [secondaryKeyword, setSecondaryKeyword] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
 
   // New Image Generation and Content Expansion state
@@ -87,8 +86,6 @@ const ArticlesDashboard = () => {
   const [isGeneratingImage, setIsGeneratingImage] = useState(false);
   const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(null);
   const [isUploadingGenerated, setIsUploadingGenerated] = useState(false);
-  const [expansionPrompt, setExpansionPrompt] = useState('');
-  const [isExpanding, setIsExpanding] = useState(false);
 
   // RSS Debug - for parity with blogs even if articles doesn't use it yet
   const [isLoadingRss, setIsLoadingRss] = useState(false);
@@ -334,7 +331,7 @@ const ArticlesDashboard = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ primaryKeyword, secondaryKeyword }),
+        body: JSON.stringify({ primaryKeyword }),
       });
 
       if (!response.ok) {
@@ -458,53 +455,6 @@ const ArticlesDashboard = () => {
     }
   };
 
-  const handleExpandContent = async () => {
-    if (!newBlog.description) {
-      alert('Please have some content in the editor first.');
-      return;
-    }
-
-    try {
-      setIsExpanding(true);
-      const response = await fetch('/api/expand-content', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ 
-          content: newBlog.description, 
-          prompt: expansionPrompt 
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to expand content');
-      }
-
-      const reader = response.body?.getReader();
-      if (!reader) throw new Error('No reader');
-
-      let expandedContent = '';
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        expandedContent += new TextDecoder().decode(value);
-      }
-
-      setNewBlog(prevState => ({
-        ...prevState,
-        description: expandedContent
-      }));
-      
-      alert('Content expanded successfully! (Targeting 5000 words)');
-    } catch (error) {
-      console.error('Error expanding content:', error);
-      alert('Failed to expand content.');
-    } finally {
-      setIsExpanding(false);
-    }
-  };
-
   const handleSubmitBlog = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
@@ -588,7 +538,6 @@ const ArticlesDashboard = () => {
     setImagePreview(null);
     setGeneratedImageUrl(null);
     setImagePrompt('');
-    setExpansionPrompt('');
     localStorage.removeItem('autosave_article_new');
     if (newBlog.id) localStorage.removeItem(`autosave_article_${newBlog.id}`);
   };
@@ -677,17 +626,6 @@ const ArticlesDashboard = () => {
                             value={primaryKeyword}
                             onChange={(e) => setPrimaryKeyword(e.target.value)}
                             placeholder="e.g., 'Divorce Law in India'"
-                            className="w-full px-4 py-2 border border-indigo-200 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
-                            disabled={isGenerating}
-                          />
-                      </div>
-                      <div>
-                          <label className="block text-xs text-indigo-800 mb-1">Secondary Keyword (Optional)</label>
-                          <input
-                            type="text"
-                            value={secondaryKeyword}
-                            onChange={(e) => setSecondaryKeyword(e.target.value)}
-                            placeholder="e.g., 'legal rights, alimony'"
                             className="w-full px-4 py-2 border border-indigo-200 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
                             disabled={isGenerating}
                           />
@@ -950,28 +888,6 @@ const ArticlesDashboard = () => {
                     <label htmlFor="description" className="block text-sm font-medium text-[#5A4C33] mb-1">Article Content</label>
                     <div className="border border-gray-300 rounded-md overflow-hidden">
                       <TiptapEditor content={newBlog.description} onChange={handleEditorChange} className="bg-white text-black h-[500px]" />
-                    </div>
-                    
-                    <div className="mt-4 p-4 bg-orange-50 border border-orange-200 rounded-md">
-                      <h3 className="text-sm font-medium text-orange-800 mb-2 flex items-center">
-                        <FontAwesomeIcon icon={faMagic} className="mr-2" />
-                        Expand Content to 5000+ Words
-                      </h3>
-                      <textarea
-                        value={expansionPrompt}
-                        onChange={(e) => setExpansionPrompt(e.target.value)}
-                        rows={3}
-                        className="text-black w-full px-3 py-2 text-sm border border-orange-200 rounded-md"
-                        placeholder="Instructions for expansion..."
-                      />
-                      <button
-                        type="button"
-                        onClick={handleExpandContent}
-                        disabled={isExpanding || !newBlog.description}
-                        className="mt-2 w-full px-4 py-2 bg-orange-600 text-white rounded-md text-sm font-medium"
-                      >
-                        {isExpanding ? 'Expanding content...' : 'Expand Content to 5000 Words'}
-                      </button>
                     </div>
                   </div>
 

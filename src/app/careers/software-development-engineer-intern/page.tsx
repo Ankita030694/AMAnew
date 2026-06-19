@@ -37,7 +37,7 @@ const breadcrumbSchema = (baseUrl: string) => ({
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": baseUrl },
     { "@type": "ListItem", "position": 2, "name": "Careers", "item": `${baseUrl}/careers` },
-    { "@type": "ListItem", "position": 3, "name": "SDE Intern", "item": `${baseUrl}/careers/sde-intern` }
+    { "@type": "ListItem", "position": 3, "name": "Software Development Engineer Intern", "item": `${baseUrl}/careers/software-development-engineer-intern` }
   ]
 });
 
@@ -55,7 +55,7 @@ const jobPostingSchema = (baseUrl: string) => ({
   "@context": "https://schema.org/",
   "@type": "JobPosting",
   "title": "Software Development Engineer (SDE) Intern",
-  "description": "Apply for SDE Internship at AMA Legal Solutions. Work on Next.js, React, and build the future of Legal Tech in Gurugram.",
+  "description": "Apply for Software Development Engineer Internship at AMA Legal Solutions. Work on Next.js, React, and build the future of Legal Tech in Gurugram.",
   "identifier": {
     "@type": "PropertyValue",
     "name": "AMA Legal Solutions",
@@ -95,8 +95,8 @@ const jobPostingSchema = (baseUrl: string) => ({
 const articleSchema = (baseUrl: string) => ({
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "SDE Intern Jobs in Gurugram | AMA Legal Solutions Careers",
-  "description": "Apply for SDE Internship at AMA Legal Solutions. Work on Next.js, React, and build the future of Legal Tech in Gurugram.",
+  "headline": "Software Development Engineer Intern Jobs in Gurugram | AMA Legal Solutions Careers",
+  "description": "Apply for Software Development Engineer Internship at AMA Legal Solutions. Work on Next.js, React, and build the future of Legal Tech in Gurugram.",
   "author": { "@type": "Organization", "name": "AMA Legal Solutions", "url": baseUrl },
   "publisher": {
     "@type": "Organization",
@@ -107,13 +107,13 @@ const articleSchema = (baseUrl: string) => ({
 });
 
 export const metadata: Metadata = {
-  title: "SDE Intern Jobs in Gurugram | AMA Legal Solutions Careers",
-  description: "Apply for SDE Internship at AMA Legal Solutions. Work on Next.js, React, and build the future of Legal Tech in Gurugram. Kickstart your tech career now.",
-  keywords: ["SDE intern jobs gurugram", "software engineering internship india", "Next.js intern roles", "React developer internship", "legal tech careers"],
-  alternates: { canonical: 'https://www.amalegalsolutions.com/careers/sde-intern' }
+  title: "Software Development Engineer Intern Jobs in Gurugram | AMA Legal Solutions Careers",
+  description: "Apply for Software Development Engineer Internship at AMA Legal Solutions. Work on Next.js, React, and build the future of Legal Tech in Gurugram. Kickstart your tech career now.",
+  keywords: ["Software Development Engineer intern jobs gurugram", "software engineering internship india", "Next.js intern roles", "React developer internship", "legal tech careers"],
+  alternates: { canonical: 'https://www.amalegalsolutions.com/careers/software-development-engineer-intern' }
 };
 
-export default function SDEInternPage() {
+export default function SoftwareDevelopmentEngineerInternPage() {
   const baseUrl = "https://www.amalegalsolutions.com";
   
   const tocSections = [
@@ -128,7 +128,7 @@ export default function SDEInternPage() {
 
   const breadcrumbItems = [
     { label: "Careers", href: "/careers" },
-    { label: "SDE Intern", href: "/careers/sde-intern" },
+    { label: "Software Development Engineer Intern", href: "/careers/software-development-engineer-intern" },
   ];
 
   return (
@@ -145,7 +145,7 @@ export default function SDEInternPage() {
           <div className="absolute inset-0 bg-black/60 z-10"></div>
           <div className="relative z-20 container mx-auto px-4 py-20 md:py-32 text-center">
             <h1 className="text-3xl md:text-6xl font-bold mb-6 leading-tight mt-10">
-              Build the Future of Legal Tech as an <span className="text-[#D2A02A]">SDE Intern</span>
+              Build the Future of Legal Tech as a <span className="text-[#D2A02A]">Software Development Engineer Intern</span>
             </h1>
             <p className="text-sm md:text-2xl mb-10 max-w-3xl mx-auto text-gray-200">
               Get hands-on experience with modern web technologies and build products that make a difference. Join our engineering team in Gurugram.
@@ -170,7 +170,7 @@ export default function SDEInternPage() {
               <section id="introduction" className="scroll-mt-32">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] mb-6 border-b border-[#D2A02A]/20 pb-4">Engineering at AMA Legal Solutions</h2>
                 <p className="text-lg leading-relaxed text-[#30261C]/80">
-                  Legal tech is one of the most exciting frontiers in technology today. At AMA Legal Solutions, we are leveraging modern software engineering to make legal help more accessible, transparent, and efficient. As an <strong>SDE Intern</strong>, you won't just be fetching coffee; you'll be writing code that powers our direct-to-consumer legal platforms, our internal case management systems, and our AI-driven legal search tools.
+                  Legal tech is one of the most exciting frontiers in technology today. At AMA Legal Solutions, we are leveraging modern software engineering to make legal help more accessible, transparent, and efficient. As a <strong>Software Development Engineer Intern</strong>, you won't just be fetching coffee; you'll be writing code that powers our direct-to-consumer legal platforms, our internal case management systems, and our AI-driven legal search tools.
                 </p>
               </section>
 
@@ -273,7 +273,7 @@ export default function SDEInternPage() {
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#D2A02A]/10">
                 <h3 className="text-xl font-bold text-[#30261C] mb-4">Code with AMA</h3>
                 <p className="text-sm text-[#30261C]/60 mb-6">
-                  Ready to kickstart your tech career? Apply for the SDE Internship in Gurugram.
+                  Ready to kickstart your tech career? Apply for the Software Development Engineer Internship in Gurugram.
                 </p>
                 <Link href="/careers#application-form">
                   <button className="w-full bg-[#D2A02A] text-white py-3 rounded-xl font-bold hover:bg-[#b88a22] transition-colors">
