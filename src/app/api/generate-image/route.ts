@@ -26,6 +26,10 @@ export async function POST(request: Request) {
 
         console.log("[AI Image Generator] Attempting generation with gpt-image-2 model (1024x1024 resolution)...");
         
+        // Add a 280 second timeout to stay just under Vercel Premium's 300s limit
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 280000);
+
         // Attempt image generation via Fetch instead of SDK
         const openAiResponse = await fetch("https://api.openai.com/v1/images/generations", {
             method: "POST",
@@ -39,7 +43,10 @@ export async function POST(request: Request) {
                 n: 1,
                 size: "1024x1024",
             }),
+            signal: controller.signal
         });
+        
+        clearTimeout(timeoutId);
 
         const data = await openAiResponse.json();
 
@@ -101,3 +108,4 @@ export async function POST(request: Request) {
 }
 
 export const runtime = 'edge';
+export const maxDuration = 300; // Allow up to 300 seconds on Vercel Premium
