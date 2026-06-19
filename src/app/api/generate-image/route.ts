@@ -107,5 +107,4 @@ export async function POST(request: Request) {
     }
 }
 
-export const runtime = 'edge';
 export const maxDuration = 300; // Allow up to 300 seconds on Vercel Premium
