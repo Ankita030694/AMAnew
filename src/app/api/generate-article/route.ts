@@ -225,5 +225,4 @@ Return ONLY a JSON object with this exact structure:
     }
 }
 
-export const runtime = 'edge';
 export const maxDuration = 300;
