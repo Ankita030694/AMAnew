@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faEdit, faTrash, faUpload, faMagic, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faEdit, faTrash, faUpload, faMagic, faSearch, faChevronLeft, faChevronRight, faTimes, faArrowLeft, faCheckCircle, faInfoCircle, faFileAlt, faStar } from '@fortawesome/free-solid-svg-icons';
 import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, getDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
@@ -177,7 +177,6 @@ const BlogsDashboard = () => {
     };
 
     fetchBlogs();
-    fetchBlogs();
   }, []);
 
   // Autosave functionality
@@ -194,23 +193,6 @@ const BlogsDashboard = () => {
       return () => clearTimeout(timer);
     }
   }, [newBlog, showBlogForm, formMode]);
-
-  // Handle animation sequence
-  // useEffect(() => {
-  //   // Start with black screen
-  //   const welcomeTimer = setTimeout(() => {
-  //     setAnimationState('welcome'); // Show Hello Anuj Bhiya
-
-  //     // After showing welcome, transition to dashboard
-  //     const dashboardTimer = setTimeout(() => {
-  //       setAnimationState('dashboard');
-  //     }, 1500); // 1.5 seconds as requested
-
-  //     return () => clearTimeout(dashboardTimer);
-  //   }, 500);
-
-  //   return () => clearTimeout(welcomeTimer);
-  // }, []);
 
   // Add a helper function to generate slug from title
   const generateSlug = (title: string) => {
@@ -302,7 +284,7 @@ const BlogsDashboard = () => {
       updatedReviews[index] = { 
         ...updatedReviews[index], 
         [field]: value 
-      };
+      } as any;
       return {
         ...prevState,
         reviews: updatedReviews
@@ -315,7 +297,7 @@ const BlogsDashboard = () => {
     const file = e.target.files?.[0];
     if (!file) return;
     
-    // Check file size (limit to 2MB)
+    // Check file size (limit to 10MB)
     const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
     if (file.size > MAX_FILE_SIZE) {
       alert("Image is too large. Maximum size is 10MB.");
@@ -501,9 +483,6 @@ const BlogsDashboard = () => {
       const blob = await response.blob();
       const file = new File([blob], `generated_${Date.now()}.png`, { type: 'image/png' });
 
-      // Use the existing upload logic (indirectly or directly)
-      // Since handleFileUpload expects an event, we should extract the core upload logic
-      // But for simplicity, we'll repeat the core Firebase upload here
       if (!storage) {
         throw new Error("Firebase Storage is not initialized");
       }
@@ -911,676 +890,654 @@ const BlogsDashboard = () => {
   };
 
   return (
-    <motion.div 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="relative"
-    >
-      {/* Dashboard Header */}
-      <div className="bg-white rounded-lg p-6 shadow-sm border-l-4 border-[#D2A02A] mb-8 flex justify-between items-center">
-        <div>
-          <h1 className="text-3xl font-bold text-[#5A4C33]">Blogs Dashboard</h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] mt-2"></div>
-        </div>
-      </div>
-
-      {/* Content Container */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="bg-white rounded-lg p-6 shadow-md"
-      >
-            {/* Header with Add Blog Button */}
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-xl font-semibold text-[#5A4C33]">
-                {showBlogForm ? (formMode === 'add' ? 'Create New Blog' : 'Edit Blog') : 'Blog Management'}
-              </h2>
-              <motion.button
+    <div className="p-6 max-w-7xl mx-auto bg-slate-50 min-h-screen text-slate-800 font-sans">
+      <AnimatePresence>
+        {!showBlogForm ? (
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            className="space-y-6"
+          >
+            {/* Header Area */}
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-slate-200 pb-5 bg-white p-6 rounded-2xl shadow-3xs">
+              <div>
+                <h1 className="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2">
+                  <span className="text-[#B8860B]">📝</span>
+                  <span>Curated Blog Dashboard</span>
+                </h1>
+                <p className="text-slate-400 text-xs mt-1 font-semibold">
+                  Publish high-quality articles, SEO schemas, client star ratings, and detailed Q&A guides.
+                </p>
+              </div>
+              <button
                 onClick={() => {
-                  if (showBlogForm) {
-                    resetForm();
-                  } else {
-                    setFormMode('add');
-
-                    // Check for saved draft for new blog
-                    const savedDraft = localStorage.getItem('autosave_blog_new');
-                    if (savedDraft) {
-                      if (window.confirm('Found an unsaved draft. Do you want to restore it?')) {
-                        setNewBlog(JSON.parse(savedDraft));
-                      } else {
-                        localStorage.removeItem('autosave_blog_new');
-                        setNewBlog({
-                          title: '',
-                          subtitle: '',
-                          description: '',
-                          date: new Date().toISOString().split('T')[0],
-                          image: '',
-                          created: Date.now(),
-                          metaTitle: '',
-                          metaDescription: '',
-                          slug: '',
-                          faqs: [],
-                          reviews: [],
-                          author: 'Anuj Anand Malik'
-                        });
-                      }
+                  setFormMode('add');
+                  const savedDraft = localStorage.getItem('autosave_blog_new');
+                  if (savedDraft) {
+                    if (window.confirm('Found an unsaved draft. Do you want to restore it?')) {
+                      setNewBlog(JSON.parse(savedDraft));
+                    } else {
+                      localStorage.removeItem('autosave_blog_new');
+                      resetForm();
                     }
-
-                    setShowBlogForm(true);
+                  } else {
+                    resetForm();
                   }
+                  setShowBlogForm(true);
                 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center px-4 py-2 bg-gradient-to-r from-[#D2A02A] to-[#5A4C33] text-white rounded-md font-medium"
+                className="bg-[#B8860B] hover:bg-[#9E7307] text-white px-5 py-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all cursor-pointer shadow-3xs"
               >
-                <FontAwesomeIcon icon={showBlogForm ? faChartLine : faPlus} className="mr-2" />
-                {showBlogForm ? 'View Blogs' : 'Add Blog'}
-              </motion.button>
+                <FontAwesomeIcon icon={faPlus} />
+                <span>Write Blog Post</span>
+              </button>
             </div>
 
-            {/* Conditional Rendering: Show either Data Table or Blog Form */}
-            {showBlogForm ? (
-              // Blog Creation/Edit Form with Updated Fields and Tiptap Editor
-              <AnimatePresence mode="wait">
-                <h2 className="text-xl font-bold mb-6 text-[#5A4C33] flex items-center">
-                  <FontAwesomeIcon icon={formMode === 'add' ? faPlus : faEdit} className="mr-3" />
-                  {formMode === 'add' ? 'Add New Blog' : 'Edit Blog'}
-                </h2>
-                
-                <form 
-                  onSubmit={handleSubmitBlog}
-                  className="space-y-6"
-                >
-                  {/* AI Generator Section */}
-                  <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-200 mb-6">
-                    <h3 className="text-indigo-800 font-medium mb-2 flex items-center">
-                      <FontAwesomeIcon icon={faMagic} className="mr-2" />
-                      AI Magic Generator
-                    </h3>
-                    <div className="flex flex-col gap-4">
-                      <div>
-                          <label className="block text-xs text-indigo-800 mb-1">Primary Keyword (Must be specific)</label>
-                          <input
-                            type="text"
-                            value={primaryKeyword}
-                            onChange={(e) => setPrimaryKeyword(e.target.value)}
-                            placeholder="e.g., 'Get freed from loan'"
-                            className="w-full px-4 py-2 border border-indigo-200 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
-                            disabled={isGenerating}
-                          />
-                      </div>
-                      <button
-                        type="button"
-                        onClick={handleGenerate}
-                        disabled={isGenerating}
-                        className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 disabled:bg-indigo-400 transition-colors flex items-center justify-center"
-                      >
-                        {isGenerating ? (
-                          <>
-                            <span className="animate-spin mr-2">💫</span>
-                            Generating...
-                          </>
-                        ) : (
-                          <>
-                            Generate Blog
-                          </>
-                        )}
-                      </button>
-                    </div>
-                    <p className="text-xs text-indigo-600 mt-2">
-                      This will auto-fill the form with SEO-optimized title, description, content, FAQs, and more (Indian Context).
-                    </p>
-                  </div>
+            {/* Metrics Overview */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-3xs">
+                <span className="text-slate-400 text-[10px] font-bold uppercase tracking-wider">Total Published Blogs</span>
+                <p className="text-3xl font-black text-[#B8860B] mt-1">{blogs.length}</p>
+              </div>
+              <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-3xs">
+                <span className="text-slate-400 text-[10px] font-bold uppercase tracking-wider">TOC & SEO Enriched</span>
+                <p className="text-3xl font-black text-green-700 mt-1">
+                  {blogs.filter(b => b.description?.includes('<h2') || b.description?.includes('<h3')).length}
+                </p>
+              </div>
+              <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-3xs">
+                <span className="text-slate-400 text-[10px] font-bold uppercase tracking-wider">FAQs Embedded</span>
+                <p className="text-3xl font-black text-blue-700 mt-1">
+                  {blogs.filter(b => b.faqs && b.faqs.length > 0).length}
+                </p>
+              </div>
+            </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="title" className="block text-sm font-medium text-[#5A4C33] mb-1">Blog Title</label>
-                      <input
-                        type="text"
-                        id="title"
-                        name="title"
-                        value={newBlog.title}
-                        onChange={handleInputChange}
-                        required
-                        className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                        placeholder="Enter blog title"
-                      />
-                    </div>
-                    
-                    <div>
-                      <label htmlFor="slug" className="block text-sm font-medium text-[#5A4C33] mb-1">URL Slug</label>
-                      <input
-                        type="text"
-                        id="slug"
-                        name="slug"
-                        value={newBlog.slug}
-                        onChange={handleInputChange}
-                        required
-                        className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                        placeholder="url-friendly-blog-name"
-                      />
-                      <p className="mt-1 text-xs text-gray-500">Will be used in the URL: /blog/{newBlog.slug}</p>
-                    </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="subtitle" className="block text-sm font-medium text-[#5A4C33] mb-1">Subtitle/SEO Keywords</label>
-                      <input
-                        type="text"
-                        id="subtitle"
-                        name="subtitle"
-                        value={newBlog.subtitle}
-                        onChange={handleInputChange}
-                        required
-                        className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                        placeholder="Enter subtitle or SEO keywords"
-                      />
-                    </div>
-                    
-                    <div>
-                      <label htmlFor="metaTitle" className="block text-sm font-medium text-[#5A4C33] mb-1">Meta Title</label>
-                      <input
-                        type="text"
-                        id="metaTitle"
-                        name="metaTitle"
-                        value={newBlog.metaTitle || ''}
-                        onChange={handleInputChange}
-                        className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                        placeholder="Enter meta title for SEO"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="date" className="block text-sm font-medium text-[#5A4C33] mb-1">Publication Date</label>
-                      <input
-                        type="date"
-                        id="date"
-                        name="date"
-                        value={newBlog.date}
-                        onChange={handleInputChange}
-                        required
-                        className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                      />
-                    </div>
-                    
-                    <div>
-                      <label htmlFor="image" className="block text-sm font-medium text-[#5A4C33] mb-1">Blog Image</label>
-                      <div className="flex flex-col space-y-2">
-                        <div className="flex items-center space-x-2">
-                          <input
-                            type="file"
-                            id="image-upload"
-                            ref={fileInputRef}
-                            accept="image/*"
-                            onChange={handleFileUpload}
-                            className="hidden"
-                          />
-                          <button
-                            type="button"
-                            onClick={() => fileInputRef.current?.click()}
-                            className="px-4 py-2 bg-[#F0EAD6] text-[#5A4C33] rounded-md text-sm font-medium flex items-center"
-                          >
-                            <FontAwesomeIcon icon={faUpload} className="mr-2" />
-                            {uploading ? 'Uploading...' : 'Choose Image'}
-                          </button>
-                          {newBlog.image && (
-                            <span className="text-xs text-green-600">Image uploaded successfully</span>
-                          )}
-                        </div>
-                        
-                        {uploading && (
-                          <div className="w-full bg-gray-200 rounded-full h-2.5">
-                            <div 
-                              className="bg-[#D2A02A] h-2.5 rounded-full" 
-                              style={{ width: `${uploadProgress}%` }}
-                            ></div>
-                          </div>
-                        )}
-                        
-                        {/* Image preview */}
-                        {(imagePreview || newBlog.image) && (
-                          <div className="mt-2 text-black">
-                            <img 
-                              src={imagePreview || newBlog.image} 
-                              alt="Blog image preview" 
-                              className="w-32 h-32 object-cover rounded-md border border-gray-300"
-                            />
-                          </div>
-                        )}
-                        
-                        {/* AI Image Generation Prompt */}
-                        <div className="mt-4 p-3 bg-purple-50 border border-purple-200 rounded-md">
-                          <label className="block text-xs font-medium text-purple-800 mb-1">AI Image Generation Prompt</label>
-                          <textarea
-                            value={imagePrompt}
-                            onChange={(e) => setImagePrompt(e.target.value)}
-                            rows={3}
-                            className="text-black w-full px-3 py-2 text-sm border border-purple-200 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"
-                            placeholder="Describe the image you want to generate..."
-                          />
-                          <button
-                            type="button"
-                            onClick={handleGenerateImage}
-                            disabled={isGeneratingImage || !imagePrompt}
-                            className="mt-2 w-full px-4 py-2 bg-purple-600 text-white rounded-md text-sm font-medium disabled:bg-purple-300"
-                          >
-                            {isGeneratingImage ? 'Generating Image...' : 'Generate Image with DALL-E'}
-                          </button>
-                          
-                          {generatedImageUrl && (
-                            <div className="mt-4 flex flex-col items-center">
-                              <img 
-                                src={generatedImageUrl} 
-                                alt="Generated" 
-                                className="w-full max-w-xs rounded-lg shadow-lg mb-2"
-                              />
-                              <button
-                                type="button"
-                                onClick={handleUploadGeneratedImage}
-                                disabled={isUploadingGenerated}
-                                className="w-full px-4 py-2 bg-green-600 text-white rounded-md text-sm font-medium"
-                              >
-                                {isUploadingGenerated ? 'Uploading...' : 'Upload this Image to Firebase'}
-                              </button>
-                            </div>
-                          )}
-                        </div>
-                        
-                        <input
-                          type="hidden"
-                          id="image"
-                          name="image"
-                          value={newBlog.image}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="metaDescription" className="block text-sm font-medium text-[#5A4C33] mb-1">Meta Description</label>
-                      <input
-                        type="text"
-                        id="metaDescription"
-                        name="metaDescription"
-                        value={newBlog.metaDescription || ''}
-                        onChange={handleInputChange}
-                        className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                        placeholder="Enter meta description for SEO"
-                      />
-                    </div>
-                    
-                    <div>
-                      <label htmlFor="author" className="block text-sm font-medium text-[#5A4C33] mb-1">Author</label>
-                      <select
-                        id="author"
-                        name="author"
-                        value={newBlog.author}
-                        onChange={handleInputChange}
-                        required
-                        className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                      >
-                        <option value="Anuj Anand Malik">Anuj Anand Malik</option>
-                        <option value="Shrey Arora">Shrey Arora</option>
-                      </select>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-[#5A4C33] mb-1">FAQs</label>
-                    <div className="border border-gray-300 rounded-md p-4 bg-gray-50">
-                      {/* Display existing FAQs */}
-                      {(newBlog.faqs || []).map((faq, index) => (
-                        <div key={index} className="mb-4 p-4 bg-white rounded-md shadow-sm">
-                          <div className="flex justify-between items-center mb-2">
-                            <h3 className="text-sm font-medium text-[#5A4C33]">FAQ #{index + 1}</h3>
-                            <motion.button
-                              type="button"
-                              onClick={() => removeFaq(index)}
-                              whileHover={{ scale: 1.05 }}
-                              whileTap={{ scale: 0.95 }}
-                              className="px-2 py-1 bg-red-500 text-white text-xs rounded-md"
-                            >
-                              Remove
-                            </motion.button>
-                          </div>
-                          <div className="mb-2">
-                            <label className="block text-xs font-medium text-[#5A4C33] mb-1">Question</label>
-                            <input
-                              type="text"
-                              value={faq.question}
-                              onChange={(e) => handleFaqChange(index, 'question', e.target.value)}
-                              className="text-black w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                              placeholder="Enter FAQ question"
-                            />
-                          </div>
-                          <div>
-                            <label className="block text-xs font-medium text-[#5A4C33] mb-1">Answer</label>
-                            <textarea
-                              value={faq.answer}
-                              onChange={(e) => handleFaqChange(index, 'answer', e.target.value)}
-                              rows={3}
-                              className="text-black w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                              placeholder="Enter FAQ answer"
-                            />
-                          </div>
-                        </div>
-                      ))}
-                      
-                      {/* Add FAQ button */}
-                      <motion.button
-                        type="button"
-                        onClick={addFaq}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="mt-2 px-4 py-2 bg-[#D2A02A] text-white rounded-md text-sm font-medium flex items-center"
-                      >
-                        <FontAwesomeIcon icon={faPlus} className="mr-2" />
-                        Add FAQ
-                      </motion.button>
-                      <p className="mt-2 text-xs text-gray-500">Add frequently asked questions related to this blog post.</p>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-[#5A4C33] mb-1">Review Snippets</label>
-                    <div className="border border-gray-300 rounded-md p-4 bg-gray-50">
-                      {/* Display existing Reviews */}
-                      {(newBlog.reviews || []).map((review, index) => (
-                        <div key={index} className="mb-4 p-4 bg-white rounded-md shadow-sm relative">
-                          <button
-                            type="button"
-                            onClick={() => removeReview(index)}
-                            className="absolute top-2 right-2 text-red-500 hover:text-red-700"
-                          >
-                            <FontAwesomeIcon icon={faTrash} />
-                          </button>
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
-                            <div>
-                              <label className="block text-xs font-medium text-[#5A4C33] mb-1">Reviewer Name</label>
-                              <input
-                                type="text"
-                                value={review.name}
-                                onChange={(e) => handleReviewChange(index, 'name', e.target.value)}
-                                className="text-black w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                                placeholder="Name"
-                              />
-                            </div>
-                            <div>
-                              <label className="block text-xs font-medium text-[#5A4C33] mb-1">Rating</label>
-                              <select
-                                value={review.rating}
-                                onChange={(e) => handleReviewChange(index, 'rating', parseInt(e.target.value))}
-                                className="text-black w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                              >
-                                {[1, 2, 3, 4, 5].map(num => (
-                                  <option key={num} value={num}>{num} Stars</option>
-                                ))}
-                              </select>
-                            </div>
-                          </div>
-                          <div>
-                            <label className="block text-xs font-medium text-[#5A4C33] mb-1">Review Text</label>
-                            <textarea
-                              value={review.review}
-                              onChange={(e) => handleReviewChange(index, 'review', e.target.value)}
-                              rows={2}
-                              className="text-black w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent"
-                              placeholder="Enter review text"
-                            />
-                          </div>
-                        </div>
-                      ))}
-                      
-                      {/* Add Review button */}
-                      <motion.button
-                        type="button"
-                        onClick={addReview}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="mt-2 px-4 py-2 bg-[#D2A02A] text-white rounded-md text-sm font-medium flex items-center"
-                      >
-                        <FontAwesomeIcon icon={faPlus} className="mr-2" />
-                        Add Review
-                      </motion.button>
-                      <p className="mt-2 text-xs text-gray-500">Add client reviews to display on the blog page.</p>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="description" className="block text-sm font-medium text-[#5A4C33] mb-1">Blog Content</label>
-                    {/* Tiptap Editor Integration */}
-                    <div className="border border-gray-300 rounded-md overflow-hidden">
-                      {typeof window !== 'undefined' && (
-                        <TiptapEditor
-                          content={newBlog.description}
-                          onChange={handleEditorChange}
-                          className="bg-white text-black h-[500px]"
-                        />
-                      )}
-                    </div>
-                    
-                    {/* Content Expansion Section Removed */}
-                    
-                    <p className="mt-1 text-xs text-gray-500 text-black">Use the toolbar above to format your content.</p>
-                  </div>
-                  
-                  <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-md">
-                    <h3 className="text-sm font-medium text-blue-800 mb-1">RSS Feed Information</h3>
-                    <p className="text-xs text-blue-600">
-                      Your blog will be automatically added to the RSS feed at <strong>{process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://www.amalegalsolutions.com'}/api/rss</strong> 
-                      which syncs with LinkedIn's RSS automation feature.
-                    </p>
-                  </div>
-                  
-                  <div className="flex justify-end space-x-3">
-                    <motion.button
-                      type="button"
-                      onClick={handleCancelForm}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md font-medium"
-                    >
-                      Cancel
-                    </motion.button>
-                    <motion.button
-                      type="submit"
-                      disabled={isSubmitting}
-                      whileHover={isSubmitting ? {} : { scale: 1.05 }}
-                      whileTap={isSubmitting ? {} : { scale: 0.95 }}
-                      className={`px-4 py-2 text-white rounded-md font-medium flex items-center justify-center min-w-[120px] ${
-                        isSubmitting 
-                          ? 'bg-gray-400 cursor-not-allowed' 
-                          : 'bg-gradient-to-r from-[#D2A02A] to-[#5A4C33]'
-                      }`}
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                          </svg>
-                          Processing...
-                        </>
-                      ) : (
-                        formMode === 'add' ? 'Publish Blog' : 'Update Blog'
-                      )}
-                    </motion.button>
-                  </div>
-                </form>
-              </AnimatePresence>
+            {/* Filter and Search */}
+            <div className="flex bg-white p-4 rounded-2xl border border-slate-100 shadow-3xs items-center gap-3">
+              <FontAwesomeIcon icon={faSearch} className="text-slate-400 text-sm ml-2" />
+              <input
+                type="text"
+                placeholder="Search blogs by title, subtitle, or slug..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full bg-transparent border-none text-xs sm:text-sm focus:outline-none placeholder-slate-400 text-slate-700"
+              />
+            </div>
+
+            {/* Blogs Table / List */}
+            {currentBlogs.length === 0 ? (
+              <div className="text-center py-20 bg-white rounded-2xl border border-slate-100 shadow-3xs border-dashed border-slate-200">
+                <FontAwesomeIcon icon={faClipboardList} className="text-slate-300 text-4xl mb-4" />
+                <p className="text-slate-400 text-sm italic">No blog posts found matching search query.</p>
+              </div>
             ) : (
-              // Blogs Table
-              <AnimatePresence mode="wait">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-x-auto"
-                >
-                  {/* Search Bar */}
-                  <div className="mb-4 relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <FontAwesomeIcon icon={faSearch} className="text-gray-400" />
-                    </div>
-                    <input
-                      type="text"
-                      placeholder="Search blogs by title, subtitle, slug, or author..."
-                      value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
-                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-[#D2A02A] focus:border-[#D2A02A] sm:text-sm text-black"
-                    />
-                    {searchTerm && (
-                      <button
-                        onClick={() => setSearchTerm('')}
-                        className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
-                      >
-                        <FontAwesomeIcon icon={faTrash} className="text-xs" />
-                      </button>
-                    )}
-                  </div>
-
-                  <table className="min-w-full divide-y divide-gray-200">
-                    <thead className="bg-[#F0EAD6]">
-                      <tr>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Date</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Title</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Subtitle</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Image</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">Actions</th>
+              <div className="bg-white rounded-2xl border border-slate-100 shadow-3xs overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="bg-slate-50 border-b border-slate-100">
+                        <th className="p-4 text-xs font-bold text-slate-400 uppercase">Banner</th>
+                        <th className="p-4 text-xs font-bold text-slate-400 uppercase">Title & Details</th>
+                        <th className="p-4 text-xs font-bold text-slate-400 uppercase">Slug / Link</th>
+                        <th className="p-4 text-xs font-bold text-slate-400 uppercase">Q&A / Reviews</th>
+                        <th className="p-4 text-xs font-bold text-slate-400 uppercase text-right">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="bg-white divide-y divide-gray-200">
-                      {currentBlogs.length > 0 ? (
-                        currentBlogs.map((blog) => (
-                          <tr key={blog.id} className="hover:bg-[#F8F5EC] transition-colors duration-150">
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">{new Date(blog.date).toLocaleDateString()}</td>
-                            <td className="px-6 py-4 text-sm font-medium text-[#5A4C33] max-w-xs truncate">{blog.title}</td>
-                            <td className="px-6 py-4 text-sm text-[#5A4C33] max-w-xs truncate">{blog.subtitle}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]"><img src={blog.image} alt="" className="w-20 h-20 rounded-full" /></td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-[#5A4C33]">
-                              <div className="flex space-x-2">
-                                <motion.button
-                                  onClick={() => handleEdit(blog)}
-                                  whileHover={{ scale: 1.1 }}
-                                  whileTap={{ scale: 0.9 }}
-                                  className="px-3 py-1 bg-blue-500 text-white rounded-md text-xs flex items-center"
-                                >
-                                  <FontAwesomeIcon icon={faEdit} className="mr-1" />
-                                  Edit
-                                </motion.button>
-                                <motion.button
-                                  onClick={() => handleDelete(blog.id)}
-                                  whileHover={{ scale: 1.1 }}
-                                  whileTap={{ scale: 0.9 }}
-                                  className="px-3 py-1 bg-red-500 text-white rounded-md text-xs flex items-center"
-                                >
-                                  <FontAwesomeIcon icon={faTrash} className="mr-1" />
-                                  Delete
-                                </motion.button>
-                              </div>
-                            </td>
-                          </tr>
-                        ))
-                      ) : (
-                        <tr>
-                          <td colSpan={6} className="px-6 py-4 text-center text-sm text-gray-500">
-                            No blogs found. Click Add Blog to create a new blog.
+                    <tbody className="divide-y divide-slate-100">
+                      {currentBlogs.map((blog) => (
+                        <tr key={blog.id} className="hover:bg-slate-50/50 transition-colors">
+                          <td className="p-4">
+                            <img
+                              src={blog.image || "/logo_qa.png"}
+                              alt={blog.title}
+                              className="w-16 h-10 object-cover rounded-lg bg-slate-100 border border-slate-200/50 shadow-3xs"
+                            />
+                          </td>
+                          <td className="p-4 max-w-xs">
+                            <span className="font-extrabold text-slate-900 text-xs sm:text-sm line-clamp-1 hover:text-[#B8860B] transition-colors">
+                              {blog.title}
+                            </span>
+                            <div className="flex gap-2 items-center text-[10px] text-slate-400 font-semibold mt-1">
+                              <span>{blog.date}</span>
+                              <span>•</span>
+                              <span>By: {blog.author}</span>
+                            </div>
+                          </td>
+                          <td className="p-4">
+                            <span className="text-[11px] font-mono bg-slate-100 border border-slate-150 text-slate-600 px-2 py-0.5 rounded-md">
+                              {blog.slug}
+                            </span>
+                          </td>
+                          <td className="p-4">
+                            <div className="flex gap-2 items-center">
+                              <span className="px-2 py-0.5 bg-blue-50 border border-blue-200/50 rounded-md text-[10px] font-extrabold text-blue-700">
+                                {blog.faqs?.length || 0} FAQs
+                              </span>
+                              <span className="px-2 py-0.5 bg-amber-50 border border-amber-200/50 rounded-md text-[10px] font-extrabold text-[#B8860B]">
+                                {blog.reviews?.length || 0} Reviews
+                              </span>
+                            </div>
+                          </td>
+                          <td className="p-4 text-right">
+                            <div className="flex items-center justify-end gap-2">
+                              <button
+                                onClick={() => handleEdit(blog)}
+                                className="w-8 h-8 rounded-lg hover:bg-slate-100 border border-slate-150 flex items-center justify-center text-slate-500 hover:text-[#B8860B] transition-colors cursor-pointer"
+                                title="Edit post"
+                              >
+                                <FontAwesomeIcon icon={faEdit} className="text-xs" />
+                              </button>
+                              <button
+                                onClick={() => handleDelete(blog.id)}
+                                className="w-8 h-8 rounded-lg hover:bg-red-50 border border-slate-150 flex items-center justify-center text-slate-500 hover:text-red-600 transition-colors cursor-pointer"
+                                title="Delete post"
+                              >
+                                <FontAwesomeIcon icon={faTrash} className="text-xs" />
+                              </button>
+                            </div>
                           </td>
                         </tr>
-                      )}
+                      ))}
                     </tbody>
                   </table>
+                </div>
 
-                  <div className="mt-4 flex justify-between items-center">
-                    <div className="text-sm text-[#5A4C33]">
-                      Showing <span className="font-medium">{filteredBlogs.length > 0 ? (currentPage - 1) * itemsPerPage + 1 : 0}</span> to <span className="font-medium">{Math.min(currentPage * itemsPerPage, filteredBlogs.length)}</span> of <span className="font-medium">{filteredBlogs.length}</span> results
-                    </div>
-                    <div className="flex space-x-2">
-                      <motion.button
+                {/* Pagination */}
+                {totalPages > 1 && (
+                  <div className="flex items-center justify-between p-4 border-t border-slate-100 bg-slate-50/50">
+                    <span className="text-xs text-slate-400 font-semibold">
+                      Page {currentPage} of {totalPages}
+                    </span>
+                    <div className="flex items-center gap-1.5">
+                      <button
                         onClick={handlePreviousPage}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="px-3 py-1 bg-[#F0EAD6] text-[#5A4C33] rounded-md text-sm"
                         disabled={currentPage === 1}
+                        className="p-2 border border-slate-200 rounded-lg hover:bg-white text-slate-500 disabled:opacity-40 disabled:hover:bg-transparent cursor-pointer"
                       >
-                        Previous
-                      </motion.button>
-                      <motion.button
+                        <FontAwesomeIcon icon={faChevronLeft} className="text-xs" />
+                      </button>
+                      <button
                         onClick={handleNextPage}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="px-3 py-1 bg-[#F0EAD6] text-[#5A4C33] rounded-md text-sm"
                         disabled={currentPage === totalPages}
+                        className="p-2 border border-slate-200 rounded-lg hover:bg-white text-slate-500 disabled:opacity-40 disabled:hover:bg-transparent cursor-pointer"
                       >
-                        Next
-                      </motion.button>
+                        <FontAwesomeIcon icon={faChevronRight} className="text-xs" />
+                      </button>
                     </div>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            )}
-
-            {/* RSS Feed Debug Panel - Add this at the end of the content section */}
-            {!showBlogForm && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="mt-8 p-4 border border-blue-200 rounded-md bg-blue-50"
-              >
-                <div className="flex justify-between items-center mb-3">
-                  <h3 className="text-md font-semibold text-blue-700">RSS Feed Diagnostics</h3>
-                  <motion.button
-                    onClick={testRssFeed}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    disabled={isLoadingRss}
-                    className="px-3 py-1 bg-blue-600 text-white text-sm rounded-md flex items-center"
-                  >
-                    {isLoadingRss ? 'Testing...' : 'Test RSS Feed'}
-                  </motion.button>
-                </div>
-                
-                <div className="flex mb-2">
-                  <a 
-                    href="/api/rss" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline text-sm mr-4"
-                  >
-                    View RSS Feed
-                  </a>
-                  <a 
-                    href="https://validator.w3.org/feed/check.cgi?url=https://www.amalegalsolutions.com/api/rss" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline text-sm"
-                  >
-                    Validate with W3C Feed Validator
-                  </a>
-                </div>
-                
-                {rssDebugInfo && (
-                  <div className="mt-3">
-                    <pre className="bg-blue-100 p-3 rounded-md text-xs text-blue-800 overflow-x-auto whitespace-pre-wrap">
-                      {rssDebugInfo}
-                    </pre>
                   </div>
                 )}
-                
-                <p className="mt-3 text-xs text-blue-600">
-                  <strong>Tip:</strong> RSS feeds should be valid XML with proper entity escaping for special characters. 
-                  Make sure all required fields (title, link, description, pubDate) are present for each item.
-                </p>
-              </motion.div>
+              </div>
             )}
-      </motion.div>
-    </motion.div>
+          </motion.div>
+        ) : (
+          <motion.form
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            onSubmit={handleSubmitBlog}
+            className="space-y-8 bg-white p-6 sm:p-10 rounded-3xl border border-slate-100 shadow-sm"
+          >
+            {/* Form Header */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-slate-100 pb-6 gap-4">
+              <div className="flex items-center gap-3">
+                <button
+                  type="button"
+                  onClick={handleCancelForm}
+                  className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 text-slate-400 hover:text-slate-700 transition-colors cursor-pointer"
+                >
+                  <FontAwesomeIcon icon={faArrowLeft} className="text-sm" />
+                </button>
+                <div>
+                  <h2 className="text-xl font-black text-slate-900 tracking-tight">
+                    {formMode === 'add' ? 'Publish a New Blog Post' : 'Modify Blog Post Details'}
+                  </h2>
+                  <p className="text-slate-400 text-xs mt-0.5 font-semibold">
+                    Set up titles, subtitle blocks, canonical slug, Rich Tiptap body content, FAQs, and reviews.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2 flex-wrap">
+                <button
+                  type="button"
+                  onClick={() => {
+                    const key = formMode === 'add' ? 'autosave_blog_new' : `autosave_blog_${newBlog.id}`;
+                    const draft = localStorage.getItem(key);
+                    if (draft) {
+                      setNewBlog(JSON.parse(draft));
+                      setImagePreview(JSON.parse(draft).image || null);
+                      alert("Draft recovered successfully!");
+                    } else {
+                      alert("No draft found in storage.");
+                    }
+                  }}
+                  className="bg-slate-100 hover:bg-slate-200 border border-slate-250 text-slate-600 px-4 py-2.5 rounded-xl font-bold text-xs flex items-center gap-2 transition-all cursor-pointer"
+                  title="Check autosaved version"
+                >
+                  <FontAwesomeIcon icon={faClipboardList} className="text-xs" />
+                  <span>Restore Draft</span>
+                </button>
+              </div>
+            </div>
+
+            {/* AI Writeup Generator Card */}
+            {formMode === 'add' && (
+              <div className="p-6 border border-amber-200/80 bg-gradient-to-br from-amber-50/40 to-orange-50/10 rounded-2xl shadow-3xs relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-amber-200/10 to-transparent rounded-bl-full pointer-events-none"></div>
+                
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-2">
+                    <span className="flex items-center justify-center w-7 h-7 rounded-lg bg-amber-100 text-[#B8860B] text-xs font-bold animate-pulse">✨</span>
+                    <div>
+                      <h3 className="text-slate-800 text-sm font-bold uppercase tracking-wider">
+                        AI Writeup Auto-Generator (ChatGPT)
+                      </h3>
+                      <p className="text-slate-500 text-[11px] mt-0.5 leading-relaxed normal-case">
+                        Paste the raw writeup or primary keyword below. ChatGPT will automatically draft the title, subtitle, slug, detailed rich blog post, 10+ FAQ schemas, and 5+ client reviews.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-3">
+                  <textarea
+                    value={primaryKeyword}
+                    onChange={(e) => setPrimaryKeyword(e.target.value)}
+                    rows={5}
+                    placeholder="Enter primary keyword, draft notes, or transcripts for the legal blog here..."
+                    className="w-full p-4 bg-white border border-slate-200 focus:border-amber-400 focus:ring-2 focus:ring-amber-50 rounded-xl text-xs text-slate-800 focus:outline-none placeholder-slate-400 shadow-3xs transition-all"
+                    disabled={isGenerating}
+                  />
+
+                  <div className="flex items-center justify-between mt-1.5">
+                    <div className="flex items-center gap-2.5">
+                      {isGenerating && (
+                        <div className="flex items-center gap-2">
+                          <span className="animate-spin text-amber-500 text-sm">💫</span>
+                          <span className="text-[11px] font-bold text-slate-650 animate-pulse">
+                            Generating Content...
+                          </span>
+                        </div>
+                      )}
+                    </div>
+
+                    <motion.button
+                      type="button"
+                      onClick={handleGenerate}
+                      disabled={isGenerating || !primaryKeyword.trim()}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="px-5 py-2.5 bg-gradient-to-r from-amber-500 to-[#B8860B] hover:from-amber-600 hover:to-[#9E7307] text-white disabled:opacity-40 rounded-xl font-bold text-xs shadow-sm hover:shadow transition-all cursor-pointer flex items-center gap-1.5"
+                    >
+                      {isGenerating ? (
+                        <>
+                          <span className="animate-spin text-xs">💫</span>
+                          <span>Generating Content...</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>✨ Generate Blog with AI</span>
+                        </>
+                      )}
+                    </motion.button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Main Form Fields */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Title */}
+              <div className="flex flex-col gap-1.5">
+                <label className="text-xs font-extrabold uppercase text-slate-400 tracking-wider">Blog Title *</label>
+                <input
+                  type="text"
+                  name="title"
+                  required
+                  value={newBlog.title}
+                  onChange={handleInputChange}
+                  placeholder="e.g. Defeating Bank Harassment & Debt Settlement"
+                  className="p-3.5 border border-slate-200 rounded-xl focus:border-[#B8860B] focus:outline-none text-xs sm:text-sm font-semibold text-slate-700 bg-white"
+                />
+              </div>
+
+              {/* Subtitle */}
+              <div className="flex flex-col gap-1.5">
+                <label className="text-xs font-extrabold uppercase text-slate-400 tracking-wider">Subtitle Block</label>
+                <input
+                  type="text"
+                  name="subtitle"
+                  value={newBlog.subtitle}
+                  onChange={handleInputChange}
+                  placeholder="e.g. A comprehensive guide on debtor legal rights and RBI OTS principles"
+                  className="p-3.5 border border-slate-200 rounded-xl focus:border-[#B8860B] focus:outline-none text-xs sm:text-sm font-semibold text-slate-700 bg-white"
+                />
+              </div>
+
+              {/* Slug */}
+              <div className="flex flex-col gap-1.5">
+                <label className="text-xs font-extrabold uppercase text-slate-400 tracking-wider flex items-center gap-2">
+                  <span>URL Slug *</span>
+                  <span className="text-[10px] text-slate-400 italic lowercase font-normal">(only letters, numbers, hyphens)</span>
+                </label>
+                <input
+                  type="text"
+                  name="slug"
+                  required
+                  value={newBlog.slug}
+                  onChange={handleInputChange}
+                  placeholder="e.g. defeating-bank-harassment"
+                  className="p-3.5 border border-slate-200 rounded-xl focus:border-[#B8860B] focus:outline-none text-xs sm:text-sm font-semibold text-slate-700 bg-white font-mono"
+                />
+              </div>
+
+              {/* Date */}
+              <div className="flex flex-col gap-1.5">
+                <label className="text-xs font-extrabold uppercase text-slate-400 tracking-wider">Publication Date *</label>
+                <input
+                  type="date"
+                  name="date"
+                  required
+                  value={newBlog.date}
+                  onChange={handleInputChange}
+                  className="p-3.5 border border-slate-200 rounded-xl focus:border-[#B8860B] focus:outline-none text-xs sm:text-sm font-semibold text-slate-700 bg-white"
+                />
+              </div>
+
+              {/* Author */}
+              <div className="flex flex-col gap-1.5">
+                <label className="text-xs font-extrabold uppercase text-slate-400 tracking-wider">Featured Author Profile</label>
+                <select
+                  name="author"
+                  value={newBlog.author}
+                  onChange={handleInputChange}
+                  className="p-3.5 border border-slate-200 rounded-xl focus:border-[#B8860B] focus:outline-none text-xs sm:text-sm font-semibold text-slate-700 bg-white"
+                >
+                  <option value="Anuj Anand Malik">Anuj Anand Malik</option>
+                  <option value="Shrey Arora">Shrey Arora</option>
+                  <option value="Adv. Ashish Bhay">Adv. Ashish Bhay</option>
+                </select>
+              </div>
+
+              {/* Image Input */}
+              <div className="flex flex-col gap-1.5 md:col-span-2">
+                <label className="text-xs font-extrabold uppercase text-slate-400 tracking-wider">Cover Image Prompt (AI Generation)</label>
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={imagePrompt}
+                    onChange={(e) => setImagePrompt(e.target.value)}
+                    placeholder="e.g. A professional legal illustration..."
+                    className="p-3.5 border border-slate-200 rounded-xl focus:border-[#B8860B] focus:outline-none text-xs sm:text-sm font-semibold text-slate-700 bg-white flex-1"
+                  />
+                  <button
+                    type="button"
+                    onClick={handleGenerateImage}
+                    disabled={isGeneratingImage || !imagePrompt.trim()}
+                    className="px-4 py-3 bg-amber-50 hover:bg-amber-100 border border-[#D4AF37]/35 text-[#B8860B] rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer disabled:opacity-50"
+                  >
+                    <span>{isGeneratingImage ? '💫 Generating...' : '✨ Generate AI'}</span>
+                  </button>
+                </div>
+              </div>
+              
+              <div className="flex flex-col gap-1.5 md:col-span-2">
+                <label className="text-xs font-extrabold uppercase text-slate-400 tracking-wider">Cover Image URL *</label>
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    name="image"
+                    required
+                    value={newBlog.image}
+                    onChange={handleInputChange}
+                    placeholder="URL of the uploaded image..."
+                    className="p-3.5 border border-slate-200 rounded-xl focus:border-[#B8860B] focus:outline-none text-xs sm:text-sm font-semibold text-slate-700 bg-white flex-1"
+                  />
+                  <input
+                    type="file"
+                    ref={fileInputRef}
+                    accept="image/*"
+                    onChange={handleFileUpload}
+                    className="hidden"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => fileInputRef.current?.click()}
+                    className="px-4 py-3 bg-slate-100 hover:bg-slate-200 border border-slate-250 text-slate-700 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                  >
+                    <FontAwesomeIcon icon={faUpload} />
+                    <span>{uploading ? '...' : 'Upload Local'}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Generated Image Preview Block */}
+            {generatedImageUrl && (
+              <div className="p-4 bg-amber-50/50 rounded-2xl border border-amber-200 flex flex-col items-center gap-3">
+                <span className="text-[10px] text-[#B8860B] font-bold uppercase tracking-wider">AI Generated Image</span>
+                <img
+                  src={generatedImageUrl}
+                  alt="generated preview"
+                  className="w-full max-w-sm h-40 object-cover rounded-xl border border-amber-200 shadow-sm"
+                />
+                <button
+                  type="button"
+                  onClick={handleUploadGeneratedImage}
+                  disabled={isUploadingGenerated}
+                  className="px-4 py-2 bg-[#B8860B] text-white rounded-lg text-xs font-bold hover:bg-[#9E7307] transition-colors disabled:opacity-50"
+                >
+                  {isUploadingGenerated ? 'Uploading to Firebase...' : 'Upload this to Firebase & Use as Cover'}
+                </button>
+              </div>
+            )}
+
+            {/* Image Preview Block */}
+            {imagePreview && !generatedImageUrl && (
+              <div className="p-4 bg-slate-50 rounded-2xl border border-slate-150 flex flex-col items-center gap-2">
+                <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Cover Image Preview</span>
+                <img
+                  src={imagePreview}
+                  alt="cover preview"
+                  className="w-full max-w-sm h-40 object-cover rounded-xl border border-slate-200 shadow-3xs"
+                />
+              </div>
+            )}
+
+            {/* Tiptap Rich Description Editor */}
+            <div className="flex flex-col gap-2">
+              <label className="text-xs font-extrabold uppercase text-slate-400 tracking-wider">Detailed Blog Content Body</label>
+              <TiptapEditor
+                content={newBlog.description}
+                onChange={handleEditorChange}
+              />
+            </div>
+
+            {/* SEO Meta Tags Accordion */}
+            <div className="p-5 border border-slate-150 rounded-2xl bg-slate-50/50 flex flex-col gap-4">
+              <h3 className="text-xs font-black text-slate-900 uppercase tracking-widest flex items-center gap-1.5">
+                <FontAwesomeIcon icon={faInfoCircle} className="text-[#B8860B]" />
+                <span>Google Search SEO Configuration</span>
+              </h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-[10px] font-extrabold uppercase text-slate-400">Custom Meta Title</label>
+                  <input
+                    type="text"
+                    name="metaTitle"
+                    value={newBlog.metaTitle}
+                    onChange={handleInputChange}
+                    placeholder="Defaults to post title if left blank"
+                    className="p-3 border border-slate-200 rounded-lg focus:border-[#B8860B] focus:outline-none text-xs font-semibold text-slate-700 bg-white"
+                  />
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-[10px] font-extrabold uppercase text-slate-400">Custom Meta Description</label>
+                  <input
+                    type="text"
+                    name="metaDescription"
+                    value={newBlog.metaDescription}
+                    onChange={handleInputChange}
+                    placeholder="Short description for Google snippet"
+                    className="p-3 border border-slate-200 rounded-lg focus:border-[#B8860B] focus:outline-none text-xs font-semibold text-slate-700 bg-white"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* FAQ Subcollection Section */}
+            <div className="p-6 border border-slate-150 rounded-3xl bg-slate-50/30 flex flex-col gap-6">
+              <div className="flex justify-between items-center border-b border-slate-100 pb-3">
+                <h3 className="text-xs font-black text-slate-900 uppercase tracking-widest flex items-center gap-1.5">
+                  <FontAwesomeIcon icon={faFileAlt} className="text-blue-700" />
+                  <span>Crawlable Q&A (FAQ Schema)</span>
+                </h3>
+                <button
+                  type="button"
+                  onClick={addFaq}
+                  className="text-xs font-bold text-blue-700 hover:text-blue-900 flex items-center gap-1 cursor-pointer"
+                >
+                  <FontAwesomeIcon icon={faPlus} />
+                  <span>Add FAQ Item</span>
+                </button>
+              </div>
+
+              {(newBlog.faqs || []).length === 0 ? (
+                <p className="text-slate-400 text-xs italic">No FAQ cards configured. Add items to support Google Q&A Rich snippets.</p>
+              ) : (
+                <div className="flex flex-col gap-4">
+                  {(newBlog.faqs || []).map((faq, idx) => (
+                    <div key={idx} className="bg-white p-4 rounded-xl border border-slate-150 flex flex-col gap-3 relative shadow-3xs">
+                      <button
+                        type="button"
+                        onClick={() => removeFaq(idx)}
+                        className="absolute top-2 right-2 w-6 h-6 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-400 hover:text-red-500 cursor-pointer"
+                      >
+                        <FontAwesomeIcon icon={faTimes} className="text-[10px]" />
+                      </button>
+                      <div className="grid grid-cols-1 gap-2.5 pr-8">
+                        <input
+                          type="text"
+                          placeholder="Question (e.g. Can I settle a bank loan without court?)"
+                          required
+                          value={faq.question}
+                          onChange={(e) => handleFaqChange(idx, 'question', e.target.value)}
+                          className="p-3 border border-slate-200 rounded-lg focus:border-blue-500 focus:outline-none text-xs font-bold text-slate-800 bg-slate-50/50"
+                        />
+                        <textarea
+                          placeholder="Detailed Answer..."
+                          required
+                          rows={2}
+                          value={faq.answer}
+                          onChange={(e) => handleFaqChange(idx, 'answer', e.target.value)}
+                          className="p-3 border border-slate-200 rounded-lg focus:border-blue-500 focus:outline-none text-xs text-slate-600 bg-slate-50/50"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Review Subcollection Section */}
+            <div className="p-6 border border-slate-150 rounded-3xl bg-slate-50/30 flex flex-col gap-6">
+              <div className="flex justify-between items-center border-b border-slate-100 pb-3">
+                <h3 className="text-xs font-black text-slate-900 uppercase tracking-widest flex items-center gap-1.5">
+                  <FontAwesomeIcon icon={faStar} className="text-amber-500" />
+                  <span>Client Testimonials (Review Schema)</span>
+                </h3>
+                <button
+                  type="button"
+                  onClick={addReview}
+                  className="text-xs font-bold text-amber-600 hover:text-amber-800 flex items-center gap-1 cursor-pointer"
+                >
+                  <FontAwesomeIcon icon={faPlus} />
+                  <span>Add Review</span>
+                </button>
+              </div>
+
+              {(newBlog.reviews || []).length === 0 ? (
+                <p className="text-slate-400 text-xs italic">No reviews added yet.</p>
+              ) : (
+                <div className="flex flex-col gap-4">
+                  {(newBlog.reviews || []).map((review, idx) => (
+                    <div key={idx} className="bg-white p-4 rounded-xl border border-slate-150 flex flex-col gap-3 relative shadow-3xs">
+                      <button
+                        type="button"
+                        onClick={() => removeReview(idx)}
+                        className="absolute top-2 right-2 w-6 h-6 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-400 hover:text-red-500 cursor-pointer"
+                      >
+                        <FontAwesomeIcon icon={faTimes} className="text-[10px]" />
+                      </button>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 pr-8">
+                        <input
+                          type="text"
+                          placeholder="Client Name"
+                          required
+                          value={review.name}
+                          onChange={(e) => handleReviewChange(idx, 'name', e.target.value)}
+                          className="p-3 border border-slate-200 rounded-lg focus:border-amber-500 focus:outline-none text-xs font-bold text-slate-800 bg-slate-50/50"
+                        />
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs text-slate-500">Rating:</span>
+                          <input
+                            type="number"
+                            min="1"
+                            max="5"
+                            required
+                            value={review.rating}
+                            onChange={(e) => handleReviewChange(idx, 'rating', parseInt(e.target.value))}
+                            className="p-2 border border-slate-200 rounded-lg focus:border-amber-500 focus:outline-none text-xs text-slate-800 bg-slate-50/50 w-20"
+                          />
+                        </div>
+                        <textarea
+                          placeholder="Client Review..."
+                          required
+                          rows={2}
+                          value={review.review}
+                          onChange={(e) => handleReviewChange(idx, 'review', e.target.value)}
+                          className="p-3 border border-slate-200 rounded-lg focus:border-amber-500 focus:outline-none text-xs text-slate-600 bg-slate-50/50 md:col-span-2"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Form Actions */}
+            <div className="pt-6 border-t border-slate-100 flex items-center justify-end gap-3">
+              <button
+                type="button"
+                onClick={handleCancelForm}
+                className="px-6 py-3 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-50 text-sm font-bold transition-colors cursor-pointer"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="px-8 py-3 bg-[#B8860B] hover:bg-[#9E7307] text-white rounded-xl text-sm font-bold shadow-sm transition-colors cursor-pointer flex items-center gap-2 disabled:opacity-60"
+              >
+                {isSubmitting ? (
+                  <>
+                    <span className="animate-spin">💫</span>
+                    <span>Saving...</span>
+                  </>
+                ) : (
+                  <>
+                    <FontAwesomeIcon icon={faCheckCircle} />
+                    <span>{formMode === 'add' ? 'Publish Blog Post' : 'Update Blog Post'}</span>
+                  </>
+                )}
+              </button>
+            </div>
+          </motion.form>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };
 
