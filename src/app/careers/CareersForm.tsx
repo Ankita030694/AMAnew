@@ -143,6 +143,7 @@ const CareersForm = () => {
           <option value="" disabled>Select a position</option>
           <option value="Business Development Associate">Business Development Associate</option>
           <option value="Legal Associate">Legal Associate</option>
+          <option value="Legal Intern">Legal Intern</option>
           <option value="SDE Intern">SDE Intern</option>
         </select>
       </div>

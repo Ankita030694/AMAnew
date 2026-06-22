@@ -33,6 +33,7 @@ const CareersDashboard = () => {
     'All Positions',
     'Business Development Associate',
     'Legal Associate',
+    'Legal Intern',
     'SDE Intern'
   ];
 
