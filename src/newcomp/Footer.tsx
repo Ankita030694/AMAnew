@@ -1077,6 +1077,7 @@ const Footer = () => {
         { name: "Expert Panel Reviews", href: "/expert-panel-loan-settlement-reviews" },
         { name: "Stop Recovery Agent Home Visits", href: "/how-do-i-stop-recovery-agent-from-coming-home" },
         { name: "Bajaj Finance Agent Help", href: "/bajaj-finance-agent-visiting-home" },
+        { name: "7 Days Loan App Harassment Complaint", href: "/loan-payment-schedule" },
         { name: "How to Settle Loans Above 1 Cr", href: "/how-to-settle-loans-above-1-crore" },
         { name: "How to Settle Loans Above 5 Cr", href: "/how-to-settle-loans-above-5-crore" },
         { name: 'Unsecured Loan Specialists', href: '/which-firms-specialize-in-negotiating-settlements-for-unsecured-loans' },
@@ -1300,7 +1301,14 @@ const Footer = () => {
         { name: "Apps for Loan Settlement Offers", href: "/which-apps-or-platforms-can-help-with-loan-settlement-offers-in-india" },
         { name: "Benefits of Settling a Personal Loan", href: "/what-are-the-benefits-of-settling-a-personal-loan" },
         { name: "Credit Card Settlement Process 2026", href: "/credit-card-settlement-in-june-2026" },
-        { name: "Personal Loan Settlement 2026", href: "/personal-loan-settlement-in-june-2026" }
+        { name: "Personal Loan Settlement 2026", href: "/personal-loan-settlement-in-june-2026" },
+        { name: "Customer Service Number for Harassment by 7-Day Loan Apps", href: "/how-can-i-find-the-customer-service-number-to-report-harassment-by-a-7-day-loan-app" },
+        { name: "Report 7-Days Loan App Harassment", href: "/how-to-report-harassment-from-instant-loan-apps-in-india" },
+        { name: "Official Helpline for Loan App Harassment", href: "/official-helpline-for-digital-lending-app-harassment-complaints" },
+        { name: "Loan Repayment Schedule Calculator", href: "/loan-repayment-schedule-calculator" },
+        { name: "Loan Repayment Schedule Excel", href: "/loan-repayment-schedule-excel" },
+        { name: "Loan Settlement Lawyers", href: "/loan-settlement-lawyers" },
+        { name: "Loan Settlement Company in India", href: "/loan-settlement-company-in-india" }
       ]
 
     }

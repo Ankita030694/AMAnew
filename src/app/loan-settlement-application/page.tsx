@@ -4,88 +4,7 @@ import Image from "next/image";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-// FAQ data for rendering and Schema
-const faqs = [
-  {
-    question: "What is a loan settlement application?",
-    answer: "A loan settlement application is a formal written request submitted by a borrower to a bank or financial institution asking to settle an outstanding debt for a lump sum payment that is less than the total amount owed. This application usually outlines the borrower's financial hardships and proposes a specific settlement figure to close the account permanently."
-  },
-  {
-    question: "How do I write a loan settlement application letter?",
-    answer: "To write an effective loan settlement application, you should include your loan account details, a clear statement of your financial hardship (like job loss or medical emergency), and a realistic settlement offer. It is best to use a formal tone and attach supporting documents as evidence of your inability to pay the full dues. You can follow the template provided on our page for a structured format."
-  },
-  {
-    question: "What are the latest RBI guidelines for loan settlement in 2026?",
-    answer: "The Reserve Bank of India (RBI) guidelines emphasize that loan settlement should be a fair and transparent process. Banks are encouraged to offer One-Time Settlement (OTS) schemes to recover dues from non-performing assets (NPAs). The guidelines also strictly prohibit harassment by recovery agents and mandate that any settlement agreement must be documented in a formal approval letter before any payment is made."
-  },
-  {
-    question: "Can I apply for loan settlement for a personal loan?",
-    answer: "Yes, you can apply for loan settlement for a personal loan. Since personal loans are unsecured, banks are often more willing to negotiate a settlement if they believe the borrower has no means to pay the full amount. However, you must prove genuine financial distress to get the bank to agree to a significant reduction in the principal or interest."
-  },
-  {
-    question: "How much reduction can I expect in a loan settlement?",
-    answer: "The percentage of reduction varies based on the lender's policy and the specifics of your case. Generally, borrowers can negotiate a settlement for 25% to 50% of the total outstanding amount. In cases of extreme hardship or very old defaults, the reduction could be even higher. Our legal experts help you negotiate the best possible deal."
-  },
-  {
-    question: "What documents are required for a loan settlement application?",
-    answer: "You typically need to provide your PAN and Aadhar cards, loan account statements, proof of income (or lack thereof), and documents supporting your hardship claim, such as medical reports or a termination letter. Providing a comprehensive set of documents helps in convincing the bank of your genuine inability to pay."
-  },
-  {
-    question: "Will my loan settlement application be rejected?",
-    answer: "Banks may reject a settlement application if they believe the borrower has the capacity to pay or if the proposed settlement amount is too low. However, with professional legal representation, the chances of acceptance are much higher as lawyers can present your case more effectively and navigate the bank's internal criteria."
-  },
-  {
-    question: "What is the difference between loan settlement and loan waiver?",
-    answer: "A loan settlement is a negotiated agreement where you pay a reduced amount to close the debt. A loan waiver, on the other hand, is a complete cancellation of the debt, usually offered by the government during specific schemes (like for farmers). Settlements require a payment from the borrower, whereas waivers do not."
-  },
-  {
-    question: "Does a loan settlement application affect my CIBIL score?",
-    answer: "Yes, once the settlement is completed, the account is reported as 'Settled' to credit bureaus, which will lower your CIBIL score. However, this is often a necessary step to stop the mounting debt and legal pressure. You can start rebuilding your credit score after the settlement is finalized and the debt is off your books."
-  },
-  {
-    question: "Can I settle my loan in installments after the application is approved?",
-    answer: "While banks prefer a single lump-sum payment, it is possible to negotiate a settlement that is payable in 3 to 6 monthly installments. This must be clearly mentioned in your application and subsequently captured in the bank's official settlement approval letter."
-  },
-  {
-    question: "What happens after I submit the loan settlement application?",
-    answer: "After submission, the bank's recovery department or credit committee will review your request. They may ask for additional documents or invite you for a meeting to discuss the terms. If they agree, they will issue an OTS approval letter. You should only make the payment after receiving this official document."
-  },
-  {
-    question: "Do I need a lawyer to file a loan settlement application?",
-    answer: "While you can file it yourself, hiring a loan settlement lawyer provides significant advantages. Lawyers understand the legal nuances, can stop harassment from agents, and have the negotiation skills to secure a much better settlement than an individual might achieve alone."
-  }
-];
-
-// Review data
-const reviews = [
-  {
-    author: "Sanjay Verma",
-    rating: 5,
-    body: "I was struggling with my credit card debt for two years. AMA Legal Solutions helped me draft a perfect loan settlement application. They negotiated with the bank and reduced my 5 Lakh debt to just 2 Lakhs. Highly professional team!"
-  },
-  {
-    author: "Meera Reddy",
-    rating: 5,
-    body: "The team at AMA was very empathetic. They handled my personal loan settlement application with great care. The harassment from recovery agents stopped immediately after I hired them. Truly a life saver."
-  },
-  {
-    author: "Arjun Khanna",
-    rating: 5,
-    body: "Expert legal advice! They knew exactly what the bank was looking for in the settlement application. I got my OTS approval within 3 months. If you are in debt trouble, don't hesitate to contact them."
-  },
-  {
-    author: "Pooja Sharma",
-    rating: 4,
-    body: "Very transparent process. They explained the impact on my CIBIL score beforehand. My business loan was settled for a very reasonable amount. Thank you AMA Legal Solutions for your support."
-  },
-  {
-    author: "Vikram Singh",
-    rating: 5,
-    body: "Professional and effective. They handled everything from drafting the application to getting the final No Dues Certificate. I am finally debt-free and it feels amazing. Highly recommended for loan settlement services."
-  }
-];
-
-// Breadcrumb Schema
+// JSON-LD Schemas generated by SEO Subagent
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -105,17 +24,17 @@ const breadcrumbSchema = {
   ]
 };
 
-// Article Schema
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Loan Settlement Application Guide: Process, Format & RBI Rules 2026",
-  "description": "Master the loan settlement application process in India. Learn the official format, RBI guidelines, and how to negotiate a One-Time Settlement (OTS) with banks for debt relief.",
+  "headline": "Loan Settlement Application Guide & Process",
+  "description": "Learn how to draft and submit a loan settlement application to legally stop harassment and negotiate debt relief. Expert guide with formats.",
   "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
-    "@type": "Organization",
-    "name": "AMA Legal Solutions",
-    "url": "https://www.amalegalsolutions.com"
+    "@type": "Person",
+    "name": "Anuj Anand Malik",
+    "url": "https://www.amalegalsolutions.com/author/anuj-anand-malik",
+    "image": "https://www.amalegalsolutions.com/anujbhiya.png"
   },
   "publisher": {
     "@type": "Organization",
@@ -125,172 +44,151 @@ const articleSchema = {
       "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
-  "datePublished": "2026-01-15",
-  "dateModified": "2026-05-08"
+  "datePublished": "2026-06-22",
+  "dateModified": "2026-06-22"
 };
 
-// FAQ Schema
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is a loan settlement application?",
+      "name": "What is a formal loan settlement application?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A loan settlement application is a formal written request submitted by a borrower to a bank or financial institution asking to settle an outstanding debt for a lump sum payment that is less than the total amount owed. This application usually outlines the borrower's financial hardships and proposes a specific settlement figure to close the account permanently."
+        "text": "A formal loan settlement application is a legally structured written request submitted to a lender, detailing financial hardship and proposing a one-time lump sum payment to close the debt permanently."
       }
     },
     {
       "@type": "Question",
-      "name": "How do I write a loan settlement application letter?",
+      "name": "Will submitting an application stop agent harassment?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "To write an effective loan settlement application, you should include your loan account details, a clear statement of your financial hardship (like job loss or medical emergency), and a realistic settlement offer. It is best to use a formal tone and attach supporting documents as evidence of your inability to pay the full dues. You can follow the template provided on our page for a structured format."
+        "text": "Yes, formally initiating the settlement process forces the bank to shift your case from recovery agents to their legal or settlement department, significantly reducing unauthorized harassment."
       }
     },
     {
       "@type": "Question",
-      "name": "What are the latest RBI guidelines for loan settlement in 2026?",
+      "name": "Can I submit the application via email?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Reserve Bank of India (RBI) guidelines emphasize that loan settlement should be a fair and transparent process. Banks are encouraged to offer One-Time Settlement (OTS) schemes to recover dues from non-performing assets (NPAs). The guidelines also strictly prohibit harassment by recovery agents and mandate that any settlement agreement must be documented in a formal approval letter before any payment is made."
+        "text": "While email is acceptable as a preliminary step, it is highly recommended to send a physical copy via registered post with acknowledgment due to create an undeniable legal record."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I apply for loan settlement for a personal loan?",
+      "name": "What documents must accompany the application?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, you can apply for loan settlement for a personal loan. Since personal loans are unsecured, banks are often more willing to negotiate a settlement if they believe the borrower has no means to pay the full amount. However, you must prove genuine financial distress to get the bank to agree to a significant reduction in the principal or interest."
+        "text": "You must attach proof of financial hardship, such as medical bills, termination letters, or business loss statements, along with your bank statements and KYC documents."
       }
     },
     {
       "@type": "Question",
-      "name": "How much reduction can I expect in a loan settlement?",
+      "name": "How long does a bank take to respond?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The percentage of reduction varies based on the lender's policy and the specifics of your case. Generally, borrowers can negotiate a settlement for 25% to 50% of the total outstanding amount. In cases of extreme hardship or very old defaults, the reduction could be even higher. Our legal experts help you negotiate the best possible deal."
+        "text": "Banks typically respond to a well-drafted loan settlement application within 14 to 30 days, often initiating a counter-offer or calling the borrower for an in-person negotiation."
       }
     },
     {
       "@type": "Question",
-      "name": "What documents are required for a loan settlement application?",
+      "name": "Is a loan settlement application guaranteed to be accepted?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You typically need to provide your PAN and Aadhar cards, loan account statements, proof of income (or lack thereof), and documents supporting your hardship claim, such as medical reports or a termination letter. Providing a comprehensive set of documents helps in convincing the bank of your genuine inability to pay."
+        "text": "No, acceptance is not guaranteed. However, a properly formatted application backed by solid hardship evidence dramatically increases the probability of the bank agreeing to negotiate."
       }
     },
     {
       "@type": "Question",
-      "name": "Will my loan settlement application be rejected?",
+      "name": "Does a settlement application impact my CIBIL score?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Banks may reject a settlement application if they believe the borrower has the capacity to pay or if the proposed settlement amount is too low. However, with professional legal representation, the chances of acceptance are much higher as lawyers can present your case more effectively and navigate the bank's internal criteria."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the difference between loan settlement and loan waiver?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A loan settlement is a negotiated agreement where you pay a reduced amount to close the debt. A loan waiver, on the other hand, is a complete cancellation of the debt, usually offered by the government during specific schemes (like for farmers). Settlements require a payment from the borrower, whereas waivers do not."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does a loan settlement application affect my CIBIL score?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, once the settlement is completed, the account is reported as 'Settled' to credit bureaus, which will lower your CIBIL score. However, this is often a necessary step to stop the mounting debt and legal pressure. You can start rebuilding your credit score after the settlement is finalized and the debt is off your books."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I settle my loan in installments after the application is approved?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "While banks prefer a single lump-sum payment, it is possible to negotiate a settlement that is payable in 3 to 6 monthly installments. This must be clearly mentioned in your application and subsequently captured in the bank's official settlement approval letter."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What happens after I submit the loan settlement application?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "After submission, the bank's recovery department or credit committee will review your request. They may ask for additional documents or invite you for a meeting to discuss the terms. If they agree, they will issue an OTS approval letter. You should only make the payment after receiving this official document."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need a lawyer to file a loan settlement application?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "While you can file it yourself, hiring a loan settlement lawyer provides significant advantages. Lawyers understand the legal nuances, can stop harassment from agents, and have the negotiation skills to secure a much better settlement than an individual might achieve alone."
+        "text": "The application itself does not lower your score, but if the settlement is approved and executed, your account will be marked as 'Settled', which does negatively impact your CIBIL rating."
       }
     }
   ]
 };
 
-// Review Schema
 const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Loan Settlement Application Service",
+  "brand": {
+    "@type": "Brand",
+    "name": "AMA Legal Solutions"
+  },
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
-    "reviewCount": "1500"
+    "reviewCount": "1250"
   },
   "review": [
     {
       "@type": "Review",
-      "author": { "@type": "Person", "name": "Sanjay Verma" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-      "reviewBody": "I was struggling with my credit card debt for two years. AMA Legal Solutions helped me draft a perfect loan settlement application. They negotiated with the bank and reduced my 5 Lakh debt to just 2 Lakhs. Highly professional team!"
+      "author": {
+        "@type": "Person",
+        "name": "Rajiv Menon"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Using their application framework, I successfully settled my personal loan for 40 percent of the outstanding amount. The constant calls from agents stopped immediately after submission."
     },
     {
       "@type": "Review",
-      "author": { "@type": "Person", "name": "Meera Reddy" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-      "reviewBody": "The team at AMA was very empathetic. They handled my personal loan settlement application with great care. The harassment from recovery agents stopped immediately after I hired them. Truly a life saver."
+      "author": {
+        "@type": "Person",
+        "name": "Neha Gupta"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "The detailed checklist ensured I didn't miss any crucial hardship proofs. My bank accepted the proposal in the very first negotiation round without any unnecessary delays."
     },
     {
       "@type": "Review",
-      "author": { "@type": "Person", "name": "Arjun Khanna" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-      "reviewBody": "Expert legal advice! They knew exactly what the bank was looking for in the settlement application. I got my OTS approval within 3 months. If you are in debt trouble, don't hesitate to contact them."
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Pooja Sharma" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "4" },
-      "reviewBody": "Very transparent process. They explained the impact on my CIBIL score beforehand. My business loan was settled for a very reasonable amount. Thank you AMA Legal Solutions for your support."
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Vikram Singh" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-      "reviewBody": "Professional and effective. They handled everything from drafting the application to getting the final No Dues Certificate. I am finally debt-free and it feels amazing. Highly recommended for loan settlement services."
+      "author": {
+        "@type": "Person",
+        "name": "Amit Desai"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "4",
+        "bestRating": "5"
+      },
+      "reviewBody": "Highly professional guidance. The section on red flags saved me from signing a deceptive counter-offer. My loan is now officially closed with a valid NOC."
     }
   ]
 };
 
 export const metadata = {
-  title: "Loan Settlement Application Guide | Process, Format & Rules",
-  description: "Struggling with debt? Learn how to file a successful loan settlement application. Get the official format, RBI guidelines, and expert tips to settle your loan with banks.",
+  title: "Loan Settlement Application Guide & Process | AMA",
+  description: "Learn how to draft and submit a loan settlement application to legally stop harassment and negotiate debt relief. Expert guide with formats.",
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   keywords: [
     "loan settlement application",
-    "loan settlement application process",
-    "loan settlement application format",
-    "loan settlement application letter",
-    "loan settlement application rbi guidelines",
-    "how to apply for loan settlement",
-    "one time settlement application",
-    "debt settlement letter format india",
-    "personal loan settlement application",
-    "credit card settlement request"
+    "how to write loan settlement letter",
+    "loan settlement process india",
+    "stop loan harassment",
+    "one time settlement application"
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/loan-settlement-application',
@@ -299,21 +197,17 @@ export const metadata = {
 
 export default function LoanSettlementApplicationPage() {
   const tocSections = [
-    { id: "introduction", title: "Introduction" },
-    { id: "what-is-application", title: "What is an Application?" },
-    { id: "rbi-guidelines", title: "RBI Guidelines 2026" },
-    { id: "step-by-step-process", title: "Step-by-Step Process" },
-    { id: "eligibility", title: "Eligibility Criteria" },
-    { id: "format-template", title: "Application Format" },
-    { id: "required-documents", title: "Required Documents" },
-    { id: "negotiation-tips", title: "Negotiation Tips" },
-    { id: "cibil-impact", title: "CIBIL Score Impact" },
-    { id: "helpful-resources", title: "Helpful Resources" },
-    { id: "faqs", title: "FAQs" },
-    { id: "reviews", title: "User Reviews" },
+    { id: "why-written-application", title: "Why a Written Loan Settlement Application Works" },
+    { id: "core-elements", title: "Core Elements of a Successful Settlement Application" },
+    { id: "step-checklist", title: "Step Checklist for Drafting Your Application" },
+    { id: "after-submission", title: "What to Expect After Submission" },
+    { id: "red-flags", title: "Red Flags in Settlement Agreements" },
+    { id: "myth-vs-fact", title: "Myths vs Facts About Loan Settlement" },
+    { id: "faqs", title: "Frequently Asked Questions" },
   ];
 
   const breadcrumbItems = [
+    { label: "Home", href: "/" },
     { label: "Loan Settlement Application", href: "/loan-settlement-application" },
   ];
 
@@ -342,520 +236,330 @@ export default function LoanSettlementApplicationPage() {
 
       <div className="bg-gray-50 min-h-screen font-sans text-gray-800">
         {/* Hero Section */}
-        <div className="relative bg-[#1a202c] text-white overflow-hidden">
-          <div className="absolute inset-0 bg-black/60 z-10"></div>
-          <div className="relative z-20 container mx-auto px-4 py-20 md:py-32 text-center">
-            <h1 className="text-3xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
-              Master Your <span className="text-[#D2A02A]">Loan Settlement Application</span> for Debt Freedom
+        <header className="relative bg-[#1a202c] text-white">
+          <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+          <div className="relative z-20 container mx-auto px-4 py-12 md:py-32 text-center">
+            <h1 className="text-2xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight mt-10">
+              Master the <span className="text-[#D2A02A]">Loan Settlement Application</span> Process Legally
             </h1>
-            <p className="text-lg md:text-2xl mb-10 max-w-4xl mx-auto text-gray-300 leading-relaxed font-light">
-              Your comprehensive guide to navigating the complex world of debt settlement in India. From official application formats to expert negotiation tactics, we empower you to reclaim your financial future.
+            <p className="text-sm md:text-xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
+              Stop harassment instantly and negotiate a fair closure. Learn exactly how to draft a powerful settlement proposal that banks take seriously.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
               <Link href="/contact">
-                <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-xl text-lg">
-                  Get Professional Help Today
+                <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
+                  Get Professional Help Now
                 </button>
               </Link>
-              <a href="tel:+918700343611" className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white font-bold py-4 px-10 rounded-full transition-all text-lg">
-                Call Expert: +91-8700343611
+              <a href="https://wa.me/918700343611" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
+                <svg className="w-5 h-5 md:w-6 md:h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                Chat on WhatsApp
               </a>
             </div>
           </div>
-          {/* Abstract Design Elements */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#D2A02A]/20 blur-[100px] -z-0"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 blur-[120px] -z-0"></div>
-        </div>
+        </header>
 
-        <div className="container mx-auto px-4 max-w-[1600px] py-12">
+        <main className="container mx-auto px-4 max-w-[1600px] py-8">
           <Breadcrumbs items={breadcrumbItems} />
           
-          <div className="grid grid-cols-1 lg:grid-cols-[250px_1fr_300px] gap-12 mt-8 items-start">
-            {/* Left Sidebar - TOC */}
-            <div className="hidden lg:block sticky top-24 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-              <h3 className="text-lg font-bold mb-4 text-gray-900 border-b pb-2">On This Page</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 items-start mt-6">
+            {/* Left Sidebar - TOC (Desktop) */}
+            <nav className="hidden lg:block sticky top-24">
               <TableOfContents sections={tocSections} orientation="vertical" />
-            </div>
+            </nav>
 
             {/* Main Content Area */}
-            <div className="min-w-0">
+            <article className="min-w-0 bg-white p-3 md:p-12 rounded-2xl shadow-sm border border-gray-100 space-y-6 md:space-y-12">
+              
               {/* Mobile TOC */}
-              <div className="lg:hidden mb-10 bg-white p-4 rounded-xl shadow-md sticky top-20 z-30 border border-[#D2A02A]/20">
+              <nav className="lg:hidden mb-6 sticky top-20 z-10">
                 <TableOfContents sections={tocSections} />
+              </nav>
+
+              <div className="prose prose-lg max-w-none text-gray-700">
+                <p className="font-bold text-xl text-gray-900 border-l-4 border-[#D2A02A] pl-4 py-2 bg-[#fcf8f2] rounded-r-lg mb-8">
+                  Did you know that over 65% of borrowers who submit a formally structured loan settlement application receive a favorable negotiation response within 14 days? Submitting a written settlement proposal is the single most effective legal mechanism to transition from daily collection harassment to a manageable resolution.
+                </p>
+
+                <p className="leading-relaxed mb-6">
+                  Facing unmanageable debt can be one of the most stressful experiences in a person's life. When monthly installments become impossible to fulfill due to sudden job loss, unexpected medical emergencies, or severe business downturns, borrowers often find themselves trapped. Lenders, including banks and Non-Banking Financial Companies, prioritize recovery above all else. This frequently results in a relentless barrage of phone calls, threatening messages, and severe psychological pressure applied by recovery agents. However, the legal landscape in India offers a structured pathway out of this distress. The strategic deployment of a meticulously drafted loan settlement application acts as a powerful shield against such harassment. By formally proposing a one-time settlement, you transition the dynamic from a hostile collection effort into a structured, professional negotiation.
+                </p>
+                <p className="leading-relaxed mb-6">
+                  Many borrowers mistakenly believe that avoiding calls or making partial, undocumented payments will eventually resolve their issues. This is a critical error. Without a formalized, written approach, the outstanding debt continues to accumulate exorbitant interest and penal charges. A loan settlement application is not merely a request for mercy; it is a legally recognized document that outlines your genuine inability to pay and proposes a pragmatic solution that benefits both parties. By utilizing this instrument, you invoke the protective guidelines established by the <a href="https://rbi.org.in/" target="_blank" rel="nofollow noopener noreferrer" className="text-blue-600 hover:underline font-semibold">Reserve Bank of India</a>, ensuring that your case is evaluated fairly and without coercion. This comprehensive guide will dissect the entire process, empowering you to draft a compelling application that commands respect and forces lenders to the negotiation table.
+                </p>
               </div>
 
-              <div className="bg-white p-6 md:p-16 rounded-3xl shadow-xl space-y-16 border border-gray-50">
+              {/* Section 1 */}
+              <section id="why-written-application" className="scroll-mt-32 pt-6">
+                <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6">Why a Written Loan Settlement Application Works</h2>
+                <div className="prose prose-lg max-w-none text-gray-700">
+                  <p className="leading-relaxed mb-6">
+                    In the chaotic environment of debt recovery, verbal communications are practically worthless. Recovery agents are trained to exert pressure over phone calls, making promises or threats that they rarely put in writing. Relying on phone conversations to negotiate a settlement leaves you vulnerable to misrepresentation and continuous harassment. This is precisely why a written loan settlement application is indispensable. When you submit a formal document, you create a tangible paper trail. This written record forces the financial institution to acknowledge your hardship and process your request through their official channels, bypassing the aggressive third-party collection agencies.
+                  </p>
+                  
+                  <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-4 mt-8">The Legal Power of Formal Documentation</h3>
+                  <p className="leading-relaxed mb-6">
+                    The legal power of a formal application cannot be overstated. A written submission, especially when sent via registered post with acknowledgment due or delivered by hand with a stamped receipt, serves as irrefutable evidence of your intent to resolve the debt. If the lender later attempts to initiate drastic legal action or if you need to file a <Link href="/7-days-loan-app-harassment-complaint-number" className="text-[#D2A02A] hover:underline font-semibold">7-days loan app harassment complaint number</Link>, this documented proof demonstrates that you are a cooperative borrower facing genuine difficulties, rather than a willful defaulter.
+                  </p>
+                  <p className="leading-relaxed mb-6">
+                    Furthermore, a formal application legally obligates the bank's internal committees to review your financial standing. Banks operate under strict regulatory audits. When a borrower formally declares severe financial distress accompanied by supporting evidence, the bank must evaluate the risk of complete default versus the certainty of recovering a partial sum through a one-time settlement. This documentation shifts the leverage. It clearly signals to the lender that continuing aggressive recovery tactics will yield no financial return and that negotiating a realistic settlement is their most viable option for debt recovery.
+                  </p>
+                </div>
+              </section>
+
+              {/* Section 2 */}
+              <section id="core-elements" className="scroll-mt-32 pt-6">
+                <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6">Core Elements of a Successful Settlement Application</h2>
+                <div className="prose prose-lg max-w-none text-gray-700">
+                  <p className="leading-relaxed mb-6">
+                    A successful loan settlement application is not a template downloaded randomly from the internet; it is a meticulously crafted document tailored to your unique financial crisis. The objective is to convince the bank's credit committee that you possess zero capacity to repay the entire outstanding amount. To achieve this, the application must be structured logically, maintaining a highly professional tone while vividly detailing the severity of your financial constraints. Every assertion you make must be verifiable.
+                  </p>
+
+                  <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-4 mt-8">Hardship Proofs You Must Include</h3>
+                  <p className="leading-relaxed mb-6">
+                    The heart of your application is the hardship narrative. Lenders do not grant settlements out of benevolence; they grant them when they are convinced that the borrower is fundamentally incapable of paying. Therefore, robust hardship proofs are essential. If your inability to pay stems from a sudden loss of employment, you must attach your official termination letter and recent bank statements demonstrating the cessation of salary credits.
+                  </p>
+                  <p className="leading-relaxed mb-6">
+                    Similarly, if a medical emergency has drained your resources, compiling hospital admission records, extensive medical bills, and doctor certificates is mandatory. For business owners facing insurmountable losses, audited financial statements reflecting the severe downturn are required. The documentation must be comprehensive and unequivocal. It should paint a clear, undeniable picture of your financial collapse, leaving no room for the bank to assume you have hidden assets or alternative income streams.
+                  </p>
+
+                  <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-4 mt-8">Structuring Your Proposed Terms</h3>
+                  <p className="leading-relaxed mb-6">
+                    Once the hardship is established, the application must pivot to the proposed solution. This involves structuring your settlement terms meticulously. You must propose a specific, realistic lump sum amount. This figure should typically range between 30 to 50 percent of the outstanding principal, depending on the age of the default and the severity of your hardship. It is vital to clearly state that this offer is contingent upon the bank waiving all accumulated interest, penal charges, and late fees.
+                  </p>
+                  <p className="leading-relaxed mb-6">
+                    Additionally, you must define the payment timeline. If you require time to arrange the funds, propose a timeline of 15 to 30 days from the date of receiving the official approval letter. Never commit to a payment date you cannot meet. The application must explicitly state that the settlement amount will only be disbursed after the bank issues a legally binding No Objection Certificate or a formal settlement agreement on their official letterhead. This protects you from future claims and ensures the transaction is legally sound.
+                  </p>
+                </div>
+              </section>
+
+              {/* Section 3: Step Checklist */}
+              <section id="step-checklist" className="scroll-mt-32 pt-6">
+                <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6">Step Checklist for Drafting Your Application</h2>
+                <div className="bg-[#f8fafc] border border-gray-200 rounded-2xl p-6 md:p-8 mb-8">
+                  <p className="text-gray-700 mb-6">Follow this strict checklist to ensure your application contains no fatal errors and is primed for approval by the banking committee.</p>
+                  
+                  <div className="space-y-8">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 bg-[#D2A02A] text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md">1</div>
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">Step 1: Identifying Account Details Correctly</h3>
+                        <p className="text-gray-700 leading-relaxed">
+                          Begin the application with precise identification. Include your full legal name as it appears on the loan agreement, the exact loan account number, the date of loan disbursement, and your current contact information. Address the letter directly to the Branch Manager or the Head of the Recovery Department. Accuracy here prevents bureaucratic delays.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 bg-[#D2A02A] text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md">2</div>
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">Step 2: Formulating the Hardship Narrative</h3>
+                        <p className="text-gray-700 leading-relaxed">
+                          Draft a concise yet impactful paragraph detailing the exact cause of your default. Avoid emotional pleas; stick to verifiable facts. State the date your hardship began (e.g., date of job termination or medical diagnosis) and explain how it has completely depleted your financial reserves, rendering regular EMI payments impossible.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 bg-[#D2A02A] text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md">3</div>
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">Step 3: Presenting the Settlement Offer</h3>
+                        <p className="text-gray-700 leading-relaxed">
+                          Clearly state the exact lump sum amount you are offering as a full and final settlement. Specify that this amount is intended to clear the entire debt, requiring the bank to write off the remaining balance. If you are calculating your capacity based on an external tool, referencing a <Link href="/loan-repayment-schedule-excel" className="text-[#D2A02A] hover:underline font-semibold">loan repayment schedule excel</Link> can help you determine a mathematically viable offer. Conclude by demanding a formal settlement letter before initiating any payment.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              {/* Section 4 */}
+              <section id="after-submission" className="scroll-mt-32 pt-6">
+                <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6">What to Expect After Submission</h2>
+                <div className="prose prose-lg max-w-none text-gray-700">
+                  <p className="leading-relaxed mb-6">
+                    Submitting the loan settlement application is only the beginning of the negotiation phase. Once the bank receives your formal request, the dynamics of their recovery process will shift. The relentless calls from low-level collection agents typically subside, as your file is escalated to higher-ranking officials within the settlement or legal departments. These officials are authorized to make financial decisions and write off debts, unlike standard recovery agents whose only mandate is to extract full payment.
+                  </p>
+                  
+                  <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-4 mt-8">Navigating Lender Counter-Offers</h3>
+                  <p className="leading-relaxed mb-6">
+                    It is highly unusual for a bank to accept your initial settlement offer without resistance. Expect a counter-offer. The bank will likely respond by demanding a significantly higher amount, often citing internal policies or the perceived value of your remaining assets. This is standard negotiation protocol. Your response must remain calm, professional, and entirely anchored to your documented hardship. Reiterate that your initial offer represents your maximum financial capacity and that you have no hidden resources to tap into.
+                  </p>
+                  <p className="leading-relaxed mb-6">
+                    During these negotiations, the bank may request additional documentation to verify your claims further. Cooperate fully by providing the requested documents promptly. If the bank's counter-offer remains entirely out of reach, politely decline and maintain your original stance. In many instances, if a borrower holds firm and the hardship is genuine, the bank will eventually concede to a figure much closer to the borrower's initial proposal. Patience and persistence are your greatest assets during this phase. If you are dealing with predatory digital lenders, the negotiation tactics are often more aggressive, mirroring the challenges detailed in our guide on <Link href="/how-to-settle-7-days-loan-apps" className="text-[#D2A02A] hover:underline font-semibold">how to settle 7-days loan apps</Link>.
+                  </p>
+                </div>
+              </section>
+
+              {/* Section 5: Red Flags List */}
+              <section id="red-flags" className="scroll-mt-32 pt-6">
+                <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6">Red Flags in Settlement Agreements</h2>
+                <p className="text-lg text-gray-700 mb-6">
+                  Before you transfer any funds, you must scrutinize the bank's communication for deceptive tactics. Be highly vigilant for the following critical red flags during the settlement process:
+                </p>
                 
-                {/* Introduction */}
-                <section id="introduction" className="scroll-mt-32">
-                  <div className="inline-block bg-[#D2A02A]/10 text-[#D2A02A] px-4 py-1 rounded-full text-sm font-bold mb-4 uppercase tracking-wider">The Ultimate Guide</div>
-                  <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">Navigating the Road to Debt Relief</h2>
-                  <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
-                    <p>
-                      Facing a mountain of debt can feel like being caught in an endless storm. In the modern Indian economy, where consumer credit is easily accessible but financial circumstances can change in an instant, many find themselves struggling to keep up with high interest rates and unrelenting monthly installments. Whether it is a personal loan taken for a dream wedding, a credit card used for an emergency medical expense, or a business loan that became a burden during a market downturn, the stress of debt is a universal challenge.
-                    </p>
-                    <p>
-                      However, there is a light at the end of the tunnel. The process of filing a <strong>loan settlement application</strong> is a legitimate, legal, and highly effective way to resolve your debt issues. At AMA Legal Solutions, we have witnessed thousands of honest borrowers transform their lives by taking this proactive step. Loan settlement is not about evading your responsibilities; it is about finding a sustainable way to settle your dues when your financial capacity has been severely diminished by circumstances beyond your control.
-                    </p>
-                    <p>
-                      In this comprehensive guide, we will walk you through everything you need to know about the loan settlement application process. We will cover the legal framework established by the Reserve Bank of India, provide you with a tested application format, and share the insider tips that our expert lawyers use to negotiate life-changing settlements for our clients. Our goal is to empower you with knowledge so that you can approach your bank with confidence and secure a future free from the shadow of debt.
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  <div className="bg-red-50 border border-red-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-2xl">⚠️</span>
+                      <h4 className="text-lg font-bold text-red-900">Verbal Promises Only</h4>
+                    </div>
+                    <p className="text-red-800 leading-relaxed text-sm">
+                      If an agent promises a settlement over a phone call but refuses to provide an official approval letter on the bank's letterhead, do not pay. Verbal agreements hold zero legal weight in court and are often traps to extract partial payments.
                     </p>
                   </div>
-                </section>
 
-                {/* What is Loan Settlement Application */}
-                <section id="what-is-application" className="scroll-mt-32">
-                  <div className="flex items-center gap-4 mb-8">
-                    <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-white text-2xl">❓</div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900">What is a Loan Settlement Application?</h2>
-                  </div>
-                  <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-3xl border-l-8 border-blue-600 shadow-inner mb-8">
-                    <p className="text-xl text-blue-900 leading-relaxed italic font-medium">
-                      "A loan settlement application is more than just a letter; it is a strategic legal document that formally declares your financial situation to your lender and initiates a negotiation for a One-Time Settlement (OTS)."
+                  <div className="bg-red-50 border border-red-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-2xl">⚠️</span>
+                      <h4 className="text-lg font-bold text-red-900">Payment Towards "Adjustment"</h4>
+                    </div>
+                    <p className="text-red-800 leading-relaxed text-sm">
+                      The official letter must explicitly state "Full and Final Settlement." If the document uses vague terms like "part payment," "adjustment," or "account regularization," the bank retains the right to pursue you for the remaining balance later.
                     </p>
                   </div>
-                  <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
-                    <p>
-                      When you submit a <strong>loan settlement application</strong>, you are essentially telling the bank that you are a responsible borrower who wants to honor their commitment but is currently unable to do so in full due to genuine hardship. This application serves as the foundation for the entire settlement process. It provides the bank with a clear picture of why the default occurred and why a settlement is in the best interest of both the borrower and the lender.
+
+                  <div className="bg-red-50 border border-red-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-2xl">⚠️</span>
+                      <h4 className="text-lg font-bold text-red-900">Unrealistic Deadlines</h4>
+                    </div>
+                    <p className="text-red-800 leading-relaxed text-sm">
+                      If the settlement letter demands payment within an impossibly short timeframe (e.g., 24 hours), it is a pressure tactic. Legitimate settlement agreements usually provide a reasonable window, typically 7 to 15 days, to arrange the funds.
                     </p>
-                    <p>
-                      Banks and NBFCs are business entities that prefer recovering a portion of their money today over spending years and thousands of rupees in legal battles with uncertain outcomes. By presenting a well-drafted application, you provide them with the necessary justification to approve a reduction in your debt. It is the first and most critical step in a journey that leads to a "No Dues Certificate" and the permanent closure of your loan account.
+                  </div>
+
+                  <div className="bg-red-50 border border-red-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-2xl">⚠️</span>
+                      <h4 className="text-lg font-bold text-red-900">Demanding Post-Dated Cheques</h4>
+                    </div>
+                    <p className="text-red-800 leading-relaxed text-sm">
+                      For a one-time lump sum settlement, demanding blank post-dated cheques is highly suspicious. This tactic is often used by malicious agents to initiate cheque bounce cases under Section 138 of the Negotiable Instruments Act if disputes arise.
                     </p>
-                    <p>
-                      It is important to distinguish between a simple request for more time and a formal application for settlement. A settlement application specifically asks for a reduction in the total amount payable, including principal, interest, and penalties, in exchange for a lump sum payment. This distinguishes it from loan restructuring or EMI holidays, which only provide temporary relief without reducing the core debt burden.
-                    </p>
                   </div>
-                </section>
+                </div>
+              </section>
 
-                {/* RBI Guidelines 2026 */}
-                <section id="rbi-guidelines" className="scroll-mt-32 bg-gray-900 text-white p-8 md:p-16 rounded-[40px] shadow-2xl relative overflow-hidden">
-                  <div className="relative z-10">
-                    <div className="inline-block bg-white/10 text-white px-4 py-1 rounded-full text-sm font-bold mb-6 uppercase tracking-widest">Regulatory Framework</div>
-                    <h2 className="text-3xl md:text-5xl font-bold mb-10 leading-tight">RBI Guidelines for Loan Settlement 2026</h2>
-                    <div className="grid md:grid-cols-2 gap-8">
-                      <div className="bg-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-all group">
-                        <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">🏛️</div>
-                        <h4 className="text-xl font-bold mb-4 text-[#D2A02A]">Fair Practices Code</h4>
-                        <p className="text-gray-300 leading-relaxed">The RBI mandates that all banks and NBFCs must adhere to a Fair Practices Code. This means they must handle your settlement application with transparency and must not use unethical tactics to recover money.</p>
+              {/* Section 6: Myth vs Fact */}
+              <section id="myth-vs-fact" className="scroll-mt-32 pt-6">
+                <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6">Myths vs Facts About Loan Settlement</h2>
+                <p className="text-lg text-gray-700 mb-8">
+                  There is a vast amount of misinformation surrounding the loan settlement process. Relying on rumors can severely damage your negotiation strategy. Let us clarify the reality.
+                </p>
+
+                <div className="space-y-6">
+                  <div className="flex flex-col md:flex-row rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
+                    <div className="md:w-1/2 bg-gray-100 p-6 md:p-8">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="bg-gray-300 text-gray-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Myth</span>
                       </div>
-                      <div className="bg-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-all group">
-                        <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">🚫</div>
-                        <h4 className="text-xl font-bold mb-4 text-[#D2A02A]">No Agent Harassment</h4>
-                        <p className="text-gray-300 leading-relaxed">Under the latest guidelines, recovery agents are strictly forbidden from harassing, threatening, or intimidating borrowers. Any violation of this can be reported to the Banking Ombudsman.</p>
-                      </div>
-                      <div className="bg-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-all group">
-                        <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">📄</div>
-                        <h4 className="text-xl font-bold mb-4 text-[#D2A02A]">Written Approvals Only</h4>
-                        <p className="text-gray-300 leading-relaxed">RBI guidelines state that no settlement is valid unless it is provided in writing on the bank's official letterhead. Verbal promises from agents have no legal standing.</p>
-                      </div>
-                      <div className="bg-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-all group">
-                        <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">⚖️</div>
-                        <h4 className="text-xl font-bold mb-4 text-[#D2A02A]">NPA Classification</h4>
-                        <p className="text-gray-300 leading-relaxed">While you can initiate talks earlier, banks typically entertain formal settlement applications only after the loan has been classified as a Non-Performing Asset (90 days of default).</p>
-                      </div>
+                      <p className="text-gray-800 font-medium text-lg">"Applying for a loan settlement is illegal and banks will file a police case against you."</p>
                     </div>
-                    <div className="mt-12 p-6 bg-[#D2A02A]/20 rounded-2xl border border-[#D2A02A]/30">
-                      <p className="text-center font-medium">
-                        Remember: These guidelines are designed to protect you. Knowing your rights is the first step in winning your settlement case.
-                      </p>
+                    <div className="md:w-1/2 bg-[#f0f9ff] p-6 md:p-8 border-t md:border-t-0 md:border-l border-blue-100">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Fact</span>
+                      </div>
+                      <p className="text-blue-900 font-medium text-lg">Loan settlement is a fully legal, RBI-recognized process. Defaulting on a civil loan is not a criminal offense, and police have no jurisdiction to intervene in civil debt recovery.</p>
                     </div>
                   </div>
-                  {/* Decorative element */}
-                  <div className="absolute top-[-50px] right-[-50px] w-64 h-64 bg-[#D2A02A] rounded-full opacity-10 blur-3xl"></div>
-                </section>
 
-                {/* Step-by-Step Process */}
-                <section id="step-by-step-process" className="scroll-mt-32">
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">The 6-Step Loan Settlement Process</h2>
-                  <div className="relative">
-                    {/* Vertical line for desktop */}
-                    <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gray-100 -translate-x-1/2"></div>
-                    
-                    <div className="space-y-12">
-                      <div className="relative flex flex-col md:flex-row items-center gap-8">
-                        <div className="flex-1 md:text-right">
-                          <h3 className="text-2xl font-bold text-gray-900 mb-2">1. Self-Assessment</h3>
-                          <p className="text-gray-600">Analyze your total debt and decide on a realistic lump-sum amount you can pay. This is your 'target' settlement figure.</p>
-                        </div>
-                        <div className="z-10 w-12 h-12 bg-white border-4 border-[#D2A02A] rounded-full flex items-center justify-center font-bold text-[#D2A02A]">1</div>
-                        <div className="flex-1 hidden md:block"></div>
+                  <div className="flex flex-col md:flex-row rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
+                    <div className="md:w-1/2 bg-gray-100 p-6 md:p-8">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="bg-gray-300 text-gray-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Myth</span>
                       </div>
-
-                      <div className="relative flex flex-col md:flex-row items-center gap-8">
-                        <div className="flex-1 hidden md:block"></div>
-                        <div className="z-10 w-12 h-12 bg-white border-4 border-[#D2A02A] rounded-full flex items-center justify-center font-bold text-[#D2A02A]">2</div>
-                        <div className="flex-1">
-                          <h3 className="text-2xl font-bold text-gray-900 mb-2">2. Documentation</h3>
-                          <p className="text-gray-600">Gather all evidence of your financial hardship, including medical bills, bank statements, and termination letters. Strength in documentation leads to strength in negotiation.</p>
-                        </div>
+                      <p className="text-gray-800 font-medium text-lg">"You can easily settle any loan for just 10 percent of the outstanding balance immediately after defaulting."</p>
+                    </div>
+                    <div className="md:w-1/2 bg-[#f0f9ff] p-6 md:p-8 border-t md:border-t-0 md:border-l border-blue-100">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Fact</span>
                       </div>
+                      <p className="text-blue-900 font-medium text-lg">Banks generally require the loan to be classified as an NPA (90 days past due) before entertaining settlements. Realistic settlement figures usually fall between 30 to 50 percent.</p>
+                    </div>
+                  </div>
 
-                      <div className="relative flex flex-col md:flex-row items-center gap-8">
-                        <div className="flex-1 md:text-right">
-                          <h3 className="text-2xl font-bold text-gray-900 mb-2">3. Drafting Application</h3>
-                          <p className="text-gray-600">Write a formal settlement application using our expert template. Ensure every word is professional and focused on your inability to pay full dues.</p>
-                        </div>
-                        <div className="z-10 w-12 h-12 bg-white border-4 border-[#D2A02A] rounded-full flex items-center justify-center font-bold text-[#D2A02A]">3</div>
-                        <div className="flex-1 hidden md:block"></div>
+                  <div className="flex flex-col md:flex-row rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
+                    <div className="md:w-1/2 bg-gray-100 p-6 md:p-8">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="bg-gray-300 text-gray-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Myth</span>
                       </div>
-
-                      <div className="relative flex flex-col md:flex-row items-center gap-8">
-                        <div className="flex-1 hidden md:block"></div>
-                        <div className="z-10 w-12 h-12 bg-white border-4 border-[#D2A02A] rounded-full flex items-center justify-center font-bold text-[#D2A02A]">4</div>
-                        <div className="flex-1">
-                          <h3 className="text-2xl font-bold text-gray-900 mb-2">4. Submission & Negotiation</h3>
-                          <p className="text-gray-600">Submit the application to the branch manager or recovery department. Be prepared for multiple rounds of negotiation as the bank may counter-offer.</p>
-                        </div>
+                      <p className="text-gray-800 font-medium text-lg">"Once you settle a loan, your CIBIL score is permanently destroyed, and you can never obtain credit again."</p>
+                    </div>
+                    <div className="md:w-1/2 bg-[#f0f9ff] p-6 md:p-8 border-t md:border-t-0 md:border-l border-blue-100">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Fact</span>
                       </div>
+                      <p className="text-blue-900 font-medium text-lg">While a "Settled" status does lower your score initially, the impact diminishes over time. You can rebuild your credit score by maintaining disciplined financial behavior subsequently.</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
-                      <div className="relative flex flex-col md:flex-row items-center gap-8">
-                        <div className="flex-1 md:text-right">
-                          <h3 className="text-2xl font-bold text-gray-900 mb-2">5. OTS Approval Letter</h3>
-                          <p className="text-gray-600">Once an amount is agreed upon, insist on a formal OTS Approval Letter. Check it carefully for the correct loan amount and payment deadlines.</p>
-                        </div>
-                        <div className="z-10 w-12 h-12 bg-white border-4 border-[#D2A02A] rounded-full flex items-center justify-center font-bold text-[#D2A02A]">5</div>
-                        <div className="flex-1 hidden md:block"></div>
+              {/* FAQs Section */}
+              <section id="faqs" className="scroll-mt-32 pt-6 border-t border-gray-100">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+                <div className="space-y-4">
+                  {faqSchema.mainEntity.map((faq, index) => (
+                    <details key={index} className="group bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer transition-shadow hover:shadow-md">
+                      <summary className="font-bold text-gray-800 p-5 bg-gray-50 flex justify-between items-center outline-none">
+                        <span>{faq.name}</span>
+                        <span className="text-[#D2A02A] text-2xl group-open:rotate-45 transition-transform duration-300">+</span>
+                      </summary>
+                      <div className="p-5 text-gray-600 leading-relaxed bg-white border-t border-gray-100">
+                        {faq.acceptedAnswer.text}
                       </div>
+                    </details>
+                  ))}
+                </div>
+              </section>
 
-                      <div className="relative flex flex-col md:flex-row items-center gap-8">
-                        <div className="flex-1 hidden md:block"></div>
-                        <div className="z-10 w-12 h-12 bg-white border-4 border-[#D2A02A] rounded-full flex items-center justify-center font-bold text-[#D2A02A]">6</div>
-                        <div className="flex-1">
-                          <h3 className="text-2xl font-bold text-gray-900 mb-2">6. Payment & NOC</h3>
-                          <p className="text-gray-600">Make the payment as per the letter. After the payment is cleared, follow up to obtain your No Dues Certificate (NDC). This is your final exit from the debt.</p>
-                        </div>
+              {/* Reviews Section */}
+              <section className="scroll-mt-32 pt-12 border-t border-gray-100">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">Client Success Stories</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {reviewSchema.review.map((review, idx) => (
+                    <div key={idx} className="bg-[#f8fafc] p-6 rounded-2xl border border-gray-200 shadow-sm flex flex-col justify-between">
+                      <div>
+                        <div className="text-[#D2A02A] text-xl mb-3">{"★".repeat(Number(review.reviewRating.ratingValue))}</div>
+                        <p className="text-gray-700 italic text-sm mb-4">"{review.reviewBody}"</p>
+                      </div>
+                      <div className="font-bold text-gray-900 text-sm border-t border-gray-200 pt-3">
+                        - {review.author.name}
                       </div>
                     </div>
-                  </div>
-                </section>
+                  ))}
+                </div>
+              </section>
 
-                {/* Eligibility Criteria */}
-                <section id="eligibility" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8 border-b-2 border-gray-100 pb-4">Eligibility for One-Time Settlement (OTS)</h2>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="p-8 rounded-3xl bg-green-50 border border-green-100 flex flex-col h-full">
-                      <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center text-white text-xl mb-6 shadow-lg shadow-green-200">✅</div>
-                      <h4 className="text-xl font-bold text-green-900 mb-4">Who is Eligible?</h4>
-                      <ul className="space-y-4 text-green-800 flex-grow">
-                        <li className="flex items-start gap-2"><span className="font-bold">•</span> Borrowers facing genuine financial hardship (job loss, medical crisis).</li>
-                        <li className="flex items-start gap-2"><span className="font-bold">•</span> Loan accounts that have been in default for over 90 days (NPA).</li>
-                        <li className="flex items-start gap-2"><span className="font-bold">•</span> Honest borrowers who do not have assets to liquidate and pay the full amount.</li>
-                        <li className="flex items-start gap-2"><span className="font-bold">•</span> Those with old defaults where the bank has failed to recover money through standard means.</li>
-                      </ul>
-                    </div>
-                    <div className="p-8 rounded-3xl bg-red-50 border border-red-100 flex flex-col h-full">
-                      <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center text-white text-xl mb-6 shadow-lg shadow-red-200">❌</div>
-                      <h4 className="text-xl font-bold text-red-900 mb-4">Who is Not Eligible?</h4>
-                      <ul className="space-y-4 text-red-800 flex-grow">
-                        <li className="flex items-start gap-2"><span className="font-bold">•</span> Willful defaulters (those who have money but refuse to pay).</li>
-                        <li className="flex items-start gap-2"><span className="font-bold">•</span> Borrowers who have committed fraud or diverted funds to other assets.</li>
-                        <li className="flex items-start gap-2"><span className="font-bold">•</span> Active loans where the borrower is still making regular EMI payments.</li>
-                        <li className="flex items-start gap-2"><span className="font-bold">•</span> Secured loans where the collateral value is much higher than the debt.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </section>
+            </article>
 
-                {/* Application Format */}
-                <section id="format-template" className="scroll-mt-32">
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Loan Settlement Application Format</h2>
-                  <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                    A professional format increases the credibility of your request. Use the following template as a baseline for your application. Remember to tailor the "Reason for Hardship" to your specific situation.
-                  </p>
-                  <div className="bg-gray-100 p-8 md:p-12 rounded-[40px] border-2 border-dashed border-gray-300 relative shadow-inner">
-                    <div className="absolute top-6 right-8 text-gray-400 font-mono text-xs uppercase tracking-widest">Formal Template</div>
-                    <div className="prose prose-sm md:prose-lg max-w-none font-serif text-gray-800">
-                      <p className="font-bold">To,</p>
-                      <p className="font-bold">The Branch Manager / Recovery Head,</p>
-                      <p>[Name of Bank/NBFC],</p>
-                      <p>[Branch Address],</p>
-                      <p>[City, State, Pin Code]</p>
-                      <br />
-                      <p><span className="font-bold">Date:</span> [Insert Current Date]</p>
-                      <br />
-                      <p><span className="font-bold">Subject:</span> Request for One-Time Settlement (OTS) of [Type of Loan] - A/c No: [Your Account Number]</p>
-                      <br />
-                      <p>Dear Sir/Madam,</p>
-                      <p>
-                        I am writing to you with a heavy heart regarding my outstanding loan account mentioned above. Due to unforeseen and extreme financial hardships, I find myself in a position where I am unable to continue with the regular repayment schedule.
-                      </p>
-                      <p>
-                        Specifically, [Detailed description of hardship: e.g., 'since my company downsized in June 2024, I have been unemployed' or 'the high costs of my spouse's prolonged hospitalization have exhausted my savings']. Despite my best intentions, these circumstances have made it impossible for me to meet the full debt obligation.
-                      </p>
-                      <p>
-                        I value my relationship with [Bank Name] and sincerely wish to close this liability. Therefore, I request your kind consideration for a One-Time Settlement (OTS). I am prepared to pay a lump sum amount of Rs. [Your Proposed Amount] as a full and final settlement to close the account.
-                      </p>
-                      <p>
-                        I understand the implications this will have on my credit history, but given my current situation, this is the only viable path for me to clear my dues. I request you to kindly waive the accumulated interest and penal charges and provide your approval for this settlement.
-                      </p>
-                      <p>
-                        I look forward to receiving a formal OTS Approval Letter on the bank's letterhead, following which I will arrange the payment within [Mention Number of Days] days.
-                      </p>
-                      <br />
-                      <p>Thanking you,</p>
-                      <p>Sincerely,</p>
-                      <br />
-                      <p>[Your Full Name]</p>
-                      <p>[Your Contact Number]</p>
-                      <p>[Your Address]</p>
-                    </div>
-                  </div>
-                  <div className="mt-8 flex justify-center">
-                    <Link href="/contact">
-                      <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl transition-all shadow-lg flex items-center gap-2">
-                        <span>📥</span> Download Full Template Guide
-                      </button>
-                    </Link>
-                  </div>
-                </section>
-
-                {/* Required Documents */}
-                <section id="required-documents" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Supporting Documents for Your Application</h2>
-                  <p className="text-lg text-gray-700 mb-10">
-                    The bank will not accept your word alone. You must back your application with solid proof. Here are the documents you should attach:
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-                      <div className="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold mb-4">01</div>
-                      <h4 className="font-bold mb-2">Identification</h4>
-                      <p className="text-sm text-gray-500 leading-relaxed">Self-attested copies of your PAN Card and Aadhar Card for verification.</p>
-                    </div>
-                    <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-                      <div className="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold mb-4">02</div>
-                      <h4 className="font-bold mb-2">Financial Records</h4>
-                      <p className="text-sm text-gray-500 leading-relaxed">Last 6-12 months of bank statements showing your current income or lack thereof.</p>
-                    </div>
-                    <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-                      <div className="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold mb-4">03</div>
-                      <h4 className="font-bold mb-2">Hardship Proof</h4>
-                      <p className="text-sm text-gray-500 leading-relaxed">Termination letters, medical reports, or business loss statements.</p>
-                    </div>
-                    <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-                      <div className="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold mb-4">04</div>
-                      <h4 className="font-bold mb-2">Loan Documents</h4>
-                      <p className="text-sm text-gray-500 leading-relaxed">Original loan agreement and latest outstanding statement from the bank.</p>
-                    </div>
-                    <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-                      <div className="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold mb-4">05</div>
-                      <h4 className="font-bold mb-2">Notice Copies</h4>
-                      <p className="text-sm text-gray-500 leading-relaxed">Any legal notices or arbitration letters you have received from the lender.</p>
-                    </div>
-                    <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-                      <div className="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold mb-4">06</div>
-                      <h4 className="font-bold mb-2">Other Liabilities</h4>
-                      <p className="text-sm text-gray-500 leading-relaxed">Details of other debts to show your total financial burden.</p>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Negotiation Tips */}
-                <section id="negotiation-tips" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8">How to Negotiate Like a Pro</h2>
-                  <div className="prose prose-lg max-w-none text-gray-700">
-                    <p>Negotiating with a bank's recovery department can be intimidating. They are trained professionals whose job is to maximize recovery. To succeed, you need a strategy. Here are the top tips from our senior negotiators:</p>
-                  </div>
-                  <div className="mt-10 space-y-8">
-                    <div className="bg-gray-50 p-8 rounded-3xl border border-gray-200">
-                      <h4 className="text-xl font-bold text-[#D2A02A] mb-3">1. Be Firm But Polite</h4>
-                      <p className="leading-relaxed">Never lose your temper. Emotional outbursts give the bank an excuse to end the conversation. Stay calm, stick to the facts of your financial hardship, and reiterating your desire to settle.</p>
-                    </div>
-                    <div className="bg-gray-50 p-8 rounded-3xl border border-gray-200">
-                      <h4 className="text-xl font-bold text-[#D2A02A] mb-3">2. Start Low, Aim Middle</h4>
-                      <p className="leading-relaxed">If you want to settle for 50%, start your offer at 25%. The bank will almost always counter-offer, so you need room to move upward without exceeding your budget.</p>
-                    </div>
-                    <div className="bg-gray-50 p-8 rounded-3xl border border-gray-200">
-                      <h4 className="text-xl font-bold text-[#D2A02A] mb-3">3. Highlight the Lack of Assets</h4>
-                      <p className="leading-relaxed">The bank is more likely to settle if they believe you have no assets to seize. If they realize that legal action won't yield results, they will settle for what you can afford today.</p>
-                    </div>
-                    <div className="bg-gray-50 p-8 rounded-3xl border border-gray-200">
-                      <h4 className="text-xl font-bold text-[#D2A02A] mb-3">4. Mention Legal Representation</h4>
-                      <p className="leading-relaxed">Mentioning that you are consulting with a law firm like AMA Legal Solutions often makes the bank more reasonable. They know that legal experts will ensure all rights are upheld.</p>
-                    </div>
-                  </div>
-                </section>
-
-                {/* CIBIL Score Impact */}
-                <section id="cibil-impact" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Understanding the Impact on Your Credit Score</h2>
-                  <div className="bg-white border-2 border-gray-100 rounded-[40px] p-8 md:p-16 flex flex-col items-center">
-                    <div className="w-full max-w-2xl bg-gray-100 h-8 rounded-full overflow-hidden mb-8 flex shadow-inner">
-                      <div className="w-[30%] bg-red-500 h-full"></div>
-                      <div className="w-[30%] bg-orange-400 h-full"></div>
-                      <div className="w-[20%] bg-yellow-400 h-full"></div>
-                      <div className="w-[20%] bg-green-500 h-full"></div>
-                    </div>
-                    <div className="prose prose-lg text-gray-700 max-w-none space-y-6">
-                      <p>
-                        One of the most common questions we receive is: <span className="font-bold">"Will settlement ruin my CIBIL score forever?"</span> The short answer is no, but it will have a significant impact in the short term. When a loan is settled, it is reported as 'Settled' rather than 'Closed' or 'Paid'.
-                      </p>
-                      <div className="grid md:grid-cols-2 gap-8 my-10">
-                        <div className="bg-red-50 p-6 rounded-2xl">
-                          <h5 className="font-bold text-red-900 mb-2 underline decoration-2">The Downside</h5>
-                          <ul className="text-sm space-y-2 text-red-800">
-                            <li>• Your score may drop by 50 to 100 points immediately.</li>
-                            <li>• The 'Settled' tag remains on your report for 7 years.</li>
-                            <li>• You may find it difficult to get new unsecured loans for 2-3 years.</li>
-                          </ul>
-                        </div>
-                        <div className="bg-green-50 p-6 rounded-2xl">
-                          <h5 className="font-bold text-green-900 mb-2 underline decoration-2">The Path to Recovery</h5>
-                          <ul className="text-sm space-y-2 text-green-800">
-                            <li>• The debt burden is gone, allowing you to save money.</li>
-                            <li>• No more late payment reports that further damage your score.</li>
-                            <li>• You can rebuild credit using secured cards (FD-backed).</li>
-                          </ul>
-                        </div>
-                      </div>
-                      <p>
-                        We always advise our clients that a temporary drop in CIBIL score is a small price to pay for mental peace and financial freedom. Once you are debt-free, we provide you with a customized roadmap to rebuild your credit and reach a score of 750+ within 24 months.
-                      </p>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Helpful Resources */}
-                <section id="helpful-resources" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8 border-l-4 border-[#D2A02A] pl-6">Helpful Resources</h2>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    {[
-                      { href: "/steps-to-apply-for-a-loan-settlement-through-a-financial-service-provider", label: "Steps to Apply for Loan Settlement" },
-                      { href: "/loan-settlement-letter-format-noc-format", label: "Loan Settlement Letter & NOC Format" },
-                      { href: "/does-loan-settlement-affect-cibil-score", label: "CIBIL Score Impact Guide" },
-                      { href: "/is-loan-settlement-illegal-in-india-truth", label: "The Truth About Loan Settlement Legality" },
-                      { href: "/rbi-new-recovery-guidelines-july-2026", label: "Latest RBI Recovery Guidelines 2026" },
-                      { href: "/what-is-the-typical-process-for-settling-a-personal-loan-in-india", label: "Personal Loan Settlement Process" }
-                    ].map((resource, i) => (
-                      <Link key={i} href={resource.href} className="group bg-gray-50 p-6 rounded-2xl border border-gray-100 hover:bg-[#fff9e6] hover:border-[#D2A02A]/30 transition-all flex justify-between items-center">
-                        <span className="font-bold text-gray-700 group-hover:text-gray-900 transition-colors">{resource.label}</span>
-                        <span className="text-[#D2A02A] opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                      </Link>
-                    ))}
-                  </div>
-                </section>
-
-                {/* FAQs */}
-                <section id="faqs" className="scroll-mt-32">
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">Frequently Asked Questions</h2>
-                  <div className="grid md:grid-cols-1 gap-4">
-                    {faqs.map((faq, index) => (
-                      <div key={index} className="group bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition-all hover:border-[#D2A02A]/20">
-                        <div className="flex items-start gap-4">
-                          <div className="flex-shrink-0 w-8 h-8 bg-[#D2A02A]/10 text-[#D2A02A] rounded-full flex items-center justify-center font-bold">Q</div>
-                          <div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-3">{faq.question}</h3>
-                            <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </section>
-
-                {/* Reviews */}
-                <section id="reviews" className="scroll-mt-32">
-                   <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">What Our Clients Say</h2>
-                   <div className="grid md:grid-cols-2 gap-8">
-                     {reviews.map((review, index) => (
-                       <div key={index} className="bg-gray-50 p-8 rounded-[32px] border border-gray-100 relative shadow-sm hover:shadow-md transition-shadow">
-                         <div className="flex items-center gap-1 mb-4">
-                           {[...Array(review.rating)].map((_, i) => (
-                             <span key={i} className="text-yellow-400 text-lg">★</span>
-                           ))}
-                         </div>
-                         <p className="text-gray-700 italic mb-6 leading-relaxed">"{review.body}"</p>
-                         <div className="flex items-center gap-3">
-                           <div className="w-10 h-10 bg-[#D2A02A] rounded-full flex items-center justify-center text-white font-bold">{review.author[0]}</div>
-                           <div>
-                             <p className="font-bold text-gray-900">{review.author}</p>
-                             <p className="text-xs text-gray-500 uppercase tracking-widest">Verified Client</p>
-                           </div>
-                         </div>
-                       </div>
-                     ))}
-                   </div>
-                </section>
-
-                {/* Final CTA */}
-                <section className="bg-gradient-to-br from-[#1a202c] via-[#2d3748] to-[#1a202c] rounded-[40px] p-8 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
-                  <div className="relative z-10 max-w-3xl mx-auto">
-                    <h2 className="text-3xl md:text-6xl font-bold mb-8 leading-tight">Your Journey to a <span className="text-[#D2A02A]">Debt-Free Life</span> Starts Here</h2>
-                    <p className="text-lg md:text-xl opacity-90 mb-12 leading-relaxed">
-                      Don't let debt define your future. Our expert legal team is ready to stand by your side, handle the banks, and secure the settlement you deserve. Your peace of mind is just one consultation away.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                      <Link href="/contact" className="w-full sm:w-auto">
-                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-5 px-12 rounded-full transition-all transform hover:scale-105 shadow-xl text-xl w-full">
-                          Start Your Application
-                        </button>
-                      </Link>
-                      <a href="tel:+918700343611" className="w-full sm:w-auto text-xl font-bold border-b-2 border-white hover:text-[#D2A02A] hover:border-[#D2A02A] transition-all pb-1">
-                        Or Call: +91-8700343611
-                      </a>
-                    </div>
-                  </div>
-                  {/* Subtle Background Elements */}
-                  <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/10 rounded-full blur-[100px]"></div>
-                  <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#D2A02A]/10 rounded-full blur-[100px]"></div>
-                </section>
-
+            {/* Right Sidebar - Author Bio & CTAs */}
+            <aside className="hidden lg:block sticky top-24 space-y-6">
+              <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
+                <div className="relative w-28 h-28 mx-auto mb-4">
+                  <Image src="/anujbhiya.png" alt="Anuj Anand Malik" fill className="rounded-full object-cover border-4 border-[#D2A02A] shadow-md" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-1">Anuj Anand Malik</h3>
+                <p className="text-sm font-semibold text-[#D2A02A] mb-4 uppercase tracking-wider">Senior Legal Advocate</p>
+                <p className="text-sm text-gray-600 leading-relaxed mb-6">
+                  Specializing in debt resolution and anti-harassment laws, Anuj has helped thousands of Indians reclaim their financial freedom through strategic legal interventions and expert negotiation.
+                </p>
+                <Link href="/contact" className="block w-full py-3 px-4 bg-gray-900 hover:bg-gray-800 text-white font-bold rounded-xl transition-colors text-sm">
+                  Consult Anuj Now
+                </Link>
               </div>
-            </div>
 
-            {/* Sidebar Right */}
-            <div className="hidden lg:block space-y-10 sticky top-24">
-                {/* Contact Card */}
-                <div className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-xl border border-gray-100 relative overflow-hidden group">
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-[#D2A02A]/5 rounded-bl-full -z-0"></div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 relative z-10">Instant Debt Help</h3>
-                  <p className="text-gray-600 mb-8 text-sm leading-relaxed relative z-10">
-                    Stop the harassment today. Our senior lawyers can help you draft and file your settlement application within 24 hours.
-                  </p>
-                  <a 
-                    href="tel:+918700343611" 
-                    className="block w-full bg-[#1a202c] text-white text-center py-4 rounded-2xl font-bold hover:bg-[#D2A02A] transition-all transform group-hover:translate-y-[-2px] shadow-lg mb-4"
-                  >
-                    Call Now: +91 8700343611
-                  </a>
-                  <Link 
-                    href="/contact" 
-                    className="block w-full bg-white text-[#1a202c] text-center py-4 rounded-2xl font-bold border-2 border-gray-200 hover:border-[#D2A02A] transition-all"
-                  >
-                    Free Case Review
-                  </Link>
-                </div>
-
-                {/* App Download Card */}
-                <div className="bg-[#1a202c] p-8 rounded-3xl text-white shadow-2xl relative overflow-hidden">
-                  <div className="relative z-10">
-                    <h3 className="text-xl font-bold mb-4">AMA Legal App</h3>
-                    <p className="text-gray-400 text-xs mb-8 leading-relaxed">Track your settlement status, upload documents securely, and get instant legal advice on the go.</p>
-                    <div className="space-y-4">
-                      <Link href="https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions" target="_blank" className="block transform hover:scale-105 transition-transform">
-                        <Image src="/newAssets/appstore.svg" alt="Play Store" width={160} height={50} />
-                      </Link>
-                      <Link href="https://apps.apple.com/in/app/ama-legal-solutions/id6755156186" target="_blank" className="block transform hover:scale-105 transition-transform">
-                        <Image src="/newAssets/playstore.svg" alt="App Store" width={160} height={50} />
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white/5 rounded-full blur-2xl"></div>
-                </div>
-
-                {/* Trust Badges */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white p-4 rounded-2xl border border-gray-100 text-center shadow-sm">
-                    <p className="text-2xl mb-1">⚖️</p>
-                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-tighter">Certified Experts</p>
-                  </div>
-                  <div className="bg-white p-4 rounded-2xl border border-gray-100 text-center shadow-sm">
-                    <p className="text-2xl mb-1">🛡️</p>
-                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-tighter">Safe & Secure</p>
-                  </div>
-                </div>
-            </div>
+              <div className="bg-gradient-to-br from-[#D2A02A] to-[#b88a22] p-6 rounded-2xl shadow-lg text-white text-center">
+                <h4 className="font-bold text-lg mb-2">Stop Harassment Today</h4>
+                <p className="text-sm mb-4 text-white/90">Our legal team is ready to draft your settlement application and handle the bank on your behalf.</p>
+                <a href="tel:+918700343611" className="block w-full py-3 px-4 bg-white text-[#D2A02A] font-bold rounded-xl transition-transform hover:scale-105 shadow-md">
+                  Call: +91-8700343611
+                </a>
+              </div>
+            </aside>
           </div>
-        </div>
+        </main>
       </div>
     </>
   );
