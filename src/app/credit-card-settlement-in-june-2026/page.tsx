@@ -484,7 +484,6 @@ export default function CreditCardSettlementPage() {
             <p className="mb-4">&copy; 2026 AMA Legal Solutions. All rights reserved.</p>
             <div className="flex justify-center space-x-4">
               <Link href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
-              <Link href="/terms-of-service" className="text-gray-400 hover:text-white transition-colors">Terms of Service</Link>
               <Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact Us</Link>
             </div>
             <p className="mt-4 text-gray-500 text-sm max-w-2xl mx-auto">

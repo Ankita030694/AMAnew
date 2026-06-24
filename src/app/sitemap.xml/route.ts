@@ -24,10 +24,15 @@ export async function GET(): Promise<Response> {
   // Build static routes
   const staticRoutes = [
     '',
+    '/debt-settlement-myths-vs-reality-india',
+    '/debt-relief-india-step-by-step-process',
+    '/bnpl-buy-now-pay-later-debt-trap-india',
     '/can-you-go-to-jail-for-not-paying-emi',
     '/what-is-a-full-and-final-loan-settlement',
     '/credit-card-settlement-in-june-2026',
     '/personal-loan-settlement-in-june-2026',
+    '/best-loan-settlement-company-as-per-quora',
+    '/best-debt-relief-companies-india',
     '/how-to-manage-loan-with-no-job',
     '/what-is-the-average-time-for-loan-settlement',
     '/loan-settlement-for-salaried-people',
@@ -606,7 +611,10 @@ export async function GET(): Promise<Response> {
     '/loan-repayment-schedule-calculator',
     '/loan-repayment-schedule-excel',
     '/loan-settlement-lawyers',
-    '/loan-settlement-company-in-india'
+    '/loan-settlement-company-in-india',
+    '/how-to-get-relief-from-debt-in-india',
+    '/signs-debt-out-of-control-india',
+    '/when-to-look-for-debt-relief-in-india'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),

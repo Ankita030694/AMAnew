@@ -1042,6 +1042,8 @@ const Footer = () => {
         { name: 'Third Party Credit Card Settlement', href: '/can-i-settle-my-credit-card-dues-using-third-party-loan-settlement-companies' },
         { name: 'Debt Resolution Companies India', href: '/get-contact-details-for-top-rated-debt-resolution-companies-in-india' },
         // Original Queries links
+        { name: 'Best Loan Settlement Company as per Quora', href: '/best-loan-settlement-company-as-per-quora' },
+        { name: "Best Debt Relief Companies in India", href: "/best-debt-relief-companies-india" },
         { name: "How to Get Trademark Certificate", href: "/how-can-i-get-trademark-certificate" },
         { name: "Registration Office Locations", href: "/where-to-register-trademark" },
         { name: "Best Advocate Near Me", href: "/best-advocate-near-me" },
@@ -1308,7 +1310,13 @@ const Footer = () => {
         { name: "Loan Repayment Schedule Calculator", href: "/loan-repayment-schedule-calculator" },
         { name: "Loan Repayment Schedule Excel", href: "/loan-repayment-schedule-excel" },
         { name: "Loan Settlement Lawyers", href: "/loan-settlement-lawyers" },
-        { name: "Loan Settlement Company in India", href: "/loan-settlement-company-in-india" }
+        { name: "Loan Settlement Company in India", href: "/loan-settlement-company-in-india" },
+        { name: "How to Get Relief from Debt in India", href: "/how-to-get-relief-from-debt-in-india" },
+        { name: "Debt Relief India Step by Step Process", href: "/debt-relief-india-step-by-step-process" },
+        { name: "BNPL Buy Now Pay Later Debt Trap India", href: "/bnpl-buy-now-pay-later-debt-trap-india" },
+        { name: "Signs Debt is Out of Control in India", href: "/signs-debt-out-of-control-india" },
+        { name: "When to Look for Debt Relief in India", href: "/when-to-look-for-debt-relief-in-india" },
+        { name: "Debt Settlement Myths vs Reality in India", href: "/debt-settlement-myths-vs-reality-india" }
       ]
 
     }
