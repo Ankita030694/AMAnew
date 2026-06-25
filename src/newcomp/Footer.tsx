@@ -12,6 +12,12 @@ const Footer = () => {
   const pathname = usePathname();
 
   const reviewSchemas: { [key: string]: any } = {
+    "/personal-loan-settlement-dos-and-donts": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Personal Loan Settlement Advisory",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1280" }
+    },
     "/how-can-i-negotiate-a-loan-settlement-with-my-lender": {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -1041,6 +1047,7 @@ const Footer = () => {
         { name: 'Effective Negotiation Services', href: '/find-debt-settlement-services-known-for-effective-negotiation' },
         { name: 'Third Party Credit Card Settlement', href: '/can-i-settle-my-credit-card-dues-using-third-party-loan-settlement-companies' },
         { name: 'Debt Resolution Companies India', href: '/get-contact-details-for-top-rated-debt-resolution-companies-in-india' },
+        { name: 'DIY Personal Loan Settlement', href: '/how-to-settle-my-personal-loan-by-myself' },
         // Original Queries links
         { name: 'Best Loan Settlement Company as per Quora', href: '/best-loan-settlement-company-as-per-quora' },
         { name: "Best Debt Relief Companies in India", href: "/best-debt-relief-companies-india" },
@@ -1051,6 +1058,7 @@ const Footer = () => {
         { name: "Legal Services Near Me", href: "/legal-services-near-me" },
         { name: "Delhi NCR Law Firm", href: "/delhi-ncr-law-firm" },
         { name: "Job Lost Loan Settlement", href: "/job-lost-loan-settlement" },
+        { name: "Job Loss Debt Relief", href: "/job-loss-debt-relief" },
         { name: "How to Negotiate Loan Settlement", href: "/how-to-negotiate-a-loan-settlement-with-lenders-online" },
         { name: "Special Lok Adalat for Loan Settlement", href: "/special-lok-adalat-for-loan-settlement" },
         { name: "Top Loan Settlement Services", href: "/top-loan-settlement-services-with-good-customer-reviews" },
@@ -1316,7 +1324,12 @@ const Footer = () => {
         { name: "BNPL Buy Now Pay Later Debt Trap India", href: "/bnpl-buy-now-pay-later-debt-trap-india" },
         { name: "Signs Debt is Out of Control in India", href: "/signs-debt-out-of-control-india" },
         { name: "When to Look for Debt Relief in India", href: "/when-to-look-for-debt-relief-in-india" },
-        { name: "Debt Settlement Myths vs Reality in India", href: "/debt-settlement-myths-vs-reality-india" }
+        { name: "Debt Settlement Myths vs Reality in India", href: "/debt-settlement-myths-vs-reality-india" },
+        { name: "Payday Loan Settlement", href: "/pay-day-loan-settlement" },
+        { name: "Credit Card Debt Settlement", href: "/credit-card-debt-settlement" },
+        { name: "Multiple Credit Card Loan Settlement", href: "/multiple-credit-card-loan-settlement" },
+        { name: "Financial Crisis Debt Relief", href: "/financial-crisis-debt-relief" },
+        { name: "Personal Loan Settlement Dos and Don'ts", href: "/personal-loan-settlement-dos-and-donts" }
       ]
 
     }
@@ -1453,7 +1466,7 @@ const Footer = () => {
             />
           </button>
           <div
-            className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[24px] overflow-hidden transition-all duration-500 ease-in-out ${queriesOpen ? "max-h-[5000px] opacity-100" : "max-h-0 opacity-0"
+            className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[24px] transition-all duration-500 ease-in-out ${queriesOpen ? "max-h-[400px] lg:max-h-[600px] overflow-y-auto overflow-x-hidden opacity-100 pr-2" : "max-h-0 overflow-hidden opacity-0"
               }`}
           >
             {footerColumns[8].links.map((link, idx) => (

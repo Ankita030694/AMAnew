@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Leads extraction & analysis (SENSITIVE DATA - NEVER PUSH)
+fetch_leads.js
+analyze_leads.py
+all_leads.csv
+converted_leads.csv
+lead_analysis_report.md

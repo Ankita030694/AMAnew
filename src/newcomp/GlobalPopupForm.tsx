@@ -49,14 +49,14 @@ const GlobalPopupForm = () => {
   useEffect(() => {
     const handleOpenPopup = () => setIsOpen(true);
     window.addEventListener("openGlobalPopup", handleOpenPopup);
+    let timer: ReturnType<typeof setTimeout>;
 
-    // Check if user has already submitted the form or it has been shown in this session
+    // Check if user has already submitted the form
     const hasBeenSubmitted = localStorage.getItem("form_submitted") || localStorage.getItem("global_popup_submitted");
-    const hasBeenShown = sessionStorage.getItem("global_popup_shown");
 
-    if (!hasBeenSubmitted && !hasBeenShown) {
-      const timer = setTimeout(() => {
-        const currentPath = window.location.pathname;
+    if (!hasBeenSubmitted) {
+      timer = setTimeout(() => {
+        const currentPath = pathname || window.location.pathname;
         const isExcludedPage = 
           currentPath.includes("/login") || 
           currentPath.includes("/admin") || 
@@ -68,18 +68,15 @@ const GlobalPopupForm = () => {
         
         if (!isExcludedPage) {
           setIsOpen(true);
-          sessionStorage.setItem("global_popup_shown", "true");
         }
       }, 5000);
-
-      return () => {
-        clearTimeout(timer);
-        window.removeEventListener("openGlobalPopup", handleOpenPopup);
-      };
     }
 
-    return () => window.removeEventListener("openGlobalPopup", handleOpenPopup);
-  }, []); // Empty dependency array means it only runs once when the app mounts
+    return () => {
+      if (timer) clearTimeout(timer);
+      window.removeEventListener("openGlobalPopup", handleOpenPopup);
+    };
+  }, [pathname]); // Runs on mount and whenever the path changes
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
