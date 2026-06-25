@@ -5,7 +5,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import ConditionalLayout from "@/newcomp/ConditionalLayout";
 import { Toaster } from "react-hot-toast";
-import Script from 'next/script'
+import Script from 'next/script';
+import NextTopLoader from 'nextjs-toploader';
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -239,6 +240,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
           }}
         />
         {/* End Google Tag Manager (noscript) */}
+        <NextTopLoader
+          color="#D29E0D"
+          showSpinner={true}
+          template='<div class="bar" role="bar" style="display: none;"><div class="peg"></div></div><div class="spinner" role="spinner" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(4px); z-index: 99999; display: flex; flex-direction: column; align-items: center; justify-content: center;"><div class="spinner-icon" style="width: 60px; height: 60px; box-sizing: border-box; border: 4px solid rgba(210, 158, 13, 0.2); border-top-color: #D29E0D; border-radius: 50%; animation: nprogress-spinner 800ms linear infinite;"></div><p style="margin-top: 20px; font-weight: 600; color: #30261C; letter-spacing: 1.5px; opacity: 0.8;">LOADING...</p></div>'
+        />
         <ConditionalLayout>
           {children}
         </ConditionalLayout>

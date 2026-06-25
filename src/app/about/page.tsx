@@ -52,7 +52,7 @@ export default async function About() {
     const attorneys = await fetchAttorneys();
     
     return (
-      <>
+      <div className="text-justify">
         <Script
           id="about-page-schema"
           type="application/ld+json"
@@ -60,6 +60,6 @@ export default async function About() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
         />
         <AboutUsRevamp attorneys={attorneys} />
-      </>
+      </div>
     );
 }

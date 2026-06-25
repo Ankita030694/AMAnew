@@ -38,7 +38,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#EBE9E4] relative overflow-hidden">
+    <main className="min-h-screen bg-[#EBE9E4] relative overflow-hidden text-justify">
       {/* Background Texture/Pattern Overlay */}
       <div 
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -146,7 +146,7 @@ export default function Home() {
         <h2 className="text-3xl md:text-4xl font-normal text-[#30261C] mb-8" style={{ fontFamily: 'var(--font-polysans)' }}>
           Why Choose AMA Legal Solutions?
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-justify">
           <div className="space-y-4">
             <h3 className="text-xl font-medium text-[#D29E0D]">Expertise You Can Trust</h3>
             <p className="text-[#30261C]/80 leading-relaxed">

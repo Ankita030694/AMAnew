@@ -7,6 +7,7 @@ import { db } from '../../lib/firebase';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Script from 'next/script';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 
 // Remove problematic dynamic import - use motion directly for better performance
 
@@ -264,8 +265,8 @@ export default function Page({ initialBlogs = [] }: BlogPageProps) {
     // Get spotlight article (most recent from filtered results)
     const spotlight = filteredBlogs.length > 0 ? filteredBlogs[0] : null;
     
-    // Get trending articles (all filtered blogs in random order, limited to 20)
-    const trending = filteredBlogs.length > 1 ? shuffleArray(filteredBlogs).slice(0, 20) : [];
+    // Get trending articles (recent filtered blogs, limited to 20)
+    const trending = filteredBlogs.length > 0 ? filteredBlogs.slice(0, 20) : [];
     
     // Get regular articles (excluding spotlight)
     const regular = filteredBlogs.length > 0 ? filteredBlogs.slice(1) : [];
@@ -448,11 +449,13 @@ export default function Page({ initialBlogs = [] }: BlogPageProps) {
                   >
                     <div className="relative h-64 md:h-80">
                       {hasValidImage(spotlightArticle.image) ? (
-                        <img
+                        <Image
                           src={getValidImageSrc(spotlightArticle.image)}
                           alt={`${spotlightArticle.title} - AMA Legal Solutions | Legal Insights India`}
-                          className="w-full h-full object-cover rounded-t-lg"
-                          loading="lazy"
+                          className="object-cover rounded-t-lg"
+                          fill
+                          sizes="(max-width: 768px) 100vw, 66vw"
+                          priority={true}
                           title={`${spotlightArticle.title} | AMA Legal Solutions Blog`}
                           onError={handleImageError}
                         />
@@ -565,11 +568,12 @@ export default function Page({ initialBlogs = [] }: BlogPageProps) {
                         >
                           <div className="relative h-48">
                             {hasValidImage(article.image) ? (
-                              <img
+                              <Image
                                 src={getValidImageSrc(article.image)}
                                 alt={`${article.title} - AMA Legal Solutions | Legal Insights India`}
-                                className="w-full h-full object-cover rounded-t-lg"
-                                loading="lazy"
+                                className="object-cover rounded-t-lg"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 33vw"
                                 title={`${article.title} | AMA Legal Solutions Blog`}
                                 onError={handleImageError}
                               />
@@ -744,7 +748,7 @@ export default function Page({ initialBlogs = [] }: BlogPageProps) {
                   <path d="M12 2L14.39 8.26L21 9.27L16.5 14.14L17.77 21L12 17.77L6.23 21L7.5 14.14L3 9.27L9.61 8.26L12 2z" />
                 </svg>
                 <h2 className="text-[26px] md:text-[25px] font-semibold leading-[32px] md:leading-[52px] opacity-100" style={{ color: '#5A4C33' }}>
-                  {searchQuery ? 'Related' : 'Trending'}
+                  {searchQuery ? 'Related' : 'Recent Posts'}
                 </h2>
               </div>
               
@@ -768,10 +772,12 @@ export default function Page({ initialBlogs = [] }: BlogPageProps) {
                       >
                         <div className="flex-shrink-0 w-20 h-20 relative rounded-lg overflow-hidden">
                           {hasValidImage(article.image) ? (
-                            <img 
+                            <Image 
                               src={getValidImageSrc(article.image)}
                               alt={`${article.title} - AMA Legal Solutions | Legal Insights India`}
-                              className="w-full h-full object-cover"
+                              className="object-cover"
+                              fill
+                              sizes="80px"
                               onError={handleImageError}
                             />
                           ) : (

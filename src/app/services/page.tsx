@@ -9,5 +9,9 @@ export const metadata = {
 }
 
 export default function Services() {
-  return <ServicesClient />;
+  return (
+    <div className="text-justify">
+      <ServicesClient />
+    </div>
+  );
 }

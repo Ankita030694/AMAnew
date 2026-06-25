@@ -53,13 +53,12 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
           </div>
         </div>
 
-        {/* Hero Image */}
         <Image
             src="/newAssets/about-hero21.png"
             alt="About Hero"
             width={1400}
             height={800}
-            className="-mt-15 md:-mt-20 object-contain scale-[1.5] origin-bottom mb-12 md:mb-0 md:scale-100 ml-10"
+            className="-mt-20 md:-mt-40 lg:-mt-60 object-contain scale-[1.2] origin-bottom mb-12 md:mb-0 md:scale-[0.8] ml-10"
             priority
         />
       </section>
@@ -141,24 +140,55 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
           </div>
 
           {/* Right Column */}
-          <div className="text-[#30261C] text-[13px] md:text-[20px] leading-[19px] md:leading-[30px] space-y-6 font-normal opacity-85">
+          <div className="flex flex-col gap-5 text-[#30261C]">
+            {/* Mission Statement Card */}
+            <div className="relative bg-white/40 p-4 md:p-5 rounded-xl border border-[#D29E0D]/20 shadow-sm backdrop-blur-sm">
+              <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-[#D29E0D] to-[#30261C] rounded-l-xl"></div>
+              <h3 className="font-semibold text-[17px] md:text-[19px] text-[#231F1B] mb-1.5 flex items-center gap-2">
+                <svg className="w-4 h-4 text-[#D29E0D]" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" fillRule="evenodd"></path></svg>
+                Our Mission
+              </h3>
+              <p className="text-[14px] md:text-[16px] font-medium leading-snug italic text-[#30261C]">
+                "To provide trusted, results-focused legal solutions that protect your financial and business interests ethically, clearly, and efficiently."
+              </p>
+            </div>
 
-            <h3> <span className="font-semibold opacity-100 text-[19px] md:text-[22px] md:leading-[25px]">Our mission:</span> </h3>
-            <p className="leading-[25px]">
-             To provide trusted, results-focused legal solutions that protect your financial and business interests ethically, clearly, and efficiently.
+            <div className="space-y-4 text-[13px] md:text-[15px] leading-relaxed text-justify font-light opacity-85">
+              <p>
+                With a <strong className="font-medium text-[#231F1B]">35-year legacy</strong>, AMA Legal Solutions is a top-rated law firm in Gurugram, India, specializing in banking & finance, corporate law, arbitration, real estate, and entertainment law. We support individuals, businesses, and startups with practical legal strategies built for real-world challenges.
+              </p>
+              
+              <div className="bg-[#30261C] text-[#EAE6DB] p-4 md:p-5 rounded-xl shadow-lg border border-black/10">
+                <p className="mb-3 font-normal leading-snug text-[13px] md:text-[14px]">Our work speaks for itself, backed by deep expertise in loan settlements, debt restructuring, financial litigation, contracts, compliance, and dispute resolution:</p>
+                <div className="grid grid-cols-3 gap-2 text-center divide-x divide-white/20">
+                  <div>
+                    <span className="block text-xl md:text-2xl font-bold text-[#D29E0D]">1,000+</span>
+                    <span className="text-[10px] md:text-xs font-light opacity-80 uppercase tracking-wide">Clients</span>
+                  </div>
+                  <div>
+                    <span className="block text-xl md:text-2xl font-bold text-[#D29E0D]">650+</span>
+                    <span className="text-[10px] md:text-xs font-light opacity-80 uppercase tracking-wide">Resolved</span>
+                  </div>
+                  <div>
+                    <span className="block text-xl md:text-2xl font-bold text-[#D29E0D]">300+</span>
+                    <span className="text-[10px] md:text-xs font-light opacity-80 uppercase tracking-wide">Closures</span>
+                  </div>
+                </div>
+              </div>
 
-
-              With a 35-year legacy, AMA Legal Solutions is a top-rated law firm in Gurugram, India, specializing in banking & finance, corporate law, arbitration, real estate, and entertainment law. We support individuals, businesses, and startups with practical legal strategies built for real-world challenges.
-
-
-              Our work speaks for itself 1,000+ clients served, 650+ cases resolved, and 300+ successful legal closures, backed by deep expertise in loan settlements, debt restructuring, financial litigation, contracts, compliance, and dispute resolution.
-
-
-              What defines us is our personalized approach. Every case receives focused attention and tailored strategy because here, you’re not just a case, you’re a priority.
-
-
-              As members of leading legal and trade institutions, we combine local authority with global perspective to deliver clear advice and strong representation when it matters most.
-            </p>
+              <p>
+                What defines us is our personalized approach. Every case receives focused attention and tailored strategy because here, <strong className="font-medium text-[#231F1B]">you're not just a case, you're a priority.</strong>
+              </p>
+              
+              <div className="flex items-start gap-3 p-3 md:p-4 bg-[#D29E0D]/10 rounded-xl border border-[#D29E0D]/20">
+                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm">
+                  <svg className="w-4 h-4 text-[#D29E0D]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <p className="font-medium text-[13px] md:text-[14px] leading-snug mt-0.5">
+                  As members of leading legal and trade institutions, we combine local authority with global perspective to deliver clear advice and strong representation when it matters most.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -250,6 +280,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
                   width={400}
                   height={550}
                   className="w-full h-full object-cover"
+                  style={{ transform: "scale(0.7)", transformOrigin: "bottom" }}
                   priority
                 />
               </div>

@@ -69,7 +69,7 @@ const Legacy2 = () => {
             </div>
 
             {/* Text Container */}
-            <div className="w-full md:w-[55%] p-8 flex flex-col justify-between text-left">
+            <div className="w-full md:w-[55%] p-8 flex flex-col justify-between text-justify">
               <div>
                 <span className="text-xs font-bold tracking-widest uppercase text-[#D29E0D] block mb-1">
                   THE FOUNDATION
@@ -125,7 +125,7 @@ const Legacy2 = () => {
             </div>
 
             {/* Text Container */}
-            <div className="w-full md:w-[55%] p-8 flex flex-col justify-between text-left">
+            <div className="w-full md:w-[55%] p-8 flex flex-col justify-between text-justify">
               <div>
                 <span className="text-xs font-bold tracking-widest uppercase text-[#D29E0D] block mb-1">
                   THE VISION
@@ -259,7 +259,7 @@ const Legacy2 = () => {
             </div>
 
             {/* Text Container */}
-            <div className="p-6 text-left flex flex-col justify-between">
+            <div className="p-6 text-justify flex flex-col justify-between">
               <div>
                 <span className="text-[10px] font-bold tracking-widest uppercase text-[#D29E0D] block mb-1">
                   THE FOUNDATION
@@ -315,7 +315,7 @@ const Legacy2 = () => {
             </div>
 
             {/* Text Container */}
-            <div className="p-6 text-left flex flex-col justify-between">
+            <div className="p-6 text-justify flex flex-col justify-between">
               <div>
                 <span className="text-[10px] font-bold tracking-widest uppercase text-[#D29E0D] block mb-1">
                   THE VISION

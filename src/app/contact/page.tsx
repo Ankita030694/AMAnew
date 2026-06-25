@@ -21,7 +21,7 @@ const contactSchema = {
 
 export default function Page() {
   return (
-    <>
+    <div className="text-justify">
       <Script
         id="contact-page-schema"
         type="application/ld+json"
@@ -29,6 +29,6 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
       />
       <ContactPage />
-    </>
+    </div>
   );
 } 
