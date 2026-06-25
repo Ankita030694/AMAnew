@@ -1,18 +1,20 @@
 // Triggering type regeneration
 import Hero from "@/newcomp/Hero";
-
-import ClientLogoSlider from "@/newcomp/ClientLogoSlider";
-import Legacy2 from "@/newcomp/Legacy2";
-import Counter from "@/newcomp/Counter";
-import Services from "@/newcomp/Services";
-import Testimonials2 from "@/newcomp/Testimonials2";
-import Testimonials from "@/newcomp/Testimonials";
-import VideoTestimonials from "@/newcomp/VideoTestimonials";
-import FAQ from "@/newcomp/FAQ";
-import CTA from "@/newcomp/CTA";
+import dynamic from "next/dynamic";
 
 import Script from "next/script";
 import { baseTestimonials } from "@/data/testimonials";
+
+// Below-the-fold components — lazily loaded to reduce initial JS bundle and improve LCP
+const ClientLogoSlider = dynamic(() => import("@/newcomp/ClientLogoSlider"));
+const Legacy2 = dynamic(() => import("@/newcomp/Legacy2"));
+const Counter = dynamic(() => import("@/newcomp/Counter"));
+const Services = dynamic(() => import("@/newcomp/Services"));
+const Testimonials2 = dynamic(() => import("@/newcomp/Testimonials2"));
+const Testimonials = dynamic(() => import("@/newcomp/Testimonials"));
+const VideoTestimonials = dynamic(() => import("@/newcomp/VideoTestimonials"));
+const FAQ = dynamic(() => import("@/newcomp/FAQ"));
+const CTA = dynamic(() => import("@/newcomp/CTA"));
 
 export const metadata = {
   title: 'AMA Legal Solutions | Top Full-Service Law Firm in India',
@@ -52,7 +54,7 @@ export default function Home() {
       <Script
         id="homepage-video-schema"
         type="application/ld+json"
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
