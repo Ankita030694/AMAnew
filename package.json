@@ -43,7 +43,6 @@
     "next-cloudinary": "^6.16.0",
     "nextjs-toploader": "^3.9.17",
     "openai": "^6.16.0",
-    "pnpm": "^11.9.0",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "react-hot-toast": "^2.5.2",
