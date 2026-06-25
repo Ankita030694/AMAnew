@@ -22,7 +22,7 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
     <>
       <Navbar />
       {children}
-      <GlobalPopupForm />
+      {process.env.NODE_ENV !== 'development' && <GlobalPopupForm />}
       <Footer />
       <WhatsAppWidget />
     </>

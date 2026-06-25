@@ -619,7 +619,8 @@ export async function GET(): Promise<Response> {
     '/how-to-get-relief-from-debt-in-india',
     '/signs-debt-out-of-control-india',
     '/when-to-look-for-debt-relief-in-india',
-    '/how-to-settle-my-personal-loan-by-myself'
+    '/how-to-settle-my-personal-loan-by-myself',
+    '/legal-help-for-credit-card-recovery-harassment-in-india'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),

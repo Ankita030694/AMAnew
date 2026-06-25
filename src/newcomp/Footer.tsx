@@ -1330,7 +1330,11 @@ const Footer = () => {
         { name: "Multiple Credit Card Loan Settlement", href: "/multiple-credit-card-loan-settlement" },
         { name: "Financial Crisis Debt Relief", href: "/financial-crisis-debt-relief" },
         { name: "Personal Loan Settlement Dos and Don'ts", href: "/personal-loan-settlement-dos-and-donts" },
-        { name: "Business Loan Settlement In July 2026", href: "/business-loan-settlement-in-july-2026" }
+        { name: "Business Loan Settlement In July 2026", href: "/business-loan-settlement-in-july-2026" },
+        { name: "Loan Settlement Company Reviews 2026", href: "/loan-settlement-company-reviews-2026" },
+        { name: "Top Fintech Loan Settlement Companies", href: "/top-fintech-loan-settlement-companies" },
+        { name: "Best Company to Settle Credit Card Debt", href: "/best-company-to-settle-credit-card-debt" },
+        { name: "Legal Help for Credit Card Recovery Harassment", href: "/legal-help-for-credit-card-recovery-harassment-in-india" }
       ]
 
     }
