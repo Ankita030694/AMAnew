@@ -1329,7 +1329,8 @@ const Footer = () => {
         { name: "Credit Card Debt Settlement", href: "/credit-card-debt-settlement" },
         { name: "Multiple Credit Card Loan Settlement", href: "/multiple-credit-card-loan-settlement" },
         { name: "Financial Crisis Debt Relief", href: "/financial-crisis-debt-relief" },
-        { name: "Personal Loan Settlement Dos and Don'ts", href: "/personal-loan-settlement-dos-and-donts" }
+        { name: "Personal Loan Settlement Dos and Don'ts", href: "/personal-loan-settlement-dos-and-donts" },
+        { name: "Business Loan Settlement In July 2026", href: "/business-loan-settlement-in-july-2026" }
       ]
 
     }
