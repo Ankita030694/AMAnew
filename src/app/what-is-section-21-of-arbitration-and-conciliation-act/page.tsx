@@ -196,7 +196,7 @@ const personSchema = {
 };
 
 export const metadata = {
-  title: "Section 21 of Arbitration & Conciliation Act: Commencement Notice Guide",
+  title: "Section 21 Arbitration Act: Commencement Guide",
   description: "Master Section 21 of the Arbitration and Conciliation Act. Learn why the notice invoking arbitration is a mandatory jurisdictional prerequisite, how it affects limitation, and view a free draft template.",
   keywords: [
     "section 21 of arbitration and conciliation act",
@@ -214,7 +214,7 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/what-is-section-21-of-arbitration-and-conciliation-act',
   },
   openGraph: {
-    title: "Section 21 of Arbitration & Conciliation Act: Commencement Notice Guide",
+    title: "Section 21 Arbitration Act: Commencement Guide",
     description: "Master Section 21 of the Arbitration and Conciliation Act. Learn why the notice invoking arbitration is a mandatory jurisdictional prerequisite, how it affects limitation, and view a free draft template.",
     url: 'https://www.amalegalsolutions.com/what-is-section-21-of-arbitration-and-conciliation-act',
     siteName: 'AMA Legal Solutions',
