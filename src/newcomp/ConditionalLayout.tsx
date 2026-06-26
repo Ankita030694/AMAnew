@@ -10,6 +10,14 @@ const WhatsAppWidget = dynamic(() => import("./WhatsAppWidget"), { ssr: false })
 
 export default function ConditionalLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const [showPopup, setShowPopup] = React.useState(false);
+  
+  React.useEffect(() => {
+    // Only load the massive GlobalPopupForm chunk after 4 seconds
+    // This completely removes it from the initial LCP render path
+    const timer = setTimeout(() => setShowPopup(true), 4000);
+    return () => clearTimeout(timer);
+  }, []);
   
   // Exclude common components for admin and login routes
   const isExcluded = pathname?.startsWith('/admin') || pathname?.startsWith('/login') || pathname === '/contact';
@@ -22,7 +30,7 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
     <>
       <Navbar />
       {children}
-      {process.env.NODE_ENV !== 'development' && <GlobalPopupForm />}
+      {process.env.NODE_ENV !== 'development' && showPopup && <GlobalPopupForm />}
       <Footer />
       <WhatsAppWidget />
     </>
