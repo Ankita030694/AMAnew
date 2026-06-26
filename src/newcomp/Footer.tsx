@@ -8,7 +8,6 @@ import { usePathname } from "next/navigation";
 import Script from "next/script";
 
 const Footer = () => {
-  const [queriesOpen, setQueriesOpen] = useState(false);
   const pathname = usePathname();
 
   const reviewSchemas: { [key: string]: any } = {
@@ -1457,34 +1456,15 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Row 3 - Queries Collapsible Section */}
-        <div className="mb-[48px]">
-          <button
-            onClick={() => setQueriesOpen(!queriesOpen)}
-            className="w-full flex items-center justify-between text-white text-[18px] md:text-[20px] font-semibold leading-[20px] border-b border-white/10 pb-4 mb-[24px] cursor-pointer bg-transparent hover:opacity-80 transition-opacity"
-            aria-expanded={queriesOpen}
-          >
-            <span>{footerColumns[8].title}</span>
-            <FaChevronDown
-              className={`text-[14px] text-white/70 transition-transform duration-300 ${queriesOpen ? "rotate-180" : ""
-                }`}
-            />
-          </button>
-          <div
-            className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[24px] transition-all duration-500 ease-in-out ${queriesOpen ? "max-h-[400px] lg:max-h-[600px] overflow-y-auto overflow-x-hidden opacity-100 pr-2" : "max-h-0 overflow-hidden opacity-0"
-              }`}
-          >
-            {footerColumns[8].links.map((link, idx) => (
-              <div key={`${link.href}-${idx}`}>
-                <Link
-                  href={link.href}
-                  className="text-[rgba(255,255,255,0.75)] text-[14px] md:text-[16px] font-normal leading-[16px] hover:text-white transition-colors"
-                >
-                  {link.name}
-                </Link>
-              </div>
-            ))}
+        {/* Row 3 - Legal Services Directory Link */}
+        <div className="mb-[48px] border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 hover:bg-white/5 transition-colors">
+          <div>
+            <h3 className="text-white text-[20px] md:text-[24px] font-semibold mb-2">Looking for a specific legal service or draft?</h3>
+            <p className="text-[rgba(255,255,255,0.75)] text-[16px]">Browse our comprehensive directory of over 150+ legal notices, settlement guides, and arbitration resources.</p>
           </div>
+          <Link href="/directory" className="flex-shrink-0 bg-[#D2A02A] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#B8860B] transition-colors whitespace-nowrap">
+            View Legal Directory
+          </Link>
         </div>
 
         {/* NAP Block - Name, Address, Phone (Social Proof & Contact) */}
