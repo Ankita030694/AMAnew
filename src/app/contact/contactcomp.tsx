@@ -376,7 +376,7 @@ const ContactComp = () => {
                   </p>
                   <a
                     href="tel:+918700343611"
-                    className="w-full bg-[#E19100] text-white text-center font-bold py-3 px-6 rounded-lg hover:bg-[#d08600] transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center transform hover:-translate-y-0.5"
+                    className="w-full bg-[#E19100] text-[#30261C] text-center font-bold py-3 px-6 rounded-lg hover:bg-[#d08600] transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center transform hover:-translate-y-0.5"
                   >
                     Call Us Now
                   </a>
@@ -526,6 +526,7 @@ const ContactComp = () => {
                     <div className="relative">
                       <select
                         name="serviceRequired"
+                        aria-label="Service Required"
                         value={formState.serviceRequired}
                         onChange={handleChange}
                         required
@@ -589,7 +590,7 @@ const ContactComp = () => {
                     <a
                       href="#"
                       onClick={handlePayUClick}
-                      className="block w-full bg-[#E19100] text-white text-center font-bold py-3.5 rounded-lg hover:bg-[#d08600] transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center transform hover:-translate-y-0.5"
+                      className="block w-full bg-[#E19100] text-[#30261C] text-center font-bold py-3.5 rounded-lg hover:bg-[#d08600] transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center transform hover:-translate-y-0.5"
                     >
                       {isSubmitting ? (
                         <span className="flex items-center justify-center">

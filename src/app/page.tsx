@@ -51,10 +51,9 @@ export default function Home() {
       ></div>
       
       {/* SEO Structured Data */}
-      <Script
+      <script
         id="homepage-video-schema"
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",

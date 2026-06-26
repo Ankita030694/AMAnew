@@ -127,14 +127,14 @@ const Legacy2 = () => {
             {/* Text Container */}
             <div className="w-full md:w-[55%] p-8 flex flex-col justify-between text-justify">
               <div>
-                <span className="text-xs font-bold tracking-widest uppercase text-[#D29E0D] block mb-1">
+                <span className="text-xs font-bold tracking-widest uppercase text-[#997309] block mb-1">
                   THE VISION
                 </span>
-                <div className="w-8 h-[2px] bg-[#D29E0D] mb-4"></div>
+                <div className="w-8 h-[2px] bg-[#997309] mb-4"></div>
                 <h3 className="text-2xl md:text-3xl text-[#231F1B] font-semibold mb-2">
                   Anuj Anand Malik
                 </h3>
-                <div className="text-sm text-[#D29E0D] font-medium space-y-1 mb-4">
+                <div className="text-sm text-[#997309] font-medium space-y-1 mb-4">
                   <p>Founder, AMA Legal Solutions</p>
                   <p className="text-[#554E45]">Advocate & Legal Strategist</p>
                 </div>
@@ -237,7 +237,7 @@ const Legacy2 = () => {
                 fill
                 className="object-contain object-bottom transition-all duration-300"
                 style={{ transform: "scale(1.2) translateY(-5px)", transformOrigin: "center" }}
-                sizes="(max-width: 768px) 100vw, 100vw"
+                sizes="(max-width: 768px) 60vw, 30vw"
                 priority
               />
               {/* Logo in top-left */}
@@ -289,7 +289,7 @@ const Legacy2 = () => {
                 fill
                 className="object-contain object-bottom"
                 style={{ transform: "scale(1.25) translateY(-5px)", transformOrigin: "center" }}
-                sizes="(max-width: 768px) 100vw, 100vw"
+                sizes="(max-width: 768px) 60vw, 30vw"
                 priority
               />
               {/* Logo in top-left */}
@@ -317,14 +317,14 @@ const Legacy2 = () => {
             {/* Text Container */}
             <div className="p-6 text-justify flex flex-col justify-between">
               <div>
-                <span className="text-[10px] font-bold tracking-widest uppercase text-[#D29E0D] block mb-1">
+                <span className="text-[10px] font-bold tracking-widest uppercase text-[#997309] block mb-1">
                   THE VISION
                 </span>
-                <div className="w-8 h-[2px] bg-[#D29E0D] mb-3"></div>
+                <div className="w-8 h-[2px] bg-[#997309] mb-3"></div>
                 <h3 className="text-xl text-[#231F1B] font-semibold mb-2">
                   Anuj Anand Malik
                 </h3>
-                <div className="text-xs text-[#D29E0D] font-medium space-y-0.5 mb-3">
+                <div className="text-xs text-[#997309] font-medium space-y-0.5 mb-3">
                   <p>Founder, AMA Legal Solutions</p>
                   <p className="text-[#554E45]">Advocate & Legal Strategist</p>
                 </div>

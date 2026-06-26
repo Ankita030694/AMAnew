@@ -112,9 +112,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//www.youtube.com" />
         <link rel="dns-prefetch" href="//firebasestorage.googleapis.com" />
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-        <link rel="preconnect" href="https://n.clarity.ms" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.clarity.ms" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://scripts.clarity.ms" crossOrigin="anonymous" />
+
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         
         {/* Favicons and PWA */}
@@ -131,12 +129,7 @@ export default function RootLayout({
           href="/api/rss" 
         />
         
-        <Script
-          id="contentsquare-script"
-          src="https://t.contentsquare.net/uxa/8cd680b1c7c61.js"
-          strategy="lazyOnload"
-        />
-        
+
         <Script
           id="gtm-script"
           strategy="lazyOnload"
@@ -148,10 +141,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-5NXMZMR4');`,
           }}
         />
-        <Script
+        <script
           id="website-structured-data"
           type="application/ld+json"
-          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -166,10 +158,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             })
           }}
         />
-        <Script
+        <script
           id="attorney-structured-data"
           type="application/ld+json"
-          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",

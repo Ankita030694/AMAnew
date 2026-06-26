@@ -15,6 +15,7 @@ const Services = () => {
               src="/newAssets/office.png"
               alt="Office"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
             />
             {/* Black Overlay */}

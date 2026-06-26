@@ -192,6 +192,7 @@ const GlobalPopupForm = () => {
             <button
               onClick={() => setIsOpen(false)}
               className="absolute top-3 right-3 md:top-4 md:right-4 text-[#30261C] hover:text-[#D2A02A] transition-colors z-10"
+              aria-label="Close"
             >
               <FontAwesomeIcon icon={faTimes} className="text-lg md:text-xl" />
             </button>
@@ -218,7 +219,7 @@ const GlobalPopupForm = () => {
       
                   <a
                     href="https://pmny.in/DIMRKGkGQz6L"
-                    className="w-full bg-[#E19100] text-white text-center font-bold py-2.5 md:py-3 px-6 rounded-lg hover:bg-[#d08600] transition-colors duration-300 text-sm md:text-base"
+                    className="w-full bg-[#E19100] text-[#30261C] text-center font-bold py-2.5 md:py-3 px-6 rounded-lg hover:bg-[#d08600] transition-colors duration-300 text-sm md:text-base"
                   >
                     Proceed to Payment
                   </a>
@@ -341,6 +342,7 @@ const GlobalPopupForm = () => {
                     <div className="relative">
                       <select
                         name="serviceRequired"
+                        aria-label="Service Required"
                         value={formState.serviceRequired}
                         onChange={handleChange}
                         disabled={otpSent}
@@ -380,7 +382,7 @@ const GlobalPopupForm = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-[#E19100] text-white font-bold py-2.5 md:py-3.5 rounded-lg hover:bg-[#d08600] transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed text-sm md:text-base"
+                      className="w-full bg-[#E19100] text-[#30261C] font-bold py-2.5 md:py-3.5 rounded-lg hover:bg-[#d08600] transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed text-sm md:text-base"
                     >
                       {isSubmitting ? (
                         <span className="flex items-center justify-center">

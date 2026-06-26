@@ -3,6 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig = {
   experimental: {
     optimizeCss: true,
+    optimizePackageImports: ['lucide-react', 'react-icons', 'framer-motion'],
   },
   env: {
     FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,

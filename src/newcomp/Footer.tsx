@@ -1577,10 +1577,10 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center gap-6">
-            <a href="https://www.instagram.com/amalegalsolutions/" target="_blank" className="text-white/60 hover:text-white"><FaInstagram size={20} /></a>
-            <a href="https://www.facebook.com/amalegalsolutions/" target="_blank" className="text-white/60 hover:text-white"><FaFacebookF size={20} /></a>
-            <a href="https://in.linkedin.com/company/ama-legal-solutions" target="_blank" className="text-white/60 hover:text-white"><FaLinkedinIn size={20} /></a>
-            <a href="https://www.youtube.com/@amalegalsolution" target="_blank" className="text-white/60 hover:text-white"><FaYoutube size={20} /></a>
+            <a href="https://www.instagram.com/amalegalsolutions/" target="_blank" className="text-white/60 hover:text-white" aria-label="Instagram"><FaInstagram size={20} /></a>
+            <a href="https://www.facebook.com/amalegalsolutions/" target="_blank" className="text-white/60 hover:text-white" aria-label="Facebook"><FaFacebookF size={20} /></a>
+            <a href="https://in.linkedin.com/company/ama-legal-solutions" target="_blank" className="text-white/60 hover:text-white" aria-label="LinkedIn"><FaLinkedinIn size={20} /></a>
+            <a href="https://www.youtube.com/@amalegalsolution" target="_blank" className="text-white/60 hover:text-white" aria-label="YouTube"><FaYoutube size={20} /></a>
           </div>
         </div>
 
