@@ -91,7 +91,7 @@ const kotakBreadcrumbSchema = {
 const kotakArticleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Kotak Bank Arbitration: Challenge Arbitrators & Settle Account Dues",
+  "headline": "Kotak Bank Arbitration: Challenge & Settle Dues",
   "description": "Received a CADRE or Sama ODR arbitration summons from Kotak Mahindra Bank? Discover how to unfreeze accounts, contest panel bias, and negotiate settlements.",
   "image": "https://www.amalegalsolutions.com/newAssets/bhiya.png",
   "author": {
@@ -196,14 +196,14 @@ const kotakPersonSchema = {
 };
 
 export const metadata = {
-  title: "Kotak Bank Arbitration: Challenge Arbitrators & Settle Account Dues",
+  title: "Kotak Bank Arbitration: Challenge & Settle Dues",
   description: "Received a CADRE or Sama ODR arbitration summons from Kotak Mahindra Bank? Discover how to unfreeze accounts, contest panel bias, and negotiate settlements.",
   keywords: ["loan settlement","kotak bank arbitration","kotak 811 account freeze","cadre odr notice kotak","unilateral arbitrator challenge","banking lawyers gurgaon","ama legal solutions"],
   alternates: {
     canonical: "https://www.amalegalsolutions.com/arbitration-for-kotak-mahindra-bank",
   },
   openGraph: {
-    title: "Kotak Bank Arbitration: Challenge Arbitrators & Settle Account Dues",
+    title: "Kotak Bank Arbitration: Challenge & Settle Dues",
     description: "Received a CADRE or Sama ODR arbitration summons from Kotak Mahindra Bank? Discover how to unfreeze accounts, contest panel bias, and negotiate settlements.",
     url: "https://www.amalegalsolutions.com/arbitration-for-kotak-mahindra-bank",
     siteName: "AMA Legal Solutions",

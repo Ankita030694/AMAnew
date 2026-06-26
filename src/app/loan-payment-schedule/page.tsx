@@ -155,7 +155,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "7 Days Loan App Harassment Complaint Number Guide",
+  title: "Loan Payment Schedule vs 7 Days App Harassment",
   description: "Get the official 7 days loan app harassment complaint number. Learn how to secure your legitimate loan payment schedule from illegal recovery agents.",
   robots: {
     index: true,

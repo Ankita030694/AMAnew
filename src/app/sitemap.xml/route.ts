@@ -241,7 +241,7 @@ export async function GET(): Promise<Response> {
     '/careers',
     '/careers/business-development-associate',
     '/careers/legal-associate',
-    '/careers/sde-intern',
+
     '/blog',
     '/articles',
     '/ama-live',
