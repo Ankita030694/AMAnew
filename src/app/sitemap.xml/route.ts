@@ -499,6 +499,8 @@ export async function GET(): Promise<Response> {
     '/services/loan-and-debt-consolidation',
     '/services/best-lawyer-for-bank-harassment',
     '/how-to-get-800-credit-score-in-india',
+    '/loan-settlement-vs-foreclosure',
+    '/top-credit-card-banks-offering-settlement-india',
     // Specific Banking and Finance State Pages
     '/services/banking-and-finance/andhra-pradesh',
     '/services/banking-and-finance/arunachal-pradesh',

@@ -275,85 +275,71 @@ export default function DebtSettlementMythsPage() {
                     The financial sector often relies on a lack of consumer awareness. When an individual seeks <Link href="/how-to-settle-loan-with-bank" className="text-[#D2A02A] hover:underline font-semibold">how to settle loan with bank</Link>, they are immediately met with a barrage of misinformation designed to deter them from pursuing legal relief. Let us categorically dismantle these falsehoods.
                   </p>
 
-                  <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-8">Myth 1: Loan Settlement Automatically Leads to Jail Time</h3>
-                  
-                  <div className="bg-gray-100 rounded-lg p-6 my-6 border border-gray-200">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="bg-red-50 p-4 rounded border-l-4 border-red-500">
-                        <h4 className="font-bold text-red-700 mb-2 flex items-center">
-                          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                          The Myth
-                        </h4>
-                        <p className="text-sm text-red-900">Recovery agents claim that failure to clear the full outstanding amount immediately constitutes fraud, resulting in an FIR and jail time.</p>
-                      </div>
-                      <div className="bg-green-50 p-4 rounded border-l-4 border-green-500">
-                        <h4 className="font-bold text-green-700 mb-2 flex items-center">
-                          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                          The Fact
-                        </h4>
-                        <p className="text-sm text-green-900">Defaulting on an unsecured loan is a civil breach of contract under Indian law. You cannot be jailed for a civil default unless you intentionally provided fraudulent documents during the application process.</p>
-                      </div>
-                    </div>
-                  </div>
+                  <div className="overflow-x-auto my-10 rounded-2xl shadow-xl border border-gray-200 relative">
+                    <table className="w-full text-left border-collapse bg-white">
+                      <thead>
+                        <tr className="bg-[#1a202c] text-white">
+                          <th className="p-5 md:p-8 w-1/2 font-bold text-xl md:text-2xl border-r border-gray-700">
+                            <div className="flex items-center">
+                              <svg className="w-8 h-8 text-red-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                              Common Myth
+                            </div>
+                          </th>
+                          <th className="p-5 md:p-8 w-1/2 font-bold text-xl md:text-2xl relative overflow-hidden">
+                            <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-transparent"></div>
+                            <div className="flex items-center relative z-10">
+                              <svg className="w-8 h-8 text-green-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                              The Ground Reality
+                            </div>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-200">
+                        {/* Myth 1 */}
+                        <tr className="hover:bg-gray-50 transition-colors group">
+                          <td className="p-5 md:p-8 align-top border-r border-gray-200">
+                            <h4 className="font-extrabold text-gray-900 mb-2 text-lg">Loan Settlement Automatically Leads to Jail Time</h4>
+                            <p className="text-gray-600 leading-relaxed">Recovery agents claim that failure to clear the full outstanding amount immediately constitutes fraud, resulting in an FIR and jail time.</p>
+                          </td>
+                          <td className="p-5 md:p-8 align-top bg-[#fcf8f2]/30 group-hover:bg-[#fcf8f2] transition-colors">
+                            <p className="text-gray-800 leading-relaxed font-medium">Defaulting on an unsecured loan is a civil breach of contract under Indian law. You cannot be jailed for a civil default unless you intentionally provided fraudulent documents during the application process.</p>
+                          </td>
+                        </tr>
+                        
+                        {/* Myth 2 */}
+                        <tr className="hover:bg-gray-50 transition-colors group">
+                          <td className="p-5 md:p-8 align-top border-r border-gray-200">
+                            <h4 className="font-extrabold text-gray-900 mb-2 text-lg">Settled Debt Means You Can Never Get a Loan Again</h4>
+                            <p className="text-gray-600 leading-relaxed">Once your CIBIL account shows a 'Settled' status, no financial institution will ever approve you for any type of credit again.</p>
+                          </td>
+                          <td className="p-5 md:p-8 align-top bg-[#fcf8f2]/30 group-hover:bg-[#fcf8f2] transition-colors">
+                            <p className="text-gray-800 leading-relaxed font-medium">The CIBIL impact is temporary. Understanding <Link href="/how-to-settle-credit-card-debt" className="text-[#D2A02A] hover:underline font-bold">how to settle credit card debt</Link> involves acknowledging this dip in exchange for immediate financial survival. Millions of Indians have successfully rebuilt credit over three to five years post settlement.</p>
+                          </td>
+                        </tr>
 
-                  <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-8">Myth 2: Settled Debt Means You Can Never Get a Loan Again</h3>
-                  <div className="bg-gray-100 rounded-lg p-6 my-6 border border-gray-200">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="bg-red-50 p-4 rounded border-l-4 border-red-500">
-                        <h4 className="font-bold text-red-700 mb-2 flex items-center">
-                          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                          The Myth
-                        </h4>
-                        <p className="text-sm text-red-900">Once your CIBIL account shows a 'Settled' status, no financial institution will ever approve you for any type of credit again.</p>
-                      </div>
-                      <div className="bg-green-50 p-4 rounded border-l-4 border-green-500">
-                        <h4 className="font-bold text-green-700 mb-2 flex items-center">
-                          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                          The Fact
-                        </h4>
-                        <p className="text-sm text-green-900">The CIBIL impact is temporary. Understanding <Link href="/how-to-settle-credit-card-debt" className="text-[#D2A02A] hover:underline font-semibold">how to settle credit card debt</Link> involves acknowledging this dip in exchange for immediate financial survival. Millions of Indians have successfully rebuilt credit over three to five years post settlement.</p>
-                      </div>
-                    </div>
-                  </div>
+                        {/* Myth 3 */}
+                        <tr className="hover:bg-gray-50 transition-colors group">
+                          <td className="p-5 md:p-8 align-top border-r border-gray-200">
+                            <h4 className="font-extrabold text-gray-900 mb-2 text-lg">Banks Only Accept Settlement After Legal Action</h4>
+                            <p className="text-gray-600 leading-relaxed">You must wait until your account becomes a severe Non Performing Asset and the bank sends you an arbitration or court notice to negotiate.</p>
+                          </td>
+                          <td className="p-5 md:p-8 align-top bg-[#fcf8f2]/30 group-hover:bg-[#fcf8f2] transition-colors">
+                            <p className="text-gray-800 leading-relaxed font-medium">Banks actually prefer proactive restructuring and settlement negotiation for distressed borrowers. Waiting for NPA status just accumulates massive late fees and severe penalties, reducing your savings.</p>
+                          </td>
+                        </tr>
 
-                  <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-8">Myth 3: Banks Only Accept Settlement After Legal Action</h3>
-                  <div className="bg-gray-100 rounded-lg p-6 my-6 border border-gray-200">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="bg-red-50 p-4 rounded border-l-4 border-red-500">
-                        <h4 className="font-bold text-red-700 mb-2 flex items-center">
-                          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                          The Myth
-                        </h4>
-                        <p className="text-sm text-red-900">You must wait until your account becomes a severe Non Performing Asset and the bank sends you an arbitration or court notice to negotiate.</p>
-                      </div>
-                      <div className="bg-green-50 p-4 rounded border-l-4 border-green-500">
-                        <h4 className="font-bold text-green-700 mb-2 flex items-center">
-                          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                          The Fact
-                        </h4>
-                        <p className="text-sm text-green-900">Banks actually prefer proactive restructuring and settlement negotiation for distressed borrowers. Waiting for NPA status just accumulates massive late fees and severe penalties, reducing your savings.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-8">Myth 4: Relief Agencies Pay The Bank For You</h3>
-                  <div className="bg-gray-100 rounded-lg p-6 my-6 border border-gray-200">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="bg-red-50 p-4 rounded border-l-4 border-red-500">
-                        <h4 className="font-bold text-red-700 mb-2 flex items-center">
-                          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                          The Myth
-                        </h4>
-                        <p className="text-sm text-red-900">You deposit a large monthly sum into a third party escrow account owned by a debt relief agency, and they use it to magically erase your debt.</p>
-                      </div>
-                      <div className="bg-green-50 p-4 rounded border-l-4 border-green-500">
-                        <h4 className="font-bold text-green-700 mb-2 flex items-center">
-                          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                          The Fact
-                        </h4>
-                        <p className="text-sm text-green-900">True legal advocates guide you through a settlement process where you pay the bank directly once an agreement is signed, completely avoiding third party fund misappropriation scams.</p>
-                      </div>
-                    </div>
+                        {/* Myth 4 */}
+                        <tr className="hover:bg-gray-50 transition-colors group">
+                          <td className="p-5 md:p-8 align-top border-r border-gray-200">
+                            <h4 className="font-extrabold text-gray-900 mb-2 text-lg">Relief Agencies Pay The Bank For You</h4>
+                            <p className="text-gray-600 leading-relaxed">You deposit a large monthly sum into a third party escrow account owned by a debt relief agency, and they use it to magically erase your debt.</p>
+                          </td>
+                          <td className="p-5 md:p-8 align-top bg-[#fcf8f2]/30 group-hover:bg-[#fcf8f2] transition-colors">
+                            <p className="text-gray-800 leading-relaxed font-medium">True legal advocates guide you through a settlement process where you pay the bank directly once an agreement is signed, completely avoiding third party fund misappropriation scams.</p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
 
                   <p className="mb-4">

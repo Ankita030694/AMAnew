@@ -393,6 +393,12 @@ const Footer = () => {
       "name": "Zero Balance Account Legal Advisory",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2150" }
     },
+    "/is-it-safe-to-use-a-law-firm-for-loan-settlement-in-india": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Law Firm Loan Settlement Safety Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2140" }
+    },
     "/compare-different-debt-management-and-settlement-programs-available-to-indian-consumers": {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -1334,7 +1340,18 @@ const Footer = () => {
         { name: "Loan Settlement Company Reviews 2026", href: "/loan-settlement-company-reviews-2026" },
         { name: "Top Fintech Loan Settlement Companies", href: "/top-fintech-loan-settlement-companies" },
         { name: "Best Company to Settle Credit Card Debt", href: "/best-company-to-settle-credit-card-debt" },
-        { name: "Legal Help for Credit Card Recovery Harassment", href: "/legal-help-for-credit-card-recovery-harassment-in-india" }
+        { name: "Legal Help for Credit Card Recovery Harassment", href: "/legal-help-for-credit-card-recovery-harassment-in-india" },
+        { name: "IndusInd Bank Credit Card Settlement", href: "/indusind-bank-credit-card-settlement" },
+        { name: "HDFC Loan Settlement Process Documents CIBIL Impact", href: "/hdfc-loan-settlement-process-documents-cibil-impact" },
+        { name: "Loan Settlement vs Foreclosure", href: "/loan-settlement-vs-foreclosure" },
+        { name: "Top Credit Card Banks Offering Settlement", href: "/top-credit-card-banks-offering-settlement-india" },
+        { name: "Reputable Debt Counselling Services", href: "/where-to-find-reputable-debt-counselling-services" },
+        { name: "Legal Assistance for Debt Disputes", href: "/legal-assistance-for-consumer-debt-settlement-disputes" },
+        { name: "Best Loan Settlement Companies and Platforms in India", href: "/best-loan-settlement-companies-and-platforms-in-india" },
+        { name: "Documents Required for Loan Settlement Through Law Firm", href: "/documents-required-for-loan-settlement-through-law-firm" },
+        { name: "Is It Safe to Use a Law Firm for Loan Settlement", href: "/is-it-safe-to-use-a-law-firm-for-loan-settlement-in-india" },
+        { name: "Best Loan Settlement Lawyer in India", href: "/top-loan-settlement-lawyers-in-india" },
+        { name: "Default Loan Settlement in India", href: "/default-loan-settlement-in-india" }
       ]
 
     }

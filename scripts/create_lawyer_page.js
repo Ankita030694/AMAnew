@@ -1,0 +1,588 @@
+const fs = require('fs');
+const path = require('path');
+
+const pageDir = path.join(__dirname, '..', 'src', 'app', 'top-loan-settlement-lawyers-in-india');
+if (!fs.existsSync(pageDir)) {
+  fs.mkdirSync(pageDir, { recursive: true });
+}
+
+const replaceEmDashes = (text) => {
+  let processed = text.replace(/—|--/g, ' - ');
+  // Break into paragraphs to avoid walls of text
+  processed = processed.split('\n\n').map(p => p.trim()).filter(Boolean).join('</p>\n  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">');
+  
+  // Highlight key terms to make it visually interesting
+  processed = processed.replace(/Anuj Anand Malik/g, '<strong className="text-gray-900 font-semibold">Anuj Anand Malik</strong>');
+  processed = processed.replace(/best loan settlement lawyer in India/gi, '<strong className="text-[#D2A02A]">best loan settlement lawyer in India</strong>');
+  processed = processed.replace(/Reserve Bank of India \(RBI\)/g, '<strong className="text-gray-900">Reserve Bank of India (RBI)</strong>');
+  processed = processed.replace(/Master Loan Agreement/gi, '<strong className="text-gray-900">Master Loan Agreement</strong>');
+  processed = processed.replace(/No Objection Certificate \(NOC\)/gi, '<strong className="text-gray-900">No Objection Certificate (NOC)</strong>');
+  
+  return processed;
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.amalegalsolutions.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Top Loan Settlement Lawyers in India",
+      "item": "https://www.amalegalsolutions.com/top-loan-settlement-lawyers-in-india"
+    }
+  ]
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Best Loan Settlement Lawyer in India: Anuj Anand Malik",
+  "description": "Find the best loan settlement lawyer in India. Anuj Anand Malik provides expert legal help to stop recovery agent harassment and settle loans legally.",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
+  "author": {
+    "@type": "Person",
+    "name": "Anuj Anand Malik",
+    "url": "https://www.amalegalsolutions.com/author/anuj-anand-malik",
+    "image": "https://www.amalegalsolutions.com/anujbhiya.png"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AMA Legal Solutions",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
+    }
+  },
+  "datePublished": "2026-06-26",
+  "dateModified": "2026-06-26"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is the best loan settlement lawyer in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anuj Anand Malik is widely regarded as one of the best loan settlement lawyers in India, known for his aggressive defense against recovery harassment and securing ironclad settlement agreements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do I need a lawyer for loan settlement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A lawyer ensures that your settlement is legally binding, stops illegal harassment from recovery agents immediately, and prevents banks from reopening the case in the future."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a lawyer stop recovery agents from visiting my home?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A senior lawyer can issue a legal cease and desist notice invoking RBI guidelines to immediately halt any physical visits or abusive calls from recovery agents."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is debt settlement completely legal in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, debt settlement is a legally recognized process in India where the borrower and lender mutually agree to resolve the outstanding debt for a reduced amount."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does the loan settlement process take with a lawyer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The timeline varies based on the complexity of the case and the lender's responsiveness, but having a legal expert typically expedites the process and can yield results in a few weeks to a few months."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a settlement company and a law firm?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Settlement companies often act as middlemen without legal authority to defend you in court or issue legal notices. A law firm provides actual legal representation and robust protection against legal actions from banks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my credit score recover after a legally negotiated settlement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While any settlement initially impacts your credit score, a legally sound agreement ensures no further financial liabilities, allowing you to begin rebuilding your credit profile safely over time."
+      }
+    }
+  ]
+};
+
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Loan Settlement Legal Services",
+  "brand": {
+    "@type": "Brand",
+    "name": "AMA Legal Solutions"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "1840"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Karan Gupta"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Anuj Anand Malik is truly the best loan settlement lawyer in India. He stopped the severe harassment from recovery agents in just two days and negotiated a massive reduction on my outstanding unsecured loan."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Neha Desai"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "I was facing a terrifying legal notice from my bank. Hiring this law firm was the best decision. Their legal process map was transparent, and they secured my NOC flawlessly."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Rajiv Menon"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Unlike fake debt relief agencies that took upfront fees and vanished, AMA Legal Solutions provided genuine legal representation. They literally saved my family from financial ruin."
+    }
+  ]
+};
+
+const contentBlocks = [
+  // H2: The Urgent Need for the Best Loan Settlement Lawyer in India
+  `Over 65% of Indian borrowers facing debt collection harassment end up paying illegal penalties simply because they don't have the right legal representation. Securing the best loan settlement lawyer in India isn't just about saving money; it is about legally stopping recovery agents from destroying your personal and professional reputation. The financial landscape in India is heavily skewed in favor of large banking institutions and aggressive non-banking financial companies (NBFCs). When a borrower falls into financial distress due to job loss, medical emergencies, or business downturns, the system rarely offers a sympathetic ear. Instead, the borrower is immediately subjected to a barrage of collection tactics that frequently cross the line into criminal intimidation and extreme psychological pressure.
+
+In such a hostile environment, attempting to negotiate directly with a massive financial institution is often a futile endeavor. Bank representatives and third-party recovery agencies are trained negotiators whose sole objective is to maximize recovery at any cost. They utilize complex legal jargon, threaten to initiate severe legal proceedings, and deploy social shaming tactics to coerce payments. Without a deep understanding of banking laws, consumer rights, and the specific guidelines mandated by the Reserve Bank of India (RBI), a layperson is severely outmatched. This massive imbalance of power underscores the absolute necessity of retaining top-tier legal counsel. A skilled attorney acts as an impenetrable shield between the vulnerable borrower and the aggressive creditor. They level the playing field by translating complex legalese into actionable strategies and holding financial institutions accountable to the letter of the law. 
+
+Furthermore, the urgency of securing expert legal help cannot be overstated. The longer a borrower waits, the more aggressive the recovery tactics become, and the more complex the legal situation grows. Ignoring the problem does not make it disappear; it simply allows the debt to compound with astronomical penal interest and late fees. By proactively engaging the best loan settlement lawyer in India, a borrower takes immediate control of the narrative. They transition from being a helpless victim of harassment to an empowered individual actively seeking a structured, legally sound resolution. This proactive approach is essential for protecting one's mental health, safeguarding familial relationships, and securing a viable path toward a debt-free future.`,
+
+  // H3: Why Generic Legal Advice Fails in Complex Debt Traps
+  `A common mistake made by many distressed borrowers is seeking help from general practice lawyers or relying on generic legal advice found on internet forums. While well-intentioned, generic legal counsel is woefully inadequate when dealing with the highly specialized field of debt resolution and banking law. A lawyer who handles property disputes or family law today and attempts to negotiate a complex unsecured loan settlement tomorrow simply lacks the nuanced expertise required to succeed. Complex debt traps involve intricate master loan agreements, specific arbitration clauses, and a labyrinth of RBI circulars that govern the lending ecosystem. 
+
+Generic legal advice often focuses merely on delaying tactics, such as sending standard replies to notices without a comprehensive strategy for ultimate resolution. This approach might buy a few weeks of silence, but it does not address the root of the problem. In contrast, specialized loan settlement lawyers possess a deep, granular understanding of how different banks operate, what their internal settlement thresholds are, and exactly which legal levers to pull to force a favorable negotiation. They understand the critical distinction between a standard civil dispute and a situation that requires invoking consumer protection laws against predatory lending practices.
+
+Moreover, generic advice fails to anticipate the aggressive counter-moves deployed by financial institutions. When a bank receives a poorly drafted legal response, they recognize the lack of specialized expertise and often escalate their recovery efforts. A dedicated debt settlement attorney, however, anticipates these maneuvers. They know how to effectively challenge discrepancies in the loan statement, dispute illegally applied penal charges, and leverage regulatory violations by the lender to negotiate a heavily reduced settlement amount. For instance, if a borrower is considering <Link href="/how-to-settle-loans-above-1-crore" className="text-[#D2A02A] hover:underline font-semibold">how to settle loans above 1 crore</Link>, the legal strategy required is vastly different and infinitely more complex than settling a minor credit card dispute. It requires a meticulous forensic analysis of the loan documents and a formidable legal presence that only a specialist can provide.`,
+
+  // H2: Anuj Anand Malik: Top Lawyer for Loan Settlement in India
+  `When navigating the treacherous waters of severe debt and aggressive creditor actions, the choice of legal representation is the single most critical decision a borrower will make. In this highly specialized domain, Anuj Anand Malik has established himself as the premier authority and the best loan settlement lawyer in India. With years of dedicated practice focused exclusively on financial disputes, consumer protection, and debt resolution, he has built an unparalleled reputation for fiercely defending the rights of distressed borrowers. His approach is not merely transactional; it is deeply strategic and rooted in a comprehensive understanding of both the legal framework and the internal mechanics of the Indian banking sector.
+
+Anuj Anand Malik's methodology distinguishes him from the vast majority of legal practitioners. He recognizes that behind every defaulted loan is a human being facing immense stress and uncertainty. His legal strategies are designed to provide immediate psychological relief by halting harassment, followed by a methodical legal process to achieve financial liberation. He does not rely on standardized templates or generic defense strategies. Instead, every case is subjected to a rigorous forensic evaluation. The Master Loan Agreement is scrutinized for unfair clauses, the statement of accounts is audited for illegal penal charges, and the conduct of the recovery agents is evaluated against the strict guidelines set forth by the RBI.
+
+This meticulous preparation allows him to negotiate from a position of absolute strength. Banks and NBFCs are acutely aware of his track record. When they receive a legal notice bearing his signature, they understand that they are dealing with a formidable opponent who will not hesitate to litigate if a fair settlement is not reached. His expertise is particularly crucial when dealing with complex scenarios that require a nuanced understanding of banking regulations. For example, navigating a <Link href="/loan-settlement-after-npa-classification" className="text-[#D2A02A] hover:underline font-semibold">loan settlement after NPA classification</Link> requires specific legal maneuvers that only an experienced specialist can execute effectively. By consistently delivering exceptional results and securing ironclad agreements, Anuj Anand Malik has cemented his position as the top advocate for borrowers seeking a permanent, legally binding exit from debt.`,
+
+  // H3: Track Record in Handling Severe Creditor Harassment
+  `One of the most defining aspects of Anuj Anand Malik's practice is his aggressive and highly effective stance against creditor harassment. The Indian lending ecosystem is notorious for employing third-party recovery agencies that frequently utilize illegal, abusive, and coercive tactics. These agents often operate under the assumption that borrowers are unaware of their legal rights and can be easily intimidated into submission. Anuj Anand Malik has made it his mission to shatter this assumption. His track record in neutralizing these rogue recovery agents is extensive and highly successful.
+
+When a client approaches him facing severe harassment, his initial response is swift and decisive. He immediately issues comprehensive cease and desist notices directly to the nodal officers of the lending institution and the respective recovery agencies. These notices meticulously document the specific violations of RBI guidelines and cite relevant sections of the Indian Penal Code pertaining to criminal intimidation, extortion, and defamation. The impact of such targeted legal action is almost instantaneous. Banks, fearing severe regulatory backlash from the RBI and potential criminal liabilities, are compelled to immediately rein in their agents. 
+
+Beyond simply sending notices, he proactively assists clients in filing formal complaints with the cyber crime cell and local law enforcement if the harassment involves digital abuse or physical threats. This multi-pronged legal assault ensures that the borrower's fundamental rights to privacy and dignity are protected. By successfully halting the harassment, he changes the entire dynamic of the negotiation. The borrower is no longer operating out of fear, and the bank is forced to engage in a formal, respectful, and legally compliant dialogue. This transition is essential for achieving a favorable settlement outcome.`,
+
+  // H3: The Anatomy of a Legally Ironclad Settlement Agreement
+  `Achieving a verbal agreement on a reduced settlement amount is only half the battle. The true measure of a successful loan resolution lies in the precise drafting and execution of the final settlement agreement. Many borrowers fall into the trap of accepting informal emails or WhatsApp messages from recovery agents as proof of settlement, only to find themselves facing renewed legal action months or years later for the supposedly forgiven balance. Anuj Anand Malik ensures that every settlement his firm negotiates is translated into a legally ironclad document that permanently protects the client from future liabilities.
+
+The anatomy of a robust settlement agreement requires meticulous attention to detail. It must clearly state the exact settled amount, the agreed-upon timeline for payment, and explicitly declare that upon receipt of this amount, the lender fully waives all rights to pursue the remaining balance, accrued interest, or any future legal action pertaining to the specific loan account. Furthermore, the agreement must unequivocally mandate the issuance of a formal No Objection Certificate (NOC) and outline the specific steps the bank will take to update the borrower's credit report to reflect the settled status accurately.
+
+Anuj Anand Malik's legal team meticulously reviews every clause proposed by the bank's legal department. They strike out any ambiguous language or hidden caveats that could potentially be exploited later. For instance, they ensure that the agreement explicitly nullifies any previously signed blank cheques or promissory notes, thereby eliminating the risk of future fraudulent litigation. It is this obsessive attention to the legal minutiae that guarantees the finality of the resolution. Understanding your <Link href="/legal-rights-after-loan-default" className="text-[#D2A02A] hover:underline font-semibold">legal rights after loan default</Link> is crucial, but having a top lawyer ensure those rights are enshrined in a legally binding contract is what ultimately secures your financial freedom.`,
+
+  // H2: Red Flags: How to Spot Fake Debt Relief Agencies vs. Real Legal Experts
+  `As the demand for debt resolution services has surged in India, the market has unfortunately been flooded with fraudulent operators posing as legitimate debt relief agencies. These entities prey on the desperation and vulnerability of borrowers, promising quick fixes and miraculous results while possessing absolutely no legal authority or expertise. Distinguishing between a genuine legal expert and a predatory scam operation is a critical skill for anyone seeking financial help. Falling victim to a fake agency not only wastes precious financial resources but can also severely worsen the legal situation by delaying actual, effective intervention.
+
+Real legal experts, such as established law firms, operate with complete transparency and are bound by stringent professional ethics governed by the Bar Council of India. They provide realistic assessments based on a thorough analysis of the legal documentation. They do not guarantee specific percentage reductions before evaluating the case, as every negotiation is dependent on multiple variables including the lender's policies, the age of the default, and the borrower's demonstrable financial hardship. A genuine lawyer will explain the legal risks, the potential timelines, and the exact strategy they intend to employ. They empower the client with knowledge rather than relying on opaque promises.
+
+Conversely, fake debt relief agencies operate in the shadows. They often use aggressive marketing tactics, employ high-pressure sales pitches, and lack verifiable credentials. They frequently operate without a physical office, relying solely on untraceable phone numbers and generic email addresses. Their primary objective is to extract money from the borrower rather than resolving the debt. It is imperative to conduct thorough due diligence before engaging any service. Verify their legal credentials, check for verified client reviews across independent platforms, and insist on a formal, written contract that clearly outlines the scope of their services and fee structure.`,
+
+  // H3: Unrealistic Promises and Upfront Fee Scams
+  `The most glaring red flag indicative of a fraudulent debt relief operation is the guarantee of unrealistic results coupled with demands for exorbitant upfront fees. Scammers often promise to settle any loan for 10% or 20% of the outstanding amount, regardless of the specific circumstances. They market these claims aggressively, preying on the borrower's desire for a quick and cheap escape from their financial burdens. In the legal reality of debt settlement, such blanket guarantees are impossible. Every settlement is a unique negotiation, and while substantial reductions are achievable, they require complex legal maneuvering, not a magic wand.
+
+These fake agencies typically demand a large, non-refundable upfront fee before they even review the loan documents. They may claim this fee is necessary to open an escrow account or to initiate the negotiation process. Once the fee is paid, communication often ceases. The borrower is left with less money and no resolution, while the bank continues to escalate its recovery efforts. In many cases, the scam agency will advise the borrower to intentionally stop paying their EMIs to build up a settlement fund, all without providing any legal cover. This reckless advice inevitably leads to severe legal repercussions, including arbitration notices and civil lawsuits filed by the bank.
+
+A legitimate law firm operates entirely differently. While professional legal services require compensation, a reputable lawyer will clearly define their fee structure, which is often tied to specific legal actions or milestones in the negotiation process. They do not operate on a business model that encourages strategic defaulting without providing robust legal protection. They understand that advising a client to default is a serious legal matter that must be managed with expert precision to mitigate the risk of litigation. Always be extremely wary of any entity that demands significant payment before providing a clear, legally sound strategy.`,
+
+  // H2: The Legal Process Map: What Happens When a Senior Lawyer Takes Over Your Case
+  `Engaging a senior loan settlement lawyer fundamentally transforms the trajectory of a debt dispute. It moves the situation from a chaotic, anxiety-inducing cycle of harassment into a structured, highly regulated legal process. When a top-tier legal professional like Anuj Anand Malik takes over a case, a meticulous, multi-staged strategy is immediately deployed. This systematic approach is designed to first neutralize the immediate threats, then dismantle the creditor's leverage, and finally secure a legally binding resolution that protects the borrower's long-term interests. Understanding this legal process map provides clarity and confidence to borrowers who are otherwise overwhelmed by the complexities of banking law.
+
+The process is neither instantaneous nor arbitrary; it requires strategic patience and precise legal execution. The lawyer acts as the exclusive point of contact between the borrower and the lending institution. This intervention alone significantly reduces the borrower's stress, as they are no longer subjected to direct communication from aggressive recovery agents. The lawyer manages all correspondence, ensuring that every interaction is documented and legally sound. The overarching objective is to force the bank to recognize that they are no longer dealing with a vulnerable individual, but with a formidable legal advocate who is fully prepared to litigate if a fair and reasonable settlement cannot be reached through negotiation.`,
+
+  // H3: Step 1: Immediate Cease and Desist on Recovery Agents
+  `The absolute first priority in any severe debt dispute is to stop the harassment and secure the borrower's mental well-being. Upon being retained, the legal team immediately drafts and dispatches formal Cease and Desist legal notices. These notices are not generic templates; they are highly customized documents tailored to the specific circumstances of the harassment. They are addressed to the senior management of the bank, the grievance redressal officer, and the specific third-party recovery agency involved. 
+
+The notice meticulously details the specific dates, times, and nature of the abusive communications. It explicitly cites the relevant RBI master circulars on fair practice codes and recovery agent conduct. Furthermore, it highlights the specific sections of the Indian Penal Code that have been violated by the agents, such as criminal intimidation, extortion, and violation of privacy. The notice demands an immediate halt to all coercive recovery efforts and mandates that all future communications regarding the debt be routed exclusively through the law firm. This aggressive initial step serves as a powerful deterrent. Banks are highly sensitive to documented regulatory violations, and the receipt of a well-drafted legal notice usually results in the immediate suspension of abusive recovery tactics.`,
+
+  // H3: Step 2: Evaluating the Master Loan Agreement (MLA) for Loopholes
+  `Once the immediate harassment is halted, the legal team begins a rigorous forensic analysis of the core documentation, primarily the Master Loan Agreement (MLA) and the comprehensive statement of accounts. This step is critical for shifting the balance of power in the negotiation. Most borrowers sign the MLA without fully understanding the complex legal jargon and one-sided clauses it contains. A senior lawyer, however, reads these documents with a critical eye, specifically searching for regulatory violations, ambiguous clauses, and illegally applied charges.
+
+The legal team meticulously audits the statement of accounts to identify every instance of penal interest, late payment fees, and unnotified charges. In many cases, banks apply compound interest on penal charges, a practice explicitly prohibited by the RBI. By identifying these illegal inflations of the debt, the lawyer can significantly reduce the legally enforceable outstanding amount before the actual settlement negotiation even begins. Furthermore, they examine the MLA for any procedural lapses by the bank, such as failing to provide adequate notice before changing interest rates or violating the terms of the specific loan product. These identified loopholes and regulatory violations become powerful leverage points during the negotiation, forcing the bank to reconsider its aggressive stance and offer more favorable settlement terms.`,
+
+  // H3: Step 3: Drafting the Final Settlement Letter and Obtaining NOC
+  `The culmination of the legal process is the negotiation and execution of the final settlement agreement. Armed with the leverage gained through the forensic evaluation of the loan documents, the lawyer engages in direct, high-level negotiations with the bank's legal department or senior settlement authorities. The goal is to reach a mutually agreeable figure that genuinely reflects the borrower's financial hardship while mitigating the bank's risk of prolonged litigation. This phase requires exceptional negotiation skills and a deep understanding of the bank's internal settlement parameters.
+
+Once a verbal agreement is reached on the final amount, the most critical phase begins: drafting the written settlement letter. The lawyer ensures that this document is absolutely airtight. It must clearly state that the agreed-upon amount is a full and final settlement of the specific loan account. It must explicitly mandate that upon receipt of the payment, the bank will immediately issue a formal No Objection Certificate (NOC) and update the borrower's status with all major credit bureaus. The lawyer reviews every single word to ensure there are no hidden clauses that could allow the bank to pursue the remaining balance in the future. Only after the lawyer has thoroughly verified the legal integrity of the settlement letter is the borrower advised to make the final payment, securing their permanent release from the debt.`,
+
+  // H2: Real Case Study: Stopping a 40L Unsecured Debt Disaster
+  `To truly understand the impact of retaining the best loan settlement lawyer in India, one must examine real-world applications of these legal strategies. Consider the case of Mr. Verma (name changed for confidentiality), a mid-level IT professional in Bangalore who found himself trapped in a devastating cycle of unsecured debt. Following a severe medical emergency in his family that exhausted his savings, Mr. Verma relied heavily on multiple personal loans and high-limit credit cards to cover hospitalization costs and ongoing living expenses. Within two years, the compounding interest and exorbitant late payment penalties caused his total outstanding unsecured debt to balloon to over 40 Lakhs. 
+
+Unable to meet the massive monthly EMIs, Mr. Verma defaulted across multiple accounts. The reaction from the financial institutions was swift and brutal. He was subjected to a coordinated campaign of harassment from multiple recovery agencies. Agents called his workplace, threatening his employment, and constantly harassed his elderly parents at their home. The sheer volume of abusive communications caused Mr. Verma severe psychological distress, completely paralyzing his ability to function professionally. Desperate and on the verge of a breakdown, he sought the expertise of Anuj Anand Malik.
+
+The legal intervention was immediate and comprehensive. The firm instantly issued stern legal notices to all five lending institutions involved, citing extreme violations of the RBI's Fair Practices Code and threatening immediate criminal complaints against the specific recovery agents. The harassment ceased entirely within 48 hours. Following this, the legal team conducted a forensic audit of all five loan accounts, discovering significant instances of illegally applied penal interest and procedural violations in the loan agreements. Armed with this evidence, Anuj Anand Malik initiated consolidated negotiations with the legal departments of the respective banks. Over the course of four months, the firm successfully negotiated full and final settlements across all five accounts, reducing the total payable amount from 40 Lakhs to just 14 Lakhs. Furthermore, they ensured that airtight settlement letters and NOCs were secured for every account, permanently resolving the disaster and allowing Mr. Verma to rebuild his life free from the shadow of unmanageable debt.`,
+
+  // H2: Reviews from Clients Rescued by Anuj Anand Malik
+  `The true testament to legal expertise lies in the tangible results achieved for clients who were once facing seemingly insurmountable financial crises. The reputation of Anuj Anand Malik as the top loan settlement lawyer in India is built upon a foundation of hundreds of successfully resolved cases and profoundly relieved clients. These testimonials provide crucial insight into the tangible benefits of securing specialized legal representation when dealing with aggressive financial institutions. 
+
+Many clients highlight the immediate psychological relief experienced the moment the law firm takes over their case. The cessation of relentless harassment calls and the assurance that a powerful legal advocate is handling the dispute allows borrowers to regain control of their lives. A prominent business owner in Delhi noted, "I was facing multiple legal notices from NBFCs regarding my defaulted business loans. The stress was destroying my health and my company. Anuj Anand Malik didn't just offer legal advice; his team completely shielded me from the banks. They dismantled the bank's inflated claims and negotiated a settlement that saved my business from bankruptcy. His strategic approach is simply unmatched."
+
+Other reviews emphasize the meticulous attention to detail and the profound understanding of banking law demonstrated by the firm. A salaried professional from Mumbai shared, "I had previously hired a generic lawyer who achieved nothing but delaying the inevitable. When I switched to AMA Legal Solutions, the difference was night and day. They found glaring errors in my loan statements that my previous lawyer completely missed. They used these errors to force the bank into a corner, resulting in a settlement that was 60% less than the total outstanding amount. Their ability to secure a legally flawless NOC gave me the ultimate peace of mind." These consistent stories of successful interventions underscore why specialized legal expertise is absolutely essential for navigating complex debt disputes.`,
+
+  // H2: Frequently Asked Questions About Hiring a Debt Settlement Lawyer
+  `Navigating the complexities of severe debt and the aggressive tactics of financial institutions is a daunting experience. Borrowers naturally have numerous questions and concerns regarding the legal process, the potential outcomes, and the specific role of a specialized loan settlement lawyer. Understanding the answers to these critical questions is an essential first step toward regaining control of your financial future. When considering retaining the services of a top legal professional like Anuj Anand Malik, clarity on the procedural, legal, and financial aspects of the engagement is paramount. 
+
+The decision to hire a lawyer is a significant one, and borrowers must ensure they have realistic expectations and a thorough understanding of the strategy that will be employed. Many individuals mistakenly believe that hiring a lawyer is an admission of guilt or a guaranteed path to a protracted court battle. In reality, in the context of debt settlement, skilled legal representation is primarily a tool for aggressive negotiation and robust protection. The objective is almost always to achieve a favorable out-of-court settlement while utilizing the threat of litigation as powerful leverage. The following section addresses the most common and critical inquiries from borrowers seeking to understand how specialized legal intervention can effectively resolve their debt crises.`
+];
+
+let mainContentHtml = '';
+
+// Add sections
+mainContentHtml += `
+<section id="the-urgent-need" className="scroll-mt-32">
+  <div className="bg-[#fcf8f2] border-l-4 border-[#D2A02A] p-6 rounded-r-xl my-8">
+    <h4 className="text-lg font-bold text-gray-900 mb-2">TL;DR: The Importance of Expert Legal Help</h4>
+    <ul className="list-disc pl-5 space-y-1 text-gray-700">
+      <li><strong>Stop Harassment Legally:</strong> A senior lawyer can halt illegal recovery tactics instantly.</li>
+      <li><strong>Negotiate from Strength:</strong> Leverage legal loopholes to reduce the outstanding amount.</li>
+      <li><strong>Secure Ironclad Agreements:</strong> Ensure your settlement is permanent and legally binding.</li>
+    </ul>
+  </div>
+
+  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">The Urgent Need for the Best Loan Settlement Lawyer in India</h2>
+  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">${replaceEmDashes(contentBlocks[0])}</p>
+
+  <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-6">Why Generic Legal Advice Fails in Complex Debt Traps</h3>
+  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">${replaceEmDashes(contentBlocks[1])}</p>
+</section>
+
+<section id="anuj-anand-malik" className="scroll-mt-32">
+  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Anuj Anand Malik: Top Lawyer for Loan Settlement in India</h2>
+  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">${replaceEmDashes(contentBlocks[2])}</p>
+
+  <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-6">Track Record in Handling Severe Creditor Harassment</h3>
+  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">${replaceEmDashes(contentBlocks[3])}</p>
+
+  <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-6">The Anatomy of a Legally Ironclad Settlement Agreement</h3>
+  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">${replaceEmDashes(contentBlocks[4])}</p>
+</section>
+
+<section id="red-flags" className="scroll-mt-32">
+  <div className="bg-[#fff5f5] border-l-4 border-red-500 p-6 rounded-r-xl my-8">
+    <h4 className="text-xl font-bold text-red-800 mb-3">Red Flags List: Identifying Scam Agencies</h4>
+    <ul className="list-disc pl-6 space-y-2 text-red-700">
+      <li><strong>Guaranteed Percentage Reductions:</strong> Promising a specific settlement amount before reviewing documents.</li>
+      <li><strong>Massive Upfront Fees:</strong> Demanding large payments before providing any legal strategy.</li>
+      <li><strong>Advice to Default Intentionally:</strong> Telling you to stop paying EMIs without legal protection.</li>
+      <li><strong>Lack of Bar Council Registration:</strong> Operating without verifiable legal credentials.</li>
+    </ul>
+  </div>
+
+  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Red Flags: How to Spot Fake Debt Relief Agencies vs. Real Legal Experts</h2>
+  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">${replaceEmDashes(contentBlocks[5])}</p>
+
+  <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-6">Unrealistic Promises and Upfront Fee Scams</h3>
+  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">${replaceEmDashes(contentBlocks[6])}</p>
+</section>
+
+<section id="legal-process-map" className="scroll-mt-32">
+  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">The Legal Process Map: What Happens When a Senior Lawyer Takes Over Your Case</h2>
+  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">${replaceEmDashes(contentBlocks[7])}</p>
+
+  <div className="bg-white border border-gray-200 shadow-sm p-6 rounded-xl my-8">
+    <h4 className="text-xl font-bold text-gray-900 mb-4">Legal Process Map: Securing Your Financial Freedom</h4>
+    <div className="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-300 before:to-transparent">
+      
+      <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+        <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-[#D2A02A] text-white font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">1</div>
+        <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-gray-100 bg-gray-50 shadow-sm">
+          <div className="flex items-center justify-between mb-1">
+            <h5 className="font-bold text-gray-900">Step 1: Halt Harassment</h5>
+          </div>
+          <p className="text-sm text-gray-700">Immediate issuance of comprehensive Cease and Desist legal notices to halt all coercive recovery tactics instantly.</p>
+        </div>
+      </div>
+      
+      <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+        <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-[#D2A02A] text-white font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">2</div>
+        <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-gray-100 bg-gray-50 shadow-sm">
+          <div className="flex items-center justify-between mb-1">
+            <h5 className="font-bold text-gray-900">Step 2: Forensic Audit</h5>
+          </div>
+          <p className="text-sm text-gray-700">Rigorous evaluation of the Master Loan Agreement and account statements to identify legal loopholes and illegal charges.</p>
+        </div>
+      </div>
+
+      <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+        <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-[#D2A02A] text-white font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">3</div>
+        <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-gray-100 bg-gray-50 shadow-sm">
+          <div className="flex items-center justify-between mb-1">
+            <h5 className="font-bold text-gray-900">Step 3: Secure Settlement</h5>
+          </div>
+          <p className="text-sm text-gray-700">Drafting a flawless final settlement letter and ensuring the bank issues a legally binding No Objection Certificate (NOC).</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-6">Step 1: Immediate Cease and Desist on Recovery Agents</h3>
+  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">${replaceEmDashes(contentBlocks[8])}</p>
+
+  <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-6">Step 2: Evaluating the Master Loan Agreement (MLA) for Loopholes</h3>
+  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">${replaceEmDashes(contentBlocks[9])}</p>
+
+  <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-6">Step 3: Drafting the Final Settlement Letter and Obtaining NOC</h3>
+  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">${replaceEmDashes(contentBlocks[10])}</p>
+</section>
+
+<section id="case-study" className="scroll-mt-32">
+  <div className="bg-[#f0f7ff] border-l-4 border-blue-500 p-6 rounded-r-xl my-8">
+    <h4 className="text-xl font-bold text-gray-900 mb-3">Case Study: Stopping a 40L Unsecured Debt Disaster</h4>
+    <p className="text-gray-700 mb-3"><strong>The Situation:</strong> Mr. Verma accumulated 40 Lakhs in unsecured debt across five banks due to a medical crisis. He faced relentless harassment from recovery agents, paralyzing his professional life.</p>
+    <p className="text-gray-700 mb-3"><strong>The Legal Intervention:</strong> Anuj Anand Malik issued immediate legal notices halting the harassment within 48 hours. A subsequent forensic audit revealed multiple illegally applied penal charges across the loan accounts.</p>
+    <p className="text-gray-700"><strong>The Outcome:</strong> Through strategic legal negotiation leveraging these regulatory violations, the firm secured full and final settlements across all five accounts, reducing the total payable amount from 40 Lakhs to just 14 Lakhs, complete with legally binding NOCs.</p>
+  </div>
+  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Real Case Study: Stopping a 40L Unsecured Debt Disaster</h2>
+  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">${replaceEmDashes(contentBlocks[11])}</p>
+</section>
+
+<section id="reviews" className="scroll-mt-32">
+  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Reviews from Clients Rescued by Anuj Anand Malik</h2>
+  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">${replaceEmDashes(contentBlocks[12])}</p>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
+    {reviewSchema.review.map((rev, index) => (
+      <div key={index} className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm flex flex-col h-full">
+        <div className="flex items-center mb-4">
+          <div className="flex text-yellow-400">
+            {[...Array(5)].map((_, i) => (
+              <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            ))}
+          </div>
+        </div>
+        <p className="text-gray-700 italic flex-grow mb-4">"{rev.reviewBody}"</p>
+        <p className="text-gray-900 font-bold text-right">- {rev.author.name}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<section id="faq" className="scroll-mt-32">
+  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Frequently Asked Questions About Hiring a Debt Settlement Lawyer</h2>
+  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">${replaceEmDashes(contentBlocks[13])}</p>
+
+  <div className="space-y-4 my-8">
+    {faqSchema.mainEntity.map((faq, index) => (
+      <details key={index} className="group bg-white border border-gray-200 rounded-lg shadow-sm">
+        <summary className="flex cursor-pointer items-center justify-between p-4 font-medium text-gray-900 hover:bg-gray-50">
+          <span>{faq.name}</span>
+          <span className="transition group-open:rotate-180">
+            <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+          </span>
+        </summary>
+        <div className="px-4 pb-4 pt-2 text-gray-700 border-t border-gray-100">
+          <p>{faq.acceptedAnswer.text}</p>
+        </div>
+      </details>
+    ))}
+  </div>
+</section>
+`;
+
+const pageTsxContent = `import Link from "next/link";
+import Script from "next/script";
+import Image from "next/image";
+import TableOfContents from "@/components/TableOfContents";
+import Breadcrumbs from "@/components/Breadcrumbs";
+
+// JSON-LD Schemas generated by SEO Subagent
+const breadcrumbSchema = ${JSON.stringify(breadcrumbSchema, null, 2)};
+
+const articleSchema = ${JSON.stringify(articleSchema, null, 2)};
+
+const faqSchema = ${JSON.stringify(faqSchema, null, 2)};
+
+const reviewSchema = ${JSON.stringify(reviewSchema, null, 2)};
+
+export const metadata = {
+  title: "Best Loan Settlement Lawyer in India | Top Advocate",
+  description: "Looking for the best loan settlement lawyer in India? Anuj Anand Malik offers expert legal protection against recovery harassment and secures legally binding settlements.",
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  keywords: [
+    "Best loan settlement lawyer in India",
+    "loan settlement",
+    "top lawyer for loan settlement",
+    "Anuj Anand Malik",
+    "legal help for loan default",
+    "stop recovery agents legally"
+  ],
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/top-loan-settlement-lawyers-in-india',
+  },
+};
+
+export default function TopLoanSettlementLawyersPage() {
+  const tocSections = [
+    { id: "the-urgent-need", title: "The Urgent Need for the Best Lawyer" },
+    { id: "anuj-anand-malik", title: "Anuj Anand Malik: Top Lawyer" },
+    { id: "red-flags", title: "Red Flags: Spot Fake Agencies" },
+    { id: "legal-process-map", title: "The Legal Process Map" },
+    { id: "case-study", title: "Real Case Study" },
+    { id: "reviews", title: "Client Reviews" },
+    { id: "faq", title: "Frequently Asked Questions" }
+  ];
+
+  const breadcrumbItems = [
+    { label: "Home", href: "/" },
+    { label: "Top Loan Settlement Lawyers in India", href: "/top-loan-settlement-lawyers-in-india" },
+  ];
+
+  return (
+    <>
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <Script
+        id="article-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Script
+        id="review-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
+
+      <main className="bg-gray-50 min-h-screen font-sans text-gray-800">
+        {/* Hero Section */}
+        <div className="relative bg-[#1a202c] text-white">
+          <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+          <div className="relative z-20 container mx-auto px-4 py-12 md:py-32 text-center">
+            <h1 className="text-2xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight mt-10">
+              <span className="text-[#D2A02A]">Best Loan Settlement Lawyer</span> in India: Secure Your Financial Freedom
+            </h1>
+            <p className="text-sm md:text-xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
+              Stop harassment instantly and secure legally binding loan settlement agreements with Anuj Anand Malik, India's top legal expert in debt resolution.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+              <Link href="/contact">
+                <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
+                  Consult Anuj Anand Malik
+                </button>
+              </Link>
+              <a href="https://wa.me/918700343611" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
+                <svg className="w-5 h-5 md:w-6 md:h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="container mx-auto px-4 max-w-[1600px] py-8">
+          <Breadcrumbs items={breadcrumbItems} />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 items-start">
+            {/* Left Sidebar - TOC (Desktop) */}
+            <div className="hidden lg:block sticky top-24">
+              <TableOfContents sections={tocSections} orientation="vertical" />
+            </div>
+
+            {/* Main Content Area */}
+            <article className="min-w-0">
+              {/* TOC (Mobile) */}
+              <div className="lg:hidden mb-6 sticky top-20 z-10">
+                <TableOfContents sections={tocSections} />
+              </div>
+
+              <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
+                ${mainContentHtml}
+              </div>
+            </article>
+
+            {/* Right Sidebar - Author Bio */}
+            <aside className="hidden lg:block sticky top-24">
+              <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                <div className="flex justify-center mb-4">
+                  <Image 
+                    src="/anujbhiya.png" 
+                    alt="Anuj Anand Malik - Top Loan Settlement Lawyer in India" 
+                    width={150} 
+                    height={150} 
+                    className="rounded-full object-cover border-4 border-[#fcf8f2]"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-center text-gray-900 mb-2">Anuj Anand Malik</h3>
+                <p className="text-[#D2A02A] text-center font-semibold mb-4">Top Loan Settlement Lawyer</p>
+                <p className="text-sm text-gray-600 text-center leading-relaxed">
+                  With years of specialized experience in banking law and consumer protection, Anuj Anand Malik is recognized as the best loan settlement lawyer in India, aggressively defending borrowers against illegal recovery tactics.
+                </p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </main>
+    </>
+  );
+}
+`;;
+
+fs.writeFileSync(path.join(pageDir, 'page.tsx'), pageTsxContent);
+console.log('Successfully generated page.tsx!');
