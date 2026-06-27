@@ -1,4 +1,6 @@
-"use client";
+import os
+
+content = """\"use client\";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -16,12 +18,9 @@ import {
   Clock, 
   Send,
   Flame,
-  MessageCircle,
-  Star
+  MessageCircle
 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
-import { SiTrustpilot } from "react-icons/si";
 
 import Navbar from "@/newcomp/Navbar";
 import Footer from "@/newcomp/Footer";
@@ -303,7 +302,7 @@ const ContactComp = () => {
       )}
 
       {/* Trust badges below textarea */}
-      <div className={`grid grid-cols-3 gap-2 mt-4 text-[#30261C] font-medium ${isMobile ? 'text-[10px]' : 'text-xs border-t border-gray-100 pt-6 mt-6'}`}>
+      <div className={`grid grid-cols-3 gap-2 mt-4 text-[#30261C]/60 font-medium ${isMobile ? 'text-[10px]' : 'text-xs border-t border-gray-100 pt-6 mt-6'}`}>
          <div className={`flex items-center justify-center gap-1.5 ${isMobile ? 'bg-white border border-gray-100 py-2 rounded-lg shadow-sm' : ''}`}>
             <ShieldCheck className="w-4 h-4 text-[#D2A02A]" /> 100% Confidential
          </div>
@@ -344,60 +343,13 @@ const ContactComp = () => {
         {/* ===================== MOBILE VIEW ===================== */}
         <div className="flex flex-col lg:hidden w-full max-w-md mx-auto gap-8 pt-6">
           
-          {/* Form Card (Moved to top) */}
-          <div className="bg-white rounded-[24px] p-5 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-[#E9C46A]/20 relative pt-10">
-             {/* Badge */}
-             <div className="absolute top-0 left-6 bg-[#D2A02A] text-white text-[10px] font-bold px-4 py-1.5 rounded-b-lg flex items-center gap-1.5 shadow-sm">
-                <Shield className="w-3 h-3" /> WE'RE HERE TO HELP
-             </div>
-
-             <div className="mb-5 relative z-10">
-                <h2 className="text-2xl font-bold text-[#30261C] mb-1">Send Us a Message</h2>
-                <p className="text-[13px] text-[#30261C]">Fill out the form below and our team will get back to you shortly.</p>
-             </div>
-
-             {submitted ? (
-                <div className="flex flex-col items-center justify-center py-8 text-center space-y-4">
-                  <div className="w-16 h-16 bg-[#D2A02A]/10 rounded-full flex items-center justify-center">
-                    <ShieldCheck className="w-8 h-8 text-[#D2A02A]" />
-                  </div>
-                  <h3 className="text-xl font-bold text-[#30261C]">Thank You!</h3>
-                  <p className="text-[#30261C]">Your message has been received.</p>
-                </div>
-              ) : isDuplicate ? (
-                <div className="flex flex-col items-center justify-center py-8 text-center space-y-4">
-                  <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center">
-                    <User className="w-8 h-8 text-blue-500" />
-                  </div>
-                  <h3 className="text-xl font-bold text-[#30261C]">Already Submitted!</h3>
-                  <p className="text-[#30261C]">Check your WhatsApp for your assigned executive.</p>
-                  <button onClick={() => setIsDuplicate(false)} className="px-6 py-2 bg-gray-100 rounded-lg text-sm font-semibold">Close</button>
-                </div>
-              ) : (
-                <form className="space-y-3 relative z-10">
-                  <FormInputs isMobile={true} />
-                </form>
-              )}
-          </div>
-
-          {/* Alerts (Kept under form) */}
-          <div className="bg-[#F0FDF4] border border-[#BBF7D0] rounded-xl py-3 px-4 flex items-center justify-center gap-3 text-sm text-[#166534]">
-             <ShieldCheck className="w-5 h-5 text-[#22C55E] shrink-0" />
-             <p className="text-[13px]">We usually respond within <span className="font-bold">30 minutes</span></p>
-          </div>
-          
-          <div className="bg-[#FEF2F2] border border-[#FECACA] rounded-xl p-4 flex gap-3 text-sm text-[#991B1B]">
-             <Flame className="w-5 h-5 text-[#EF4444] shrink-0 mt-0.5" />
-             <p className="text-[12px] leading-relaxed"><span className="font-bold text-red-600">Don't wait!</span> Secure the right legal guidance today. Your early action can make all the difference.</p>
-          </div>
-
           {/* Headlines */}
           <div>
              <h1 className="text-4xl font-bold text-[#30261C] leading-[1.15] mb-4 tracking-tight">
                 Your Legal Matters,<br/>
                 <span className="text-[#E19100]">Our Priority.</span>
              </h1>
-             <p className="text-[#30261C] text-sm leading-relaxed font-medium">
+             <p className="text-[#30261C]/80 text-sm leading-relaxed font-medium">
                 Clear guidance. Strategic solutions.<br/>
                 Results that matter.
              </p>
@@ -410,68 +362,80 @@ const ContactComp = () => {
                    <Shield className="w-5 h-5 text-[#D2A02A]" />
                 </div>
                 <h3 className="font-bold text-[#30261C] text-[10px] leading-tight">Confidential<br/>& Secure</h3>
-                <p className="text-[9px] text-[#30261C] leading-tight px-1">Your information is always safe with us.</p>
+                <p className="text-[9px] text-[#30261C]/70 leading-tight px-1">Your information is always safe with us.</p>
              </div>
              <div className="flex flex-col items-center text-center gap-2">
                 <div className="w-12 h-12 rounded-full bg-[#FDF8E7] flex items-center justify-center border border-[#E9C46A]/40 shadow-sm">
                    <Users className="w-5 h-5 text-[#D2A02A]" />
                 </div>
                 <h3 className="font-bold text-[#30261C] text-[10px] leading-tight">Expert Legal<br/>Guidance</h3>
-                <p className="text-[9px] text-[#30261C] leading-tight px-1">Advice from experienced legal professionals.</p>
+                <p className="text-[9px] text-[#30261C]/70 leading-tight px-1">Advice from experienced legal professionals.</p>
              </div>
              <div className="flex flex-col items-center text-center gap-2">
                 <div className="w-12 h-12 rounded-full bg-[#FDF8E7] flex items-center justify-center border border-[#E9C46A]/40 shadow-sm">
                    <Target className="w-5 h-5 text-[#D2A02A]" />
                 </div>
                 <h3 className="font-bold text-[#30261C] text-[10px] leading-tight">Results<br/>Focused</h3>
-                <p className="text-[9px] text-[#30261C] leading-tight px-1">Practical solutions tailored to your needs.</p>
+                <p className="text-[9px] text-[#30261C]/70 leading-tight px-1">Practical solutions tailored to your needs.</p>
              </div>
           </div>
 
           {/* Trusted By avatars */}
           <div className="flex items-center gap-3 bg-[#FDF8E7] py-2.5 px-4 rounded-2xl border border-[#E9C46A]/30 shadow-sm">
              <div className="flex -space-x-3 shrink-0">
-                <div className="w-8 h-8 rounded-full border-2 border-[#FDF8E7] bg-white flex items-center justify-center relative z-10 shadow-sm">
-                   <FcGoogle className="w-5 h-5" />
-                </div>
-                <div className="w-8 h-8 rounded-full border-2 border-[#FDF8E7] bg-gray-300 overflow-hidden relative"><Image src="/testi1.png" fill alt="Client" className="object-cover" /></div>
-                <div className="w-8 h-8 rounded-full border-2 border-[#FDF8E7] bg-gray-400 overflow-hidden relative"><Image src="/testi2.png" fill alt="Client" className="object-cover" /></div>
-                <div className="w-8 h-8 rounded-full border-2 border-[#FDF8E7] bg-gray-500 overflow-hidden relative"><Image src="/testi3.png" fill alt="Client" className="object-cover" /></div>
+                <div className="w-8 h-8 rounded-full border-2 border-[#FDF8E7] bg-gray-300 overflow-hidden"><Image src="/testi1.png" width={32} height={32} alt="User" className="w-full h-full object-cover" /></div>
+                <div className="w-8 h-8 rounded-full border-2 border-[#FDF8E7] bg-gray-400 overflow-hidden"><Image src="/testi2.png" width={32} height={32} alt="User" className="w-full h-full object-cover" /></div>
+                <div className="w-8 h-8 rounded-full border-2 border-[#FDF8E7] bg-gray-500 overflow-hidden"><Image src="/testi3.png" width={32} height={32} alt="User" className="w-full h-full object-cover" /></div>
+                <div className="w-8 h-8 rounded-full border-2 border-[#FDF8E7] bg-gray-600 overflow-hidden"><Image src="/testi1.png" width={32} height={32} alt="User" className="w-full h-full object-cover" /></div>
              </div>
-             <p className="text-[11px] text-[#30261C] font-medium">Trusted by <span className="text-[#E19100] font-bold">5,000+</span> Clients Across India</p>
+             <p className="text-[11px] text-[#30261C]/80 font-medium">Trusted by <span className="text-[#E19100] font-bold">5,000+</span> Clients Across India</p>
           </div>
 
-          {/* Ratings Mobile */}
-          <div className="flex items-center justify-between gap-2 bg-white py-3 px-4 rounded-2xl border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] mt-2">
-            <div className="flex items-center gap-1.5">
-               <FcGoogle className="w-5 h-5" />
-               <div className="flex flex-col">
-                  <div className="flex items-center gap-1">
-                    <span className="text-[12px] font-bold text-[#30261C]">4.9</span>
-                    <div className="flex gap-0.5">
-                      {[...Array(5)].map((_, i) => <Star key={i} className="w-2.5 h-2.5 text-[#E19100] fill-[#E19100]" />)}
-                    </div>
+          {/* Form Card */}
+          <div className="bg-white rounded-[24px] p-5 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-[#E9C46A]/20 relative mt-4 pt-10">
+             {/* Badge */}
+             <div className="absolute top-0 left-6 bg-[#D2A02A] text-white text-[10px] font-bold px-4 py-1.5 rounded-b-lg flex items-center gap-1.5 shadow-sm">
+                <Shield className="w-3 h-3" /> WE'RE HERE TO HELP
+             </div>
+
+             <div className="mb-5 relative z-10">
+                <h2 className="text-2xl font-bold text-[#30261C] mb-1">Send Us a Message</h2>
+                <p className="text-[13px] text-[#30261C]/70">Fill out the form below and our team will get back to you shortly.</p>
+             </div>
+
+             {submitted ? (
+                <div className="flex flex-col items-center justify-center py-8 text-center space-y-4">
+                  <div className="w-16 h-16 bg-[#D2A02A]/10 rounded-full flex items-center justify-center">
+                    <ShieldCheck className="w-8 h-8 text-[#D2A02A]" />
                   </div>
-                  <span className="text-[9px] text-[#30261C] font-medium">Google Reviews</span>
-               </div>
-            </div>
-            <div className="w-px h-8 bg-gray-100"></div>
-            <div className="flex items-center gap-1.5">
-               <SiTrustpilot className="w-5 h-5 text-[#00B67A]" />
-               <div className="flex flex-col">
-                  <div className="flex items-center gap-1">
-                    <span className="text-[12px] font-bold text-[#30261C]">4.8</span>
-                    <div className="flex gap-0.5">
-                      {[...Array(5)].map((_, i) => (
-                        <div key={i} className="w-[14px] h-[14px] bg-[#00B67A] flex items-center justify-center rounded-[2px]">
-                          <Star className="w-2.5 h-2.5 text-white fill-white" />
-                        </div>
-                      ))}
-                    </div>
+                  <h3 className="text-xl font-bold text-[#30261C]">Thank You!</h3>
+                  <p className="text-[#30261C]/70">Your message has been received.</p>
+                </div>
+              ) : isDuplicate ? (
+                <div className="flex flex-col items-center justify-center py-8 text-center space-y-4">
+                  <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center">
+                    <User className="w-8 h-8 text-blue-500" />
                   </div>
-                  <span className="text-[9px] text-[#30261C] font-medium">Trustpilot</span>
-               </div>
-            </div>
+                  <h3 className="text-xl font-bold text-[#30261C]">Already Submitted!</h3>
+                  <p className="text-[#30261C]/70">Check your WhatsApp for your assigned executive.</p>
+                  <button onClick={() => setIsDuplicate(false)} className="px-6 py-2 bg-gray-100 rounded-lg text-sm font-semibold">Close</button>
+                </div>
+              ) : (
+                <form className="space-y-3 relative z-10">
+                  <FormInputs isMobile={true} />
+                </form>
+              )}
+          </div>
+
+          {/* Alerts */}
+          <div className="bg-[#F0FDF4] border border-[#BBF7D0] rounded-xl py-3 px-4 flex items-center justify-center gap-3 text-sm text-[#166534]">
+             <ShieldCheck className="w-5 h-5 text-[#22C55E] shrink-0" />
+             <p className="text-[13px]">We usually respond within <span className="font-bold">30 minutes</span></p>
+          </div>
+          
+          <div className="bg-[#FEF2F2] border border-[#FECACA] rounded-xl p-4 flex gap-3 text-sm text-[#991B1B]">
+             <Flame className="w-5 h-5 text-[#EF4444] shrink-0 mt-0.5" />
+             <p className="text-[12px] leading-relaxed"><span className="font-bold text-red-600">Don't wait!</span> Secure the right legal guidance today. Your early action can make all the difference.</p>
           </div>
 
           {/* App Card Mobile */}
@@ -515,7 +479,7 @@ const ContactComp = () => {
                 <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm mb-1.5">
                    <Phone className="w-4 h-4 text-[#E19100]" />
                 </div>
-                <p className="text-[9px] text-[#30261C] mb-0.5">Call Us</p>
+                <p className="text-[9px] text-[#30261C]/70 mb-0.5">Call Us</p>
                 <p className="text-[9px] font-bold text-[#30261C]">+91 87003 43611</p>
              </div>
              
@@ -523,7 +487,7 @@ const ContactComp = () => {
                 <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm mb-1.5">
                    <MessageCircle className="w-4 h-4 text-[#E19100]" />
                 </div>
-                <p className="text-[9px] text-[#30261C] mb-0.5">Chat on</p>
+                <p className="text-[9px] text-[#30261C]/70 mb-0.5">Chat on</p>
                 <p className="text-[9px] font-bold text-[#30261C]">WhatsApp</p>
              </div>
 
@@ -531,7 +495,7 @@ const ContactComp = () => {
                 <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm mb-1.5">
                    <Clock className="w-4 h-4 text-[#E19100]" />
                 </div>
-                <p className="text-[9px] text-[#30261C] mb-0.5">Mon - Sat</p>
+                <p className="text-[9px] text-[#30261C]/70 mb-0.5">Mon - Sat</p>
                 <p className="text-[9px] font-bold text-[#30261C]">10AM - 7PM</p>
              </div>
           </div>
@@ -553,7 +517,7 @@ const ContactComp = () => {
               <span className="text-[#E19100]">Our Priority.</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-[#30261C] mb-12 max-w-2xl leading-relaxed">
+            <p className="text-lg md:text-xl text-[#30261C]/80 mb-12 max-w-2xl leading-relaxed">
               Connect with our legal experts to receive clear, strategic, and results-driven legal guidance tailored to your needs.
             </p>
 
@@ -565,7 +529,7 @@ const ContactComp = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-[#30261C] mb-1">Confidential<br/>& Secure</h3>
-                  <p className="text-sm text-[#30261C]">Your information is always safe with us.</p>
+                  <p className="text-sm text-[#30261C]/70">Your information is always safe with us.</p>
                 </div>
               </div>
 
@@ -575,7 +539,7 @@ const ContactComp = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-[#30261C] mb-1">Expert Legal<br/>Guidance</h3>
-                  <p className="text-sm text-[#30261C]">Get advice from experienced legal professionals.</p>
+                  <p className="text-sm text-[#30261C]/70">Get advice from experienced legal professionals.</p>
                 </div>
               </div>
 
@@ -585,7 +549,7 @@ const ContactComp = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-[#30261C] mb-1">Results<br/>Focused</h3>
-                  <p className="text-sm text-[#30261C]">Practical solutions tailored to your unique needs.</p>
+                  <p className="text-sm text-[#30261C]/70">Practical solutions tailored to your unique needs.</p>
                 </div>
               </div>
             </div>
@@ -593,7 +557,7 @@ const ContactComp = () => {
             {/* Trusted Clients */}
             <div className="mb-12">
               <h3 className="text-lg text-[#30261C] mb-6 font-medium">Trusted by Clients Across India</h3>
-              <div className="flex flex-wrap items-center gap-8 md:gap-12 opacity-80 mb-8">
+              <div className="flex flex-wrap items-center gap-8 md:gap-12 opacity-80">
                 <Image src="/newAssets/clientLogos/1.png" width={80} height={40} alt="BCB" className="h-8 w-auto object-contain" />
                 <Image src="/newAssets/clientLogos/3.png" width={80} height={40} alt="HDFC Bank" className="h-8 w-auto object-contain" />
                 <Image src="/newAssets/clientLogos/4.png" width={80} height={40} alt="IPR Karo" className="h-8 w-auto object-contain" />
@@ -601,38 +565,6 @@ const ContactComp = () => {
                 <Image src="/newAssets/clientLogos/7.png" width={100} height={40} alt="Hero Fincorp" className="h-8 w-auto object-contain" />
                 <Image src="/newAssets/clientLogos/8.png" width={80} height={40} alt="Jivo Energy" className="h-8 w-auto object-contain" />
                 <Image src="/newAssets/clientLogos/11.png" width={80} height={40} alt="Billcut" className="h-8 w-auto object-contain" />
-              </div>
-              
-              <div className="flex items-center gap-6">
-                <div className="flex items-center gap-3 bg-white px-5 py-3 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                  <FcGoogle className="w-8 h-8" />
-                  <div className="flex flex-col">
-                    <div className="flex items-center gap-2">
-                      <span className="font-bold text-[#30261C] text-lg leading-none">4.9</span>
-                      <div className="flex gap-0.5">
-                         {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 text-[#E19100] fill-[#E19100]" />)}
-                      </div>
-                    </div>
-                    <span className="text-[11px] text-[#30261C] font-medium mt-0.5">Google Reviews</span>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3 bg-white px-5 py-3 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                  <SiTrustpilot className="w-8 h-8 text-[#00B67A]" />
-                  <div className="flex flex-col">
-                    <div className="flex items-center gap-2">
-                      <span className="font-bold text-[#30261C] text-lg leading-none">4.8</span>
-                      <div className="flex gap-1">
-                         {[...Array(5)].map((_, i) => (
-                           <div key={i} className="w-5 h-5 bg-[#00B67A] flex items-center justify-center rounded-[3px]">
-                             <Star className="w-3.5 h-3.5 text-white fill-white" />
-                           </div>
-                         ))}
-                      </div>
-                    </div>
-                    <span className="text-[11px] text-[#30261C] font-medium mt-0.5">Trustpilot</span>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -688,7 +620,7 @@ const ContactComp = () => {
               </div>
               
               <h2 className="text-2xl font-bold text-center text-[#30261C] mb-2">Send Us a Message</h2>
-              <p className="text-center text-sm text-[#30261C] mb-8 max-w-[280px] mx-auto">
+              <p className="text-center text-sm text-[#30261C]/60 mb-8 max-w-[280px] mx-auto">
                 Fill out the form below and our team will get back to you shortly.
               </p>
 
@@ -698,7 +630,7 @@ const ContactComp = () => {
                     <ShieldCheck className="w-8 h-8 text-[#D2A02A]" />
                   </div>
                   <h3 className="text-xl font-bold text-[#30261C]">Thank You!</h3>
-                  <p className="text-[#30261C]">Your message has been received.</p>
+                  <p className="text-[#30261C]/70">Your message has been received.</p>
                 </div>
               ) : isDuplicate ? (
                 <div className="flex flex-col items-center justify-center py-8 text-center space-y-4">
@@ -706,7 +638,7 @@ const ContactComp = () => {
                     <User className="w-8 h-8 text-blue-500" />
                   </div>
                   <h3 className="text-xl font-bold text-[#30261C]">Already Submitted!</h3>
-                  <p className="text-[#30261C]">Check your WhatsApp for your assigned executive.</p>
+                  <p className="text-[#30261C]/70">Check your WhatsApp for your assigned executive.</p>
                   <button onClick={() => setIsDuplicate(false)} className="px-6 py-2 bg-gray-100 rounded-lg text-sm font-semibold">Close</button>
                 </div>
               ) : (
@@ -726,7 +658,7 @@ const ContactComp = () => {
                <Phone className="w-5 h-5 text-[#E19100]" />
             </div>
             <div>
-              <p className="text-sm text-[#30261C]">Prefer to talk?</p>
+              <p className="text-sm text-[#30261C]/70">Prefer to talk?</p>
               <p className="font-bold text-[#30261C]">Call us at +91 87003 43611</p>
             </div>
           </div>
@@ -738,7 +670,7 @@ const ContactComp = () => {
                <Mail className="w-5 h-5 text-[#E19100]" />
             </div>
             <div>
-              <p className="text-sm text-[#30261C]">Email us</p>
+              <p className="text-sm text-[#30261C]/70">Email us</p>
               <p className="font-bold text-[#30261C]">notify@amalegalsolutions.com</p>
             </div>
           </div>
@@ -750,7 +682,7 @@ const ContactComp = () => {
                <Clock className="w-5 h-5 text-[#E19100]" />
             </div>
             <div>
-              <p className="text-sm text-[#30261C]">Our Office Hours</p>
+              <p className="text-sm text-[#30261C]/70">Our Office Hours</p>
               <p className="font-bold text-[#30261C]">Mon - Sat: 10:00 AM - 7:00 PM</p>
             </div>
           </div>
@@ -765,3 +697,8 @@ const ContactComp = () => {
 };
 
 export default ContactComp;
+"""
+
+with open("/Users/amalegalsolutions/Desktop/AMAWORK/AMA/ama/src/app/contact/contactcomp.tsx", "w") as f:
+    f.write(content)
+

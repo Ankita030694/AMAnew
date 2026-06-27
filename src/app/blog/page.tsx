@@ -34,9 +34,14 @@ const truncateWords = (text: string, wordCount: number) => {
   return words.slice(0, wordCount).join(' ') + '...';
 };
 
-const getBlogs = async () => {
+const getBlogs = async (page: number, limit: number) => {
     try {
-        const querySnapshot = await adminDb.collection('blogs').orderBy('created', 'desc').get();
+        const offset = (page - 1) * limit;
+        const querySnapshot = await adminDb.collection('blogs')
+            .orderBy('created', 'desc')
+            .offset(offset)
+            .limit(limit)
+            .get();
 
         return querySnapshot.docs.map(doc => {
             const data = doc.data();
@@ -61,8 +66,27 @@ const getBlogs = async () => {
     }
 };
 
-export default async function Page() {
-  const blogs = await getBlogs();
+const getTotalBlogs = async () => {
+    try {
+        const countSnapshot = await adminDb.collection('blogs').count().get();
+        return countSnapshot.data().count;
+    } catch (error) {
+        console.error("Error fetching total blogs count:", error);
+        return 0;
+    }
+};
+
+export default async function Page({ searchParams }: { searchParams: any }) {
+  // Await searchParams for Next.js 15+ compatibility, works as no-op in Next.js <15
+  const params = await Promise.resolve(searchParams);
+  const pageParam = params?.page;
+  const currentPage = pageParam ? parseInt(pageParam as string, 10) : 1;
+  const limit = 7;
+
+  const [blogs, totalBlogs] = await Promise.all([
+    getBlogs(currentPage, limit),
+    getTotalBlogs()
+  ]);
 
   return (
     <main className='bg-[#F5F2EB]' style={{ fontFamily: "var(--font-polysans)" }}>
@@ -78,7 +102,7 @@ export default async function Page() {
         </h1>
 
         <Suspense fallback={<BlogLoading />}>
-          <BlogPage initialBlogs={blogs} />
+          <BlogPage initialBlogs={blogs} currentPage={currentPage} totalBlogs={totalBlogs} />
         </Suspense>
       </div>
 

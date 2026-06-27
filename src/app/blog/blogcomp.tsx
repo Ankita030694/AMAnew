@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import Link from 'next/link';
-import { motion, Variants } from 'framer-motion';
+import { motion, Variants, AnimatePresence } from 'framer-motion';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
 import { useSearchParams, useRouter } from 'next/navigation';
@@ -79,6 +79,15 @@ const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   }
 };
 
+// Calculate estimated read time based on description length
+const getEstimatedReadTime = (text: string) => {
+  if (!text) return "3 min read";
+  const words = text.split(/\s+/).length;
+  // Assume description is a summary, multiply by 5 for full article estimation, 200 words/min
+  const readTime = Math.max(3, Math.ceil((words * 5) / 200));
+  return `${readTime} min read`;
+};
+
 // Define the Blog interface
 export interface Blog {
   id: string;
@@ -95,55 +104,26 @@ export interface Blog {
 
 interface BlogPageProps {
   initialBlogs: Blog[];
+  currentPage: number;
+  totalBlogs: number;
 }
 
-export default function Page({ initialBlogs = [] }: BlogPageProps) {
-  const [blogs, setBlogs] = useState<Blog[]>(initialBlogs);
-  const [filteredBlogs, setFilteredBlogs] = useState<Blog[]>(initialBlogs);
+export default function Page({ initialBlogs = [], currentPage, totalBlogs }: BlogPageProps) {
   const [loading, setLoading] = useState(false);
   const [paginationLoading, setPaginationLoading] = useState(false);
-  const [scrollLocked, setScrollLocked] = useState(false); // Reduced scroll lock time
+  const [isDisclaimerOpen, setIsDisclaimerOpen] = useState(false);
   const [webPageSchema, setWebPageSchema] = useState<any>(null);
   const [searchQuery, setSearchQuery] = useState('');
   
   // URL state management
   const searchParams = useSearchParams();
   const router = useRouter();
-  const [currentPage, setCurrentPage] = useState(() => {
-    const pageParam = searchParams.get('page');
-    return pageParam ? parseInt(pageParam, 10) : 1;
-  });
   
-  const blogsPerPage = 8;
+  const blogsPerPage = 7;
+  const totalPages = Math.ceil(totalBlogs / blogsPerPage);
 
-  // Optimized search functionality with useMemo
-  const handleSearch = useCallback((query: string) => {
-    setSearchQuery(query);
-    setCurrentPage(1); // Reset to first page when searching
-    
-    if (!query.trim()) {
-      setFilteredBlogs(blogs);
-      return;
-    }
-    
-    const searchTerm = query.toLowerCase().trim();
-    const filtered = blogs.filter(blog => 
-      blog.title.toLowerCase().includes(searchTerm) ||
-      blog.subtitle.toLowerCase().includes(searchTerm) ||
-      blog.description.toLowerCase().includes(searchTerm)
-    );
-    
-    setFilteredBlogs(filtered);
-  }, [blogs]);
-
-  // Debounced search to improve performance
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      handleSearch(searchQuery);
-    }, 300);
-
-    return () => clearTimeout(timeoutId);
-  }, [searchQuery, blogs]);
+  const blogs = initialBlogs;
+  const filteredBlogs = initialBlogs;
 
   // Function to generate dynamic FAQ schema based on blogs data
   const generateBlogFaqSchema = (blogsData: Blog[]) => {
@@ -229,7 +209,7 @@ export default function Page({ initialBlogs = [] }: BlogPageProps) {
     }
   }, [loading]);
   const updateURL = (page: number) => {
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams(searchParams.toString());
     if (page === 1) {
       params.delete('page');
     } else {
@@ -239,52 +219,31 @@ export default function Page({ initialBlogs = [] }: BlogPageProps) {
     router.push(`/blog${newUrl}`, { scroll: false });
   };
 
-  // Sync state with URL changes
+  // Turn off loading state when the server responds with the new page
   useEffect(() => {
-    const pageParam = searchParams.get('page');
-    const newPage = pageParam ? parseInt(pageParam, 10) : 1;
-    if (newPage !== currentPage && newPage > 0) {
-      setCurrentPage(newPage);
-    }
-  }, [searchParams]);
+    setPaginationLoading(false);
+  }, [currentPage]);
 
 
-
-  // Helper function to shuffle array (Fisher-Yates algorithm)
-  const shuffleArray = (array: Blog[]) => {
-    const shuffled = [...array];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    return shuffled;
-  };
 
   // Memoized calculations for better performance
-  const { spotlightArticle, trendingArticles, regularArticles, currentBlogs, totalPages } = useMemo(() => {
-    // Get spotlight article (most recent from filtered results)
-    const spotlight = filteredBlogs.length > 0 ? filteredBlogs[0] : null;
+  const { spotlightArticle, trendingArticles, regularArticles, currentBlogs } = useMemo(() => {
+    // Get spotlight article (most recent from current page)
+    const spotlight = blogs.length > 0 ? blogs[0] : null;
     
-    // Get trending articles (recent filtered blogs, limited to 20)
-    const trending = filteredBlogs.length > 0 ? filteredBlogs.slice(0, 20) : [];
+    // Get trending articles (we use the current page blogs for the sidebar)
+    const trending = blogs;
     
     // Get regular articles (excluding spotlight)
-    const regular = filteredBlogs.length > 0 ? filteredBlogs.slice(1) : [];
-    
-    // Pagination logic for regular articles
-    const indexOfLastBlog = currentPage * blogsPerPage;
-    const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
-    const current = regular.slice(indexOfFirstBlog, indexOfLastBlog);
-    const total = Math.ceil(regular.length / blogsPerPage);
+    const regular = blogs.length > 0 ? blogs.slice(1) : [];
     
     return {
       spotlightArticle: spotlight,
       trendingArticles: trending,
       regularArticles: regular,
-      currentBlogs: current,
-      totalPages: total
+      currentBlogs: regular,
     };
-  }, [filteredBlogs, currentPage, blogsPerPage]);
+  }, [blogs]);
 
   // Smart pagination - show limited page numbers with ellipsis
   const getPageNumbers = () => {
@@ -320,7 +279,6 @@ export default function Page({ initialBlogs = [] }: BlogPageProps) {
     if (pageNumber === currentPage || pageNumber < 1 || pageNumber > totalPages) return;
     
     setPaginationLoading(true);
-    setCurrentPage(pageNumber);
     updateURL(pageNumber);
     
     // Smooth scroll to content area
@@ -332,7 +290,6 @@ export default function Page({ initialBlogs = [] }: BlogPageProps) {
           block: 'start',
         });
       }
-      setPaginationLoading(false);
     }, 100);
   };
 
@@ -361,59 +318,6 @@ export default function Page({ initialBlogs = [] }: BlogPageProps) {
       
 
 
-      {/* Search Bar */}
-      <motion.div 
-        className="max-w-2xl mx-auto mb-[80px]"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
-      >
-        <div className="relative">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-          </div>
-          <input
-            type="text"
-            placeholder="Search blogs by title, subtitle, or content..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="text-black block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-[#D2A02A] focus:border-[#D2A02A] transition-colors"
-            aria-label="Search blogs"
-          />
-          {searchQuery && (
-            <button
-              onClick={() => setSearchQuery('')}
-              className="absolute inset-y-0 right-0 pr-3 flex items-center"
-              aria-label="Clear search"
-            >
-              <svg className="h-5 w-5 text-gray-400 hover:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          )}
-        </div>
-        
-        {/* Search Results Info */}
-        {searchQuery && (
-          <motion.div 
-            className="mt-3 text-center text-sm text-gray-600"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.1 }}
-          >
-            {filteredBlogs.length === 0 ? (
-              <p>No blogs found matching "<span className="font-medium">{searchQuery}</span>"</p>
-            ) : filteredBlogs.length === blogs.length ? (
-              <p>Showing all {blogs.length} blogs</p>
-            ) : (
-              <p>Found {filteredBlogs.length} blog{filteredBlogs.length !== 1 ? 's' : ''} matching "<span className="font-medium">{searchQuery}</span>"</p>
-            )}
-          </motion.div>
-        )}
-      </motion.div>
-      
       {loading ? (
         <div className="flex justify-center items-center h-64">
           <div className="flex flex-col items-center space-y-4">
@@ -422,426 +326,306 @@ export default function Page({ initialBlogs = [] }: BlogPageProps) {
           </div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-[80px]" data-blog-content>
-          {/* Main Content (2/3 width on large screens) */}
-          <div className="lg:col-span-2">
-            {/* Spotlight Section - Only show if there are search results */}
-            {spotlightArticle && (
-              <div className="mb-[80px]">
-                <motion.div
-                  className="flex items-center gap-2 mb-[35px]"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  
-                  <h2 className="text-[26px] md:text-[25px] font-semibold leading-[32px] md:leading-[52px] opacity-100" style={{ color: '#5A4C33' }}>
-                    {searchQuery ? 'Search Result' : 'Spotlight'}
-                  </h2>
-                </motion.div>
-                
-                <Link href={`/blog/${spotlightArticle.slug}`}>
-                  <motion.div 
-                    className="rounded-xl overflow-hidden border border-gray-100"
-                    variants={hoverVariants}
-                    initial="initial"
-                    whileHover="hover"
-                  >
-                    <div className="relative h-64 md:h-80">
-                      {hasValidImage(spotlightArticle.image) ? (
-                        <Image
-                          src={getValidImageSrc(spotlightArticle.image)}
-                          alt={`${spotlightArticle.title} - AMA Legal Solutions | Legal Insights India`}
-                          className="object-cover rounded-t-lg"
-                          fill
-                          sizes="(max-width: 768px) 100vw, 66vw"
-                          priority={true}
-                          title={`${spotlightArticle.title} | AMA Legal Solutions Blog`}
-                          onError={handleImageError}
-                        />
-                      ) : (
-                        <div className="w-full h-full bg-gray-200 flex items-center justify-center rounded-t-lg">
-                          <div className="text-center">
-                            <svg className="w-16 h-16 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                            <p className="text-gray-400 text-sm">No image available</p>
-                          </div>
-                        </div>
-                      )}
-                      <div className="absolute bottom-3 right-3 bg-white rounded px-2 py-1 text-xs uppercase text-blue-600">
-                        {spotlightArticle.date}
-                      </div>
-                    </div>
-                    
-                    <div className="relative bg-white p-6"> {/* Added pt-2 to create space between image and text */}
-                      <h3 className="text-[24px] md:text-[27px] font-normal leading-[31px] mb-[15px] opacity-85" style={{ color: '#5A4C33' }}>
-                        {spotlightArticle.title}
-                      </h3>
-                      <p className="text-sm text-blue-600 mb-[15px] max-w-none">{spotlightArticle.subtitle}</p>
-                      <p className="text-[16px] md:text-[25px] leading-[24px] md:leading-[29px] font-normal text-gray-600 opacity-85">{spotlightArticle.description}</p>
-                    </div>
-                  </motion.div>
-                </Link>
-              </div>
-            )}
-            
-            {/* Articles Section */}
-            <div className="mb-[80px]">
-              <motion.div 
-                className="flex items-center justify-between mb-[35px]"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
-              >
-                <div className="flex items-center gap-2">
-                  <h2 className="text-[26px] md:text-[25px] font-semibold leading-[32px] md:leading-[52px] opacity-100" style={{ color: '#5A4C33' }}>
-                    {searchQuery ? 'Search Results' : 'Blogs'} {regularArticles.length > 0 && (
-                      <span className="text-[20px] md:text-[22px] text-gray-500 font-normal opacity-85 ml-4">
-                        ({regularArticles.length} articles)
-                      </span>
-                    )}
-                  </h2>
-                </div>
-                
-                {!searchQuery && (
-                  <Link href="/blog">
-                    <span className="text-sm text-gray-500 flex items-center">
-                      Read More
-                      <svg width="16" height="16" viewBox="0 0 24 24" className="ml-1">
-                        <path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                      </svg>
-                    </span>
-                  </Link>
-                )}
-              </motion.div>
-              
-              {/* No Results Message */}
-              {searchQuery && filteredBlogs.length === 0 && (
-                <motion.div 
-                  className="text-center py-12"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  <svg className="w-16 h-16 mx-auto text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.47-.881-6.08-2.33" />
-                  </svg>
-                  <h3 className="text-lg font-medium text-gray-600 mb-2">No blogs found</h3>
-                  <p className="text-gray-500 mb-4">Try adjusting your search terms or browse all our blogs</p>
-                  <button
-                    onClick={() => setSearchQuery('')}
-                    className="px-4 py-2 bg-[#5A4C33] text-white rounded-lg hover:bg-[#4A3C23] transition-colors"
-                  >
-                    Clear Search
-                  </button>
-                </motion.div>
-              )}
-              
-              {/* Loading overlay for pagination */}
-              <div className="relative">
-                {paginationLoading && (
-                  <div className="absolute inset-0 bg-white bg-opacity-75 flex items-center justify-center z-10 rounded-xl">
-                    <div className="w-6 h-6 border-2 border-[#D2A02A] border-t-transparent rounded-full animate-spin"></div>
-                  </div>
-                )}
-                
-                <motion.div 
-                  className="grid grid-cols-1 md:grid-cols-2 gap-6"
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate="visible"
-                  key={currentPage} // Re-animate when page changes
-                >
-                  {currentBlogs.map((article) => (
-                    <motion.div 
-                      key={article.id}
-                      variants={itemVariants}
-                    >
-                      <Link href={`/blog/${article.slug}`}>
-                        <motion.div 
-                          className="rounded-xl overflow-hidden border border-gray-100 h-full"
-                          variants={hoverVariants}
-                          initial="initial"
-                          whileHover="hover"
-                          
-                        >
-                          <div className="relative h-48">
-                            {hasValidImage(article.image) ? (
-                              <Image
-                                src={getValidImageSrc(article.image)}
-                                alt={`${article.title} - AMA Legal Solutions | Legal Insights India`}
-                                className="object-cover rounded-t-lg"
-                                fill
-                                sizes="(max-width: 768px) 100vw, 33vw"
-                                title={`${article.title} | AMA Legal Solutions Blog`}
-                                onError={handleImageError}
-                              />
-                            ) : (
-                              <div className="w-full h-full bg-gray-200 flex items-center justify-center rounded-t-lg">
-                                <div className="text-center">
-                                  <svg className="w-12 h-12 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                  </svg>
-                                  <p className="text-gray-400 text-xs">No image</p>
-                                </div>
-                              </div>
-                            )}
-                            <div className="absolute bottom-3 right-3 bg-white rounded px-2 py-1 text-xs uppercase text-blue-600">
-                              {article.date}
-                            </div>
-                          </div>
-                          
-                          <div className="p-6 relative bg-white">
-                            <h3 className="text-[24px] md:text-[27px] leading-[31px] font-normal mb-[15px] opacity-85" style={{ color: '#5A4C33' }}>
-                              {article.title}
-                            </h3>
-                            <p className="text-sm mb-2 text-blue-600">{article.subtitle}</p>
-                            <p className="text-[16px] md:text-[18px] text-gray-500 opacity-85">{article.description}</p>
-                          </div>
-                        </motion.div>
-                      </Link>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </div>
-
-              {/* Enhanced Pagination Controls - Only show if there are results */}
-              {totalPages > 1 && filteredBlogs.length > 0 && (
-                <motion.div 
-                  className="mt-8"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                >
-                  {/* Pagination Info */}
-                  <div className="text-center mb-4 text-sm text-gray-600">
-                    Showing {(currentPage - 1) * blogsPerPage + 1} to {Math.min(currentPage * blogsPerPage, regularArticles.length)} of {regularArticles.length} articles
-                  </div>
-                  
-                  {/* Pagination Controls */}
-                  <nav 
-                    className="flex flex-wrap justify-center items-center gap-1 sm:gap-2"
-                    role="navigation"
-                    aria-label="Blog pagination"
-                  >
-                    {/* First Page Button (mobile hidden) */}
-                    {currentPage > 3 && totalPages > 7 && (
-                      <>
-                        <button
-                          onClick={() => paginate(1)}
-                          className="hidden sm:flex px-3 py-2 rounded text-sm bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
-                          aria-label="Go to first page"
-                        >
-                          First
-                        </button>
-                        <span className="hidden sm:block text-gray-400">...</span>
-                      </>
-                    )}
-                    
-                    {/* Previous Button */}
-                    <button 
-                      onClick={() => paginate(currentPage - 1)}
-                      disabled={currentPage === 1}
-                      className={`px-3 py-2 rounded text-sm transition-colors ${
-                        currentPage === 1 
-                          ? 'bg-gray-200 text-gray-400 cursor-not-allowed' 
-                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                      }`}
-                      aria-label="Go to previous page"
-                    >
-                      <span className="hidden sm:inline">Previous</span>
-                      <span className="sm:hidden">←</span>
-                    </button>
-                    
-                    {/* Page Numbers */}
-                    {getPageNumbers().map((number, index) => (
-                      <React.Fragment key={index}>
-                        {number === '...' ? (
-                          <span className="px-2 py-2 text-gray-400" aria-hidden="true">...</span>
-                        ) : (
-                          <button
-                            onClick={() => paginate(number as number)}
-                            onKeyDown={(e) => handleKeyDown(e, number)}
-                            className={`w-10 h-10 rounded text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:ring-opacity-50 ${
-                              currentPage === number 
-                                ? 'bg-[#5A4C33] text-white shadow-md' 
-                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                            }`}
-                            aria-label={`Go to page ${number}`}
-                            aria-current={currentPage === number ? 'page' : undefined}
-                          >
-                            {number}
-                          </button>
-                        )}
-                      </React.Fragment>
-                    ))}
-                    
-                    {/* Next Button */}
-                    <button 
-                      onClick={() => paginate(currentPage + 1)}
-                      disabled={currentPage === totalPages}
-                      className={`px-3 py-2 rounded text-sm transition-colors ${
-                        currentPage === totalPages 
-                          ? 'bg-gray-200 text-gray-400 cursor-not-allowed' 
-                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                      }`}
-                      aria-label="Go to next page"
-                    >
-                      <span className="hidden sm:inline">Next</span>
-                      <span className="sm:hidden">→</span>
-                    </button>
-                    
-                    {/* Last Page Button (mobile hidden) */}
-                    {currentPage < totalPages - 2 && totalPages > 7 && (
-                      <>
-                        <span className="hidden sm:block text-gray-400">...</span>
-                        <button
-                          onClick={() => paginate(totalPages)}
-                          className="hidden sm:flex px-3 py-2 rounded text-sm bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
-                          aria-label="Go to last page"
-                        >
-                          Last
-                        </button>
-                      </>
-                    )}
-                  </nav>
-                  
-                  {/* Quick Jump (desktop only) */}
-                  {totalPages > 10 && (
-                    <div className="hidden lg:flex justify-center mt-4">
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <span>Jump to page:</span>
-                        <input
-                          type="number"
-                          min="1"
-                          max={totalPages}
-                          value={currentPage}
-                          onChange={(e) => {
-                            const page = parseInt(e.target.value, 10);
-                            if (page >= 1 && page <= totalPages) {
-                              paginate(page);
-                            }
-                          }}
-                          className="w-16 px-2 py-1 border border-gray-300 rounded text-center focus:outline-none focus:ring-2 focus:ring-[#D2A02A] focus:ring-opacity-50"
-                          aria-label="Jump to specific page"
-                        />
-                        <span>of {totalPages}</span>
-                      </div>
-                    </div>
-                  )}
-                </motion.div>
-              )}
-            </div>
-          </div>
+        <div className="max-w-[1400px] mx-auto w-full" data-blog-content>
           
-          {/* Sidebar (1/3 width on large screens) */}
-          <div className="lg:col-span-1">
-            <motion.div
-              className="mb-[80px]"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 }}
+          {/* Spotlight Section (Split Layout) */}
+          {spotlightArticle && (
+            <div className="mb-[80px]">
+              <Link href={`/blog/${spotlightArticle.slug}`} className="block group">
+                <motion.div 
+                  className="flex flex-col md:flex-row w-full bg-white rounded-[2rem] overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                  {/* Left: Image */}
+                  <div className="relative w-full md:w-1/2 h-[350px] md:h-[500px] overflow-hidden">
+                    {hasValidImage(spotlightArticle.image) ? (
+                      <Image
+                        src={getValidImageSrc(spotlightArticle.image)}
+                        alt={`${spotlightArticle.title} - AMA Legal Solutions`}
+                        className="object-contain w-full h-full transition-transform duration-1000 group-hover:scale-105"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        priority={true}
+                        onError={handleImageError}
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gray-100 flex items-center justify-center">
+                        <span className="text-gray-400">No image available</span>
+                      </div>
+                    )}
+                    <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm rounded-full px-4 py-2 text-xs font-bold text-[#5A4C33] shadow-md flex items-center gap-2">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                      {getEstimatedReadTime(spotlightArticle.description)}
+                    </div>
+                  </div>
+                  
+                  {/* Right: Content */}
+                  <div className="w-full md:w-1/2 p-8 md:p-14 flex flex-col justify-center bg-white">
+                    <div className="flex items-center gap-3 mb-6">
+                      <span className="bg-[#D2A02A]/10 text-[#D2A02A] text-xs font-bold uppercase tracking-widest py-1.5 px-4 rounded-full">
+                        Spotlight Feature
+                      </span>
+                      <span className="text-gray-400 font-medium text-sm tracking-wider uppercase">
+                        {spotlightArticle.date}
+                      </span>
+                    </div>
+                    
+                    <h2 className="text-3xl md:text-5xl font-bold text-[#30261C] leading-[1.1] mb-6 group-hover:text-[#D2A02A] transition-colors duration-300" style={{ fontFamily: "var(--font-polysans)" }}>
+                      {spotlightArticle.title}
+                    </h2>
+                    
+                    <p className="text-gray-500 text-lg md:text-xl line-clamp-3 mb-10 leading-relaxed">
+                      {spotlightArticle.description}
+                    </p>
+                    
+                    <div className="mt-auto">
+                      <span className="inline-flex items-center gap-3 text-[#30261C] font-semibold text-lg group-hover:text-[#D2A02A] transition-colors">
+                        Read Full Story 
+                        <span className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-[#D2A02A]/10 transition-colors">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover:translate-x-1 transition-transform"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
+              </Link>
+            </div>
+          )}
+          
+          {/* Articles Section (Clean 3-Column Grid) */}
+          <div className="mb-[60px]">
+            <motion.div 
+              className="flex items-center justify-between mb-[40px] pb-6 border-b border-gray-200"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
             >
-              <div className="flex items-center gap-2 mb-[35px]">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="#D2A02A" stroke="#D2A02A" strokeWidth="1.5">
-                  <path d="M12 2L14.39 8.26L21 9.27L16.5 14.14L17.77 21L12 17.77L6.23 21L7.5 14.14L3 9.27L9.61 8.26L12 2z" />
-                </svg>
-                <h2 className="text-[26px] md:text-[25px] font-semibold leading-[32px] md:leading-[52px] opacity-100" style={{ color: '#5A4C33' }}>
-                  {searchQuery ? 'Related' : 'Recent Posts'}
-                </h2>
-              </div>
+              <h2 className="text-[32px] font-bold text-[#30261C] m-0 leading-none" style={{ fontFamily: "var(--font-polysans)" }}>
+                Latest Insights
+              </h2>
+            </motion.div>
+
+            {/* Loading overlay for pagination */}
+            <div className="relative">
+              {paginationLoading && (
+                <div className="absolute inset-0 bg-white/80 backdrop-blur-sm flex items-center justify-center z-10 rounded-xl">
+                  <div className="w-8 h-8 border-4 border-[#D2A02A] border-t-transparent rounded-full animate-spin"></div>
+                </div>
+              )}
               
               <motion.div 
-                className="space-y-6"
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
+                key={currentPage} 
               >
-                {trendingArticles.map((article) => (
+                {currentBlogs.map((article) => (
                   <motion.div 
                     key={article.id}
                     variants={itemVariants}
+                    className="h-full"
                   >
-                    <Link href={`/blog/${article.slug}`}>
-                      <motion.div 
-                        className="flex gap-4 p-2 rounded-lg" 
-                        variants={hoverVariants}
-                        initial="initial"
-                        whileHover="hover"
-                      >
-                        <div className="flex-shrink-0 w-20 h-20 relative rounded-lg overflow-hidden">
+                    <Link href={`/blog/${article.slug}`} className="block group h-full">
+                      <div className="flex flex-col h-full bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-[0_15px_30px_-10px_rgba(0,0,0,0.1)] transition-all duration-300 group-hover:-translate-y-1">
+                        <div className="relative h-60 w-full overflow-hidden">
                           {hasValidImage(article.image) ? (
-                            <Image 
+                            <Image
                               src={getValidImageSrc(article.image)}
-                              alt={`${article.title} - AMA Legal Solutions | Legal Insights India`}
-                              className="object-cover"
+                              alt={`${article.title} - AMA Legal Solutions`}
+                              className="object-contain transition-transform duration-700 group-hover:scale-105"
                               fill
-                              sizes="80px"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                               onError={handleImageError}
                             />
                           ) : (
-                            <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                              <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                              </svg>
+                            <div className="w-full h-full bg-gray-50 flex items-center justify-center">
+                              <svg className="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
                             </div>
                           )}
+                          <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-full px-3 py-1.5 text-[11px] font-bold text-[#5A4C33] shadow-sm flex items-center gap-1.5">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            {getEstimatedReadTime(article.description)}
+                          </div>
                         </div>
                         
-                        <div>
-                          <h3 className="text-sm font-medium mb-1" style={{ color: '#5A4C33' }}>
+                        <div className="p-6 flex flex-col flex-grow">
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="text-[11px] font-bold text-[#D2A02A] uppercase tracking-wider">{article.subtitle || "Legal Insight"}</span>
+                            <span className="w-1 h-1 rounded-full bg-gray-300"></span>
+                            <span className="text-[11px] font-medium text-gray-400 uppercase tracking-wider">{article.date}</span>
+                          </div>
+                          
+                          <h3 className="text-[22px] leading-snug font-semibold mb-3 text-[#30261C] group-hover:text-[#D2A02A] transition-colors" style={{ fontFamily: "var(--font-polysans)" }}>
                             {article.title}
                           </h3>
-                          <p className="text-xs text-gray-500">{article.date}</p>
+                          
+                          <p className="text-[15px] leading-relaxed text-gray-500 mb-6 flex-grow line-clamp-3">
+                            {article.description}
+                          </p>
+
+                          <div className="mt-auto flex items-center text-sm font-bold text-[#5A4C33] group-hover:text-[#D2A02A] transition-colors">
+                            Read Article 
+                            <svg className="ml-2 w-4 h-4 group-hover:translate-x-1.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                          </div>
                         </div>
-                      </motion.div>
+                      </div>
                     </Link>
                   </motion.div>
                 ))}
               </motion.div>
-            </motion.div>
+            </div>
           </div>
+
+          {/* Full Width CTA Banner Replacing Sidebar */}
+          <motion.div 
+            className="mb-16 bg-gradient-to-r from-[#5A4C33] via-[#433825] to-[#30261C] rounded-3xl p-10 md:p-14 text-white shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Background glowing effect */}
+            <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#D2A02A] opacity-10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div className="max-w-2xl relative z-10 text-center md:text-left">
+              <h3 className="text-3xl md:text-4xl font-bold mb-4 leading-tight" style={{ fontFamily: "var(--font-polysans)" }}>
+                Need clear, actionable legal advice?
+              </h3>
+              <p className="text-lg text-white/80 font-light">
+                Our expert legal team provides tailored strategies to protect your rights and assets in India, UK & Dubai.
+              </p>
+            </div>
+            
+            <div className="shrink-0 relative z-10 w-full md:w-auto">
+              <Link href="/contact" className="flex items-center justify-center gap-3 bg-[#D2A02A] hover:bg-white text-[#30261C] font-bold text-lg py-4 px-8 rounded-xl transition-all duration-300 hover:shadow-lg w-full md:w-auto hover:-translate-y-1">
+                Schedule Consultation
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* Enhanced Pagination Controls */}
+          {totalPages > 1 && filteredBlogs.length > 0 && (
+            <motion.div 
+              className="mb-16 border-t border-gray-200 pt-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
+              <div className="text-center mb-6 text-sm text-gray-500 tracking-wide">
+                Showing {(currentPage - 1) * blogsPerPage + 1} to {Math.min(currentPage * blogsPerPage, regularArticles.length)} of {regularArticles.length} insights
+              </div>
+              
+              <nav className="flex flex-wrap justify-center items-center gap-2" role="navigation" aria-label="Blog pagination">
+                <button 
+                  onClick={() => paginate(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  className={`flex items-center justify-center w-12 h-12 rounded-full transition-all ${currentPage === 1 ? 'bg-gray-50 text-gray-300 cursor-not-allowed' : 'bg-white border border-gray-200 text-[#30261C] hover:border-[#D2A02A] hover:text-[#D2A02A] shadow-sm'}`}
+                  aria-label="Previous page"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                
+                {getPageNumbers().map((number, index) => (
+                  <React.Fragment key={index}>
+                    {number === '...' ? (
+                      <span className="px-2 text-gray-400" aria-hidden="true">...</span>
+                    ) : (
+                      <button
+                        onClick={() => paginate(number as number)}
+                        onKeyDown={(e) => handleKeyDown(e, number)}
+                        className={`w-12 h-12 rounded-full text-[15px] font-semibold transition-all ${currentPage === number ? 'bg-[#30261C] text-white shadow-md' : 'bg-white text-gray-600 hover:bg-gray-50'}`}
+                        aria-label={`Page ${number}`}
+                        aria-current={currentPage === number ? 'page' : undefined}
+                      >
+                        {number}
+                      </button>
+                    )}
+                  </React.Fragment>
+                ))}
+                
+                <button 
+                  onClick={() => paginate(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                  className={`flex items-center justify-center w-12 h-12 rounded-full transition-all ${currentPage === totalPages ? 'bg-gray-50 text-gray-300 cursor-not-allowed' : 'bg-white border border-gray-200 text-[#30261C] hover:border-[#D2A02A] hover:text-[#D2A02A] shadow-sm'}`}
+                  aria-label="Next page"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </button>
+              </nav>
+            </motion.div>
+          )}
         </div>
       )}
        {/* Styled Disclaimer Section */}
        <motion.div 
-          className="my-12 px-6 py-8 bg-gray-50 rounded-xl border border-gray-200 shadow-sm text-center"
+          className="my-12 bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          <h3 className="text-[#5A4C33] text-xl font-medium mb-4 text-center">Disclaimer</h3>
-          <div className="text-gray-700 text-sm leading-relaxed space-y-4">
-            <p>
-              The information provided on this website https://www.amalegalsolutions.com is for general informational purposes only
-              and should not be considered legal, financial, or professional advice. While we strive to ensure that the content is accurate and
-              up to date, we do not guarantee the completeness, reliability, or accuracy of any information.
-            </p>
-            <p>
-              Any reliance you place on the information provided is strictly at your own risk. AMA Legal
-              Solutions, its founders, employees, or affiliates shall be held liable for any losses, damages, or legal consequences arising from
-              the use of this website or any linked resources.
-            </p>
-            <p>
-              The content on this website does not establish a client-attorney relationship. If you
-              require legal or financial assistance, we strongly recommend consulting with a qualified professional. Any discussions,
-              consultations, or assessments provided through this website or related services are for preliminary guidance only.
-            </p>
-            <p>
-              Our services are subject to applicable laws and regulations, and results may vary depending on individual circumstances. We do not guarantee specific
-              outcomes for loan settlements, debt negotiations, or legal proceedings.
-            </p>
-            <p>
-              Additionally, this website may contain links to
-              third-party websites for additional information or reference. We do not endorse or assume responsibility for the content, privacy
-              policies, or practices of these external websites.
-            </p>
-            <p className="font-medium">
-              By using this website, you acknowledge and agree to this disclaimer. If you do not agree with any part of this notice, please refrain from using our
-              services. For legal assistance or inquiries, please contact us at <a href="mailto:notify@amalegalsolutions.com" className="text-[#D2A02A] hover:underline">notify@amalegalsolutions.com</a>
-            </p>
-          </div>
+          <button 
+            onClick={() => setIsDisclaimerOpen(!isDisclaimerOpen)}
+            className="w-full flex items-center justify-between p-6 bg-gray-50 hover:bg-gray-100 transition-colors focus:outline-none"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-[#5A4C33]/10 flex items-center justify-center text-[#5A4C33]">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h3 className="text-[#30261C] text-lg font-bold m-0" style={{ fontFamily: "var(--font-polysans)" }}>Disclaimer</h3>
+            </div>
+            <div className={`w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-[#5A4C33] transition-transform duration-300 ${isDisclaimerOpen ? 'rotate-180' : ''}`}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </button>
+          
+          <AnimatePresence>
+            {isDisclaimerOpen && (
+              <motion.div 
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="overflow-hidden"
+              >
+                <div className="p-8 border-t border-gray-100">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-500 text-[13px] leading-relaxed font-medium">
+                    <div className="space-y-4">
+                      <p>
+                        <strong className="text-[#5A4C33] block mb-1">General Information Only</strong>
+                        The information provided on this website https://www.amalegalsolutions.com is for general informational purposes only
+                        and should not be considered legal, financial, or professional advice. While we strive to ensure that the content is accurate and
+                        up to date, we do not guarantee the completeness, reliability, or accuracy of any information.
+                      </p>
+                      <p>
+                        <strong className="text-[#5A4C33] block mb-1">No Attorney-Client Relationship</strong>
+                        The content on this website does not establish a client-attorney relationship. If you
+                        require legal or financial assistance, we strongly recommend consulting with a qualified professional. Any discussions,
+                        consultations, or assessments provided through this website or related services are for preliminary guidance only.
+                      </p>
+                    </div>
+                    <div className="space-y-4">
+                      <p>
+                        <strong className="text-[#5A4C33] block mb-1">Limitation of Liability</strong>
+                        Any reliance you place on the information provided is strictly at your own risk. AMA Legal
+                        Solutions, its founders, employees, or affiliates shall be held liable for any losses, damages, or legal consequences arising from
+                        the use of this website or any linked resources. Our services are subject to applicable laws and regulations, and results may vary depending on individual circumstances. We do not guarantee specific outcomes for loan settlements, debt negotiations, or legal proceedings.
+                      </p>
+                      <p>
+                        <strong className="text-[#5A4C33] block mb-1">Acceptance of Terms</strong>
+                        By using this website, you acknowledge and agree to this disclaimer. If you do not agree with any part of this notice, please refrain from using our services. For legal assistance or inquiries, please contact us at <a href="mailto:notify@amalegalsolutions.com" className="text-[#D2A02A] hover:underline font-bold">notify@amalegalsolutions.com</a>.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.div>
     </>
   );

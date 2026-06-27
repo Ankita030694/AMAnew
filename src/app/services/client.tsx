@@ -179,6 +179,7 @@ const ServicesClient = () => {
                 height={600} 
                 className="w-full h-auto object-cover"
                 priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
              />
          </div>
       </section>
