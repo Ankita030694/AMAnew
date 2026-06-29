@@ -649,7 +649,9 @@ export async function GET(): Promise<Response> {
     '/best-loan-settlement-companies-and-platforms-in-india',
     '/loan-settlement-company-reviews-2026',
     '/best-lawyer-who-can-get-you-loan-settlement-india',
-    '/default-loan-settlement-in-india'
+    '/default-loan-settlement-in-india',
+    '/what-to-do-after-receiving-arbitration-notice-from-bank',
+    '/bank-arbitration-advocate-near-me'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
@@ -742,6 +744,11 @@ export async function GET(): Promise<Response> {
       <priority>${route.priority}</priority>
     </url>
   `).join('')}
+  <url>
+    <loc>https://www.amalegalsolutions.com/can-you-ignore-bank-arbitration-notice-in-india</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <priority>0.8</priority>
+  </url>
 </urlset>`
 
   return new Response(xml, {

@@ -1355,9 +1355,18 @@ const Footer = () => {
         { name: "Who is the Best Lawyer for Loan Settlement in India?", href: "/who-is-the-best-lawyer-for-loan-settlement-in-india" },
         { name: "Which Company Offers Quick Loan Settlement", href: "/which-company-offers-quick-loan-settlement" },
         { name: "Best Loan Settlement Lawyer Near Me", href: "/who-is-the-best-loan-settlement-lawyer-near-me" },
-        { name: "Best Lawyer for Loan Settlement", href: "/best-lawyer-who-can-get-you-loan-settlement-india" }
+        { name: "Best Lawyer for Loan Settlement", href: "/best-lawyer-who-can-get-you-loan-settlement-india" },
+        { name: "Bank Arbitration Notice Lawyer in India", href: "/bank-arbitration-notice-lawyer-india" },
+        { name: "Received Arbitration Notice From Bank", href: "/received-arbitration-notice-from-bank" },
+        { name: "How to Stop Bank Arbitration Proceedings", href: "/stop-bank-arbitration-proceedings" },
+        { name: "What to Do After Receiving Arbitration Notice from Bank", href: "/what-to-do-after-receiving-arbitration-notice-from-bank" },
+        { name: "Credit Card Arbitration Notice from Bank", href: "/credit-card-arbitration-notice-from-bank" },
+        { name: "Bank Arbitration Settlement Guide", href: "/bank-arbitration-settlement" },
+        { name: "Received Arbitration Notice from Bank India", href: "/received-arbitration-notice-from-bank-india" },
+        { name: "Bank Arbitration Advocate Near Me", href: "/bank-arbitration-advocate-near-me" },
+        { name: "Can You Ignore a Bank Arbitration Notice?", href: "/can-you-ignore-bank-arbitration-notice" },
+        { name: "Can You Ignore a Bank Arbitration Notice in India?", href: "/can-you-ignore-bank-arbitration-notice-in-india" }
       ]
-
     }
   ];
 
