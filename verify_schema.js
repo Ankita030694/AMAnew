@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const fileContent = fs.readFileSync('src/app/what-to-do-after-receiving-arbitration-notice-from-bank/page.tsx', 'utf-8');
+const fileContent = fs.readFileSync('ama/src/app/how-to-file-complaint-rbi-ombudsman-online/page.tsx', 'utf-8');
 const scriptRegex = /<script\s+type="application\/ld\+json"\s+dangerouslySetInnerHTML=\{\{\s*__html:\s*JSON\.stringify\(([\s\S]*?)\)\s*\}\}\s*\/>/g;
 
 let match;

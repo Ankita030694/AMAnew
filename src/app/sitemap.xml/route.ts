@@ -344,6 +344,7 @@ export async function GET(): Promise<Response> {
     '/loan-settlement-application',
     '/expert-panel-loan-settlement',
     '/what-is-loan-settlement',
+    '/what-is-drt-debt-recovery-tribunal-india',
     '/loan-moratorium-meaning',
     '/minimum-amount-due-in-credit-card-meaning',
     '/section-25-payment-and-settlement-act-bailable-or-not',

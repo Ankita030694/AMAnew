@@ -881,11 +881,10 @@ const Footer = () => {
         { name: 'Home', href: '/' },
         { name: 'About Us', href: '/about' },
         { name: 'Careers', href: '/careers' },
-        { name: 'Contact Us', href: '/contact' },
         { name: 'AMA Connect App', href: '/ama-legal-solutions-application' },
         { name: 'Lawyer by City', href: '/lawyer-by-city' },
         { name: 'Lawyer by Expertise', href: '/lawyer-by-expertise' },
-        { name: 'Loan Settlement by Bank', href: '/loan-settlement-by-bank' },
+        { name: 'Loan Settlement by Bank', href: '/loan-settlement-by-bank' }
       ]
     },
     {
@@ -897,7 +896,7 @@ const Footer = () => {
         { name: 'Corporate Law', href: '/services/corporate' },
         { name: 'Criminal Law', href: '/services/criminal-law' },
         { name: 'Cyber Law', href: '/services/cyber' },
-        { name: 'Legal Drafting', href: '/services/drafting' },
+        { name: 'Legal Drafting', href: '/services/drafting' }
       ]
     },
     {
@@ -909,7 +908,7 @@ const Footer = () => {
         { name: 'Instagram', href: 'https://www.instagram.com/amalegalsolutions/?hl=en', external: true },
         { name: 'Facebook', href: 'https://www.facebook.com/amalegalsolutions/', external: true },
         { name: 'LinkedIn', href: 'https://in.linkedin.com/company/ama-legal-solutions', external: true },
-        { name: 'YouTube', href: 'https://www.youtube.com/@amalegalsolution', external: true },
+        { name: 'YouTube', href: 'https://www.youtube.com/@amalegalsolution', external: true }
       ]
     },
     {
@@ -921,7 +920,7 @@ const Footer = () => {
         { name: 'Kolkata', href: '/locations/kolkata' },
         { name: 'Chennai', href: '/locations/chennai' },
         { name: 'Jaipur', href: '/locations/jaipur' },
-        { name: 'Chandigarh', href: '/locations/chandigarh' },
+        { name: 'Chandigarh', href: '/locations/chandigarh' }
       ]
     },
     // ROW 2
@@ -948,7 +947,6 @@ const Footer = () => {
       links: [
         { name: 'Loan Settlement Guide', href: '/loan-settlement' },
         { name: 'Personal Loan Settlement', href: '/personal-loan-settlement' },
-        { name: 'Credit Card Settlement', href: '/credit-card-settlement' },
         { name: 'Business Loan Settlement', href: '/business-loan-settlement' },
         { name: 'Car Loan Settlement', href: '/car-loan-settlement' },
         { name: 'App Loan Settlement', href: '/app-loan-settlement' },
@@ -961,8 +959,7 @@ const Footer = () => {
         { name: "Secured Loan Settlement", href: "/secured-loan-settlement" },
         { name: "Trading Loan Settlement", href: "/trading-loan-settlement" },
         { name: "Medical Loan Settlement Support", href: "/support-for-loan-settlement-during-medical-emergencies" },
-        { name: "Settlement Letter From Bank", href: "/loan-settlement-letter-from-bank" },
-        
+        { name: "Settlement Letter From Bank", href: "/loan-settlement-letter-from-bank" }
       ]
     },
 
@@ -981,7 +978,7 @@ const Footer = () => {
         { name: "Trademark Registration Timeline", href: "/how-much-time-it-takes-to-get-your-trademark-registered" },
         { name: "Expedited Trademark Process", href: "/expedited-process-for-trademark-registration" },
         { name: "Trademark in 180 Days", href: "/get-your-trademark-in-180-days" },
-        { name: ".", href: "https://www.proedgeconsultation.in", hiddenLink: true },
+        { name: ".", href: "https://www.proedgeconsultation.in", hiddenLink: true }
       ]
     },
     {
@@ -1329,7 +1326,6 @@ const Footer = () => {
         { name: "BNPL Buy Now Pay Later Debt Trap India", href: "/bnpl-buy-now-pay-later-debt-trap-india" },
         { name: "Signs Debt is Out of Control in India", href: "/signs-debt-out-of-control-india" },
         { name: "When to Look for Debt Relief in India", href: "/when-to-look-for-debt-relief-in-india" },
-        { name: "Debt Settlement Myths vs Reality in India", href: "/debt-settlement-myths-vs-reality-india" },
         { name: "Payday Loan Settlement", href: "/pay-day-loan-settlement" },
         { name: "Credit Card Debt Settlement", href: "/credit-card-debt-settlement" },
         { name: "Multiple Credit Card Loan Settlement", href: "/multiple-credit-card-loan-settlement" },
@@ -1339,33 +1335,7 @@ const Footer = () => {
         { name: "Loan Settlement Company Reviews 2026", href: "/loan-settlement-company-reviews-2026" },
         { name: "Top Fintech Loan Settlement Companies", href: "/top-fintech-loan-settlement-companies" },
         { name: "Best Company to Settle Credit Card Debt", href: "/best-company-to-settle-credit-card-debt" },
-        { name: "Legal Help for Credit Card Recovery Harassment", href: "/legal-help-for-credit-card-recovery-harassment-in-india" },
-        { name: "IndusInd Bank Credit Card Settlement", href: "/indusind-bank-credit-card-settlement" },
-        { name: "HDFC Loan Settlement Process Documents CIBIL Impact", href: "/hdfc-loan-settlement-process-documents-cibil-impact" },
-        { name: "Loan Settlement vs Foreclosure", href: "/loan-settlement-vs-foreclosure" },
-        { name: "Top Credit Card Banks Offering Settlement", href: "/top-credit-card-banks-offering-settlement-india" },
-        { name: "Reputable Debt Counselling Services", href: "/where-to-find-reputable-debt-counselling-services" },
-        { name: "Legal Assistance for Debt Disputes", href: "/legal-assistance-for-consumer-debt-settlement-disputes" },
-        { name: "Best Loan Settlement Companies and Platforms in India", href: "/best-loan-settlement-companies-and-platforms-in-india" },
-        { name: "Documents Required for Loan Settlement Through Law Firm", href: "/documents-required-for-loan-settlement-through-law-firm" },
-        { name: "Is It Safe to Use a Law Firm for Loan Settlement", href: "/is-it-safe-to-use-a-law-firm-for-loan-settlement-in-india" },
-        { name: "Best Loan Settlement Lawyer in India", href: "/top-loan-settlement-lawyers-in-india" },
-        { name: "Default Loan Settlement in India", href: "/default-loan-settlement-in-india" },
-        { name: "Lawyer Who Provides Loan Debt Settlement Services", href: "/lawyer-who-provides-loan-debt-settlement-services" },
-        { name: "Who is the Best Lawyer for Loan Settlement in India?", href: "/who-is-the-best-lawyer-for-loan-settlement-in-india" },
-        { name: "Which Company Offers Quick Loan Settlement", href: "/which-company-offers-quick-loan-settlement" },
-        { name: "Best Loan Settlement Lawyer Near Me", href: "/who-is-the-best-loan-settlement-lawyer-near-me" },
-        { name: "Best Lawyer for Loan Settlement", href: "/best-lawyer-who-can-get-you-loan-settlement-india" },
-        { name: "Bank Arbitration Notice Lawyer in India", href: "/bank-arbitration-notice-lawyer-india" },
-        { name: "Received Arbitration Notice From Bank", href: "/received-arbitration-notice-from-bank" },
-        { name: "How to Stop Bank Arbitration Proceedings", href: "/stop-bank-arbitration-proceedings" },
-        { name: "What to Do After Receiving Arbitration Notice from Bank", href: "/what-to-do-after-receiving-arbitration-notice-from-bank" },
-        { name: "Credit Card Arbitration Notice from Bank", href: "/credit-card-arbitration-notice-from-bank" },
-        { name: "Bank Arbitration Settlement Guide", href: "/bank-arbitration-settlement" },
-        { name: "Received Arbitration Notice from Bank India", href: "/received-arbitration-notice-from-bank-india" },
-        { name: "Bank Arbitration Advocate Near Me", href: "/bank-arbitration-advocate-near-me" },
-        { name: "Can You Ignore a Bank Arbitration Notice?", href: "/can-you-ignore-bank-arbitration-notice" },
-        { name: "Can You Ignore a Bank Arbitration Notice in India?", href: "/can-you-ignore-bank-arbitration-notice-in-india" }
+        { name: "Legal Help for Credit Card Recovery Harassment", href: "/legal-help-for-credit-card-recovery-harassment-in-india" }
       ]
     }
   ];

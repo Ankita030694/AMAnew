@@ -9,6 +9,13 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'What Is DPD In Cibil Report India', href: '/what-is-dpd-in-cibil-report-india' },
+  { name: 'What Is SARFAESI Act India', href: '/what-is-sarfaesi-act-india' },
+  { name: 'What Is DRT Debt Recovery Tribunal India', href: '/what-is-drt-debt-recovery-tribunal-india' },
+  { name: 'What Is SMA Classification India', href: '/what-is-sma-classification-india' },
+  { name: 'Difference Between Loan Write Off And Loan Settlement', href: '/difference-between-loan-write-off-and-loan-settlement' },
+  { name: 'Borrower Rights Under RBI Guidelines India', href: '/borrower-rights-under-rbi-guidelines-india' },
+  { name: 'How to file complaint RBI ombudsman online', href:'/how-to-file-complaint-rbi-ombudsman-online' },
   { name: 'Can You Ignore a Bank Arbitration Notice in India?', href: '/can-you-ignore-bank-arbitration-notice-in-india' },
   { name: 'Bank Arbitration Advocate Near Me', href: '/bank-arbitration-advocate-near-me' },
   { name: 'Received Arbitration Notice From Bank India', href: '/received-arbitration-notice-from-bank-india' },
