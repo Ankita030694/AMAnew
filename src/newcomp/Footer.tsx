@@ -1350,7 +1350,12 @@ const Footer = () => {
         { name: "Documents Required for Loan Settlement Through Law Firm", href: "/documents-required-for-loan-settlement-through-law-firm" },
         { name: "Is It Safe to Use a Law Firm for Loan Settlement", href: "/is-it-safe-to-use-a-law-firm-for-loan-settlement-in-india" },
         { name: "Best Loan Settlement Lawyer in India", href: "/top-loan-settlement-lawyers-in-india" },
-        { name: "Default Loan Settlement in India", href: "/default-loan-settlement-in-india" }
+        { name: "Default Loan Settlement in India", href: "/default-loan-settlement-in-india" },
+        { name: "Lawyer Who Provides Loan Debt Settlement Services", href: "/lawyer-who-provides-loan-debt-settlement-services" },
+        { name: "Who is the Best Lawyer for Loan Settlement in India?", href: "/who-is-the-best-lawyer-for-loan-settlement-in-india" },
+        { name: "Which Company Offers Quick Loan Settlement", href: "/which-company-offers-quick-loan-settlement" },
+        { name: "Best Loan Settlement Lawyer Near Me", href: "/who-is-the-best-loan-settlement-lawyer-near-me" },
+        { name: "Best Lawyer for Loan Settlement", href: "/best-lawyer-who-can-get-you-loan-settlement-india" }
       ]
 
     }

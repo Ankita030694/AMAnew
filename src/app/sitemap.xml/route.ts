@@ -15,6 +15,8 @@ const slugify = (text: string) => {
     .replace(/(^-|-$)+/g, '');
 };
 
+
+
 export async function GET(): Promise<Response> {
   const blogs = await fetchAllBlogs()
   const articles = await fetchAllArticles()
@@ -241,7 +243,6 @@ export async function GET(): Promise<Response> {
     '/careers',
     '/careers/business-development-associate',
     '/careers/legal-associate',
-
     '/blog',
     '/articles',
     '/ama-live',
@@ -622,7 +623,33 @@ export async function GET(): Promise<Response> {
     '/signs-debt-out-of-control-india',
     '/when-to-look-for-debt-relief-in-india',
     '/how-to-settle-my-personal-loan-by-myself',
-    '/legal-help-for-credit-card-recovery-harassment-in-india'
+    '/legal-help-for-credit-card-recovery-harassment-in-india',
+    '/lawyer-who-provides-loan-debt-settlement-services',
+    '/who-is-the-best-loan-settlement-lawyer-near-me',
+    '/directory',
+    '/top-loan-settlement-lawyers-in-india',
+    '/is-it-safe-to-use-a-law-firm-for-loan-settlement-in-india',
+    '/multiple-credit-card-loan-settlement',
+    '/indusind-bank-credit-card-settlement',
+    '/who-is-the-best-lawyer-for-loan-settlement-in-india',
+    '/hdfc-loan-settlement-process-documents-cibil-impact',
+    '/top-fintech-loan-settlement-companies',
+    '/loan-settlement-consultant',
+    '/how-to-settle-7-days-loan-apps',
+    '/legal-assistance-for-consumer-debt-settlement-disputes',
+    '/documents-required-for-loan-settlement-through-law-firm',
+    '/careers/legal-intern',
+    '/careers/software-development-engineer-intern',
+    '/personal-loan-settlement-dos-and-donts',
+    '/best-company-to-settle-credit-card-debt',
+    '/what-are-the-rbi-guidelines-for-recovery-agents-in-india',
+    '/business-loan-settlement-in-july-2026',
+    '/where-to-find-reputable-debt-counselling-services',
+    '/which-company-offers-quick-loan-settlement',
+    '/best-loan-settlement-companies-and-platforms-in-india',
+    '/loan-settlement-company-reviews-2026',
+    '/best-lawyer-who-can-get-you-loan-settlement-india',
+    '/default-loan-settlement-in-india'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
@@ -689,6 +716,7 @@ export async function GET(): Promise<Response> {
 
   // Build lawyer keyword routes
   const lawyerKeywordRoutes = generateLawyerKeywordRoutes(baseUrl)
+
 
   // Combine all routes, including dynamicBankRoutes
   const allRoutes = [
