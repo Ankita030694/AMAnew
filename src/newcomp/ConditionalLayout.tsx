@@ -13,9 +13,11 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
   const [showPopup, setShowPopup] = React.useState(false);
   
   React.useEffect(() => {
-    // Only load the massive GlobalPopupForm chunk after 4 seconds
-    // This completely removes it from the initial LCP render path
-    const timer = setTimeout(() => setShowPopup(true), 4000);
+    console.log("ConditionalLayout: setting timer to show popup");
+    const timer = setTimeout(() => {
+      console.log("ConditionalLayout: showPopup set to true");
+      setShowPopup(true);
+    }, 100);
     return () => clearTimeout(timer);
   }, []);
   
@@ -30,7 +32,7 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
     <>
       <Navbar />
       {children}
-      {process.env.NODE_ENV !== 'development' && showPopup && <GlobalPopupForm />}
+      {showPopup && <GlobalPopupForm />}
       <Footer />
       <WhatsAppWidget />
     </>

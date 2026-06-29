@@ -51,8 +51,8 @@ const GlobalPopupForm = () => {
     window.addEventListener("openGlobalPopup", handleOpenPopup);
     let timer: ReturnType<typeof setTimeout>;
 
-    // Check if user has already submitted the form
     const hasBeenSubmitted = localStorage.getItem("form_submitted") || localStorage.getItem("global_popup_submitted");
+    console.log("GlobalPopupForm: hasBeenSubmitted =", hasBeenSubmitted);
 
     if (!hasBeenSubmitted) {
       timer = setTimeout(() => {
@@ -66,10 +66,13 @@ const GlobalPopupForm = () => {
           currentPath.includes("/contact") ||
           currentPath.includes("/careers");
         
+        console.log("GlobalPopupForm: currentPath =", currentPath, "isExcludedPage =", isExcludedPage);
+        
         if (!isExcludedPage) {
+          console.log("GlobalPopupForm: Setting isOpen to true");
           setIsOpen(true);
         }
-      }, 5000);
+      }, 2000);
     }
 
     return () => {

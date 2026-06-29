@@ -196,7 +196,7 @@ const ContactComp = () => {
   };
 
   // The actual Form UI component so we can reuse it between mobile and desktop without duplicating a lot of code
-  const FormInputs = ({ isMobile }: { isMobile?: boolean }) => (
+  const renderFormInputs = (isMobile?: boolean) => (
     <>
       <div className="relative">
         <div className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none">
@@ -375,7 +375,7 @@ const ContactComp = () => {
                 </div>
               ) : (
                 <form className="space-y-3 relative z-10">
-                  <FormInputs isMobile={true} />
+                  {renderFormInputs(true)}
                 </form>
               )}
           </div>
@@ -711,7 +711,7 @@ const ContactComp = () => {
                 </div>
               ) : (
                 <form className="space-y-4">
-                  <FormInputs isMobile={false} />
+                  {renderFormInputs(false)}
                 </form>
               )}
             </div>
