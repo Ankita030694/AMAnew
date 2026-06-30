@@ -385,6 +385,12 @@ const Footer = () => {
         }
       ]
     },
+    "/loan-settlement-request-letter": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Loan Settlement Request Letter Formatting Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1342" }
+    },
     "/zero-balance": {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -822,6 +828,12 @@ const Footer = () => {
       "name": "HNWI Loan Settlement and Stressed Asset Advisory",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1790" }
     },
+    "/lawyer-for-gift-deed": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Lawyer for Gift Deed Advisory",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1350" }
+    },
     "/how-does-loan-settlement-process-work-in-india": {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -1001,6 +1013,8 @@ const Footer = () => {
     {
       title: "Queries",
       links: [
+        { name: 'Can I go to jail for loan settlement?', href: '/kya-loan-settlement-karwane-se-mujhe-jail-ho-skti-hai' },
+        { name: 'Debt Recovery Tribunal Advocate', href: '/debt-recovery-tribunal-advocate' },
         { name: 'Recovery of Money Notice', href: '/demand-notice-for-recovery-of-money' },
         { name: 'Draft Money Recovery Notice', href: '/how-to-draft-a-legal-notice-for-recovery-of-money' },
         { name: 'Loan Repayment Demand Notice', href: '/demand-notice-for-loan-repayment' },
@@ -1051,6 +1065,7 @@ const Footer = () => {
         { name: 'Debt Resolution Companies India', href: '/get-contact-details-for-top-rated-debt-resolution-companies-in-india' },
         { name: 'DIY Personal Loan Settlement', href: '/how-to-settle-my-personal-loan-by-myself' },
         // Original Queries links
+        { name: 'Loan Settlement Recovery Agent Complaint', href: '/loan-settlement-recovery-agent-complaint' },
         { name: 'Best Loan Settlement Company as per Quora', href: '/best-loan-settlement-company-as-per-quora' },
         { name: "Best Debt Relief Companies in India", href: "/best-debt-relief-companies-india" },
         { name: "How to Get Trademark Certificate", href: "/how-can-i-get-trademark-certificate" },
@@ -1103,6 +1118,7 @@ const Footer = () => {
         { name: 'Documents Needed for Loan Settlement NOC', href: '/documents-needed-for-loan-settlement-noc' },
         { name: 'Charities That Pay Off Debt', href: '/charities-that-pay-off-debt' },
         { name: "Best Time for Loan Settlement", href: "/best-time-for-loan-settlement" },
+        { name: 'Best Supreme Court Lawyer', href: '/best-supreme-court-lawyer' },
         { name: "Benefits of Settling Your Loan in March", href: "/benefits-of-settling-your-loan-in-march" },
         { name: "Can Bank File Case for Personal Loan", href: "/can-bank-file-case-for-personal-loan" },
         { name: "Credit Card Settlement Process India", href: "/credit-card-settlement-process-india" },
@@ -1186,6 +1202,7 @@ const Footer = () => {
         { name: "Personal Loan Settlement Process", href: "/what-is-the-typical-process-for-settling-a-personal-loan-in-india" },
         { name: "Professional Debt Settlement Companies", href: "/which-companies-offer-professional-debt-settlement-services-for-personal-loans" },
         { name: "Cheque Bounce Notice", href: "/cheque-bounce-notice" },
+        { name: "Cheque Bounce Legal Notice", href: "/cheque-bounce-legal-notice" },
         { name: "Average Time for Settlement", href: "/what-is-the-average-time-for-loan-settlement" },
         { name: "Breach of Contract Notice", href: "/breach-of-contract-notice" },
         { name: "Consumer Complaint Notice", href: "/consumer-complaint-notice" },
@@ -1335,7 +1352,10 @@ const Footer = () => {
         { name: "Loan Settlement Company Reviews 2026", href: "/loan-settlement-company-reviews-2026" },
         { name: "Top Fintech Loan Settlement Companies", href: "/top-fintech-loan-settlement-companies" },
         { name: "Best Company to Settle Credit Card Debt", href: "/best-company-to-settle-credit-card-debt" },
-        { name: "Legal Help for Credit Card Recovery Harassment", href: "/legal-help-for-credit-card-recovery-harassment-in-india" }
+        { name: "Legal Help for Credit Card Recovery Harassment", href: "/legal-help-for-credit-card-recovery-harassment-in-india" },
+        { name: "Lawyer For Gift Deed", href: "/lawyer-for-gift-deed" },
+        { name: "Loan Settlement Request Letter", href: "/loan-settlement-request-letter" },
+        { name: "Loan Settlement Kiske Liye Hota Hai", href: "/loan-settlement-kiske-liye-hota-hai" }
       ]
     }
   ];

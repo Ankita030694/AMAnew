@@ -197,6 +197,7 @@ export async function GET(): Promise<Response> {
     '/which-companies-offer-professional-debt-settlement-services-for-personal-loans',
     '/compare-different-debt-management-and-settlement-programs-available-to-indian-consumers',
     '/cheque-bounce-notice',
+    '/cheque-bounce-legal-notice',
     '/breach-of-contract-notice',
     '/consumer-complaint-notice',
     '/property-eviction-notice',
@@ -652,7 +653,10 @@ export async function GET(): Promise<Response> {
     '/best-lawyer-who-can-get-you-loan-settlement-india',
     '/default-loan-settlement-in-india',
     '/what-to-do-after-receiving-arbitration-notice-from-bank',
-    '/bank-arbitration-advocate-near-me'
+    '/bank-arbitration-advocate-near-me',
+    '/debt-recovery-tribunal-advocate',
+    '/lawyer-for-gift-deed',
+    '/loan-settlement-request-letter'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),

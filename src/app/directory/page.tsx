@@ -9,6 +9,16 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'Kya Loan Settlement Karwane Se Mujhe Jail Ho Skti Hai', href: '/kya-loan-settlement-karwane-se-mujhe-jail-ho-skti-hai' },
+  { name: 'Loan Settlement Karwane Ke Kya Nuksaan Or Fayde Hai', href: '/loan-settlement-karwane-ke-kya-nuksaan-or-fayde-hai' },
+  { name: 'Loan Settlement Request Letter', href: '/loan-settlement-request-letter' },
+  { name: 'Loan Settlement Kiske Liye Hota Hai', href: '/loan-settlement-kiske-liye-hota-hai' },
+  { name: 'Loan Settlement Recovery Agent Complaint', href: '/loan-settlement-recovery-agent-complaint' },
+  { name: 'Lawyer For Gift Deed', href: '/lawyer-for-gift-deed' },
+  { name: 'Debt Recovery Tribunal Advocate', href: '/debt-recovery-tribunal-advocate' },
+  { name: 'Best Supreme Court Lawyer', href: '/best-supreme-court-lawyer' },
+  { name: 'Cheque Bounce Legal Notice', href: '/cheque-bounce-legal-notice' },
+  { name: '138 Case If Accused Not Received Legal Notice', href: '/138-case-if-accused-not-received-legal-notice' },
   { name: 'What Is DPD In Cibil Report India', href: '/what-is-dpd-in-cibil-report-india' },
   { name: 'What Is SARFAESI Act India', href: '/what-is-sarfaesi-act-india' },
   { name: 'What Is DRT Debt Recovery Tribunal India', href: '/what-is-drt-debt-recovery-tribunal-india' },

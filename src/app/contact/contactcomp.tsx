@@ -18,7 +18,8 @@ import {
   Send,
   Flame,
   MessageCircle,
-  Star
+  Star,
+  MapPin
 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -526,39 +527,47 @@ const ContactComp = () => {
 
               <div className="flex flex-col gap-2">
                 <Link href="https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions" target="_blank" className="hover:opacity-80 transition-opacity">
-                  <Image src="/newAssets/playstore.svg" alt="Google Play" width={100} height={30} className="h-7 w-auto" />
+                  <Image src="/newAssets/appstore.svg" alt="App Store" width={100} height={30} className="h-7 w-auto" />
                 </Link>
                 <Link href="https://apps.apple.com/in/app/ama-legal-solutions/id6755156186" target="_blank" className="hover:opacity-80 transition-opacity">
-                  <Image src="/newAssets/appstore.svg" alt="App Store" width={100} height={30} className="h-7 w-auto" />
+                  <Image src="/newAssets/playstore.svg" alt="Google Play" width={100} height={30} className="h-7 w-auto" />
                 </Link>
               </div>
             </div>
           </div>
 
           {/* Bottom Contact Info Mobile */}
-          <div className="w-full bg-[#FDF8E7] rounded-[24px] py-4 px-3 mt-4 border border-[#E9C46A]/20 grid grid-cols-3 gap-2 divide-x divide-[#E9C46A]/30">
+          <div className="w-full bg-[#FDF8E7] rounded-[24px] py-5 px-4 mt-4 border border-[#E9C46A]/20 grid grid-cols-2 gap-y-6 gap-x-2">
              <div className="flex flex-col items-center justify-center text-center px-1">
-                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm mb-1.5">
+                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm mb-2">
                    <Phone className="w-4 h-4 text-[#E19100]" />
                 </div>
-                <p className="text-[9px] text-[#30261C] mb-0.5">Call Us</p>
-                <p className="text-[9px] font-bold text-[#30261C]">+91 87003 43611</p>
+                <p className="text-[10px] text-[#30261C] mb-0.5">Call Us</p>
+                <a href="tel:+918700343611" className="text-[11px] font-bold text-[#30261C] hover:text-[#E19100]">+91 87003 43611</a>
              </div>
              
              <div className="flex flex-col items-center justify-center text-center px-1">
-                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm mb-1.5">
-                   <MessageCircle className="w-4 h-4 text-[#E19100]" />
+                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm mb-2">
+                   <Mail className="w-4 h-4 text-[#E19100]" />
                 </div>
-                <p className="text-[9px] text-[#30261C] mb-0.5">Chat on</p>
-                <p className="text-[9px] font-bold text-[#30261C]">WhatsApp</p>
+                <p className="text-[10px] text-[#30261C] mb-0.5">Email Us</p>
+                <a href="mailto:notify@amalegalsolutions.com" className="text-[10px] font-bold text-[#30261C] hover:text-[#E19100] break-all w-full px-1">notify@amalegalsolutions.com</a>
              </div>
 
              <div className="flex flex-col items-center justify-center text-center px-1">
-                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm mb-1.5">
+                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm mb-2">
                    <Clock className="w-4 h-4 text-[#E19100]" />
                 </div>
-                <p className="text-[9px] text-[#30261C] mb-0.5">Mon - Sat</p>
-                <p className="text-[9px] font-bold text-[#30261C]">10AM - 7PM</p>
+                <p className="text-[10px] text-[#30261C] mb-0.5">Mon - Sat</p>
+                <p className="text-[11px] font-bold text-[#30261C]">10AM - 7PM</p>
+             </div>
+
+             <div className="flex flex-col items-center justify-center text-center px-1">
+                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm mb-2">
+                   <MapPin className="w-4 h-4 text-[#E19100]" />
+                </div>
+                <p className="text-[10px] text-[#30261C] mb-0.5">Location</p>
+                <a href="https://maps.app.goo.gl/C11eKgqm46oUwdio9" target="_blank" rel="noopener noreferrer" className="text-[11px] font-bold text-[#30261C] hover:text-[#E19100]">Sector 57, Gurugram</a>
              </div>
           </div>
 
@@ -688,10 +697,10 @@ const ContactComp = () => {
 
                 <div className="flex items-center gap-3">
                   <Link href="https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions" target="_blank" className="hover:opacity-80 transition-opacity">
-                    <Image src="/newAssets/playstore.svg" alt="Get it on Google Play" width={120} height={35} className="h-9 w-auto" />
+                    <Image src="/newAssets/appstore.svg" alt="Download on App Store" width={120} height={35} className="h-9 w-auto" />
                   </Link>
                   <Link href="https://apps.apple.com/in/app/ama-legal-solutions/id6755156186" target="_blank" className="hover:opacity-80 transition-opacity">
-                    <Image src="/newAssets/appstore.svg" alt="Download on App Store" width={120} height={35} className="h-9 w-auto" />
+                    <Image src="/newAssets/playstore.svg" alt="Get it on Google Play" width={120} height={35} className="h-9 w-auto" />
                   </Link>
                 </div>
               </div>
@@ -771,7 +780,7 @@ const ContactComp = () => {
             </div>
             <div>
               <p className="text-sm text-[#30261C]">Prefer to talk?</p>
-              <p className="font-bold text-[#30261C]">Call us at +91 87003 43611</p>
+              <a href="tel:+918700343611" className="font-bold text-[#30261C] hover:text-[#E19100] transition-colors block">Call us at +91 87003 43611</a>
             </div>
           </div>
           
@@ -783,7 +792,7 @@ const ContactComp = () => {
             </div>
             <div>
               <p className="text-sm text-[#30261C]">Email us</p>
-              <p className="font-bold text-[#30261C]">notify@amalegalsolutions.com</p>
+              <a href="mailto:notify@amalegalsolutions.com" className="font-bold text-[#30261C] hover:text-[#E19100] transition-colors block">notify@amalegalsolutions.com</a>
             </div>
           </div>
           
@@ -799,6 +808,69 @@ const ContactComp = () => {
             </div>
           </div>
 
+          <div className="w-px h-12 bg-[#30261C]/10 hidden md:block"></div>
+          
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0">
+               <MapPin className="w-5 h-5 text-[#E19100]" />
+            </div>
+            <div>
+              <p className="text-sm text-[#30261C]">Location</p>
+              <a href="https://maps.app.goo.gl/C11eKgqm46oUwdio9" target="_blank" rel="noopener noreferrer" className="font-bold text-[#30261C] hover:text-[#E19100] transition-colors block">Sector 57, Gurugram</a>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Map Section */}
+        <div className="mt-16 w-full grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          <div className="lg:col-span-1 bg-white rounded-3xl p-8 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.03)] flex flex-col justify-between">
+            <div>
+              <div className="w-12 h-12 bg-[#FDF8E7] rounded-xl flex items-center justify-center text-[#E19100] mb-6">
+                <MapPin className="w-6 h-6" />
+              </div>
+              <h2 className="text-2xl font-bold text-[#30261C] mb-4">Visit Our Office</h2>
+              <p className="text-sm text-[#30261C]/80 leading-relaxed mb-6">
+                AMA Legal Solutions is located in Gurgaon, Haryana. Drop by for a consultation or reach out to schedule an appointment.
+              </p>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-bold text-[#30261C] text-sm">Office Address</h4>
+                  <p className="text-sm text-[#30261C]/70 mt-1">
+                    Sector 57, Sushant Lok 2, Gurugram, Haryana 122003
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-bold text-[#30261C] text-sm">Office Hours</h4>
+                  <p className="text-sm text-[#30261C]/70 mt-1">
+                    Monday – Saturday: 10:00 AM – 7:00 PM
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="pt-8">
+              <a 
+                href="https://maps.app.goo.gl/C11eKgqm46oUwdio9" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-6 py-3 bg-[#dda321] hover:bg-[#c9921b] text-white font-bold rounded-xl transition-colors shadow-sm text-sm"
+              >
+                Get Directions on Google Maps
+              </a>
+            </div>
+          </div>
+          <div className="lg:col-span-2 relative min-h-[350px] rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.03)] border border-gray-100">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.786864055198!2d77.0878512!3d28.425687399999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8b74fa3c4bce8f29%3A0x9c0cf35a3104b12e!2sAMA%20LEGAL%20SOLUTIONS!5e0!3m2!1sen!2sin!4v1782799376041!5m2!1sen!2sin" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0, minHeight: "400px" }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="strict-origin-when-cross-origin"
+              title="AMA Legal Solutions Location Map"
+            ></iframe>
+          </div>
         </div>
 
       </main>
