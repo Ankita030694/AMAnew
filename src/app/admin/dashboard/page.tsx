@@ -19,6 +19,7 @@ interface TableData {
   timestamp: string;
   originalTimestamp: any;
   submissionUrl?: string;
+  paymentStatus?: string;
 }
 
 interface FirebaseError {
@@ -89,7 +90,8 @@ const AdminDashboard = () => {
             serviceRequired: docData.serviceRequired || '-',
             timestamp: timestamp,
             originalTimestamp: originalTimestamp, // Keep original for sorting
-            submissionUrl: docData.submissionUrl || '-'
+            submissionUrl: docData.submissionUrl || '-',
+            paymentStatus: docData.paymentStatus || 'Pending'
           };
         });
 
@@ -216,11 +218,11 @@ const AdminDashboard = () => {
                 <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider w-32">
                   Date & Time
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider w-24">
-                  Name
-                </th>
                 <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider w-32">
-                  Email
+                  Name & Email
+                </th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider w-24">
+                  Payment Status
                 </th>
                 <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider w-24">
                   Phone
@@ -259,10 +261,17 @@ const AdminDashboard = () => {
                       {truncateText(row.timestamp, 20)}
                     </td>
                     <td className="px-4 py-4 text-sm text-[#5A4C33]">
-                      {truncateText(row.name, 20)}
+                      <div className="font-semibold">{truncateText(row.name, 20)}</div>
+                      <div className="text-xs text-gray-500 mt-1">{truncateText(row.email, 25)}</div>
                     </td>
                     <td className="px-4 py-4 text-sm text-[#5A4C33]">
-                      {truncateText(row.email, 25)}
+                      <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                        row.paymentStatus === 'Paid' ? 'bg-green-100 text-green-800' : 
+                        row.paymentStatus === 'Failed' ? 'bg-red-100 text-red-800' : 
+                        'bg-yellow-100 text-yellow-800'
+                      }`}>
+                        {row.paymentStatus}
+                      </span>
                     </td>
                     <td className="px-4 py-4 text-sm text-[#5A4C33]">
                       {truncateText(row.phone, 15)}
@@ -380,6 +389,19 @@ const AdminDashboard = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                   <div className="p-3 bg-gray-50 rounded-md text-[#5A4C33]">
                     {selectedLead.email}
+                  </div>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Payment Status</label>
+                  <div className="p-3 bg-gray-50 rounded-md text-[#5A4C33]">
+                    <span className={`px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                      selectedLead.paymentStatus === 'Paid' ? 'bg-green-100 text-green-800' : 
+                      selectedLead.paymentStatus === 'Failed' ? 'bg-red-100 text-red-800' : 
+                      'bg-yellow-100 text-yellow-800'
+                    }`}>
+                      {selectedLead.paymentStatus}
+                    </span>
                   </div>
                 </div>
                 
