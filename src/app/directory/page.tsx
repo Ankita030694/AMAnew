@@ -9,6 +9,10 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'Best Loan Settlement Companies India Flexible Payment Plans', href: '/best-loan-settlement-companies-india-flexible-payment-plans' },
+  { name: 'Most Affordable Debt Resolution India', href: '/affordable-debt-resolution-company-india' },
+  { name: '10 Practical Steps for Debt Solution', href: '/10-practical-steps-for-debt-solution' },
+  { name: '9 Smart Ways To Get Out Of Debt Trap', href: '/9-smart-ways-to-get-out-of-debt-trap' },
   { name: 'Kya Loan Settlement Karwane Se Mujhe Jail Ho Skti Hai', href: '/kya-loan-settlement-karwane-se-mujhe-jail-ho-skti-hai' },
   { name: 'Loan Settlement Karwane Ke Kya Nuksaan Or Fayde Hai', href: '/loan-settlement-karwane-ke-kya-nuksaan-or-fayde-hai' },
   { name: 'Loan Settlement Request Letter', href: '/loan-settlement-request-letter' },

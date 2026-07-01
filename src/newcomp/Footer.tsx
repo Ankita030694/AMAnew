@@ -1355,7 +1355,11 @@ const Footer = () => {
         { name: "Legal Help for Credit Card Recovery Harassment", href: "/legal-help-for-credit-card-recovery-harassment-in-india" },
         { name: "Lawyer For Gift Deed", href: "/lawyer-for-gift-deed" },
         { name: "Loan Settlement Request Letter", href: "/loan-settlement-request-letter" },
-        { name: "Loan Settlement Kiske Liye Hota Hai", href: "/loan-settlement-kiske-liye-hota-hai" }
+        { name: "Loan Settlement Kiske Liye Hota Hai", href: "/loan-settlement-kiske-liye-hota-hai" },
+        { name: "Most Affordable Debt Resolution India", href: "/affordable-debt-resolution-company-india" },
+        { name: "9 Smart Ways To Get Out Of Debt Trap", href: "/9-smart-ways-to-get-out-of-debt-trap" },
+        { name: "10 Practical Steps for Debt Solution", href: "/10-practical-steps-for-debt-solution" },
+        { name: "Best Loan Settlement Companies in India", href: "/best-loan-settlement-companies-india-flexible-payment-plans" }
       ]
     }
   ];
