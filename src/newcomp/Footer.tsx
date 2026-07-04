@@ -1359,7 +1359,12 @@ const Footer = () => {
         { name: "Most Affordable Debt Resolution India", href: "/affordable-debt-resolution-company-india" },
         { name: "9 Smart Ways To Get Out Of Debt Trap", href: "/9-smart-ways-to-get-out-of-debt-trap" },
         { name: "10 Practical Steps for Debt Solution", href: "/10-practical-steps-for-debt-solution" },
-        { name: "Best Loan Settlement Companies in India", href: "/best-loan-settlement-companies-india-flexible-payment-plans" }
+        { name: "Best Loan Settlement Companies in India", href: "/best-loan-settlement-companies-india-flexible-payment-plans" },
+        { name: "Top 20 Cities Facing Personal Loan Defaults", href: "/top-20-cities-facing-personal-loan-defaults" },
+        { name: "Which Banks Send the Most Recovery Calls?", href: "/which-banks-send-the-most-recovery-calls" },
+        { name: "2026 India Debt Report", href: "/ama-legal-solutions-2026-india-debt-report" },
+        { name: "Who Helps Settle Loans in India?", href: "/who-helps-settle-loans-in-india" },
+        { name: "Recovery Agents Harassing Borrowers Fresh Data", href: "/recovery-agents-harassing-borrowers-fresh-data" }
       ]
     }
   ];

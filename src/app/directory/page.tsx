@@ -9,6 +9,11 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'Recovery Agents Harassing Borrowers Fresh Data', href: '/recovery-agents-harassing-borrowers-fresh-data' },
+  { name: 'AMA Legal Solutions 2026 India Debt Report', href: '/ama-legal-solutions-2026-india-debt-report' },
+  { name: 'Who Helps Settle Loans in India?', href: '/who-helps-settle-loans-in-india' },
+  { name: 'Top 20 Cities Facing Personal Loan Defaults', href: '/top-20-cities-facing-personal-loan-defaults' },
+  { name: 'Which Banks Send the Most Recovery Calls?', href: '/which-banks-send-the-most-recovery-calls' },
   { name: 'Best Loan Settlement Companies India Flexible Payment Plans', href: '/best-loan-settlement-companies-india-flexible-payment-plans' },
   { name: 'Most Affordable Debt Resolution India', href: '/affordable-debt-resolution-company-india' },
   { name: '10 Practical Steps for Debt Solution', href: '/10-practical-steps-for-debt-solution' },

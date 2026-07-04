@@ -681,7 +681,8 @@ export async function GET(): Promise<Response> {
     '/success-stories/ama-connect-app',
     '/what-is-dpd-in-cibil-report-india',
     '/what-is-sarfaesi-act-india',
-    '/what-is-sma-classification-india'
+    '/what-is-sma-classification-india',
+    '/ama-legal-solutions-2026-india-debt-report'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
