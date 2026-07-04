@@ -106,7 +106,7 @@ export default function BankHarassmentTemplate({ bank }: { bank: HarassmentBank 
         "name": `How do I bypass the recovery agency and talk to ${bank.name} directly?`,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": `You must stop answering calls from the unverified agents entirely. Instead, all communication must be directed in writing to the ${bank.name} Grievance Redressal Officer at ${bank.grievanceEmail}. This creates a legally binding paper trail.`
+          "text": `You must stop answering calls from the unverified agents entirely. Instead, all communication must be directed in writing to the ${bank.name} Grievance Redressal Officer at ${bank.emails.split(',')[0]}. This creates a legally binding paper trail.`
         }
       },
       {
@@ -489,11 +489,7 @@ export default function BankHarassmentTemplate({ bank }: { bank: HarassmentBank 
               <div className="space-y-3">
                 <div className="flex items-start">
                   <FaEnvelope className="text-[#D29E0D] mt-1 mr-3 shrink-0" />
-                  <span className="text-sm text-gray-800 break-all font-medium">{bank.nodalEmail}</span>
-                </div>
-                <div className="flex items-start">
-                  <FaEnvelope className="text-[#D29E0D] mt-1 mr-3 shrink-0" />
-                  <span className="text-sm text-gray-800 break-all">{bank.grievanceEmail}</span>
+                  <span className="text-sm text-gray-800 break-all font-medium">{bank.emails}</span>
                 </div>
               </div>
             </div>

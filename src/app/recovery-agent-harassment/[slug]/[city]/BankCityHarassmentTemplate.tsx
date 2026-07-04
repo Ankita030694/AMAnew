@@ -520,11 +520,7 @@ export default function BankCityHarassmentTemplate({ bank, city }: { bank: Haras
               <div className="space-y-3">
                 <div className="flex items-start">
                   <FaEnvelope className="text-[#D29E0D] mt-1 mr-3 shrink-0" />
-                  <span className="text-sm text-gray-800 break-all font-medium">{bank.nodalEmail}</span>
-                </div>
-                <div className="flex items-start">
-                  <FaEnvelope className="text-[#D29E0D] mt-1 mr-3 shrink-0" />
-                  <span className="text-sm text-gray-800 break-all">{bank.grievanceEmail}</span>
+                  <span className="text-sm text-gray-800 break-all font-medium">{bank.emails}</span>
                 </div>
               </div>
             </div>
