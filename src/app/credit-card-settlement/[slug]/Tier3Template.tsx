@@ -3,6 +3,8 @@ import Script from "next/script";
 import Image from "next/image";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import StateGrid from "@/components/StateGrid";
+import { statesData } from "@/data/statesData";
 
 export default function Tier3Template({ bankName, slug }: { bankName: string, slug: string }) {
   
@@ -369,6 +371,8 @@ export default function Tier3Template({ bankName, slug }: { bankName: string, sl
                   </div>
                 </section>
 
+                <StateGrid bankName={bankName} bankSlug={slug} />
+
                 <section id="faqs" className="scroll-mt-32 mt-12">
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-2">Frequently Asked Questions</h2>
                   <div className="space-y-6">
@@ -472,6 +476,24 @@ export default function Tier3Template({ bankName, slug }: { bankName: string, sl
                           {`While a 'Settled' status on your ${bankName} card negatively impacts your credit score in the short term, it does not permanently destroy your eligibility. By strategically rebuilding your CIBIL score over 2-3 years using secured credit, many traditional lenders will reconsider you for significant loans.`}
                         </p>
                       </div>
+                  </div>
+                </section>
+
+                <section className="bg-white p-6 md:p-10 rounded-xl md:rounded-2xl shadow-sm border border-gray-100 mb-12">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-4">
+                    {bankName} Credit Card Settlement Services by State
+                  </h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    {statesData.map((state) => (
+                      <Link 
+                        key={state.slug} 
+                        href={`/credit-card-settlement/${slug}/${state.slug}`}
+                        className="flex items-center p-3 rounded-lg border border-gray-200 hover:border-[#D2A02A] hover:bg-[#D2A02A]/5 transition-all text-sm font-semibold text-gray-800"
+                      >
+                        <span className="w-2 h-2 rounded-full bg-[#D2A02A] mr-3"></span>
+                        {state.name}
+                      </Link>
+                    ))}
                   </div>
                 </section>
 
