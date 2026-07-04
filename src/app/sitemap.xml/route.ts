@@ -640,6 +640,7 @@ export async function GET(): Promise<Response> {
     '/top-fintech-loan-settlement-companies',
     '/loan-settlement-consultant',
     '/how-to-settle-7-days-loan-apps',
+    '/protection-from-loan-recovery-harassment',
     '/legal-assistance-for-consumer-debt-settlement-disputes',
     '/documents-required-for-loan-settlement-through-law-firm',
     '/careers/legal-intern',

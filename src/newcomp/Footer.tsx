@@ -17,6 +17,36 @@ const Footer = () => {
       "name": "Recovery Agent Harassment Legal Defense",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
     },
+    "/can-banks-refuse-settlement": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Bank Refusal of Settlement Advisory",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1250" }
+    },
+    "/can-banks-reject-loan-settlement-offer": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Bank Rejection of Loan Settlement Advisory",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1540" }
+    },
+    "/can-i-settle-my-credit-card-debt": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Credit Card Debt Settlement Legal Guide",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2150" }
+    },
+    "/can-i-settle-my-personal-loan": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Personal Loan Settlement Legal Advisory",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1420" }
+    },
+    "/protection-from-loan-recovery-harassment": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Protection from Loan Recovery Harassment Service",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1850" }
+    },
     "/personal-loan-settlement-dos-and-donts": {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -1371,7 +1401,14 @@ const Footer = () => {
         { name: "Which Banks Send the Most Recovery Calls?", href: "/which-banks-send-the-most-recovery-calls" },
         { name: "2026 India Debt Report", href: "/ama-legal-solutions-2026-india-debt-report" },
         { name: "Who Helps Settle Loans in India?", href: "/who-helps-settle-loans-in-india" },
-        { name: "Recovery Agents Harassing Borrowers Fresh Data", href: "/recovery-agents-harassing-borrowers-fresh-data" }
+        { name: "Recovery Agents Harassing Borrowers Fresh Data", href: "/recovery-agents-harassing-borrowers-fresh-data" },
+        { name: "12000+ Loan Settlement Enquiries Analysis", href: "/ama-legal-solutions-12000-loan-settlement-enquiries-analysis" },
+        { name: "Can I Settle My Personal Loan?", href: "/can-i-settle-my-personal-loan" },
+        { name: "Protection from Loan Recovery Harassment", href: "/protection-from-loan-recovery-harassment" },
+        { name: "Can Bank Reject Loan Settlement?", href: "/can-banks-reject-loan-settlement-offer" },
+        { name: "Can I Settle My Credit Card Debt?", href: "/can-i-settle-my-credit-card-debt" },
+        { name: "Can Banks Refuse Settlement?", href: "/can-banks-refuse-settlement" },
+        { name: "What To Do If Recovery Agents Harass You", href: "/what-to-do-if-recovery-agents-harass-you" }
       ]
     }
   ];
