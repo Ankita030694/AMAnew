@@ -752,30 +752,7 @@ export async function GET(): Promise<Response> {
   // Build lawyer keyword routes
   const lawyerKeywordRoutes = generateLawyerKeywordRoutes(baseUrl)
 
-  // Build harassment bank routes
-  const harassmentBankRoutes = harassmentBanks.map(bank => ({
-    url: `${baseUrl}/recovery-agent-harassment/${bank.slug}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: 'weekly',
-    priority: 0.8
-  }))
 
-  // Build harassment city routes
-  const harassmentCityRoutes = harassmentCities.map(city => ({
-    url: `${baseUrl}/recovery-agent-harassment/${city.slug}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: 'weekly',
-    priority: 0.8
-  }))
-  // Build harassment bank+city routes
-  const harassmentBankCityRoutes = harassmentBanks.flatMap(bank => 
-    harassmentCities.map(city => ({
-      url: `${baseUrl}/recovery-agent-harassment/${bank.slug}/${city.slug}`,
-      lastModified: new Date().toISOString(),
-      changeFrequency: 'weekly',
-      priority: 0.7
-    }))
-  )
 
   // Combine all routes, including dynamicBankRoutes
   const allRoutes = [
@@ -787,10 +764,7 @@ export async function GET(): Promise<Response> {
     ...blogRoutes,
     ...articleRoutes,
     ...successStoryRoutes,
-    ...lawyerByCityRoutes,
-    ...harassmentBankRoutes,
-    ...harassmentCityRoutes,
-    ...harassmentBankCityRoutes
+    ...lawyerByCityRoutes
   ]
 
   // Generate XML
