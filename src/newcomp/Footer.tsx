@@ -11,6 +11,12 @@ const Footer = () => {
   const pathname = usePathname();
 
   const reviewSchemas: { [key: string]: any } = {
+    "/recovery-agent-harassment": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Recovery Agent Harassment Legal Defense",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1840" }
+    },
     "/personal-loan-settlement-dos-and-donts": {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -1068,6 +1074,7 @@ const Footer = () => {
         { name: 'Loan Settlement Recovery Agent Complaint', href: '/loan-settlement-recovery-agent-complaint' },
         { name: 'Best Loan Settlement Company as per Quora', href: '/best-loan-settlement-company-as-per-quora' },
         { name: "Best Debt Relief Companies in India", href: "/best-debt-relief-companies-india" },
+        { name: "Stop Recovery Agent Harassment", href: "/recovery-agent-harassment" },
         { name: "How to Get Trademark Certificate", href: "/how-can-i-get-trademark-certificate" },
         { name: "Registration Office Locations", href: "/where-to-register-trademark" },
         { name: "Best Advocate Near Me", href: "/best-advocate-near-me" },

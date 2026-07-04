@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'Recovery Agent Harassment', href: '/recovery-agent-harassment' },
   { name: 'Recovery Agents Harassing Borrowers Fresh Data', href: '/recovery-agents-harassing-borrowers-fresh-data' },
   { name: 'AMA Legal Solutions 2026 India Debt Report', href: '/ama-legal-solutions-2026-india-debt-report' },
   { name: 'Who Helps Settle Loans in India?', href: '/who-helps-settle-loans-in-india' },
