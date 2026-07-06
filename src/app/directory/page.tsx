@@ -9,6 +9,10 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'Impact of High Credit Card Interest Rates', href: '/understanding-the-impact-of-high-credit-card-interest-rates-what-you-need-to-know' },
+  { name: 'How to Repair Your Credit Score', href: '/how-to-repair-your-credit-score' },
+  { name: 'Expert Debt Settlement Solutions', href: '/expert-debt-settlement-solutions' },
+  { name: 'How to Register a Complaint Against a Debt Collector', href: '/how-to-register-complaint-against-debt-collector' },
   { name: 'How to Stop Recovery Agent Calls Immediately', href: '/how-to-stop-recovery-agent-calls-immediately' },
   { name: 'Mai Apne Loan Ki EMI Nahi Bhar Parha Hun', href: '/mai-apne-loan-ki-emi-nahi-bhar-parha-hun' },
   { name: 'Can I Settle a Loan in One Day?', href: '/can-i-settle-loan-in-one-day' },
@@ -119,6 +123,7 @@ const directoryLinks = [
 { name: 'Can You Go To Jail For Not Paying Emi', href: '/can-you-go-to-jail-for-not-paying-emi' },
 { name: "Average Time for Settlement", href: "/what-is-the-average-time-for-loan-settlement" },
   { name: 'How To Settle 7 Days Loan Apps', href: '/how-to-settle-7-days-loan-apps' },
+{ name: 'How to Fix Credit Score', href: '/how-to-fix-credit-score' },
 { name: 'Recovery Agent Calling 100 Times Per Day', href: '/recovery-agent-calling-100-times-per-day' },
 { name: 'Recovery Agent Sending Morphed And Ai Generated Explicit Images To Relatives', href: '/recovery-agent-sending-morphed-and-ai-generated-explicit-images-to-relatives' },
 { name: 'Loan Settlement For Axis Bank', href: '/loan-settlement-for-axis-bank' },

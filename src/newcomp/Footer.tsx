@@ -1101,6 +1101,7 @@ const Footer = () => {
         { name: 'Third Party Credit Card Settlement', href: '/can-i-settle-my-credit-card-dues-using-third-party-loan-settlement-companies' },
         { name: 'Debt Resolution Companies India', href: '/get-contact-details-for-top-rated-debt-resolution-companies-in-india' },
         { name: 'DIY Personal Loan Settlement', href: '/how-to-settle-my-personal-loan-by-myself' },
+        { name: 'Expert Debt Settlement Solutions', href: '/expert-debt-settlement-solutions' },
         // Original Queries links
         { name: 'Loan Settlement Recovery Agent Complaint', href: '/loan-settlement-recovery-agent-complaint' },
         { name: 'Best Loan Settlement Company as per Quora', href: '/best-loan-settlement-company-as-per-quora' },
@@ -1196,6 +1197,7 @@ const Footer = () => {
         { name: "How to Get 800 Credit Score in India", href: "/how-to-get-800-credit-score-in-india" },
         { name: "Loan Settlement & NOC Formats", href: "/loan-settlement-letter-format-noc-format" },
         { name: "Legal Notice for Harassment", href: "/legal-notice-for-loan-settlement-harassment" },
+        { name: "Impact of High Credit Card Interest Rates", href: "/understanding-the-impact-of-high-credit-card-interest-rates-what-you-need-to-know" },
         { name: "2026 Resource Lockdown", href: "/2026-lockdown-due-to-scarcity-of-resources" },
         { name: "LPG Crisis India 2026", href: "/lpg-cylinder-crisis-india-2026-iran-war" },
         { name: "Economic Downturn Settlement", href: "/loan-settlement-for-borrowers-facing-economic-downturn" },

@@ -28,6 +28,7 @@ export async function GET(): Promise<Response> {
   // Build static routes
   const staticRoutes = [
     '',
+    '/how-to-repair-your-credit-score',
     '/pay-day-loan-settlement',
     '/credit-card-debt-settlement',
     '/debt-settlement-myths-vs-reality-india',
@@ -688,7 +689,8 @@ export async function GET(): Promise<Response> {
     '/ama-legal-solutions-2026-india-debt-report',
     '/mai-apne-loan-ki-emi-nahi-bhar-parha-hun',
     '/can-i-settle-loan-in-one-week',
-    '/how-to-stop-recovery-agent-calls-immediately'
+    '/how-to-stop-recovery-agent-calls-immediately',
+    '/expert-debt-settlement-solutions'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
