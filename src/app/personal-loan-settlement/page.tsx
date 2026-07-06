@@ -3,6 +3,7 @@ import Script from "next/script";
 import Image from "next/image";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { personalLoanBanks } from "@/data/personalLoanBanks";
 
 // FAQ data for rendering and Schema
 const faqs = [
@@ -172,6 +173,8 @@ export default function PersonalLoanSettlementPage() {
   const tocSections = [
     { id: "introduction", title: "Understanding Debt Relief" },
     { id: "what-is-settlement", title: "What is a Settlement?" },
+    { id: "legal-framework-138-25", title: "Section 138 vs Section 25 (NACH)" },
+    { id: "arbitration-lok-adalat", title: "Arbitration & Lok Adalats" },
     { id: "how-it-works", title: "How Settlement Works" },
     { id: "eligibility", title: "Hardship & Eligibility" },
     { id: "cibil-impact", title: "Impact on CIBIL Score" },
@@ -181,9 +184,10 @@ export default function PersonalLoanSettlementPage() {
     { id: "alternatives", title: "Alternative Options" },
     { id: "ots-scheme", title: "One Time Settlement (OTS)" },
     { id: "stop-harassment", title: "Stopping Agent Harassment" },
+    { id: "rbi-guidelines", title: "Strict RBI Guidelines" },
     { id: "why-hire-lawyers", title: "Why Hire a Lawyer?" },
     { id: "pan-india-service", title: "Pan-India Services" },
-    { id: "case-studies", title: "Client Success Stories" },
+    { id: "bank-specific-guides", title: "Bank-Specific Settlement Guides" },
     { id: "faqs", title: "Frequently Asked Questions" },
   ];
 
@@ -303,6 +307,46 @@ export default function PersonalLoanSettlementPage() {
                   </p>
                 </section>
 
+                {/* Section: Legal Framework 138 vs 25 */}
+                <section id="legal-framework-138-25" className="scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">The Legal Reality: Section 138 vs Section 25 of the PSS Act</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
+                    One of the most critical aspects of personal loan defaults in India is understanding the legal mechanism banks use to enforce repayment. Unlike secured loans (like home or auto loans) where the bank can invoke the SARFAESI Act to seize physical assets, personal loans are unsecured. Therefore, lenders rely heavily on the payment instruments you signed at the time of disbursement.
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-6 my-8">
+                    <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+                      <h3 className="text-xl font-bold text-[#1a202c] mb-3">Section 138 (Cheque Bounce)</h3>
+                      <p className="text-gray-700 leading-relaxed">
+                        Under Section 138 of the Negotiable Instruments Act, 1881, if a physical cheque presented for a legally enforceable debt is dishonored due to insufficient funds, it is a <strong>criminal offense</strong>. The penalty can include imprisonment for up to two years, a fine up to twice the cheque amount, or both. If you issued Post-Dated Cheques (PDCs) for your personal loan, this is the legal tool the bank will wield.
+                      </p>
+                    </div>
+                    <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+                      <h3 className="text-xl font-bold text-[#1a202c] mb-3">Section 25 (NACH/ECS Bounce)</h3>
+                      <p className="text-gray-700 leading-relaxed">
+                        In modern personal loans, EMIs are almost entirely automated via NACH (National Automated Clearing House) or ECS mandates. If an electronic mandate bounces, it falls under <strong>Section 25 of the Payment and Settlement Systems (PSS) Act, 2007</strong>. The Supreme Court of India has clarified that a NACH bounce carries the exact same criminal penalties (up to two years imprisonment) and procedures as a physical cheque bounce under Section 138.
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-sm md:text-lg leading-relaxed text-gray-700 mb-4">
+                    <strong>The 30-Day Notice Window:</strong> Whether it is a physical cheque or a NACH mandate, the bank cannot immediately issue an arrest warrant. Upon the bounce, they must send you a formal legal demand notice within 30 days of receiving the return memo from the bank. You then have 15 days from the receipt of this notice to make the payment. Only if you fail to pay within these 15 days does the cause of action arise to file a criminal complaint in the magistrate court. This window is often the most critical time to initiate a <strong>personal loan settlement</strong> before criminal litigation commences.
+                  </p>
+                </section>
+
+                {/* Section: Arbitration and Lok Adalats */}
+                <section id="arbitration-lok-adalat" className="scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Arbitration Clauses and Lok Adalats: Navigating Dispute Resolution</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
+                    If you review the fine print of your personal loan agreement, you will likely find an arbitration clause. Under the Arbitration and Conciliation Act, 1996, banks frequently attempt to bypass the heavily congested civil courts by referring defaults to a private arbitrator.
+                  </p>
+                  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
+                    <strong>The "Unilateral Appointment" Defense:</strong> Historically, banks would unilaterally appoint an arbitrator of their own choosing, often leading to biased, fast-tracked "ex-parte" awards against the borrower. However, landmark judgments by the Supreme Court of India have strictly struck down unilateral appointments. An arbitrator must be appointed neutrally, and if a bank sends you an arbitration notice with an arbitrator they chose independently, our legal team can strongly contest the jurisdiction and validity of the entire proceeding. This forces the bank back to the negotiation table, significantly increasing your leverage for a favorable settlement.
+                  </p>
+                  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
+                    <strong>Lok Adalats:</strong> The Reserve Bank of India (RBI) actively encourages banks to utilize Lok Adalats (People's Courts) to resolve NPA accounts, especially for loans under ₹20 Lakhs. Lok Adalats are non-adversarial forums designed specifically for settlement and compromise. If your case is referred to a Lok Adalat, it presents an excellent, formalized opportunity to execute a One Time Settlement (OTS). A decree passed by a Lok Adalat is legally binding and equivalent to a civil court decree, ensuring the bank cannot renege on the agreed waiver.
+                  </p>
+                </section>
+
+
                 {/* Section: How it Works */}
                 <section id="how-it-works" className="scroll-mt-32">
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">The Mechanics of the Loan Settlement Process</h2>
@@ -392,7 +436,11 @@ export default function PersonalLoanSettlementPage() {
                     <div className="flex flex-col md:flex-row gap-6 items-start">
                       <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">4</div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Execute the Formal Agreement</h3>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-3">5. Demand the Settlement Letter Before Payment</h3>
+<p className="text-lg leading-relaxed mb-6 text-gray-700">Never, under any circumstances, pay a single rupee based on a verbal promise or a WhatsApp message from a recovery agent. You must demand a formal Settlement Letter issued on the bank's official letterhead, signed by an authorized signatory. This letter must explicitly state the total agreed settlement amount, the installment schedule (if any), and a clear clause stating that upon receipt of this final amount, the loan will be closed and a No Dues Certificate (NOC) will be issued. Furthermore, the letter should stipulate that the bank will withdraw all pending legal cases (including Section 138/25 or Arbitration) and update the CIBIL status to "Settled".</p>
+<h3 className="text-2xl font-bold text-gray-900 mb-3">6. Post-Settlement CIBIL Management</h3>
+<p className="text-lg leading-relaxed mb-6 text-gray-700">Once the payment is made, ensure the bank issues the NOC within 30 days. It is then your responsibility to monitor your CIBIL report to confirm the status has been updated. If the bank fails to update CIBIL, a legal notice can be issued to compel them to reflect the agreed settlement.</p>
+<h3 className="text-2xl font-bold text-gray-900 mb-3">Execute the Formal Agreement</h3>
                         <p className="text-gray-700 leading-relaxed">
                           Never transfer funds based on a verbal commitment or a WhatsApp typed assurance. Wait for the bank headquarters to dispatch an official OTS settlement letter on watermarked company letterhead outlining the exact figures and the mandatory No Dues Clause.
                         </p>
@@ -517,7 +565,26 @@ export default function PersonalLoanSettlementPage() {
                 </section>
 
                 {/* Section: Stop Harassment */}
-                <section id="stop-harassment" className="scroll-mt-32">
+                
+
+                {/* Section: Strict RBI Guidelines */}
+                <section id="rbi-guidelines" className="scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Strict RBI Guidelines on Recovery Agent Conduct</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
+                    The Reserve Bank of India has repeatedly issued stringent circulars regarding the Fair Practices Code that all regulated entities (banks and NBFCs) must follow during debt recovery. Banks cannot outsource their accountability; they are directly legally responsible for the actions of their third-party recovery agencies (DRAs).
+                  </p>
+                  <ul className="list-disc pl-6 space-y-4 mb-6 text-gray-700 text-sm md:text-lg">
+                    <li><strong>Permitted Contact Hours:</strong> Agents are strictly prohibited from contacting borrowers before 8:00 AM or after 7:00 PM. Calls at odd hours constitute active harassment.</li>
+                    <li><strong>Data Privacy & Social Shaming:</strong> Agents cannot contact your relatives, friends, employers, or neighbors to publicly shame you. They are bound by strict confidentiality regarding your loan default.</li>
+                    <li><strong>Use of Threat or Intimidation:</strong> The use of abusive language, physical threats, or sending fake legal notices (forged on fake court letterheads or fake police station stamps) is a severe criminal offense under the Indian Penal Code (IPC).</li>
+                    <li><strong>Mandatory Authorization:</strong> Any agent visiting your premises must carry an official ID card and an authorization letter from the bank explicitly permitting them to collect on that specific account.</li>
+                  </ul>
+                  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
+                    If these guidelines are violated, borrowers have the right to file a formal complaint with the bank's internal grievance redressal officer. If the bank fails to resolve the issue within 30 days, the borrower can escalate the matter directly to the **RBI Banking Ombudsman** via the centralized CMS (Complaint Management System) portal. A strong lawyer will document every instance of harassment and use these violations as immense leverage during settlement negotiations.
+                  </p>
+                </section>
+
+<section id="stop-harassment" className="scroll-mt-32">
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Immediately Terminating Recovery Agent Harassment</h2>
                   <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-8 text-gray-700">
                     Unregulated harassment from third party collection agencies drives countless borrowers into deep psychological distress. Halting this harassment is the primary objective when you associate with professional legal counsel. By exercising your <strong>Right to Representation</strong>, we officially intercede between you and the threatening entities.
@@ -600,33 +667,19 @@ export default function PersonalLoanSettlementPage() {
                   </p>
                 </section>
 
-                {/* Section: Testimonials */}
-                <section id="case-studies" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Client Success Stories</h2>
-                  <div className="grid md:grid-cols-2 gap-8">
-                    {reviewSchema.review.map((rev, index) => (
-                      <div key={index} className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative shadow-sm hover:shadow-md transition-shadow">
-                        <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
-                        <div className="flex text-[#D2A02A] mb-3 relative z-10">
-                          {Array.from({ length: Number(rev.reviewRating.ratingValue) }).map((_, i) => (
-                            <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                          ))}
-                        </div>
-                        <p className="text-gray-700 italic mb-4 relative z-10">
-                          "{rev.reviewBody}"
-                        </p>
-                        <div className="flex items-center">
-                          <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">
-                            {rev.author.name.charAt(0)}
-                          </div>
-                          <div>
-                            <p className="font-bold text-gray-900">{rev.author.name}</p>
-                            <p className="text-sm text-gray-500">Verified Client</p>
-                          </div>
-                        </div>
-                      </div>
+                {/* Section: Bank Specific Guides */}
+                <section id="bank-specific-guides" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Bank-Specific Settlement Guides</h2>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">Select your personal loan issuing bank below to read our detailed, bank-specific settlement strategy and negotiation guide.</p>
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {personalLoanBanks.map((bank) => (
+                      <Link 
+                        key={bank.slug} 
+                        href={`/personal-loan-settlement/${bank.slug}`}
+                        className="bg-white border border-gray-200 hover:border-[#D2A02A] p-4 rounded-xl text-center shadow-sm hover:shadow-md transition-all group"
+                      >
+                        <h3 className="font-semibold text-gray-800 group-hover:text-[#D2A02A] transition-colors">{bank.name}</h3>
+                      </Link>
                     ))}
                   </div>
                 </section>
@@ -744,6 +797,26 @@ export default function PersonalLoanSettlementPage() {
                       </Link>
                     </li>
                   </ul>
+                </div>
+
+                {/* 3rd Client Reviews Container */}
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                  <h3 className="text-xl font-bold text-gray-900 mb-6">Client Success Stories</h3>
+                  <div className="space-y-6">
+                    {reviewSchema.review.map((rev, index) => (
+                      <div key={index} className="bg-gray-50 p-4 rounded-lg border border-gray-100 relative">
+                        <div className="flex text-[#D2A02A] mb-2">
+                          {Array.from({ length: Number(rev.reviewRating.ratingValue) }).map((_, i) => (
+                            <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                          ))}
+                        </div>
+                        <p className="text-gray-700 italic text-sm mb-3">"{rev.reviewBody}"</p>
+                        <p className="font-bold text-gray-900 text-sm">- {rev.author.name}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
             </div>
 
