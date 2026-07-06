@@ -684,7 +684,10 @@ export async function GET(): Promise<Response> {
     '/what-is-dpd-in-cibil-report-india',
     '/what-is-sarfaesi-act-india',
     '/what-is-sma-classification-india',
-    '/ama-legal-solutions-2026-india-debt-report'
+    '/ama-legal-solutions-2026-india-debt-report',
+    '/mai-apne-loan-ki-emi-nahi-bhar-parha-hun',
+    '/can-i-settle-loan-in-one-week',
+    '/how-to-stop-recovery-agent-calls-immediately'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),

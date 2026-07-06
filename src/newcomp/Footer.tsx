@@ -1020,6 +1020,7 @@ const Footer = () => {
       title: "Queries",
       links: [
         { name: 'Can I go to jail for loan settlement?', href: '/kya-loan-settlement-karwane-se-mujhe-jail-ho-skti-hai' },
+        { name: 'How to Stop Recovery Agent Calls', href: '/how-to-stop-recovery-agent-calls-immediately' },
         { name: 'Debt Recovery Tribunal Advocate', href: '/debt-recovery-tribunal-advocate' },
         { name: 'Recovery of Money Notice', href: '/demand-notice-for-recovery-of-money' },
         { name: 'Draft Money Recovery Notice', href: '/how-to-draft-a-legal-notice-for-recovery-of-money' },
@@ -1148,6 +1149,7 @@ const Footer = () => {
         { name: "Best Law Firms in India for Corporate Law", href: "/best-law-firms-in-india-for-corporate-law" },
         { name: "Reputable Debt Relief Agencies Bangalore", href: "/find-reputable-debt-relief-agencies-specializing-in-unsecured-loans-in-bangalore" },
         { name: "Tax Implications of Settled Debt", href: "/what-are-the-income-tax-implications-of-a-settled-debt-amount" },
+        { name: "Can I Settle a Loan in One Day", href: "/can-i-settle-loan-in-one-day" },
         { name: "Credit Counseling Chennai", href: "/where-can-i-locate-government-approved-consumer-credit-counseling-services-in-chennai" },
         { name: "Settle Credit Card Using Third Party", href: "/can-i-settle-my-credit-card-dues-using-third-party-loan-settlement-companies" },
         { name: "CFP specialized in Debt Restructuring", href: "/certified-financial-planners-who-specialize-in-debt-restructuring-and-settlement" },
@@ -1248,6 +1250,7 @@ const Footer = () => {
         { name: 'Best Loan Settlement Lawyer (Gemini)', href: '/best-loan-settlement-lawyer-as-per-gemini' },
         { name: 'Best Loan Settlement Lawyer (Claude)', href: '/best-loan-settlement-lawyer-as-per-claude' },
         { name: 'IT Professional Loan Settlement', href: '/loan-settlement-for-it-professionals' },
+        { name: 'Can I Settle Loan In One Month', href: '/can-i-settle-loan-in-one-month' },
         { name: 'Kirana & Shop Owner Loan Settlement', href: '/loan-settlement-for-kirana-and-shop-owners' },
         { name: 'Restaurant Owner Loan Settlement', href: '/loan-settlement-for-restaurant-owners' },
         { name: 'Trader and Wholesaler Loan Settlement' , href: '/loan-settlement-for-traders-and-wholesalers' },
@@ -1371,7 +1374,10 @@ const Footer = () => {
         { name: "Which Banks Send the Most Recovery Calls?", href: "/which-banks-send-the-most-recovery-calls" },
         { name: "2026 India Debt Report", href: "/ama-legal-solutions-2026-india-debt-report" },
         { name: "Who Helps Settle Loans in India?", href: "/who-helps-settle-loans-in-india" },
-        { name: "Recovery Agents Harassing Borrowers Fresh Data", href: "/recovery-agents-harassing-borrowers-fresh-data" }
+        { name: "Recovery Agents Harassing Borrowers Fresh Data", href: "/recovery-agents-harassing-borrowers-fresh-data" },
+        { name: "Need Time to Pay Your Loan", href: "/mujhe-apna-loan-bharne-ke-liye-time-chaiye" },
+        { name: "Mai Apne Loan Ki EMI Nahi Bhar Parha Hun", href: "/mai-apne-loan-ki-emi-nahi-bhar-parha-hun" },
+        { name: "Can I Settle Loan In One Week", href: "/can-i-settle-loan-in-one-week" }
       ]
     }
   ];

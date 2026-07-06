@@ -9,6 +9,12 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'How to Stop Recovery Agent Calls Immediately', href: '/how-to-stop-recovery-agent-calls-immediately' },
+  { name: 'Mai Apne Loan Ki EMI Nahi Bhar Parha Hun', href: '/mai-apne-loan-ki-emi-nahi-bhar-parha-hun' },
+  { name: 'Can I Settle a Loan in One Day?', href: '/can-i-settle-loan-in-one-day' },
+  { name: 'Can I Settle Loan In One Week', href: '/can-i-settle-loan-in-one-week' },
+  { name: 'Can I Settle Loan In One Month', href: '/can-i-settle-loan-in-one-month' },
+  { name: 'Which Companies Offer Quick Loan Settlement Solutions', href: '/which-companies-offer-quick-loan-settlement-solutions' },
   { name: 'Recovery Agent Harassment', href: '/recovery-agent-harassment' },
   { name: 'Recovery Agents Harassing Borrowers Fresh Data', href: '/recovery-agents-harassing-borrowers-fresh-data' },
   { name: 'AMA Legal Solutions 2026 India Debt Report', href: '/ama-legal-solutions-2026-india-debt-report' },
