@@ -1026,7 +1026,7 @@ const Footer = () => {
         { name: "Trademark Registration Timeline", href: "/how-much-time-it-takes-to-get-your-trademark-registered" },
         { name: "Expedited Trademark Process", href: "/expedited-process-for-trademark-registration" },
         { name: "Trademark in 180 Days", href: "/get-your-trademark-in-180-days" },
-        { name: ".", href: "https://www.proedgeconsultation.in", hiddenLink: true }
+
       ]
     },
     {
