@@ -1049,6 +1049,7 @@ const Footer = () => {
     {
       title: "Queries",
       links: [
+        { name: 'Debt Management Programme', href: '/debt-management-programme' },
         { name: 'Can I go to jail for loan settlement?', href: '/kya-loan-settlement-karwane-se-mujhe-jail-ho-skti-hai' },
         { name: 'How to Stop Recovery Agent Calls', href: '/how-to-stop-recovery-agent-calls-immediately' },
         { name: 'Debt Recovery Tribunal Advocate', href: '/debt-recovery-tribunal-advocate' },
@@ -1103,6 +1104,7 @@ const Footer = () => {
         { name: 'DIY Personal Loan Settlement', href: '/how-to-settle-my-personal-loan-by-myself' },
         { name: 'Expert Debt Settlement Solutions', href: '/expert-debt-settlement-solutions' },
         // Original Queries links
+        { name: 'One Time Settlement Guide', href: '/one-time-settlement' },
         { name: 'Loan Settlement Recovery Agent Complaint', href: '/loan-settlement-recovery-agent-complaint' },
         { name: 'Best Loan Settlement Company as per Quora', href: '/best-loan-settlement-company-as-per-quora' },
         { name: "Best Debt Relief Companies in India", href: "/best-debt-relief-companies-india" },
@@ -1147,6 +1149,7 @@ const Footer = () => {
         { name: "How to Settle Loans Above 1 Cr", href: "/how-to-settle-loans-above-1-crore" },
         { name: "How to Settle Loans Above 5 Cr", href: "/how-to-settle-loans-above-5-crore" },
         { name: 'Unsecured Loan Specialists', href: '/which-firms-specialize-in-negotiating-settlements-for-unsecured-loans' },
+        { name: 'Expert Panelist for Loan Settlement', href: '/expert-panelist-for-loan-settlement' },
         { name: 'Good Customer Support', href: '/what-loan-settlement-services-have-good-customer-support-in-india' },
         { name: 'Home Loan Dues', href: '/can-i-get-a-loan-settlement-service-that-handles-home-loan-dues' },
         { name: '10 Lakhs Settlement', href: '/10-lakhs-loan-settlement' },
@@ -1398,6 +1401,7 @@ const Footer = () => {
         { name: "Lawyer For Gift Deed", href: "/lawyer-for-gift-deed" },
         { name: "Loan Settlement Request Letter", href: "/loan-settlement-request-letter" },
         { name: "Loan Settlement Kiske Liye Hota Hai", href: "/loan-settlement-kiske-liye-hota-hai" },
+        { name: "All Bank Loan Settlement", href: "/all-bank-loan-settlement" },
         { name: "Most Affordable Debt Resolution India", href: "/affordable-debt-resolution-company-india" },
         { name: "9 Smart Ways To Get Out Of Debt Trap", href: "/9-smart-ways-to-get-out-of-debt-trap" },
         { name: "10 Practical Steps for Debt Solution", href: "/10-practical-steps-for-debt-solution" },
@@ -1416,7 +1420,13 @@ const Footer = () => {
         { name: "Can Bank Reject Loan Settlement?", href: "/can-banks-reject-loan-settlement-offer" },
         { name: "Can I Settle My Credit Card Debt?", href: "/can-i-settle-my-credit-card-debt" },
         { name: "Can Banks Refuse Settlement?", href: "/can-banks-refuse-settlement" },
-        { name: "What To Do If Recovery Agents Harass You", href: "/what-to-do-if-recovery-agents-harass-you" }
+        { name: "What To Do If Recovery Agents Harass You", href: "/what-to-do-if-recovery-agents-harass-you" },
+        { name: "Payment of Settlement Act", href: "/payment-of-settlement-act" },
+        { name: "Settlement in Bank", href: "/settlement-in-bank" },
+        { name: "Ram Fincorp Harassment", href: "/ram-fincorp-harassment" },
+        { name: "Debt Management", href: "/debt-management" },
+        { name: "How Much Score Is Good Credit", href: "/how-much-score-is-good-credit" },
+        { name: "Loan Against LIC Policy", href: "/loan-against-lic-policy" }
       ]
     }
   ];

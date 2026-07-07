@@ -28,6 +28,10 @@ export async function GET(): Promise<Response> {
   // Build static routes
   const staticRoutes = [
     '',
+    '/how-much-score-is-good-credit',
+    '/debt-management',
+    '/debt-management-programme',
+    '/can-i-use-my-credit-card-to-pay-the-fees-for-my-loan-settlement-programme',
     '/how-to-repair-your-credit-score',
     '/pay-day-loan-settlement',
     '/credit-card-debt-settlement',
@@ -257,6 +261,7 @@ export async function GET(): Promise<Response> {
     '/legal-services-near-me',
     '/delhi-ncr-law-firm',
     '/how-to-settle-credit-card-debt',
+    '/settlement-credit-card',
     '/job-lost-loan-settlement',
     '/job-loss-debt-relief',
     '/10-lakhs-loan-settlement',
@@ -690,7 +695,8 @@ export async function GET(): Promise<Response> {
     '/mai-apne-loan-ki-emi-nahi-bhar-parha-hun',
     '/can-i-settle-loan-in-one-week',
     '/how-to-stop-recovery-agent-calls-immediately',
-    '/expert-debt-settlement-solutions'
+    '/expert-debt-settlement-solutions',
+    '/loan-against-lic-policy'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),

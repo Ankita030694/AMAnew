@@ -9,6 +9,18 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'Loan Against LIC Policy', href: '/loan-against-lic-policy' },
+  { name: 'How Much Score Is Good Credit', href: '/how-much-score-is-good-credit' },
+  { name: 'Expert Panelist for Loan Settlement', href: '/expert-panelist-for-loan-settlement' },
+  { name: 'Expert Debt Management India: Legal Strategies & Solutions', href: '/debt-management' },
+  { name: 'Debt Management Programme', href: '/debt-management-programme' },
+  { name: 'Can I Use My Credit Card To Pay Loan Settlement Fees?', href: '/can-i-use-my-credit-card-to-pay-the-fees-for-my-loan-settlement-programme' },
+  { name: 'Settlement Credit Card', href: '/settlement-credit-card' },
+  { name: 'One Time Settlement Guide', href: '/one-time-settlement' },
+  { name: 'Ram Fincorp Harassment', href: '/ram-fincorp-harassment' },
+  { name: 'All Bank Loan Settlement', href: '/all-bank-loan-settlement' },
+  { name: 'Payment of Settlement Act', href: '/payment-of-settlement-act' },
+  { name: 'Settlement in Bank', href: '/settlement-in-bank' },
   { name: 'Impact of High Credit Card Interest Rates', href: '/understanding-the-impact-of-high-credit-card-interest-rates-what-you-need-to-know' },
   { name: 'How to Repair Your Credit Score', href: '/how-to-repair-your-credit-score' },
   { name: 'Expert Debt Settlement Solutions', href: '/expert-debt-settlement-solutions' },
