@@ -9,6 +9,12 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'Cheque Bounce Case Jurisdiction Rules in India', href: '/cheque-bounce-case-jurisdiction' },
+  { name: 'Top Legal Firm for Debt Settlement: AMA Legal Solutions', href: '/top-legal-firm' },
+  { name: 'Debt Recovery Tribunal Advocate', href: '/debt-recovery-tribunal-advocate' },
+  { name: 'Cheque Bounce Legal Notice: Section 138 Protocol', href: '/cheque-bounce-legal-notice' },
+  { name: 'Best Criminal Lawyers in Delhi', href: '/best-criminal-lawyers-in-delhi' },
+  { name: 'How to Trust AMA\'s Law Associates', href: '/how-to-trust-amas-law-associates' },
   { name: 'Loan Against LIC Policy', href: '/loan-against-lic-policy' },
   { name: 'How Much Score Is Good Credit', href: '/how-much-score-is-good-credit' },
   { name: 'Expert Panelist for Loan Settlement', href: '/expert-panelist-for-loan-settlement' },
@@ -54,7 +60,7 @@ const directoryLinks = [
   { name: 'Loan Settlement Kiske Liye Hota Hai', href: '/loan-settlement-kiske-liye-hota-hai' },
   { name: 'Loan Settlement Recovery Agent Complaint', href: '/loan-settlement-recovery-agent-complaint' },
   { name: 'Lawyer For Gift Deed', href: '/lawyer-for-gift-deed' },
-  { name: 'Debt Recovery Tribunal Advocate', href: '/debt-recovery-tribunal-advocate' },
+
   { name: 'Best Supreme Court Lawyer', href: '/best-supreme-court-lawyer' },
   { name: 'Cheque Bounce Legal Notice', href: '/cheque-bounce-legal-notice' },
   { name: '138 Case If Accused Not Received Legal Notice', href: '/138-case-if-accused-not-received-legal-notice' },

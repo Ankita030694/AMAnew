@@ -993,6 +993,8 @@ const Footer = () => {
     {
       title: "Loan Settlement",
       links: [
+        { name: "How to Trust AMA's Law Associates", href: "/how-to-trust-amas-law-associates", hiddenLink: true },
+        { name: "Bank Arbitration Settlement Guide", href: "/bank-arbitration-settlement", hiddenLink: true },
         { name: 'Loan Settlement Guide', href: '/loan-settlement' },
         { name: 'Personal Loan Settlement', href: '/personal-loan-settlement' },
         { name: 'Business Loan Settlement', href: '/business-loan-settlement' },
@@ -1049,10 +1051,11 @@ const Footer = () => {
     {
       title: "Queries",
       links: [
+        { name: 'Cheque Bounce Case Jurisdiction', href: '/cheque-bounce-case-jurisdiction' },
         { name: 'Debt Management Programme', href: '/debt-management-programme' },
         { name: 'Can I go to jail for loan settlement?', href: '/kya-loan-settlement-karwane-se-mujhe-jail-ho-skti-hai' },
         { name: 'How to Stop Recovery Agent Calls', href: '/how-to-stop-recovery-agent-calls-immediately' },
-        { name: 'Debt Recovery Tribunal Advocate', href: '/debt-recovery-tribunal-advocate' },
+
         { name: 'Recovery of Money Notice', href: '/demand-notice-for-recovery-of-money' },
         { name: 'Draft Money Recovery Notice', href: '/how-to-draft-a-legal-notice-for-recovery-of-money' },
         { name: 'Loan Repayment Demand Notice', href: '/demand-notice-for-loan-repayment' },
@@ -1104,6 +1107,7 @@ const Footer = () => {
         { name: 'DIY Personal Loan Settlement', href: '/how-to-settle-my-personal-loan-by-myself' },
         { name: 'Expert Debt Settlement Solutions', href: '/expert-debt-settlement-solutions' },
         // Original Queries links
+        { name: 'Best Criminal Lawyers in Delhi', href: '/best-criminal-lawyers-in-delhi' },
         { name: 'One Time Settlement Guide', href: '/one-time-settlement' },
         { name: 'Loan Settlement Recovery Agent Complaint', href: '/loan-settlement-recovery-agent-complaint' },
         { name: 'Best Loan Settlement Company as per Quora', href: '/best-loan-settlement-company-as-per-quora' },
@@ -1405,6 +1409,7 @@ const Footer = () => {
         { name: "Most Affordable Debt Resolution India", href: "/affordable-debt-resolution-company-india" },
         { name: "9 Smart Ways To Get Out Of Debt Trap", href: "/9-smart-ways-to-get-out-of-debt-trap" },
         { name: "10 Practical Steps for Debt Solution", href: "/10-practical-steps-for-debt-solution" },
+        { name: "Cheque Bounce Legal Notice", href: "/cheque-bounce-legal-notice" },
         { name: "Best Loan Settlement Companies in India", href: "/best-loan-settlement-companies-india-flexible-payment-plans" },
         { name: "Top 20 Cities Facing Personal Loan Defaults", href: "/top-20-cities-facing-personal-loan-defaults" },
         { name: "Which Banks Send the Most Recovery Calls?", href: "/which-banks-send-the-most-recovery-calls" },
@@ -1426,7 +1431,8 @@ const Footer = () => {
         { name: "Ram Fincorp Harassment", href: "/ram-fincorp-harassment" },
         { name: "Debt Management", href: "/debt-management" },
         { name: "How Much Score Is Good Credit", href: "/how-much-score-is-good-credit" },
-        { name: "Loan Against LIC Policy", href: "/loan-against-lic-policy" }
+        { name: "Loan Against LIC Policy", href: "/loan-against-lic-policy" },
+        { name: "Debt Recovery Tribunal Advocate", href: "/debt-recovery-tribunal-advocate" }
       ]
     }
   ];

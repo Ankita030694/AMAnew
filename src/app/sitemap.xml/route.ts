@@ -28,6 +28,8 @@ export async function GET(): Promise<Response> {
   // Build static routes
   const staticRoutes = [
     '',
+    '/best-criminal-lawyers-in-delhi',
+    '/how-to-trust-amas-law-associates',
     '/how-much-score-is-good-credit',
     '/debt-management',
     '/debt-management-programme',
@@ -696,6 +698,7 @@ export async function GET(): Promise<Response> {
     '/can-i-settle-loan-in-one-week',
     '/how-to-stop-recovery-agent-calls-immediately',
     '/expert-debt-settlement-solutions',
+    '/cheque-bounce-case-jurisdiction',
     '/loan-against-lic-policy'
   ].map(route => ({
     url: `${baseUrl}${route}`,
