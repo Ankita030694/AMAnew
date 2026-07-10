@@ -116,6 +116,9 @@ importers:
       react-dom:
         specifier: ^19.2.1
         version: 19.2.6(react@19.2.6)
+      react-google-recaptcha-v3:
+        specifier: ^1.11.0
+        version: 1.11.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react-hot-toast:
         specifier: ^2.5.2
         version: 2.6.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
@@ -2163,6 +2166,9 @@ packages:
     resolution: {integrity: sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w==}
     engines: {node: '>=12.0.0'}
 
+  hoist-non-react-statics@3.3.2:
+    resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
+
   html-entities@2.6.0:
     resolution: {integrity: sha512-kig+rMn/QOVRvr7c86gQ8lWXq+Hkv6CbAH1hLu+RG338StTpE8Z0b44SDVaqVu7HGKf27frdmUYEs9hTUX/cLQ==}
 
@@ -2920,6 +2926,12 @@ packages:
     resolution: {integrity: sha512-0prMI+hvBbPjsWnxDLxlCGyM8PN6UuWjEUCYmZhO67xIV9Xasa/r/vDnq+Xyq4Lo27g8QSbO5YzARu0D1Sps3g==}
     peerDependencies:
       react: ^19.2.6
+
+  react-google-recaptcha-v3@1.11.0:
+    resolution: {integrity: sha512-kLQqpz/77m8+trpBwzqcxNtvWZYoZ/YO6Vm2cVTHW8hs80BWUfDpC7RDwuAvpswwtSYApWfaSpIDFWAIBNIYxQ==}
+    peerDependencies:
+      react: ^16.3 || ^17.0 || ^18.0 || ^19.0
+      react-dom: ^17.0 || ^18.0 || ^19.0
 
   react-hot-toast@2.6.0:
     resolution: {integrity: sha512-bH+2EBMZ4sdyou/DPrfgIouFpcRLCJ+HoCA32UoAYHn6T3Ur5yfcDCeSr5mwldl6pFOsiocmrXMuoCJ1vV8bWg==}
@@ -5731,6 +5743,10 @@ snapshots:
 
   highlight.js@11.11.1: {}
 
+  hoist-non-react-statics@3.3.2:
+    dependencies:
+      react-is: 16.13.1
+
   html-entities@2.6.0:
     optional: true
 
@@ -6534,6 +6550,12 @@ snapshots:
     dependencies:
       react: 19.2.6
       scheduler: 0.27.0
+
+  react-google-recaptcha-v3@1.11.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
+    dependencies:
+      hoist-non-react-statics: 3.3.2
+      react: 19.2.6
+      react-dom: 19.2.6(react@19.2.6)
 
   react-hot-toast@2.6.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
     dependencies:
