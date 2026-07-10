@@ -35,11 +35,13 @@ const GlobalPopupForm = () => {
     phone: "",
     serviceRequired: "",
     message: "",
+    work_email: "", // Honeypot field
   });
   const [otpSent, setOtpSent] = useState(false);
   const [otp, setOtp] = useState("");
   const [pendingId, setPendingId] = useState("");
   const [isDuplicate, setIsDuplicate] = useState(false);
+  const [renderTime, setRenderTime] = useState(0);
   const [errors, setErrors] = useState({
     name: "",
     email: "",
@@ -47,6 +49,10 @@ const GlobalPopupForm = () => {
     serviceRequired: "",
     message: "",
   });
+
+  useEffect(() => {
+    setRenderTime(Date.now());
+  }, []);
 
   useEffect(() => {
     const handleOpenPopup = () => setIsOpen(true);
@@ -142,7 +148,8 @@ const GlobalPopupForm = () => {
             ...formState,
             source: "Global Popup",
             submissionUrl: window.location.href,
-            recaptchaToken
+            recaptchaToken,
+            renderTime
           }),
         });
 

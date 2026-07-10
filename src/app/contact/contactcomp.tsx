@@ -55,6 +55,7 @@ const ContactComp = () => {
   const [otp, setOtp] = useState("");
   const [pendingId, setPendingId] = useState("");
   const [isDuplicate, setIsDuplicate] = useState(false);
+  const [renderTime, setRenderTime] = useState(0);
 
   const [errors, setErrors] = useState({
     name: "",
@@ -98,6 +99,10 @@ const ContactComp = () => {
     if (!service) return "Please select a service";
     return "";
   };
+
+  useEffect(() => {
+    setRenderTime(Date.now());
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -158,7 +163,8 @@ const ContactComp = () => {
             ...formState,
             source: "Contact Page",
             submissionUrl: window.location.href,
-            recaptchaToken
+            recaptchaToken,
+            renderTime
           }),
         });
 
