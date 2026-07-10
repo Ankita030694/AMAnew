@@ -8,6 +8,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import payu from "../../public/payu.png";
 import Image from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const SERVICE_OPTIONS = [
   { label: "Loan Settlement", description: "Negotiating and settling outstanding debts and controlling harassment." },
@@ -24,6 +25,7 @@ const SERVICE_OPTIONS = [
 
 const GlobalPopupForm = () => {
   const pathname = usePathname();
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -128,13 +130,19 @@ const GlobalPopupForm = () => {
       if (!validateForm()) return;
       setIsSubmitting(true);
       try {
+        let recaptchaToken = "";
+        if (executeRecaptcha) {
+          recaptchaToken = await executeRecaptcha("global_popup");
+        }
+
         const response = await fetch("/api/otp/send", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             ...formState,
             source: "Global Popup",
-            submissionUrl: window.location.href
+            submissionUrl: window.location.href,
+            recaptchaToken
           }),
         });
 

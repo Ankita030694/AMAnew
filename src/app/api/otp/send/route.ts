@@ -13,11 +13,43 @@ export async function POST(request: Request) {
             serviceRequired,
             message,
             source,
-            submissionUrl
+            submissionUrl,
+            recaptchaToken
         } = body;
 
         if (!name || !phone) {
             return NextResponse.json({ error: 'Name and phone are required' }, { status: 400 });
+        }
+
+        // Verify reCAPTCHA token if present (if not present, maybe we should block it depending on strictness, but let's be strict since we just added it)
+        if (!recaptchaToken) {
+            return NextResponse.json({ error: 'reCAPTCHA verification failed. Please try again.' }, { status: 403 });
+        }
+
+        const recaptchaSecretKey = process.env.SITE_SECRET_KEY;
+        if (recaptchaSecretKey) {
+            const params = new URLSearchParams();
+            params.append('secret', recaptchaSecretKey);
+            params.append('response', recaptchaToken);
+
+            const recaptchaVerifyResponse = await fetch(`https://www.google.com/recaptcha/api/siteverify`, {
+                method: 'POST',
+                body: params,
+            });
+            const recaptchaVerifyData = await recaptchaVerifyResponse.json();
+            
+            // Log the score for debugging
+            console.log('\n--- reCAPTCHA Verification ---');
+            console.log('Success:', recaptchaVerifyData.success);
+            console.log('Score:', recaptchaVerifyData.score);
+            console.log('------------------------------\n');
+
+            if (!recaptchaVerifyData.success || recaptchaVerifyData.score < 0.5) {
+                console.error('reCAPTCHA failed:', recaptchaVerifyData);
+                return NextResponse.json({ error: 'Bot behavior detected. If you are human, please contact us directly.' }, { status: 403 });
+            }
+        } else {
+            console.warn('SITE_SECRET_KEY is not set. Skipping reCAPTCHA verification.');
         }
 
         // 0. Check for duplicate lead in 'form' collection (within the last 7 days)

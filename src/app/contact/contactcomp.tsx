@@ -24,6 +24,7 @@ import {
 import { FaWhatsapp } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { SiTrustpilot } from "react-icons/si";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 import Navbar from "@/newcomp/Navbar";
 import Footer from "@/newcomp/Footer";
@@ -42,6 +43,7 @@ const SERVICE_OPTIONS = [
 ];
 
 const ContactComp = () => {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -144,13 +146,19 @@ const ContactComp = () => {
       if (!validateForm()) return;
       setIsSubmitting(true);
       try {
+        let recaptchaToken = "";
+        if (executeRecaptcha) {
+          recaptchaToken = await executeRecaptcha("contact_form");
+        }
+
         const response = await fetch("/api/otp/send", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             ...formState,
             source: "Contact Page",
-            submissionUrl: window.location.href
+            submissionUrl: window.location.href,
+            recaptchaToken
           }),
         });
 
