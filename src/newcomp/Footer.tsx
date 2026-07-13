@@ -1432,7 +1432,8 @@ const Footer = () => {
         { name: "Debt Management", href: "/debt-management" },
         { name: "How Much Score Is Good Credit", href: "/how-much-score-is-good-credit" },
         { name: "Loan Against LIC Policy", href: "/loan-against-lic-policy" },
-        { name: "Debt Recovery Tribunal Advocate", href: "/debt-recovery-tribunal-advocate" }
+        { name: "Debt Recovery Tribunal Advocate", href: "/debt-recovery-tribunal-advocate" },
+        { name: "Settle Your Challan in Delhi at 50% Off", href: "/settle-your-challan-in-delhi-at-50%-off" }
       ]
     }
   ];

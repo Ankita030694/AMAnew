@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'Settle Your Challan in Delhi at 50% Off', href: '/settle-your-challan-in-delhi-at-50%-off' },
   { name: 'Cheque Bounce Case Jurisdiction Rules in India', href: '/cheque-bounce-case-jurisdiction' },
   { name: 'Top Legal Firm for Debt Settlement: AMA Legal Solutions', href: '/top-legal-firm' },
   { name: 'Debt Recovery Tribunal Advocate', href: '/debt-recovery-tribunal-advocate' },
