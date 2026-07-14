@@ -1052,6 +1052,9 @@ const Footer = () => {
     {
       title: "Queries",
       links: [
+        { name: 'RWA Dispute Lawyer Advocate', href: '/rwa-dispute-lawyer-advocate' },
+        { name: 'Lawyer & Advocate for RWA', href: '/best-lawyer-advocate-for-rwa-in-faridabad-gurgaon-noida-delhi' },
+        { name: 'Lawyer for RWA', href: '/lawyer-for-rwa' },
         { name: 'Will Draft Under 3000', href: '/will-draft-under-3000' },
         { name: 'Best Will Drafting Services In India', href: '/best-will-drafting-services-in-india' },
         { name: 'Cheque Bounce Case Jurisdiction', href: '/cheque-bounce-case-jurisdiction' },
@@ -1441,7 +1444,8 @@ const Footer = () => {
         { name: "Debt Recovery Tribunal Advocate", href: "/debt-recovery-tribunal-advocate" },
         { name: "Settle Your Challan in Delhi at 50% Off", href: "/settle-your-challan-in-delhi-at-50%-off" },
         { name: "100% Guaranteed Money Recovery", href: "/100-percent-guaranteed-money-recovery" },
-        { name: "Recovery of Money from Fraud", href: "/recovery-of-money-from-fraud" }
+        { name: "Recovery of Money from Fraud", href: "/recovery-of-money-from-fraud" },
+        { name: "RWA Maintenance Recovery Lawyer in Gurugram", href: "/rwa-maintenance-recovery-lawyer-in-gurugram" }
       ]
     }
   ];

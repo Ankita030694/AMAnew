@@ -28,6 +28,7 @@ export async function GET(): Promise<Response> {
   // Build static routes
   const staticRoutes = [
     '',
+    '/rwa-dispute-lawyer-advocate',
     '/lok-adalat-contract-drafting',
     '/will-drafting-services-affordable-for-nri',
     '/recovery-of-money-from-fraud',

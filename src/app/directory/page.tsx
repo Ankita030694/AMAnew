@@ -9,6 +9,10 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'RWA Dispute Lawyer Advocate', href: '/rwa-dispute-lawyer-advocate' },
+  { name: 'RWA Maintenance Recovery Lawyer in Gurugram', href: '/rwa-maintenance-recovery-lawyer-in-gurugram' },
+  { name: 'Lawyer for RWA', href: '/lawyer-for-rwa' },
+  { name: 'Best Lawyer & Advocate for RWA in Delhi NCR', href: '/best-lawyer-advocate-for-rwa-in-faridabad-gurgaon-noida-delhi' },
   { name: 'Lok Adalat Contract Drafting', href: '/lok-adalat-contract-drafting' },
   { name: 'Lok Adalat Settlement for Recovery of Money', href: '/lok-adalat-recovery-of-money' },
   { name: 'Lok Adalat Will Drafting Services', href: '/lok-adalat-will-drafting-services' },
