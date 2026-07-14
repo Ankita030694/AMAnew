@@ -107,7 +107,7 @@ const articleSchema = (baseUrl: string) => ({
 });
 
 export const metadata: Metadata = {
-  title: "Software Development Engineer Intern Jobs in Gurugram | AMA Legal Solutions Careers",
+  title: "SDE Intern Jobs in Gurugram | AMA Legal Solutions",
   description: "Apply for Software Development Engineer Internship at AMA Legal Solutions. Work on Next.js, React, and build the future of Legal Tech in Gurugram. Kickstart your tech career now.",
   keywords: ["Software Development Engineer intern jobs gurugram", "software engineering internship india", "Next.js intern roles", "React developer internship", "legal tech careers"],
   alternates: { canonical: 'https://www.amalegalsolutions.com/careers/software-development-engineer-intern' }

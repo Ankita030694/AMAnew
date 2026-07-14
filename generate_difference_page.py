@@ -129,7 +129,7 @@ def create_page():
       "@type": "ListItem",
       "position": 2,
       "name": "Difference Between Loan Write-Off and Loan Settlement",
-      "item": "https://www.amalegalsolutions.com/difference-between-loan-write-off-and-loan-settlement"
+      "item": "https://www.amalegalsolutions.com/loan-write-off-vs-loan-settlement"
     }
   ]
 };"""
@@ -437,8 +437,8 @@ export default function DifferenceBetweenWriteOffAndSettlementPage() {{
 }}
 '''
 
-    os.makedirs("src/app/difference-between-loan-write-off-and-loan-settlement", exist_ok=True)
-    with open("src/app/difference-between-loan-write-off-and-loan-settlement/page.tsx", "w", encoding="utf-8") as f:
+    os.makedirs("src/app/loan-write-off-vs-loan-settlement", exist_ok=True)
+    with open("src/app/loan-write-off-vs-loan-settlement/page.tsx", "w", encoding="utf-8") as f:
         # Avoid em-dashes by replacing any that might have slipped in
         page_content = page_content.replace('—', '-')
         page_content = page_content.replace('--', '-')

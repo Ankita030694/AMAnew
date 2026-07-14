@@ -130,7 +130,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 2,
       "name": "Difference Between Loan Write-Off and Loan Settlement",
-      "item": "https://www.amalegalsolutions.com/difference-between-loan-write-off-and-loan-settlement"
+      "item": "https://www.amalegalsolutions.com/loan-write-off-vs-loan-settlement"
     }
   ]
 };

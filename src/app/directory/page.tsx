@@ -69,7 +69,7 @@ const directoryLinks = [
   { name: 'What Is SARFAESI Act India', href: '/what-is-sarfaesi-act-india' },
   { name: 'What Is DRT Debt Recovery Tribunal India', href: '/what-is-drt-debt-recovery-tribunal-india' },
   { name: 'What Is SMA Classification India', href: '/what-is-sma-classification-india' },
-  { name: 'Difference Between Loan Write Off And Loan Settlement', href: '/difference-between-loan-write-off-and-loan-settlement' },
+  { name: 'Difference Between Loan Write Off And Loan Settlement', href: '/loan-write-off-vs-loan-settlement' },
   { name: 'Borrower Rights Under RBI Guidelines India', href: '/borrower-rights-under-rbi-guidelines-india' },
   { name: 'How to file complaint RBI ombudsman online', href:'/how-to-file-complaint-rbi-ombudsman-online' },
   { name: 'Can You Ignore a Bank Arbitration Notice in India?', href: '/can-you-ignore-bank-arbitration-notice-in-india' },
@@ -733,6 +733,25 @@ export default function DirectoryPage() {
               <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-[#D29E0D] shrink-0" />
             </Link>
           ))}
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-20 pt-10 border-t border-gray-200">
+          <h2 className="text-2xl font-bold text-[#30261C] mb-6">About AMA Legal Solutions Directory</h2>
+          <div className="space-y-6 text-gray-700 text-base md:text-lg leading-relaxed">
+            <p>
+              Welcome to the AMA Legal Solutions comprehensive legal directory. We have compiled a vast array of resources, guides, and professional services tailored to meet your most pressing legal and financial challenges. Whether you are dealing with aggressive recovery agents, navigating complex bank arbitration notices, or seeking expert advice on loan settlement, this directory serves as your central hub for actionable legal knowledge in India.
+            </p>
+            <p>
+              Our legal framework in India is vast and often intimidating for the average consumer. Issues like cheque bounce cases under Section 138, Debt Recovery Tribunal (DRT) proceedings, or SARFAESI Act implementations can cause immense stress. By browsing through our curated list of articles, you will find step-by-step guides on how to handle harassment from 7-day loan apps, the exact protocol for drafting legal notices, and the criteria for securing the best debt relief and one-time settlement (OTS) offers from major banks and NBFCs.
+            </p>
+            <p>
+              AMA Legal Solutions is committed to transparency and empowerment. We believe that an informed borrower is better equipped to negotiate and protect their fundamental rights. Our expert panel of supreme court lawyers, debt management consultants, and arbitration advocates have contributed their practical insights into these pages. You will discover practical advice on managing personal loans, dealing with credit card debt traps, and understanding the nuances of CIBIL score repairs after a default.
+            </p>
+            <p>
+              Use the links above to navigate directly to the specific legal concern you are facing today. From figuring out how to register a formal complaint with the RBI ombudsman to finding flexible payment plans for debt resolution, our directory is continuously updated to reflect the latest guidelines for 2026 and beyond. Trust AMA Legal Solutions to be your reliable partner in achieving financial freedom and legal peace of mind.
+            </p>
+          </div>
         </div>
       </div>
     </main>

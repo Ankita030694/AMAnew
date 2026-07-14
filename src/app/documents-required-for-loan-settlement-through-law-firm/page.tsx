@@ -137,6 +137,12 @@ const breadcrumbSchema = {
   ]
 };
 
+export const metadata = {
+  title: "Documents Required for Loan Settlement | AMA Legal",
+  description: "Learn what legal, financial, and correspondence documents a borrower must surrender to an Indian law firm to construct an airtight case for loan settlement.",
+  alternates: { canonical: 'https://www.amalegalsolutions.com/documents-required-for-loan-settlement-through-law-firm' }
+};
+
 export default function DocumentsForLoanSettlementPage() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },

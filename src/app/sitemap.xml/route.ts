@@ -680,7 +680,7 @@ export async function GET(): Promise<Response> {
     '/can-you-ignore-bank-arbitration-notice',
     '/can-you-ignore-bank-arbitration-notice-in-india',
     '/credit-card-arbitration-notice-from-bank',
-    '/difference-between-loan-write-off-and-loan-settlement',
+    '/loan-write-off-vs-loan-settlement',
     '/how-to-file-complaint-rbi-ombudsman-online',
     '/kya-loan-settlement-karwane-se-mujhe-jail-ho-skti-hai',
     '/loan-settlement-karwane-ke-kya-nuksaan-or-fayde-hai',

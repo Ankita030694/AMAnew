@@ -164,6 +164,12 @@ const nextConfig = {
         destination: '/ama-live',
         permanent: true,
       },
+      // ── SEO Fix: /difference-between-loan-write-off-and-loan-settlement -> /loan-write-off-vs-loan-settlement ───
+      {
+        source: '/difference-between-loan-write-off-and-loan-settlement',
+        destination: '/loan-write-off-vs-loan-settlement',
+        permanent: true,
+      },
 
       // ── Existing redirects ──────────────────────────────────────────────
       {

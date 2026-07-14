@@ -176,7 +176,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Loan Settlement Company Reviews 2026: Which One Should You Choose?",
+  title: "Loan Settlement Company Reviews 2026 | AMA Legal",
   description: "An honest, 2026-specific comparative review of top loan settlement companies in India. Discover why AMA Legal Solutions stands out for legal safety and success.",
   robots: {
     index: true,

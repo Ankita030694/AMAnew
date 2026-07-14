@@ -168,7 +168,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Received Arbitration Notice from Bank in India? Here is What to Do",
+  title: "Received Arbitration Notice from Bank? What To Do",
   description: "Have you received an arbitration notice from a bank in India? Learn the exact legal steps to reply, verify the arbitrator, and settle your loan debt safely.",
   robots: {
     index: true,
