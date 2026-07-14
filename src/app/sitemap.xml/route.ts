@@ -28,6 +28,12 @@ export async function GET(): Promise<Response> {
   // Build static routes
   const staticRoutes = [
     '',
+    '/lok-adalat-contract-drafting',
+    '/will-drafting-services-affordable-for-nri',
+    '/recovery-of-money-from-fraud',
+    '/recover-your-money-with-best-results',
+    '/100-percent-guaranteed-money-recovery',
+    '/free-will-drafting-consultation-in-delhi-ncr',
     '/best-criminal-lawyers-in-delhi',
     '/how-to-trust-amas-law-associates',
     '/how-much-score-is-good-credit',
@@ -793,6 +799,12 @@ export async function GET(): Promise<Response> {
       <priority>${route.priority}</priority>
     </url>
   `).join('')}
+  <url>
+    <loc>https://www.amalegalsolutions.com/lok-adalat-recovery-of-money</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://www.amalegalsolutions.com/can-you-ignore-bank-arbitration-notice-in-india</loc>
     <lastmod>${new Date().toISOString()}</lastmod>

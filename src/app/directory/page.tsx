@@ -9,6 +9,22 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'Lok Adalat Contract Drafting', href: '/lok-adalat-contract-drafting' },
+  { name: 'Lok Adalat Settlement for Recovery of Money', href: '/lok-adalat-recovery-of-money' },
+  { name: 'Lok Adalat Will Drafting Services', href: '/lok-adalat-will-drafting-services' },
+  { name: 'Contract Drafting Between Two Parties Affordable', href: '/contract-drafting-between-two-parties-affordable' },
+  { name: 'Recovery of Money from Fraud', href: '/recovery-of-money-from-fraud' },
+  { name: 'Affordable NRI Will Drafting Services', href: '/will-drafting-services-affordable-for-nri' },
+  { name: 'Will Draft Under 3000', href: '/will-draft-under-3000' },
+  { name: 'Will Drafting Services in Delhi NCR', href: '/will-drafting-services-in-delhi-ncr' },
+  { name: 'Contract Drafting Services in Delhi NCR', href: '/contract-drafting-services-in-delhi-ncr' },
+  { name: 'Recover Your Money Fast With The Best Legal Results', href: '/recover-your-money-with-best-results' },
+  { name: 'Contract Drafting Services in India for NRI', href: '/contract-drafting-services-in-india-for-nri' },
+  { name: 'Best Will Drafting Services In India', href: '/best-will-drafting-services-in-india' },
+  { name: 'Recover Your Money From Your Previous Employer', href: '/recover-your-money-from-your-previous-employer' },
+  { name: '100% Guaranteed Money Recovery', href: '/100-percent-guaranteed-money-recovery' },
+  { name: 'Free Will Contract Consultation in Delhi NCR', href: '/free-will-contract-consultation-in-delhi-ncr' },
+  { name: 'Free Will Drafting Consultation in Delhi NCR', href: '/free-will-drafting-consultation-in-delhi-ncr' },
   { name: 'Settle Your Challan in Delhi at 50% Off', href: '/settle-your-challan-in-delhi-at-50%-off' },
   { name: 'Cheque Bounce Case Jurisdiction Rules in India', href: '/cheque-bounce-case-jurisdiction' },
   { name: 'Top Legal Firm for Debt Settlement: AMA Legal Solutions', href: '/top-legal-firm' },

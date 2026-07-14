@@ -927,6 +927,7 @@ const Footer = () => {
       title: "Quick Links",
       links: [
         { name: 'Home', href: '/' },
+        { name: 'Free Will Drafting Consultation', href: '/free-will-drafting-consultation-in-delhi-ncr' },
         { name: 'About Us', href: '/about' },
         { name: 'Careers', href: '/careers' },
         { name: 'AMA Connect App', href: '/ama-legal-solutions-application' },
@@ -1051,6 +1052,8 @@ const Footer = () => {
     {
       title: "Queries",
       links: [
+        { name: 'Will Draft Under 3000', href: '/will-draft-under-3000' },
+        { name: 'Best Will Drafting Services In India', href: '/best-will-drafting-services-in-india' },
         { name: 'Cheque Bounce Case Jurisdiction', href: '/cheque-bounce-case-jurisdiction' },
         { name: 'Debt Management Programme', href: '/debt-management-programme' },
         { name: 'Can I go to jail for loan settlement?', href: '/kya-loan-settlement-karwane-se-mujhe-jail-ho-skti-hai' },
@@ -1107,6 +1110,7 @@ const Footer = () => {
         { name: 'DIY Personal Loan Settlement', href: '/how-to-settle-my-personal-loan-by-myself' },
         { name: 'Expert Debt Settlement Solutions', href: '/expert-debt-settlement-solutions' },
         // Original Queries links
+        { name: 'Affordable NRI Will Drafting Services', href: '/will-drafting-services-affordable-for-nri' },
         { name: 'Best Criminal Lawyers in Delhi', href: '/best-criminal-lawyers-in-delhi' },
         { name: 'One Time Settlement Guide', href: '/one-time-settlement' },
         { name: 'Loan Settlement Recovery Agent Complaint', href: '/loan-settlement-recovery-agent-complaint' },
@@ -1122,6 +1126,7 @@ const Footer = () => {
         { name: "Job Lost Loan Settlement", href: "/job-lost-loan-settlement" },
         { name: "Job Loss Debt Relief", href: "/job-loss-debt-relief" },
         { name: "How to Negotiate Loan Settlement", href: "/how-to-negotiate-a-loan-settlement-with-lenders-online" },
+        { name: "Lok Adalat Settlement for Recovery of Money", href: "/lok-adalat-recovery-of-money" },
         { name: "Special Lok Adalat for Loan Settlement", href: "/special-lok-adalat-for-loan-settlement" },
         { name: "Top Loan Settlement Services", href: "/top-loan-settlement-services-with-good-customer-reviews" },
         { name: "Steps to Trademark Registration", href: "/steps-to-trademark-registration" },
@@ -1347,6 +1352,7 @@ const Footer = () => {
         { name: "Choose Reliable Loan Settlement Agency Near Me", href: "/how-to-choose-a-reliable-loan-settlement-agency-near-me" },
         { name: 'Best Credit Card Settlement Services in India', href: '/recommendations-for-loan-settlement-negotiation-services-that-handle-overdue-credit-card-debts-in-india' },
         { name: 'Best Loan Settlement Companies Near Me', href: '/best-loan-settlement-companies-near-me-with-customer-success-guaranteed' },
+        { name: 'Free Will Contract Consultation in Delhi NCR', href: '/free-will-contract-consultation-in-delhi-ncr' },
         { name: 'Best Personal Loan Settlement Negotiation Terms', href: '/which-loan-settlement-company-offers-the-best-negotiation-terms-for-personal-loans-in-india' },
         { name: 'Flexible Payment Plans for Debt Settlement', href: '/recommendations-for-debt-settlement-firms-that-offer-flexible-payment-plans-in-india' },
         { name: 'Most Affordable Loan Settlement Plans', href: '/most-affordable-and-pocket-friendly-loan-settlement-plans' },
@@ -1433,7 +1439,9 @@ const Footer = () => {
         { name: "How Much Score Is Good Credit", href: "/how-much-score-is-good-credit" },
         { name: "Loan Against LIC Policy", href: "/loan-against-lic-policy" },
         { name: "Debt Recovery Tribunal Advocate", href: "/debt-recovery-tribunal-advocate" },
-        { name: "Settle Your Challan in Delhi at 50% Off", href: "/settle-your-challan-in-delhi-at-50%-off" }
+        { name: "Settle Your Challan in Delhi at 50% Off", href: "/settle-your-challan-in-delhi-at-50%-off" },
+        { name: "100% Guaranteed Money Recovery", href: "/100-percent-guaranteed-money-recovery" },
+        { name: "Recovery of Money from Fraud", href: "/recovery-of-money-from-fraud" }
       ]
     }
   ];
