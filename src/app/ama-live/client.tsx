@@ -301,7 +301,7 @@ export default function AmaLiveClient({ initialVideos }: AmaLiveClientProps) {
             </p>
             <p className="font-medium">
               By using this website, you acknowledge and agree to this disclaimer. If you do not agree with any part of this notice, please refrain from using our
-              services. For legal assistance or inquiries, please contact us at <a href="mailto:Info@amalegalsolutions.com" className="text-[#D2A02A] hover:underline">Info@amalegalsolutions.com</a>
+              services. For legal assistance or inquiries, please contact us at <a href="mailto:notify@amalegalsolutions.com" className="text-[#D2A02A] hover:underline">notify@amalegalsolutions.com</a>
             </p>
           </div>
         </motion.div>

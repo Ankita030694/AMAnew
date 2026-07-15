@@ -185,7 +185,7 @@ export default function Services() {
               If you have any questions or concerns about this Privacy Policy or how your information is handled, please contact us:
             </p>
             <p className="text-gray-700 mt-4 flex items-center">
-              <span className="text-[#D2A02A] mr-2">📧</span> Email: <a href="mailto:Info@amalegalsolutions.com" className="text-[#D2A02A] hover:underline ml-2">Info@amalegalsolutions.com</a>
+              <span className="text-[#D2A02A] mr-2">📧</span> Email: <a href="mailto:notify@amalegalsolutions.com" className="text-[#D2A02A] hover:underline ml-2">notify@amalegalsolutions.com</a>
             </p>
           </div>
         </div>

@@ -487,7 +487,7 @@ export default function HowIsLoanSettlementDonePage() {
                 <div className="space-y-2">
                   <div className="text-sm font-semibold text-gray-800">AMA Legal Solutions</div>
                   <div className="text-xs text-gray-500">Sector 57, Gurugram, Haryana</div>
-                  <div className="text-xs text-gray-500">Email: info@amalegalsolutions.com</div>
+                  <div className="text-xs text-gray-500">Email: notify@amalegalsolutions.com</div>
                 </div>
                 <Link href="/contact" className="block text-center">
                   <button className="w-full bg-[#1a202c] hover:bg-black text-[#D2A02A] font-bold py-3 px-4 rounded-xl transition-colors text-sm">

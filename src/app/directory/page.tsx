@@ -335,9 +335,7 @@ const directoryLinks = [
 { name: "Will Drafting for Indians in Australia", href: "/will-drafting-for-indians-living-in-australia" },
 { name: "Will Drafting for Indians in USA", href: "/will-drafting-for-indians-living-in-usa" },
 { name: "Will Drafting for Indians in Canada", href: "/will-drafting-for-indians-living-in-canada" },
-{ name: 'Loan Settlement By Bank', href: '/loan-settlement-by-bank' },
-{ name: 'Lawyer By Expertise', href: '/lawyer-by-expertise' },
-{ name: 'Lawyer By City', href: '/lawyer-by-city' },
+
 { name: "Recovery Notice Reply Format", href: "/reply-to-recovery-notice-format" },
 { name: "When to Choose Settlement", href: "/when-to-choose-loan-settlement" },
 { name: "Legal Rights After Default", href: "/legal-rights-after-loan-default" },

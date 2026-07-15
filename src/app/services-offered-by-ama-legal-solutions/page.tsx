@@ -556,7 +556,7 @@ export default function ServicesOfferedPage() {
                     <FaEnvelope className="text-[#D2A02A] mt-1 flex-shrink-0" />
                     <div>
                       <p className="font-medium text-gray-300">Email Address</p>
-                      <a href="mailto:info@amalegalsolutions.com" className="text-gray-400 hover:text-[#D2A02A] block mt-1">info@amalegalsolutions.com</a>
+                      <a href="mailto:notify@amalegalsolutions.com" className="text-gray-400 hover:text-[#D2A02A] block mt-1">notify@amalegalsolutions.com</a>
                     </div>
                   </div>
                 </div>

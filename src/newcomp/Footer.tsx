@@ -931,9 +931,9 @@ const Footer = () => {
         { name: 'About Us', href: '/about' },
         { name: 'Careers', href: '/careers' },
         { name: 'AMA Connect App', href: '/ama-legal-solutions-application' },
-        { name: 'Lawyer by City', href: '/lawyer-by-city' },
-        { name: 'Lawyer by Expertise', href: '/lawyer-by-expertise' },
-        { name: 'Loan Settlement by Bank', href: '/loan-settlement-by-bank' }
+        { name: 'Privacy Policy', href: '/privacy-policy' },
+        { name: 'Terms and Conditions', href: '/terms-and-conditions' },
+
       ]
     },
     {
