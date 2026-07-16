@@ -1052,6 +1052,10 @@ const Footer = () => {
     {
       title: "Queries",
       links: [
+        { name: 'SBI Bank Settlement Waiver Percentage 2026 Guide', href: '/settlement-waiver-percentage-of-sbi-bank-loans' },
+        { name: 'Willful Defaulter in India', href: '/who-is-considered-as-willfull-defaulter' },
+        { name: 'Legal Rights Against Recovery Agents', href: '/what-are-my-legal-rights-when-dealing-with-recovery-agents' },
+        { name: 'Loan Settlement Help', href: '/loan-settlement-help' },
         { name: 'RWA Dispute Lawyer Advocate', href: '/rwa-dispute-lawyer-advocate' },
         { name: 'Lawyer & Advocate for RWA', href: '/best-lawyer-advocate-for-rwa-in-faridabad-gurgaon-noida-delhi' },
         { name: 'Lawyer for RWA', href: '/lawyer-for-rwa' },
@@ -1113,6 +1117,8 @@ const Footer = () => {
         { name: 'DIY Personal Loan Settlement', href: '/how-to-settle-my-personal-loan-by-myself' },
         { name: 'Expert Debt Settlement Solutions', href: '/expert-debt-settlement-solutions' },
         // Original Queries links
+        { name: 'Settlement Waiver Percentage of Payday Loans', href: '/settlement-waiver-percentage-of-payday-loans' },
+        { name: 'Help in Loan Settlement Legal Firm', href: '/help-in-loan-settlement-legal-firm' },
         { name: 'Affordable NRI Will Drafting Services', href: '/will-drafting-services-affordable-for-nri' },
         { name: 'Best Criminal Lawyers in Delhi', href: '/best-criminal-lawyers-in-delhi' },
         { name: 'One Time Settlement Guide', href: '/one-time-settlement' },
@@ -1445,7 +1451,12 @@ const Footer = () => {
         { name: "Settle Your Challan in Delhi at 50% Off", href: "/settle-your-challan-in-delhi-at-50%-off" },
         { name: "100% Guaranteed Money Recovery", href: "/100-percent-guaranteed-money-recovery" },
         { name: "Recovery of Money from Fraud", href: "/recovery-of-money-from-fraud" },
-        { name: "RWA Maintenance Recovery Lawyer in Gurugram", href: "/rwa-maintenance-recovery-lawyer-in-gurugram" }
+        { name: "RWA Maintenance Recovery Lawyer in Gurugram", href: "/rwa-maintenance-recovery-lawyer-in-gurugram" },
+        { name: "Nullify Loan App Scam", href: "/outstanding-of-5000-became-1-lakh" },
+        { name: "Can I Beat Recovery Agents", href: "/can-i-beat-recovery-agents" },
+        { name: "Trick Recovery Agents", href: "/how-to-trick-recovery-agents" },
+        { name: "Axis Bank Settlement Waiver Percentage", href: "/settlement-waiver-percentage-of-axis-bank" },
+        { name: "ICICI Bank Settlement Waiver Percentage", href: "/settlement-waiver-percentage-of-icici-bank" }
       ]
     }
   ];

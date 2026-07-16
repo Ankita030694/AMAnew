@@ -28,6 +28,12 @@ export async function GET(): Promise<Response> {
   // Build static routes
   const staticRoutes = [
     '',
+    '/settlement-waiver-percentage-of-sbi-bank-loans',
+    '/who-is-considered-as-willfull-defaulter',
+    '/what-are-my-legal-rights-when-dealing-with-recovery-agents',
+    '/can-i-beat-recovery-agents',
+    '/how-to-trick-recovery-agents',
+    '/loan-settlement-help',
     '/rwa-dispute-lawyer-advocate',
     '/lok-adalat-contract-drafting',
     '/will-drafting-services-affordable-for-nri',
@@ -706,7 +712,8 @@ export async function GET(): Promise<Response> {
     '/how-to-stop-recovery-agent-calls-immediately',
     '/expert-debt-settlement-solutions',
     '/cheque-bounce-case-jurisdiction',
-    '/loan-against-lic-policy'
+    '/loan-against-lic-policy',
+    '/settlement-waiver-percentage-of-axis-bank'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),

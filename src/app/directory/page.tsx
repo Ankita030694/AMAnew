@@ -9,6 +9,23 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'Settlement Waiver Percentage of YES Bank Loans', href: '/settlement-waiver-percentage-of-yes-bank-loans' },
+  { name: 'SBI Bank Settlement Waiver Percentage 2026 Guide', href: '/settlement-waiver-percentage-of-sbi-bank-loans' },
+  { name: 'Settlement Waiver Percentage of RBL Bank', href: '/settlement-waiver-percentage-of-rbl-bank-loans' },
+  { name: 'ICICI Bank Settlement Waiver Percentage 2026 Guide', href: '/settlement-waiver-percentage-of-icici-bank' },
+  { name: 'Settlement Waiver Percentage of Payday Loans', href: '/settlement-waiver-percentage-of-payday-loans' },
+  { name: 'Settlement Waiver Percentage of Bajaj Finance', href: '/settlement-waiver-percentage-of-bajaj-fin' },
+  { name: 'Axis Bank Settlement Waiver Percentage 2026 Guide', href: '/settlement-waiver-percentage-of-axis-bank' },
+  { name: 'HDFC Bank Settlement Waiver Percentage', href: '/settlement-waiver-percentage-of-hdfc-bank' },
+  { name: 'Trick Recovery Agents', href: '/how-to-trick-recovery-agents' },
+  { name: 'Who Is Considered As Willful Defaulter In India', href: '/who-is-considered-as-willfull-defaulter' },
+  { name: 'Can I Beat Recovery Agents', href: '/can-i-beat-recovery-agents' },
+  { name: 'What Are My Legal Rights When Dealing With Recovery Agents?', href: '/what-are-my-legal-rights-when-dealing-with-recovery-agents' },
+  { name: 'How to Safeguard Yourself from Recovery Agents', href: '/how-to-safeguard-myself-from-recovery-agents-full-guide' },
+  { name: 'Loan Settlement Madad', href: '/loan-settlement-madad' },
+  { name: 'Loan Settlement Help', href: '/loan-settlement-help' },
+  { name: 'Help in Loan Settlement Legal Firm', href: '/help-in-loan-settlement-legal-firm' },
+  { name: 'Nullify Loan App Scam', href: '/outstanding-of-5000-became-1-lakh' },
   { name: 'RWA Dispute Lawyer Advocate', href: '/rwa-dispute-lawyer-advocate' },
   { name: 'RWA Maintenance Recovery Lawyer in Gurugram', href: '/rwa-maintenance-recovery-lawyer-in-gurugram' },
   { name: 'Lawyer for RWA', href: '/lawyer-for-rwa' },

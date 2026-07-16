@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUsers, faChartLine, faClipboardList, faCog, faEye, faTrash, faTimes, faBriefcase } from '@fortawesome/free-solid-svg-icons';
-import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
+import { collection, getDocs, deleteDoc, doc, query, orderBy, limit, startAfter } from 'firebase/firestore';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { db, auth } from '../../../lib/firebase'; // adjust the path as needed
 import { useRouter } from 'next/navigation';
@@ -61,59 +61,92 @@ const AdminDashboard = () => {
     return () => unsubscribe();
   }, [router]);
 
+  // Pagination state
+  const [loading, setLoading] = useState(false);
+  const lastVisibleRef = React.useRef<any>(null);
+  const hasMoreRef = React.useRef(true);
+  const loadingRef = React.useRef(false);
+
+  const fetchLeads = async (isLoadMore = false) => {
+    if (loadingRef.current) return;
+    if (isLoadMore && !hasMoreRef.current) return;
+    
+    loadingRef.current = true;
+    setLoading(true);
+    
+    try {
+      let q;
+      if (isLoadMore && lastVisibleRef.current) {
+        q = query(collection(db, 'form'), orderBy('timestamp', 'desc'), startAfter(lastVisibleRef.current), limit(50));
+      } else {
+        q = query(collection(db, 'form'), orderBy('timestamp', 'desc'), limit(50));
+      }
+
+      const querySnapshot = await getDocs(q);
+      
+      const data = querySnapshot.docs.map(doc => {
+        const docData = doc.data();
+        
+        const originalTimestamp = docData.timestamp;
+        
+        let timestamp = '-';
+        if (docData.timestamp) {
+          timestamp = docData.timestamp.toDate ? 
+            docData.timestamp.toDate().toLocaleString() : 
+            docData.timestamp;
+        }
+        
+        return {
+          id: doc.id,
+          name: docData.name || '-',
+          email: docData.email || '-',
+          message: docData.message || '-',
+          phone: docData.phone || '-',
+          serviceRequired: docData.serviceRequired || '-',
+          timestamp: timestamp,
+          originalTimestamp: originalTimestamp,
+          submissionUrl: docData.submissionUrl || '-',
+          paymentStatus: docData.paymentStatus || 'Pending'
+        };
+      });
+
+      if (isLoadMore) {
+        setTableData(prev => [...prev, ...data]);
+      } else {
+        setTableData(data);
+      }
+
+      if (querySnapshot.docs.length > 0) {
+        lastVisibleRef.current = querySnapshot.docs[querySnapshot.docs.length - 1];
+      }
+
+      hasMoreRef.current = querySnapshot.docs.length === 50;
+    } catch (error) {
+      const firebaseError = error as FirebaseError;
+      console.error("Error fetching Firebase data:", firebaseError);
+    } finally {
+      loadingRef.current = false;
+      setLoading(false);
+    }
+  };
+
   // Fetch Firebase data from the "form" collection
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, 'form'));
-        const data = querySnapshot.docs.map(doc => {
-          const docData = doc.data();
-          
-          // Store original timestamp for sorting
-          const originalTimestamp = docData.timestamp;
-          
-          // Format timestamp (if it exists) or provide a fallback
-          let timestamp = '-';
-          if (docData.timestamp) {
-            // Handle Firestore timestamp
-            timestamp = docData.timestamp.toDate ? 
-              docData.timestamp.toDate().toLocaleString() : 
-              docData.timestamp;
-          }
-          
-          return {
-            id: doc.id,
-            name: docData.name || '-',
-            email: docData.email || '-',
-            message: docData.message || '-',
-            phone: docData.phone || '-',
-            serviceRequired: docData.serviceRequired || '-',
-            timestamp: timestamp,
-            originalTimestamp: originalTimestamp, // Keep original for sorting
-            submissionUrl: docData.submissionUrl || '-',
-            paymentStatus: docData.paymentStatus || 'Pending'
-          };
-        });
+    fetchLeads();
+  }, []);
 
-        // Sort data by timestamp in descending order (newest first)
-        data.sort((a, b) => {
-          if (!a.originalTimestamp) return 1;
-          if (!b.originalTimestamp) return -1;
-          
-          const timeA = a.originalTimestamp.toDate ? a.originalTimestamp.toDate().getTime() : 0;
-          const timeB = b.originalTimestamp.toDate ? b.originalTimestamp.toDate().getTime() : 0;
-          
-          return timeB - timeA; // Descending order
-        });
-        
-        setTableData(data);
-      } catch (error) {
-        const firebaseError = error as FirebaseError;
-        console.error("Error fetching Firebase data:", firebaseError);
+  const observer = React.useRef<IntersectionObserver | null>(null);
+  const lastElementRef = React.useCallback((node: HTMLTableRowElement | null) => {
+    if (loadingRef.current) return;
+    if (observer.current) observer.current.disconnect();
+    
+    observer.current = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && hasMoreRef.current) {
+        fetchLeads(true);
       }
-    };
-
-    fetchData();
+    });
+    
+    if (node) observer.current.observe(node);
   }, []);
 
   // Handle row click to open view modal
@@ -251,12 +284,17 @@ const AdminDashboard = () => {
                   return row.serviceRequired === selectedFilter;
                 });
 
-                return filteredData.map((row) => (
-                  <tr 
-                    key={row.id} 
-                    className="hover:bg-[#F8F5EC] transition-colors duration-150 cursor-pointer"
-                    onClick={() => handleRowClick(row)}
-                  >
+                return (
+                  <>
+                    {filteredData.map((row, index) => {
+                      const isLastElement = index === filteredData.length - 1;
+                      return (
+                        <tr 
+                          key={row.id} 
+                          ref={isLastElement ? lastElementRef : null}
+                          className="hover:bg-[#F8F5EC] transition-colors duration-150 cursor-pointer"
+                          onClick={() => handleRowClick(row)}
+                        >
                     <td className="px-4 py-4 text-sm font-medium text-[#5A4C33]">
                       {truncateText(row.timestamp, 20)}
                     </td>
@@ -306,8 +344,30 @@ const AdminDashboard = () => {
                       </div>
                     </td>
                   </tr>
-                ));
-              })()}
+                );
+              })}
+              {loading && (
+                <tr>
+                  <td colSpan={8} className="px-4 py-4 text-center text-sm text-gray-500 font-medium">
+                    <div className="flex justify-center items-center space-x-2">
+                      <div className="w-4 h-4 rounded-full border-2 border-[#D2A02A] border-t-transparent animate-spin"></div>
+                      <span>Loading leads...</span>
+                    </div>
+                  </td>
+                </tr>
+              )}
+              {!loading && hasMoreRef.current && filteredData.length === 0 && tableData.length > 0 && (
+                <tr>
+                  <td colSpan={8} className="px-4 py-4 text-center">
+                    <button onClick={() => fetchLeads(true)} className="px-4 py-2 bg-[#D2A02A] hover:bg-[#b88a24] text-white rounded-md transition-colors text-sm font-medium">
+                      Load More Leads
+                    </button>
+                  </td>
+                </tr>
+              )}
+              </>
+            );
+          })()}
             </tbody>
           </table>
         </div>
@@ -323,28 +383,11 @@ const AdminDashboard = () => {
             });
             return (
               <div className="text-sm text-[#5A4C33]">
-                Showing <span className="font-medium">{filteredData.length > 0 ? 1 : 0}</span> to <span className="font-medium">{filteredData.length}</span> of <span className="font-medium">{filteredData.length}</span> results
+                Showing <span className="font-medium">{filteredData.length}</span> loaded leads
+                {!hasMoreRef.current && <span> (All leads loaded)</span>}
               </div>
             );
           })()}
-          <div className="flex space-x-2">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-3 py-1 bg-[#F0EAD6] text-[#5A4C33] rounded-md text-sm"
-              disabled
-            >
-              Previous
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-3 py-1 bg-[#F0EAD6] text-[#5A4C33] rounded-md text-sm"
-              disabled
-            >
-              Next
-            </motion.button>
-          </div>
         </div>
       </motion.div>
 
