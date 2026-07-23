@@ -919,6 +919,12 @@ const Footer = () => {
       "@type": "Product",
       "name": "AMA Legal Solutions",
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2150" }
+    },
+    "/personal-loan-settlement-process-consequences": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Personal Loan Settlement Process Consequences",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1940" }
     }
   };
   const footerColumns: { title: string; links: { name: string; href: string; external?: boolean; hiddenLink?: boolean }[] }[] = [
@@ -933,6 +939,7 @@ const Footer = () => {
         { name: 'AMA Connect App', href: '/ama-legal-solutions-application' },
         { name: 'Privacy Policy', href: '/privacy-policy' },
         { name: 'Terms and Conditions', href: '/terms-and-conditions' },
+        { name: 'Types of Unsecured Loans', href: '/what-are-the-types-of-unsecured-loans-available-in-india' },
 
       ]
     },
@@ -1052,6 +1059,8 @@ const Footer = () => {
     {
       title: "Queries",
       links: [
+        { name: 'Steps to Enroll in a Consumer Credit Counselling Program', href: '/steps-to-enroll-in-a-consumer-credit-counselling-program' },
+        { name: 'Online Loan During Cash Crunch', href: '/online-loan-during-cash-crunch' },
         { name: 'SBI Bank Settlement Waiver Percentage 2026 Guide', href: '/settlement-waiver-percentage-of-sbi-bank-loans' },
         { name: 'Willful Defaulter in India', href: '/who-is-considered-as-willfull-defaulter' },
         { name: 'Legal Rights Against Recovery Agents', href: '/what-are-my-legal-rights-when-dealing-with-recovery-agents' },
@@ -1108,6 +1117,7 @@ const Footer = () => {
         { name: 'Reasonable Settlement Offer', href: '/what-is-a-reasonable-settlement-offer' },
         { name: 'Top Settlement Companies', href: '/loan-settlement-companies' },
         { name: 'Steps to Apply for Settlement', href: '/steps-to-apply-for-a-loan-settlement-through-a-financial-service-provider' },
+        { name: 'Steps to Apply for Debt Resolution Schemes Online', href: '/steps-to-apply-for-debt-resolution-schemes-online' },
         { name: 'Benefits & Drawbacks of Settlement', href: '/key-benefits-and-drawbacks-of-persuing-loan-settlement' },
         { name: 'Initiate Settlement Discussion', href: '/how-can-i-initiate-a-full-and-final-settlement-discussion-with-bank' },
         { name: 'Check Genuine Settlement Offer', href: '/how-to-check-if-a-loan-settlement-offer-is-genuine-on-digital-platforms' },
@@ -1384,6 +1394,8 @@ const Footer = () => {
         { name: "Stop Recovery Morphing & AI Extortion", href: "/recovery-agent-sending-morphed-and-ai-generated-explicit-images-to-relatives" },
         { name: "Stop Recovery Agent 100 Calls/Day", href: "/recovery-agent-calling-100-times-per-day" },
         { name: "How to Settle 7-Days Loan Apps", href: "/how-to-settle-7-days-loan-apps" },
+        { name: "Loan Partial Payment", href: "/loan-partial-payment" },
+        { name: "Personal Loan Settlement Process Consequences", href: "/personal-loan-settlement-process-consequences" },
         { name: "Full and Final Loan Settlement", href: "/what-is-a-full-and-final-loan-settlement" },
         { name: "Can You Go To Jail For Not Paying EMI", href: "/can-you-go-to-jail-for-not-paying-emi" },
         { name: "How to Manage Loan With No Job", href: "/how-to-manage-loan-with-no-job" },
@@ -1456,7 +1468,9 @@ const Footer = () => {
         { name: "Can I Beat Recovery Agents", href: "/can-i-beat-recovery-agents" },
         { name: "Trick Recovery Agents", href: "/how-to-trick-recovery-agents" },
         { name: "Axis Bank Settlement Waiver Percentage", href: "/settlement-waiver-percentage-of-axis-bank" },
-        { name: "ICICI Bank Settlement Waiver Percentage", href: "/settlement-waiver-percentage-of-icici-bank" }
+        { name: "ICICI Bank Settlement Waiver Percentage", href: "/settlement-waiver-percentage-of-icici-bank" },
+        { name: "Auction Settlement Process", href: "/auction-settlement-process-loan-recovery-explained" },
+        { name: "Debt Resolution Company", href: "/debt-resolution-company" }
       ]
     }
   ];

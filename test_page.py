@@ -1,67 +1,47 @@
 import re
-import json
 
-FILE_PATH = "/Users/anujanandmalik/Desktop/amawebsite/src/app/who-helps-settle-loans-in-india/page.tsx"
-FOOTER_PATH = "/Users/anujanandmalik/Desktop/amawebsite/src/newcomp/Footer.tsx"
-SITEMAP_PATH = "/Users/anujanandmalik/Desktop/amawebsite/public/sitemap.xml"
-
-with open(FILE_PATH, "r", encoding="utf-8") as f:
+with open('src/app/steps-to-apply-for-debt-resolution-schemes-online/page.tsx', 'r') as f:
     content = f.read()
 
-# TESTER 1 & 7: EM DASH CHECKER
-if "—" in content or "--" in content:
-    print("FAILED: Em dashes or double hyphens found.")
+# Word count check
+text = re.sub(r'<[^>]+>', ' ', content)
+text = re.sub(r'\{[^\}]+\}', ' ', text)
+words = text.split()
+print(f"Word count approx: {len(words)}")
+
+# Check H1 length
+h1_match = re.search(r'<h1[^>]*>(.*?)</h1>', content, re.DOTALL)
+if h1_match:
+    h1_text = h1_match.group(1).strip()
+    h1_text = re.sub(r'<[^>]+>', '', h1_text)
+    print(f"H1 length: {len(h1_text)}")
 else:
-    print("PASSED: No em dashes or double hyphens found.")
+    print("H1 not found")
 
-# TESTER 2: CONTENT QUALITY CHECKER (Word Count & LEAD_HOOK)
-words = len(content.split())
-if words > 2500:
-    print(f"PASSED: Word count is {words} (over 2500).")
-else:
-    print(f"FAILED: Word count is {words} (under 2500).")
+# Meta title and description length
+title_match = re.search(r'title:\s*["\'](.*?)["\']', content)
+if title_match:
+    print(f"Title length: {len(title_match.group(1))}")
+desc_match = re.search(r'description:\s*["\'](.*?)["\']', content)
+if desc_match:
+    print(f"Description length: {len(desc_match.group(1))}")
 
-lead_hook = "In India, over 70% of borrowers seeking loan settlement fall victim to unauthorized agencies"
-if lead_hook in content:
-    print("PASSED: LEAD_HOOK is present.")
-else:
-    print("FAILED: LEAD_HOOK is missing.")
+# Check Alt Texts
+alts = re.findall(r'alt=["\'](.*?)["\']', content)
+for alt in alts:
+    if len(alt) > 125:
+        print(f"WARNING: Alt text too long ({len(alt)}): {alt}")
+    else:
+        print(f"Alt text OK ({len(alt)}): {alt}")
 
-# Check for identical sections (skipped here as we wrote it uniquely)
+# Check internal links
+if '/affordable-debt-resolution-company-india' in content: print("Internal link 1 OK")
+if '/what-is-loan-settlement' in content: print("Internal link 2 OK")
+if '/loan-settlement-companies' in content: print("Internal link 3 OK")
 
-# TESTER 3 & 4: TECHNICAL & ON-PAGE
-if "<h1" in content and "Who Helps Settle Loans in India? (The Ultimate Guide)" in content:
-    print("PASSED: H1 is present and correct.")
-else:
-    print("FAILED: H1 issue.")
+# Author image check
+if '/anujbhiya.png' in content: print("Author image /anujbhiya.png found")
 
-if "what-is-loan-settlement" in content and "legal-assistance-for-consumer-debt-settlement-disputes" in content and "how-to-settle-7-days-loan-apps" in content:
-    print("PASSED: Internal links are present.")
-else:
-    print("FAILED: Internal links missing.")
-
-# TESTER 5: AUTHORITY EVALUATOR
-# We generated robust content, so sections are not thin.
-
-# TESTER 8 & 9: THEME, LAYOUT, AUTHOR IMAGE
-if "/anujbhiya.png" in content:
-    print("PASSED: Author image is referenced.")
-else:
-    print("FAILED: Author image missing.")
-
-# Check Footer
-with open(FOOTER_PATH, "r", encoding="utf-8") as f:
-    footer = f.read()
-if "who-helps-settle-loans-in-india" in footer:
-    print("PASSED: Footer updated.")
-else:
-    print("FAILED: Footer not updated.")
-
-# Check Sitemap
-with open(SITEMAP_PATH, "r", encoding="utf-8") as f:
-    sitemap = f.read()
-if "who-helps-settle-loans-in-india" in sitemap:
-    print("PASSED: Sitemap updated.")
-else:
-    print("FAILED: Sitemap not updated.")
-
+# Em dash check
+if '—' in content or '--' in content: print("Em dash or -- found!")
+else: print("No em dashes found")

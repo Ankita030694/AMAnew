@@ -28,6 +28,9 @@ export async function GET(): Promise<Response> {
   // Build static routes
   const staticRoutes = [
     '',
+    '/what-are-the-types-of-unsecured-loans-available-in-india',
+    '/auction-settlement-process-loan-recovery-explained',
+    '/check-loan-settlement-status',
     '/settlement-waiver-percentage-of-sbi-bank-loans',
     '/who-is-considered-as-willfull-defaulter',
     '/what-are-my-legal-rights-when-dealing-with-recovery-agents',
@@ -661,6 +664,7 @@ export async function GET(): Promise<Response> {
     '/top-fintech-loan-settlement-companies',
     '/loan-settlement-consultant',
     '/how-to-settle-7-days-loan-apps',
+    '/personal-loan-settlement-process-consequences',
     '/protection-from-loan-recovery-harassment',
     '/legal-assistance-for-consumer-debt-settlement-disputes',
     '/documents-required-for-loan-settlement-through-law-firm',

@@ -9,6 +9,17 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'Is Debt Relief Worth It', href: '/is-debt-relief-worth-it' },
+  { name: 'Debt Resolution Company', href: '/debt-resolution-company' },
+  { name: 'Steps to Enroll in a Consumer Credit Counselling Program', href: '/steps-to-enroll-in-a-consumer-credit-counselling-program' },
+  { name: 'Best Apps for Debt Resolution in India', href: '/best-apps-for-debt-resolution-in-india' },
+  { name: 'Steps to Apply for Debt Resolution Schemes Online', href: '/steps-to-apply-for-debt-resolution-schemes-online' },
+  { name: 'Loan Partial Payment', href: '/loan-partial-payment' },
+  { name: 'Online Loan During Cash Crunch', href: '/online-loan-during-cash-crunch' },
+  { name: 'What Are The Types Of Unsecured Loans Available In India', href: '/what-are-the-types-of-unsecured-loans-available-in-india' },
+  { name: 'Auction Settlement Process & Loan Recovery Explained', href: '/auction-settlement-process-loan-recovery-explained' },
+  { name: 'Check Loan Settlement Status', href: '/check-loan-settlement-status' },
+  { name: 'Best Lawyer For Loan Settlement', href: '/best-lawyer-for-loan-settlement' },
   { name: 'Settlement Waiver Percentage of YES Bank Loans', href: '/settlement-waiver-percentage-of-yes-bank-loans' },
   { name: 'SBI Bank Settlement Waiver Percentage 2026 Guide', href: '/settlement-waiver-percentage-of-sbi-bank-loans' },
   { name: 'Settlement Waiver Percentage of RBL Bank', href: '/settlement-waiver-percentage-of-rbl-bank-loans' },
@@ -179,6 +190,7 @@ const directoryLinks = [
 { name: 'Can You Go To Jail For Not Paying Emi', href: '/can-you-go-to-jail-for-not-paying-emi' },
 { name: "Average Time for Settlement", href: "/what-is-the-average-time-for-loan-settlement" },
   { name: 'How To Settle 7 Days Loan Apps', href: '/how-to-settle-7-days-loan-apps' },
+  { name: 'Personal Loan Settlement Process Consequences', href: '/personal-loan-settlement-process-consequences' },
 { name: 'How to Fix Credit Score', href: '/how-to-fix-credit-score' },
 { name: 'Recovery Agent Calling 100 Times Per Day', href: '/recovery-agent-calling-100-times-per-day' },
 { name: 'Recovery Agent Sending Morphed And Ai Generated Explicit Images To Relatives', href: '/recovery-agent-sending-morphed-and-ai-generated-explicit-images-to-relatives' },
