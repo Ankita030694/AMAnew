@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
 const CareersForm = () => {
   const [formState, setFormState] = useState({
@@ -167,6 +168,9 @@ const CareersForm = () => {
       >
         {isSubmitting ? "Submitting Application..." : "Submit Application"}
       </button>
+      <p className="text-[10px] md:text-xs text-[#30261C]/70 mt-3 text-center">
+        By clicking submit, you agree to share these details with us for the purpose of contacting you regarding our services. Please read our <Link href="/privacy-policy" className="text-[#D2A02A] hover:underline">Privacy Policy</Link> for more details.
+      </p>
     </form>
   );
 };

@@ -349,6 +349,10 @@ const ContactComp = () => {
           </>
         )}
       </button>
+      
+      <p className="text-xs text-[#30261C] mt-3 text-center">
+        By clicking submit, you agree to share these details with us for the purpose of contacting you regarding our services. Please read our <Link href="/privacy-policy" className="text-[#E19100] hover:underline">Privacy Policy</Link> for more details.
+      </p>
 
       <div className="flex flex-col items-center gap-2 md:gap-4 pt-4 md:pt-6">
         <div className="opacity-80 hover:opacity-100 transition-opacity">

@@ -450,6 +450,9 @@ export default function LoanSettlementHelpPage() {
                   <button type="submit" className="w-full bg-[#1a202c] hover:bg-gray-800 text-white font-bold py-3 px-4 rounded-lg transition-colors">
                     Get Free Consultation
                   </button>
+                  <p className="text-xs text-gray-500 mt-2 text-center">
+                    By clicking submit, you agree to share these details with us for the purpose of contacting you regarding our services. Please read our <Link href="/privacy-policy" className="text-[#D2A02A] hover:underline">Privacy Policy</Link> for more details.
+                  </p>
                 </form>
               </div>
             </div>

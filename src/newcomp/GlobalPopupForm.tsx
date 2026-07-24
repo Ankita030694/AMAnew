@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import payu from "../../public/payu.png";
@@ -414,6 +415,10 @@ const GlobalPopupForm = () => {
                         otpSent ? "Verify OTP" : "Register"
                       )}
                     </button>
+                    
+                    <p className="text-[10px] md:text-xs text-[#30261C] mt-3 text-center">
+                      By clicking submit, you agree to share these details with us for the purpose of contacting you regarding our services. Please read our <Link href="/privacy-policy" className="text-[#E19100] hover:underline">Privacy Policy</Link> for more details.
+                    </p>
                     
                     <div className="flex flex-col items-center gap-2 md:gap-4 pt-1 md:pt-2">
                       <div className="opacity-80 hover:opacity-100 transition-opacity">

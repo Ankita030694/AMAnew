@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { FaWhatsapp } from 'react-icons/fa'
 
 const services = [
@@ -136,6 +137,9 @@ export default function Form() {
               >
                 Request consultation
               </button>
+              <p className="text-xs text-gray-500 mt-4 text-center">
+                By clicking submit, you agree to share these details with us for the purpose of contacting you regarding our services. Please read our <Link href="/privacy-policy" className="text-[#6B5B3D] hover:underline">Privacy Policy</Link> for more details.
+              </p>
             </form>
           </div>
         </div>

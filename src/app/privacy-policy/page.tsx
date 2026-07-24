@@ -73,13 +73,17 @@ export default function Services() {
             <h2 className="text-2xl font-bold text-[#5A4C33] mb-4">2. Information We Collect</h2>
             <p className="text-gray-700 leading-relaxed">We may collect and process the following types of information:</p>
             
-            <h3 className="text-xl font-semibold text-[#5A4C33] mt-6 mb-3">a) Personal Information</h3>
+            <h3 className="text-xl font-semibold text-[#5A4C33] mt-6 mb-3">a) Personal Information Collected via Website</h3>
             <ul className="list-disc pl-6 text-gray-700 space-y-2">
-              <li>Name, contact details (phone number, email address, mailing address)</li>
-              <li>Identification documents (PAN, Aadhaar, passport)</li>
-              <li>Billing and payment information</li>
-              <li>Any other information you provide during consultations or through our website forms</li>
+              <li>Name</li>
+              <li>Email address</li>
+              <li>Phone number</li>
+              <li>Service required</li>
+              <li>Any message or details you provide regarding your legal issue</li>
             </ul>
+            <p className="text-gray-700 leading-relaxed mt-4 text-sm">
+              <em>Note: Sensitive information such as identification documents (PAN, Aadhaar, passport) or billing details are <strong>not</strong> collected through our website forms. These will only be requested securely after you have formally enrolled as a client with us.</em>
+            </p>
 
             <h3 className="text-xl font-semibold text-[#5A4C33] mt-6 mb-3">b) Non-Personal Information</h3>
             <ul className="list-disc pl-6 text-gray-700 space-y-2">
@@ -89,15 +93,22 @@ export default function Services() {
             </ul>
           </div>
 
-          {/* 3. How We Collect Information */}
+          {/* 3. How We Collect Information & Consent */}
           <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100">
-            <h2 className="text-2xl font-bold text-[#5A4C33] mb-4">3. How We Collect Information</h2>
+            <h2 className="text-2xl font-bold text-[#5A4C33] mb-4">3. How We Collect Information & Consent</h2>
             <p className="text-gray-700 leading-relaxed">We collect information through:</p>
             <ul className="list-disc pl-6 text-gray-700 space-y-2 mt-4">
               <li>Direct interactions: When you contact us, fill out forms, or provide information during consultations.</li>
               <li>Website and cookies: When you visit our website, we use cookies and tracking technologies to collect usage data.</li>
               <li>Third-party services: When you interact with us through social media platforms or other service providers.</li>
             </ul>
+            <div className="mt-6 p-4 bg-gray-50 border-l-4 border-[#D2A02A] rounded-r-lg">
+              <h3 className="text-lg font-semibold text-[#5A4C33] mb-2">Consent and DPDP Act Compliance</h3>
+              <p className="text-gray-700 leading-relaxed">
+                In compliance with the <strong>Digital Personal Data Protection (DPDP) Act, 2023</strong>, we process your personal data based on your explicit consent. 
+                <strong> By clicking the "Submit" button on any of our contact forms, you explicitly agree and consent to share your details with us for the purpose of communicating with you and providing the requested legal services.</strong>
+              </p>
+            </div>
           </div>
 
           {/* 4. How We Use Your Information */}
