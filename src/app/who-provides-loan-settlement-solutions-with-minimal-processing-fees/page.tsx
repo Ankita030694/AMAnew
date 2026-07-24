@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     question: "What is a reasonable processing fee for loan settlement?",
-    answer: "A reasonable processing or registration fee is typically between ₹2,000 to ₹5,000. The major cost should be the 'Success Fee', which is usually 10-20% of the *amount saved* (difference between outstanding and settled amount). If someone asks for 10% of the *total loan amount* as an upfront fee, it is likely a scam or an overpriced service."
+    answer: "A reasonable processing or registration fee is typically between ₹2,000 to ₹5,000. The major cost should be the 'Success Fee', which is typically charged as a percentage of the *total outstanding amount*, not on the total saved or waived off. Be cautious if someone asks for a large percentage of the total loan amount as an upfront fee before doing any work."
   },
   {
     question: "Do banks charge a processing fee for settlement?",
@@ -124,7 +124,7 @@ const reviewSchema = {
         "@type": "Person",
         "name": "Rakesh Sharma"
       },
-      "reviewBody": "Best pricing. They only charged me a small retainer and the rest was a percentage of my savings. Very fair."
+      "reviewBody": "Best pricing. They only charged me a small retainer and the rest was a percentage of my total outstanding amount. Very fair."
     },
     {
       "@type": "Review",
@@ -322,9 +322,9 @@ export default function MinimalFeePage() {
                     <div className="bg-green-50 p-6 rounded-xl border-t-4 border-green-500">
                         <h3 className="font-bold text-lg mb-2 text-green-900">1. The "Success Fee" Model (Best)</h3>
                         <p className="text-gray-700">
-                            You pay a small token amount (Retainer) to start. The bulk of the fee is paid <strong>ONLY AFTER</strong> you get the settlement letter. The fee is usually a percentage of the <em>amount saved</em>, not the total loan.
+                            You pay a small token amount (Retainer) to start. The bulk of the fee is paid <strong>ONLY AFTER</strong> you get the settlement letter. The fee is charged on the <em>total outstanding amount</em>, and not on the total saved or waived off.
                         </p>
-                        <p className="text-sm text-green-700 mt-2 font-semibold">Example: Loan ₹5L. Settled at ₹2L. Savings ₹3L. Fee = 10% of ₹3L = ₹30k.</p>
+                        <p className="text-sm text-green-700 mt-2 font-semibold">Example: Total Outstanding ₹5L. Settled at ₹2L. Fee = 10% of ₹5L = ₹50k.</p>
                     </div>
 
                     <div className="bg-red-50 p-6 rounded-xl border-t-4 border-red-500">
@@ -351,7 +351,7 @@ export default function MinimalFeePage() {
                       <h3 className="text-2xl font-bold text-gray-900 mb-2">1. AMA Legal Solutions</h3>
                       <p className="text-green-600 font-bold mb-4">Model: Low Retainer + Success Fee</p>
                       <p className="text-gray-700 mb-4">
-                        AMA Legal is widely regarded as the most cost-effective option because they are a law firm, not a sales agency. Their processing fee acts as a legal retainer (minimal cost) to draft powers of attorney and handle harassment. The main fee comes from the savings they generate for you.
+                        AMA Legal is widely regarded as the most cost-effective option because they are a law firm, not a sales agency. Their processing fee acts as a legal retainer (minimal cost) to draft powers of attorney and handle harassment. The main fee is charged as a percentage of your total outstanding loan amount.
                       </p>
                       <ul className="list-disc pl-5 text-gray-600 space-y-2">
                         <li><strong>Processing Fee:</strong> Minimal (varies by loan size, approx ₹3k-5k).</li>
@@ -398,13 +398,13 @@ export default function MinimalFeePage() {
                         <tr className="bg-white border-b">
                           <td className="px-6 py-4 font-bold">AMA Legal Solutions</td>
                           <td className="px-6 py-4 text-green-700">Minimal Retainer</td>
-                          <td className="px-6 py-4">% of Savings</td>
+                          <td className="px-6 py-4">% of Total Outstanding</td>
                           <td className="px-6 py-4 text-green-700 font-bold">Best Value</td>
                         </tr>
                         <tr className="bg-white border-b">
                           <td className="px-6 py-4 font-bold">FREED</td>
                           <td className="px-6 py-4">Subscription Fee</td>
-                          <td className="px-6 py-4">% of Savings</td>
+                          <td className="px-6 py-4">% of Total Outstanding</td>
                           <td className="px-6 py-4">Good for Discipline</td>
                         </tr>
                         <tr className="bg-white border-b">
@@ -446,7 +446,7 @@ export default function MinimalFeePage() {
                     </div>
                     <div className="bg-green-50 p-6 rounded-xl">
                         <h3 className="font-bold text-green-900 mb-2">The "Success" Incentive</h3>
-                        <p className="text-gray-700">When a firm relies on Success Fees, their revenue is directly tied to YOUR saving. If they don't get you a good waiver, they don't get paid well. This alignment of interest is the best guarantee of performance.</p>
+                        <p className="text-gray-700">When a firm relies on Success Fees, they only get paid when the settlement is successfully completed. This alignment of interest is the best guarantee of performance, even though the fee is based on the total outstanding amount.</p>
                     </div>
                   </div>
                 </section>
@@ -468,7 +468,7 @@ export default function MinimalFeePage() {
                      </div>
                      <div className="bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
                         <h4 className="font-bold text-gray-900">3. Ask for "No Cure, No Pay"</h4>
-                        <p className="text-gray-600">If they are confident, ask them to waive the processing fee entirely and increase the success fee slightly. For example, "I can't pay ₹5000 now. But I will pay you 15% of savings instead of 10% later." If they agree, it's a zero-risk deal for you.</p>
+                        <p className="text-gray-600">If they are confident, ask them to waive the processing fee entirely and increase the success fee slightly. For example, "I can't pay ₹5000 now. But I will pay you 15% of the total outstanding instead of 10% later." If they agree, it's a zero-risk deal for you.</p>
                      </div>
                   </div>
                 </section>
@@ -718,8 +718,8 @@ export default function MinimalFeePage() {
                         <p className="text-gray-700 mb-2"><strong>Debt:</strong> ₹12 Lakhs (3 Credit Cards)</p>
                         <p className="text-gray-700 mb-4"><strong>Scenario:</strong> Rohan was approached by an agency asking for ₹1.2 Lakhs (10%) upfront to "start the process". He refused and found AMA Legal.</p>
                         <p className="text-gray-700 mb-2"><strong>AMA Legal Approach:</strong> Charged ₹5,000 retainer. Negotiated settlement to ₹4.5 Lakhs.</p>
-                        <p className="text-gray-700 font-bold text-green-700"><strong>Total Cost to Rohan:</strong> ₹4.5L (Settlement) + ₹5k (Retainer) + ₹75k (10% Success Fee on savings) = ₹5.3L.</p>
-                        <p className="text-gray-600 italic">Savings vs Upfront Agent: Rohan saved ₹40,000 instantly by not paying the upfront fee, plus got a better settlement deal.</p>
+                        <p className="text-gray-700 font-bold text-green-700"><strong>Total Cost to Rohan:</strong> ₹4.5L (Settlement) + ₹5k (Retainer) + ₹1.2L (10% Success Fee on total outstanding) = ₹5.75L.</p>
+                        <p className="text-gray-600 italic">Savings vs Upfront Agent: Rohan saved instantly by not paying the upfront fee, plus got a better settlement deal.</p>
                     </div>
 
                     <div className="border-l-4 border-blue-500 pl-6 py-2">
