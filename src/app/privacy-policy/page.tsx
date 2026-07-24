@@ -164,7 +164,7 @@ export default function Services() {
               <li>Request deletion: Ask us to delete your personal information, subject to legal obligations.</li>
             </ul>
             <p className="text-gray-700 leading-relaxed mt-4">
-              To exercise these rights, contact us at <a href="mailto:proposals@amalegalsolutions.com" className="text-[#D2A02A] hover:underline">proposals@amalegalsolutions.com</a>
+              To exercise these rights, contact us at <a href="mailto:escalations@amalegalsolutions.com" className="text-[#D2A02A] hover:underline">escalations@amalegalsolutions.com</a>
             </p>
           </div>
 
