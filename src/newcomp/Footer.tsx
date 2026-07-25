@@ -935,6 +935,7 @@ const Footer = () => {
         { name: 'Home', href: '/' },
         { name: 'Free Will Drafting Consultation', href: '/free-will-drafting-consultation-in-delhi-ncr' },
         { name: 'About Us', href: '/about' },
+        { name: 'Support / Escalations', href: '/support' },
         { name: 'Careers', href: '/careers' },
         { name: 'AMA Connect App', href: '/ama-legal-solutions-application' },
         { name: 'Privacy Policy', href: '/privacy-policy' },

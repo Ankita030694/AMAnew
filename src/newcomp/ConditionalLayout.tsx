@@ -28,11 +28,13 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
     return <>{children}</>;
   }
 
+  const hidePopup = pathname === '/support';
+
   return (
     <>
       <Navbar />
       {children}
-      {showPopup && <GlobalPopupForm />}
+      {showPopup && !hidePopup && <GlobalPopupForm />}
       <Footer />
       <WhatsAppWidget />
     </>
