@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUsers, faChartLine, faClipboardList, faCog, faPlus, faEdit, faTrash, faUpload, faMagic, faSearch, faChevronLeft, faChevronRight, faTimes, faArrowLeft, faCheckCircle, faInfoCircle, faFileAlt, faStar } from '@fortawesome/free-solid-svg-icons';
-import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, getDoc } from 'firebase/firestore';
+import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, getDoc, query, where } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { db, auth, storage } from '../../../lib/firebase'; // adjust the path as needed
@@ -88,6 +88,10 @@ const BlogsDashboard = () => {
   const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(null);
   const [isUploadingGenerated, setIsUploadingGenerated] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Prompt Management state
+  const [promptsList, setPromptsList] = useState<{id: string, name: string, isDefault: boolean}[]>([]);
+  const [selectedPromptId, setSelectedPromptId] = useState<string>('');
 
   // Filter blogs based on search term
   const filteredBlogs = blogs.filter(blog => 
@@ -177,6 +181,32 @@ const BlogsDashboard = () => {
     };
 
     fetchBlogs();
+  }, []);
+
+  // Fetch AI Prompts
+  useEffect(() => {
+    const fetchPrompts = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, 'prompts'));
+        const data = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          name: doc.data().name,
+          isDefault: doc.data().isDefault || false
+        }));
+        setPromptsList(data);
+        
+        // Auto-select default prompt if available
+        const defaultPrompt = data.find(p => p.isDefault);
+        if (defaultPrompt) {
+          setSelectedPromptId(defaultPrompt.id);
+        } else if (data.length > 0) {
+          setSelectedPromptId(data[0].id);
+        }
+      } catch (error) {
+        console.error("Error fetching prompts:", error);
+      }
+    };
+    fetchPrompts();
   }, []);
 
   // Autosave functionality
@@ -381,7 +411,7 @@ const BlogsDashboard = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ primaryKeyword }),
+        body: JSON.stringify({ primaryKeyword, promptId: selectedPromptId }),
       });
 
       if (!response.ok) {
@@ -1149,6 +1179,26 @@ const BlogsDashboard = () => {
                     className="w-full p-4 bg-white border border-slate-200 focus:border-amber-400 focus:ring-2 focus:ring-amber-50 rounded-xl text-xs text-slate-800 focus:outline-none placeholder-slate-400 shadow-3xs transition-all"
                     disabled={isGenerating}
                   />
+
+                  <div className="flex flex-col gap-1.5 mt-2">
+                    <label className="text-[10px] font-extrabold uppercase text-slate-500 tracking-wider">Select AI Prompt Profile</label>
+                    <select
+                      value={selectedPromptId}
+                      onChange={(e) => setSelectedPromptId(e.target.value)}
+                      disabled={isGenerating || promptsList.length === 0}
+                      className="w-full p-3 bg-white border border-slate-200 focus:border-amber-400 focus:ring-2 focus:ring-amber-50 rounded-xl text-xs text-slate-800 focus:outline-none shadow-3xs transition-all"
+                    >
+                      {promptsList.length === 0 ? (
+                        <option value="">No profiles found (Please create one in AI Prompts)</option>
+                      ) : (
+                        promptsList.map(prompt => (
+                          <option key={prompt.id} value={prompt.id}>
+                            {prompt.name} {prompt.isDefault ? '(Default)' : ''}
+                          </option>
+                        ))
+                      )}
+                    </select>
+                  </div>
 
                   <div className="flex items-center justify-between mt-1.5">
                     <div className="flex items-center gap-2.5">

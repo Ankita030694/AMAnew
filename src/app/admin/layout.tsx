@@ -20,7 +20,8 @@ import {
   faChevronRight,
   faChevronLeft,
   faGlobe,
-  faClock
+  faClock,
+  faRobot
 } from '@fortawesome/free-solid-svg-icons'
 import { signOut } from 'firebase/auth'
 import { auth } from '../../lib/firebase'
@@ -30,6 +31,7 @@ const navItems = [
   { id: 'analytics', label: 'Analytics', icon: faChartLine, href: '/admin/analytics' },
   { id: 'users', label: 'Users', icon: faUsers, href: '/admin/users' },
   { id: 'blogs', label: 'Blogs', icon: faGlobe, href: '/admin/blogs' },
+  { id: 'prompts', label: 'AI Prompts', icon: faRobot, href: '/admin/prompts' },
   { id: 'articles', label: 'Articles', icon: faClipboardList, href: '/admin/articles' },
   { id: 'amalive', label: 'AMA Live', icon: faCog, href: '/admin/ama-live' },
   { id: 'careers', label: 'Careers', icon: faBriefcase, href: '/admin/careers' },

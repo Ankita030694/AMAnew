@@ -1,6 +1,7 @@
 
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
+import { adminDb } from '../../../lib/firebase-admin';
 
 export async function POST(request: Request) {
     const openai = new OpenAI({
@@ -12,9 +13,26 @@ export async function POST(request: Request) {
     try {
         const body = await request.json();
         const primaryKeyword = body.primaryKeyword;
+        const promptId = body.promptId;
 
         if (!primaryKeyword) {
             return NextResponse.json({ error: 'Primary Keyword is required' }, { status: 400 });
+        }
+
+        let coreInstructions = "You are a professional legal SEO and AEO strategist. Write in a highly authoritative, informative, and professional tone suitable for a top-tier law firm.";
+        let targetWordCount = 3500;
+
+        if (promptId) {
+            try {
+                const promptDoc = await adminDb.collection('prompts').doc(promptId).get();
+                if (promptDoc.exists) {
+                    const data = promptDoc.data();
+                    coreInstructions = data?.coreInstructions || coreInstructions;
+                    targetWordCount = data?.targetWordCount || targetWordCount;
+                }
+            } catch (error) {
+                console.error("Error fetching prompt profile:", error);
+            }
         }
 
         console.log(`[AI Generator Flow] Step 1: Generating SEO metadata and Article Outline for: [${primaryKeyword}]...`);
@@ -25,12 +43,13 @@ export async function POST(request: Request) {
             messages: [
                 {
                     role: "system",
-                    content: `You are a professional legal SEO and AEO strategist.
-Generate an SEO-optimized H1 Title, engaging subtitle, meta title, meta description, URL slug, and a detailed outline of 10 to 12 H2 headings for an exhaustive blog article on AMA Legal Solutions.
+                    content: `${coreInstructions}
+
+--- TECHNICAL REQUIREMENTS FOR STEP 1 ---
+Task: Generate an SEO-optimized H1 Title, engaging subtitle, meta title, meta description, URL slug, and a detailed outline of 10 to 12 H2 headings for an exhaustive blog article.
 Primary Keyword: ${primaryKeyword}
 
-CRITICAL NEGATIVE CONSTRAINT:
-Under no circumstances should you include any em dashes (—) anywhere in your response. Always use normal hyphens (-), colons (:), commas, parentheses, or rewrite the sentence to avoid them.
+CRITICAL: Do NOT include any headings for "FAQs", "Frequently Asked Questions", "Reviews", or "Conclusion" in your outline. These sections will be generated separately.
 
 Return ONLY a JSON object with this exact structure:
 {
@@ -53,7 +72,10 @@ Return ONLY a JSON object with this exact structure:
 
         const step1ResultStr = sanitizeText(step1Completion.choices[0].message.content || "{}");
         const step1Result = JSON.parse(step1ResultStr);
-        const outline: string[] = step1Result.outline || [];
+        let outline: string[] = step1Result.outline || [];
+        
+        // Filter out FAQ, Review, or Conclusion headings just in case the AI ignores the instruction
+        outline = outline.filter(h => !/faq|frequently asked|review|conclusion/i.test(h));
 
         console.log(`[AI Generator Flow] Step 1 complete. Title: "${step1Result.title}", Outline items: ${outline.length}`);
         console.log(`[AI Generator Flow] Step 2: Iteratively generating description content (Aiming for 3500+ words HTML)...`);
@@ -63,39 +85,26 @@ Return ONLY a JSON object with this exact structure:
 
         for (let i = 0; i < outline.length; i++) {
             const heading = outline[i];
-            console.log(`[AI Generator Flow] Step 2.${i + 1}: Expanding heading "${heading}"...`);
+            const sectionWordCount = Math.floor(targetWordCount / Math.max(outline.length, 1));
+            console.log(`[AI Generator Flow] Step 2.${i + 1}: Expanding heading "${heading}" (Target: ~${sectionWordCount} words)...`);
             
             const step2SystemPrompt = `
-You are a professional legal content writer and SEO expert writing for AMA Legal Solutions (https://www.amalegalsolutions.com).
+${coreInstructions}
+
+--- TECHNICAL REQUIREMENTS FOR STEP 2 ---
 Target Primary Keyword: ${primaryKeyword}
 Article Title: ${step1Result.title}
 
-**CRITICAL WORD COUNT REQUIREMENT**:
-You are writing ONLY the content for the specific H2 section titled: "${heading}".
-Write exactly 350 to 450 words for this specific section alone. Ensure it is extremely detailed, comprehensive, and exhaustive. Expand with 4-6 detailed paragraphs.
+Task: You are writing ONLY the content for the specific H2 section titled: "${heading}".
+Word Count: Write approximately ${sectionWordCount} words for this specific section alone. Ensure it is extremely detailed and comprehensive.
 
-**Requirements**:
-- **Structure**: Output HTML ONLY. Start with an <h2>${heading}</h2> tag, followed by <p>, <h3>, <ul>, <li>, or <table> tags as appropriate.
-- **Tone**: Professional, authoritative, human. Use Indian context (Rupees ₹, RBI, etc.) naturally.
-- **No Markdown**: Do NOT use markdown headers (like ## or ###) or markdown bold (like **text**). Use HTML tags instead.
-- **Internal Linking**: You MUST naturally integrate mentions and links to the following AMA Legal Solutions services within the text where relevant:
-  - https://www.amalegalsolutions.com/services/banking-and-finance
-  - https://www.amalegalsolutions.com/services/loan-settlement
-  - https://www.amalegalsolutions.com/services/intellectual-property-rights
-  - https://www.amalegalsolutions.com/services/entertainment
-  - https://www.amalegalsolutions.com/services/real-estate
-  - https://www.amalegalsolutions.com/services/criminal-law
-  - https://www.amalegalsolutions.com/services/corporate
-  - https://www.amalegalsolutions.com/services/arbitration
-  - https://www.amalegalsolutions.com/services/cyber
-  - https://www.amalegalsolutions.com/services/civil
-  - https://www.amalegalsolutions.com/services/drafting
-  - https://www.amalegalsolutions.com/services/litigation
-- **Do NOT** include any main article H1 title. Start directly with the <h2> tag for your section.
-- **Do NOT** include any FAQs or Reviews in this content.
-- **Do NOT** wrap the response in markdown code blocks like \`\`\`html or \`\`\`. Output RAW HTML only.
-- **CRITICAL NEGATIVE CONSTRAINT**:
-  Under no circumstances should you include any em dashes (—) anywhere in your entire response. Always use normal hyphens (-), colons, commas, or parentheses if needed instead.
+Formatting Requirements:
+- Output HTML ONLY. Start directly with an <h2>${heading}</h2> tag.
+- Follow the <h2> with <p>, <h3>, <ul>, <li>, or <table> tags as appropriate.
+- Do NOT use markdown headers (like ## or ###) or bolding (like **text**). Use HTML tags instead.
+- Do NOT wrap the response in markdown code blocks like \`\`\`html. Output RAW HTML only.
+- Do NOT include any main article H1 title.
+- Do NOT include any FAQs or Reviews in this content.
 `;
 
             const sectionContext = `Write the specific HTML section for "${heading}" relating to the primary keyword: ${primaryKeyword}`;
@@ -141,8 +150,10 @@ Write exactly 350 to 450 words for this specific section alone. Ensure it is ext
 
         try {
             const step3SystemPrompt = `
-You are a legal content strategist and SEO expert.
-Analyze the following generated article Title, Subtitle, and HTML Description, and generate:
+${coreInstructions}
+
+--- TECHNICAL REQUIREMENTS FOR STEP 3 ---
+Task: Analyze the following generated article Title, Subtitle, and HTML Description, and generate:
 1. At least 8-10 highly relevant, detailed FAQs (frequently asked questions) that directly relate to the article content.
 2. 5 realistic customer review snippets (with Indian names) expressing high satisfaction with the legal service.
 3. A suggested image prompt describing a clean, professional, modern corporate infographic/illustration suitable for this article.
@@ -152,9 +163,6 @@ Article Subtitle: ${step1Result.subtitle}
 
 Article Description (Partial/Summary context):
 ${cleanedDescription.substring(0, 4000)} ... (content truncated for context)
-
-CRITICAL NEGATIVE CONSTRAINT:
-Under no circumstances should you include any em dashes (—) anywhere in your response. Always use normal hyphens (-), colons (:), commas, parentheses, or rewrite the sentence to avoid them.
 
 Return ONLY a JSON object with this exact structure:
 {
