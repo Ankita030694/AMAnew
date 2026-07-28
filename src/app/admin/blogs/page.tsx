@@ -1282,6 +1282,32 @@ const BlogsDashboard = () => {
                 />
               </div>
 
+              {/* Meta Title */}
+              <div className="flex flex-col gap-1.5">
+                <label className="text-xs font-extrabold uppercase text-slate-400 tracking-wider">Custom Meta Title</label>
+                <input
+                  type="text"
+                  name="metaTitle"
+                  value={newBlog.metaTitle}
+                  onChange={handleInputChange}
+                  placeholder="Defaults to post title if left blank"
+                  className="p-3.5 border border-slate-200 rounded-xl focus:border-[#B8860B] focus:outline-none text-xs sm:text-sm font-semibold text-slate-700 bg-white"
+                />
+              </div>
+
+              {/* Meta Description */}
+              <div className="flex flex-col gap-1.5">
+                <label className="text-xs font-extrabold uppercase text-slate-400 tracking-wider">Custom Meta Description</label>
+                <input
+                  type="text"
+                  name="metaDescription"
+                  value={newBlog.metaDescription}
+                  onChange={handleInputChange}
+                  placeholder="Short description for Google snippet"
+                  className="p-3.5 border border-slate-200 rounded-xl focus:border-[#B8860B] focus:outline-none text-xs sm:text-sm font-semibold text-slate-700 bg-white"
+                />
+              </div>
+
               {/* Date */}
               <div className="flex flex-col gap-1.5">
                 <label className="text-xs font-extrabold uppercase text-slate-400 tracking-wider">Publication Date *</label>
@@ -1404,38 +1430,6 @@ const BlogsDashboard = () => {
               />
             </div>
 
-            {/* SEO Meta Tags Accordion */}
-            <div className="p-5 border border-slate-150 rounded-2xl bg-slate-50/50 flex flex-col gap-4">
-              <h3 className="text-xs font-black text-slate-900 uppercase tracking-widest flex items-center gap-1.5">
-                <FontAwesomeIcon icon={faInfoCircle} className="text-[#B8860B]" />
-                <span>Google Search SEO Configuration</span>
-              </h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-[10px] font-extrabold uppercase text-slate-400">Custom Meta Title</label>
-                  <input
-                    type="text"
-                    name="metaTitle"
-                    value={newBlog.metaTitle}
-                    onChange={handleInputChange}
-                    placeholder="Defaults to post title if left blank"
-                    className="p-3 border border-slate-200 rounded-lg focus:border-[#B8860B] focus:outline-none text-xs font-semibold text-slate-700 bg-white"
-                  />
-                </div>
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-[10px] font-extrabold uppercase text-slate-400">Custom Meta Description</label>
-                  <input
-                    type="text"
-                    name="metaDescription"
-                    value={newBlog.metaDescription}
-                    onChange={handleInputChange}
-                    placeholder="Short description for Google snippet"
-                    className="p-3 border border-slate-200 rounded-lg focus:border-[#B8860B] focus:outline-none text-xs font-semibold text-slate-700 bg-white"
-                  />
-                </div>
-              </div>
-            </div>
 
             {/* FAQ Subcollection Section */}
             <div className="p-6 border border-slate-150 rounded-3xl bg-slate-50/30 flex flex-col gap-6">

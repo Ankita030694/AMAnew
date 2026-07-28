@@ -177,11 +177,21 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
   return (
     <div className="min-h-screen bg-[#F5F2EB] text-gray-800">
       {/* Hero Image Section */}
-      <div className="w-full h-[400px] md:h-[500px] relative bg-[#1a202c]">
+      <div className="w-full h-[400px] md:h-[500px] relative bg-[#1a202c] overflow-hidden">
+        {/* Blurred Background */}
         <div 
-          className="absolute inset-0 bg-cover bg-center" 
+          className="absolute inset-0 bg-cover bg-center blur-2xl scale-110" 
           style={{ backgroundImage: blog.image ? `url("${blog.image}")` : 'none' }}
         ></div>
+        
+        {/* Main Contained Image */}
+        {blog.image && (
+          <img 
+            src={blog.image} 
+            alt={blog.title} 
+            className="absolute inset-0 w-full h-full object-contain relative z-10" 
+          />
+        )}
       </div>
 
       <div className="container mx-auto px-4 max-w-[1600px] py-8">
