@@ -337,6 +337,7 @@ export default function Page({ initialBlogs = [], currentPage, totalBlogs }: Blo
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
+                  style={{ fontFamily: 'var(--font-polysans)' }}
                 >
                   {/* Left: Image */}
                   <div className="relative w-full md:w-1/2 h-[350px] md:h-[500px] overflow-hidden">
@@ -364,24 +365,24 @@ export default function Page({ initialBlogs = [], currentPage, totalBlogs }: Blo
                   {/* Right: Content */}
                   <div className="w-full md:w-1/2 p-8 md:p-14 flex flex-col justify-center bg-white">
                     <div className="flex items-center gap-3 mb-6">
-                      <span className="bg-[#D2A02A]/10 text-[#D2A02A] text-xs font-bold uppercase tracking-widest py-1.5 px-4 rounded-full">
+                      <span className="bg-[#D2A02A]/10 text-[#D2A02A] text-xs font-normal uppercase tracking-widest py-1.5 px-4 rounded-full">
                         Spotlight Feature
                       </span>
-                      <span className="text-gray-400 font-medium text-sm tracking-wider uppercase">
+                      <span className="text-gray-400 font-light text-sm tracking-wider uppercase">
                         {spotlightArticle.date}
                       </span>
                     </div>
                     
-                    <h2 className="text-3xl md:text-5xl font-bold text-[#30261C] leading-[1.1] mb-6 group-hover:text-[#D2A02A] transition-colors duration-300" style={{ fontFamily: "var(--font-polysans)" }}>
+                    <h2 className="text-3xl md:text-5xl font-normal text-[#30261C] leading-[1.1] mb-6 group-hover:text-[#D2A02A] transition-colors duration-300" style={{ fontFamily: "var(--font-polysans)" }}>
                       {spotlightArticle.title}
                     </h2>
                     
-                    <p className="text-gray-500 text-lg md:text-xl line-clamp-3 mb-10 leading-relaxed">
+                    <p className="text-gray-500 text-lg md:text-xl line-clamp-3 mb-10 leading-relaxed font-extralight">
                       {spotlightArticle.description}
                     </p>
                     
                     <div className="mt-auto">
-                      <span className="inline-flex items-center gap-3 text-[#30261C] font-semibold text-lg group-hover:text-[#D2A02A] transition-colors">
+                      <span className="inline-flex items-center gap-3 text-[#30261C] font-normal text-lg group-hover:text-[#D2A02A] transition-colors">
                         Read Full Story 
                         <span className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-[#D2A02A]/10 transition-colors">
                           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover:translate-x-1 transition-transform"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -429,7 +430,10 @@ export default function Page({ initialBlogs = [], currentPage, totalBlogs }: Blo
                     className="h-full"
                   >
                     <Link href={`/blog/${article.slug}`} className="block group h-full">
-                      <div className="flex flex-col h-full bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-[0_15px_30px_-10px_rgba(0,0,0,0.1)] transition-all duration-300 group-hover:-translate-y-1">
+                      <div 
+                        className="flex flex-col h-full bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-[0_15px_30px_-10px_rgba(0,0,0,0.1)] transition-all duration-300 group-hover:-translate-y-1"
+                        style={{ fontFamily: 'var(--font-polysans)' }}
+                      >
                         <div className="relative h-60 w-full overflow-hidden">
                           {hasValidImage(article.image) ? (
                             <Image
@@ -445,7 +449,7 @@ export default function Page({ initialBlogs = [], currentPage, totalBlogs }: Blo
                               <svg className="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
                             </div>
                           )}
-                          <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-full px-3 py-1.5 text-[11px] font-bold text-[#5A4C33] shadow-sm flex items-center gap-1.5">
+                          <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-full px-3 py-1.5 text-[11px] font-normal text-[#5A4C33] shadow-sm flex items-center gap-1.5">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                             {getEstimatedReadTime(article.description)}
                           </div>
@@ -453,20 +457,20 @@ export default function Page({ initialBlogs = [], currentPage, totalBlogs }: Blo
                         
                         <div className="p-6 flex flex-col flex-grow">
                           <div className="flex items-center gap-2 mb-3">
-                            <span className="text-[11px] font-bold text-[#D2A02A] uppercase tracking-wider">{article.subtitle || "Legal Insight"}</span>
+                            <span className="text-[11px] font-normal text-[#D2A02A] uppercase tracking-wider">{article.subtitle || "Legal Insight"}</span>
                             <span className="w-1 h-1 rounded-full bg-gray-300"></span>
-                            <span className="text-[11px] font-medium text-gray-400 uppercase tracking-wider">{article.date}</span>
+                            <span className="text-[11px] font-light text-gray-400 uppercase tracking-wider">{article.date}</span>
                           </div>
                           
-                          <h3 className="text-[22px] leading-snug font-semibold mb-3 text-[#30261C] group-hover:text-[#D2A02A] transition-colors" style={{ fontFamily: "var(--font-polysans)" }}>
+                          <h3 className="text-[22px] leading-snug font-normal mb-3 text-[#30261C] group-hover:text-[#D2A02A] transition-colors" style={{ fontFamily: "var(--font-polysans)" }}>
                             {article.title}
                           </h3>
                           
-                          <p className="text-[15px] leading-relaxed text-gray-500 mb-6 flex-grow line-clamp-3">
+                          <p className="text-[15px] leading-relaxed text-gray-500 mb-6 flex-grow line-clamp-3 font-extralight">
                             {article.description}
                           </p>
 
-                          <div className="mt-auto flex items-center text-sm font-bold text-[#5A4C33] group-hover:text-[#D2A02A] transition-colors">
+                          <div className="mt-auto flex items-center text-sm font-normal text-[#5A4C33] group-hover:text-[#D2A02A] transition-colors">
                             Read Article 
                             <svg className="ml-2 w-4 h-4 group-hover:translate-x-1.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />

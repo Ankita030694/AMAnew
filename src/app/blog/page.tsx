@@ -95,10 +95,9 @@ export default async function Page({ searchParams }: { searchParams: any }) {
       
       <div className="container mx-auto px-4 py-8">
         <h1 
-          className="text-[32px] md:text-[45px] font-semibold text-center mb-[80px] mt-[120px] leading-[40px] md:leading-[65px] opacity-100 h1-seo-fix"
-          style={{ color: '#5A4C33', fontFamily: "var(--font-polysans)" }}
+          className="text-3xl sm:text-[26px] md:text-[40px] lg:text-[48px] xl:text-[56px] font-normal text-[#30261C] leading-[34px] sm:leading-[35px] md:leading-[50px] lg:leading-[59px] xl:leading-[68px] mb-[80px] mt-[120px] opacity-100 h1-seo-fix text-center"
         >
-          Legal Blogs & Expert Insights
+          <span style={{ color: "#D29E0D", fontWeight: 400 }}>Legal Blogs</span> & Expert Insights
         </h1>
 
         <Suspense fallback={<BlogLoading />}>

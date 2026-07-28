@@ -137,25 +137,15 @@ const ServicesClient = () => {
       {/* Hero Section */}
       <section className="relative w-full pt-32 md:pt-[150px] pb-[50px] md:pb-[120px] flex flex-col items-center">
          <div className="text-center max-w-6xl mx-auto z-20 px-4 pb-12">
-              <h1 className="text-[32px] md:text-[65px] font-semibold text-[#30261C] leading-[40px] md:leading-[75px] mb-[30px] opacity-100"  style={{
-                    background: "linear-gradient(90deg, #30261C 5.29%, #D29E0D 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                    color: "transparent",
-                    overflow: "visible"
-                  }}>
-                  Our Legal Services
-              </h1>
-              <h2 
-                  className="text-[24px] md:text-[27px] leading-[30px] md:leading-[31px] font-normal text-black opacity-85 mb-[35px -mt-2"
-              >
+              <h1 className="text-3xl sm:text-[26px] md:text-[40px] lg:text-[48px] xl:text-[56px] font-normal text-[#30261C] leading-[34px] sm:leading-[35px] md:leading-[50px] lg:leading-[59px] xl:leading-[68px] mb-6 sm:mb-6 md:mb-8 opacity-100">
+                  <span style={{ color: "#D29E0D", fontWeight: 400 }}>
+                      Our Legal Services:
+                  </span>{" "}
                   Comprehensive Legal Solutions Tailored to You
-              </h2>
+              </h1>
              
               <p 
-                className="text-center text-[13px] md:text-[20px] leading-[24px] md:leading-[29px] font-normal max-w-4xl mx-auto mb-[50px] opacity-85"
-                style={{ color: "rgba(48, 38, 28, 0.85)" }}
+                className="text-[17px] sm:text-base md:text-base lg:text-[19px] xl:text-[21px] text-[#30261C] leading-[25px] sm:leading-[24px] md:leading-[27px] lg:leading-[30px] xl:leading-[34px] font-normal mb-7 sm:mb-8 md:mb-10 lg:mb-12 max-w-4xl mx-auto opacity-85 text-center px-6"
               >
                   We provide reliable legal advice and representation for individuals and businesses, ensuring clarity, compliance, and confidence at every stage.
               </p>
