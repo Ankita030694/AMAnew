@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'Difference Between Loan Settlement and Closure', href: '/difference-between-loan-settlement-and-loan-closure-impact-on-cibil' },
+  { name: 'What Happens After Loan Account Becomes NPA', href: '/what-happens-after-loan-account-becomes-npa' },
+  { name: 'How to Stop Bank Recovery Agents Harassment Legally in India', href: '/how-to-stop-bank-recovery-agents-harassment-legally-in-india' },
+  { name: 'Can Bank Freeze Salary Account', href: '/can-a-bank-freeze-my-salary-account-for-personal-loan-default' },
+  { name: 'Section 138 Cheque Bounce Notice For Personal Loan', href: '/section-138-cheque-bounce-notice-for-personal-loan' },
+  { name: 'One Time Settlement Scheme for Personal Loan 2026', href: '/one-time-settlement-scheme-for-personal-loan-2026' },
+  { name: 'How to Reply to Bank Legal Notice for Personal Loan Default', href: '/how-to-reply-to-bank-legal-notice-for-personal-loan-default' },
+  { name: 'Credit Card Settlement After 6 Months', href: '/credit-card-settlement-process-in-india-after-6-months-default' },
   { name: 'Is Debt Relief Worth It', href: '/is-debt-relief-worth-it' },
   { name: 'Debt Resolution Company', href: '/debt-resolution-company' },
   { name: 'Steps to Enroll in a Consumer Credit Counselling Program', href: '/steps-to-enroll-in-a-consumer-credit-counselling-program' },

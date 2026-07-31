@@ -28,6 +28,9 @@ export async function GET(): Promise<Response> {
   // Build static routes
   const staticRoutes = [
     '',
+    '/difference-between-loan-settlement-and-loan-closure-impact-on-cibil',
+    '/how-to-reply-to-bank-legal-notice-for-personal-loan-default',
+    '/credit-card-settlement-process-in-india-after-6-months-default',
     '/what-are-the-types-of-unsecured-loans-available-in-india',
     '/auction-settlement-process-loan-recovery-explained',
     '/check-loan-settlement-status',
@@ -664,6 +667,7 @@ export async function GET(): Promise<Response> {
     '/top-fintech-loan-settlement-companies',
     '/loan-settlement-consultant',
     '/how-to-settle-7-days-loan-apps',
+    '/what-happens-after-loan-account-becomes-npa',
     '/personal-loan-settlement-process-consequences',
     '/protection-from-loan-recovery-harassment',
     '/legal-assistance-for-consumer-debt-settlement-disputes',

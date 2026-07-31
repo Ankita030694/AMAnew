@@ -1060,6 +1060,7 @@ const Footer = () => {
     {
       title: "Queries",
       links: [
+        { name: 'Section 138 Cheque Bounce Notice For Personal Loan', href: '/section-138-cheque-bounce-notice-for-personal-loan' },
         { name: 'Steps to Enroll in a Consumer Credit Counselling Program', href: '/steps-to-enroll-in-a-consumer-credit-counselling-program' },
         { name: 'Online Loan During Cash Crunch', href: '/online-loan-during-cash-crunch' },
         { name: 'SBI Bank Settlement Waiver Percentage 2026 Guide', href: '/settlement-waiver-percentage-of-sbi-bank-loans' },
@@ -1128,6 +1129,8 @@ const Footer = () => {
         { name: 'DIY Personal Loan Settlement', href: '/how-to-settle-my-personal-loan-by-myself' },
         { name: 'Expert Debt Settlement Solutions', href: '/expert-debt-settlement-solutions' },
         // Original Queries links
+        { name: 'One Time Settlement Scheme for Personal Loan 2026', href: '/one-time-settlement-scheme-for-personal-loan-2026' },
+        { name: 'How to Reply to Bank Legal Notice for Personal Loan Default', href: '/how-to-reply-to-bank-legal-notice-for-personal-loan-default' },
         { name: 'Settlement Waiver Percentage of Payday Loans', href: '/settlement-waiver-percentage-of-payday-loans' },
         { name: 'Help in Loan Settlement Legal Firm', href: '/help-in-loan-settlement-legal-firm' },
         { name: 'Affordable NRI Will Drafting Services', href: '/will-drafting-services-affordable-for-nri' },
@@ -1146,9 +1149,11 @@ const Footer = () => {
         { name: "Job Lost Loan Settlement", href: "/job-lost-loan-settlement" },
         { name: "Job Loss Debt Relief", href: "/job-loss-debt-relief" },
         { name: "How to Negotiate Loan Settlement", href: "/how-to-negotiate-a-loan-settlement-with-lenders-online" },
+        { name: "What Happens After Loan Account Becomes NPA", href: "/what-happens-after-loan-account-becomes-npa" },
         { name: "Lok Adalat Settlement for Recovery of Money", href: "/lok-adalat-recovery-of-money" },
         { name: "Special Lok Adalat for Loan Settlement", href: "/special-lok-adalat-for-loan-settlement" },
         { name: "Top Loan Settlement Services", href: "/top-loan-settlement-services-with-good-customer-reviews" },
+        { name: "Difference Between Loan Settlement & Closure", href: "/difference-between-loan-settlement-and-loan-closure-impact-on-cibil" },
         { name: "Steps to Trademark Registration", href: "/steps-to-trademark-registration" },
         { name: "Best Apps for Loan Settlement", href: "/best-apps-for-loan-settlement-in-india" },
         { name: "How Can I Negotiate a Loan Settlement", href: "/how-can-i-negotiate-a-loan-settlement-with-my-lender" },
@@ -1448,6 +1453,7 @@ const Footer = () => {
         { name: "Mai Apne Loan Ki EMI Nahi Bhar Parha Hun", href: "/mai-apne-loan-ki-emi-nahi-bhar-parha-hun" },
         { name: "Can I Settle Loan In One Week", href: "/can-i-settle-loan-in-one-week" },
         { name: "12000+ Loan Settlement Enquiries Analysis", href: "/ama-legal-solutions-12000-loan-settlement-enquiries-analysis" },
+        { name: "Credit Card Settlement After 6 Months", href: "/credit-card-settlement-process-in-india-after-6-months-default" },
         { name: "Can I Settle My Personal Loan?", href: "/can-i-settle-my-personal-loan" },
         { name: "Protection from Loan Recovery Harassment", href: "/protection-from-loan-recovery-harassment" },
         { name: "Can Bank Reject Loan Settlement?", href: "/can-banks-reject-loan-settlement-offer" },
@@ -1471,7 +1477,8 @@ const Footer = () => {
         { name: "Axis Bank Settlement Waiver Percentage", href: "/settlement-waiver-percentage-of-axis-bank" },
         { name: "ICICI Bank Settlement Waiver Percentage", href: "/settlement-waiver-percentage-of-icici-bank" },
         { name: "Auction Settlement Process", href: "/auction-settlement-process-loan-recovery-explained" },
-        { name: "Debt Resolution Company", href: "/debt-resolution-company" }
+        { name: "Debt Resolution Company", href: "/debt-resolution-company" },
+        { name: "Can Bank Freeze Salary Account", href: "/can-a-bank-freeze-my-salary-account-for-personal-loan-default" }
       ]
     }
   ];
