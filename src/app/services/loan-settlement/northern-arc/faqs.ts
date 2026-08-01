@@ -1,5 +1,9 @@
 export const faqs = [
     {
+        question: "How can I check my Northern Arc Capital loan statement?",
+        answer: "You can usually download your Northern Arc Capital loan statement directly through the partner app (like Slice, Uni, or KreditBee) or by contacting Northern Arc's customer support. Reviewing your statement is the critical first step before initiating a settlement to verify exactly how much penal interest and late fees have been added to your principal amount."
+    },
+    {
         question: "I took a loan from an app, why is Northern Arc sending me notices?",
         answer: "Northern Arc Capital is a major NBFC that partners with many fintech apps and digital lenders (like Slice, Uni, KreditBee, etc.) to provide the actual loan capital. Even if you applied through an app, Northern Arc might be the official lender on record, making them responsible for recovery and legal notices."
     },

@@ -7,12 +7,12 @@ import TableOfContents from "@/components/TableOfContents";
 // FAQ data for rendering and Schema
 const faqs = [
   {
-    question: "What is the credit card settlement process in India?",
+    question: "How to settle a credit card debt through the settlement process in India?",
     answer: "The credit card settlement process in India is a legal negotiation where a cardholder and the bank agree on a one-time payment to close the debt for less than the total outstanding amount. This is typically offered when the borrower is in genuine financial distress. The process involves documenting hardship, negotiating the waiver of interest and penalties, receiving a formal settlement letter, making the payment through official channels, and obtaining a No Dues Certificate (NDC)."
   },
   {
-    question: "How much discount can I get on credit card settlement in 2025?",
-    answer: "In 2025, banks in India typically offer waivers ranging from 40% to 70% of the total outstanding amount, depending on the age of the default and the cardholder's financial situation. In extreme cases of long-term NPA or high accumulated interest, savings can be even higher. AMA Legal Solutions specializes in maximizing these waivers by leveraging legal defenses and RBI guidelines."
+    question: "What is the average credit card settlement percentage in India?",
+    answer: "In 2025, the credit card settlement percentage typically ranges from 30% to 60% of the total outstanding amount that you have to pay (meaning banks offer waivers of 40% to 70%). This percentage depends on the age of the default and the cardholder's financial situation. AMA Legal Solutions specializes in negotiating the best credit card settlement percentage by leveraging legal defenses and RBI guidelines."
   },
   {
     question: "Will credit card settlement stop recovery agent harassment?",
@@ -105,16 +105,17 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Credit Card Settlement Process India | Expert Legal Help",
-  description: "Struggling with credit card debt? Learn the legal credit card settlement process in India for 2025. Get expert help from AMA Legal Solutions to reduce debt and stop harassment.",
+  description: "Wondering how to settle a credit card debt? Learn the legal credit card settlement process in India for 2025. Get expert help from AMA Legal Solutions to reduce debt and stop harassment.",
   keywords: [
     "credit card settlement process india",
     "credit card settlement rbi guidelines 2025",
-    "how to settle credit card debt in india",
+    "how to settle a credit card debt",
     "credit card settlement lawyers",
     "debt settlement process for credit cards",
     "ama legal solutions credit card settlement",
     "credit card recovery harassment help",
-    "settle credit card debt with bank"
+    "settle credit card debt with bank",
+    "credit card settlement percentage"
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/credit-card-settlement-process-india',
@@ -190,7 +191,7 @@ export default function CreditCardSettlementPage() {
               The Ultimate Guide to <br/><span className="text-[#D2A02A]">Credit Card Settlement Process in India</span>
             </h1>
             <p className="text-sm md:text-2xl mb-6 md:mb-10 max-w-4xl mx-auto text-gray-200">
-              Escape the compounding interest trap with India's #1 legal debt resolution firm. Learn how to negotiate waivers of up to 70 percent and stop harassment legally.
+              Escape the compounding interest trap with India's #1 legal debt resolution firm. Learn how to settle a credit card debt, negotiate waivers of up to 70 percent and stop harassment legally.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <Link href="/contact" className="w-full sm:w-auto">
@@ -265,7 +266,7 @@ export default function CreditCardSettlementPage() {
                         In the modern Indian economy, credit cards have become a double-edged sword. While they offer convenience and rewards, their interest rates (often ranging from 36 percent to 48 percent per annum) can quickly spiral out of control. Once a borrower falls behind on a few payments, the compounding interest, late fees, and GST on charges can make the debt balloon to several times the original principal. This is known as the "Credit Card Debt Trap," and it affects millions of professionals in cities like Mumbai, Bengaluru, and Gurgaon.
                     </p>
                     <p>
-                        Finding yourself in this situation can be overwhelming. The constant barrage of legal notices, recovery agent calls, and the fear of social shaming can lead to immense mental distress. However, it is vital to know that you are not alone and that there is a legal, regulated path to freedom. The credit card settlement process in India is a recognized financial solution for those in genuine hardship.
+                        Finding yourself in this situation can be overwhelming. The constant barrage of legal notices, recovery agent calls, and the fear of social shaming can lead to immense mental distress. However, it is vital to know that you are not alone and that there is a legal, regulated path to freedom. If you are wondering how to settle a credit card debt, the credit card settlement process in India is a recognized financial solution for those in genuine hardship.
                     </p>
                     <p>
                         At **AMA Legal Solutions**, we have spent decades helping honest borrowers navigate the complexities of banking litigation and negotiations. As India's #1 legal firm for debt resolution, we don't just negotiate; we protect. We ensure that every step of your settlement follows the mandated RBI guidelines and that your rights as a consumer are never compromised.
@@ -281,7 +282,7 @@ export default function CreditCardSettlementPage() {
                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-10">What Exactly is Credit Card Settlement?</h2>
                   <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-8">
                     <p>
-                        Credit card settlement is a mutual agreement between the cardholder and the bank to close the account by paying a lump-sum amount that is significantly lower than the total outstanding balance. This amount typically covers the principal part of the debt, while a large portion of the interest and penalties is waived off.
+                        Credit card settlement is a mutual agreement between the cardholder and the bank to close the account by paying a lump-sum amount that is significantly lower than the total outstanding balance. This amount typically covers the principal part of the debt, while a large portion of the interest and penalties is waived off. The final <strong>credit card settlement percentage</strong> that you end up paying is often heavily dependent on the negotiation skills of your legal counsel and the bank's internal NPA policies.
                     </p>
                     <div className="bg-blue-50 p-8 rounded-xl border-l-4 border-blue-500">
                         <h4 className="text-2xl font-bold text-blue-900 mb-4">Key Terms You Must Know</h4>

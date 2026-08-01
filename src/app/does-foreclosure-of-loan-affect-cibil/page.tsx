@@ -8,7 +8,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 // FAQ data for rendering and Schema
 const faqs = [
   {
-    question: "Does foreclosure of a loan affect my CIBIL score positively or negatively?",
+    question: "Does foreclosure of loan affect CIBIL score positively or negatively?",
     answer: "Foreclosure can have both positive and negative impacts, but generally, it is seen as a sign of financial discipline. In the short term, you might see a small dip of 5 to 10 points because a long standing credit line is closed. However, in the long run, it reduces your debt to income ratio and proves you can repay your debts in full, which is highly viewed by future lenders."
   },
   {
@@ -204,9 +204,9 @@ const reviewSchema = {
 export const metadata = {
   title: "Does Foreclosure of Loan Affect CIBIL? | Expert Credit Guide",
   description:
-    "Learn how loan foreclosure impacts your CIBIL score in India. Understand the benefits of early repayment, potential short-term dips, and how to maintain a healthy credit profile.",
+    "Wondering does foreclosure of loan affect cibil? Learn how early repayment impacts your CIBIL score. Understand the benefits and potential short-term dips.",
   keywords: [
-    "does foreclosure affect cibil",
+    "does foreclosure of loan affect cibil",
     "loan foreclosure cibil score impact",
     "foreclosure vs settlement cibil",
     "cibil score after loan closure",
@@ -291,7 +291,7 @@ export default function ForeclosureCibilPage() {
           ></div>
           <div className="relative z-20 container mx-auto px-4 py-12 md:py-32 text-center">
             <h1 className="text-2xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight mt-10">
-              Does <span className="text-[#D2A02A]">Foreclosure of Loan</span> Affect CIBIL Score?
+              <span className="text-[#D2A02A]">Does Foreclosure of Loan Affect CIBIL</span> Score?
             </h1>
             <p className="text-sm md:text-2xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
               Everything you need to know about the impact of early loan repayment on your credit health. Understand the facts, avoid the myths, and secure your financial future.

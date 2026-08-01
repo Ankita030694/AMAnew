@@ -205,8 +205,8 @@ export default function CreditCardSettlementPage() {
           <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
           <div className="relative z-20 container mx-auto px-4 py-16 md:py-32 text-center">
             <h1 className="text-3xl md:text-6xl font-bold mb-6 leading-tight mt-10">
-              Struggling with Credit Card Debt? <br />
-              <span className="text-[#D2A02A]">Learn How to Settle It Legally</span>
+              Struggling with dues? <br />
+              <span className="text-[#D2A02A]">Learn How to Settle Credit Card Debt</span>
             </h1>
             <p className="text-base md:text-2xl mb-10 max-w-4xl mx-auto text-gray-200">
               The complete guide to credit card settlement in India. Stop the interest trap, end recovery harassment, and settle your dues for up to 50% less with expert legal help.

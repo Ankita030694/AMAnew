@@ -7,8 +7,8 @@ import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamation
 export const metadata = {
   title: "One Time Settlement (OTS) Legal Assistance: 2026 Guide",
   description:
-    "Facing debt? Get expert One Time Settlement (OTS) legal assistance. Learn about RBI guidelines, negotiation strategies for 70-90% waivers, and legal protection.",
-  keywords: "one time settlement ots legal assistance, loan settlement india, rbi compromise settlement guidelines, debt resolution help, how to settle personal loan india",
+    "Facing debt? Get expert legal assistance for your one time settlement. Learn about RBI guidelines, negotiation strategies for 70-90% waivers, and legal protection.",
+  keywords: "one time settlement, one time settlement ots legal assistance, loan settlement india, rbi compromise settlement guidelines, debt resolution help",
 };
 
 const sections = [

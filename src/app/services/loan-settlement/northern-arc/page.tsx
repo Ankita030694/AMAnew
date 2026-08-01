@@ -11,7 +11,14 @@ import { MdSmartphone, MdOutlinePayments, MdSecurity, MdCreditScore } from "reac
 // Metadata
 export const metadata = {
   title: "Northern Arc Capital Loan Settlement | Slice, Uni & Fintech Loans | AMA Legal Solutions",
-  description: "Unable to pay Northern Arc Capital loans (Slice, Uni, KreditBee)? We provide expert legal settlement services to stop harassment, handle arbitration, and close your debt.",
+  description: "Unable to pay Northern Arc Capital loans? Need a northern arc capital loan statement? We provide expert legal settlement services to stop harassment and close your debt.",
+  keywords: [
+    "northern arc capital loan settlement",
+    "northern arc capital loan statement",
+    "slice loan settlement",
+    "uni loan settlement",
+    "fintech loan settlement lawyers"
+  ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/northern-arc',
   },
@@ -212,7 +219,7 @@ export default function NorthernArcLoanSettlementPage() {
                   When you use a "Buy Now, Pay Later" (BNPL) service or swipe a fintech credit card, the money is often being lent by Northern Arc. This means that while your app interface might belong to a cool, modern startup, the legal debt obligation is owed to a regulated, traditional financial institution. This distinction is crucial because when defaults happen, it is Northern Arc that initiates the legal recovery process, not just the app developer.
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Many borrowers are surprised to receive legal notices from Northern Arc when they thought their relationship was with a different brand. Understanding this relationship is the first step in resolving your debt. At AMA Legal Solutions, we bridge this gap, dealing directly with Northern Arc's compliance and settlement teams to resolve your financial liabilities professionally and legally.
+                  Many borrowers are surprised to receive legal notices from Northern Arc when they thought their relationship was with a different brand. Understanding this relationship is the first step in resolving your debt. Before taking any action, you should always review your <strong>northern arc capital loan statement</strong> to understand the exact breakdown of principal versus penal interest. At AMA Legal Solutions, we bridge this gap, dealing directly with Northern Arc's compliance and settlement teams to resolve your financial liabilities professionally and legally.
                 </p>
               </div>
             </section>

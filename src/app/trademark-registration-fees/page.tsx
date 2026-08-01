@@ -179,8 +179,9 @@ const reviewSchema = {
 export const metadata = {
   title: "Trademark Registration Fees India 2026 | #1 Cost Guide",
   description:
-    "Official guide to trademark registration fees in India. Complete breakdown of government costs, professional fees, and startup concessions. Get protected today.",
+    "Official guide to trademark and logo registration fees in India. Complete breakdown of government costs, professional fees, and startup concessions. Get protected today.",
   keywords: [
+    "logo registration fees",
     "trademark registration fees",
     "trademark cost india",
     "government fee for trademark",

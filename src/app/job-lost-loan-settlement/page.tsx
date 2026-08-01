@@ -7,7 +7,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 // FAQ data for rendering and Schema
 const faqs = [
   {
-    question: "I lost my job and cannot pay my loan EMIs. What should I do?",
+    question: "What should I do if I am unable to pay personal loan emi due to job loss?",
     answer: "The first step is not to panic. Inform your bank immediately about your job loss and submit proof such as your termination letter. Do not ignore their calls. If you are unable to sustain payments, you can propose a loan settlement. Engaging a legal firm like AMA Legal Solutions early can help you negotiate better terms and stop harassment while you look for a new job."
   },
   {
@@ -159,11 +159,11 @@ const reviewSchema = {
 export const metadata = {
   title: "Job Lost Loan Settlement | Settle Debt After Job Loss India",
   description:
-    "Struggling with loans after job loss? AMA Legal Solutions offers expert loan settlement services. We negotiate with banks to reduce your debt and stop harassment.",
+    "Unable to pay personal loan emi due to job loss? AMA Legal Solutions offers expert loan settlement services. We negotiate with banks to reduce your debt and stop harassment.",
   keywords: [
     "job lost loan settlement",
     "loan settlement after job loss",
-    "unable to pay loan due to job loss",
+    "unable to pay personal loan emi due to job loss",
     "debt settlement india",
     "one time settlement job loss",
     "personal loan settlement unemployment",
@@ -287,7 +287,7 @@ export default function JobLostLoanSettlementPage() {
                     Losing a job is one of the most stressful events in a person's life. The sudden loss of income brings with it a wave of uncertainty, affecting not just your career but your entire financial stability. In the midst of updating your resume and interviewing for new roles, the looming pressure of outstanding loans - be it Personal Loans, Credit Card bills, or Home Loans - can feel overwhelming.
                   </p>
                   <p className="text-base md:text-lg leading-relaxed mb-6 text-gray-700">
-                    If you are searching for <strong>job lost loan settlement</strong> solutions, know that you are not alone. Thousands of professionals across India face this crisis annually. The good news is that the Indian banking system and the Reserve Bank of India (RBI) have provisions for borrowers in genuine distress. You do not have to ruin your life over debt.
+                    If you are <strong>unable to pay personal loan emi due to job loss</strong> and searching for job lost loan settlement solutions, know that you are not alone. Thousands of professionals across India face this crisis annually. The good news is that the Indian banking system and the Reserve Bank of India (RBI) have provisions for borrowers in genuine distress. You do not have to ruin your life over debt.
                   </p>
                   <p className="text-base md:text-lg leading-relaxed text-gray-700">
                     At AMA Legal Solutions, we specialize in helping unemployed individuals manage and settle their debts with dignity. We step in to handle the banks, stop the harassment, and negotiate a settlement that gives you the breathing room you need to get your career back on track. If you are specifically working in the tech sector, please check our specialized guide on <Link href="/loan-settlement-for-it-professionals" className="text-[#D2A02A] font-semibold hover:underline">loan settlement for IT professionals</Link> to understand tech-specific background verification and client clearance implications. Similarly, if you are a freelance professional or gig worker struggling with debt due to client contract termination, read our dedicated roadmap on <Link href="/loan-settlement-for-freelancers" className="text-[#D2A02A] font-semibold hover:underline">loan settlement for freelancers</Link> to resolve bank dues.
