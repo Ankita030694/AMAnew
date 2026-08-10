@@ -1,23 +1,23 @@
-import AndhraPradeshClient from "./AndhraPradeshClient";
+import ClientPage from "./ClientPage";
 
 export const metadata = {
-  title: "Intellectual Property Rights Services in Andhra Pradesh | Trademark & Patent",
+  title: "Intellectual Property Rights Services in Ladakh | Trademark & Patent",
   description:
-    "Expert IPR services in Andhra Pradesh. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets today.",
+    "Expert IPR services in Ladakh. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets today.",
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/andhra-pradesh',
+    canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/ladakh',
   },
   openGraph: {
-    title: "Intellectual Property Rights Services in Andhra Pradesh | Trademark & Patent",
-    description: "Expert IPR services in Andhra Pradesh. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets today.",
-    url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/andhra-pradesh",
+    title: "Intellectual Property Rights Services in Ladakh | Trademark & Patent",
+    description: "Expert IPR services in Ladakh. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets today.",
+    url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/ladakh",
     type: "website",
     images: [
       {
-        url: "/services/ipr-andhra-pradesh.jpg",
+        url: "/services/ipr-ladakh.jpg",
         width: 1200,
         height: 630,
-        alt: "IPR Services Andhra Pradesh",
+        alt: "IPR Services Ladakh",
       },
     ],
   },
@@ -48,8 +48,8 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 4,
-      "name": "Andhra Pradesh",
-      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights/andhra-pradesh"
+      "name": "Ladakh",
+      "item": "https://www.amalegalsolutions.com/services/intellectual-property-rights/ladakh"
     }
   ]
 };
@@ -61,7 +61,7 @@ export default function AndhraPradeshIPRPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <AndhraPradeshClient />
+      <ClientPage />
     </>
   );
 }
