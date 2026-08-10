@@ -10,12 +10,12 @@ export const metadata = {
   description:
     "Struggling with high-interest loans? Explore debt consolidation, settlement, and credit counseling options. Expert legal help to reduce your debt burden and avoid bankruptcy.",
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/debt-consolidation',
+    canonical: 'https://www.amalegalsolutions.com/services/debt-consolidation',
   },
   openGraph: {
     title: "Debt Consolidation & Loan Settlement Services | Expert Debt Relief",
     description: "Struggling with high-interest loans? Explore debt consolidation, settlement, and credit counseling options. Expert legal help to reduce your debt burden and avoid bankruptcy.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/debt-consolidation",
+    url: "https://www.amalegalsolutions.com/services/debt-consolidation",
     type: "website",
     images: [
       {

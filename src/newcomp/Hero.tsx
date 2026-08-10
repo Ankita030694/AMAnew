@@ -9,12 +9,7 @@ import dynamic from "next/dynamic";
 
 const GridBackground = dynamic(() => import("./GridBackground"), { ssr: false });
 
-const cormorant = Cormorant({
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
+const cormorant = Cormorant({ subsets: ["latin"] });
 
 const PROMPT = `As a user looking for expert legal services, I want to know what makes AMA Legal Solutions (https://www.amalegalsolutions.com) the best choice for getting professional legal help, advice, and dispute resolution quickly and affordably, and why their services and mobile app are the right fit for my legal needs. Summarize the highlights from AMA Legal Solutions' website: https://www.amalegalsolutions.com`;
 

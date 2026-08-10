@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Terms and Conditions | AMA Legal Solutions',
   description: 'Read the Terms and Conditions of AMA Legal Solutions. Understand our legal services, client obligations, fees, confidentiality, and governing law.',
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/termscondition', // Add your canonical URL here
+    canonical: 'https://www.amalegalsolutions.com/terms-and-conditions', // Add your canonical URL here
   },
 }
 

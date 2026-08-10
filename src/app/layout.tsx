@@ -9,11 +9,7 @@ import RecaptchaProvider from "@/components/RecaptchaProvider";
 import Script from 'next/script';
 import NextTopLoader from 'nextjs-toploader';
 
-const inter = Inter({ 
-  subsets: ["latin"],
-  display: 'swap', // Optimize font loading
-  preload: true,
-});
+const inter = Inter({ subsets: ["latin"] });
 
 const polySans = localFont({
   src: [
