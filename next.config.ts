@@ -1,4 +1,6 @@
 import type { NextConfig } from "next";
+import fs from "fs";
+import path from "path";
 
 const nextConfig = {
   experimental: {
@@ -347,6 +349,7 @@ const nextConfig = {
       { source: '/services/loan-settlement/personal-loan', destination: '/personal-loan-settlement', permanent: true },
       { source: '/services/success-stories', destination: '/success-stories', permanent: true },
       { source: '/shop-and-establishment', destination: '/employer-not-paying-salary-after-resignation', permanent: true },
+      ...JSON.parse(fs.readFileSync(path.join(process.cwd(), 'redirects.json'), 'utf8'))
     ];
   },
 

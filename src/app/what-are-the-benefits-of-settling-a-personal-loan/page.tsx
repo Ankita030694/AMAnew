@@ -304,7 +304,7 @@ export default function BenefitsOfSettlingPersonalLoanPage() {
 
                   <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-6">How Debt Settlement Differs from Debt Management</h3>
                   <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                    It is vital not to confuse debt settlement with debt management or credit counseling. In a Debt Management Plan (DMP), a credit counseling agency works with your creditors to reduce your interest rates and waive late fees, but you are still required to pay back 100% of the principal balance over three to five years. Debt settlement, on the other hand, actively reduces the principal amount you owe. While a DMP is excellent for those who can afford their principal but are drowning in interest, settlement is designed for those who fundamentally cannot afford the total debt they have incurred. If you are unsure which is right for you, our <Link href="/credit-counseling-vs-debt-settlement" className="text-[#D2A02A] hover:underline font-semibold">credit counseling vs. debt settlement guide</Link> offers a deeper comparison.
+                    It is vital not to confuse debt settlement with debt management or credit counseling. In a Debt Management Plan (DMP), a credit counseling agency works with your creditors to reduce your interest rates and waive late fees, but you are still required to pay back 100% of the principal balance over three to five years. Debt settlement, on the other hand, actively reduces the principal amount you owe. While a DMP is excellent for those who can afford their principal but are drowning in interest, settlement is designed for those who fundamentally cannot afford the total debt they have incurred. If you are unsure which is right for you, our credit counseling vs. debt settlement guide offers a deeper comparison.
                   </p>
                 </section>
 
@@ -335,7 +335,7 @@ export default function BenefitsOfSettlingPersonalLoanPage() {
                         Bankruptcy carries severe, long-lasting consequences. A Chapter 7 bankruptcy will remain on your public credit report for a full 10 years, severely hampering your ability to obtain new credit, secure a mortgage, or sometimes even rent an apartment or get a job. Furthermore, Chapter 7 bankruptcy involves the liquidation of non-exempt assets, meaning you could potentially lose valuable property. Chapter 13 bankruptcy requires a court-mandated repayment plan lasting three to five years, during which your finances are strictly monitored by a court-appointed trustee.
                       </p>
                       <p className="text-sm md:text-lg leading-relaxed text-gray-700 mt-2">
-                        Debt settlement allows you to avoid the public stigma, the total credit devastation, and the invasive court oversight associated with bankruptcy. By negotiating your debts down privately, you retain control over your assets and your financial privacy. If you are weighing these two options, reading our <Link href="/bankruptcy-alternatives" className="text-[#D2A02A] hover:underline font-semibold">bankruptcy alternatives</Link> resource can provide further clarity.
+                        Debt settlement allows you to avoid the public stigma, the total credit devastation, and the invasive court oversight associated with bankruptcy. By negotiating your debts down privately, you retain control over your assets and your financial privacy. If you are weighing these two options, reading our bankruptcy alternatives resource can provide further clarity.
                       </p>
                     </div>
 
@@ -429,7 +429,7 @@ export default function BenefitsOfSettlingPersonalLoanPage() {
 
                   <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-6">Debt Settlement vs. Debt Consolidation Loans</h3>
                   <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                    A <Link href="/debt-consolidation-guide" className="text-[#D2A02A] hover:underline font-semibold">debt consolidation loan</Link> involves taking out a new, large personal loan to pay off all your existing smaller loans and credit cards. The goal is to secure a lower interest rate and combine multiple payments into one.
+                    A debt consolidation loan involves taking out a new, large personal loan to pay off all your existing smaller loans and credit cards. The goal is to secure a lower interest rate and combine multiple payments into one.
                   </p>
                   <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
                     <strong>The Verdict:</strong> Consolidation is excellent if you have a strong credit score (usually 680+) and sufficient income to qualify for a favorable rate. However, if you are already missing payments, your credit score will disqualify you from getting a consolidation loan. Furthermore, consolidation does not reduce the principal amount you owe; it merely moves the debt from one bank to another. Settlement is for those who fundamentally cannot afford the principal balance, whereas consolidation is for those who can afford the principal but want a lower interest rate.

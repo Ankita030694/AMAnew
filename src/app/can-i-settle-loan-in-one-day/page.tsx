@@ -409,7 +409,7 @@ export default function Page() {
                   </div>
 
                   <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                    This is why engaging a qualified professional is not a luxury, but a necessity. A seasoned advocate scrutinizes every syllable of the settlement document. They understand the bank's standard operating procedures and the legal loopholes they often attempt to embed in these agreements. If you are serious about protecting your financial future, you must consult the <Link href="/best-loan-settlement-lawyer-in-india" className="text-[#D2A02A] hover:underline font-semibold">best loan settlement lawyer in india</Link> before transferring a single rupee.
+                    This is why engaging a qualified professional is not a luxury, but a necessity. A seasoned advocate scrutinizes every syllable of the settlement document. They understand the bank's standard operating procedures and the legal loopholes they often attempt to embed in these agreements. If you are serious about protecting your financial future, you must consult the best loan settlement lawyer in india before transferring a single rupee.
                   </p>
                 </section>
 

@@ -234,7 +234,7 @@ export default function DifferenceBetweenSettlementAndClosurePage() {
                   </p>
 
                   <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                    This compromise path is entirely legal and is governed by specific Reserve Bank of India guidelines designed to help banks clean their balance sheets of toxic assets. For the borrower, a settlement provides immediate psychological and financial relief. It permanently stops the harassing phone calls from collection agents and eliminates the crushing burden of a debt they physically cannot pay. If you are struggling with the exact mechanics of this negotiation, you must review the detailed <Link href="/loan-settlement-process" className="text-[#D2A02A] hover:underline font-semibold">loan settlement process</Link> to ensure you secure the maximum possible waiver without falling into common banking traps.
+                    This compromise path is entirely legal and is governed by specific Reserve Bank of India guidelines designed to help banks clean their balance sheets of toxic assets. For the borrower, a settlement provides immediate psychological and financial relief. It permanently stops the harassing phone calls from collection agents and eliminates the crushing burden of a debt they physically cannot pay. If you are struggling with the exact mechanics of this negotiation, you must review the detailed loan settlement process to ensure you secure the maximum possible waiver without falling into common banking traps.
                   </p>
 
                   <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-6">How a "Settled" Status Ruins Your CIBIL</h3>

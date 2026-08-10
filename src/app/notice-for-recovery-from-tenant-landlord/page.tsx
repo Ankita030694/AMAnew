@@ -34,7 +34,7 @@ const relatedPages = [
 
 export default function TenantRecoveryGuide() {
   const breadcrumbItems = [
-    { label: "Legal Guides", href: "/guides" },
+    { label: "Legal Guides", href: "/articles" },
     { label: "Recovery from Tenant", href: "/notice-for-recovery-from-tenant-landlord" },
   ];
 
@@ -146,7 +146,7 @@ export default function TenantRecoveryGuide() {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.amalegalsolutions.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Legal Guides", "item": "https://www.amalegalsolutions.com/guides" },
+      { "@type": "ListItem", "position": 2, "name": "Legal Guides", "item": "https://www.amalegalsolutions.com/articles" },
       { "@type": "ListItem", "position": 3, "name": "Recovery from Tenant", "item": "https://www.amalegalsolutions.com/notice-for-recovery-from-tenant-landlord" }
     ]
   };

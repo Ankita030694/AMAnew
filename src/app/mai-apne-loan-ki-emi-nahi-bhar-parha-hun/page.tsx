@@ -373,7 +373,7 @@ export default function UnableToPayEMIPage() {
               <section id="impact-cibil" className="scroll-mt-32">
                 <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-6">Impact on Your CIBIL Score and Credit Profile</h3>
                 <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                  The most enduring damage of a missed EMI is inflicted upon your credit profile. In India, credit bureaus like CIBIL, Experian, Equifax, and CRIF High Mark maintain your credit history. Lenders are legally obligated to report borrower payment behavior to these bureaus on a monthly basis. Consequently, any delay in your EMI payment is instantly recorded in your credit report. For a comprehensive look at this mechanism, read our detailed analysis on <Link href="/cibil-score-impact-after-default" className="text-[#D2A02A] hover:underline font-semibold">CIBIL score impact after default</Link>.
+                  The most enduring damage of a missed EMI is inflicted upon your credit profile. In India, credit bureaus like CIBIL, Experian, Equifax, and CRIF High Mark maintain your credit history. Lenders are legally obligated to report borrower payment behavior to these bureaus on a monthly basis. Consequently, any delay in your EMI payment is instantly recorded in your credit report. For a comprehensive look at this mechanism, read our detailed analysis on CIBIL score impact after default.
                 </p>
                 
                 <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 my-8 flex flex-col md:flex-row items-center">
@@ -411,7 +411,7 @@ export default function UnableToPayEMIPage() {
               <section id="loan-restructuring" className="scroll-mt-32">
                 <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-6">Initiating Loan Restructuring Requests</h3>
                 <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                  Your most powerful tool is a formal request for loan restructuring. Banks have internal policies allowing them to alter the terms of a loan for borrowers facing genuine, verifiable hardship. To understand the complete step-by-step mechanism, review our comprehensive guide on the <Link href="/loan-restructuring-process" className="text-[#D2A02A] hover:underline font-semibold">loan restructuring process</Link>.
+                  Your most powerful tool is a formal request for loan restructuring. Banks have internal policies allowing them to alter the terms of a loan for borrowers facing genuine, verifiable hardship. To understand the complete step-by-step mechanism, review our comprehensive guide on the loan restructuring process.
                 </p>
                 <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
                   To initiate this, you must draft a formal Hardship Letter. This letter must be concise, factual, and strictly professional. Address it to the Branch Manager and the Nodal Officer of the bank. State clearly the exact reason for your inability to pay. Acceptable reasons include job loss, severe medical emergencies, sudden business failure, or death of a primary earning family member. Crucially, you must attach documentary evidence supporting your claim. A termination letter from your employer, hospital admission bills, or a death certificate are essential to prove your case is genuine.
@@ -447,7 +447,7 @@ export default function UnableToPayEMIPage() {
               <section id="rbi-guidelines" className="scroll-mt-32">
                 <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-6">RBI Guidelines on Fair Recovery Practices</h3>
                 <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                  To curb the menace of aggressive collection tactics, the central banking authority has laid down stringent rules. Familiarizing yourself with the <Link href="/rbi-guidelines-for-loan-recovery-agents" className="text-[#D2A02A] hover:underline font-semibold">RBI guidelines for loan recovery agents</Link> is your strongest shield against harassment. The Master Circular on Fair Practice Code dictates exactly what a bank can and cannot do.
+                  To curb the menace of aggressive collection tactics, the central banking authority has laid down stringent rules. Familiarizing yourself with the RBI guidelines for loan recovery agents is your strongest shield against harassment. The Master Circular on Fair Practice Code dictates exactly what a bank can and cannot do.
                 </p>
                 <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
                   Firstly, recovery agents can only contact you between standard daylight hours, strictly from 7 AM to 7 PM. Any calls made early in the morning or late at night constitute illegal harassment. Secondly, agents must treat you with respect. The use of abusive language, threats, or intimidation is a severe violation.

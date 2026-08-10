@@ -433,7 +433,7 @@ export default function LoanSettlementRecoveryAgentComplaintPage() {
                     You cannot be arrested simply for being unable to repay a loan, provided there was no fraudulent intent at the time of borrowing. The bank must respect your right to negotiate terms that align with your current financial capacity. If the recovery agents attempt to mislead you into believing you will face immediate jail time for a missed EMI, they are committing fraud.
                   </p>
                   <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                    To fortify your position, consider consulting with financial legal experts who specialize in debt relief. Professional advocacy can shield you from direct harassment while securing a legally sound settlement agreement that permanently resolves the debt. If you need professional intervention, obtaining <Link href="/online-legal-advice" className="text-[#D2A02A] hover:underline font-semibold">online legal advice</Link> can provide the strategic direction required to navigate these complex situations.
+                    To fortify your position, consider consulting with financial legal experts who specialize in debt relief. Professional advocacy can shield you from direct harassment while securing a legally sound settlement agreement that permanently resolves the debt. If you need professional intervention, obtaining online legal advice can provide the strategic direction required to navigate these complex situations.
                   </p>
                   
                   <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
@@ -468,10 +468,10 @@ export default function LoanSettlementRecoveryAgentComplaintPage() {
                 <h3 className="text-lg font-bold text-gray-900 mb-4 border-b pb-2">Related Legal Guides</h3>
                 <ul className="space-y-3">
                   <li>
-                    <Link href="/legal-notice-format-for-recovery-of-money" className="text-sm text-gray-700 hover:text-[#D2A02A] transition-colors flex items-center">
+                    
                       <span className="w-1.5 h-1.5 rounded-full bg-[#D2A02A] mr-2"></span>
                       Legal Notice for Recovery
-                    </Link>
+                    
                   </li>
                   <li>
                     <Link href="/what-is-loan-settlement" className="text-sm text-gray-700 hover:text-[#D2A02A] transition-colors flex items-center">
@@ -480,10 +480,10 @@ export default function LoanSettlementRecoveryAgentComplaintPage() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/online-legal-advice" className="text-sm text-gray-700 hover:text-[#D2A02A] transition-colors flex items-center">
+                    
                       <span className="w-1.5 h-1.5 rounded-full bg-[#D2A02A] mr-2"></span>
                       Consult a Legal Expert Online
-                    </Link>
+                    
                   </li>
                 </ul>
               </div>

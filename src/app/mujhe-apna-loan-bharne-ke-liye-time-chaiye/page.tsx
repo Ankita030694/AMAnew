@@ -378,7 +378,7 @@ export default function MujheApnaLoanBharneKeLiyeTimeChaiyePage() {
                     In the body of the letter, explain the exact reason for your default. Was it a sudden job loss? A major medical emergency in the family? Clearly articulate the cause. Then, outline your proposed solution. Do you need a three month moratorium? Or do you need the loan tenure extended to reduce the monthly EMI? Being specific shows the bank that you have a realistic plan.
                   </p>
                   <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                    Always conclude the letter by stating your firm intention to repay the loan in full. Attach photocopies of your evidence, such as a medical certificate or a termination letter. Keep the tone respectful but firm. If you need a broader understanding of how negotiations work, exploring the <Link href="/loan-settlement-process" className="text-[#D2A02A] hover:underline font-semibold">loan settlement process</Link> can provide deeper insights into banking operations.
+                    Always conclude the letter by stating your firm intention to repay the loan in full. Attach photocopies of your evidence, such as a medical certificate or a termination letter. Keep the tone respectful but firm. If you need a broader understanding of how negotiations work, exploring the loan settlement process can provide deeper insights into banking operations.
                   </p>
 
                   <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-6">Who to Contact at Your Bank</h3>
@@ -439,7 +439,7 @@ export default function MujheApnaLoanBharneKeLiyeTimeChaiyePage() {
                     Banks operate for profit, and granting an extension is entirely at their discretion. It is very common for a branch manager to reject a hardship letter, especially if they believe the borrower has hidden assets or if the provided evidence is deemed insufficient. A rejection is not the end of the road. 
                   </p>
                   <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                    If your request is rejected, the first step is to demand the rejection in writing. Ask the bank to formally state the grounds for denial. Often, a verbal rejection is a pressure tactic used by local staff to force immediate payment. A formal written rejection allows you to escalate the issue. If you are entirely out of funds, understanding <Link href="/what-to-do-when-you-cant-pay-loan" className="text-[#D2A02A] hover:underline font-semibold">what to do when you cant pay loan</Link> will help you prepare for the next phases of default.
+                    If your request is rejected, the first step is to demand the rejection in writing. Ask the bank to formally state the grounds for denial. Often, a verbal rejection is a pressure tactic used by local staff to force immediate payment. A formal written rejection allows you to escalate the issue. If you are entirely out of funds, understanding what to do when you cant pay loan will help you prepare for the next phases of default.
                   </p>
 
                   <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-6">Escalating to the Banking Ombudsman</h3>
