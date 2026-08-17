@@ -1,7 +1,6 @@
 import { adminDb } from "../../../lib/firebase-admin";
 import type { Metadata, ResolvingMetadata } from "next";
 import ArticleDetail, { Blog, FAQ, Review } from "./blogdetail";
-import Script from "next/script";
 import PerformanceMonitor from '../../../components/PerformanceMonitor';
 import Navbar from "@/newcomp/Navbar";
 export const revalidate = 3600; // Cache the page at the Edge for 1 hour
@@ -117,12 +116,11 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { slug } = await props.params;
 
+  const baseUrl = "https://www.amalegalsolutions.com";
   let title = "Blog Post | AMA Legal Solutions";
   let description = "Read our latest insights and articles at AMA Legal Solutions";
-  let image = "";
+  let image = `${baseUrl}/ama-legal-solutions-logo.png`;
   let author = "AMA Legal Solutions";
-
-  const baseUrl = "https://www.amalegalsolutions.com";
 
   try {
     const blogData = await getBlogBySlug(slug);
@@ -130,7 +128,7 @@ export async function generateMetadata(
     if (blogData) {
       title = blogData.metaTitle || blogData.title || title;
       description = blogData.metaDescription || description;
-      image = blogData.image || "";
+      image = formatAbsoluteUrl(blogData.image || blogData.infographic);
       author = blogData.author || author;
     }
   } catch (error) {
@@ -151,21 +149,21 @@ export async function generateMetadata(
       url: blogUrl,
       siteName: "AMA Legal Solutions",
       type: "article",
-      images: image ? [
+      images: [
         {
           url: image,
           width: 1200,
           height: 630,
           alt: title,
         }
-      ] : [],
+      ],
       authors: [author],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: image ? [image] : [],
+      images: [image],
       creator: "@amalegalsolutions",
     },
   };
@@ -185,7 +183,7 @@ export default async function Page({
   let reviews: Review[] = [];
   let relatedBlogs: Blog[] = [];
   
-  let combinedSchema = null;
+  let schemas = null;
 
   try {
     blogData = await getBlogBySlug(slug);
@@ -201,8 +199,8 @@ export default async function Page({
       reviews = fetchedReviews;
       relatedBlogs = fetchedRelated;
 
-      // Generate Combined Schema
-      combinedSchema = generateCombinedSchema(blogData, faqs, reviews);
+      // Generate structured data schemas
+      schemas = generateSchemas(blogData, faqs, reviews);
     }
   } catch (error) {
     console.error("Error fetching blog data:", error);
@@ -223,13 +221,29 @@ export default async function Page({
     <div style={{ fontFamily: "var(--font-polysans)" }}>
       <Navbar />
       <PerformanceMonitor />
-      {/* Combined Schema */}
-      {combinedSchema && (
-        <Script
-          id="blog-combined-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema) }}
-        />
+      
+      {/* JSON-LD Structured Data Schemas for Google Rich Results Test & Search Engines */}
+      {schemas && (
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.articleSchema) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.organizationSchema) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.breadcrumbSchema) }}
+          />
+          {schemas.faqSchema && (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.faqSchema) }}
+            />
+          )}
+        </>
       )}
 
       {/* SSR-rendered crawlable content - guaranteed in server HTML */}
@@ -251,49 +265,124 @@ export default async function Page({
   );
 }
 
-function generateCombinedSchema(blogData: any, faqs: any[], reviews: any[]) {
+// Helpers for structured data formatting
+function formatIsoDate(dateStr?: string, created?: number): string {
+  if (dateStr) {
+    const parsed = new Date(dateStr);
+    if (!isNaN(parsed.getTime())) {
+      return parsed.toISOString().split('T')[0];
+    }
+  }
+  if (created) {
+    const parsed = new Date(created);
+    if (!isNaN(parsed.getTime())) {
+      return parsed.toISOString().split('T')[0];
+    }
+  }
+  return new Date().toISOString().split('T')[0];
+}
+
+function formatAbsoluteUrl(url?: string, defaultUrl: string = "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"): string {
+  if (!url || typeof url !== 'string' || !url.trim()) {
+    return defaultUrl;
+  }
+  const cleanUrl = url.trim();
+  if (cleanUrl.startsWith('http://') || cleanUrl.startsWith('https://')) {
+    return cleanUrl;
+  }
+  if (cleanUrl.startsWith('/')) {
+    return `https://www.amalegalsolutions.com${cleanUrl}`;
+  }
+  return `https://www.amalegalsolutions.com/${cleanUrl}`;
+}
+
+function getAuthorSchema(authorName?: string) {
+  const baseUrl = "https://www.amalegalsolutions.com";
+  const name = authorName?.trim() || "AMA Legal Solutions";
+
+  if (name === "Anuj Anand Malik") {
+    return {
+      "@type": "Person",
+      "name": "Anuj Anand Malik",
+      "jobTitle": "Founder & Senior Advocate",
+      "url": `${baseUrl}/author/anuj-anand-malik`,
+      "image": `${baseUrl}/anujbhiya.png`,
+      "sameAs": "https://www.linkedin.com/in/iamanujmalik/",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "AMA Legal Solutions",
+        "url": baseUrl
+      }
+    };
+  }
+
+  if (name === "Shrey Arora") {
+    return {
+      "@type": "Person",
+      "name": "Shrey Arora",
+      "jobTitle": "Legal Associate",
+      "url": `${baseUrl}/author/shrey-arora`,
+      "image": `${baseUrl}/shreychad.svg`,
+      "sameAs": "https://www.linkedin.com/in/shrey-arora-b0487b67/",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "AMA Legal Solutions",
+        "url": baseUrl
+      }
+    };
+  }
+
+  return {
+    "@type": "Organization",
+    "name": name,
+    "url": baseUrl,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${baseUrl}/ama-legal-solutions-logo.png`
+    }
+  };
+}
+
+function generateSchemas(blogData: any, faqs: any[], reviews: any[]) {
   const baseUrl = "https://www.amalegalsolutions.com";
   const blogUrl = `${baseUrl}/blog/${blogData.slug}`;
-  const isOrganizationAuthor = !blogData.author || blogData.author === "AMA Legal Solutions";
+  const isoPublishedDate = formatIsoDate(blogData.date, blogData.created);
+  const isoModifiedDate = formatIsoDate(blogData.date, blogData.created);
+  const imageUrl = formatAbsoluteUrl(blogData.image || blogData.infographic);
+  const cleanDescription = (blogData.metaDescription || blogData.subtitle || blogData.description?.replace(/<[^>]*>/g, ''))?.trim().substring(0, 200) || `${blogData.title} - Legal guide and insights from AMA Legal Solutions.`;
 
-  const graph = [];
-
-  // 1. Article Schema
-  const articleSchema: any = {
-    "@type": "BlogPosting",
-    "@id": `${blogUrl}#article`,
-    "isPartOf": { "@id": blogUrl },
-    "author": {
-      "@type": isOrganizationAuthor ? "Organization" : "Person",
-      "name": blogData.author || "AMA Legal Solutions",
-      "url": blogData.author === "Anuj Anand Malik" ? `${baseUrl}/author/anuj-anand-malik` : 
-            blogData.author === "Shrey Arora" ? `${baseUrl}/author/shrey-arora` : 
-            `${baseUrl}/about`
-    },
+  // 1. Article Schema (compliant with Google Rich Results Test)
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
     "headline": blogData.title,
-    "datePublished": blogData.date,
-    "dateModified": blogData.date,
-    "mainEntityOfPage": { "@id": blogUrl },
-    "publisher": { "@id": `${baseUrl}/#organization` },
-    "image": blogData.image ? {
-      "@type": "ImageObject",
-      "url": blogData.image,
-      "caption": blogData.title
-    } : (blogData.infographic ? {
-      "@type": "ImageObject",
-      "url": blogData.infographic,
-      "caption": `${blogData.title} Data Infographic`
-    } : undefined),
+    "description": cleanDescription,
+    "image": [imageUrl],
+    "datePublished": isoPublishedDate,
+    "dateModified": isoModifiedDate,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": blogUrl
+    },
+    "author": getAuthorSchema(blogData.author),
+    "publisher": {
+      "@type": "Organization",
+      "name": "AMA Legal Solutions",
+      "url": baseUrl,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${baseUrl}/ama-legal-solutions-logo.png`
+      }
+    },
     "keywords": blogData.metaTitle || blogData.title,
     "articleSection": "Legal Advice",
-    "inLanguage": "en-IN",
-    "description": blogData.metaDescription || blogData.subtitle || blogData.description?.replace(/<[^>]*>/g, '').substring(0, 160) || ''
+    "inLanguage": "en-IN"
   };
-  graph.push(articleSchema);
 
-  // 2. Organization / LegalService Schema with AggregateRating
+  // 2. Organization Schema (with LegalService support and Google Rich Results compliance)
   const organizationSchema: any = {
-    "@type": "LegalService",
+    "@context": "https://schema.org",
+    "@type": ["Organization", "LegalService"],
     "@id": `${baseUrl}/#organization`,
     "name": "AMA Legal Solutions",
     "url": baseUrl,
@@ -301,16 +390,34 @@ function generateCombinedSchema(blogData: any, faqs: any[], reviews: any[]) {
       "@type": "ImageObject",
       "url": `${baseUrl}/ama-legal-solutions-logo.png`
     },
+    "image": `${baseUrl}/ama-legal-solutions-logo.png`,
+    "description": "Leading legal firm in India specializing in loan settlement, banking disputes, debt relief, arbitration, and comprehensive legal consultation.",
+    "telephone": "+918700343611",
+    "email": "contact@amalegalsolutions.com",
+    "priceRange": "₹₹",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "2493AP, Block G, Sushant Lok 2,Sector 57",
+      "streetAddress": "2493AP, Block G, Sushant Lok 2, Sector 57",
       "addressLocality": "Gurugram",
       "addressRegion": "Haryana",
       "postalCode": "122001",
       "addressCountry": "IN"
     },
-    "telephone": "+918700343611",
-    "priceRange": "$$"
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+918700343611",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Hindi"]
+    },
+    "sameAs": [
+      "https://www.facebook.com/amalegalsolutions/",
+      "https://www.youtube.com/@amalegalsolution",
+      "https://www.instagram.com/amalegalsolutions/",
+      "https://www.linkedin.com/company/ama-legal-solutions/",
+      "https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions",
+      "https://apps.apple.com/in/app/ama-legal-solutions/id6755156186"
+    ]
   };
 
   // Add AggregateRating if reviews exist
@@ -342,10 +449,9 @@ function generateCombinedSchema(blogData: any, faqs: any[], reviews: any[]) {
     }));
   }
 
-  graph.push(organizationSchema);
-
-  // 3. Breadcrumb Schema
-  graph.push({
+  // 3. BreadcrumbList Schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "@id": `${blogUrl}#breadcrumb`,
     "itemListElement": [
@@ -368,29 +474,32 @@ function generateCombinedSchema(blogData: any, faqs: any[], reviews: any[]) {
         "item": blogUrl
       }
     ]
-  });
+  };
 
-  // 4. FAQ Schema (if present)
-  if (faqs.length > 0) {
-    graph.push({
+  // 4. FAQ Schema (if FAQs exist)
+  let faqSchema = null;
+  if (faqs && faqs.length > 0) {
+    faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
       "@id": `${blogUrl}#faq`,
-      "name": `${blogData.title} - Frequently Asked Questions`,
-      "description": `Frequently asked questions about ${blogData.title}`,
-      "url": blogUrl,
       "mainEntity": faqs.map(faq => ({
         "@type": "Question",
         "name": faq.question,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": faq.answer.replace(/<[^>]*>/g, '')
+          "text": faq.answer.replace(/<[^>]*>/g, '').trim()
         }
       }))
-    });
+    };
   }
 
   return {
-    "@context": "https://schema.org",
-    "@graph": graph
+    articleSchema,
+    organizationSchema,
+    breadcrumbSchema,
+    faqSchema
   };
 }
+
 
