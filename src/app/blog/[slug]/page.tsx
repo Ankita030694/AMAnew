@@ -266,20 +266,50 @@ export default async function Page({
 }
 
 // Helpers for structured data formatting
-function formatIsoDate(dateStr?: string, created?: number): string {
-  if (dateStr) {
-    const parsed = new Date(dateStr);
+function formatToISTIsoString(date: Date): string {
+  const istOffsetMs = 5.5 * 60 * 60 * 1000;
+  const istDate = new Date(date.getTime() + istOffsetMs);
+  
+  const year = istDate.getUTCFullYear();
+  const month = String(istDate.getUTCMonth() + 1).padStart(2, '0');
+  const day = String(istDate.getUTCDate()).padStart(2, '0');
+  const hours = String(istDate.getUTCHours()).padStart(2, '0');
+  const minutes = String(istDate.getUTCMinutes()).padStart(2, '0');
+  const seconds = String(istDate.getUTCSeconds()).padStart(2, '0');
+
+  return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}+05:30`;
+}
+
+function formatIsoDateTime(dateStr?: string, created?: number): string {
+  if (dateStr && typeof dateStr === 'string') {
+    const trimmed = dateStr.trim();
+    // If already full ISO with timezone (e.g., 2026-08-17T10:00:00+05:30 or 2026-08-17T10:00:00Z)
+    if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/.test(trimmed)) {
+      if (trimmed.endsWith('Z') || /[+-]\d{2}:\d{2}$/.test(trimmed)) {
+        return trimmed;
+      }
+      return `${trimmed}+05:30`;
+    }
+    // If format is YYYY-MM-DD
+    if (/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) {
+      return `${trimmed}T10:00:00+05:30`;
+    }
+    // Try parsing string with new Date
+    const parsed = new Date(trimmed);
     if (!isNaN(parsed.getTime())) {
-      return parsed.toISOString().split('T')[0];
+      return formatToISTIsoString(parsed);
     }
   }
-  if (created) {
-    const parsed = new Date(created);
+
+  if (created && typeof created === 'number') {
+    const ms = created < 10000000000 ? created * 1000 : created;
+    const parsed = new Date(ms);
     if (!isNaN(parsed.getTime())) {
-      return parsed.toISOString().split('T')[0];
+      return formatToISTIsoString(parsed);
     }
   }
-  return new Date().toISOString().split('T')[0];
+
+  return formatToISTIsoString(new Date());
 }
 
 function formatAbsoluteUrl(url?: string, defaultUrl: string = "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"): string {
@@ -346,8 +376,8 @@ function getAuthorSchema(authorName?: string) {
 function generateSchemas(blogData: any, faqs: any[], reviews: any[]) {
   const baseUrl = "https://www.amalegalsolutions.com";
   const blogUrl = `${baseUrl}/blog/${blogData.slug}`;
-  const isoPublishedDate = formatIsoDate(blogData.date, blogData.created);
-  const isoModifiedDate = formatIsoDate(blogData.date, blogData.created);
+  const isoPublishedDate = formatIsoDateTime(blogData.date, blogData.created);
+  const isoModifiedDate = formatIsoDateTime(blogData.date, blogData.created);
   const imageUrl = formatAbsoluteUrl(blogData.image || blogData.infographic);
   const cleanDescription = (blogData.metaDescription || blogData.subtitle || blogData.description?.replace(/<[^>]*>/g, ''))?.trim().substring(0, 200) || `${blogData.title} - Legal guide and insights from AMA Legal Solutions.`;
 
@@ -379,10 +409,10 @@ function generateSchemas(blogData: any, faqs: any[], reviews: any[]) {
     "inLanguage": "en-IN"
   };
 
-  // 2. Organization Schema (with LegalService support and Google Rich Results compliance)
+  // 2. Organization Schema (Google Organization Rich Results compliance)
   const organizationSchema: any = {
     "@context": "https://schema.org",
-    "@type": ["Organization", "LegalService"],
+    "@type": "Organization",
     "@id": `${baseUrl}/#organization`,
     "name": "AMA Legal Solutions",
     "url": baseUrl,
@@ -394,7 +424,6 @@ function generateSchemas(blogData: any, faqs: any[], reviews: any[]) {
     "description": "Leading legal firm in India specializing in loan settlement, banking disputes, debt relief, arbitration, and comprehensive legal consultation.",
     "telephone": "+918700343611",
     "email": "contact@amalegalsolutions.com",
-    "priceRange": "₹₹",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "2493AP, Block G, Sushant Lok 2, Sector 57",
@@ -419,35 +448,6 @@ function generateSchemas(blogData: any, faqs: any[], reviews: any[]) {
       "https://apps.apple.com/in/app/ama-legal-solutions/id6755156186"
     ]
   };
-
-  // Add AggregateRating if reviews exist
-  if (reviews && reviews.length > 0) {
-    const totalRating = reviews.reduce((sum, review) => sum + (Number(review.rating) || 0), 0);
-    const avgRating = (totalRating / reviews.length).toFixed(1);
-
-    organizationSchema.aggregateRating = {
-      "@type": "AggregateRating",
-      "ratingValue": avgRating,
-      "reviewCount": reviews.length.toString(),
-      "bestRating": "5",
-      "worstRating": "1"
-    };
-
-    organizationSchema.review = reviews.map(review => ({
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": review.name || "Anonymous"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": (Number(review.rating) || 5).toString(),
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "reviewBody": review.review || ""
-    }));
-  }
 
   // 3. BreadcrumbList Schema
   const breadcrumbSchema = {
