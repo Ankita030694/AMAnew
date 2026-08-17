@@ -6,6 +6,7 @@ import Breadcrumbs from '../../../components/Breadcrumbs';
 import TableOfContents from '../../../components/TableOfContents';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faUser, faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
+import BlogCounter from '../../../newcomp/BlogCounter';
 
 // Lazy load heavy components
 const LazyImage = dynamic(() => import('next/image'), { 
@@ -26,6 +27,7 @@ export interface Blog {
   metaDescription?: string;
   slug: string;
   author?: string;
+  references?: { title: string; url: string }[];
 }
 
 export interface FAQ {
@@ -93,6 +95,34 @@ const processContent = (html: string) => {
     .replace(/href=["']https:\/\/www\.amalegalsolutions\.com\/resources["']/gi, 'href="/blog"')
     .replace(/href=["']\/resources["']/gi, 'href="/blog"');
 
+  // Extract and style POPULAR SEARCHES
+  modifiedContent = modifiedContent.replace(
+    /<h3[^>]*>Popular Searches<\/h3>\s*<ul[^>]*>([\s\S]*?)<\/ul>/ig,
+    (match, ulContent) => {
+      // Extract all li text
+      const keywords = [];
+      const liRegex = /<li[^>]*>(.*?)<\/li>/gi;
+      let liMatch;
+      while ((liMatch = liRegex.exec(ulContent)) !== null) {
+        // Strip any inner html from the keyword just in case
+        keywords.push(liMatch[1].replace(/<[^>]*>/g, '').trim());
+      }
+      
+      const keywordsHtml = keywords.map(k => 
+        `<span class="inline-block px-5 py-2.5 bg-[#F5F2EB] border border-[#D2A02A]/30 rounded-full text-sm font-bold text-[#1a202c] shadow-sm hover:bg-[#D2A02A] hover:text-white transition-colors cursor-default">${k}</span>`
+      ).join('\n');
+      
+      return `
+        <div class="mt-12 pt-8 border-t border-gray-100">
+          <h3 class="text-sm font-extrabold text-gray-500 uppercase tracking-widest mb-6" style="letter-spacing: 0.1em;">Popular Searches</h3>
+          <div class="flex flex-wrap gap-3">
+            ${keywordsHtml}
+          </div>
+        </div>
+      `;
+    }
+  );
+
   // Strip nofollow from internal links (links to our own domain or relative paths)
   // This prevents SEO tools from flagging our own pages as "blocked by nofollow"
   modifiedContent = modifiedContent.replace(
@@ -131,6 +161,16 @@ const processContent = (html: string) => {
 const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, relatedBlogs }: BlogDetailProps) {
   const [currentUrl, setCurrentUrl] = useState('');
   const [expandedFaqs, setExpandedFaqs] = useState<string[]>([]);
+  
+  const formatDate = (dateString: string) => {
+    if (!dateString) return "";
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) return dateString;
+    const dd = String(date.getDate()).padStart(2, '0');
+    const mm = String(date.getMonth() + 1).padStart(2, '0');
+    const yyyy = date.getFullYear();
+    return `${dd}-${mm}-${yyyy}`;
+  };
   
   // Process content for TOC
   const { content: processedContent, sections: tocSections } = useMemo(() => {
@@ -175,45 +215,75 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
   ];
 
   return (
-    <div className="min-h-screen bg-[#F5F2EB] text-gray-800">
-      {/* Hero Image Section */}
-      <div className="w-full h-[400px] md:h-[500px] relative bg-[#1a202c] overflow-hidden">
-        {/* Blurred Background */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center blur-2xl scale-110" 
-          style={{ backgroundImage: blog.image ? `url("${blog.image}")` : 'none' }}
-        ></div>
-        
-        {/* Main Contained Image */}
-        {blog.image && (
-          <img 
-            src={blog.image} 
-            alt={blog.title} 
-            className="absolute inset-0 w-full h-full object-contain relative z-10" 
-          />
-        )}
-      </div>
-
-      <div className="container mx-auto px-4 max-w-[1600px] py-8">
+    <div className="min-h-screen bg-[#F5F2EB] text-gray-800 pt-20 md:pt-28">
+      <div className="container mx-auto px-4 max-w-[1600px]">
         <Breadcrumbs items={breadcrumbItems} />
         
-        {/* Blog Header Content */}
-        <div className="text-center mb-12 max-w-4xl mx-auto mt-8">
-          <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-gray-900">
-            {blog.title}
-          </h1>
-          {blog.subtitle && (
-            <p className="text-xl md:text-2xl mb-6 text-gray-600">
-              {blog.subtitle}
-            </p>
-          )}
-          <div className="flex justify-center items-center space-x-4 text-sm md:text-base text-gray-500">
-            <span>{blog.date}</span>
-            <span>•</span>
-            <span>{blog.author || 'AMA Legal Solutions'}</span>
+        {/* New Asymmetric 12-Column Hero */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mt-8 mb-12 items-center">
+          {/* Left Column - Text Content */}
+          <div className="flex flex-col lg:col-span-8">
+
+            
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 leading-tight text-[#1a202c] max-w-4xl">
+              {blog.title}
+            </h1>
+            
+            {blog.subtitle && (
+              <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+                {blog.subtitle}
+              </p>
+            )}
+            
+            {/* Author & Meta Data */}
+            <div className="flex flex-wrap items-center gap-4 md:gap-6 mt-8">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full overflow-hidden bg-[#1a202c] flex items-center justify-center text-white font-bold text-lg border-2 border-[#D2A02A]">
+                  {blog.author ? (
+                    <img src={authorBios[blog.author as keyof typeof authorBios]?.image || "/anujbhiya.png"} alt={blog.author} className="w-full h-full object-cover" />
+                  ) : (
+                    "AM"
+                  )}
+                </div>
+                <div>
+                  <p className="font-bold text-[#1a202c] text-base">{blog.author || 'AMA Legal Solutions'}</p>
+                  <p className="text-xs text-gray-500">Reviewed by AMA Legal Solutions</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-2 md:gap-3">
+                <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs font-semibold text-gray-600 shadow-sm">
+                  <span className="text-gray-400">📅</span> {formatDate(blog.date)}
+                </div>
+                <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs font-semibold text-gray-600 shadow-sm">
+                  <span className="text-gray-400">⏱️</span> 7 Min Read
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Right Column - Image */}
+          <div className="flex justify-center lg:justify-end w-full mt-6 lg:mt-0 lg:col-span-4">
+            <div className="w-[90%] sm:w-[80%] lg:w-full rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white flex items-center justify-center">
+              {blog.image ? (
+                <img 
+                  src={blog.image} 
+                  alt={blog.title} 
+                  className="w-full h-auto object-contain block"
+                />
+              ) : (
+                <div className="w-full aspect-video bg-gray-200 animate-pulse"></div>
+              )}
+            </div>
           </div>
         </div>
-        
+      </div>
+
+      <div className="w-full mb-12">
+        <BlogCounter />
+      </div>
+
+      <div className="container mx-auto px-4 max-w-[1600px]">
         <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 items-start">
           
           {/* Left Sidebar - TOC (Desktop) */}
@@ -229,6 +299,25 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
             </div>
 
             <div className="bg-white p-6 md:p-12 rounded-2xl shadow-sm space-y-12">
+              {/* Meta details & Share */}
+              <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center border-b border-gray-100 pb-6 mb-6 gap-4">
+                <div className="text-xs md:text-sm text-gray-500 font-medium">
+                  Written by <Link href="/author/anuj-anand-malik" className="text-[#D2A02A] hover:underline font-semibold">Advocate Anuj Anand Malik</Link> &bull; Reviewed by <span className="font-semibold text-gray-700">Team AMA Legal Solutions</span> &bull; Last updated: {formatDate(blog.date)}
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-xs md:text-sm font-bold text-gray-700">Share:</span>
+                  <button onClick={() => handleShare('facebook')} className="w-8 h-8 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:bg-blue-700 transition shadow-sm">
+                    <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                  </button>
+                  <button onClick={() => handleShare('twitter')} className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center hover:bg-gray-800 transition shadow-sm">
+                    <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                  </button>
+                  <button onClick={() => handleShare('linkedin')} className="w-8 h-8 rounded-full bg-[#0A66C2] text-white flex items-center justify-center hover:bg-blue-800 transition shadow-sm">
+                    <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                  </button>
+                </div>
+              </div>
+
               {/* Article Content */}
               <div 
                 className="prose prose-lg max-w-none text-gray-700 tiptap-content"
@@ -252,6 +341,22 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
                 .tiptap-content td { padding: 0.75rem; border: 1px solid #e2e8f0; }
               `}</style>
               
+              {/* References Section */}
+              {blog.references && blog.references.length > 0 && (
+                <div className="border-t border-gray-200 pt-8 mt-8">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">References & Authority</h3>
+                  <ul className="list-disc pl-5 space-y-2 text-sm text-gray-600">
+                    {blog.references.map((ref, idx) => (
+                      <li key={idx}>
+                        <a href={ref.url} target="_blank" rel="noopener noreferrer" className="hover:text-[#D2A02A] underline">
+                          {ref.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
               {/* Share Section */}
               <div className="border-t border-gray-200 pt-8 mt-8">
                 <div className="flex items-center justify-between">
@@ -439,6 +544,33 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
             </div>
         </div>
       </div>
+      
+      {/* Company Section matching @loan-settlement */}
+      <footer className="max-w-7xl mx-auto px-4 md:px-8 mt-10 mb-4 md:mb-8">
+        <div className="border-4 border-[#D2A02A] rounded-2xl p-8 md:p-12 bg-white text-center shadow-2xl relative">
+          <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-white px-4">
+             <div className="bg-black p-3 rounded-xl flex items-center justify-center shadow-lg"><img src="/newAssets/logo/ama_box.svg" alt="AMA Legal Solutions Logo" width={60} height={60} className="object-contain" /></div>
+          </div>
+          <h2 className="text-3xl font-extrabold text-[#5A4C33] mt-4 mb-2 md:mb-4">AMA Legal Solutions</h2>
+          <p className="text-gray-700 max-w-2xl mx-auto leading-relaxed mb-4 md:mb-8">
+            AMA Legal Solutions is India's premium legal advisory firm specializing in financial dispute resolution, debt relief, and civil litigation. We empower our clients with uncompromising legal defense and strategic negotiations.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+            <Link href="/loan-settlement" className="px-4 md:px-6 py-3 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-base">
+              Loan Settlement Services
+            </Link>
+            <Link href="/send-legal-notice" className="px-4 md:px-6 py-3 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-base">
+              Legal Notice Services
+            </Link>
+            <Link href="/drafting-of-will" className="px-4 md:px-6 py-3 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-base">
+              Will Drafting Services
+            </Link>
+            <Link href="/virtual-inhouse-councel" className="px-4 md:px-6 py-3 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-base">
+              Virtual In-house Counsel
+            </Link>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 });

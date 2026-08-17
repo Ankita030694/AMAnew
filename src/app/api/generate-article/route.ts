@@ -59,8 +59,8 @@ Return ONLY a JSON object with this exact structure:
   "metaDescription": "SEO meta description (150-160 chars)",
   "slug": "url-friendly-slug",
   "outline": [
-    "Introduction to Primary Keyword",
-    "Understanding the Legal Framework...",
+    "Dynamic and engaging introductory H2 heading specific to the topic",
+    "Dynamic secondary H2 heading exploring the core legal concept",
     ... (10 to 12 detailed H2 heading titles)
   ]
 }`
@@ -139,14 +139,15 @@ Formatting Requirements:
             }
         }
 
-        const cleanedDescription = finalHtmlBodyChunks.join("\n\n");
+        let cleanedDescription = finalHtmlBodyChunks.join("\n\n");
         console.log(`[AI Generator Flow] Step 2 complete. Total description length: ${cleanedDescription.split(/\s+/).length} words.`);
         console.log(`[AI Generator Flow] Step 3: Generating FAQs, reviews, and image prompt in the context of the description...`);
 
         // STEP 3: Generate FAQs, Reviews, suggestedImagePrompt based on the Title, Subtitle, and Description
-        let faqs = [];
-        let reviews = [];
+        let faqs: any[] = [];
+        let reviews: any[] = [];
         let suggestedImagePrompt = "Professional legal recovery illustration";
+        let references: any[] = [];
 
         try {
             const step3SystemPrompt = `
@@ -157,6 +158,9 @@ Task: Analyze the following generated article Title, Subtitle, and HTML Descript
 1. At least 8-10 highly relevant, detailed FAQs (frequently asked questions) that directly relate to the article content.
 2. 5 realistic customer review snippets (with Indian names) expressing high satisfaction with the legal service.
 3. A suggested image prompt describing a highly professional legal illustration that MUST feature real people, an Indian landscape or setting in the background, and prominently feature the exact title of the blog written within the image. The image must exclusively use the colors #D29E0D, white, and black. Do NOT generate random infographics stuffed with numerics.
+4. A list of 3-5 highly authoritative external references (like RBI, NCDRC, India Code, Supreme Court) relevant to the article's topic.
+5. A list of 10-15 highly relevant SEO keyword phrases (unlinked) that users might search to find this content.
+6. A concise "TL;DR" (Too Long; Didn't Read) paragraph summarizing the most important takeaways from the article.
 
 Article Title: ${step1Result.title}
 Article Subtitle: ${step1Result.subtitle}
@@ -172,7 +176,12 @@ Return ONLY a JSON object with this exact structure:
   "reviews": [
     { "name": "Reviewer Full Name", "rating": 5, "review": "Detailed review text..." }
   ],
-  "suggestedImagePrompt": "Visual description for the article's featured image"
+  "suggestedImagePrompt": "Visual description for the article's featured image",
+  "references": [
+    { "title": "Reserve Bank of India (RBI) Official Guidelines", "url": "https://www.rbi.org.in/" }
+  ],
+  "keywords": ["keyword phrase 1", "keyword phrase 2"],
+  "tldr": "A concise paragraph summarizing the article..."
 }`;
 
             const step3Completion = await openai.chat.completions.create({
@@ -190,8 +199,22 @@ Return ONLY a JSON object with this exact structure:
             faqs = step3Result.faqs || [];
             reviews = step3Result.reviews || [];
             suggestedImagePrompt = step3Result.suggestedImagePrompt || "Professional legal recovery illustration";
+            references = step3Result.references || [];
+            
+            const keywords = step3Result.keywords || [];
+            if (keywords.length > 0) {
+                // Append Keywords section as standard HTML list so Tiptap preserves it
+                const keywordsHtml = keywords.map((k: string) => `<li>${k}</li>`).join('\n');
+                cleanedDescription += `\n\n<h3>Popular Searches</h3>\n<ul>\n${keywordsHtml}\n</ul>`;
+            }
 
-            console.log(`[AI Generator Flow] Step 3 complete. FAQs: ${faqs.length}, Reviews: ${reviews.length}`);
+            const tldr = step3Result.tldr;
+            if (tldr) {
+                // Prepend TLDR to the top of the description
+                cleanedDescription = `<blockquote><strong>TL;DR:</strong> ${tldr}</blockquote>\n\n` + cleanedDescription;
+            }
+
+            console.log(`[AI Generator Flow] Step 3 complete. FAQs: ${faqs.length}, Reviews: ${reviews.length}, Keywords: ${keywords.length}, TLDR: ${!!tldr}`);
         } catch (step3Error) {
             console.error("[AI Generator Flow] Error in Step 3:", step3Error);
         }
@@ -206,7 +229,8 @@ Return ONLY a JSON object with this exact structure:
             description: cleanedDescription,
             faqs: faqs,
             reviews: reviews,
-            suggestedImagePrompt: suggestedImagePrompt
+            suggestedImagePrompt: suggestedImagePrompt,
+            references: references
         };
 
         const finalJsonStr = JSON.stringify(finalResult);

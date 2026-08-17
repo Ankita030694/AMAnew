@@ -334,7 +334,7 @@ export const harassmentBanks: HarassmentBank[] = [
     "name": "Tata Capital",
     "slug": "tata-capital",
     "address": "Mr. Rajesh Kumar, Principal Nodal Officer Address: Tata Capital Financial Services Limited, Lodha I-Think Techno Campus Building, Building A, 4th Floor, Off Pokhran Road No 2, Thane (West) 400 607",
-    "emails": "customercare@tatacapital.com, contactcommercialfinance@tatacapital.com, contactus@tatacapital.com, vaman.n@tatacapital.com, rajesh13.Kumar@tatacapital.com"
+    "emails": "customercare@tatacapital.com, contactcommercialfinance@tatacapital.com, contactus@tatacapital.com, vaman.n@tatacapital.com, sona.gaharwar@tatacapital.com"
   },
   {
     "name": "Bajaj Finance",
