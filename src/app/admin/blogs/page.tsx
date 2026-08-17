@@ -31,6 +31,7 @@ interface Blog {
   description: string;
   date: string;
   image: string;
+  infographic?: string; // Infographic image for graphs and data breakdown
   created: number;
   metaTitle?: string;
   metaDescription?: string;
@@ -59,6 +60,7 @@ const BlogsDashboard = () => {
     description: '',
     date: new Date().toISOString().split('T')[0], // Format as YYYY-MM-DD
     image: '',
+    infographic: '',
     created: Date.now(),
     metaTitle: '',
     metaDescription: '',
@@ -82,11 +84,21 @@ const BlogsDashboard = () => {
   const [primaryKeyword, setPrimaryKeyword] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
 
-  // New Image Generation and Content Expansion state
+  // Cover Image Generation and Upload state
   const [imagePrompt, setImagePrompt] = useState('');
   const [isGeneratingImage, setIsGeneratingImage] = useState(false);
   const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(null);
   const [isUploadingGenerated, setIsUploadingGenerated] = useState(false);
+
+  // Infographic Generation and Upload state
+  const [infographicPrompt, setInfographicPrompt] = useState('');
+  const [isGeneratingInfographic, setIsGeneratingInfographic] = useState(false);
+  const [generatedInfographicUrl, setGeneratedInfographicUrl] = useState<string | null>(null);
+  const [isUploadingGeneratedInfographic, setIsUploadingGeneratedInfographic] = useState(false);
+  const [infographicPreview, setInfographicPreview] = useState<string | null>(null);
+  const [uploadingInfographic, setUploadingInfographic] = useState(false);
+  const fileInputInfographicRef = useRef<HTMLInputElement>(null);
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Prompt Management state
@@ -163,6 +175,7 @@ const BlogsDashboard = () => {
             description: docData.description || '',
             date: docData.date || '',
             image: docData.image || '',
+            infographic: docData.infographic || '',
             created: docData.created || Date.now(),
             metaTitle: docData.metaTitle || '',
             metaDescription: docData.metaDescription || '',
@@ -456,12 +469,15 @@ const BlogsDashboard = () => {
         setNewBlog(prev => ({ ...prev, slug: generatedSlug }));
       }
       
-      // Also set the image prompt if suggested
+      // Also set the image prompts if suggested
       if (generatedData.suggestedImagePrompt) {
         setImagePrompt(generatedData.suggestedImagePrompt);
       }
+      if (generatedData.suggestedInfographicPrompt) {
+        setInfographicPrompt(generatedData.suggestedInfographicPrompt);
+      }
       
-      alert('Blog generated successfully! Please review and add an image.');
+      alert('Blog generated successfully! You can now generate both Featured Image and Topic Infographic.');
     } catch (error) {
       console.error('Error generating blog:', error);
       alert('Failed to generate blog. Please try again.');
@@ -526,13 +542,130 @@ const BlogsDashboard = () => {
       }));
       setImagePreview(downloadURL);
       setGeneratedImageUrl(null); // Clear the preview once uploaded
-      alert('Image uploaded to Firebase successfully!');
+      alert('Featured image uploaded to Firebase successfully!');
     } catch (error) {
       console.error('Error uploading generated image:', error);
       alert('Failed to upload image to Firebase.');
     } finally {
       setIsUploadingGenerated(false);
     }
+  };
+
+  // Infographic handlers
+  const handleGenerateInfographic = async () => {
+    if (!infographicPrompt.trim()) {
+      alert('Please enter an infographic prompt.');
+      return;
+    }
+
+    try {
+      setIsGeneratingInfographic(true);
+      const response = await fetch('/api/generate-image', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ prompt: infographicPrompt }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to generate infographic');
+      }
+
+      const data = await response.json();
+      setGeneratedInfographicUrl(data.imageUrl);
+    } catch (error) {
+      console.error('Error generating infographic:', error);
+      alert('Failed to generate infographic. Please try again.');
+    } finally {
+      setIsGeneratingInfographic(false);
+    }
+  };
+
+  const handleUploadGeneratedInfographic = async () => {
+    if (!generatedInfographicUrl) return;
+
+    try {
+      setIsUploadingGeneratedInfographic(true);
+      
+      const response = generatedInfographicUrl.startsWith('data:')
+        ? await fetch(generatedInfographicUrl)
+        : await fetch(`/api/proxy-image?url=${encodeURIComponent(generatedInfographicUrl)}`);
+      const blob = await response.blob();
+      const file = new File([blob], `infographic_${Date.now()}.png`, { type: 'image/png' });
+
+      if (!storage) {
+        throw new Error("Firebase Storage is not initialized");
+      }
+      const storageRef = ref(storage, `blog-infographics/${Date.now()}_generated.png`);
+      const snapshot = await uploadBytes(storageRef, file);
+      const downloadURL = await getDownloadURL(snapshot.ref);
+
+      setNewBlog(prevState => ({
+        ...prevState,
+        infographic: downloadURL
+      }));
+      setInfographicPreview(downloadURL);
+      setGeneratedInfographicUrl(null);
+      alert('Infographic uploaded to Firebase successfully!');
+    } catch (error) {
+      console.error('Error uploading generated infographic:', error);
+      alert('Failed to upload infographic to Firebase.');
+    } finally {
+      setIsUploadingGeneratedInfographic(false);
+    }
+  };
+
+  const handleInfographicFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    
+    const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+    if (file.size > MAX_FILE_SIZE) {
+      alert("Image is too large. Maximum size is 10MB.");
+      return;
+    }
+    
+    try {
+      setUploadingInfographic(true);
+      if (!storage) {
+        throw new Error("Firebase Storage is not initialized");
+      }
+      const storageRef = ref(storage, `blog-infographics/${Date.now()}_${file.name}`);
+      
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setInfographicPreview(event.target?.result as string);
+      };
+      reader.readAsDataURL(file);
+      
+      let fileToUpload = file;
+      if (file.type.startsWith('image/')) {
+        fileToUpload = await compressImage(file);
+      }
+      
+      const snapshot = await uploadBytes(storageRef, fileToUpload);
+      const downloadURL = await getDownloadURL(snapshot.ref);
+      setNewBlog(prevState => ({
+        ...prevState,
+        infographic: downloadURL
+      }));
+      alert('Infographic uploaded successfully!');
+    } catch (err) {
+      console.error('Error uploading local infographic:', err);
+      alert('Failed to upload infographic image.');
+    } finally {
+      setUploadingInfographic(false);
+    }
+  };
+
+  const handleRemoveInfographic = () => {
+    setNewBlog(prevState => ({
+      ...prevState,
+      infographic: ''
+    }));
+    setInfographicPreview(null);
+    setGeneratedInfographicUrl(null);
   };
 
   // Helper function to compress images
@@ -686,6 +819,7 @@ const BlogsDashboard = () => {
           description: docData.description || '',
           date: docData.date || '',
           image: docData.image || '',
+          infographic: docData.infographic || '',
           created: docData.created || Date.now(),
           metaTitle: docData.metaTitle || '',
           metaDescription: docData.metaDescription || '',
@@ -729,6 +863,9 @@ const BlogsDashboard = () => {
       
       setNewBlog({...blog, faqs, reviews});
       setFormMode('edit');
+      if (blog.image) setImagePreview(blog.image);
+      if (blog.infographic) setInfographicPreview(blog.infographic);
+      else setInfographicPreview(null);
       
       // Check for saved draft for this specific blog
       const savedDraft = localStorage.getItem(`autosave_blog_${blog.id}`);
@@ -837,6 +974,7 @@ const BlogsDashboard = () => {
       description: '',
       date: new Date().toISOString().split('T')[0],
       image: '',
+      infographic: '',
       created: Date.now(),
       metaTitle: '',
       metaDescription: '',
@@ -847,6 +985,12 @@ const BlogsDashboard = () => {
     });
     setFormMode('add');
     setShowBlogForm(false);
+    setImagePreview(null);
+    setGeneratedImageUrl(null);
+    setImagePrompt('');
+    setInfographicPrompt('');
+    setGeneratedInfographicUrl(null);
+    setInfographicPreview(null);
   };
 
   // Cancel form handler
@@ -1342,90 +1486,208 @@ const BlogsDashboard = () => {
                 </select>
               </div>
 
-              {/* Image Input */}
-              <div className="flex flex-col gap-1.5 md:col-span-2">
-                <label className="text-xs font-extrabold uppercase text-slate-400 tracking-wider">Cover Image Prompt (AI Generation)</label>
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    value={imagePrompt}
-                    onChange={(e) => setImagePrompt(e.target.value)}
-                    placeholder="e.g. A professional legal illustration..."
-                    className="p-3.5 border border-slate-200 rounded-xl focus:border-[#B8860B] focus:outline-none text-xs sm:text-sm font-semibold text-slate-700 bg-white flex-1"
-                  />
-                  <button
-                    type="button"
-                    onClick={handleGenerateImage}
-                    disabled={isGeneratingImage || !imagePrompt.trim()}
-                    className="px-4 py-3 bg-amber-50 hover:bg-amber-100 border border-[#D4AF37]/35 text-[#B8860B] rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer disabled:opacity-50"
-                  >
-                    <span>{isGeneratingImage ? '💫 Generating...' : '✨ Generate AI'}</span>
-                  </button>
+              {/* Cover Image Input */}
+              <div className="flex flex-col gap-1.5 md:col-span-2 p-4 bg-slate-50/60 rounded-2xl border border-slate-200">
+                <div className="flex items-center justify-between mb-1">
+                  <label className="text-xs font-extrabold uppercase text-slate-600 tracking-wider">1. Featured Cover Image *</label>
+                  <span className="text-[11px] font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">Main Header Image</span>
+                </div>
+                
+                <div className="flex flex-col gap-2">
+                  <div className="flex gap-2">
+                    <input
+                      type="text"
+                      value={imagePrompt}
+                      onChange={(e) => setImagePrompt(e.target.value)}
+                      placeholder="Prompt for featured cover image..."
+                      className="p-3 border border-slate-200 rounded-xl focus:border-[#B8860B] focus:outline-none text-xs sm:text-sm font-medium text-slate-700 bg-white flex-1"
+                    />
+                    <button
+                      type="button"
+                      onClick={handleGenerateImage}
+                      disabled={isGeneratingImage || !imagePrompt.trim()}
+                      className="px-4 py-2.5 bg-amber-50 hover:bg-amber-100 border border-[#D4AF37]/35 text-[#B8860B] rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer disabled:opacity-50 shrink-0"
+                    >
+                      <span>{isGeneratingImage ? '💫 Generating...' : '✨ Generate Cover AI'}</span>
+                    </button>
+                  </div>
+
+                  <div className="flex gap-2">
+                    <input
+                      type="text"
+                      name="image"
+                      required
+                      value={newBlog.image}
+                      onChange={handleInputChange}
+                      placeholder="Cover image URL..."
+                      className="p-3 border border-slate-200 rounded-xl focus:border-[#B8860B] focus:outline-none text-xs sm:text-sm font-medium text-slate-700 bg-white flex-1"
+                    />
+                    <input
+                      type="file"
+                      ref={fileInputRef}
+                      accept="image/*"
+                      onChange={handleFileUpload}
+                      className="hidden"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => fileInputRef.current?.click()}
+                      className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 border border-slate-250 text-slate-700 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer shrink-0"
+                    >
+                      <FontAwesomeIcon icon={faUpload} />
+                      <span>{uploading ? '...' : 'Upload Local'}</span>
+                    </button>
+                  </div>
+
+                  {/* Generated Cover Image Preview */}
+                  {generatedImageUrl && (
+                    <div className="mt-2 p-3 bg-amber-50 rounded-xl border border-amber-200 flex flex-col sm:flex-row items-center gap-3">
+                      <img
+                        src={generatedImageUrl}
+                        alt="generated cover preview"
+                        className="w-32 h-20 object-cover rounded-lg border border-amber-300 shadow-sm shrink-0"
+                      />
+                      <div className="flex flex-col gap-1 w-full">
+                        <span className="text-[11px] font-bold text-amber-800">AI Cover Image Ready</span>
+                        <button
+                          type="button"
+                          onClick={handleUploadGeneratedImage}
+                          disabled={isUploadingGenerated}
+                          className="px-3 py-1.5 bg-[#B8860B] text-white rounded-lg text-xs font-bold hover:bg-[#9E7307] transition-colors disabled:opacity-50 w-fit"
+                        >
+                          {isUploadingGenerated ? 'Uploading...' : 'Save & Use as Cover'}
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Current Cover Preview */}
+                  {imagePreview && !generatedImageUrl && (
+                    <div className="mt-1 flex items-center gap-3 p-2 bg-white rounded-xl border border-slate-200">
+                      <img
+                        src={imagePreview}
+                        alt="cover preview"
+                        className="w-20 h-14 object-cover rounded-lg border border-slate-200 shadow-3xs"
+                      />
+                      <span className="text-xs text-slate-500 font-medium">Cover Image Active</span>
+                    </div>
+                  )}
                 </div>
               </div>
-              
-              <div className="flex flex-col gap-1.5 md:col-span-2">
-                <label className="text-xs font-extrabold uppercase text-slate-400 tracking-wider">Cover Image URL *</label>
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    name="image"
-                    required
-                    value={newBlog.image}
-                    onChange={handleInputChange}
-                    placeholder="URL of the uploaded image..."
-                    className="p-3.5 border border-slate-200 rounded-xl focus:border-[#B8860B] focus:outline-none text-xs sm:text-sm font-semibold text-slate-700 bg-white flex-1"
-                  />
-                  <input
-                    type="file"
-                    ref={fileInputRef}
-                    accept="image/*"
-                    onChange={handleFileUpload}
-                    className="hidden"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => fileInputRef.current?.click()}
-                    className="px-4 py-3 bg-slate-100 hover:bg-slate-200 border border-slate-250 text-slate-700 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer"
-                  >
-                    <FontAwesomeIcon icon={faUpload} />
-                    <span>{uploading ? '...' : 'Upload Local'}</span>
-                  </button>
+
+              {/* Infographic Image Input */}
+              <div className="flex flex-col gap-1.5 md:col-span-2 p-4 bg-amber-50/30 rounded-2xl border border-amber-200/80">
+                <div className="flex items-center justify-between mb-1">
+                  <label className="text-xs font-extrabold uppercase text-amber-900 tracking-wider">2. Topic Infographic (Charts, Data & Graphs) - Optional</label>
+                  <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">Data Visualization</span>
+                </div>
+                <p className="text-xs text-slate-500 mb-2">
+                  This second image renders inside the blog as an in-depth data breakdown with statistical charts, timelines, or workflow graphs.
+                </p>
+
+                <div className="flex flex-col gap-2">
+                  <div className="flex gap-2">
+                    <input
+                      type="text"
+                      value={infographicPrompt}
+                      onChange={(e) => setInfographicPrompt(e.target.value)}
+                      placeholder="Prompt for topic infographic data & charts..."
+                      className="p-3 border border-slate-200 rounded-xl focus:border-[#B8860B] focus:outline-none text-xs sm:text-sm font-medium text-slate-700 bg-white flex-1"
+                    />
+                    <button
+                      type="button"
+                      onClick={handleGenerateInfographic}
+                      disabled={isGeneratingInfographic || !infographicPrompt.trim()}
+                      className="px-4 py-2.5 bg-amber-100 hover:bg-amber-200 border border-[#D4AF37]/50 text-[#B8860B] rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer disabled:opacity-50 shrink-0"
+                    >
+                      <span>{isGeneratingInfographic ? '💫 Generating...' : '📊 Generate Infographic AI'}</span>
+                    </button>
+                  </div>
+
+                  <div className="flex gap-2">
+                    <input
+                      type="text"
+                      name="infographic"
+                      value={newBlog.infographic || ''}
+                      onChange={handleInputChange}
+                      placeholder="Infographic image URL (optional)..."
+                      className="p-3 border border-slate-200 rounded-xl focus:border-[#B8860B] focus:outline-none text-xs sm:text-sm font-medium text-slate-700 bg-white flex-1"
+                    />
+                    <input
+                      type="file"
+                      ref={fileInputInfographicRef}
+                      accept="image/*"
+                      onChange={handleInfographicFileUpload}
+                      className="hidden"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => fileInputInfographicRef.current?.click()}
+                      className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 border border-slate-250 text-slate-700 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer shrink-0"
+                    >
+                      <FontAwesomeIcon icon={faUpload} />
+                      <span>{uploadingInfographic ? '...' : 'Upload Local'}</span>
+                    </button>
+                    {newBlog.infographic && (
+                      <button
+                        type="button"
+                        onClick={handleRemoveInfographic}
+                        className="px-3 py-2.5 bg-red-50 hover:bg-red-100 border border-red-200 text-red-600 rounded-xl text-xs font-bold transition-all flex items-center justify-center cursor-pointer shrink-0"
+                        title="Remove Infographic"
+                      >
+                        <FontAwesomeIcon icon={faTrash} />
+                      </button>
+                    )}
+                  </div>
+
+                  {/* Generated Infographic Preview */}
+                  {generatedInfographicUrl && (
+                    <div className="mt-2 p-3 bg-amber-50 rounded-xl border border-amber-200 flex flex-col sm:flex-row items-center gap-3">
+                      <img
+                        src={generatedInfographicUrl}
+                        alt="generated infographic preview"
+                        className="w-32 h-20 object-cover rounded-lg border border-amber-300 shadow-sm shrink-0"
+                      />
+                      <div className="flex flex-col gap-1 w-full">
+                        <span className="text-[11px] font-bold text-amber-800">AI Infographic Ready</span>
+                        <button
+                          type="button"
+                          onClick={handleUploadGeneratedInfographic}
+                          disabled={isUploadingGeneratedInfographic}
+                          className="px-3 py-1.5 bg-[#B8860B] text-white rounded-lg text-xs font-bold hover:bg-[#9E7307] transition-colors disabled:opacity-50 w-fit"
+                        >
+                          {isUploadingGeneratedInfographic ? 'Uploading...' : 'Save & Set as Infographic'}
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Current Infographic Preview */}
+                  {infographicPreview && !generatedInfographicUrl && (
+                    <div className="mt-1 flex items-center justify-between p-2.5 bg-white rounded-xl border border-amber-200">
+                      <div className="flex items-center gap-3">
+                        <img
+                          src={infographicPreview}
+                          alt="infographic preview"
+                          className="w-20 h-14 object-cover rounded-lg border border-amber-200 shadow-3xs"
+                        />
+                        <div>
+                          <span className="text-xs text-amber-900 font-bold block">Infographic Active</span>
+                          <span className="text-[10px] text-slate-400">Will render inside blog data section</span>
+                        </div>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={handleRemoveInfographic}
+                        className="text-xs text-red-500 hover:text-red-700 font-semibold px-2 py-1"
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
-
-            {/* Generated Image Preview Block */}
-            {generatedImageUrl && (
-              <div className="p-4 bg-amber-50/50 rounded-2xl border border-amber-200 flex flex-col items-center gap-3">
-                <span className="text-[10px] text-[#B8860B] font-bold uppercase tracking-wider">AI Generated Image</span>
-                <img
-                  src={generatedImageUrl}
-                  alt="generated preview"
-                  className="w-full max-w-sm h-40 object-cover rounded-xl border border-amber-200 shadow-sm"
-                />
-                <button
-                  type="button"
-                  onClick={handleUploadGeneratedImage}
-                  disabled={isUploadingGenerated}
-                  className="px-4 py-2 bg-[#B8860B] text-white rounded-lg text-xs font-bold hover:bg-[#9E7307] transition-colors disabled:opacity-50"
-                >
-                  {isUploadingGenerated ? 'Uploading to Firebase...' : 'Upload this to Firebase & Use as Cover'}
-                </button>
-              </div>
-            )}
-
-            {/* Image Preview Block */}
-            {imagePreview && !generatedImageUrl && (
-              <div className="p-4 bg-slate-50 rounded-2xl border border-slate-150 flex flex-col items-center gap-2">
-                <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Cover Image Preview</span>
-                <img
-                  src={imagePreview}
-                  alt="cover preview"
-                  className="w-full max-w-sm h-40 object-cover rounded-xl border border-slate-200 shadow-3xs"
-                />
-              </div>
-            )}
 
             {/* Tiptap Rich Description Editor */}
             <div className="flex flex-col gap-2">

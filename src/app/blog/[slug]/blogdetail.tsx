@@ -1,12 +1,12 @@
 'use client'
 import { useEffect, useState, useMemo, memo } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import Breadcrumbs from '../../../components/Breadcrumbs';
 import TableOfContents from '../../../components/TableOfContents';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faUser, faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
-import BlogCounter from '../../../newcomp/BlogCounter';
 
 // Lazy load heavy components
 const LazyImage = dynamic(() => import('next/image'), { 
@@ -21,6 +21,7 @@ export interface Blog {
   description: string;
   date: string;
   image?: string; 
+  infographic?: string; // Topic infographic for charts and data visualization
   subtitle?: string;
   created?: number;
   metaTitle?: string;
@@ -66,17 +67,30 @@ const authorBios = {
   }
 };
 
-// Helper to process content and extract TOC
+// Helper to process content and extract TOC (only main headings)
 const processContent = (html: string) => {
   const sections: { id: string, title: string }[] = [];
+  const hasH2 = /<h2[^>]*>(.*?)<\/h2>/i.test(html || '');
+  const mainHeadingTag = hasH2 ? 'h2' : 'h3';
+
   // Regex to match h2 and h3 tags
-  let modifiedContent = html.replace(/<(h[23])(.*?)>(.*?)<\/\1>/g, (match, tag, attrs, title) => {
+  let modifiedContent = (html || '').replace(/<(h[23])(.*?)>(.*?)<\/\1>/gi, (match, tag, attrs, title) => {
     // Strip HTML from title for the TOC label
     const cleanTitle = title.replace(/<[^>]*>/g, '').trim();
     // Generate ID from title
     const id = cleanTitle.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+    const lowerTitle = cleanTitle.toLowerCase();
     
-    sections.push({ id, title: cleanTitle });
+    // Only add main headings to table of contents
+    if (
+      tag.toLowerCase() === mainHeadingTag && 
+      cleanTitle &&
+      !lowerTitle.includes('popular search') &&
+      !lowerTitle.startsWith('frequently asked') &&
+      !lowerTitle.startsWith('faq')
+    ) {
+      sections.push({ id, title: cleanTitle });
+    }
     
     // Check if ID already exists in attrs
     if (attrs.includes('id=')) {
@@ -93,7 +107,10 @@ const processContent = (html: string) => {
     .replace(/href=["']https:\/\/www\.amalegalsolutions\.com\/legal-notice-to-bank-format["']/gi, 'href="/how-can-i-send-legal-notice"')
     .replace(/href=["']\/legal-notice-to-bank-format["']/gi, 'href="/how-can-i-send-legal-notice"')
     .replace(/href=["']https:\/\/www\.amalegalsolutions\.com\/resources["']/gi, 'href="/blog"')
-    .replace(/href=["']\/resources["']/gi, 'href="/blog"');
+    .replace(/href=["']\/resources["']/gi, 'href="/blog"')
+    .replace(/<strong>\s*TL;?DR:?\s*<\/strong>/gi, '<strong>Key Takeaways:</strong> ')
+    .replace(/<strong>\s*TL;?DR\s*<\/strong>\s*:/gi, '<strong>Key Takeaways:</strong> ')
+    .replace(/<blockquote>\s*<strong>\s*TL;?DR:?\s*<\/strong>/gi, '<blockquote><strong>Key Takeaways:</strong> ');
 
   // Extract and style POPULAR SEARCHES
   modifiedContent = modifiedContent.replace(
@@ -158,6 +175,36 @@ const processContent = (html: string) => {
 };
 
 
+// Helper to split content into two halves to place the infographic in the middle of the article
+const splitContentForInfographic = (html: string) => {
+  if (!html) return { firstPart: '', secondPart: '' };
+
+  // Match all <h2> tags
+  const h2Matches = Array.from(html.matchAll(/<h2[^>]*>/gi));
+  if (h2Matches.length >= 2) {
+    // Place right before middle heading (e.g. if 6 headings, before heading 3)
+    const targetIndex = Math.max(1, Math.floor(h2Matches.length / 2));
+    const splitPos = h2Matches[targetIndex].index!;
+    return {
+      firstPart: html.substring(0, splitPos),
+      secondPart: html.substring(splitPos)
+    };
+  }
+
+  // If few or no <h2>, split by </p> tags
+  const pMatches = Array.from(html.matchAll(/<\/p>/gi));
+  if (pMatches.length >= 4) {
+    const midPIndex = Math.floor(pMatches.length / 2);
+    const splitPos = pMatches[midPIndex].index! + pMatches[midPIndex][0].length;
+    return {
+      firstPart: html.substring(0, splitPos),
+      secondPart: html.substring(splitPos)
+    };
+  }
+
+  return { firstPart: html, secondPart: '' };
+};
+
 const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, relatedBlogs }: BlogDetailProps) {
   const [currentUrl, setCurrentUrl] = useState('');
   const [expandedFaqs, setExpandedFaqs] = useState<string[]>([]);
@@ -176,6 +223,12 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
   const { content: processedContent, sections: tocSections } = useMemo(() => {
     return processContent(blog.description);
   }, [blog.description]);
+
+  // Split content for middle infographic placement if infographic exists
+  const { firstPart, secondPart } = useMemo(() => {
+    if (!blog.infographic) return { firstPart: processedContent, secondPart: '' };
+    return splitContentForInfographic(processedContent);
+  }, [processedContent, blog.infographic]);
 
     useEffect(() => {
     setCurrentUrl(window.location.href);
@@ -279,24 +332,24 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
         </div>
       </div>
 
-      <div className="w-full mb-12">
-        <BlogCounter />
-      </div>
-
-      <div className="container mx-auto px-4 max-w-[1600px]">
-        <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 items-start">
+      <div className="container mx-auto px-4 max-w-[1600px] mt-8">
+        <div className={`grid grid-cols-1 ${tocSections.length > 0 ? "lg:grid-cols-[220px_1fr_280px]" : "lg:grid-cols-[1fr_280px]"} gap-8 items-start`}>
           
           {/* Left Sidebar - TOC (Desktop) */}
-          <div className="hidden lg:block sticky top-24">
-             <TableOfContents sections={tocSections} orientation="vertical" />
-          </div>
+          {tocSections.length > 0 && (
+            <div className="hidden lg:block sticky top-24">
+               <TableOfContents sections={tocSections} orientation="vertical" />
+            </div>
+          )}
 
           {/* Main Content Area */}
           <div className="min-w-0">
             {/* TOC (Mobile) */}
-            <div className="lg:hidden mb-8">
-               <TableOfContents sections={tocSections} />
-            </div>
+            {tocSections.length > 0 && (
+              <div className="lg:hidden mb-8">
+                 <TableOfContents sections={tocSections} />
+              </div>
+            )}
 
             <div className="bg-white p-6 md:p-12 rounded-2xl shadow-sm space-y-12">
               {/* Meta details & Share */}
@@ -318,11 +371,50 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
                 </div>
               </div>
 
-              {/* Article Content */}
+              {/* First Part of Article Content */}
               <div 
                 className="prose prose-lg max-w-none text-gray-700 tiptap-content"
-                dangerouslySetInnerHTML={{ __html: processedContent }}
+                dangerouslySetInnerHTML={{ __html: firstPart }}
               />
+
+              {/* Infographic Section - In the middle of the blog */}
+              {blog.infographic && (
+                <div className="my-10 p-4 sm:p-6 bg-gradient-to-br from-[#FAF7F0] via-white to-[#F7F3E9] border-2 border-[#D2A02A]/35 rounded-2xl shadow-sm">
+                  <div className="flex items-center gap-3 mb-4 pb-3 border-b border-[#D2A02A]/20">
+                    <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-[#D2A02A] text-white font-bold text-base shadow-sm">
+                      📊
+                    </span>
+                    <div>
+                      <h3 className="text-base sm:text-lg font-extrabold text-[#1a202c]">
+                        Key Insights & Data Infographic
+                      </h3>
+                      <p className="text-xs text-gray-500 font-medium">
+                        Visual summary, statistical trends & procedural breakdown
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="rounded-xl overflow-hidden bg-white border border-[#D2A02A]/20 shadow-sm flex justify-center items-center p-2 sm:p-4">
+                    <img
+                      src={blog.infographic}
+                      alt={`${blog.title} - Data Infographic`}
+                      className="w-full h-auto max-h-[900px] object-contain rounded-lg hover:scale-[1.01] transition-transform duration-300"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p className="text-[11px] text-gray-400 text-center mt-3 font-medium">
+                    Prepared by AMA Legal Solutions Research & Analytics Team &bull; Data & Compliance Overview
+                  </p>
+                </div>
+              )}
+
+              {/* Second Part of Article Content (if present) */}
+              {secondPart && (
+                <div 
+                  className="prose prose-lg max-w-none text-gray-700 tiptap-content"
+                  dangerouslySetInnerHTML={{ __html: secondPart }}
+                />
+              )}
 
               {/* Tiptap Styles */}
               <style jsx global>{`
@@ -335,10 +427,15 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
                 .tiptap-content li { margin-bottom: 0.5em; }
                 .tiptap-content blockquote { border-left: 4px solid #D2A02A; padding-left: 1em; font-style: italic; color: #4a5568; background: #fffaf0; padding: 1rem; border-radius: 0.5rem; }
                 .tiptap-content img { border-radius: 0.5rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 2rem 0; }
-                .tiptap-content a { color: #D2A02A; text-decoration: underline; }
-                .tiptap-content table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
-                .tiptap-content th { background: #f7fafc; padding: 0.75rem; text-align: left; font-weight: 600; border: 1px solid #e2e8f0; }
-                .tiptap-content td { padding: 0.75rem; border: 1px solid #e2e8f0; }
+                .tiptap-content a { color: #B8860B; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; transition: color 0.15s ease; }
+                .tiptap-content a:hover { color: #8A6508; text-decoration-color: #8A6508; }
+                .tiptap-content table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 2.5rem 0; border: 1px solid #e2e8f0; border-radius: 0.75rem; overflow: hidden; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05); }
+                .tiptap-content th { background: #FAF7F0; color: #1a202c; padding: 0.9rem 1.1rem; text-align: left; font-weight: 700; font-size: 0.95rem; border-bottom: 2px solid #D2A02A; border-right: 1px solid #e2e8f0; }
+                .tiptap-content th:last-child { border-right: none; }
+                .tiptap-content td { padding: 0.85rem 1.1rem; border-bottom: 1px solid #edf2f7; border-right: 1px solid #edf2f7; font-size: 0.925rem; vertical-align: top; }
+                .tiptap-content td:last-child { border-right: none; }
+                .tiptap-content tr:last-child td { border-bottom: none; }
+                .tiptap-content tr:nth-child(even) { background-color: #fdfbf7; }
               `}</style>
               
               {/* References Section */}
@@ -377,6 +474,110 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
                   </div>
                 </div>
               </div>
+
+              {/* AMA Legal Solutions Company & Media Section */}
+              <section className="border-4 border-[#D2A02A] rounded-2xl p-6 md:p-10 bg-white text-center shadow-lg relative mt-12 mb-8">
+                <div className="flex justify-center mb-4">
+                  <Image src="/ama3.svg" alt="AMA Legal Solutions Logo" width={75} height={75} className="object-contain" />
+                </div>
+                <h2 className="text-2xl md:text-3xl font-extrabold text-[#5A4C33] mb-3">AMA Legal Solutions</h2>
+                <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed mb-6 text-sm md:text-base font-medium">
+                  Trusted with a <strong className="text-[#D2A02A] font-bold">4.7 Google Rating</strong>, over <strong className="text-[#D2A02A] font-bold">10,000+ Clients Served</strong>, <strong className="text-[#D2A02A] font-bold">25,000+ Cases Handled</strong>, and more than <strong className="text-[#D2A02A] font-bold">40+ Years of Experience</strong> in providing strategic legal defense and debt resolution across India.
+                </p>
+
+                {/* Media Coverages */}
+                <div className="border-t border-b border-gray-100 py-4 my-6">
+                  <h3 className="text-xs md:text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Our media coverages</h3>
+                  <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8">
+                    <Link
+                      href="https://yourstory.com/companies/ama-legal-solutions"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:opacity-80 transition-opacity"
+                    >
+                      <Image
+                        src="/newAssets/media/yourstory.png"
+                        alt="YourStory"
+                        width={120}
+                        height={45}
+                        className="h-6 sm:h-7 md:h-8 w-auto object-contain"
+                      />
+                    </Link>
+                    <Link
+                      href="https://www.livemint.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:opacity-80 transition-opacity"
+                    >
+                      <Image
+                        src="/newAssets/media/livemint.png"
+                        alt="LiveMint"
+                        width={120}
+                        height={45}
+                        className="h-6 sm:h-7 md:h-8 w-auto object-contain"
+                      />
+                    </Link>
+                    <Link
+                      href="https://www.barandbench.com/news/ama-legal-solutions-launches-indias-first-law-firm-backed-pro-bono-driven-mobile-app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:opacity-80 transition-opacity"
+                    >
+                      <Image
+                        src="/newAssets/media/barandbench.png"
+                        alt="Bar and Bench"
+                        width={120}
+                        height={45}
+                        className="h-6 sm:h-7 md:h-8 w-auto object-contain"
+                      />
+                    </Link>
+                    <Link
+                      href="https://medium.com/@amalegalsolutions"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:opacity-80 transition-opacity"
+                    >
+                      <Image
+                        src="/newAssets/media/medium.png"
+                        alt="Medium"
+                        width={120}
+                        height={45}
+                        className="h-6 sm:h-7 md:h-8 w-auto object-contain"
+                      />
+                    </Link>
+                    <Link
+                      href="https://www.mid-day.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:opacity-80 transition-opacity"
+                    >
+                      <Image
+                        src="/newAssets/media/mid_day.png"
+                        alt="Mid-day"
+                        width={120}
+                        height={45}
+                        className="h-6 sm:h-7 md:h-8 w-auto object-contain"
+                      />
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Services in single row */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 max-w-5xl mx-auto">
+                  <Link href="/loan-settlement" className="px-3 py-2.5 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded-lg hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-sm flex items-center justify-center">
+                    Loan Settlement Services
+                  </Link>
+                  <Link href="/send-legal-notice" className="px-3 py-2.5 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded-lg hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-sm flex items-center justify-center">
+                    Legal Notice Services
+                  </Link>
+                  <Link href="/drafting-of-will" className="px-3 py-2.5 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded-lg hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-sm flex items-center justify-center">
+                    Will Drafting Services
+                  </Link>
+                  <Link href="/virtual-inhouse-councel" className="px-3 py-2.5 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded-lg hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-sm flex items-center justify-center">
+                    Virtual In-house Counsel
+                  </Link>
+                </div>
+              </section>
 
               {/* Reviews Section */}
               {reviews.length > 0 && (
@@ -544,33 +745,6 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
             </div>
         </div>
       </div>
-      
-      {/* Company Section matching @loan-settlement */}
-      <footer className="max-w-7xl mx-auto px-4 md:px-8 mt-10 mb-4 md:mb-8">
-        <div className="border-4 border-[#D2A02A] rounded-2xl p-8 md:p-12 bg-white text-center shadow-2xl relative">
-          <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-white px-4">
-             <div className="bg-black p-3 rounded-xl flex items-center justify-center shadow-lg"><img src="/newAssets/logo/ama_box.svg" alt="AMA Legal Solutions Logo" width={60} height={60} className="object-contain" /></div>
-          </div>
-          <h2 className="text-3xl font-extrabold text-[#5A4C33] mt-4 mb-2 md:mb-4">AMA Legal Solutions</h2>
-          <p className="text-gray-700 max-w-2xl mx-auto leading-relaxed mb-4 md:mb-8">
-            AMA Legal Solutions is India's premium legal advisory firm specializing in financial dispute resolution, debt relief, and civil litigation. We empower our clients with uncompromising legal defense and strategic negotiations.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
-            <Link href="/loan-settlement" className="px-4 md:px-6 py-3 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-base">
-              Loan Settlement Services
-            </Link>
-            <Link href="/send-legal-notice" className="px-4 md:px-6 py-3 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-base">
-              Legal Notice Services
-            </Link>
-            <Link href="/drafting-of-will" className="px-4 md:px-6 py-3 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-base">
-              Will Drafting Services
-            </Link>
-            <Link href="/virtual-inhouse-councel" className="px-4 md:px-6 py-3 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-base">
-              Virtual In-house Counsel
-            </Link>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 });

@@ -574,7 +574,7 @@ export default function SettleLoansClient() {
         <footer className="max-w-7xl mx-auto px-4 md:px-8 mt-10 mb-4 md:mb-8">
           <div className="border-4 border-[#D2A02A] rounded-2xl p-8 md:p-12 bg-white text-center shadow-2xl relative">
             <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-white px-4">
-               <div className="bg-black p-3 rounded-xl flex items-center justify-center shadow-lg"><Image src="/newAssets/logo/ama_box.svg" alt="AMA Legal Solutions Logo" width={60} height={60} className="object-contain" /></div>
+               <div className="flex items-center justify-center"><Image src="/ama3.svg" alt="AMA Legal Solutions Logo" width={80} height={80} className="object-contain" /></div>
             </div>
             <h2 className="text-3xl font-extrabold text-[#5A4C33] mt-4 mb-2 md:mb-4">AMA Legal Solutions</h2>
             <p className="text-gray-700 max-w-2xl mx-auto leading-relaxed mb-4 md:mb-8">

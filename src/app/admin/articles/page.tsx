@@ -39,6 +39,7 @@ interface Blog {
   description: string;
   date: string;
   image: string;
+  infographic?: string;
   created: number;
   metaTitle?: string;
   metaDescription?: string;
@@ -59,6 +60,7 @@ const ArticlesDashboard = () => {
     description: '',
     date: new Date().toISOString().split('T')[0],
     image: '',
+    infographic: '',
     created: Date.now(),
     metaTitle: '',
     metaDescription: '',
@@ -155,6 +157,7 @@ const ArticlesDashboard = () => {
           description: docData.description || '',
           date: docData.date || '',
           image: docData.image || '',
+          infographic: docData.infographic || '',
           created: docData.created || Date.now(),
           metaTitle: docData.metaTitle || '',
           metaDescription: docData.metaDescription || '',

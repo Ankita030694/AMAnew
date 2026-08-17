@@ -279,7 +279,11 @@ function generateCombinedSchema(blogData: any, faqs: any[], reviews: any[]) {
       "@type": "ImageObject",
       "url": blogData.image,
       "caption": blogData.title
-    } : undefined,
+    } : (blogData.infographic ? {
+      "@type": "ImageObject",
+      "url": blogData.infographic,
+      "caption": `${blogData.title} Data Infographic`
+    } : undefined),
     "keywords": blogData.metaTitle || blogData.title,
     "articleSection": "Legal Advice",
     "inLanguage": "en-IN",
