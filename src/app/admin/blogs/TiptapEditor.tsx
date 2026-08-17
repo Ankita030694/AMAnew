@@ -196,7 +196,7 @@ const MenuBar = ({ editor }: { editor: any }) => {
   };
 
   return (
-    <div className="sticky top-0 z-10 border-b border-gray-300 p-2 flex flex-wrap gap-1 bg-gray-50">
+    <div className="sticky top-0 z-40 border-b border-gray-300 p-2 flex flex-wrap gap-1 bg-gray-50">
       {/* Text Formatting */}
       <div className="flex gap-1 mr-2">
         <button

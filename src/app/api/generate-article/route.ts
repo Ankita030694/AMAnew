@@ -156,7 +156,7 @@ ${coreInstructions}
 Task: Analyze the following generated article Title, Subtitle, and HTML Description, and generate:
 1. At least 8-10 highly relevant, detailed FAQs (frequently asked questions) that directly relate to the article content.
 2. 5 realistic customer review snippets (with Indian names) expressing high satisfaction with the legal service.
-3. A suggested image prompt describing a clean, professional, modern corporate infographic/illustration suitable for this article.
+3. A suggested image prompt describing a highly professional legal illustration that MUST feature real people, an Indian landscape or setting in the background, and prominently feature the exact title of the blog written within the image. The image must exclusively use the colors #D29E0D, white, and black. Do NOT generate random infographics stuffed with numerics.
 
 Article Title: ${step1Result.title}
 Article Subtitle: ${step1Result.subtitle}

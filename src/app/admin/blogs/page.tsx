@@ -734,7 +734,9 @@ const BlogsDashboard = () => {
       const savedDraft = localStorage.getItem(`autosave_blog_${blog.id}`);
       if (savedDraft) {
         if (window.confirm('Found an unsaved draft for this blog. Do you want to restore your edits?')) {
-          setNewBlog(JSON.parse(savedDraft));
+          const parsedDraft = JSON.parse(savedDraft);
+          setNewBlog(parsedDraft);
+          if (parsedDraft.image) setImagePreview(parsedDraft.image);
         } else {
           localStorage.removeItem(`autosave_blog_${blog.id}`);
         }
@@ -750,7 +752,9 @@ const BlogsDashboard = () => {
       const savedDraft = localStorage.getItem(`autosave_blog_${blog.id}`);
       if (savedDraft) {
         if (window.confirm('Found an unsaved draft for this blog. Do you want to restore your edits?')) {
-          setNewBlog(JSON.parse(savedDraft));
+          const parsedDraft = JSON.parse(savedDraft);
+          setNewBlog(parsedDraft);
+          if (parsedDraft.image) setImagePreview(parsedDraft.image);
         } else {
           localStorage.removeItem(`autosave_blog_${blog.id}`);
         }
@@ -946,7 +950,9 @@ const BlogsDashboard = () => {
                   const savedDraft = localStorage.getItem('autosave_blog_new');
                   if (savedDraft) {
                     if (window.confirm('Found an unsaved draft. Do you want to restore it?')) {
-                      setNewBlog(JSON.parse(savedDraft));
+                      const parsedDraft = JSON.parse(savedDraft);
+                      setNewBlog(parsedDraft);
+                      if (parsedDraft.image) setImagePreview(parsedDraft.image);
                     } else {
                       localStorage.removeItem('autosave_blog_new');
                       resetForm();

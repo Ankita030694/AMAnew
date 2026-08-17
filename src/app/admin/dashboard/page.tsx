@@ -197,6 +197,13 @@ const AdminDashboard = () => {
     return text.substring(0, maxLength) + '...';
   };
 
+  const truncateWords = (text: string, maxWords: number = 2) => {
+    if (!text || text === '-') return text;
+    const words = text.trim().split(/\s+/);
+    if (words.length <= maxWords) return text;
+    return words.slice(0, maxWords).join(' ') + '...';
+  };
+
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -263,10 +270,10 @@ const AdminDashboard = () => {
                 <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider w-24">
                   Service Required
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider w-32">
+                <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider w-64">
                   Submission URL
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider">
+                <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider w-24">
                   Message
                 </th>
                 <th className="px-4 py-3 text-left text-xs font-medium text-[#5A4C33] uppercase tracking-wider w-20">
@@ -318,15 +325,27 @@ const AdminDashboard = () => {
                       {truncateText(row.serviceRequired, 20)}
                     </td>
                     <td className="px-4 py-4 text-sm text-[#5A4C33]">
-                      <a href={row.submissionUrl} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline" onClick={(e) => e.stopPropagation()}>
-                        {truncateText(row.submissionUrl || '-', 30)}
+                      <a href={row.submissionUrl} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline break-all" onClick={(e) => e.stopPropagation()}>
+                        {row.submissionUrl || '-'}
                       </a>
                     </td>
                     <td className="px-4 py-4 text-sm text-[#5A4C33]">
-                      {truncateText(row.message, 40)}
+                      {truncateWords(row.message, 2)}
                     </td>
                     <td className="px-4 py-4 text-sm text-[#5A4C33]">
                       <div className="flex space-x-2">
+                        <motion.button
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleRowClick(row);
+                          }}
+                          className="px-3 py-1 text-white rounded-md text-xs flex items-center space-x-1 bg-blue-500 hover:bg-blue-600"
+                        >
+                          <FontAwesomeIcon icon={faEye} className="text-xs" />
+                          <span>View</span>
+                        </motion.button>
                         <motion.button
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}

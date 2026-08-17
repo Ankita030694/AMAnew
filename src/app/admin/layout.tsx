@@ -75,7 +75,7 @@ export default function AdminLayout({
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
   return (
-    <div className="min-h-screen bg-[#F8F5EC] flex flex-col lg:flex-row overflow-x-hidden">
+    <div className="min-h-screen bg-[#F8F5EC] flex flex-col lg:flex-row overflow-x-clip">
       {/* Script for Cloudinary */}
       <Script
         id="cloudinary-widget-script-next"

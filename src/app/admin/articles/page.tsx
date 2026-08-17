@@ -391,10 +391,11 @@ const ArticlesDashboard = () => {
   };
 
   const handleGenerateImage = async () => {
-    if (!imagePrompt.trim()) {
-      alert('Please enter an image prompt.');
-      return;
-    }
+    const defaultPrompt = newBlog.title 
+      ? `A highly professional legal illustration that MUST feature real people, an Indian landscape or setting in the background, and prominently feature the exact title of the article: "${newBlog.title}" written within the image. The image must exclusively use the colors #D29E0D, white, and black. Do NOT generate random infographics stuffed with numerics.`
+      : `A highly professional legal illustration that MUST feature real people, an Indian landscape or setting in the background. The image must exclusively use the colors #D29E0D, white, and black. Do NOT generate random infographics stuffed with numerics.`;
+
+    const finalPrompt = imagePrompt.trim() || defaultPrompt;
 
     try {
       setIsGeneratingImage(true);
@@ -403,7 +404,7 @@ const ArticlesDashboard = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ prompt: imagePrompt }),
+        body: JSON.stringify({ prompt: finalPrompt }),
       });
 
       if (!response.ok) {
@@ -499,7 +500,11 @@ const ArticlesDashboard = () => {
       setNewBlog({ ...blog, faqs, reviews });
       setFormMode('edit');
       const saved = localStorage.getItem(`autosave_article_${blog.id}`);
-      if (saved && window.confirm('Restore draft?')) setNewBlog(JSON.parse(saved));
+      if (saved && window.confirm('Restore draft?')) {
+        const parsedDraft = JSON.parse(saved);
+        setNewBlog(parsedDraft);
+        if (parsedDraft.image) setImagePreview(parsedDraft.image);
+      }
       setShowBlogForm(true);
     } catch (e) {
       setNewBlog(blog); setFormMode('edit'); setShowBlogForm(true);
@@ -581,7 +586,9 @@ const ArticlesDashboard = () => {
                     const savedDraft = localStorage.getItem('autosave_article_new');
                     if (savedDraft) {
                       if (window.confirm('Found an unsaved draft. Do you want to restore it?')) {
-                        setNewBlog(JSON.parse(savedDraft));
+                        const parsedDraft = JSON.parse(savedDraft);
+                        setNewBlog(parsedDraft);
+                        if (parsedDraft.image) setImagePreview(parsedDraft.image);
                       } else {
                         localStorage.removeItem('autosave_article_new');
                         resetForm();
@@ -784,7 +791,7 @@ const ArticlesDashboard = () => {
                           <button
                             type="button"
                             onClick={handleGenerateImage}
-                            disabled={isGeneratingImage || !imagePrompt}
+                            disabled={isGeneratingImage}
                             className="mt-2 w-full px-4 py-2 bg-purple-600 text-white rounded-md text-sm font-medium disabled:bg-purple-300"
                           >
                             {isGeneratingImage ? 'Generating Image...' : 'Generate Image with DALL-E'}
