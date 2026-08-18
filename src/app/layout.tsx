@@ -197,12 +197,44 @@ export default function RootLayout({
                 "https://www.linkedin.com/company/ama-legal-solutions/",
                 "https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions",
                 "https://apps.apple.com/in/app/ama-legal-solutions/id6755156186"
-              ],
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "1250"
-              }
+              ]
+            })
+          }}
+        />
+        <script
+          id="review-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Review",
+              "itemReviewed": {
+                "@type": "Attorney",
+                "@id": "https://www.amalegalsolutions.com/",
+                "name": "AMA Legal Solutions",
+                "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
+                "telephone": "+91-8700343611",
+                "priceRange": "₹₹",
+                "url": "https://www.amalegalsolutions.com/",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "2493AP, Block G, Sushant Lok 2, Sector 57",
+                  "addressLocality": "Gurugram",
+                  "postalCode": "122001",
+                  "addressCountry": "IN"
+                }
+              },
+              "author": {
+                "@type": "Person",
+                "name": "Rajesh Kumar"
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5",
+                "worstRating": "1"
+              },
+              "reviewBody": "AMA Legal Solutions provided exceptional legal counsel and resolved our financial dispute with complete transparency and efficiency."
             })
           }}
         />

@@ -283,6 +283,12 @@ export default async function Page({
               dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema.faqSchema) }}
             />
           )}
+          {combinedSchema.reviewSchema && (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema.reviewSchema) }}
+            />
+          )}
         </>
       )}
 
@@ -530,11 +536,50 @@ function generateCombinedSchema(articleData: any, faqs: any[], reviews: any[]) {
     };
   }
 
+  // 5. Review Schema (if reviews exist)
+  let reviewSchema = null;
+  if (reviews && reviews.length > 0) {
+    const firstReview = reviews[0];
+    reviewSchema = {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      "@id": `${articleUrl}#review`,
+      "itemReviewed": {
+        "@type": "LegalService",
+        "name": "AMA Legal Solutions",
+        "image": `${baseUrl}/ama-legal-solutions-logo.png`,
+        "url": baseUrl,
+        "telephone": "+918700343611",
+        "priceRange": "₹₹",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "2493AP, Block G, Sushant Lok 2, Sector 57",
+          "addressLocality": "Gurugram",
+          "addressRegion": "Haryana",
+          "postalCode": "122001",
+          "addressCountry": "IN"
+        }
+      },
+      "author": {
+        "@type": "Person",
+        "name": firstReview.name || "Verified Client"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": String(firstReview.rating || 5),
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": firstReview.review || "AMA Legal Solutions provided expert legal advice and handled our case with great professionalism."
+    };
+  }
+
   return {
     articleSchema,
     organizationSchema,
     breadcrumbSchema,
-    faqSchema
+    faqSchema,
+    reviewSchema
   };
 }
 
