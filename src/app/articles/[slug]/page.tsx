@@ -262,13 +262,28 @@ export default async function Page({
   return (
     <div style={{ fontFamily: "var(--font-polysans)" }}>
       <Navbar />
-      {/* Combined Schema */}
+      {/* JSON-LD Structured Data Schemas for Google Rich Results Test & Search Engines */}
       {combinedSchema && (
-        <Script
-          id="article-combined-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema) }}
-        />
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema.articleSchema) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema.organizationSchema) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema.breadcrumbSchema) }}
+          />
+          {combinedSchema.faqSchema && (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema.faqSchema) }}
+            />
+          )}
+        </>
       )}
 
       {/* SSR-rendered crawlable content - guaranteed in server HTML */}
@@ -290,46 +305,150 @@ export default async function Page({
   );
 }
 
+function formatToISTIsoString(date: Date): string {
+  const istOffsetMs = 5.5 * 60 * 60 * 1000;
+  const istDate = new Date(date.getTime() + istOffsetMs);
+  
+  const year = istDate.getUTCFullYear();
+  const month = String(istDate.getUTCMonth() + 1).padStart(2, '0');
+  const day = String(istDate.getUTCDate()).padStart(2, '0');
+  const hours = String(istDate.getUTCHours()).padStart(2, '0');
+  const minutes = String(istDate.getUTCMinutes()).padStart(2, '0');
+  const seconds = String(istDate.getUTCSeconds()).padStart(2, '0');
+
+  return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}+05:30`;
+}
+
+function formatIsoDateTime(dateStr?: string, created?: number): string {
+  if (dateStr && typeof dateStr === 'string') {
+    const trimmed = dateStr.trim();
+    if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/.test(trimmed)) {
+      if (trimmed.endsWith('Z') || /[+-]\d{2}:\d{2}$/.test(trimmed)) {
+        return trimmed;
+      }
+      return `${trimmed}+05:30`;
+    }
+    if (/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) {
+      return `${trimmed}T10:00:00+05:30`;
+    }
+    const parsed = new Date(trimmed);
+    if (!isNaN(parsed.getTime())) {
+      return formatToISTIsoString(parsed);
+    }
+  }
+
+  if (created && typeof created === 'number') {
+    const ms = created < 10000000000 ? created * 1000 : created;
+    const parsed = new Date(ms);
+    if (!isNaN(parsed.getTime())) {
+      return formatToISTIsoString(parsed);
+    }
+  }
+
+  return formatToISTIsoString(new Date());
+}
+
+function formatAbsoluteUrl(url?: string, defaultUrl: string = "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"): string {
+  if (!url || typeof url !== 'string' || !url.trim()) {
+    return defaultUrl;
+  }
+  const cleanUrl = url.trim();
+  if (cleanUrl.startsWith('http://') || cleanUrl.startsWith('https://')) {
+    return cleanUrl;
+  }
+  if (cleanUrl.startsWith('/')) {
+    return `https://www.amalegalsolutions.com${cleanUrl}`;
+  }
+  return `https://www.amalegalsolutions.com/${cleanUrl}`;
+}
+
+function getAuthorSchema(authorName?: string) {
+  const baseUrl = "https://www.amalegalsolutions.com";
+  const name = authorName?.trim() || "AMA Legal Solutions";
+
+  if (name === "Anuj Anand Malik") {
+    return {
+      "@type": "Person",
+      "name": "Anuj Anand Malik",
+      "jobTitle": "Founder & Senior Advocate",
+      "url": `${baseUrl}/author/anuj-anand-malik`,
+      "image": `${baseUrl}/anujbhiya.png`,
+      "sameAs": "https://www.linkedin.com/in/iamanujmalik/",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "AMA Legal Solutions",
+        "url": baseUrl
+      }
+    };
+  }
+
+  if (name === "Shrey Arora") {
+    return {
+      "@type": "Person",
+      "name": "Shrey Arora",
+      "jobTitle": "Legal Associate",
+      "url": `${baseUrl}/author/shrey-arora`,
+      "image": `${baseUrl}/shreychad.svg`,
+      "sameAs": "https://www.linkedin.com/in/shrey-arora-b0487b67/",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "AMA Legal Solutions",
+        "url": baseUrl
+      }
+    };
+  }
+
+  return {
+    "@type": "Organization",
+    "name": name,
+    "url": baseUrl,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${baseUrl}/ama-legal-solutions-logo.png`
+    }
+  };
+}
+
 function generateCombinedSchema(articleData: any, faqs: any[], reviews: any[]) {
   const baseUrl = "https://www.amalegalsolutions.com";
   const articleUrl = `${baseUrl}/articles/${articleData.slug}`;
-  const isOrganizationAuthor = !articleData.author || articleData.author === "AMA Legal Solutions";
-
-  const graph = [];
+  const isoPublishedDate = formatIsoDateTime(articleData.date, articleData.created);
+  const isoModifiedDate = formatIsoDateTime(articleData.date, articleData.created);
+  const imageUrl = formatAbsoluteUrl(articleData.image || articleData.infographic);
+  const cleanDescription = (articleData.metaDescription || articleData.subtitle || articleData.description?.replace(/<[^>]*>/g, ''))?.trim().substring(0, 200) || `${articleData.title} - Legal guide and insights from AMA Legal Solutions.`;
 
   // 1. Article Schema
-  const articleSchema: any = {
+  const articleSchema = {
+    "@context": "https://schema.org",
     "@type": "Article",
-    "@id": `${articleUrl}#article`,
-    "isPartOf": { "@id": articleUrl },
-    "author": {
-      "@type": isOrganizationAuthor ? "Organization" : "Person",
-      "name": articleData.author || "AMA Legal Solutions",
-      "url": articleData.author === "Anuj Anand Malik" ? `${baseUrl}/author/anuj-anand-malik` : 
-            articleData.author === "Shrey Arora" ? `${baseUrl}/author/shrey-arora` : 
-            `${baseUrl}/about`
-    },
     "headline": articleData.title,
-    "datePublished": articleData.date,
-    "dateModified": articleData.date,
-    "mainEntityOfPage": { "@id": articleUrl },
-    "publisher": { "@id": `${baseUrl}/#organization` },
-    "image": articleData.image ? {
-      "@type": "ImageObject",
-      "url": articleData.image,
-      "caption": articleData.title
-    } : undefined,
+    "description": cleanDescription,
+    "image": [imageUrl],
+    "datePublished": isoPublishedDate,
+    "dateModified": isoModifiedDate,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": articleUrl
+    },
+    "author": getAuthorSchema(articleData.author),
+    "publisher": {
+      "@type": "Organization",
+      "name": "AMA Legal Solutions",
+      "url": baseUrl,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${baseUrl}/ama-legal-solutions-logo.png`
+      }
+    },
     "keywords": articleData.metaTitle || articleData.title,
     "articleSection": "Legal Articles",
-    "inLanguage": "en-IN",
-    "description": articleData.metaDescription || articleData.subtitle || articleData.description?.replace(/<[^>]*>/g, '').substring(0, 160) || ''
+    "inLanguage": "en-IN"
   };
 
-  graph.push(articleSchema);
-
-  // 2. Organization / LegalService Schema with AggregateRating
+  // 2. Organization Schema
   const organizationSchema: any = {
-    "@type": "LegalService",
+    "@context": "https://schema.org",
+    "@type": "Organization",
     "@id": `${baseUrl}/#organization`,
     "name": "AMA Legal Solutions",
     "url": baseUrl,
@@ -337,51 +456,38 @@ function generateCombinedSchema(articleData: any, faqs: any[], reviews: any[]) {
       "@type": "ImageObject",
       "url": `${baseUrl}/ama-legal-solutions-logo.png`
     },
+    "image": `${baseUrl}/ama-legal-solutions-logo.png`,
+    "description": "Leading legal firm in India specializing in loan settlement, banking disputes, debt relief, arbitration, and comprehensive legal consultation.",
+    "telephone": "+918700343611",
+    "email": "contact@amalegalsolutions.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "2493AP, Block G, Sushant Lok 2,Sector 57",
+      "streetAddress": "2493AP, Block G, Sushant Lok 2, Sector 57",
       "addressLocality": "Gurugram",
       "addressRegion": "Haryana",
       "postalCode": "122001",
       "addressCountry": "IN"
     },
-    "telephone": "+918700343611",
-    "priceRange": "$$"
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+918700343611",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Hindi"]
+    },
+    "sameAs": [
+      "https://www.facebook.com/amalegalsolutions/",
+      "https://www.youtube.com/@amalegalsolution",
+      "https://www.instagram.com/amalegalsolutions/",
+      "https://www.linkedin.com/company/ama-legal-solutions/",
+      "https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions",
+      "https://apps.apple.com/in/app/ama-legal-solutions/id6755156186"
+    ]
   };
 
-  // Add AggregateRating if reviews exist
-  if (reviews && reviews.length > 0) {
-    const totalRating = reviews.reduce((sum, review) => sum + (Number(review.rating) || 0), 0);
-    const avgRating = (totalRating / reviews.length).toFixed(1);
-
-    organizationSchema.aggregateRating = {
-      "@type": "AggregateRating",
-      "ratingValue": avgRating,
-      "reviewCount": reviews.length.toString(),
-      "bestRating": "5",
-      "worstRating": "1"
-    };
-
-    organizationSchema.review = reviews.map(review => ({
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": review.name || "Anonymous"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": (Number(review.rating) || 5).toString(),
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "reviewBody": review.review || ""
-    }));
-  }
-
-  graph.push(organizationSchema);
-
   // 3. Breadcrumb Schema
-  graph.push({
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "@id": `${articleUrl}#breadcrumb`,
     "itemListElement": [
@@ -404,28 +510,31 @@ function generateCombinedSchema(articleData: any, faqs: any[], reviews: any[]) {
         "item": articleUrl
       }
     ]
-  });
+  };
 
   // 4. FAQ Schema (if present)
-  if (faqs.length > 0) {
-    graph.push({
+  let faqSchema = null;
+  if (faqs && faqs.length > 0) {
+    faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
       "@id": `${articleUrl}#faq`,
-      "name": `${articleData.title} - Frequently Asked Questions`,
-      "description": `Frequently asked questions about ${articleData.title}`,
-      "url": articleUrl,
       "mainEntity": faqs.map(faq => ({
         "@type": "Question",
         "name": faq.question,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": faq.answer.replace(/<[^>]*>/g, '')
+          "text": faq.answer.replace(/<[^>]*>/g, '').trim()
         }
       }))
-    });
+    };
   }
 
   return {
-    "@context": "https://schema.org",
-    "@graph": graph
+    articleSchema,
+    organizationSchema,
+    breadcrumbSchema,
+    faqSchema
   };
 }
+
