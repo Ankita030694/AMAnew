@@ -465,6 +465,152 @@ export default function SettleLoansClient() {
                   </div>
                 </div>
 
+                {/* References & Authority Section */}
+                <div className="border-t border-gray-200 pt-8 mt-10">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">References & Statutory Authorities</h3>
+                  <ul className="list-disc pl-5 space-y-2 text-sm text-gray-600">
+                    <li>
+                      <a href="https://www.rbi.org.in/" target="_blank" rel="noopener noreferrer" className="hover:text-[#D2A02A] underline font-medium">
+                        Reserve Bank of India (RBI) – Master Directions on Fair Practices Code for Lenders & NBFCs
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://cms.rbi.org.in/" target="_blank" rel="noopener noreferrer" className="hover:text-[#D2A02A] underline font-medium">
+                        RBI Integrated Ombudsman Scheme – Statutory Complaint Redressal & Anti-Harassment Mechanism
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.indiacode.nic.in/handle/123456789/2006" target="_blank" rel="noopener noreferrer" className="hover:text-[#D2A02A] underline font-medium">
+                        Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest (SARFAESI) Act, 2002 – India Code
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.indiacode.nic.in/handle/123456789/1960" target="_blank" rel="noopener noreferrer" className="hover:text-[#D2A02A] underline font-medium">
+                        Recovery of Debts and Bankruptcy Act, 1993 (Debt Recovery Tribunal - DRT Judicial Framework)
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://ncdrc.nic.in/" target="_blank" rel="noopener noreferrer" className="hover:text-[#D2A02A] underline font-medium">
+                        National Consumer Disputes Redressal Commission (NCDRC) – Consumer Protection Act, 2019
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://main.sci.gov.in/" target="_blank" rel="noopener noreferrer" className="hover:text-[#D2A02A] underline font-medium">
+                        Supreme Court of India – Landmark Judgments on Borrower Dignity & Prohibition of Coercive Recovery Tactics
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://incometaxindia.gov.in/" target="_blank" rel="noopener noreferrer" className="hover:text-[#D2A02A] underline font-medium">
+                        Income Tax Department of India – Provisions under Section 41(1) on Debt Relief and Loan Waivers
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* AMA Legal Solutions Company & Media Section */}
+                <section className="border-4 border-[#D2A02A] rounded-2xl p-6 md:p-10 bg-white text-center shadow-lg relative mt-12 mb-8">
+                  <div className="flex justify-center mb-4">
+                    <Image src="/ama3.svg" alt="AMA Legal Solutions Logo" width={75} height={75} className="object-contain" />
+                  </div>
+                  <h2 className="text-2xl md:text-3xl font-extrabold text-[#5A4C33] mb-3">AMA Legal Solutions</h2>
+                  <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed mb-6 text-sm md:text-base font-medium">
+                    Trusted with a <strong className="text-[#D2A02A] font-bold">4.7 Google Rating</strong>, over <strong className="text-[#D2A02A] font-bold">10,000+ Clients Served</strong>, <strong className="text-[#D2A02A] font-bold">25,000+ Cases Handled</strong>, and more than <strong className="text-[#D2A02A] font-bold">40+ Years of Experience</strong> in providing strategic legal defense and debt resolution across India.
+                  </p>
+
+                  {/* Media Coverages */}
+                  <div className="border-t border-b border-gray-100 py-4 my-6">
+                    <h3 className="text-xs md:text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Our media coverages</h3>
+                    <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8">
+                      <Link
+                        href="https://yourstory.com/companies/ama-legal-solutions"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:opacity-80 transition-opacity"
+                      >
+                        <Image
+                          src="/newAssets/media/yourstory.png"
+                          alt="YourStory"
+                          width={120}
+                          height={45}
+                          className="h-6 sm:h-7 md:h-8 w-auto object-contain"
+                        />
+                      </Link>
+                      <Link
+                        href="https://www.livemint.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:opacity-80 transition-opacity"
+                      >
+                        <Image
+                          src="/newAssets/media/livemint.png"
+                          alt="LiveMint"
+                          width={120}
+                          height={45}
+                          className="h-6 sm:h-7 md:h-8 w-auto object-contain"
+                        />
+                      </Link>
+                      <Link
+                        href="https://www.barandbench.com/news/ama-legal-solutions-launches-indias-first-law-firm-backed-pro-bono-driven-mobile-app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:opacity-80 transition-opacity"
+                      >
+                        <Image
+                          src="/newAssets/media/barandbench.png"
+                          alt="Bar and Bench"
+                          width={120}
+                          height={45}
+                          className="h-6 sm:h-7 md:h-8 w-auto object-contain"
+                        />
+                      </Link>
+                      <Link
+                        href="https://medium.com/@amalegalsolutions"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:opacity-80 transition-opacity"
+                      >
+                        <Image
+                          src="/newAssets/media/medium.png"
+                          alt="Medium"
+                          width={120}
+                          height={45}
+                          className="h-6 sm:h-7 md:h-8 w-auto object-contain"
+                        />
+                      </Link>
+                      <Link
+                        href="https://www.mid-day.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:opacity-80 transition-opacity"
+                      >
+                        <Image
+                          src="/newAssets/media/mid_day.png"
+                          alt="Mid-day"
+                          width={120}
+                          height={45}
+                          className="h-6 sm:h-7 md:h-8 w-auto object-contain"
+                        />
+                      </Link>
+                    </div>
+                  </div>
+
+                  {/* Services in single row */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 max-w-5xl mx-auto">
+                    <Link href="/loan-settlement" className="px-3 py-2.5 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded-lg hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-sm flex items-center justify-center">
+                      Loan Settlement Services
+                    </Link>
+                    <Link href="/send-legal-notice" className="px-3 py-2.5 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded-lg hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-sm flex items-center justify-center">
+                      Legal Notice Services
+                    </Link>
+                    <Link href="/drafting-of-will" className="px-3 py-2.5 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded-lg hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-sm flex items-center justify-center">
+                      Will Drafting Services
+                    </Link>
+                    <Link href="/virtual-inhouse-councel" className="px-3 py-2.5 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded-lg hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-sm flex items-center justify-center">
+                      Virtual In-house Counsel
+                    </Link>
+                  </div>
+                </section>
+
                 {/* FAQs */}
                 <section id="frequently-asked-questions" className="scroll-mt-32 mt-16">
                   <h2 className="text-base md:text-2xl font-bold text-gray-900 mb-4 md:mb-8">Frequently Asked Questions</h2>
@@ -569,33 +715,6 @@ export default function SettleLoansClient() {
 
           </div>
         </div>
-
-        {/* Company Section */}
-        <footer className="max-w-7xl mx-auto px-4 md:px-8 mt-10 mb-4 md:mb-8">
-          <div className="border-4 border-[#D2A02A] rounded-2xl p-8 md:p-12 bg-white text-center shadow-2xl relative">
-            <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-white px-4">
-               <div className="flex items-center justify-center"><Image src="/ama3.svg" alt="AMA Legal Solutions Logo" width={80} height={80} className="object-contain" /></div>
-            </div>
-            <h2 className="text-3xl font-extrabold text-[#5A4C33] mt-4 mb-2 md:mb-4">AMA Legal Solutions</h2>
-            <p className="text-gray-700 max-w-2xl mx-auto leading-relaxed mb-4 md:mb-8">
-              AMA Legal Solutions is India's premium legal advisory firm specializing in financial dispute resolution, debt relief, and civil litigation. We empower our clients with uncompromising legal defense and strategic negotiations.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
-              <Link href="/loan-settlement" className="px-4 md:px-6 py-3 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-base">
-                Loan Settlement Services
-              </Link>
-              <Link href="/send-legal-notice" className="px-4 md:px-6 py-3 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-base">
-                Legal Notice Services
-              </Link>
-              <Link href="/drafting-of-will" className="px-4 md:px-6 py-3 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-base">
-                Will Drafting Services
-              </Link>
-              <Link href="/virtual-inhouse-councel" className="px-4 md:px-6 py-3 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-base">
-                Virtual In-house Counsel
-              </Link>
-            </div>
-          </div>
-        </footer>
 
       </div>
     </>
