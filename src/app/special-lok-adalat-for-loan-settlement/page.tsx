@@ -995,7 +995,7 @@ export default function SpecialLokAdalatPage() {
                             { label: "Loan Settlement Guide", href: "/services/loan-settlement" },
                             { label: "Negotiation Strategies", href: "/how-to-negotiate-a-loan-settlement-with-lenders-online" },
                             { label: "NPA Survival Kit 2025", href: "/best-apps-for-managing-loan-settlement-offers-in-India" },
-                            { label: "Legal Notice Response", href: "/services/cheque-bounce-lawyer" }
+                            { label: "Legal Notice Response", href: "/send-legal-notice" }
                         ].map((link, i) => (
                             <li key={i}>
                                 <Link href={link.href} className="flex items-center gap-3 text-gray-600 hover:text-[#D2A02A] transition-colors group">

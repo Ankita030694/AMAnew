@@ -166,15 +166,15 @@ const webPageSchema = {
 };
 
 export const metadata = {
-  title: "Trademark Registration in India | Expert IP Rights Lawyers",
+  title: "IPR & Trademark Lawyers in India | AMA Legal Solutions",
   description:
-    "Protect your brand with AMA Legal Solutions. We provide expert trademark registration in India, patent filing, copyright protection, and IP litigation services. Secure your intellectual property today.",
+    "Protect your innovations with expert Trademark Registration, Patent filing, Copyright protection, and IP litigation at AMA Legal Solutions.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights',
   },
   openGraph: {
-    title: "Trademark Registration in India | Expert IP Rights Lawyers",
-    description: "Secure your brand identity with our comprehensive trademark registration and intellectual property services in India.",
+    title: "IPR & Trademark Lawyers in India | AMA Legal Solutions",
+    description: "Protect your innovations with expert Trademark Registration, Patent filing, Copyright protection, and IP litigation at AMA Legal Solutions.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights",
     type: "website",
     images: [

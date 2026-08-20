@@ -235,7 +235,7 @@ const reviewSchema = {
 export const metadata = {
   title: "Trademark Registration & Objection Reply | AMA Legal",
   description:
-    "Secure your brand with expert Trademark Registration services. We handle Objection Replies, Hearings, Renewals, and Oppositions. Fast, affordable, and legal.",
+    "Protect your brand with expert Trademark Registration, Objection Replies, Hearings, and Oppositions across India with AMA Legal Solutions.",
   keywords: [
     "trademark registration",
     "trademark objection reply",

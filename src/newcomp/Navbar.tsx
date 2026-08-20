@@ -360,12 +360,12 @@ const Navbar = () => {
                           >
                             <Link href="/blog" className="block w-full group">
                               <div className="flex justify-between items-start">
-                                <h3 
+                                <p 
                                   className="text-[25px] font-normal mb-1 text-black group-hover:opacity-80 transition-opacity"
                                   style={{ fontFamily: "var(--font-polysans)" }}
                                 >
                                   Blogs
-                                </h3>
+                                </p>
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-black transform group-hover:translate-x-1 transition-transform">
                                   <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>
@@ -385,12 +385,12 @@ const Navbar = () => {
                             >
                               <Link href="/ask-me-anything" className="block w-full group">
                                 <div className="flex justify-between items-start gap-2">
-                                  <h3 
+                                  <p 
                                     className="text-[20px] lg:text-[23px] font-normal leading-tight mb-1 text-[#EBE9E4] group-hover:opacity-80 transition-opacity whitespace-normal"
                                     style={{ fontFamily: "var(--font-polysans)" }}
                                   >
                                     AMA
-                                  </h3>
+                                  </p>
                                   <div className="w-6 h-6 shrink-0 flex items-center justify-center group-hover:translate-x-1 transition-transform">
                                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EBE9E4" className="transform transition-transform">
                                         <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -410,12 +410,12 @@ const Navbar = () => {
                             >
                               <Link href="/virtual-inhouse-councel" className="block w-full group">
                                 <div className="flex justify-between items-start gap-2">
-                                  <h3 
+                                  <p 
                                     className="text-[20px] lg:text-[23px] font-normal leading-tight mb-1 text-[#30261C] group-hover:opacity-80 transition-opacity whitespace-normal"
                                     style={{ fontFamily: "var(--font-polysans)" }}
                                   >
                                     Virtual<br/>Counsel
-                                  </h3>
+                                  </p>
                                   <div className="w-6 h-6 shrink-0 flex items-center justify-center group-hover:translate-x-1 transition-transform">
                                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#30261C" className="transform transition-transform">
                                         <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

@@ -80,7 +80,7 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Recover Your Unpaid F&F Settlement: A Comprehensive Legal Guide for Employees in India",
   "description": "Facing delays in your Full and Final settlement? Learn how to legally recover unpaid salary, leave encashment, and gratuity from your employer with expert legal advice.",
-  "image": "https://www.amalegalsolutions.com/services/legal-notice-fnf.png",
+  "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
   "author": {
     "@type": "Organization",
     "name": "AMA Legal Solutions",
@@ -117,7 +117,7 @@ const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "F&F Settlement Legal Recovery Services",
-  "image": "https://www.amalegalsolutions.com/services/legal-notice-fnf.png",
+  "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
   "description": "Expert legal assistance for recovering unpaid Full and Final settlement dues in India.",
   "brand": {
     "@type": "Brand",

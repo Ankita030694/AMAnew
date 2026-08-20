@@ -177,15 +177,15 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Civil Lawyers in India | Top Civil Litigation Services & Legal Advice",
+  title: "Civil Lawyers in India | AMA Legal Solutions",
   description:
-    "Need expert civil lawyers in India? AMA Legal Solutions provides top-tier legal representation for property disputes, family law, contract breaches, and more. Secure your rights today.",
+    "Top civil lawyers in India for property disputes, family law, breach of contract, recovery suits, and legal advisory with AMA Legal Solutions.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/civil',
   },
   openGraph: {
-    title: "Civil Lawyers in India | Top Civil Litigation Services & Legal Advice",
-    description: "Need expert civil lawyers in India? AMA Legal Solutions provides top-tier legal representation for property disputes, family law, contract breaches, and more.",
+    title: "Civil Lawyers in India | AMA Legal Solutions",
+    description: "Top civil lawyers in India for property disputes, family law, and contract recovery with AMA Legal Solutions.",
     url: "https://www.amalegalsolutions.com/services/civil",
     type: "website",
     images: [

@@ -157,15 +157,15 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Criminal Lawyers in India | Expert Defense & Bail Services - AMA Legal Solutions",
+  title: "Criminal Lawyers in India | AMA Legal Solutions",
   description:
-    "Top-rated criminal lawyers in India. Expert legal defense for FIR, bail, cyber crime, and criminal litigation. 24/7 emergency support. Call now for consultation.",
+    "Top-rated criminal defense lawyers in India for anticipatory bail, FIR quashing, cyber offenses, and trial advocacy with AMA Legal Solutions.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/criminal-law',
   },
   openGraph: {
-    title: "Criminal Lawyers in India | Expert Defense & Bail Services",
-    description: "Top-rated criminal lawyers in India. Expert legal defense for FIR, bail, cyber crime, and criminal litigation. 24/7 emergency support.",
+    title: "Criminal Lawyers in India | AMA Legal Solutions",
+    description: "Top-rated criminal defense lawyers in India for anticipatory bail, FIR quashing, and criminal litigation with AMA Legal Solutions.",
     url: "https://www.amalegalsolutions.com/services/criminal-law",
     type: "website",
     images: [

@@ -6,9 +6,12 @@ export const metadata = {
   title: "Lawyers by Expertise | AMA Legal Solutions",
   description:
     "Find the best advocates and lawyers for specialized legal areas. Browse our comprehensive list of legal expertise to find the right professional.",
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/lawyer-by-expertise',
+  },
 };
 
-const ITEMS_PER_PAGE = 500;
+const ITEMS_PER_PAGE = 60;
 
 export default async function LawyerByExpertise({
   searchParams,

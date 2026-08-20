@@ -1,6 +1,7 @@
 User-agent: *
 Disallow: /admin/
 Disallow: /login/
+Disallow: /settlement-thank-you
 Allow: /
 Allow: /blog/
 Allow: /articles/

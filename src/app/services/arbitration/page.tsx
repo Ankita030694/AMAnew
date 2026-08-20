@@ -177,15 +177,15 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Arbitration Services in India | Expert Arbitration Lawyers | AMA Legal",
+  title: "Arbitration Services in India | AMA Legal Solutions",
   description:
-    "Leading arbitration lawyers in India. We provide expert legal representation for domestic and international commercial arbitration. Secure, fast, and binding dispute resolution.",
+    "Expert arbitration lawyers in India for domestic and international commercial dispute resolution, award enforcement, and mediation.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/arbitration',
   },
   openGraph: {
-    title: "Arbitration Services in India | Expert Arbitration Lawyers",
-    description: "Leading arbitration lawyers in India. We provide expert legal representation for domestic and international commercial arbitration.",
+    title: "Arbitration Services in India | AMA Legal Solutions",
+    description: "Leading arbitration lawyers in India for domestic and international commercial dispute resolution.",
     url: "https://www.amalegalsolutions.com/services/arbitration",
     type: "website",
     images: [

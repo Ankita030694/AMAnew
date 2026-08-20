@@ -198,9 +198,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Loan Settlement Services India | #1 Debt Settlement Lawyers",
+  title: "Loan Settlement Services India | AMA Legal Solutions",
   description:
-    "Struggling with debt? AMA Legal Solutions offers expert loan settlement services in India. We negotiate with banks to reduce your debt by up to 50% and stop harassment. Legal, safe, and effective.",
+    "Resolve debt legally with AMA Legal Solutions. We negotiate with banks for one-time loan settlements, reduce debt, and stop harassment across India.",
   keywords: [
     "loan settlement",
     "loan settlement india",
@@ -217,8 +217,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement',
   },
   openGraph: {
-    title: "Loan Settlement Services India | #1 Debt Settlement Lawyers",
-    description: "Struggling with debt? AMA Legal Solutions offers expert loan settlement services in India. We negotiate with banks to reduce your debt and stop harassment.",
+    title: "Loan Settlement Services India | AMA Legal Solutions",
+    description: "Expert loan settlement and bank negotiation services across India by AMA Legal Solutions. Settle loans and stop harassment.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement",
     type: "website",
     images: [

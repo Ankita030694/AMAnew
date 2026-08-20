@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   return {
     title: `Best Lawyers for ${matchedExpertise} | AMA Legal Solutions`,
-    description: `Get expert legal consultation and find the top-rated lawyers for ${matchedExpertise}. Connect with AMA Legal Solutions today for professional representation.`,
+    description: `Find top-rated lawyers for ${matchedExpertise}. Get expert legal consultation and trusted representation from AMA Legal Solutions.`,
     alternates: {
       canonical: `https://www.amalegalsolutions.com/lawyer-by-expertise/${resolvedParams.slug}`,
     },

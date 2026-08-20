@@ -128,6 +128,36 @@ const nextConfig = {
   async headers() {
     return [
       {
+        // Global security headers for all routes
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=31536000; includeSubDomains; preload',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()',
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.gstatic.com https://apis.google.com https://www.youtube.com https://s.ytimg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https: https://*.googleapis.com https://*.gstatic.com https://*.google.com https://*.cloudinary.com https://*.firebasestorage.app https://*.youtube.com https://i.ytimg.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https: wss: https://*.googleapis.com https://*.firebaseio.com https://*.firebasestorage.app https://*.cloudfunctions.net https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.cloudinary.com https://api.openai.com; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com https://recaptcha.google.com; media-src 'self' https: blob: data:; object-src 'none'; base-uri 'self'; form-action 'self' https:;",
+          },
+        ],
+      },
+      {
         // Cache video & image assets under /newAssets/ for 1 year
         source: '/newAssets/:path*',
         headers: [

@@ -42,6 +42,9 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.amalegalsolutions.com'),
   title: "AMA Legal Solutions | Top Law Firm in India",
   description: "Top-rated Indian law firm for loan settlement, intellectual property rights, and corporate law. Contact us for expert legal consultation.",
+  alternates: {
+    canonical: './',
+  },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '16x16 32x32 48x48', type: 'image/x-icon' },

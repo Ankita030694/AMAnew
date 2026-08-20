@@ -245,8 +245,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Send Legal Notice Online in India | #1 Legal Notice Lawyers",
-  description: "Looking to send a legal notice? AMA Legal Solutions offers expert drafting and dispatch services for property, financial, and employment disputes across India. Fast, professional, and legally robust.",
+  title: "Send Legal Notice Online in India | AMA Legal Solutions",
+  description: "Send a legal notice online in India with expert drafting and fast dispatch for property, financial, and civil disputes by AMA Legal Solutions.",
   keywords: [
     "send legal notice online",
     "legal notice service India",
@@ -265,8 +265,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/send-legal-notice',
   },
   openGraph: {
-    title: "Send Legal Notice Online in India | Expert Legal Representation",
-    description: "Take the first step toward justice. Our expert lawyers draft and dispatch professional legal notices for any dispute in India. Fast resolutions guaranteed.",
+    title: "Send Legal Notice Online in India | AMA Legal Solutions",
+    description: "Expert drafting and dispatch of legally robust notices for disputes across India. Consult top lawyers at AMA Legal Solutions.",
     url: "https://www.amalegalsolutions.com/send-legal-notice",
     type: "website",
     images: [

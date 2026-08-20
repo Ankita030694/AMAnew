@@ -177,15 +177,15 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Cyber Lawyers in India | Cyber Crime & Data Protection Experts",
+  title: "Cyber Lawyers in India | AMA Legal Solutions",
   description:
-    "Looking for the best cyber lawyers in India? AMA Legal Solutions offers expert legal help for cyber crimes, online fraud, data protection, and IT Act compliance. Secure your digital rights today.",
+    "Top cyber crime lawyers in India for online fraud, data privacy compliance, cyber extortion, and IT Act litigation with AMA Legal Solutions.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/cyber',
   },
   openGraph: {
-    title: "Cyber Lawyers in India | Cyber Crime & Data Protection Experts",
-    description: "Looking for the best cyber lawyers in India? AMA Legal Solutions offers expert legal help for cyber crimes, online fraud, data protection, and IT Act compliance.",
+    title: "Cyber Lawyers in India | AMA Legal Solutions",
+    description: "Top cyber crime lawyers in India for online fraud, data privacy compliance, and IT Act litigation.",
     url: "https://www.amalegalsolutions.com/services/cyber",
     type: "website",
     images: [

@@ -206,15 +206,15 @@ const webPageSchema = {
 };
 
 export const metadata = {
-  title: "Litigation Services in India | Civil, Criminal & Commercial Lawyers",
+  title: "Litigation Services in India | AMA Legal Solutions",
   description:
-    "Expert litigation lawyers in India. AMA Legal Solutions provides comprehensive services for civil suits, criminal defense, commercial disputes, and appellate matters. Secure your legal rights today.",
+    "Top litigation lawyers in India for civil disputes, criminal defense, corporate arbitration, and High Court appeals with AMA Legal Solutions.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/litigation',
   },
   openGraph: {
-    title: "Litigation Services in India | Civil, Criminal & Commercial Lawyers",
-    description: "Expert litigation services for civil, criminal, and commercial disputes in India. AMA Legal Solutions provides top-tier court representation.",
+    title: "Litigation Services in India | AMA Legal Solutions",
+    description: "Top litigation lawyers in India for civil, criminal, corporate, and High Court matters with AMA Legal Solutions.",
     url: "https://www.amalegalsolutions.com/services/litigation",
     type: "website",
     images: [

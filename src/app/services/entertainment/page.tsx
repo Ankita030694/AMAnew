@@ -138,9 +138,9 @@ const breadcrumbSchema = {
 };
 
 export const metadata = {
-  title: "Entertainment Lawyers in India | Film, Music & Media Law Experts",
+  title: "Entertainment Lawyers in India | AMA Legal Solutions",
   description:
-    "Leading entertainment lawyers in India offering specialized legal services for film production, music licensing, digital media, and celebrity rights. Secure your creative assets with AMA Legal Solutions.",
+    "Leading entertainment lawyers in India for film production, music licensing, OTT contracts, media rights, and copyright defense at AMA Legal.",
   keywords: [
     "entertainment lawyers in India",
     "media law firm India",

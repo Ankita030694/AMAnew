@@ -28,6 +28,10 @@ export async function GET(): Promise<Response> {
   // Build static routes
   const staticRoutes = [
     '',
+    '/best-personal-loan-settlement-service',
+    '/best-credit-card-settlement-service',
+    '/personal-loan-debt-settlement',
+    '/personal-loan-settlement-services',
     '/difference-between-loan-settlement-and-loan-closure-impact-on-cibil',
     '/how-to-reply-to-bank-legal-notice-for-personal-loan-default',
     '/credit-card-settlement-process-in-india-after-6-months-default',

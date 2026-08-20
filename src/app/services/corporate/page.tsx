@@ -157,15 +157,15 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Corporate Lawyers in India | Top Corporate Law Firm – AMA Legal Solutions",
+  title: "Corporate Lawyers in India | AMA Legal Solutions",
   description:
-    "Looking for expert corporate lawyers in India? AMA Legal Solutions offers comprehensive corporate legal services including incorporation, compliance, M&A, and dispute resolution. Consult now.",
+    "Expert corporate lawyers in India for company incorporation, compliance, M&A, contracts, and commercial disputes with AMA Legal Solutions.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/corporate',
   },
   openGraph: {
-    title: "Corporate Lawyers in India | Top Corporate Law Firm – AMA Legal Solutions",
-    description: "Looking for expert corporate lawyers in India? AMA Legal Solutions offers comprehensive corporate legal services including incorporation, compliance, M&A, and dispute resolution.",
+    title: "Corporate Lawyers in India | AMA Legal Solutions",
+    description: "Top corporate law firm in India for company incorporation, compliance, contracts, and dispute resolution with AMA Legal Solutions.",
     url: "https://www.amalegalsolutions.com/services/corporate",
     type: "website",
     images: [

@@ -39,7 +39,7 @@ const relatedPages = [
 
 export default function ConsumerComplaintNotice() {
   const breadcrumbItems = [
-    { label: "Legal Notices", href: "/services/legal-notices" },
+    { label: "Legal Notices", href: "/send-legal-notice" },
     { label: "Consumer Complaint Notice", href: "/consumer-complaint-notice" },
   ];
 
@@ -151,7 +151,7 @@ export default function ConsumerComplaintNotice() {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.amalegalsolutions.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Legal Notices", "item": "https://www.amalegalsolutions.com/services/legal-notices" },
+      { "@type": "ListItem", "position": 2, "name": "Legal Notices", "item": "https://www.amalegalsolutions.com/send-legal-notice" },
       { "@type": "ListItem", "position": 3, "name": "Consumer Complaint Notice", "item": "https://www.amalegalsolutions.com/consumer-complaint-notice" }
     ]
   };

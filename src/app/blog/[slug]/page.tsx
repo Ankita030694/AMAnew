@@ -252,15 +252,6 @@ export default async function Page({
         </>
       )}
 
-      {/* SSR-rendered crawlable content - guaranteed in server HTML */}
-      <article className="sr-only" aria-hidden="true">
-        <h1>{blogData.title}</h1>
-        {blogData.date && <time dateTime={blogData.date}>{blogData.date}</time>}
-        {blogData.author && <span>{blogData.author}</span>}
-        {blogData.subtitle && <p>{blogData.subtitle}</p>}
-        <p>{(blogData.description || '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim().split(/\s+/).slice(0, 150).join(' ')}...</p>
-      </article>
-
       <ArticleDetail 
         blog={blogData as Blog} 
         faqs={faqs} 
