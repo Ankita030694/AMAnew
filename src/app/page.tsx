@@ -69,6 +69,25 @@ export default function Home() {
               {
                 "@type": "Attorney",
                 "@id": "https://www.amalegalsolutions.com/",
+                "name": "AMA Legal Solutions",
+                "image": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png",
+                "url": "https://www.amalegalsolutions.com/",
+                "telephone": "+91-8700343611",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "2493AP, Block G, Sushant Lok 2, Sector 57",
+                  "addressLocality": "Gurugram",
+                  "postalCode": "122001",
+                  "addressCountry": "IN"
+                },
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": "5",
+                  "bestRating": "5",
+                  "worstRating": "1",
+                  "ratingCount": "10",
+                  "reviewCount": "10"
+                },
                 "review": baseTestimonials.slice(0, 10).map((t, i) => ({
                   "@type": "Review",
                   "reviewRating": {

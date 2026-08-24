@@ -163,7 +163,7 @@ export default function BajajReferenceCallingGuide() {
     "review": [
       {
         "@type": "Review",
-        "author": "Vikram Singh",
+        "author": { "@type": "Person", "name": "Vikram Singh" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "AMA Legal Solutions stopped Bajaj agents from calling my sister and parents. Their legal intervention was swift and professional."
       }

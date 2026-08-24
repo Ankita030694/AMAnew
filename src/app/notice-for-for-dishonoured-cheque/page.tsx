@@ -165,25 +165,25 @@ export default function DishonouredChequeGuide() {
     "review": [
       {
         "@type": "Review",
-        "author": "Vikram Singh",
+        "author": { "@type": "Person", "name": "Vikram Singh" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "AMA Legal Solutions helped me recover 12 lakhs from a bounced cheque. Their notice for for dishonoured cheque was so effective that the other party paid within 15 days."
       },
       {
         "@type": "Review",
-        "author": "Sneha Reddy",
+        "author": { "@type": "Person", "name": "Sneha Reddy" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "Professional and fast. They handled the entire Section 138 process for me. I highly recommend them for any debt recovery or cheque bounce issues."
       },
       {
         "@type": "Review",
-        "author": "Manish Gupta",
+        "author": { "@type": "Person", "name": "Manish Gupta" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "The team is very knowledgeable. They guided me through the 30-day timeline perfectly and ensured I received interim compensation from the court."
       },
       {
         "@type": "Review",
-        "author": "Anjali Sharma",
+        "author": { "@type": "Person", "name": "Anjali Sharma" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "I was worried about the court process, but AMA's lawyers made it simple. Their strategic approach to the legal notice led to a quick settlement."
       }

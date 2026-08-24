@@ -117,17 +117,27 @@ const faqSchema = {
 // Review Schema
 const reviewSchema = {
   "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Legal Notice Services",
+  "@type": "LegalService",
+  "name": "Legal Notice Services - AMA Legal Solutions",
   "image": "https://www.amalegalsolutions.com/newAssets/hero-bg.jpg",
   "description": "Expert legal notice drafting and dispatch services in India.",
-  "brand": {
-    "@type": "Brand",
-    "name": "AMA Legal Solutions"
+  "url": "https://www.amalegalsolutions.com/procedure-of-sending-legal-notice",
+  "telephone": "+918700343611",
+  "priceRange": "₹₹",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2493AP, Block G, Sushant Lok 2, Sector 57",
+    "addressLocality": "Gurugram",
+    "addressRegion": "Haryana",
+    "postalCode": "122001",
+    "addressCountry": "IN"
   },
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "850",
     "reviewCount": "850"
   },
   "review": [
@@ -135,7 +145,9 @@ const reviewSchema = {
       "@type": "Review",
       "reviewRating": {
         "@type": "Rating",
-        "ratingValue": "5"
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
       },
       "author": {
         "@type": "Person",
@@ -147,7 +159,9 @@ const reviewSchema = {
       "@type": "Review",
       "reviewRating": {
         "@type": "Rating",
-        "ratingValue": "5"
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
       },
       "author": {
         "@type": "Person",

@@ -28,6 +28,7 @@ export async function GET(): Promise<Response> {
   // Build static routes
   const staticRoutes = [
     '',
+    '/best-debt-settlement-company',
     '/best-personal-loan-settlement-service',
     '/best-credit-card-settlement-service',
     '/personal-loan-debt-settlement',

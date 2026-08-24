@@ -210,25 +210,25 @@ export default function BusinessDuesRecovery() {
     "review": [
       {
         "@type": "Review",
-        "author": "Rakesh M.",
+        "author": { "@type": "Person", "name": "Rakesh M." },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "AMA Legal Solutions helped me recover payments from a corporate client that had been pending for 14 months. Their strategic use of the MSME Samadhaan portal was a game changer."
       },
       {
         "@type": "Review",
-        "author": "Sneha K.",
+        "author": { "@type": "Person", "name": "Sneha K." },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "We had a large amount stuck with a vendor who refused to pay. AMA filed a summary suit and we got a decree within 6 months. Highly professional team."
       },
       {
         "@type": "Review",
-        "author": "Vikram S.",
+        "author": { "@type": "Person", "name": "Vikram S." },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "Excellent legal support for cheque bounce cases. They handled everything from the notice to the court proceedings, and we recovered our full amount with interest."
       },
       {
         "@type": "Review",
-        "author": "Amit J.",
+        "author": { "@type": "Person", "name": "Amit J." },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "Reliable and transparent service. They helped us organize our documentation and led a successful mediation that saved us months of litigation."
       }

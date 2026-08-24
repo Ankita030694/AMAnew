@@ -189,7 +189,7 @@ export default function BajajHarassmentGuide() {
     "review": [
       {
         "@type": "Review",
-        "author": "Rajesh Kumar",
+        "author": { "@type": "Person", "name": "Rajesh Kumar" },
         "reviewRating": {
           "@type": "Rating",
           "ratingValue": "5"

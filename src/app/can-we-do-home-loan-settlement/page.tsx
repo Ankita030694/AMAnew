@@ -157,10 +157,10 @@ export default function HomeLoanSettlementGuide() {
     "name": "Home Loan Settlement Legal Service",
     "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "2450" },
     "review": [
-      { "@type": "Review", "author": "Amit Sharma", "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "AMA helped me save my home from auction. Their negotiation skills with the bank were amazing." },
-      { "@type": "Review", "author": "Priya Singh", "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "I was overwhelmed with notices. AMA Legal Solutions handled everything and got me a 40% waiver." },
-      { "@type": "Review", "author": "Rajesh Gupta", "reviewRating": { "@type": "Rating", "ratingValue": "4" }, "reviewBody": "Professional and transparent. They made sure I got my original property documents back safely." },
-      { "@type": "Review", "author": "Suresh Kumar", "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "The only firm that actually understands the SARFAESI Act. Highly recommended." }
+      { "@type": "Review", "author": { "@type": "Person", "name": "Amit Sharma" }, "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "AMA helped me save my home from auction. Their negotiation skills with the bank were amazing." },
+      { "@type": "Review", "author": { "@type": "Person", "name": "Priya Singh" }, "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "I was overwhelmed with notices. AMA Legal Solutions handled everything and got me a 40% waiver." },
+      { "@type": "Review", "author": { "@type": "Person", "name": "Rajesh Gupta" }, "reviewRating": { "@type": "Rating", "ratingValue": "4" }, "reviewBody": "Professional and transparent. They made sure I got my original property documents back safely." },
+      { "@type": "Review", "author": { "@type": "Person", "name": "Suresh Kumar" }, "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "The only firm that actually understands the SARFAESI Act. Highly recommended." }
     ]
   };
 

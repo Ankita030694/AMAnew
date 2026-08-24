@@ -122,13 +122,13 @@ const reviewSchema = {
   "review": [
     {
       "@type": "Review",
-      "author": "Anil Kumar",
+      "author": { "@type": "Person", "name": "Anil Kumar" },
       "reviewBody": "The CFP team at AMA Legal Solutions saved my business. We restructured 5 Crores of debt into manageable payments. Their expertise in RBI guidelines is unmatched.",
       "reviewRating": { "@type": "Rating", "ratingValue": "5" }
     },
     {
       "@type": "Review",
-      "author": "Meera Iyer",
+      "author": { "@type": "Person", "name": "Meera Iyer" },
       "reviewBody": "I was overwhelmed by credit card debt. The specialized financial planners helped me settle for a fraction of what I owed. Highly recommend their professional approach.",
       "reviewRating": { "@type": "Rating", "ratingValue": "5" }
     }

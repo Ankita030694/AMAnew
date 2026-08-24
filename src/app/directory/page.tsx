@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'Best Debt Settlement Company in India', href: '/best-debt-settlement-company' },
   { name: 'Best Personal Loan Settlement Service', href: '/best-personal-loan-settlement-service' },
   { name: 'Best Credit Card Settlement Service', href: '/best-credit-card-settlement-service' },
   { name: 'Credit Card Debt Settlement', href: '/credit-card-debt-settlement' },

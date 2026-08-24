@@ -163,25 +163,25 @@ export default function RBIViolationGuide() {
     "review": [
       {
         "@type": "Review",
-        "author": "Arun Kumar",
+        "author": { "@type": "Person", "name": "Arun Kumar" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "AMA Legal Solutions helped me file an RBI complaint when my bank refused to stop recovery harassment. The calls stopped within 48 hours!"
       },
       {
         "@type": "Review",
-        "author": "Priya Sharma",
+        "author": { "@type": "Person", "name": "Priya Sharma" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "Expert guidance on the RBI CMS portal. I was able to get my unauthorized credit card charges reversed thanks to their advice."
       },
       {
         "@type": "Review",
-        "author": "Vikram Singh",
+        "author": { "@type": "Person", "name": "Vikram Singh" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "Very professional. They understood the legal nuances of the Master Circular on Recovery Agents and protected my rights."
       },
       {
         "@type": "Review",
-        "author": "Megha Gupta",
+        "author": { "@type": "Person", "name": "Megha Gupta" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "If you are facing bank harassment, don't wait. These guys know the RBI rules better than the bankers themselves."
       }

@@ -126,13 +126,13 @@ export default function RBIRecoveryAgentsGuide() {
     "review": [
       {
         "@type": "Review",
-        "author": "Surendra Rao",
+        "author": { "@type": "Person", "name": "Surendra Rao" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "I can’t thank enough to the team of AMA legal solutions, because of them, my life became easy, and I didn’t have to deal with the harassment calls and certainly helped me to close my loans with a complete legal support and guidance."
       },
       {
         "@type": "Review",
-        "author": "Vinod Marskole",
+        "author": { "@type": "Person", "name": "Vinod Marskole" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "I’m truly impressed with AMA legal solutions, services. They made the loan settlement process so smooth and stress-free. The team is professional, transparent, and genuinely cares about solving customer issues. Highly recommended!"
       }

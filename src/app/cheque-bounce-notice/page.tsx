@@ -161,25 +161,25 @@ export default function ChequeBounceGuide() {
     "review": [
       {
         "@type": "Review",
-        "author": "Rajesh Kumar",
+        "author": { "@type": "Person", "name": "Rajesh Kumar" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "AMA Legal Solutions handled my cheque bounce case with extreme professionalism. The legal notice was served within 24 hours, and I got my payment in the 15-day grace period itself."
       },
       {
         "@type": "Review",
-        "author": "Priya Sharma",
+        "author": { "@type": "Person", "name": "Priya Sharma" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "Excellent service. They explained the Section 138 process clearly and helped me file the complaint when the drawer refused to pay. Highly recommended for debt recovery."
       },
       {
         "@type": "Review",
-        "author": "Amit Patel",
+        "author": { "@type": "Person", "name": "Amit Patel" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "The team at AMA is very knowledgeable about the NI Act. Their strategic approach to the legal notice ensured that the other party came to the settlement table quickly."
       },
       {
         "@type": "Review",
-        "author": "Sunita Devi",
+        "author": { "@type": "Person", "name": "Sunita Devi" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "I was worried about the long court delays, but AMA's lawyers used the latest Supreme Court guidelines to expedite my case. I received 20% interim compensation within months."
       }

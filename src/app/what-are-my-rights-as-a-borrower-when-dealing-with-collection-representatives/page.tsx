@@ -122,19 +122,19 @@ export default function BorrowerRightsGuide() {
     "review": [
       {
         "@type": "Review",
-        "author": "Surendra Rao",
+        "author": { "@type": "Person", "name": "Surendra Rao" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "I can’t thank enough to the team of AMA legal solutions, because of them, my life became easy, and I didn’t have to deal with the harassment calls and certainly helped me to close my loans with a complete legal support and guidance."
       },
       {
         "@type": "Review",
-        "author": "Raaghav Bajaj",
+        "author": { "@type": "Person", "name": "Raaghav Bajaj" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "I want to say the team is helpful and they are handling my case very nicely and providing me the support in dealing with agents or handling legal notices from bank. A big cheers for the ama team."
       },
       {
         "@type": "Review",
-        "author": "Sumitkumar Kanoujiya",
+        "author": { "@type": "Person", "name": "Sumitkumar Kanoujiya" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "I want to thanks the team for handling my case and providing valuable support in distress and supporting at all the steps be it dealing with agents or handling legal notices from bank."
       }

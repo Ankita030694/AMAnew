@@ -162,25 +162,25 @@ export default function DebtSettlementRemovalGuide() {
     "review": [
       {
         "@type": "Review",
-        "author": "Arun V.",
+        "author": { "@type": "Person", "name": "Arun V." },
         "reviewBody": "AMA Legal Solutions helped me change my 'Settled' status to 'Closed' in just 45 days. My score jumped by 60 points!",
         "reviewRating": { "@type": "Rating", "ratingValue": "5" }
       },
       {
         "@type": "Review",
-        "author": "Meera S.",
+        "author": { "@type": "Person", "name": "Meera S." },
         "reviewBody": "Professional and transparent. They handled the bank negotiations perfectly.",
         "reviewRating": { "@type": "Rating", "ratingValue": "5" }
       },
       {
         "@type": "Review",
-        "author": "Rajesh K.",
+        "author": { "@type": "Person", "name": "Rajesh K." },
         "reviewBody": "I thought I was stuck with the settled tag forever. The legal way works best.",
         "reviewRating": { "@type": "Rating", "ratingValue": "4" }
       },
       {
         "@type": "Review",
-        "author": "Priya M.",
+        "author": { "@type": "Person", "name": "Priya M." },
         "reviewBody": "Highly recommended for anyone looking to fix their credit history legally.",
         "reviewRating": { "@type": "Rating", "ratingValue": "5" }
       }

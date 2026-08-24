@@ -491,41 +491,49 @@ function generateSchemas(blogData: any, faqs: any[], reviews: any[]) {
     };
   }
 
-  // 5. Review Schema (if reviews exist)
+  // 5. Review Schema (if reviews exist) — uses LegalService with single aggregateRating
   let reviewSchema = null;
   if (reviews && reviews.length > 0) {
-    const firstReview = reviews[0];
+    const avgRating = (reviews.reduce((sum, r) => sum + (r.rating || 5), 0) / reviews.length).toFixed(1);
     reviewSchema = {
       "@context": "https://schema.org",
-      "@type": "Review",
+      "@type": "LegalService",
       "@id": `${blogUrl}#review`,
-      "itemReviewed": {
-        "@type": "LegalService",
-        "name": "AMA Legal Solutions",
-        "image": `${baseUrl}/ama-legal-solutions-logo.png`,
-        "url": baseUrl,
-        "telephone": "+918700343611",
-        "priceRange": "₹₹",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "2493AP, Block G, Sushant Lok 2, Sector 57",
-          "addressLocality": "Gurugram",
-          "addressRegion": "Haryana",
-          "postalCode": "122001",
-          "addressCountry": "IN"
-        }
+      "name": "AMA Legal Solutions",
+      "image": `${baseUrl}/ama-legal-solutions-logo.png`,
+      "url": baseUrl,
+      "telephone": "+918700343611",
+      "priceRange": "₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2493AP, Block G, Sushant Lok 2, Sector 57",
+        "addressLocality": "Gurugram",
+        "addressRegion": "Haryana",
+        "postalCode": "122001",
+        "addressCountry": "IN"
       },
-      "author": {
-        "@type": "Person",
-        "name": firstReview.name || "Verified Client"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": String(firstReview.rating || 5),
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": avgRating,
         "bestRating": "5",
-        "worstRating": "1"
+        "worstRating": "1",
+        "ratingCount": String(reviews.length),
+        "reviewCount": String(reviews.length)
       },
-      "reviewBody": firstReview.review || "AMA Legal Solutions provided expert legal advice and handled our case with great professionalism."
+      "review": reviews.map(r => ({
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": r.name || "Verified Client"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": String(r.rating || 5),
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "reviewBody": r.review || "AMA Legal Solutions provided expert legal advice and handled our case with great professionalism."
+      }))
     };
   }
 

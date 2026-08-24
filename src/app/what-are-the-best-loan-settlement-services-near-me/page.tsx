@@ -164,25 +164,25 @@ export default function BestLoanSettlementServices() {
     "review": [
       {
         "@type": "Review",
-        "author": "Rajiv Sharma",
+        "author": { "@type": "Person", "name": "Rajiv Sharma" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "AMA helped me settle my credit card debt which was over 12 lakhs. The calls stopped within 2 days of hiring them. Truly the best service near me in Delhi."
       },
       {
         "@type": "Review",
-        "author": "Ananya Gupta",
+        "author": { "@type": "Person", "name": "Ananya Gupta" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "Professional and empathetic. They handled the bank's legal department perfectly. I got a 65% waiver on my personal loan."
       },
       {
         "@type": "Review",
-        "author": "Vikram Singh",
+        "author": { "@type": "Person", "name": "Vikram Singh" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "I was scared of recovery agents visiting my home. AMA sent a legal notice and the visits stopped immediately. Recommended for anyone in Mumbai."
       },
       {
         "@type": "Review",
-        "author": "Meera Iyer",
+        "author": { "@type": "Person", "name": "Meera Iyer" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "Their negotiation team is fantastic. They managed to get me a settlement letter that was genuine and legally binding. Great support in Bangalore."
       }

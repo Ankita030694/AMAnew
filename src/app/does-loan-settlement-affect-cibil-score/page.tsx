@@ -172,25 +172,25 @@ export default function LoanSettlementCIBILGuide() {
     "review": [
       {
         "@type": "Review",
-        "author": "Rajiv M.",
+        "author": { "@type": "Person", "name": "Rajiv M." },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "AMA Legal Solutions helped me convert my settled status to closed. My home loan was approved last month!"
       },
       {
         "@type": "Review",
-        "author": "Anjali S.",
+        "author": { "@type": "Person", "name": "Anjali S." },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "Excellent guidance on rebuilding my CIBIL score after a difficult personal loan settlement."
       },
       {
         "@type": "Review",
-        "author": "Vikram K.",
+        "author": { "@type": "Person", "name": "Vikram K." },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "The legal notice they sent stopped recovery calls immediately. Now I am on a path to credit recovery."
       },
       {
         "@type": "Review",
-        "author": "Sneha P.",
+        "author": { "@type": "Person", "name": "Sneha P." },
         "reviewRating": { "@type": "Rating", "ratingValue": "5" },
         "reviewBody": "Transparent and professional. They negotiated an 80% waiver for my credit card debt."
       }

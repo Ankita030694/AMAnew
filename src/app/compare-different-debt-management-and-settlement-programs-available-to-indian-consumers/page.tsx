@@ -162,10 +162,10 @@ export default function DebtComparisonGuide() {
     "name": "Debt Relief Comparison Service",
     "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2150" },
     "review": [
-      { "@type": "Review", "author": "Amit Sharma", "reviewBody": "The comparison between DMP and Settlement was eye-opening. I chose settlement and AMA helped me get a 65% waiver." },
-      { "@type": "Review", "author": "Priya Iyer", "reviewBody": "Clear and concise information. Helped me understand why a DMP was better for my specific situation to save my credit score." },
-      { "@type": "Review", "author": "Vikram Singh", "reviewBody": "I was confused about the legal side of things. This guide and the legal team at AMA gave me the confidence to fight back." },
-      { "@type": "Review", "author": "Sneha Reddy", "reviewBody": "Finally a guide that explains things for Indian consumers specifically. The RBI section is very useful." }
+      { "@type": "Review", "author": { "@type": "Person", "name": "Amit Sharma" }, "reviewBody": "The comparison between DMP and Settlement was eye-opening. I chose settlement and AMA helped me get a 65% waiver." },
+      { "@type": "Review", "author": { "@type": "Person", "name": "Priya Iyer" }, "reviewBody": "Clear and concise information. Helped me understand why a DMP was better for my specific situation to save my credit score." },
+      { "@type": "Review", "author": { "@type": "Person", "name": "Vikram Singh" }, "reviewBody": "I was confused about the legal side of things. This guide and the legal team at AMA gave me the confidence to fight back." },
+      { "@type": "Review", "author": { "@type": "Person", "name": "Sneha Reddy" }, "reviewBody": "Finally a guide that explains things for Indian consumers specifically. The RBI section is very useful." }
     ]
   };
 
