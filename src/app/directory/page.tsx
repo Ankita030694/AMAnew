@@ -9,6 +9,9 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'How to Settle Loans After a Failed Debt Consolidation Plan', href: '/how-to-settle-loans-after-a-failed-debt-consolidation-plan' },
+  { name: 'Settle Loans When Your Monthly Debt Payments Cross Your Repayment Capacity', href: '/settle-loans-when-your-monthly-debt-payments-cross-your-repayment-capacity' },
+  { name: 'How to Remove a Written-Off Status from a Credit Report', href: '/how-to-remove-a-written-off-status-from-a-credit-report' },
   { name: 'Best Debt Settlement Company in India', href: '/best-debt-settlement-company' },
   { name: 'Best Personal Loan Settlement Service', href: '/best-personal-loan-settlement-service' },
   { name: 'Best Credit Card Settlement Service', href: '/best-credit-card-settlement-service' },
