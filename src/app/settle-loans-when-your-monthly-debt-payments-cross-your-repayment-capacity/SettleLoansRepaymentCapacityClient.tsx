@@ -424,9 +424,7 @@ export default function SettleLoansRepaymentCapacityClient() {
             {/* Left col — title + meta */}
             <div className="flex flex-col lg:col-span-8">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 leading-tight text-[#1a202c] max-w-4xl">
-                Settle Loans When Your{" "}
-                <span className="text-[#D2A02A]">Monthly Debt Payments</span>{" "}
-                Cross Your Repayment Capacity
+                Settle Loans When <span className="text-[#D2A02A]">Debt Payments</span> Cross Repayment Capacity
               </h1>
               <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
                 When aggregate Equated Monthly Installments (EMIs) mathematically eclipse your
@@ -488,9 +486,9 @@ export default function SettleLoansRepaymentCapacityClient() {
             {/* ── LEFT SIDEBAR: ONLY COMPACT TABLE OF CONTENTS (NO SCROLL REQUIRED) ── */}
             <div className="hidden lg:block sticky top-24">
               <div className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
-                <h3 className="text-xs font-extrabold text-[#5A4C33] uppercase tracking-wider mb-3 pb-2 border-b border-gray-100 flex items-center gap-1.5">
+                <p className="text-xs font-extrabold text-[#5A4C33] uppercase tracking-wider mb-3 pb-2 border-b border-gray-100 flex items-center gap-1.5">
                   <span className="text-[#D2A02A]">📑</span> Contents
-                </h3>
+                </p>
                 <nav className="flex flex-col space-y-0.5">
                   {tocSections.map((s) => (
                     <button
@@ -514,9 +512,9 @@ export default function SettleLoansRepaymentCapacityClient() {
               {/* Mobile TOC */}
               <div className="lg:hidden mb-6">
                 <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
-                  <h3 className="text-xs font-bold text-[#5A4C33] uppercase tracking-wider mb-2">
+                  <p className="text-xs font-bold text-[#5A4C33] uppercase tracking-wider mb-2">
                     Table of Contents
-                  </h3>
+                  </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-1">
                     {tocSections.map((s) => (
                       <button
@@ -596,18 +594,18 @@ export default function SettleLoansRepaymentCapacityClient() {
                     <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#D2A02A] mb-2">
                       Quick Answer
                     </span>
-                    <p className="text-base md:text-lg font-medium text-gray-900 leading-relaxed">
-                      When monthly debt payments cross your repayment capacity in India, borrowers
-                      have the legal right under the Reserve Bank of India (RBI) Prudential Framework
-                      for Resolution of Stressed Assets and Master Directions on Compromise
-                      Settlements to negotiate a One-Time Settlement (OTS) with lenders. By retaining
-                      banking litigation advocates, distressed borrowers can formally establish
-                      involuntary financial hardship, halt illegal recovery agent harassment through
-                      statutory cease-and-desist notices, defend against Section 138 NI Act cheque
-                      bounce and Section 25 PSS Act NACH summons, eliminate 100% of accumulated
-                      penal interest, and secure 40% to 75% principal waivers with official bank No
-                      Dues Certificates (NDCs).
+                    <p className="text-base md:text-lg font-medium text-gray-900 leading-relaxed mb-3">
+                      When monthly EMIs exceed your repayment capacity in India, borrowers have the statutory right under RBI compromise settlement directives to negotiate a One-Time Settlement (OTS) with banks and NBFCs.
                     </p>
+                    <div className="space-y-2 text-xs md:text-sm text-gray-700 pt-2 border-t border-gray-200/60">
+                      <p className="font-semibold text-gray-800">Key Advocate-Led Settlement Steps:</p>
+                      <ul className="list-disc pl-5 space-y-1.5 text-gray-600">
+                        <li><strong>Hardship Petitions:</strong> File formal DTI audit petitions to establish involuntary financial distress.</li>
+                        <li><strong>Anti-Harassment Shield:</strong> Serve legal cease-and-desist notices to stop recovery agent harassment.</li>
+                        <li><strong>Legal Defense:</strong> Defend Section 138 (cheque bounce) and Section 25 (e-NACH) proceedings.</li>
+                        <li><strong>Debt Waivers:</strong> Secure <strong>40% to 75% waivers</strong> on outstanding dues with authentic bank No Dues Certificates (NDCs).</li>
+                      </ul>
+                    </div>
                   </div>
                 </section>
 
@@ -663,7 +661,7 @@ export default function SettleLoansRepaymentCapacityClient() {
                 {/* ── SECTION 2: WHY ADVOCATE REPRESENTATION ── */}
                 <section id="why-advocate-settlement" className="scroll-mt-28">
                   <h2 className="text-2xl md:text-3xl font-bold text-[#1a202c] mb-5">
-                    Why Advocate-Led Representation is Essential for Overburdened Borrowers
+                    Why Advocate Representation Matters for Overburdened Borrowers
                   </h2>
                   <p className="text-base leading-relaxed text-gray-700 mb-6">
                     When borrowers attempt to negotiate directly with branch managers or recovery agents
@@ -760,7 +758,7 @@ export default function SettleLoansRepaymentCapacityClient() {
                           <a
                             href={law.link}
                             target="_blank"
-                            rel="noopener noreferrer"
+                            rel="nofollow noopener noreferrer"
                             className="text-[#D2A02A] hover:text-[#5A4C33] hover:underline"
                           >
                             {law.title} ↗
@@ -1134,9 +1132,9 @@ export default function SettleLoansRepaymentCapacityClient() {
 
                 {/* ── SECTION 11: CITATIONS ── */}
                 <section id="citations" className="scroll-mt-28 border-t border-gray-200 pt-8 mt-8">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  <h2 className="text-2xl md:text-3xl font-bold text-[#1a202c] mb-4">
                     References &amp; Authority
-                  </h3>
+                  </h2>
                   <ul className="list-disc pl-5 space-y-2 text-sm text-gray-600">
                     {[
                       {
@@ -1171,7 +1169,7 @@ export default function SettleLoansRepaymentCapacityClient() {
                         <a
                           href={cite.href}
                           target="_blank"
-                          rel="noopener noreferrer"
+                          rel="nofollow noopener noreferrer"
                           className="text-[#D2A02A] hover:text-[#5A4C33] hover:underline"
                         >
                           {cite.label}
@@ -1392,9 +1390,9 @@ export default function SettleLoansRepaymentCapacityClient() {
             <div className="space-y-8 sticky top-24">
               {/* About Author Card */}
               <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                <h3 className="text-lg font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">
+                <p className="text-lg font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">
                   About Author
-                </h3>
+                </p>
                 <div className="flex items-center mb-4">
                   <div className="w-16 h-16 rounded-full overflow-hidden mr-4 border-2 border-[#D2A02A] shrink-0">
                     <img
@@ -1404,7 +1402,7 @@ export default function SettleLoansRepaymentCapacityClient() {
                     />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900">Anuj Anand Malik</h4>
+                    <p className="font-bold text-gray-900">Anuj Anand Malik</p>
                     <Link
                       href="/author/anuj-anand-malik"
                       className="text-xs text-[#D2A02A] hover:underline font-semibold"
@@ -1421,7 +1419,7 @@ export default function SettleLoansRepaymentCapacityClient() {
                 <a
                   href="https://www.linkedin.com/in/iamanujmalik/"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="nofollow noopener noreferrer"
                   className="block w-full border border-[#0077b5] text-[#0077b5] text-center py-2 rounded-lg text-sm font-semibold hover:bg-[#0077b5] hover:text-white transition-colors"
                 >
                   Connect on LinkedIn
@@ -1430,7 +1428,7 @@ export default function SettleLoansRepaymentCapacityClient() {
 
               {/* CTA Card */}
               <div className="bg-[#5A4C33] p-6 rounded-xl shadow-sm text-white">
-                <h3 className="text-xl font-bold mb-4">Need Legal Help?</h3>
+                <p className="text-xl font-bold mb-4">Need Legal Help?</p>
                 <p className="text-gray-200 mb-6 text-sm leading-relaxed">
                   Get expert legal advice on settling loans when monthly debt payments cross your repayment capacity.
                   Advocate Anuj Anand Malik and our senior banking defense team will review your case within 24 hours.
@@ -1470,9 +1468,9 @@ export default function SettleLoansRepaymentCapacityClient() {
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#5A4C33] text-[#D2A02A] text-2xl mb-2">
                 🛡️
               </div>
-              <h3 className="text-xl sm:text-2xl font-extrabold text-gray-900">
+              <p className="text-xl sm:text-2xl font-extrabold text-gray-900">
                 Request Hardship Case Evaluation
-              </h3>
+              </p>
               <p className="text-xs sm:text-sm text-gray-600 mt-1">
                 Confidential legal assessment by Advocate Anuj Anand Malik&apos;s senior banking defense
                 team.
@@ -1484,7 +1482,7 @@ export default function SettleLoansRepaymentCapacityClient() {
                 <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-3xl font-bold">
                   ✓
                 </div>
-                <h4 className="text-xl font-bold text-gray-900">Case Request Received</h4>
+                <p className="text-xl font-bold text-gray-900">Case Request Received</p>
                 <p className="text-sm text-gray-600 max-w-md mx-auto leading-relaxed">
                   Thank you. Our senior legal team has received your hardship details. An advocate
                   specializing in RBI compromise settlements will contact you within 24 hours at{" "}

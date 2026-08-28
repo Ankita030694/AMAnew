@@ -534,7 +534,7 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
             <div className="hidden lg:block sticky top-28 bg-white p-5 rounded-2xl shadow-sm border border-gray-100 max-h-[calc(100vh-140px)] overflow-y-auto">
               <div className="flex items-center gap-2 mb-4 pb-3 border-b border-gray-100">
                 <span className="text-[#D2A02A] text-lg font-bold">📑</span>
-                <h3 className="font-bold text-gray-900 text-sm">Table of Contents</h3>
+                <p className="font-bold text-gray-900 text-sm">Table of Contents</p>
               </div>
               <nav className="space-y-1.5">
                 {tocSections.map((sec) => (
@@ -625,9 +625,18 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
                         Statutory Direct Answer
                       </span>
                     </div>
-                    <p className="text-base md:text-lg font-medium text-gray-900 leading-relaxed">
-                      To settle loans after a failed debt consolidation plan in India, a borrower must unbundle the consolidated debt structure and negotiate individual One-Time Settlements (OTS) directly with each underlying bank or NBFC under the Reserve Bank of India compromise settlement guidelines. An advocate representing the borrower files formal financial hardship dossiers, issues legal cease-and-desist notices to stop recovery agent harassment, defends against Section 138 Negotiable Instruments Act or Section 25 Payment and Settlement Systems Act notices, and secures binding OTS sanction letters granting 40% to 75% waivers backed by official No Dues Certificates.
+                    <p className="text-base md:text-lg font-medium text-gray-900 leading-relaxed mb-3">
+                      To settle loans after a failed debt consolidation plan in India, you must separate your multi-lender debt and negotiate individual One-Time Settlements (OTS) directly with each bank or NBFC under RBI compromise settlement directives.
                     </p>
+                    <div className="space-y-2 text-xs md:text-sm text-gray-700 pt-2 border-t border-gray-200/60">
+                      <p className="font-semibold text-gray-800">The advocate-led legal procedure includes:</p>
+                      <ul className="list-disc pl-5 space-y-1.5 text-gray-600">
+                        <li><strong>Unbundling Liabilities:</strong> Auditing individual accounts to separate true principal from inflated penal charges.</li>
+                        <li><strong>Halting Harassment:</strong> Serving formal legal notices to stop recovery agents under RBI Fair Practice Codes.</li>
+                        <li><strong>Defending Legal Notices:</strong> Defending against Section 138 (cheque bounce) and Section 25 (e-NACH) actions.</li>
+                        <li><strong>Securing Waivers:</strong> Obtaining official bank sanction letters with <strong>40% to 75% waivers</strong> and authentic No Dues Certificates (NDCs).</li>
+                      </ul>
+                    </div>
                   </div>
                 </section>
 
@@ -780,7 +789,7 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
                     <a
                       href="https://rbi.org.in/Scripts/NotificationUser.aspx?Id=12513&Mode=0"
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="nofollow noopener noreferrer"
                       className="text-[#D2A02A] hover:text-[#5A4C33] hover:underline font-semibold"
                     >
                       RBI Framework on Compromise Settlements (rbi.org.in)
@@ -789,7 +798,7 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
                     <a
                       href="https://rbi.org.in/Scripts/BS_CircularIndexDisplay.aspx?Id=9908"
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="nofollow noopener noreferrer"
                       className="text-[#D2A02A] hover:text-[#5A4C33] hover:underline font-semibold"
                     >
                       RBI Master Circular on Prudential Norms on Income Recognition and Asset Classification (IRAC Norms)
@@ -837,7 +846,7 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
                           <a
                             href="https://rbi.org.in/Scripts/NotificationUser.aspx?Id=12372&Mode=0"
                             target="_blank"
-                            rel="noopener noreferrer"
+                            rel="nofollow noopener noreferrer"
                             className="text-[#D2A02A] hover:underline font-semibold"
                           >
                             RBI Master Circular on Recovery Agents
@@ -891,7 +900,7 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
                           <a
                             href="https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=5671&Mode=0"
                             target="_blank"
-                            rel="noopener noreferrer"
+                            rel="nofollow noopener noreferrer"
                             className="text-[#D2A02A] hover:underline font-semibold"
                           >
                             Credit Information Companies (Regulation) Act, 2005
@@ -1042,7 +1051,7 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
                     <a
                       href="https://cms.rbi.org.in"
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="nofollow noopener noreferrer"
                       className="text-[#D2A02A] hover:text-[#5A4C33] hover:underline font-semibold"
                     >
                       RBI Complaint Management System (cms.rbi.org.in)
@@ -1051,7 +1060,7 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
                     <a
                       href="https://bankingombudsman.rbi.org.in"
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="nofollow noopener noreferrer"
                       className="text-[#D2A02A] hover:text-[#5A4C33] hover:underline font-semibold"
                     >
                       RBI Integrated Ombudsman Scheme, 2021
@@ -1217,9 +1226,9 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
 
                 {/* ── SECTION 13: CITATIONS & SOURCES ── */}
                 <section id="citations" className="scroll-mt-28 border-t border-gray-200 pt-8">
-                  <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  <h2 className="text-2xl md:text-3xl font-extrabold text-[#1a202c] mb-4 flex items-center gap-2">
                     <span>🏛️</span> Statutory Citations &amp; Official References
-                  </h3>
+                  </h2>
                   <ul className="list-disc pl-5 space-y-2 text-xs md:text-sm text-gray-600">
                     {[
                       {
@@ -1259,7 +1268,7 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
                         <a
                           href={cite.href}
                           target="_blank"
-                          rel="noopener noreferrer"
+                          rel="nofollow noopener noreferrer"
                           className="text-[#D2A02A] hover:text-[#5A4C33] hover:underline font-semibold"
                         >
                           {cite.label}
@@ -1329,9 +1338,9 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
               
               {/* About Author Card */}
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                <h3 className="text-base font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2.5 flex items-center gap-2">
+                <p className="text-base font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2.5 flex items-center gap-2">
                   <span>👨‍⚖️</span> Lead Banking Advocate
-                </h3>
+                </p>
                 <div className="flex items-center mb-4">
                   <div className="w-16 h-16 rounded-full overflow-hidden mr-3.5 border-2 border-[#D2A02A] shrink-0">
                     <img
@@ -1341,7 +1350,7 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
                     />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-gray-900 text-base">Anuj Anand Malik</h4>
+                    <p className="font-extrabold text-gray-900 text-base">Anuj Anand Malik</p>
                     <p className="text-xs text-gray-500 font-medium">Founder &amp; Senior Advocate</p>
                     <Link
                       href="/author/anuj-anand-malik"
@@ -1359,7 +1368,7 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
                 <a
                   href="https://www.linkedin.com/in/iamanujmalik/"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="nofollow noopener noreferrer"
                   className="block w-full border border-[#0A66C2] text-[#0A66C2] text-center py-2.5 rounded-xl text-xs font-bold hover:bg-[#0A66C2] hover:text-white transition-colors"
                 >
                   Connect on LinkedIn
@@ -1372,7 +1381,7 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#D2A02A]/20 border border-[#D2A02A]/40 rounded-full text-[11px] font-bold text-[#D2A02A] mb-3">
                   <span>⚡</span> Urgent Legal Assistance
                 </div>
-                <h3 className="text-xl font-bold mb-2">Consolidation Default Crisis?</h3>
+                <p className="text-xl font-bold mb-2">Consolidation Default Crisis?</p>
                 <p className="text-gray-200 mb-5 text-xs leading-relaxed">
                   Stop recovery harassment and negotiate structured 40%–75% OTS waivers with bank management. Speak directly with our legal team.
                 </p>
@@ -1392,12 +1401,12 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
 
               {/* Client Reviews Block (Exact match with Product Schema) */}
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                <h3 className="text-base font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2.5 flex items-center justify-between">
+                <p className="text-base font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2.5 flex items-center justify-between">
                   <span>Verified Client Reviews</span>
                   <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
                     Verified
                   </span>
-                </h3>
+                </p>
                 <div className="flex items-center gap-2 mb-1">
                   <Stars />
                   <span className="font-extrabold text-gray-900 text-sm">4.9 / 5.0</span>
@@ -1466,9 +1475,9 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
 
               {/* Quick Links */}
               <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
-                <h3 className="font-bold text-gray-900 text-xs uppercase tracking-wider mb-3 border-b border-gray-100 pb-2">
+                <p className="font-bold text-gray-900 text-xs uppercase tracking-wider mb-3 border-b border-gray-100 pb-2">
                   Related Legal Guides
-                </h3>
+                </p>
                 <ul className="space-y-2 text-xs">
                   {[
                     ["/settle-loans-when-your-monthly-debt-payments-cross-your-repayment-capacity", "Debt Payments Exceed Capacity"],
@@ -1517,7 +1526,7 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
                 <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
                   ✓
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Legal Review Requested</h3>
+                <p className="text-2xl font-bold text-gray-900 mb-2">Legal Review Requested</p>
                 <p className="text-sm text-gray-600 mb-6">
                   Advocate Anuj Anand Malik&apos;s team has received your details. A senior banking advocate will review your loan portfolio and call you within 24 hours.
                 </p>
@@ -1535,9 +1544,9 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
               <div>
                 <div className="flex items-center gap-2.5 mb-2">
                   <span className="text-[#D2A02A] text-xl">⚖️</span>
-                  <h3 className="text-xl font-extrabold text-gray-900">
+                  <p className="text-xl font-extrabold text-gray-900">
                     Failed Consolidation Legal Review
-                  </h3>
+                  </p>
                 </div>
                 <p className="text-xs text-gray-600 mb-6">
                   Confidential evaluation by Advocate Anuj Anand Malik &bull; 100% Legal Privilege

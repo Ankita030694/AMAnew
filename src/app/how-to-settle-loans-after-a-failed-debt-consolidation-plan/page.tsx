@@ -7,10 +7,9 @@ const OG_IMAGE =
   "/images/og/how-to-settle-loans-after-a-failed-debt-consolidation-plan.png";
 
 export const metadata: Metadata = {
-  title:
-    "How to Settle Loans After a Failed Debt Consolidation Plan | AMA Legal Solutions",
+  title: "Settle Loans After Failed Debt Consolidation | AMA Legal",
   description:
-    "Did your debt consolidation loan or balance transfer fail? Learn how to legally settle multiple loans individually under RBI compromise settlement norms, halt recovery agent harassment, defend against legal notices, and secure 40%–75% waivers with authentic No Dues Certificates.",
+    "Failed debt consolidation? Legally settle multiple loans under RBI compromise norms, stop agent harassment, and secure 40%-75% waivers with authentic NDCs.",
   keywords: [
     "how to settle loans after a failed debt consolidation plan",
     "failed debt consolidation what to do",
@@ -27,10 +26,9 @@ export const metadata: Metadata = {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title:
-      "How to Settle Loans After a Failed Debt Consolidation Plan | AMA Legal Solutions",
+    title: "Settle Loans After Failed Debt Consolidation | AMA Legal",
     description:
-      "When debt consolidation fails, multiple EMIs and compounding interest create an immediate legal crisis. Learn the step-by-step advocate-led strategy to settle each loan for 40%–75% less under RBI guidelines.",
+      "Failed debt consolidation? Legally settle multiple loans under RBI compromise norms, stop agent harassment, and secure 40%-75% waivers with authentic NDCs.",
     url: PAGE_URL,
     type: "article",
     images: [
@@ -46,10 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "How to Settle Loans After a Failed Debt Consolidation Plan | AMA Legal Solutions",
+    title: "Settle Loans After Failed Debt Consolidation | AMA Legal",
     description:
-      "Comprehensive legal guide to negotiate One Time Settlements (OTS) after a debt consolidation loan fails. Expert advice by Advocate Anuj Anand Malik.",
+      "Failed debt consolidation? Legally settle multiple loans under RBI compromise norms, stop agent harassment, and secure 40%-75% waivers with authentic NDCs.",
     images: [OG_IMAGE],
     site: "@AMALegalSol",
     creator: "@AnujAnandMalik",

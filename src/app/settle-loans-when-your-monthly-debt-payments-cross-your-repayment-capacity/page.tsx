@@ -7,10 +7,9 @@ const OG_IMAGE =
   "/images/og/settle-loans-when-your-monthly-debt-payments-cross-your-repayment-capacity.png";
 
 export const metadata: Metadata = {
-  title:
-    "Settle Loans When Monthly Debt Payments Cross Repayment Capacity | AMA Legal Solutions",
+  title: "Settle Loans When EMIs Exceed Income | AMA Legal",
   description:
-    "Drowning in EMIs exceeding your income? Learn how to legally settle loans under RBI compromise settlement frameworks, stop recovery agent harassment, defend against Section 138/25 notices, and secure 40%–75% waivers with authentic No Dues Certificates.",
+    "EMIs exceed your income? Legally settle loans under RBI compromise rules, stop recovery harassment, and secure 40%-75% waivers with authentic bank NDCs.",
   keywords: [
     "settle loans when your monthly debt payments cross your repayment capacity",
     "emi exceeds income debt settlement",
@@ -27,10 +26,9 @@ export const metadata: Metadata = {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title:
-      "Settle Loans When Monthly Debt Payments Cross Repayment Capacity | AMA Legal Solutions",
+    title: "Settle Loans When EMIs Exceed Income | AMA Legal",
     description:
-      "Legal guide for borrowers whose debt obligations exceed monthly income. Learn RBI OTS compromise rules, anti-harassment protections, and advocate-led negotiation strategies for 40%–75% waivers.",
+      "EMIs exceed your income? Legally settle loans under RBI compromise rules, stop recovery harassment, and secure 40%-75% waivers with authentic bank NDCs.",
     url: PAGE_URL,
     type: "article",
     images: [
@@ -46,10 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Settle Loans When Monthly Debt Payments Cross Repayment Capacity | AMA Legal Solutions",
+    title: "Settle Loans When EMIs Exceed Income | AMA Legal",
     description:
-      "Comprehensive legal guide to negotiate One Time Settlements (OTS) when debt obligations cross repayment capacity. Expert advice by Advocate Anuj Anand Malik.",
+      "EMIs exceed your income? Legally settle loans under RBI compromise rules, stop recovery harassment, and secure 40%-75% waivers with authentic bank NDCs.",
     images: [OG_IMAGE],
     site: "@AMALegalSol",
     creator: "@AnujAnandMalik",
