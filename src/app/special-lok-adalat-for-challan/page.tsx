@@ -284,8 +284,8 @@ const breadcrumbSchema = {
 };
 
 export const metadata = {
-  title: "Special Lok Adalat for Traffic Challan 2025 | Clear Online Challans",
-  description: "Want to clear your traffic challans with massive discounts? Learn about the 2025 Special Lok Adalat schedule, online disposal procedure, and how to settle pending court challans legally.",
+  title: "Special Lok Adalat for Traffic Challan 2025 | Clear Online",
+  description: "Clear traffic challans with discounts. Learn the 2025 Special Lok Adalat schedule, online disposal procedure, and settle pending court challans legally.",
   keywords: [
     "special lok adalat for challan",
     "traffic challan settlement 2025",
@@ -336,7 +336,7 @@ export default function ChallanLokAdalatPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Article",
-          "headline": "Special Lok Adalat for Traffic Challan 2025: Clear Online Challans",
+          "headline": "Special Lok Adalat for Traffic Challan 2025: Clear Online",
           "description": "Exhaustive guide to settling traffic challans in Lok Adalat 2025. Learn about waivers, online disposal, and legal rights.",
           "author": { "@type": "Organization", "name": "AMA Legal Solutions" },
           "publisher": { "@type": "Organization", "name": "AMA Legal Solutions", "logo": { "@type": "ImageObject", "url": "https://www.amalegalsolutions.com/logo.png" } },
@@ -415,7 +415,7 @@ export default function ChallanLokAdalatPage() {
             <div className="hidden lg:block sticky top-28">
               <TableOfContents sections={tocSections} orientation="vertical" />
               <div className="mt-12 p-8 bg-gradient-to-b from-[#1E293B] to-[#0F172A] rounded-3xl border border-white/10 shadow-2xl">
-                  <h4 className="font-bold text-[#D2A02A] mb-4 uppercase tracking-widest text-xs">Legal Assistance</h4>
+                  <p className="font-bold text-[#D2A02A] mb-4 uppercase tracking-widest text-xs">Legal Assistance</p>
                   <p className="text-xs text-gray-400 leading-relaxed mb-6 font-medium">Don't let complex traffic notices ruin your peace. Get expert representation for bulk challan settlement.</p>
                   <Link href="/contact" className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-[#D2A02A] transition-colors">
                     Talk to a Lawyer <FaHandshake />
@@ -463,13 +463,13 @@ export default function ChallanLokAdalatPage() {
                     </h2>
                     <div className="grid md:grid-cols-2 gap-10">
                         <div className="p-10 bg-gray-900 text-white rounded-[2rem] shadow-xl">
-                            <h4 className="text-2xl font-bold mb-6 text-[#D2A02A]">What is it?</h4>
+                            <h3 className="text-2xl font-bold mb-6 text-[#D2A02A]">What is it?</h3>
                             <p className="text-gray-300 leading-relaxed text-lg">
                                 Established under the Legal Services Authorities Act, 1987, a Traffic Lok Adalat is an Alternative Dispute Resolution (ADR) forum where pending traffic notices and court-sent challans are resolved through mutual consent. It is chaired by a sitting or retired judicial officer along with a panel of social workers and legal experts.
                             </p>
                         </div>
                         <div className="p-10 bg-[#fff9e6] rounded-[2rem] border border-[#D2A02A]/20">
-                            <h4 className="text-2xl font-bold mb-6 text-gray-900">The 2025 Objective</h4>
+                            <h3 className="text-2xl font-bold mb-6 text-gray-900">The 2025 Objective</h3>
                             <p className="text-gray-700 leading-relaxed text-lg">
                                 The 2025 vision for Traffic Lok Adalats is "Digital Disposal." The focus is on clearing the 50-million-plus pending challans across India using E-Lok Adalat platforms, reducing the burden on regular courts and providing instant relief to motorists.
                             </p>
@@ -491,7 +491,7 @@ export default function ChallanLokAdalatPage() {
                         ].map((item, i) => (
                             <div key={i} className="p-8 bg-white border-2 border-gray-50 rounded-[2rem] shadow-lg hover:shadow-2xl transition-all">
                                 <div className="text-4xl mb-6">{item.icon}</div>
-                                <h4 className="text-xl font-bold mb-4">{item.title}</h4>
+                                <h3 className="text-xl font-bold mb-4">{item.title}</h3>
                                 <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
                             </div>
                         ))}
@@ -528,7 +528,7 @@ export default function ChallanLokAdalatPage() {
                             <div key={i} className="flex gap-10 items-start">
                                 <div className="text-6xl font-black text-gray-100">{item.step}</div>
                                 <div>
-                                    <h4 className="text-2xl font-bold mb-4 text-gray-900">{item.title}</h4>
+                                    <h3 className="text-2xl font-bold mb-4 text-gray-900">{item.title}</h3>
                                     <p className="text-lg text-gray-600 leading-relaxed">{item.desc}</p>
                                 </div>
                             </div>
@@ -558,10 +558,10 @@ export default function ChallanLokAdalatPage() {
                     <div className="space-y-20">
                         {/* Delhi */}
                         <div className="p-10 bg-white rounded-[2rem] border border-gray-100 shadow-xl">
-                            <h4 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-4">
+                            <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-4">
                                 <span className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-black">DL</span>
                                 Delhi Traffic Lok Adalat 2025
-                            </h4>
+                            </h3>
                             <div className="prose prose-xl max-w-none text-gray-600 space-y-6">
                                 <p>
                                     Delhi remains the benchmark for traffic challan disposal in India. The Delhi State Legal Services Authority (DSLSA) organizes mega Lok Adalats almost every quarter. In 2025, the focus is on "Integrated Disposal."
@@ -576,10 +576,10 @@ export default function ChallanLokAdalatPage() {
 
                         {/* Bangalore */}
                         <div className="p-10 bg-white rounded-[2rem] border border-gray-100 shadow-xl">
-                            <h4 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-4">
+                            <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-4">
                                 <span className="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-black">KA</span>
                                 Bengaluru (Karnataka) Enforcement
-                            </h4>
+                            </h3>
                             <div className="prose prose-xl max-w-none text-gray-600 space-y-6">
                                 <p>
                                     Karnataka has pioneered the 50% rebate scheme, which is often extended for several weeks. Unlike Delhi's one-day mega event, Bengaluru often provides a wider window for citizens to pay at traffic police stations or even at Bangalore One centers.
@@ -592,10 +592,10 @@ export default function ChallanLokAdalatPage() {
 
                         {/* Mumbai */}
                         <div className="p-10 bg-white rounded-[2rem] border border-gray-100 shadow-xl">
-                            <h4 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-4">
+                            <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-4">
                                 <span className="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-black">MH</span>
                                 Mumbai & Maharashtra E-Challans
-                            </h4>
+                            </h3>
                             <div className="prose prose-xl max-w-none text-gray-600 space-y-6">
                                 <p>
                                     The Mumbai traffic police use the 'MTP App' extensively. During Lok Adalats, the 'Mahatraffic' portal opens up specialized links for 'Pre-Litigation' settlements. This is specifically for challans that have not yet reached the court but are older than 90 days.
@@ -657,7 +657,7 @@ export default function ChallanLokAdalatPage() {
                     </div>
                     <div className="grid md:grid-cols-2 gap-8">
                         <div className="p-10 bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef] rounded-[2.5rem] border border-gray-200 shadow-inner">
-                            <h4 className="text-xl font-black text-blue-900 mb-6 uppercase tracking-widest">Minor Infractions</h4>
+                            <h3 className="text-xl font-black text-blue-900 mb-6 uppercase tracking-widest">Minor Infractions</h3>
                             <ul className="space-y-4 text-gray-600 font-medium">
                                 <li className="flex justify-between"><span>No Parking:</span> <span className="text-green-600 font-black">50% Waiver</span></li>
                                 <li className="flex justify-between"><span>Wrong Way:</span> <span className="text-green-600 font-black">40% Waiver</span></li>
@@ -666,7 +666,7 @@ export default function ChallanLokAdalatPage() {
                             </ul>
                         </div>
                         <div className="p-10 bg-gradient-to-br from-[#1E293B] to-[#0F172A] rounded-[2.5rem] text-white shadow-2xl">
-                            <h4 className="text-xl font-black text-[#D2A02A] mb-6 uppercase tracking-widest">High-Penalty Cases</h4>
+                            <h3 className="text-xl font-black text-[#D2A02A] mb-6 uppercase tracking-widest">High-Penalty Cases</h3>
                             <ul className="space-y-4 text-gray-300 font-medium">
                                 <li className="flex justify-between"><span>Speeding:</span> <span className="text-[#D2A02A] font-black">50% Discount</span></li>
                                 <li className="flex justify-between"><span>No PUC:</span> <span className="text-[#D2A02A] font-black">Negotiable (High)</span></li>
@@ -691,7 +691,7 @@ export default function ChallanLokAdalatPage() {
                         </p>
                         <div className="flex flex-col md:flex-row gap-10 mt-10">
                             <div className="flex-1 space-y-6">
-                                <h4 className="text-2xl font-bold text-gray-900 border-b-4 border-blue-500 pb-2 inline-block">The Virtual Experience</h4>
+                                <h3 className="text-2xl font-bold text-gray-900 border-b-4 border-blue-500 pb-2 inline-block">The Virtual Experience</h3>
                                 <ul className="space-y-4 list-disc pl-6 text-gray-600">
                                     <li>Entirely paperless through the SLSA portal.</li>
                                     <li>Video conferencing links for conciliation.</li>
@@ -700,7 +700,7 @@ export default function ChallanLokAdalatPage() {
                                 </ul>
                             </div>
                             <div className="flex-1 space-y-6">
-                                <h4 className="text-2xl font-bold text-gray-900 border-b-4 border-[#D2A02A] pb-2 inline-block">The Physical Experience</h4>
+                                <h3 className="text-2xl font-bold text-gray-900 border-b-4 border-[#D2A02A] pb-2 inline-block">The Physical Experience</h3>
                                 <ul className="space-y-4 list-disc pl-6 text-gray-600">
                                     <li>Face-to-face interaction with the judicial panel.</li>
                                     <li>Opportunity to bring physical evidence (original papers).</li>
@@ -759,7 +759,7 @@ export default function ChallanLokAdalatPage() {
                             The Lok Adalat is not just a convenience; it is a manifestation of <strong>Article 39A of the Constitution of India</strong>, which mandates "Equal Justice and Free Legal Aid." The state is duty-bound to ensure that the operation of the legal system promotes justice on a basis of equal opportunity.
                         </p>
                         <div className="p-12 bg-gradient-to-r from-gray-900 to-black text-white rounded-[3rem] shadow-2xl">
-                            <h4 className="text-3xl font-bold mb-8 text-[#D2A02A]">Finality & No Appeal</h4>
+                            <h3 className="text-3xl font-bold mb-8 text-[#D2A02A]">Finality & No Appeal</h3>
                             <p className="text-xl leading-relaxed text-gray-300">
                                 One of the most unique features of a Lok Adalat Award is that it is <strong>Non-Appealable</strong>. This might seem restrictive, but it is actually a boon for the citizen. It ensures that the police or the state cannot drag you to the High Court if they are unhappy with the waiver. Once the Award is signed, the chapter is closed forever. This provides "Legal Finality" which is rare in the Indian judicial system.
                             </p>
@@ -785,15 +785,15 @@ export default function ChallanLokAdalatPage() {
                     <h2 className="text-2xl md:text-5xl font-black text-blue-900 mb-12">The AMA '3-C' Challan Analysis Framework</h2>
                     <div className="grid md:grid-cols-3 gap-10">
                         <div className="p-8 bg-white rounded-3xl shadow-sm">
-                            <h4 className="text-xl font-bold mb-4 text-blue-600">01. Categorization</h4>
+                            <h3 className="text-xl font-bold mb-4 text-blue-600">01. Categorization</h3>
                             <p className="text-sm text-gray-500">Separating camera-based notices from court summons and active warrants.</p>
                         </div>
                         <div className="p-8 bg-white rounded-3xl shadow-sm">
-                            <h4 className="text-xl font-bold mb-4 text-blue-600">02. Contestation</h4>
+                            <h3 className="text-xl font-bold mb-4 text-blue-600">02. Contestation</h3>
                             <p className="text-sm text-gray-500">Drafting arguments based on lack of photographic evidence or jurisdiction errors.</p>
                         </div>
                         <div className="p-8 bg-white rounded-3xl shadow-sm">
-                            <h4 className="text-xl font-bold mb-4 text-blue-600">03. Clearance</h4>
+                            <h3 className="text-xl font-bold mb-4 text-blue-600">03. Clearance</h3>
                             <p className="text-sm text-gray-500">Liaising with the Traffic Police tech-wing to ensure the portal reflects 'Paid' status in 24 hours.</p>
                         </div>
                     </div>
@@ -838,15 +838,15 @@ export default function ChallanLokAdalatPage() {
                                 <h3 className="text-2xl md:text-3xl font-black text-gray-900 mb-10 border-b-4 border-gray-100 pb-6">{caseStudy.title}</h3>
                                 <div className="grid md:grid-cols-3 gap-12">
                                     <div>
-                                        <h5 className="font-bold text-[#D2A02A] mb-4 uppercase text-xs tracking-widest italic">The Challenge</h5>
+                                        <h4 className="font-bold text-[#D2A02A] mb-4 uppercase text-xs tracking-widest italic">The Challenge</h4>
                                         <p className="text-sm text-gray-500 leading-relaxed font-medium">{caseStudy.context}</p>
                                     </div>
                                     <div>
-                                        <h5 className="font-bold text-blue-600 mb-4 uppercase text-xs tracking-widest italic">Our Strategy</h5>
+                                        <h4 className="font-bold text-blue-600 mb-4 uppercase text-xs tracking-widest italic">Our Strategy</h4>
                                         <p className="text-sm text-gray-500 leading-relaxed font-medium">{caseStudy.strategy}</p>
                                     </div>
                                     <div>
-                                        <h5 className="font-bold text-green-600 mb-4 uppercase text-xs tracking-widest italic">The Win</h5>
+                                        <h4 className="font-bold text-green-600 mb-4 uppercase text-xs tracking-widest italic">The Win</h4>
                                         <p className="text-sm text-gray-500 leading-relaxed font-black">{caseStudy.outcome}</p>
                                     </div>
                                 </div>
@@ -872,7 +872,7 @@ export default function ChallanLokAdalatPage() {
                             <div key={i} className="flex gap-6 p-6 bg-gray-50 rounded-2xl border border-gray-100">
                                 <div className="text-2xl font-black text-[#D2A02A]">{i+1}.</div>
                                 <div>
-                                    <h5 className="font-bold text-gray-900 mb-2">{item.term}</h5>
+                                    <h3 className="font-bold text-gray-900 mb-2">{item.term}</h3>
                                     <p className="text-sm text-gray-500">{item.desc}</p>
                                 </div>
                             </div>
@@ -906,13 +906,13 @@ export default function ChallanLokAdalatPage() {
                     <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mb-6">
                         <FaShieldAlt className="text-4xl text-green-600" />
                     </div>
-                    <h4 className="font-black text-xl mb-4 text-gray-900">Certified Legal Help</h4>
+                    <p className="font-black text-xl mb-4 text-gray-900">Certified Legal Help</p>
                     <p className="text-sm text-gray-500 mb-8 leading-relaxed">Join 10,000+ satisfied clients who cleared their road records with AMA Legal Solutions.</p>
                     <Link href="/contact" className="w-full bg-[#D2A02A] text-white font-bold py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all">Get Free Consultation</Link>
                 </div>
 
                 <div className="p-8 bg-gray-900 rounded-[2.5rem] shadow-2xl text-white">
-                    <h4 className="font-bold text-[#D2A02A] mb-8 uppercase tracking-widest text-xs text-center">Quick Links</h4>
+                    <p className="font-bold text-[#D2A02A] mb-8 uppercase tracking-widest text-xs text-center">Quick Links</p>
                     <ul className="space-y-4">
                         <li className="flex items-center gap-3 text-sm font-medium text-gray-300 hover:text-white cursor-pointer"><FaCar /> Check Delhi Challan</li>
                         <li className="flex items-center gap-3 text-sm font-medium text-gray-300 hover:text-white cursor-pointer"><FaMotorcycle /> Check Bangalore Challan</li>

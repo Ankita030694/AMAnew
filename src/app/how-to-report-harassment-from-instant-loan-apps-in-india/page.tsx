@@ -154,7 +154,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "7 Days Loan App Harassment Complaint Number Guide",
+  title: "7 Days Loan App Harassment Complaint Number | Legal Help",
   description: "Find the official 7 days loan app harassment complaint number here. Learn step by step legal methods to stop illegal recovery agents and secure your data.",
   robots: {
     index: true,

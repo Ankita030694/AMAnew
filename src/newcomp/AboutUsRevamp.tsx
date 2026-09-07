@@ -58,7 +58,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-start">
           {/* Left Column */}
           <div className="flex flex-col items-start gap-[35px]">
-            <h3 className="text-[26px] md:text-[52px] leading-[32px] md:leading-[52px] font-semibold text-black opacity-100">
+            <h2 className="text-[26px] md:text-[52px] leading-[32px] md:leading-[52px] font-semibold text-black opacity-100">
               <span
                 style={{
                   background: "linear-gradient(90deg, #30261C 5.29%, #D29E0D 100%)",
@@ -72,7 +72,7 @@ const AboutUsRevamp = ({ attorneys = [] }: { attorneys?: Attorney[] }) => {
               </span>
               <br />
               is your legal safety partner
-            </h3>
+            </h2>
 
             <Link
               href="/contact"

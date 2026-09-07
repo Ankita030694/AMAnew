@@ -379,7 +379,7 @@ const ContactComp = () => {
              </div>
 
              <div className="mb-5 relative z-10">
-                <h2 className="text-2xl font-bold text-[#30261C] mb-1">Send Us a Message</h2>
+                <p className="text-2xl font-bold text-[#30261C] mb-1">Send Us a Message</p>
                 <p className="text-[13px] text-[#30261C]">Fill out the form below and our team will get back to you shortly.</p>
              </div>
 
@@ -414,7 +414,7 @@ const ContactComp = () => {
                   <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center">
                     <User className="w-8 h-8 text-blue-500" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#30261C]">Already Submitted!</h3>
+                  <p className="text-xl font-bold text-[#30261C]">Already Submitted!</p>
                   <p className="text-[#30261C]">Check your WhatsApp for your assigned executive.</p>
                   <button onClick={() => setIsDuplicate(false)} className="px-6 py-2 bg-gray-100 rounded-lg text-sm font-semibold">Close</button>
                 </div>
@@ -438,10 +438,10 @@ const ContactComp = () => {
 
           {/* Headlines */}
           <div>
-             <h1 className="text-4xl font-bold text-[#30261C] leading-[1.15] mb-4 tracking-tight">
+             <p className="text-4xl font-bold text-[#30261C] leading-[1.15] mb-4 tracking-tight">
                 Your Legal Matters,<br/>
                 <span className="text-[#E19100]">Our Priority.</span>
-             </h1>
+             </p>
              <p className="text-[#30261C] text-sm leading-relaxed font-medium">
                 Clear guidance. Strategic solutions.<br/>
                 Results that matter.
@@ -454,21 +454,21 @@ const ContactComp = () => {
                 <div className="w-12 h-12 rounded-full bg-[#FDF8E7] flex items-center justify-center border border-[#E9C46A]/40 shadow-sm">
                    <Shield className="w-5 h-5 text-[#D2A02A]" />
                 </div>
-                <h3 className="font-bold text-[#30261C] text-[10px] leading-tight">Confidential<br/>& Secure</h3>
+                <p className="font-bold text-[#30261C] text-[10px] leading-tight">Confidential<br/>& Secure</p>
                 <p className="text-[9px] text-[#30261C] leading-tight px-1">Your information is always safe with us.</p>
              </div>
              <div className="flex flex-col items-center text-center gap-2">
                 <div className="w-12 h-12 rounded-full bg-[#FDF8E7] flex items-center justify-center border border-[#E9C46A]/40 shadow-sm">
                    <Users className="w-5 h-5 text-[#D2A02A]" />
                 </div>
-                <h3 className="font-bold text-[#30261C] text-[10px] leading-tight">Expert Legal<br/>Guidance</h3>
+                <p className="font-bold text-[#30261C] text-[10px] leading-tight">Expert Legal<br/>Guidance</p>
                 <p className="text-[9px] text-[#30261C] leading-tight px-1">Advice from experienced legal professionals.</p>
              </div>
              <div className="flex flex-col items-center text-center gap-2">
                 <div className="w-12 h-12 rounded-full bg-[#FDF8E7] flex items-center justify-center border border-[#E9C46A]/40 shadow-sm">
                    <Target className="w-5 h-5 text-[#D2A02A]" />
                 </div>
-                <h3 className="font-bold text-[#30261C] text-[10px] leading-tight">Results<br/>Focused</h3>
+                <p className="font-bold text-[#30261C] text-[10px] leading-tight">Results<br/>Focused</p>
                 <p className="text-[9px] text-[#30261C] leading-tight px-1">Practical solutions tailored to your needs.</p>
              </div>
           </div>
@@ -525,7 +525,7 @@ const ContactComp = () => {
                <Image src="/app_creative.png" alt="AMA Legal App" width={160} height={320} className="w-full max-w-[130px] h-auto object-contain" />
             </div>
             <div className="w-[55%] flex flex-col justify-center">
-              <h3 className="text-[15px] font-bold text-[#30261C] leading-tight mb-1">Legal Support Now in Your Pocket</h3>
+              <p className="text-[15px] font-bold text-[#30261C] leading-tight mb-1">Legal Support Now in Your Pocket</p>
               <p className="text-[10px] text-[#E19100] font-semibold mb-3">Download the AMA Legal Solutions App</p>
               
               <div className="flex flex-col gap-1.5 mb-4">
@@ -617,7 +617,7 @@ const ContactComp = () => {
                   <Shield className="w-6 h-6 text-[#D2A02A]" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-[#30261C] mb-1">Confidential<br/>& Secure</h3>
+                  <p className="font-bold text-[#30261C] mb-1">Confidential<br/>& Secure</p>
                   <p className="text-sm text-[#30261C]">Your information is always safe with us.</p>
                 </div>
               </div>
@@ -627,7 +627,7 @@ const ContactComp = () => {
                   <Users className="w-6 h-6 text-[#D2A02A]" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-[#30261C] mb-1">Expert Legal<br/>Guidance</h3>
+                  <p className="font-bold text-[#30261C] mb-1">Expert Legal<br/>Guidance</p>
                   <p className="text-sm text-[#30261C]">Get advice from experienced legal professionals.</p>
                 </div>
               </div>
@@ -637,7 +637,7 @@ const ContactComp = () => {
                   <Target className="w-6 h-6 text-[#D2A02A]" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-[#30261C] mb-1">Results<br/>Focused</h3>
+                  <p className="font-bold text-[#30261C] mb-1">Results<br/>Focused</p>
                   <p className="text-sm text-[#30261C]">Practical solutions tailored to your unique needs.</p>
                 </div>
               </div>
@@ -645,7 +645,7 @@ const ContactComp = () => {
 
             {/* Trusted Clients */}
             <div className="mb-12">
-              <h3 className="text-lg text-[#30261C] mb-6 font-medium">Trusted by Clients Across India</h3>
+              <p className="text-lg text-[#30261C] mb-6 font-medium">Trusted by Clients Across India</p>
               <div className="flex flex-wrap items-center gap-8 md:gap-12 opacity-80 mb-8">
                 <Image src="/newAssets/clientLogos/1.png" width={80} height={40} alt="BCB" className="h-8 w-auto object-contain" />
                 <Image src="/newAssets/clientLogos/3.png" width={80} height={40} alt="HDFC Bank" className="h-8 w-auto object-contain" />
@@ -695,7 +695,7 @@ const ContactComp = () => {
                  <Image src="/app_creative.png" alt="AMA Legal Solutions App" width={200} height={400} className="w-full max-w-[160px] h-auto object-contain" />
               </div>
               <div className="md:w-2/3">
-                <h3 className="text-xl md:text-2xl font-bold text-[#30261C] mb-1">Legal Support Now in Your Pocket</h3>
+                <p className="text-xl md:text-2xl font-bold text-[#30261C] mb-1">Legal Support Now in Your Pocket</p>
                 <p className="text-sm text-[#E19100] font-semibold mb-6">Download the AMA Legal Solutions App</p>
                 
                 <div className="grid grid-cols-2 gap-y-4 gap-x-2 mb-6">
@@ -776,7 +776,7 @@ const ContactComp = () => {
                   <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center">
                     <User className="w-8 h-8 text-blue-500" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#30261C]">Already Submitted!</h3>
+                  <p className="text-xl font-bold text-[#30261C]">Already Submitted!</p>
                   <p className="text-[#30261C]">Check your WhatsApp for your assigned executive.</p>
                   <button onClick={() => setIsDuplicate(false)} className="px-6 py-2 bg-gray-100 rounded-lg text-sm font-semibold">Close</button>
                 </div>
@@ -853,13 +853,13 @@ const ContactComp = () => {
               </p>
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-bold text-[#30261C] text-sm">Office Address</h4>
+                  <h3 className="font-bold text-[#30261C] text-sm">Office Address</h3>
                   <p className="text-sm text-[#30261C]/70 mt-1">
                     Sector 57, Sushant Lok 2, Gurugram, Haryana 122003
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-bold text-[#30261C] text-sm">Office Hours</h4>
+                  <h3 className="font-bold text-[#30261C] text-sm">Office Hours</h3>
                   <p className="text-sm text-[#30261C]/70 mt-1">
                     Monday – Saturday: 10:00 AM – 7:00 PM
                   </p>

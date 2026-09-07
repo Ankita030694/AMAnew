@@ -163,7 +163,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Credit Card Settlement in India: Legally End Debt",
+  title: "Credit Card Settlement in India | Stop Debt Harassment",
   description: "Learn how to legally force credit card companies to settle your debt for less. Stop recovery agents and rebuild your financial life with expert guidance.",
   robots: {
     index: true,

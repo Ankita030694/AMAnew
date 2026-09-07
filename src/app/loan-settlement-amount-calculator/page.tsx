@@ -2,13 +2,13 @@ import { Metadata } from 'next';
 import LoanSettlementCalculatorClient from './client';
 
 export const metadata: Metadata = {
-  title: 'Loan Settlement Amount Calculator India | AMA Legal Solutions',
-  description: 'Calculate your potential loan settlement amount with our advanced India-specific calculator. Understand OTS ranges for personal loans, credit cards, and business debts.',
+  title: 'Loan Settlement Calculator India | AMA Legal Solutions',
+  description: 'Calculate your loan settlement amount with our India-specific calculator. Estimate OTS ranges for personal loans, credit cards, and business debts.',
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/loan-settlement-amount-calculator',
   },
   openGraph: {
-    title: 'Loan Settlement Amount Calculator India | AMA Legal Solutions',
+    title: 'Loan Settlement Calculator India | AMA Legal Solutions',
     description: 'Calculate your potential loan settlement amount with our advanced India-specific calculator. Understand OTS ranges.',
     url: 'https://www.amalegalsolutions.com/loan-settlement-amount-calculator',
     siteName: 'AMA Legal Solutions',

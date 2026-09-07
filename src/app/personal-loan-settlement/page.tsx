@@ -150,8 +150,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Personal Loan Settlement India | Stop Harassment & Clear Debt",
-  description: "Struggling with personal loan EMIs? Our legal experts help you negotiate the best One Time Settlement (OTS) across all Indian cities and stop recovery agent harassment.",
+  title: "Personal Loan Settlement India | Stop Debt Harassment",
+  description: "Struggling with personal loan EMIs? Our legal experts help you negotiate the best OTS across India and stop harassment from bank recovery agents.",
   keywords: [
     "personal loan settlement",
     "personal loan settlement India",

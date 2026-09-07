@@ -12,7 +12,7 @@ import { fetchAttorneys } from "@/lib/attorneys";
 import Script from "next/script";
 
 export const metadata = {
-  title: 'About AMA Legal Solutions: Experienced Law Firm in Gurugram',
+  title: 'About AMA Legal Solutions | Top Law Firm in Gurugram',
   description: 'Learn about AMA Legal Solutions legacy and expertise in providing exceptional legal services across various domains in Gurugram, India.',
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/about', // Add your canonical URL here

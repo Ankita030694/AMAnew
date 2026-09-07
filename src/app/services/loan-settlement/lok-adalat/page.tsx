@@ -9,13 +9,13 @@ import Image from "next/image";
 export const metadata = {
   title: "Loan Settlement in Lok Adalat | Legal Process & Benefits",
   description:
-    "Complete guide to Loan Settlement in Lok Adalat. Learn the process, benefits, eligibility, and how to legally settle your debt with no court fees and binding results.",
+    "Guide to Loan Settlement in Lok Adalat. Learn the process, eligibility, and how to legally settle your debt with no court fees and binding results.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/lok-adalat',
   },
   openGraph: {
     title: "Loan Settlement in Lok Adalat | Legal Process & Benefits",
-    description: "Complete guide to Loan Settlement in Lok Adalat. Learn the process, benefits, eligibility, and how to legally settle your debt with no court fees and binding results.",
+    description: "Guide to Loan Settlement in Lok Adalat. Learn the process, eligibility, and how to legally settle your debt with no court fees and binding results.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/lok-adalat",
     type: "article",
     images: [

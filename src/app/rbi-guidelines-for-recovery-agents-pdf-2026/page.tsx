@@ -188,7 +188,7 @@ export default function RBIRecoveryAgents2026Guide() {
         {/* Left Column - Table of Contents */}
         <aside className="lg:w-[20%] hidden lg:block">
           <div className="sticky top-32">
-            <h4 className="text-xl font-bold mb-6 text-[#30261C] border-b pb-2">Guide Contents</h4>
+            <p className="text-xl font-bold mb-6 text-[#30261C] border-b pb-2">Guide Contents</p>
             <TableOfContents sections={sections} orientation="vertical" />
           </div>
         </aside>
@@ -345,7 +345,7 @@ export default function RBIRecoveryAgents2026Guide() {
                     "I can’t thank enough to the team of AMA legal solutions, because of them, my life became easy, and I didn’t have to deal with the harassment calls and certainly helped me to close my loans with a complete legal support and guidance."
                   </p>
                   <div>
-                    <h5 className="font-bold text-gray-950 text-sm">Surendra Rao</h5>
+                    <p className="font-bold text-gray-950 text-sm">Surendra Rao</p>
                     <div className="text-amber-500 text-xs font-semibold">★★★★★ Rating</div>
                   </div>
                 </div>
@@ -354,7 +354,7 @@ export default function RBIRecoveryAgents2026Guide() {
                     "I’m truly impressed with AMA legal solutions, services. They made the loan settlement process so smooth and stress-free. The team is professional, transparent, and genuinely cares about solving customer issues. Highly recommended!"
                   </p>
                   <div>
-                    <h5 className="font-bold text-gray-950 text-sm">Vinod Marskole</h5>
+                    <p className="font-bold text-gray-950 text-sm">Vinod Marskole</p>
                     <div className="text-amber-500 text-xs font-semibold">★★★★★ Rating</div>
                   </div>
                 </div>
@@ -410,23 +410,23 @@ export default function RBIRecoveryAgents2026Guide() {
               <h2 className="text-3xl font-bold text-[#30261C] mb-6">Frequently Asked Questions</h2>
               <div className="space-y-8">
                 <div>
-                  <h4 className="font-bold text-xl mb-2 text-[#D29E0D]">What are the official calling hours for recovery agents in India?</h4>
+                  <h3 className="font-bold text-xl mb-2 text-[#D29E0D]">What are the official calling hours for recovery agents in India?</h3>
                   <p>Under RBI guidelines, recovery agents are strictly permitted to contact debtors (via calls, messages, or physical visits) only between 8:00 AM and 7:00 PM. Contact outside these hours is a regulatory violation.</p>
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-2 text-[#D29E0D]">Can recovery agents call my family members, friends, or colleagues?</h4>
+                  <h3 className="font-bold text-xl mb-2 text-[#D29E0D]">Can recovery agents call my family members, friends, or colleagues?</h3>
                   <p>No. Recovery agents are prohibited from contacting your family, friends, or colleagues to discuss your debt or demand payment. They may contact third parties only to locate you if you have become unreachable.</p>
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-2 text-[#D29E0D]">What should I do if a recovery agent threatens me or uses abusive language?</h4>
+                  <h3 className="font-bold text-xl mb-2 text-[#D29E0D]">What should I do if a recovery agent threatens me or uses abusive language?</h3>
                   <p>Document the exchange by recording the call or saving screenshots of the messages. Submit a formal complaint to the bank's Principal Nodal Officer, and escalate the matter to the RBI Ombudsman if it remains unresolved after 30 days. For threats to your physical safety, file a complaint with the local police.</p>
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-2 text-[#D29E0D]">Are banks legally responsible for the actions of their recovery agents?</h4>
+                  <h3 className="font-bold text-xl mb-2 text-[#D29E0D]">Are banks legally responsible for the actions of their recovery agents?</h3>
                   <p>Yes. Under the principle of vicarious liability, banks and NBFCs are responsible for the conduct of their outsourced recovery agents. Lenders are liable for regulatory penalties if their agents violate the RBI's Fair Practices Code.</p>
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-2 text-[#D29E0D]">How can I file a complaint with the RBI against recovery harassment?</h4>
+                  <h3 className="font-bold text-xl mb-2 text-[#D29E0D]">How can I file a complaint with the RBI against recovery harassment?</h3>
                   <p>If a lender does not resolve your complaint within 30 days, you can file a complaint with the RBI Ombudsman through the online Complaint Management System (CMS) at cms.rbi.org.in.</p>
                 </div>
               </div>
@@ -467,7 +467,7 @@ export default function RBIRecoveryAgents2026Guide() {
         <aside className="lg:w-[25%]">
           <div className="sticky top-32 space-y-8">
             <div className="bg-[#30261C] text-[#EBE9E4] p-8 rounded-2xl shadow-xl">
-              <h4 className="text-xl font-bold mb-4 text-[#D29E0D]" style={{ fontFamily: "var(--font-polysans)" }}>Defend Against Harassment</h4>
+              <p className="text-xl font-bold mb-4 text-[#D29E0D]" style={{ fontFamily: "var(--font-polysans)" }}>Defend Against Harassment</p>
               <p className="text-sm opacity-80 mb-6">
                 Our legal team specializes in assisting debtors facing recovery agent harassment. We help draft notices and represent you before regulatory bodies.
               </p>
@@ -493,7 +493,7 @@ export default function RBIRecoveryAgents2026Guide() {
             </div>
 
             <div className="bg-white border border-gray-100 p-8 rounded-2xl shadow-sm">
-              <h4 className="text-xl font-bold mb-6 text-[#30261C]" style={{ fontFamily: "var(--font-polysans)" }}>Related Resources</h4>
+              <p className="text-xl font-bold mb-6 text-[#30261C]" style={{ fontFamily: "var(--font-polysans)" }}>Related Resources</p>
               <div className="space-y-4">
                 {relatedPages.map((page, index) => (
                   <Link key={index} href={page.href} className="block group">

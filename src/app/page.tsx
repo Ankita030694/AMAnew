@@ -18,7 +18,7 @@ const CTA = dynamic(() => import("@/newcomp/CTA"));
 
 export const metadata = {
   title: 'AMA Legal Solutions | Top Full-Service Law Firm in India',
-  description: 'AMA Legal Solutions is a premier law firm in India, providing expert legal consultation, dispute resolution, and advisory services for individuals and corporations.',
+  description: 'AMA Legal Solutions is a premier law firm in India, offering expert legal consultation, dispute resolution, and advisory for individuals and corporations.',
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/',
   },
