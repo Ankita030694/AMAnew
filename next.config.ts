@@ -378,8 +378,9 @@ const nextConfig = {
       { source: '/services/loan-settlement/Noida', destination: '/services/loan-settlement/noida', permanent: true },
       { source: '/services/loan-settlement/personal-loan', destination: '/personal-loan-settlement', permanent: true },
       { source: '/services/success-stories', destination: '/success-stories', permanent: true },
-      { source: '/shop-and-establishment', destination: '/employer-not-paying-salary-after-resignation', permanent: true },
-      ...JSON.parse(fs.readFileSync(path.join(process.cwd(), 'redirects.json'), 'utf8'))
+      ...(fs.existsSync(path.join(process.cwd(), 'redirects.json'))
+        ? JSON.parse(fs.readFileSync(path.join(process.cwd(), 'redirects.json'), 'utf8'))
+        : [])
     ];
   },
 
