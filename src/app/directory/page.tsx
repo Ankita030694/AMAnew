@@ -9,6 +9,13 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'Will Drafting Services in Uttar Pradesh: Top Estate Planning & Succession Lawyers', href: '/will-drafting-services-in-uttar-pradesh' },
+  { name: 'Will Drafting Services in Rajasthan: Top Estate Planning & Succession Lawyers', href: '/will-drafting-services-in-rajasthan' },
+  { name: 'Will Drafting Services in Punjab: Top Estate Planning & Succession Lawyers', href: '/will-drafting-services-in-punjab' },
+  { name: 'Will Drafting Services in Haryana: Top Estate Planning & Succession Lawyers', href: '/will-drafting-services-in-haryana' },
+  { name: 'Will Drafting Services in Delhi: Expert Estate Planning & Succession Lawyers', href: '/will-drafting-services-in-delhi' },
+  { name: 'Will Drafting Services in Gurugram: Expert Estate Planning & Will Lawyers', href: '/will-drafting-services-in-gurugram' },
+  { name: 'Will Drafting Cheap: Affordable & Legally Valid Services in India', href: '/will-drafting-services-cheap' },
   { name: 'How to Settle Loans After a Failed Debt Consolidation Plan', href: '/how-to-settle-loans-after-a-failed-debt-consolidation-plan' },
   { name: 'Settle Loans When Your Monthly Debt Payments Cross Your Repayment Capacity', href: '/settle-loans-when-your-monthly-debt-payments-cross-your-repayment-capacity' },
   { name: 'How to Remove a Written-Off Status from a Credit Report', href: '/how-to-remove-a-written-off-status-from-a-credit-report' },
