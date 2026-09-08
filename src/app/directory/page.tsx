@@ -9,6 +9,9 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'Will Drafting Services in Mumbai: Top Estate Planning & Succession Lawyers', href: '/will-drafting-services-in-mumbai' },
+  { name: 'Will Drafting Services in Noida: Top Estate Planning & Succession Lawyers', href: '/will-drafting-services-in-noida' },
+  { name: 'Will Drafting Services in Bihar: Top Estate Planning & Succession Lawyers', href: '/will-drafting-services-in-bihar' },
   { name: 'Will Drafting Services in Uttar Pradesh: Top Estate Planning & Succession Lawyers', href: '/will-drafting-services-in-uttar-pradesh' },
   { name: 'Will Drafting Services in Rajasthan: Top Estate Planning & Succession Lawyers', href: '/will-drafting-services-in-rajasthan' },
   { name: 'Will Drafting Services in Punjab: Top Estate Planning & Succession Lawyers', href: '/will-drafting-services-in-punjab' },
