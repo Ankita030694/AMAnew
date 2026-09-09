@@ -227,16 +227,6 @@ const jsonLdGraph = {
 /* ──────────────────────── MAIN COMPONENT ───────────────────────── */
 export default function WillDraftingRajasthanClient() {
   const [expandedFaqs, setExpandedFaqs] = useState<string[]>([]);
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    city: "Jaipur / Jodhpur / Udaipur / Rajasthan",
-    assetType: "JDA / UIT Residential & Commercial Property",
-    message: "",
-  });
 
   const toggleFaq = (id: string) => {
     setExpandedFaqs((prev) =>
@@ -244,17 +234,6 @@ export default function WillDraftingRajasthanClient() {
     );
   };
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-  };
 
   const handleShare = (platform: string) => {
     const url = PAGE_URL;
@@ -1018,12 +997,11 @@ export default function WillDraftingRajasthanClient() {
                 >
                   Call +91-8700343611
                 </a>
-                <button
-                  onClick={() => setIsModalOpen(true)}
+                <Link href="/contact"
                   className="block w-full border border-white text-white text-center py-3 rounded-lg font-semibold hover:bg-white hover:text-[#5A4C33] transition-colors cursor-pointer"
                 >
                   Request Callback
-                </button>
+                </Link>
               </div>
 
               {/* Client Reviews */}
@@ -1091,167 +1069,6 @@ export default function WillDraftingRajasthanClient() {
 
           </div>
         </div>
-
-        {/* ══ INTERACTIVE INTAKE MODAL ══ */}
-        {isModalOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 overflow-y-auto">
-            <div className="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full p-6 sm:p-8 border border-gray-100 my-8">
-              {/* Close Button */}
-              <button
-                onClick={() => {
-                  setIsModalOpen(false);
-                  setFormSubmitted(false);
-                }}
-                className="absolute top-5 right-5 text-gray-400 hover:text-gray-700 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-lg transition-colors cursor-pointer"
-                aria-label="Close Modal"
-              >
-                ✕
-              </button>
-
-              {!formSubmitted ? (
-                <div>
-                  <div className="text-center mb-6">
-                    <div className="inline-block p-2.5 rounded-full bg-amber-50 text-[#D2A02A] text-2xl mb-2">
-                      📜
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
-                      Will Drafting Legal Consultation
-                    </h3>
-                    <p className="text-xs sm:text-sm text-gray-500 mt-1">
-                      Speak directly with a senior advocate to draft your custom, court-admissible Will in Rajasthan under the Indian Succession Act.
-                    </p>
-                  </div>
-
-                  <form onSubmit={handleFormSubmit} className="space-y-4">
-                    <div>
-                      <label className="block text-xs font-semibold text-gray-700 mb-1">
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        required
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="e.g. Vikramaditya Singh Rathore"
-                        className="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent outline-none transition"
-                      />
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      <div>
-                        <label className="block text-xs font-semibold text-gray-700 mb-1">
-                          WhatsApp / Phone *
-                        </label>
-                        <input
-                          type="tel"
-                          name="phone"
-                          required
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                          placeholder="+91 9876543210"
-                          className="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent outline-none transition"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-semibold text-gray-700 mb-1">
-                          Email Address
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          placeholder="rathore@example.com"
-                          className="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent outline-none transition"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      <div>
-                        <label className="block text-xs font-semibold text-gray-700 mb-1">
-                          City / Location
-                        </label>
-                        <input
-                          type="text"
-                          name="city"
-                          value={formData.city}
-                          onChange={handleInputChange}
-                          placeholder="e.g. Jaipur, Jodhpur, Udaipur, Kota, Bikaner, Ajmer"
-                          className="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent outline-none transition"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-semibold text-gray-700 mb-1">
-                          Primary Asset Type
-                        </label>
-                        <select
-                          name="assetType"
-                          value={formData.assetType}
-                          onChange={handleInputChange}
-                          className="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent outline-none transition bg-white"
-                        >
-                          <option value="JDA / UIT Residential & Commercial Property">JDA / UIT Residential &amp; Commercial Property</option>
-                          <option value="Jaipur / Jodhpur Kothi, Haveli & Independent Floor">Jaipur / Jodhpur Kothi, Haveli &amp; Independent Floor</option>
-                          <option value="Agricultural Farmland & Khatedari Holdings">Agricultural Farmland &amp; Khatedari Holdings</option>
-                          <option value="NRI Ancestral Estate & Cross-Border Wealth">NRI Ancestral Estate &amp; Cross-Border Wealth</option>
-                          <option value="Commercial SCOs & Industrial RIICO Plots">Commercial SCOs &amp; Industrial RIICO Plots</option>
-                          <option value="Ancestral Coparcenary & HUF Assets">Ancestral Coparcenary &amp; HUF Assets</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-semibold text-gray-700 mb-1">
-                        Brief Details or Specific Questions
-                      </label>
-                      <textarea
-                        name="message"
-                        rows={2}
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        placeholder="Details on Rajasthan properties, number of legal heirs, executor preferences, NRI status, or E-Panjiyan registration questions..."
-                        className="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent outline-none transition"
-                      ></textarea>
-                    </div>
-
-                    <button
-                      type="submit"
-                      className="w-full bg-[#D2A02A] hover:bg-[#b08522] text-white font-bold py-3.5 rounded-xl transition-all shadow-lg text-sm sm:text-base mt-2 cursor-pointer"
-                    >
-                      Submit Confidential Request
-                    </button>
-
-                    <p className="text-[11px] text-gray-400 text-center">
-                      🔒 Guaranteed 100% Privacy. Advocate-Client confidentiality applies.
-                    </p>
-                  </form>
-                </div>
-              ) : (
-                <div className="text-center py-6 space-y-4">
-                  <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mx-auto">
-                    ✓
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Request Submitted Successfully</h3>
-                  <p className="text-gray-600 text-sm max-w-sm mx-auto">
-                    Thank you, <strong>{formData.name || "Client"}</strong>. Our testamentary legal team serving Rajasthan and High Court jurisdictions will review your details and contact you confidentially on <strong>{formData.phone}</strong>.
-                  </p>
-                  <div className="pt-3">
-                    <a
-                      href={`https://api.whatsapp.com/send?phone=918700343611&text=Hello%20AMA%20Legal%20Solutions,%20I%20am%20${encodeURIComponent(formData.name || "a client")}%20requesting%20assistance%20with%20will%20drafting%20services%20in%20Rajasthan.`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-[#25D366] text-white font-bold py-3 px-6 rounded-xl hover:bg-emerald-600 transition text-sm shadow-md"
-                    >
-                      <span>💬 Connect on WhatsApp Instantly</span>
-                    </a>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        )}
 
       </div>
     </>

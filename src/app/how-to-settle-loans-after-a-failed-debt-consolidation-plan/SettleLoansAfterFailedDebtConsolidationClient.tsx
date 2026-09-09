@@ -285,36 +285,12 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
   const [expandedFaqs, setExpandedFaqs] = useState<string[]>([]);
   const [shareMsg, setShareMsg] = useState<string | null>(null);
   const [activeSection, setActiveSection] = useState<string>("quick-answer");
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    totalDebt: "",
-    monthlyIncome: "",
-    bankName: "",
-    message: "",
-  });
 
   const toggleFaq = (id: string) =>
     setExpandedFaqs((prev) =>
       prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
     );
 
-  const handleInputChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-  };
 
   const handleShare = async (platform: string) => {
     const url = PAGE_URL;
@@ -447,15 +423,14 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
 
               {/* Action Buttons in Hero */}
               <div className="flex flex-wrap gap-4 mt-8">
-                <button
-                  onClick={() => setIsModalOpen(true)}
+                <Link href="/contact"
                   className="bg-[#D2A02A] hover:bg-[#b08522] text-white font-bold px-7 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 text-sm md:text-base flex items-center gap-2"
                 >
                   <span>Request Urgent Legal Settlement Review</span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </button>
+                </Link>
                 <a
                   href="tel:+918700343611"
                   className="bg-[#1a202c] hover:bg-black text-white font-semibold px-6 py-3.5 rounded-xl border border-gray-700 shadow transition-all text-sm md:text-base flex items-center gap-2"
@@ -1391,12 +1366,11 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
                 >
                   📞 Call +91-8700343611
                 </a>
-                <button
-                  onClick={() => setIsModalOpen(true)}
+                <Link href="/contact"
                   className="block w-full bg-white/10 hover:bg-white hover:text-[#5A4C33] border border-white/30 text-white text-center py-3 rounded-xl font-bold transition-all text-sm"
                 >
                   Request Legal Case Review
-                </button>
+                </Link>
               </div>
 
               {/* Client Reviews Block (Exact match with Product Schema) */}
@@ -1504,169 +1478,6 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
         </div>
       </div>
 
-      {/* ══ INTERACTIVE CONSULTATION INTAKE MODAL ══ */}
-      {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 md:p-8 relative border border-gray-100 max-h-[90vh] overflow-y-auto">
-            <button
-              onClick={() => {
-                setIsModalOpen(false);
-                setFormSubmitted(false);
-              }}
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors p-2"
-              aria-label="Close modal"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-
-            {formSubmitted ? (
-              <div className="text-center py-8">
-                <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
-                  ✓
-                </div>
-                <p className="text-2xl font-bold text-gray-900 mb-2">Legal Review Requested</p>
-                <p className="text-sm text-gray-600 mb-6">
-                  Advocate Anuj Anand Malik&apos;s team has received your details. A senior banking advocate will review your loan portfolio and call you within 24 hours.
-                </p>
-                <button
-                  onClick={() => {
-                    setIsModalOpen(false);
-                    setFormSubmitted(false);
-                  }}
-                  className="bg-[#D2A02A] text-white px-6 py-2.5 rounded-xl font-bold hover:bg-[#b08522] transition-colors text-sm"
-                >
-                  Close Window
-                </button>
-              </div>
-            ) : (
-              <div>
-                <div className="flex items-center gap-2.5 mb-2">
-                  <span className="text-[#D2A02A] text-xl">⚖️</span>
-                  <p className="text-xl font-extrabold text-gray-900">
-                    Failed Consolidation Legal Review
-                  </p>
-                </div>
-                <p className="text-xs text-gray-600 mb-6">
-                  Confidential evaluation by Advocate Anuj Anand Malik &bull; 100% Legal Privilege
-                </p>
-
-                <form onSubmit={handleFormSubmit} className="space-y-4">
-                  <div>
-                    <label className="block text-xs font-bold text-gray-700 mb-1">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder="e.g. Rahul Sharma"
-                      className="w-full px-3.5 py-2.5 text-xs md:text-sm border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent outline-none"
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div>
-                      <label className="block text-xs font-bold text-gray-700 mb-1">
-                        Phone Number *
-                      </label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        required
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        placeholder="+91 98765 43210"
-                        className="w-full px-3.5 py-2.5 text-xs md:text-sm border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent outline-none"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold text-gray-700 mb-1">
-                        Email Address
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="rahul@example.com"
-                        className="w-full px-3.5 py-2.5 text-xs md:text-sm border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent outline-none"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div>
-                      <label className="block text-xs font-bold text-gray-700 mb-1">
-                        Total Outstanding Debt *
-                      </label>
-                      <select
-                        name="totalDebt"
-                        required
-                        value={formData.totalDebt}
-                        onChange={handleInputChange}
-                        className="w-full px-3.5 py-2.5 text-xs md:text-sm border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent outline-none bg-white"
-                      >
-                        <option value="">Select Debt Range</option>
-                        <option value="₹2 - ₹5 Lakhs">₹2 - ₹5 Lakhs</option>
-                        <option value="₹5 - ₹10 Lakhs">₹5 - ₹10 Lakhs</option>
-                        <option value="₹10 - ₹25 Lakhs">₹10 - ₹25 Lakhs</option>
-                        <option value="₹25 - ₹50 Lakhs">₹25 - ₹50 Lakhs</option>
-                        <option value="Above ₹50 Lakhs">Above ₹50 Lakhs</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold text-gray-700 mb-1">
-                        Primary Lender(s) *
-                      </label>
-                      <input
-                        type="text"
-                        name="bankName"
-                        required
-                        value={formData.bankName}
-                        onChange={handleInputChange}
-                        placeholder="e.g. HDFC, ICICI, Bajaj Fin"
-                        className="w-full px-3.5 py-2.5 text-xs md:text-sm border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent outline-none"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold text-gray-700 mb-1">
-                      Current Legal Status / Summary of Failed Plan
-                    </label>
-                    <textarea
-                      name="message"
-                      rows={3}
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder="Briefly describe the failed consolidation loan, received legal notices, or recovery calls..."
-                      className="w-full px-3.5 py-2.5 text-xs md:text-sm border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent outline-none resize-none"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full bg-[#D2A02A] hover:bg-[#b08522] text-white font-bold py-3.5 rounded-xl transition-all shadow-md text-sm flex items-center justify-center gap-2"
-                  >
-                    <span>Submit for Advocate Review</span>
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </button>
-
-                  <p className="text-[10px] text-gray-400 text-center">
-                    🔒 Your information is confidential under the Advocates Act, 1961 and is never shared with third parties.
-                  </p>
-                </form>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
     </>
   );
 }

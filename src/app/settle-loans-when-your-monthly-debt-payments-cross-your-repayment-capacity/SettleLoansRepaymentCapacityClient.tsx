@@ -306,36 +306,12 @@ export default function SettleLoansRepaymentCapacityClient() {
   const [expandedFaqs, setExpandedFaqs] = useState<string[]>([]);
   const [shareMsg, setShareMsg] = useState<string | null>(null);
   const [activeSection, setActiveSection] = useState<string>("quick-answer");
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    totalDebt: "",
-    monthlyIncome: "",
-    bankName: "",
-    message: "",
-  });
 
   const toggleFaq = (id: string) =>
     setExpandedFaqs((prev) =>
       prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
     );
 
-  const handleInputChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-  };
 
   const handleShare = async (platform: string) => {
     const url = PAGE_URL;
@@ -1439,12 +1415,11 @@ export default function SettleLoansRepaymentCapacityClient() {
                 >
                   Call +91-8700343611
                 </a>
-                <button
-                  onClick={() => setIsModalOpen(true)}
+                <Link href="/contact"
                   className="block w-full border border-white text-white text-center py-3 rounded-lg font-semibold hover:bg-white hover:text-[#5A4C33] transition-colors cursor-pointer"
                 >
                   Request Callback
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -1452,161 +1427,6 @@ export default function SettleLoansRepaymentCapacityClient() {
         </div>
       </div>
 
-      {/* ══ INTAKE MODAL ══ */}
-      {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fade-in">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 sm:p-8 relative border border-[#D2A02A]/40 max-h-[90vh] overflow-y-auto">
-            <button
-              onClick={() => setIsModalOpen(false)}
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl font-bold leading-none"
-              aria-label="Close modal"
-            >
-              &times;
-            </button>
-
-            <div className="text-center mb-6">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#5A4C33] text-[#D2A02A] text-2xl mb-2">
-                🛡️
-              </div>
-              <p className="text-xl sm:text-2xl font-extrabold text-gray-900">
-                Request Hardship Case Evaluation
-              </p>
-              <p className="text-xs sm:text-sm text-gray-600 mt-1">
-                Confidential legal assessment by Advocate Anuj Anand Malik&apos;s senior banking defense
-                team.
-              </p>
-            </div>
-
-            {formSubmitted ? (
-              <div className="text-center py-8 space-y-4">
-                <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-3xl font-bold">
-                  ✓
-                </div>
-                <p className="text-xl font-bold text-gray-900">Case Request Received</p>
-                <p className="text-sm text-gray-600 max-w-md mx-auto leading-relaxed">
-                  Thank you. Our senior legal team has received your hardship details. An advocate
-                  specializing in RBI compromise settlements will contact you within 24 hours at{" "}
-                  <strong>{formData.phone || "your provided number"}</strong>.
-                </p>
-                <button
-                  onClick={() => {
-                    setIsModalOpen(false);
-                    setFormSubmitted(false);
-                  }}
-                  className="bg-[#D2A02A] text-white font-bold px-6 py-2.5 rounded-xl hover:bg-[#b08522] transition text-sm"
-                >
-                  Close Window
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleFormSubmit} className="space-y-4 text-left text-xs sm:text-sm">
-                <div>
-                  <label className="block text-gray-700 font-semibold mb-1">Full Legal Name *</label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    placeholder="e.g. Rajesh Kumar"
-                    className="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent outline-none"
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div>
-                    <label className="block text-gray-700 font-semibold mb-1">Phone Number *</label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      required
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="+91 98765 43210"
-                      className="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent outline-none"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-700 font-semibold mb-1">Email Address</label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="rajesh@example.com"
-                      className="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent outline-none"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div>
-                    <label className="block text-gray-700 font-semibold mb-1">Total Overdue Debt *</label>
-                    <input
-                      type="text"
-                      name="totalDebt"
-                      required
-                      value={formData.totalDebt}
-                      onChange={handleInputChange}
-                      placeholder="e.g. ₹15,00,000"
-                      className="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent outline-none"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-700 font-semibold mb-1">Monthly Take-Home *</label>
-                    <input
-                      type="text"
-                      name="monthlyIncome"
-                      required
-                      value={formData.monthlyIncome}
-                      onChange={handleInputChange}
-                      placeholder="e.g. ₹40,000"
-                      className="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent outline-none"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-gray-700 font-semibold mb-1">Primary Lending Banks *</label>
-                  <input
-                    type="text"
-                    name="bankName"
-                    required
-                    value={formData.bankName}
-                    onChange={handleInputChange}
-                    placeholder="e.g. HDFC Bank, ICICI Bank, Bajaj Finance"
-                    className="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent outline-none"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-gray-700 font-semibold mb-1">Reason for Hardship</label>
-                  <textarea
-                    name="message"
-                    rows={3}
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder="Briefly describe your financial hardship (e.g. job loss, business loss, medical emergency, recovery calls)..."
-                    className="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#D2A02A] focus:border-transparent outline-none resize-none"
-                  />
-                </div>
-
-                <div className="text-[11px] text-gray-500 leading-tight">
-                  🔒 100% confidential. Your information is protected under advocate-client privilege
-                  (Indian Evidence Act).
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-[#D2A02A] hover:bg-[#b08522] text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-md text-sm cursor-pointer"
-                >
-                  Submit for Confidential Legal Evaluation
-                </button>
-              </form>
-            )}
-          </div>
-        </div>
-      )}
     </>
   );
 }

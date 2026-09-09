@@ -9,6 +9,8 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'Credit Card Settlement in September 2026: Legal Process & RBI OTS Framework', href: '/credit-card-settlement-in-september-2026' },
+  { name: 'Personal Loan Settlement in September 2026: Legal Process & RBI OTS Framework', href: '/personal-loan-settlement-in-september-2026' },
   { name: 'Will Drafting Services in Mumbai: Top Estate Planning & Succession Lawyers', href: '/will-drafting-services-in-mumbai' },
   { name: 'Will Drafting Services in Noida: Top Estate Planning & Succession Lawyers', href: '/will-drafting-services-in-noida' },
   { name: 'Will Drafting Services in Bihar: Top Estate Planning & Succession Lawyers', href: '/will-drafting-services-in-bihar' },
