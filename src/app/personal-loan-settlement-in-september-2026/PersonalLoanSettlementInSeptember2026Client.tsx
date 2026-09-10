@@ -461,40 +461,40 @@ export default function PersonalLoanSettlementInSeptember2026Client() {
           </div>
         </div>
 
-        {/* ══ TRUST & STATUTORY ACCREDITATION BANNER ══ */}
+        {/* ══ TRUST & ACHIEVEMENTS BANNER (MATCHING /blog/[slug]) ══ */}
         <div className="bg-white border-y border-gray-200 py-6 mb-10 shadow-sm">
           <div className="container mx-auto px-4 max-w-[1600px]">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div className="flex flex-col items-center justify-center p-2">
                 <div className="text-2xl md:text-3xl font-extrabold text-[#1a202c] flex items-center gap-1.5">
-                  <span className="text-[#D2A02A]">⚖️</span> Statutory Standing
+                  <span className="text-[#D2A02A]">⭐</span> 4.7 Rating
                 </div>
                 <p className="text-xs md:text-sm text-gray-500 font-medium mt-1">
-                  Enrolled Advocates Under Advocates Act, 1961
+                  Google Verified Client Reviews
                 </p>
               </div>
               <div className="flex flex-col items-center justify-center p-2">
                 <div className="text-2xl md:text-3xl font-extrabold text-[#1a202c] flex items-center gap-1.5">
-                  <span className="text-[#D2A02A]">📜</span> Q2 OTS Leverage
+                  <span className="text-[#D2A02A]">👥</span> 10,000+
                 </div>
                 <p className="text-xs md:text-sm text-gray-500 font-medium mt-1">
-                  Quarter-End NPA Provisioning Alignment
+                  Clients Served Across India
                 </p>
               </div>
               <div className="flex flex-col items-center justify-center p-2">
                 <div className="text-2xl md:text-3xl font-extrabold text-[#1a202c] flex items-center gap-1.5">
-                  <span className="text-[#D2A02A]">⭐</span> 4.9/5 Client Rating
+                  <span className="text-[#D2A02A]">⚖️</span> 25,000+
                 </div>
                 <p className="text-xs md:text-sm text-gray-500 font-medium mt-1">
-                  Over 10,000+ Borrowers Defended Across India
+                  Cases Handled Successfully
                 </p>
               </div>
               <div className="flex flex-col items-center justify-center p-2">
                 <div className="text-2xl md:text-3xl font-extrabold text-[#1a202c] flex items-center gap-1.5">
-                  <span className="text-[#D2A02A]">🛡️</span> Complete Immunity
+                  <span className="text-[#D2A02A]">📜</span> 40+ Years
                 </div>
                 <p className="text-xs md:text-sm text-gray-500 font-medium mt-1">
-                  Section 138, Section 25 &amp; Anti-Harassment Defense
+                  Combined Legal Experience
                 </p>
               </div>
             </div>
