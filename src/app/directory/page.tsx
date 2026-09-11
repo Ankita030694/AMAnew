@@ -9,6 +9,11 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'How to File a Complaint Against a Bank or an NBFC in NCH: Legal Guide & Consumer Helpline Procedure', href: '/how-to-file-a-complaint-against-bank-nbfc-in-NCH' },
+  { name: 'How to File a Complaint Against a Bank or an NBFC in RBI: Legal Guide & CMS Procedure', href: '/how-to-file-a-complaint-against-bank-nbfc-in-rbi' },
+  { name: 'App Loan Settlement in September 2026: Legal Process & RBI Digital Lending OTS Framework', href: '/app-loan-settlement-in-september-2026' },
+  { name: 'NBFC Loan Settlement in September 2026: Legal Process & RBI OTS Framework', href: '/nbfc-loan-settlement-in-september-2026' },
+  { name: 'Trading Loan Settlement in September 2026: Legal Process & RBI OTS Framework', href: '/trading-loan-settlement-in-september-2026' },
   { name: 'Business Loan Settlement in September 2026: Legal Process & RBI OTS Framework', href: '/business-loan-settlement-in-september-2026' },
   { name: 'Credit Card Settlement in September 2026: Legal Process & RBI OTS Framework', href: '/credit-card-settlement-in-september-2026' },
   { name: 'Personal Loan Settlement in September 2026: Legal Process & RBI OTS Framework', href: '/personal-loan-settlement-in-september-2026' },
