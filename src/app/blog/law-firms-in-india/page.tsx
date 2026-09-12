@@ -12,6 +12,9 @@ export async function generateMetadata(
     ...baseMetadata,
     title: "Top Indian Law Firms 2026 | Comprehensive Guide",
     description: "Explore the top Indian law firms for corporate, civil, and criminal matters. Find the right legal representation for your needs today.",
+    alternates: {
+      canonical: "https://www.amalegalsolutions.com/blog/law-firms-in-india",
+    },
     keywords: ["indian law firms", "law firms in india", "top law firms india", "best legal firms in india", "corporate law firms"],
   };
 }

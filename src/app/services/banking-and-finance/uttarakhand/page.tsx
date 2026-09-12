@@ -2,6 +2,9 @@ import React from "react";
 import UttarakhandBankingClient from "./UttarakhandBankingClient";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/services/banking-and-finance/uttarakhand',
+  },
   title: "Banking and Finance Services in Uttarakhand | AMA Legal Solutions",
   description:
     "Expert legal consultancy for banking and finance in Uttarakhand. NBFC registration in Dehradun, tourism finance, and hydropower project lending.",

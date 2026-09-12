@@ -1,4 +1,5 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
 import Image from "next/image";
@@ -17,6 +18,20 @@ import {
   FaLandmark,
   FaLinkedin
 } from "react-icons/fa";
+
+export const metadata: Metadata = {
+  title: "Recovery Agent Harassment Defense | Legal Rights & RBI Guidelines",
+  description: "Facing recovery agent harassment? Learn your legal rights under RBI guidelines, how to file police complaints, and stop illegal collection tactics legally.",
+  alternates: {
+    canonical: "https://www.amalegalsolutions.com/recovery-agent-harassment",
+  },
+  openGraph: {
+    title: "Recovery Agent Harassment Defense | Legal Rights & RBI Guidelines",
+    description: "Facing recovery agent harassment? Learn your legal rights under RBI guidelines, how to file police complaints, and stop illegal collection tactics legally.",
+    url: "https://www.amalegalsolutions.com/recovery-agent-harassment",
+    type: "article",
+  },
+};
 
 export default function RecoveryAgentHarassmentHub() {
   

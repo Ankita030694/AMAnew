@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaHandshake, FaChartLine, FaFileSignature, FaUserTie } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/one-time-settlement-ots-legal-assistance',
+  },
   title: "One Time Settlement (OTS) Legal Assistance: 2026 Guide",
   description:
     "Facing debt? Get expert legal assistance for your one time settlement. Learn about RBI guidelines, negotiation strategies for 70-90% waivers, and legal protection.",

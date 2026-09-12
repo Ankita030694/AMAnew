@@ -8,6 +8,9 @@ import Footer from "@/newcomp/Footer";
 const FailurePage = () => {
   return (
     <div className="min-h-screen bg-[#F8F5EC] flex flex-col font-[family-name:var(--font-polysans)]">
+      <head>
+        <meta name="robots" content="noindex, nofollow" />
+      </head>
       <Navbar />
       
       <main className="flex-grow flex items-center justify-center py-[100px] md:pt-[120px] px-4">

@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaSearch, FaMobileAlt, FaLaptop, FaEnvelopeOpenText } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/how-to-check-your-loan-status-without-visiting-the-bank',
+  },
   title: "Check Loan Status Online Without Visiting Bank",
   description:
     "Learn how to check your loan status online, via mobile apps, SMS, and WhatsApp without visiting a bank branch. Comprehensive guide for Indian borrowers.",

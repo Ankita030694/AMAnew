@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaUserEdit, FaSearchPlus, FaFileAlt } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/notice-to-employee-for-misconduct',
+  },
   title: "Notice to Employee for Misconduct: Legal Procedure & Format",
   description:
     "Need to take disciplinary action? Learn the legal process for issuing a misconduct notice to an employee in India. Ensure compliance with labor laws and standing orders.",
@@ -39,7 +42,6 @@ const relatedPages = [
 
 export default function EmployeeMisconductGuide() {
   const breadcrumbItems = [
-    { label: "Employer Compliance", href: "/services/employer-compliance" },
     { label: "Employee Misconduct Notice", href: "/notice-to-employee-for-misconduct" },
   ];
 
@@ -150,8 +152,7 @@ export default function EmployeeMisconductGuide() {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.amalegalsolutions.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Employer Compliance", "item": "https://www.amalegalsolutions.com/services/employer-compliance" },
-      { "@type": "ListItem", "position": 3, "name": "Employee Misconduct Notice", "item": "https://www.amalegalsolutions.com/notice-to-employee-for-misconduct" }
+      { "@type": "ListItem", "position": 2, "name": "Employee Misconduct Notice", "item": "https://www.amalegalsolutions.com/notice-to-employee-for-misconduct" }
     ]
   };
 

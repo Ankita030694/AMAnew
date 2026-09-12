@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaHandshake, FaFileAlt, FaCalculator, FaRegClock, FaChartLine, FaQuoteLeft } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/steps-to-apply-for-a-loan-settlement-through-a-financial-service-provider',
+  },
   title: "Steps to Apply for a Loan Settlement through a Financial Service Provider",
   description:
     "Master the loan settlement process with our 2026 guide. Learn the exact steps to work with a financial service provider, negotiate waivers, and clear debt legally under RBI rules.",

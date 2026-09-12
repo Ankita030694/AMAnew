@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaGlobe, FaClipboardList, FaBullhorn, FaInfoCircle } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/data-breach-privacy-notice',
+  },
   title: "Data Breach Privacy Notice: Your Legal Guide to Data Protection",
   description:
     "Has your data been breached? Learn about the Data Breach Privacy Notice under DPDP Act 2023 and GDPR. Know your rights, notification timelines, and how to claim compensation.",

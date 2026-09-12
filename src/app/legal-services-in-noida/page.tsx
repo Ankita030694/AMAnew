@@ -733,7 +733,7 @@ export default function LegalServicesInNoidaPage() {
                 <ul className="space-y-4">
                   {[
                     { href: "/send-legal-notice-in-noida", label: "Send Legal Notice" },
-                    { href: "/services/loan-settlement/Noida", label: "Loan Settlement Noida" },
+                    { href: "/services/loan-settlement/noida", label: "Loan Settlement Noida" },
                     { href: "/services/real-estate", label: "UP RERA Noida Lawyers" },
                     { href: "/services/corporate", label: "Business Legal Support" },
                     { href: "/delhi-ncr-law-firm", label: "Best NCR Law Firm" },

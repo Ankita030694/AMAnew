@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaHome, FaFileAlt } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/notice-for-recovery-of-security-deposit',
+  },
   title: "Notice for Recovery of Security Deposit: Legal Guide & Rights",
   description:
     "Is your landlord not returning your security deposit? Learn the legal procedure to recover your deposit in India, including legal notices, Model Tenancy Act, and court options.",

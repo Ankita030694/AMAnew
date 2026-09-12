@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaSearch, FaFileAlt, FaBalanceScale, FaHistory, FaCalendarCheck, FaUserTie } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/income-tax-demand-notice',
+  },
   title: "Income Tax Demand Notice Guide: Respond to Section 156 & 143(1)",
   description:
     "Received an income tax demand notice? Learn how to respond to Section 156 and 143(1) notices. Step-by-step guide on online response, rectification, and legal appeals.",

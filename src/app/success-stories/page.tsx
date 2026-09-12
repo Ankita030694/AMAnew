@@ -7,6 +7,9 @@ import { baseTestimonials } from "@/data/testimonials";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/success-stories',
+  },
   title: "Success Stories | AMA Legal Solutions",
   description: "Read real stories of how AMA Legal Solutions helped clients become debt-free and stop harassment. Proven legal excellence in loan settlement.",
 };

@@ -4,6 +4,9 @@ import { collection, query, orderBy, limit, getDocs } from "firebase/firestore";
 import Link from "next/link";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/ask-me-anything',
+  },
   title: "Ask Me Anything (AMA) | AMA Legal Solutions",
   description: "Get expert answers to your questions about loan settlement, legal issues, and financial recovery. Join our AMA community and connect with enrolled advocates.",
 };

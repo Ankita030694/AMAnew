@@ -164,6 +164,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/mas-financial',
+  },
   title: "MAS Financial Services Loan Settlement | Expert Help by Anuj Anand Malik",
   description: "Facing MAS Financial Services debt? resolve your MSME or personal loan with India's top debt lawyer. based in sector 57, amalegalsolutions.com offers expert OTS negotiation. call 8700343611.",
   keywords: ["MAS Financial Services loan settlement", "MAS Financial debt waiver", "SME loan settlement India", "MSME loan default resolution", "Anuj Anand Malik", "AMA Legal Solutions", "Sector 57", "8700343611"],
@@ -630,10 +633,15 @@ export default function MasFinancialSettlementPage() {
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                   <h3 className="text-lg font-bold text-gray-900 mb-4 italic">Related Services</h3>
                   <ul className="space-y-3 text-sm">
-                    {["Debt Consolidation", "Banking & Finance", "Civil Litigation", "Arbitration"].map((name, i) => (
+                    {[
+                      { name: "Debt Consolidation", href: "/services/debt-consolidation" },
+                      { name: "Banking & Finance", href: "/services/banking-and-finance" },
+                      { name: "Civil Law", href: "/services/civil" },
+                      { name: "Arbitration", href: "/services/arbitration" },
+                    ].map((item, i) => (
                       <li key={i}>
-                        <Link href={`/services/${name.toLowerCase().replace(/ & /g, '-and-').replace(/ /g, '-')}`} className="text-gray-600 hover:text-[#2563eb] flex items-center">
-                          <span className="mr-2">›</span> {name}
+                        <Link href={item.href} className="text-gray-600 hover:text-[#2563eb] flex items-center">
+                          <span className="mr-2">›</span> {item.name}
                         </Link>
                       </li>
                     ))}

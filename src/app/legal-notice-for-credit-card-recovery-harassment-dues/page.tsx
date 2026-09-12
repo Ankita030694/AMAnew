@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/legal-notice-for-credit-card-recovery-harassment-dues',
+  },
   title: "Legal Notice for Credit Card Recovery Harassment Dues | Stop Abuse",
   description:
     "Facing harassment for credit card dues? Learn your legal rights under RBI guidelines and IPC. Send a legal notice for credit card recovery harassment and stop illegal calls instantly.",

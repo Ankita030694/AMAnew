@@ -7,6 +7,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 
 import { getMatchedExpertise } from '../expertiseData';
+import { getExpertiseSEO } from '@/lib/seo';
 
 export async function generateStaticParams() {
   return [];
@@ -15,12 +16,14 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const match = getMatchedExpertise(resolvedParams.slug);
-  let matchedExpertise = match?.item || 
+  const matchedExpertise = match?.item || 
     resolvedParams.slug.split('-').map((word: string) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
+  const { title, description } = getExpertiseSEO(matchedExpertise, resolvedParams.slug);
+
   return {
-    title: `Expert ${matchedExpertise} Associates | AMA Legal Solutions`,
-    description: `Discover premier legal guidance for ${matchedExpertise}. AMA Legal Solutions offers specialized advocates to secure your rights and resolve your cases efficiently.`,
+    title,
+    description,
     alternates: {
       canonical: `https://www.amalegalsolutions.com/expertise/${resolvedParams.slug}`,
     },

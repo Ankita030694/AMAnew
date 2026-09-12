@@ -330,7 +330,7 @@ const GlobalPopupForm = () => {
                           />
                           <FaWhatsapp 
                             className="absolute right-3 md:right-4 text-[#25D366] text-lg md:text-xl pointer-events-none" 
-                            title="OTP will be sent on WhatsApp"
+                            aria-label="OTP will be sent on WhatsApp"
                           />
                         </div>
                         {errors.phone && <p className="text-red-500 text-[10px] md:text-xs mt-0.5 md:mt-1">{errors.phone}</p>}

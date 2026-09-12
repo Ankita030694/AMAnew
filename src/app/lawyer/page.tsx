@@ -3,6 +3,9 @@ import React from 'react';
 import Link from 'next/link';
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/lawyer',
+  },
   title: 'Lawyer Opportunities & Legal Guides | AMA Legal Solutions',
   description: 'Explore comprehensive legal guides and opportunities curated by AMA Legal Solutions covering loan settlement, banking complaints, consumer rights, and more.',
 };

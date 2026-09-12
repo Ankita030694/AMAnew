@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaFileAlt, FaHandshake, FaUserCheck, FaClock } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/demand-notice-for-recovery-of-money',
+  },
   title: "Demand Notice for Recovery of Money: Legal Guide & Format",
   description:
     "Learn the legal process for recovery of money in India. Expert guide on sending a demand notice, legal sections involved, and procedures to recover your dues legally.",

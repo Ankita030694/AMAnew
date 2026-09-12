@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaHandshake, FaFileContract, FaCreditCard, FaBriefcase } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/is-an-email-or-whatsApp-message-considered-a-valid-legal-notice-in-indian-courts',
+  },
   title: "Is Email or WhatsApp a Valid Legal Notice in Indian Courts?",
   description:
     "Exhaustive legal analysis on the validity of WhatsApp messages & emails as legal notices in India. Learn about court precedents, IT Act, and BSA 2023.",

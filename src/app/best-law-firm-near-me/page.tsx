@@ -202,7 +202,7 @@ export default function BestLawFirmPage() {
     { title: "Best Advocate Near Me", href: "/best-advocate-near-me" },
     { title: "Trademark Registration", href: "/services/trademark-registration" },
     { title: "Legal Notice Procedure", href: "/how-can-i-send-legal-notice" },
-    { title: "GST Registration Service", href: "/services/gst-registration" },
+    { title: "GST Registration Service", href: "/services/corporate" },
   ];
 
   return (

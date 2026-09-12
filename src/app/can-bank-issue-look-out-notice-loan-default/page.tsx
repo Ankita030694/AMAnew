@@ -27,7 +27,7 @@ const reviews = [
   { "name": "Prakash Jha", "rating": "5", "body": "Prompt and effective legal representation. They challenged the bank's arbitrary action and protected my right to travel. Highly recommend for any banking related legal issues." }
 ];
 
-const banks = ["SBI", "HDFC", "ICICI", "Kotak Mahindra", "IDFC", "Yes Bank", "Bajaj Finserv", "Axis Bank", "Bank of Baroda", "Paytm", "Hero Fincorp", "Aditya Birla", "Poonawalla Fincorp", "Prefr", "Citibank", "Zype", "Infocredit", "NDX P2P", "Newtap Finance", "Tata Capital", "Federal Bank", "PayU Finance", "KrazyBee", "AU Small Finance Bank", "Northern Arc", "DMI Finance", "Piramal Finance", "DBS Bank", "South Indian Bank", "Si Creva (Kissht/Ring)", "Stashfin", "L&T Finance", "American Express", "Standard Chartered", "True Credits (TrueBalance)", "Moneyview", "Vivriti Capital", "Kisetsu Saison Finance", "IndusInd Bank", "MAS Financial", "SMFG India Credit", "Fibe (EarlySalary)"];
+const banks = ["SBI", "HDFC", "ICICI", "Kotak Mahindra", "IDFC", "Yes Bank", "Bajaj Finserv", "Axis Bank", "Bank of Baroda", "Paytm", "Hero Fincorp", "Aditya Birla", "Poonawalla Fincorp", "Prefr", "Citibank", "Zype", "Infocredit", "NDX P2P", "Tata Capital", "Federal Bank", "PayU Finance", "KrazyBee", "AU Small Finance Bank", "Northern Arc", "DMI Finance", "Piramal Finance", "DBS Bank", "South Indian Bank", "Stashfin", "American Express", "Standard Chartered", "True Credits (TrueBalance)", "Moneyview", "Vivriti Capital", "Kisetsu Saison Finance", "IndusInd Bank", "MAS Financial", "SMFG India Credit", "Fibe (EarlySalary)"];
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -280,10 +280,15 @@ export default function Page() {
               <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                 <h3 className="text-lg font-bold text-gray-900 mb-4">Related Services</h3>
                 <ul className="space-y-3 text-sm">
-                  {["Debt Consolidation", "Banking & Finance", "Civil Litigation", "Arbitration"].map((s, i) => (
+                  {[
+                    { name: "Debt Consolidation", href: "/services/debt-consolidation" },
+                    { name: "Banking & Finance", href: "/services/banking-and-finance" },
+                    { name: "Civil Law", href: "/services/civil" },
+                    { name: "Arbitration", href: "/services/arbitration" },
+                  ].map((s, i) => (
                     <li key={i}>
-                      <Link href={`/services/${s.toLowerCase().replace(/ & /g, '-and-').replace(/ /g, '-')}`} className="text-gray-600 hover:text-[#D2A02A] flex items-center group transition-colors">
-                        <span className="mr-2 group-hover:translate-x-1 transition-transform">›</span> {s}
+                      <Link href={s.href} className="text-gray-600 hover:text-[#D2A02A] flex items-center group transition-colors">
+                        <span className="mr-2 group-hover:translate-x-1 transition-transform">›</span> {s.name}
                       </Link>
                     </li>
                   ))}

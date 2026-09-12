@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserTie, FaBalanceScale, FaFileAlt, FaHandshake, FaBriefcase, FaUserShield } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/legal-notice-for-illegal-termination',
+  },
   title: "Legal Notice for Illegal Termination | Stop Wrongful Dismissal in India",
   description:
     "Facing illegal termination? Learn your legal rights under the Industrial Disputes Act and Indian Contract Act. Send a legal notice for reinstatement, back wages, and compensation.",
@@ -41,7 +44,6 @@ const relatedPages = [
 
 export default function IllegalTerminationGuide() {
   const breadcrumbItems = [
-    { label: "Employment Law", href: "/services/employment-law" },
     { label: "Illegal Termination", href: "/legal-notice-for-illegal-termination" },
   ];
 
@@ -153,8 +155,7 @@ export default function IllegalTerminationGuide() {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.amalegalsolutions.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Employment Law", "item": "https://www.amalegalsolutions.com/services/employment-law" },
-      { "@type": "ListItem", "position": 3, "name": "Illegal Termination", "item": "https://www.amalegalsolutions.com/legal-notice-for-illegal-termination" }
+      { "@type": "ListItem", "position": 2, "name": "Illegal Termination", "item": "https://www.amalegalsolutions.com/legal-notice-for-illegal-termination" }
     ]
   };
 

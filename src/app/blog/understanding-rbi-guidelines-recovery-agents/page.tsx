@@ -12,6 +12,9 @@ export async function generateMetadata(
     ...baseMetadata,
     title: "RBI Guidelines for Recovery Agents Home Visit & Loan Recovery",
     description: "Understand the strict RBI loan recovery guidelines and rules for recovery agents home visits. Protect yourself from harassment and learn how to complain legally.",
+    alternates: {
+      canonical: "https://www.amalegalsolutions.com/blog/understanding-rbi-guidelines-recovery-agents",
+    },
     keywords: ["rbi loan recovery guidelines", "rbi guidelines for recovery agents home visit", "rbi guidelines recovery agents", "stop recovery agent harassment", "legal action against recovery agents"],
   };
 }

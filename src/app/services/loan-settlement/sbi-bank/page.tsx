@@ -33,7 +33,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 4,
       "name": "SBI Loan Settlement",
-      "item": "https://www.amalegalsolutions.com/services/loan-settlement/SBI"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/sbi-bank"
     }
   ]
 };
@@ -116,7 +116,7 @@ export const metadata = {
   openGraph: {
     title: "SBI Loan Settlement Process 2025 | SBI OTS Scheme & Rinn Samadhan Details",
     description: "Expert guide on SBI loan settlement. Learn about Rinn Samadhan scheme, OTS policies for personal loans. Get legal help to negotiate, stop harassment, and save up to 50%.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/SBI",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/sbi-bank",
     type: "website",
     images: [
       {
@@ -147,7 +147,7 @@ export default function SBILoanSettlementPage() {
   const breadcrumbItems = [
     { label: "Services", href: "/services" },
     { label: "Loan Settlement", href: "/services/loan-settlement" },
-    { label: "SBI Loan Settlement", href: "/services/loan-settlement/SBI" },
+    { label: "SBI Loan Settlement", href: "/services/loan-settlement/sbi-bank" },
   ];
 
   return (

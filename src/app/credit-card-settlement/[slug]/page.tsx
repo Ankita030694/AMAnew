@@ -4,6 +4,7 @@ import Tier1Template from "./Tier1Template";
 import Tier2Template from "./Tier2Template";
 import Tier3Template from "./Tier3Template";
 import { Metadata } from "next";
+import { getBankSettlementSEO } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return creditCardBanks.map((bank) => ({
@@ -18,13 +19,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!bank) {
     return {
       title: "Credit Card Settlement | AMA Legal Solutions",
-      description: "Expert legal assistance for credit card settlement.",
+      description: "Expert legal assistance for credit card settlement in India.",
     };
   }
 
+  const { title, description } = getBankSettlementSEO(bank.name, slug);
+
   return {
-    title: `${bank.name} Credit Card Settlement: Stop Harassment Now`,
-    description: `Struggling with ${bank.name} credit card debt? Learn the exact legal process for ${bank.name} credit card settlement, stop recovery agents, and get a valid NOC.`,
+    title,
+    description,
     alternates: {
       canonical: `https://www.amalegalsolutions.com/credit-card-settlement/${bank.slug}`,
     },

@@ -690,7 +690,7 @@ export default function LegalServicesInDelhiPage() {
                   {[
                     { href: "/send-legal-notice-in-delhi", label: "Send Legal Notice" },
                     { href: "/delhi-ncr-law-firm", label: "Best NCR Law Firm" },
-                    { href: "/services/loan-settlement/Delhi", label: "Loan Settlement Delhi" },
+                    { href: "/services/loan-settlement/delhi", label: "Loan Settlement Delhi" },
                     { href: "/services/corporate", label: "Corporate Legal Advice" },
                     { href: "/best-advocate-near-me", label: "Advocates Near You" },
                     { href: "/legal-services-in-gurgaon", label: "Legal Services Gurgaon" },

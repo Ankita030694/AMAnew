@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaFileAlt, FaBalanceScaleRight, FaClinicMedical, FaStore, FaGlobe } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/consumer-complaint-notice',
+  },
   title: "Consumer Complaint Notice: Process & Format India",
   description:
     "Want to send a consumer complaint notice in India? Learn the legal procedure, format, and fees under Consumer Protection Act 2019. Get expert legal help to file your complaint.",

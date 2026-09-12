@@ -1,276 +1,175 @@
-'use client';
+import React from 'react';
+import type { Metadata } from 'next';
+import { Shield, ShieldCheck, Clock, Users, FileText, PhoneCall, AlertTriangle } from 'lucide-react';
+import SupportForm from './SupportForm';
 
-import React, { useState } from 'react';
-import { User, Mail, Phone, MessageSquare, Shield, Send, ShieldCheck, Clock, Users } from 'lucide-react';
-import Head from 'next/head';
+export const metadata: Metadata = {
+  title: "Support & Legal Escalations | AMA Legal Solutions",
+  description: "Connect directly with AMA Legal Solutions legal support desk for priority case escalations, debt recovery grievances, and urgent legal interventions.",
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/support',
+  },
+  openGraph: {
+    title: "Support & Legal Escalations | AMA Legal Solutions",
+    description: "Connect directly with AMA Legal Solutions legal support desk for priority case escalations, debt recovery grievances, and urgent legal interventions.",
+    url: 'https://www.amalegalsolutions.com/support',
+    type: 'website',
+  },
+};
 
 export default function SupportPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    concern: ''
-  });
-  const [errors, setErrors] = useState({ name: '', phone: '', email: '', concern: '' });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-
-  const validateName = (name: string) => {
-    if (!name.trim()) return "Name is required";
-    return "";
-  };
-  const validatePhone = (phone: string) => {
-    const phoneRegex = /^\d{10}$/;
-    if (!phone) return "Phone number is required";
-    if (!phoneRegex.test(phone)) return "Phone number must be exactly 10 digits";
-    return "";
-  };
-  const validateEmail = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email) return "Email is required";
-    if (!emailRegex.test(email)) return "Please enter a valid email address";
-    return "";
-  };
-  const validateConcern = (concern: string) => {
-    if (!concern.trim()) return "Concern is required";
-    return "";
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    let newValue = value;
-    if (name === 'phone') {
-      newValue = value.replace(/[^0-9]/g, '').slice(0, 10);
-    }
-    setFormData(prev => ({ ...prev, [name]: newValue }));
-    setErrors(prev => ({ ...prev, [name]: '' }));
-  };
-
-  const validateForm = () => {
-    const nameError = validateName(formData.name);
-    const emailError = validateEmail(formData.email);
-    const phoneError = validatePhone(formData.phone);
-    const concernError = validateConcern(formData.concern);
-
-    setErrors({
-      name: nameError,
-      email: emailError,
-      phone: phoneError,
-      concern: concernError,
-    });
-
-    return !(nameError || emailError || phoneError || concernError);
-  };
-
-  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    if (!validateForm()) return;
-
-    setIsSubmitting(true);
-    try {
-      const response = await fetch('https://us-central1-amacrm-76fd1.cloudfunctions.net/submitEscalation', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to submit escalation.');
-      }
-      setSubmitted(true);
-    } catch (error) {
-      console.error('Submit Error:', error);
-      alert('There was an issue submitting your request. Please try again later.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
-    <>
-      <Head>
-        <title>Support & Escalations | AMA Legal Solutions</title>
-        <meta name="description" content="Reach out to AMA Legal Solutions for support and escalations." />
-      </Head>
-      
-      <main className="min-h-screen bg-[#FCFBF8] flex flex-col font-[family-name:var(--font-polysans)]">
-        <div className="flex-grow pt-[120px] px-4 md:px-8 max-w-[1440px] mx-auto w-full mb-[80px]">
-          
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
-            {/* Left Section */}
-            <div className="flex-1 max-w-3xl pt-4">
-              <div className="inline-flex items-center gap-2 border border-[#E19100]/30 bg-[#E19100]/5 rounded-full px-4 py-1.5 mb-6 text-[#E19100] text-sm font-semibold uppercase tracking-wider">
-                <Shield className="w-4 h-4" /> ESCALATION & SUPPORT
+    <main className="min-h-screen bg-[#FCFBF8] flex flex-col font-[family-name:var(--font-polysans)]">
+      <div className="flex-grow pt-[120px] px-4 md:px-8 max-w-[1440px] mx-auto w-full mb-[80px]">
+        
+        {/* Top Header & Form Section */}
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
+          {/* Left Section */}
+          <div className="flex-1 max-w-3xl pt-4">
+            <div className="inline-flex items-center gap-2 border border-[#E19100]/30 bg-[#E19100]/5 rounded-full px-4 py-1.5 mb-6 text-[#E19100] text-sm font-semibold uppercase tracking-wider">
+              <Shield className="w-4 h-4" /> ESCALATION & CLIENT SUPPORT
+            </div>
+
+            <h1 className="text-[40px] md:text-[56px] font-bold text-[#30261C] leading-[1.1] mb-4">
+              We take your concerns <br />
+              <span className="text-[#E19100]">seriously.</span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-[#30261C] mb-8 max-w-2xl leading-relaxed">
+              Connect directly with our dedicated legal support desk to escalate urgent matters, report recovery agent violations, or receive updates on your active legal proceedings.
+            </p>
+
+            {/* Value Props */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="flex flex-col gap-3">
+                <div className="w-14 h-14 rounded-full bg-[#FDF8E7] flex items-center justify-center border border-[#E9C46A]/40">
+                  <ShieldCheck className="w-6 h-6 text-[#D2A02A]" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-[#30261C] mb-1">Confidential<br />& Secure</h3>
+                  <p className="text-sm text-[#30261C]/80">Your case records and financial information are protected by advocate-client privilege.</p>
+                </div>
               </div>
 
-              <h1 className="text-[40px] md:text-[56px] font-bold text-[#30261C] leading-[1.1] mb-4">
-                We take your concerns <br/>
-                <span className="text-[#E19100]">seriously.</span>
-              </h1>
-              
-              <p className="text-lg md:text-xl text-[#30261C] mb-12 max-w-2xl leading-relaxed">
-                Connect directly with our support team to escalate matters that require immediate attention.
-              </p>
-
-              {/* Features */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <div className="flex flex-col gap-3">
-                  <div className="w-14 h-14 rounded-full bg-[#FDF8E7] flex items-center justify-center border border-[#E9C46A]/40">
-                    <ShieldCheck className="w-6 h-6 text-[#D2A02A]" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-[#30261C] mb-1">Confidential<br/>& Secure</h3>
-                    <p className="text-sm text-[#30261C]">Your information is securely handled.</p>
-                  </div>
+              <div className="flex flex-col gap-3">
+                <div className="w-14 h-14 rounded-full bg-[#FDF8E7] flex items-center justify-center border border-[#E9C46A]/40">
+                  <Clock className="w-6 h-6 text-[#D2A02A]" />
                 </div>
-
-                <div className="flex flex-col gap-3">
-                  <div className="w-14 h-14 rounded-full bg-[#FDF8E7] flex items-center justify-center border border-[#E9C46A]/40">
-                    <Clock className="w-6 h-6 text-[#D2A02A]" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-[#30261C] mb-1">Quick<br/>Response</h3>
-                    <p className="text-sm text-[#30261C]">Fastest turnaround for escalations.</p>
-                  </div>
+                <div>
+                  <h3 className="font-bold text-[#30261C] mb-1">Fast<br />Turnaround</h3>
+                  <p className="text-sm text-[#30261C]/80">Guaranteed acknowledgment within 4 hours and prompt escalation to assigned advocates.</p>
                 </div>
+              </div>
 
-                <div className="flex flex-col gap-3">
-                  <div className="w-14 h-14 rounded-full bg-[#FDF8E7] flex items-center justify-center border border-[#E9C46A]/40">
-                    <Users className="w-6 h-6 text-[#D2A02A]" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-[#30261C] mb-1">Expert<br/>Support</h3>
-                    <p className="text-sm text-[#30261C]">Dedicated team for prompt resolution.</p>
-                  </div>
+              <div className="flex flex-col gap-3">
+                <div className="w-14 h-14 rounded-full bg-[#FDF8E7] flex items-center justify-center border border-[#E9C46A]/40">
+                  <Users className="w-6 h-6 text-[#D2A02A]" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-[#30261C] mb-1">Senior Legal<br />Oversight</h3>
+                  <p className="text-sm text-[#30261C]/80">Complex disputes and emergency court matters are directly reviewed by senior counsel.</p>
                 </div>
               </div>
             </div>
 
-            {/* Right Section - Form Card */}
-            <div className="w-full lg:w-[480px] shrink-0">
-              <div className="bg-white rounded-[24px] p-5 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-[#E9C46A]/20 relative h-fit md:p-8">
-                
-                <div className="flex items-center justify-center mb-6">
-                  <div className="relative flex items-center justify-center">
-                    <div className="absolute w-12 h-[1px] bg-[#E19100]/30 -left-16"></div>
-                    <div className="w-12 h-12 bg-[#FDF8E7] rounded-xl flex items-center justify-center text-[#E19100]">
-                      <MessageSquare className="w-5 h-5" />
-                    </div>
-                    <div className="absolute w-12 h-[1px] bg-[#E19100]/30 -right-16"></div>
-                  </div>
-                </div>
-                
-                <h2 className="text-2xl font-bold text-center text-[#30261C] mb-2">Escalate an Issue</h2>
-                <p className="text-center text-sm text-[#30261C] mb-8 max-w-[280px] mx-auto">
-                  Provide details and our team will get back to you immediately.
-                </p>
-
-                {submitted ? (
-                  <div className="flex flex-col items-center justify-center py-8 text-center space-y-4">
-                    <div className="w-16 h-16 bg-[#F0FDF4] rounded-full flex items-center justify-center mb-2">
-                      <ShieldCheck className="w-8 h-8 text-[#22C55E]" />
-                    </div>
-                    <h3 className="text-xl font-bold text-[#30261C]">Escalation Received</h3>
-                    <p className="text-[#30261C]">Thank you for reaching out. We have securely escalated your concern to our support team.</p>
-                    <button 
-                      onClick={() => { setSubmitted(false); setFormData({ name: '', phone: '', email: '', concern: '' }); }} 
-                      className="mt-4 px-6 py-2 bg-[#FDF8E7] rounded-lg text-sm font-semibold border border-[#E9C46A]/40 text-[#E19100]"
-                    >
-                      Submit Another
-                    </button>
-                  </div>
-                ) : (
-                  <form className="space-y-3 relative z-10">
-                    <div className="relative">
-                      <div className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                        <User className="w-4 h-4 text-gray-400" />
-                      </div>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        onBlur={() => setErrors({ ...errors, name: validateName(formData.name) })}
-                        className={`w-full bg-[#FCFBF8] border ${errors.name ? 'border-red-400' : 'border-gray-200'} rounded-xl py-3.5 pl-11 pr-4 text-sm text-black focus:outline-none focus:border-[#E19100] transition-colors`}
-                        placeholder="Ravi Sharma"
-                      />
-                    </div>
-
-                    <div className="relative">
-                      <div className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                        <Phone className="w-4 h-4 text-gray-400" />
-                      </div>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        onBlur={() => setErrors({ ...errors, phone: validatePhone(formData.phone) })}
-                        maxLength={10}
-                        className={`w-full bg-[#FCFBF8] border ${errors.phone ? 'border-red-400' : 'border-gray-200'} rounded-xl py-3.5 pl-11 pr-4 text-sm text-black focus:outline-none focus:border-[#E19100] transition-colors`}
-                        placeholder="9876543210"
-                      />
-                    </div>
-
-                    <div className="relative">
-                      <div className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                        <Mail className="w-4 h-4 text-gray-400" />
-                      </div>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        onBlur={() => setErrors({ ...errors, email: validateEmail(formData.email) })}
-                        className={`w-full bg-[#FCFBF8] border ${errors.email ? 'border-red-400' : 'border-gray-200'} rounded-xl py-3.5 pl-11 pr-4 text-sm text-black focus:outline-none focus:border-[#E19100] transition-colors`}
-                        placeholder="ravi@example.com"
-                      />
-                    </div>
-
-                    <div className="relative">
-                      <div className="absolute left-4 top-4 pointer-events-none">
-                        <MessageSquare className="w-4 h-4 text-gray-400" />
-                      </div>
-                      <textarea
-                        name="concern"
-                        value={formData.concern}
-                        onChange={handleChange}
-                        onBlur={() => setErrors({ ...errors, concern: validateConcern(formData.concern) })}
-                        rows={4}
-                        className={`w-full bg-[#FCFBF8] border ${errors.concern ? 'border-red-400' : 'border-gray-200'} rounded-xl py-3.5 pl-11 pr-4 text-sm text-black focus:outline-none focus:border-[#E19100] transition-colors resize-none`}
-                        placeholder="Your Concern..."
-                      />
-                    </div>
-
-                    {(errors.name || errors.email || errors.phone || errors.concern) && (
-                      <p className="text-red-500 text-xs text-center">Please fill out all fields correctly.</p>
-                    )}
-
-                    <button
-                      onClick={handleSubmit}
-                      disabled={isSubmitting}
-                      className="w-full bg-[#dda321] hover:bg-[#c9921b] text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-colors mt-4 shadow-md"
-                    >
-                      {isSubmitting ? (
-                        <span className="flex items-center gap-2">
-                          <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                          Submitting...
-                        </span>
-                      ) : (
-                        <>
-                          Submit Escalation <Send className="w-4 h-4" />
-                        </>
-                      )}
-                    </button>
-                  </form>
-                )}
+            {/* Quick Contact Bar */}
+            <div className="bg-[#FDF8E7]/60 border border-[#E9C46A]/30 rounded-2xl p-6 mb-8">
+              <h3 className="text-base font-bold text-[#30261C] mb-2 flex items-center gap-2">
+                <PhoneCall className="w-5 h-5 text-[#E19100]" /> Direct Helpline & Emergency Contacts
+              </h3>
+              <p className="text-sm text-[#30261C]/80 mb-4">
+                If you are currently facing physical intimidation from recovery agents or have received a same-day court warrant, reach us immediately:
+              </p>
+              <div className="flex flex-wrap gap-6 text-sm font-medium text-[#30261C]">
+                <div>Telephone: <a href="tel:+918700343611" className="text-[#E19100] underline font-bold">+91 8700343611</a></div>
+                <div>Official Support: <a href="mailto:notify@amalegalsolutions.com" className="text-[#E19100] underline font-bold">notify@amalegalsolutions.com</a></div>
               </div>
             </div>
           </div>
+
+          {/* Right Section - Form Card */}
+          <SupportForm />
         </div>
-      </main>
-    </>
+
+        {/* Escalation Hierarchy & SLA Section */}
+        <section className="mt-20 pt-12 border-t border-[#30261C]/10">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#30261C] mb-4">
+              Our 3-Tier Escalation Matrix & Resolution Process
+            </h2>
+            <p className="text-[#30261C]/80 text-base leading-relaxed">
+              We understand that legal matters, loan defaults, and banking harassment require structured, time-sensitive resolution. Our formalized escalation framework ensures your issues are addressed by the right legal authority without delay.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 rounded-xl bg-[#E19100]/10 text-[#E19100] flex items-center justify-center font-bold text-lg mb-6">
+                01
+              </div>
+              <h3 className="text-xl font-bold text-[#30261C] mb-2">Level 1: Case Desk & Client Care</h3>
+              <p className="text-sm text-[#E19100] font-semibold mb-4">SLA: Response within 4 Business Hours</p>
+              <p className="text-sm text-[#30261C]/80 leading-relaxed">
+                Initial grievance logging, verification of client credentials, document reconciliation, and dispatching status updates regarding ongoing settlement negotiations or drafting schedules.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 rounded-xl bg-[#E19100]/10 text-[#E19100] flex items-center justify-center font-bold text-lg mb-6">
+                02
+              </div>
+              <h3 className="text-xl font-bold text-[#30261C] mb-2">Level 2: Legal Counsel & Strategy</h3>
+              <p className="text-sm text-[#E19100] font-semibold mb-4">SLA: Resolution within 24 Business Hours</p>
+              <p className="text-sm text-[#30261C]/80 leading-relaxed">
+                Assigned advocates review complex banking communications, counter-reply to formal legal notices under Section 138 NI Act or SARFAESI, and engage directly with bank nodal officers to enforce RBI compliance.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 rounded-xl bg-[#E19100]/10 text-[#E19100] flex items-center justify-center font-bold text-lg mb-6">
+                03
+              </div>
+              <h3 className="text-xl font-bold text-[#30261C] mb-2">Level 3: Senior Partner Intervention</h3>
+              <p className="text-sm text-[#E19100] font-semibold mb-4">SLA: Immediate Priority Action</p>
+              <p className="text-sm text-[#30261C]/80 leading-relaxed">
+                Direct oversight by managing partners for emergency court appearances, urgent stay petitions before the Debt Recovery Tribunal (DRT), High Court writ petitions, and criminal complaints for severe physical harassment.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Support FAQs */}
+        <section className="mt-16 pt-12 border-t border-[#30261C]/10">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] mb-8 text-center">
+              Frequently Asked Questions About Client Support
+            </h2>
+            <div className="space-y-6">
+              <div className="bg-white p-6 rounded-xl border border-gray-200">
+                <h3 className="font-bold text-lg text-[#30261C] mb-2">How quickly does legal support intervene after I submit an escalation?</h3>
+                <p className="text-sm text-[#30261C]/80 leading-relaxed">
+                  Every submitted escalation triggers an automated case notification to our senior review team. For standard inquiries, our team responds within 4 business hours. If your escalation involves imminent agent home visits or court deadlines, our on-call advocates initiate immediate protective measures.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl border border-gray-200">
+                <h3 className="font-bold text-lg text-[#30261C] mb-2">What documents should I prepare when reporting recovery agent harassment?</h3>
+                <p className="text-sm text-[#30261C]/80 leading-relaxed">
+                  To ensure our legal team can take swift legal action against unlawful recovery practices, please have your loan account number, bank name, audio recordings, WhatsApp chat screenshots, and details of any agent visits (time, location, and behavior) ready for sharing with our advocates.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl border border-gray-200">
+                <h3 className="font-bold text-lg text-[#30261C] mb-2">Can AMA Legal Solutions represent me in DRT or Lok Adalat proceedings?</h3>
+                <p className="text-sm text-[#30261C]/80 leading-relaxed">
+                  Yes, AMA Legal Solutions is a full-service law firm with advocates empaneled across major High Courts, District Courts, Debt Recovery Tribunals (DRT), and National Lok Adalat forums across India. We provide end-to-end representation from pre-litigation notices through final settlement decrees.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
   );
 }

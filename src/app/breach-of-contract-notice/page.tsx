@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaFileContract, FaEnvelopeOpenText, FaHistory, FaBalanceScale, FaUserTie, FaRegHandshake } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/breach-of-contract-notice',
+  },
   title: "Breach of Contract Notice India: Legal Requirements & Procedure",
   description:
     "Facing a contract violation? Learn how to send a legal notice for breach of contract in India. Understand Section 73 of the Indian Contract Act and legal remedies.",

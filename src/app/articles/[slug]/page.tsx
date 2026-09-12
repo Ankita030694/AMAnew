@@ -1,5 +1,6 @@
 import { adminDb } from "../../../lib/firebase-admin";
 import type { Metadata, ResolvingMetadata } from "next";
+import { notFound } from "next/navigation";
 import ArticleDetail, { Article, FAQ, Review } from "./articledetail";
 import Script from "next/script";
 import { unstable_cache } from 'next/cache';
@@ -172,6 +173,14 @@ export async function generateMetadata(
       description = articleData.metaDescription || description;
       image = articleData.image || "";
       author = articleData.author || author;
+    } else {
+      return {
+        title: "Article Not Found | AMA Legal Solutions",
+        robots: {
+          index: false,
+          follow: false,
+        },
+      };
     }
   } catch (error) {
     console.error("Error fetching article metadata:", error);
@@ -249,14 +258,7 @@ export default async function Page({
   }
 
   if (!articleData) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900">Article Not Found</h1>
-          <p className="text-gray-600 mt-2">The article you are looking for does not exist.</p>
-        </div>
-      </div>
-    );
+    notFound();
   }
 
   return (

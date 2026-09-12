@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUniversity, FaFileInvoiceDollar, FaUserShield, FaBalanceScale, FaChartLine, FaHandsHelping } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/understanding-non-performing-assets-npa-what-happens-next-your-complete-guide',
+  },
   title: "Non-Performing Assets (NPA): What Happens Next?",
   description:
     "Classification of NPAs, RBI guidelines, and the recovery process in India. Learn what happens when a loan becomes an NPA and how to protect your assets legally.",

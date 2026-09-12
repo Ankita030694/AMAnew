@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaHandshake, FaFileContract, FaCreditCard, FaBriefcase } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/how-to-draft-a-legal-notice-for-recovery-of-money',
+  },
   title: "How to Draft a Legal Notice for Recovery of Money: Expert Guide",
   description:
     "Master the legal notice format for recovering outstanding dues. Learn crucial rules under CPC Order 37, Section 138 NI Act, and save litigation time.",

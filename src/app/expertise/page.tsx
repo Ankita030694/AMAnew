@@ -4,6 +4,9 @@ import fs from "fs";
 import path from "path";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/expertise',
+  },
   title: "All Legal Expertise Areas | AMA Legal Solutions",
   description:
     "Explore our comprehensive list of legal expertise areas, covering family law, civil property, documentation, legal notices, and more.",

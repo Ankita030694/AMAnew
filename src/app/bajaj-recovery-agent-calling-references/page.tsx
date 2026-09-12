@@ -6,6 +6,9 @@ import { FaPhone, FaWhatsapp, FaShieldAlt, FaCheckCircle, FaExclamationTriangle,
 import GlobalPopupForm from "@/newcomp/GlobalPopupForm";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/bajaj-recovery-agent-calling-references',
+  },
   title: "Bajaj Recovery Agent Calling References? Stop Harassment Now",
   description: "Are Bajaj recovery agents calling your friends and family? Learn your legal rights under RBI guidelines and stop reference calling harassment instantly with our guide.",
   keywords: "bajaj recovery agent calling references, stop recovery agent calling family, rbi guidelines for reference calling, bajaj finance harassment complaint, loan recovery legal help india",

@@ -2,14 +2,25 @@ import React from "react";
 import Link from "next/link";
 import { getExpertiseData, slugify } from "./expertiseData";
 
-export const metadata = {
-  title: "Lawyers by Expertise | AMA Legal Solutions",
-  description:
-    "Find the best advocates and lawyers for specialized legal areas. Browse our comprehensive list of legal expertise to find the right professional.",
-  alternates: {
-    canonical: 'https://www.amalegalsolutions.com/lawyer-by-expertise',
-  },
-};
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const resolved = await searchParams;
+  const pageNum = typeof resolved?.page === "string" ? parseInt(resolved.page, 10) : 1;
+  const page = isNaN(pageNum) || pageNum < 1 ? 1 : pageNum;
+  const pageStr = page > 1 ? ` - Page ${page}` : "";
+
+  return {
+    title: `Lawyers by Expertise${pageStr} | AMA Legal Solutions`,
+    description: `Find top advocates and lawyers by legal expertise${pageStr}. Browse specialized legal practice areas across India with AMA Legal Solutions.`,
+    alternates: {
+      canonical: page > 1 ? `https://www.amalegalsolutions.com/lawyer-by-expertise?page=${page}` : 'https://www.amalegalsolutions.com/lawyer-by-expertise',
+    },
+    robots: page > 1 ? { index: false, follow: true } : { index: true, follow: true },
+  };
+}
 
 const ITEMS_PER_PAGE = 60;
 
@@ -49,7 +60,7 @@ export default async function LawyerByExpertise({
             className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight mb-6 text-[#30261C]"
             style={{ fontFamily: "var(--font-polysans)" }}
           >
-            Find Lawyers by <span className="text-[#D29E0D]">Expertise</span>
+            Find Lawyers by <span className="text-[#D29E0D]">Expertise</span>{currentPage > 1 ? ` (Page ${currentPage})` : ''}
           </h1>
           <p className="text-lg md:text-xl text-[#30261C]/70 max-w-4xl mx-auto font-light leading-relaxed">
             Browse our comprehensive directory of specialized advocates for

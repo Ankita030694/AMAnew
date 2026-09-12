@@ -6,6 +6,7 @@ import { Metadata } from "next";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { locationData, getLocationBySlug } from "../locationData";
+import { getCitySEO } from "@/lib/seo";
 
 // Generate all static params at build time for SSG
 export async function generateStaticParams() {
@@ -20,9 +21,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const location = getLocationBySlug(slug);
   if (!location) return { title: "Not Found" };
 
+  const { title, description } = getCitySEO(location.name, slug, "Loan Settlement");
+
   return {
-    title: `${location.title} | AMA Legal`,
-    description: location.description,
+    title,
+    description,
     keywords: [
       `loan settlement ${location.name}`,
       `best lawyer ${location.name}`,
@@ -39,8 +42,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       canonical: `https://www.amalegalsolutions.com/lawyer-by-city/${location.slug}`,
     },
     openGraph: {
-      title: location.title,
-      description: location.description,
+      title,
+      description,
       url: `https://www.amalegalsolutions.com/lawyer-by-city/${location.slug}`,
       type: "website",
       images: [
@@ -116,7 +119,8 @@ export default async function LawyerBySlugPage({ params }: { params: Promise<{ s
   }
 
   const locationName = location.name;
-  const pageTitle = location.title;
+  const seo = getCitySEO(location.name, slug, "Loan Settlement");
+  const pageTitle = seo.h1;
 
   // Schema Markup
   const breadcrumbSchema = {
@@ -133,7 +137,7 @@ export default async function LawyerBySlugPage({ params }: { params: Promise<{ s
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": `Best Advocate & Lawyers in ${locationName} for Loan Settlement`,
-    "description": location.description,
+    "description": seo.description,
     "image": "https://www.amalegalsolutions.com/services/3.png",
     "author": {
       "@type": "Organization",

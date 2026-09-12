@@ -12,6 +12,9 @@ export async function generateMetadata(
     ...baseMetadata,
     title: "How to Handle Recovery Agents of Bank in India",
     description: "Are recovery agents of bank harassing you? Learn how to handle them legally, know your rights under RBI guidelines, and protect your peace of mind.",
+    alternates: {
+      canonical: "https://www.amalegalsolutions.com/blog/handle-loan-recovery-agents-india",
+    },
     keywords: ["recovery agents of bank", "handle loan recovery agents india", "stop recovery agent harassment", "legal action against recovery agents"],
   };
 }

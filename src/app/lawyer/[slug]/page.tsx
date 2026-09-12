@@ -3,6 +3,7 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaSearch, FaFileContract, FaBuilding, FaHandshake } from "react-icons/fa";
+import { formatMetaTitle, formatMetaDescription, truncateEntity } from "@/lib/seo";
 
 const keywordsList = [
   "section 25 payment and settlement act bailable or not",
@@ -235,9 +236,18 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const keyword = keywordsList.find(kw => slugify(kw) === slug) || slug || "Lawyer";
   const capitalizedKeyword = keyword.charAt(0).toUpperCase() + keyword.slice(1);
   
+  const cleanKeyword = truncateEntity(capitalizedKeyword, 35);
+  const title = formatMetaTitle(cleanKeyword, " | AMA Legal");
+  const description = formatMetaDescription(
+    `Expert legal advice and consultation on ${cleanKeyword} in India. Understand your rights, follow procedures, and resolve issues with AMA Legal.`
+  );
+
   return {
-    title: `${capitalizedKeyword} | Professional Legal Guidance & Solutions`,
-    description: `Expert legal advice on ${keyword}. Learn about your rights, legal procedures, and how to resolve issues related to ${keyword} in India.`,
+    title,
+    description,
+    alternates: {
+      canonical: `https://www.amalegalsolutions.com/lawyer/${slug}`,
+    },
     keywords: `${keyword}, legal advice india, lawyer guidance, debt recovery, consumer rights, ama legal solutions`,
   };
 }

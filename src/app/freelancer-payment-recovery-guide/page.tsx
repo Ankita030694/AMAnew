@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaHandshake, FaFileContract, FaCreditCard, FaBriefcase, FaListAlt } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/freelancer-payment-recovery-guide',
+  },
   title: "Freelancer Payment Recovery Guide | AMA Legal Solutions",
   description: "Struggling with unpaid freelance invoices? Follow our step-by-step recovery guide for freelancers, covering legal notices, MSME Samadhaan, and summary suits.",
   keywords: "freelancer payment recovery guide, unpaid freelance invoices, recover unpaid freelance fees india, msme samadhaan for freelancers, written freelance contract, legal notice for unpaid fees, small claims court freelancer, cheque bounce section 138 ni act, summary suit order 37 cpc, section 420 ipc cheating",

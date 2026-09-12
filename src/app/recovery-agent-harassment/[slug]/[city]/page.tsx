@@ -3,6 +3,7 @@ import { harassmentBanks } from "@/data/harassmentBanks";
 import { harassmentCities } from "@/data/harassmentCities";
 import BankCityHarassmentTemplate from "./BankCityHarassmentTemplate";
 import { Metadata } from "next";
+import { getBankCityHarassmentSEO } from "@/lib/seo";
 
 export async function generateStaticParams() {
   const params: { slug: string; city: string }[] = [];
@@ -25,13 +26,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!bank || !city) {
     return {
       title: "Recovery Agent Harassment Complaint | AMA Legal Solutions",
-      description: "Expert legal assistance for stopping recovery agent harassment.",
+      description: "Expert legal assistance for stopping recovery agent harassment in India.",
     };
   }
+
+  const { title, description } = getBankCityHarassmentSEO(bank.name, city.name, slug, citySlug);
   
   return {
-    title: `Stop ${bank.name} Recovery Agent Harassment in ${city.name} | Legal Help`,
-    description: `Facing harassment from ${bank.name} recovery agents in ${city.name}? Learn how to file a complaint at ${city.policeAuthority} and stop abusive calls legally.`,
+    title,
+    description,
     alternates: {
       canonical: `https://www.amalegalsolutions.com/recovery-agent-harassment/${bank.slug}/${city.slug}`,
     },

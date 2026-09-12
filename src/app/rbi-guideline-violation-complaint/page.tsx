@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/rbi-guideline-violation-complaint',
+  },
   title: "RBI Guideline Violation Complaint: File Online & Stop Bank Harassment",
   description:
     "Facing violations of RBI guidelines? Learn how to file a complaint through the RBI CMS portal and Banking Ombudsman. Expert legal guide on stopping harassment and illegal bank practices.",

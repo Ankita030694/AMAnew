@@ -2,6 +2,9 @@ import React from "react";
 import OdishaBankingClient from "./OdishaBankingClient";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/services/banking-and-finance/odisha',
+  },
   title: "Banking and Finance Services in Odisha | AMA Legal Solutions",
   description:
     "Expert legal consultancy for banking and finance in Odisha. NBFC registration in Bhubaneswar, mining finance, and SHG lending compliance.",

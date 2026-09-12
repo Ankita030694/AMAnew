@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUniversity, FaFileContract, FaRegHandshake, FaChartLine, FaUserShield, FaBalanceScale, FaInfoCircle } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/what-is-the-typical-process-for-settling-a-personal-loan-in-india',
+  },
   title: "What is the Typical Process for Settling a Personal Loan in India?",
   description:
     "Complete guide to the personal loan settlement process in India. Learn about NPA, OTS negotiation, CIBIL impact, and how to settle your debt legally with maximum waivers.",

@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaFileInvoice, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaSearchDollar, FaLock, FaUserShield, FaBalanceScale, FaPhone, FaWhatsapp, FaUniversity } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/gst-show-cause-notice-scn',
+  },
   title: "GST Show Cause Notice SCN: Replying & Legal Guide 2026",
   description:
     "Received a GST Show Cause Notice (SCN)? Learn why you got it, how to reply effectively, and understand the new Section 74A rules for 2026. Protect your business with our expert guide.",

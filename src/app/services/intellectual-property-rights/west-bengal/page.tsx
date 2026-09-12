@@ -8,6 +8,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/west-bengal',
+  },
   title: "IPR Services in West Bengal | IP Registration",
   description:
     "Leading IPR services in West Bengal. We assist with Trademark, Patent, Copyright, and GI registration. Protect your innovations with expert legal guidance in Kolkata and beyond.",

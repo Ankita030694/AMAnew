@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaHandsHelping, FaFileContract, FaUserCheck } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/legal-help-for-loan-defaulters',
+  },
   title: "Legal Help for Loan Defaulters: Rights & RBI Guidelines 2024",
   description:
     "Get expert legal help for loan defaulters in India. Learn your rights under RBI guidelines, stop recovery agent harassment, and negotiate settlements legally.",
@@ -37,7 +40,6 @@ const relatedPages = [
   { title: "Debt Settlement Agreement Drafting", href: "/debt-settlement-agreement-drafting" },
   { title: "Legal Notice for Credit Card Harassment", href: "/legal-notice-for-credit-card-recovery-harassment-dues" },
   { title: "RBI Guideline Violation Complaint", href: "/rbi-guideline-violation-complaint" },
-  { title: "CIBIL Correction Guide", href: "/cibil-correction-guide" },
   { title: "Stop Recovery Agent Home Visits", href: "/how-do-i-stop-recovery-agent-from-coming-home" },
 ];
 

@@ -744,9 +744,9 @@ export default function TrademarkDelhiPage() {
                   <h4 className="text-xs font-black uppercase text-gray-400 tracking-widest mb-6">Expertise in Delhi Registry</h4>
                   <ul className="space-y-4">
                     {[
-                      { title: "Trademark Hearing Presence", href: "/trademark-hearing-delhi" },
+                      { title: "Trademark Hearing Presence", href: "/services/intellectual-property-rights" },
                       { title: "Opposition Reply Services", href: "/trademark-opposition-procedure" },
-                      { title: "MSME Discount Filings", href: "/msme-trademark-registration-delhi" },
+                      { title: "MSME Discount Filings", href: "/msme-registration" },
                       { title: "International Brand Expansion", href: "/is-trademark-internationally-valid" },
                       { title: "Trademark Search Agency", href: "/trademark-registration-agency-near-me" }
                     ].map((item, idx) => (

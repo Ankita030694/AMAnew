@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaRegCheckCircle, FaRegFileAlt, FaHistory, FaBullseye } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/notice-for-cibil-correction-after-settlement',
+  },
   title: "Notice for CIBIL Correction After Settlement | Move from Settled to Closed",
   description:
     "Learn how to correct your CIBIL status from 'Settled' to 'Closed' after a loan settlement. Step-by-step legal guide on drafting a correction notice and rebuilding credit.",

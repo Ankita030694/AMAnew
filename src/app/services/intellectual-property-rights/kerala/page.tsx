@@ -9,6 +9,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/kerala',
+  },
   title: "IPR Services in Kerala | Intellectual Property Experts",
   description:
     "Leading IPR services in Kerala. We assist with Trademark, Patent, Copyright, and GI registration. Protect your innovations with expert legal guidance in God's Own Country.",

@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaHandshake, FaFileSignature, FaUserTimes } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/notice-to-employee-for-breach-of-employment-contract',
+  },
   title: "Notice to Employee for Breach of Contract: Legal Remedies & Damages",
   description:
     "Has an employee breached their contract? Learn how to issue a legal notice for notice period violations, non-compete breaches, and confidentiality leaks in India.",
@@ -39,7 +42,6 @@ const relatedPages = [
 
 export default function BreachOfContractGuide() {
   const breadcrumbItems = [
-    { label: "Employer Compliance", href: "/services/employer-compliance" },
     { label: "Breach of Employment Contract", href: "/notice-to-employee-for-breach-of-employment-contract" },
   ];
 
@@ -150,8 +152,7 @@ export default function BreachOfContractGuide() {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.amalegalsolutions.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Employer Compliance", "item": "https://www.amalegalsolutions.com/services/employer-compliance" },
-      { "@type": "ListItem", "position": 3, "name": "Breach of Employment Contract", "item": "https://www.amalegalsolutions.com/notice-to-employee-for-breach-of-employment-contract" }
+      { "@type": "ListItem", "position": 2, "name": "Breach of Employment Contract", "item": "https://www.amalegalsolutions.com/notice-to-employee-for-breach-of-employment-contract" }
     ]
   };
 

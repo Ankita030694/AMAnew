@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaBalanceScale, FaClock, FaClipboardList, FaFileInvoice, FaLandmark, FaUserCheck, FaSearchDollar } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/cheque-bounce-notice',
+  },
   title: "Cheque Bounce Notice Section 138 NI Act: Legal Process & Format",
   description:
     "Cheque bounce notice under Section 138 of the NI Act. Learn the step-by-step legal procedure, mandatory timelines, and how to recover your money legally with our expert guide.",

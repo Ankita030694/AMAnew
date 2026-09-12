@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaUserClock, FaTrashAlt, FaCalendarTimes } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/notice-to-employee-for-absenteeism-negligence',
+  },
   title: "Notice to Employee for Absenteeism & Negligence: Legal Protocol",
   description:
     "Struggling with employee absence or negligence? Learn how to issue a formal legal notice for absenteeism and negligence of duty in India. Protect your workplace productivity.",
@@ -39,7 +42,6 @@ const relatedPages = [
 
 export default function AbsenteeismNegligenceGuide() {
   const breadcrumbItems = [
-    { label: "Employer Compliance", href: "/services/employer-compliance" },
     { label: "Absenteeism & Negligence Notice", href: "/notice-to-employee-for-absenteeism-negligence" },
   ];
 
@@ -150,8 +152,7 @@ export default function AbsenteeismNegligenceGuide() {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.amalegalsolutions.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Employer Compliance", "item": "https://www.amalegalsolutions.com/services/employer-compliance" },
-      { "@type": "ListItem", "position": 3, "name": "Absenteeism & Negligence Notice", "item": "https://www.amalegalsolutions.com/notice-to-employee-for-absenteeism-negligence" }
+      { "@type": "ListItem", "position": 2, "name": "Absenteeism & Negligence Notice", "item": "https://www.amalegalsolutions.com/notice-to-employee-for-absenteeism-negligence" }
     ]
   };
 

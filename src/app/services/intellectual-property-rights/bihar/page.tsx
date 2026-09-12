@@ -8,6 +8,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/bihar',
+  },
   title: "IPR Services in Bihar | Expert Intellectual Property Registration",
   description:
     "Leading IPR services in Bihar. We assist with Trademark, Patent, Copyright, and GI registration. Protect your innovations with expert legal guidance in Patna and beyond.",

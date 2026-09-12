@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaHandHoldingUsd, FaReceipt, FaExclamationCircle } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/can-loan-repayment-be-done-in-cash',
+  },
   title: "Can Loan Repayment Be Done in Cash? India Income Tax Rules 2026",
   description: "Is it legal to repay loans in cash in India? Learn about Section 269T, 269ST limits, RBI guidelines, and penalties. Complete guide on cash loan repayment rules.",
   keywords: "can loan repayment be done in cash, section 269T loan repayment, section 269ST cash limit, rbi guidelines for cash repayment, income tax rules for cash loan india, cash repayment penalty",

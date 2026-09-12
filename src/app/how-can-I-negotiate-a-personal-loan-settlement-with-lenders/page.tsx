@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaHandshake, FaFileInvoiceDollar, FaChartLine } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/how-can-I-negotiate-a-personal-loan-settlement-with-lenders',
+  },
   title: "How Can I Negotiate a Personal Loan Settlement with Lenders?",
   description:
     "Struggling with debt? Learn how to negotiate a personal loan settlement with lenders in India. Expert tips on OTS, RBI guidelines, and legal rights to settle debt.",

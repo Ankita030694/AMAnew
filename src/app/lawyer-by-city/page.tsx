@@ -3,6 +3,9 @@ import Link from "next/link";
 import { locationData } from "./locationData";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/lawyer-by-city',
+  },
   title: "Loan Settlement Lawyers by City | AMA Legal",
   description:
     "Find the best advocates and lawyers for loan settlement across various cities in India. Get expert legal assistance with AMA Legal Solutions.",

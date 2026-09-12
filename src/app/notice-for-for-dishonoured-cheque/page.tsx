@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaBalanceScale, FaClock, FaClipboardList, FaFileInvoice, FaLandmark, FaUserCheck, FaSearchDollar, FaShieldVirus, FaBalanceScaleRight, FaHandshake, FaUserShield, FaCheckDouble } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/notice-for-for-dishonoured-cheque',
+  },
   title: "Notice for for Dishonoured Cheque: Section 138 Legal Guide 2026",
   description:
     "Comprehensive legal guide on sending a notice for for dishonoured cheque under Section 138 of the NI Act. Learn the procedure, timelines, and recovery strategies.",

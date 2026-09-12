@@ -73,7 +73,7 @@ export default function Form() {
                     />
                     <FaWhatsapp 
                       className="absolute right-3 text-[#25D366] text-lg pointer-events-none" 
-                      title="OTP will be sent on WhatsApp"
+                      aria-label="OTP will be sent on WhatsApp"
                     />
                   </div>
                 </div>

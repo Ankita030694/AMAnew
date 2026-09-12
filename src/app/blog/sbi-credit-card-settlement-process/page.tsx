@@ -12,6 +12,9 @@ export async function generateMetadata(
     ...baseMetadata,
     title: "SBI Credit Card Settlement: Reduce Debt & Regain Financial Stability",
     description: "Learn about the SBI credit card settlement process to reduce debt and avoid legal issues. Take control of your finances.",
+    alternates: {
+      canonical: "https://www.amalegalsolutions.com/blog/sbi-credit-card-settlement-process",
+    },
     keywords: ["sbi credit card settlement", "sbi credit card settlement process", "credit card settlement sbi"],
   };
 }

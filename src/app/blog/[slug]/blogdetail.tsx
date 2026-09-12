@@ -68,7 +68,7 @@ const authorBios = {
 };
 
 // Helper to process content and extract TOC (only main headings)
-const processContent = (html: string) => {
+const processContent = (html: string, fallbackTitle?: string) => {
   const sections: { id: string, title: string }[] = [];
   const hasH2 = /<h2[^>]*>(.*?)<\/h2>/i.test(html || '');
   const mainHeadingTag = hasH2 ? 'h2' : 'h3';
@@ -171,6 +171,24 @@ const processContent = (html: string) => {
     }
   );
   
+  // Ensure all <img> tags have an alt attribute for accessibility and SEO
+  modifiedContent = modifiedContent.replace(
+    /<img\s([^>]*?)>/gi,
+    (match, attrs) => {
+      const altMatch = attrs.match(/alt=["']([^"']*)["']/i);
+      if (!altMatch || !altMatch[1].trim()) {
+        const cleanAlt = (fallbackTitle || 'Legal Insights - AMA Legal Solutions')
+          .replace(/"/g, '&quot;')
+          .trim();
+        if (altMatch) {
+          return `<img ${attrs.replace(/alt=["'][^"']*["']/i, `alt="${cleanAlt}"`)}>`;
+        }
+        return `<img alt="${cleanAlt}" ${attrs}>`;
+      }
+      return match;
+    }
+  );
+  
   return { content: modifiedContent, sections };
 };
 
@@ -219,10 +237,10 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
     return `${dd}-${mm}-${yyyy}`;
   };
   
-  // Process content for TOC
+  // Process content for TOC & image accessibility
   const { content: processedContent, sections: tocSections } = useMemo(() => {
-    return processContent(blog.description);
-  }, [blog.description]);
+    return processContent(blog.description, blog.title);
+  }, [blog.description, blog.title]);
 
   // Split content for middle infographic placement if infographic exists
   const { firstPart, secondPart } = useMemo(() => {

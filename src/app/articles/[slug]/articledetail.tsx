@@ -65,7 +65,7 @@ const authorBios = {
 };
 
 // Helper to process content and extract TOC
-const processContent = (html: string) => {
+const processContent = (html: string, fallbackTitle?: string) => {
   const sections: { id: string, title: string }[] = [];
   // Regex to match h2 and h3 tags
   let modifiedContent = html.replace(/<(h[23])(.*?)>(.*?)<\/\1>/g, (match, tag, attrs, title) => {
@@ -115,6 +115,24 @@ const processContent = (html: string) => {
     }
   );
   
+  // Ensure all <img> tags have an alt attribute for accessibility and SEO
+  modifiedContent = modifiedContent.replace(
+    /<img\s([^>]*?)>/gi,
+    (match, attrs) => {
+      const altMatch = attrs.match(/alt=["']([^"']*)["']/i);
+      if (!altMatch || !altMatch[1].trim()) {
+        const cleanAlt = (fallbackTitle || 'Legal Consultation - AMA Legal Solutions')
+          .replace(/"/g, '&quot;')
+          .trim();
+        if (altMatch) {
+          return `<img ${attrs.replace(/alt=["'][^"']*["']/i, `alt="${cleanAlt}"`)}>`;
+        }
+        return `<img alt="${cleanAlt}" ${attrs}>`;
+      }
+      return match;
+    }
+  );
+  
   return { content: modifiedContent, sections };
 };
 
@@ -122,10 +140,10 @@ const ArticleDetail = memo(function ArticleDetail({ article, faqs, reviews, rela
   const [currentUrl, setCurrentUrl] = useState('');
   const [expandedFaqs, setExpandedFaqs] = useState<string[]>([]);
   
-  // Process content for TOC
+  // Process content for TOC & image accessibility
   const { content: processedContent, sections: tocSections } = useMemo(() => {
-    return processContent(article.description);
-  }, [article.description]);
+    return processContent(article.description, article.title);
+  }, [article.description, article.title]);
 
   useEffect(() => {
     setCurrentUrl(window.location.href);

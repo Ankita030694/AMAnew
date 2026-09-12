@@ -2,6 +2,9 @@ import React from "react";
 import RajasthanBankingClient from "./RajasthanBankingClient";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/services/banking-and-finance/rajasthan',
+  },
   title: "Banking and Finance Services in Rajasthan | AMA Legal Solutions",
   description:
     "Expert legal consultancy for banking and finance in Rajasthan. NBFC registration in Jaipur, tourism finance, and solar project lending compliance.",

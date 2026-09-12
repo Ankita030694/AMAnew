@@ -9,6 +9,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/telangana',
+  },
   title: "IPR Services in Telangana | Intellectual Property",
   description:
     "Leading IPR services in Telangana. We assist with Trademark, Patent, Copyright, and GI registration. Protect your innovations with expert legal guidance in Hyderabad and beyond.",

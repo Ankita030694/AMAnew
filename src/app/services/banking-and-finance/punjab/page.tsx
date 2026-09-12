@@ -2,6 +2,9 @@ import React from "react";
 import PunjabBankingClient from "./PunjabBankingClient";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/services/banking-and-finance/punjab',
+  },
   title: "Banking and Finance Services in Punjab | AMA Legal Solutions",
   description:
     "Expert legal consultancy for banking and finance in Punjab. NBFC registration in Ludhiana, agricultural loans, and NRI financial services.",

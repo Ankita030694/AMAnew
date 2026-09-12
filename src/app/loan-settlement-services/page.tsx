@@ -3,6 +3,9 @@ import Link from "next/link";
 import { allServices, getSlug } from "./services-data";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/loan-settlement-services',
+  },
   title: "Complete Loan Settlement Services & Legal Help | AMA Legal Solutions",
   description:
     "Explore our comprehensive range of loan settlement services including DRT lawyers, bank harassment protection, SARFAESI defense, and financial restructuring across India.",

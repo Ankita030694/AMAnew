@@ -2,6 +2,9 @@ import React from "react";
 import MadhyaPradeshBankingClient from "./MadhyaPradeshBankingClient";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/services/banking-and-finance/madhya-pradesh',
+  },
   title: "Banking & Finance Services in Madhya Pradesh | AMA",
   description:
     "Expert legal consultancy for banking and finance in Madhya Pradesh. NBFC registration in Indore, MSME finance in Pithampur, and agricultural lending compliance.",

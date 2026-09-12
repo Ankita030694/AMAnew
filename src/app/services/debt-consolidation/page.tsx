@@ -54,7 +54,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 4,
       "name": "Debt Consolidation",
-      "item": "https://www.amalegalsolutions.com/services/loan-settlement/debt-consolidation"
+      "item": "https://www.amalegalsolutions.com/services/debt-consolidation"
     }
   ]
 };
@@ -145,8 +145,7 @@ export default function DebtConsolidationPage() {
 
   const breadcrumbItems = [
     { label: "Services", href: "/services" },
-    { label: "Loan Settlement", href: "/services/loan-settlement" },
-    { label: "Debt Consolidation", href: "/services/loan-settlement/debt-consolidation" },
+    { label: "Debt Consolidation", href: "/services/debt-consolidation" },
   ];
 
   return (

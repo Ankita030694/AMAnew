@@ -18,6 +18,9 @@ import {
 } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/top-10-instant-loan-apps-revolutionizing-access-to-credit-in-india',
+  },
   title: "Top 10 Instant Loan Apps in India (2025)",
   description:
     "Discover the top 10 instant loan apps in India for 2025. Compare interest rates, features, and eligibility for apps like MoneyView, KreditBee, and Navi. Get quick credit access today.",

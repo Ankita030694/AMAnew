@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaBuilding, FaFileAlt, FaHandshake, FaBalanceScaleRight } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/notice-for-recovery-of-outstanding-business-dues',
+  },
   title: "Notice for Recovery of Outstanding Business Dues: Legal Guide",
   description:
     "Recover unpaid business dues in India with our comprehensive guide. Learn about Legal Notices, MSME Samadhaan, Order 37 CPC, and NI Act Section 138 recovery procedures.",

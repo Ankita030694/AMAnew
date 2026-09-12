@@ -33,7 +33,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 4,
       "name": "ICICI Loan Settlement",
-      "item": "https://www.amalegalsolutions.com/services/loan-settlement/ICICI"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/icici-bank"
     }
   ]
 };
@@ -116,7 +116,7 @@ export const metadata = {
   openGraph: {
     title: "ICICI Loan Settlement Process | ICICI Personal Loan Settlement Letter Format",
     description: "Expert guide on ICICI loan settlement. Learn how to settle ICICI personal loans and credit cards. Get legal help to negotiate OTS, stop harassment, and save up to 50%.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/ICICI",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/icici-bank",
     type: "website",
     images: [
       {
@@ -147,7 +147,7 @@ export default function ICICILoanSettlementPage() {
   const breadcrumbItems = [
     { label: "Services", href: "/services" },
     { label: "Loan Settlement", href: "/services/loan-settlement" },
-    { label: "ICICI Loan Settlement", href: "/services/loan-settlement/ICICI" },
+    { label: "ICICI Loan Settlement", href: "/services/loan-settlement/icici-bank" },
   ];
 
   return (

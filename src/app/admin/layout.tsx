@@ -76,6 +76,9 @@ export default function AdminLayout({
 
   return (
     <div className="min-h-screen bg-[#F8F5EC] flex flex-col lg:flex-row overflow-x-clip">
+      <head>
+        <meta name="robots" content="noindex, nofollow" />
+      </head>
       {/* Script for Cloudinary */}
       <Script
         id="cloudinary-widget-script-next"

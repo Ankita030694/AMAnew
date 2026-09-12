@@ -162,6 +162,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/loan-settlement-for-high-net-worth-individual',
+  },
   title: "HNWI Loan Settlement India | High-Value Debt Resolution",
   description: "Confidential One Time Settlement (OTS) guide for high net worth individuals in India. Settle multi-crore debts legally & protect your reputation.",
   keywords: [

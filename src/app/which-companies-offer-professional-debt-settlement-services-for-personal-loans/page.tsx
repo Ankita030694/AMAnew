@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaRegHandshake, FaChartLine, FaQuoteLeft } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/which-companies-offer-professional-debt-settlement-services-for-personal-loans',
+  },
   title: "Debt Settlement Services for Personal Loans India",
   description:
     "Looking for professional debt settlement services for personal loans in India? Explore top companies, legal protections, and how to settle your debt legally with our expert guide.",

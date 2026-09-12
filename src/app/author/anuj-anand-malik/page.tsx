@@ -1,95 +1,95 @@
-'use client'
-
-import Head from 'next/head';
-import Image from 'next/image';
-import { FaLinkedin, FaInstagram, FaPhone, FaEnvelope } from 'react-icons/fa';
+import React from 'react';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { FaLinkedin } from 'react-icons/fa';
 import AnujBhiya from '@/components/aboutcomps/AnujBhiya';
+
+export const metadata: Metadata = {
+  title: "Anuj Anand Malik | Founder & Managing Partner | AMA Legal Solutions",
+  description: "Learn more about Anuj Anand Malik, founder and managing partner at AMA Legal Solutions, leading advocate specializing in loan settlement, banking dispute resolution, and corporate law.",
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/author/anuj-anand-malik',
+  },
+  openGraph: {
+    title: "Anuj Anand Malik | Founder & Managing Partner | AMA Legal Solutions",
+    description: "Learn more about Anuj Anand Malik, founder and managing partner at AMA Legal Solutions, leading advocate specializing in loan settlement, banking dispute resolution, and corporate law.",
+    url: 'https://www.amalegalsolutions.com/author/anuj-anand-malik',
+    type: 'profile',
+  },
+};
 
 export default function AuthorPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-[#f9f5e8]">
-      <Head>
-        <title>Anuj Anand Malik | Advocate & Legal Consultant</title>
-        <meta name="description" content="Learn more about Anuj Anand Malik, founder of AMA Legal Solutions and expert in legal consultancy." />
-      </Head>
-      
-      {/* Hero Section */}
-      {/* <div className="bg-[#4a3c23] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-6">Anuj Anand Malik</h1>
-          <p className="text-xl max-w-3xl mx-auto">Advocate | Legal Consultant | Founder, AMA Legal Solutions</p>
-        </div>
-      </div> */}
-      
       {/* About Section - Using the AnujBhiya component */}
-      <section id="about" className="py-16">
+      <section id="about" className="py-16 pt-28">
         <AnujBhiya />
       </section>
       
       {/* Expertise Section */}
       <section id="expertise" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-[#4a3c23]">Areas of Expertise</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-[#4a3c23]">Areas of Legal Expertise</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "Loan Settlements",
-                description: "Expert negotiation and resolution of complex loan matters with financial institutions."
+                title: "Loan Settlement & Debt Waiver",
+                description: "Strategic negotiation with major commercial banks and NBFCs, securing massive principal waivers and legitimate No Dues Certificates."
               },
               {
-                title: "Corporate Compliance",
-                description: "Ensuring businesses meet regulatory requirements and corporate governance standards."
+                title: "Anti-Harassment Defense",
+                description: "Enforcing RBI Fair Practice Code guidelines against unlawful recovery agent intimidation, third-party harassment, and unannounced home visits."
               },
               {
-                title: "Business Contracts",
-                description: "Drafting, reviewing, and negotiating comprehensive business agreements."
+                title: "DRT & SARFAESI Defense",
+                description: "Representing borrowers and business owners before the Debt Recovery Tribunal against auction notices and possession orders."
               },
               {
-                title: "Dispute Resolution",
-                description: "Strategic approach to resolving commercial and civil disputes."
+                title: "Corporate Compliance & Governance",
+                description: "Ensuring businesses meet regulatory requirements, director compliance standards, and Companies Act statutory mandates."
               },
               {
-                title: "Financial Litigation",
-                description: "Representation in court for financial and banking disputes."
+                title: "Business Contracts & Drafting",
+                description: "Drafting, structuring, and reviewing high-stakes commercial agreements, partner equity covenants, and vendor contracts."
               },
               {
-                title: "Startup Advisory",
-                description: "Legal guidance for entrepreneurs and emerging businesses."
+                title: "Dispute Resolution & Lok Adalat",
+                description: "Pre-litigation mediation and effective representation before National Lok Adalats to secure binding settlement decrees."
               }
             ].map((item, index) => (
               <div key={index} className="bg-[#f9f5e8] p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border-l-4 border-[#D2A02A]">
                 <h3 className="text-xl font-semibold mb-3 text-[#4a3c23]">{item.title}</h3>
-                <p className="text-black">{item.description}</p>
+                <p className="text-black text-sm leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
       
-      {/* Achievements Section */}
+      {/* Experience Section */}
       <section id="achievements" className="py-16 bg-[#f9f5e8]">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-[#4a3c23]">Professional Achievements</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-[#4a3c23]">Professional Experience & Bar Affiliations</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-sm border-t-4 border-[#D2A02A]">
-              <h3 className="text-xl font-semibold mb-4 text-[#4a3c23]">Memberships</h3>
-              <ul className="space-y-2 text-black">
-                <li>Indo-American Chamber of Commerce (IACC)</li>
-                <li>Mumbai Centre for International Arbitration (MCIA)</li>
-                <li>Bar Council of Delhi</li>
-                <li>Bar Council of India</li>
+              <h3 className="text-xl font-semibold mb-4 text-[#4a3c23]">Leadership & Track Record</h3>
+              <ul className="space-y-3 text-black text-sm leading-relaxed">
+                <li>• Founder and Managing Partner at AMA Legal Solutions, leading a national team of specialized advocates.</li>
+                <li>• Successfully represented thousands of distressed borrowers across India, resolving over ₹100+ Crores in disputed debt.</li>
+                <li>• Pioneer in programmatic legal advisory and digital access to justice in India.</li>
+                <li>• Regular speaker on borrower legal protections under Indian banking statutes.</li>
               </ul>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm border-t-4 border-[#D2A02A]">
-              <h3 className="text-xl font-semibold mb-4 text-[#4a3c23]">Notable Cases</h3>
-              <ul className="space-y-2 text-black">
-                <li>Successfully negotiated multi-crore loan settlements</li>
-                <li>Represented startups in various corporate disputes</li>
-                <li>Advisory role in international business transactions</li>
-                <li>Resolution of complex corporate compliance issues</li>
+              <h3 className="text-xl font-semibold mb-4 text-[#4a3c23]">Professional Memberships</h3>
+              <ul className="space-y-3 text-black text-sm leading-relaxed">
+                <li>• Bar Council of Delhi — Enrolled Advocate</li>
+                <li>• Delhi High Court Bar Association (DHCBA)</li>
+                <li>• Member, Debt Recovery Tribunal Bar Association</li>
+                <li>• Advocate on Record, District & Sessions Courts of Delhi NCR</li>
               </ul>
             </div>
           </div>
@@ -99,31 +99,33 @@ export default function AuthorPage() {
       {/* Publications Section */}
       <section id="publications" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-[#4a3c23]">Insights & Publications</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-[#4a3c23]">Insights & Legal Thought Leadership</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 title: "Navigating Legal Challenges for Startups in India",
-                date: "June 2023",
-                summary: "A comprehensive guide for entrepreneurs on legal considerations when starting a business in India."
+                date: "Corporate Advisory",
+                summary: "A comprehensive guide for entrepreneurs on statutory considerations, founder pacts, and regulatory filings when starting up."
               },
               {
                 title: "Corporate Compliance: A Practical Approach",
-                date: "March 2023",
-                summary: "Insights into maintaining regulatory compliance while focusing on business growth."
+                date: "Regulatory Law",
+                summary: "Insights into maintaining robust regulatory compliance frameworks while sustaining rapid business expansion."
               },
               {
-                title: "Financial Restructuring in Post-Pandemic Era",
-                date: "November 2022",
-                summary: "Analysis of strategies for businesses recovering from pandemic-related financial challenges."
+                title: "Financial Restructuring in the Post-Pandemic Era",
+                date: "Banking Law",
+                summary: "Detailed analysis of One-Time Settlement mechanisms and debt restructuring avenues for stressed Indian businesses."
               }
             ].map((item, index) => (
-              <div key={index} className="bg-[#f9f5e8] p-6 rounded-lg shadow-sm">
-                <p className="text-sm text-[#4a3c23] mb-2">{item.date}</p>
-                <h3 className="text-xl font-semibold mb-3 text-[#4a3c23]">{item.title}</h3>
-                <p className="text-black mb-4">{item.summary}</p>
-                <a href="#" className="text-[#D2A02A] hover:text-[#4a3c23] font-medium">Read more →</a>
+              <div key={index} className="bg-[#f9f5e8] p-6 rounded-lg shadow-sm flex flex-col justify-between">
+                <div>
+                  <p className="text-xs uppercase tracking-wider font-semibold text-[#D2A02A] mb-2">{item.date}</p>
+                  <h3 className="text-xl font-semibold mb-3 text-[#4a3c23]">{item.title}</h3>
+                  <p className="text-black text-sm mb-4 leading-relaxed">{item.summary}</p>
+                </div>
+                <Link href="/blog" className="text-[#D2A02A] hover:text-[#4a3c23] font-medium text-sm">Read full insights →</Link>
               </div>
             ))}
           </div>
@@ -133,19 +135,25 @@ export default function AuthorPage() {
       {/* Contact Section */}
       <section id="contact" className="py-16 bg-[#4a3c23] text-white">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-8">Get in Touch</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">Connect with me for legal consultation or inquiries about AMA Legal Solutions.</p>
+          <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
+          <p className="text-lg mb-8 max-w-2xl mx-auto text-white/90">Connect directly for senior legal consultation, dispute resolution, or banking escalation advisory.</p>
           
-          <div className="flex justify-center space-x-8 mb-12">
-            <a href="https://www.linkedin.com/in/iamanujmalik/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center hover:text-[#D2A02A] transition-colors">
-              <FaLinkedin size={32} className="mb-2" />
-              <span>LinkedIn</span>
+          <div className="flex justify-center space-x-8 mb-8">
+            <a 
+              href="https://www.linkedin.com/in/iamanujmalik/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center gap-2 text-white hover:text-[#D2A02A] transition-colors"
+              aria-label="LinkedIn Profile"
+            >
+              <FaLinkedin size={24} />
+              <span>Connect on LinkedIn</span>
             </a>
           </div>
           
-          <a href="/contact" className="inline-block bg-[#D2A02A] text-black px-8 py-3 rounded-lg font-semibold hover:bg-[#c99420] transition-colors">
+          <Link href="/contact" className="inline-block bg-[#D2A02A] text-black px-8 py-3 rounded-lg font-semibold hover:bg-[#c99420] transition-colors">
             Schedule a Consultation
-          </a>
+          </Link>
         </div>
       </section>
     </div>

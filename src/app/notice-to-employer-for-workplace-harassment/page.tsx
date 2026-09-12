@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/notice-to-employer-for-workplace-harassment',
+  },
   title: "Notice to Employer for Workplace Harassment: Legal Guide & Rights",
   description:
     "Facing harassment at work? Learn how to issue a legal notice to your employer under the POSH Act and IPC. Protect your rights and stop workplace abuse today.",
@@ -39,7 +42,6 @@ const relatedPages = [
 
 export default function WorkplaceHarassmentGuide() {
   const breadcrumbItems = [
-    { label: "Employment Law", href: "/services/employment-law" },
     { label: "Workplace Harassment Notice", href: "/notice-to-employer-for-workplace-harassment" },
   ];
 
@@ -150,8 +152,7 @@ export default function WorkplaceHarassmentGuide() {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.amalegalsolutions.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Employment Law", "item": "https://www.amalegalsolutions.com/services/employment-law" },
-      { "@type": "ListItem", "position": 3, "name": "Workplace Harassment Notice", "item": "https://www.amalegalsolutions.com/notice-to-employer-for-workplace-harassment" }
+      { "@type": "ListItem", "position": 2, "name": "Workplace Harassment Notice", "item": "https://www.amalegalsolutions.com/notice-to-employer-for-workplace-harassment" }
     ]
   };
 

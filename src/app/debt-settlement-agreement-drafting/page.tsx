@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/debt-settlement-agreement-drafting',
+  },
   title: "Debt Settlement Agreement Drafting: Expert Guide & Legal Best Practices",
   description:
     "Learn how to draft a legally binding debt settlement agreement in India. Understand key clauses, stamp duty requirements, and RBI guidelines for full and final settlement.",

@@ -17,7 +17,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!story) {
     return {
-      title: "Story Not Found",
+      title: "Story Not Found | AMA Legal Solutions",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
@@ -25,6 +29,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: story.seo.title,
     description: story.seo.description,
     keywords: story.seo.keywords,
+    alternates: {
+      canonical: `https://www.amalegalsolutions.com/success-stories/${story.slug}`,
+    },
   };
 }
 

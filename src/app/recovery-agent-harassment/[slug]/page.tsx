@@ -4,6 +4,7 @@ import { harassmentCities } from "@/data/harassmentCities";
 import BankHarassmentTemplate from "./BankHarassmentTemplate";
 import CityHarassmentTemplate from "./CityHarassmentTemplate";
 import { Metadata } from "next";
+import { getHarassmentSEO } from "@/lib/seo";
 
 export async function generateStaticParams() {
   const bankSlugs = harassmentBanks.map((bank) => ({ slug: bank.slug }));
@@ -18,9 +19,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const city = harassmentCities.find((c) => c.slug === slug);
   
   if (bank) {
+    const { title, description } = getHarassmentSEO(bank.name, slug, true);
     return {
-      title: `Stop ${bank.name} Recovery Agent Harassment | File Complaint & Send Legal Notice`,
-      description: `Facing harassment from ${bank.name} recovery agents? Learn how to file a direct complaint to the Nodal Officer, stop abusive calls, and send a legal notice to ${bank.name}.`,
+      title,
+      description,
       alternates: {
         canonical: `https://www.amalegalsolutions.com/recovery-agent-harassment/${bank.slug}`,
       },
@@ -32,9 +34,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
   
   if (city) {
+    const { title, description } = getHarassmentSEO(city.name, slug, false);
     return {
-      title: `Stop Recovery Agent Harassment in ${city.name} | Local Legal Defense`,
-      description: `Comprehensive legal guide for borrowers in ${city.name} facing harassment. Learn how to leverage the ${city.highCourt} and the ${city.policeAuthority} to stop abuse permanently.`,
+      title,
+      description,
       alternates: {
         canonical: `https://www.amalegalsolutions.com/recovery-agent-harassment/${city.slug}`,
       },
@@ -46,8 +49,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return {
-    title: "Recovery Agent Harassment Complaint | AMA Legal Solutions",
-    description: "Expert legal assistance for stopping recovery agent harassment.",
+    title: "Stop Recovery Harassment | AMA Legal Solutions",
+    description: "Expert legal assistance for stopping illegal bank and recovery agent harassment in India.",
   };
 }
 

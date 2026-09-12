@@ -7,6 +7,9 @@ import { FaStar, FaQuoteLeft, FaCheckCircle, FaExclamationTriangle, FaFileAlt, F
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/trademark-registration-agency-near-me',
+  },
   title: "Trademark Registration Agency Near Me | Expert IP Services",
   description: "Looking for a trademark registration agency near me? AMA Legal Solutions provides forensic search, Madrid Protocol filings, and aggressive brand enforcement services.",
 };

@@ -7,6 +7,9 @@ import { Home, ArrowLeft, ShieldAlert, BookOpen, Briefcase, Phone, MessageSquare
 export default function NotFound() {
   return (
     <main className="min-h-screen bg-[#EBE9E4] flex items-center justify-center px-6 py-32 relative overflow-hidden">
+      <head>
+        <meta name="robots" content="noindex, nofollow" />
+      </head>
       {/* Background Texture/Pattern Overlay */}
       <div 
         className="absolute inset-0 opacity-[0.03] pointer-events-none"

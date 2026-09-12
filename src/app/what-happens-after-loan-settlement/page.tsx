@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaCheckCircle, FaExclamationTriangle, FaChartLine, FaHistory, FaFileContract, FaUserShield, FaBalanceScale, FaLock, FaUserTie } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/what-happens-after-loan-settlement',
+  },
   title: "What Happens After Loan Settlement? CIBIL Impact & Recovery Guide",
   description:
     "Wondering what happens after loan settlement in India? Learn about the 'Settled' tag on CIBIL, future loan eligibility, and how to rebuild your credit score in 2026.",

@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaBuilding, FaMapMarkerAlt, FaHandshake, FaUserTie } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/find-reputable-debt-relief-agencies-specializing-in-unsecured-loans-in-bangalore',
+  },
   title: "Debt Relief Agencies for Unsecured Loans Bangalore",
   description:
     "Struggling with debt? Find reputable debt relief agencies specializing in unsecured loans in Bangalore. Learn how to settle personal loans and credit cards legally.",

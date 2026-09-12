@@ -33,7 +33,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 4,
       "name": "IDFC Loan Settlement",
-      "item": "https://www.amalegalsolutions.com/services/loan-settlement/IDFC"
+      "item": "https://www.amalegalsolutions.com/services/loan-settlement/idfc-bank"
     }
   ]
 };
@@ -116,7 +116,7 @@ export const metadata = {
   openGraph: {
     title: "IDFC Loan Settlement Process | IDFC Credit Card Settlement Letter",
     description: "Complete guide to IDFC FIRST Bank loan settlement. Negotiate OTS, stop recovery harassment, and settle your personal loan or credit card debt legally.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/IDFC",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/idfc-bank",
     type: "website",
     images: [
       {
@@ -147,7 +147,7 @@ export default function IDFCLoanSettlementPage() {
   const breadcrumbItems = [
     { label: "Services", href: "/services" },
     { label: "Loan Settlement", href: "/services/loan-settlement" },
-    { label: "IDFC Loan Settlement", href: "/services/loan-settlement/IDFC" },
+    { label: "IDFC Loan Settlement", href: "/services/loan-settlement/idfc-bank" },
   ];
 
   return (

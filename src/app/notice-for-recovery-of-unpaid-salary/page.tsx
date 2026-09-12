@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaMoneyBillWave, FaHandshake, FaFileContract, FaUniversity } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/notice-for-recovery-of-unpaid-salary',
+  },
   title: "Notice for Recovery of Unpaid Salary: Legal Procedure & Employee Rights",
   description:
     "Employer not paying salary? Learn how to send a legal notice for recovery of unpaid salary in India. Understand your rights under Payment of Wages Act and Labour Laws.",

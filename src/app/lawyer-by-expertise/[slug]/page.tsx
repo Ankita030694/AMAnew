@@ -7,6 +7,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 
 import { getMatchedExpertise } from '../expertiseData';
+import { getExpertiseSEO } from '@/lib/seo';
 
 export const revalidate = 86400; // Cache for 24 hours since expertise pages change rarely
 
@@ -21,9 +22,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const matchedExpertise = getMatchedExpertise(resolvedParams.slug) || 
     resolvedParams.slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
+  const { title, description } = getExpertiseSEO(matchedExpertise, resolvedParams.slug);
+
   return {
-    title: `Best Lawyers for ${matchedExpertise} | AMA Legal Solutions`,
-    description: `Find top-rated lawyers for ${matchedExpertise}. Get expert legal consultation and trusted representation from AMA Legal Solutions.`,
+    title,
+    description,
     alternates: {
       canonical: `https://www.amalegalsolutions.com/lawyer-by-expertise/${resolvedParams.slug}`,
     },

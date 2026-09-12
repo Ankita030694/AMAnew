@@ -4,6 +4,7 @@ import Tier1Template from "./Tier1Template";
 import Tier2Template from "./Tier2Template";
 import Tier3Template from "./Tier3Template";
 import { Metadata } from "next";
+import { getBankSettlementSEO } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return personalLoanBanks.map((bank) => ({
@@ -18,13 +19,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!bank) {
     return {
       title: "Personal Loan Settlement | AMA Legal Solutions",
-      description: "Expert legal assistance for personal loan settlement.",
+      description: "Expert legal assistance for personal loan settlement in India.",
     };
   }
 
+  const { title, description } = getBankSettlementSEO(bank.name, slug);
+
   return {
-    title: `${bank.name} Personal Loan Settlement: Stop Harassment Now`,
-    description: `Struggling with ${bank.name} personal loan debt? Learn the exact legal process for ${bank.name} personal loan settlement, stop recovery agents, and get a valid NOC.`,
+    title,
+    description,
     alternates: {
       canonical: `https://www.amalegalsolutions.com/personal-loan-settlement/${bank.slug}`,
     },

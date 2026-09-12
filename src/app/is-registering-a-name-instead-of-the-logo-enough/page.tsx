@@ -62,12 +62,6 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Queries",
-      "item": "https://www.amalegalsolutions.com/queries"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
       "name": "Is Registering a Name Instead of the Logo Enough?",
       "item": "https://www.amalegalsolutions.com/is-registering-a-name-instead-of-the-logo-enough"
     }
@@ -188,7 +182,6 @@ export default function TrademarkNameVsLogoPage() {
   ];
 
   const breadcrumbItems = [
-    { label: "Queries", href: "/#queries" },
     { label: "Name vs Logo Trademark", href: "/is-registering-a-name-instead-of-the-logo-enough" },
   ];
 

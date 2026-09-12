@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaHandshake, FaFileContract, FaCreditCard, FaBriefcase } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/legal-notice-for-freelance-payment-recovery',
+  },
   title: "Legal Notice for Freelance Payment Recovery | Recover Unpaid Fees in India",
   description:
     "Struggling with unpaid freelance invoices? Learn how to send a legal notice for freelance payment recovery. Use MSME Samadhaan, Order 37 CPC, and NI Act to recover your fees fast.",

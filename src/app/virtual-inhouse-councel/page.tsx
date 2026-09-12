@@ -154,6 +154,9 @@ const reviewSchema = {
 };
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/virtual-inhouse-councel',
+  },
   title: "Virtual Inhouse Councel | AMA Legal Solutions",
   description: "Get comprehensive legal support with our Virtual Inhouse Councel. We offer drafting, legal notices, trademark registration, startup registration and dispute resolution.",
 };

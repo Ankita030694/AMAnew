@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/notice-for-recovery-of-professional-fees',
+  },
   title: "Legal Notice for Recovery of Professional Fees | Professional Fee Recovery Guide",
   description:
     "Non-payment of professional fees? Learn how to draft a legal notice for recovery of outstanding dues in India. Expert guide for consultants, freelancers, and businesses.",

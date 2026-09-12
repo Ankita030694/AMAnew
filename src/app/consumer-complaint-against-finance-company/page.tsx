@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/consumer-complaint-against-finance-company',
+  },
   title: "Consumer Complaint Against Finance Company: Legal Process & Rights",
   description:
     "Learn how to file a consumer complaint against a finance company in India. Expert guide on RBI Ombudsman, Consumer Court, and legal steps to resolve grievances.",
@@ -31,12 +34,10 @@ const relatedPages = [
   { title: "RBI Guideline Violation Complaint", href: "/rbi-guideline-violation-complaint" },
   { title: "One Time Settlement (OTS) Guide", href: "/one-time-settlement-ots-legal-assistance" },
   { title: "Stop Recovery Agent Harassment", href: "/how-to-stop-bajaj-recovery-agent-harassment-instantly" },
-  { title: "CIBIL Correction Guide", href: "/cibil-score-correction-services" },
 ];
 
 export default function ConsumerComplaintGuide() {
   const breadcrumbItems = [
-    { label: "Grievance Redressal", href: "/services/grievance" },
     { label: "Consumer Complaint", href: "/consumer-complaint-against-finance-company" },
   ];
 
@@ -147,8 +148,7 @@ export default function ConsumerComplaintGuide() {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.amalegalsolutions.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Grievance Redressal", "item": "https://www.amalegalsolutions.com/services/grievance" },
-      { "@type": "ListItem", "position": 3, "name": "Consumer Complaint", "item": "https://www.amalegalsolutions.com/consumer-complaint-against-finance-company" }
+      { "@type": "ListItem", "position": 2, "name": "Consumer Complaint", "item": "https://www.amalegalsolutions.com/consumer-complaint-against-finance-company" }
     ]
   };
 

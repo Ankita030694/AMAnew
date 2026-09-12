@@ -71,12 +71,6 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Queries",
-      "item": "https://www.amalegalsolutions.com/queries"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
       "name": "Does Foreclosure Affect CIBIL?",
       "item": "https://www.amalegalsolutions.com/does-foreclosure-of-loan-affect-cibil"
     }
@@ -254,7 +248,6 @@ export default function ForeclosureCibilPage() {
   ];
 
   const breadcrumbItems = [
-    { label: "Queries", href: "/queries" },
     { label: "Foreclosure Impact", href: "/does-foreclosure-of-loan-affect-cibil" },
   ];
 

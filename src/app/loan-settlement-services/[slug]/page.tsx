@@ -14,6 +14,7 @@ import {
   FaArrowRight
 } from "react-icons/fa";
 import { allServices, getSlug } from "../services-data";
+import { getServiceSEO } from "@/lib/seo";
 
 // Generate serviceMap dynamically from allServices
 const serviceMap: { [key: string]: string } = {};
@@ -39,9 +40,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const serviceName = serviceMap[slug];
   if (!serviceName) return {};
 
+  const { title, description } = getServiceSEO(serviceName, slug);
+
   return {
-    title: `${serviceName} | #1 Expert Legal Help in India (2026 Updated) - AMA Legal Solutions`,
-    description: `Expert and authoritative legal assistance for ${serviceName} in India. Comprehensive 3000+ word guide on ${serviceName}, covering RBI 2026 guidelines, SARFAESI defense, and debt settlement strategies. Rank #1 with AMA Legal Solutions.`,
+    title,
+    description,
     keywords: [serviceName, "loan settlement", "legal help", "debt recovery tribunal", "bank harassment lawyer", "SARFAESI defense", "RBI guidelines 2026", "loan settlement process", "how to settle loans", "bank settlement strategy", "debt resolution lawyers", "RBI circular on loan settlement", "one time settlement process", "legal way to close loan"],
     alternates: {
       canonical: `https://www.amalegalsolutions.com/loan-settlement-services/${slug}`,
@@ -56,6 +59,8 @@ export default async function DynamicServicePage({ params }: { params: Promise<{
   if (!serviceName) {
     notFound();
   }
+
+  const seo = getServiceSEO(serviceName, slug);
 
   const tocSections = [
     { id: "introduction", title: "Introduction" },
@@ -203,7 +208,7 @@ export default async function DynamicServicePage({ params }: { params: Promise<{
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-normal tracking-tight mb-6 mt-12 text-[#30261C]" style={{ fontFamily: "var(--font-polysans)" }}>
-              Expert <span className="text-[#D29E0D]">{serviceName}</span> & Legal Defense
+              {seo.h1}
             </h1>
             <p className="text-lg md:text-xl text-[#30261C]/70 max-w-4xl mx-auto font-light leading-relaxed mb-10">
               Empowering borrowers through veteran legal strategies, SARFAESI defense, and the new 2026 RBI directives. Don't just settle; resolve your financial future with dignity and legal precision.

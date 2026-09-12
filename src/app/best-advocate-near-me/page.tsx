@@ -743,11 +743,17 @@ export default function BestAdvocatePage() {
               <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
                 <h3 className="text-base font-bold text-gray-900 mb-4 border-b pb-2">Practice Areas</h3>
                 <ul className="space-y-2.5">
-                  {["Loan Settlement", "Civil Litigation", "Criminal Law", "Corporate Law", "Intellectual Property Rights"].map((item) => (
-                    <li key={item}>
-                      <Link href={`/services/${item.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`} className="group flex items-center text-gray-600 hover:text-[#D2A02A] transition-colors text-xs">
+                  {[
+                    { name: "Loan Settlement", href: "/services/loan-settlement" },
+                    { name: "Civil Law", href: "/services/civil" },
+                    { name: "Criminal Law", href: "/services/criminal-law" },
+                    { name: "Corporate Law", href: "/services/corporate" },
+                    { name: "Intellectual Property Rights", href: "/services/intellectual-property-rights" },
+                  ].map((item) => (
+                    <li key={item.name}>
+                      <Link href={item.href} className="group flex items-center text-gray-600 hover:text-[#D2A02A] transition-colors text-xs">
                         <span className="w-1 h-1 rounded-full bg-gray-300 group-hover:bg-[#D2A02A] mr-2"></span>
-                        {item}
+                        {item.name}
                       </Link>
                     </li>
                   ))}

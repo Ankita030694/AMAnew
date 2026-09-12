@@ -5,6 +5,9 @@ import { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/success-stories/ama-connect-app',
+  },
   title: "AMA Connect App Success | India's Best Legal Application",
   description: "Discover how the AMA Connect App is revolutionizing legal access in India. Learn about the 'Ask Me Anything' (AMA) section and how thousands are becoming debt-free.",
   keywords: ["best legal app India", "AMA Connect app success", "loan settlement app", "legal advice app", "AMA section legal solutions"],

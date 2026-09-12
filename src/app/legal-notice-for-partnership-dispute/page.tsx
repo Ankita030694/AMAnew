@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaHandshake, FaBuilding, FaFileContract, FaUsers, FaMoneyBillWave, FaBalanceScale, FaUserShield, FaSuitcase, FaBriefcase, FaUserTie } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/legal-notice-for-partnership-dispute',
+  },
   title: "Legal Notice for Partnership Dispute: Expert Guidance & Rights",
   description:
     "Facing a partnership dispute in India? Learn how to draft a legal notice under the Indian Partnership Act 1932. Protect your business interests, render accounts, and resolve conflicts legally with our expert guide.",

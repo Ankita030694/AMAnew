@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaChartLine, FaHandshake, FaFileInvoiceDollar, FaUserCheck } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/compare-different-debt-management-and-settlement-programs-available-to-indian-consumers',
+  },
   title: "Compare Debt Management vs. Settlement Programs in India",
   description:
     "Explore the best debt relief options for Indian consumers. Compare Debt Management Programs (DMP) and One-Time Settlement (OTS). Learn about credit scores, RBI rules, and legal rights.",

@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/settlement-thank-you',
+  },
   title: 'Thank You | AMA Legal Solutions',
   description: 'Your response has been securely recorded.',
   robots: {

@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaLaptop, FaMobileAlt, FaDatabase, FaFileSignature } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/notice-for-recovery-of-company-assets-from-employee',
+  },
   title: "Notice for Recovery of Company Assets from Employee: Legal Guide",
   description:
     "Has an employee left without returning company property? Learn the legal steps to recover laptops, phones, and data under IPC 406. Issue a formal notice today.",
@@ -84,7 +87,6 @@ const relatedPages = [
 
 export default function AssetRecoveryGuide() {
   const breadcrumbItems = [
-    { label: "Employer Compliance", href: "/services/employer-compliance" },
     { label: "Recovery of Company Assets", href: "/notice-for-recovery-of-company-assets-from-employee" },
   ];
 
@@ -195,8 +197,7 @@ export default function AssetRecoveryGuide() {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.amalegalsolutions.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Employer Compliance", "item": "https://www.amalegalsolutions.com/services/employer-compliance" },
-      { "@type": "ListItem", "position": 3, "name": "Recovery of Company Assets", "item": "https://www.amalegalsolutions.com/notice-for-recovery-of-company-assets-from-employee" }
+      { "@type": "ListItem", "position": 2, "name": "Recovery of Company Assets", "item": "https://www.amalegalsolutions.com/notice-for-recovery-of-company-assets-from-employee" }
     ]
   };
 

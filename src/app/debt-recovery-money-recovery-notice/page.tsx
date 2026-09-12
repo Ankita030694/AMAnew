@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaRegFileAlt, FaHandshake, FaChartLine } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/debt-recovery-money-recovery-notice',
+  },
   title: "Debt Recovery Notice India: Legal Step-by-Step",
   description:
     "Need to recover money? Learn the complete legal process for debt recovery in India. Draft a powerful money recovery notice, understand CPC rules, and get your dues back legally.",

@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/legal-notice-against-nbfc',
+  },
   title: "Legal Notice Against NBFC: Stop Harassment & Protect Your Rights",
   description:
     "Facing abuse from NBFC recovery agents? Learn how to send a legal notice against NBFC for harassment, illegal calls, and threats under RBI guidelines. Stop abuse today.",

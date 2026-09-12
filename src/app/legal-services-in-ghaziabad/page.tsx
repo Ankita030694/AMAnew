@@ -734,7 +734,7 @@ export default function LegalServicesInGhaziabadPage() {
                     { href: "/legal-services-in-noida", label: "Legal Services Noida" },
                     { href: "/legal-services-in-delhi", label: "Legal Services Delhi" },
                     { href: "/legal-services-in-gurgaon", label: "Legal Services Gurgaon" },
-                    { href: "/services/loan-settlement/Ghaziabad", label: "Loan Settlement Ghaziabad" },
+                    { href: "/services/loan-settlement/ghaziabad", label: "Loan Settlement Ghaziabad" },
                     { href: "/send-legal-notice-in-uttar-pradesh", label: "Legal Notice UP" },
                     { href: "/delhi-ncr-law-firm", label: "Top NCR Law Firm" },
                     { href: "/best-advocate-near-me", label: "Expert Advocates" }

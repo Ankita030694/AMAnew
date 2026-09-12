@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/ip-cease-desist-notice',
+  },
   title: "IP Cease and Desist Notice India: Stop Infringement & Legal Guide",
   description:
     "Facing IP infringement or received a cease and desist? Learn the legal requirements for Trademark, Copyright, and Patent notices in India. Stop infringement legally.",

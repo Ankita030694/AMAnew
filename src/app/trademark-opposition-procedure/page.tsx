@@ -7,6 +7,9 @@ import { FaStar, FaQuoteLeft, FaCheckCircle, FaExclamationTriangle, FaFileAlt, F
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/trademark-opposition-procedure',
+  },
   title: "Trademark Opposition Procedure in India | Section 21 Guide",
   description: "Expert guide on trademark opposition procedure in India. Learn about Section 21 filings, counter-statements, Rule 45-47 evidence, and landmark IP cases for 2026.",
 };

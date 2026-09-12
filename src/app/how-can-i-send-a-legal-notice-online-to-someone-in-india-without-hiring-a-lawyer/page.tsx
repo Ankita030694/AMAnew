@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaHandshake, FaFileContract, FaCreditCard, FaBriefcase } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/how-can-i-send-a-legal-notice-online-to-someone-in-india-without-hiring-a-lawyer',
+  },
   title: "How to Send a Legal Notice Online in India Without a Lawyer?",
   description:
     "Exhaustive legal guide on drafting and sending a legal notice yourself (DIY) online or offline in India. Learn the rules, validity, risks, and process.",

@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaFileAlt, FaHandshake } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/notice-to-employer-for-wrongful-termination',
+  },
   title: "Notice to Employer for Wrongful Termination: Legal Rights & Compensation",
   description:
     "Facing wrongful termination in India? Learn your legal rights, grounds for challenge, and how to send a legal notice to your employer. Get expert help for back wages and reinstatement.",

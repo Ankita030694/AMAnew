@@ -6,6 +6,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { personalLoanBanks, PersonalLoanBank } from "@/data/personalLoanBanks";
 import { statesData, StateData } from "@/data/statesData";
 import { notFound } from "next/navigation";
+import { getBankStateSettlementSEO } from "@/lib/seo";
 
 export async function generateStaticParams() {
   const params: { slug: string; "state-slug": string }[] = [];
@@ -24,9 +25,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   if (!bank || !state) return {};
 
+  const { title, description } = getBankStateSettlementSEO(bank.name, state.name, slug, stateSlug, false);
+
   return {
-    title: `${bank.name} Personal Loan Settlement in ${state.name} | AMA`,
-    description: `Facing legal notices from ${bank.name} in ${state.name}? Learn how to settle your unsecured debt, stop recovery agents, and utilize the ${state.highCourt} guidelines.`,
+    title,
+    description,
     robots: {
       index: true,
       follow: true,

@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaChartLine, FaEraser, FaHistory, FaBuilding } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/can-debt-settlement-be-removed-from-credit-report',
+  },
   title: "Can Debt Settlement Be Removed From Credit Report? Legal Guide",
   description:
     "Learn if debt settlement can be removed from your credit report in India. Discover the legal procedure to change 'Settled' to 'Closed' status and boost your CIBIL score.",

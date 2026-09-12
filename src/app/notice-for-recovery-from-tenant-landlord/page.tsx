@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaHome, FaHistory, FaFileInvoiceDollar, FaBuilding } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/notice-for-recovery-from-tenant-landlord',
+  },
   title: "Notice for Recovery from Tenant & Landlord: Legal Guide 2026",
   description:
     "Learn how to legally recover possession and outstanding rent from a tenant in India. Complete guide on legal notices, eviction procedures, and the Transfer of Property Act.",

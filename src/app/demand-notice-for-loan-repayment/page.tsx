@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaFileAlt, FaBalanceScale, FaUserShield, FaHandshake, FaSearch, FaHistory, FaBullhorn, FaRegClipboard } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/demand-notice-for-loan-repayment',
+  },
   title: "Demand Notice for Loan Repayment: Legal Guide & Process in India",
   description:
     "Facing a demand notice for loan repayment? Learn the legal requirements, RBI guidelines, and how to respond. A comprehensive guide for borrowers to handle bank notices and settlement.",

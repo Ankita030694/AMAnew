@@ -20,6 +20,9 @@ import {
 } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/legal-notice-for-experience-letter-and-releiving-letter',
+  },
   title: "Legal Notice for Experience Letter and Relieving Letter: Stop Withholding Now",
   description:
     "Is your former employer withholding your experience or relieving letter? Send a formal legal notice to demand your exit documents and protect your career. Expert guidance by AMA Legal Solutions.",

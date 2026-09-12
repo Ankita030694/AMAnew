@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaHome, FaFileAlt, FaBalanceScaleRight } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/property-eviction-notice',
+  },
   title: "Property Eviction Notice India: Legal Procedure",
   description:
     "Planning to evict a tenant in India? Learn the legal procedure for property eviction notice, valid grounds under Rent Control Acts, and how to reclaim possession legally.",

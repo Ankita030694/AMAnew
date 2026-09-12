@@ -163,6 +163,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/recovery-agent-sending-morphed-and-ai-generated-explicit-images-to-relatives',
+  },
   title: "Recovery Agent Sending Morphed Images? Stop It | AMA",
   description: "Recovery agents sending morphed AI explicit images to relatives? Learn your legal rights and stop illegal blackmail instantly with AMA Legal Solutions.",
   keywords: [

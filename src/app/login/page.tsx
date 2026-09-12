@@ -73,6 +73,9 @@ const LoginPage = () => {
 
   return (
     <div className="min-h-screen overflow-hidden relative">
+      <head>
+        <meta name="robots" content="noindex, nofollow" />
+      </head>
       {/* Black background that fades out */}
       <AnimatePresence>
         {animationState === 'initial' && (

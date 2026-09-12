@@ -4,9 +4,11 @@ import path from 'path';
 import Link from 'next/link'; 
 import Script from 'next/script'; 
 import Image from 'next/image'; 
+import { notFound } from 'next/navigation';
 import TableOfContents from "@/components/TableOfContents"; 
 import Breadcrumbs from "@/components/Breadcrumbs"; 
 import GenericStatesGrid from "@/components/GenericStatesGrid"; 
+import { getBankSettlementSEO } from "@/lib/seo";
 
 const slugify = (text: any) => { 
   return text 
@@ -15,23 +17,41 @@ const slugify = (text: any) => {
     .replace(/(^-|-$)+/g, ''); 
 }; 
 
+const findBankData = (banksData: any[], rawSlug: string) => {
+  const cleanSlug = (rawSlug || '').toLowerCase().trim();
+  return banksData.find((b: any) => {
+    const s = slugify(b.company);
+    return s === cleanSlug || `${s}-bank` === cleanSlug || cleanSlug.replace(/-bank$/, '') === s;
+  });
+};
+
 export async function generateMetadata({ params }: { params: any }) { 
   const resolvedParams = await params; 
   const dataPath = path.join(process.cwd(), "src/app/loan-settlement-by-bank/banks.json"); 
   const rawData = fs.readFileSync(dataPath, "utf-8"); 
   const banksData = JSON.parse(rawData); 
    
-  const bankData = banksData.find((b: any) => slugify(b.company) === resolvedParams.slug); 
+  const bankData = findBankData(banksData, resolvedParams.slug); 
 
-  const bankName = bankData ? bankData.company : 
-    resolvedParams.slug.split('-').map((word: any) => 
-    word.charAt(0).toUpperCase() + word.slice(1)).join(' '); 
+  if (!bankData) {
+    return {
+      title: "Bank Not Found | AMA Legal Solutions",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+
+  const bankName = bankData.company;
+  const canonicalSlug = slugify(bankData.company);
+  const { title, description } = getBankSettlementSEO(bankName, canonicalSlug); 
 
   return { 
-    title: `Expert Loan Settlement for ${bankName} & Anti-Harassment Solutions | AMA Legal`, 
-    description: `Need a loan settlement for ${bankName}? Get expert legal help to negotiate your debt, secure an OTS, and stop recovery agent harassment. Read our comprehensive 2026 guide.`, 
+    title, 
+    description, 
     alternates: { 
-      canonical: `https://www.amalegalsolutions.com/loan-settlement-by-bank/${resolvedParams.slug}`, 
+      canonical: `https://www.amalegalsolutions.com/loan-settlement-by-bank/${canonicalSlug}`, 
     }, 
   }; 
 } 
@@ -42,19 +62,10 @@ export default async function BankSlugPage({ params }: { params: any }) {
   const rawData = fs.readFileSync(dataPath, "utf-8"); 
   const banksData = JSON.parse(rawData); 
    
-  const bankData = banksData.find((b: any) => slugify(b.company) === resolvedParams.slug); 
+  const bankData = findBankData(banksData, resolvedParams.slug); 
 
   if (!bankData) { 
-    return ( 
-      <div className="min-h-screen flex items-center justify-center bg-[#EBE9E4] text-[#30261C]"> 
-        <div className="text-center"> 
-          <h1 className="text-3xl mb-4 font-medium">Bank Information Not Found</h1> 
-          <Link href="/loan-settlement-by-bank" className="text-[#D29E0D] hover:underline"> 
-            ← Back to Directory 
-          </Link> 
-        </div> 
-      </div> 
-    ); 
+    notFound();
   } 
 
   const bankName = bankData.company; 

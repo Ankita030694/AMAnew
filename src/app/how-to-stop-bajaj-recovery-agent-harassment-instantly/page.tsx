@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaEnvelope, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/how-to-stop-bajaj-recovery-agent-harassment-instantly',
+  },
   title: "How to Stop Bajaj Recovery Agent Harassment Instantly | Legal Guide 2026",
   description:
     "Experiencing harassment from Bajaj recovery agents? Learn how to stop it instantly using RBI guidelines, legal notices, and formal complaints. Know your rights today.",

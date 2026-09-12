@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaEyeSlash, FaUserTie, FaUniversity, FaWallet, FaHandHoldingUsd, FaFileInvoiceDollar, FaChartLine } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/zero-balance',
+  },
   title: "Zero Balance Account (ZBA): Benefits & RBI Rules",
   description:
     "Discover the complete guide to Zero Balance Accounts (ZBA) in India. Learn about PMJDY, BSBDA, salary accounts, benefits for businesses, and your rights under RBI guidelines.",

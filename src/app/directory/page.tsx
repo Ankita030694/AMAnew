@@ -4,6 +4,9 @@ import { Metadata } from 'next';
 import { ChevronRight } from 'lucide-react';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/directory',
+  },
   title: 'Legal Services Directory | AMA Legal Solutions',
   description: 'A comprehensive directory of all legal services, drafting notices, loan settlement guides, and arbitration support offered by AMA Legal Solutions.',
 };

@@ -5,6 +5,9 @@ import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaLock, FaUserShield, FaBalanceScale, FaUserTie, FaRegMoneyBillAlt, FaBriefcase, FaUniversity, FaUserGraduate } from "react-icons/fa";
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://www.amalegalsolutions.com/notice-to-employer-for-non-payment-of-salary-or-benefits',
+  },
   title: "Notice to Employer for Non-Payment of Salary or Benefits | Legal Guide",
   description:
     "Is your employer withholding your salary or benefits? Learn your legal rights under the Payment of Wages Act and Industrial Disputes Act. Draft a legal notice to your employer and recover your dues today.",
@@ -39,7 +42,6 @@ const relatedPages = [
 
 export default function SalaryRecoveryGuide() {
   const breadcrumbItems = [
-    { label: "Employment Law", href: "/services/employment-law" },
     { label: "Salary Recovery Notice", href: "/notice-to-employer-for-non-payment-of-salary-or-benefits" },
   ];
 
@@ -151,8 +153,7 @@ export default function SalaryRecoveryGuide() {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.amalegalsolutions.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Employment Law", "item": "https://www.amalegalsolutions.com/services/employment-law" },
-      { "@type": "ListItem", "position": 3, "name": "Salary Recovery Notice", "item": "https://www.amalegalsolutions.com/notice-to-employer-for-non-payment-of-salary-or-benefits" }
+      { "@type": "ListItem", "position": 2, "name": "Salary Recovery Notice", "item": "https://www.amalegalsolutions.com/notice-to-employer-for-non-payment-of-salary-or-benefits" }
     ]
   };
 
