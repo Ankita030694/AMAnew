@@ -18,7 +18,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 2,
       "name": "Settle Your Challan in Delhi at 50% Off",
-      "item": "https://www.amalegalsolutions.com/settle-your-challan-in-delhi-at-50%-off"
+      "item": "https://www.amalegalsolutions.com/settle-your-challan-in-delhi-at-50-percent-off"
     }
   ]
 };
@@ -174,7 +174,7 @@ export const metadata = {
     "delhi traffic police portal"
   ],
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/settle-your-challan-in-delhi-at-50%-off',
+    canonical: 'https://www.amalegalsolutions.com/settle-your-challan-in-delhi-at-50-percent-off',
   },
 };
 
@@ -192,7 +192,7 @@ export default function SettleChallanInDelhiPage() {
 
   const breadcrumbItems = [
     { label: "Home", href: "/" },
-    { label: "Settle Your Challan in Delhi at 50% Off", href: "/settle-your-challan-in-delhi-at-50%-off" },
+    { label: "Settle Your Challan in Delhi at 50% Off", href: "/settle-your-challan-in-delhi-at-50-percent-off" },
   ];
 
   return (

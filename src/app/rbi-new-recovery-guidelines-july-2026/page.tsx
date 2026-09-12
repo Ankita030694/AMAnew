@@ -171,8 +171,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "RBI New Recovery Guidelines July 2026: Protect Yourself from Harassment",
-  description: "Stay informed about the RBI new recovery guidelines effective July 1, 2026. Discover rules for recovery agents, calling hours, and legal protections for borrowers in India.",
+  title: "RBI New Recovery Guidelines July 2026: Stop Harassment",
+  description: "Learn about new RBI recovery guidelines effective July 2026. Discover rules for recovery agents, calling hours, and borrower legal protections in India.",
   keywords: [
     "rbi new recovery guidelines july 2026",
     "rbi recovery agent rules 2026",

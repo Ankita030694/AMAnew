@@ -125,7 +125,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Financial Crisis Debt Relief | Multiple Loan Account Settlement",
+  title: "Financial Crisis Debt Relief | Multi Loan Settlement India",
   description: "Learn how to legally execute a multiple loan account settlement. Overcome your financial crisis with structured debt relief and RBI protected strategies.",
   robots: { index: true, follow: true },
   keywords: ["multiple loan account settlement", "financial crisis", "debt relief", "RBI guidelines on debt settlement", "stop recovery harassment"],

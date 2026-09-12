@@ -735,8 +735,8 @@ export default function TrademarkFeesPage() {
               <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
                 <h4 className="font-bold text-gray-900 mb-6">Expert Facilitator</h4>
                 <div className="flex items-center gap-5 mb-8">
-                  <div className="w-16 h-16 bg-gray-200 rounded-2xl overflow-hidden grayscale">
-                    <Image src="/newcomp/AmaLogo.png" alt="AMA Legal" width={64} height={64} />
+                  <div className="w-16 h-16 bg-gray-200 rounded-2xl overflow-hidden grayscale flex items-center justify-center p-1">
+                    <Image src="/ama-legal-solutions-logo.png" alt="AMA Legal" width={64} height={64} className="object-contain" />
                   </div>
                   <div>
                     <p className="font-bold text-gray-900">AMA Solutions</p>

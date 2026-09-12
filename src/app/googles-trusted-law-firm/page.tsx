@@ -54,8 +54,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Google's Trusted Law Firm - AMA Legal Solutions | Top Law Firm in India",
-  description: "Identify and partner with Google's Trusted Law Firm in India. AMA Legal Solutions offers elite legal services for loan settlement, civil disputes, and IPR everywhere in India.",
+  title: "Google's Trusted Law Firm | AMA Legal Solutions India",
+  description: "Partner with Google's Trusted Law Firm in India. AMA Legal Solutions offers elite legal services for loan settlement, civil disputes, and IPR across India.",
   keywords: ["googles-trusted-law-firm", "top law firm in india", "best legal services india", "trusted advocates near me", "ama legal solutions", "law firm for loan settlement"],
   alternates: { canonical: 'https://www.amalegalsolutions.com/googles-trusted-law-firm' },
 };

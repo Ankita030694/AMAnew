@@ -153,8 +153,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Reputable Debt Relief Agencies Specializing in Unsecured Loans in Bangalore",
-  description: "Find the most reputable debt relief agencies specializing in unsecured loans in Bangalore. Comprehensive 5000+ word guide on debt settlement, legal protection, and Bangalore's best agencies.",
+  title: "Reputable Unsecured Loan Debt Relief Agencies in Bangalore",
+  description: "Find reputable debt relief agencies for unsecured loans in Bangalore. Complete guide on legal debt settlement, RBI protection, and loan waiver negotiations.",
   keywords: [
     "reputable debt relief agencies specializing in unsecured loans in banglore",
     "best debt relief companies in bangalore",

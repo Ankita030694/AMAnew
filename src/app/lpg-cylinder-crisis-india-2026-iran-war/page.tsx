@@ -62,8 +62,8 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Crises and Updates",
-      "item": "https://www.amalegalsolutions.com/updates"
+      "name": "Blog & Legal Updates",
+      "item": "https://www.amalegalsolutions.com/blog"
     },
     {
       "@type": "ListItem",
@@ -192,7 +192,7 @@ export default function LPGCrisisPage() {
   ];
 
   const breadcrumbItems = [
-    { label: "Updates", href: "/updates" },
+    { label: "Blog", href: "/blog" },
     { label: "LPG Crisis 2026", href: "/lpg-cylinder-crisis-india-2026-iran-war" },
   ];
 

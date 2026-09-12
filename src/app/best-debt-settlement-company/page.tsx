@@ -3,7 +3,7 @@ import BestDebtSettlementCompanyClient from './BestDebtSettlementCompanyClient';
 
 export const metadata: Metadata = {
   title: 'Best Debt Settlement Company in India | AMA Legal Solutions',
-  description: 'Looking for the best debt settlement company in India? AMA Legal Solutions provides advocate-led OTS negotiations, halts recovery harassment, and secures 40%–75% waivers under RBI guidelines.',
+  description: "Looking for the best debt settlement company in India? AMA Legal Solutions provides legal OTS negotiations, stops harassment, and secures 40%–75% waivers.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/best-debt-settlement-company',
   },

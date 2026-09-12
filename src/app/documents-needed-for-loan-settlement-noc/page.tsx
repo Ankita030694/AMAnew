@@ -4,6 +4,7 @@ import Image from "next/image";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { CheckCircle2, PhoneCall } from "lucide-react";
 
 // FAQ data for rendering and Schema
 const faqs = [
@@ -248,7 +249,7 @@ export default function LoanSettlementDocsPage() {
             </p>
             <Link href="/contact" className="group">
               <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-[#1a202c] font-black py-3 px-8 md:py-4 md:px-12 rounded-full transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(210,160,42,0.3)] text-xs md:text-base uppercase tracking-widest flex items-center justify-center gap-2 mx-auto">
-                 <Image src="/newAssets/check-circle.svg" alt="Icon" width={18} height={18} className="brightness-0" />
+                 <CheckCircle2 className="w-[18px] h-[18px] text-black" />
                  Get Verified Document Checklist
               </button>
             </Link>
@@ -331,28 +332,28 @@ export default function LoanSettlementDocsPage() {
                       <div className="grid md:grid-cols-2 gap-4 mt-6">
                          <div className="p-4 bg-white border-2 border-gray-100 rounded-xl shadow-sm">
                             <h4 className="font-bold text-gray-900 mb-2 flex items-center">
-                               <Image src="/newAssets/check-circle.svg" alt="Icon" width={16} height={16} className="mr-2" />
+                               <CheckCircle2 className="w-4 h-4 mr-2 text-[#D2A02A] shrink-0" />
                                Aadhaar Card
                             </h4>
                             <p className="text-xs leading-relaxed">Ensure your mobile number is linked for e-KYC. This is often used for digital signatures on settlement agreements by fintech lenders like Navi or Dhani.</p>
                          </div>
                          <div className="p-4 bg-white border-2 border-gray-100 rounded-xl shadow-sm">
                             <h4 className="font-bold text-gray-900 mb-2 flex items-center">
-                               <Image src="/newAssets/check-circle.svg" alt="Icon" width={16} height={16} className="mr-2" />
+                               <CheckCircle2 className="w-4 h-4 mr-2 text-[#D2A02A] shrink-0" />
                                PAN Card
                             </h4>
                             <p className="text-xs leading-relaxed">Mandatory. Without a PAN, processing a settlement is nearly impossible due to Income Tax reporting requirements for bad debt write-offs.</p>
                          </div>
                          <div className="p-4 bg-white border-2 border-gray-100 rounded-xl shadow-sm">
                             <h4 className="font-bold text-gray-900 mb-2 flex items-center">
-                               <Image src="/newAssets/check-circle.svg" alt="Icon" width={16} height={16} className="mr-2" />
+                               <CheckCircle2 className="w-4 h-4 mr-2 text-[#D2A02A] shrink-0" />
                                Passport Size Photos
                             </h4>
                             <p className="text-xs leading-relaxed">Physical settlements in nationalized banks (like SBI or PNB) still require recent photographs for the application forms.</p>
                          </div>
                          <div className="p-4 bg-white border-2 border-gray-100 rounded-xl shadow-sm">
                             <h4 className="font-bold text-gray-900 mb-2 flex items-center">
-                               <Image src="/newAssets/check-circle.svg" alt="Icon" width={16} height={16} className="mr-2" />
+                               <CheckCircle2 className="w-4 h-4 mr-2 text-[#D2A02A] shrink-0" />
                                Address Proof
                             </h4>
                             <p className="text-xs leading-relaxed">If you have moved since taking the loan, provide a latest utility bill or rent agreement. Banks need a valid address to send the physical NOC.</p>
@@ -807,7 +808,7 @@ export default function LoanSettlementDocsPage() {
                       </Link>
                           <a href="tel:+918700343611" className="w-full sm:w-auto group">
                         <button className="bg-transparent border-4 border-white hover:bg-white hover:text-[#1a202c] text-white font-black py-4 px-10 md:py-6 md:px-16 rounded-full transition-all text-base md:text-xl uppercase tracking-widest w-full flex items-center justify-center gap-3">
-                          <Image src="/newAssets/phone-call.svg" alt="Call" width={24} height={24} className="invert group-hover:invert-0" />
+                          <PhoneCall className="w-6 h-6 text-white group-hover:text-[#1a202c] transition-colors" />
                           +91-8700343611
                         </button>
                       </a>

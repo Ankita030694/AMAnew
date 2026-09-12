@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import BestCreditCardSettlementServiceClient from './BestCreditCardSettlementServiceClient';
 
 export const metadata: Metadata = {
-  title: 'Best Credit Card Debt Settlement Service in India | AMA Legal Solutions',
-  description: 'Rated India’s best credit card debt settlement service. Advocate-led legal representation, RBI-compliant One Time Settlement (OTS) negotiations, 40%–75% debt waivers, and instant anti-harassment protection.',
+  title: "Best Credit Card Settlement Service | AMA Legal Solutions",
+  description: "India’s best credit card settlement service. Legal representation, RBI-compliant OTS negotiations, 40%–75% debt waivers, and anti-harassment protection.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/best-credit-card-settlement-service',
   },

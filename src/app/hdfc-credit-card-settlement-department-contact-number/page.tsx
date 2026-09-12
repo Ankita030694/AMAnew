@@ -131,8 +131,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "HDFC Credit Card Settlement Department Contact Details (2026)",
-  description: "Looking for the official HDFC credit card settlement department contact number? Find direct helpline numbers, escalation emails, and the step-by-step OTS process.",
+  title: "HDFC Credit Card Settlement Department Contact Details",
+  description: "Looking for the HDFC credit card settlement contact number? Find direct helpline numbers, escalation emails, and the step-by-step OTS settlement process.",
   keywords: [
     "hdfc credit card settlement department contact number",
     "hdfc bank recovery department contact number",

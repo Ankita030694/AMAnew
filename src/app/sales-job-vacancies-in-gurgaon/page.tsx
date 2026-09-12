@@ -133,7 +133,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "AMA Legal is Hiring: Sales & Business Development Jobs in Gurgaon 2026",
+  title: "Sales & BD Job Vacancies in Gurgaon 2026 | AMA Legal",
   description: "Looking for sales job vacancies in Gurgaon? AMA Legal Solutions is hiring Business Development Executives. Premium culture and rapid growth path. Apply now!",
   keywords: [
     "sales job vacancies in gurgaon",

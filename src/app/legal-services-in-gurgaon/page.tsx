@@ -151,9 +151,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Best Legal Services in Gurgaon | Top Law Firm & Lawyers in Gurugram",
-  description:
-    "AMA Legal Solutions is a leading law firm in Gurgaon providing expert legal services in Corporate, Civil, Criminal, Family, and Property Law. Consult with top advocates today for reliable legal advice.",
+  title: "Best Legal Services in Gurgaon | Top Law Firm Gurugram",
+  description: "AMA Legal Solutions is a leading law firm in Gurgaon for Corporate, Civil, Criminal, Family, and Property Law. Consult top advocates in Gurugram today.",
   keywords: [
     "legal services in gurgaon",
     "law firm in gurgaon",

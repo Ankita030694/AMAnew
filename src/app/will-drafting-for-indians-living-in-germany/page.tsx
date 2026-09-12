@@ -123,8 +123,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Will Drafting for Indians Living in Germany | #1 NRI Succession Lawyers",
-  description: "Expert cross-border will drafting for Indians in Germany. Navigate German BGB, EU Brussels IV, and Indian Succession laws. Secure your Indian properties and bank accounts legally.",
+  title: "Will Drafting for Indians in Germany | NRI Succession Law",
+  description: "Cross-border Will drafting for Indians in Germany. Navigate German BGB and Indian Succession laws. Secure Indian properties and bank accounts legally.",
   keywords: [
     "will drafting for indians in germany",
     "nri will germany",

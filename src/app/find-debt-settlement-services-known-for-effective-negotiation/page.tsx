@@ -166,8 +166,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Find Debt Settlement Services Known for Effective Negotiation | Expert Guide",
-  description: "Struggling with debt? Discover how to find debt settlement services known for effective negotiation. Learn strategies to reduce debt by up to 70% and stop bank harassment legally.",
+  title: "Find Debt Settlement Services for Effective Negotiation",
+  description: "Struggling with debt? Find debt settlement services known for effective negotiation. Learn how to reduce debt by up to 70% and halt bank harassment legally.",
   keywords: [
     "find debt settlement services known for effective negotiation",
     "debt settlement negotiation strategies",

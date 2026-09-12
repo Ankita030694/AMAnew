@@ -183,7 +183,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "How to Manage a Loan With No Job | AMA Legal Solutions",
-  description: "Lost your job and struggling with loan EMIs? Discover practical, legal, and financial strategies to manage your loan without a steady income and stop recovery harassment.",
+  description: "Lost your job and struggling with EMIs? Discover practical legal strategies to manage loans without income and stop recovery harassment under RBI rules.",
   robots: {
     index: true,
     follow: true,

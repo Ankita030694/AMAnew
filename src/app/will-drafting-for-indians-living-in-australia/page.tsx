@@ -143,8 +143,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Will Drafting for Indians Living in Australia | #1 NRI Estate Lawyers",
-  description: "Secure your Indian assets from Australia with expert will drafting. Navigate cross-border laws, avoid probate delays, and manage ATO tax compliance. Expert NRI Lawyers.",
+  title: "Will Drafting for Indians in Australia | NRI Estate Lawyers",
+  description: "Secure your Indian assets from Australia with expert Will drafting. Navigate cross-border laws, avoid probate delays, and manage ATO tax rules. Top NRI lawyers.",
   keywords: [
     "will drafting for indians in australia",
     "nri will for indian property australia",

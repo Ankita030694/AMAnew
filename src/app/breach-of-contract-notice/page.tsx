@@ -32,7 +32,7 @@ const sections = [
 
 const relatedPages = [
   { title: "Legal Notice for Loan Harassment", href: "/legal-notice-for-loan-settlement-harassment" },
-  { title: "How to Send a Legal Notice", href: "/how-to-send-legal-notice" },
+  { title: "How to Send a Legal Notice", href: "/send-legal-notice" },
   { title: "Procedure of Sending Legal Notice", href: "/procedure-of-sending-legal-notice" },
   { title: "Legal Rights after Loan Default", href: "/legal-rights-after-loan-default" },
   { title: "Cheque Bounce Notice Guide", href: "/cheque-bounce-notice" },

@@ -148,7 +148,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Lok Adalat Contract Drafting: Fast-Track Dispute Resolution",
-  description: "Learn how to legally draft commercial and personal contracts optimized for rapid enforceability and settlement through India's Lok Adalat system. Contact AMA Legal Solutions.",
+  description: "Draft contracts optimized for rapid enforceability and settlement through India's Lok Adalat system. Legal contract drafting by AMA Legal Solutions.",
   robots: {
     index: true,
     follow: true,

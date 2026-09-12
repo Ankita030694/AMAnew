@@ -167,8 +167,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Get Contact Details for Top Rated Debt Resolution Companies in India",
-  description: "Exhaustive list of top rated debt resolution firms in India. Get contact and review details for AMA Legal Solutions, FREED, and more. Highly SEO optimized guide.",
+  title: "Contact Details: Top Rated Debt Resolution Companies India",
+  description: "Exhaustive list of top rated debt resolution firms in India. Get contact details and reviews for AMA Legal Solutions, FREED, and leading legal agencies.",
   keywords: [
     "debt resolution companies in india",
     "debt settlement companies contact",
@@ -713,7 +713,7 @@ export default function DebtResolutionPage() {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/blog/rbi-guidelines-loan-harassment" className="text-gray-600 hover:text-[#D2A02A] font-medium transition-colors flex items-center group">
+                        <Link href="/blog/understanding-rbi-guidelines-recovery-agents" className="text-gray-600 hover:text-[#D2A02A] font-medium transition-colors flex items-center group">
                            <span className="mr-2 text-gray-300 group-hover:text-[#D2A02A]">›</span>
                            RBI Recovery Rules
                         </Link>

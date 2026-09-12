@@ -6,7 +6,7 @@ import GenericStatesGrid from "@/components/GenericStatesGrid";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Loan Settlement with AMA Legal Solutions | Expert Debt Relief",
+  title: "Loan Settlement with AMA Legal Solutions | Expert Relief",
   description: "Get legal guidance for loan settlement with AMA Legal Solutions. Negotiate a one-time settlement, stop recovery agent harassment, and track progress.",
   keywords: [
     "loan settlement with AMA Legal Solutions",

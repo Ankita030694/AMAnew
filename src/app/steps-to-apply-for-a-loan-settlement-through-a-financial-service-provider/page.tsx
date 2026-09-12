@@ -8,9 +8,8 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/steps-to-apply-for-a-loan-settlement-through-a-financial-service-provider',
   },
-  title: "Steps to Apply for a Loan Settlement through a Financial Service Provider",
-  description:
-    "Master the loan settlement process with our 2026 guide. Learn the exact steps to work with a financial service provider, negotiate waivers, and clear debt legally under RBI rules.",
+  title: "Steps to Apply for Loan Settlement with a Service Provider",
+  description: "Master loan settlement with our 2026 guide. Learn the steps to work with a service provider, negotiate waivers, and clear debts legally under RBI rules.",
   keywords: "loan settlement process india, financial service provider for debt, debt resolution steps, how to settle personal loan, credit card settlement agency, rbi loan settlement guidelines",
 };
 

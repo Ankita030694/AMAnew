@@ -695,7 +695,7 @@ export default function RealEstateAgentLoanSettlement() {
               <div className="flex items-center gap-4">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden bg-gray-100 border border-gray-200 shrink-0">
                   <Image 
-                    src="/newAssets/anuj_profile.png" 
+                    src="/newAssets/bhiya.png" 
                     alt="Advocate Anuj Anand Malik" 
                     fill 
                     className="object-cover"

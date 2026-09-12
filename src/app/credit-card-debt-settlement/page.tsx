@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import CreditCardDebtSettlementClient from './CreditCardDebtSettlementClient';
 
 export const metadata: Metadata = {
-  title: 'Credit Card Debt Settlement in India | Legal Protection & OTS Advisory',
-  description: 'Legal credit card debt settlement advisory by AMA Legal Solutions. Halt recovery harassment, negotiate 40%–75% debt waivers under RBI compromise guidelines, and obtain official No Dues Certificates.',
+  title: "Credit Card Debt Settlement India | Legal Relief & OTS",
+  description: "Legal credit card debt settlement by AMA Legal Solutions. Stop harassment, negotiate 40%–75% waivers under RBI guidelines, and get No Dues Certificates.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/credit-card-debt-settlement',
   },

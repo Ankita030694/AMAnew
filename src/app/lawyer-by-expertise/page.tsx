@@ -18,7 +18,7 @@ export async function generateMetadata({
     alternates: {
       canonical: page > 1 ? `https://www.amalegalsolutions.com/lawyer-by-expertise?page=${page}` : 'https://www.amalegalsolutions.com/lawyer-by-expertise',
     },
-    robots: page > 1 ? { index: false, follow: true } : { index: true, follow: true },
+    robots: { index: true, follow: true },
   };
 }
 

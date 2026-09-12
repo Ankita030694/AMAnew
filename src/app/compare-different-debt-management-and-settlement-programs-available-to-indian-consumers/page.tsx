@@ -32,10 +32,10 @@ const sections = [
 ];
 
 const relatedPages = [
-  { title: "One-Time Settlement (OTS) Guide", href: "/one-time-settlement-guide" },
-  { title: "Understanding Your CIBIL Score", href: "/understanding-cibil-score-after-settlement" },
-  { title: "Stop Recovery Agent Harassment", href: "/how-to-stop-recovery-agent-harassment" },
-  { title: "Personal Loan Settlement Process", href: "/personal-loan-settlement-process-india" },
+  { title: "One-Time Settlement (OTS) Guide", href: "/one-time-settlement-scheme-for-personal-loan-2026" },
+  { title: "Understanding Your CIBIL Score", href: "/what-is-cibil-score" },
+  { title: "Stop Recovery Agent Harassment", href: "/how-to-stop-bank-recovery-agents-harassment-legally-in-india" },
+  { title: "Personal Loan Settlement Process", href: "/personal-loan-settlement" },
   { title: "Credit Card Debt Relief", href: "/credit-card-debt-settlement-india" },
 ];
 

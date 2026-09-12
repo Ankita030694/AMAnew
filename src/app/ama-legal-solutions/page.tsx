@@ -310,8 +310,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "AMA Legal Solutions | #1 Pan-India Law Firm | Legal Consultant in India",
-  description: "Official page of AMA Legal Solutions. Expert Pan-India Legal Consultants in India. Specializing in Loan Settlement, IEPF Share Recovery, Arbitration, Trademark, and Real Estate Law. HQ Sector 57 Gurgaon.",
+  title: "AMA Legal Solutions | Top Law Firm & Legal Consultants India",
+  description: "AMA Legal Solutions: Premier Pan-India law firm specializing in Loan Settlement, IEPF Share Recovery, Arbitration, and Trademark Law. HQ in Sector 57 Gurgaon.",
   keywords: [
     "AMA Legal Solutions",
     "Legal Consultant in India",

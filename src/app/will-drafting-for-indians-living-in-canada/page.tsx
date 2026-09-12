@@ -143,8 +143,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Will Drafting for Indians Living in Canada | #1 NRI Estate Lawyers",
-  description: "Secure your global legacy with expert will drafting for Indians in Canada. Navigate cross-border laws, avoid Indian probate delays, and manage Canadian tax compliance. Legal and safe.",
+  title: "Will Drafting for Indians in Canada | NRI Estate Lawyers",
+  description: "Secure your Indian assets with expert Will drafting for NRIs in Canada. Navigate cross-border laws, avoid probate delays, and ensure succession compliance.",
   keywords: [
     "will drafting for indians in canada",
     "nri will for indian assets",

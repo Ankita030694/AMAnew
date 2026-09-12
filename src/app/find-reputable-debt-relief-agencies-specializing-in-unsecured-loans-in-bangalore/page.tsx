@@ -9,8 +9,7 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/find-reputable-debt-relief-agencies-specializing-in-unsecured-loans-in-bangalore',
   },
   title: "Debt Relief Agencies for Unsecured Loans Bangalore",
-  description:
-    "Struggling with debt? Find reputable debt relief agencies specializing in unsecured loans in Bangalore. Learn how to settle personal loans and credit cards legally.",
+  description: "Struggling with debt? Find reputable debt relief agencies for unsecured loans in Bangalore. Settle personal loans and credit cards legally under RBI rules.",
   keywords: "find reputable debt relief agencies specializing in unsecured loans in bangalore, debt relief bangalore, unsecured loan settlement bangalore, debt settlement companies bangalore, personal loan relief bangalore",
 };
 

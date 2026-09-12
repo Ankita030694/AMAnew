@@ -153,7 +153,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Key Benefits and Drawbacks of Pursuing Loan Settlement | SEO Guide",
+  title: "Key Benefits and Drawbacks of Pursuing Loan Settlement",
   description: "Examine the key benefits and drawbacks of pursuing loan settlement in India. A comprehensive 5000 word guide on debt reduction, CIBIL impact, and legal rights.",
   keywords: [
     "key benefits and drawbacks of persuing loan settlement",

@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'Loan Settlement Karwana Hai? Complete Legal Process & RBI OTS Guide', href: '/loan-settlement-karwana-hai' },
   { name: 'Pay Day Loan Settlement in September 2026: Legal Process & RBI OTS Framework', href: '/pay-day-loan-settlement-in-september-2026' },
   { name: 'Loan Settlement Lawyer for High Value Debts: Strategic Commercial Debt Resolution & DRT Defense', href: '/loan-settlement-expert-for-high-value-debts' },
   { name: 'Will My Salary Account Be Auto Debited If Loan Settlement? Freeze & Lien Legal Guide', href: '/will-my-salary-account-be-auto-debited-if-loan-settlement' },
@@ -98,7 +99,7 @@ const directoryLinks = [
   { name: '100% Guaranteed Money Recovery', href: '/100-percent-guaranteed-money-recovery' },
   { name: 'Free Will Contract Consultation in Delhi NCR', href: '/free-will-contract-consultation-in-delhi-ncr' },
   { name: 'Free Will Drafting Consultation in Delhi NCR', href: '/free-will-drafting-consultation-in-delhi-ncr' },
-  { name: 'Settle Your Challan in Delhi at 50% Off', href: '/settle-your-challan-in-delhi-at-50%-off' },
+  { name: 'Settle Your Challan in Delhi at 50% Off', href: '/settle-your-challan-in-delhi-at-50-percent-off' },
   { name: 'Cheque Bounce Case Jurisdiction Rules in India', href: '/cheque-bounce-case-jurisdiction' },
   { name: 'Top Legal Firm for Debt Settlement: AMA Legal Solutions', href: '/top-legal-firm' },
   { name: 'Debt Recovery Tribunal Advocate', href: '/debt-recovery-tribunal-advocate' },

@@ -374,10 +374,9 @@ export default function CreditScoreGuidePage() {
                 <section id="anuj-anand-malik" className="scroll-mt-32">
                   <h2 className="text-2xl md:text-4xl font-black text-gray-900 mb-8">Founded by Anuj Anand Malik: A Legacy of Financial Empowerment</h2>
                   <div className="flex flex-col md:flex-row gap-12 items-center">
-                    <div className="flex-shrink-0 w-48 h-48 bg-gray-200 rounded-full overflow-hidden border-4 border-[#D2A02A] shadow-lg">
-                       {/* Placeholder for Anuj Anand Malik's image */}
-                       <Image src="/author/anuj.png" alt="Anuj Anand Malik" width={192} height={192} className="object-cover" />
-                    </div>
+                     <div className="flex-shrink-0 w-48 h-48 bg-gray-200 rounded-full overflow-hidden border-4 border-[#D2A02A] shadow-lg relative">
+                        <Image src="/newAssets/bhiya.png" alt="Anuj Anand Malik" fill className="object-cover object-top" />
+                     </div>
                     <div className="space-y-6">
                       <p className="text-lg text-gray-700">
                          <strong>Anuj Anand Malik</strong> is not just a lawyer; he is a champion for the debt-ridden citizens of India. Having founded <strong>AMA Legal Solutions</strong>, his vision was to bridge the gap between complex legal statutes and the common man. His deep understanding of the Banking Regulation Act and Insolvency & Bankruptcy Code has made him a household name in the field.

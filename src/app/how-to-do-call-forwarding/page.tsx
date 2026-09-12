@@ -627,7 +627,7 @@ export default function HowToDoCallForwardingPage() {
               <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
                 <div className="flex items-center space-x-4 mb-4">
                   <Image
-                    src="/team/anuj.jpg"
+                    src="/newAssets/bhiya.png"
                     alt="Anuj Anand Malik"
                     width={60}
                     height={60}

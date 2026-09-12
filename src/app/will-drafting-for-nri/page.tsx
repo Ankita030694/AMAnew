@@ -155,8 +155,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Professional Will Drafting for NRI in India | Secure Assets ₹2999",
-  description: "Get your Will drafted for Indian assets by expert lawyers. Specializing in NRI estate planning, FEMA compliance, and property succession. Serving all Indian cities. Just ₹2999.",
+  title: "Professional Will Drafting for NRI in India | Secure Assets",
+  description: "Get your Will drafted for Indian assets by expert lawyers. Specialized in NRI estate planning, FEMA compliance, and property succession across India for ₹2999.",
   keywords: [
     "will drafting for nri",
     "nri property inheritance india",

@@ -139,8 +139,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Simple Will Format - Download Free Legal Document Sample India",
-  description: "Download a simple will format and get professional legal document samples in India. Expert drafting services for your last will and testament at ₹2999. Serve all cities & states.",
+  title: "Simple Will Format - Free Legal Document Sample India",
+  description: "Download a simple will format and free legal samples in India. Professional Will drafting and estate planning at just ₹2999 across all Indian cities and states.",
   keywords: [
     "simple will format",
     "download free legal document sample",

@@ -39,7 +39,7 @@ const relatedPages = [
   { title: "Consumer Complaint Guide", href: "/consumer-complaint-notice" },
   { title: "Cyber Crime Legal Support", href: "/services/cyber" },
   { title: "Privacy Policy Best Practices", href: "/privacy-policy" },
-  { title: "Digital Personal Data Protection Act", href: "/dpdp-act-guide" },
+  { title: "Digital Personal Data Protection (DPDP) Compliance", href: "/services/cyber" },
 ];
 
 export default function DataBreachGuide() {

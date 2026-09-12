@@ -189,7 +189,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Best Debt Relief Companies in India | Verify Scams & RBI Rules",
+  title: "Best Debt Relief Companies in India | Verify Scams & Rules",
   description: "Find the best debt relief companies in India. Evaluate legitimate debt settlement agencies based on RBI compliance, transparent fees, and legal leverage.",
   robots: {
     index: true,

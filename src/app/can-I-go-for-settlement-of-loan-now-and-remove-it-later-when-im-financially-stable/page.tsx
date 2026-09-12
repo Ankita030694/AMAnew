@@ -657,7 +657,7 @@ export default function SettlementStrategyPage() {
                 <div className="mt-6 pt-6 border-t border-gray-100">
                   <p className="text-xs text-gray-400 text-center uppercase tracking-widest font-bold">Recommended By Experts</p>
                   <div className="flex justify-center gap-4 mt-4">
-                     <Image src="/logo-ama.png" alt="AMA Legal Solutions" width={40} height={40} className="grayscale opacity-50" />
+                     <Image src="/ama-legal-solutions-logo.png" alt="AMA Legal Solutions" width={40} height={40} className="grayscale opacity-50" />
                   </div>
                 </div>
               </div>

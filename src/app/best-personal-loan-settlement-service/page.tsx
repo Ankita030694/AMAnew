@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import BestPersonalLoanSettlementServiceClient from './BestPersonalLoanSettlementServiceClient';
 
 export const metadata: Metadata = {
-  title: 'Best Personal Loan Debt Settlement Service in India | AMA Legal Solutions',
-  description: 'Looking for the best personal loan debt settlement service in India? AMA Legal Solutions provides advocate-led OTS negotiations, halts recovery harassment, and secures 40%–75% waivers under RBI guidelines.',
+  title: "Best Personal Loan Settlement Service | AMA Legal Solutions",
+  description: "Get the best personal loan settlement service in India. AMA Legal Solutions leads OTS negotiations, stops harassment, and secures 40%–75% debt waivers.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/best-personal-loan-settlement-service',
   },

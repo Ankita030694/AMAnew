@@ -143,8 +143,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Will Drafting for Indians Living in Dubai | #1 UAE NRI Estate Lawyers",
-  description: "Secure your legacy across Dubai and India. Expert Will drafting for Indians in the UAE. DIFC: ADJD: and Indian registered Wills. Avoid Sharia defaults and Indian court delays.",
+  title: "Will Drafting for Indians in Dubai | UAE NRI Estate Lawyers",
+  description: "Secure your legacy across Dubai and India. Expert Will drafting for UAE NRIs. DIFC, ADJD, and Indian registered Wills to protect your assets and family.",
   keywords: [
     "will drafting for indians in dubai",
     "nri will for indian property dubai",

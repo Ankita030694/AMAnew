@@ -139,7 +139,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Telecaller Vacancies in Gurgaon 2026: Apply Now at AMA Legal",
-  description: "Explore the latest telecaller vacancies in Gurgaon at AMA Legal Solutions. High-paying roles with attractive incentives. Join the best telecalling team in Gurugram today!",
+  description: "Explore top telecaller vacancies in Gurgaon at AMA Legal Solutions. High-paying roles with attractive incentives. Join our legal telecalling team today!",
   keywords: [
     "telecaller vacancies in gurgaon",
     "telecalling jobs in gurugram",

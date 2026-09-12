@@ -164,8 +164,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Verify Digital Loan Settlement Offers | Avoid Scams & Frauds",
-  description:
-    "Is your online loan settlement offer real? Learn how to verify digital settlement offers on WhatsApp, email, and apps. Spot red flags and follow RBI guidelines for safe debt relief.",
+  description: "Is your online loan settlement offer real? Learn to verify digital settlement offers on WhatsApp and email. Spot red flags and follow RBI guidelines.",
   keywords: [
     "verify loan settlement offer",
     "digital loan settlement scam",

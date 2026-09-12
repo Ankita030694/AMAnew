@@ -162,7 +162,7 @@ const aggregateRatingSchema = {
 };
 
 export const metadata = {
-  title: "Affordable NRI Will Drafting Services | Protect Indian Assets",
+  title: "Affordable NRI Will Drafting Services | Protect Assets",
   description: "Expert, affordable will drafting services for NRIs. Secure your Indian property, understand jurisdiction rules, and avoid complex cross-border probate disputes.",
   keywords: [
     "will drafting services for NRI",

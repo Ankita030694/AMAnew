@@ -157,8 +157,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Government Approved Consumer Credit Counseling Services in Chennai",
-  description: "Looking for government-approved consumer credit counseling services in Chennai? Discover Disha Financial Counselling centers, RBI guidelines, and expert debt management strategies in our 5000+ word guide.",
+  title: "Government Credit Counseling Services in Chennai | Guide",
+  description: "Looking for credit counseling in Chennai? Discover Disha Financial Counselling centers, RBI guidelines, and expert debt management strategies in our guide.",
   keywords: [
     "where can i locate government approved consumer credit counseling services in chennai",
     "credit counseling services in chennai",

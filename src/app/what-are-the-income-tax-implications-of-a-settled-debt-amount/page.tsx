@@ -159,8 +159,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Income Tax Implications of Settled Debt Amount in India | Expert Guide",
-  description: "Are you settling your debt with a bank? Learn about the income tax implications of settled debt amounts in India, including Section 41(1), 28(iv), and the Mahindra case.",
+  title: "Tax Implications of Settled Debt in India | Legal Guide",
+  description: "Settling bank debt? Understand the income tax implications of settled debt in India, including Section 41(1), Section 28(iv), and landmark case laws.",
   keywords: [
     "income tax on settled debt",
     "tax implications of loan waiver",

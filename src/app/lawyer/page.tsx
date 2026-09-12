@@ -235,6 +235,14 @@ export default function LawyerPage() {
   return (
     <main className="min-h-screen bg-[#EBE9E4] py-20 px-6">
       <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl md:text-5xl font-bold text-[#30261C] mb-4">
+            Lawyer Opportunities & Legal Guides
+          </h1>
+          <p className="text-base md:text-lg text-[#30261C]/80 max-w-3xl mx-auto">
+            Explore curated legal insights, banking dispute guides, and advocate advisory services across India.
+          </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
           {keywords.map((kw, index) => (
             <Link 

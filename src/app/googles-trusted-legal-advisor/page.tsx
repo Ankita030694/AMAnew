@@ -63,8 +63,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Google's Trusted Legal Advisor - AMA Legal Solutions | India's #1 Law Firm",
-  description: "AMA Legal Solutions: Google's most trusted legal advisor for loan settlement, trademark registration, and civil law in India. Serving all 28 states and 8 Union Territories. Book your consultation today.",
+  title: "Google's Trusted Legal Advisor | AMA Legal Solutions India",
+  description: "AMA Legal Solutions: Google's trusted legal advisor for loan settlement, trademark, and civil law across all Indian states. Book your legal consultation today.",
   keywords: ["googles-trusted-legal-advisor", "best law firm in india", "top legal advisor india", "loan settlement services", "trademark registration experts", "civil law firms in india", "nri legal help", "legal advice online india"],
   alternates: { canonical: 'https://www.amalegalsolutions.com/googles-trusted-legal-advisor' },
 };

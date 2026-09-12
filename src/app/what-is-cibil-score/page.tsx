@@ -515,9 +515,9 @@ export default function WhatIsCibilScorePage() {
                     <div className="flex items-center mb-4">
                       <div className="w-16 h-16 rounded-full overflow-hidden mr-4 border-2 border-gray-100">
                         <img 
-                          src="https://www.amalegalsolutions.com/author/anuj-anand-malik.jpg"
+                          src="/newAssets/bhiya.png"
                           alt="Anuj Anand Malik"
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover object-top"
                         />
                       </div>
                       <div>
@@ -548,9 +548,9 @@ export default function WhatIsCibilScorePage() {
                 <div className="flex items-center mb-4">
                   <div className="w-16 h-16 rounded-full overflow-hidden mr-4 border-2 border-gray-100">
                     <img 
-                      src="https://www.amalegalsolutions.com/author/anuj-anand-malik.jpg"
+                      src="/newAssets/bhiya.png"
                       alt="Anuj Anand Malik"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-top"
                     />
                   </div>
                   <div>

@@ -34,7 +34,7 @@ const relatedPages = [
   { title: "How to Negotiate Loan Settlement Online", href: "/how-to-negotiate-a-loan-settlement-with-lenders-online" },
   { title: "Job Lost Loan Settlement Guide", href: "/job-lost-loan-settlement" },
   { title: "RBI Guidelines for Debt Recovery", href: "/rbi-new-recovery-guidelines-july-2026" },
-  { title: "Legal Notice for Loan Default", href: "/legal-notice-for-loan-default" },
+  { title: "Reply to Bank Legal Notice for Loan Default", href: "/how-to-reply-to-bank-legal-notice-for-personal-loan-default" },
 ];
 
 export default function DebtSettlementRemovalGuide() {

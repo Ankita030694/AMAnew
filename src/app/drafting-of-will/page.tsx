@@ -162,8 +162,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Drafting of Will Services in India | Legally Secure Your Legacy ₹2999",
-  description: "Get your Will drafted by expert lawyers at AMA Legal Solutions. We serve all cities in India. Professional drafting of will, probate help, and estate planning at just ₹2999. Protect your family today!",
+  title: "Drafting of Will Services in India | Secure Legacy ₹2999",
+  description: "Get your Will drafted by expert lawyers at AMA Legal. Professional Will drafting, probate help, and estate planning at just ₹2999. Protect your family legacy.",
   keywords: [
     "drafting of will",
     "will drafting services india",

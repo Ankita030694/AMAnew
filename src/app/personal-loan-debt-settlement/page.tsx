@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import PersonalLoanDebtSettlementClient from './PersonalLoanDebtSettlementClient';
 
 export const metadata: Metadata = {
-  title: 'Personal Loan Debt Settlement in India | Legal Relief & OTS Advisory',
-  description: 'Legal personal loan debt settlement advisory by AMA Legal Solutions. Halt recovery harassment, negotiate 40%–75% debt waivers under RBI guidelines, and obtain official No Dues Certificates.',
+  title: "Personal Loan Debt Settlement India | Legal Relief & OTS",
+  description: "Personal loan debt settlement by AMA Legal Solutions. Stop recovery harassment, negotiate 40%–75% waivers under RBI rules, and get No Dues Certificates.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/personal-loan-debt-settlement',
   },

@@ -143,8 +143,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Will Drafting for Indians Living in USA | #1 NRI Succession Lawyers",
-  description: "Secure your Indian legacy from the USA. Expert will drafting for NRIs and OCIs. Navigate IRS 3520, FBAR, and Indian succession laws with top cross-border attorneys.",
+  title: "Will Drafting for Indians in USA | NRI Succession Lawyers",
+  description: "Secure your Indian legacy from the USA. Expert Will drafting for NRIs. Navigate IRS 3520, FBAR, and Indian succession laws with top cross-border lawyers.",
   keywords: [
     "will drafting for indians in usa",
     "nri will for indian property",

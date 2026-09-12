@@ -205,7 +205,7 @@ const personSchema = {
 };
 
 export const metadata = {
-  title: "Free Will Drafting Consultation in Delhi NCR | Expert Lawyers",
+  title: "Free Will Drafting Consultation in Delhi NCR | Top Lawyers",
   description: "Secure your family's future with a legally binding will in Delhi NCR. Get a free consultation to draft, register, and protect your assets from disputes.",
   keywords: [
     "will drafting lawyer delhi ncr",

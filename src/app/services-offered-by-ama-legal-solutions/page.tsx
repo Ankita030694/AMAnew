@@ -167,7 +167,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Services Offered by AMA Legal Solutions | Expert Legal Advice",
+  title: "Services Offered by AMA Legal Solutions | Legal Services",
   description: "Explore the professional legal services offered by AMA Legal Solutions. Learn about loan settlement, trademark registration, and corporate compliance.",
   keywords: [
     "services offered by ama legal solutions",

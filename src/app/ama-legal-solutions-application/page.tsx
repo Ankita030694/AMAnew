@@ -59,8 +59,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "AMA Legal Solutions Application - India's Best App for Legal Advice",
-  description: "Download the best legal app in India for free advice, loan settlement, and direct firm-backed support. Join thousands who trust AMA Legal Solutions for their legal needs.",
+  title: "AMA Legal Solutions App - Top Legal Advice App in India",
+  description: "Download India's top legal app for free legal advice, loan settlement, and law firm support. Join thousands who trust AMA Legal Solutions for legal help.",
   keywords: ["ama legal solutions application", "best app for legal advice in india", "free legal advice app", "loan settlement app india", "online legal assistance india", "nri legal app"],
   alternates: { canonical: 'https://www.amalegalsolutions.com/ama-legal-solutions-application' },
 };

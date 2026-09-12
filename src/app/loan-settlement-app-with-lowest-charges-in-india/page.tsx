@@ -7,7 +7,7 @@ import GenericStatesGrid from "@/components/GenericStatesGrid";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Loan Settlement App with Lowest Charges in India | AMA Connect",
+  title: "Lowest Fee Loan Settlement App in India | AMA Legal Connect",
   description: "Compare loan settlement app charges in India. Learn how AMA Connect offers transparent fees, legal defense, and protection against recovery harassment.",
   keywords: [
     "loan settlement app",

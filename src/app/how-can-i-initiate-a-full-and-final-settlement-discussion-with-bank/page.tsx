@@ -152,8 +152,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "How Can I Initiate a Full and Final Settlement Discussion with Bank?",
-  description: "Master the process of initiating a full and final settlement with your bank. A 5000 word expert guide on negotiation, hardship letters, and legal rights in India.",
+  title: "How to Initiate Full & Final Settlement with Your Bank",
+  description: "Learn how to initiate a full and final settlement with your bank. Expert guide on negotiation, hardship letters, and borrower legal rights in India.",
   keywords: [
     "how can i initiate a full and final settlement discussion with bank",
     "initiate loan settlement with bank manager",

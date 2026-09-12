@@ -170,8 +170,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Loan Settlement App | Best Debt Resolution Application India 2026",
-  description: "Drowning in debt? Download the best loan settlement app in India for expert legal negotiation, harassment protection, and 50% debt reduction. Trusted by thousands.",
+  title: "Loan Settlement App | Best Debt Resolution App India 2026",
+  description: "Drowning in debt? Download India's top loan settlement app for legal negotiation, anti-harassment protection, and up to 50% debt reduction. Get relief today.",
   keywords: [
     "loan settlement app",
     "best debt settlement app india",

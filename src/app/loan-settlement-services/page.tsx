@@ -2,16 +2,44 @@ import React from "react";
 import Link from "next/link";
 import { allServices, getSlug } from "./services-data";
 
-export const metadata = {
-  alternates: {
-    canonical: 'https://www.amalegalsolutions.com/loan-settlement-services',
-  },
-  title: "Complete Loan Settlement Services & Legal Help | AMA Legal Solutions",
-  description:
-    "Explore our comprehensive range of loan settlement services including DRT lawyers, bank harassment protection, SARFAESI defense, and financial restructuring across India.",
-};
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const resolved = await searchParams;
+  const pageNum = typeof resolved?.page === "string" ? parseInt(resolved.page, 10) : 1;
+  const page = isNaN(pageNum) || pageNum < 1 ? 1 : pageNum;
+  const pageStr = page > 1 ? ` - Page ${page}` : "";
 
-export default function LoanSettlementServices() {
+  return {
+    title: `Complete Loan Settlement Services & Legal Help${pageStr} | AMA Legal Solutions`,
+    description: `Explore our comprehensive range of loan settlement services${pageStr} including DRT lawyers, bank harassment protection, SARFAESI defense, and financial restructuring across India.`,
+    alternates: {
+      canonical: page > 1 ? `https://www.amalegalsolutions.com/loan-settlement-services?page=${page}` : 'https://www.amalegalsolutions.com/loan-settlement-services',
+    },
+  };
+}
+
+const ITEMS_PER_PAGE = 60;
+
+export default async function LoanSettlementServices({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const resolvedSearchParams = await searchParams;
+  const page =
+    typeof resolvedSearchParams?.page === "string" ? parseInt(resolvedSearchParams.page, 10) : 1;
+  const currentPage = isNaN(page) || page < 1 ? 1 : page;
+
+  const totalItems = allServices.length;
+  const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, totalItems);
+  const currentServices = allServices.slice(startIndex, endIndex);
+
   return (
     <div className="min-h-screen bg-[#EBE9E4] text-[#30261C] py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden">
       {/* Background Pattern */}
@@ -39,7 +67,7 @@ export default function LoanSettlementServices() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {allServices.map((service, index) => (
+          {currentServices.map((service, index) => (
             <Link
               key={index}
               href={`/loan-settlement-services/${getSlug(service)}`}
@@ -58,6 +86,33 @@ export default function LoanSettlementServices() {
             </Link>
           ))}
         </div>
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="mt-16 flex flex-wrap justify-center gap-2 items-center">
+            {currentPage > 1 && (
+              <Link
+                href={`/loan-settlement-services?page=${currentPage - 1}`}
+                className="px-4 py-2 border border-[#30261C]/20 rounded-md hover:bg-[#D29E0D] hover:text-white hover:border-[#D29E0D] transition-all"
+              >
+                Previous
+              </Link>
+            )}
+            
+            <div className="px-4 py-2 text-sm text-[#30261C]/60">
+              Page {currentPage} of {totalPages}
+            </div>
+
+            {currentPage < totalPages && (
+              <Link
+                href={`/loan-settlement-services?page=${currentPage + 1}`}
+                className="px-4 py-2 border border-[#30261C]/20 rounded-md hover:bg-[#D29E0D] hover:text-white hover:border-[#D29E0D] transition-all"
+              >
+                Next
+              </Link>
+            )}
+          </div>
+        )}
 
         {/* SEO Content Section */}
         <section className="mt-24 border-t border-[#30261C]/5 pt-16">

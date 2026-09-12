@@ -20,7 +20,7 @@ const AnujBhiya = () => {
       {/* Content Section */}
       <div className="w-full md:w-1/2 space-y-6">
         <div className="space-y-2">
-          <h2 className="text-4xl font-bold text-gray-900">Anuj Anand Malik</h2>
+          <h1 className="text-4xl font-bold text-gray-900">Anuj Anand Malik</h1>
           <p className="text-xl text-gray-600">Founder</p>
           <div className="flex space-x-4">
             <a href="https://www.linkedin.com/in/iamanujmalik/" target="_blank" rel="noopener noreferrer">

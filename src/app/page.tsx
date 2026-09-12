@@ -20,13 +20,13 @@ export const metadata = {
   title: 'AMA Legal Solutions | Top Full-Service Law Firm in India',
   description: 'AMA Legal Solutions is a premier law firm in India, offering expert legal consultation, dispute resolution, and advisory for individuals and corporations.',
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/',
+    canonical: 'https://www.amalegalsolutions.com',
   },
   // Add Open Graph metadata for better social sharing
   openGraph: {
     title: 'AMA Legal Solutions | Top Full-Service Law Firm in India',
     description: 'Expert legal consultation and dispute resolution services in India. AMA Legal Solutions provides trustworthy advisory for all your legal needs.',
-    url: 'https://www.amalegalsolutions.com/',
+    url: 'https://www.amalegalsolutions.com',
     siteName: 'AMA Legal Solutions',
     type: 'website',
   },

@@ -137,7 +137,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "CFPs for Debt Restructuring & Settlement | Expert Advice",
-  description: "Find expert Certified Financial Planners (CFPs) for debt restructuring and settlement in India. Reduce EMIs, settle loans legally, and stop recovery harassment today.",
+  description: "Find expert CFPs for debt restructuring and loan settlement in India. Reduce EMIs, settle debts legally, and stop recovery agent harassment today.",
   keywords: [
     "certified financial planners debt restructuring",
     "debt settlement specialists india",
@@ -651,7 +651,7 @@ export default function DebtSpecialistPage() {
                 {/* Trust Badges */}
                 <div className="px-4 py-8 bg-gray-50/50 rounded-[2.5rem] border border-dashed border-gray-200">
                     <div className="grid grid-cols-2 gap-6 items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-                      <Image src="/logo.png" alt="Trusted" width={100} height={40} className="w-full h-auto" />
+                      <Image src="/ama-legal-solutions-logo.png" alt="Trusted" width={100} height={40} className="w-full h-auto" />
                       <div className="text-xs font-bold text-center text-gray-400">FPSB INDIA <br/> STANDARDS</div>
                     </div>
                 </div>
