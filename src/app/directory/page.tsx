@@ -12,6 +12,9 @@ export const metadata: Metadata = {
 };
 
 const directoryLinks = [
+  { name: 'Which is Better: Loan Settlement or Debt Consolidation? Legal Guide', href: '/loan-settlement-vs-debt-consolidation' },
+  { name: 'Loan Settlement Kab Krna Chaiye? Right Time & Legal Guide', href: '/loan-settlement-kab-krna-chaiye' },
+  { name: 'Loan Settlement Ke Liye Konsi Company Sabse Achi Hai? Legal Guide & Comparison', href: '/loan-settlement-ke-liye-konsi-company-sabse-achi-hai' },
   { name: 'Loan Settlement Karwana Hai? Complete Legal Process & RBI OTS Guide', href: '/loan-settlement-karwana-hai' },
   { name: 'Pay Day Loan Settlement in September 2026: Legal Process & RBI OTS Framework', href: '/pay-day-loan-settlement-in-september-2026' },
   { name: 'Loan Settlement Lawyer for High Value Debts: Strategic Commercial Debt Resolution & DRT Defense', href: '/loan-settlement-expert-for-high-value-debts' },
