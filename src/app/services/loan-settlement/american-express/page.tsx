@@ -10,13 +10,13 @@ import { MdCreditScore, MdMoneyOff, MdWarning } from "react-icons/md";
 
 // Metadata
 export const metadata = {
-  title: "American Express Settlement | Amex Credit Card OTS | AMA Legal Solutions",
+  title: "American Express Settlement | AMA Legal",
   description: "Struggling with American Express (Amex) debt? Expert legal help for settling Charge Cards and Credit Cards. Stop arbitration and legal notices.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/american-express',
   },
   openGraph: {
-    title: "American Express Settlement | Amex Credit Card OTS | AMA Legal Solutions",
+    title: "American Express Settlement | AMA Legal",
     description: "Struggling with American Express (Amex) debt? Expert legal help for settling Charge Cards and Credit Cards. Stop arbitration and legal notices.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/american-express",
     type: "website",

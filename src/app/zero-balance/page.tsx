@@ -8,10 +8,17 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/zero-balance',
   },
-  title: "Zero Balance Account (ZBA): Benefits & RBI Rules",
+  title: "Zero Balance Account (ZBA) Benefits & RBI Rules | AMA",
   description:
-    "Discover the complete guide to Zero Balance Accounts (ZBA) in India. Learn about PMJDY, BSBDA, salary accounts, benefits for businesses, and your rights under RBI guidelines.",
+    "Complete guide to Zero Balance Accounts (ZBA) in India. Learn about PMJDY, BSBDA, salary accounts, business perks, and RBI rights with AMA Legal.",
   keywords: "zero balance account, ZBA India, jan dhan yojana, bsbda account, zero balance savings account, rbi guidelines zero balance, no minimum balance account, bank account benefits",
+  openGraph: {
+    title: "Zero Balance Account (ZBA) Benefits & RBI Rules | AMA",
+    description:
+      "Complete guide to Zero Balance Accounts (ZBA) in India. Learn about PMJDY, BSBDA, salary accounts, business perks, and RBI rights with AMA Legal.",
+    url: 'https://www.amalegalsolutions.com/zero-balance',
+    type: "article",
+  },
 };
 
 const sections = [

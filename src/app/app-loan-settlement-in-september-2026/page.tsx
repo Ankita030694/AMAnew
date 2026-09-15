@@ -9,7 +9,7 @@ const OG_IMAGE =
 export const metadata: Metadata = {
   title: "App Loan Settlement in September 2026 | AMA Legal",
   description:
-    "Settle digital lending app loans, instant personal loans, and fintech credit lines in September 2026 under RBI compromise norms. Secure maximum waivers before Q2 audit closing with expert legal advisory.",
+    "Settle digital lending app loans and fintech credit in September 2026 under RBI compromise norms. Secure maximum waivers before Q2 with expert legal help.",
   keywords: [
     "app loan settlement in september 2026",
     "digital lending app loan settlement india",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "App Loan Settlement in September 2026 | AMA Legal",
     description:
-      "Settle digital lending app loans, instant personal loans, and fintech credit lines in September 2026 under RBI compromise norms. Secure maximum waivers before Q2 audit closing with expert legal advisory.",
+      "Settle digital lending app loans and fintech credit in September 2026 under RBI compromise norms. Secure maximum waivers before Q2 with expert legal help.",
     url: PAGE_URL,
     type: "article",
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "App Loan Settlement in September 2026 | AMA Legal",
     description:
-      "Settle digital lending app loans, instant personal loans, and fintech credit lines in September 2026 under RBI compromise norms. Secure maximum waivers before Q2 audit closing with expert legal advisory.",
+      "Settle digital lending app loans and fintech credit in September 2026 under RBI compromise norms. Secure maximum waivers before Q2 with expert legal help.",
     images: [OG_IMAGE],
     site: "@AMALegalSol",
     creator: "@AnujAnandMalik",

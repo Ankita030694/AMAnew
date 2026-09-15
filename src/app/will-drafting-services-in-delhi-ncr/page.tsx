@@ -168,7 +168,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Will Drafting Services in Delhi NCR | Avoid Probate Delays",
-  description: "Expert Will drafting services in Delhi NCR. Protect your assets from mandatory probate, handle DDA flats, and ensure legal validity. Contact AMA Legal Solutions.",
+  description: "Expert Will drafting services in Delhi NCR. Protect your assets from mandatory probate, handle DDA flats, and ensure legal validity with AMA Legal.",
   robots: {
     index: true,
     follow: true,

@@ -161,7 +161,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Can You Ignore a Bank Arbitration Notice? What Happens Next",
-  description: "Discover the severe legal and financial consequences of ignoring a bank arbitration notice, including ex-parte awards and asset attachment. Learn how to respond.",
+  description: "Discover the legal consequences of ignoring a bank arbitration notice, including ex-parte awards and account attachment. Learn how to protect your rights.",
   robots: {
     index: true,
     follow: true,

@@ -7,9 +7,9 @@ const OG_IMAGE =
   "/images/og/loan-settlement-expert-for-high-value-debts.png";
 
 export const metadata: Metadata = {
-  title: "Loan Settlement Lawyer for High Value Debts | AMA Legal Solutions",
+  title: "Loan Settlement Lawyer for High Value Debts | AMA Legal",
   description:
-    "Consult a premier loan settlement lawyer for high value debts. Advocate-led commercial debt compromise, DRT litigation defense, SARFAESI quashing, guarantor immunity, and transparent fixed advisory.",
+    "Consult a top loan settlement lawyer for high-value debts. Expert advocate defense for commercial debt compromise, DRT litigation, and SARFAESI defense.",
   keywords: [
     "loan settlement lawyer for high value debts",
     "high value debt settlement expert india",
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "Loan Settlement Lawyer for High Value Debts | AMA Legal Solutions",
+    title: "Loan Settlement Lawyer for High Value Debts | AMA Legal",
     description:
-      "Consult a premier loan settlement lawyer for high value debts. Advocate-led commercial debt compromise, DRT litigation defense, SARFAESI quashing, guarantor immunity, and transparent fixed advisory.",
+      "Consult a top loan settlement lawyer for high-value debts. Expert advocate defense for commercial debt compromise, DRT litigation, and SARFAESI defense.",
     url: PAGE_URL,
     type: "article",
     images: [
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Loan Settlement Lawyer for High Value Debts | AMA Legal Solutions",
+    title: "Loan Settlement Lawyer for High Value Debts | AMA Legal",
     description:
-      "Consult a premier loan settlement lawyer for high value debts. Advocate-led commercial debt compromise, DRT litigation defense, SARFAESI quashing, guarantor immunity, and transparent fixed advisory.",
+      "Consult a top loan settlement lawyer for high-value debts. Expert advocate defense for commercial debt compromise, DRT litigation, and SARFAESI defense.",
     images: [OG_IMAGE],
     site: "@AMALegalSol",
     creator: "@AnujAnandMalik",

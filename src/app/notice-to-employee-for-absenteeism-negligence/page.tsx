@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/notice-to-employee-for-absenteeism-negligence',
   },
-  title: "Notice to Employee for Absenteeism & Negligence: Legal Protocol",
+  title: "Notice to Employee for Absenteeism & Negligence | Guide",
   description:
-    "Struggling with employee absence or negligence? Learn how to issue a formal legal notice for absenteeism and negligence of duty in India. Protect your workplace productivity.",
+    "Struggling with employee absence or negligence? Learn how to issue a formal notice for absenteeism and dereliction of duty in India under labor laws.",
   keywords: "notice to employee for absenteeism negligence india, legal action for employee absence without leave, show cause notice for negligence of duty format, termination for unauthorized absence india, how to handle negligent employees legally",
 };
 

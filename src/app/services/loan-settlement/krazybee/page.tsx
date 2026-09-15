@@ -9,14 +9,14 @@ import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUnivers
 
 // Metadata
 export const metadata = {
-  title: "KrazyBee Loan Settlement | KreditBee OTS Scheme | AMA Legal Solutions",
-  description: "Struggling with KrazyBee or KreditBee loan repayment? Expert legal help for KrazyBee loan settlement. Stop harassment, settle student loans, and close debt.",
+  title: "KrazyBee Loan Settlement | AMA Legal",
+  description: "Struggling with KrazyBee or KreditBee loan repayment? Expert legal help for KrazyBee loan settlement. Stop harassment, settle student loans, and close.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/krazybee',
   },
   openGraph: {
-    title: "KrazyBee Loan Settlement | KreditBee OTS Scheme | AMA Legal Solutions",
-    description: "Struggling with KrazyBee or KreditBee loan repayment? Expert legal help for KrazyBee loan settlement. Stop harassment, settle student loans, and close debt.",
+    title: "KrazyBee Loan Settlement | AMA Legal",
+    description: "Struggling with KrazyBee or KreditBee loan repayment? Expert legal help for KrazyBee loan settlement. Stop harassment, settle student loans, and close.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/krazybee",
     type: "website",
     images: [

@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/notice-for-recovery-of-professional-fees',
   },
-  title: "Legal Notice for Recovery of Professional Fees | Professional Fee Recovery Guide",
+  title: "Legal Notice for Recovery of Professional Fees | Guide",
   description:
-    "Non-payment of professional fees? Learn how to draft a legal notice for recovery of outstanding dues in India. Expert guide for consultants, freelancers, and businesses.",
+    "Facing non-payment of professional fees? Learn how to draft a legal notice for recovery of outstanding dues in India. Expert guide for professionals.",
   keywords: "notice for recovery of professional fees, legal notice for professional fees india, recovery of unpaid dues, professional fee dispute, civil suit for recovery of money",
 };
 

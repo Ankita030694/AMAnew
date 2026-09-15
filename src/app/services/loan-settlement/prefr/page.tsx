@@ -164,9 +164,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Prefr Loan Settlement | Expert Debt Relief by AMA Legal Solutions",
+  title: "Prefr Loan Settlement | AMA Legal",
   description:
-    "End your Prefr debt problems with expert legal help. AMA Legal Solutions specializes in app-based personal loan settlements. founded by anuj anand malik in sector 57. call 8700343611.",
+    "End your Prefr debt problems with expert legal help. AMA Legal Solutions specializes in app-based personal loan settlements. founded by anuj anand malik.",
   keywords: [
     "Prefr loan settlement",
     "Prefr debt default",
@@ -181,7 +181,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Prefr Debt SettlementExperts | Legal Resolution in India",
-    description: "Resolve your Prefr outstanding dues through a professional legal settlement. our firm in sector 57 will protect your rights and stop all harassment. call 8700343611 today.",
+    description: "Resolve your Prefr outstanding dues through a professional legal settlement. our firm in sector 57 will protect your rights and stop all harassment..",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/prefr",
     type: "website",
     images: [{ url: "/services/3.png", width: 1200, height: 630, alt: "Prefr Loan Settlement Services" }],

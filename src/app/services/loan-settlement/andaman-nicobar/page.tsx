@@ -7,14 +7,14 @@ import Image from "next/image";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement in Andaman & Nicobar | Port Blair Bank Recovery Lawyers",
+  title: "Loan Settlement in Andaman & Nicobar | AMA Legal",
   description:
-    "Expert loan settlement services in Andaman and Nicobar Islands (Port Blair, Diglipur, Havelock). Settle bank debts legally through Lok Adalat & DRT. Stop harassment.",
+    "Expert loan settlement services in Andaman and Nicobar Islands (Port Blair, Diglipur, Havelock). Settle bank debts legally through Lok Adalat & DRT..",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/andaman-nicobar',
   },
   openGraph: {
-    title: "Loan Settlement in Andaman & Nicobar | Port Blair Bank Recovery Lawyers",
+    title: "Loan Settlement in Andaman & Nicobar | AMA Legal",
     description: "Expert loan settlement services in the Andaman and Nicobar Islands. Stop harassment and settle debt legally through Lok Adalat & DRT Kolkata.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/andaman-nicobar",
     type: "website",

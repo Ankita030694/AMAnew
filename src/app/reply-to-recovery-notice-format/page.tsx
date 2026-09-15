@@ -144,7 +144,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Reply to Recovery Notice Format | Best Legal Guide in India",
-  description: "Get the expert reply to recovery notice format from amalegalsolutions.com. Consulting Anuj Anand Malik in Sector 57 can save your assets. Call 8700343611 for help.",
+  description: "Get the expert reply to recovery notice format in India. Learn how to draft an effective response, dispute wrongful claims, and protect your assets.",
   keywords: ["reply to recovery notice format", "recovery notice reply", "bank legal notice reply", "Anuj Anand Malik lawyer", "Sector 57 law firm", "AMA Legal Solutions"],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/reply-to-recovery-notice-format',

@@ -148,7 +148,7 @@ const faqSchema = {
 export const metadata = {
   title: "Loan Settlement in Karnataka | 2025 Ordinance Debt Relief",
   description:
-    "#1 Loan Settlement in Karnataka. Settle debts under 2025 Ordinance. Specialized for Bangalore IT professionals & Credit Cards. Stop harassment in Mysore/Hubli.",
+    "#1 Loan Settlement in Karnataka. Settle debts under 2025 Ordinance. Specialized for Bangalore IT professionals & Credit Cards. Stop harassment in.",
   keywords: [
     "loan settlement Karnataka",
     "debt settlement Bangalore",

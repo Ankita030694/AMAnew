@@ -129,7 +129,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "How to File Complaint RBI Ombudsman Online | Loan Settlement",
-  description: "Learn exactly how to file complaint RBI ombudsman online to escalate uncooperative lenders and aggressive recovery agents during a loan settlement process in India.",
+  description: "Learn how to file an RBI Ombudsman complaint online against unfair recovery practices and uncooperative lenders during loan settlement in India.",
   robots: {
     index: true,
     follow: true,

@@ -6,16 +6,16 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement in Assam | Debt Relief Lawyers Guwahati, Dibrugarh, Silchar",
+  title: "Loan Settlement in Assam | AMA Legal",
   description:
-    "Struggling with debt in Assam? AMA Legal Solutions offers expert loan settlement. We help Tea Garden Workers, Flood-affected Farmers, and Microfinance borrowers (AMFIRS).",
+    "Struggling with debt in Assam? AMA Legal Solutions offers expert loan settlement. We help Tea Garden Workers, Flood-affected Farmers, and Microfinance.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/assam',
   },
   openGraph: {
-    title: "Loan Settlement in Assam | Debt Relief Lawyers Guwahati, Dibrugarh, Silchar",
-    description: "Struggling with debt in Assam? AMA Legal Solutions offers expert loan settlement. We help Tea Garden Workers, Flood-affected Farmers, and Microfinance borrowers (AMFIRS).",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Assam",
+    title: "Loan Settlement in Assam | AMA Legal",
+    description: "Struggling with debt in Assam? AMA Legal Solutions offers expert loan settlement. We help Tea Garden Workers, Flood-affected Farmers, and Microfinance.",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/assam",
     type: "website",
     images: [
       {

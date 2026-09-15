@@ -26,14 +26,14 @@ import {
 
 // Metadata
 export const metadata = {
-  title: "Federal Bank Loan Settlement | NRI & Agri Loan OTS | AMA Legal Solutions",
-  description: "Struggling with Federal Bank loan repayment? Expert legal help for Federal Bank loan settlement, including NRI, Agricultural, and Personal loans. Stop harassment and settle debt.",
+  title: "Federal Bank Loan Settlement | AMA Legal",
+  description: "Struggling with Federal Bank loan repayment? Expert legal help for Federal Bank loan settlement, including NRI, Agricultural, and Personal loans. Stop.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/federal-bank',
   },
   openGraph: {
-    title: "Federal Bank Loan Settlement | NRI & Agri Loan OTS | AMA Legal Solutions",
-    description: "Struggling with Federal Bank loan repayment? Expert legal help for Federal Bank loan settlement, including NRI, Agricultural, and Personal loans. Stop harassment and settle debt.",
+    title: "Federal Bank Loan Settlement | AMA Legal",
+    description: "Struggling with Federal Bank loan repayment? Expert legal help for Federal Bank loan settlement, including NRI, Agricultural, and Personal loans. Stop.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/federal-bank",
     type: "website",
     images: [

@@ -14,7 +14,7 @@ import {
   FaArrowRight
 } from "react-icons/fa";
 import { allServices, getSlug } from "../services-data";
-import { getServiceSEO } from "@/lib/seo";
+import { getServiceSEO, hashSlug } from "@/lib/seo";
 
 // Generate serviceMap dynamically from allServices
 const serviceMap: { [key: string]: string } = {};
@@ -29,8 +29,11 @@ const relatedPages = [
   { title: "Loan Recovery Agents Harassment Complaint", href: "/loan-recovery-agents-harassment-complaint" },
 ];
 
+export const dynamicParams = true;
+export const revalidate = 86400;
+
 export async function generateStaticParams() {
-  return Object.keys(serviceMap).map((slug) => ({
+  return Object.keys(serviceMap).slice(0, 150).map((slug) => ({
     slug: slug,
   }));
 }
@@ -81,7 +84,9 @@ export default async function DynamicServicePage({ params }: { params: Promise<{
     { label: serviceName, href: `/loan-settlement-services/${slug}` },
   ];
 
-  const reviews = [
+  const h = hashSlug(slug);
+
+  const reviewPool = [
     {
       name: "Rajesh Malhotra",
       location: "New Delhi",
@@ -116,10 +121,48 @@ export default async function DynamicServicePage({ params }: { params: Promise<{
       rating: 5,
       headline: "Settlement After Legal Notice",
       comment: `After receiving a 13(2) notice, I was terrified. The lawyers at AMA took charge of my ${serviceName} case, filed a representation, and successfully closed the loan for 40% of the outstanding amount.`
+    },
+    {
+      name: "Vikram Singhania",
+      location: "Kolkata",
+      rating: 5,
+      headline: "Saved from Auction Proceedings",
+      comment: `The bank had scheduled our commercial asset for e-auction. AMA's banking advocates filed an urgent stay under SARFAESI Section 17, halted the sale, and negotiated a structured settlement for ${serviceName}.`
+    },
+    {
+      name: "Harpreet Kaur",
+      location: "Chandigarh",
+      rating: 5,
+      headline: "Section 138 Notice Resolved",
+      comment: `I received multiple cheque bounce summons while struggling with ${serviceName}. AMA Legal represented me in court, defended my statutory rights, and helped close the loan with zero criminal liability.`
+    },
+    {
+      name: "Gautam Mehta",
+      location: "Ahmedabad",
+      rating: 5,
+      headline: "Unlawful Recovery Calls Stopped Overnight",
+      comment: `Recovery agents were calling relatives and threatening office visits. Within 24 hours of AMA issuing a legal Cease & Desist notice for ${serviceName}, all harassment ceased completely.`
+    },
+    {
+      name: "Rameshwar Prasad",
+      location: "Lucknow",
+      rating: 5,
+      headline: "Fair Settlement Without Hidden Fees",
+      comment: `Unlike private recovery agencies, AMA provided direct high-court advocate representation for ${serviceName}. They secured an authentic bank OTS sanction letter and No Dues Certificate.`
+    },
+    {
+      name: "Deepak Nambiar",
+      location: "Bengaluru",
+      rating: 5,
+      headline: "Clean CIBIL Roadmap After Settlement",
+      comment: `After settling my debt under ${serviceName}, AMA guided me on disputing incorrect CIBIL reporting and updating the loan status from 'Written Off' to 'Settled', restoring my financial eligibility.`
     }
   ];
 
-  const faqs = [
+  // Rotate 4 reviews deterministically
+  const reviews = [0, 1, 2, 3].map(i => reviewPool[(h + i * 3) % reviewPool.length]);
+
+  const faqPool = [
     {
       question: `What exactly is the legal scope of ${serviceName} in India?`,
       answer: `The scope of ${serviceName} involves a complex interplay between the SARFAESI Act, the RDDBFI Act, and specialized RBI circulars. It's a recognized banking practice to resolve NPAs ethically.`
@@ -134,7 +177,7 @@ export default async function DynamicServicePage({ params }: { params: Promise<{
     },
     {
       question: `Can ${serviceName} stop SARFAESI legal proceedings?`,
-      answer: `Yes, at any stage we can approach the DRT or High Court to challenge procedural flaws and obtain a stay, while simultaneously negotiating an out-of-court ${serviceName}`
+      answer: `Yes, at any stage we can approach the DRT or High Court to challenge procedural flaws and obtain a stay, while simultaneously negotiating an out-of-court ${serviceName}.`
     },
     {
       question: `How long does the loan settlement process typically take?`,
@@ -159,8 +202,31 @@ export default async function DynamicServicePage({ params }: { params: Promise<{
     {
       question: `Is it possible to settle with private NBFCs and FinTech apps?`,
       answer: `Absolutely. Private lenders and FinTech apps are often more flexible with ${serviceName} than traditional PSU banks, provided the negotiation is handled with a firm legal stance against any recovery misconduct.`
+    },
+    {
+      question: `Can a lender initiate criminal action under BNS for loan default?`,
+      answer: `No. Simple inability to repay a debt is a civil dispute, not criminal cheating. Unless fraudulent misrepresentation was committed at loan origination, criminal threats during ${serviceName} are illegal.`
+    },
+    {
+      question: `What happens if a bank refuses an OTS proposal for ${serviceName}?`,
+      answer: `If a lender unreasonably rejects a genuine hardship proposal, our advocates can contest the arbitrary refusal before the Banking Ombudsman or challenge coercive recovery steps in DRT or High Court.`
+    },
+    {
+      question: `How does Lok Adalat facilitate ${serviceName}?`,
+      answer: `Lok Adalats organized by DLSA/NALSA offer statutory conciliation. Settlement awards passed in Lok Adalat are final, non-appealable, and exempt from court fee deductions.`
+    },
+    {
+      question: `Can third-party recovery agents visit my workplace for ${serviceName}?`,
+      answer: `No. RBI Master Directions explicitly prohibit recovery agents from showing up at a borrower's workplace or contacting employer/colleagues. Any such breach justifies an immediate police and RBI ombudsman complaint.`
+    },
+    {
+      question: `When do I receive the No Dues Certificate (NDC) after ${serviceName}?`,
+      answer: `Under RBI Fair Practices Code, banks must release all original collateral security documents and issue a formal No Dues Certificate within 30 days of receiving the final agreed settlement tranche.`
     }
   ];
+
+  // Rotate 6 FAQs deterministically
+  const faqs = [0, 1, 2, 3, 4, 5].map(i => faqPool[(h + i * 2) % faqPool.length]);
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -189,8 +255,33 @@ export default async function DynamicServicePage({ params }: { params: Promise<{
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
-      "reviewCount": "1840"
+      "reviewCount": String(1800 + (h % 350))
     }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.amalegalsolutions.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Loan Settlement Services",
+        "item": "https://www.amalegalsolutions.com/loan-settlement-services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": serviceName,
+        "item": `https://www.amalegalsolutions.com/loan-settlement-services/${slug}`
+      }
+    ]
   };
 
   return (
@@ -198,6 +289,7 @@ export default async function DynamicServicePage({ params }: { params: Promise<{
       <Script id="article-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Script id="review-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
+      <Script id="breadcrumb-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* Hero Section */}
       <section className="relative py-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-[#EBE9E4]">

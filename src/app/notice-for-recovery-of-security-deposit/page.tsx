@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/notice-for-recovery-of-security-deposit',
   },
-  title: "Notice for Recovery of Security Deposit: Legal Guide & Rights",
+  title: "Notice for Recovery of Security Deposit | Legal Rights",
   description:
-    "Is your landlord not returning your security deposit? Learn the legal procedure to recover your deposit in India, including legal notices, Model Tenancy Act, and court options.",
+    "Landlord refusing to refund your security deposit? Learn legal steps to recover your deposit in India under Model Tenancy Act with expert notice drafting.",
   keywords: "notice for recovery of security deposit, legal notice to landlord for security deposit, security deposit refund laws india, model tenancy act security deposit, how to get security deposit back from landlord",
 };
 

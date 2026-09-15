@@ -196,9 +196,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "How to Improve CIBIL Score After Loan Settlement | Expert Guide",
+  title: "Improve CIBIL Score After Loan Settlement | Legal Guide",
   description:
-    "Struggling with a low credit score after a loan settlement? Discover the complete roadmap to rebuild your CIBIL score, from secured credit cards to error disputes. Expert legal advice from AMA Legal Solutions.",
+    "Rebuild your CIBIL score after loan settlement. Learn proven legal strategies, dispute errors, use secured credit cards, and restore your credit rating.",
   keywords: [
     "improve cibil score after loan settlement",
     "rebuild credit score india",
@@ -215,8 +215,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/how-to-improve-cibil-score-after-loan-settlement',
   },
   openGraph: {
-    title: "How to Improve CIBIL Score After Loan Settlement | Expert Guide",
-    description: "Discover the complete roadmap to rebuild your CIBIL score after a loan settlement. Expert tips and legal guidance.",
+    title: "Improve CIBIL Score After Loan Settlement | Legal Guide",
+    description: "Rebuild your CIBIL score after loan settlement. Learn proven legal strategies, dispute errors, use secured credit cards, and restore your credit rating.",
     url: "https://www.amalegalsolutions.com/how-to-improve-cibil-score-after-loan-settlement",
     type: "website",
     images: [

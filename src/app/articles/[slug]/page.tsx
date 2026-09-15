@@ -5,6 +5,7 @@ import ArticleDetail, { Article, FAQ, Review } from "./articledetail";
 import Script from "next/script";
 import { unstable_cache } from 'next/cache';
 import Navbar from "@/newcomp/Navbar";
+import { formatMetaTitle, formatMetaDescription } from "@/lib/seo";
 
 export const revalidate = 3600; // Cache the page at the Edge for 1 hour
 
@@ -169,8 +170,10 @@ export async function generateMetadata(
     const articleData = await getArticleBySlug(slug);
     
     if (articleData) {
-      title = articleData.metaTitle || articleData.title || title;
-      description = articleData.metaDescription || description;
+      const rawTitle = articleData.metaTitle || articleData.title || title;
+      const rawDesc = articleData.metaDescription || description;
+      title = formatMetaTitle(rawTitle);
+      description = formatMetaDescription(rawDesc);
       image = articleData.image || "";
       author = articleData.author || author;
     } else {

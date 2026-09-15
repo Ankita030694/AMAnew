@@ -10,7 +10,7 @@ export const metadata = {
   },
   title: "Notice for Recovery from Tenant & Landlord: Legal Guide 2026",
   description:
-    "Learn how to legally recover possession and outstanding rent from a tenant in India. Complete guide on legal notices, eviction procedures, and the Transfer of Property Act.",
+    "Learn how to legally recover possession and unpaid rent from a tenant in India. Comprehensive guide on eviction notices under Transfer of Property Act.",
   keywords: "notice for recovery from tenant, eviction notice India, recover unpaid rent, possession of property, rental dispute legal guide, landlord rights India, legal notice for eviction",
 };
 

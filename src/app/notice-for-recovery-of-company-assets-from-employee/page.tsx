@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/notice-for-recovery-of-company-assets-from-employee',
   },
-  title: "Notice for Recovery of Company Assets from Employee: Legal Guide",
+  title: "Notice for Recovery of Company Assets from Employee",
   description:
-    "Has an employee left without returning company property? Learn the legal steps to recover laptops, phones, and data under IPC 406. Issue a formal notice today.",
+    "Employee left without returning company property? Learn legal steps to recover laptops, phones, and data under IPC 406. Issue a formal notice today.",
   keywords: "notice for recovery of company assets from employee india, legal action against employee for not returning laptop, criminal breach of trust employee assets india, legal notice format for recovery of company property, employee wrongful retention of assets legal steps",
 };
 

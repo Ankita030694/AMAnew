@@ -221,7 +221,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "What is SARFAESI Act India? Borrowers Rights & Timeline",
-  description: "Understand the SARFAESI Act, 2002. Learn your legal rights against bank property seizure, DRT appeals, and how to stop an auction with the best loan settlement india.",
+  description: "Understand the SARFAESI Act 2002. Learn your legal rights against bank property seizure, Section 13 notices, DRT appeals, and how to stop property auctions.",
   robots: {
     index: true,
     follow: true,

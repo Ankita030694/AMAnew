@@ -23,14 +23,14 @@ import {
 
 export const metadata = {
   title: "Loan Settlement Guide for IT Professionals | AMA Legal",
-  description: "Struggling with debt? Get our expert Loan Settlement Guide for IT Professionals to resolve bank harassment, restore CIBIL, and secure your financial future today.",
+  description: "Struggling with debt? Read our Loan Settlement Guide for IT Professionals to stop bank harassment, restore CIBIL, and secure your financial future.",
   keywords: "loan settlement for IT professionals, tech worker debt settlement, CIBIL score recovery for developers, software engineer loan default, bank negotiation for IT workers, AMA Legal Solutions, Anuj Anand Malik, IT layoffs loan default",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/loan-settlement-for-it-professionals',
   },
   openGraph: {
     title: "Loan Settlement Guide for IT Professionals | AMA Legal",
-    description: "Struggling with debt? Get our expert Loan Settlement Guide for IT Professionals to resolve bank harassment, restore CIBIL, and secure your financial future today.",
+    description: "Struggling with debt? Read our Loan Settlement Guide for IT Professionals to stop bank harassment, restore CIBIL, and secure your financial future.",
     url: "https://www.amalegalsolutions.com/loan-settlement-for-it-professionals",
     siteName: "AMA Legal Solutions",
     images: [
@@ -48,7 +48,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Loan Settlement Guide for IT Professionals | AMA Legal",
-    description: "Struggling with debt? Get our expert Loan Settlement Guide for IT Professionals to resolve bank harassment, restore CIBIL, and secure your financial future today.",
+    description: "Struggling with debt? Read our Loan Settlement Guide for IT Professionals to stop bank harassment, restore CIBIL, and secure your financial future.",
     images: ["https://www.amalegalsolutions.com/newAssets/it_loan_settlement.png"],
     creator: "@amalegalsolutions",
     site: "@amalegalsolutions",

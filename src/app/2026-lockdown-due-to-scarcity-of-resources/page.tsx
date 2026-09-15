@@ -158,7 +158,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "2026 Lockdown & Resource Scarcity | Expert Legal Analysis",
-  description: "Is a 2026 lockdown due to scarcity of resources coming? AMA Legal Solutions, led by Anuj Anand Malik in Sector 57, analyzes the legalities, rumors, and your rights. Contact 8700343611.",
+  description: "Is a 2026 lockdown due to scarcity of resources coming? AMA Legal Solutions analyzes the legalities, emergency powers, and constitutional rights in India.",
   keywords: [
     "2026 lockdown due to scarcity of resources",
     "lockdown 2026 india",

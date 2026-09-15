@@ -183,9 +183,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Litigation Services in Punjab | Punjab & Haryana High Court Lawyers",
+  title: "Litigation Services in Punjab | AMA Legal",
   description:
-    "Expert litigation lawyers in Punjab. We represent clients in Punjab & Haryana High Court (Chandigarh) and District Courts (Ludhiana, Amritsar). NRI Property, Criminal, Civil & Matrimonial cases.",
+    "Expert litigation lawyers in Punjab. We represent clients in Punjab & Haryana High Court (Chandigarh) and District Courts (Ludhiana, Amritsar). NRI.",
   keywords: [
     "litigation services punjab",
     "punjab and haryana high court lawyer",
@@ -202,8 +202,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/services/litigation/punjab',
   },
   openGraph: {
-    title: "Litigation Services in Punjab | Punjab & Haryana High Court Lawyers",
-    description: "Expert litigation services in Punjab. Representing clients in Punjab & Haryana High Court and District Courts.",
+    title: "Litigation Services in Punjab | AMA Legal",
+    description: "Expert litigation services in Punjab. Representing clients in Punjab & Haryana High Court and District Courts Contact AMA Legal Solutions today.",
     url: "https://www.amalegalsolutions.com/services/litigation/punjab",
     type: "website",
     images: [

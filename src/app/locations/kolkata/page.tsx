@@ -199,7 +199,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Lawyers in Kolkata | Best Law Firm for High Court & Corporate",
+  title: "Lawyers in Kolkata | AMA Legal",
   description:
     "Top Advocates in Kolkata practicing in Calcutta High Court, NCLT, and Alipore Judges Court. Experts in Property, Probate, Divorce, and Corporate Law.",
   keywords: [
@@ -220,7 +220,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Lawyers in Kolkata | Premier Legal Counsel West Bengal",
-    description: "Expert legal representation in Kolkata. Corporate, Civil, Criminal, and Property Law services by AMA Legal Solutions.",
+    description: "Expert legal representation in Kolkata. Corporate, Civil, Criminal, and Property Law services by AMA Legal Solutions Contact AMA Legal Solutions today.",
     url: "https://www.amalegalsolutions.com/locations/kolkata",
     type: "website",
     images: [

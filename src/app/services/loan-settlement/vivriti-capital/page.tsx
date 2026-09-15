@@ -10,13 +10,13 @@ import { MdBusinessCenter, MdMoneyOff } from "react-icons/md";
 
 // Metadata
 export const metadata = {
-  title: "Vivriti Capital Loan Settlement | SME & Personal Loan OTS | AMA Legal Solutions",
+  title: "Vivriti Capital Loan Settlement | AMA Legal",
   description: "Struggling with Vivriti Capital loan repayment? Expert legal help for settling business loans and personal loans. Stop arbitration and legal action.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/vivriti-capital',
   },
   openGraph: {
-    title: "Vivriti Capital Loan Settlement | SME & Personal Loan OTS | AMA Legal Solutions",
+    title: "Vivriti Capital Loan Settlement | AMA Legal",
     description: "Struggling with Vivriti Capital loan repayment? Expert legal help for settling business loans and personal loans. Stop arbitration and legal action.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/vivriti-capital",
     type: "website",

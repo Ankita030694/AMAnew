@@ -10,13 +10,13 @@ import { MdAppShortcut, MdMoneyOff } from "react-icons/md";
 
 // Metadata
 export const metadata = {
-  title: "Moneyview Loan Settlement | Personal Loan OTS | AMA Legal Solutions",
+  title: "Moneyview Loan Settlement | AMA Legal",
   description: "Struggling with Moneyview personal loan repayment? Expert legal help for settling app loans. Stop harassment, arbitration, and legal notices.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/moneyview',
   },
   openGraph: {
-    title: "Moneyview Loan Settlement | Personal Loan OTS | AMA Legal Solutions",
+    title: "Moneyview Loan Settlement | AMA Legal",
     description: "Struggling with Moneyview personal loan repayment? Expert legal help for settling app loans. Stop harassment, arbitration, and legal notices.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/moneyview",
     type: "website",

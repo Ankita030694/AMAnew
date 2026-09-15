@@ -152,8 +152,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Stop Loan Recovery Agent Harassment Online India | File Complaint ₹999",
-  description: "Drowning in recovery calls? Get expert legal protection for ₹999. File official complaints on RBI portals, stop harassment in 24 hours, and know your legal rights.",
+  title: "Stop Recovery Agent Harassment Online | Legal Complaint",
+  description: "Drowning in recovery calls? File official complaints on RBI portals, stop harassment within 24 hours, and enforce your borrower rights with AMA Legal.",
   keywords: [
     "loan recovery agent harassment complaint",
     "stop recovery agent harassment 24 hours",

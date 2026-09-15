@@ -21,9 +21,15 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/top-10-instant-loan-apps-in-india',
   },
-  title: "Top 10 Instant Loan Apps in India (2026) | Safe Regulated Apps",
+  title: "Top 10 Instant Loan Apps in India 2026 | RBI Regulated",
   description: "Compare the top 10 safe, RBI-regulated instant loan apps in India. Check interest rates, disbursal times, and learn how to avoid digital credit traps.",
   keywords: "instant loan apps, top 10 loan apps, top 10 instant loan apps, top loan apps, personal loan app india, rbi approved loan apps, safe digital lending, cibil score personal loan",
+  openGraph: {
+    title: "Top 10 Instant Loan Apps in India 2026 | RBI Regulated",
+    description: "Compare the top 10 safe, RBI-regulated instant loan apps in India. Check interest rates, disbursal times, and learn how to avoid digital credit traps.",
+    url: 'https://www.amalegalsolutions.com/top-10-instant-loan-apps-in-india',
+    type: "article",
+  },
 };
 
 const sections = [

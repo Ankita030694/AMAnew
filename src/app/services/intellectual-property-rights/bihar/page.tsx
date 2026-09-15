@@ -11,9 +11,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/bihar',
   },
-  title: "IPR Services in Bihar | Expert Intellectual Property Registration",
+  title: "IPR Services in Bihar | AMA Legal",
   description:
-    "Leading IPR services in Bihar. We assist with Trademark, Patent, Copyright, and GI registration. Protect your innovations with expert legal guidance in Patna and beyond.",
+    "Leading IPR services in Bihar. We assist with Trademark, Patent, Copyright, and GI registration. Protect your innovations with expert legal guidance in.",
   keywords: [
     "IPR services in Bihar",
     "Trademark registration Patna",
@@ -27,10 +27,9 @@ export const metadata = {
     "Trade Secret protection Bihar",
   ],
   openGraph: {
-    title:
-      "IPR Services in Bihar | Expert Intellectual Property Registration",
+    title: "IPR Services in Bihar | AMA Legal",
     description:
-      "Secure your intellectual property in Bihar with our expert services. From Trademarks to GI tags, we provide comprehensive legal support.",
+    "Secure your intellectual property in Bihar with our expert services. From Trademarks to GI tags, we provide comprehensive legal support.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/bihar",
     siteName: "AMA Legal Solutions",
     locale: "en_IN",

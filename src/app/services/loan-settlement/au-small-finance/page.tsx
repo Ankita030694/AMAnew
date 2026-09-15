@@ -9,14 +9,14 @@ import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUnivers
 
 // Metadata
 export const metadata = {
-  title: "AU Small Finance Bank Loan Settlement | OTS Scheme 2025 | AMA Legal Solutions",
-  description: "Struggling with AU Small Finance Bank loan repayment? Expert legal help for AU Bank loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
+  title: "AU Small Finance Bank Loan Settlement | AMA Legal",
+  description: "Struggling with AU Small Finance Bank loan repayment? Expert legal help for AU Bank loan settlement. Reduce your debt with One Time Settlement (OTS)..",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/au-small-finance',
   },
   openGraph: {
-    title: "AU Small Finance Bank Loan Settlement | OTS Scheme 2025 | AMA Legal Solutions",
-    description: "Struggling with AU Small Finance Bank loan repayment? Expert legal help for AU Bank loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
+    title: "AU Small Finance Bank Loan Settlement | AMA Legal",
+    description: "Struggling with AU Small Finance Bank loan repayment? Expert legal help for AU Bank loan settlement. Reduce your debt with One Time Settlement (OTS)..",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/au-small-finance",
     type: "website",
     images: [

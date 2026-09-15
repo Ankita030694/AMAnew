@@ -6,15 +6,15 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "IPR Services in Manipur | Trademark & Patent Consultants Imphal",
+  title: "IPR Services in Manipur | AMA Legal",
   description:
-    "Leading IPR firm for Manipur. We secure Trademarks, Patents, and GI tags for Imphal's startups, handloom weavers, and agricultural producers. Expert legal guidance.",
+    "Leading IPR firm for Manipur. We secure Trademarks, Patents, and GI tags for Imphal's startups, handloom weavers, and agricultural producers in India.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/manipur',
   },
   openGraph: {
-    title: "IPR Services in Manipur | Trademark & Patent Consultants Imphal",
-    description: "Leading IPR firm for Manipur. We secure Trademarks, Patents, and GI tags for Imphal's startups, handloom weavers, and agricultural producers. Expert legal guidance.",
+    title: "IPR Services in Manipur | AMA Legal",
+    description: "Leading IPR firm for Manipur. We secure Trademarks, Patents, and GI tags for Imphal's startups, handloom weavers, and agricultural producers in India.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/manipur",
     type: "website",
     images: [

@@ -160,8 +160,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Workplace Harassment Legal Notice Service India | POSH & Mental Health",
-  description: "Facing harassment at work? Get expert legal notice services for sexual, mental, and physical workplace harassment in India. Protect your rights with AMA Legal Solutions.",
+  title: "Workplace Harassment Legal Notice Service | AMA Legal",
+  description: "Facing harassment at work? Issue an expert legal notice under POSH Act and BNS for workplace harassment in India. Protect your legal rights with AMA Legal.",
   keywords: "workplace harassment legal notice, posh act india, mental harassment at work legal notice, sexual harassment legal help, employee rights india, labor court cases, internal committee bias",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/workplace-harassment-legal-notice-service',

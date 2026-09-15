@@ -212,9 +212,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Lawyers in Mumbai | #1 Law Firm for High Court & Corporate Law",
+  title: "Lawyers in Mumbai | #1 Law Firm for High Court & Corporate",
   description:
-    "Expert Lawyers in Mumbai for Bombay High Court, NCLT, Family Court. Best specialized advocates for Property Redevelopment, SRA, Divorce, Media Law & Corporate Disputes.",
+    "Expert Lawyers in Mumbai for Bombay High Court, NCLT, Family Court. Best specialized advocates for Property Redevelopment, SRA, Divorce, Media Law &.",
   keywords: [
     "lawyers in mumbai",
     "law firm in mumbai",
@@ -235,7 +235,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Lawyers in Mumbai | Top Legal Services Financial Capital",
-    description: "Expert legal representation in Mumbai. Corporate, Civil, Criminal, and Media Law services by AMA Legal Solutions.",
+    description: "Expert legal representation in Mumbai. Corporate, Civil, Criminal, and Media Law services by AMA Legal Solutions Contact AMA Legal Solutions today.",
     url: "https://www.amalegalsolutions.com/locations/mumbai",
     type: "website",
     images: [

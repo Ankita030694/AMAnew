@@ -188,9 +188,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "HDFC Debt Consolidation Loan | Simplify Multiple EMIs into One",
+  title: "HDFC Debt Consolidation Loan | Simplify Multiple EMIs",
   description:
-    "Consolidate your high-interest debts with HDFC Bank Debt Consolidation. Reduce your monthly EMI, save on interest, and regain financial control. Expert guidance from AMA Legal Solutions.",
+    "Consolidate high-interest debts with an HDFC Bank Debt Consolidation loan. Lower your monthly EMI, save on interest, and regain financial control.",
   keywords: [
     "hdfc debt consolidation loan",
     "hdfc personal loan for debt consolidation",
@@ -207,8 +207,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/hdfc-debt-consolidation-loan',
   },
   openGraph: {
-    title: "HDFC Debt Consolidation Loan | Simplify Multiple EMIs into One",
-    description: "Consolidate your high-interest debts with HDFC Bank Debt Consolidation. Reduce your monthly EMI and save on interest.",
+    title: "HDFC Debt Consolidation Loan | Simplify Multiple EMIs",
+    description: "Consolidate high-interest debts with an HDFC Bank Debt Consolidation loan. Lower your monthly EMI, save on interest, and regain financial control.",
     url: "https://www.amalegalsolutions.com/hdfc-debt-consolidation-loan",
     type: "website",
     images: [

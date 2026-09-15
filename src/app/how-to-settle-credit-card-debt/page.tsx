@@ -153,8 +153,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "How to Settle Credit Card Debt India | Expert Legal Help 2024",
-  description: "Stop credit card harassment! Learn how to settle credit card debt in India with expert legal help. Negotiate 50% reduction, understand RBI rules, and rebuild your CIBIL score. Free consultation.",
+  title: "How to Settle Credit Card Debt in India | Legal Guide",
+  description: "Stop recovery harassment and settle credit card debt in India. Learn how to negotiate debt reduction, understand RBI rules, and regain financial freedom.",
   keywords: [
     "how to settle credit card debt",
     "credit card settlement india",

@@ -8,14 +8,14 @@ import FaqSection from "./FaqSection";
 export const metadata = {
   title: "Loan Settlement in Kanpur | Expert Debt Relief Lawyers",
   description:
-    "Struggling with debt in Kanpur? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok Adalat at Civil Lines Court.",
+    "Struggling with debt in Kanpur? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/kanpur',
   },
   openGraph: {
     title: "Loan Settlement in Kanpur | Expert Debt Relief Lawyers",
-    description: "Struggling with debt in Kanpur? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok Adalat at Civil Lines Court.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Kanpur",
+    description: "Struggling with debt in Kanpur? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok.",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/kanpur",
     type: "website",
     images: [
       {

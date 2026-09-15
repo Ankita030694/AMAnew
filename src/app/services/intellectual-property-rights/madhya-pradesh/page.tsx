@@ -6,15 +6,15 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "IPR Services in Madhya Pradesh | Trademark & Patent Consultants",
+  title: "IPR Services in Madhya Pradesh | AMA Legal",
   description:
-    "Leading IPR firm in Madhya Pradesh. Expert legal services for Trademark Registration, Patent Filing, and Copyright protection in Indore, Bhopal, Gwalior, and Pithampur.",
+    "Leading IPR firm in Madhya Pradesh. Expert legal services for Trademark Registration, Patent Filing, and Copyright protection in Indore, Bhopal.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/madhya-pradesh',
   },
   openGraph: {
-    title: "IPR Services in Madhya Pradesh | Trademark & Patent Consultants",
-    description: "Leading IPR firm in Madhya Pradesh. Expert legal services for Trademark Registration, Patent Filing, and Copyright protection in Indore, Bhopal, Gwalior, and Pithampur.",
+    title: "IPR Services in Madhya Pradesh | AMA Legal",
+    description: "Leading IPR firm in Madhya Pradesh. Expert legal services for Trademark Registration, Patent Filing, and Copyright protection in Indore, Bhopal.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/madhya-pradesh",
     type: "website",
     images: [

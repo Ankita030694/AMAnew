@@ -14,7 +14,7 @@ export const metadata = {
   },
   title: "IPR Services in Kerala | Intellectual Property Experts",
   description:
-    "Leading IPR services in Kerala. We assist with Trademark, Patent, Copyright, and GI registration. Protect your innovations with expert legal guidance in God's Own Country.",
+    "Protect your intellectual property in Kerala. Expert legal services for trademark, patent, copyright, and GI registration with AMA Legal Solutions.",
   keywords: [
     "IPR services in Kerala",
     "Trademark registration Kerala",
@@ -30,7 +30,7 @@ export const metadata = {
   openGraph: {
     title: "IPR Services in Kerala | Intellectual Property Experts",
     description:
-      "Secure your intellectual property in Kerala with our expert services. From Trademarks to GI tags, we provide comprehensive legal support.",
+      "Protect your intellectual property in Kerala. Expert legal services for trademark, patent, copyright, and GI registration with AMA Legal Solutions.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/kerala",
     siteName: "AMA Legal Solutions",
     locale: "en_IN",

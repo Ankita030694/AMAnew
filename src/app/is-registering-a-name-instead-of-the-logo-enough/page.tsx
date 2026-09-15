@@ -139,8 +139,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Is Registering a Name Instead of the Logo Enough? | AMA Legal Solutions",
-  description: "Wondering if a word mark is sufficient for your brand? Learn the differences between name and logo trademarks, their legal benefits, and the best strategy for protection.",
+  title: "Is Registering Name Instead of Logo Enough? | Legal Guide",
+  description: "Is a word mark enough for brand protection? Learn the differences between name and logo trademarks, legal coverage, and best filing strategies in India.",
   keywords: [
     "word mark vs design mark",
     "trademark name vs logo",

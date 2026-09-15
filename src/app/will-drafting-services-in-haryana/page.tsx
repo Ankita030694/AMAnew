@@ -5,9 +5,9 @@ const PAGE_URL = "https://www.amalegalsolutions.com/will-drafting-services-in-ha
 const OG_IMAGE = "/images/og/will-drafting-services-in-haryana.png";
 
 export const metadata: Metadata = {
-  title: "Will Drafting Services in Haryana: Top Estate & Succession Lawyers | AMA Legal Solutions",
+  title: "Will Drafting Services in Haryana | AMA Legal Solutions",
   description:
-    "Expert will drafting services in Haryana by senior High Court advocates. Secure your family's estate with dispute-proof testamentary drafting compliant with the Indian Succession Act, HSVP guidelines, and Jamabandi mutation rules.",
+    "Expert will drafting across Haryana by senior advocates. Secure your estate with dispute-proof drafting compliant with HSVP and Jamabandi mutation rules.",
   keywords: [
     "will drafting services in haryana",
     "will drafting services haryana",

@@ -76,9 +76,15 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "RBI Warns Against Misleading Loan Waiver Campaigns | AMA Legal",
-  description: "The Reserve Bank of India warns against misleading loan waiver campaigns. Learn how to identify scams and protect your finances.",
-  alternates: { canonical: 'https://www.amalegalsolutions.com/rbi-beware-misleading-loan-waiver-campaigns' }
+  title: "Misleading Loan Waiver Campaigns: RBI Alert | AMA Legal",
+  description: "The Reserve Bank of India warns against misleading loan waiver campaigns. Learn how to identify debt scams and protect your legal rights with AMA Legal.",
+  alternates: { canonical: 'https://www.amalegalsolutions.com/rbi-beware-misleading-loan-waiver-campaigns' },
+  openGraph: {
+    title: "Misleading Loan Waiver Campaigns: RBI Alert | AMA Legal",
+    description: "The Reserve Bank of India warns against misleading loan waiver campaigns. Learn how to identify debt scams and protect your legal rights with AMA Legal.",
+    url: "https://www.amalegalsolutions.com/rbi-beware-misleading-loan-waiver-campaigns",
+    type: "article",
+  },
 };
 
 export default function Page() {

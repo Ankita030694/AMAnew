@@ -178,7 +178,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Bank Loan Settlement Rules India 2024 | RBI Guidelines & OTS",
-  description: "Complete guide to bank loan settlement rules in India. Learn about RBI guidelines, One-Time Settlement (OTS) schemes, and legal ways to settle personal, business, and credit card loans.",
+  description: "Guide to bank loan settlement rules in India. Learn about RBI guidelines, OTS schemes, and legal ways to settle personal, business, and credit card loans.",
   keywords: ["bank loan settlement rules", "loan settlement rules india", "rbi guidelines for loan settlement", "one time settlement scheme rules", "ots rules india", "personal loan settlement rules"],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/bank-loan-settlement-rules',

@@ -11,7 +11,7 @@ export const metadata = {
   openGraph: {
     title: "Banking & Finance Services in Uttar Pradesh | AMA",
     description:
-      "Expert legal consultancy for banking and finance in Uttar Pradesh. NBFC registration in Noida, ODOP finance, and infrastructure project lending.",
+    "Expert legal consultancy for banking and finance in Uttar Pradesh. NBFC registration in Noida, ODOP finance, and infrastructure project lending.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/uttar-pradesh",
     siteName: "AMA Legal Solutions",
     locale: "en_US",

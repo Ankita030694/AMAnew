@@ -6,7 +6,7 @@ import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata = {
-  title: "Can I Settle My Loan Without A Lawyer? | Hidden Truths Revealed",
+  title: "Can I Settle My Loan Without a Lawyer? | Legal Guide",
   description: "Find out the exact steps on 'can I settle my loan without a lawyer'. Discover legal ways to practically reduce debt without facing severe harassment.",
   keywords: [
     "can i settle my loan without a lawyer",
@@ -20,7 +20,7 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/can-i-settle-my-loan-without-a-lawyer',
   },
   openGraph: {
-    title: "Can I Settle My Loan Without A Lawyer? | Hidden Truths Revealed",
+    title: "Can I Settle My Loan Without a Lawyer? | Legal Guide",
     description: "Find out the exact steps on 'can I settle my loan without a lawyer'. Discover legal ways to practically reduce debt without facing severe harassment.",
     url: "https://www.amalegalsolutions.com/can-i-settle-my-loan-without-a-lawyer",
     type: "website",

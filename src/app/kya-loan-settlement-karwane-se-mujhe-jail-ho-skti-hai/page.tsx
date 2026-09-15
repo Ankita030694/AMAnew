@@ -116,13 +116,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com/"
+      "item": "https://www.amalegalsolutions.com/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Kya Loan Settlement Karwane Se Mujhe Jail Ho Skti Hai",
-      "item": "https://amalegalsolutions.com/kya-loan-settlement-karwane-se-mujhe-jail-ho-skti-hai"
+      "item": "https://www.amalegalsolutions.com/kya-loan-settlement-karwane-se-mujhe-jail-ho-skti-hai"
     }
   ]
 };
@@ -137,7 +137,7 @@ export const metadata = {
     "loan default consequences in india"
   ],
   alternates: {
-    canonical: 'https://amalegalsolutions.com/kya-loan-settlement-karwane-se-mujhe-jail-ho-skti-hai',
+    canonical: 'https://www.amalegalsolutions.com/kya-loan-settlement-karwane-se-mujhe-jail-ho-skti-hai',
   },
 };
 

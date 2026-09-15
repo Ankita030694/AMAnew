@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/legal-notice-for-partnership-dispute',
   },
-  title: "Legal Notice for Partnership Dispute: Expert Guidance & Rights",
+  title: "Legal Notice for Partnership Dispute | Indian Law Guide",
   description:
-    "Facing a partnership dispute in India? Learn how to draft a legal notice under the Indian Partnership Act 1932. Protect your business interests, render accounts, and resolve conflicts legally with our expert guide.",
+    "Facing a partnership dispute in India? Learn how to draft a legal notice under the Partnership Act 1932, demand accounts, and resolve firm conflicts.",
   keywords: "legal notice for partnership dispute, partnership dispute resolution India, Indian Partnership Act 1932, breach of partnership deed, legal notice to partner for misappropriation of funds, how to resolve partnership conflict legally, dissolution of partnership notice",
 };
 

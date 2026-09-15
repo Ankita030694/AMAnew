@@ -9,14 +9,14 @@ import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUnivers
 
 // Metadata
 export const metadata = {
-  title: "Kisetsu Saison Finance Loan Settlement | OTS Scheme & Process | AMA Legal Solutions",
-  description: "Struggling with Kisetsu Saison Finance (Credit Saison) loan repayment? Expert legal help for loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
+  title: "Kisetsu Saison Finance Loan Settlement | AMA Legal",
+  description: "Struggling with Kisetsu Saison Finance (Credit Saison) loan repayment? Expert legal help for loan settlement. Reduce your debt with One Time Settlement.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/kisetsu-saison-finance',
   },
   openGraph: {
-    title: "Kisetsu Saison Finance Loan Settlement | OTS Scheme & Process | AMA Legal Solutions",
-    description: "Struggling with Kisetsu Saison Finance (Credit Saison) loan repayment? Expert legal help for loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
+    title: "Kisetsu Saison Finance Loan Settlement | AMA Legal",
+    description: "Struggling with Kisetsu Saison Finance (Credit Saison) loan repayment? Expert legal help for loan settlement. Reduce your debt with One Time Settlement.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/kisetsu-saison-finance",
     type: "website",
     images: [

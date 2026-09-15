@@ -10,7 +10,7 @@ export const metadata = {
   },
   title: "GST Show Cause Notice SCN: Replying & Legal Guide 2026",
   description:
-    "Received a GST Show Cause Notice (SCN)? Learn why you got it, how to reply effectively, and understand the new Section 74A rules for 2026. Protect your business with our expert guide.",
+    "Received a GST Show Cause Notice (SCN)? Learn why you got it, how to reply effectively, and understand new Section 74A rules with our tax lawyers.",
   keywords: "gst show cause notice scn, gst scn reply format, how to reply to gst notice, section 74a gst notice, gst audit notice reply, gst itc mismatch notice",
 };
 

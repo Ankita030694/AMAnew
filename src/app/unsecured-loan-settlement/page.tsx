@@ -68,12 +68,18 @@ const tocSections = [
 ];
 
 export const metadata = {
-  title: "Unsecured Loan Settlement India | Expert Legal Debt Relief Guide",
-  description: "Struggling with personal loans or credit cards? Learn how unsecured loan settlement works in India. Get expert legal help to reduce debt by 50%+ and stop harassment.",
+  title: "Unsecured Loan Settlement in India | AMA Legal Solutions",
+  description: "Struggling with personal loans or credit cards? Learn how unsecured loan settlement works in India. Settle debt legally and stop harassment with AMA Legal.",
   keywords: "unsecured loan settlement, personal loan settlement, credit card debt settlement, debt relief india, loan settlement lawyer, settle unsecured loans, cibil score impact, bank settlement negotiation, rbi recovery guidelines",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/unsecured-loan-settlement',
-  }
+  },
+  openGraph: {
+    title: "Unsecured Loan Settlement in India | AMA Legal Solutions",
+    description: "Struggling with personal loans or credit cards? Learn how unsecured loan settlement works in India. Settle debt legally and stop harassment with AMA Legal.",
+    url: 'https://www.amalegalsolutions.com/unsecured-loan-settlement',
+    type: "article",
+  },
 };
 
 export default function UnsecuredLoanSettlementPage() {

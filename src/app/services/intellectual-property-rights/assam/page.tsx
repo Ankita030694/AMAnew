@@ -8,13 +8,13 @@ import FaqSection from "./FaqSection";
 export const metadata = {
   title: "IPR Services in Assam | Trademark, Patent & GI Registration",
   description:
-    "Expert Intellectual Property Rights (IPR) services in Assam. We assist with Trademark, Patent, Copyright, and GI registration in Guwahati, Dibrugarh & across the state. Protect your innovation today.",
+    "Expert Intellectual Property Rights (IPR) services in Assam. We assist with Trademark, Patent, Copyright, and GI registration in Guwahati, Dibrugarh &.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/assam',
   },
   openGraph: {
     title: "IPR Services in Assam | Trademark, Patent & GI Registration",
-    description: "Expert Intellectual Property Rights (IPR) services in Assam. We assist with Trademark, Patent, Copyright, and GI registration in Guwahati, Dibrugarh & across the state. Protect your innovation today.",
+    description: "Expert Intellectual Property Rights (IPR) services in Assam. We assist with Trademark, Patent, Copyright, and GI registration in Guwahati, Dibrugarh &.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/assam",
     type: "website",
     images: [

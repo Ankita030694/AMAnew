@@ -163,7 +163,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Received Arbitration Notice From Bank? Immediate Steps",
-  description: "Received arbitration notice from bank for loan settlement? Discover the immediate legal steps to take within 30 days to defend your rights and stop ex-parte orders.",
+  description: "Received an arbitration notice from a bank? Discover immediate legal steps to take within 30 days to defend your rights and prevent ex-parte orders.",
   robots: {
     index: true,
     follow: true,

@@ -6,16 +6,16 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement in Himachal Pradesh | Debt Relief Lawyers Shimla, Manali, Dharamshala",
+  title: "Loan Settlement in Himachal Pradesh | AMA Legal",
   description:
-    "Struggling with debt in Himachal Pradesh? AMA Legal Solutions offers expert loan settlement. We help Apple Growers, Hotel Owners, and Flood-affected families.",
+    "Struggling with debt in Himachal Pradesh? AMA Legal Solutions offers expert loan settlement. We help Apple Growers, Hotel Owners, and Flood-affected.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/himachal-pradesh',
   },
   openGraph: {
-    title: "Loan Settlement in Himachal Pradesh | Debt Relief Lawyers Shimla, Manali, Dharamshala",
-    description: "Struggling with debt in Himachal Pradesh? AMA Legal Solutions offers expert loan settlement. We help Apple Growers, Hotel Owners, and Flood-affected families.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Himachal Pradesh",
+    title: "Loan Settlement in Himachal Pradesh | AMA Legal",
+    description: "Struggling with debt in Himachal Pradesh? AMA Legal Solutions offers expert loan settlement. We help Apple Growers, Hotel Owners, and Flood-affected.",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/himachal pradesh",
     type: "website",
     images: [
       {

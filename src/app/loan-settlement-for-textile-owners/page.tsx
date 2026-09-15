@@ -15,14 +15,14 @@ import {
 
 export const metadata = {
   title: "Loan Settlement for Textile Owners Guide | AMA Legal",
-  description: "Struggling with manufacturing debt? Secure our expert loan settlement for textile owners. Legally resolve factory defaults, stop harassment, and protect business!",
+  description: "Struggling with manufacturing debt? Secure expert loan settlement for textile owners. Resolve factory defaults, stop harassment, and protect your business.",
   keywords: "loan settlement for textile owners, textile factory debt settlement, CIBIL score recovery for textile, powerloom loan default, bank negotiation for textile owners, AMA Legal Solutions, Anuj Anand Malik, SARFAESI Act, MSME debt restructuring, textile mill NPA",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/loan-settlement-for-textile-owners',
   },
   openGraph: {
     title: "Loan Settlement for Textile Owners Guide | AMA Legal",
-    description: "Struggling with manufacturing debt? Secure our expert loan settlement for textile owners. Legally resolve factory defaults, stop harassment, and protect business!",
+    description: "Struggling with manufacturing debt? Secure expert loan settlement for textile owners. Resolve factory defaults, stop harassment, and protect your business.",
     url: "https://www.amalegalsolutions.com/loan-settlement-for-textile-owners",
     siteName: "AMA Legal Solutions",
     images: [
@@ -40,7 +40,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Loan Settlement for Textile Owners Guide | AMA Legal",
-    description: "Struggling with manufacturing debt? Secure our expert loan settlement for textile owners. Legally resolve factory defaults, stop harassment, and protect business!",
+    description: "Struggling with manufacturing debt? Secure expert loan settlement for textile owners. Resolve factory defaults, stop harassment, and protect your business.",
     images: ["https://www.amalegalsolutions.com/newAssets/it_loan_settlement.png"],
     creator: "@amalegalsolutions",
     site: "@amalegalsolutions",

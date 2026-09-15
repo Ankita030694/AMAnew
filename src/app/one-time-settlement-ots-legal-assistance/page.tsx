@@ -8,10 +8,17 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/one-time-settlement-ots-legal-assistance',
   },
-  title: "One Time Settlement (OTS) Legal Assistance: 2026 Guide",
+  title: "One Time Settlement (OTS) Legal Assistance | AMA Legal",
   description:
-    "Facing debt? Get expert legal assistance for your one time settlement. Learn about RBI guidelines, negotiation strategies for 70-90% waivers, and legal protection.",
+    "Facing debt? Get expert legal assistance for One Time Settlement (OTS). Learn RBI guidelines, waiver negotiation strategies, and rights with AMA Legal.",
   keywords: "one time settlement, one time settlement ots legal assistance, loan settlement india, rbi compromise settlement guidelines, debt resolution help",
+  openGraph: {
+    title: "One Time Settlement (OTS) Legal Assistance | AMA Legal",
+    description:
+      "Facing debt? Get expert legal assistance for One Time Settlement (OTS). Learn RBI guidelines, waiver negotiation strategies, and rights with AMA Legal.",
+    url: "https://www.amalegalsolutions.com/one-time-settlement-ots-legal-assistance",
+    type: "article",
+  },
 };
 
 const sections = [

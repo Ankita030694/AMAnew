@@ -187,7 +187,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "AMA Legal Solutions Expert Panel Loan Settlement Reviews",
-  description: "Read real AMA Legal Solutions expert panel loan settlement reviews. Learn the legal strategies our advocates use to negotiate unsecured debt and rebuild your CIBIL.",
+  description: "Read verified AMA Legal Solutions expert panel loan settlement reviews. Discover how our advocates negotiate debt waivers and help rebuild credit scores.",
   keywords: [
     "ama legal solutions expert panel reviews",
     "ama legal solutions loan settlement",

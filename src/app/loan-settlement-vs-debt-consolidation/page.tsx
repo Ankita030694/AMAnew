@@ -2,9 +2,9 @@ import { Metadata } from 'next';
 import LoanSettlementVsDebtConsolidationClient from './LoanSettlementVsDebtConsolidationClient';
 
 export const metadata: Metadata = {
-  title: 'Which is Better: Loan Settlement or Debt Consolidation? | AMA Legal Solutions',
+  title: 'Loan Settlement vs Debt Consolidation | AMA Legal Guide',
   description:
-    'Comprehensive legal and commercial comparison: Which is better loan settlement or debt consolidation? Learn RBI compromise frameworks, credit impacts, and advocate-led debt relief.',
+    'Compare loan settlement and debt consolidation under RBI rules. Discover which strategy clears debt faster, saves more interest, and protects your rights.',
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/loan-settlement-vs-debt-consolidation',
   },
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Which is Better: Loan Settlement or Debt Consolidation? Legal Comparison',
+    title: 'Loan Settlement vs Debt Consolidation | AMA Legal Guide',
     description:
-      'Struggling with unmanageable debt? Compare legal loan settlement and debt consolidation under RBI guidelines. Learn which strategy eliminates debt faster and protects your legal rights.',
+      'Compare loan settlement and debt consolidation under RBI rules. Discover which strategy clears debt faster, saves more interest, and protects your rights.',
     url: 'https://www.amalegalsolutions.com/loan-settlement-vs-debt-consolidation',
     type: 'article',
     siteName: 'AMA Legal Solutions',
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Which is Better: Loan Settlement or Debt Consolidation? | Legal Guide',
+    title: 'Loan Settlement vs Debt Consolidation | AMA Legal Guide',
     description:
-      'Detailed legal analysis of loan settlement vs debt consolidation under Indian banking law. Discover when an advocate-led One-Time Settlement is superior to refinancing.',
+      'Compare loan settlement and debt consolidation under RBI rules. Discover which strategy clears debt faster, saves more interest, and protects your rights.',
     images: ['/images/og/loan-settlement-vs-debt-consolidation.png'],
   },
 };

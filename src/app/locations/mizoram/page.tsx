@@ -188,7 +188,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Lawyers in Mizoram | Aizawl High Court, Customary Law & Trade",
+  title: "Lawyers in Mizoram | AMA Legal",
   description:
     "Top lawyers in Mizoram. Experts in Gauhati High Court (Aizawl Bench), Mizo Customary Law, Government Contracts, and Border Trade regulations.",
   keywords: [
@@ -208,7 +208,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Lawyers in Mizoram | Aizawl High Court & Customary Law",
-    description: "Expert legal representation in Mizoram. Serving clients in Civil, Criminal, and Government Contract matters.",
+    description: "Expert legal representation in Mizoram. Serving clients in Civil, Criminal, and Government Contract matters Contact AMA Legal Solutions today.",
     url: "https://www.amalegalsolutions.com/locations/mizoram",
     type: "website",
     images: [

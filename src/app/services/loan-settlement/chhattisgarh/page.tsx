@@ -6,16 +6,16 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement in Chhattisgarh | Debt Relief Lawyers Raipur, Bilaspur, Bhilai",
+  title: "Loan Settlement in Chhattisgarh | AMA Legal",
   description:
-    "Struggling with debt in Chhattisgarh? AMA Legal Solutions offers expert loan settlement. We protect Tribal Land (CGLRC Sec 165), help Farmers in the Rice Bowl, and stop harassment.",
+    "Struggling with debt in Chhattisgarh? AMA Legal Solutions offers expert loan settlement. We protect Tribal Land (CGLRC Sec 165), help Farmers in the.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/chhattisgarh',
   },
   openGraph: {
-    title: "Loan Settlement in Chhattisgarh | Debt Relief Lawyers Raipur, Bilaspur, Bhilai",
-    description: "Struggling with debt in Chhattisgarh? AMA Legal Solutions offers expert loan settlement. We protect Tribal Land (CGLRC Sec 165), help Farmers in the Rice Bowl, and stop harassment.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Chhattisgarh",
+    title: "Loan Settlement in Chhattisgarh | AMA Legal",
+    description: "Struggling with debt in Chhattisgarh? AMA Legal Solutions offers expert loan settlement. We protect Tribal Land (CGLRC Sec 165), help Farmers in the.",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/chhattisgarh",
     type: "website",
     images: [
       {

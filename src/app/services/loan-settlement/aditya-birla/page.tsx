@@ -9,14 +9,14 @@ import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUnivers
 
 // Metadata
 export const metadata = {
-  title: "Aditya Birla Loan Settlement | OTS Scheme 2025 | AMA Legal Solutions",
-  description: "Struggling with Aditya Birla Capital personal or business loan repayment? Get expert legal help for Aditya Birla loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
+  title: "Aditya Birla Loan Settlement | AMA Legal",
+  description: "Struggling with Aditya Birla Capital personal or business loan repayment? Get expert legal help for Aditya Birla loan settlement. Reduce your debt with.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/aditya-birla',
   },
   openGraph: {
-    title: "Aditya Birla Loan Settlement | OTS Scheme 2025 | AMA Legal Solutions",
-    description: "Struggling with Aditya Birla Capital personal or business loan repayment? Get expert legal help for Aditya Birla loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
+    title: "Aditya Birla Loan Settlement | AMA Legal",
+    description: "Struggling with Aditya Birla Capital personal or business loan repayment? Get expert legal help for Aditya Birla loan settlement. Reduce your debt with.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/aditya-birla",
     type: "website",
     images: [

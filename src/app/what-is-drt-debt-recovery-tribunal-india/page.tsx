@@ -156,7 +156,7 @@ const reviewSchema = {
 
 // SEO Subagent (Subagent 3) metadata
 export const metadata = {
-  title: "What is DRT Debt Recovery Tribunal India | Best Loan Settlement",
+  title: "What is DRT (Debt Recovery Tribunal) in India? Legal Guide",
   description: "Understand what the Debt Recovery Tribunal (DRT) in India is and how it impacts your loan settlement. Strategic guide for borrowers facing DRT proceedings.",
   robots: {
     index: true,

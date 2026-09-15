@@ -13,13 +13,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://amalegalsolutions.com/"
+      "item": "https://www.amalegalsolutions.com/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Loan for CIBIL Defaulters",
-      "item": "https://amalegalsolutions.com/loan-for-cibil-defaulters"
+      "item": "https://www.amalegalsolutions.com/loan-for-cibil-defaulters"
     }
   ]
 };
@@ -188,7 +188,7 @@ export const metadata = {
     },
   },
   alternates: {
-    canonical: 'https://amalegalsolutions.com/loan-for-cibil-defaulters',
+    canonical: 'https://www.amalegalsolutions.com/loan-for-cibil-defaulters',
   },
 };
 

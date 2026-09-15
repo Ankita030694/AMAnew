@@ -6,16 +6,16 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement in Jharkhand | Debt Relief Lawyers Ranchi, Dhanbad, Jamshedpur",
+  title: "Loan Settlement in Jharkhand | AMA Legal",
   description:
-    "Struggling with debt in Jharkhand? AMA Legal Solutions offers expert loan settlement. We protect Tribal Land (CNT/SPT Acts), help Mining workers, and stop harassment.",
+    "Struggling with debt in Jharkhand? AMA Legal Solutions offers expert loan settlement. We protect Tribal Land (CNT/SPT Acts), help Mining workers, and.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/jharkhand',
   },
   openGraph: {
-    title: "Loan Settlement in Jharkhand | Debt Relief Lawyers Ranchi, Dhanbad, Jamshedpur",
-    description: "Struggling with debt in Jharkhand? AMA Legal Solutions offers expert loan settlement. We protect Tribal Land (CNT/SPT Acts), help Mining workers, and stop harassment.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Jharkhand",
+    title: "Loan Settlement in Jharkhand | AMA Legal",
+    description: "Struggling with debt in Jharkhand? AMA Legal Solutions offers expert loan settlement. We protect Tribal Land (CNT/SPT Acts), help Mining workers, and.",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/jharkhand",
     type: "website",
     images: [
       {

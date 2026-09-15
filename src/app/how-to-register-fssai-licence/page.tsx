@@ -160,7 +160,7 @@ const reviewSchema = {
 export const metadata = {
   title: "How to Register FSSAI Licence | Complete Legal Guide India",
   description:
-    "Learn precisely how to register fssai licence without stressful rejections. AMA Legal Solutions delivers comprehensive regulatory clarity covering all basic, state, and central FSSAI registration procedures.",
+    "Learn how to register an FSSAI licence online in India. Step-by-step legal guide for Basic, State, and Central FoSCoS food licenses without rejections.",
   keywords: [
     "how to register fssai licence",
     "how to register fssai license",
@@ -177,8 +177,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/how-to-register-fssai-licence',
   },
   openGraph: {
-    title: "How to Register FSSAI Licence | Definite Guide",
-    description: "Launch your compliant food business swiftly by understanding exactly how to register fssai licence properly. We cover the entire FoSCoS mechanism deeply.",
+    title: "How to Register FSSAI Licence | Complete Legal Guide India",
+    description: "Learn how to register an FSSAI licence online in India. Step-by-step legal guide for Basic, State, and Central FoSCoS food licenses without rejections.",
     url: "https://www.amalegalsolutions.com/how-to-register-fssai-licence",
     type: "website",
     images: [

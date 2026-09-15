@@ -108,8 +108,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Trademark Registration in Class 38 India | Telecommunications Expert",
-  description: "Protect your telecom, broadcasting, or streaming brand with Class 38 Trademark Registration. Expert legal help from Anuj Anand Malik at AMA Legal Solutions.",
+  title: "Class 38 Trademark Registration | Telecom & Streaming",
+  description: "Protect your telecom, broadcasting, or streaming brand with Class 38 Trademark Registration. Expert legal counsel from AMA Legal Solutions.",
   alternates: { canonical: 'https://www.amalegalsolutions.com/trademark-registration-in-class-38' },
   keywords: ["trademark-registration-in-class-38", "telecommunication trademark india", "broadcasting license trademark", "OTT platform trademark", "anuj anand malik trademark", "amalegalsolutions sector 57", "8700343611"],
 };

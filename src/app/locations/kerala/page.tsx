@@ -201,9 +201,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Lawyers in Kerala | High Court Kochi, NRI Services & Maritime Law",
+  title: "Lawyers in Kerala | High Court Kochi, NRI Services &",
   description:
-    "Expert lawyers in Kerala. Specialized in NRI Property Disputes, Kerala High Court Litigation, Divorce, Maritime Law (Cochin Port), and Startup Legal Services.",
+    "Expert lawyers in Kerala. Specialized in NRI Property Disputes, Kerala High Court Litigation, Divorce, Maritime Law (Cochin Port), and Startup Legal.",
   keywords: [
     "Lawyers in Kerala",
     "Advocates in Kochi",
@@ -221,7 +221,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Lawyers in Kerala | Kochi High Court & NRI Legal Services",
-    description: "Premier legal firm in Kerala. Serving NRIs, Startups, and Litigants in Civil, Criminal, and Maritime matters.",
+    description: "Premier legal firm in Kerala. Serving NRIs, Startups, and Litigants in Civil, Criminal, and Maritime matters Contact AMA Legal Solutions today.",
     url: "https://www.amalegalsolutions.com/locations/kerala",
     type: "website",
     images: [

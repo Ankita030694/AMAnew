@@ -9,14 +9,14 @@ import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUnivers
 
 // Metadata
 export const metadata = {
-  title: "Axis Bank Loan Settlement | OTS Scheme & Process | AMA Legal Solutions",
-  description: "Struggling with Axis Bank personal loan or credit card repayment? Expert legal help for Axis Bank loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
+  title: "Axis Bank Loan Settlement | AMA Legal",
+  description: "Struggling with Axis Bank personal loan or credit card repayment? Expert legal help for Axis Bank loan settlement. Reduce your debt with One Time.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/axis-bank',
   },
   openGraph: {
-    title: "Axis Bank Loan Settlement | OTS Scheme & Process | AMA Legal Solutions",
-    description: "Struggling with Axis Bank personal loan or credit card repayment? Expert legal help for Axis Bank loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
+    title: "Axis Bank Loan Settlement | AMA Legal",
+    description: "Struggling with Axis Bank personal loan or credit card repayment? Expert legal help for Axis Bank loan settlement. Reduce your debt with One Time.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/axis-bank",
     type: "website",
     images: [

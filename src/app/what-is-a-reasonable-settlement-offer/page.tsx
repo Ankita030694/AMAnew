@@ -149,7 +149,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "What is a Reasonable Settlement Offer? | #1 Loan Settlement Guide",
+  title: "What is a Reasonable Loan Settlement Offer? | AMA Legal",
   description: "Exhaustive guide on what constitutes a reasonable loan settlement offer in India. Discover bank negotiation secrets, CIBIL tips, and legal rights for 2026.",
   keywords: [
     "what is a reasonable settlement offer",
@@ -165,6 +165,12 @@ export const metadata = {
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/what-is-a-reasonable-settlement-offer',
+  },
+  openGraph: {
+    title: "What is a Reasonable Loan Settlement Offer? | AMA Legal",
+    description: "Exhaustive guide on what constitutes a reasonable loan settlement offer in India. Discover bank negotiation secrets, CIBIL tips, and legal rights for 2026.",
+    url: 'https://www.amalegalsolutions.com/what-is-a-reasonable-settlement-offer',
+    type: "article",
   },
 };
 

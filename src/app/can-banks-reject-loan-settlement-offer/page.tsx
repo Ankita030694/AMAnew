@@ -148,7 +148,7 @@ const legalServiceSchema = {
 
 export const metadata = {
   title: "Can Banks Reject a Loan Settlement Offer? | Legal Rights",
-  description: "Can a bank reject your loan settlement? Learn about borrower rights, RBI guidelines, common reasons for rejection, and how to negotiate debt settlement successfully.",
+  description: "Can a bank reject your loan settlement? Learn borrower rights, RBI rules, rejection reasons, and how to negotiate your debt settlement successfully.",
   keywords: [
     "can banks reject loan settlement offer",
     "loan settlement",
@@ -169,7 +169,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Can Banks Reject a Loan Settlement Offer? | Legal Rights",
-    description: "Can a bank reject your loan settlement? Learn about borrower rights, RBI guidelines, common reasons for rejection, and how to negotiate debt settlement successfully.",
+    description: "Can a bank reject your loan settlement? Learn borrower rights, RBI rules, rejection reasons, and how to negotiate your debt settlement successfully.",
     url: 'https://www.amalegalsolutions.com/can-banks-reject-loan-settlement-offer',
     siteName: 'AMA Legal Solutions',
     images: [

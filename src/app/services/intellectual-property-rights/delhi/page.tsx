@@ -194,14 +194,14 @@ const webPageSchema = {
 export const metadata = {
   title: "Intellectual Property Rights in Delhi NCR | Top IP Lawyers",
   description:
-    "Secure your IP in India's capital. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Delhi, Gurgaon & Noida. Litigation support at Delhi High Court.",
+    "Secure your IP in India's capital. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Delhi, Gurgaon & Noida. Litigation support.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/delhi',
   },
   openGraph: {
     title: "Intellectual Property Rights in Delhi NCR | Top IP Lawyers",
-    description: "Secure your IP in India's capital. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Delhi, Gurgaon & Noida. Litigation support at Delhi High Court.",
-    url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/Delhi",
+    description: "Secure your IP in India's capital. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Delhi, Gurgaon & Noida. Litigation support.",
+    url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/delhi",
     type: "website",
     images: [
       {

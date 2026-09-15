@@ -160,7 +160,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Documents for Loan Settlement & NOC | Legal Guide",
-  description: "Complete list of documents required for successful loan settlement and obtaining an NOC in India. Hardship proof, KYC, and legal requirements explained in detail.",
+  description: "Complete list of documents required for loan settlement and obtaining an NOC in India. Hardship proof, KYC, and legal requirements explained in detail.",
   keywords: [
     "documents needed for loan settlement noc",
     "loan settlement documentation checklist india",

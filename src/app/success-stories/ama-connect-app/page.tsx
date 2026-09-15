@@ -9,8 +9,14 @@ export const metadata: Metadata = {
     canonical: 'https://www.amalegalsolutions.com/success-stories/ama-connect-app',
   },
   title: "AMA Connect App Success | India's Best Legal Application",
-  description: "Discover how the AMA Connect App is revolutionizing legal access in India. Learn about the 'Ask Me Anything' (AMA) section and how thousands are becoming debt-free.",
+  description: "Discover how the AMA Connect App revolutionizes legal access in India, empowering thousands of borrowers to achieve debt freedom with AMA Legal.",
   keywords: ["best legal app India", "AMA Connect app success", "loan settlement app", "legal advice app", "AMA section legal solutions"],
+  openGraph: {
+    title: "AMA Connect App Success | India's Best Legal Application",
+    description: "Discover how the AMA Connect App revolutionizes legal access in India, empowering thousands of borrowers to achieve debt freedom with AMA Legal.",
+    url: 'https://www.amalegalsolutions.com/success-stories/ama-connect-app',
+    type: "article",
+  },
 };
 
 export default function AppSuccessPage() {

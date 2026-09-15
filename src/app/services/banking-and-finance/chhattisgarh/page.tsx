@@ -3,16 +3,16 @@ import Script from "next/script";
 import ChhattisgarhBankingClient from "./ChhattisgarhBankingClient";
 
 export const metadata = {
-  title: "Banking and Finance Services in Chhattisgarh | NBFC Registration & Industrial Finance",
+  title: "Banking and Finance Services in Chhattisgarh | AMA Legal",
   description:
-    "Expert legal consultancy for Banking & Finance in Chhattisgarh. Services include NBFC Registration, Mining & Industrial Finance, Nidhi Company, Money Lenders License & DRT Litigation in Raipur.",
+    "Expert legal consultancy for Banking & Finance in Chhattisgarh. Services include NBFC Registration, Mining & Industrial Finance, Nidhi Company, Money.",
   alternates: {
     canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/chhattisgarh",
   },
   openGraph: {
-    title: "Banking and Finance Services in Chhattisgarh | NBFC Registration & Industrial Finance",
+    title: "Banking and Finance Services in Chhattisgarh | AMA Legal",
     description:
-      "Expert legal consultancy for Banking & Finance in Chhattisgarh. Services include NBFC Registration, Mining & Industrial Finance, Nidhi Company, Money Lenders License & DRT Litigation in Raipur.",
+    "Expert legal consultancy for Banking & Finance in Chhattisgarh. Services include NBFC Registration, Mining & Industrial Finance, Nidhi Company, Money.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/chhattisgarh",
     siteName: "AMA Legal Solutions",
     locale: "en_US",

@@ -13,7 +13,7 @@ export const metadata = {
   },
   title: "IPR Services in West Bengal | IP Registration",
   description:
-    "Leading IPR services in West Bengal. We assist with Trademark, Patent, Copyright, and GI registration. Protect your innovations with expert legal guidance in Kolkata and beyond.",
+    "Leading IPR services in West Bengal. We assist with Trademark, Patent, Copyright, and GI registration. Protect your innovations with expert legal.",
   keywords: [
     "IPR services in West Bengal",
     "Trademark registration Kolkata",
@@ -27,10 +27,9 @@ export const metadata = {
     "Trade Secret protection West Bengal",
   ],
   openGraph: {
-    title:
-      "IPR Services in West Bengal | Expert Intellectual Property Registration",
+    title: "IPR Services in West Bengal | AMA Legal",
     description:
-      "Secure your intellectual property in West Bengal with our expert services. From Trademarks to GI tags, we provide comprehensive legal support.",
+    "Secure your intellectual property in West Bengal with our expert services. From Trademarks to GI tags, we provide comprehensive legal support.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/west-bengal",
     siteName: "AMA Legal Solutions",
     locale: "en_IN",

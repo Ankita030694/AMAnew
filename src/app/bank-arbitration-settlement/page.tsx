@@ -170,7 +170,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Bank Arbitration Settlement: Defend Your Rights",
-  description: "Learn how to expertly negotiate and respond to a bank arbitration settlement notice in India. Discover your legal rights to challenge awards and stop harassment.",
+  description: "Learn how to negotiate and respond to a bank arbitration notice in India. Discover your legal rights to challenge unilateral awards and settle debts safely.",
   robots: {
     index: true,
     follow: true,

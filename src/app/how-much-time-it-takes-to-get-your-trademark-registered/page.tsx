@@ -288,7 +288,7 @@ const aggregateReviewSchema = {
 };
 
 export const metadata = {
-  title: "How Much Time It Takes To Get Your Trademark Registered? (2025)",
+  title: "How Much Time Does Trademark Registration Take in India?",
   description: "Detailed 7500+ word guide on trademark registration time in India. Breakdown of all 45 classes, global comparisons, Case studies and expert advice.",
   keywords: ["how much time it takes to get your trademark registered", "trademark registration time india", "trademark process timeline", "how long to get trademark certificate"],
   alternates: {

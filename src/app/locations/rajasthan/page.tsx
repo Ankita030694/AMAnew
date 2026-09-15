@@ -201,9 +201,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Lawyers in Rajasthan | High Court Jaipur & Jodhpur | RERA & Mining Law",
+  title: "Lawyers in Rajasthan | AMA Legal",
   description:
-    "Expert lawyers in Rajasthan. Specialized in High Court Litigation (Jaipur/Jodhpur), Mining & Industrial Law, RERA, and Heritage Property matters. Trusted Legal Advice.",
+    "Expert lawyers in Rajasthan. Specialized in High Court Litigation (Jaipur/Jodhpur), Mining & Industrial Law, RERA, and Heritage Property matters..",
   keywords: [
     "Lawyers in Rajasthan",
     "Advocates in Jaipur",

@@ -7,7 +7,7 @@ import TableOfContents from '@/components/TableOfContents';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata = {
-  title: "Can I Get a Loan Settlement Service That Handles Home Loan Dues? | Expert Legal Advice",
+  title: "Can You Settle Home Loan Dues in India? | Legal Guide",
   description: "Facing SARFAESI action or home loan default? Learn if you can settle secured loans. Expert legal strategies to stop foreclosure and negotiate with banks.",
   keywords: [
     "home loan settlement",

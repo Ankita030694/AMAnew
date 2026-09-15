@@ -201,7 +201,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Lawyers in Tamil Nadu | Madras High Court, NCLT & Corporate Law",
+  title: "Lawyers in Tamil Nadu | AMA Legal",
   description:
     "Top lawyers in Tamil Nadu. Experts in Madras High Court (Chennai/Madurai), Corporate Law for SaaS, Maritime Law, and Real Estate (CMDA/DTCP).",
   keywords: [
@@ -220,8 +220,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/locations/tamil-nadu',
   },
   openGraph: {
-    title: "Lawyers in Tamil Nadu | High Court & Corporate Legal Services",
-    description: "Expert legal representation in Tamil Nadu. Civil, Criminal, Corporate, and Maritime services by AMA Legal Solutions.",
+    title: "Lawyers in Tamil Nadu | AMA Legal",
+    description: "Expert legal representation in Tamil Nadu. Civil, Criminal, Corporate, and Maritime services by AMA Legal Solutions Contact AMA Legal Solutions today.",
     url: "https://www.amalegalsolutions.com/locations/tamil-nadu",
     type: "website",
     images: [

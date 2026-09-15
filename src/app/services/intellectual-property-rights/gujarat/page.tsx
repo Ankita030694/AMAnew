@@ -6,15 +6,15 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Intellectual Property Rights in Gujarat | IP Lawyers Ahmedabad",
+  title: "Intellectual Property Rights in Gujarat | AMA Legal",
   description:
-    "Secure your innovations in Gujarat. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Ahmedabad, Surat & Vadodara. Litigation support at Gujarat High Court.",
+    "Secure your innovations in Gujarat. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Ahmedabad, Surat & Vadodara. Litigation.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/gujarat',
   },
   openGraph: {
-    title: "Intellectual Property Rights in Gujarat | IP Lawyers Ahmedabad",
-    description: "Secure your innovations in Gujarat. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Ahmedabad, Surat & Vadodara. Litigation support at Gujarat High Court.",
+    title: "Intellectual Property Rights in Gujarat | AMA Legal",
+    description: "Secure your innovations in Gujarat. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Ahmedabad, Surat & Vadodara. Litigation.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/Gujarat",
     type: "website",
     images: [

@@ -10,13 +10,13 @@ import { MdAgriculture, MdMoneyOff } from "react-icons/md";
 
 // Metadata
 export const metadata = {
-  title: "L&T Finance Loan Settlement | Two-Wheeler & Tractor Loan OTS | AMA Legal Solutions",
+  title: "L&T Finance Loan Settlement | AMA Legal",
   description: "Unable to repay L&T Finance loan? Expert legal help for settling Two-Wheeler, Tractor, and Microfinance loans. Stop repossession and legal action.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/l-and-t-finance',
   },
   openGraph: {
-    title: "L&T Finance Loan Settlement | Two-Wheeler & Tractor Loan OTS | AMA Legal Solutions",
+    title: "L&T Finance Loan Settlement | AMA Legal",
     description: "Unable to repay L&T Finance loan? Expert legal help for settling Two-Wheeler, Tractor, and Microfinance loans. Stop repossession and legal action.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/l-and-t-finance",
     type: "website",

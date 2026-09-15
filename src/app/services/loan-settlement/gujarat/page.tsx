@@ -6,16 +6,16 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement in Gujarat | Debt Relief Lawyers Ahmedabad, Surat, Vadodara",
+  title: "Loan Settlement in Gujarat | AMA Legal",
   description:
     "Struggling with debt in Gujarat? AMA Legal Solutions offers expert loan settlement for Diamond workers, MSMEs & traders. Stop harassment & settle legally.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/gujarat',
   },
   openGraph: {
-    title: "Loan Settlement in Gujarat | Debt Relief Lawyers Ahmedabad, Surat, Vadodara",
+    title: "Loan Settlement in Gujarat | AMA Legal",
     description: "Struggling with debt in Gujarat? AMA Legal Solutions offers expert loan settlement for Diamond workers, MSMEs & traders. Stop harassment & settle legally.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Gujarat",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/gujarat",
     type: "website",
     images: [
       {

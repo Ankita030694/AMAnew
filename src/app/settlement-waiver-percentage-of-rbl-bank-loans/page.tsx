@@ -167,8 +167,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "RBL Bank Settlement Waiver Percentage: Maximum Limits Explained",
-  description: "Discover the specific settlement waiver percentage of RBL Bank loans. Learn exactly how to negotiate a maximum waiver for your personal loan or credit card debt.",
+  title: "RBL Bank Loan Settlement Waiver Percentage | AMA Legal",
+  description: "Learn the settlement waiver percentage of RBL Bank loans. Discover how to negotiate maximum waivers for personal loans and credit cards with AMA Legal.",
   robots: {
     index: true,
     follow: true,
@@ -194,6 +194,12 @@ export const metadata = {
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/settlement-waiver-percentage-of-rbl-bank-loans',
+  },
+  openGraph: {
+    title: "RBL Bank Loan Settlement Waiver Percentage | AMA Legal",
+    description: "Learn the settlement waiver percentage of RBL Bank loans. Discover how to negotiate maximum waivers for personal loans and credit cards with AMA Legal.",
+    url: 'https://www.amalegalsolutions.com/settlement-waiver-percentage-of-rbl-bank-loans',
+    type: "article",
   },
 };
 

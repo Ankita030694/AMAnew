@@ -19,7 +19,7 @@ import {
 } from "react-icons/fa";
 
 export const metadata: Metadata = {
-  title: "How to Register Trademark with Ipindia | Official Portal Guide",
+  title: "How to Register Trademark on IP India | Official Guide",
   description: "Master the Ipindia portal (ipindia.gov.in) for trademark registration. Detailed guide on DSC, Public Search, Form TM-A, and checking application status.",
   keywords: [
     "Ipindia trademark registration",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.amalegalsolutions.com/services/how-to-register-trademark-with-ipindia',
   },
   openGraph: {
-    title: "How to Register Trademark with Ipindia | Official Portal Guide",
+    title: "How to Register Trademark on IP India | Official Guide",
     description: "Master the Ipindia portal for trademark registration. Expert guide on creating an account, performing public search, and filing TM-A on ipindia.gov.in.",
     url: "https://www.amalegalsolutions.com/services/how-to-register-trademark-with-ipindia",
     siteName: "AMA Legal Solutions",

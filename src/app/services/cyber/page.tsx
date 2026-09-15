@@ -185,7 +185,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Cyber Lawyers in India | AMA Legal Solutions",
-    description: "Top cyber crime lawyers in India for online fraud, data privacy compliance, and IT Act litigation.",
+    description: "Top cyber crime lawyers in India for online fraud, data privacy compliance, and IT Act litigation Contact AMA Legal Solutions today.",
     url: "https://www.amalegalsolutions.com/services/cyber",
     type: "website",
     images: [

@@ -8,13 +8,13 @@ import FaqSection from "./FaqSection";
 export const metadata = {
   title: "Loan Settlement in Ghaziabad | Expert Debt Relief Lawyers",
   description:
-    "Struggling with debt in Ghaziabad? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok Adalat at Raj Nagar Court.",
+    "Struggling with debt in Ghaziabad? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/ghaziabad',
   },
   openGraph: {
     title: "Loan Settlement in Ghaziabad | Expert Debt Relief Lawyers",
-    description: "Struggling with debt in Ghaziabad? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok Adalat at Raj Nagar Court.",
+    description: "Struggling with debt in Ghaziabad? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/ghaziabad",
     type: "website",
     images: [

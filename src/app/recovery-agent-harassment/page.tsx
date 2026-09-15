@@ -20,7 +20,7 @@ import {
 } from "react-icons/fa";
 
 export const metadata: Metadata = {
-  title: "Recovery Agent Harassment Defense | Legal Rights & RBI Guidelines",
+  title: "Recovery Agent Harassment Defense | Legal Rights & RBI",
   description: "Facing recovery agent harassment? Learn your legal rights under RBI guidelines, how to file police complaints, and stop illegal collection tactics legally.",
   alternates: {
     canonical: "https://www.amalegalsolutions.com/recovery-agent-harassment",

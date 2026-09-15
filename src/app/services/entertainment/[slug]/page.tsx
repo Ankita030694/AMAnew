@@ -1,3 +1,4 @@
+import { formatMetaTitle, formatMetaDescription } from '@/lib/seo';
 import { Metadata } from 'next';
 import Script from 'next/script';
 import EntertainmentClient from './EntertainmentClient';
@@ -338,15 +339,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
+  const title = formatMetaTitle(content.title);
+  const description = formatMetaDescription(content.description);
+
   return {
-    title: content.title,
-    description: content.description,
+    title,
+    description,
     alternates: {
       canonical: `https://www.amalegalsolutions.com/services/entertainment/${slug}`,
     },
     openGraph: {
-      title: content.title,
-      description: content.description,
+      title,
+      description,
       url: `https://www.amalegalsolutions.com/services/entertainment/${slug}`,
       siteName: 'AMA Legal Solutions',
       locale: 'en_IN',
@@ -354,8 +358,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     twitter: {
       card: 'summary_large_image',
-      title: content.title,
-      description: content.description,
+      title,
+      description,
     },
   };
 }

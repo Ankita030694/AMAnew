@@ -26,13 +26,13 @@ import {
 
 // Metadata
 export const metadata = {
-  title: "PayU Finance Loan Settlement | LazyPay OTS Scheme | AMA Legal Solutions",
+  title: "PayU Finance Loan Settlement | AMA Legal",
   description: "Struggling with LazyPay or PayU Finance loan repayment? Expert legal help for PayU Finance loan settlement. Stop digital harassment and settle BNPL debt.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/payu-finance',
   },
   openGraph: {
-    title: "PayU Finance Loan Settlement | LazyPay OTS Scheme | AMA Legal Solutions",
+    title: "PayU Finance Loan Settlement | AMA Legal",
     description: "Struggling with LazyPay or PayU Finance loan repayment? Expert legal help for PayU Finance loan settlement. Stop digital harassment and settle BNPL debt.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/payu-finance",
     type: "website",

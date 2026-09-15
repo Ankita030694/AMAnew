@@ -6,16 +6,16 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement in Kerala | Debt Relief Lawyers Kochi, Trivandrum, Calicut",
+  title: "Loan Settlement in Kerala | AMA Legal",
   description:
-    "Struggling with debt in Kerala? AMA Legal Solutions offers expert loan settlement for Gulf returnees, rubber farmers, and individuals. Stop 'Blade Mafia' harassment & settle legally.",
+    "Struggling with debt in Kerala? AMA Legal Solutions offers expert loan settlement for Gulf returnees, rubber farmers, and individuals. Settle debts legally.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/kerala',
   },
   openGraph: {
-    title: "Loan Settlement in Kerala | Debt Relief Lawyers Kochi, Trivandrum, Calicut",
-    description: "Struggling with debt in Kerala? AMA Legal Solutions offers expert loan settlement for Gulf returnees, rubber farmers, and individuals. Stop 'Blade Mafia' harassment & settle legally.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Kerala",
+    title: "Loan Settlement in Kerala | AMA Legal",
+    description: "Struggling with debt in Kerala? AMA Legal Solutions offers expert loan settlement for Gulf returnees, rubber farmers, and individuals. Settle debts legally.",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/kerala",
     type: "website",
     images: [
       {

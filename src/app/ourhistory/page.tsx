@@ -1,8 +1,14 @@
 export const metadata = {
   title: 'Our Legacy | The Journey of AMA Legal Solutions',
-  description: 'Explore the rich history of AMA Legal Solutions, from its inception to becoming a trusted legal services provider in India. Learn about our milestones and achievements',
+  description: 'Explore the history of AMA Legal Solutions, our founding journey, legal excellence milestones, and leadership in client advocacy across India.',
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/ourhistory', // Add your canonical URL here
+    canonical: 'https://www.amalegalsolutions.com/ourhistory',
+  },
+  openGraph: {
+    title: 'Our Legacy | The Journey of AMA Legal Solutions',
+    description: 'Explore the history of AMA Legal Solutions, our founding journey, legal excellence milestones, and leadership in client advocacy across India.',
+    url: 'https://www.amalegalsolutions.com/ourhistory',
+    type: 'website',
   },
 }
 

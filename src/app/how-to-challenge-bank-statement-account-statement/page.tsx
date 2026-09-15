@@ -157,7 +157,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "How to Challenge Bank Statement Errors India | AMA Legal Solutions",
+  title: "How to Challenge Bank Statement Errors in India | Guide",
   description: "Learn how to challenge bank statement errors, unauthorized transactions, and illegal charges in India. Expert legal guide by Anuj Anand Malik, Sector 57.",
   keywords: [
     "challenge bank statement",

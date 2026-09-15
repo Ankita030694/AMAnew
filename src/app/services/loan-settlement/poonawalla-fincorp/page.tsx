@@ -28,14 +28,14 @@ import {
 
 // Metadata
 export const metadata = {
-  title: "Poonawalla Fincorp Loan Settlement | Digital OTS 2025 | AMA Legal Solutions",
-  description: "Struggling with Poonawalla Fincorp personal, professional, or digital loans? Expert legal help for Poonawalla Fincorp loan settlement. Stop digital harassment and settle debt.",
+  title: "Poonawalla Fincorp Loan Settlement | AMA Legal",
+  description: "Struggling with Poonawalla Fincorp personal, professional, or digital loans? Expert legal help for Poonawalla Fincorp loan settlement. Stop digital.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/poonawalla-fincorp',
   },
   openGraph: {
-    title: "Poonawalla Fincorp Loan Settlement | Digital OTS 2025 | AMA Legal Solutions",
-    description: "Struggling with Poonawalla Fincorp personal, professional, or digital loans? Expert legal help for Poonawalla Fincorp loan settlement. Stop digital harassment and settle debt.",
+    title: "Poonawalla Fincorp Loan Settlement | AMA Legal",
+    description: "Struggling with Poonawalla Fincorp personal, professional, or digital loans? Expert legal help for Poonawalla Fincorp loan settlement. Stop digital.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/poonawalla-fincorp",
     type: "website",
     images: [

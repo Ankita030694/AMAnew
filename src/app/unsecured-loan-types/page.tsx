@@ -188,8 +188,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Unsecured Loan Types in India | Complete Guide 2024",
-  description: "Learn about different types of unsecured loans in India: Personal, Student, Business, and more. Expert legal advice on eligibility, interest rates, and debt relief.",
+  title: "Unsecured Loan Types in India | AMA Legal Solutions",
+  description: "Learn about unsecured loan types in India, from personal to business credit. Get expert legal advice on eligibility, rates, and debt relief with AMA Legal.",
   keywords: [
     "unsecured loan types",
     "personal loan types",
@@ -206,8 +206,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/unsecured-loan-types',
   },
   openGraph: {
-    title: "Unsecured Loan Types in India | Complete Guide 2024",
-    description: "Discover all varieties of unsecured credit available in the Indian market. From personal use to business growth, find the right non-collateral loan for your needs.",
+    title: "Unsecured Loan Types in India | AMA Legal Solutions",
+    description: "Learn about unsecured loan types in India, from personal to business credit. Get expert legal advice on eligibility, rates, and debt relief with AMA Legal.",
     url: "https://www.amalegalsolutions.com/unsecured-loan-types",
     type: "website",
     images: [

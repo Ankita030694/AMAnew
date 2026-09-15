@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/breach-of-contract-notice',
   },
-  title: "Breach of Contract Notice India: Legal Requirements & Procedure",
+  title: "Breach of Contract Notice India | Legal Procedure",
   description:
-    "Facing a contract violation? Learn how to send a legal notice for breach of contract in India. Understand Section 73 of the Indian Contract Act and legal remedies.",
+    "Send a legal notice for breach of contract in India. Understand Section 73 remedies, mandatory cure periods, and court damages under the Indian Contract Act.",
   keywords: "breach of contract notice india, legal notice for breach of contract, contract violation remedies, section 73 indian contract act, legal notice format contract breach, indian contract act 1872",
 };
 

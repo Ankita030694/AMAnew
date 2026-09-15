@@ -188,9 +188,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Lawyers in Uttarakhand | Nainital High Court | Loan Settlement & Trademarks",
+  title: "Lawyers in Uttarakhand | AMA Legal",
   description:
-    "Expert legal services in Uttarakhand. Top lawyers for Loan Settlement, Trademark Registration, Divorce, and Property disputes. Practice at Nainital High Court & District Courts.",
+    "Expert legal services in Uttarakhand. Top lawyers for Loan Settlement, Trademark Registration, Divorce, and Property disputes. Practice at Nainital High.",
   keywords: [
     "Lawyers in Uttarakhand",
     "Nainital High Court Advocates",

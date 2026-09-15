@@ -238,9 +238,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "What is Loan Settlement? | Guide to Loan Settlement App India",
+  title: "What is Loan Settlement in India? | AMA Legal Solutions",
   description:
-    "Discover what is loan settlement and how it works in India. Use our expert guide to understand the loan settlement app features, benefits, and impact on CIBIL. Get professional legal help today.",
+    "Discover what loan settlement is and how it works in India. Learn about OTS negotiation, CIBIL score impact, and legal borrower rights with AMA Legal.",
   keywords: [
     "what is loan settlement",
     "loan settlement app",
@@ -255,6 +255,13 @@ export const metadata = {
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/what-is-loan-settlement',
+  },
+  openGraph: {
+    title: "What is Loan Settlement in India? | AMA Legal Solutions",
+    description:
+      "Discover what loan settlement is and how it works in India. Learn about OTS negotiation, CIBIL score impact, and legal borrower rights with AMA Legal.",
+    url: 'https://www.amalegalsolutions.com/what-is-loan-settlement',
+    type: "article",
   },
 };
 

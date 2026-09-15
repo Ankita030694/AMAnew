@@ -198,9 +198,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "MSME Registration India 2026 | Udyam Registration Guide & Benefits",
+  title: "MSME Registration India 2026 | Udyam Guide | AMA Legal",
   description:
-    "Get your MSME (Udyam) Registration in India with AMA Legal Solutions. Updated 2026 criteria, benefits of collateral-free loans, 45-day payment protection, and expert legal help.",
+    "Get online MSME Udyam registration in India. Access collateral-free loans, subsidies, 45-day payment protection, and legal support from AMA Legal.",
   keywords: [
     "msme registration",
     "udyam registration",
@@ -217,8 +217,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/msme-registration',
   },
   openGraph: {
-    title: "MSME Registration India 2026 | #1 Legal Assistance for Startups",
-    description: "Secure your business growth with MSME (Udyam) Registration. Access subsidies, credit schemes, and legal protection with AMA Legal Solutions.",
+    title: "MSME Registration India 2026 | Udyam Guide | AMA Legal",
+    description: "Get online MSME Udyam registration in India. Access collateral-free loans, subsidies, 45-day payment protection, and legal support from AMA Legal.",
     url: "https://www.amalegalsolutions.com/msme-registration",
     type: "website",
     images: [

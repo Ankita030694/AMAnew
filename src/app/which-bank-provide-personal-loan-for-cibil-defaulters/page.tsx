@@ -152,8 +152,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Which Bank Provide Personal Loan for CIBIL Defaulters India (2025)",
-  description: "Find out which banks provide personal loans for CIBIL defaulters in India. Explore NBFCs, digital lenders, and smart strategies to get a loan with 500 CIBIL score.",
+  title: "Personal Loans for CIBIL Defaulters in India | AMA Legal",
+  description: "Discover which banks and NBFCs offer personal loans for CIBIL defaulters in India. Learn options, credit rebuilding, and legal advice with AMA Legal.",
   keywords: [
     "personal loan for cibil defaulters",
     "bank loan for low cibil score",
@@ -180,8 +180,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/which-bank-provide-personal-loan-for-cibil-defaulters',
   },
   openGraph: {
-    title: "Which Bank Provide Personal Loan for CIBIL Defaulters India (2025)",
-    description: "Expert guide on securing personal loans despite a history of CIBIL defaults. Learn which banks and NBFCs are lending today.",
+    title: "Personal Loans for CIBIL Defaulters in India | AMA Legal",
+    description: "Discover which banks and NBFCs offer personal loans for CIBIL defaulters in India. Learn options, credit rebuilding, and legal advice with AMA Legal.",
     url: "https://www.amalegalsolutions.com/which-bank-provide-personal-loan-for-cibil-defaulters",
     type: "article",
     images: [

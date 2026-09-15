@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/rbi-guideline-violation-complaint',
   },
-  title: "RBI Guideline Violation Complaint: File Online & Stop Bank Harassment",
+  title: "RBI Guideline Violation Complaint | Stop Bank Harassment",
   description:
-    "Facing violations of RBI guidelines? Learn how to file a complaint through the RBI CMS portal and Banking Ombudsman. Expert legal guide on stopping harassment and illegal bank practices.",
+    "Facing violations of RBI guidelines? Learn how to file a complaint through the RBI CMS portal and Banking Ombudsman to stop illegal bank practices.",
   keywords: "rbi guideline violation complaint, rbi cms portal complaint, file complaint against bank rbi, banking ombudsman complaint process, rbi recovery agent guidelines complaint",
 };
 

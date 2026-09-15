@@ -23,9 +23,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/legal-notice-for-experience-letter-and-releiving-letter',
   },
-  title: "Legal Notice for Experience Letter and Relieving Letter: Stop Withholding Now",
+  title: "Legal Notice for Experience & Relieving Letter | India",
   description:
-    "Is your former employer withholding your experience or relieving letter? Send a formal legal notice to demand your exit documents and protect your career. Expert guidance by AMA Legal Solutions.",
+    "Former employer withholding your experience or relieving letter? Send a legal notice to demand your exit documents promptly with AMA Legal Solutions.",
   keywords: "legal notice for experience letter and relieving letter, employer not giving relieving letter, employee rights experience letter india, legal action for exit documents, withholding relieving letter legal notice, experience certificate rights india",
 };
 

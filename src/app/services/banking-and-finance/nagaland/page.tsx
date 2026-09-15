@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import NagalandBankingClient from "./NagalandBankingClient";
 
 export const metadata: Metadata = {
-  title: "Banking and Finance Services in Nagaland | NBFC & DRT Lawyers",
+  title: "Banking and Finance Services in Nagaland | AMA Legal",
   description:
-    "Premier legal consultancy for Banking & Finance in Nagaland. Expert guidance on Article 371A land issues, Money Lenders Act, CMMFI Scheme, and DRT Guwahati litigation.",
+    "Banking and finance legal services in Nagaland. Expert counsel on Article 371A land issues, Money Lenders Act, CMMFI, and DRT Guwahati with AMA Legal.",
   keywords: [
     "Banking and Finance Services Nagaland",
     "NBFC Registration Dimapur",
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     "Nidhi Company Registration Dimapur",
   ],
   openGraph: {
-    title: "Banking and Finance Legal Services in Nagaland",
+    title: "Banking and Finance Services in Nagaland | AMA Legal",
     description:
-      "Expert legal support for financial institutions in Nagaland. From Article 371A compliance to DRT litigation and CMMFI schemes.",
+      "Banking and finance legal services in Nagaland. Expert counsel on Article 371A land issues, Money Lenders Act, CMMFI, and DRT Guwahati with AMA Legal.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/nagaland",
     siteName: "AMA Legal Solutions",
     locale: "en_US",
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Banking and Finance Services in Nagaland | AMA Legal Solutions",
+    title: "Banking and Finance Services in Nagaland | AMA Legal",
     description:
-      "Specialized legal services for NBFCs, Startups, and Banks in Nagaland. Expert in DRT Guwahati and Article 371A.",
+      "Banking and finance legal services in Nagaland. Expert counsel on Article 371A land issues, Money Lenders Act, CMMFI, and DRT Guwahati with AMA Legal.",
   },
   alternates: {
     canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/nagaland",

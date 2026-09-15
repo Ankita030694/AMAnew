@@ -159,7 +159,7 @@ const reviewSchema = {
 export const metadata = {
   title: "Job Lost Loan Settlement | Settle Debt After Job Loss India",
   description:
-    "Unable to pay personal loan emi due to job loss? AMA Legal Solutions offers expert loan settlement services. We negotiate with banks to reduce your debt and stop harassment.",
+    "Unable to pay personal loan EMI due to job loss? AMA Legal Solutions negotiates with banks to reduce your debt, stop harassment, and secure an OTS.",
   keywords: [
     "job lost loan settlement",
     "loan settlement after job loss",
@@ -176,7 +176,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Job Lost Loan Settlement | Settle Debt After Job Loss India",
-    description: "Struggling with loans after job loss? AMA Legal Solutions offers expert loan settlement services. We negotiate with banks to reduce your debt.",
+    description: "Unable to pay personal loan EMI due to job loss? AMA Legal Solutions negotiates with banks to reduce your debt, stop harassment, and secure an OTS.",
     url: "https://www.amalegalsolutions.com/job-lost-loan-settlement",
     type: "website",
     images: [

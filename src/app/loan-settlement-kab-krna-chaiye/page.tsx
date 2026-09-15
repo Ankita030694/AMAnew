@@ -5,9 +5,9 @@ const PAGE_URL = "https://www.amalegalsolutions.com/loan-settlement-kab-krna-cha
 const OG_IMAGE = "/images/og/loan-settlement-kab-krna-chaiye.png";
 
 export const metadata: Metadata = {
-  title: "Loan Settlement Kab Krna Chaiye? Right Time & Legal Guide | AMA Legal",
+  title: "Loan Settlement Kab Krna Chaiye? Right Time | AMA Legal",
   description:
-    "Janein loan settlement kab krna chaiye. Discover the right time for loan settlement in India under RBI compromise norms, NPA triggers, debt spiral signs, and advocate legal advisory.",
+    "Janein loan settlement kab krna chaiye. Discover the right time for settlement in India under RBI compromise norms, NPA triggers, and legal advisory.",
   keywords: [
     "loan settlement kab krna chaiye",
     "loan settlement kab karna chahiye",
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "Loan Settlement Kab Krna Chaiye? Right Time & Legal Guide | AMA Legal",
+    title: "Loan Settlement Kab Krna Chaiye? Right Time | AMA Legal",
     description:
-      "Janein loan settlement kab krna chaiye. Discover the right time for loan settlement in India under RBI compromise norms, NPA triggers, debt spiral signs, and advocate legal advisory.",
+      "Janein loan settlement kab krna chaiye. Discover the right time for settlement in India under RBI compromise norms, NPA triggers, and legal advisory.",
     url: PAGE_URL,
     type: "article",
     images: [
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Loan Settlement Kab Krna Chaiye? Right Time & Legal Guide | AMA Legal",
+    title: "Loan Settlement Kab Krna Chaiye? Right Time | AMA Legal",
     description:
-      "Janein loan settlement kab krna chaiye. Discover the right time for loan settlement in India under RBI compromise norms, NPA triggers, debt spiral signs, and advocate legal advisory.",
+      "Janein loan settlement kab krna chaiye. Discover the right time for settlement in India under RBI compromise norms, NPA triggers, and legal advisory.",
     images: [OG_IMAGE],
     site: "@AMALegalSol",
     creator: "@AnujAnandMalik",

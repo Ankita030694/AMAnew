@@ -196,14 +196,14 @@ const bajajPersonSchema = {
 };
 
 export const metadata = {
-  title: "Bajaj Finance Arbitration: Defend Your Rights and Settle Dues",
+  title: "Bajaj Finance Arbitration: Defend Rights & Settle Dues",
   description: "Facing Bajaj Finance arbitration via Sama ODR? Learn how to dispute unilateral arbitrators, stop recovery harassment, and negotiate a loan settlement.",
   keywords: ["loan settlement","bajaj finance arbitration","bajaj loan settlement","sama odr notice bajaj","unilateral arbitrator bajaj","bajaj emi card settlement","recovery agent harassment help","banking lawyers gurugram","ama legal solutions"],
   alternates: {
     canonical: "https://www.amalegalsolutions.com/arbitration-for-bajaj-bank",
   },
   openGraph: {
-    title: "Bajaj Finance Arbitration: Defend Your Rights and Settle Dues",
+    title: "Bajaj Finance Arbitration: Defend Rights & Settle Dues",
     description: "Facing Bajaj Finance arbitration via Sama ODR? Learn how to dispute unilateral arbitrators, stop recovery harassment, and negotiate a loan settlement.",
     url: "https://www.amalegalsolutions.com/arbitration-for-bajaj-bank",
     siteName: "AMA Legal Solutions",

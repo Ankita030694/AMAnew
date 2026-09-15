@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/data-breach-privacy-notice',
   },
-  title: "Data Breach Privacy Notice: Your Legal Guide to Data Protection",
+  title: "Data Breach Privacy Notice: Legal Guide to Data Protection",
   description:
-    "Has your data been breached? Learn about the Data Breach Privacy Notice under DPDP Act 2023 and GDPR. Know your rights, notification timelines, and how to claim compensation.",
+    "Has your data been breached? Learn about Data Breach Privacy Notices under DPDP Act 2023 and GDPR, mandatory timelines, and compensation claims.",
   keywords: "data breach privacy notice, dpdp act 2023 notification, gdpr data breach requirements, personal data protection india, data breach victim rights, data protection officer role",
 };
 

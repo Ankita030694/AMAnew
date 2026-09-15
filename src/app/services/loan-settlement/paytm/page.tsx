@@ -164,9 +164,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Paytm Loan Settlement | Expert Debt Relief by AMA Legal Solutions",
+  title: "Paytm Loan Settlement | AMA Legal",
   description:
-    "End your Paytm debt problems with expert legal help. AMA Legal Solutions specializes in Paytm Postpaid and Personal loan settlements. founded by anuj anand malik in sector 57. call 8700343611.",
+    "End your Paytm debt problems with expert legal help. AMA Legal Solutions specializes in Paytm Postpaid and Personal loan settlements. founded by anuj.",
   keywords: [
     "Paytm loan settlement",
     "Paytm postpaid default",
@@ -182,7 +182,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Paytm Debt Settlement Experts | Legal Resolution in India",
-    description: "Resolve your Paytm outstanding dues through a professional legal settlement. our firm in sector 57 will protect your rights and stop all harassment. call 8700343611 today.",
+    description: "Resolve your Paytm outstanding dues through a professional legal settlement. our firm in sector 57 will protect your rights and stop all harassment..",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/paytm",
     type: "website",
     images: [{ url: "/services/5.png", width: 1200, height: 630, alt: "Paytm Loan Settlement Services" }],

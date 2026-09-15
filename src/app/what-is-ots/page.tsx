@@ -151,9 +151,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "What is OTS? | Complete Guide to One Time Settlement India 2024",
+  title: "What is OTS? One Time Settlement in India | AMA Legal",
   description:
-    "Everything you need to know about One Time Settlement (OTS) in India. Learn the RBI rules, eligibility, process, and negotiation tips to settle your bank loans legally.",
+    "Learn what One Time Settlement (OTS) is in India. Discover RBI rules, eligibility, procedures, and legal negotiation tips with AMA Legal Solutions.",
   keywords: [
     "what is ots",
     "one time settlement india",
@@ -168,6 +168,13 @@ export const metadata = {
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/what-is-ots',
+  },
+  openGraph: {
+    title: "What is OTS? One Time Settlement in India | AMA Legal",
+    description:
+      "Learn what One Time Settlement (OTS) is in India. Discover RBI rules, eligibility, procedures, and legal negotiation tips with AMA Legal Solutions.",
+    url: 'https://www.amalegalsolutions.com/what-is-ots',
+    type: "article",
   },
 };
 

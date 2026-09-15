@@ -202,7 +202,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Lawyers in Chandigarh | High Court, NCLT & Estate Office Experts",
+  title: "Lawyers in Chandigarh | AMA Legal",
   description:
     "Leading lawyers in Chandigarh. Experts in Punjab & Haryana High Court, NCLT, Estate Office Property Matters, Service Law (CAT/AFT), and NRI Legal Services.",
   keywords: [
@@ -221,7 +221,7 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/locations/chandigarh',
   },
   openGraph: {
-    title: "Lawyers in Chandigarh | High Court & Corporate Legal Services",
+    title: "Lawyers in Chandigarh | AMA Legal",
     description: "Expert legal representation in Chandigarh. High Court, NCLT, Civil, Criminal, and Property services by AMA Legal Solutions.",
     url: "https://www.amalegalsolutions.com/locations/chandigarh",
     type: "website",

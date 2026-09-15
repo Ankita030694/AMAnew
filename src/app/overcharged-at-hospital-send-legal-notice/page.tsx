@@ -160,8 +160,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Overcharged at Hospital? Send Legal Notice for Refund & Compensation",
-  description: "Facing unfair billing or overcharging at a hospital? Learn how to send a legal notice, understand your rights under CPA 2019, and seek a refund with AMA Legal Solutions.",
+  title: "Overcharged at Hospital? Send Legal Notice for Refund",
+  description: "Overcharged at a hospital? Learn how to send a legal notice, protect your rights under CPA 2019, and recover inflated medical bills with our lawyers.",
   keywords: "overcharged at hospital, legal notice to hospital for overcharging, medical billing fraud india, hospital refund process, patient rights india, consumer court hospital billing, medical negligence billing, legal notice format for overbilling",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/overcharged-at-hospital-send-legal-notice',

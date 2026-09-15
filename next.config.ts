@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 
 const nextConfig = {
+  staticPageGenerationTimeout: 120,
   experimental: {
     optimizeCss: true,
     optimizePackageImports: ['lucide-react', 'react-icons', 'framer-motion'],
@@ -387,6 +388,10 @@ const nextConfig = {
       { source: '/articles/best-loan-settlement-lawyer-in-india', destination: '/lawyer-who-provides-loan-debt-settlement-services', permanent: true },
       { source: '/settle-your-challan-in-delhi-at-50%25-off', destination: '/settle-your-challan-in-delhi-at-50-percent-off', permanent: true },
       { source: '/services/success-stories', destination: '/success-stories', permanent: true },
+      // ── SEO Fix: 404 errors from latest audit (Sep 2026) ──────────────
+      { source: '/credit-card-debt-settlement-india', destination: '/credit-card-debt-settlement', permanent: true },
+      { source: '/blog/how-to-improve-your-cibil-score-after-loan-settlement', destination: '/how-to-improve-cibil-score-after-loan-settlement', permanent: true },
+      { source: '/blog/legal-process-for-loan-recovery-in-india', destination: '/blog/legal-process-for-loan-recovery-in-india-explained-2025', permanent: true },
       ...(fs.existsSync(path.join(process.cwd(), 'redirects.json'))
         ? JSON.parse(fs.readFileSync(path.join(process.cwd(), 'redirects.json'), 'utf8'))
         : [])

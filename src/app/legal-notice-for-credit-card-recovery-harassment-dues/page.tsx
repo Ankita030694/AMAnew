@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/legal-notice-for-credit-card-recovery-harassment-dues',
   },
-  title: "Legal Notice for Credit Card Recovery Harassment Dues | Stop Abuse",
+  title: "Notice for Credit Card Harassment Dues | Legal Protection",
   description:
-    "Facing harassment for credit card dues? Learn your legal rights under RBI guidelines and IPC. Send a legal notice for credit card recovery harassment and stop illegal calls instantly.",
+    "Facing harassment for credit card dues? Learn your rights under RBI rules. Send a legal notice to banks and stop illegal collection calls with AMA Legal.",
   keywords: "legal notice for credit card recovery harassment dues, stop credit card agent harassment, rbi guidelines for credit card recovery, harassment by credit card collection agents, legal steps against credit card harassment india",
 };
 

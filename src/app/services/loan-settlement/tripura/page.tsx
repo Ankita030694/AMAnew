@@ -125,7 +125,7 @@ const faqSchema = {
 export const metadata = {
   title: "Loan Settlement in Tripura | Debt Relief Lawyers Agartala",
   description:
-    "Expert loan settlement services in Tripura (Agartala, Udaipur, Dharmanagar). Legally settle loans, stop harassment, and avoid bankruptcy. Free consultation.",
+    "Expert loan settlement services in Tripura (Agartala, Udaipur, Dharmanagar). Legally settle loans, stop harassment, and avoid bankruptcy. Free.",
   keywords: [
     "loan settlement Tripura",
     "debt settlement Agartala",

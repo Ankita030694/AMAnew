@@ -69,12 +69,18 @@ const tocSections = [
 ];
 
 export const metadata = {
-  title: "Secured Loan Settlement India | Legal Protection for Property & Assets",
-  description: "Facing property auction or SARFAESI notices? Learn how to settle secured loans legally. Expert guide on home loan settlement, LAP relief, and stopping auctions.",
+  title: "Secured Loan Settlement in India | AMA Legal Solutions",
+  description: "Facing property auction or SARFAESI notices? Learn how to settle secured loans legally. Expert guide on home loan settlement, LAP, and auction defense.",
   keywords: "secured loan settlement, home loan settlement, property auction help, sarfaesi act guide, lap settlement, debt relief india, loan settlement lawyer, drt case help, settle banking debt",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/secured-loan-settlement',
-  }
+  },
+  openGraph: {
+    title: "Secured Loan Settlement in India | AMA Legal Solutions",
+    description: "Facing property auction or SARFAESI notices? Learn how to settle secured loans legally. Expert guide on home loan settlement, LAP, and auction defense.",
+    url: 'https://www.amalegalsolutions.com/secured-loan-settlement',
+    type: "article",
+  },
 };
 
 export default function SecuredLoanSettlementPage() {

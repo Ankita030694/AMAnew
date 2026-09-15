@@ -5,9 +5,9 @@ const PAGE_URL = "https://www.amalegalsolutions.com/will-drafting-services-in-ra
 const OG_IMAGE = "/images/og/will-drafting-services-in-rajasthan.png";
 
 export const metadata: Metadata = {
-  title: "Will Drafting Services in Rajasthan: Top Estate & Succession Lawyers | AMA Legal Solutions",
+  title: "Will Drafting Services in Rajasthan | AMA Legal",
   description:
-    "Expert will drafting services in Rajasthan by senior High Court advocates. Protect your family's estate, JDA/UIT plots, Marwari & NRI assets, and agricultural Jamabandi land with court-admissible, dispute-proof testamentary drafting.",
+    "Expert will drafting in Rajasthan by High Court advocates. Protect JDA plots, family assets, and rural land with dispute-proof testamentary drafting.",
   keywords: [
     "will drafting services in rajasthan",
     "will drafting services rajasthan",

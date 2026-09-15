@@ -158,7 +158,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Banks File FIR for Credit Card Dues? | Legal Realities",
-  description: "Dreading an FIR for credit card dues? Learn the legal reality in India. AMA Legal Solutions, founded by Anuj Anand Malik in Sector 57, provides expert debt relief. Call 8700343611.",
+  description: "Can banks file an FIR for credit card dues in India? Learn the legal realities, civil vs criminal rules, borrower protection rights, and debt settlement.",
   keywords: [
     "do-banks-file-fir-for-credit-card-dues",
     "credit card default fir",

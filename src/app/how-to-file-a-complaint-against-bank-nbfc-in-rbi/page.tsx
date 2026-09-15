@@ -8,9 +8,9 @@ const OG_IMAGE =
 
 export const metadata: Metadata = {
   title:
-    "How to File a Complaint Against a Bank or an NBFC in RBI: Legal Guide & CMS Procedure | AMA Legal Solutions",
+    "How to File a Complaint Against Bank or NBFC in RBI",
   description:
-    "Authoritative legal guide on how to file a complaint against a bank or an NBFC in RBI under the Integrated Ombudsman Scheme 2021. Learn mandatory 30-day pre-complaint notice protocols, CMS portal escalation, recovery harassment defense, and advocate-led fixed advisory.",
+    "File a complaint against a bank or NBFC with the RBI Ombudsman under Scheme 2021. Step-by-step guide to CMS portal filing, notices, and legal support.",
   keywords: [
     "how to file a complaint against a bank or an nbfc in rbi",
     "how to file complaint against bank in rbi ombudsman",
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "How to File a Complaint Against a Bank or an NBFC in RBI: Legal Guide & CMS Procedure | AMA Legal Solutions",
+      "How to File a Complaint Against Bank or NBFC in RBI",
     description:
-      "Authoritative legal guide on how to file a complaint against a bank or an NBFC in RBI under the Integrated Ombudsman Scheme 2021. Learn mandatory 30-day pre-complaint notice protocols, CMS portal escalation, recovery harassment defense, and advocate-led fixed advisory.",
+      "File a complaint against a bank or NBFC with the RBI Ombudsman under Scheme 2021. Step-by-step guide to CMS portal filing, notices, and legal support.",
     url: PAGE_URL,
     type: "article",
     images: [

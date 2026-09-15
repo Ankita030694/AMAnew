@@ -159,8 +159,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Best Law Firm Near Me | Top Rated Advocates India | AMA Legal Solutions",
-  description: "Looking for the best law firm near you? AMA Legal Solutions provides expert legal representation across India. Highly optimized legal services for civil, criminal, and corporate matters.",
+  title: "Best Law Firm Near Me | Top Rated Advocates | AMA Legal",
+  description: "Looking for the best law firm near you? AMA Legal Solutions provides expert legal services in civil, criminal, family, and corporate law across India.",
   keywords: [
     "best law firm near me",
     "top law firm india",

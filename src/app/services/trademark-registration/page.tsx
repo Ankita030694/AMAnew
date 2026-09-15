@@ -257,7 +257,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Trademark Registration & Objection Reply | AMA Legal",
-    description: "Secure your brand with expert Trademark Registration services. We handle Objection Replies, Hearings, and Oppositions.",
+    description: "Secure your brand with expert Trademark Registration services. We handle Objection Replies, Hearings, and Oppositions Contact AMA Legal Solutions today.",
     url: "https://www.amalegalsolutions.com/services/trademark-registration",
     type: "website",
     images: [

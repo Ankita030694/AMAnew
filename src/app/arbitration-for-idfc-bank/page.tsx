@@ -196,14 +196,14 @@ const idfcPersonSchema = {
 };
 
 export const metadata = {
-  title: "IDFC First Bank Arbitration: Legal Advice and Settlement Guides",
+  title: "IDFC First Bank Arbitration: Legal Advice & Settlement",
   description: "Facing digital arbitration from IDFC First Bank on Sama ODR? Read this complete guide to handling arbitrator challenges and negotiating credit settlements.",
   keywords: ["loan settlement","idfc bank arbitration","idfc credit card settlement","sama odr notice idfc","unilateral arbitrator challenge","banking lawyers delhi","ama legal solutions"],
   alternates: {
     canonical: "https://www.amalegalsolutions.com/arbitration-for-idfc-bank",
   },
   openGraph: {
-    title: "IDFC First Bank Arbitration: Legal Advice and Settlement Guides",
+    title: "IDFC First Bank Arbitration: Legal Advice & Settlement",
     description: "Facing digital arbitration from IDFC First Bank on Sama ODR? Read this complete guide to handling arbitrator challenges and negotiating credit settlements.",
     url: "https://www.amalegalsolutions.com/arbitration-for-idfc-bank",
     siteName: "AMA Legal Solutions",

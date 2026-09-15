@@ -120,7 +120,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Send Legal Notice in Gurugram | Expert Gurgaon Lawyers",
-  description: "Send a professional legal notice in Gurugram for property disputes, builder delays, money recovery, and corporate issues. Fast drafting and dispatch by AMA Legal Solutions.",
+  description: "Send a legal notice in Gurugram for property disputes, builder delays, money recovery, and corporate issues. Fast drafting by AMA Legal Solutions.",
   keywords: [
     "send legal notice in Gurugram",
     "legal notice lawyers Gurgaon",

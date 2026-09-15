@@ -21,13 +21,11 @@ export function hashSlug(slug: string): number {
  * Truncates an entity (service, bank, city, or expertise name) cleanly at a whole word boundary.
  */
 export function truncateEntity(name: string, maxLen = 35): string {
-  if (!name || name.length <= maxLen) return name || "";
+  if (!name || name.length <= maxLen) return (name || "").replace(/[\s|:,-]+$/, "");
   const sliced = name.slice(0, maxLen).trim();
   const lastSpace = sliced.lastIndexOf(" ");
-  if (lastSpace > 0) {
-    return sliced.slice(0, lastSpace).trim();
-  }
-  return sliced;
+  const truncated = lastSpace > 0 ? sliced.slice(0, lastSpace).trim() : sliced;
+  return truncated.replace(/[\s|:,-]+$/, "");
 }
 
 /**
@@ -41,10 +39,19 @@ export function formatMetaTitle(
   minLen = 30
 ): string {
   const cleanSubject = subject.replace(/\s+/g, " ").trim();
+
+  // If the subject alone already fits within maxLen and already has brand or delimiter
+  if (
+    cleanSubject.length <= maxLen &&
+    (cleanSubject.includes("AMA") || cleanSubject.includes("|") || cleanSubject.includes(" - ") || !preferredSuffix)
+  ) {
+    return cleanSubject;
+  }
+
   let full = `${cleanSubject}${preferredSuffix}`;
 
   // If already contains brand or preferred suffix
-  if (cleanSubject.includes("AMA")) {
+  if (cleanSubject.includes("AMA") || !preferredSuffix) {
     full = cleanSubject;
   }
 
@@ -63,9 +70,9 @@ export function formatMetaTitle(
   }
 
   // Need to trim subject to fit within maxLen
-  const targetLen = cleanSubject.includes("AMA") ? maxLen : maxLen - preferredSuffix.length;
+  const targetLen = (cleanSubject.includes("AMA") || !preferredSuffix) ? maxLen : maxLen - preferredSuffix.length;
   const trimmed = truncateEntity(cleanSubject, targetLen);
-  return cleanSubject.includes("AMA") ? trimmed : `${trimmed}${preferredSuffix}`;
+  return (cleanSubject.includes("AMA") || !preferredSuffix) ? trimmed : `${trimmed}${preferredSuffix}`;
 }
 
 /**

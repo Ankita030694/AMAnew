@@ -1,15 +1,15 @@
 import MizoramClient from "./MizoramClient";
 
 export const metadata = {
-  title: "Intellectual Property Rights Services in Mizoram | Trademark & Patent",
+  title: "Intellectual Property Rights Services in Mizoram | AMA Legal",
   description:
-    "Expert IPR services in Mizoram. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets today.",
+    "Expert IPR services in Mizoram. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/mizoram',
   },
   openGraph: {
-    title: "Intellectual Property Rights Services in Mizoram | Trademark & Patent",
-    description: "Expert IPR services in Mizoram. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets today.",
+    title: "Intellectual Property Rights Services in Mizoram | AMA Legal",
+    description: "Expert IPR services in Mizoram. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/mizoram",
     type: "website",
     images: [

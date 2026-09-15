@@ -157,9 +157,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "What Loan Settlement Service Can Help Me Reduce My Outstanding Debt Quickly?",
+  title: "Fast Loan Settlement Services to Reduce Debt | AMA Legal",
   description:
-    "Looking for a loan settlement service to reduce outstanding debt quickly? AMA Legal Solutions offers expert legal negotiation to cut your debt by up to 50% and stop harassment.",
+    "Reduce outstanding debt quickly with AMA Legal Solutions. We negotiate with banks to cut debt by up to 50%, stop recovery harassment, and secure your NDC.",
   keywords: [
     "loan settlement service",
     "reduce outstanding debt quickly",
@@ -176,8 +176,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/what-loan-settlement-service-can-help-me-reduce-my-outstanding-debt-quickly',
   },
   openGraph: {
-    title: "What Loan Settlement Service Can Help Me Reduce My Outstanding Debt Quickly?",
-    description: "Looking for a loan settlement service to reduce outstanding debt quickly? AMA Legal Solutions offers expert legal negotiation.",
+    title: "Fast Loan Settlement Services to Reduce Debt | AMA Legal",
+    description: "Reduce outstanding debt quickly with AMA Legal Solutions. We negotiate with banks to cut debt by up to 50%, stop recovery harassment, and secure your NDC.",
     url: "https://www.amalegalsolutions.com/what-loan-settlement-service-can-help-me-reduce-my-outstanding-debt-quickly",
     type: "article",
     images: [

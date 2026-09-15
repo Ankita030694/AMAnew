@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.amalegalsolutions.com/trademark-registration-agency-near-me',
   },
   title: "Trademark Registration Agency Near Me | Expert IP Services",
-  description: "Looking for a trademark registration agency near me? AMA Legal Solutions provides forensic search, Madrid Protocol filings, and aggressive brand enforcement services.",
+  description: "Looking for a trademark registration agency near you? AMA Legal Solutions provides forensic trademark search, filing, and expert brand enforcement services.",
 };
 
 // FAQ data for rendering and Schema

@@ -1,16 +1,16 @@
 import MaharashtraBankingClient from "./MaharashtraBankingClient";
 
 export const metadata = {
-  title: "Banking and Finance Services in Maharashtra | NBFC & Fintech Legal Experts",
+  title: "Banking and Finance Services in Maharashtra | AMA Legal",
   description:
-    "Expert legal services for Banking, Finance, and NBFC registration in Maharashtra. We assist with RBI compliance, Fintech regulations, and Money Lending licenses in Mumbai and Pune.",
+    "Expert legal services for Banking, Finance, and NBFC registration in Maharashtra. We assist with RBI compliance, Fintech regulations, and Money Lending.",
   alternates: {
     canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/maharashtra",
   },
   openGraph: {
-    title: "Banking and Finance Services in Maharashtra | NBFC & Fintech Legal Experts",
+    title: "Banking and Finance Services in Maharashtra | AMA Legal",
     description:
-      "Expert legal services for Banking, Finance, and NBFC registration in Maharashtra. We assist with RBI compliance, Fintech regulations, and Money Lending licenses in Mumbai and Pune.",
+    "Expert legal services for Banking, Finance, and NBFC registration in Maharashtra. We assist with RBI compliance, Fintech regulations, and Money Lending.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/Maharashtra",
     type: "website",
     images: [

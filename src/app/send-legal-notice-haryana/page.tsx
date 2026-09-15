@@ -190,8 +190,8 @@ const organizationSchema = {
 };
 
 export const metadata = {
-  title: "Send Legal Notice in Haryana | #1 Legal Notice Lawyers in Haryana",
-  description: "Need to send a legal notice in Haryana? AMA Legal Solutions provides expert drafting and dispatch services for property, money recovery, and matrimonial disputes in Haryana. 100% legal & fast.",
+  title: "Send Legal Notice in Haryana | Expert Lawyers",
+  description: "Need to send a legal notice in Haryana? AMA Legal Solutions provides expert drafting for property, recovery, and matrimonial disputes across Haryana.",
   keywords: [
     "send legal notice in Haryana",
     "legal notice service Haryana",
@@ -213,7 +213,7 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/send-legal-notice-haryana',
   },
   openGraph: {
-    title: "Send Legal Notice in Haryana | Expert Legal Notice Services",
+    title: "Send Legal Notice in Haryana | Expert Lawyers",
     description: "Empower your legal journey in Haryana. Send professional legal notices for any dispute with AMA Legal Solutions. Trusted by thousands in the state.",
     url: "https://www.amalegalsolutions.com/send-legal-notice-haryana",
     type: "website",

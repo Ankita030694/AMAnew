@@ -5,9 +5,9 @@ const PAGE_URL = "https://www.amalegalsolutions.com/will-drafting-services-in-mu
 const OG_IMAGE = "/images/og/will-drafting-services-in-mumbai.png";
 
 export const metadata: Metadata = {
-  title: "Will Drafting Services in Mumbai: Top Estate & Succession Lawyers | AMA Legal Solutions",
+  title: "Will Drafting Services in Mumbai | AMA Legal Solutions",
   description:
-    "Expert will drafting services in Mumbai by senior High Court advocates. Secure family estates, Co-operative Housing Society (CHS) flats, commercial assets, and corporate equities with Bombay High Court probate-admissible drafting.",
+    "Top will drafting in Mumbai by senior advocates. Secure CHS flats and corporate assets with Bombay High Court probate-compliant testamentary drafting.",
   keywords: [
     "will drafting services in mumbai",
     "will drafting services mumbai",

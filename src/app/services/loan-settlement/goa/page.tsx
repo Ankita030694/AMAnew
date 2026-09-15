@@ -6,16 +6,16 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement in Goa | Debt Relief Lawyers Panaji, Margao, Vasco",
+  title: "Loan Settlement in Goa | AMA Legal",
   description:
-    "Struggling with debt in Goa? AMA Legal Solutions offers expert loan settlement for Tourism & Mining businesses. Navigate Portuguese Civil Code & settle legally.",
+    "Struggling with debt in Goa? AMA Legal Solutions offers expert loan settlement for Tourism & Mining businesses. Navigate Portuguese Civil Code & settle.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/goa',
   },
   openGraph: {
-    title: "Loan Settlement in Goa | Debt Relief Lawyers Panaji, Margao, Vasco",
-    description: "Struggling with debt in Goa? AMA Legal Solutions offers expert loan settlement for Tourism & Mining businesses. Navigate Portuguese Civil Code & settle legally.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Goa",
+    title: "Loan Settlement in Goa | AMA Legal",
+    description: "Struggling with debt in Goa? AMA Legal Solutions offers expert loan settlement for Tourism & Mining businesses. Navigate Portuguese Civil Code & settle.",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/goa",
     type: "website",
     images: [
       {

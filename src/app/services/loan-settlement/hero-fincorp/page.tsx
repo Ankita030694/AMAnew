@@ -9,14 +9,14 @@ import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUnivers
 
 // Metadata
 export const metadata = {
-  title: "Hero Fincorp Loan Settlement | OTS Scheme 2025 | AMA Legal Solutions",
-  description: "Struggling with Hero Fincorp personal loan or two-wheeler loan repayment? Get expert legal help for Hero Fincorp loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
+  title: "Hero Fincorp Loan Settlement | AMA Legal",
+  description: "Struggling with Hero Fincorp personal loan or two-wheeler loan repayment? Get expert legal help for Hero Fincorp loan settlement. Reduce your debt with.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/hero-fincorp',
   },
   openGraph: {
-    title: "Hero Fincorp Loan Settlement | OTS Scheme 2025 | AMA Legal Solutions",
-    description: "Struggling with Hero Fincorp personal loan or two-wheeler loan repayment? Get expert legal help for Hero Fincorp loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
+    title: "Hero Fincorp Loan Settlement | AMA Legal",
+    description: "Struggling with Hero Fincorp personal loan or two-wheeler loan repayment? Get expert legal help for Hero Fincorp loan settlement. Reduce your debt with.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/hero-fincorp",
     type: "website",
     images: [

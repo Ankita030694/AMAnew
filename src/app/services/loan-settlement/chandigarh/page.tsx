@@ -7,14 +7,14 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement in Chandigarh | #1 Debt Recovery Lawyers in UT Chandigarh",
+  title: "Loan Settlement in Chandigarh | AMA Legal",
   description:
-    "Expert loan settlement services in Chandigarh, Mohali, and Panchkula. Settle bank recovery matters legally through DRT Chandigarh & National Lok Adalats. Stop harassment.",
+    "Expert loan settlement services in Chandigarh, Mohali, and Panchkula. Settle bank recovery matters legally through DRT Chandigarh & National Lok.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/chandigarh',
   },
   openGraph: {
-    title: "Loan Settlement in Chandigarh | #1 Debt Recovery Lawyers in UT Chandigarh",
+    title: "Loan Settlement in Chandigarh | AMA Legal",
     description: "Expert legal representation for loan settlement in Chandigarh. Settle debts with 40-70% waivers through DRT Chandigarh & State Legal Services.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/chandigarh",
     type: "website",

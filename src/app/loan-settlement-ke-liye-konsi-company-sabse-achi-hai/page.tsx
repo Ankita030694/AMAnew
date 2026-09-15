@@ -5,9 +5,9 @@ const PAGE_URL = "https://www.amalegalsolutions.com/loan-settlement-ke-liye-kons
 const OG_IMAGE = "/images/og/loan-settlement-ke-liye-konsi-company-sabse-achi-hai.png";
 
 export const metadata: Metadata = {
-  title: "Loan Settlement Ke Liye Konsi Company Sabse Achi Hai? Legal Guide",
+  title: "Loan Settlement Ke Liye Konsi Company Sabse Achi Hai?",
   description:
-    "Janein loan settlement ke liye konsi company sabse achi hai. Compare enrolled High Court advocates vs private debt agencies, RBI OTS framework, and legal protection.",
+    "Janein loan settlement ke liye konsi company sabse achi hai. Compare High Court advocates vs private agencies, RBI OTS framework, and legal defense.",
   keywords: [
     "loan settlement ke liye konsi company sabse achi hai",
     "best loan settlement company in india",
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "Loan Settlement Ke Liye Konsi Company Sabse Achi Hai? Legal Guide",
+    title: "Loan Settlement Ke Liye Konsi Company Sabse Achi Hai?",
     description:
-      "Janein loan settlement ke liye konsi company sabse achi hai. Compare enrolled High Court advocates vs private debt agencies, RBI OTS framework, and legal protection.",
+      "Janein loan settlement ke liye konsi company sabse achi hai. Compare High Court advocates vs private agencies, RBI OTS framework, and legal defense.",
     url: PAGE_URL,
     type: "article",
     images: [
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Loan Settlement Ke Liye Konsi Company Sabse Achi Hai? Legal Guide",
+    title: "Loan Settlement Ke Liye Konsi Company Sabse Achi Hai?",
     description:
-      "Janein loan settlement ke liye konsi company sabse achi hai. Compare enrolled High Court advocates vs private debt agencies, RBI OTS framework, and legal protection.",
+      "Janein loan settlement ke liye konsi company sabse achi hai. Compare High Court advocates vs private agencies, RBI OTS framework, and legal defense.",
     images: [OG_IMAGE],
     site: "@AMALegalSol",
     creator: "@AnujAnandMalik",

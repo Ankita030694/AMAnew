@@ -6,16 +6,16 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement in Telangana | Hyderabad DRT & Cyber Law Experts",
+  title: "Loan Settlement in Telangana | AMA Legal",
   description:
-    "Expert loan settlement services in Telangana (Hyderabad, Warangal). Settle debt legally through TSLSA Lok Adalat & DRT Hyderabad. Stop harassment & save 50%.",
+    "Expert loan settlement services in Telangana (Hyderabad, Warangal). Settle debt legally through TSLSA Lok Adalat & DRT Hyderabad. Stop harassment & save.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/telangana',
   },
   openGraph: {
-    title: "Loan Settlement in Telangana | Hyderabad DRT & Cyber Law Experts",
-    description: "Expert loan settlement services in Telangana (Hyderabad, Warangal). Settle debt legally through TSLSA Lok Adalat & DRT Hyderabad. Stop harassment & save 50%.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Telangana",
+    title: "Loan Settlement in Telangana | AMA Legal",
+    description: "Expert loan settlement services in Telangana (Hyderabad, Warangal). Settle debt legally through TSLSA Lok Adalat & DRT Hyderabad. Stop harassment & save.",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/telangana",
     type: "website",
     images: [
       {

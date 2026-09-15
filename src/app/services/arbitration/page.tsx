@@ -185,7 +185,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Arbitration Services in India | AMA Legal Solutions",
-    description: "Leading arbitration lawyers in India for domestic and international commercial dispute resolution.",
+    description: "Leading arbitration lawyers in India for domestic and international commercial dispute resolution Contact AMA Legal Solutions today.",
     url: "https://www.amalegalsolutions.com/services/arbitration",
     type: "website",
     images: [

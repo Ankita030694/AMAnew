@@ -153,8 +153,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Legal Notice for Loan Settlement Harassment | Stop Bank Harassment Now",
-  description: "Facing harassment for loan recovery? AMA Legal Solutions, led by Anuj Anand Malik in Sector 57, helps you send a legal notice to stop calls and achieve a fair loan settlement. Call 8700343611.",
+  title: "Notice for Loan Settlement Harassment | AMA Legal",
+  description: "Facing harassment for loan recovery? Send a formal legal notice to banks to stop calls, enforce RBI compliance, and achieve a fair settlement with AMA Legal.",
   keywords: [
     "legal notice for loan settlement harassment",
     "bank harassment legal notice",

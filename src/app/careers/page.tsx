@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.amalegalsolutions.com/careers',
   },
   title: "Careers at AMA Legal Solutions | Join Our Team",
-  description: "Join our team at AMA Legal Solutions. Explore open positions for Business Development Associate, Legal Associate, Legal Intern, and Software Development Engineer Intern. Build a meaningful career in legal services.",
+  description: "Explore career opportunities at AMA Legal Solutions. Join our dynamic legal, sales, and technology teams in Gurugram to build a rewarding career.",
 };
 
 const OPEN_POSITIONS = [

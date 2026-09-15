@@ -10,7 +10,7 @@ export const metadata = {
   },
   title: "How Can I Negotiate a Personal Loan Settlement with Lenders?",
   description:
-    "Struggling with debt? Learn how to negotiate a personal loan settlement with lenders in India. Expert tips on OTS, RBI guidelines, and legal rights to settle debt.",
+    "Struggling with debt? Learn how to negotiate a personal loan settlement with lenders in India. Expert tips on OTS, RBI guidelines, and legal borrower rights.",
   keywords: "negotiate personal loan settlement, how to settle personal loan with bank, debt settlement process india, loan settlement negotiation tips, rbi guidelines for loan settlement",
 };
 

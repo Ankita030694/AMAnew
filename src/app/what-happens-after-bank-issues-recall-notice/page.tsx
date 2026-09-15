@@ -174,9 +174,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "What Happens After Bank Issues Recall Notice? Step-by-Step Guide",
+  title: "Bank Loan Recall Notice: What Happens Next & Legal Steps",
   description:
-    "Received a loan recall notice from your bank? Learn what happens next and how to protect your assets. Expert legal advice from Anuj Anand Malik at AMA Legal Solutions, Sector 57. Call 8700343611.",
+    "Received a loan recall notice from your bank? Learn what happens next, legal borrower options, and how to protect your assets with AMA Legal Solutions.",
   keywords: [
     "what happens after bank issues recall notice",
     "loan recall notice india",

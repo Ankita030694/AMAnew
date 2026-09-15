@@ -151,9 +151,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Best Legal Services in Delhi | Top Law Firm & Lawyers in Delhi NCR",
+  title: "Best Legal Services in Delhi | Top Law Firm & Lawyers",
   description:
-    "AMA Legal Solutions is a leading law firm in Delhi providing expert legal services in Corporate, Civil, Criminal, Family, and Property Law. Consult with top advocates in Delhi High Court and District Courts.",
+    "AMA Legal Solutions provides top legal services in Delhi across civil, criminal, corporate, family, and property law in High Court and District Courts.",
   keywords: [
     "legal services in delhi",
     "law firm in delhi",
@@ -170,8 +170,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/legal-services-in-delhi',
   },
   openGraph: {
-    title: "Best Legal Services in Delhi | Top Law Firm & Lawyers in Delhi NCR",
-    description: "AMA Legal Solutions is a leading law firm in Delhi providing expert legal services in Corporate, Civil, Criminal, Family, and Property Law.",
+    title: "Best Legal Services in Delhi | Top Law Firm & Lawyers",
+    description: "AMA Legal Solutions provides top legal services in Delhi across civil, criminal, corporate, family, and property law in High Court and District Courts.",
     url: "https://www.amalegalsolutions.com/legal-services-in-delhi",
     type: "website",
     images: [

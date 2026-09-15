@@ -140,7 +140,7 @@ const faqSchema = {
 export const metadata = {
   title: "Loan Settlement Tamil Nadu | Stop Kanduvatti & Harassment",
   description:
-    "#1 Loan Settlement in Tamil Nadu. Settle debts under 2003 Kanduvatti Act. Expert help for Chennai IT professionals, Coimbatore MSMEs. Stop recovery harassment now.",
+    "#1 Loan Settlement in Tamil Nadu. Settle debts under 2003 Kanduvatti Act. Expert help for Chennai IT professionals, Coimbatore MSMEs. Stop recovery.",
   keywords: [
     "loan settlement Tamil Nadu",
     "Kanduvatti complaint number",

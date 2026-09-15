@@ -27,7 +27,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Expert Vakil for Trademark Registration | AMA Legal",
-  description: "Conducting a Vakil search for trademark registration? Comprehensive guide on finding the right legal expert (Vakil) vs automated bots. Learn the risks, verify credentials, and protect your brand.",
+  description: "Searching for an expert vakil for trademark registration? Learn how to choose a dedicated IP attorney over bots, verify credentials, and protect your brand.",
   keywords: [
     "vakil search",
     "vakil search for trademark",

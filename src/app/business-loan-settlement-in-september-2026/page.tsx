@@ -9,7 +9,7 @@ const OG_IMAGE =
 export const metadata: Metadata = {
   title: "Business Loan Settlement in September 2026 | AMA Legal",
   description:
-    "Settle business loans in September 2026 under RBI compromise norms. Secure maximum commercial waivers before Q2 closing, resolve DRT & SARFAESI actions, and get authentic NDCs.",
+    "Settle business loans in September 2026 under RBI norms. Secure maximum commercial waivers before Q2 closing, defend DRT actions, and get authentic NDCs.",
   keywords: [
     "business loan settlement in september 2026",
     "commercial debt settlement legal advisory",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Business Loan Settlement in September 2026 | AMA Legal",
     description:
-      "Settle business loans in September 2026 under RBI compromise norms. Secure maximum commercial waivers before Q2 closing, resolve DRT & SARFAESI actions, and get authentic NDCs.",
+      "Settle business loans in September 2026 under RBI norms. Secure maximum commercial waivers before Q2 closing, defend DRT actions, and get authentic NDCs.",
     url: PAGE_URL,
     type: "article",
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Business Loan Settlement in September 2026 | AMA Legal",
     description:
-      "Settle business loans in September 2026 under RBI compromise norms. Secure maximum commercial waivers before Q2 closing, resolve DRT & SARFAESI actions, and get authentic NDCs.",
+      "Settle business loans in September 2026 under RBI norms. Secure maximum commercial waivers before Q2 closing, defend DRT actions, and get authentic NDCs.",
     images: [OG_IMAGE],
     site: "@AMALegalSol",
     creator: "@AnujAnandMalik",

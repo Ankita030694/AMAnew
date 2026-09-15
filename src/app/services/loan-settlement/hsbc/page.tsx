@@ -107,15 +107,15 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "HSBC Loan Settlement Process | HSBC Personal Loan Settlement Letter Format",
+  title: "HSBC Loan Settlement Process | AMA Legal",
   description:
-    "Expert guide on HSBC loan settlement. Learn how to settle HSBC personal loans and credit cards. Get legal help to negotiate OTS, stop harassment, and save up to 50%.",
+    "Expert guide on HSBC loan settlement. Learn how to settle HSBC personal loans and credit cards. Get legal help to negotiate OTS, stop harassment, and.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/hsbc',
   },
   openGraph: {
-    title: "HSBC Loan Settlement Process | HSBC Personal Loan Settlement Letter Format",
-    description: "Expert guide on HSBC loan settlement. Learn how to settle HSBC personal loans and credit cards. Get legal help to negotiate OTS, stop harassment, and save up to 50%.",
+    title: "HSBC Loan Settlement Process | AMA Legal",
+    description: "Expert guide on HSBC loan settlement. Learn how to settle HSBC personal loans and credit cards. Get legal help to negotiate OTS, stop harassment, and.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/hsbc",
     type: "website",
     images: [

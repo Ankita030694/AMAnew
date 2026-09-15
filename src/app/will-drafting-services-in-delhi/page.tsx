@@ -5,9 +5,9 @@ const PAGE_URL = "https://www.amalegalsolutions.com/will-drafting-services-in-de
 const OG_IMAGE = "/images/og/will-drafting-services-in-delhi.png";
 
 export const metadata: Metadata = {
-  title: "Will Drafting Services in Delhi: Top Estate & Succession Lawyers | AMA Legal Solutions",
+  title: "Will Drafting Services in Delhi | AMA Legal Solutions",
   description:
-    "Expert will drafting services in Delhi by senior High Court advocates. Secure your family's assets with court-admissible, dispute-proof testamentary drafting compliant with the Indian Succession Act, 1925.",
+    "Expert will drafting in Delhi by senior High Court advocates. Secure your assets with court-admissible drafting under the Indian Succession Act, 1925.",
   keywords: [
     "will drafting services",
     "will drafting services in delhi",

@@ -6,15 +6,15 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement in Andhra Pradesh | DRT Visakhapatnam Lawyers",
+  title: "Loan Settlement in Andhra Pradesh | AMA Legal",
   description:
-    "Expert loan settlement services in Andhra Pradesh (Visakhapatnam, Vijayawada, Guntur). Settle debt legally through APSLSA Lok Adalat & DRT Vizag. Stop harassment.",
+    "Expert loan settlement services in Andhra Pradesh (Visakhapatnam, Vijayawada, Guntur). Settle debt legally through APSLSA Lok Adalat & DRT Vizag. Stop.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/andhra-pradesh',
   },
   openGraph: {
-    title: "Loan Settlement in Andhra Pradesh | DRT Visakhapatnam Lawyers",
-    description: "Expert loan settlement services in Andhra Pradesh (Visakhapatnam, Vijayawada, Guntur). Settle debt legally through APSLSA Lok Adalat & DRT Vizag. Stop harassment.",
+    title: "Loan Settlement in Andhra Pradesh | AMA Legal",
+    description: "Expert loan settlement services in Andhra Pradesh (Visakhapatnam, Vijayawada, Guntur). Settle debt legally through APSLSA Lok Adalat & DRT Vizag. Stop.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/andhra-pradesh",
     type: "website",
     images: [

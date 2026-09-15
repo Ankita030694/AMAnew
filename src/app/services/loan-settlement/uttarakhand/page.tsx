@@ -187,14 +187,14 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Loan Settlement in Uttarakhand | Debt Settlement Lawyers Dehradun",
+  title: "Loan Settlement in Uttarakhand | AMA Legal",
   description:
-    "Expert loan settlement services in Uttarakhand. We help you settle personal loans and credit card debt in Dehradun, Haridwar, and Haldwani. Stop harassment today.",
+    "Expert loan settlement services in Uttarakhand. We help you settle personal loans and credit card debt in Dehradun, Haridwar, and Haldwani. Stop.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/uttarakhand',
   },
   openGraph: {
-    title: "Loan Settlement in Uttarakhand | Debt Settlement Lawyers Dehradun",
+    title: "Loan Settlement in Uttarakhand | AMA Legal",
     description: "Struggling with debt in Uttarakhand? We negotiate with banks to reduce your debt and stop harassment. Legal, safe, and effective services in Dehradun.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/uttarakhand",
     type: "website",

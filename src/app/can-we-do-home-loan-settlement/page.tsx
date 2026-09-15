@@ -10,7 +10,7 @@ export const metadata = {
   },
   title: "Can We Do Home Loan Settlement? | Expert Legal Guide",
   description:
-    "Wondering if you can settle your home loan? Learn the step-by-step process of home loan settlement in India, SARFAESI Act rules, CIBIL impact, and how to negotiate waivers with banks.",
+    "Can you settle a home loan in India? Learn the step-by-step settlement process, SARFAESI Act rules, CIBIL impact, and how to negotiate waivers with banks.",
   keywords: "can we do home loan settlement, home loan settlement process india, home loan one time settlement, impact of home loan settlement on cibil, legal rights in home loan default, sarfaesi act home loan settlement, SBI home loan settlement, HDFC home loan closure",
 };
 

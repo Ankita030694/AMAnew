@@ -3,16 +3,16 @@ import Script from "next/script";
 import HaryanaBankingClient from "./HaryanaBankingClient";
 
 export const metadata = {
-  title: "Banking and Finance Services in Haryana | NBFC Registration & Fintech Law",
+  title: "Banking and Finance Services in Haryana | AMA Legal",
   description:
-    "Expert legal consultancy for Banking & Finance in Haryana. Services include NBFC Registration in Gurugram, Fintech compliance, Nidhi Company setup & DRT Chandigarh Litigation.",
+    "Expert legal consultancy for Banking & Finance in Haryana. Services include NBFC Registration in Gurugram, Fintech compliance, Nidhi Company setup & DRT.",
   alternates: {
     canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/haryana",
   },
   openGraph: {
-    title: "Banking and Finance Services in Haryana | NBFC Registration & Fintech Law",
+    title: "Banking and Finance Services in Haryana | AMA Legal",
     description:
-      "Expert legal consultancy for Banking & Finance in Haryana. Services include NBFC Registration in Gurugram, Fintech compliance, Nidhi Company setup & DRT Chandigarh Litigation.",
+    "Expert legal consultancy for Banking & Finance in Haryana. Services include NBFC Registration in Gurugram, Fintech compliance, Nidhi Company setup & DRT.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/haryana",
     siteName: "AMA Legal Solutions",
     locale: "en_US",

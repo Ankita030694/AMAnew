@@ -167,7 +167,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Credit Card Settlement in India: The Ultimate Legal Guide | AMA",
+  title: "Credit Card Settlement in India: Legal Guide | AMA Legal",
   description: "Master credit card settlement in India. Discover how to negotiate with banks, stop recovery agent harassment, and settle your credit card debt legally today.",
   robots: {
     index: true,
@@ -192,6 +192,12 @@ export const metadata = {
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/settlement-credit-card',
+  },
+  openGraph: {
+    title: "Credit Card Settlement in India: Legal Guide | AMA Legal",
+    description: "Master credit card settlement in India. Discover how to negotiate with banks, stop recovery agent harassment, and settle your credit card debt legally today.",
+    url: 'https://www.amalegalsolutions.com/settlement-credit-card',
+    type: "article",
   },
 };
 

@@ -158,8 +158,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Send Legal Notice in Delhi | #1 Legal Notice Lawyers in Delhi",
-  description: "Need to send a legal notice in Delhi? AMA Legal Solutions provides expert drafting and dispatch services for property, money recovery, and matrimonial disputes in Delhi. 100% legal & fast.",
+  title: "Send Legal Notice in Delhi | Expert Lawyers & Advocates",
+  description: "Need to send a legal notice in Delhi? AMA Legal Solutions provides expert drafting for property, recovery, and matrimonial disputes across all Delhi courts.",
   keywords: [
     "send legal notice in Delhi",
     "legal notice service Delhi",
@@ -178,7 +178,7 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/send-legal-notice-in-delhi',
   },
   openGraph: {
-    title: "Send Legal Notice in Delhi | Expert Legal Notice Services",
+    title: "Send Legal Notice in Delhi | Expert Lawyers & Advocates",
     description: "Empower your legal journey in Delhi. Send professional legal notices for any dispute with AMA Legal Solutions. Trusted by thousands in the capital city.",
     url: "https://www.amalegalsolutions.com/send-legal-notice-in-delhi",
     type: "website",

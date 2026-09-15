@@ -153,7 +153,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Can I Settle My Credit Card Debt? | Legal Guide & RBI Rules",
-  description: "Wondering 'Can I settle my credit card debt in India?' Discover the legal process, One Time Settlement (OTS), your rights against recovery agents, and how to save up to 60%.",
+  description: "Can I settle credit card debt in India? Learn the legal process, One Time Settlement (OTS) options, recovery rules, and how to negotiate debt reduction.",
   keywords: [
     "can I settle my credit card debt",
     "credit card settlement",

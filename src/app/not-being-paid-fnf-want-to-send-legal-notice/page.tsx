@@ -157,8 +157,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Unpaid F&F Settlement Legal Notice India | Recover Your Salary",
-  description: "Not getting paid your F&F settlement? Send a strong legal notice to your employer for unpaid salary, gratuity, and leave encashment. Legal advice by AMA Legal Solutions.",
+  title: "Unpaid F&F Settlement Legal Notice India | Recover Dues",
+  description: "Not receiving your F&F settlement? Send a formal legal notice to your employer for unpaid salary, gratuity, and dues with AMA Legal Solutions.",
   keywords: [
     "legal notice for unpaid F&F settlement",
     "recover unpaid salary India",

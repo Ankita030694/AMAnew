@@ -150,8 +150,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Best Loan Settlement Companies in India 2024 | AMA Legal Solutions #1",
-  description: "Find the best loan settlement companies in India. Compare AMA Legal Solutions, FREED, SingleDebt, and more. Expert legal advice for debt relief and CIBIL restoration.",
+  title: "Best Loan Settlement Companies in India | AMA Legal",
+  description: "Find the best loan settlement companies in India. Compare top agencies, understand debt relief options, and get expert legal representation.",
   keywords: [
     "best loan settlement companies in India",
     "loan settlement companies reviews",

@@ -104,7 +104,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Business Loan Settlement India | Expert MSME Debt Resolution",
-  description: "Secure your business and stop harassment. Our legal experts help you negotiate the best business loan settlement (OTS) across all Indian cities. specialized in MSME and SARFAESI cases.",
+  description: "Secure your business and stop recovery harassment. Our legal experts negotiate business loan settlements (OTS) across India for MSME and SARFAESI cases.",
   keywords: [
     "business loan settlement",
     "business loan settlement india",

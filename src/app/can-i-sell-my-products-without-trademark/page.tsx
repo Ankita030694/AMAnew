@@ -171,8 +171,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Can I Sell My Products Without Trademark? | Legal Risks in India",
-  description: "Is it legal to sell products without a trademark in India? Discover the massive risks of brand hijacking, the cost of 'passing off' lawsuits, and how to protect your business legally.",
+  title: "Can I Sell Products Without Trademark? | Legal Risks",
+  description: "Is it legal to sell products without a trademark in India? Discover risks of brand hijacking, passing off lawsuits, and how to protect your brand.",
   keywords: [
     "sell products without trademark",
     "trademark registration india",

@@ -169,8 +169,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Home Loan Eligibility After Settlement | SECURE Approval Fast",
-  description: "Can you get a house loan after settlement? Yes! Discover the exact steps to improve home loan eligibility after loan settlement with AMA Legal Solutions at Sector 57.",
+  title: "Home Loan Eligibility After Settlement | Approval Guide",
+  description: "Can you get a home loan after settlement? Discover the exact legal steps to improve home loan eligibility and rebuild credit with AMA Legal Solutions.",
   keywords: [
     "home loan eligibility after settlement",
     "can I get home loan after settlement",

@@ -158,7 +158,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Documents Required for Trademark Registration | 7500+ Word Guide",
+  title: "Documents Required for Trademark Registration in India",
   description: "Exhaustive 7500+ word manual on trademark registration documents in India. Learn about MSME rebates, Startup certificates, User Affidavits, and POA.",
   keywords: ["documents for trademark registration", "trademark registration checklist india", "trademark user affidavit", "MSME trademark discount documents", "power of attorney trademark india", "trademark filing requirements"],
   alternates: { canonical: 'https://www.amalegalsolutions.com/what-documents-are-required-for-trademark-registration' }

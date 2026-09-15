@@ -140,7 +140,7 @@ const faqSchema = {
 export const metadata = {
   title: "Loan Settlement Meghalaya | Stop Harassment & Protect Land",
   description:
-    "#1 Loan Settlement in Meghalaya. Settle debts under Land Transfer Act 1971. Expert help for Shillong, Tura, Jowai. Stop bank harassment & protect tribal land.",
+    "#1 Loan Settlement in Meghalaya. Settle debts under Land Transfer Act 1971. Expert help for Shillong, Tura, Jowai. Stop bank harassment & protect tribal.",
   keywords: [
     "loan settlement Meghalaya",
     "debt settlement Shillong",

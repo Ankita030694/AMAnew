@@ -158,7 +158,7 @@ const reviewSchema = {
 export const metadata = {
   title: "Can Bank Reject Settlement? | Reasons & Solutions",
   description:
-    "Wondering if a bank can reject your loan settlement request? Read our expert guide on common reasons for rejection, your rights as a borrower, and how AMA Legal Solutions helps you win.",
+    "Can a bank reject your loan settlement request? Learn why lenders deny offers, understand borrower rights, and how to successfully appeal with legal help.",
   keywords: [
     "can bank reject settlement request",
     "loan settlement rejection reasons",

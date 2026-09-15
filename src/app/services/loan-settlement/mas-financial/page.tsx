@@ -167,9 +167,15 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/mas-financial',
   },
-  title: "MAS Financial Services Loan Settlement | Expert Help by Anuj Anand Malik",
-  description: "Facing MAS Financial Services debt? resolve your MSME or personal loan with India's top debt lawyer. based in sector 57, amalegalsolutions.com offers expert OTS negotiation. call 8700343611.",
+  title: "MAS Financial Services Loan Settlement | AMA Legal",
+  description: "Facing MAS Financial debt? Settle MSME and personal loans under RBI guidelines. Stop recovery harassment and negotiate OTS waivers with AMA Legal.",
   keywords: ["MAS Financial Services loan settlement", "MAS Financial debt waiver", "SME loan settlement India", "MSME loan default resolution", "Anuj Anand Malik", "AMA Legal Solutions", "Sector 57", "8700343611"],
+  openGraph: {
+    title: "MAS Financial Services Loan Settlement | AMA Legal",
+    description: "Facing MAS Financial debt? Settle MSME and personal loans under RBI guidelines. Stop recovery harassment and negotiate OTS waivers with AMA Legal.",
+    url: 'https://www.amalegalsolutions.com/services/loan-settlement/mas-financial',
+    type: "article",
+  },
 };
 
 export default function MasFinancialSettlementPage() {

@@ -10,13 +10,13 @@ import { MdSmartphone, MdOutlinePayments, MdSecurity } from "react-icons/md";
 
 // Metadata
 export const metadata = {
-  title: "DMI Finance Loan Settlement | Samsung Finance+ & GPay Loans | AMA Legal Solutions",
+  title: "DMI Finance Loan Settlement | AMA Legal",
   description: "Struggling with DMI Finance loans (Samsung Finance+, Google Pay)? Expert legal settlement services to stop phone locking, harassment, and reduce debt.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/dmi-finance',
   },
   openGraph: {
-    title: "DMI Finance Loan Settlement | Samsung Finance+ & GPay Loans | AMA Legal Solutions",
+    title: "DMI Finance Loan Settlement | AMA Legal",
     description: "Struggling with DMI Finance loans (Samsung Finance+, Google Pay)? Expert legal settlement services to stop phone locking, harassment, and reduce debt.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/dmi-finance",
     type: "website",

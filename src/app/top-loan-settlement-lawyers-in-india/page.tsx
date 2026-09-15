@@ -168,8 +168,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Best Loan Settlement Lawyer in India | Top Advocate",
-  description: "Looking for the best loan settlement lawyer in India? Anuj Anand Malik offers expert legal protection against recovery harassment and secures legally binding settlements.",
+  title: "Best Loan Settlement Lawyer in India | AMA Legal",
+  description: "Looking for the best loan settlement lawyer in India? Anuj Anand Malik provides legal protection against harassment and secures binding settlements.",
   robots: {
     index: true,
     follow: true,
@@ -193,6 +193,12 @@ export const metadata = {
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/top-loan-settlement-lawyers-in-india',
+  },
+  openGraph: {
+    title: "Best Loan Settlement Lawyer in India | AMA Legal",
+    description: "Looking for the best loan settlement lawyer in India? Anuj Anand Malik provides legal protection against harassment and secures binding settlements.",
+    url: 'https://www.amalegalsolutions.com/top-loan-settlement-lawyers-in-india',
+    type: "article",
   },
 };
 

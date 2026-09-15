@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/notice-for-recovery-of-unpaid-salary',
   },
-  title: "Notice for Recovery of Unpaid Salary: Legal Procedure & Employee Rights",
+  title: "Notice for Recovery of Unpaid Salary | Employee Rights",
   description:
-    "Employer not paying salary? Learn how to send a legal notice for recovery of unpaid salary in India. Understand your rights under Payment of Wages Act and Labour Laws.",
+    "Employer not paying salary? Learn how to send a legal notice for recovery of unpaid salary in India under Payment of Wages Act and labor laws with our team.",
   keywords: "notice for recovery of unpaid salary, legal notice for unpaid salary format, employee rights unpaid salary india, recovery of dues from employer, labour law unpaid salary, demand notice for salary recovery",
 };
 

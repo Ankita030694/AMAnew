@@ -3,16 +3,16 @@ import Script from "next/script";
 import GujaratBankingClient from "./GujaratBankingClient";
 
 export const metadata = {
-  title: "Banking and Finance Services in Gujarat | GIFT City & NBFC Registration",
+  title: "Banking and Finance Services in Gujarat | AMA Legal",
   description:
-    "Expert legal consultancy for Banking & Finance in Gujarat. Services include NBFC Registration in Ahmedabad, GIFT City IFSC setup, Nidhi Company & DRT Litigation.",
+    "Expert legal consultancy for Banking & Finance in Gujarat. Services include NBFC Registration in Ahmedabad, GIFT City IFSC setup, Nidhi Company & DRT.",
   alternates: {
     canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/gujarat",
   },
   openGraph: {
-    title: "Banking and Finance Services in Gujarat | GIFT City & NBFC Registration",
+    title: "Banking and Finance Services in Gujarat | AMA Legal",
     description:
-      "Expert legal consultancy for Banking & Finance in Gujarat. Services include NBFC Registration in Ahmedabad, GIFT City IFSC setup, Nidhi Company & DRT Litigation.",
+    "Expert legal consultancy for Banking & Finance in Gujarat. Services include NBFC Registration in Ahmedabad, GIFT City IFSC setup, Nidhi Company & DRT.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/gujarat",
     siteName: "AMA Legal Solutions",
     locale: "en_US",

@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/notice-for-cibil-correction-after-settlement',
   },
-  title: "Notice for CIBIL Correction After Settlement | Move from Settled to Closed",
+  title: "Notice for CIBIL Correction After Settlement | Legal Guide",
   description:
-    "Learn how to correct your CIBIL status from 'Settled' to 'Closed' after a loan settlement. Step-by-step legal guide on drafting a correction notice and rebuilding credit.",
+    "Learn how to update your CIBIL status from Settled to Closed after a loan settlement. Step-by-step guide to drafting a notice and rebuilding credit.",
   keywords: "notice for cibil correction after settlement, convert settled to closed in cibil, how to remove settled status from cibil, cibil correction procedure after settlement, credit score repair india",
 };
 

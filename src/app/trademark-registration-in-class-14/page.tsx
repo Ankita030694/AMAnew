@@ -5,8 +5,8 @@ import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata = {
-  title: "Trademark Registration in Class 14 India | Leading Jewelry IP Guide",
-  description: "Secure your jewelry, watch, or precious metal brand with Trademark Registration in Class 14. Expert guidance from Anuj Anand Malik at AMA Legal Solutions, Sector 57.",
+  title: "Class 14 Trademark Registration India | Jewelry & Watches",
+  description: "Protect your jewelry, watch, and precious metal brand with Class 14 trademark registration in India. Expert legal guidance from AMA Legal Solutions.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/trademark-registration-in-class-14',
   },
@@ -24,7 +24,7 @@ export const metadata = {
     "horological instrument trademark"
   ],
   openGraph: {
-    title: "Trademark Registration in Class 14 India | Expert Legal Help",
+    title: "Class 14 Trademark Registration India | Jewelry & Watches",
     description: "Comprehensive guide for Class 14 trademark registration. Services for jewelry, watches, and precious metals by Anuj Anand Malik.",
     url: "https://www.amalegalsolutions.com/trademark-registration-in-class-14",
     type: "article",

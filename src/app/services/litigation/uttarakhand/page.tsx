@@ -183,9 +183,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Litigation Services in Uttarakhand | Nainital High Court Lawyers",
+  title: "Litigation Services in Uttarakhand | AMA Legal",
   description:
-    "Expert litigation lawyers in Uttarakhand. We represent clients in Nainital High Court, NGT, and District Courts (Dehradun, Haridwar). Civil, Criminal, Land & Environmental cases.",
+    "Expert litigation lawyers in Uttarakhand. We represent clients in Nainital High Court, NGT, and District Courts (Dehradun, Haridwar). Civil, Criminal.",
   keywords: [
     "litigation services uttarakhand",
     "nainital high court lawyer",
@@ -202,8 +202,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/services/litigation/uttarakhand',
   },
   openGraph: {
-    title: "Litigation Services in Uttarakhand | Nainital High Court Lawyers",
-    description: "Expert litigation services in Uttarakhand. Representing clients in Nainital High Court and District Courts.",
+    title: "Litigation Services in Uttarakhand | AMA Legal",
+    description: "Expert litigation services in Uttarakhand. Representing clients in Nainital High Court and District Courts Contact AMA Legal Solutions today.",
     url: "https://www.amalegalsolutions.com/services/litigation/uttarakhand",
     type: "website",
     images: [

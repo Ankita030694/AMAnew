@@ -157,9 +157,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Best Personal Loan Settlement Companies & Plans India (2025 Review)",
+  title: "Best Personal Loan Settlement Companies & Plans | AMA",
   description:
-    "Comparing the best loan settlement companies for personal loans in India. Reviews of AMA Legal, FREED, SettleMyLoan, CredSettle, and SettleLoans. Choose the right legal plan to reduce debt.",
+    "Compare the best loan settlement companies for personal loans in India. Review top debt relief plans, legal protections, and waivers with AMA Legal.",
   keywords: [
     "best loan settlement companies",
     "personal loan settlement plans",
@@ -178,8 +178,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/which-companies-offer-the-best-loan-settlement-plans-for-personal-loans',
   },
   openGraph: {
-    title: "Best Personal Loan Settlement Companies & Plans India (2025 Review)",
-    description: "Who offers the best loan settlement plans? Detailed comparison of top companies in India.",
+    title: "Best Personal Loan Settlement Companies & Plans | AMA",
+    description: "Compare the best loan settlement companies for personal loans in India. Review top debt relief plans, legal protections, and waivers with AMA Legal.",
     url: "https://www.amalegalsolutions.com/which-companies-offer-the-best-loan-settlement-plans-for-personal-loans",
     type: "article",
     images: [

@@ -198,8 +198,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Expert Panel Loan Settlement | Top Debt Resolution Experts India",
-  description: "Need help with debt? Our expert panel for loan settlement offers legal negotiation with banks, harassment protection, and debt relief. Rank #1 for expert panel loan settlement with AMA Legal Solutions.",
+  title: "Expert Panel Loan Settlement | Debt Resolution Experts",
+  description: "Need debt help? Our expert panel for loan settlement provides legal negotiation with banks, harassment defense, and debt relief with AMA Legal Solutions.",
   keywords: [
     "expert panel loan settlement",
     "expert panel reviews",
@@ -216,8 +216,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/expert-panel-loan-settlement',
   },
   openGraph: {
-    title: "Expert Panel Loan Settlement | Top Debt Resolution Experts India",
-    description: "Need help with debt? Our expert panel for loan settlement offers legal negotiation with banks, harassment protection, and debt relief.",
+    title: "Expert Panel Loan Settlement | Debt Resolution Experts",
+    description: "Need debt help? Our expert panel for loan settlement provides legal negotiation with banks, harassment defense, and debt relief with AMA Legal Solutions.",
     url: "https://www.amalegalsolutions.com/expert-panel-loan-settlement",
     type: "website",
     images: [

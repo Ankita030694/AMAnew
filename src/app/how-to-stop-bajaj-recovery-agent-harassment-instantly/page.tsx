@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/how-to-stop-bajaj-recovery-agent-harassment-instantly',
   },
-  title: "How to Stop Bajaj Recovery Agent Harassment Instantly | Legal Guide 2026",
+  title: "Stop Bajaj Recovery Harassment Instantly | Legal Guide",
   description:
-    "Experiencing harassment from Bajaj recovery agents? Learn how to stop it instantly using RBI guidelines, legal notices, and formal complaints. Know your rights today.",
+    "Experiencing harassment from Bajaj recovery agents? Learn how to stop it using RBI guidelines, legal notices, and police complaints with AMA Legal.",
   keywords: "stop bajaj recovery agent harassment, rbi guidelines for recovery agents, bajaj finance harassment complaint, loan recovery harassment legal help, how to deal with recovery agents india",
 };
 

@@ -10,7 +10,7 @@ export const metadata = {
   },
   title: "Debt Settlement & Credit Score | CIBIL Impact Explained",
   description:
-    "Does debt settlement hurt your credit? Learn how a 'settled' status affects your CIBIL score, why it stays for 7 years, and how to rebuild your credit after settlement.",
+    "Does debt settlement hurt your credit? Learn how 'settled' status affects your CIBIL score, 7-year reporting rules, and how to rebuild your credit rating.",
   keywords: "can debt settlement hurt your credit, debt settlement impact on cibil score, settled vs closed loan status, rebuilding credit after settlement, debt relief india",
 };
 

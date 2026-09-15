@@ -3,16 +3,16 @@ import Script from "next/script";
 import BiharBankingClient from "./BiharBankingClient";
 
 export const metadata = {
-  title: "Banking and Finance Services in Bihar | NBFC Registration & DRT Patna",
+  title: "Banking and Finance Services in Bihar | AMA Legal",
   description:
-    "Expert legal consultancy for Banking & Finance in Bihar. Services include NBFC Registration in Patna, Nidhi Company setup, Bihar Money Lenders License & DRT Litigation.",
+    "Expert legal consultancy for Banking & Finance in Bihar. Services include NBFC Registration in Patna, Nidhi Company setup, Bihar Money Lenders License &.",
   alternates: {
     canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/bihar",
   },
   openGraph: {
-    title: "Banking and Finance Services in Bihar | NBFC Registration & DRT Patna",
+    title: "Banking and Finance Services in Bihar | AMA Legal",
     description:
-      "Expert legal consultancy for Banking & Finance in Bihar. Services include NBFC Registration in Patna, Nidhi Company setup, Bihar Money Lenders License & DRT Litigation.",
+    "Expert legal consultancy for Banking & Finance in Bihar. Services include NBFC Registration in Patna, Nidhi Company setup, Bihar Money Lenders License &.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/bihar",
     siteName: "AMA Legal Solutions",
     locale: "en_US",

@@ -153,8 +153,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Bank Account Frozen? P2P Crypto Scam Unfreeze Guide | Expert Lawyer",
-  description: "Is your bank account frozen due to a P2P crypto scam? Learn how to legally unfreeze it. Expert consultation with Anuj Anand Malik from AMA Legal Solutions, Sector 57. Call 8700343611.",
+  title: "P2P Crypto Scam Bank Freeze: How to Unfreeze Your Account",
+  description: "Bank account frozen due to a P2P crypto scam? Learn how to unfreeze it legally under cyber laws with expert guidance from AMA Legal Solutions.",
   keywords: ["p2p crypto scam unfreeze", "bank account frozen india", "anuj anand malik", "ama legal solutions", "sector 57", "8700343611", "amalegalsolutions.com", "cyber crime bank unfreeze"],
   alternates: { canonical: 'https://www.amalegalsolutions.com/p2p-crypto-scam-unfreeze-bank-account' },
 };

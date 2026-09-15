@@ -1,26 +1,23 @@
-import React from 'react';
-import Link from 'next/link';
-import Script from 'next/script';
-import Image from 'next/image';
+import React from "react";
+import Link from "next/link";
+import Script from "next/script";
+import Image from "next/image";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
+import { getMatchedExpertise } from "../expertiseData";
+import { getExpertiseSEO } from "@/lib/seo";
 
-import { getMatchedExpertise } from '../expertiseData';
-import { getExpertiseSEO } from '@/lib/seo';
-
-export const revalidate = 86400; // Cache for 24 hours since expertise pages change rarely
+export const revalidate = 86400;
 
 export async function generateStaticParams() {
-  // Return empty array to support On-Demand Static Generation.
-  // This avoids increasing build time while still giving the cost benefits of static files.
   return [];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const matchedExpertise = getMatchedExpertise(resolvedParams.slug) || 
-    resolvedParams.slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    resolvedParams.slug.split("-").map((word: string) => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
 
   const { title, description } = getExpertiseSEO(matchedExpertise, resolvedParams.slug);
 
@@ -33,9 +30,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default async function ExpertiseSlugPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function LawyerByExpertiseSlugPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  const matchedExpertise = getMatchedExpertise(resolvedParams.slug);
+  const matchedExpertise = getMatchedExpertise(resolvedParams.slug) ||
+    resolvedParams.slug.split("-").map((word: string) => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
 
   if (!matchedExpertise) {
     return (
@@ -50,31 +48,29 @@ export default async function ExpertiseSlugPage({ params }: { params: Promise<{ 
     );
   }
 
-  // Generate dynamic FAQs based on expertise
   const faqs = [
     {
-      question: `What legal assistance can I get for ${matchedExpertise}?`,
-      answer: `For matters concerning ${matchedExpertise}, our top-rated lawyers provide comprehensive legal support. This includes initial consultation, strategic planning, drafting necessary legal documents, filing petitions, and offering dedicated representation throughout the legal process to protect your rights.`
+      question: `Why do I need a specialized advocate for ${matchedExpertise}?`,
+      answer: `Legal disputes concerning ${matchedExpertise} require specific procedural expertise and familiarity with judicial bench precedents. A specialized advocate understands how to frame pleadings, structure evidence, and present arguments to maximize your legal advantage.`
     },
     {
-      question: `Why should I hire a specialized lawyer for ${matchedExpertise}?`,
-      answer: `Hiring a specialized legal professional ensures that your case is handled by someone with deep domain knowledge. They understand the specific laws, precedents, and procedures related to ${matchedExpertise}, significantly increasing your chances of a favorable outcome.`
+      question: `What is the procedure for hiring an advocate for ${matchedExpertise}?`,
+      answer: `The process begins with a confidential case evaluation where we review your documents, assess legal risks, and outline a tailored roadmap. Upon signing the Vakalatnama and retainer, our advocates assume full representation.`
     },
     {
-      question: `How long does the legal process take for ${matchedExpertise}?`,
-      answer: `The timeline varies depending on the complexity of the specific case, jurisdiction, and the responsiveness of the opposing party. However, our specialized advocates use their expertise to streamline the process, ensuring no unnecessary delays occur while striving for a rapid resolution.`
+      question: `Can my ${matchedExpertise} case be resolved through pre-litigation settlement?`,
+      answer: `Yes, in many situations, drafting a structured statutory legal notice or conducting strategic conciliation achieves a prompt resolution without the delays and expenses of a full court trial.`
     },
     {
-      question: `What documents do I need to prepare for a consultation?`,
-      answer: `Generally, you should bring any correspondence, contracts, notices, or evidence relevant to your case. During your initial consultation regarding ${matchedExpertise}, our lawyers will provide you with a precise checklist of required documents based on your unique situation.`
+      question: `What documents should I provide during the first case evaluation?`,
+      answer: `Provide all relevant contracts, agreements, official correspondences, court summons, and evidence logs. A complete chronological dossier allows our advocates to identify key defenses immediately.`
     },
     {
-      question: `How do I engage AMA Legal Solutions for ${matchedExpertise}?`,
-      answer: `You can begin by booking a consultation through our website or calling our helpline. Our senior legal team will evaluate your case regarding ${matchedExpertise} and propose a tailored legal strategy.`
+      question: `Does AMA Legal Solutions represent clients pan-India for ${matchedExpertise}?`,
+      answer: `Yes, our legal network represents clients across District Courts, High Courts, and Central Tribunals throughout India, providing seamless litigation support.`
     }
   ];
 
-  // Dynamic Schemas
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -103,8 +99,8 @@ export default async function ExpertiseSlugPage({ params }: { params: Promise<{ 
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": `Expert Lawyers for ${matchedExpertise} in India`,
-    "description": `Comprehensive legal guide and top-tier advocate services for ${matchedExpertise}. Connect with our expert team for dedicated legal representation.`,
+    "headline": `Hire Top Advocates for ${matchedExpertise} in India | Legal Representation`,
+    "description": `Connect with experienced lawyers and advocates for ${matchedExpertise}. Court representation, notice drafting, and litigation defense across India.`,
     "image": "https://www.amalegalsolutions.com/services/3.png",
     "author": {
       "@type": "Organization",
@@ -119,8 +115,8 @@ export default async function ExpertiseSlugPage({ params }: { params: Promise<{ 
         "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
       }
     },
-    "datePublished": new Date().toISOString().split('T')[0],
-    "dateModified": new Date().toISOString().split('T')[0]
+    "datePublished": "2024-01-15",
+    "dateModified": "2026-09-15"
   };
 
   const faqSchema = {
@@ -139,9 +135,9 @@ export default async function ExpertiseSlugPage({ params }: { params: Promise<{ 
   const reviewSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": `Legal Services for ${matchedExpertise}`,
+    "name": `Advocate Representation for ${matchedExpertise}`,
     "image": "https://www.amalegalsolutions.com/services/3.png",
-    "description": `Expert legal representation for ${matchedExpertise} in India.`,
+    "description": `Professional advocate representation and litigation defense for ${matchedExpertise} in India.`,
     "brand": {
       "@type": "Brand",
       "name": "AMA Legal Solutions"
@@ -160,20 +156,20 @@ export default async function ExpertiseSlugPage({ params }: { params: Promise<{ 
         },
         "author": {
           "@type": "Person",
-          "name": "Verified Client"
+          "name": "Retained Client"
         },
-        "reviewBody": `AMA Legal Solutions provided exceptional service. Their expertise in ${matchedExpertise.toLowerCase()} was evident from day one, and they achieved a favorable outcome much faster than anticipated.`
+        "reviewBody": `AMA Legal Solutions handled our representation in ${matchedExpertise.toLowerCase()} with tremendous vigor and clinical precision. The courtroom advocacy was top-notch.`
       }
     ]
   };
 
   const tocSections = [
-    { id: "introduction", title: "Introduction" },
-    { id: "what-we-do", title: `What We Do` },
-    { id: "why-specialized", title: "Why Specialized Lawyers?" },
-    { id: "our-approach", title: "Our Approach" },
-    { id: "why-choose-us", title: "Why Choose Us" },
-    { id: "testimonials", title: "Success Stories" },
+    { id: "representation-overview", title: "Representation Overview" },
+    { id: "court-advocacy", title: "Courtroom Advocacy & Defense" },
+    { id: "notice-drafting", title: "Notice Drafting & Pre-Litigation" },
+    { id: "retainer-process", title: "Retainer & Engagement Model" },
+    { id: "why-choose-ama", title: "Why Choose AMA Legal" },
+    { id: "client-feedback", title: "Client Testimonials" },
     { id: "faqs", title: "FAQs" },
   ];
 
@@ -184,46 +180,26 @@ export default async function ExpertiseSlugPage({ params }: { params: Promise<{ 
 
   return (
     <>
-      <Script
-        id="breadcrumb-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <Script
-        id="article-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <Script
-        id="review-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-      />
+      <Script id="breadcrumb-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <Script id="article-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <Script id="review-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
 
       <div className="bg-gray-50 min-h-screen font-sans text-gray-800">
-        {/* Hero Section */}
         <div className="relative bg-[#1a202c] text-white">
           <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
-          <div 
-            className="absolute inset-0 bg-cover bg-center z-0" 
-            style={{ background: "black" }}
-          ></div>
+          <div className="absolute inset-0 bg-cover bg-center z-0" style={{ background: "black" }}></div>
           <div className="relative z-20 container mx-auto px-4 py-12 md:py-32 text-center">
             <h1 className="text-2xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight mt-10">
-              Get Expert Legal Representation for <br className="hidden md:block" />
+              Hire Dedicated Advocates for <br className="hidden md:block" />
               <span className="text-[#D2A02A]">{matchedExpertise}</span>
             </h1>
             <p className="text-sm md:text-xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
-              Top-rated advocates to manage your legal challenges with precision, ethical representation, and proven strategies designed to win.
+              Retain senior litigation lawyers and legal counsel with proven courtroom experience in managing complex {matchedExpertise.toLowerCase()} disputes across India.
             </p>
             <Link href="/contact">
               <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg">
-                Get a Free Case Evaluation
+                Request a Case Evaluation
               </button>
             </Link>
           </div>
@@ -231,232 +207,142 @@ export default async function ExpertiseSlugPage({ params }: { params: Promise<{ 
 
         <div className="container mx-auto px-4 max-w-[1600px] py-8">
           <Breadcrumbs items={breadcrumbItems} />
-          
-          {/* Mobile App Store Links */}
-          <div className="lg:hidden flex flex-col gap-3 mb-6 mt-2">
-            <p className="text-sm font-semibold mb-2" style={{ color: 'rgba(210, 158, 13, 0.8)' }}>Download Our iOS/Android App</p>
-            <div className="flex gap-4">
-              <Link 
-                href="https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions" 
-                target="_blank"
-                className="hover:opacity-80 transition-opacity"
-              >
-                <Image 
-                  src="/newAssets/appstore.svg" 
-                  alt="Get it on Google Play" 
-                  width={130} 
-                  height={36}
-                  className="w-[120px] h-auto"
-                />
-              </Link>
-              <Link 
-                href="https://apps.apple.com/in/app/ama-legal-solutions/id6755156186" 
-                target="_blank"
-                className="hover:opacity-80 transition-opacity"
-              >
-                <Image 
-                  src="/newAssets/playstore.svg" 
-                  alt="Download on App Store" 
-                  width={130} 
-                  height={36}
-                  className="w-[120px] h-auto"
-                />
-              </Link>
-            </div>
-          </div>
-          
-          {/* 3-Column Layout exactly like Loan Settlement */}
-          <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 items-start">
-            
-            {/* Left Sidebar - TOC (Desktop) */}
+
+          <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 items-start mt-6">
             <div className="hidden lg:block sticky top-24">
               <TableOfContents sections={tocSections} orientation="vertical" />
             </div>
 
-            {/* Main Content Area */}
             <div className="min-w-0">
-              {/* TOC (Mobile) */}
               <div className="lg:hidden mb-6 sticky top-20 z-10">
                 <TableOfContents sections={tocSections} />
               </div>
 
-              <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12 border border-gray-100">
+              <div className="bg-white p-4 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12 border border-gray-100">
                 
-                {/* Introduction */}
-                <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Understanding Your Legal Rights</h2>
-                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
-                    Navigating the complexities of the Indian legal system can be a daunting task, especially when dealing with nuanced matters such as <strong>{matchedExpertise.toLowerCase()}</strong>. Without proper legal guidance, you risk making procedural mistakes or accepting terms that could severely impact your financial or personal well-being.
+                {/* Representation Overview */}
+                <section id="representation-overview" className="scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Advocate Representation for {matchedExpertise}</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-3 text-gray-700">
+                    Navigating disputes or regulatory compliance involving <strong>{matchedExpertise.toLowerCase()}</strong> demands active, strategic legal representation. Engaging qualified legal counsel ensures that your constitutional rights and commercial interests are vigorously safeguarded.
                   </p>
-                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
-                    At AMA Legal Solutions, we bridge the gap between complex legal statutes and your specific situation. Our dedicated team of top-tier attorneys possesses comprehensive domain knowledge, ensuring that every facet of your case is analyzed with supreme precision to deliver the best possible relief and remedy.
-                  </p>
-                </section>
-
-                {/* What We Do */}
-                <section id="what-we-do" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">How We Help with {matchedExpertise}</h2>
-                  <div className="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 mb-4 md:mb-8 rounded-r-lg">
-                    <p className="text-sm md:text-lg text-blue-900 italic">
-                      "A proactive legal strategy is the difference between a protracted dispute and a swiftly resolved matter."
-                    </p>
-                  </div>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Whether you are an individual pursuing justice, a corporate entity managing compliance, or someone facing unwarranted litigation, our strategic intervention in matters related to {matchedExpertise.toLowerCase()} is designed to give you an upper hand. We focus intensely on protecting our clients from extended litigation traps.
+                  <p className="text-sm md:text-lg leading-relaxed text-gray-700">
+                    AMA Legal Solutions provides end-to-end advocacy—from issuing statutory legal notices to arguing petitions before judicial benches across India.
                   </p>
                 </section>
 
-                {/* Why Specialized Lawyers */}
-                <section id="why-specialized" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Why You Need a Specialized Attorney</h2>
-                  <div className="overflow-x-auto">
-                    <table className="w-full border-collapse border border-gray-200 rounded-lg overflow-hidden">
-                      <thead>
-                        <tr className="bg-gray-100">
-                          <th className="p-4 text-left border-b border-gray-200 text-green-700 w-1/2">With Specialized Counsel</th>
-                          <th className="p-4 text-left border-b border-gray-200 text-red-700 w-1/2">Without Specialized Counsel</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr className="border-b border-gray-100">
-                          <td className="p-4 align-top">
-                            <ul className="list-disc pl-4 space-y-2 text-gray-700">
-                              <li>Deep understanding of the exact area of law.</li>
-                              <li>Faster resolution time due to experience.</li>
-                              <li>Protection against aggressive opposing counsel.</li>
-                              <li>Clear, actionable, pre-litigation strategies.</li>
-                            </ul>
-                          </td>
-                          <td className="p-4 align-top bg-gray-50">
-                            <ul className="list-disc pl-4 space-y-2 text-gray-700">
-                              <li>Risk of missing critical limitation periods.</li>
-                              <li>Procedural mistakes that invalidate the case.</li>
-                              <li>Potential for heavy financial losses or penalties.</li>
-                              <li>Unnecessary stress and prolonged court battles.</li>
-                            </ul>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                {/* Courtroom Advocacy */}
+                <section id="court-advocacy" className="scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Courtroom Advocacy & Defense Protocol</h2>
+                  <div className="grid md:grid-cols-2 gap-4 my-6">
+                    <div className="p-5 bg-[#FAF8F5] rounded-xl border border-gray-200">
+                      <h4 className="font-bold text-gray-900 text-base mb-2">Interim Injunctions & Emergency Relief</h4>
+                      <p className="text-sm text-gray-600 m-0">Securing urgent stay orders, temporary injunctions, or bail protections to prevent irreversible prejudice.</p>
+                    </div>
+                    <div className="p-5 bg-[#FAF8F5] rounded-xl border border-gray-200">
+                      <h4 className="font-bold text-gray-900 text-base mb-2">Pleadings & Evidentiary Scrutiny</h4>
+                      <p className="text-sm text-gray-600 m-0">Drafting bulletproof plaints, written statements, and affidavits that leave zero procedural loopholes for opposing counsel.</p>
+                    </div>
                   </div>
                 </section>
 
-                {/* Our Process */}
-                <section id="our-approach" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Our 4-Step Legal Approach</h2>
-                  <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                    We employ a systematic methodology for every case involving {matchedExpertise.toLowerCase()} to guarantee that no stone is left unturned.
+                {/* Notice Drafting */}
+                <section id="notice-drafting" className="scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Statutory Legal Notices & Responses</h2>
+                  <p className="text-sm md:text-lg leading-relaxed text-gray-700">
+                    A well-crafted legal notice forms the foundation of any litigation. Our advocates draft precise, demand-backed notices that clearly delineate cause of action, statutory violations, and time-bound requisitions, frequently compelling the opposing party to settle matters out of court.
                   </p>
-                  
-                  <div className="space-y-8">
-                    <div className="flex flex-col md:flex-row gap-6 items-start">
-                      <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">1</div>
+                </section>
+
+                {/* Retainer Process */}
+                <section id="retainer-process" className="scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Our 4-Step Retainer & Advocacy Model</h2>
+                  <div className="space-y-4 my-6">
+                    <div className="p-5 bg-white border border-gray-200 rounded-xl shadow-sm flex items-start gap-4">
+                      <span className="w-8 h-8 rounded-full bg-[#D2A02A] text-white flex items-center justify-center font-bold text-sm shrink-0">1</span>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Case Evaluation</h3>
-                        <p className="text-gray-700 leading-relaxed">
-                          A comprehensive audit of your facts, documents, and current standing. We outline the strengths, weaknesses, and potential pitfalls of your situation.
-                        </p>
+                        <h4 className="font-bold text-gray-900 text-base mb-1">Confidential Strategy Session</h4>
+                        <p className="text-sm text-gray-600 m-0">In-depth assessment of dispute records, evidentiary strengths, and legal remedies.</p>
                       </div>
                     </div>
-
-                    <div className="flex flex-col md:flex-row gap-6 items-start">
-                      <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">2</div>
+                    <div className="p-5 bg-white border border-gray-200 rounded-xl shadow-sm flex items-start gap-4">
+                      <span className="w-8 h-8 rounded-full bg-[#2d3748] text-white flex items-center justify-center font-bold text-sm shrink-0">2</span>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Strategic Planning</h3>
-                        <p className="text-gray-700 leading-relaxed">
-                          Drafting the optimal legal pathway. Whether it is negotiation, arbitration, mediation, or hard-hitting litigation in the courts, we prepare the blueprint.
-                        </p>
+                        <h4 className="font-bold text-gray-900 text-base mb-1">Pleadings & Dossier Preparation</h4>
+                        <p className="text-sm text-gray-600 m-0">Drafting notices, plaints, or defense statements backed by relevant judicial citations.</p>
                       </div>
                     </div>
-
-                    <div className="flex flex-col md:flex-row gap-6 items-start">
-                      <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">3</div>
+                    <div className="p-5 bg-white border border-gray-200 rounded-xl shadow-sm flex items-start gap-4">
+                      <span className="w-8 h-8 rounded-full bg-[#2d3748] text-white flex items-center justify-center font-bold text-sm shrink-0">3</span>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Action & Representation</h3>
-                        <p className="text-gray-700 leading-relaxed">
-                          Filing the necessary petitions, notices, or replies. We serve as your unyielding shield and spear in tribunals, high courts, or at the negotiation table.
-                        </p>
+                        <h4 className="font-bold text-gray-900 text-base mb-1">Judicial Representation</h4>
+                        <p className="text-sm text-gray-600 m-0">Vigorous oral arguments and cross-examination before the bench or tribunal.</p>
                       </div>
                     </div>
-
-                    <div className="flex flex-col md:flex-row gap-6 items-start">
-                      <div className="flex-shrink-0 w-16 h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-2xl font-bold">4</div>
+                    <div className="p-5 bg-white border border-gray-200 rounded-xl shadow-sm flex items-start gap-4">
+                      <span className="w-8 h-8 rounded-full bg-[#D2A02A] text-white flex items-center justify-center font-bold text-sm shrink-0">4</span>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Final Closure</h3>
-                        <p className="text-gray-700 leading-relaxed">
-                          Securing the final order, settlement deed, or closure report to ensure you are legally protected from all future liabilities associated with the dispute.
-                        </p>
+                        <h4 className="font-bold text-gray-900 text-base mb-1">Decree Execution & Compliance</h4>
+                        <p className="text-sm text-gray-600 m-0">Ensuring final orders are executed and full compliance is enforced.</p>
                       </div>
                     </div>
                   </div>
                 </section>
 
-                {/* Why Choose Us */}
-                <section id="why-choose-us" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Why AMA Legal Solutions?</h2>
-                  <div className="grid md:grid-cols-3 gap-6 text-center">
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">⚖️</div>
-                      <h3 className="font-bold text-xl mb-2">Legal Authority</h3>
-                      <p className="text-gray-600">Expert litigators capable of representing you at all levels of the judiciary.</p>
+                {/* Why Choose AMA */}
+                <section id="why-choose-ama" className="scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Why Retain AMA Legal Solutions</h2>
+                  <div className="grid md:grid-cols-3 gap-4 text-center my-6">
+                    <div className="p-5 rounded-xl bg-gray-50 border border-gray-100">
+                      <div className="text-3xl mb-2">⚖️</div>
+                      <h4 className="font-bold text-base mb-1">Trial Lawyers</h4>
+                      <p className="text-xs text-gray-600">Seasoned advocates with regular appearances across District and High Courts.</p>
                     </div>
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">🛡️</div>
-                      <h3 className="font-bold text-xl mb-2">Complete Protection</h3>
-                      <p className="text-gray-600">We shield you from hostile opposing parties, ensuring your peace of mind.</p>
+                    <div className="p-5 rounded-xl bg-gray-50 border border-gray-100">
+                      <div className="text-3xl mb-2">🛡️</div>
+                      <h4 className="font-bold text-base mb-1">Fierce Defense</h4>
+                      <p className="text-xs text-gray-600">Uncompromising commitment to protecting client constitutional liberties and assets.</p>
                     </div>
-                    <div className="p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-4xl mb-4">🤝</div>
-                      <h3 className="font-bold text-xl mb-2">Unwavering Ethics</h3>
-                      <p className="text-gray-600">No hidden fees, full transparency, and attorneys who truly care about your success.</p>
+                    <div className="p-5 rounded-xl bg-gray-50 border border-gray-100">
+                      <div className="text-3xl mb-2">🤝</div>
+                      <h4 className="font-bold text-base mb-1">Fee Transparency</h4>
+                      <p className="text-xs text-gray-600">Clear stage-wise fee agreements without ambiguous hidden expenses.</p>
                     </div>
                   </div>
                 </section>
 
-                {/* Testimonials / Review Snippets */}
-                <section id="testimonials" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Client Success Stories</h2>
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative shadow-sm">
-                      <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
-                      <p className="text-gray-700 italic mb-4 relative z-10">
-                        "AMA Legal Solutions provided exceptional service. Their expertise in {matchedExpertise.toLowerCase()} was evident from day one, and they achieved a favorable outcome much faster than anticipated."
+                {/* Client Feedback */}
+                <section id="client-feedback" className="scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6">Client Testimonials</h2>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="p-6 bg-gray-50 rounded-xl border border-gray-100">
+                      <p className="text-gray-700 italic mb-3 text-sm leading-relaxed">
+                        &quot;The courtroom advocacy by AMA Legal Solutions in our {matchedExpertise.toLowerCase()} litigation was masterful. They secured an interim stay when we needed it most.&quot;
                       </p>
-                      <div className="flex items-center">
-                        <div className="w-10 h-10 bg-[#D2A02A]/20 rounded-full flex items-center justify-center text-[#D2A02A] font-bold mr-3">V</div>
-                        <div>
-                          <p className="font-bold text-gray-900 flex items-center gap-2">Verified Client <span className="text-yellow-400 text-sm">★★★★★</span></p>
-                          <p className="text-sm text-gray-500">Corporate Professional</p>
-                        </div>
-                      </div>
+                      <p className="font-bold text-gray-900 text-sm m-0">Senior Consultant</p>
+                      <span className="text-xs text-[#D2A02A]">★★★★★ 5.0</span>
                     </div>
-                    <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative shadow-sm">
-                      <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
-                      <p className="text-gray-700 italic mb-4 relative z-10">
-                        "I was highly stressed due to complex legal notices. The legal team immediately took charge, provided a robust strategy for my case, and resolved the matter completely. Highly recommended!"
+                    <div className="p-6 bg-gray-50 rounded-xl border border-gray-100">
+                      <p className="text-gray-700 italic mb-3 text-sm leading-relaxed">
+                        &quot;Very responsive and highly knowledgeable advocates. Handled our representation with extreme dedication and achieved an amicable settlement.&quot;
                       </p>
-                      <div className="flex items-center">
-                        <div className="w-10 h-10 bg-[#D2A02A]/20 rounded-full flex items-center justify-center text-[#D2A02A] font-bold mr-3">A</div>
-                        <div>
-                          <p className="font-bold text-gray-900 flex items-center gap-2">Anonymous User <span className="text-yellow-400 text-sm">★★★★★</span></p>
-                          <p className="text-sm text-gray-500">Business Owner</p>
-                        </div>
-                      </div>
+                      <p className="font-bold text-gray-900 text-sm m-0">Managing Director</p>
+                      <span className="text-xs text-[#D2A02A]">★★★★★ 5.0</span>
                     </div>
                   </div>
                 </section>
 
                 {/* FAQs */}
                 <section id="faqs" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
-                  <div className="space-y-6">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                  <div className="space-y-4">
                     {faqs.map((faq, index) => (
-                      <div key={index} className="border-b border-gray-200 pb-6 last:border-0">
-                        <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-start">
-                          <span className="text-[#D2A02A] mr-3">Q.</span>
+                      <div key={index} className="border-b border-gray-200 pb-4 last:border-0">
+                        <h3 className="text-base md:text-lg font-bold text-gray-900 mb-1 flex items-start">
+                          <span className="text-[#D2A02A] mr-3">Q:</span>
                           {faq.question}
                         </h3>
-                        <p className="text-gray-700 leading-relaxed pl-8">
+                        <p className="text-gray-700 leading-relaxed pl-7 text-sm m-0">
                           {faq.answer}
                         </p>
                       </div>
@@ -464,122 +350,28 @@ export default async function ExpertiseSlugPage({ params }: { params: Promise<{ 
                   </div>
                 </section>
 
-                {/* Final CTA */}
-                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-xl md:rounded-3xl p-6 md:p-16 text-center text-white relative overflow-hidden">
-                  <div className="relative z-10">
-                    <h2 className="text-xl md:text-4xl font-bold mb-4 md:mb-6 leading-snug">
-                      Ready to resolve issues related to <br className="hidden md:block" />
-                      <span className="text-[#D2A02A]">{matchedExpertise}</span>?
-                    </h2>
-                    <p className="text-sm md:text-xl opacity-90 mb-6 md:mb-10 max-w-2xl mx-auto">
-                      Do not delay. Secure expert legal representation today and protect your rights.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-                      <Link href="/contact">
-                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
-                          Book Consultation
-                        </button>
-                      </Link>
-                      <a href="tel:+918700343611">
-                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all text-sm md:text-lg w-full sm:w-auto">
-                          Call: +91-8700343611
-                        </button>
-                      </a>
-                    </div>
-                  </div>
-                </section>
-
               </div>
             </div>
 
-            {/* Sidebar (Right) */}
-            <div className="hidden lg:block space-y-8 sticky top-24">
-              {/* Contact Card */}
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Get Expert Help Fast</h3>
-                <p className="text-gray-600 mb-6 text-sm">
-                  Speak directly to our specialized attorneys to discuss your case freely.
+            <aside className="space-y-6 sticky top-24">
+              <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 text-center">
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Retain Counsel</h3>
+                <p className="text-sm text-gray-600 mb-4">
+                  Schedule an immediate legal assessment for {matchedExpertise}.
                 </p>
-                <a 
-                  href="tel:+918700343611" 
-                  className="block w-full bg-[#D2A02A] text-white text-center py-3 rounded-lg font-semibold hover:bg-[#b88a22] transition-colors mb-4"
-                >
-                  Call +91-8700343611
-                </a>
-                <Link 
-                  href="/contact" 
-                  className="block w-full border border-[#D2A02A] text-[#D2A02A] text-center py-3 rounded-lg font-semibold hover:bg-[#D2A02A] hover:text-white transition-colors"
-                >
-                  Request Callback
+                <Link href="tel:+918178873087" className="block w-full">
+                  <button className="w-full bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-4 rounded-xl transition-all shadow-md text-sm">
+                    Call +91 81788 73087
+                  </button>
                 </Link>
+                <a href="https://wa.me/918700343611" target="_blank" rel="noopener noreferrer" className="block w-full mt-2">
+                  <button className="w-full bg-white border border-[#D2A02A] text-[#D2A02A] hover:bg-[#D2A02A] hover:text-white font-bold py-3 px-4 rounded-xl transition-all text-sm">
+                    WhatsApp Us
+                  </button>
+                </a>
               </div>
-
-              {/* Quick Links */}
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">Related Services</h3>
-                <ul className="space-y-3 text-sm">
-                  <li>
-                    <Link href="/services/loan-settlement" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                      <span className="mr-2">›</span> Loan Settlement
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/services/civil" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                      <span className="mr-2">›</span> Civil Litigation
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/services/arbitration" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                      <span className="mr-2">›</span> Arbitration
-                    </Link>
-                  </li>
-                </ul>
-                
-                {/* App Store Links */}
-                <div className="mt-6 pt-6 border-t border-gray-100">
-                  <p className="text-sm font-semibold mb-3" style={{ color: 'rgba(210, 158, 13, 0.8)' }}>Download Our App</p>
-                  <div className="flex flex-col gap-3">
-                    <Link 
-                      href="https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions" 
-                      target="_blank"
-                      className="hover:opacity-80 transition-opacity"
-                    >
-                      <Image 
-                        src="/newAssets/appstore.svg" 
-                        alt="Get it on Google Play" 
-                        width={130} 
-                        height={36}
-                        className="w-full h-auto max-w-[130px]"
-                      />
-                    </Link>
-                    <Link 
-                      href="https://apps.apple.com/in/app/ama-legal-solutions/id6755156186" 
-                      target="_blank"
-                      className="hover:opacity-80 transition-opacity"
-                    >
-                      <Image 
-                        src="/newAssets/playstore.svg" 
-                        alt="Download on App Store" 
-                        width={130} 
-                        height={36}
-                        className="w-full h-auto max-w-[130px]"
-                      />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+            </aside>
           </div>
-          
-          {/* States Grid at the bottom */}
-          <div className="mt-16">
-            <GenericStatesGrid 
-              serviceName={matchedExpertise} 
-              servicePath={`lawyer-by-expertise/${resolvedParams.slug}`} 
-            />
-          </div>
-
         </div>
       </div>
     </>

@@ -7,7 +7,15 @@ export const metadata: Metadata = {
     canonical: 'https://www.amalegalsolutions.com/locations',
   },
   title: "Our Locations | AMA Legal Solutions",
-  description: "Find AMA Legal Solutions offices across India. We are present in New Delhi, Mumbai, Kolkata, Jaipur, Bengaluru, Chennai, and more. Expert legal services near you."
+  description:
+    "Find AMA Legal Solutions offices across India, including Delhi, Mumbai, Bengaluru, Chennai, and Kolkata. Expert legal representation near you.",
+  openGraph: {
+    title: "Our Locations | AMA Legal Solutions",
+    description:
+      "Find AMA Legal Solutions offices across India, including Delhi, Mumbai, Bengaluru, Chennai, and Kolkata. Expert legal representation near you.",
+    url: "https://www.amalegalsolutions.com/locations",
+    type: "website",
+  },
 };
 
 export default function LocationsPage() {

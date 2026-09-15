@@ -8,10 +8,17 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/what-happens-after-loan-settlement',
   },
-  title: "What Happens After Loan Settlement? CIBIL Impact & Recovery Guide",
+  title: "What Happens After Loan Settlement in India | AMA Legal",
   description:
-    "Wondering what happens after loan settlement in India? Learn about the 'Settled' tag on CIBIL, future loan eligibility, and how to rebuild your credit score in 2026.",
+    "Wondering what happens after loan settlement in India? Learn about the Settled tag on CIBIL, loan eligibility, and how to rebuild credit with AMA Legal.",
   keywords: "what happens after loan settlement, cibil score after settlement, settled vs closed status, how to rebuild credit after loan settlement, home loan eligibility after settlement, remove settled tag from cibil",
+  openGraph: {
+    title: "What Happens After Loan Settlement in India | AMA Legal",
+    description:
+      "Wondering what happens after loan settlement in India? Learn about the Settled tag on CIBIL, loan eligibility, and how to rebuild credit with AMA Legal.",
+    url: 'https://www.amalegalsolutions.com/what-happens-after-loan-settlement',
+    type: "article",
+  },
 };
 
 const sections = [

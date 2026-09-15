@@ -6,16 +6,16 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement in Haryana | Expert Debt Relief Lawyers Gurugram",
+  title: "Loan Settlement in Haryana | AMA Legal",
   description:
-    "Struggling with debt in Haryana? AMA Legal Solutions offers expert loan settlement services in Gurugram, Faridabad & across the state. Stop harassment & settle legally.",
+    "Struggling with debt in Haryana? AMA Legal Solutions offers expert loan settlement services in Gurugram, Faridabad & across the state. Stop harassment &.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/haryana',
   },
   openGraph: {
-    title: "Loan Settlement in Haryana | Expert Debt Relief Lawyers Gurugram",
-    description: "Struggling with debt in Haryana? AMA Legal Solutions offers expert loan settlement services in Gurugram, Faridabad & across the state. Stop harassment & settle legally.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Haryana",
+    title: "Loan Settlement in Haryana | AMA Legal",
+    description: "Struggling with debt in Haryana? AMA Legal Solutions offers expert loan settlement services in Gurugram, Faridabad & across the state. Stop harassment &.",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/haryana",
     type: "website",
     images: [
       {

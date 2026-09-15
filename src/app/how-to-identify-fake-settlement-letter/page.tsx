@@ -153,7 +153,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "How to Identify Fake Settlement Letter | Official Guide 2026",
-  description: "Protect yourself from loan settlement fraud! Learn to spot fake settlement letters with our 2026 update. Expert advice from Anuj Anand Malik at AMA Legal Solutions.",
+  description: "Protect yourself from loan settlement scams. Learn how to identify fake settlement letters, verify authenticity, and avoid fraud with expert legal advice.",
   keywords: [
     "how to identify fake settlement letter",
     "fake loan settlement letter checklist",

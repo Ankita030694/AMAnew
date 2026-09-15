@@ -199,9 +199,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Lawyers in New Delhi | Best Questions of Law Firm Delhi NCR | AMA Legal Solutions",
+  title: "Lawyers in New Delhi | AMA Legal",
   description:
-    "Looking for the best lawyers in New Delhi? AMA Legal Solutions offers expert legal representation in Supreme Court and High Court for Civil, Criminal, Corporate, and Family matters. Top Rated Law Firm.",
+    "Looking for the best lawyers in New Delhi? AMA Legal Solutions offers expert legal representation in Supreme Court and High Court for Civil, Criminal.",
   keywords: [
     "lawyers in new delhi",
     "law firm in delhi",
@@ -222,7 +222,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Lawyers in New Delhi | Top Legal Services Delhi NCR",
-    description: "Expert legal representation in New Delhi. Corporate, Civil, Criminal, and Family Law services by AMA Legal Solutions.",
+    description: "Expert legal representation in New Delhi. Corporate, Civil, Criminal, and Family Law services by AMA Legal Solutions Contact AMA Legal Solutions today.",
     url: "https://www.amalegalsolutions.com/locations/newdelhi",
     type: "website",
     images: [

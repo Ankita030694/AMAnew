@@ -6,16 +6,16 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement in Sikkim | Debt Relief Lawyers Gangtok, Namchi, Geyzing",
+  title: "Loan Settlement in Sikkim | AMA Legal",
   description:
-    "Struggling with debt in Sikkim? AMA Legal Solutions offers expert loan settlement. We understand Article 371F protections and help Organic Farmers & Hotel Owners.",
+    "Struggling with debt in Sikkim? AMA Legal Solutions offers expert loan settlement. We understand Article 371F protections and help Organic Farmers &.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/sikkim',
   },
   openGraph: {
-    title: "Loan Settlement in Sikkim | Debt Relief Lawyers Gangtok, Namchi, Geyzing",
-    description: "Struggling with debt in Sikkim? AMA Legal Solutions offers expert loan settlement. We understand Article 371F protections and help Organic Farmers & Hotel Owners.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Sikkim",
+    title: "Loan Settlement in Sikkim | AMA Legal",
+    description: "Struggling with debt in Sikkim? AMA Legal Solutions offers expert loan settlement. We understand Article 371F protections and help Organic Farmers &.",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/sikkim",
     type: "website",
     images: [
       {

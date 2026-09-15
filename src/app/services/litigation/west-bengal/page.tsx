@@ -183,9 +183,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Litigation Services in West Bengal | Calcutta High Court Lawyers",
+  title: "Litigation Services in West Bengal | AMA Legal",
   description:
-    "Expert litigation lawyers in West Bengal. We represent clients in Calcutta High Court, Alipore Court, and District Courts. Civil, Criminal, Property & Commercial cases.",
+    "Expert litigation lawyers in West Bengal. We represent clients in Calcutta High Court, Alipore Court, and District Courts. Civil, Criminal, Property &.",
   keywords: [
     "litigation services west bengal",
     "calcutta high court lawyer",
@@ -202,7 +202,7 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/services/litigation/west-bengal',
   },
   openGraph: {
-    title: "Litigation Services in West Bengal | Calcutta High Court Lawyers",
+    title: "Litigation Services in West Bengal | AMA Legal",
     description: "Expert litigation services in West Bengal. Representing clients in Calcutta High Court, City Civil Court, and District Courts.",
     url: "https://www.amalegalsolutions.com/services/litigation/west-bengal",
     type: "website",

@@ -8,14 +8,14 @@ import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUnivers
 
 // Metadata
 export const metadata = {
-  title: "RBL Bank Loan Settlement | OTS Scheme & Process | AMA Legal Solutions",
-  description: "Struggling with RBL Bank loan repayment? Expert legal help for RBL Bank loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
+  title: "RBL Bank Loan Settlement | AMA Legal",
+  description: "Struggling with RBL Bank loan repayment? Expert legal help for RBL Bank loan settlement. Reduce your debt with One Time Settlement (OTS). Stop.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/rbl-bank',
   },
   openGraph: {
-    title: "RBL Bank Loan Settlement | OTS Scheme & Process | AMA Legal Solutions",
-    description: "Struggling with RBL Bank loan repayment? Expert legal help for RBL Bank loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
+    title: "RBL Bank Loan Settlement | AMA Legal",
+    description: "Struggling with RBL Bank loan repayment? Expert legal help for RBL Bank loan settlement. Reduce your debt with One Time Settlement (OTS). Stop.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/rbl-bank",
     type: "website",
     images: [

@@ -197,14 +197,14 @@ const axisPersonSchema = {
 
 export const metadata = {
   title: "Axis Bank Arbitration: Settle Outstanding Loans & Card Debt",
-  description: "Get clear legal information about Axis Bank virtual arbitration on Sama. Learn how to stop agent calls, object to unilateral arbiters, and negotiate settlements.",
+  description: "Get legal guidance on Axis Bank arbitration notices on Sama. Learn how to stop agent harassment, challenge unilateral arbiters, and negotiate debt settlements.",
   keywords: ["loan settlement","axis bank arbitration","axis credit card settlement","sama arbitration notice axis","flipkart axis card default","banking dispute lawyers","ama legal solutions"],
   alternates: {
     canonical: "https://www.amalegalsolutions.com/arbitration-for-axis-bank",
   },
   openGraph: {
     title: "Axis Bank Arbitration: Settle Outstanding Loans & Card Debt",
-    description: "Get clear legal information about Axis Bank virtual arbitration on Sama. Learn how to stop agent calls, object to unilateral arbiters, and negotiate settlements.",
+    description: "Get legal guidance on Axis Bank arbitration notices on Sama. Learn how to stop agent harassment, challenge unilateral arbiters, and negotiate debt settlements.",
     url: "https://www.amalegalsolutions.com/arbitration-for-axis-bank",
     siteName: "AMA Legal Solutions",
     images: [

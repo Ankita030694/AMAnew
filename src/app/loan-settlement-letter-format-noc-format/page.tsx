@@ -6,15 +6,15 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement Letter Format & NOC Format 2025 | #1 RBI Compliant Debt Relief",
+  title: "Loan Settlement Letter & NOC Format | Legal Guide",
   description:
-    "The ultimate guide to loan settlement letter format and NOC format for personal loans, credit cards, and MSME debt. Expert legal aid from AMA Legal Solutions, Sector 57, Gurugram. Founded by Anuj Anand Malik. Call 8700343611 for a professional draft.",
+    "Download loan settlement letter formats and NOC samples for personal loans, credit cards, and MSME debts. Expert legal drafting by AMA Legal Solutions.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/loan-settlement-letter-format-noc-format',
   },
   openGraph: {
-    title: "Official Bank Loan Settlement & NOC Format (2025) - AMA Legal Solutions",
-    description: "Get the most optimized loan settlement request letter and NOC format. Legal debt relief guide from Sector 57, Gurugram. Call 8700343611 for expert consultation.",
+    title: "Loan Settlement Letter & NOC Format | Legal Guide",
+    description: "Download loan settlement letter formats and NOC samples for personal loans, credit cards, and MSME debts. Expert legal drafting by AMA Legal Solutions.",
     url: "https://www.amalegalsolutions.com/loan-settlement-letter-format-noc-format",
     type: "article",
     images: [

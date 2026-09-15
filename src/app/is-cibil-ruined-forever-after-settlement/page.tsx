@@ -157,9 +157,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Is CIBIL Ruined Forever After Settlement? Recovery Strategy 2024",
+  title: "Is CIBIL Ruined Forever After Settlement? Recovery Guide",
   description:
-    "Is your CIBIL score ruined forever after a settlement? Learn the truth about credit scores, settlement consequences, and how to rebuild your credit. Expert advice from AMA Legal Solutions.",
+    "Is your CIBIL ruined forever after loan settlement? Learn the facts about credit scores, 7-year reporting rules, and proven legal steps to rebuild credit.",
   keywords: [
     "cibil ruined after settlement",
     "loan settlement cibil impact",
@@ -174,8 +174,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/is-cibil-ruined-forever-after-settlement',
   },
   openGraph: {
-    title: "Is CIBIL Ruined Forever After Settlement? | AMA Legal Solutions",
-    description: "The complete guide to understanding credit score impact after loan settlement. Rebuild your financial reputation with expert legal help.",
+    title: "Is CIBIL Ruined Forever After Settlement? Recovery Guide",
+    description: "Is your CIBIL ruined forever after loan settlement? Learn the facts about credit scores, 7-year reporting rules, and proven legal steps to rebuild credit.",
     url: "https://www.amalegalsolutions.com/is-cibil-ruined-forever-after-settlement",
     type: "website",
     images: [

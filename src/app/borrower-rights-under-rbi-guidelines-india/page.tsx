@@ -147,7 +147,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Borrower Rights Under RBI Guidelines | Best Loan Settlement India",
+  title: "Borrower Rights Under RBI Guidelines | Loan Settlement",
   description: "Discover your legal borrower rights under RBI guidelines in India. Learn to stop recovery harassment and achieve the best loan settlement India offers.",
   robots: {
     index: true,

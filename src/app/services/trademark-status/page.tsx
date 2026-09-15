@@ -139,7 +139,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Trademark Status Check India | Track Application",
-  description: "Check your Trademark Status in India. Complete guide to interpreting statuses like Objected, Accepted, Opposed, and Registered. Expert status recovery services.",
+  description: "Check your Trademark Status in India. Complete guide to interpreting statuses like Objected, Accepted, Opposed, and Registered. Expert status recovery.",
   keywords: [
     "trademark status check india",
     "ip india public search status",

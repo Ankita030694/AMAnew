@@ -168,11 +168,19 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: pageTitle,
-  description: pageDescription,
+  title: "Settle Loan Now, Remove Later? Legal Guide | AMA Legal",
+  description:
+    "Can you settle a loan now and remove the settled tag later? Learn the legal steps to convert settled to closed on CIBIL with AMA Legal Solutions.",
   keywords: ["loan settlement", "remove settled status cibil", "AMA Legal Solutions", "Anuj Anand Malik", "Sector 57", "8700343611", "loan settlement india", "financial stability"],
   alternates: {
     canonical: pageUrl,
+  },
+  openGraph: {
+    title: "Settle Loan Now, Remove Later? Legal Guide | AMA Legal",
+    description:
+      "Can you settle a loan now and remove the settled tag later? Learn the legal steps to convert settled to closed on CIBIL with AMA Legal Solutions.",
+    url: pageUrl,
+    type: "article",
   },
 };
 

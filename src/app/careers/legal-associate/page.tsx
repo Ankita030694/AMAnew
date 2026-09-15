@@ -104,8 +104,8 @@ const articleSchema = (baseUrl: string) => ({
 });
 
 export const metadata: Metadata = {
-  title: "Legal Associate Jobs in Gurugram | AMA Legal Solutions Careers",
-  description: "Join the legal team at AMA Legal Solutions as a Legal Associate. Work on high-impact litigation, IPR, and loan settlement cases. Elevate your legal career in Gurugram.",
+  title: "Legal Associate Jobs in Gurugram | AMA Legal Solutions",
+  description: "Join AMA Legal Solutions as a Legal Associate in Gurugram. Work on high-impact litigation, IPR, and loan settlement cases to advance your career.",
   keywords: ["legal associate jobs gurugram", "lawyer careers india", "litigation associate roles", "IPR lawyer jobs", "corporate law associate careers"],
   alternates: { canonical: 'https://www.amalegalsolutions.com/careers/legal-associate' }
 };

@@ -145,7 +145,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "10 Practical Steps for Debt Solution | Loan Settlement Guide",
-  description: "Discover 10 practical steps for debt solution and loan settlement in India. Learn how to stop harassment, secure your privacy, and rebuild your financial life legally.",
+  description: "Discover 10 practical steps for debt solution and loan settlement in India. Stop recovery harassment, protect your privacy, and rebuild finances legally.",
   robots: {
     index: true,
     follow: true,

@@ -157,9 +157,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "How to Check Active Loan on Your Name in India - Step by Step Guide",
+  title: "How to Check Active Loans on Your Name in India | Guide",
   description:
-    "Learn how to check all active loans on your name in India with our 2026 guide. Discover the exact steps for CIBIL, Experian, and Equifax. Expert legal advice from Anuj Anand Malik.",
+    "Learn how to check all active loans on your name in India. Step-by-step guide to verify PAN card debts on CIBIL, Experian, and Equifax with legal experts.",
   keywords: [
     "check active loan on your name",
     "how to check active loans in india",

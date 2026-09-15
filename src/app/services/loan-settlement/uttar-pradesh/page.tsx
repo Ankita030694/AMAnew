@@ -6,14 +6,14 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement in Uttar Pradesh | DRT Lucknow & Allahabad Lawyers",
+  title: "Loan Settlement in Uttar Pradesh | AMA Legal",
   description:
     "Expert loan settlement services in Uttar Pradesh (Noida, Kanpur, Lucknow). Settle debt legally through UPSLSA Lok Adalat & DRT. Stop harassment & save 50%.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/uttar-pradesh',
   },
   openGraph: {
-    title: "Loan Settlement in Uttar Pradesh | DRT Lucknow & Allahabad Lawyers",
+    title: "Loan Settlement in Uttar Pradesh | AMA Legal",
     description: "Expert loan settlement services in Uttar Pradesh (Noida, Kanpur, Lucknow). Settle debt legally through UPSLSA Lok Adalat & DRT. Stop harassment & save 50%.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/uttar-pradesh",
     type: "website",

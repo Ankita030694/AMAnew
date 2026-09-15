@@ -107,15 +107,15 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Cred Loan Settlement Process | Cred Cash Loan Settlement Letter Format",
+  title: "Cred Loan Settlement Process | AMA Legal",
   description:
-    "Expert guide on Cred (Cred Cash) loan settlement. Learn how to settle Cred personal loans. Get legal help to negotiate OTS, stop harassment, and save up to 50%.",
+    "Expert guide on Cred (Cred Cash) loan settlement. Learn how to settle Cred personal loans. Get legal help to negotiate OTS, stop harassment, and save up.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/cred',
   },
   openGraph: {
-    title: "Cred Loan Settlement Process | Cred Cash Loan Settlement Letter Format",
-    description: "Expert guide on Cred (Cred Cash) loan settlement. Learn how to settle Cred personal loans. Get legal help to negotiate OTS, stop harassment, and save up to 50%.",
+    title: "Cred Loan Settlement Process | AMA Legal",
+    description: "Expert guide on Cred (Cred Cash) loan settlement. Learn how to settle Cred personal loans. Get legal help to negotiate OTS, stop harassment, and save up.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/cred",
     type: "website",
     images: [

@@ -157,9 +157,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "LPG Cylinder Crisis India 2026 Iran War | AMA Legal Solutions Sector 57",
+  title: "LPG Cylinder Crisis India 2026 | Legal Rights & Advisory",
   description:
-    "Explore the causes and impact of the 2026 LPG cylinder crisis in India due to the Iran war. Expert legal insights from Anuj Anand Malik of AMA Legal Solutions Sector 57 Gurugram. Call 8700343611 for help.",
+    "Explore the 2026 LPG cylinder crisis in India, price surge, and consumer legal rights against black marketing with expert counsel from AMA Legal Solutions.",
   keywords: [
     "lpg cylinder crisis india 2026 iran war",
     "lpg price hike india 2026",
@@ -174,6 +174,13 @@ export const metadata = {
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/lpg-cylinder-crisis-india-2026-iran-war',
+  },
+  openGraph: {
+    title: "LPG Cylinder Crisis India 2026 | Legal Rights & Advisory",
+    description:
+      "Explore the 2026 LPG cylinder crisis in India, price surge, and consumer legal rights against black marketing with expert counsel from AMA Legal Solutions.",
+    url: "https://www.amalegalsolutions.com/lpg-cylinder-crisis-india-2026-iran-war",
+    type: "article",
   },
 };
 

@@ -107,14 +107,14 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Navi Loan Settlement | Stop Harassment & Arbitration Legal Help",
+  title: "Navi Loan Settlement | AMA Legal",
   description:
     "Expert legal help for Navi Finserv loan settlement. Stop contact list harassment, handle arbitration notices, and negotiate a One Time Settlement (OTS).",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/navi',
   },
   openGraph: {
-    title: "Navi Loan Settlement | Stop Harassment & Arbitration Legal Help",
+    title: "Navi Loan Settlement | AMA Legal",
     description: "Expert legal help for Navi Finserv loan settlement. Stop contact list harassment, handle arbitration notices, and negotiate a One Time Settlement (OTS).",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/navi",
     type: "website",

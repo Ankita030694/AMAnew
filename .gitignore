@@ -46,3 +46,7 @@ analyze_leads.py
 all_leads.csv
 converted_leads.csv
 lead_analysis_report.md
+
+# Large exports & CSV files
+*.csv
+issues/*.csv

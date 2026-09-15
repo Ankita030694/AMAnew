@@ -5,7 +5,8 @@ export const metadata: Metadata = {
     canonical: 'https://www.amalegalsolutions.com/settlement-thank-you',
   },
   title: 'Thank You | AMA Legal Solutions',
-  description: 'Your response has been securely recorded.',
+  description:
+    'Thank you for reaching out to AMA Legal Solutions. Your loan settlement inquiry has been securely recorded, and our legal team will contact you shortly.',
   robots: {
     index: false,
     follow: false,

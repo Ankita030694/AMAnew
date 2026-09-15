@@ -10,7 +10,7 @@ export const metadata = {
   },
   title: "Notice to Employee for Misconduct: Legal Procedure & Format",
   description:
-    "Need to take disciplinary action? Learn the legal process for issuing a misconduct notice to an employee in India. Ensure compliance with labor laws and standing orders.",
+    "Need to take disciplinary action? Learn the legal process for issuing an employee misconduct notice in India ensuring compliance with labor laws.",
   keywords: "notice to employee for misconduct india, show cause notice for misconduct format, disciplinary action against employee legal procedure, misconduct termination laws india, employee misconduct types and penalties",
 };
 

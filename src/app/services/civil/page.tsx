@@ -185,7 +185,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Civil Lawyers in India | AMA Legal Solutions",
-    description: "Top civil lawyers in India for property disputes, family law, and contract recovery with AMA Legal Solutions.",
+    description: "Top civil lawyers in India for property disputes, family law, and contract recovery with AMA Legal Solutions Contact AMA Legal Solutions today.",
     url: "https://www.amalegalsolutions.com/services/civil",
     type: "website",
     images: [

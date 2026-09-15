@@ -171,8 +171,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "How Can I Get Trademark Certificate? | Step-by-Step India Guide",
-  description: "Want to know how to get a trademark certificate in India? Follow our 2500+ word comprehensive guide covering application, examination, and certificate download.",
+  title: "How to Get a Trademark Certificate in India | Step-by-Step",
+  description: "Learn how to get a trademark certificate in India. Our complete guide covers application filing, examination reports, and downloading your certificate.",
   keywords: [
     "get trademark certificate india",
     "trademark registration process",

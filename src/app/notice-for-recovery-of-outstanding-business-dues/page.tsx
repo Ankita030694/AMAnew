@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/notice-for-recovery-of-outstanding-business-dues',
   },
-  title: "Notice for Recovery of Outstanding Business Dues: Legal Guide",
+  title: "Notice for Recovery of Outstanding Business Dues | Guide",
   description:
-    "Recover unpaid business dues in India with our comprehensive guide. Learn about Legal Notices, MSME Samadhaan, Order 37 CPC, and NI Act Section 138 recovery procedures.",
+    "Recover unpaid business dues in India. Learn about Legal Notices, MSME Samadhaan, Order 37 CPC summary suits, and Section 138 cheque recovery procedures.",
   keywords: "notice for recovery of outstanding business dues, legal notice for unpaid invoices, debt recovery india business, msme samadhaan procedure, summary suit order 37 cpc, commercial debt recovery india",
 };
 

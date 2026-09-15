@@ -123,9 +123,9 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: "Loan Settlement in Madhya Pradesh | Debt Settlement Leaders in MP",
+  title: "Loan Settlement in Madhya Pradesh | AMA Legal",
   description:
-    "Top-rated loan settlement services in Madhya Pradesh (Indore, Bhopal, Gwalior). We help you settle credit card and personal loan debts legally. Stop harassment today.",
+    "Top-rated loan settlement services in Madhya Pradesh (Indore, Bhopal, Gwalior). We help you settle credit card and personal loan debts legally. Stop.",
   keywords: [
     "loan settlement Madhya Pradesh",
     "debt settlement Indore",

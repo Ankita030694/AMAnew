@@ -196,9 +196,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Best Debt Settlement Company in India | Expert Legal Debt Relief",
+  title: "Best Debt Settlement Company in India | Legal Debt Relief",
   description:
-    "Find the best debt settlement company in India. AMA Legal Solutions offers expert legal negotiation with banks to reduce your debt and stop harassment. Rank #1 for debt relief.",
+    "Looking for the best debt settlement company in India? AMA Legal Solutions provides expert legal negotiation with banks to reduce debt and stop harassment.",
   keywords: [
     "debt settlement company in india",
     "best debt settlement company",

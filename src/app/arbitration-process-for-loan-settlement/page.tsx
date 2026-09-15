@@ -197,7 +197,7 @@ const personSchema = {
 
 export const metadata = {
   title: "Arbitration Process for Loan Settlement: Expert Guide",
-  description: "Understand the loan arbitration process. Learn how to respond to Section 21 notices, challenge unilateral arbitrator appointments, and negotiate a One-Time Settlement (OTS).",
+  description: "Understand the loan arbitration process in India. Learn how to respond to Section 21 notices, challenge unilateral arbiters, and negotiate an OTS.",
   keywords: [
     "arbitration process for loan settlement",
     "loan arbitration India",
@@ -215,7 +215,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Arbitration Process for Loan Settlement: Expert Guide",
-    description: "Understand the loan arbitration process. Learn how to respond to Section 21 notices, challenge unilateral arbitrator appointments, and negotiate a One-Time Settlement (OTS).",
+    description: "Understand the loan arbitration process in India. Learn how to respond to Section 21 notices, challenge unilateral arbiters, and negotiate an OTS.",
     url: 'https://www.amalegalsolutions.com/arbitration-process-for-loan-settlement',
     siteName: 'AMA Legal Solutions',
     images: [

@@ -152,7 +152,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Loan Settlement Near Me | #1 Debt Relief Services in India",
-  description: "Searching for loan settlement near me? AMA Legal Solutions offers expert debt settlement and legal protection in all Indian cities. Reduce debt by 50% & stop harassment today.",
+  description: "Searching for loan settlement near me? AMA Legal Solutions provides expert debt relief and legal protection across all Indian cities. Settle today.",
   keywords: [
     "loan settlement near me",
     "debt settlement services near me",

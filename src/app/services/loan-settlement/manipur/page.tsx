@@ -169,14 +169,14 @@ const reviewSchema = {
 export const metadata = {
   title: "Loan Settlement in Manipur | Debt Settlement Lawyers Imphal",
   description:
-    "Expert loan settlement services in Manipur. We help you settle personal and business loans in Imphal, Churachandpur, and Thoubal. Stop harassment and reduce debt.",
+    "Expert loan settlement services in Manipur. We help you settle personal and business loans in Imphal, Churachandpur, and Thoubal. Stop harassment and.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/manipur',
   },
   openGraph: {
     title: "Loan Settlement in Manipur | Debt Settlement Lawyers Imphal",
     description: "Struggling with debt in Manipur? We negotiate with banks to reduce your debt and stop harassment. Legal, safe, and effective services in Imphal.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Manipur",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/manipur",
     type: "website",
     images: [
       {

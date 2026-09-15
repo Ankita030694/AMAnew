@@ -10,13 +10,13 @@ import { MdAppSettingsAlt, MdMoneyOff } from "react-icons/md";
 
 // Metadata
 export const metadata = {
-  title: "Si Creva Loan Settlement | Kissht & Ring App Loan OTS | AMA Legal Solutions",
+  title: "Si Creva Loan Settlement | AMA Legal",
   description: "Unable to repay Si Creva (Kissht/Ring) loan? Stop harassment and legal threats. Expert legal help for One Time Settlement (OTS) of digital loans.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/si-creva',
   },
   openGraph: {
-    title: "Si Creva Loan Settlement | Kissht & Ring App Loan OTS | AMA Legal Solutions",
+    title: "Si Creva Loan Settlement | AMA Legal",
     description: "Unable to repay Si Creva (Kissht/Ring) loan? Stop harassment and legal threats. Expert legal help for One Time Settlement (OTS) of digital loans.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/si-creva",
     type: "website",

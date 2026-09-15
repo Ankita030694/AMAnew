@@ -10,8 +10,8 @@ import { MdSmartphone, MdOutlinePayments, MdSecurity, MdCreditScore } from "reac
 
 // Metadata
 export const metadata = {
-  title: "Northern Arc Capital Loan Settlement | Slice, Uni & Fintech Loans | AMA Legal Solutions",
-  description: "Unable to pay Northern Arc Capital loans? Need a northern arc capital loan statement? We provide expert legal settlement services to stop harassment and close your debt.",
+  title: "Northern Arc Capital Loan Settlement | AMA Legal",
+  description: "Unable to pay Northern Arc Capital loans? Need a northern arc capital loan statement? We provide expert legal settlement services to stop harassment and.",
   keywords: [
     "northern arc capital loan settlement",
     "northern arc capital loan statement",
@@ -23,8 +23,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/northern-arc',
   },
   openGraph: {
-    title: "Northern Arc Capital Loan Settlement | Slice, Uni & Fintech Loans | AMA Legal Solutions",
-    description: "Unable to pay Northern Arc Capital loans (Slice, Uni, KreditBee)? We provide expert legal settlement services to stop harassment, handle arbitration, and close your debt.",
+    title: "Northern Arc Capital Loan Settlement | AMA Legal",
+    description: "Unable to pay Northern Arc Capital loans (Slice, Uni, KreditBee)? We provide expert legal settlement services to stop harassment, handle arbitration.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/northern-arc",
     type: "website",
     images: [

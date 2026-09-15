@@ -6,7 +6,7 @@ import TableOfContents from "../../components/TableOfContents";
 import Breadcrumbs from "../../components/Breadcrumbs";
 
 export const metadata = {
-  title: "What Loan Settlement Services Have Good Customer Support in India? (2025)",
+  title: "Loan Settlement Services with Good Support | AMA Legal",
   description:
     "Harassment stops when you have a responsive legal team. Discover loan settlement services with 24/7 support, dedicated case managers, and empathy.",
   keywords: [
@@ -21,8 +21,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/what-loan-settlement-services-have-good-customer-support-in-india',
   },
   openGraph: {
-    title: "What Loan Settlement Services Have Good Customer Support in India?",
-    description: "Don't face the bank alone. Find settlement firms that actually pick up the phone and fight for you.",
+    title: "Loan Settlement Services with Good Support | AMA Legal",
+    description: "Harassment stops when you have a responsive legal team. Discover loan settlement services with 24/7 support, dedicated case managers, and empathy.",
     url: "https://www.amalegalsolutions.com/what-loan-settlement-services-have-good-customer-support-in-india",
     type: "article",
     images: [

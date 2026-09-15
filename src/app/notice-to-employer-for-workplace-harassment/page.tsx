@@ -8,7 +8,7 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/notice-to-employer-for-workplace-harassment',
   },
-  title: "Notice to Employer for Workplace Harassment: Legal Guide & Rights",
+  title: "Notice to Employer for Workplace Harassment | Legal Guide",
   description:
     "Facing harassment at work? Learn how to issue a legal notice to your employer under the POSH Act and IPC. Protect your rights and stop workplace abuse today.",
   keywords: "workplace harassment legal notice india, POSH Act complaint employer, sexual harassment at workplace legal action, notice to employer for hostile work environment, victim rights POSH India",

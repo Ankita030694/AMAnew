@@ -103,8 +103,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Car Loan Settlement India | Legal Help for Vehicle Debt Reduction",
-  description: "Struggling with car loan debt? Negotiate your car loan settlement (OTS) with expert legal guidance. We serve all Indian cities. Stop repossession and end harassment today.",
+  title: "Car Loan Settlement India | Vehicle Debt Relief Guide",
+  description: "Struggling with car loan debt? Negotiate car loan settlement (OTS) with expert legal guidance. Stop repossession and end recovery harassment across India.",
   keywords: [
     "car loan settlement",
     "car loan settlement india",

@@ -5,9 +5,9 @@ const PAGE_URL = "https://www.amalegalsolutions.com/will-drafting-services-in-gu
 const OG_IMAGE = "/images/og/will-drafting-services-in-gurugram.png";
 
 export const metadata: Metadata = {
-  title: "Will Drafting Services in Gurugram: Top Estate & Succession Lawyers | AMA Legal Solutions",
+  title: "Will Drafting Services in Gurugram | AMA Legal Solutions",
   description:
-    "Expert will drafting services in Gurugram by senior High Court advocates. Secure your family's assets with court-admissible, dispute-proof testamentary drafting compliant with the Indian Succession Act, 1925.",
+    "Top will drafting services in Gurugram by senior advocates. Secure your properties, ensure HSVP/MCG compliance, and register smoothly at Tehsil office.",
   keywords: [
     "will drafting services",
     "will drafting services in gurugram",

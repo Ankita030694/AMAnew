@@ -112,7 +112,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Send Legal Notice in Noida | Professional Noida Lawyers",
-  description: "Send a professional legal notice in Noida and Greater Noida for property delays, UP RERA complaints, money recovery, and business disputes. Expert drafting by AMA Legal Solutions.",
+  description: "Send a legal notice in Noida & Greater Noida for property delays, UP RERA matters, money recovery, and business disputes. Drafted by AMA Legal Solutions.",
   keywords: [
     "send legal notice in Noida",
     "legal notice lawyers Noida",

@@ -8,14 +8,14 @@ import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUnivers
 
 // Metadata
 export const metadata = {
-  title: "Yes Bank Loan Settlement | OTS Scheme & Process | AMA Legal Solutions",
-  description: "Struggling with Yes Bank loan repayment? Expert legal help for Yes Bank loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
+  title: "Yes Bank Loan Settlement | AMA Legal",
+  description: "Struggling with Yes Bank loan repayment? Expert legal help for Yes Bank loan settlement. Reduce your debt with One Time Settlement (OTS). Stop.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/yes-bank',
   },
   openGraph: {
-    title: "Yes Bank Loan Settlement | OTS Scheme & Process | AMA Legal Solutions",
-    description: "Struggling with Yes Bank loan repayment? Expert legal help for Yes Bank loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
+    title: "Yes Bank Loan Settlement | AMA Legal",
+    description: "Struggling with Yes Bank loan repayment? Expert legal help for Yes Bank loan settlement. Reduce your debt with One Time Settlement (OTS). Stop.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/yes-bank",
     type: "website",
     images: [

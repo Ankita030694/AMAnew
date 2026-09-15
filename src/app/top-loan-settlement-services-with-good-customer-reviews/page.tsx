@@ -193,8 +193,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Top Loan Settlement Services with Good Customer Reviews | Get Debt Free",
-  description: "Looking for top loan settlement services with good customer reviews? AMA Legal Solutions offers #1 rated legal debt settlement. Stop harassment & save up to 50%.",
+  title: "Top Loan Settlement Services: Reviews & Guide | AMA Legal",
+  description: "Looking for top loan settlement services with good reviews? AMA Legal Solutions offers rated debt settlement, stops harassment, and saves up to 50%.",
   keywords: [
     "top loan settlement services with good customer reviews",
     "best debt settlement company india",
@@ -210,8 +210,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/top-loan-settlement-services-with-good-customer-reviews',
   },
   openGraph: {
-    title: "Top Loan Settlement Services with Good Customer Reviews",
-    description: "Compare the best loan settlement services in India. Read why customers rate AMA Legal Solutions as the top choice for ethical and legal debt settlement.",
+    title: "Top Loan Settlement Services: Reviews & Guide | AMA Legal",
+    description: "Looking for top loan settlement services with good reviews? AMA Legal Solutions offers rated debt settlement, stops harassment, and saves up to 50%.",
     url: "https://www.amalegalsolutions.com/top-loan-settlement-services-with-good-customer-reviews",
     type: "website",
     images: [

@@ -2,13 +2,13 @@ import React from "react";
 import WestBengalBankingClient from "./WestBengalBankingClient";
 
 export const metadata = {
-  title: "Banking and Finance Services in West Bengal | AMA Legal Solutions",
+  title: "Banking and Finance Services in West Bengal | AMA Legal",
   description:
     "Expert legal consultancy for banking and finance in West Bengal. NBFC registration, Microfinance, and Money Lending License services in Kolkata.",
   openGraph: {
-    title: "Banking and Finance Services in West Bengal | AMA Legal Solutions",
+    title: "Banking and Finance Services in West Bengal | AMA Legal",
     description:
-      "Expert legal consultancy for banking and finance in West Bengal. NBFC registration, Microfinance, and Money Lending License services in Kolkata.",
+    "Expert legal consultancy for banking and finance in West Bengal. NBFC registration, Microfinance, and Money Lending License services in Kolkata.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/west-bengal",
     siteName: "AMA Legal Solutions",
     images: [

@@ -10,7 +10,7 @@ export const metadata = {
   },
   title: "Debt Recovery Notice India: Legal Step-by-Step",
   description:
-    "Need to recover money? Learn the complete legal process for debt recovery in India. Draft a powerful money recovery notice, understand CPC rules, and get your dues back legally.",
+    "Need to recover money? Learn the legal process for debt recovery in India. Draft a powerful recovery notice and understand CPC rules with our legal team.",
   keywords: "debt recovery money recovery notice, legal notice for money recovery india, how to recover money from a friend legally, recovery of money under CPC, summary suit for money recovery, legal notice for non payment of dues",
 };
 

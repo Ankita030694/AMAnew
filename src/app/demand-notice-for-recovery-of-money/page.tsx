@@ -10,7 +10,7 @@ export const metadata = {
   },
   title: "Demand Notice for Recovery of Money: Legal Guide & Format",
   description:
-    "Learn the legal process for recovery of money in India. Expert guide on sending a demand notice, legal sections involved, and procedures to recover your dues legally.",
+    "Learn the legal process for money recovery in India. Expert guide on drafting a demand notice, relevant sections, and steps to recover dues legally.",
   keywords: "demand notice for recovery of money, legal notice for money recovery, recovery of dues india, legal notice format for money, how to recover money legally",
 };
 

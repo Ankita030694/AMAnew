@@ -103,8 +103,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Loan Settlement After NPA Classification | Expert Help by Anuj Anand Malik",
-  description: "End the NPA stress today. Professional legal help for loan settlement after NPA classification in India. Negotiate waivers, stop harassment, and protect your assets legally.",
+  title: "Loan Settlement After NPA Classification | Legal Guide",
+  description: "Professional legal help for loan settlement after NPA classification in India. Negotiate waivers, stop recovery harassment, and protect your assets legally.",
   keywords: [
     "loan settlement after npa classification",
     "npa settlement process india",

@@ -8,14 +8,14 @@ import FaqSection from "./FaqSection";
 export const metadata = {
   title: "Loan Settlement in Mumbai | Expert Debt Relief Lawyers",
   description:
-    "Struggling with debt in Mumbai? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok Adalat and DRT Mumbai.",
+    "Struggling with debt in Mumbai? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/mumbai',
   },
   openGraph: {
     title: "Loan Settlement in Mumbai | Expert Debt Relief Lawyers",
-    description: "Struggling with debt in Mumbai? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok Adalat and DRT Mumbai.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Mumbai",
+    description: "Struggling with debt in Mumbai? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok.",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/mumbai",
     type: "website",
     images: [
       {

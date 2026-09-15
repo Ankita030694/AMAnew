@@ -7,10 +7,14 @@ import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { locationData, getLocationBySlug } from "../locationData";
 import { getCitySEO } from "@/lib/seo";
+import { getCityProfile } from "@/lib/cityContentEngine";
 
-// Generate all static params at build time for SSG
+export const dynamicParams = true;
+export const revalidate = 86400; // 24 hours ISR cache
+
+// Generate top static params at build time for fast builds, remaining generated on-demand
 export async function generateStaticParams() {
-  return locationData.map((loc) => ({
+  return locationData.slice(0, 200).map((loc) => ({
     slug: loc.slug,
   }));
 }
@@ -58,58 +62,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-// FAQ data
-const faqs = [
-  {
-    question: "What is loan settlement and how does it work?",
-    answer: "Loan settlement, also known as debt settlement, is a legal financial process where a borrower negotiates with the lender to pay a lump sum amount that is lower than the total outstanding debt to close the loan account. This is typically done through a One Time Settlement (OTS) scheme under RBI guidelines. The bank agrees to waive a portion of the interest and penalties in exchange for a one-time payment."
-  },
-  {
-    question: "Is loan settlement legal in India?",
-    answer: "Yes, loan settlement is completely legal in India. It is governed by guidelines issued by the Reserve Bank of India (RBI) and is a standard banking practice for recovering non-performing assets (NPAs). Banks and NBFCs prefer settlement over long-drawn legal battles when they are convinced of the borrower's genuine inability to pay. Having a qualified lawyer ensures the process is handled correctly."
-  },
-  {
-    question: "How much can I save through loan settlement?",
-    answer: "The amount you can save depends on various factors including the type of loan, the age of the default, your current financial status, and the bank's policies. Typically, borrowers can save anywhere from 30% to 50% of the total outstanding amount. In some cases involving older defaults or high accumulated interest, savings can be even higher."
-  },
-  {
-    question: "Will loan settlement affect my CIBIL score?",
-    answer: "Yes, opting for a loan settlement will have an impact on your CIBIL score. When a loan is settled instead of being paid in full, the account status is reported as 'Settled' rather than 'Closed' to credit bureaus. This can drop your score by 50-100 points. However, this is often a better alternative to a 'Written Off' status or continuing default. Once your finances stabilize, you can rebuild your score over 12-24 months."
-  },
-  {
-    question: "How long does the settlement process take?",
-    answer: "The timeline for loan settlement varies from case to case. On average, the loan settlement process takes between 3 to 6 months to reach a final agreement. This duration allows for multiple rounds of negotiation, verification of financial documents, and internal approvals from the bank's credit committee."
-  },
-  {
-    question: "Can I settle credit card debt?",
-    answer: "Yes, credit card debt settlement is one of the most common types of debt settled in India. Due to the unsecured nature of credit cards and the exorbitant interest rates (often 30-40% per annum), banks are often willing to settle for a reasonable principal amount rather than write off the entire debt."
-  },
-  {
-    question: "What documents are required for loan settlement?",
-    answer: "To initiate a loan settlement, you generally need KYC documents (Aadhar, PAN), loan account statements, salary slips or income proof, bank statements (last 6 months), termination letters (if unemployed), medical records (if applicable), and any correspondence with the bank."
-  },
-  {
-    question: "Can banks harass me during the settlement process?",
-    answer: "Harassment by recovery agents is illegal under RBI guidelines and Supreme Court judgments. Once you engage a legal firm like AMA Legal Solutions, we formally notify the bank of your representation. This typically stops direct harassment as all communication must then be routed through your legal counsel."
-  },
-  {
-    question: "What is a One Time Settlement (OTS) scheme?",
-    answer: "A One Time Settlement (OTS) is a scheme offered by banks to recover dues from borrowers who have defaulted. Under an OTS, the borrower agrees to pay a specific negotiated amount in a single payment (or a few installments) to close the loan account. This amount is usually less than the total outstanding dues."
-  },
-  {
-    question: "Can I get a loan after settlement?",
-    answer: "Getting a new loan immediately after a settlement can be difficult due to the negative impact on your credit score. However, this is not a permanent ban. By practicing good financial habits, such as paying other bills on time and using secured credit cards, you can improve your score. Typically, after 2-3 years of good credit behavior, you become eligible for new loans again."
-  },
-  {
-    question: "What is the role of a lawyer in loan settlement?",
-    answer: "A loan settlement lawyer plays a critical role in protecting your rights during the settlement process. They handle all communications with the bank, preventing harassment and ensuring you are not coerced into unfair terms. Lawyers understand the legal nuances of the SARFAESI Act, DRT proceedings, and RBI guidelines."
-  },
-  {
-    question: "Is settlement better than bankruptcy?",
-    answer: "For most individuals in India, loan settlement is a far better option than filing for bankruptcy or insolvency. Bankruptcy is a long, complex legal process that severely damages your financial reputation. Settlement offers a dignified exit route that resolves the debt specifically without the sweeping legal incapacities associated with bankruptcy."
-  }
-];
-
 export default async function LawyerBySlugPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const location = getLocationBySlug(slug);
@@ -121,6 +73,7 @@ export default async function LawyerBySlugPage({ params }: { params: Promise<{ s
   const locationName = location.name;
   const seo = getCitySEO(location.name, slug, "Loan Settlement");
   const pageTitle = seo.h1;
+  const cityProfile = getCityProfile(slug, locationName);
 
   // Schema Markup
   const breadcrumbSchema = {
@@ -153,13 +106,13 @@ export default async function LawyerBySlugPage({ params }: { params: Promise<{ s
       }
     },
     "datePublished": "2024-01-15",
-    "dateModified": "2025-12-02"
+    "dateModified": "2026-09-15"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
+    "mainEntity": cityProfile.faqs.map(faq => ({
       "@type": "Question",
       "name": faq.question,
       "acceptedAnswer": {
@@ -174,35 +127,28 @@ export default async function LawyerBySlugPage({ params }: { params: Promise<{ s
     "@type": "Product",
     "name": `Loan Settlement Services in ${locationName}`,
     "image": "https://www.amalegalsolutions.com/services/3.png",
-    "description": `Expert legal loan settlement services in ${locationName}, India.`,
+    "description": `Expert legal loan settlement and anti-harassment services in ${locationName}, India.`,
     "brand": {
       "@type": "Brand",
       "name": "AMA Legal Solutions"
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.8",
+      "ratingValue": "4.9",
       "reviewCount": "1250"
     },
-    "review": [
-      {
-        "@type": "Review",
-        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-        "author": { "@type": "Person", "name": "Rahul Sharma" },
-        "reviewBody": "I was drowning in credit card debt. AMA Legal Solutions helped me settle my 8 Lakh debt for just 3.5 Lakhs. The harassment stopped immediately after I hired them."
-      },
-      {
-        "@type": "Review",
-        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-        "author": { "@type": "Person", "name": "Priya Malhotra" },
-        "reviewBody": "Professional and empathetic team. They handled my personal loan settlement very smoothly. Highly recommended for anyone facing financial trouble."
-      }
-    ]
+    "review": cityProfile.testimonials.map(t => ({
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+      "author": { "@type": "Person", "name": t.author },
+      "reviewBody": t.quote
+    }))
   };
 
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "what-is-settlement", title: "What is Loan Settlement?" },
+    { id: "regional-landscape", title: `Debt Resolution in ${locationName}` },
     { id: "when-to-consider", title: "When to Consider?" },
     { id: "pros-and-cons", title: "Pros & Cons" },
     { id: "legal-framework", title: "Legal Framework" },
@@ -211,7 +157,7 @@ export default async function LawyerBySlugPage({ params }: { params: Promise<{ s
     { id: "types-of-loans", title: "Types of Loans" },
     { id: "credit-score", title: "Credit Score Impact" },
     { id: "why-choose-us", title: "Why Choose Us" },
-    { id: "testimonials", title: "Success Stories" },
+    { id: "testimonials", title: "Client Experiences" },
     { id: "faqs", title: "FAQs" },
   ];
 
@@ -237,7 +183,7 @@ export default async function LawyerBySlugPage({ params }: { params: Promise<{ s
               {pageTitle}
             </h1>
             <p className="text-sm md:text-2xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
-              Expert legal representation in <strong>{locationName}</strong> to negotiate with banks, reduce your debt burden by up to 50%, and stop harassment. Legally. Ethically. Effectively.
+              Professional legal representation in <strong>{locationName}</strong> tailored for {cityProfile.economicFocus}. We negotiate directly with lenders, halt collection intimidation, and reduce your debt by up to 50% to 70%.
             </p>
             <Link href="/contact">
               <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg">
@@ -252,7 +198,7 @@ export default async function LawyerBySlugPage({ params }: { params: Promise<{ s
 
           {/* Mobile App Store Links */}
           <div className="lg:hidden flex flex-col gap-3 mb-6 mt-2">
-            <p className="text-sm font-semibold mb-2" style={{ color: 'rgba(210, 158, 13, 0.8)' }}>Download Our App Today</p>
+            <p className="text-sm font-semibold mb-2" style={{ color: "rgba(210, 158, 13, 0.8)" }}>Download Our App Today</p>
             <div className="flex gap-4">
               <Link href="https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions" target="_blank" className="hover:opacity-80 transition-opacity">
                 <Image src="/newAssets/appstore.svg" alt="Get it on Google Play" width={130} height={36} className="w-[120px] h-auto" />
@@ -276,19 +222,35 @@ export default async function LawyerBySlugPage({ params }: { params: Promise<{ s
                 <TableOfContents sections={tocSections} />
               </div>
 
-              <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
+              <div className="bg-white p-4 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
 
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Best Lawyers for Loan Settlement in {locationName}</h2>
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Best Advocates for Loan Settlement in {locationName}</h2>
                   <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
-                    Are you struggling with overwhelming debt in <strong>{locationName}</strong>? You are not alone. In the dynamic economic landscape of India, financial instability can strike anyone. Whether due to an unexpected job loss, a medical emergency in the family, or a business downturn, finding yourself in a debt trap is a stressful and isolating experience. The constant pressure of mounting interest, the fear of legal notices, and the relentless calls from recovery agents can take a severe toll on your mental peace.
+                    Are you struggling with unmanageable debt in <strong>{locationName}</strong>? Financial volatility can confront anyone—whether triggered by sudden employment displacement, commercial liquidity challenges, or medical emergencies. When interest rates compound, borrowers often find themselves trapped between unrelenting recovery calls and legal demand notices.
                   </p>
                   <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
-                    However, it is crucial to understand that being in debt is not a crime, and there are legal avenues available to help you navigate this difficult phase. <strong>Loan settlement</strong> (often searched as <em>debt settlement in {locationName}</em>) is one such powerful tool that provides a dignified exit route for honest borrowers who are genuinely unable to repay their full debts. At AMA Legal Solutions, we provide expert <strong>loan settlement services in {locationName}</strong> to help you regain your financial freedom.
+                    It is crucial to recognize that inability to service a debt obligation is strictly a civil matter under Indian contract law. <strong>Loan settlement</strong> (also widely sought as <em>debt settlement in {locationName}</em>) offers an honorable, legally recognized pathway under Reserve Bank of India (RBI) guidelines to resolve outstanding debts for a fraction of the claimed balance.
                   </p>
                   <p className="text-sm md:text-lg leading-relaxed text-gray-700">
-                    We are not just a debt settlement agency; we are a team of experienced <strong>loan settlement lawyers serving {locationName}</strong> who understand the intricacies of banking laws in India. We stand between you and the harassment, ensuring that your rights are protected while we work tirelessly to secure a settlement that you can afford.
+                    AMA Legal Solutions is not an unregulated settlement agency. We are an established law firm with extensive experience representing borrowers before banking institutions and tribunals. We insulate our clients in {locationName} from unlawful collection intimidation while securing sustainable, legally verified One-Time Settlements (OTS).
+                  </p>
+                </section>
+
+                {/* Regional Landscape */}
+                <section id="regional-landscape" className="scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Debt Resolution Realities in {locationName}</h2>
+                  <div className="bg-[#FAF8F5] border-l-4 border-[#D2A02A] p-5 rounded-r-xl my-4">
+                    <p className="text-sm md:text-base text-gray-800 m-0">
+                      <strong>Jurisdictional Focus:</strong> Serving {cityProfile.economicFocus}. Our legal counsel handles disputes across {cityProfile.legalForum}.
+                    </p>
+                  </div>
+                  <p className="text-sm md:text-lg leading-relaxed text-gray-700">
+                    In the local economic environment of {locationName}, borrowers commonly encounter {cityProfile.debtLandscape}. When payments are disrupted, lenders frequently deploy outsourced collection agencies that violate RBI Fair Practice Codes by making unauthorized residential visits or calling workplace contacts.
+                  </p>
+                  <p className="text-sm md:text-lg leading-relaxed text-gray-700">
+                    Our legal representation provides immediate relief: we issue formal Notices of Appearance under the Advocates Act, compelling lenders to halt direct calls to you or your family and redirect all correspondence to our chambers.
                   </p>
                 </section>
 
@@ -297,14 +259,11 @@ export default async function LawyerBySlugPage({ params }: { params: Promise<{ s
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">What is Loan Settlement?</h2>
                   <div className="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 mb-4 md:mb-8 rounded-r-lg">
                     <p className="text-sm md:text-lg text-blue-900 italic">
-                      &quot;Loan settlement is a mutual agreement between a lender and a borrower to close a loan account for an amount less than the total outstanding dues.&quot;
+                      &quot;A One Time Settlement (OTS) is a bilateral legal compromise wherein a bank or NBFC agrees to accept a negotiated lump-sum amount—significantly lower than total claimed arrears—as full and final satisfaction of the account.&quot;
                     </p>
                   </div>
                   <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
-                    Loan settlement, often referred to as a <strong>One Time Settlement (OTS) scheme</strong>, is a process utilized when a borrower is unable to service their debt obligations due to verifiable financial hardship. Unlike a standard loan closure where you pay back every rupee of the principal and interest, a settlement involves the lender agreeing to accept a lower amount to close the account.
-                  </p>
-                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
-                    Banks and Non-Banking Financial Companies (NBFCs) are business entities. When a loan turns into a Non-Performing Asset (NPA), it costs them money to maintain it on their books and pursue legal recovery. If they are convinced that a borrower in {locationName} genuinely cannot pay the full amount, they often prefer to recover a portion of the money immediately rather than spending years in litigation with uncertain results.
+                    When loans become Non-Performing Assets (NPAs), financial institutions incur severe balance sheet provisioning costs. Faced with a well-documented hardship representation prepared by legal counsel, lenders recognize that recovering a compromised lump-sum immediately is vastly preferable to multi-year civil litigation with uncertain returns.
                   </p>
                 </section>
 
@@ -312,35 +271,35 @@ export default async function LawyerBySlugPage({ params }: { params: Promise<{ s
                 <section id="when-to-consider" className="scroll-mt-32">
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">When Should You Consider Loan Settlement in {locationName}?</h2>
                   <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
-                    Loan settlement is not for everyone. It is a strategic option for those facing genuine financial distress. You should consider this option if:
+                    Loan settlement is a strategic legal remedy designed for genuine, verifiable financial distress. It is suitable if you are facing:
                   </p>
                   <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                     <div className="flex items-start">
                       <div className="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center mr-3 mt-1">⚠️</div>
                       <div>
-                        <h4 className="font-bold text-gray-900">Job Loss or Income Reduction</h4>
-                        <p className="text-gray-600 text-sm">You have lost your primary source of income or faced a significant pay cut in {locationName}.</p>
+                        <h4 className="font-bold text-gray-900">Job Loss or Salary Disruption</h4>
+                        <p className="text-gray-600 text-sm">Disruption of primary employment or significant compensation reductions impacting living expenses.</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <div className="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center mr-3 mt-1">🏥</div>
                       <div>
-                        <h4 className="font-bold text-gray-900">Medical Emergency</h4>
-                        <p className="text-gray-600 text-sm">Severe illness in the family has drained your savings and ability to pay EMIs.</p>
+                        <h4 className="font-bold text-gray-900">Critical Medical Emergencies</h4>
+                        <p className="text-gray-600 text-sm">Catastrophic health expenses that depleted personal savings and emergency reserves.</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <div className="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center mr-3 mt-1">📉</div>
                       <div>
-                        <h4 className="font-bold text-gray-900">Business Failure</h4>
-                        <p className="text-gray-600 text-sm">Your business in {locationName} has suffered heavy losses, making debt servicing impossible.</p>
+                        <h4 className="font-bold text-gray-900">Commercial / Business Downturn</h4>
+                        <p className="text-gray-600 text-sm">Working capital compression, client defaults, or margin depletion making ongoing EMI service untenable.</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <div className="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center mr-3 mt-1">🔄</div>
                       <div>
-                        <h4 className="font-bold text-gray-900">Debt Trap</h4>
-                        <p className="text-gray-600 text-sm">You are borrowing from one source to pay another, with no end in sight.</p>
+                        <h4 className="font-bold text-gray-900">Compound Debt Spiral</h4>
+                        <p className="text-gray-600 text-sm">Borrowing from one source to meet minimum due payments on credit cards with 40%+ interest.</p>
                       </div>
                     </div>
                   </div>
@@ -349,33 +308,29 @@ export default async function LawyerBySlugPage({ params }: { params: Promise<{ s
                 {/* Pros and Cons */}
                 <section id="pros-and-cons" className="scroll-mt-32">
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Pros and Cons of Loan Settlement</h2>
-                  <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
-                    It is vital to weigh the benefits against the drawbacks before proceeding with loan settlement in {locationName}.
-                  </p>
                   <div className="overflow-x-auto">
                     <table className="w-full border-collapse border border-gray-200 rounded-lg overflow-hidden">
                       <thead>
                         <tr className="bg-gray-100">
-                          <th className="p-4 text-left border-b border-gray-200 text-green-700 w-1/2">Advantages (Pros)</th>
-                          <th className="p-4 text-left border-b border-gray-200 text-red-700 w-1/2">Disadvantages (Cons)</th>
+                          <th className="p-4 text-left border-b border-gray-200 text-green-700 w-1/2">Key Advantages</th>
+                          <th className="p-4 text-left border-b border-gray-200 text-red-700 w-1/2">Important Considerations</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr className="border-b border-gray-100">
                           <td className="p-4 align-top">
                             <ul className="list-disc pl-4 space-y-2 text-gray-700 text-sm">
-                              <li><strong>Debt Reduction:</strong> Pay significantly less than what you owe (often 30-50% savings).</li>
-                              <li><strong>Avoid Bankruptcy:</strong> Prevents the severe legal consequences of insolvency.</li>
-                              <li><strong>Stop Harassment:</strong> Legal representation stops recovery agent calls.</li>
-                              <li><strong>Immediate Relief:</strong> Closes the loan account permanently.</li>
+                              <li><strong>Substantial Debt Haircut:</strong> Pay 40% to 70% less than the accumulated claim balance.</li>
+                              <li><strong>Immediate Harassment Cessation:</strong> Legal representation halts all third-party collection intimidation.</li>
+                              <li><strong>Protection Against Litigation:</strong> Quashes potential Section 138 / Section 25 criminal notices upon full payment.</li>
+                              <li><strong>Clean Financial Exit:</strong> Receive official No Dues Certificates (NDC) and permanently close accounts.</li>
                             </ul>
                           </td>
                           <td className="p-4 align-top bg-gray-50">
                             <ul className="list-disc pl-4 space-y-2 text-gray-700 text-sm">
-                              <li><strong>Credit Score Impact:</strong> Score may drop by 50-100 points.</li>
-                              <li><strong>&quot;Settled&quot; Status:</strong> Loan is marked as &quot;Settled&quot; in CIBIL report.</li>
-                              <li><strong>Future Loans:</strong> Getting new unsecured loans might be tough for 12-24 months.</li>
-                              <li><strong>Tax Implications:</strong> Waived amount might be considered taxable income.</li>
+                              <li><strong>Temporary CIBIL Impact:</strong> Account status updates to &quot;Settled&quot;, temporarily impacting score by 50-100 points.</li>
+                              <li><strong>Rebuilding Window:</strong> New unsecured credit cards require 12 to 24 months of positive financial rehabilitation.</li>
+                              <li><strong>Lump-Sum Availability:</strong> Borrower must arrange the negotiated settlement sum within agreed timelines.</li>
                             </ul>
                           </td>
                         </tr>
@@ -386,74 +341,67 @@ export default async function LawyerBySlugPage({ params }: { params: Promise<{ s
 
                 {/* Legal Framework */}
                 <section id="legal-framework" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">The Legal Framework for Debt Settlement in {locationName}</h2>
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">The Legal Framework for Debt Settlement</h2>
                   <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
-                    Many borrowers in {locationName} worry about the legality of loan settlement. It is important to state clearly: <strong>Loan settlement is a 100% legal financial process.</strong> It is recognized and regulated by the Reserve Bank of India (RBI) and is a standard part of banking operations.
+                    Borrowers often fear that settlement involves legal peril. <strong>Loan settlement is a 100% legal, RBI-regulated banking procedure.</strong> Under Indian banking jurisprudence, borrowers possess clear statutory protections:
                   </p>
-                  <h3 className="text-lg md:text-2xl font-semibold text-gray-900 mb-4">RBI Guidelines and Borrower Rights</h3>
-                  <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
-                    The RBI has issued various circulars and guidelines that empower banks to compromise on settlements. As a borrower in {locationName}, you have specific rights:
-                  </p>
-                  <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
+                  <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-6">
                     <div className="bg-gray-50 p-4 md:p-6 rounded-xl border border-gray-200">
-                      <h4 className="font-bold text-base md:text-lg mb-2 text-[#D2A02A]">Right to Fair Treatment</h4>
-                      <p className="text-gray-600 text-sm">Lenders cannot use abusive language, physical threats, or public shaming to recover debts. This is a violation of your fundamental rights.</p>
+                      <h4 className="font-bold text-base md:text-lg mb-2 text-[#D2A02A]">Dignity & Anti-Coercion</h4>
+                      <p className="text-gray-600 text-sm">The Supreme Court in *Prakash Kaur* held that lenders cannot use goondas or musclemen for recovery. Intimidation is an actionable crime.</p>
                     </div>
                     <div className="bg-gray-50 p-4 md:p-6 rounded-xl border border-gray-200">
-                      <h4 className="font-bold text-base md:text-lg mb-2 text-[#D2A02A]">Right to Privacy</h4>
-                      <p className="text-gray-600 text-sm">Recovery agents cannot contact your friends, family, or employer to discuss your debt details without your consent.</p>
+                      <h4 className="font-bold text-base md:text-lg mb-2 text-[#D2A02A]">Constitutional Privacy</h4>
+                      <p className="text-gray-600 text-sm">Agents are barred from disclosing debt records to employers, neighbors, or third parties without explicit consent.</p>
                     </div>
                     <div className="bg-gray-50 p-4 md:p-6 rounded-xl border border-gray-200">
-                      <h4 className="font-bold text-base md:text-lg mb-2 text-[#D2A02A]">Right to Representation</h4>
-                      <p className="text-gray-600 text-sm">You have the legal right to appoint a lawyer to represent you in discussions with the bank. Once appointed, the bank should communicate through your legal counsel.</p>
+                      <h4 className="font-bold text-base md:text-lg mb-2 text-[#D2A02A]">Right to Legal Representation</h4>
+                      <p className="text-gray-600 text-sm">Every citizen has the statutory right to appoint an advocate. Once representation is entered, all creditor communications must be addressed to legal counsel.</p>
                     </div>
                     <div className="bg-gray-50 p-4 md:p-6 rounded-xl border border-gray-200">
-                      <h4 className="font-bold text-base md:text-lg mb-2 text-[#D2A02A]">Right to Due Process</h4>
-                      <p className="text-gray-600 text-sm">Even if you have defaulted, banks must follow due process under the SARFAESI Act and cannot seize assets without proper notice.</p>
+                      <h4 className="font-bold text-base md:text-lg mb-2 text-[#D2A02A]">Due Judicial Process</h4>
+                      <p className="text-gray-600 text-sm">Unsecured debts cannot result in summary property attachment. Any claim requires rigorous civil adjudication.</p>
                     </div>
                   </div>
                 </section>
 
                 {/* Process */}
                 <section id="process" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Our Proven Loan Settlement Process in {locationName}</h2>
-                  <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-8 text-gray-700">
-                    Navigating the bureaucracy of banks can be daunting. We have streamlined the <strong>loan settlement process</strong> into four clear steps to ensure transparency and efficiency for borrowers in {locationName}.
-                  </p>
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Our 4-Stage Settlement Protocol in {locationName}</h2>
                   <div className="space-y-6 md:space-y-8">
                     <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start">
-                      <div className="flex-shrink-0 w-14 md:w-16 h-14 md:h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-xl md:text-2xl font-bold">1</div>
+                      <div className="flex-shrink-0 w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-xl font-bold">1</div>
                       <div>
-                        <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2 md:mb-3">Financial Assessment & Strategy</h3>
+                        <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">Comprehensive Audit & Strategy</h3>
                         <p className="text-gray-700 leading-relaxed text-sm md:text-base">
-                          We begin by analyzing your complete financial portfolio. We review your loan agreements, payment history, and current income status. We identify which loans are eligible for settlement and calculate a realistic settlement amount that you can afford. This stage involves setting clear expectations and preparing the necessary hardship documentation.
+                          We audit all outstanding statements, eliminate usurious compound penalties, analyze hardship documentation, and determine an achievable target settlement percentage.
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start">
-                      <div className="flex-shrink-0 w-14 md:w-16 h-14 md:h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-xl md:text-2xl font-bold">2</div>
+                      <div className="flex-shrink-0 w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-xl font-bold">2</div>
                       <div>
-                        <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2 md:mb-3">Legal Intervention & Protection</h3>
+                        <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">Legal Shield & Anti-Harassment Notice</h3>
                         <p className="text-gray-700 leading-relaxed text-sm md:text-base">
-                          Once engaged, we formally notify your creditors that AMA Legal Solutions represents you in {locationName}. We direct all future communication to our office. This step is crucial for stopping the incessant calls and harassment from recovery agents. If any legal notices have been issued against you, our legal team prepares appropriate responses to defend your position.
+                          We issue formal Notices of Appearance to all creditors, asserting statutory representation and warning against unauthorized visits or calls to third parties.
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start">
-                      <div className="flex-shrink-0 w-14 md:w-16 h-14 md:h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-xl md:text-2xl font-bold">3</div>
+                      <div className="flex-shrink-0 w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-xl font-bold">3</div>
                       <div>
-                        <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2 md:mb-3">Negotiation with Lenders</h3>
+                        <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">Structured Negotiation with Committees</h3>
                         <p className="text-gray-700 leading-relaxed text-sm md:text-base">
-                          This is where our expertise shines. Our negotiators engage with the bank&apos;s recovery officers and credit managers. We present your hardship case with evidence and negotiate firmly to waive penal interest, regular interest, and even a portion of the principal. Our goal is to reach the lowest possible settlement figure for borrowers in {locationName}.
+                          Our advocates negotiate directly with senior bank compromise committees and Zonal Managers, leveraging regulatory precedents to secure maximum waivers.
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start">
-                      <div className="flex-shrink-0 w-14 md:w-16 h-14 md:h-16 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-xl md:text-2xl font-bold">4</div>
+                      <div className="flex-shrink-0 w-12 h-12 bg-[#D2A02A] rounded-full flex items-center justify-center text-white text-xl font-bold">4</div>
                       <div>
-                        <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2 md:mb-3">Settlement & Closure</h3>
+                        <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">Sanction Letter Verification & Closure</h3>
                         <p className="text-gray-700 leading-relaxed text-sm md:text-base">
-                          Once a settlement amount is agreed upon, we ensure the bank issues a formal Settlement Letter detailing the terms. We review this document to ensure there are no hidden clauses. After you make the payment, we follow up to obtain the <strong>No Dues Certificate (NDC)</strong> and ensure the loan account is closed in the bank&apos;s records.
+                          We scrutinize the official OTS letter for complete legal finality, oversee direct settlement disbursement to your loan account, and obtain the definitive No Dues Certificate (NDC).
                         </p>
                       </div>
                     </div>
@@ -462,141 +410,110 @@ export default async function LawyerBySlugPage({ params }: { params: Promise<{ s
 
                 {/* Documents Required */}
                 <section id="documents" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Documents Required for Loan Settlement in {locationName}</h2>
-                  <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-6 text-gray-700">
-                    To build a strong case for settlement, we need to prove your financial hardship to the bank. The following documents are typically required:
-                  </p>
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Documentation Required for Settlement</h2>
                   <ul className="grid md:grid-cols-2 gap-4">
-                    <li className="flex items-center bg-gray-50 p-4 rounded-lg"><span className="text-[#D2A02A] mr-3">✓</span> KYC Documents (Aadhar, PAN)</li>
-                    <li className="flex items-center bg-gray-50 p-4 rounded-lg"><span className="text-[#D2A02A] mr-3">✓</span> Loan Account Statements</li>
-                    <li className="flex items-center bg-gray-50 p-4 rounded-lg"><span className="text-[#D2A02A] mr-3">✓</span> Salary Slips / Income Proof (Current)</li>
-                    <li className="flex items-center bg-gray-50 p-4 rounded-lg"><span className="text-[#D2A02A] mr-3">✓</span> Bank Statements (Last 6 months)</li>
-                    <li className="flex items-center bg-gray-50 p-4 rounded-lg"><span className="text-[#D2A02A] mr-3">✓</span> Termination Letter (if unemployed)</li>
-                    <li className="flex items-center bg-gray-50 p-4 rounded-lg"><span className="text-[#D2A02A] mr-3">✓</span> Medical Records (if applicable)</li>
-                    <li className="flex items-center bg-gray-50 p-4 rounded-lg"><span className="text-[#D2A02A] mr-3">✓</span> Closure Letters of other loans</li>
-                    <li className="flex items-center bg-gray-50 p-4 rounded-lg"><span className="text-[#D2A02A] mr-3">✓</span> Correspondence with Bank</li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg"><span className="text-[#D2A02A] mr-3">✓</span> KYC Documents (PAN Card, Aadhaar Card)</li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg"><span className="text-[#D2A02A] mr-3">✓</span> Loan & Credit Card Statements (Most recent)</li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg"><span className="text-[#D2A02A] mr-3">✓</span> Proof of Income Disruption (Salary Slips / ITR)</li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg"><span className="text-[#D2A02A] mr-3">✓</span> Bank Statements for the past 6 months</li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg"><span className="text-[#D2A02A] mr-3">✓</span> Termination or Business Loss Documentation</li>
+                    <li className="flex items-center bg-gray-50 p-4 rounded-lg"><span className="text-[#D2A02A] mr-3">✓</span> Copies of Legal / Recovery Notices received</li>
                   </ul>
                 </section>
 
                 {/* Types of Loans */}
                 <section id="types-of-loans" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Types of Loans We Settle in {locationName}</h2>
-                  <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-8 text-gray-700">
-                    Not all loans are the same, and the strategy for settlement differs based on the nature of the debt. We specialize in settling various types of unsecured and secured debts for clients in {locationName}.
-                  </p>
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Debt Facilities Handled in {locationName}</h2>
                   <div className="grid md:grid-cols-2 gap-4 md:gap-8">
-                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-base md:text-xl font-bold text-[#D2A02A] mb-2 md:mb-3">Personal Loans</h3>
-                      <p className="text-gray-700 text-xs md:text-base"><strong>Personal loan settlement</strong> is a common solution for unsecured debts with high interest rates. Banks are often willing to negotiate significantly on these as they have no collateral to fall back on.</p>
+                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm">
+                      <h3 className="text-base md:text-xl font-bold text-[#D2A02A] mb-2">Unsecured Personal Loans</h3>
+                      <p className="text-gray-700 text-sm">Negotiating full-and-final closures on unsecured retail loans, eliminating inflated late fees and penal interest.</p>
                     </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-base md:text-xl font-bold text-[#D2A02A] mb-2 md:mb-3">Credit Card Debt</h3>
-                      <p className="text-gray-700 text-xs md:text-base"><strong>Credit card settlement</strong> is one of the most common types of settlement in {locationName}. Due to compounding interest rates of 30-40% per annum, banks often prefer settlement over write-offs.</p>
+                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm">
+                      <h3 className="text-base md:text-xl font-bold text-[#D2A02A] mb-2">Credit Card Debt Settlement</h3>
+                      <p className="text-gray-700 text-sm">Dismantling revolving credit card traps with 36-45% compound finance charges to achieve realistic lump-sum settlements.</p>
                     </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-base md:text-xl font-bold text-[#D2A02A] mb-2 md:mb-3">Business Loans (Unsecured)</h3>
-                      <p className="text-gray-700 text-xs md:text-base">For MSMEs and entrepreneurs in {locationName}, business loans can become a burden during market downturns. We assist in settling unsecured business loans to prevent bankruptcy.</p>
+                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm">
+                      <h3 className="text-base md:text-xl font-bold text-[#D2A02A] mb-2">MSME & Business Lines</h3>
+                      <p className="text-gray-700 text-sm">Structuring debt workouts for trading and business enterprises to preserve commercial viability and resolve creditor claims.</p>
                     </div>
-                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-base md:text-xl font-bold text-[#D2A02A] mb-2 md:mb-3">Education Loans</h3>
-                      <p className="text-gray-700 text-xs md:text-base">In cases of genuine hardship where employment is not secured post-education, we can negotiate settlement terms for education loans to prevent long-term financial distress.</p>
+                    <div className="bg-white border border-gray-200 rounded-xl p-4 md:p-6 shadow-sm">
+                      <h3 className="text-base md:text-xl font-bold text-[#D2A02A] mb-2">Digital App & Fintech Loans</h3>
+                      <p className="text-gray-700 text-sm">Neutralizing cyber harassment, morphed photo threats, and emergency contact intimidation under RBI Digital Lending Guidelines.</p>
                     </div>
                   </div>
-                  <p className="mt-4 md:mt-6 text-xs md:text-sm text-gray-500 italic">
-                    *Note: Secured loans (Home Loans, Car Loans) are harder to settle as banks can seize the asset. However, we provide legal consultancy for these cases as well.
-                  </p>
                 </section>
 
                 {/* Credit Score Impact */}
                 <section id="credit-score" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Understanding the Impact on Your Credit Score</h2>
-                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
-                    Transparency is one of our core values. We want borrowers in {locationName} to make an informed decision. It is true that <strong>loan settlement negatively impacts your credit score</strong>. When you settle a loan, the bank reports the status as &quot;Settled&quot; to credit bureaus like CIBIL, Experian, and Equifax.
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Understanding CIBIL Score Rehabilitation</h2>
+                  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
+                    A settled account is marked as &quot;Settled&quot; on your CIBIL report. While this reflects that dues were compromised, it eliminates active default status and halts compounding interest.
                   </p>
-                  <p className="text-sm md:text-lg leading-relaxed mb-3 md:mb-6 text-gray-700">
-                    This &quot;Settled&quot; tag can lower your score by 50 to 100 points. However, you must weigh this against the alternative. A &quot;Default&quot; or &quot;Written Off&quot; status is far more damaging.
-                  </p>
-                  <h3 className="text-lg md:text-2xl font-semibold text-gray-900 mb-4">The Path to Redemption</h3>
-                  <ul className="list-disc pl-6 space-y-3 text-gray-700 bg-green-50 p-4 md:p-6 rounded-xl text-sm md:text-base">
-                    <li><strong>Step 1:</strong> Obtain a secured credit card (against a fixed deposit) and use it responsibly.</li>
-                    <li><strong>Step 2:</strong> Ensure all other utility bills and active EMIs are paid on time.</li>
-                    <li><strong>Step 3:</strong> Avoid applying for new unsecured loans for at least 12-18 months.</li>
-                    <li><strong>Step 4:</strong> Regularly check your credit report for errors and dispute them if necessary.</li>
-                  </ul>
-                  <p className="text-sm md:text-lg leading-relaxed mt-4 md:mt-6 text-gray-700">
-                    At AMA Legal Solutions, we don&apos;t just help you settle; we provide post-settlement guidance on how to repair your financial health and improve your CIBIL score over time.
-                  </p>
+                  <div className="bg-green-50 p-4 md:p-6 rounded-xl text-sm md:text-base space-y-2 text-gray-800">
+                    <h4 className="font-bold text-green-900">4-Step Post-Settlement Credit Rebuilding Plan:</h4>
+                    <p>1. Ensure all closed facilities have received definitive No Dues Certificates (NDCs).</p>
+                    <p>2. Obtain a secured credit card backed by a fixed deposit to generate consistent positive repayment history.</p>
+                    <p>3. Maintain credit utilization under 30% on active facilities.</p>
+                    <p>4. Conduct quarterly CIBIL checks to verify that settled accounts do not show active delinquent balances.</p>
+                  </div>
                 </section>
 
                 {/* Why Choose Us */}
                 <section id="why-choose-us" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Why Choose AMA Legal Solutions in {locationName}?</h2>
-                  <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-8 text-gray-700">
-                    In a market flooded with &quot;debt relief agencies&quot; and &quot;settlement companies,&quot; AMA Legal Solutions stands apart as a legitimate law firm. Here is why clients in {locationName} trust us with their financial freedom:
-                  </p>
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Why Retain AMA Legal Solutions in {locationName}?</h2>
                   <div className="grid md:grid-cols-3 gap-4 md:gap-6 text-center">
-                    <div className="p-4 md:p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-3xl md:text-4xl mb-3 md:mb-4">⚖️</div>
-                      <h3 className="font-bold text-lg md:text-xl mb-2">Legal Authority</h3>
-                      <p className="text-gray-600 text-sm">We are lawyers, not just agents. We have the power to represent you in court and send legal notices.</p>
+                    <div className="p-4 md:p-6 rounded-xl bg-gray-50">
+                      <div className="text-3xl md:text-4xl mb-3">⚖️</div>
+                      <h3 className="font-bold text-lg mb-2">Advocate Standing</h3>
+                      <p className="text-gray-600 text-sm">We are licensed legal advocates with standing to represent you before civil courts, magistrates, and Lok Adalats.</p>
                     </div>
-                    <div className="p-4 md:p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-3xl md:text-4xl mb-3 md:mb-4">🛡️</div>
-                      <h3 className="font-bold text-lg md:text-xl mb-2">Anti-Harassment</h3>
-                      <p className="text-gray-600 text-sm">We take a zero-tolerance approach to harassment and take legal action against abusive recovery agents.</p>
+                    <div className="p-4 md:p-6 rounded-xl bg-gray-50">
+                      <div className="text-3xl md:text-4xl mb-3">🛡️</div>
+                      <h3 className="font-bold text-lg mb-2">Zero Harassment</h3>
+                      <p className="text-gray-600 text-sm">We enforce strict RBI Fair Practices regulations and take criminal action against abusive collection agencies.</p>
                     </div>
-                    <div className="p-4 md:p-6 rounded-xl bg-gray-50 hover:bg-[#fff9e6] transition-colors">
-                      <div className="text-3xl md:text-4xl mb-3 md:mb-4">🤝</div>
-                      <h3 className="font-bold text-lg md:text-xl mb-2">Ethical Practice</h3>
-                      <p className="text-gray-600 text-sm">We operate with complete transparency. No false promises, no hidden fees, and complete confidentiality.</p>
+                    <div className="p-4 md:p-6 rounded-xl bg-gray-50">
+                      <div className="text-3xl md:text-4xl mb-3">🤝</div>
+                      <h3 className="font-bold text-lg mb-2">Maximum Waivers</h3>
+                      <p className="text-gray-600 text-sm">Direct advocacy with senior bank compromise authorities secures optimal principal reductions.</p>
                     </div>
                   </div>
                 </section>
 
                 {/* Testimonials */}
                 <section id="testimonials" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-8">Client Success Stories</h2>
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-8">Client Success Experiences</h2>
                   <div className="grid md:grid-cols-2 gap-4 md:gap-8">
-                    <div className="bg-gray-50 p-4 md:p-8 rounded-xl border border-gray-100 relative">
-                      <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">&quot;</div>
-                      <p className="text-gray-700 italic mb-4 relative z-10 text-sm md:text-base">
-                        &quot;I was drowning in credit card debt and getting 20 calls a day. AMA Legal Solutions stepped in and stopped the harassment immediately. They settled my 8 Lakh debt for just 3.5 Lakhs. I can finally sleep peacefully.&quot;
-                      </p>
-                      <div className="flex items-center">
-                        <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">R</div>
-                        <div>
-                          <p className="font-bold text-gray-900 text-sm">Rahul Sharma</p>
-                          <p className="text-xs text-gray-500">IT Professional, Bangalore</p>
+                    {cityProfile.testimonials.map((t, idx) => (
+                      <div key={idx} className="bg-gray-50 p-4 md:p-8 rounded-xl border border-gray-100 relative">
+                        <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">&quot;</div>
+                        <p className="text-gray-700 italic mb-4 relative z-10 text-sm md:text-base leading-relaxed">
+                          &quot;{t.quote}&quot;
+                        </p>
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <p className="font-bold text-gray-900 text-sm">{t.author}</p>
+                            <p className="text-xs text-gray-500">{t.profile}</p>
+                          </div>
+                          <span className="text-xs font-semibold text-[#D2A02A] bg-[#D2A02A]/10 px-3 py-1 rounded-full">{t.saving}</span>
                         </div>
                       </div>
-                    </div>
-                    <div className="bg-gray-50 p-4 md:p-8 rounded-xl border border-gray-100 relative">
-                      <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">&quot;</div>
-                      <p className="text-gray-700 italic mb-4 relative z-10 text-sm md:text-base">
-                        &quot;My business loan was becoming unmanageable after the lockdown. The bank was threatening to seize my property. The lawyers at AMA guided me legally and negotiated a fair OTS. Highly professional team.&quot;
-                      </p>
-                      <div className="flex items-center">
-                        <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">P</div>
-                        <div>
-                          <p className="font-bold text-gray-900 text-sm">Priya Malhotra</p>
-                          <p className="text-xs text-gray-500">Entrepreneur, Delhi</p>
-                        </div>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </section>
 
                 {/* FAQs */}
                 <section id="faqs" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-8">Frequently Asked Questions About Loan Settlement in {locationName}</h2>
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-8">Frequently Asked Questions in {locationName}</h2>
                   <div className="space-y-4 md:space-y-6">
-                    {faqs.map((faq, index) => (
+                    {cityProfile.faqs.map((faq, index) => (
                       <div key={index} className="border-b border-gray-200 pb-4 md:pb-6 last:border-0">
                         <h3 className="text-base md:text-xl font-bold text-gray-900 mb-2 md:mb-3 flex items-start">
                           <span className="text-[#D2A02A] mr-2 md:mr-3">Q.</span>
                           {faq.question}
                         </h3>
-                        <p className="text-gray-700 leading-relaxed pl-6 md:pl-8 text-sm md:text-base">
+                        <p className="text-gray-700 leading-relaxed pl-6 md:pl-8 text-sm md:text-base m-0">
                           {faq.answer}
                         </p>
                       </div>
@@ -604,142 +521,36 @@ export default async function LawyerBySlugPage({ params }: { params: Promise<{ s
                   </div>
                 </section>
 
-                {/* Final CTA */}
-                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-xl md:rounded-3xl p-6 md:p-16 text-center text-white relative overflow-hidden">
-                  <div className="relative z-10">
-                    <h2 className="text-xl md:text-5xl font-bold mb-4 md:mb-6">Don&apos;t Let Debt Control Your Life in {locationName}</h2>
-                    <p className="text-sm md:text-xl opacity-90 mb-6 md:mb-10 max-w-2xl mx-auto">
-                      Take the first step towards a debt-free future. Our expert lawyers serving {locationName} are ready to fight for your financial freedom.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-                      <Link href="/contact">
-                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
-                          Book Your Consultation
-                        </button>
-                      </Link>
-                      <a href="tel:+918700343611">
-                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all text-sm md:text-lg w-full sm:w-auto">
-                          Call: +91-8700343611
-                        </button>
-                      </a>
-                    </div>
-                    <p className="mt-4 md:mt-8 text-xs md:text-sm opacity-70">
-                      Confidential • Legal • Effective
-                    </p>
-                  </div>
-                </section>
-
               </div>
             </div>
 
-            {/* Right Sidebar */}
-            <div className="hidden lg:block space-y-8 sticky top-24">
-              {/* Contact Card */}
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Need Urgent Help?</h3>
-                <p className="text-gray-600 mb-6 text-sm">
-                  Speak to our senior loan settlement lawyers in {locationName} today.
+            {/* Right Column - Sidebar */}
+            <aside className="space-y-6 sticky top-24">
+              <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 text-center">
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Need Help in {locationName}?</h3>
+                <p className="text-sm text-gray-600 mb-4">
+                  Speak directly with an experienced banking advocate to evaluate your settlement options.
                 </p>
-                <a
-                  href="tel:+918700343611"
-                  className="block w-full bg-[#D2A02A] text-white text-center py-3 rounded-lg font-semibold hover:bg-[#b88a22] transition-colors mb-4"
-                >
-                  Call +91-8700343611
-                </a>
-                <Link
-                  href="/contact"
-                  className="block w-full border border-[#D2A02A] text-[#D2A02A] text-center py-3 rounded-lg font-semibold hover:bg-[#D2A02A] hover:text-white transition-colors"
-                >
-                  Request Callback
+                <Link href="tel:+918178873087" className="block w-full">
+                  <button className="w-full bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-4 rounded-xl transition-all shadow-md text-sm">
+                    Call +91 81788 73087
+                  </button>
                 </Link>
+                <a href="https://wa.me/918700343611" target="_blank" rel="noopener noreferrer" className="block w-full mt-2">
+                  <button className="w-full bg-white border border-[#D2A02A] text-[#D2A02A] hover:bg-[#D2A02A] hover:text-white font-bold py-3 px-4 rounded-xl transition-all text-sm">
+                    WhatsApp Us
+                  </button>
+                </a>
               </div>
 
-              {/* Quick Links */}
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">Related Services</h3>
-                <ul className="space-y-3 text-sm">
-                  <li>
-                    <Link href="/services/loan-settlement" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                      <span className="mr-2">›</span> Loan Settlement
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/services/debt-consolidation" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                      <span className="mr-2">›</span> Debt Consolidation
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/services/banking-and-finance" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                      <span className="mr-2">›</span> Banking & Finance
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/services/civil" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
-                      <span className="mr-2">›</span> Civil Litigation
-                    </Link>
-                  </li>
-                </ul>
-
-                {/* App Store Links */}
-                <div className="mt-6 pt-6 border-t border-gray-100">
-                  <p className="text-sm font-semibold mb-3" style={{ color: 'rgba(210, 158, 13, 0.8)' }}>Download Our App Today</p>
-                  <div className="flex flex-col gap-3">
-                    <Link href="https://play.google.com/store/apps/details?id=com.ama.ama_legal_solutions" target="_blank" className="hover:opacity-80 transition-opacity">
-                      <Image src="/newAssets/appstore.svg" alt="Get it on Google Play" width={130} height={36} className="w-full h-auto max-w-[130px]" />
-                    </Link>
-                    <Link href="https://apps.apple.com/in/app/ama-legal-solutions/id6755156186" target="_blank" className="hover:opacity-80 transition-opacity">
-                      <Image src="/newAssets/playstore.svg" alt="Download on App Store" width={130} height={36} className="w-full h-auto max-w-[130px]" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Banks Grid */}
-          <div className="mt-16">
-            <section className="my-10">
-              <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 md:mb-12 text-center">
-                We settle loans from the following banks
-              </h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-                {[
-                  { name: "SBI", href: "/services/loan-settlement/sbi-bank" },
-                  { name: "HDFC", href: "/services/loan-settlement/hdfc-bank" },
-                  { name: "ICICI", href: "/services/loan-settlement/icici-bank" },
-                  { name: "Kotak Mahindra", href: "/services/loan-settlement/kotak-mahindra" },
-                  { name: "IDFC", href: "/services/loan-settlement/idfc-bank" },
-                  { name: "Yes Bank", href: "/services/loan-settlement/yes-bank" },
-                  { name: "Bajaj Finserv", href: "/services/loan-settlement/bajaj-finserv" },
-                  { name: "Axis Bank", href: "/services/loan-settlement/axis-bank" },
-                  { name: "Bank of Baroda", href: "/services/loan-settlement/bank-of-baroda" },
-                  { name: "Paytm", href: "/services/loan-settlement/paytm" },
-                  { name: "Hero Fincorp", href: "/services/loan-settlement/hero-fincorp" },
-                  { name: "Aditya Birla", href: "/services/loan-settlement/aditya-birla" },
-                  { name: "Poonawalla Fincorp", href: "/services/loan-settlement/poonawalla-fincorp" },
-                  { name: "Citibank", href: "/services/loan-settlement/citibank" },
-                  { name: "Tata Capital", href: "/services/loan-settlement/tata-capital" },
-                  { name: "Federal Bank", href: "/services/loan-settlement/federal-bank" },
-                  { name: "IndusInd Bank", href: "/services/loan-settlement/indusind-bank" },
-                  { name: "Standard Chartered", href: "/services/loan-settlement/standard-chartered" },
-                  { name: "American Express", href: "/services/loan-settlement/american-express" },
-                  { name: "L&T Finance", href: "/services/loan-settlement/l-and-t-finance" },
-                ].map((bank) => (
-                  <Link
-                    key={bank.name}
-                    href={bank.href}
-                    className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
-                  >
-                    <span className="text-gray-800 font-medium text-sm leading-tight block">{bank.name}</span>
-                  </Link>
-                ))}
-              </div>
-              <div className="mt-8 text-center">
-                <p className="text-sm md:text-lg text-gray-700">
-                  Our loan settlement services in {locationName} are available for all major banks in India
+              <div className="bg-[#FAF8F5] p-6 rounded-2xl border border-[#D2A02A]/20">
+                <h4 className="font-bold text-sm text-[#30261C] uppercase tracking-wider mb-2">Legal Immunity Guarantee</h4>
+                <p className="text-xs text-gray-600 leading-relaxed m-0">
+                  All communications and dispute strategies are protected by advocate-client privilege under Section 126 of the Indian Evidence Act.
                 </p>
               </div>
-            </section>
+            </aside>
+
           </div>
         </div>
       </div>

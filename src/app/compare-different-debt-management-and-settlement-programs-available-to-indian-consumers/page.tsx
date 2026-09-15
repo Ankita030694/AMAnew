@@ -10,7 +10,7 @@ export const metadata = {
   },
   title: "Compare Debt Management vs. Settlement Programs in India",
   description:
-    "Explore the best debt relief options for Indian consumers. Compare Debt Management Programs (DMP) and One-Time Settlement (OTS). Learn about credit scores, RBI rules, and legal rights.",
+    "Compare Debt Management Programs (DMP) and One-Time Settlement (OTS) in India. Understand credit score impacts, RBI rules, and borrower legal rights.",
   keywords: "debt management program india, debt settlement india, compare debt relief options, one time settlement vs dmp, credit score impact debt settlement, rbi guidelines debt recovery",
 };
 
@@ -36,7 +36,7 @@ const relatedPages = [
   { title: "Understanding Your CIBIL Score", href: "/what-is-cibil-score" },
   { title: "Stop Recovery Agent Harassment", href: "/how-to-stop-bank-recovery-agents-harassment-legally-in-india" },
   { title: "Personal Loan Settlement Process", href: "/personal-loan-settlement" },
-  { title: "Credit Card Debt Relief", href: "/credit-card-debt-settlement-india" },
+  { title: "Credit Card Debt Relief", href: "/credit-card-debt-settlement" },
 ];
 
 export default function DebtComparisonGuide() {

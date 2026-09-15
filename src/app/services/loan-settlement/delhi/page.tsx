@@ -8,13 +8,13 @@ import FaqSection from "./FaqSection";
 export const metadata = {
   title: "Loan Settlement in Delhi | Expert Debt Relief Lawyers",
   description:
-    "Struggling with debt in Delhi NCR? AMA Legal Solutions offers expert loan settlement services. Stop harassment & settle legally through Lok Adalat & DRT Delhi.",
+    "Struggling with debt in Delhi NCR? AMA Legal Solutions offers expert loan settlement services. Stop harassment & settle legally through Lok Adalat & DRT.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/delhi',
   },
   openGraph: {
     title: "Loan Settlement in Delhi | Expert Debt Relief Lawyers",
-    description: "Struggling with debt in Delhi NCR? AMA Legal Solutions offers expert loan settlement services. Stop harassment & settle legally through Lok Adalat & DRT Delhi.",
+    description: "Struggling with debt in Delhi NCR? AMA Legal Solutions offers expert loan settlement services. Stop harassment & settle legally through Lok Adalat & DRT.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/delhi",
     type: "website",
     images: [

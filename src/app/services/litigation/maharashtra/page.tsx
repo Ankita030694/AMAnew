@@ -183,9 +183,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Litigation Services in Maharashtra | Bombay High Court Lawyers",
+  title: "Litigation Services in Maharashtra | AMA Legal",
   description:
-    "Expert litigation lawyers in Maharashtra. We represent clients in Bombay High Court (Mumbai, Nagpur, Aurangabad), City Civil Court, and District Courts. Civil, Criminal & Commercial.",
+    "Expert litigation lawyers in Maharashtra. We represent clients in Bombay High Court (Mumbai, Nagpur, Aurangabad), City Civil Court, and District Courts..",
   keywords: [
     "litigation services maharashtra",
     "bombay high court lawyer",
@@ -202,7 +202,7 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/services/litigation/maharashtra',
   },
   openGraph: {
-    title: "Litigation Services in Maharashtra | Bombay High Court Lawyers",
+    title: "Litigation Services in Maharashtra | AMA Legal",
     description: "Expert litigation services in Maharashtra. Representing clients in Bombay High Court, City Civil Court, and District Courts.",
     url: "https://www.amalegalsolutions.com/services/litigation/maharashtra",
     type: "website",

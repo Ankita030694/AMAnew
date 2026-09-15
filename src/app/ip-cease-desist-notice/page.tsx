@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/ip-cease-desist-notice',
   },
-  title: "IP Cease and Desist Notice India: Stop Infringement & Legal Guide",
+  title: "IP Cease and Desist Notice India: Stop Brand Infringement",
   description:
-    "Facing IP infringement or received a cease and desist? Learn the legal requirements for Trademark, Copyright, and Patent notices in India. Stop infringement legally.",
+    "Facing IP infringement or received a notice? Learn legal requirements for Trademark, Copyright, and Patent notices in India to stop violations legally.",
   keywords: "IP cease and desist notice India, trademark infringement notice, copyright notice legal requirements, groundless threats section 142, responding to cease and desist",
 };
 

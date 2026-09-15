@@ -183,9 +183,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Litigation Services in Uttar Pradesh | Allahabad High Court Lawyers",
+  title: "Litigation Services in Uttar Pradesh | AMA Legal",
   description:
-    "Expert litigation lawyers in Uttar Pradesh. We represent clients in Allahabad High Court, Lucknow Bench, NCLT, and District Courts (Noida, Ghaziabad, Kanpur). Civil, Criminal & Corporate cases.",
+    "Expert litigation lawyers in Uttar Pradesh. We represent clients in Allahabad High Court, Lucknow Bench, NCLT, and District Courts (Noida, Ghaziabad.",
   keywords: [
     "litigation services uttar pradesh",
     "allahabad high court lawyer",
@@ -202,7 +202,7 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/services/litigation/uttar-pradesh',
   },
   openGraph: {
-    title: "Litigation Services in Uttar Pradesh | Allahabad High Court Lawyers",
+    title: "Litigation Services in Uttar Pradesh | AMA Legal",
     description: "Expert litigation services in Uttar Pradesh. Representing clients in Allahabad High Court, Lucknow Bench, and District Courts.",
     url: "https://www.amalegalsolutions.com/services/litigation/uttar-pradesh",
     type: "website",

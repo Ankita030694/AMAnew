@@ -151,7 +151,7 @@ const reviewSchema = {
 export const metadata = {
   title: "How to Know If the Settlement Letter is Valid | Legal Guide",
   description:
-    "Avoid fake loan settlement letters and scams. Learn how to verify your settlement letter authenticity with RBI guidelines and expert legal advice from AMA Legal Solutions.",
+    "Avoid fake loan settlement scams. Learn how to verify settlement letter authenticity using RBI guidelines and expert legal steps from AMA Legal Solutions.",
   keywords: [
     "how to know if the settlement letter is valid",
     "fake settlement letter india",

@@ -5,7 +5,7 @@ import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata = {
-  title: "Is GST Required for Trademark Registration? | 7500+ Word Guide",
+  title: "Is GST Required for Trademark Registration in India?",
   description: "Exhaustive legal manual on GST requirements for trademarks in India. Learn about RCM on legal fees, Input Tax Credit (ITC), and GST for individuals.",
   keywords: ["gst for trademark registration", "is gst mandatory for trademark", "trademark gst rate", "RCM on trademark fees", "input tax credit trademark services", "gst for ipr services"],
   alternates: { canonical: 'https://www.amalegalsolutions.com/is-gst-required-for-trademarks' }

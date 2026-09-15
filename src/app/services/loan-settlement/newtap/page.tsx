@@ -184,9 +184,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Newtap Finance (CRED Cash) Loan Settlement | Expert Legal Representation",
+  title: "Newtap Finance (CRED Cash) Loan Settlement | AMA Legal",
   description:
-    "Master the Newtap Finance loan settlement process. get expert legal help from anuj anand malik and the team in sector 57 to resolve your CRED Cash debt with a 50% waiver. call 8700343611.",
+    "Master the Newtap Finance loan settlement process. get expert legal help from anuj anand malik and the team in sector 57 to resolve your CRED Cash debt.",
   keywords: [
     "Newtap finance loan settlement",
     "CRED cash loan default help",
@@ -201,8 +201,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/newtap',
   },
   openGraph: {
-    title: "Newtap Finance (CRED) Debt Settlement | Professional Legal Help",
-    description: "Resolve your Newtap outstanding dues through a professional legal settlement. our firm in sector 57 will protect your rights and stop all harassment. call 8700343611 today.",
+    title: "Newtap Finance (CRED) Debt Settlement | AMA Legal",
+    description: "Resolve your Newtap outstanding dues through a professional legal settlement. our firm in sector 57 will protect your rights and stop all harassment..",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/newtap",
     type: "website",
     images: [{ url: "/services/3.png", width: 1200, height: 630, alt: "Newtap Finance Loan Settlement Services" }],

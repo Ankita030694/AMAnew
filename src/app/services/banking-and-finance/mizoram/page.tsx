@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import MizoramBankingClient from "./MizoramBankingClient";
 
 export const metadata: Metadata = {
-  title: "Banking and Finance Services in Mizoram | NBFC & DRT Lawyers",
+  title: "Banking and Finance Services in Mizoram | AMA Legal",
   description:
-    "Premier legal consultancy for Banking & Finance in Mizoram. Expert guidance on Land Settlement Certificates (LSC), SEDP Loans, Money Lenders Act, and DRT Guwahati.",
+    "Banking and finance legal services in Mizoram. Expert guidance on Land Settlement Certificates (LSC), SEDP loans, and DRT Guwahati with AMA Legal.",
   keywords: [
     "Banking and Finance Services Mizoram",
     "NBFC Registration Aizawl",
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     "Startup Mizoram Legal Advisor",
   ],
   openGraph: {
-    title: "Banking and Finance Legal Services in Mizoram",
+    title: "Banking and Finance Services in Mizoram | AMA Legal",
     description:
-      "Expert legal support for financial institutions in Mizoram. From LSC mortgage issues to DRT litigation and SEDP funding.",
+      "Banking and finance legal services in Mizoram. Expert guidance on Land Settlement Certificates (LSC), SEDP loans, and DRT Guwahati with AMA Legal.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/mizoram",
     siteName: "AMA Legal Solutions",
     locale: "en_US",
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Banking and Finance Services in Mizoram | AMA Legal Solutions",
+    title: "Banking and Finance Services in Mizoram | AMA Legal",
     description:
-      "Specialized legal services for NBFCs, Startups, and Banks in Mizoram. Expert in DRT Guwahati and Land Settlement Certificates.",
+      "Banking and finance legal services in Mizoram. Expert guidance on Land Settlement Certificates (LSC), SEDP loans, and DRT Guwahati with AMA Legal.",
   },
   alternates: {
     canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/mizoram",

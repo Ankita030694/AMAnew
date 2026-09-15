@@ -157,8 +157,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Loan Settlement Before Auction | Stop Bank Auction Legal Help India",
-  description: "Struggling with a bank auction notice? AMA Legal Solutions, founded by Anuj Anand Malik, offers expert loan settlement before auction services. Stop SARFAESI auctions legally from our Gurugram Sector 57 office. Call 8700343611.",
+  title: "Loan Settlement Before Auction | Stop Bank Auction Legally",
+  description: "Facing a bank auction notice? Get expert legal help for loan settlement before auction. Stop SARFAESI proceedings and protect your property in India.",
   keywords: [
     "loan settlement before auction",
     "stop bank auction legally",

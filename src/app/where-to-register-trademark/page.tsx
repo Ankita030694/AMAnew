@@ -171,8 +171,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Where to Register Trademark in India | Official Registry & Online Guide",
-  description: "Learn where to register a trademark in India. Complete guide to the Trademark Registry offices, online filing through IP India, documents required, and step by step procedure.",
+  title: "Where to Register a Trademark in India | Official Guide",
+  description: "Learn where to register a trademark in India. Complete guide to Trademark Registry offices, IP India online filing, required documents, and procedure.",
   keywords: [
     "where to register trademark",
     "trademark registration india",

@@ -148,7 +148,7 @@ const legalServiceSchema = {
 
 export const metadata = {
   title: "Can Banks Refuse Settlement? Legal Rights & RBI Rules",
-  description: "Understand if banks can refuse your debt settlement offer in India. Learn about borrower rights, RBI guidelines, legal recourse, and how to negotiate effectively.",
+  description: "Can banks refuse your debt settlement in India? Learn about borrower legal rights, RBI guidelines, practical recourse, and how to negotiate effectively.",
   keywords: [
     "can banks refuse settlement",
     "loan settlement",
@@ -169,7 +169,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Can Banks Refuse Settlement? Legal Rights & RBI Rules",
-    description: "Understand if banks can refuse your debt settlement offer in India. Learn about borrower rights, RBI guidelines, legal recourse, and how to negotiate effectively.",
+    description: "Can banks refuse your debt settlement in India? Learn about borrower legal rights, RBI guidelines, practical recourse, and how to negotiate effectively.",
     url: 'https://www.amalegalsolutions.com/can-banks-refuse-settlement',
     siteName: 'AMA Legal Solutions',
     images: [

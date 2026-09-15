@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/consumer-complaint-against-finance-company',
   },
-  title: "Consumer Complaint Against Finance Company: Legal Process & Rights",
+  title: "Consumer Complaint Against Finance Company: Legal Guide",
   description:
-    "Learn how to file a consumer complaint against a finance company in India. Expert guide on RBI Ombudsman, Consumer Court, and legal steps to resolve grievances.",
+    "File a consumer complaint against a finance company in India. Expert legal guide on RBI Ombudsman, Consumer Court filing, and recovering damages.",
   keywords: "consumer complaint against finance company, rbi ombudsman complaint, file consumer case india, finance company harassment legal action, e-daakhil process",
 };
 

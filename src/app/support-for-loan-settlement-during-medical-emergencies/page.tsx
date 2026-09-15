@@ -131,7 +131,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Loan Settlement During Medical Emergency | Professional Relief",
+  title: "Loan Settlement During Medical Emergency | AMA Legal",
   description: "Facing debt due to hospital bills? AMA Legal Solutions helps you negotiate a loan settlement under RBI guidelines and stops recovery harassment.",
   keywords: [
     "support for loan settlement during medical emergencies",
@@ -146,6 +146,12 @@ export const metadata = {
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/support-for-loan-settlement-during-medical-emergencies',
+  },
+  openGraph: {
+    title: "Loan Settlement During Medical Emergency | AMA Legal",
+    description: "Facing debt due to hospital bills? AMA Legal Solutions helps you negotiate a loan settlement under RBI guidelines and stops recovery harassment.",
+    url: 'https://www.amalegalsolutions.com/support-for-loan-settlement-during-medical-emergencies',
+    type: "article",
   },
 };
 

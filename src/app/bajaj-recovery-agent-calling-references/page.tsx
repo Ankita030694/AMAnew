@@ -10,7 +10,7 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/bajaj-recovery-agent-calling-references',
   },
   title: "Bajaj Recovery Agent Calling References? Stop Harassment Now",
-  description: "Are Bajaj recovery agents calling your friends and family? Learn your legal rights under RBI guidelines and stop reference calling harassment instantly with our guide.",
+  description: "Are Bajaj recovery agents calling your friends and family? Learn your rights under RBI rules and stop illegal reference calling with AMA Legal Solutions.",
   keywords: "bajaj recovery agent calling references, stop recovery agent calling family, rbi guidelines for reference calling, bajaj finance harassment complaint, loan recovery legal help india",
 };
 

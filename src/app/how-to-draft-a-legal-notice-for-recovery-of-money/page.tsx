@@ -8,7 +8,7 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/how-to-draft-a-legal-notice-for-recovery-of-money',
   },
-  title: "How to Draft a Legal Notice for Recovery of Money: Expert Guide",
+  title: "Draft a Legal Notice for Money Recovery | Legal Guide",
   description:
     "Master the legal notice format for recovering outstanding dues. Learn crucial rules under CPC Order 37, Section 138 NI Act, and save litigation time.",
   keywords: "how to draft a legal notice for recovery of money, legal notice format, outstanding dues, cheque bounce, legal action, summary suit, breach of contract, Code of Civil Procedure, Order 37 of the CPC",

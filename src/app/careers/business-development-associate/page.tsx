@@ -109,7 +109,7 @@ const jobPostingSchema = (baseUrl: string) => ({
 
 export const metadata: Metadata = {
   title: "Business Development Associate | AMA Legal Solutions",
-  description: "Exciting career opportunity for Sales and Business Development Associates at AMA Legal Solutions. Join Gurugram's top law firm and drive strategic growth. Apply now.",
+  description: "Join AMA Legal Solutions as a Business Development Associate in Gurugram. Drive strategic growth, client relationships, and legal sales. Apply now.",
   keywords: ["business development associate jobs", "sales associate careers", "law firm jobs gurugram", "legal sales associate", "jobs for bda in delhi ncr"],
   alternates: { canonical: 'https://www.amalegalsolutions.com/careers/business-development-associate' }
 };

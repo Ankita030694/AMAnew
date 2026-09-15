@@ -5,9 +5,9 @@ const PAGE_URL = "https://www.amalegalsolutions.com/will-drafting-services-in-bi
 const OG_IMAGE = "/images/og/will-drafting-services-in-bihar.png";
 
 export const metadata: Metadata = {
-  title: "Will Drafting Services in Bihar: Top Estate & Succession Lawyers | AMA Legal Solutions",
+  title: "Will Drafting Services in Bihar | AMA Legal Solutions",
   description:
-    "Expert will drafting services in Bihar by senior High Court advocates. Secure your family estate, Patna urban properties, BIADA industrial assets, and agricultural Raiyati land with court-admissible testamentary drafting.",
+    "Expert will drafting in Bihar by Patna High Court advocates. Secure urban estates, BIADA assets, and Raiyati land with dispute-proof legal drafting.",
   keywords: [
     "will drafting services in bihar",
     "will drafting services bihar",

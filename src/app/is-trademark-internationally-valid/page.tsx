@@ -241,9 +241,9 @@ const contentSections = [
 ];
 
 export const metadata = {
-  title: "Is Trademark Internationally Valid? | Global Protection Guide 2024",
+  title: "Is Trademark Internationally Valid? | Global IP Guide",
   description:
-    "Discover the truth about international trademark validity. Comprehensive 7500+ word guide on territorial rights, Madrid Protocol, and securing your brand in 130+ countries.",
+    "Discover international trademark validity rules. Learn about territorial rights, Madrid Protocol, and securing global brand protection in 130+ countries.",
   keywords: [
     "is trademark internationally valid",
     "international trademark registration",

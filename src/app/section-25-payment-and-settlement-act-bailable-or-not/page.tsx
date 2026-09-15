@@ -172,8 +172,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Section 25 Payment and Settlement Act Bailable or Not? | #1 Guide",
-  description: "Find out if Section 25 of the Payment and Settlement Systems Act is bailable. Expert legal analysis on electronic funds transfer dishonour, punishment, and your rights.",
+  title: "Section 25 Payment & Settlement Act: Bailable? | AMA Legal",
+  description: "Find out if Section 25 of the Payment and Settlement Systems Act is bailable. Expert legal advice on NACH dishonour, defense, and bail with AMA Legal.",
   keywords: [
     "section 25 payment and settlement act bailable or not",
     "is section 25 pssa bailable",
@@ -188,6 +188,12 @@ export const metadata = {
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/section-25-payment-and-settlement-act-bailable-or-not',
+  },
+  openGraph: {
+    title: "Section 25 Payment & Settlement Act: Bailable? | AMA Legal",
+    description: "Find out if Section 25 of the Payment and Settlement Systems Act is bailable. Expert legal advice on NACH dishonour, defense, and bail with AMA Legal.",
+    url: 'https://www.amalegalsolutions.com/section-25-payment-and-settlement-act-bailable-or-not',
+    type: "article",
   },
 };
 

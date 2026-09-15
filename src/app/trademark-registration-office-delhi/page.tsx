@@ -182,9 +182,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Trademark Registration Office Delhi | Expert Brand Protection",
+  title: "Trademark Registration Office Delhi | Brand Protection",
   description:
-    "Looking for the Trademark Registration Office in Delhi? Secure your brand at the Dwarka Registry. Expert guide on fees, documents, and procedure for registration in 2025.",
+    "Looking for the Trademark Registration Office in Delhi? Secure your brand at the Dwarka Registry. Complete guide on fees, documents, and procedures.",
   keywords: [
     "trademark registration office delhi",
     "trademark registry dwarka",
@@ -203,7 +203,7 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/trademark-registration-office-delhi',
   },
   openGraph: {
-    title: "Trademark Registration Office Delhi | Expert Brand Protection",
+    title: "Trademark Registration Office Delhi | Brand Protection",
     description: "Secure your brand at the New Delhi Trademark Office. Learn the complete filing process, fees, and legal steps in our comprehensive guide.",
     url: "https://www.amalegalsolutions.com/trademark-registration-office-delhi",
     type: "website",

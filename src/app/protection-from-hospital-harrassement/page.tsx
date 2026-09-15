@@ -164,11 +164,17 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Protection from Hospital Harassment India | Patient Rights Guide",
-  description: "Facing hospital harassment? Learn your legal rights against illegal detention, body holding, and overcharging. Expert legal help for patient protection in India.",
+  title: "Protection from Hospital Harassment in India | AMA Legal",
+  description: "Facing hospital harassment? Learn legal rights against illegal detention, body holding, and overcharging. Get patient protection from AMA Legal Solutions.",
   keywords: "hospital harassment india, patient rights india, protection against body holding, illegal detention in hospital, recovery agent protection, medical bill dispute help, sue hospital for harassment",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/protection-from-hospital-harrassement',
+  },
+  openGraph: {
+    title: "Protection from Hospital Harassment in India | AMA Legal",
+    description: "Facing hospital harassment? Learn legal rights against illegal detention, body holding, and overcharging. Get patient protection from AMA Legal Solutions.",
+    url: "https://www.amalegalsolutions.com/protection-from-hospital-harrassement",
+    type: "article",
   },
 };
 

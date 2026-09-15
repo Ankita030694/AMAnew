@@ -158,7 +158,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "How to Settle Loans Above 5 Crore in India | Corporate Debt Resolution",
+  title: "How to Settle Loans Above 5 Crore in India | Legal Guide",
   description: "Comprehensive guide for settling loans above 5 crore. Strategic advice on RBI guidelines, OTS for large accounts, NCLT withdrawals, and legal defense.",
   keywords: [
     "how to settle loans above 5 crore",

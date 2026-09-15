@@ -6,6 +6,7 @@ import { Metadata } from "next";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Image from "next/image";
+import { formatMetaTitle, formatMetaDescription } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -26,8 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: story.seo.title,
-    description: story.seo.description,
+    title: formatMetaTitle(story.seo.title),
+    description: formatMetaDescription(story.seo.description),
     keywords: story.seo.keywords,
     alternates: {
       canonical: `https://www.amalegalsolutions.com/success-stories/${story.slug}`,

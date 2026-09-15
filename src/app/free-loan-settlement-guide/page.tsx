@@ -151,7 +151,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Free Loan Settlement Guide 2024-2025 | Legal Debt Relief India",
+  title: "Free Loan Settlement Guide | Legal Debt Relief India",
   description:
     "Master the art of loan settlement with our free expert guide. Clear debt, stop harassment, and improve your CIBIL. Updated for RBI 2024-2025 regulations.",
   keywords: [
@@ -170,7 +170,7 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/free-loan-settlement-guide',
   },
   openGraph: {
-    title: "Free Loan Settlement Guide 2024-2025 | Legal Debt Relief India",
+    title: "Free Loan Settlement Guide | Legal Debt Relief India",
     description: "Expert strategies to settle your bank loans legally. Stop harassment and regain financial freedom. Updated for current RBI rules.",
     url: "https://www.amalegalsolutions.com/free-loan-settlement-guide",
     type: "website",

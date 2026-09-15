@@ -66,12 +66,18 @@ const tocSections = [
 ];
 
 export const metadata = {
-  title: "Trading Loan Settlement India | Legal Debt Relief for Traders",
-  description: "Caught in a trading debt trap? Learn about trading loan settlement in India. Get expert legal help to settle margin funding, LAS, and business trade debts legally.",
+  title: "Trading Loan Settlement in India | AMA Legal Solutions",
+  description: "Caught in trading debt? Learn how trading loan settlement works in India. Settle margin funding, LAS, and business trade debts legally with AMA Legal.",
   keywords: "trading loan settlement, margin funding settlement, loan against securities settlement, trade debt relief, stock market debt settlement, legal notice to broker, debt recovery for traders, rbi guidelines for trading loans, settle trading debt india",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/trading-loan-settlement',
-  }
+  },
+  openGraph: {
+    title: "Trading Loan Settlement in India | AMA Legal Solutions",
+    description: "Caught in trading debt? Learn how trading loan settlement works in India. Settle margin funding, LAS, and business trade debts legally with AMA Legal.",
+    url: 'https://www.amalegalsolutions.com/trading-loan-settlement',
+    type: "article",
+  },
 };
 
 export default function TradingLoanSettlementPage() {

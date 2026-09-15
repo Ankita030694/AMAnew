@@ -10,13 +10,13 @@ import { MdBusinessCenter, MdMoneyOff, MdWarning } from "react-icons/md";
 
 // Metadata
 export const metadata = {
-  title: "DBS Bank Loan Settlement | Credit Card & Personal Loan OTS | AMA Legal Solutions",
+  title: "DBS Bank Loan Settlement | AMA Legal",
   description: "Struggling with DBS Bank (Digibank) loan or credit card repayment? Expert legal help for settling Personal Loans and Credit Card dues. Stop harassment.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/dbs-bank',
   },
   openGraph: {
-    title: "DBS Bank Loan Settlement | Credit Card & Personal Loan OTS | AMA Legal Solutions",
+    title: "DBS Bank Loan Settlement | AMA Legal",
     description: "Struggling with DBS Bank (Digibank) loan or credit card repayment? Expert legal help for settling Personal Loans and Credit Card dues. Stop harassment.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/dbs-bank",
     type: "website",

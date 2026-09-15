@@ -124,8 +124,8 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: "What Should I Do If Recovery Agents Are Harassing Me? Legal Rights",
-  description: "Facing recovery agent harassment? Learn your legal borrower rights, RBI guidelines, and step-by-step actions to stop abuse. Contact AMA Legal Solutions for debt settlement help.",
+  title: "What To Do If Recovery Agents Harass You | Legal Rights",
+  description: "Facing recovery agent harassment? Learn your legal rights, RBI rules, and step-by-step actions to stop abuse. Contact AMA Legal Solutions for debt help.",
   keywords: [
     "loan settlement",
     "debt settlement",

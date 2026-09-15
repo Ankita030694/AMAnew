@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/legal-notice-against-nbfc',
   },
-  title: "Legal Notice Against NBFC: Stop Harassment & Protect Your Rights",
+  title: "Legal Notice Against NBFC: Stop Harassment & Protect Rights",
   description:
-    "Facing abuse from NBFC recovery agents? Learn how to send a legal notice against NBFC for harassment, illegal calls, and threats under RBI guidelines. Stop abuse today.",
+    "Facing abuse from NBFC recovery agents? Learn how to send a legal notice against NBFC for illegal calls and threats under RBI guidelines to stop harassment.",
   keywords: "legal notice against nbfc, nbfc recovery agent harassment, stop nbfc harassment, rbi guidelines for nbfc recovery, legal help for loan defaulters, file complaint against nbfc",
 };
 

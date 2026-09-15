@@ -107,14 +107,14 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Kotak Mahindra Loan Settlement Process | Kotak Credit Card Settlement",
+  title: "Kotak Mahindra Loan Settlement Process | AMA Legal",
   description:
     "Complete guide to Kotak Mahindra Bank loan settlement. Negotiate OTS, stop recovery harassment, and settle your personal loan or credit card debt legally.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/kotak-mahindra',
   },
   openGraph: {
-    title: "Kotak Mahindra Loan Settlement Process | Kotak Credit Card Settlement",
+    title: "Kotak Mahindra Loan Settlement Process | AMA Legal",
     description: "Complete guide to Kotak Mahindra Bank loan settlement. Negotiate OTS, stop recovery harassment, and settle your personal loan or credit card debt legally.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/kotak-mahindra",
     type: "website",

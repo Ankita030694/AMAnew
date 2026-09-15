@@ -105,7 +105,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Credit Card Settlement Process India | Expert Legal Help",
-  description: "Wondering how to settle a credit card debt? Learn the legal credit card settlement process in India for 2025. Get expert help from AMA Legal Solutions to reduce debt and stop harassment.",
+  description: "Learn the legal credit card settlement process in India. Understand RBI rules, negotiate waivers with banks, stop harassment, and resolve your debt.",
   keywords: [
     "credit card settlement process india",
     "credit card settlement rbi guidelines 2025",

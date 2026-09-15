@@ -181,8 +181,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Best Law Firms in India for Corporate Law | 2024 Expert Guide",
-  description: "Explore the best law firms in India for corporate law. In-depth analysis of top tier legal partners for M&A, private equity, compliance, and corporate structuring.",
+  title: "Best Law Firms in India for Corporate Law | AMA Legal",
+  description: "Explore the best law firms in India for corporate law. In-depth analysis of top tier legal partners for M&A, private equity, and compliance.",
   keywords: [
     "best law firms in India for corporate law",
     "top corporate law firms India",
@@ -193,12 +193,12 @@ export const metadata = {
     "corporate restructuring legal advice"
   ],
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/blog/best-law-firms-in-india-for-corporate-law',
+    canonical: 'https://www.amalegalsolutions.com/best-law-firms-in-india-for-corporate-law',
   },
   openGraph: {
-    title: "Best Law Firms in India for Corporate Law | 2024 Expert Guide",
+    title: "Best Law Firms in India for Corporate Law | AMA Legal",
     description: "Explore the best law firms in India for corporate law. In-depth analysis of top tier legal partners for M&A, private equity, and compliance.",
-    url: "https://www.amalegalsolutions.com/blog/best-law-firms-in-india-for-corporate-law",
+    url: "https://www.amalegalsolutions.com/best-law-firms-in-india-for-corporate-law",
     type: "article",
     images: [
       {

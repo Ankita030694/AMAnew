@@ -6,21 +6,24 @@ import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { HarassmentBank } from "@/data/harassmentBanks";
 import { HarassmentCity } from "@/data/harassmentCities";
+import { getDynamicBankCityContent } from "@/lib/harassmentContentEngine";
 import { 
   FaPhone, 
   FaWhatsapp, 
   FaShieldAlt, 
   FaCheckCircle, 
   FaEnvelope,
-  FaFileInvoice,
+  FaMapMarkerAlt,
   FaGavel,
   FaLandmark,
-  FaLinkedin
+  FaLinkedin,
+  FaBalanceScale,
+  FaFileAlt
 } from "react-icons/fa";
 
 export default function BankCityHarassmentTemplate({ bank, city }: { bank: HarassmentBank, city: HarassmentCity }) {
-  
   const pageUrl = `https://www.amalegalsolutions.com/recovery-agent-harassment/${bank.slug}/${city.slug}`;
+  const dynamicContent = getDynamicBankCityContent(bank, city);
 
   const breadcrumbItems = [
     { label: "Guides", href: "/articles" },
@@ -30,23 +33,16 @@ export default function BankCityHarassmentTemplate({ bank, city }: { bank: Haras
   ];
 
   const sections = [
-    { id: "pincer-movement", title: `The "Pincer Movement" Strategy` },
-    { id: "bank-liability", title: `Holding ${bank.name} Liable` },
-    { id: "local-police", title: `Activating the ${city.policeAuthority}` },
-    { id: "drafting-fir", title: `Drafting an FIR in ${city.name}` },
-    { id: "high-court", title: `Leveraging ${city.highCourt} Precedents` },
-    { id: "digital-extortion", title: `Digital Extortion & ${city.name} Cyber Cell` },
-    { id: "workplace-defamation", title: `Workplace Defamation by ${bank.name}` },
-    { id: "sarfaesi-myth", title: `Busting the SARFAESI Myth` },
-    { id: "limitation-act", title: `The Limitation Act & Unsecured Loans` },
-    { id: "ombudsman", title: `The RBI Ombudsman Escalation` },
-    { id: "internal-policy", title: `${bank.name} Internal Policy vs RBI` },
-    { id: "escalation-matrix", title: `Local vs Regional Manager in ${city.name}` },
+    { id: "pincer-movement", title: `Dual Defense Strategy in ${city.name}` },
+    { id: "regulatory-framework", title: `${dynamicContent.categoryLabel} Regulations` },
+    { id: "police-action", title: `Activating ${city.policeAuthority}` },
+    { id: "high-court-jurisprudence", title: `${city.highCourt} Rulings` },
+    { id: "defense-protocol", title: `Step-by-Step Defense Protocol` },
+    { id: "workplace-defamation", title: `Stopping Workplace Defamation` },
+    { id: "sarfaesi-myth", title: `SARFAESI & Unsecured Debt Myths` },
+    { id: "case-study", title: `Case Study: ${city.name} Resolution` },
     { id: "ots-negotiation", title: `Negotiating a ${bank.name} OTS` },
-    { id: "fake-settlements", title: `Avoiding Fake Settlements in ${city.name}` },
-    { id: "case-study", title: `Case Study: Defeating ${bank.name} in ${city.name}` },
-    { id: "psychological-advantage", title: `The Psychological Advantage` },
-    { id: "advocate-role", title: `Why You Need an Advocate` },
+    { id: "advocate-role", title: `Why You Need Legal Counsel` },
     { id: "faqs", title: `Frequently Asked Questions` },
   ];
 
@@ -65,8 +61,8 @@ export default function BankCityHarassmentTemplate({ bank, city }: { bank: Haras
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": `Stop ${bank.name} Recovery Agents in ${city.name} | Dual Legal Strategy`,
-    "description": `Execute the definitive Pincer Movement strategy. Sue ${bank.name} corporately while simultaneously filing criminal FIRs with the ${city.policeAuthority} in ${city.name}.`,
+    "headline": `Stop ${bank.name} Recovery Harassment in ${city.name} | Legal Defense Protocol`,
+    "description": `Comprehensive legal guide to halting illegal recovery tactics by ${bank.name} in ${city.name}. Enforce RBI directives and mobilize the ${city.policeAuthority}.`,
     "author": {
       "@type": "Person",
       "name": "Anuj Anand Malik",
@@ -87,7 +83,7 @@ export default function BankCityHarassmentTemplate({ bank, city }: { bank: Haras
       }
     },
     "datePublished": "2026-07-04",
-    "dateModified": "2026-07-04",
+    "dateModified": "2026-09-15",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": pageUrl
@@ -97,80 +93,14 @@ export default function BankCityHarassmentTemplate({ bank, city }: { bank: Haras
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": `Can a local police station in ${city.name} issue a notice to ${bank.name}'s head office?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `Yes. Under Section 35 of the BNSS (formerly Section 41A of the CrPC), if an FIR is registered in ${city.name}, the ${city.policeAuthority} can issue a mandatory summons to the Grievance Redressal Officer or Branch Manager of ${bank.name}, compelling them to travel to ${city.name} to join the criminal investigation.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `How do I stop ${bank.name} agents from visiting my office in ${city.name}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `You must immediately have an advocate draft a Cease & Desist legal notice citing Criminal Defamation under the BNS, addressed directly to ${bank.name}'s corporate compliance desk. Simultaneously, inform your HR department in ${city.name} to deny entry to these agents, citing private property trespass.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `If I file a case in the ${city.highCourt}, will it stop the EMI deductions?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `A High Court writ petition under Article 226 is primarily to stop the physical and mental harassment and secure police protection. It does not automatically wipe away the civil debt. To stop ECS/NACH deductions, you must formally withdraw your mandate through a specific banking procedure.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `What is the maximum discount ${bank.name} will offer in an OTS in ${city.name}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `The discount depends heavily on the 'aging' of the debt (NPA status) and the severity of the legal pressure you apply. With a registered FIR in ${city.name} and a strong RBI Ombudsman complaint, ${bank.name} routinely waives 100% of penalties and between 50% to 75% of the principal loan amount.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `Can ${bank.name} seize my vehicle in ${city.name} for an unsecured loan default?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `No. Seizure of physical assets like vehicles or homes without a court order is strictly governed by the SARFAESI Act, which only applies to secured loans. For unsecured personal loans or credit cards, ${bank.name} has no legal right to touch your property without a specific civil court decree.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `Is it legal to record phone calls from ${bank.name} agents in India?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `Yes. India operates on a 'single-party consent' framework regarding call recording, meaning you can legally record any conversation you are a part of without informing the other party. These recordings are admissible electronic evidence under the Indian Evidence Act.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `What if the recovery agents in ${city.name} claim to be police officers?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `Impersonating a public servant is a severe felony under the BNS. If an agent claims to be from the ${city.policeAuthority} or CBI, demand their belt number and station name, record the call, and immediately file a complaint for impersonation and extortion.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `How long does the RBI Ombudsman take to resolve a complaint against ${bank.name}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `Once a complaint is filed on the RBI CMS portal, it typically takes 30 to 45 days for the Ombudsman to review the evidence and issue a ruling or facilitate a mediation session between you and ${bank.name}.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `What should I do if ${bank.name} threatens to freeze my salary account in ${city.name}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `A bank cannot arbitrarily freeze your salary account for an unsecured loan default without a specific order from a civil court or a tax authority. If ${bank.name} threatens this, it is an illegal pressure tactic. You should immediately transfer your salary to a different bank and file a complaint for coercive recovery practices.`
-        }
+    "mainEntity": dynamicContent.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
       }
-    ]
+    }))
   };
 
   return (
@@ -188,16 +118,19 @@ export default function BankCityHarassmentTemplate({ bank, city }: { bank: Haras
           ></div>
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-8">
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-normal tracking-tight mb-6 mt-12 text-[#30261C]" style={{ fontFamily: "var(--font-polysans)" }}>
-                Defeating <span className="text-[#D29E0D]">{bank.name}</span> Recovery Agents in <span className="text-[#D29E0D]">{city.name}</span>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D29E0D]/15 text-[#916b08] text-xs md:text-sm font-semibold mb-4 tracking-wide uppercase">
+                <FaShieldAlt className="text-[#D29E0D]" /> {dynamicContent.categoryLabel} Defense
+              </div>
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-normal tracking-tight mb-6 mt-2 text-[#30261C]" style={{ fontFamily: "var(--font-polysans)" }}>
+                Stop <span className="text-[#D29E0D]">{bank.name}</span> Recovery Harassment in <span className="text-[#D29E0D]">{city.name}</span>
               </h1>
               <p className="text-base md:text-xl text-[#30261C]/70 max-w-4xl mx-auto font-light leading-relaxed mb-10">
-                Execute the definitive "Pincer Movement." Learn how to strike {bank.name}'s corporate compliance team nationally while simultaneously mobilizing the {city.policeAuthority} locally to permanently end the harassment and secure a massive OTS.
+                Deploy an aggressive, dual-pronged legal strategy. We hold {bank.name} corporately liable under RBI directives while mobilizing the {city.policeAuthority} in {city.name} to neutralize unlawful intimidation and secure a discounted One-Time Settlement (OTS).
               </p>
               <div className="flex flex-row gap-3 justify-center items-center w-full max-w-lg mx-auto">
                 <Link href="tel:+918178873087" className="w-1/2">
                   <button className="w-full bg-[#D29E0D] hover:bg-[#b88a22] text-white font-bold py-3.5 md:py-4 px-2 md:px-8 rounded-full transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-1.5 md:gap-2 text-[12px] sm:text-sm md:text-base whitespace-nowrap">
-                    <FaShieldAlt className="shrink-0" /> Sue {bank.name} Today
+                    <FaShieldAlt className="shrink-0" /> Free Case Evaluation
                   </button>
                 </Link>
                 <a href="https://wa.me/918700343611" target="_blank" rel="noopener noreferrer" className="w-1/2">
@@ -218,7 +151,7 @@ export default function BankCityHarassmentTemplate({ bank, city }: { bank: Haras
         {/* Main Content Layout */}
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 pb-24 flex flex-col lg:flex-row gap-8 lg:gap-12 mt-8">
           
-          {/* Left Column - Table of Contents (Desktop Only) */}
+          {/* Left Column - Table of Contents */}
           <aside className="lg:w-[20%] hidden lg:block sticky top-32 h-fit">
             <h4 className="text-lg font-bold mb-4 text-[#30261C] border-b pb-2 uppercase tracking-wider text-xs">On This Page</h4>
             <TableOfContents sections={sections} orientation="vertical" />
@@ -226,256 +159,210 @@ export default function BankCityHarassmentTemplate({ bank, city }: { bank: Haras
 
           {/* Middle Column - Content */}
           <main className="w-full lg:w-[55%] min-w-0">
-            {/* Mobile TOC */}
             <div className="lg:hidden mb-6 sticky top-20 z-20">
               <TableOfContents sections={sections} orientation="horizontal" />
             </div>
 
             <article className="prose prose-sm md:prose-lg max-w-none text-[#30261C]/90 leading-relaxed space-y-12">
               
-              {/* SECTION 1: Pincer Movement */}
+              {/* SECTION 1: Dual Strategy */}
               <section id="pincer-movement" className="scroll-mt-24 space-y-4">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
+                  Dual Legal Defense Strategy in {city.name}
+                </h2>
                 <p className="text-xl font-light leading-relaxed text-[#30261C]/80">
-                  When facing severe harassment from <strong>{bank.name}</strong> recovery agents while living in <strong>{city.name}</strong>, relying on a single legal avenue is often insufficient. To truly break the cycle of abuse and force a settlement on your terms, you must deploy a dual-pronged legal strategy known as the "Pincer Movement."
+                  When facing sustained recovery harassment from <strong>{bank.name}</strong> while living or working in <strong>{city.name}</strong>, relying solely on informal telephone requests will not halt abusive collection practices. To permanently terminate illegal harassment, borrowers must execute a coordinated, dual-track legal protocol.
                 </p>
                 <p>
-                  This strategy involves simultaneously striking the bank at two distinct levels: 
-                  First, you target {bank.name}'s corporate compliance apparatus (often located in Mumbai or Delhi) with formal legal notices and RBI Ombudsman escalations. 
-                  Second, you activate the local jurisdictional power of the <strong>{city.policeAuthority}</strong> to physically threaten the freedom of the local agents operating the harassment ring in {city.name}. 
+                  First, our legal team serves a formal corporate Cease & Desist Notice directly to the Principal Nodal Officer and Compliance Secretariat of {bank.name}. This establishes incontrovertible institutional liability for Fair Practices Code and consumer protection violations.
                 </p>
                 <p>
-                  By creating immense pressure at both the corporate headquarters and the local street level, you trap the bank in a legal vice. The corporate legal department will panic over the regulatory violations, while the local agency will back off due to the threat of police arrest. This combined pressure forces the bank to rapidly transition from extortion to negotiation.
+                  Second, we concurrently petition the <strong>{city.policeAuthority}</strong> and the local jurisdictional magistrate in {city.name} under the Bharatiya Nyaya Sanhita (BNS) and Bharatiya Nagarik Suraksha Sanhita (BNSS). This local pressure immobilizes unauthorized third-party recovery agencies operating in the {city.name} jurisdiction, transforming unmanageable harassment into structured, lawful settlement discussions.
                 </p>
               </section>
 
-              {/* SECTION 2: Bank Liability */}
-              <section id="bank-liability" className="scroll-mt-24 space-y-4">
+              {/* SECTION 2: Category Regulatory Framework */}
+              <section id="regulatory-framework" className="scroll-mt-24 space-y-4">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
-                  Holding {bank.name} Corporately Liable
+                  {dynamicContent.regulatoryFramework.title}
                 </h2>
                 <p>
-                  The foundation of the Pincer Movement is establishing that {bank.name} cannot hide behind their outsourced agents. According to the Indian Contract Act and strictly enforced RBI guidelines, {bank.name} is vicariously liable as the "Principal" for any illegal acts committed by its "Agents."
+                  {dynamicContent.regulatoryFramework.description}
                 </p>
-                <p>
-                  You begin by drafting a severe Legal Notice addressed to the Principal Nodal Officer of {bank.name}. This notice explicitly documents the harassment occurring in {city.name}, including dates, times, phone numbers, and WhatsApp screenshots. It demands the immediate revocation of the local agency's mandate. The moment this notice is delivered, {bank.name} can no longer claim ignorance in a court of law; they are formally put on notice that crimes are being committed in their name.
-                </p>
-                <p>
-                  If {bank.name} fails to act within 48 hours, they become directly complicit in the extortion. This corporate liability is your primary leverage for demanding heavy financial compensation and a drastically reduced One-Time Settlement (OTS).
-                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+                  {dynamicContent.regulatoryFramework.keyPoints.map((pt, idx) => (
+                    <div key={idx} className="bg-white border border-[#EBE9E4] p-5 rounded-xl shadow-sm">
+                      <h4 className="font-bold text-[#30261C] text-base mb-2 flex items-center gap-2">
+                        <FaShieldAlt className="text-[#D29E0D] shrink-0" /> {pt.title}
+                      </h4>
+                      <p className="text-sm text-gray-600 leading-relaxed m-0">
+                        {pt.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </section>
 
-              {/* SECTION 3: Local Police */}
-              <section id="local-police" className="scroll-mt-24 space-y-4">
+              {/* SECTION 3: Police Action */}
+              <section id="police-action" className="scroll-mt-24 space-y-4">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
                   Activating the {city.policeAuthority}
                 </h2>
                 <p>
-                  While the corporate notice is processing, you must strike locally. The agents harassing you live and operate in {city.name}. Therefore, the <strong>{city.policeAuthority}</strong> possesses the absolute jurisdiction to arrest them and shut down their call center.
+                  Recovery agents harassing borrowers in {city.name} depend heavily on the mistaken belief that their actions are immune from criminal liability because a debt exists. Under Indian jurisprudence, debt default is strictly a civil matter, whereas coercion, intimidation, and unlawful shaming constitute cognizable criminal offenses.
                 </p>
                 <p>
-                  You must compile all evidence—call recordings, morphed images, and witness statements from colleagues or neighbors—and formally petition the Station House Officer (SHO) of your local police station in {city.name}. 
-                </p>
-                <p>
-                  If the SHO dismisses your complaint as a "civil bank matter," your advocate will immediately escalate the matter to the Deputy Commissioner of Police (DCP) or Superintendent of Police (SP) in {city.name} via registered post. This postal trail legally proves that you exhausted all administrative police remedies, paving the way for a Magistrate court intervention.
-                </p>
-              </section>
-
-              {/* SECTION 4: Drafting FIR */}
-              <section id="drafting-fir" className="scroll-mt-24 space-y-4">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
-                  Drafting a Bulletproof FIR in {city.name}
-                </h2>
-                <p>
-                  A verbal complaint is useless. To force the {city.policeAuthority} to act against {bank.name} agents, your advocate must draft an FIR application heavily grounded in the Bharatiya Nyaya Sanhita (BNS).
+                  We draft structured, evidence-backed complaints for submission to the <strong>{city.policeAuthority}</strong> invoking critical provisions of the Bharatiya Nyaya Sanhita (BNS):
                 </p>
                 <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-                  <li><strong>Section 351 (Criminal Intimidation):</strong> "The agents from {bank.name} explicitly threatened to physically harm me and my family at my residence in {city.name}."</li>
-                  <li><strong>Section 308 (Extortion):</strong> "The agents threatened to post defamatory statements on my social media unless I immediately transferred funds via UPI."</li>
-                  <li><strong>Section 356 (Defamation):</strong> "The agents called my workplace in {city.name} and falsely told my manager that I am a fraudster running away from the law."</li>
+                  <li><strong>Section 351 BNS (Criminal Intimidation):</strong> Invoked when agents from {bank.name} threaten physical violence, reputational harm, or unlawful residential intrusion.</li>
+                  <li><strong>Section 308 BNS (Extortion):</strong> Applicable when collection personnel demand immediate electronic fund transfers under threat of public humiliation or criminal fabrication.</li>
+                  <li><strong>Section 356 BNS (Defamation):</strong> Enforced when agents contact your employer, colleagues, neighbors, or relatives in {city.name} with false claims of financial delinquency.</li>
+                  <li><strong>Section 329 BNS (Criminal Trespass):</strong> Triggered when unauthorized agents enter your private residential premises or workplace without statutory warrants.</li>
                 </ul>
-                <p className="mt-4">
-                  By citing these specific, non-bailable offenses, you compel the police to register the FIR. Once the FIR is active, the {city.policeAuthority} can issue a Section 35 BNSS notice to {bank.name}'s regional manager, forcing them to answer for the crimes committed.
-                </p>
               </section>
 
-              {/* SECTION 5: High Court */}
-              <section id="high-court" className="scroll-mt-24 space-y-4">
+              {/* SECTION 4: High Court Jurisprudence */}
+              <section id="high-court-jurisprudence" className="scroll-mt-24 space-y-4">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
-                  Leveraging {city.highCourt} Precedents
+                  {dynamicContent.highCourtPrecedent.title}
                 </h2>
+                <div className="bg-[#FAF8F5] border-l-4 border-[#D29E0D] p-5 rounded-r-xl my-4">
+                  <p className="font-semibold text-[#30261C] text-sm md:text-base m-0">
+                    <span className="text-[#D29E0D]">Landmark Precedent:</span> {dynamicContent.highCourtPrecedent.citation}
+                  </p>
+                </div>
                 <p>
-                  The <strong>{city.highCourt}</strong> has consistently ruled against the "musclemen" tactics used by banks like {bank.name}. In landmark judgments, the High Court has reiterated that the right to recover a debt does not supersede a citizen's fundamental right to dignity under Article 21.
+                  {dynamicContent.highCourtPrecedent.analysis}
                 </p>
                 <p>
-                  If the {city.policeAuthority} refuses to register the FIR, or if the harassment from {bank.name} reaches a level where your physical safety is compromised, your advocate can file a Writ Petition (Criminal) before the {city.highCourt}. The Court can issue a writ of mandamus, directly ordering the police to provide you protection and strictly barring {bank.name} from utilizing coercive recovery methods.
+                  Should local authorities in {city.name} fail to register an FIR due to administrative resistance, our advocates have the standing to file an urgent Criminal Writ Petition under Article 226 before the <strong>{city.highCourt}</strong>. High Court intervention typically yields immediate restraining orders against {bank.name} and directs state police to provide physical and digital protection to the petitioner.
                 </p>
               </section>
 
-              {/* SECTION 6: Digital Extortion */}
-              <section id="digital-extortion" className="scroll-mt-24 space-y-4">
+              {/* SECTION 5: Step-by-Step Defense Protocol */}
+              <section id="defense-protocol" className="scroll-mt-24 space-y-4">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
-                  Digital Extortion & The {city.name} Cyber Cell
+                  {dynamicContent.policeProcedure.title}
                 </h2>
-                <p>
-                  If your loan was processed via a digital app associated with {bank.name}, or if the agents are using WhatsApp to send fake Lok Adalat notices, you are a victim of cybercrime.
-                </p>
-                <p>
-                  Agents frequently use VoIP (Voice over Internet Protocol) spoofing to hide their location, or they morph your photos and threaten to send them to your contact list. In these scenarios, bypass the local police station and file a complaint directly with the {city.name} Cyber Crime Cell. The Cyber Cell has the technical capability to track IP addresses and dismantle these digital extortion rings under the stringent provisions of the Information Technology (IT) Act.
-                </p>
+                <div className="space-y-4 my-6">
+                  {dynamicContent.policeProcedure.steps.map((st, idx) => (
+                    <div key={idx} className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
+                      <h4 className="font-bold text-[#30261C] text-base mb-1.5 flex items-center gap-2">
+                        <span className="w-6 h-6 rounded-full bg-[#D29E0D] text-white text-xs flex items-center justify-center font-bold">{idx + 1}</span>
+                        {st.title}
+                      </h4>
+                      <p className="text-sm text-gray-600 pl-8 m-0">
+                        {st.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </section>
 
-              {/* SECTION 7: Workplace Defamation */}
+              {/* SECTION 6: Workplace Defamation */}
               <section id="workplace-defamation" className="scroll-mt-24 space-y-4">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
-                  Workplace Defamation by {bank.name}
+                  Neutralizing Workplace & Third-Party Defamation
                 </h2>
                 <p>
-                  One of the most destructive tactics is when an agent calls your office switchboard or HR department in {city.name}, demanding to speak to your boss regarding your "{bank.name} default."
+                  One of the most aggressive tactics employed by outsourced recovery agents from {bank.name} is contacting the borrower workplace, HR department, or reporting manager in {city.name}. This is an intentional tort designed to weaponize employment anxiety.
                 </p>
                 <p>
-                  This is a profound breach of privacy and constitutes Criminal Defamation. {bank.name} has no legal right to discuss your financial status with a third party. If this occurs, immediately ask your HR to send you an email documenting the call. This email is the most potent evidence you can possess. It forms the basis of a massive civil suit for damages against {bank.name} for tortious interference with your employment, giving you immense leverage in settlement negotiations.
+                  {bank.name} has zero statutory privilege to communicate financial loan records to your employer. When this occurs, our firm drafts an immediate Corporate Spoliation Notice and Cease & Desist requisition directly to the Chief Risk Officer and Head of Legal at {bank.name}. 
+                </p>
+                <p>
+                  We instruct your human resources department to record the incident and refuse communication with non-credentialed collectors under corporate privacy policies, converting workplace interference into high-value legal leverage for compensatory damages during settlement discussions.
                 </p>
               </section>
 
-              {/* SECTION 8: SARFAESI Myth */}
+              {/* SECTION 7: SARFAESI & Unsecured Debt Myths */}
               <section id="sarfaesi-myth" className="scroll-mt-24 space-y-4">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
-                  Busting the SARFAESI Myth
+                  Busting the SARFAESI & Asset Attachment Myth
                 </h2>
                 <p>
-                  Agents frequently threaten to "attach your property tomorrow" citing the SARFAESI Act, 2002. It is vital to understand that this powerful law <strong>only applies to secured loans</strong> (where an asset is pledged). 
+                  Agents collecting for {bank.name} frequently threaten borrowers in {city.name} with "immediate house sealing," "property auction," or "salary freezing within 24 hours," falsely invoking the Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest (SARFAESI) Act, 2002.
                 </p>
                 <p>
-                  If you have an unsecured personal loan or credit card debt with {bank.name}, the SARFAESI Act is entirely irrelevant. {bank.name} cannot seize your property in {city.name} without first fighting a lengthy civil suit, obtaining a decree, and then filing for execution. Knowing this strips the agents of their primary weapon of fear.
+                  It is an established point of law that <strong>the SARFAESI Act applies strictly to secured credit facilities</strong> where tangible property has been formally mortgaged or hypothecated to the institution. For unsecured credit cards, personal loans, and digital micro-credit:
                 </p>
+                <ul className="list-disc pl-6 space-y-2 mt-2 text-gray-700">
+                  <li>{bank.name} possesses absolutely no statutory power of summary asset attachment or property seizure.</li>
+                  <li>No representative can enter your premises to remove household goods, electronics, or personal belongings.</li>
+                  <li>Any civil recovery requires a full-fledged summary suit before a competent civil court, a multi-year judicial proceeding subject to stringent civil evidentiary burdens.</li>
+                </ul>
               </section>
 
-              {/* SECTION 9: Limitation Act */}
-              <section id="limitation-act" className="scroll-mt-24 space-y-4">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
-                  The Limitation Act & Unsecured Loans
-                </h2>
-                <p>
-                  The Limitation Act of 1963 states that a bank has exactly three years from the date of the last payment (or written acknowledgment) to file a civil suit for recovery. 
-                </p>
-                <p>
-                  If three years have passed, your debt with {bank.name} is legally "time-barred," meaning it cannot be enforced in court. Agents will aggressively harass you to make a small token payment (even ₹500) to reset this three-year clock. Never make partial payments on old debts without consulting an advocate, as you may unwittingly revive a dead loan.
-                </p>
-              </section>
-
-              {/* SECTION 10: Ombudsman */}
-              <section id="ombudsman" className="scroll-mt-24 space-y-4">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
-                  The RBI Ombudsman Escalation
-                </h2>
-                <p>
-                  If {bank.name}'s Nodal Officer fails to resolve your grievance within 30 days, you must file a complaint with the Reserve Bank of India’s Complaint Management System (CMS).
-                </p>
-                <p>
-                  Because you have already executed the "Pincer Movement"—by serving a legal notice and filing a complaint with the {city.policeAuthority}—your case before the RBI Ombudsman will be airtight. The Ombudsman has the power to heavily penalize {bank.name} and direct them to pay you compensation for the mental agony caused by their agents.
-                </p>
-              </section>
-
-              {/* SECTION 11: Internal Policy */}
-              <section id="internal-policy" className="scroll-mt-24 space-y-4">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
-                  Legal Nuances: {bank.name}'s Internal Policy vs RBI Guidelines
-                </h2>
-                <p>
-                  During negotiations, representatives of {bank.name} will often claim that they cannot waive penal interest or offer a high-percentage OTS because their "internal bank policy does not allow it." This is a negotiation tactic designed to lower your expectations.
-                </p>
-                <p>
-                  Your legal counsel will explicitly counter this by demonstrating that {bank.name}'s internal policies do not supersede RBI regulatory guidelines or the judgments of the {city.highCourt}. When faced with a registered FIR in {city.name} or a pending RBI Ombudsman investigation for Fair Practices Code violations, the bank's internal policy becomes highly flexible. Compliance risks always override internal recovery targets, forcing the bank to approve exceptional waivers.
-                </p>
-              </section>
-
-              {/* SECTION 12: Escalation Matrix */}
-              <section id="escalation-matrix" className="scroll-mt-24 space-y-4">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
-                  Escalation Matrix: Local vs Regional Manager in {city.name}
-                </h2>
-                <p>
-                  A critical error made by borrowers is attempting to negotiate a settlement directly with the local branch manager of {bank.name} in {city.name}. Local branch managers have limited financial authority and are strictly evaluated on their branch's recovery numbers, making them highly resistant to offering a good OTS.
-                </p>
-                <p>
-                  Instead, your advocate will escalate the dispute over the head of the local branch manager, directly engaging the Zonal or Regional Manager of {bank.name} responsible for the entire {city.name} territory, or the corporate compromise committee in the head office. These higher-level executives are evaluated on legal risk mitigation, not just recovery, making them far more willing to accept a discounted settlement to close a legally complicated, highly litigated account.
-                </p>
-              </section>
-
-              {/* SECTION 13: OTS Negotiation */}
-              <section id="ots-negotiation" className="scroll-mt-24 space-y-4">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
-                  Negotiating an OTS with {bank.name}
-                </h2>
-                <p>
-                  The ultimate goal of this legal aggression is to achieve financial freedom. Once the agents are paralyzed by the threat of police action and corporate notices, {bank.name} will transition to negotiations.
-                </p>
-                <p>
-                  At this stage, your advocate will engage {bank.name}'s compromise committee to secure a One-Time Settlement (OTS). Because you hold the leverage of criminal complaints and RBI violations, {bank.name} is often willing to waive 100% of the late fees and penal interest, and heavily discount the principal amount, allowing you to close the account permanently and receive a No Objection Certificate (NOC).
-                </p>
-              </section>
-
-              {/* SECTION 14: Fake Settlements */}
-              <section id="fake-settlements" className="scroll-mt-24 space-y-4">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
-                  Avoiding Fake Settlements in {city.name}
-                </h2>
-                <p>
-                  A critical warning: Never agree to an OTS based on a WhatsApp message or a verbal promise from a local agent in {city.name}. This is a prevalent scam where agents pocket the "settlement amount," and {bank.name} simply adjusts it against late fees, leaving the principal intact.
-                </p>
-                <p>
-                  A valid settlement must be a formalized, hard-copy OTS Letter issued on {bank.name}'s official letterhead, clearly stating it is a "Full and Final Settlement." Your advocate must verify this document's authenticity with the bank's corporate office before any funds are transferred.
-                </p>
-              </section>
-
-              {/* SECTION 15: Case Study */}
+              {/* SECTION 8: Case Study */}
               <section id="case-study" className="scroll-mt-24 space-y-4">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
-                  Case Study: Defeating {bank.name} in {city.name}
+                  Case Study: {dynamicContent.caseStudy.title}
                 </h2>
-                <p>
-                  A retail manager in {city.name} defaulted on a {bank.name} credit card after losing his job. Local agents began visiting his apartment complex, harassing his wife and loudly declaring him a thief to the neighbors.
-                </p>
-                <p>
-                  AMA Legal Solutions executed the Pincer Movement. We served a corporate legal notice to {bank.name}'s headquarters in Mumbai and simultaneously filed a Section 156(3) application before a Magistrate in {city.name}. The Magistrate ordered the {city.policeAuthority} to register an FIR for Criminal Defamation and Trespass.
-                </p>
-                <p>
-                  When the police arrived at the local agency's office to arrest the manager, {bank.name}'s legal department panicked. Within 24 hours, they formally revoked the agency's mandate, issued an unconditional apology, and offered a staggering 85% discount OTS on the outstanding balance to settle the criminal matter.
-                </p>
+                <div className="bg-white border border-[#D29E0D]/30 rounded-2xl p-6 md:p-8 shadow-md space-y-4 my-6">
+                  <div className="flex flex-wrap items-center justify-between gap-2 border-b border-gray-100 pb-3">
+                    <div>
+                      <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Client Profile</span>
+                      <p className="font-bold text-[#30261C] m-0">{dynamicContent.caseStudy.borrowerProfile}</p>
+                    </div>
+                    <div>
+                      <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Disputed Facility</span>
+                      <p className="font-bold text-[#D29E0D] m-0">{dynamicContent.caseStudy.loanAmount}</p>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-[#30261C] text-sm uppercase tracking-wide text-red-600 mb-1">The Challenge</h5>
+                    <p className="text-sm text-gray-600 m-0">{dynamicContent.caseStudy.challenge}</p>
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-[#30261C] text-sm uppercase tracking-wide text-blue-700 mb-1">Legal Counter-Strategy</h5>
+                    <p className="text-sm text-gray-600 m-0">{dynamicContent.caseStudy.legalAction}</p>
+                  </div>
+                  <div className="bg-[#FAF8F5] p-4 rounded-xl border border-[#D29E0D]/20">
+                    <h5 className="font-bold text-[#30261C] text-sm uppercase tracking-wide text-green-700 mb-1">Outcome & Settlement</h5>
+                    <p className="text-sm font-medium text-gray-800 m-0">{dynamicContent.caseStudy.resolution}</p>
+                  </div>
+                </div>
               </section>
 
-              {/* SECTION 16: Psychological Advantage */}
-              <section id="psychological-advantage" className="scroll-mt-24 space-y-4">
+              {/* SECTION 9: OTS Negotiation */}
+              <section id="ots-negotiation" className="scroll-mt-24 space-y-4">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
-                  The Psychological Advantage of an Advocate
+                  Negotiating a Legally Binding OTS with {bank.name}
                 </h2>
                 <p>
-                  The moment a recovery agent realizes you are represented by a competent banking advocate, the power dynamic fundamentally shifts. Agents rely on the assumption that you are ignorant of the law, terrified of public humiliation, and willing to empty your savings to buy a few days of peace.
+                  The strategic objective of applying legal pressure to {bank.name} is to facilitate a clean, affordable financial resolution. Once illegal collection harassment is brought to an abrupt halt, our advocates engage the bank compromise settlement committee.
                 </p>
                 <p>
-                  By injecting an advocate into the communication loop, you erect an impenetrable wall. The advocate does not respond to emotion, shouting, or threats; they respond with sections of the BNS, citations of {city.highCourt} judgments, and formal complaints to the {city.policeAuthority}. This clinical, aggressive legal response shatters the agent's primary tool—fear—forcing the bank to abandon strong-arm tactics and come to the negotiating table.
+                  With active police complaints and regulatory escalations on record, {bank.name} is compelled to offer substantial waivers:
                 </p>
+                <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                  <li><strong>100% Waiver on Penalties & Compound Interest:</strong> All exorbitant overdue fines and bounce charges are removed from the account ledger.</li>
+                  <li><strong>Principal Haircut of 40% to 75%:</strong> Based on verified income disruption and hardship criteria, the outstanding balance is discounted to a realistic lump-sum or structured tranches.</li>
+                  <li><strong>Official Settlement Sanction Letter:</strong> We ensure the issuance of a verified, digitally authentic One-Time Settlement letter directly from {bank.name} headquarters, preventing fraudulent local agency traps.</li>
+                  <li><strong>No Objection Certificate (NOC):</strong> Full release documentation confirming account closure and cessation of all legal and collection proceedings.</li>
+                </ul>
               </section>
 
-              {/* SECTION 17: Advocate Role */}
+              {/* SECTION 10: Advocate Role */}
               <section id="advocate-role" className="scroll-mt-24 space-y-4">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
-                  The Role of Your Corporate Advocate
+                  The Role of Your Dedicated Legal Counsel
                 </h2>
                 <p>
-                  Attempting to fight a massive institution like {bank.name} while simultaneously dealing with local thugs in {city.name} is overwhelming for an unrepresented borrower. Banks rely on this power imbalance.
+                  Unrepresented borrowers routinely face severe asymmetric pressure when trying to negotiate against institutional lenders like {bank.name}. Outsourced collectors are trained to exploit legal unawareness and fear of social embarrassment.
                 </p>
                 <p>
-                  By retaining AMA Legal Solutions, you instantly shift the dynamic. We handle the corporate notices, the police escalations, and the intense OTS negotiations, entirely shielding you from the stress. We enforce your constitutional rights and dismantle the extortion ring.
+                  The moment AMA Legal Solutions assumes representation, the power balance shifts decisively. Under established legal protocol, our formal Notice of Representation requires {bank.name} to direct all communications to our offices. We insulate you from intimidation, manage regulatory and criminal filings, and secure your financial dignity.
                 </p>
-                
+
                 <div className="bg-[#30261C] text-white p-8 md:p-12 rounded-2xl shadow-2xl mt-12 text-center relative overflow-hidden">
                   <div className="absolute top-0 right-0 p-4 opacity-10 transform translate-x-4 -translate-y-4">
                     <FaShieldAlt className="text-9xl" />
                   </div>
-                  <h3 className="text-3xl md:text-4xl font-bold mb-4 relative z-10" style={{ fontFamily: "var(--font-polysans)" }}>Execute the Pincer Movement</h3>
+                  <h3 className="text-3xl md:text-4xl font-bold mb-4 relative z-10" style={{ fontFamily: "var(--font-polysans)" }}>End the Harassment Today</h3>
                   <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto relative z-10 font-light leading-relaxed">
-                    Strike {bank.name} corporately and utilize the {city.policeAuthority} locally. Contact our legal experts today for a free, confidential strategy session.
+                    Protect your family and career in {city.name}. Engage seasoned banking advocates to neutralize {bank.name} recovery intimidation and settle your debt with complete legal immunity.
                   </p>
                   <Link href="tel:+918178873087" className="inline-block relative z-10">
                     <button className="bg-[#D29E0D] hover:bg-white hover:text-[#30261C] text-white font-bold py-5 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(210,158,13,0.5)] text-xl flex items-center justify-center gap-3">
@@ -485,20 +372,20 @@ export default function BankCityHarassmentTemplate({ bank, city }: { bank: Haras
                 </div>
               </section>
 
-              {/* SECTION 18: FAQs */}
+              {/* SECTION 11: FAQs */}
               <section id="faqs" className="scroll-mt-24 space-y-4 pt-10">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#30261C] border-b pb-3" style={{ fontFamily: "var(--font-polysans)" }}>
                   Frequently Asked Questions (FAQs)
                 </h2>
                 
                 <div className="space-y-6 mt-8">
-                  {faqSchema.mainEntity.map((faq, index) => (
+                  {dynamicContent.faqs.map((faq, index) => (
                     <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                       <h3 className="text-xl font-bold text-[#30261C] mb-3 flex items-start">
-                        <span className="text-[#D29E0D] mr-3">Q:</span> {faq.name}
+                        <span className="text-[#D29E0D] mr-3">Q:</span> {faq.question}
                       </h3>
-                      <p className="text-gray-600 leading-relaxed pl-8">
-                        {faq.acceptedAnswer.text}
+                      <p className="text-gray-600 leading-relaxed pl-8 m-0">
+                        {faq.answer}
                       </p>
                     </div>
                   ))}
@@ -508,20 +395,28 @@ export default function BankCityHarassmentTemplate({ bank, city }: { bank: Haras
             </article>
           </main>
 
-          {/* Right Column - Sidebar Widgets */}
+          {/* Right Column - Sidebar */}
           <aside className="w-full lg:w-[25%] space-y-8">
             
-            {/* Contact Details Widget */}
+            {/* Escalation Desk Widget */}
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 p-6">
-              <h3 className="text-xl font-bold text-[#30261C] mb-4 border-b border-gray-100 pb-3">{bank.name} Escalation Desk</h3>
+              <h3 className="text-xl font-bold text-[#30261C] mb-4 border-b border-gray-100 pb-3 flex items-center gap-2">
+                <FaLandmark className="text-[#D29E0D]" /> {bank.name} Escalation Desk
+              </h3>
               <p className="text-sm text-gray-600 mb-4 leading-relaxed">
-                Send all formal RBI grievances directly to the official corporate officers below. Do not engage with local agents in {city.name}.
+                Official corporate grievance desk for {bank.name}. Formal notices should be served directly to these registered channels:
               </p>
               <div className="space-y-3">
                 <div className="flex items-start">
                   <FaEnvelope className="text-[#D29E0D] mt-1 mr-3 shrink-0" />
                   <span className="text-sm text-gray-800 break-all font-medium">{bank.emails}</span>
                 </div>
+                {bank.address && (
+                  <div className="flex items-start">
+                    <FaMapMarkerAlt className="text-[#D29E0D] mt-1 mr-3 shrink-0" />
+                    <span className="text-xs text-gray-700 leading-relaxed">{bank.address}</span>
+                  </div>
+                )}
               </div>
             </div>
             
@@ -536,7 +431,7 @@ export default function BankCityHarassmentTemplate({ bank, city }: { bank: Haras
                   <h3 className="text-xl font-bold text-[#30261C]">Anuj Anand Malik</h3>
                   <p className="text-[#D29E0D] font-medium text-sm mt-1 uppercase tracking-wide">Founder, AMA Legal</p>
                   <p className="text-gray-600 mt-4 text-sm leading-relaxed">
-                    Pioneering the "Pincer Movement" legal strategy, Advocate Malik specializes in neutralizing corporate abuse by simultaneously deploying High Court injunctions and local criminal FIRs.
+                    Advocate Malik has defended thousands of borrowers across India against unlawful debt recovery, combining High Court writ protections with strict enforcement of RBI Fair Practice Codes.
                   </p>
                   <div className="mt-4 flex justify-center space-x-3">
                     <a href="https://www.linkedin.com/in/iamanujmalik/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[#0077b5] transition-colors">
@@ -552,24 +447,24 @@ export default function BankCityHarassmentTemplate({ bank, city }: { bank: Haras
               <div className="absolute -top-10 -right-10 opacity-10">
                 <FaGavel className="text-9xl" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 relative z-10" style={{ fontFamily: "var(--font-polysans)" }}>Deploy the Strategy</h3>
+              <h3 className="text-2xl font-bold mb-4 relative z-10" style={{ fontFamily: "var(--font-polysans)" }}>Deploy Legal Shield</h3>
               <p className="text-gray-300 mb-6 leading-relaxed relative z-10 text-sm">
-                Stop the harassment in {city.name} by attacking {bank.name}'s corporate compliance structure while filing local police cases.
+                Stop illegal recovery agent harassment in {city.name} permanently. We serve formal Cease & Desist notices and manage the entire OTS process.
               </p>
               <ul className="space-y-3 mb-8 relative z-10">
                 <li className="flex items-center text-sm text-gray-200">
-                  <FaCheckCircle className="text-[#D29E0D] mr-3" /> Stop all calls in 48 hrs
+                  <FaCheckCircle className="text-[#D29E0D] mr-3" /> All direct calls blocked
                 </li>
                 <li className="flex items-center text-sm text-gray-200">
-                  <FaCheckCircle className="text-[#D29E0D] mr-3" /> Local police protection
+                  <FaCheckCircle className="text-[#D29E0D] mr-3" /> Police & Cyber Cell action
                 </li>
                 <li className="flex items-center text-sm text-gray-200">
-                  <FaCheckCircle className="text-[#D29E0D] mr-3" /> Secure Maximum OTS
+                  <FaCheckCircle className="text-[#D29E0D] mr-3" /> Maximum OTS waivers
                 </li>
               </ul>
               <Link href="tel:+918178873087" className="block relative z-10">
                 <button className="w-full bg-[#D29E0D] text-white text-center py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-[#30261C] transition-all duration-300 shadow-lg">
-                  Free Legal Audit
+                  Free Legal Consultation
                 </button>
               </Link>
             </div>

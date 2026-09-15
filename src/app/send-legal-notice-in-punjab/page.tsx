@@ -192,7 +192,7 @@ const organizationSchema = {
 
 export const metadata = {
   title: "Send Legal Notice in Punjab | Lawyers in Ludhiana",
-  description: "Need to send a legal notice in Punjab? Expert drafting and dispatch in Ludhiana, Amritsar, Mohali, and all UP districts. Specliazed for NRIs and property matters.",
+  description: "Need to send a legal notice in Punjab? Expert drafting and dispatch in Ludhiana, Amritsar, and Mohali. Specialized for NRIs and property matters.",
   keywords: [
     "send legal notice in Punjab",
     "legal notice lawyers Ludhiana",

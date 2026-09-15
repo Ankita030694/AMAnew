@@ -183,7 +183,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "How Long Does a Settled Tag Stay on My Report? | CIBIL Guide",
-  description: "Learn how long a settled status stays on your credit report in India. Get expert advice on removing settled tags, improving CIBIL scores, and legal debt resolution.",
+  description: "Learn how long a settled status stays on your credit report in India. Get expert legal advice on removing settled tags and improving CIBIL scores.",
   keywords: [
     "how long does a settled tag stay on my report",
     "settled status in CIBIL report duration",

@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import MeghalayaBankingClient from "./MeghalayaBankingClient";
 
 export const metadata: Metadata = {
-  title: "Banking and Finance Services in Meghalaya | NBFC & DRT Lawyers",
+  title: "Banking and Finance Services in Meghalaya | AMA Legal",
   description:
     "Premier legal consultancy for Banking & Finance in Meghalaya. Expert guidance on Land Transfer Act, PRIME Meghalaya funding, FOCUS scheme, and DRT Guwahati.",
   keywords: [
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     "Cooperative Society Registration Meghalaya",
   ],
   openGraph: {
-    title: "Banking and Finance Legal Services in Meghalaya",
+    title: "Banking and Finance Services in Meghalaya | AMA Legal",
     description:
-      "Expert legal support for financial institutions in Meghalaya. From Land Act compliance to DRT litigation and Startup funding.",
+      "Premier legal consultancy for Banking & Finance in Meghalaya. Expert guidance on Land Transfer Act, PRIME Meghalaya funding, FOCUS scheme, and DRT Guwahati.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/meghalaya",
     siteName: "AMA Legal Solutions",
     locale: "en_US",
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Banking and Finance Services in Meghalaya | AMA Legal Solutions",
+    title: "Banking and Finance Services in Meghalaya | AMA Legal",
     description:
-      "Specialized legal services for NBFCs, Startups, and Banks in Meghalaya. Expert in DRT Guwahati and Land Transfer Act.",
+      "Premier legal consultancy for Banking & Finance in Meghalaya. Expert guidance on Land Transfer Act, PRIME Meghalaya funding, FOCUS scheme, and DRT Guwahati.",
   },
   alternates: {
     canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/meghalaya",

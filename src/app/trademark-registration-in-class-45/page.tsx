@@ -157,8 +157,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Trademark Registration in Class 45 India | Legal & Security Services",
-  description: "Secure your brand in Trademark Class 45 with expert help from AMA Legal Solutions, founded by Anuj Anand Malik. Legal, security, and personal services protection.",
+  title: "Class 45 Trademark Registration India | Legal & Security",
+  description: "Secure your brand in Class 45 with expert help from AMA Legal Solutions. Complete trademark protection for legal, security, and personal services.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/trademark-registration-in-class-45',
   },
@@ -175,7 +175,7 @@ export const metadata = {
     "ipindia class 45 registration"
   ],
   openGraph: {
-    title: "Trademark Registration in Class 45 India | Expert Legal & Security Guide",
+    title: "Class 45 Trademark Registration India | Legal & Security",
     description: "Full guide to Class 45 trademark registration. Services for law firms, security agencies, and social brands by Anuj Anand Malik.",
     url: "https://www.amalegalsolutions.com/trademark-registration-in-class-45",
     type: "article",

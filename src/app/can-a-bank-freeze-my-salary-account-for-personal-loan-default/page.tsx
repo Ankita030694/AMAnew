@@ -126,7 +126,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Can a Bank Freeze My Salary Account for Personal Loan Default?",
+  title: "Can a Bank Freeze Salary Account for Loan Default?",
   description: "Discover if a bank can legally freeze your salary account for personal loan defaults in India. Learn about your rights, banker's lien, and steps to unfreeze.",
   robots: {
     index: true,

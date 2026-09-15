@@ -176,8 +176,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Need Time to Pay Your Loan? The Legal Way to Ask",
-  description: "Learn how to legally ask for more time to pay your loan in India. Discover RBI guidelines, hardship letters, and negotiation strategies before your loan becomes an NPA.",
+  title: "Need Time to Pay Your Loan? Legal Guide | AMA Legal",
+  description:
+    "Learn how to legally ask your bank for more time to pay loans in India under RBI guidelines, restructuring options, and legal advice from AMA Legal.",
   robots: {
     index: true,
     follow: true,
@@ -203,6 +204,13 @@ export const metadata = {
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/mujhe-apna-loan-bharne-ke-liye-time-chaiye',
+  },
+  openGraph: {
+    title: "Need Time to Pay Your Loan? Legal Guide | AMA Legal",
+    description:
+      "Learn how to legally ask your bank for more time to pay loans in India under RBI guidelines, restructuring options, and legal advice from AMA Legal.",
+    url: "https://www.amalegalsolutions.com/mujhe-apna-loan-bharne-ke-liye-time-chaiye",
+    type: "article",
   },
 };
 

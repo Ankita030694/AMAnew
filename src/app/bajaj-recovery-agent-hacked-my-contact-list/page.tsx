@@ -10,7 +10,7 @@ export const metadata = {
   },
   title: "Bajaj Agent Hacked Contact List | Stop Harassment",
   description:
-    "Has a Bajaj recovery agent hacked your contact list? Learn your legal rights under RBI guidelines and IT Act 2000. Stop illegal calls to family and friends today.",
+    "Has a recovery agent accessed your contact list? Learn your rights under RBI rules and IT Act 2000. Stop illegal calls to family with AMA Legal Solutions.",
   keywords: "bajaj recovery agent hacked my contact list, stop recovery agent calling contacts, rbi guidelines for recovery agents privacy, illegal debt collection tactics india, how to deal with contact list harassment",
 };
 

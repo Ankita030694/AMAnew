@@ -2,13 +2,13 @@ import React from "react";
 import ChandigarhBankingClient from "./ChandigarhBankingClient";
 
 export const metadata = {
-  title: "Banking and Finance Services in Chandigarh | AMA Legal Solutions",
+  title: "Banking and Finance Services in Chandigarh | AMA Legal",
   description:
-    "Expert legal consultancy for banking and finance in Chandigarh. NBFC registration, Wealth Management compliance, and financial services in the Tri-City area.",
+    "Expert legal consultancy for banking and finance in Chandigarh. NBFC registration, Wealth Management compliance, and financial services in the Tri-City.",
   openGraph: {
-    title: "Banking and Finance Services in Chandigarh | AMA Legal Solutions",
+    title: "Banking and Finance Services in Chandigarh | AMA Legal",
     description:
-      "Expert legal consultancy for banking and finance in Chandigarh. NBFC registration, Wealth Management compliance, and financial services in the Tri-City area.",
+    "Expert legal consultancy for banking and finance in Chandigarh. NBFC registration, Wealth Management compliance, and financial services in the Tri-City.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/chandigarh",
     siteName: "AMA Legal Solutions",
     images: [

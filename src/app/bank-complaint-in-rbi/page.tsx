@@ -188,8 +188,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Bank Complaint in RBI | File Complaint Online - Step-by-Step Guide",
-  description: "Learn how to file a bank complaint in RBI online via CMS portal. Get expert help for RBI Ombudsman complaints, bank harassment, and illegal charges. 100% legal guide.",
+  title: "Bank Complaint in RBI | Step-by-Step Online Guide",
+  description: "Learn how to file a bank complaint with the RBI online via CMS portal. Expert legal guidance for Ombudsman complaints, lender harassment, and unfair fees.",
   keywords: [
     "bank complaint in rbi",
     "rbi complaint online",
@@ -206,8 +206,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/bank-complaint-in-rbi',
   },
   openGraph: {
-    title: "Bank Complaint in RBI | File Complaint Online - Step-by-Step Guide",
-    description: "Comprehensive guide to filing a bank complaint in RBI. Learn about the CMS portal, Ombudsman process, and your rights as a borrower.",
+    title: "Bank Complaint in RBI | Step-by-Step Online Guide",
+    description: "Learn how to file a bank complaint with the RBI online via CMS portal. Expert legal guidance for Ombudsman complaints, lender harassment, and unfair fees.",
     url: "https://www.amalegalsolutions.com/bank-complaint-in-rbi",
     type: "website",
     images: [

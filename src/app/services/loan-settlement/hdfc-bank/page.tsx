@@ -107,15 +107,15 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "HDFC Loan Settlement Process | HDFC Personal Loan Settlement Letter Format",
+  title: "HDFC Loan Settlement Process | AMA Legal",
   description:
-    "Expert guide on HDFC loan settlement. Learn how to settle HDFC personal loans and credit cards. Get legal help to negotiate OTS, stop harassment, and save up to 50%.",
+    "Expert guide on HDFC loan settlement. Learn how to settle HDFC personal loans and credit cards. Get legal help to negotiate OTS, stop harassment, and.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/hdfc-bank',
   },
   openGraph: {
-    title: "HDFC Loan Settlement Process | HDFC Personal Loan Settlement Letter Format",
-    description: "Expert guide on HDFC loan settlement. Learn how to settle HDFC personal loans and credit cards. Get legal help to negotiate OTS, stop harassment, and save up to 50%.",
+    title: "HDFC Loan Settlement Process | AMA Legal",
+    description: "Expert guide on HDFC loan settlement. Learn how to settle HDFC personal loans and credit cards. Get legal help to negotiate OTS, stop harassment, and.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/hdfc-bank",
     type: "website",
     images: [

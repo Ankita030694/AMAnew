@@ -124,8 +124,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Loan Recovery Agents Harassment Complaint | Legal Rights & RBI Portals",
-  description: "Are loan recovery agents calling your family or office? File a professional complaint today for ₹999. Learn about IPC sections, stay orders, and safe debt consolidation loans.",
+  title: "Recovery Agent Harassment Complaint | RBI Rights",
+  description: "Are recovery agents calling your family or office? File an official complaint, enforce RBI rules, and stop harassment with AMA Legal Solutions.",
   keywords: [
     "loan recovery agents harassment complaint",
     "complaint against bank recovery agent format",

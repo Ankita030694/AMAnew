@@ -169,7 +169,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Contract Drafting Services in Delhi NCR | Expert Legal Firm",
-  description: "Secure your business with airtight contract drafting services in Delhi NCR. Get customized agreements, avoid jurisdictional disputes, and ensure legal compliance.",
+  description: "Protect your business with airtight contract drafting in Delhi NCR. Get customized agreements, avoid disputes, and ensure strict legal compliance.",
   robots: {
     index: true,
     follow: true,

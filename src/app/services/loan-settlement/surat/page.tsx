@@ -8,14 +8,14 @@ import FaqSection from "./FaqSection";
 export const metadata = {
   title: "Loan Settlement in Surat | Expert Debt Relief Lawyers",
   description:
-    "Struggling with debt in Surat? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok Adalat at Athwalines Court.",
+    "Struggling with debt in Surat? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/surat',
   },
   openGraph: {
     title: "Loan Settlement in Surat | Expert Debt Relief Lawyers",
-    description: "Struggling with debt in Surat? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok Adalat at Athwalines Court.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Surat",
+    description: "Struggling with debt in Surat? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok.",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/surat",
     type: "website",
     images: [
       {

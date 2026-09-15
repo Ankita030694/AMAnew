@@ -7,9 +7,9 @@ const OG_IMAGE = "/images/og/how-to-remove-a-written-off-status-from-a-credit-re
 
 export const metadata: Metadata = {
   title:
-    "How to Remove a Written-Off Status from a Credit Report | AMA Legal Solutions",
+    "Remove Written-Off Status from Credit Report | AMA Legal",
   description:
-    "A written-off status on your CIBIL report can block loans for 7 years. Learn the exact legal steps — dispute filings, RBI Ombudsman complaints, and bank negotiation strategies — to remove or rectify a written-off entry. Expert guidance by Advocate Anuj Anand Malik.",
+    "Learn legal steps to remove or rectify a written-off status on your CIBIL report. Expert guide on dispute filings, RBI complaints, and bank negotiations.",
   keywords: [
     "how to remove a written off status from a credit report",
     "written off cibil report removal",
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "How to Remove a Written-Off Status from a Credit Report | AMA Legal Solutions",
+      "Remove Written-Off Status from Credit Report | AMA Legal",
     description:
-      "Discover the step-by-step legal process to challenge, dispute, and remove a written-off entry from your CIBIL or credit report. Authored by Advocate Anuj Anand Malik.",
+      "Learn legal steps to remove or rectify a written-off status on your CIBIL report. Expert guide on dispute filings, RBI complaints, and bank negotiations.",
     url: PAGE_URL,
     type: "article",
     images: [
@@ -46,9 +46,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "How to Remove a Written-Off Status from a Credit Report | AMA Legal Solutions",
+      "Remove Written-Off Status from Credit Report | AMA Legal",
     description:
-      "Step-by-step legal guide to dispute and remove a written-off entry from your CIBIL report. Expert legal advice from AMA Legal Solutions.",
+      "Learn legal steps to remove or rectify a written-off status on your CIBIL report. Expert guide on dispute filings, RBI complaints, and bank negotiations.",
     images: [OG_IMAGE],
     site: "@AMALegalSol",
     creator: "@AnujAnandMalik",

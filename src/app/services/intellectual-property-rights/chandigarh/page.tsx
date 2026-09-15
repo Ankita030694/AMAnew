@@ -6,15 +6,15 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "IPR Services in Chandigarh | Expert Trademark & Patent Attorneys",
+  title: "IPR Services in Chandigarh | AMA Legal",
   description:
-    "Secure your intellectual property in Chandigarh with AMA Legal Solutions. Comprehensive IPR services including Trademark, Patent, and Copyright registration in the Tri-City region.",
+    "Secure your intellectual property in Chandigarh with AMA Legal Solutions. Comprehensive IPR services including Trademark, Patent, and Copyright.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/chandigarh',
   },
   openGraph: {
-    title: "IPR Services in Chandigarh | Expert Trademark & Patent Attorneys",
-    description: "Secure your intellectual property in Chandigarh with AMA Legal Solutions. Comprehensive IPR services including Trademark, Patent, and Copyright registration in the Tri-City region.",
+    title: "IPR Services in Chandigarh | AMA Legal",
+    description: "Secure your intellectual property in Chandigarh with AMA Legal Solutions. Comprehensive IPR services including Trademark, Patent, and Copyright.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/chandigarh",
     type: "website",
     images: [

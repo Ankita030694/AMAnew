@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import ArticleDetail, { Blog, FAQ, Review } from "./blogdetail";
 import PerformanceMonitor from '../../../components/PerformanceMonitor';
 import Navbar from "@/newcomp/Navbar";
+import { formatMetaTitle, formatMetaDescription } from "@/lib/seo";
 export const revalidate = 3600; // Cache the page at the Edge for 1 hour
 
 export async function generateStaticParams() {
@@ -127,8 +128,10 @@ export async function generateMetadata(
     const blogData = await getBlogBySlug(slug);
     
     if (blogData) {
-      title = blogData.metaTitle || blogData.title || title;
-      description = blogData.metaDescription || description;
+      const rawTitle = blogData.metaTitle || blogData.title || title;
+      const rawDesc = blogData.metaDescription || description;
+      title = formatMetaTitle(rawTitle);
+      description = formatMetaDescription(rawDesc);
       image = formatAbsoluteUrl(blogData.image || blogData.infographic);
       author = blogData.author || author;
     } else {

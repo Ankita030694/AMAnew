@@ -183,9 +183,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Litigation Services in Rajasthan | High Court Lawyers Jaipur & Jodhpur",
+  title: "Litigation Services in Rajasthan | AMA Legal",
   description:
-    "Expert litigation lawyers in Rajasthan. We represent clients in Rajasthan High Court (Jodhpur & Jaipur), Board of Revenue, and District Courts. Heritage, Mining, Civil & Criminal cases.",
+    "Expert litigation lawyers in Rajasthan. We represent clients in Rajasthan High Court (Jodhpur & Jaipur), Board of Revenue, and District Courts..",
   keywords: [
     "litigation services rajasthan",
     "rajasthan high court lawyer",
@@ -202,8 +202,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/services/litigation/rajasthan',
   },
   openGraph: {
-    title: "Litigation Services in Rajasthan | High Court Lawyers Jaipur & Jodhpur",
-    description: "Expert litigation services in Rajasthan. Representing clients in Rajasthan High Court and District Courts.",
+    title: "Litigation Services in Rajasthan | AMA Legal",
+    description: "Expert litigation services in Rajasthan. Representing clients in Rajasthan High Court and District Courts Contact AMA Legal Solutions today.",
     url: "https://www.amalegalsolutions.com/services/litigation/rajasthan",
     type: "website",
     images: [

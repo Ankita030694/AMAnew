@@ -5,8 +5,8 @@ import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata = {
-  title: "Best Lawyer for Bank Harassment | Stop Illegal Recovery Agents - AMA Legal Solutions",
-  description: "Are you facing bank harassment from recovery agents? Get expert legal help from Anuj Anand Malik at AMA Legal Solutions (Sector 57, Gurugram). We stop illegal recovery calls and help settle your debt. Call 8700343611 now.",
+  title: "Best Lawyer for Bank Harassment | AMA Legal",
+  description: "Are you facing bank harassment from recovery agents? Get expert legal help from Anuj Anand Malik at AMA Legal Solutions (Sector 57, Gurugram). We stop.",
   keywords: [
     "best lawyer for bank harassment",
     "bank harassment lawyer in India",
@@ -25,7 +25,7 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/services/best-lawyer-for-bank-harassment',
   },
   openGraph: {
-    title: "Best Lawyer for Bank Harassment | Stop Illegal Recovery Agents",
+    title: "Best Lawyer for Bank Harassment | AMA Legal",
     description: "Expert legal help from Anuj Anand Malik at AMA Legal Solutions to stop bank harassment. Stop illegal recovery calls and settle your debt. Call 8700343611.",
     url: "https://www.amalegalsolutions.com/services/best-lawyer-for-bank-harassment",
     type: "article",

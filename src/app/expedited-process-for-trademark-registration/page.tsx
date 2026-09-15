@@ -112,7 +112,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Expedited Trademark Registration India | Fast-track Rule 34 Process",
+  title: "Expedited Trademark Registration India | Rule 34 Fast-Track",
   description: "Secure your brand in record time with expedited trademark registration in India. Guide to Rule 34 for Startups & MSMEs. Get expert legal help today.",
   keywords: [
     "expedited trademark registration india",

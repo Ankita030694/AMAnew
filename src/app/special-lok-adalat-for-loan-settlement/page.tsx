@@ -368,8 +368,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Special Lok Adalat for Loan Settlement 2025 | Authority Legal Guide",
-  description: "Drowning in debt? Discover how Special Lok Adalats provide a 100% legal way to settle bank loans with up to 80% waivers. 2025 schedules, procedures, and expert legal help inside.",
+  title: "Special Lok Adalat for Loan Settlement | Legal Guide",
+  description: "Discover how Special Lok Adalats provide a legal way to settle bank loans with substantial waivers. Complete guide to schedules, procedures, and legal help.",
   keywords: [
     "special lok adalat for loan settlement",
     "national lok adalat schedule 2025",

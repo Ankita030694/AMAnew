@@ -2,14 +2,14 @@ import { Metadata } from 'next';
 import HowToSettleLoanClient from './client';
 
 export const metadata: Metadata = {
-  title: 'How to Settle Loan with Bank in India (2025 Guide) | AMA Legal Solutions',
-  description: 'Master the legal process of loan settlement in India with our comprehensive 2025 guide. Learn about RBI guidelines, OTS schemes, and borrower rights to settle your debts legally.',
+  title: 'How to Settle Loan with Bank in India | Legal Guide',
+  description: 'Learn the legal process of loan settlement with banks in India. Understand RBI rules, OTS schemes, and borrower rights to settle debt and stop harassment.',
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/how-to-settle-loan-with-bank',
   },
   openGraph: {
-    title: 'How to Settle Loan with Bank in India (2025 Guide) | AMA Legal Solutions',
-    description: 'Master the legal process of loan settlement in India with our comprehensive 2025 guide. Learn about RBI guidelines, OTS schemes, and borrower rights.',
+    title: 'How to Settle Loan with Bank in India | Legal Guide',
+    description: 'Learn the legal process of loan settlement with banks in India. Understand RBI rules, OTS schemes, and borrower rights to settle debt and stop harassment.',
     url: 'https://www.amalegalsolutions.com/how-to-settle-loan-with-bank',
     siteName: 'AMA Legal Solutions',
     images: [

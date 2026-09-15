@@ -200,9 +200,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Lawyers in Jaipur | Top Law Firm for High Court & Property | AMA Legal Solutions",
+  title: "Lawyers in Jaipur | Top Law Firm for High Court & Property",
   description:
-    "Expert Lawyers in Jaipur for Rajasthan High Court, JDA Property Disputes, Heritage Law, and Family Matters. Best advocates for Civil Litigation and Mining Law.",
+    "Expert Lawyers in Jaipur for Rajasthan High Court, JDA Property Disputes, Heritage Law, and Family Matters. Best advocates for Civil Litigation and.",
   keywords: [
     "lawyers in jaipur",
     "law firm in jaipur",
@@ -222,7 +222,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Lawyers in Jaipur | Expert Legal Services Rajasthan",
-    description: "Leading legal representation in Jaipur. Specializing in High Court writs, Real Estate, and Heritage Law.",
+    description: "Leading legal representation in Jaipur. Specializing in High Court writs, Real Estate, and Heritage Law Contact AMA Legal Solutions today.",
     url: "https://www.amalegalsolutions.com/locations/jaipur",
     type: "website",
     images: [

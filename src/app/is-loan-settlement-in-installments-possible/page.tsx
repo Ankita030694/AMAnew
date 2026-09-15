@@ -147,7 +147,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Is Loan Settlement in Installments Possible? | 100% Proven Strategies",
+  title: "Is Loan Settlement in Installments Possible? | Legal Guide",
   description: "Find out if loan settlement in installments is possible in India. Discover legal ways to reduce debt and pay in EMI settlements without facing harassment.",
   keywords: [
     "is loan settlement in installments possible",
@@ -161,7 +161,7 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/is-loan-settlement-in-installments-possible',
   },
   openGraph: {
-    title: "Is Loan Settlement in Installments Possible? | 100% Proven Strategies",
+    title: "Is Loan Settlement in Installments Possible? | Legal Guide",
     description: "Find out if loan settlement in installments is possible in India. Discover legal ways to reduce debt and pay in EMI settlements without facing harassment.",
     url: "https://www.amalegalsolutions.com/is-loan-settlement-in-installments-possible",
     type: "website",

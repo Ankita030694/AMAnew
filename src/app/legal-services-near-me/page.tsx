@@ -232,8 +232,8 @@ const serviceSchema = {
 
 
 export const metadata = {
-  title: "Legal Services Near Me | Expert Lawyers & Consultation | AMA Legal Solutions",
-  description: "Searching for legal services near me? Get instant access to top advocates for property, divorce, criminal, and business law. Trusted legal support across India.",
+  title: "Legal Services Near Me | Expert Lawyers Consultation",
+  description: "Searching for legal services near me? Get instant access to top advocates for property, divorce, criminal, and business law across India.",
   keywords: [
     "legal services near me",
     "legal advice near me",

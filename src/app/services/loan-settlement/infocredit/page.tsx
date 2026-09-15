@@ -164,9 +164,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Infocredit (Fibe) Loan Settlement | Professional Legal Help by AMA Legal Solutions",
+  title: "Infocredit (Fibe) Loan Settlement | AMA Legal",
   description:
-    "End your Infocredit debt problems properly. AMA Legal Solutions provides specialized settlement services for Fibe app borrowers. founded by anuj anand malik, we resolve cases from sector 57. call 8700343611.",
+    "End your Infocredit debt problems properly. AMA Legal Solutions provides specialized settlement services for Fibe app borrowers. founded by anuj anand.",
   keywords: [
     "Infocredit loan settlement",
     "Fibe loan default help",
@@ -181,8 +181,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/infocredit',
   },
   openGraph: {
-    title: "Infocredit (Fibe) Debt Settlement Experts | Legal Resolution in India",
-    description: "Resolve your Infocredit outstanding dues through a professional legal settlement. our firm in sector 57 will protect your rights and stop all harassment. call 8700343611 today.",
+    title: "Infocredit (Fibe) Debt Settlement Experts | AMA Legal",
+    description: "Resolve your Infocredit outstanding dues through a professional legal settlement. our firm in sector 57 will protect your rights and stop all.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/infocredit",
     type: "website",
     images: [{ url: "/services/3.png", width: 1200, height: 630, alt: "Infocredit Loan Settlement Services" }],

@@ -158,7 +158,7 @@ const reviewSchema = {
 export const metadata = {
   title: "Can Loan Settlement Be Done in Installments? | Legal Guide",
   description:
-    "Wondering if you can pay your settled loan amount in installments? Read our expert guide on structured settlements, RBI rules, and how AMA Legal Solutions helps you get the best deal.",
+    "Can you pay a loan settlement in installments? Learn how structured settlements work under RBI rules and how to negotiate flexible payment plans in India.",
   keywords: [
     "can settlement be done in installments",
     "loan settlement in installments india",

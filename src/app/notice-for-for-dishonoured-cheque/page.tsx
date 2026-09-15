@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/notice-for-for-dishonoured-cheque',
   },
-  title: "Notice for for Dishonoured Cheque: Section 138 Legal Guide 2026",
+  title: "Notice for Dishonoured Cheque: Section 138 Legal Guide",
   description:
-    "Comprehensive legal guide on sending a notice for for dishonoured cheque under Section 138 of the NI Act. Learn the procedure, timelines, and recovery strategies.",
+    "Complete legal guide on issuing a notice for a dishonoured cheque under Section 138 NI Act. Learn the procedure, timelines, and debt recovery strategies.",
   keywords: "notice for for dishonoured cheque, cheque bounce notice section 138, legal notice for cheque bounce, cheque bounce recovery process, ni act section 138 notice format",
 };
 

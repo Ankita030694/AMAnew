@@ -166,7 +166,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Who Provides Loan Settlement Solutions with Minimal Processing Fees? (2025 Guide)",
+  title: "Affordable Loan Settlement with Minimal Fees | AMA Legal",
   description:
     "Don't overpay for debt relief. Find loan settlement solutions with minimal processing fees. Compare costs of AMA Legal, FREED, SettleLoans. Cheap & Reliable.",
   keywords: [
@@ -185,8 +185,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/who-provides-loan-settlement-solutions-with-minimal-processing-fees',
   },
   openGraph: {
-    title: "Who Provides Loan Settlement Solutions with Minimal Processing Fees?",
-    description: "Save money on your settlement. Find the most affordable and transparent loan settlement services in India.",
+    title: "Affordable Loan Settlement with Minimal Fees | AMA Legal",
+    description: "Don't overpay for debt relief. Find loan settlement solutions with minimal processing fees. Compare costs of AMA Legal, FREED, SettleLoans. Cheap & Reliable.",
     url: "https://www.amalegalsolutions.com/who-provides-loan-settlement-solutions-with-minimal-processing-fees",
     type: "article",
     images: [

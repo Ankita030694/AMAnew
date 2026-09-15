@@ -9,7 +9,7 @@ const OG_IMAGE =
 export const metadata: Metadata = {
   title: "Credit Card Settlement in September 2026 | AMA Legal",
   description:
-    "Settle credit card debt in September 2026 under RBI compromise norms. Leverage Q2 bank balance sheet write-offs, stop collection agent harassment, and obtain official NDCs.",
+    "Settle credit card debt in September 2026 under RBI norms. Leverage Q2 bank write-offs, stop recovery agent harassment, and secure official NDCs.",
   keywords: [
     "credit card settlement in september 2026",
     "credit card settlement legal advisory",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Credit Card Settlement in September 2026 | AMA Legal",
     description:
-      "Settle credit card debt in September 2026 under RBI compromise norms. Leverage Q2 bank balance sheet write-offs, stop collection agent harassment, and obtain official NDCs.",
+      "Settle credit card debt in September 2026 under RBI norms. Leverage Q2 bank write-offs, stop recovery agent harassment, and secure official NDCs.",
     url: PAGE_URL,
     type: "article",
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Credit Card Settlement in September 2026 | AMA Legal",
     description:
-      "Settle credit card debt in September 2026 under RBI compromise norms. Leverage Q2 bank balance sheet write-offs, stop collection agent harassment, and obtain official NDCs.",
+      "Settle credit card debt in September 2026 under RBI norms. Leverage Q2 bank write-offs, stop recovery agent harassment, and secure official NDCs.",
     images: [OG_IMAGE],
     site: "@AMALegalSol",
     creator: "@AnujAnandMalik",

@@ -213,9 +213,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Employer Not Paying Salary After Resignation? Legal Help for Recovery",
+  title: "Employer Not Paying Salary After Resignation? Legal Help",
   description:
-    "Struggling with unpaid salary after resignation? AMA Legal Solutions provides expert legal help to recover your FNF dues, salary, and gratuity. Stop harassment and get what is yours.",
+    "Employer not paying salary or FNF after resignation? Get expert legal help to send legal notices, recover unpaid dues, and protect employee rights in India.",
   keywords: [
     "employer not paying salary after resignation",
     "salary recovery legal notice",

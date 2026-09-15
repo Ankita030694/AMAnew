@@ -117,8 +117,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "YES Bank Settlement Waiver Percentage: Ultimate Negotiation Guide",
-  description: "Discover exactly how YES Bank calculates settlement waivers. Uncover the internal forgiveness matrix, DPD role, hardship factors, and strategies for a maximum discount.",
+  title: "YES Bank Loan Settlement Waiver Percentage | AMA Legal",
+  description: "Discover how YES Bank calculates settlement waivers. Learn how DPD, hardship factors, and legal negotiation secure maximum loan discounts with AMA Legal.",
   keywords: [
     "yes bank settlement waiver percentage",
     "yes bank loan settlement",
@@ -131,8 +131,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/settlement-waiver-percentage-of-yes-bank-loans',
   },
   openGraph: {
-    title: "YES Bank Settlement Waiver Percentage: Ultimate Negotiation Guide",
-    description: "Discover exactly how YES Bank calculates settlement waivers. Uncover the internal forgiveness matrix, DPD role, hardship factors, and strategies for a maximum discount.",
+    title: "YES Bank Loan Settlement Waiver Percentage | AMA Legal",
+    description: "Discover how YES Bank calculates settlement waivers. Learn how DPD, hardship factors, and legal negotiation secure maximum loan discounts with AMA Legal.",
     url: 'https://www.amalegalsolutions.com/settlement-waiver-percentage-of-yes-bank-loans',
     siteName: 'AMA Legal Solutions',
     images: [

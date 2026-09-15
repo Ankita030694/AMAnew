@@ -1,15 +1,15 @@
 import JammuKashmirClient from "./JammuKashmirClient";
 
 export const metadata = {
-  title: "Intellectual Property Rights Services in Jammu & Kashmir | Trademark & Patent",
+  title: "Intellectual Property Rights Services in Jammu & Kashmir",
   description:
-    "Expert IPR services in Jammu & Kashmir. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets today.",
+    "Expert IPR services in Jammu & Kashmir. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/jammu-and-kashmir',
   },
   openGraph: {
-    title: "Intellectual Property Rights Services in Jammu & Kashmir | Trademark & Patent",
-    description: "Expert IPR services in Jammu & Kashmir. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets today.",
+    title: "Intellectual Property Rights Services in Jammu & Kashmir",
+    description: "Expert IPR services in Jammu & Kashmir. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/jammu-and-kashmir",
     type: "website",
     images: [

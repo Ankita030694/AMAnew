@@ -214,7 +214,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Litigation Services in India | AMA Legal Solutions",
-    description: "Top litigation lawyers in India for civil, criminal, corporate, and High Court matters with AMA Legal Solutions.",
+    description: "Top litigation lawyers in India for civil, criminal, corporate, and High Court matters with AMA Legal Solutions Contact AMA Legal Solutions today.",
     url: "https://www.amalegalsolutions.com/services/litigation",
     type: "website",
     images: [

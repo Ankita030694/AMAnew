@@ -8,10 +8,17 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/which-companies-offer-professional-debt-settlement-services-for-personal-loans',
   },
-  title: "Debt Settlement Services for Personal Loans India",
+  title: "Personal Loan Debt Settlement Companies in India | AMA",
   description:
-    "Looking for professional debt settlement services for personal loans in India? Explore top companies, legal protections, and how to settle your debt legally with our expert guide.",
+    "Explore professional debt settlement services for personal loans in India. Learn legal protections, compare companies, and settle debt with AMA Legal.",
   keywords: "debt settlement companies india, personal loan settlement services, professional debt relief, one time settlement india, stop recovery agent harassment, loan settlement lawyer",
+  openGraph: {
+    title: "Personal Loan Debt Settlement Companies in India | AMA",
+    description:
+      "Explore professional debt settlement services for personal loans in India. Learn legal protections, compare companies, and settle debt with AMA Legal.",
+    url: 'https://www.amalegalsolutions.com/which-companies-offer-professional-debt-settlement-services-for-personal-loans',
+    type: "article",
+  },
 };
 
 const sections = [

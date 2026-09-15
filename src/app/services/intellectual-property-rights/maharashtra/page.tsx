@@ -6,15 +6,15 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Intellectual Property Rights in Maharashtra | Expert IP Lawyers Mumbai",
+  title: "Intellectual Property Rights in Maharashtra | AMA Legal",
   description:
-    "Protect your brand & innovation in Maharashtra. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Mumbai, Pune & across the state.",
+    "Protect your brand & innovation in Maharashtra. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Mumbai, Pune & across the.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/maharashtra',
   },
   openGraph: {
-    title: "Intellectual Property Rights in Maharashtra | Expert IP Lawyers Mumbai",
-    description: "Protect your brand & innovation in Maharashtra. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Mumbai, Pune & across the state.",
+    title: "Intellectual Property Rights in Maharashtra | AMA Legal",
+    description: "Protect your brand & innovation in Maharashtra. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Mumbai, Pune & across the.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/Maharashtra",
     type: "website",
     images: [

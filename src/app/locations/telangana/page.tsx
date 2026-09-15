@@ -216,9 +216,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Lawyers in Telangana | Loan Settlement & Trademark Experts Hyderabad",
+  title: "Lawyers in Telangana | AMA Legal",
   description:
-    "Expert Legal Services in Telangana. Specialized in Loan Settlement, Trademark Registration, High Court Litigation & Corporate Law. Trusted by Hyderabad's businesses & individuals.",
+    "Expert Legal Services in Telangana. Specialized in Loan Settlement, Trademark Registration, High Court Litigation & Corporate Law for Hyderabad businesses.",
   keywords: [
     "lawyers in telangana",
     "advocates in hyderabad",

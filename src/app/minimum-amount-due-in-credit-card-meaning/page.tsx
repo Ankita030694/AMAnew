@@ -214,9 +214,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Minimum Amount Due in Credit Card Meaning | Avoid the Debt Trap",
+  title: "Minimum Amount Due in Credit Card Explained | AMA Legal",
   description:
-    "What is the minimum amount due on a credit card? Learn why paying only the minimum is a dangerous debt trap. Discover calculation methods, interest costs, and expert debt relief tips.",
+    "Understand minimum amount due in credit cards, hidden interest costs, calculation methods, and legal debt relief solutions from AMA Legal Solutions.",
   keywords: [
     "minimum amount due in credit card meaning",
     "how to calculate minimum amount due",
@@ -234,9 +234,9 @@ export const metadata = {
       "https://www.amalegalsolutions.com/minimum-amount-due-in-credit-card-meaning",
   },
   openGraph: {
-    title: "Minimum Amount Due in Credit Card Meaning | Avoid the Debt Trap",
+    title: "Minimum Amount Due in Credit Card Explained | AMA Legal",
     description:
-      "What is the minimum amount due on a credit card? Learn why paying only the minimum is a dangerous debt trap. Discover calculation methods, interest costs, and expert debt relief tips.",
+      "Understand minimum amount due in credit cards, hidden interest costs, calculation methods, and legal debt relief solutions from AMA Legal Solutions.",
     url: "https://www.amalegalsolutions.com/minimum-amount-due-in-credit-card-meaning",
     type: "website",
     images: [

@@ -164,8 +164,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "40L Unsecured Debt in India: What to Do? Self vs Debt Settlement",
-  description: "Struggling with 40 Lakhs debt? Compare self-repayment vs debt settlement. Expert legal help from AMA Legal Solutions, founded by Anuj Anand Malik in Sector 57. Call 8700343611.",
+  title: "40L Unsecured Debt in India: Self vs Debt Settlement",
+  description: "Struggling with 40 Lakhs debt? Compare self-repayment vs debt settlement programs. Expert legal advice from AMA Legal Solutions to reduce debt legally.",
   keywords: [
     "40L unsecured debt",
     "debt settlement india",

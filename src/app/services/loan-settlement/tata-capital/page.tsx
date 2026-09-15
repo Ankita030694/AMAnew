@@ -9,14 +9,14 @@ import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUnivers
 
 // Metadata
 export const metadata = {
-  title: "Tata Capital Loan Settlement | OTS Scheme 2025 | AMA Legal Solutions",
-  description: "Struggling with Tata Capital Personal, Housing, or Business loan repayment? Expert legal help for Tata Capital loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
+  title: "Tata Capital Loan Settlement | AMA Legal",
+  description: "Struggling with Tata Capital Personal, Housing, or Business loan repayment? Expert legal help for Tata Capital loan settlement. Reduce your debt with.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/tata-capital',
   },
   openGraph: {
-    title: "Tata Capital Loan Settlement | OTS Scheme 2025 | AMA Legal Solutions",
-    description: "Struggling with Tata Capital Personal, Housing, or Business loan repayment? Expert legal help for Tata Capital loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
+    title: "Tata Capital Loan Settlement | AMA Legal",
+    description: "Struggling with Tata Capital Personal, Housing, or Business loan repayment? Expert legal help for Tata Capital loan settlement. Reduce your debt with.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/tata-capital",
     type: "website",
     images: [

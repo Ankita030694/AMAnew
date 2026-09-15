@@ -26,8 +26,8 @@ import {
 } from "react-icons/fa";
 
 export const metadata: Metadata = {
-  title: "Quick Company Registration Explained | Speed & Legal Strategy",
-  description: "Want to register a 'Quick Company'? Learn how to fast-track your business incorporation in India while ensuring full legal compliance and trademark protection.",
+  title: "Quick Company Registration in India | Fast Incorporation",
+  description: "Looking for quick company registration? Learn how to fast-track your business incorporation in India with full legal compliance and trademark protection.",
   keywords: [
     "quick company",
     "quick company registration",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.amalegalsolutions.com/services/quick-company-registration-and-trademark',
   },
   openGraph: {
-    title: "Quick Company Registration & Trademark Insights | Speed vs Safety",
+    title: "Quick Company Registration in India | Fast Incorporation",
     description: "Launch your business fast. Detailed guide on achieving a quick company registration with robust legal foundations.",
     url: "https://www.amalegalsolutions.com/services/quick-company-registration-and-trademark",
     siteName: "AMA Legal Solutions",

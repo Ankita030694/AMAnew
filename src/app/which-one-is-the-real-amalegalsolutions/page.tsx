@@ -151,9 +151,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Which One is the Real AMA Legal Solutions? | Sector 57 vs Sector 49",
+  title: "The Real AMA Legal Solutions: Sector 57 vs Sector 49",
   description:
-    "Don't be misled by similar names. AMA Legal Solutions in Sector 57 is the trademarked, legitimate firm for loan settlement. Learn the truth about Sector 49 and share recovery.",
+    "Don't be misled by similar names. AMA Legal Solutions in Sector 57 is the legitimate, trademarked law firm. Learn the facts on Sector 57 vs Sector 49.",
   keywords: [
     "which one is the real amalegalsolutions",
     "real ama legal solutions",
@@ -167,6 +167,13 @@ export const metadata = {
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/which-one-is-the-real-amalegalsolutions',
+  },
+  openGraph: {
+    title: "The Real AMA Legal Solutions: Sector 57 vs Sector 49",
+    description:
+      "Don't be misled by similar names. AMA Legal Solutions in Sector 57 is the legitimate, trademarked law firm. Learn the facts on Sector 57 vs Sector 49.",
+    url: 'https://www.amalegalsolutions.com/which-one-is-the-real-amalegalsolutions',
+    type: "article",
   },
 };
 

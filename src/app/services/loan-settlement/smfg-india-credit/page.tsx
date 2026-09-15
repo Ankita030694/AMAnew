@@ -9,14 +9,14 @@ import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUnivers
 
 // Metadata
 export const metadata = {
-  title: "SMFG India Credit Loan Settlement | OTS Scheme & Process | AMA Legal Solutions",
-  description: "Struggling with SMFG India Credit (formerly Fullerton India) loan repayment? Expert legal help for loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
+  title: "SMFG India Credit Loan Settlement | AMA Legal",
+  description: "Struggling with SMFG India Credit (formerly Fullerton India) loan repayment? Expert legal help for loan settlement. Reduce your debt with One Time.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/smfg-india-credit',
   },
   openGraph: {
-    title: "SMFG India Credit Loan Settlement | OTS Scheme & Process | AMA Legal Solutions",
-    description: "Struggling with SMFG India Credit (formerly Fullerton India) loan repayment? Expert legal help for loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
+    title: "SMFG India Credit Loan Settlement | AMA Legal",
+    description: "Struggling with SMFG India Credit (formerly Fullerton India) loan repayment? Expert legal help for loan settlement. Reduce your debt with One Time.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/smfg-india-credit",
     type: "website",
     images: [

@@ -283,8 +283,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Steps to Trademark Registration in India | 2026 Full Legal Guide",
-  description: "Master the steps to trademark registration in India with our 5000+ word expert guide. Includes Section 9/11 analysis, landmark case laws, and Madrid Protocol insights.",
+  title: "Steps to Trademark Registration in India | Full Legal Guide",
+  description: "Master trademark registration steps in India with our expert legal guide. Includes Section 9 & 11 analysis, case laws, and Madrid Protocol insights.",
   keywords: [
     "steps to trademark registration",
     "trademark registration process india",

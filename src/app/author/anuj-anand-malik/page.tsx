@@ -5,14 +5,14 @@ import { FaLinkedin } from 'react-icons/fa';
 import AnujBhiya from '@/components/aboutcomps/AnujBhiya';
 
 export const metadata: Metadata = {
-  title: "Anuj Anand Malik | Founder & Managing Partner | AMA Legal Solutions",
-  description: "Learn more about Anuj Anand Malik, founder and managing partner at AMA Legal Solutions, leading advocate specializing in loan settlement, banking dispute resolution, and corporate law.",
+  title: "Anuj Anand Malik | Founder & Managing Partner | AMA Legal",
+  description: "Meet Anuj Anand Malik, Founder & Managing Partner at AMA Legal Solutions. Leading advocate in loan settlement, banking disputes, and corporate law.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/author/anuj-anand-malik',
   },
   openGraph: {
-    title: "Anuj Anand Malik | Founder & Managing Partner | AMA Legal Solutions",
-    description: "Learn more about Anuj Anand Malik, founder and managing partner at AMA Legal Solutions, leading advocate specializing in loan settlement, banking dispute resolution, and corporate law.",
+    title: "Anuj Anand Malik | Founder & Managing Partner | AMA Legal",
+    description: "Meet Anuj Anand Malik, Founder & Managing Partner at AMA Legal Solutions. Leading advocate in loan settlement, banking disputes, and corporate law.",
     url: 'https://www.amalegalsolutions.com/author/anuj-anand-malik',
     type: 'profile',
   },

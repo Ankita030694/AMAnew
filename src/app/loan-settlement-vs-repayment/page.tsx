@@ -106,8 +106,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Loan Settlement vs Repayment: Which is Better? | AMA Legal Solutions",
-  description: "Struggling to choose between loan settlement or repayment? Read our 5000+ words guide on the pros, cons, and CIBIL impact of both. Expert legal help at 8700343611.",
+  title: "Loan Settlement vs Repayment: Which is Better? | AMA Legal",
+  description: "Choosing between loan settlement and repayment? Read our comprehensive legal guide on the pros, cons, and CIBIL score impacts of both options.",
   keywords: [
     "loan settlement vs repayment",
     "loan settlement pros and cons",

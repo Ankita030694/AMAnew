@@ -112,8 +112,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Bajaj Finance Agent Visiting Home | Stop Harassment Legal Guide 2025",
-  description: "Are Bajaj Finance recovery agents visiting your home? Stop illegal visits & social shaming for ₹999. Learn your rights under RBI rules & Supreme Court mandates. Protect your home.",
+  title: "Bajaj Finance Agent Visiting Home | Legal Protection",
+  description: "Are Bajaj Finance agents visiting your home? Stop illegal visits and harassment legally under RBI guidelines and Supreme Court mandates with AMA Legal.",
   keywords: [
     "bajaj finance agent visiting home",
     "bajaj finance recovery agent harassment",

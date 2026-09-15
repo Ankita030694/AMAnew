@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/can-debt-settlement-be-removed-from-credit-report',
   },
-  title: "Can Debt Settlement Be Removed From Credit Report? Legal Guide",
+  title: "Can Debt Settlement Be Removed from Credit Report? Guide",
   description:
-    "Learn if debt settlement can be removed from your credit report in India. Discover the legal procedure to change 'Settled' to 'Closed' status and boost your CIBIL score.",
+    "Can debt settlement be removed from credit reports? Learn legal steps in India to change 'Settled' to 'Closed' status and boost your CIBIL score.",
   keywords: "can debt settlement be removed from credit report, remove settled status from cibil, debt settlement impact on credit score, cibil dispute resolution, how to increase cibil score after settlement",
 };
 

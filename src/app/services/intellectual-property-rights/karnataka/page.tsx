@@ -1,15 +1,15 @@
 import ClientPage from "./ClientPage";
 
 export const metadata = {
-  title: "Intellectual Property Rights Services in Karnataka | Trademark & Patent",
+  title: "Intellectual Property Rights Services in Karnataka",
   description:
-    "Expert IPR services in Karnataka. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets today.",
+    "Expert IPR services in Karnataka. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/karnataka',
   },
   openGraph: {
-    title: "Intellectual Property Rights Services in Karnataka | Trademark & Patent",
-    description: "Expert IPR services in Karnataka. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets today.",
+    title: "Intellectual Property Rights Services in Karnataka",
+    description: "Expert IPR services in Karnataka. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/karnataka",
     type: "website",
     images: [

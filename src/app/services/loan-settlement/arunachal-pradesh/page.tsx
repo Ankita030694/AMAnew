@@ -123,9 +123,9 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: "Loan Settlement in Arunachal Pradesh | Debt Relief Lawyers Itanagar",
+  title: "Loan Settlement in Arunachal Pradesh | AMA Legal",
   description:
-    "Best loan settlement services in Arunachal Pradesh (Itanagar, Naharlagun, Pasighat). Legally settle personal loans & credit cards. Stop bank harassment today.",
+    "Best loan settlement services in Arunachal Pradesh (Itanagar, Naharlagun, Pasighat). Legally settle personal loans & credit cards. Stop bank harassment.",
   keywords: [
     "loan settlement Arunachal Pradesh",
     "debt settlement Itanagar",

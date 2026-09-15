@@ -197,9 +197,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Is Trademark Registration Mandatory to Sell on Amazon? | Expert Guide",
+  title: "Is Trademark Mandatory to Sell on Amazon? | Legal Guide",
   description:
-    "Planning to sell on Amazon? Find out if trademark registration is mandatory. Learn about Amazon Brand Registry, protecting your listings, and why successful sellers choose to register.",
+    "Planning to sell on Amazon? Find out if trademark registration is mandatory. Learn about Amazon Brand Registry benefits and listing protection strategies.",
   keywords: [
     "is trademark registration mandatory to sell on amazon",
     "amazon brand registry india",
@@ -216,7 +216,7 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/is-trademark-registration-mandatory-to-sell-on-amazon',
   },
   openGraph: {
-    title: "Is Trademark Registration Mandatory to Sell on Amazon? | Expert Guide",
+    title: "Is Trademark Mandatory to Sell on Amazon? | Legal Guide",
     description: "Planning to sell on Amazon? Find out if trademark registration is mandatory. Learn about Amazon Brand Registry and protecting your listings.",
     url: "https://www.amalegalsolutions.com/is-trademark-registration-mandatory-to-sell-on-amazon",
     type: "website",

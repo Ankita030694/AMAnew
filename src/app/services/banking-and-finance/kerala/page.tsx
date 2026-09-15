@@ -3,16 +3,16 @@ import Script from "next/script";
 import KeralaBankingClient from "./KeralaBankingClient";
 
 export const metadata = {
-  title: "Banking and Finance Services in Kerala | Gold Loan & NBFC Registration",
+  title: "Banking and Finance Services in Kerala | AMA Legal",
   description:
-    "Expert legal consultancy for Banking & Finance in Kerala. Services include Gold Loan NBFC Registration, Chitty Business, Nidhi Company, & DRT Litigation in Kochi.",
+    "Expert legal consultancy for Banking & Finance in Kerala. Services include Gold Loan NBFC Registration, Chitty Business, Nidhi Company, & DRT Litigation.",
   alternates: {
     canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/kerala",
   },
   openGraph: {
-    title: "Banking and Finance Services in Kerala | Gold Loan & NBFC Registration",
+    title: "Banking and Finance Services in Kerala | AMA Legal",
     description:
-      "Expert legal consultancy for Banking & Finance in Kerala. Services include Gold Loan NBFC Registration, Chitty Business, Nidhi Company, & DRT Litigation in Kochi.",
+    "Expert legal consultancy for Banking & Finance in Kerala. Services include Gold Loan NBFC Registration, Chitty Business, Nidhi Company, & DRT Litigation.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/kerala",
     siteName: "AMA Legal Solutions",
     locale: "en_US",

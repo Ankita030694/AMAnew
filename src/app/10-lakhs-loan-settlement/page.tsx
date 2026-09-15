@@ -186,7 +186,7 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/10-lakhs-loan-settlement',
   },
-  title: "10 Lakhs Loan Settlement India | Expert Legal Guide to Debt Relief",
+  title: "10 Lakhs Loan Settlement India | Legal Debt Relief Guide",
   description: "Struggling with a 10 lakhs loan? Our expert lawyers provide a comprehensive guide to loan settlement, RBI rules, and how to save up to 70% on your debt.",
   keywords: [
     "10 lakhs loan settlement",

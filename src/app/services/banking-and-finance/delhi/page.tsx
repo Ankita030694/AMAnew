@@ -1,16 +1,16 @@
 import DelhiBankingClient from "./DelhiBankingClient";
 
 export const metadata = {
-  title: "Banking and Finance Services in Delhi | NBFC & Fintech Legal Experts",
+  title: "Banking and Finance Services in Delhi | AMA Legal",
   description:
-    "Expert legal services for Banking, Finance, and NBFC registration in Delhi. We assist with RBI compliance, Fintech regulations, and Money Lending licenses in New Delhi and NCR.",
+    "Expert legal services for Banking, Finance, and NBFC registration in Delhi. We assist with RBI compliance, Fintech regulations, and Money Lending.",
   alternates: {
     canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/delhi",
   },
   openGraph: {
-    title: "Banking and Finance Services in Delhi | NBFC & Fintech Legal Experts",
+    title: "Banking and Finance Services in Delhi | AMA Legal",
     description:
-      "Expert legal services for Banking, Finance, and NBFC registration in Delhi. We assist with RBI compliance, Fintech regulations, and Money Lending licenses in New Delhi and NCR.",
+    "Expert legal services for Banking, Finance, and NBFC registration in Delhi. We assist with RBI compliance, Fintech regulations, and Money Lending.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/delhi",
     type: "website",
     images: [

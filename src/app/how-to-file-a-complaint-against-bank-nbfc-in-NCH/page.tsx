@@ -8,9 +8,9 @@ const OG_IMAGE =
 
 export const metadata: Metadata = {
   title:
-    "How to File a Complaint Against a Bank or an NBFC in NCH: Legal Guide & Consumer Helpline Procedure | AMA Legal Solutions",
+    "How to File a Complaint Against Bank or NBFC in NCH",
   description:
-    "Comprehensive legal guide on how to file a complaint against a bank or an NBFC in NCH under the Consumer Protection Act, 2019. Learn INGRAM portal escalation, 1915 helpline protocol, recovery harassment defense, and advocate-led fixed advisory.",
+    "Learn how to file a complaint against a bank or NBFC with the National Consumer Helpline (NCH) under CPA 2019. Expert legal escalation guide by AMA Legal.",
   keywords: [
     "how to file a complaint against a bank or an nbfc in NCH",
     "how to file complaint against bank in national consumer helpline",
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "How to File a Complaint Against a Bank or an NBFC in NCH: Legal Guide & Consumer Helpline Procedure | AMA Legal Solutions",
+      "How to File a Complaint Against Bank or NBFC in NCH",
     description:
-      "Comprehensive legal guide on how to file a complaint against a bank or an NBFC in NCH under the Consumer Protection Act, 2019. Learn INGRAM portal escalation, 1915 helpline protocol, recovery harassment defense, and advocate-led fixed advisory.",
+      "Learn how to file a complaint against a bank or NBFC with the National Consumer Helpline (NCH) under CPA 2019. Expert legal escalation guide by AMA Legal.",
     url: PAGE_URL,
     type: "article",
     images: [

@@ -3,16 +3,16 @@ import Script from "next/script";
 import HimachalPradeshBankingClient from "./HimachalPradeshBankingClient";
 
 export const metadata = {
-  title: "Banking and Finance Services in Himachal Pradesh | NBFC & MFI Registration",
+  title: "Banking and Finance Services in Himachal Pradesh | AMA Legal",
   description:
-    "Expert legal consultancy for Banking & Finance in Himachal Pradesh. Services include NBFC Registration, Microfinance setup, Nidhi Company, Money Lenders License & DRT Litigation in Shimla.",
+    "Expert legal consultancy for Banking & Finance in Himachal Pradesh. Services include NBFC Registration, Microfinance setup, Nidhi Company, Money Lenders.",
   alternates: {
     canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/himachal-pradesh",
   },
   openGraph: {
-    title: "Banking and Finance Services in Himachal Pradesh | NBFC & MFI Registration",
+    title: "Banking and Finance Services in Himachal Pradesh | AMA Legal",
     description:
-      "Expert legal consultancy for Banking & Finance in Himachal Pradesh. Services include NBFC Registration, Microfinance setup, Nidhi Company, Money Lenders License & DRT Litigation in Shimla.",
+    "Expert legal consultancy for Banking & Finance in Himachal Pradesh. Services include NBFC Registration, Microfinance setup, Nidhi Company, Money Lenders.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/himachal-pradesh",
     siteName: "AMA Legal Solutions",
     locale: "en_US",

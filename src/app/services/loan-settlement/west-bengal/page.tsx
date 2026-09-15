@@ -6,16 +6,16 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement in West Bengal | Expert Debt Relief Lawyers Kolkata",
+  title: "Loan Settlement in West Bengal | AMA Legal",
   description:
-    "Struggling with debt in West Bengal? AMA Legal Solutions offers expert loan settlement services in Kolkata, Howrah & across the state. Stop harassment & settle legally.",
+    "Struggling with debt in West Bengal? AMA Legal Solutions offers expert loan settlement services in Kolkata, Howrah & across the state. Stop harassment &.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/west-bengal',
   },
   openGraph: {
-    title: "Loan Settlement in West Bengal | Expert Debt Relief Lawyers Kolkata",
-    description: "Struggling with debt in West Bengal? AMA Legal Solutions offers expert loan settlement services in Kolkata, Howrah & across the state. Stop harassment & settle legally.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/West Bengal",
+    title: "Loan Settlement in West Bengal | AMA Legal",
+    description: "Struggling with debt in West Bengal? AMA Legal Solutions offers expert loan settlement services in Kolkata, Howrah & across the state. Stop harassment &.",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/west bengal",
     type: "website",
     images: [
       {

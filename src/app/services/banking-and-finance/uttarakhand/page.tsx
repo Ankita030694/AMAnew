@@ -5,13 +5,13 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/banking-and-finance/uttarakhand',
   },
-  title: "Banking and Finance Services in Uttarakhand | AMA Legal Solutions",
+  title: "Banking and Finance Services in Uttarakhand | AMA Legal",
   description:
     "Expert legal consultancy for banking and finance in Uttarakhand. NBFC registration in Dehradun, tourism finance, and hydropower project lending.",
   openGraph: {
-    title: "Banking and Finance Services in Uttarakhand | AMA Legal Solutions",
+    title: "Banking and Finance Services in Uttarakhand | AMA Legal",
     description:
-      "Expert legal consultancy for banking and finance in Uttarakhand. NBFC registration in Dehradun, tourism finance, and hydropower project lending.",
+    "Expert legal consultancy for banking and finance in Uttarakhand. NBFC registration in Dehradun, tourism finance, and hydropower project lending.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/uttarakhand",
     siteName: "AMA Legal Solutions",
     locale: "en_US",

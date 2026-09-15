@@ -6,14 +6,14 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Intellectual Property Rights in Puducherry | Trademark & Patent Attorneys",
+  title: "Intellectual Property Rights in Puducherry | AMA Legal",
   description:
-    "Secure your brand in Puducherry. AMA Legal Solutions offers expert IPR services for Tourism, Handicrafts (GI Tags), and Pharma industries. Litigation support at Madras High Court.",
+    "Secure your brand in Puducherry. AMA Legal Solutions offers expert IPR services for Tourism, Handicrafts (GI Tags), and Pharma industries. Litigation.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/puducherry',
   },
   openGraph: {
-    title: "Intellectual Property Rights in Puducherry | Trademark & Patent Attorneys",
+    title: "Intellectual Property Rights in Puducherry | AMA Legal",
     description: "Secure your brand in Puducherry. AMA Legal Solutions offers expert IPR services for Tourism, Handicrafts (GI Tags), and Pharma industries.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/puducherry",
     type: "website",

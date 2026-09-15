@@ -200,9 +200,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Lawyers in Haryana | High Court Chandigarh | Loan Settlement & Trademarks",
+  title: "Lawyers in Haryana | AMA Legal",
   description:
-    "Expert lawyers in Haryana for Punjab & Haryana High Court litigation, Loan Settlement in Gurgaon/Faridabad, RERA, and Trademark Registration. Top rated legal services.",
+    "Expert lawyers in Haryana for Punjab & Haryana High Court litigation, Loan Settlement in Gurgaon/Faridabad, RERA, and Trademark Registration. Top rated.",
   keywords: [
     "Lawyers in Haryana",
     "Advocates in Gurgaon",
@@ -220,7 +220,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Lawyers in Haryana | High Court & Corporate Legal Services",
-    description: "Expert legal representation in Haryana. Corporate, Civil, Criminal, and RERA services by AMA Legal Solutions.",
+    description: "Expert legal representation in Haryana. Corporate, Civil, Criminal, and RERA services by AMA Legal Solutions Contact AMA Legal Solutions today.",
     url: "https://www.amalegalsolutions.com/locations/haryana",
     type: "website",
     images: [

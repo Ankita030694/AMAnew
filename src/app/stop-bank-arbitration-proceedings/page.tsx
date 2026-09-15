@@ -169,7 +169,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "How to Stop Bank Arbitration Proceedings | AMA Legal",
-  description: "Discover actionable legal steps to stop bank arbitration proceedings. Learn how to challenge unilateral arbitrator appointments and protect your rights in India.",
+  description: "Discover legal steps to stop bank arbitration proceedings in India. Learn how to challenge unilateral arbitrator appointments and protect your borrower rights.",
   robots: {
     index: true,
     follow: true,

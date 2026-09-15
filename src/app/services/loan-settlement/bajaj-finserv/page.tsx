@@ -9,14 +9,14 @@ import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUnivers
 
 // Metadata
 export const metadata = {
-  title: "Bajaj Finserv Loan Settlement | OTS Scheme & Process | AMA Legal Solutions",
-  description: "Struggling with Bajaj Finserv loan or EMI card repayment? Expert legal help for Bajaj Finserv loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
+  title: "Bajaj Finserv Loan Settlement | AMA Legal",
+  description: "Struggling with Bajaj Finserv loan or EMI card repayment? Expert legal help for Bajaj Finserv loan settlement. Reduce your debt with One Time Settlement.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/bajaj-finserv',
   },
   openGraph: {
-    title: "Bajaj Finserv Loan Settlement | OTS Scheme & Process | AMA Legal Solutions",
-    description: "Struggling with Bajaj Finserv loan or EMI card repayment? Expert legal help for Bajaj Finserv loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
+    title: "Bajaj Finserv Loan Settlement | AMA Legal",
+    description: "Struggling with Bajaj Finserv loan or EMI card repayment? Expert legal help for Bajaj Finserv loan settlement. Reduce your debt with One Time Settlement.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/bajaj-finserv",
     type: "website",
     images: [

@@ -141,7 +141,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Cheque Bounce Case Jurisdiction Rules in India",
-  description: "Learn how the specific court jurisdiction defined under Section 138 dictates where a cheque bounce case must be filed, and how creditors legally enforce recovery.",
+  description: "Understand court jurisdiction under Section 138 NI Act. Learn where a cheque bounce case must be filed and how creditors legally enforce recovery.",
   keywords: [
     "cheque bounce case jurisdiction",
     "section 138 jurisdiction",
@@ -155,7 +155,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Cheque Bounce Case Jurisdiction Rules in India",
-    description: "Learn how the specific court jurisdiction defined under Section 138 dictates where a cheque bounce case must be filed, and how creditors legally enforce recovery.",
+    description: "Understand court jurisdiction under Section 138 NI Act. Learn where a cheque bounce case must be filed and how creditors legally enforce recovery.",
     url: 'https://www.amalegalsolutions.com/cheque-bounce-case-jurisdiction',
     siteName: 'AMA Legal Solutions',
     images: [

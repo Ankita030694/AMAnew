@@ -10,13 +10,13 @@ import { MdCreditScore, MdMoneyOff } from "react-icons/md";
 
 // Metadata
 export const metadata = {
-  title: "Standard Chartered Loan Settlement | Credit Card OTS | AMA Legal Solutions",
+  title: "Standard Chartered Loan Settlement | AMA Legal",
   description: "Struggling with Standard Chartered Bank loan or credit card dues? Expert legal help for One Time Settlement (OTS). Stop harassment and legal action.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/standard-chartered',
   },
   openGraph: {
-    title: "Standard Chartered Loan Settlement | Credit Card OTS | AMA Legal Solutions",
+    title: "Standard Chartered Loan Settlement | AMA Legal",
     description: "Struggling with Standard Chartered Bank loan or credit card dues? Expert legal help for One Time Settlement (OTS). Stop harassment and legal action.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/standard-chartered",
     type: "website",

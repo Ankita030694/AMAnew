@@ -6,8 +6,8 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Best Apps for Managing Loan Settlement Offers in India (2025 Guide)",
-  description: "Discover the best apps for managing loan settlement offers in India. Compare top platforms like AMA App, SingleDebt, and FREED to negotiate duties and regain financial freedom.",
+  title: "Best Apps for Loan Settlement Offers in India | Guide",
+  description: "Discover the best apps for managing loan settlement offers in India. Compare top platforms like AMA App, SingleDebt, and FREED to resolve debt legally.",
   keywords: [
     "best apps for managing loan settlement offers in India",
     "loan settlement apps India",
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
     canonical: 'https://www.amalegalsolutions.com/best-apps-for-managing-loan-settlement-offers-in-India',
   },
   openGraph: {
-      title: "Best Apps for Managing Loan Settlement Offers in India | Expert Guide",
-      description: "Looking for the best apps for managing loan settlement offers in India? We review the top digital platforms and legal services to help you settle your debt.",
+      title: "Best Apps for Loan Settlement Offers in India | Guide",
+      description: "Discover the best apps for managing loan settlement offers in India. Compare top platforms like AMA App, SingleDebt, and FREED to resolve debt legally.",
       url: "https://www.amalegalsolutions.com/best-apps-for-managing-loan-settlement-offers-in-India",
       type: "article",
       images: [

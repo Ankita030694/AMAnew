@@ -10,14 +10,14 @@ import { MdRealEstateAgent, MdMoneyOff } from "react-icons/md";
 
 // Metadata
 export const metadata = {
-  title: "South Indian Bank Loan Settlement | Gold & Personal Loan OTS | AMA Legal Solutions",
-  description: "Struggling with South Indian Bank loan repayment? Expert legal help for settling Gold Loans, Personal Loans, and Business Loans. Stop auction and harassment.",
+  title: "South Indian Bank Loan Settlement | AMA Legal",
+  description: "Struggling with South Indian Bank loan repayment? Expert legal help for settling Gold Loans, Personal Loans, and Business Loans. Stop auction and.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/south-indian-bank',
   },
   openGraph: {
-    title: "South Indian Bank Loan Settlement | Gold & Personal Loan OTS | AMA Legal Solutions",
-    description: "Struggling with South Indian Bank loan repayment? Expert legal help for settling Gold Loans, Personal Loans, and Business Loans. Stop auction and harassment.",
+    title: "South Indian Bank Loan Settlement | AMA Legal",
+    description: "Struggling with South Indian Bank loan repayment? Expert legal help for settling Gold Loans, Personal Loans, and Business Loans. Stop auction and.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/south-indian-bank",
     type: "website",
     images: [

@@ -13,7 +13,7 @@ export const metadata = {
   },
   title: "IPR Services in Uttarakhand | IP Registration",
   description:
-    "Leading IPR services in Uttarakhand. We assist with Trademark, Patent, Copyright, and GI registration. Protect your innovations with expert legal guidance in Dehradun, Haridwar, and beyond.",
+    "Leading IPR services in Uttarakhand. We assist with Trademark, Patent, Copyright, and GI registration. Protect your innovations with expert legal.",
   keywords: [
     "IPR services in Uttarakhand",
     "Trademark registration Uttarakhand",
@@ -27,10 +27,9 @@ export const metadata = {
     "Trade Secret protection Uttarakhand",
   ],
   openGraph: {
-    title:
-      "IPR Services in Uttarakhand | Expert Intellectual Property Registration",
+    title: "IPR Services in Uttarakhand | AMA Legal",
     description:
-      "Secure your intellectual property in Uttarakhand with our expert services. From Trademarks to GI tags, we provide comprehensive legal support.",
+    "Secure your intellectual property in Uttarakhand with our expert services. From Trademarks to GI tags, we provide comprehensive legal support.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/uttarakhand",
     siteName: "AMA Legal Solutions",
     locale: "en_IN",

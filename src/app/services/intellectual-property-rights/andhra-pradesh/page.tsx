@@ -1,15 +1,15 @@
 import AndhraPradeshClient from "./AndhraPradeshClient";
 
 export const metadata = {
-  title: "Intellectual Property Rights Services in Andhra Pradesh | Trademark & Patent",
+  title: "Intellectual Property Rights Services in Andhra Pradesh",
   description:
-    "Expert IPR services in Andhra Pradesh. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets today.",
+    "Expert IPR services in Andhra Pradesh. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/andhra-pradesh',
   },
   openGraph: {
-    title: "Intellectual Property Rights Services in Andhra Pradesh | Trademark & Patent",
-    description: "Expert IPR services in Andhra Pradesh. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets today.",
+    title: "Intellectual Property Rights Services in Andhra Pradesh",
+    description: "Expert IPR services in Andhra Pradesh. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/andhra-pradesh",
     type: "website",
     images: [

@@ -123,7 +123,7 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: "Loan Settlement in Puducherry | Debt Relief Lawyers Pondicherry",
+  title: "Loan Settlement in Puducherry | AMA Legal",
   description:
     "Expert loan settlement in Puducherry (Pondicherry, Karaikal). Legally settle personal loans & credit cards. Stop agent harassment & save up to 50%.",
   keywords: [

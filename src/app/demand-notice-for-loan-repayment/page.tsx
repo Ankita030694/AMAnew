@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/demand-notice-for-loan-repayment',
   },
-  title: "Demand Notice for Loan Repayment: Legal Guide & Process in India",
+  title: "Demand Notice for Loan Repayment: Legal Guide & Process",
   description:
-    "Facing a demand notice for loan repayment? Learn the legal requirements, RBI guidelines, and how to respond. A comprehensive guide for borrowers to handle bank notices and settlement.",
+    "Facing a loan repayment demand notice? Learn the legal requirements, RBI guidelines, and how to reply or negotiate an OTS settlement with our legal experts.",
   keywords: "demand notice for loan repayment, legal notice for loan default, bank recovery notice india, sarfaesi notice response, debt recovery notice legal guide, how to reply to bank demand notice",
 };
 

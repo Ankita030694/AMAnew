@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/cheque-bounce-notice',
   },
-  title: "Cheque Bounce Notice Section 138 NI Act: Legal Process & Format",
+  title: "Cheque Bounce Notice Section 138 NI Act: Legal Process",
   description:
-    "Cheque bounce notice under Section 138 of the NI Act. Learn the step-by-step legal procedure, mandatory timelines, and how to recover your money legally with our expert guide.",
+    "Draft a cheque bounce notice under Section 138 NI Act. Learn the mandatory 30-day timeline, legal procedure, and debt recovery steps with expert lawyers.",
   keywords: "cheque bounce notice, section 138 ni act, legal notice for cheque bounce, cheque bounce case procedure, cheque bounce penalty india, how to file cheque bounce case",
 };
 

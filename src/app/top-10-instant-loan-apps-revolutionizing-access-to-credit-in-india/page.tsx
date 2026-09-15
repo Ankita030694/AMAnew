@@ -21,10 +21,17 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/top-10-instant-loan-apps-revolutionizing-access-to-credit-in-india',
   },
-  title: "Top 10 Instant Loan Apps in India (2025)",
+  title: "Top 10 Instant Loan Apps in India | AMA Legal Solutions",
   description:
-    "Discover the top 10 instant loan apps in India for 2025. Compare interest rates, features, and eligibility for apps like MoneyView, KreditBee, and Navi. Get quick credit access today.",
-  keywords: "top 10 instant loan apps india, best instant loan apps 2025, quick personal loan india, kreditbee vs moneyview, instant credit access india, personal loan app reviews india",
+    "Discover the top 10 instant loan apps in India. Compare interest rates, eligibility, features, and RBI digital lending safety tips with AMA Legal.",
+  keywords: "top 10 instant loan apps india, best instant loan apps 2026, quick personal loan india, kreditbee vs moneyview, instant credit access india, personal loan app reviews india",
+  openGraph: {
+    title: "Top 10 Instant Loan Apps in India | AMA Legal Solutions",
+    description:
+      "Discover the top 10 instant loan apps in India. Compare interest rates, eligibility, features, and RBI digital lending safety tips with AMA Legal.",
+    url: 'https://www.amalegalsolutions.com/top-10-instant-loan-apps-revolutionizing-access-to-credit-in-india',
+    type: "article",
+  },
 };
 
 const sections = [

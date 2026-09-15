@@ -188,8 +188,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Loan Settlement Advocate Near Me | Expert Debt Relief Lawyers",
-  description: "Searching for a loan settlement advocate near me? AMA Legal Solutions provides expert legal help to settle loans, stop harassment, and reduce debt by up to 50%. Free consultation.",
+  title: "Loan Settlement Advocate Near Me | Debt Relief Lawyers",
+  description: "Find an expert loan settlement advocate near you. We provide legal defense against recovery harassment, negotiate bank settlements, and reduce your debt.",
   keywords: [
     "loan settlement advocate near me",
     "debt settlement lawyer near me",

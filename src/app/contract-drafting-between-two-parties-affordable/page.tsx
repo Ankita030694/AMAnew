@@ -167,7 +167,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Affordable Contract Drafting Between Two Parties in India | AMA",
+  title: "Affordable Two-Party Contract Drafting | AMA Legal",
   description: "Learn how two parties can secure affordable, legally binding contract drafting without expensive corporate retainers. Protect your financial interests today.",
   robots: {
     index: true,

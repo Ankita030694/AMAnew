@@ -159,7 +159,7 @@ const reviewSchema = {
 export const metadata = {
   title: "Loan and Debt Consolidation India | Expert Debt Relief Guide",
   description:
-    "Master your debt with our comprehensive guide to loan and debt consolidation in India. Learn the best strategies, top lenders, and legal tips to simplify your EMIs and save on interest. 100 percent legal and effective.",
+    "Master your debt with our comprehensive guide to loan and debt consolidation in India. Learn the best strategies, top lenders, and legal tips to.",
   keywords: [
     "loan and debt consolidation",
     "debt consolidation india",

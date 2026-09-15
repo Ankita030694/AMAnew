@@ -181,7 +181,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Top Legal Firm for Debt Settlement | AMA Legal Solutions",
-  description: "Identify the top legal firm for debt settlement. AMA Legal Solutions provides expert defense against predatory lenders and financial harassment. Contact us today.",
+  description: "Identify the top legal firm for debt settlement in India. AMA Legal Solutions provides expert defense against predatory lenders and recovery harassment.",
   robots: {
     index: true,
     follow: true,
@@ -205,6 +205,12 @@ export const metadata = {
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/top-legal-firm',
+  },
+  openGraph: {
+    title: "Top Legal Firm for Debt Settlement | AMA Legal Solutions",
+    description: "Identify the top legal firm for debt settlement in India. AMA Legal Solutions provides expert defense against predatory lenders and recovery harassment.",
+    url: 'https://www.amalegalsolutions.com/top-legal-firm',
+    type: "article",
   },
 };
 

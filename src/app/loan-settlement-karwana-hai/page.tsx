@@ -5,9 +5,9 @@ const PAGE_URL = "https://www.amalegalsolutions.com/loan-settlement-karwana-hai"
 const OG_IMAGE = "/images/og/loan-settlement-karwana-hai.png";
 
 export const metadata: Metadata = {
-  title: "Loan Settlement Karwana Hai? Complete Legal Process & RBI OTS Guide",
+  title: "Loan Settlement Karwana Hai? Legal Process & RBI Guide",
   description:
-    "Agar aapko loan settlement karwana hai toh janein Reserve Bank of India (RBI) OTS guidelines, advocate-led debt negotiation, recovery agent protection, aur authentic No Dues Certificate lene ka certified legal process.",
+    "Loan settlement karwana hai? Janein RBI OTS guidelines, advocate negotiation, harassment protection, aur authentic No Dues Certificate lene ka legal process.",
   keywords: [
     "loan settlement karwana hai",
     "loan settlement kaise kare",
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "Loan Settlement Karwana Hai? Complete Legal Process & RBI OTS Guide",
+    title: "Loan Settlement Karwana Hai? Legal Process & RBI Guide",
     description:
-      "Agar aapko loan settlement karwana hai toh janein Reserve Bank of India (RBI) OTS guidelines, advocate-led debt negotiation, recovery agent protection, aur authentic No Dues Certificate lene ka certified legal process.",
+      "Loan settlement karwana hai? Janein RBI OTS guidelines, advocate negotiation, harassment protection, aur authentic No Dues Certificate lene ka legal process.",
     url: PAGE_URL,
     type: "article",
     images: [
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Loan Settlement Karwana Hai? Complete Legal Process & RBI OTS Guide",
+    title: "Loan Settlement Karwana Hai? Legal Process & RBI Guide",
     description:
-      "Agar aapko loan settlement karwana hai toh janein Reserve Bank of India (RBI) OTS guidelines, advocate-led debt negotiation, recovery agent protection, aur authentic No Dues Certificate lene ka certified legal process.",
+      "Loan settlement karwana hai? Janein RBI OTS guidelines, advocate negotiation, harassment protection, aur authentic No Dues Certificate lene ka legal process.",
     images: [OG_IMAGE],
     site: "@AMALegalSol",
     creator: "@AnujAnandMalik",

@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import AssamBankingClient from "./AssamBankingClient";
 
 export const metadata: Metadata = {
-  title: "Banking and Finance Services in Assam | NBFC, MFI & DRT Lawyers",
+  title: "Banking and Finance Services in Assam | AMA Legal",
   description:
-    "Premier legal consultancy for Banking & Finance in Assam. Expert guidance on NBFC Registration, Microfinance Act 2020 compliance, Tea Industry Loans, NEDFi schemes, and DRT Guwahati litigation.",
+    "Banking and finance legal services in Assam. Expert guidance on NBFC compliance, microfinance laws, tea industry loans, and DRT Guwahati with AMA Legal.",
   keywords: [
     "Banking and Finance Services Assam",
     "NBFC Registration Guwahati",
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     "Finance Company Registration Assam",
   ],
   openGraph: {
-    title: "Banking and Finance Legal Services in Assam",
+    title: "Banking and Finance Services in Assam | AMA Legal",
     description:
-      "Expert legal support for financial institutions in Assam. From NBFC setup in Guwahati to DRT litigation and Tea Industry finance.",
+      "Banking and finance legal services in Assam. Expert guidance on NBFC compliance, microfinance laws, tea industry loans, and DRT Guwahati with AMA Legal.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/assam",
     siteName: "AMA Legal Solutions",
     locale: "en_US",
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Banking and Finance Services in Assam | AMA Legal Solutions",
+    title: "Banking and Finance Services in Assam | AMA Legal",
     description:
-      "Specialized legal services for NBFCs, MFIs, and Banks in Assam. Expert in DRT Guwahati and local financial regulations.",
+      "Banking and finance legal services in Assam. Expert guidance on NBFC compliance, microfinance laws, tea industry loans, and DRT Guwahati with AMA Legal.",
   },
   alternates: {
     canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/assam",

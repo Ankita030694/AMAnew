@@ -3,16 +3,16 @@ import Script from "next/script";
 import SikkimBankingClient from "./SikkimBankingClient";
 
 export const metadata = {
-  title: "Banking and Finance Services in Sikkim | NBFC Registration & Tax-Free Investment",
+  title: "Banking and Finance Services in Sikkim | AMA Legal",
   description:
-    "Expert legal consultancy for Banking & Finance in Sikkim. Services include NBFC Registration, Industrial Finance in Tax-Free Zones, Nidhi Company, Money Lenders License & DRT Litigation in Gangtok.",
+    "Expert legal consultancy for Banking & Finance in Sikkim. Services include NBFC Registration, Industrial Finance in Tax-Free Zones, Nidhi Company, Money.",
   alternates: {
     canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/sikkim",
   },
   openGraph: {
-    title: "Banking and Finance Services in Sikkim | NBFC Registration & Tax-Free Investment",
+    title: "Banking and Finance Services in Sikkim | AMA Legal",
     description:
-      "Expert legal consultancy for Banking & Finance in Sikkim. Services include NBFC Registration, Industrial Finance in Tax-Free Zones, Nidhi Company, Money Lenders License & DRT Litigation in Gangtok.",
+    "Expert legal consultancy for Banking & Finance in Sikkim. Services include NBFC Registration, Industrial Finance in Tax-Free Zones, Nidhi Company, Money.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/sikkim",
     siteName: "AMA Legal Solutions",
     locale: "en_US",

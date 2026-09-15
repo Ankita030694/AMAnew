@@ -6,16 +6,16 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement in Punjab | Debt Relief Lawyers Ludhiana, Jalandhar",
+  title: "Loan Settlement in Punjab | AMA Legal",
   description:
-    "Struggling with business or personal debt in Punjab? AMA Legal Solutions offers expert loan settlement in Ludhiana, Jalandhar, Amritsar. Protect your business & settle legally.",
+    "Struggling with business or personal debt in Punjab? AMA Legal Solutions offers expert loan settlement in Ludhiana, Jalandhar, Amritsar. Protect your.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/punjab',
   },
   openGraph: {
-    title: "Loan Settlement in Punjab | Debt Relief Lawyers Ludhiana, Jalandhar",
-    description: "Struggling with business or personal debt in Punjab? AMA Legal Solutions offers expert loan settlement in Ludhiana, Jalandhar, Amritsar. Protect your business & settle legally.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Punjab",
+    title: "Loan Settlement in Punjab | AMA Legal",
+    description: "Struggling with business or personal debt in Punjab? AMA Legal Solutions offers expert loan settlement in Ludhiana, Jalandhar, Amritsar. Protect your.",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/punjab",
     type: "website",
     images: [
       {

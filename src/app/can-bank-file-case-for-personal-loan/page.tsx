@@ -158,7 +158,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Can Bank File Case for Personal Loan? - Legal Recovery Guide",
-  description: "Wondering if a bank can file a case for personal loan default? Read our 5000-word guide on civil suits, criminal charges, and how to defend your rights in India.",
+  description: "Can a bank file a case for personal loan default in India? Read our complete legal guide on civil suits, Section 138 notices, and borrower defense rights.",
   keywords: [
     "can bank file case for personal loan",
     "personal loan default legal action",

@@ -8,10 +8,17 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/what-are-the-best-loan-settlement-services-near-me',
   },
-  title: "Best Loan Settlement Services Near Me | India",
+  title: "Best Loan Settlement Services Near Me | AMA Legal",
   description:
-    "Looking for the best loan settlement services near you? AMA Legal Solutions provides expert legal aid to settle personal loans, credit cards, and business debts with banks. Stop harassment and get debt relief now.",
+    "Looking for top loan settlement services near you? AMA Legal Solutions provides expert legal aid to settle loans, stop harassment, and clear bank debts.",
   keywords: "best loan settlement services near me, loan settlement companies india, debt resolution services, settle personal loan with bank, credit card settlement lawyer, ama legal solutions debt settlement",
+  openGraph: {
+    title: "Best Loan Settlement Services Near Me | AMA Legal",
+    description:
+      "Looking for top loan settlement services near you? AMA Legal Solutions provides expert legal aid to settle loans, stop harassment, and clear bank debts.",
+    url: 'https://www.amalegalsolutions.com/what-are-the-best-loan-settlement-services-near-me',
+    type: "article",
+  },
 };
 
 const sections = [

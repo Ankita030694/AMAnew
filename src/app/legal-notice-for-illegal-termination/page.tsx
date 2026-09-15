@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/legal-notice-for-illegal-termination',
   },
-  title: "Legal Notice for Illegal Termination | Stop Wrongful Dismissal in India",
+  title: "Legal Notice for Illegal Termination | Wrongful Dismissal",
   description:
-    "Facing illegal termination? Learn your legal rights under the Industrial Disputes Act and Indian Contract Act. Send a legal notice for reinstatement, back wages, and compensation.",
+    "Facing wrongful dismissal? Learn your rights under labour laws and send a formal legal notice for reinstatement, back wages, and statutory compensation.",
   keywords: "legal notice for illegal termination, wrongful termination india, illegal dismissal laws, industrial disputes act termination, reinstatement after illegal firing, labour law notice period, compensation for unfair dismissal",
 };
 

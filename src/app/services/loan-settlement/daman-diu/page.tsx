@@ -7,15 +7,15 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement in Daman & Diu | #1 Dadra & Nagar Haveli Debt Recovery Lawyers",
+  title: "Loan Settlement in Daman & Diu | AMA Legal",
   description:
-    "Expert loan settlement services in Daman, Diu, and Dadra & Nagar Haveli (Silvassa). Comprehensive legal aid for personal loans and MSME debt. Settle with 40-70% waivers through DRT Ahmedabad & Bombay High Court.",
+    "Expert loan settlement services in Daman, Diu, and Dadra & Nagar Haveli (Silvassa). Comprehensive legal aid for personal loans and MSME debt. Settle.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/daman-diu',
   },
   openGraph: {
-    title: "Loan Settlement in Daman & Diu | #1 Dadra & Nagar Haveli Debt Recovery Lawyers",
-    description: "Expert debt relief for the residents and industries of Daman, Diu, and Silvassa. Stop harassment and settle loans legally through RBI-governed One Time Settlement (OTS).",
+    title: "Loan Settlement in Daman & Diu | AMA Legal",
+    description: "Expert debt relief for the residents and industries of Daman, Diu, and Silvassa. Stop harassment and settle loans legally through RBI-governed One Time.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/daman-diu",
     type: "website",
     images: [

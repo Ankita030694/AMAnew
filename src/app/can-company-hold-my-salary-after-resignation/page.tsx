@@ -107,9 +107,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Can Company Hold My Salary After Resignation? Legal Rights in India",
+  title: "Can Company Hold My Salary After Resignation? Legal Guide",
   description:
-    "Is your company withholding your salary post-resignation? Learn about the legal validity of salary holds, your rights under Indian labor laws, and how to recover your dues.",
+    "Is your company withholding salary after resignation? Learn your rights under Indian labor laws, legal timelines, and steps to recover unpaid dues.",
   keywords: [
     "can company hold salary after resignation",
     "legal validity of salary withholding",

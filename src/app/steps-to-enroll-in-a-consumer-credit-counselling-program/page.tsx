@@ -169,7 +169,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Steps to Enroll in a Consumer Credit Counselling Program | AMA Legal Solutions",
+  title: "Steps to Enroll in Credit Counselling in India | AMA Legal",
   description: "Discover the exact roadmap to enroll in a consumer credit counselling program in India without falling for fake agencies. A step-by-step guide for borrowers.",
   robots: {
     index: true,
@@ -193,6 +193,12 @@ export const metadata = {
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/steps-to-enroll-in-a-consumer-credit-counselling-program',
+  },
+  openGraph: {
+    title: "Steps to Enroll in Credit Counselling in India | AMA Legal",
+    description: "Discover the exact roadmap to enroll in a consumer credit counselling program in India without falling for fake agencies. A step-by-step guide for borrowers.",
+    url: 'https://www.amalegalsolutions.com/steps-to-enroll-in-a-consumer-credit-counselling-program',
+    type: "article",
   },
 };
 

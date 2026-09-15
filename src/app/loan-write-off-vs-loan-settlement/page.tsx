@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Loan Write-Off vs Loan Settlement in India | Key Differences",
-  description: "Understand the critical differences between a bank loan write-off and a loan settlement. Learn how each impacts your CIBIL score, debt liability, and recovery rights.",
+  description: "Understand key differences between a bank loan write-off and a loan settlement. Learn how each impacts your CIBIL score, debt liability, and recovery rights.",
   alternates: {
     canonical: "https://www.amalegalsolutions.com/loan-write-off-vs-loan-settlement",
   },

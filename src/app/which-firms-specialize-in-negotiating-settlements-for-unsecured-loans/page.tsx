@@ -6,7 +6,7 @@ import TableOfContents from "../../components/TableOfContents";
 import Breadcrumbs from "../../components/Breadcrumbs";
 
 export const metadata = {
-  title: "Which Firms Specialize in Negotiating Settlements for Unsecured Loans? (2025)",
+  title: "Unsecured Loan Settlement Firms in India | AMA Legal",
   description:
     "Not all debt relief agencies can handle unsecured loans. Find specialists for Credit Card & Personal Loan settlement who can stop harassment and legal action.",
   keywords: [
@@ -23,8 +23,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/which-firms-specialize-in-negotiating-settlements-for-unsecured-loans',
   },
   openGraph: {
-    title: "Which Firms Specialize in Negotiating Settlements for Unsecured Loans?",
-    description: "Expert guide to settling unsecured debt without legal risks. Compare top specialists.",
+    title: "Unsecured Loan Settlement Firms in India | AMA Legal",
+    description: "Not all debt relief agencies can handle unsecured loans. Find specialists for Credit Card & Personal Loan settlement who can stop harassment and legal action.",
     url: "https://www.amalegalsolutions.com/which-firms-specialize-in-negotiating-settlements-for-unsecured-loans",
     type: "article",
     images: [

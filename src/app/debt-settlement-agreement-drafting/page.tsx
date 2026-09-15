@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/debt-settlement-agreement-drafting',
   },
-  title: "Debt Settlement Agreement Drafting: Expert Guide & Legal Best Practices",
+  title: "Debt Settlement Agreement Drafting | Legal Guide",
   description:
-    "Learn how to draft a legally binding debt settlement agreement in India. Understand key clauses, stamp duty requirements, and RBI guidelines for full and final settlement.",
+    "Learn how to draft a legally binding debt settlement agreement in India. Master key clauses, stamp duty, and RBI guidelines for full settlement.",
   keywords: "debt settlement agreement drafting, legal debt settlement india, draft settlement letter bank, full and final settlement agreement format, debt relief legal drafting",
 };
 

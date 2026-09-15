@@ -9,7 +9,7 @@ const OG_IMAGE =
 export const metadata: Metadata = {
   title: "Pay Day Loan Settlement in September 2026 | AMA Legal",
   description:
-    "Settle predatory payday loans, instant short-term app debt, and fintech credit in September 2026 under RBI compromise norms. Stop recovery harassment and secure authentic No Dues Certificates with expert legal advisory.",
+    "Settle predatory payday loans and app debt in September 2026 under RBI norms. Stop harassment and secure authentic No Dues Certificates with AMA Legal.",
   keywords: [
     "pay day loan settlement in september 2026",
     "payday loan debt settlement india",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Pay Day Loan Settlement in September 2026 | AMA Legal",
     description:
-      "Settle predatory payday loans, instant short-term app debt, and fintech credit in September 2026 under RBI compromise norms. Stop recovery harassment and secure authentic No Dues Certificates with expert legal advisory.",
+      "Settle predatory payday loans and app debt in September 2026 under RBI norms. Stop harassment and secure authentic No Dues Certificates with AMA Legal.",
     url: PAGE_URL,
     type: "article",
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pay Day Loan Settlement in September 2026 | AMA Legal",
     description:
-      "Settle predatory payday loans, instant short-term app debt, and fintech credit in September 2026 under RBI compromise norms. Stop recovery harassment and secure authentic No Dues Certificates with expert legal advisory.",
+      "Settle predatory payday loans and app debt in September 2026 under RBI norms. Stop harassment and secure authentic No Dues Certificates with AMA Legal.",
     images: [OG_IMAGE],
     site: "@AMALegalSol",
     creator: "@AnujAnandMalik",

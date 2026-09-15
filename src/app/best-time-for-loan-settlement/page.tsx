@@ -175,7 +175,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Best Time for Loan Settlement in India | Maximize Your Savings",
+  title: "Best Time for Loan Settlement in India | Maximize Savings",
   description: "Want to know when is the best time for loan settlement? Learn why timing is crucial for getting maximum waivers (up to 70%) and stopping harassment legally.",
   alternates: {
     canonical: "https://www.amalegalsolutions.com/best-time-for-loan-settlement",

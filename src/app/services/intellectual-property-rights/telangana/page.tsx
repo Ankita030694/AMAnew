@@ -14,7 +14,7 @@ export const metadata = {
   },
   title: "IPR Services in Telangana | Intellectual Property",
   description:
-    "Leading IPR services in Telangana. We assist with Trademark, Patent, Copyright, and GI registration. Protect your innovations with expert legal guidance in Hyderabad and beyond.",
+    "Leading IPR services in Telangana. We assist with Trademark, Patent, Copyright, and GI registration. Protect your innovations with expert legal guidance.",
   keywords: [
     "IPR services in Telangana",
     "Trademark registration Telangana",
@@ -28,10 +28,9 @@ export const metadata = {
     "Trade Secret protection Telangana",
   ],
   openGraph: {
-    title:
-      "IPR Services in Telangana | Expert Intellectual Property Registration",
+    title: "IPR Services in Telangana | AMA Legal",
     description:
-      "Secure your intellectual property in Telangana with our expert services. From Trademarks to GI tags, we provide comprehensive legal support.",
+    "Secure your intellectual property in Telangana with our expert services. From Trademarks to GI tags, we provide comprehensive legal support.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/telangana",
     siteName: "AMA Legal Solutions",
     locale: "en_IN",

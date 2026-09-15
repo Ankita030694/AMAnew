@@ -6,16 +6,16 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement in Rajasthan | Debt Relief Lawyers Jaipur, Jodhpur, Udaipur",
+  title: "Loan Settlement in Rajasthan | AMA Legal",
   description:
-    "Struggling with debt in Rajasthan? AMA Legal Solutions offers expert loan settlement for hotels, textile units, and individuals in Jaipur, Jodhpur, Udaipur. Settle legally & stop harassment.",
+    "Struggling with debt in Rajasthan? AMA Legal Solutions offers expert loan settlement for hotels, textile units, and individuals in Jaipur, Jodhpur.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/rajasthan',
   },
   openGraph: {
-    title: "Loan Settlement in Rajasthan | Debt Relief Lawyers Jaipur, Jodhpur, Udaipur",
-    description: "Struggling with debt in Rajasthan? AMA Legal Solutions offers expert loan settlement for hotels, textile units, and individuals in Jaipur, Jodhpur, Udaipur. Settle legally & stop harassment.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Rajasthan",
+    title: "Loan Settlement in Rajasthan | AMA Legal",
+    description: "Struggling with debt in Rajasthan? AMA Legal Solutions offers expert loan settlement for hotels, textile units, and individuals in Jaipur, Jodhpur.",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/rajasthan",
     type: "website",
     images: [
       {

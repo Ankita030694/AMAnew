@@ -10,13 +10,13 @@ import { MdAppShortcut, MdMoneyOff } from "react-icons/md";
 
 // Metadata
 export const metadata = {
-  title: "True Credits Loan Settlement | TrueBalance App OTS | AMA Legal Solutions",
+  title: "True Credits Loan Settlement | AMA Legal",
   description: "Struggling with True Credits (TrueBalance) loan repayment? Expert legal help for settling app loans. Stop harassment and legal notices.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/true-credits',
   },
   openGraph: {
-    title: "True Credits Loan Settlement | TrueBalance App OTS | AMA Legal Solutions",
+    title: "True Credits Loan Settlement | AMA Legal",
     description: "Struggling with True Credits (TrueBalance) loan repayment? Expert legal help for settling app loans. Stop harassment and legal notices.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/true-credits",
     type: "website",

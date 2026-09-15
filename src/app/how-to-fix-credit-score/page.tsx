@@ -161,7 +161,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "How to Fix Credit Score in India | Legal Repair Guide",
-  description: "Learn exactly how to fix credit score in India. A step-by-step legal roadmap to remove negative items, dispute inaccuracies, and rebuild your CIBIL score quickly.",
+  description: "Learn how to fix your credit score in India. Step-by-step legal guide to dispute inaccuracies, remove negative entries, and rebuild your CIBIL score.",
   robots: {
     index: true,
     follow: true,

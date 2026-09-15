@@ -154,7 +154,7 @@ const reviewSchema = {
 export const metadata = {
   title: "Get FSSAI Licence in 7 Days | Fast FSSAI Registration India",
   description:
-    "Looking to get FSSAI licence in 7 days? AMA Legal Solutions provides rapid FSSAI basic registration, state, and central licensing services across all Indian states and cities.",
+    "Get your FSSAI licence in 7 days with AMA Legal Solutions. We provide fast-track basic registration, state, and central food licensing across India.",
   keywords: [
     "get fssai licence in 7 days",
     "fssai license online",
@@ -171,7 +171,7 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/get-fssai-licence-in-7-days',
   },
   openGraph: {
-    title: "Get FSSAI Licence in 7 Days | Fast-Track Food License Services",
+    title: "Get FSSAI Licence in 7 Days | Fast FSSAI Registration India",
     description: "Launch your food business swiftly with our guaranteed guidance on obtaining your FSSAI registration in just a week. Serving all localities across India.",
     url: "https://www.amalegalsolutions.com/get-fssai-licence-in-7-days",
     type: "website",

@@ -10,7 +10,7 @@ export const metadata = {
   },
   title: "Does Loan Settlement Affect CIBIL? | Expert Analysis",
   description:
-    "Understand how loan settlement impacts your CIBIL score in India. Learn the difference between settled and closed status, how to remove the remark, and rebuild your credit.",
+    "Understand how loan settlement impacts your CIBIL score in India. Learn the difference between settled and closed status, and how to rebuild your credit.",
   keywords: "does loan settlement affect cibil score, loan settlement vs closure, remove settled status cibil, impact of debt settlement on credit score, rebuild cibil score after settlement",
 };
 

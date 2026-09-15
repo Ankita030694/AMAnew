@@ -6,15 +6,15 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "IPR Services in Jharkhand | Trademark & Patent Attorneys Ranchi",
+  title: "IPR Services in Jharkhand | AMA Legal",
   description:
-    "Expert Intellectual Property Rights services in Jharkhand. Secure your Trademark, Patent, and Copyright in Ranchi, Jamshedpur, and Dhanbad with AMA Legal Solutions.",
+    "Expert Intellectual Property Rights services in Jharkhand. Secure your Trademark, Patent, and Copyright in Ranchi, Jamshedpur, and Dhanbad with AMA.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/jharkhand',
   },
   openGraph: {
-    title: "IPR Services in Jharkhand | Trademark & Patent Attorneys Ranchi",
-    description: "Expert Intellectual Property Rights services in Jharkhand. Secure your Trademark, Patent, and Copyright in Ranchi, Jamshedpur, and Dhanbad with AMA Legal Solutions.",
+    title: "IPR Services in Jharkhand | AMA Legal",
+    description: "Expert Intellectual Property Rights services in Jharkhand. Secure your Trademark, Patent, and Copyright in Ranchi, Jamshedpur, and Dhanbad with AMA.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/jharkhand",
     type: "website",
     images: [

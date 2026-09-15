@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/notice-to-employee-for-breach-of-employment-contract',
   },
-  title: "Notice to Employee for Breach of Contract: Legal Remedies & Damages",
+  title: "Notice to Employee for Breach of Contract | Legal Guide",
   description:
-    "Has an employee breached their contract? Learn how to issue a legal notice for notice period violations, non-compete breaches, and confidentiality leaks in India.",
+    "Issue a legal notice to an employee for contract breach, notice period default, or confidentiality violations in India. Learn remedies and legal damages.",
   keywords: "notice to employee for breach of contract india, legal action against employee for breaking notice period, non-compete clause enforcement india, breach of confidentiality legal notice employee, damages for breach of employment contract india",
 };
 

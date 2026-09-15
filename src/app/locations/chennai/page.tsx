@@ -284,9 +284,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Lawyers in Chennai | Best High Court Advocates & Corporate Law Firm | AMA Legal Solutions",
+  title: "Lawyers in Chennai | Expert Legal Services | AMA Legal",
   description:
-    "Expert Lawyers in Chennai for Madras High Court, SaaS/IT Law, Real Estate (CMDA), and Family Matters. Top advocates for Civil Litigation and Maritime Law.",
+    "Expert lawyers in Chennai for Madras High Court, SaaS & IT law, CMDA real estate disputes, corporate advisory, and civil litigation with AMA Legal.",
   keywords: [
     "lawyers in chennai",
     "law firm in chennai",
@@ -305,8 +305,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/locations/chennai',
   },
   openGraph: {
-    title: "Lawyers in Chennai | Expert Legal Services Tamil Nadu",
-    description: "Leading legal representation in Chennai. Specializing in Madras High Court writs, Corporate Law, and Real Estate.",
+    title: "Lawyers in Chennai | Expert Legal Services | AMA Legal",
+    description: "Expert lawyers in Chennai for Madras High Court, SaaS & IT law, CMDA real estate disputes, corporate advisory, and civil litigation with AMA Legal.",
     url: "https://www.amalegalsolutions.com/locations/chennai",
     type: "website",
     images: [

@@ -8,14 +8,14 @@ import FaqSection from "./FaqSection";
 export const metadata = {
   title: "Loan Settlement in Gurugram | Expert Debt Relief Lawyers",
   description:
-    "Struggling with debt in Gurugram? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok Adalat at District Court.",
+    "Struggling with debt in Gurugram? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/gurugram',
   },
   openGraph: {
     title: "Loan Settlement in Gurugram | Expert Debt Relief Lawyers",
-    description: "Struggling with debt in Gurugram? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok Adalat at District Court.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Gurugram",
+    description: "Struggling with debt in Gurugram? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via.",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/gurugram",
     type: "website",
     images: [
       {

@@ -197,7 +197,7 @@ const personSchema = {
 
 export const metadata = {
   title: "Conciliation Process for Loan Settlement: Expert Guide",
-  description: "Understand the loan conciliation process. Learn how to respond to bank notices, utilize Lok Adalats, negotiate OTS under Section 30/73, and manage CIBIL score impacts.",
+  description: "Understand the loan conciliation process in India. Learn how to respond to notices, use Lok Adalats, negotiate OTS, and protect your legal rights.",
   keywords: [
     "conciliation process for loan settlement",
     "loan conciliation India",
@@ -215,7 +215,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Conciliation Process for Loan Settlement: Expert Guide",
-    description: "Understand the loan conciliation process. Learn how to respond to bank notices, utilize Lok Adalats, negotiate OTS under Section 30/73, and manage CIBIL score impacts.",
+    description: "Understand the loan conciliation process in India. Learn how to respond to notices, use Lok Adalats, negotiate OTS, and protect your legal rights.",
     url: 'https://www.amalegalsolutions.com/conciliation-process-for-loan-settlement',
     siteName: 'AMA Legal Solutions',
     images: [

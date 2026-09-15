@@ -9,7 +9,7 @@ const OG_IMAGE =
 export const metadata: Metadata = {
   title: "Personal Loan Settlement in September 2026 | AMA Legal",
   description:
-    "Settle personal loans in September 2026 under RBI compromise norms. Secure maximum waivers before Q2 balance-sheet closing, stop recovery harassment, and get authentic NDCs.",
+    "Settle personal loans in September 2026 under RBI norms. Secure maximum waivers, stop recovery harassment, and get authentic NDCs with AMA Legal.",
   keywords: [
     "personal loan settlement in september 2026",
     "personal loan settlement legal advisory",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Personal Loan Settlement in September 2026 | AMA Legal",
     description:
-      "Settle personal loans in September 2026 under RBI compromise norms. Secure maximum waivers before Q2 balance-sheet closing, stop recovery harassment, and get authentic NDCs.",
+      "Settle personal loans in September 2026 under RBI norms. Secure maximum waivers, stop recovery harassment, and get authentic NDCs with AMA Legal.",
     url: PAGE_URL,
     type: "article",
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Personal Loan Settlement in September 2026 | AMA Legal",
     description:
-      "Settle personal loans in September 2026 under RBI compromise norms. Secure maximum waivers before Q2 balance-sheet closing, stop recovery harassment, and get authentic NDCs.",
+      "Settle personal loans in September 2026 under RBI norms. Secure maximum waivers, stop recovery harassment, and get authentic NDCs with AMA Legal.",
     images: [OG_IMAGE],
     site: "@AMALegalSol",
     creator: "@AnujAnandMalik",

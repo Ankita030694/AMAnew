@@ -6,14 +6,14 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Intellectual Property Rights in Rajasthan | Jaipur, Jodhpur & Udaipur IP Lawyers",
+  title: "Intellectual Property Rights in Rajasthan | AMA Legal",
   description:
-    "Secure your brand in Rajasthan. AMA Legal Solutions offers expert IPR services for Jewelry, Handicrafts (GI Tags), and Tourism industries. Ahmedabad Registry & High Court support.",
+    "Secure your brand in Rajasthan. AMA Legal Solutions offers expert IPR services for Jewelry, Handicrafts (GI Tags), and Tourism industries. Ahmedabad.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/rajasthan',
   },
   openGraph: {
-    title: "Intellectual Property Rights in Rajasthan | Jaipur, Jodhpur & Udaipur IP Lawyers",
+    title: "Intellectual Property Rights in Rajasthan | AMA Legal",
     description: "Secure your brand in Rajasthan. AMA Legal Solutions offers expert IPR services for Jewelry, Handicrafts (GI Tags), and Tourism industries.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/Rajasthan",
     type: "website",

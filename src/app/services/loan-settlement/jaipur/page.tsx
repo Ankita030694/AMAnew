@@ -8,14 +8,14 @@ import FaqSection from "./FaqSection";
 export const metadata = {
   title: "Loan Settlement in Jaipur | Expert Debt Relief Lawyers",
   description:
-    "Struggling with debt in Jaipur? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok Adalat at Bani Park Court.",
+    "Struggling with debt in Jaipur? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/jaipur',
   },
   openGraph: {
     title: "Loan Settlement in Jaipur | Expert Debt Relief Lawyers",
-    description: "Struggling with debt in Jaipur? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok Adalat at Bani Park Court.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Jaipur",
+    description: "Struggling with debt in Jaipur? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok.",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/jaipur",
     type: "website",
     images: [
       {

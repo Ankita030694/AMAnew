@@ -7,14 +7,14 @@ import FaqSection from "./FaqSection";
 import Image from "next/image";
 
 export const metadata = {
-  title: "What is Loan Settlement? | Complete Guide to Debt Relief in India",
+  title: "What is Loan Settlement? | AMA Legal",
   description:
     "Understand what loan settlement is, how it works, its benefits, and its impact on your credit score. A comprehensive guide by AMA Legal Solutions.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/what-is-loan-settlement',
   },
   openGraph: {
-    title: "What is Loan Settlement? | Complete Guide to Debt Relief in India",
+    title: "What is Loan Settlement? | AMA Legal",
     description: "Understand what loan settlement is, how it works, its benefits, and its impact on your credit score. A comprehensive guide by AMA Legal Solutions.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/what-is-loan-settlement",
     type: "article",

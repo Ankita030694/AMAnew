@@ -146,7 +146,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Can Recovery Agents Abuse You? | Your Legal Rights",
-  description: "Are recovery agents harassing you? Learn if they can legally abuse you in India. Discover your rights, RBI guidelines, and how AMA Legal Solutions can stop the abuse.",
+  description: "Are recovery agents abusing you? Learn your rights under RBI guidelines and Indian law. Stop abusive collection tactics with AMA Legal Solutions.",
   keywords: [
     "can recovery agents abuse you legally india",
     "recovery agent harassment complaint",

@@ -8,14 +8,14 @@ import FaqSection from "./FaqSection";
 export const metadata = {
   title: "Loan Settlement in Maharashtra | Expert Debt Relief Lawyers",
   description:
-    "Struggling with debt in Maharashtra? AMA Legal Solutions offers expert loan settlement services in Mumbai, Pune & across the state. Stop harassment & settle legally.",
+    "Struggling with debt in Maharashtra? AMA Legal Solutions offers expert loan settlement services in Mumbai, Pune & across the state. Stop harassment &.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/maharashtra',
   },
   openGraph: {
     title: "Loan Settlement in Maharashtra | Expert Debt Relief Lawyers",
-    description: "Struggling with debt in Maharashtra? AMA Legal Solutions offers expert loan settlement services in Mumbai, Pune & across the state. Stop harassment & settle legally.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Maharashtra",
+    description: "Struggling with debt in Maharashtra? AMA Legal Solutions offers expert loan settlement services in Mumbai, Pune & across the state. Stop harassment &.",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/maharashtra",
     type: "website",
     images: [
       {

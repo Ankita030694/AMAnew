@@ -152,8 +152,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Charities That Pay Off Debt in India | Top Debt Relief Guide 2024",
-  description: "Looking for charities that pay off debt in India? Explore our comprehensive guide on NGOs, financial aid, and why AMA Legal Solutions is the #1 rated firm for legal debt relief.",
+  title: "Charities That Pay Off Debt in India | Debt Relief Guide",
+  description: "Explore charities and NGOs that help pay off debt in India. Learn about financial aid, legal debt settlement options, and borrower protection rights.",
   keywords: [
     "debt relief",
     "charities that pay off debt in India",

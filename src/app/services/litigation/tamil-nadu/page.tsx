@@ -183,9 +183,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Litigation Services in Tamil Nadu | Madras High Court Lawyers",
+  title: "Litigation Services in Tamil Nadu | AMA Legal",
   description:
-    "Expert litigation lawyers in Tamil Nadu. We represent clients in Madras High Court (Chennai & Madurai), City Civil Court, and District Courts. Civil, Criminal, Property & Commercial cases.",
+    "Expert litigation lawyers in Tamil Nadu. We represent clients in Madras High Court (Chennai & Madurai), City Civil Court, and District Courts. Civil.",
   keywords: [
     "litigation services tamil nadu",
     "madras high court lawyer",
@@ -202,7 +202,7 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/services/litigation/tamil-nadu',
   },
   openGraph: {
-    title: "Litigation Services in Tamil Nadu | Madras High Court Lawyers",
+    title: "Litigation Services in Tamil Nadu | AMA Legal",
     description: "Expert litigation services in Tamil Nadu. Representing clients in Madras High Court, City Civil Court, and District Courts.",
     url: "https://www.amalegalsolutions.com/services/litigation/tamil-nadu",
     type: "website",

@@ -3,16 +3,16 @@ import Script from "next/script";
 import ArunachalPradeshBankingClient from "./ArunachalPradeshBankingClient";
 
 export const metadata = {
-  title: "Banking and Finance Services in Arunachal Pradesh | NBFC & LPC Loans",
+  title: "Banking and Finance Services in Arunachal Pradesh",
   description:
-    "Expert legal consultancy for Banking & Finance in Arunachal Pradesh. Services include NBFC Registration in Itanagar, Land Possession Certificate (LPC) loan compliance, ILP & Trading Licenses.",
+    "Expert legal consultancy for Banking & Finance in Arunachal Pradesh. Services include NBFC Registration in Itanagar, Land Possession Certificate (LPC).",
   alternates: {
     canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/arunachal-pradesh",
   },
   openGraph: {
-    title: "Banking and Finance Services in Arunachal Pradesh | NBFC & LPC Loans",
+    title: "Banking and Finance Services in Arunachal Pradesh",
     description:
-      "Expert legal consultancy for Banking & Finance in Arunachal Pradesh. Services include NBFC Registration in Itanagar, Land Possession Certificate (LPC) loan compliance, ILP & Trading Licenses.",
+    "Expert legal consultancy for Banking & Finance in Arunachal Pradesh. Services include NBFC Registration in Itanagar, Land Possession Certificate (LPC).",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/arunachal-pradesh",
     siteName: "AMA Legal Solutions",
     locale: "en_US",

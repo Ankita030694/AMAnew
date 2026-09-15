@@ -8,10 +8,17 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/what-is-the-typical-process-for-settling-a-personal-loan-in-india',
   },
-  title: "What is the Typical Process for Settling a Personal Loan in India?",
+  title: "Personal Loan Settlement Process in India | AMA Legal",
   description:
-    "Complete guide to the personal loan settlement process in India. Learn about NPA, OTS negotiation, CIBIL impact, and how to settle your debt legally with maximum waivers.",
+    "Guide to personal loan settlement in India. Learn about NPA rules, OTS negotiations, CIBIL score impact, and legal debt waivers with AMA Legal Solutions.",
   keywords: "personal loan settlement process india, how to settle personal loan with bank, loan settlement steps, ots letter india, impact of loan settlement on cibil, rbi guidelines for loan settlement",
+  openGraph: {
+    title: "Personal Loan Settlement Process in India | AMA Legal",
+    description:
+      "Guide to personal loan settlement in India. Learn about NPA rules, OTS negotiations, CIBIL score impact, and legal debt waivers with AMA Legal Solutions.",
+    url: 'https://www.amalegalsolutions.com/what-is-the-typical-process-for-settling-a-personal-loan-in-india',
+    type: "article",
+  },
 };
 
 const sections = [

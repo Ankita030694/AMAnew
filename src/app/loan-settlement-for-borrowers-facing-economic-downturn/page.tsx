@@ -157,8 +157,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Loan Settlement for Borrowers Facing Economic Downturn | AMA Legal Solutions",
-  description: "Facing financial crisis? Get expert loan settlement help. Stop bank harassment and settle debts legally with Anuj Anand Malik. Sector 57, Gurugram. Call 8700343611.",
+  title: "Loan Settlement During Economic Downturn | AMA Legal",
+  description: "Facing financial crisis? Get expert loan settlement help from AMA Legal Solutions. Stop bank harassment and resolve unsecured debts legally in India.",
   keywords: [
     "loan settlement for borrowers facing economic downturn",
     "loan settlement during crisis",

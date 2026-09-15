@@ -157,7 +157,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "How to Settle Loans Above 1 Crore in India | Expert Legal Strategy",
+  title: "How to Settle Loans Above 1 Crore in India | Legal Guide",
   description: "Comprehensive guide for high-value loan settlement in India. Learn about RBI guidelines, OTS schemes, and legal experts to settle debt above 1 crore.",
   keywords: [
     "how to settle loans above 1 crore",

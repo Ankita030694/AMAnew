@@ -162,8 +162,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Loan Settlement for borrowers planning financial reset | AMA Legal Solutions",
-  description: "Plan your financial reset with expert loan settlement services. Guided by Anuj Anand Malik, AMA Legal Solutions in Sector 57, Gurugram helps you become debt-free. Call 8700343611.",
+  title: "Loan Settlement for Financial Reset | AMA Legal",
+  description: "Plan your financial reset with expert loan settlement services. AMA Legal Solutions helps you resolve debts, stop harassment, and become debt-free.",
   keywords: [
     "loan settlement",
     "financial reset",

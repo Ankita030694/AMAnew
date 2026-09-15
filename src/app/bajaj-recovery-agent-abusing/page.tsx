@@ -10,7 +10,7 @@ export const metadata = {
   },
   title: "Bajaj Recovery Agent Abusing? Stop Harassment & Legal Rights",
   description:
-    "Facing abuse from Bajaj recovery agents? Learn your legal rights under RBI guidelines and IPC. Stop illegal calls, verbal abuse, and threats instantly with our guide.",
+    "Facing abuse from Bajaj recovery agents? Learn your legal rights under RBI guidelines and BNS. Stop illegal calls, verbal abuse, and threats with AMA Legal.",
   keywords: "bajaj recovery agent abusing, stop bajaj agent harassment, rbi guidelines for recovery agents, illegal debt recovery tactics india, how to deal with recovery agent abuse",
 };
 

@@ -6,16 +6,16 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Intellectual Property Rights in Punjab | Trademark & Patent Lawyers Ludhiana Jalandhar",
+  title: "Intellectual Property Rights in Punjab | AMA Legal",
   description:
-    "Protect your brand in Punjab with AMA Legal Solutions. We specialize in IPR services for Ludhiana's textile industry, Jalandhar's sports goods, and Mohali's tech startups. Expert litigation at Punjab & Haryana High Court.",
+    "Protect your brand in Punjab with AMA Legal Solutions. We specialize in IPR services for Ludhiana textiles, Jalandhar sports, and Mohali tech startups.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/punjab',
   },
   openGraph: {
-    title: "Intellectual Property Rights in Punjab | Trademark & Patent Lawyers Ludhiana Jalandhar",
-    description: "Protect your brand in Punjab with AMA Legal Solutions. We specialize in IPR services for Ludhiana's textile industry, Jalandhar's sports goods, and Mohali's tech startups.",
-    url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/Punjab",
+    title: "Intellectual Property Rights in Punjab | AMA Legal",
+    description: "Protect your brand in Punjab with AMA Legal Solutions. We specialize in IPR services for Ludhiana textiles, Jalandhar sports, and Mohali tech startups.",
+    url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/punjab",
     type: "website",
     images: [
       {

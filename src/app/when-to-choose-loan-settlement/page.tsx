@@ -178,7 +178,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "When to Choose Loan Settlement vs Repayment | AMA Legal Solutions",
+  title: "When to Choose Loan Settlement vs Repayment | AMA Legal",
   description: "Learn when to opt for loan settlement over full repayment. Expert guide by Anuj Anand Malik on Indian banking laws, CIBIL impact, and debt recovery solutions.",
   keywords: [
     "when to choose loan settlement",
@@ -194,6 +194,12 @@ export const metadata = {
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/when-to-choose-loan-settlement',
+  },
+  openGraph: {
+    title: "When to Choose Loan Settlement vs Repayment | AMA Legal",
+    description: "Learn when to opt for loan settlement over full repayment. Expert guide by Anuj Anand Malik on Indian banking laws, CIBIL impact, and debt recovery solutions.",
+    url: 'https://www.amalegalsolutions.com/when-to-choose-loan-settlement',
+    type: "article",
   },
 };
 

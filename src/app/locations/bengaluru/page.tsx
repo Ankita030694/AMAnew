@@ -151,7 +151,7 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: "Lawyers in Bengaluru | Top Law Firm for Startups & Property | AMA Legal Solutions",
+  title: "Lawyers in Bengaluru | AMA Legal",
   description:
     "Expert Lawyers in Bengaluru for Karnataka High Court, RERA, Startups, and Divorce. Best advocates for Civil Litigation and Corporate Law in Bangalore.",
   keywords: [

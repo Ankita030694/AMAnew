@@ -5,9 +5,9 @@ const PAGE_URL = "https://www.amalegalsolutions.com/will-drafting-services-in-pu
 const OG_IMAGE = "/images/og/will-drafting-services-in-punjab.png";
 
 export const metadata: Metadata = {
-  title: "Will Drafting Services in Punjab: Top Estate & Succession Lawyers | AMA Legal Solutions",
+  title: "Will Drafting Services in Punjab | AMA Legal Solutions",
   description:
-    "Expert will drafting services in Punjab by senior High Court advocates. Protect your family's estate, GMADA/GLADA plots, NRI assets, and agricultural Jamabandi land with court-admissible, dispute-proof testamentary drafting.",
+    "Expert will drafting in Punjab by senior High Court advocates. Protect GMADA plots, NRI assets, and agricultural land with court-admissible drafting.",
   keywords: [
     "will drafting services in punjab",
     "will drafting services punjab",

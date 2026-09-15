@@ -164,9 +164,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Citibank Loan Settlement | elite Debt Defense by AMA Legal Solutions",
+  title: "Citibank Loan Settlement | AMA Legal",
   description:
-    "End your Citibank debt crisis with expert legal help. AMA Legal Solutions specializes in high-value Citibank credit card and personal loan settlements. founded by anuj anand malik in sector 57. call 8700343611.",
+    "End your Citibank debt crisis with expert legal help. AMA Legal Solutions specializes in high-value Citibank credit card and personal loan settlements..",
   keywords: [
     "Citibank loan settlement",
     "Citibank credit card default",
@@ -182,7 +182,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Citibank Debt Settlement Experts | Legal Resolution in India",
-    description: "Resolve your Citibank outstanding dues through a professional legal settlement. our firm in sector 57 will handle all negotiations and protect your rights. call 8700343611 today.",
+    description: "Resolve your Citibank outstanding dues through a professional legal settlement. our firm in sector 57 will handle all negotiations and protect your.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/citibank",
     type: "website",
     images: [{ url: "/services/3.png", width: 1200, height: 630, alt: "Citibank Loan Settlement Services" }],

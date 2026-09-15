@@ -107,15 +107,15 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "ICICI Loan Settlement Process | ICICI Personal Loan Settlement Letter Format",
+  title: "ICICI Loan Settlement Process | AMA Legal",
   description:
-    "Expert guide on ICICI loan settlement. Learn how to settle ICICI personal loans and credit cards. Get legal help to negotiate OTS, stop harassment, and save up to 50%.",
+    "Expert guide on ICICI loan settlement. Learn how to settle ICICI personal loans and credit cards. Get legal help to negotiate OTS, stop harassment, and.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/icici-bank',
   },
   openGraph: {
-    title: "ICICI Loan Settlement Process | ICICI Personal Loan Settlement Letter Format",
-    description: "Expert guide on ICICI loan settlement. Learn how to settle ICICI personal loans and credit cards. Get legal help to negotiate OTS, stop harassment, and save up to 50%.",
+    title: "ICICI Loan Settlement Process | AMA Legal",
+    description: "Expert guide on ICICI loan settlement. Learn how to settle ICICI personal loans and credit cards. Get legal help to negotiate OTS, stop harassment, and.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/icici-bank",
     type: "website",
     images: [

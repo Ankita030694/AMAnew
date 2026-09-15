@@ -188,9 +188,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Lawyers in Uttar Pradesh | Allahabad High Court | Loan Settlement & Trademarks",
+  title: "Lawyers in Uttar Pradesh | AMA Legal",
   description:
-    "Expert legal services in Uttar Pradesh. Top lawyers for Loan Settlement, Trademark Registration, Divorce, and Property disputes. Practice at Allahabad High Court & District Courts.",
+    "Expert legal services in Uttar Pradesh. Top lawyers for Loan Settlement, Trademark Registration, Divorce, and Property disputes. Practice at Allahabad.",
   keywords: [
     "Lawyers in Uttar Pradesh",
     "Allahabad High Court Advocates",

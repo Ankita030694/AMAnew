@@ -219,8 +219,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Best Advocate Near Me | Expert Lawyers in India | AMA Legal Solutions",
-  description: "Consult the best advocates near you for civil, criminal, family, and property law. AMA Legal Solutions offers professional legal advice across Delhi, Mumbai, Bangalore, and more.",
+  title: "Best Advocate Near Me | Top Lawyers in India | AMA Legal",
+  description: "Consult top advocates near you for civil, criminal, family, and property law. AMA Legal Solutions offers expert legal counsel across major Indian cities.",
   keywords: [
     "best advocate near me",
     "lawyer near me",

@@ -235,14 +235,14 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Benefits of Settling Your Loan in March | India's #1 Debt Guide",
-  description: "Discover why March is the most beneficial month for loan settlement in India. Save up to 80% on debt with year-end waivers. Expert help from AMA Legal Solutions.",
+  title: "Benefits of Settling Your Loan in March | Legal Guide",
+  description: "Discover why March is the best month for loan settlement in India. Secure year-end bank waivers and reduce debt with expert help from AMA Legal Solutions.",
   alternates: {
     canonical: "https://www.amalegalsolutions.com/benefits-of-settling-your-loan-in-march",
   },
   openGraph: {
-    title: "Benefits of Settling Your Loan in March | Maximum Waivers Guide",
-    description: "The financial year-end is the golden window for debt settlement. Learn how to leverage bank targets to your advantage.",
+    title: "Benefits of Settling Your Loan in March | Legal Guide",
+    description: "Discover why March is the best month for loan settlement in India. Secure year-end bank waivers and reduce debt with expert help from AMA Legal Solutions.",
     url: "https://www.amalegalsolutions.com/benefits-of-settling-your-loan-in-march",
     type: "website",
   },

@@ -6,15 +6,15 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Intellectual Property Rights in Uttar Pradesh | IP Lawyers Noida & Lucknow",
+  title: "Intellectual Property Rights in Uttar Pradesh | AMA Legal",
   description:
-    "Protect your business in UP. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Noida, Lucknow, Kanpur & Varanasi. Litigation support at Allahabad High Court.",
+    "Protect your business in UP. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Noida, Lucknow, Kanpur & Varanasi. Litigation.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/uttar-pradesh',
   },
   openGraph: {
-    title: "Intellectual Property Rights in Uttar Pradesh | IP Lawyers Noida & Lucknow",
-    description: "Protect your business in UP. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Noida, Lucknow, Kanpur & Varanasi. Litigation support at Allahabad High Court.",
+    title: "Intellectual Property Rights in Uttar Pradesh | AMA Legal",
+    description: "Protect your business in UP. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Noida, Lucknow, Kanpur & Varanasi. Litigation.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/uttar-pradesh",
     type: "website",
     images: [

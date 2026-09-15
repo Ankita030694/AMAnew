@@ -6,15 +6,15 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement in Jammu & Kashmir | Expert Debt Relief Lawyers",
+  title: "Loan Settlement in Jammu & Kashmir | AMA Legal",
   description:
-    "Struggling with debt in J&K? AMA Legal Solutions offers expert loan settlement services in Srinagar, Jammu & across the UT. Stop harassment & settle legally.",
+    "Struggling with debt in J&K? AMA Legal Solutions offers expert loan settlement services in Srinagar, Jammu & across the UT. Stop harassment & settle.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/jammu-and-kashmir',
   },
   openGraph: {
-    title: "Loan Settlement in Jammu & Kashmir | Expert Debt Relief Lawyers",
-    description: "Struggling with debt in J&K? AMA Legal Solutions offers expert loan settlement services in Srinagar, Jammu & across the UT. Stop harassment & settle legally.",
+    title: "Loan Settlement in Jammu & Kashmir | AMA Legal",
+    description: "Struggling with debt in J&K? AMA Legal Solutions offers expert loan settlement services in Srinagar, Jammu & across the UT. Stop harassment & settle.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/jammu-and-kashmir",
     type: "website",
     images: [

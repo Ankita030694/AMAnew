@@ -5,9 +5,9 @@ const PAGE_URL = "https://www.amalegalsolutions.com/will-drafting-services-cheap
 const OG_IMAGE = "/images/og/will-drafting-services-cheap.png";
 
 export const metadata: Metadata = {
-  title: "Will Drafting Cheap: Affordable & Legally Valid Services in India | AMA Legal Solutions",
+  title: "Affordable Will Drafting Services India | AMA Legal",
   description:
-    "Looking for affordable will drafting services in India without compromising legal validity? Get custom, court-admissible, advocate-drafted wills compliant with the Indian Succession Act, 1925. Consult Advocate Anuj Anand Malik.",
+    "Affordable, legally valid will drafting services in India. Custom testamentary drafting under the Indian Succession Act, 1925 by experienced advocates.",
   keywords: [
     "will drafting cheap",
     "cheap will drafting services in india",

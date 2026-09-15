@@ -6,15 +6,15 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Intellectual Property Rights in Tamil Nadu | IP Lawyers Chennai",
+  title: "Intellectual Property Rights in Tamil Nadu | AMA Legal",
   description:
-    "Protect your innovation in Tamil Nadu. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Chennai, Coimbatore & Tirupur. Litigation support at Madras High Court.",
+    "Protect your innovation in Tamil Nadu. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Chennai, Coimbatore & Tirupur..",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/tamil-nadu',
   },
   openGraph: {
-    title: "Intellectual Property Rights in Tamil Nadu | IP Lawyers Chennai",
-    description: "Protect your innovation in Tamil Nadu. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Chennai, Coimbatore & Tirupur. Litigation support at Madras High Court.",
+    title: "Intellectual Property Rights in Tamil Nadu | AMA Legal",
+    description: "Protect your innovation in Tamil Nadu. AMA Legal Solutions offers expert Trademark, Patent & Copyright services in Chennai, Coimbatore & Tirupur..",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/tamil-nadu",
     type: "website",
     images: [

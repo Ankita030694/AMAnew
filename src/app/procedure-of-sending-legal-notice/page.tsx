@@ -640,8 +640,8 @@ export default function LegalNoticeProcedurePage() {
 
 // SEO Optimisation Metadata
 export const metadata = {
-  title: "Procedure of Sending Legal Notice in India | Professional Legal Drafting",
-  description: "Comprehensive step-by-step procedure of sending a legal notice in India. Learn the laws, formats, and best practices for legal notice drafting and service in 2025.",
+  title: "Procedure of Sending Legal Notice in India | Legal Guide",
+  description: "Step-by-step procedure of sending a legal notice in India. Learn statutory requirements, notice formats, and drafting best practices with our advocates.",
   keywords: [
     "procedure of sending legal notice",
     "how to send legal notice in india",
@@ -658,7 +658,7 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/procedure-of-sending-legal-notice',
   },
   openGraph: {
-    title: "Procedure of Sending Legal Notice in India | Detailed Guide",
+    title: "Procedure of Sending Legal Notice in India | Legal Guide",
     description: "Step by step guide on the procedure of sending legal notice in India. Ensure your legal notices are valid and effective.",
     url: "https://www.amalegalsolutions.com/procedure-of-sending-legal-notice",
     type: "article",

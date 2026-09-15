@@ -7,10 +7,9 @@ const OG_IMAGE =
   "/images/og/will-my-salary-account-be-auto-debited-if-loan-settlement.png";
 
 export const metadata: Metadata = {
-  title:
-    "Will My Salary Account Be Auto Debited If I Go for Loan Settlement? Freeze & Lien Legal Guide | AMA Legal Solutions",
+  title: "Will Salary Account Be Debited in Loan Settlement? | AMA",
   description:
-    "Critical legal guide: Will your salary account be auto debited if you go for loan settlement, or can it be marked freeze or lien? Learn Section 171 Banker's Lien, Section 60 CPC salary exemptions, NACH revocation, and advocate-led protection.",
+    "Can a bank auto-debit or freeze your salary account during loan settlement? Learn Section 171 Banker's Lien, Section 60 CPC exemptions, and NACH cancellation.",
   keywords: [
     "will my salary account be auto debited if i go for loan settlement or can it be marked freeze or lein",
     "can bank freeze salary account for loan settlement",

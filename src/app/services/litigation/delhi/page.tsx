@@ -183,9 +183,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Litigation Services in Delhi | Delhi High Court & District Court Lawyers",
+  title: "Litigation Services in Delhi | AMA Legal",
   description:
-    "Expert litigation lawyers in Delhi. We represent clients in Delhi High Court, Tis Hazari, Patiala House, Saket, and all District Courts. Civil, Criminal, Commercial & IPR.",
+    "Expert litigation lawyers in Delhi. We represent clients in Delhi High Court, Tis Hazari, Patiala House, Saket, and all District Courts. Civil.",
   keywords: [
     "litigation services delhi",
     "delhi high court lawyer",
@@ -202,8 +202,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/services/litigation/delhi',
   },
   openGraph: {
-    title: "Litigation Services in Delhi | Delhi High Court & District Court Lawyers",
-    description: "Expert litigation services in Delhi. Representing clients in Delhi High Court and all District Courts.",
+    title: "Litigation Services in Delhi | AMA Legal",
+    description: "Expert litigation services in Delhi. Representing clients in Delhi High Court and all District Courts Contact AMA Legal Solutions today.",
     url: "https://www.amalegalsolutions.com/services/litigation/delhi",
     type: "website",
     images: [

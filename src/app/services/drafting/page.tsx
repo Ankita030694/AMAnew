@@ -157,14 +157,14 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Legal Drafting Services India | Expert Contract & Agreement Lawyers",
+  title: "Legal Drafting Services India | AMA Legal",
   description:
-    "Looking for professional legal drafting services in India? AMA Legal Solutions offers expert drafting for contracts, agreements, notices, and corporate documents. legally binding and secure.",
+    "Looking for professional legal drafting services in India? AMA Legal Solutions offers expert drafting for contracts, agreements, notices, and corporate.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/drafting',
   },
   openGraph: {
-    title: "Legal Drafting Services India | Expert Contract & Agreement Lawyers",
+    title: "Legal Drafting Services India | AMA Legal",
     description: "Professional legal drafting services in India. Expert lawyers for contracts, agreements, legal notices, and corporate documentation.",
     url: "https://www.amalegalsolutions.com/services/drafting",
     type: "website",

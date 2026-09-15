@@ -103,8 +103,8 @@ const articleSchema = (baseUrl: string) => ({
 });
 
 export const metadata: Metadata = {
-  title: "Legal Intern Jobs in Gurugram | AMA Legal Solutions Careers",
-  description: "Join the legal team at AMA Legal Solutions as a Legal Intern. Gain hands-on experience in high-impact litigation, IPR, and loan settlement cases. Elevate your legal career in Gurugram.",
+  title: "Legal Intern Jobs in Gurugram | AMA Legal Solutions",
+  description: "Join AMA Legal Solutions as a Legal Intern in Gurugram. Gain hands-on experience in litigation, IPR, and loan settlement cases. Apply today.",
   keywords: ["legal intern jobs gurugram", "law student internships india", "litigation internship", "IPR intern jobs", "corporate law internships"],
   alternates: { canonical: 'https://www.amalegalsolutions.com/careers/legal-intern' }
 };

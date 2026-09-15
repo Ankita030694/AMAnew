@@ -8,13 +8,13 @@ import FaqSection from "./FaqSection";
 export const metadata = {
   title: "Loan Settlement in Lakshadweep | Expert Debt Relief Lawyers",
   description:
-    "Struggling with debt in Lakshadweep? AMA Legal Solutions offers expert loan settlement services in Kavaratti, Minicoy, Agatti & Andrott. Stop harassment & resolve disputes legally.",
+    "Struggling with debt in Lakshadweep? AMA Legal Solutions offers expert loan settlement services in Kavaratti, Minicoy, Agatti & Andrott. Stop harassment.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/lakshadweep',
   },
   openGraph: {
     title: "Loan Settlement in Lakshadweep | Expert Debt Relief Lawyers",
-    description: "Struggling with debt in Lakshadweep? AMA Legal Solutions offers expert loan settlement services in Kavaratti, Minicoy, Agatti & Andrott. Stop harassment & resolve disputes legally.",
+    description: "Struggling with debt in Lakshadweep? AMA Legal Solutions offers expert loan settlement services in Kavaratti, Minicoy, Agatti & Andrott. Stop harassment.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/lakshadweep",
     type: "website",
     images: [

@@ -165,8 +165,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Top 20 Cities Facing Personal Loan Defaults | AMA",
-  description: "How and why the top 20 urban centers in India are experiencing unprecedented personal loan defaults in 2026, and what specific geographic factors are driving this financial crisis.",
+  title: "Top 20 Cities Facing Loan Defaults in India | AMA Legal",
+  description: "Explore why 20 major Indian cities face surging personal loan defaults in 2026. Discover economic causes, borrower rights, and debt relief with AMA Legal.",
   robots: {
     index: true,
     follow: true,
@@ -190,6 +190,12 @@ export const metadata = {
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/top-20-cities-facing-personal-loan-defaults',
+  },
+  openGraph: {
+    title: "Top 20 Cities Facing Loan Defaults in India | AMA Legal",
+    description: "Explore why 20 major Indian cities face surging personal loan defaults in 2026. Discover economic causes, borrower rights, and debt relief with AMA Legal.",
+    url: 'https://www.amalegalsolutions.com/top-20-cities-facing-personal-loan-defaults',
+    type: "article",
   },
 };
 

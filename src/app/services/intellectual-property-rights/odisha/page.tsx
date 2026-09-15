@@ -8,13 +8,13 @@ import FaqSection from "./FaqSection";
 export const metadata = {
   title: "IPR Services in Odisha | Trademark, Patent & GI Registration",
   description:
-    "Expert Intellectual Property Rights (IPR) services in Odisha. We assist with Trademark, Patent, Copyright, and GI registration in Bhubaneswar, Cuttack & across the state. Protect your innovation today.",
+    "Expert Intellectual Property Rights (IPR) services in Odisha. We assist with Trademark, Patent, Copyright, and GI registration in Bhubaneswar, Cuttack &.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/odisha',
   },
   openGraph: {
     title: "IPR Services in Odisha | Trademark, Patent & GI Registration",
-    description: "Expert Intellectual Property Rights (IPR) services in Odisha. We assist with Trademark, Patent, Copyright, and GI registration in Bhubaneswar, Cuttack & across the state. Protect your innovation today.",
+    description: "Expert Intellectual Property Rights (IPR) services in Odisha. We assist with Trademark, Patent, Copyright, and GI registration in Bhubaneswar, Cuttack &.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/odisha",
     type: "website",
     images: [

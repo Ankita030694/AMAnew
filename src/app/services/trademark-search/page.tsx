@@ -138,8 +138,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Trademark Search India 2026 | Professional IP Search & Analysis",
-  description: "Free & Professional Trademark Search in India. Detailed guide on Wordmark, Phonetic, and Vienna search via IP India Portal. Avoid Section 9 and 11 objections.",
+  title: "Trademark Search India 2026 | AMA Legal",
+  description: "Free & Professional Trademark Search in India. Detailed guide on Wordmark, Phonetic, and Vienna search via IP India Portal. Avoid Section 9 and 11.",
   keywords: [
     "trademark search india guide",
     "public search ip india portal",

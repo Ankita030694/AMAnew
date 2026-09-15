@@ -9,7 +9,7 @@ const OG_IMAGE =
 export const metadata: Metadata = {
   title: "Trading Loan Settlement in September 2026 | AMA Legal",
   description:
-    "Settle trading loans, margin funding shortfalls, and commercial trade credit in September 2026 under RBI compromise norms. Secure maximum waivers before Q2 closing with expert legal advisory.",
+    "Settle trading loans and margin funding shortfalls in September 2026 under RBI compromise norms. Secure maximum waivers with legal counsel from AMA Legal.",
   keywords: [
     "trading loan settlement in september 2026",
     "margin funding debt settlement india",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Trading Loan Settlement in September 2026 | AMA Legal",
     description:
-      "Settle trading loans, margin funding shortfalls, and commercial trade credit in September 2026 under RBI compromise norms. Secure maximum waivers before Q2 closing with expert legal advisory.",
+      "Settle trading loans and margin funding shortfalls in September 2026 under RBI compromise norms. Secure maximum waivers with legal counsel from AMA Legal.",
     url: PAGE_URL,
     type: "article",
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Trading Loan Settlement in September 2026 | AMA Legal",
     description:
-      "Settle trading loans, margin funding shortfalls, and commercial trade credit in September 2026 under RBI compromise norms. Secure maximum waivers before Q2 closing with expert legal advisory.",
+      "Settle trading loans and margin funding shortfalls in September 2026 under RBI compromise norms. Secure maximum waivers with legal counsel from AMA Legal.",
     images: [OG_IMAGE],
     site: "@AMALegalSol",
     creator: "@AnujAnandMalik",

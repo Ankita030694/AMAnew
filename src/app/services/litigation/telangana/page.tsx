@@ -183,9 +183,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Litigation Services in Telangana | High Court Lawyers Hyderabad",
+  title: "Litigation Services in Telangana | AMA Legal",
   description:
-    "Expert litigation lawyers in Telangana. We represent clients in Telangana High Court, City Civil Courts, and District Courts. Civil, Criminal, Property & Commercial cases.",
+    "Expert litigation lawyers in Telangana. We represent clients in Telangana High Court, City Civil Courts, and District Courts. Civil, Criminal, Property.",
   keywords: [
     "litigation services telangana",
     "high court lawyer hyderabad",
@@ -202,8 +202,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/services/litigation/telangana',
   },
   openGraph: {
-    title: "Litigation Services in Telangana | High Court Lawyers Hyderabad",
-    description: "Expert litigation services in Telangana. Representing clients in High Court, City Civil Courts, and District Courts.",
+    title: "Litigation Services in Telangana | AMA Legal",
+    description: "Expert litigation services in Telangana. Representing clients in High Court, City Civil Courts, and District Courts Contact AMA Legal Solutions today.",
     url: "https://www.amalegalsolutions.com/services/litigation/telangana",
     type: "website",
     images: [

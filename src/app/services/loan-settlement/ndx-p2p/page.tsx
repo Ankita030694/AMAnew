@@ -164,9 +164,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "NDX P2P Loan Settlement | Professional Legal Help by AMA Legal Solutions",
+  title: "NDX P2P Loan Settlement | AMA Legal",
   description:
-    "End your NDX P2P (LiquiLoans) debt problems properly. AMA Legal Solutions provides elite settlement services for P2P borrows. Founded by anuj anand malik, we resolve cases from sector 57. call 8700343611.",
+    "End your NDX P2P (LiquiLoans) debt problems properly. AMA Legal Solutions provides elite settlement services for P2P borrows. Founded by anuj anand.",
   keywords: [
     "NDX P2P loan settlement",
     "NDX P2P private limited default",
@@ -182,7 +182,7 @@ export const metadata = {
   },
   openGraph: {
     title: "NDX P2P (LiquiLoans) Debt Settlement | Legal Defense Experts",
-    description: "Get professional legal help to settle your NDX P2P outstanding. Our experts at sector 57 will protect your rights and stop all harassment. call 8700343611 for a consultation.",
+    description: "Get professional legal help to settle your NDX P2P outstanding. Our experts at sector 57 will protect your rights and stop all harassment. call.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/ndx-p2p",
     type: "website",
     images: [{ url: "/services/3.png", width: 1200, height: 630, alt: "NDX P2P Loan Settlement Services" }],

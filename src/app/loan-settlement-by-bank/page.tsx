@@ -8,7 +8,7 @@ export const metadata = {
   },
   title: "Loan Settlement by Bank | AMA Legal Solutions",
   description:
-    "Find expert legal assistance for loan settlement and grievance redressal across various banks and NBFCs in India.",
+    "Find expert legal assistance for loan settlement and grievance redressal across major banks and NBFCs in India. Stop harassment and resolve your debt.",
 };
 
 // Helper function to convert bank names to URL-friendly slugs

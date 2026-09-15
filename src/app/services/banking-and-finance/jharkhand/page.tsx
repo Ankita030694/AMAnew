@@ -3,16 +3,16 @@ import Script from "next/script";
 import JharkhandBankingClient from "./JharkhandBankingClient";
 
 export const metadata = {
-  title: "Banking and Finance Services in Jharkhand | NBFC Registration & DRT",
+  title: "Banking and Finance Services in Jharkhand | AMA Legal",
   description:
-    "Expert legal consultancy for Banking & Finance in Jharkhand. Services include NBFC Registration in Ranchi, Tribal Finance (CNT/SPT) compliance, Money Lenders License & DRT Litigation.",
+    "Expert legal consultancy for Banking & Finance in Jharkhand. Services include NBFC Registration in Ranchi, Tribal Finance (CNT/SPT) compliance, Money.",
   alternates: {
     canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/jharkhand",
   },
   openGraph: {
-    title: "Banking and Finance Services in Jharkhand | NBFC Registration & DRT",
+    title: "Banking and Finance Services in Jharkhand | AMA Legal",
     description:
-      "Expert legal consultancy for Banking & Finance in Jharkhand. Services include NBFC Registration in Ranchi, Tribal Finance (CNT/SPT) compliance, Money Lenders License & DRT Litigation.",
+    "Expert legal consultancy for Banking & Finance in Jharkhand. Services include NBFC Registration in Ranchi, Tribal Finance (CNT/SPT) compliance, Money.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/jharkhand",
     siteName: "AMA Legal Solutions",
     locale: "en_US",

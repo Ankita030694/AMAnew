@@ -223,8 +223,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Validity of Trademark Registration India | Renewal & Restoration",
-  description: "Understand the validity of trademark registration in India. Guide on 10-year renewal cycles, grace periods, restoration process, and grounds for cancellation.",
+  title: "Validity of Trademark Registration India | Renewal Guide",
+  description: "Understand trademark validity in India. Comprehensive guide on 10-year renewal cycles, grace periods, restoration process, and cancellation grounds.",
   keywords: [
     "validity of trademark registration",
     "trademark renewal india",
@@ -240,7 +240,7 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/validity-of-trademark-registration',
   },
   openGraph: {
-    title: "Validity of Trademark Registration India | Renewal & Restoration",
+    title: "Validity of Trademark Registration India | Renewal Guide",
     description: "Expert legal guide on maintaining your trademark's validity in India. Learn about renewals, grace periods, and protecting your brand assets.",
     url: "https://www.amalegalsolutions.com/validity-of-trademark-registration",
     type: "website",

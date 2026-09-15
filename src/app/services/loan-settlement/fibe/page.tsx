@@ -122,15 +122,15 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: "Fibe Loan Settlement Process | EarlySalary Loan Settlement Letter Format",
+  title: "Fibe Loan Settlement Process | AMA Legal",
   description:
-    "Expert guide on Fibe (EarlySalary) loan settlement. Learn how to settle Fibe personal loans. Get legal help to negotiate OTS, stop harassment, and save up to 50%.",
+    "Expert guide on Fibe (EarlySalary) loan settlement. Learn how to settle Fibe personal loans. Get legal help to negotiate OTS, stop harassment, and save.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/fibe',
   },
   openGraph: {
-    title: "Fibe Loan Settlement Process | EarlySalary Loan Settlement Letter Format",
-    description: "Expert guide on Fibe (EarlySalary) loan settlement. Learn how to settle Fibe personal loans. Get legal help to negotiate OTS, stop harassment, and save up to 50%.",
+    title: "Fibe Loan Settlement Process | AMA Legal",
+    description: "Expert guide on Fibe (EarlySalary) loan settlement. Learn how to settle Fibe personal loans. Get legal help to negotiate OTS, stop harassment, and save.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/fibe",
     type: "website",
     images: [

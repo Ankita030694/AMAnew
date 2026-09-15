@@ -10,13 +10,13 @@ import { MdCreditScore, MdMoneyOff } from "react-icons/md";
 
 // Metadata
 export const metadata = {
-  title: "Stashfin Loan Settlement | Credit Line OTS | AMA Legal Solutions",
+  title: "Stashfin Loan Settlement | AMA Legal",
   description: "Struggling with Stashfin (Akara Capital) loan repayment? Expert legal help for settling credit lines and personal loans. Stop harassment and legal notices.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/stashfin',
   },
   openGraph: {
-    title: "Stashfin Loan Settlement | Credit Line OTS | AMA Legal Solutions",
+    title: "Stashfin Loan Settlement | AMA Legal",
     description: "Struggling with Stashfin (Akara Capital) loan repayment? Expert legal help for settling credit lines and personal loans. Stop harassment and legal notices.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/stashfin",
     type: "website",

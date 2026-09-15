@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import LadakhBankingClient from "./LadakhBankingClient";
 
 export const metadata: Metadata = {
-  title: "Banking and Finance Services in Ladakh | NBFC & DRT Lawyers",
+  title: "Banking and Finance Services in Ladakh | AMA Legal",
   description:
-    "Premier legal consultancy for Banking & Finance in Ladakh. Expert guidance on SARFAESI in tribal areas, Hotel Financing, Solar Projects, and DRT litigation for Leh & Kargil.",
+    "Banking and finance legal services in Ladakh. Expert counsel on SARFAESI, tribal land rights, hotel financing, and DRT litigation with AMA Legal.",
   keywords: [
     "Banking and Finance Services Ladakh",
     "NBFC Registration Leh",
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     "PMEGP Loan Consultant Ladakh",
   ],
   openGraph: {
-    title: "Banking and Finance Legal Services in Ladakh",
+    title: "Banking and Finance Services in Ladakh | AMA Legal",
     description:
-      "Expert legal support for financial institutions in Ladakh. From Tourism Finance to DRT litigation and Solar Energy projects.",
+      "Banking and finance legal services in Ladakh. Expert counsel on SARFAESI, tribal land rights, hotel financing, and DRT litigation with AMA Legal.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/ladakh",
     siteName: "AMA Legal Solutions",
     locale: "en_US",
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Banking and Finance Services in Ladakh | AMA Legal Solutions",
+    title: "Banking and Finance Services in Ladakh | AMA Legal",
     description:
-      "Specialized legal services for NBFCs, Hoteliers, and Banks in Ladakh. Expert in DRT Chandigarh and local land laws.",
+      "Banking and finance legal services in Ladakh. Expert counsel on SARFAESI, tribal land rights, hotel financing, and DRT litigation with AMA Legal.",
   },
   alternates: {
     canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/ladakh",

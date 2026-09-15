@@ -6,13 +6,13 @@ import { Video, ShieldCheck, Scale, HelpCircle, FileText } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: "AMA Live | Interactive Legal Broadcasts & Video Advisory",
-  description: "Watch weekly legal sessions and live video advisory from senior advocates at AMA Legal Solutions. Insights on loan settlement, recovery agent harassment, and corporate disputes.",
+  description: "Watch weekly legal broadcasts and video advisory from senior advocates at AMA Legal Solutions. Insights on loan settlement, harassment, and legal disputes.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/ama-live',
   },
   openGraph: {
     title: "AMA Live | Interactive Legal Broadcasts & Video Advisory",
-    description: "Watch weekly legal sessions and live video advisory from senior advocates at AMA Legal Solutions. Insights on loan settlement, recovery agent harassment, and corporate disputes.",
+    description: "Watch weekly legal broadcasts and video advisory from senior advocates at AMA Legal Solutions. Insights on loan settlement, harassment, and legal disputes.",
     url: 'https://www.amalegalsolutions.com/ama-live',
     type: 'website',
   },

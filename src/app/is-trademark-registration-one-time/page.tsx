@@ -165,9 +165,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Is Trademark Registration One Time? | Validity & Renewal Guide",
+  title: "Is Trademark Registration One Time? | Validity & Renewal",
   description:
-    "Discover the truth about trademark validity in India. Is registration a one-time cost? Learn about the 10-year renewal cycle, government fees, and maintenance strategies.",
+    "Is trademark registration a one-time cost? Learn about India's 10-year validity, renewal process, government fees, and essential brand maintenance.",
   keywords: [
     "is trademark registration one time",
     "trademark validity in india",
@@ -184,7 +184,7 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/is-trademark-registration-one-time',
   },
   openGraph: {
-    title: "Is Trademark Registration One Time? | Validity & Renewal Guide",
+    title: "Is Trademark Registration One Time? | Validity & Renewal",
     description: "Discover the truth about trademark validity in India. Is registration a one-time cost? Learn about the 10-year renewal cycle.",
     url: "https://www.amalegalsolutions.com/is-trademark-registration-one-time",
     type: "website",

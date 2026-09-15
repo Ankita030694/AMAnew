@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/income-tax-demand-notice',
   },
-  title: "Income Tax Demand Notice Guide: Respond to Section 156 & 143(1)",
+  title: "Income Tax Demand Notice: Respond to Section 156 & 143(1)",
   description:
-    "Received an income tax demand notice? Learn how to respond to Section 156 and 143(1) notices. Step-by-step guide on online response, rectification, and legal appeals.",
+    "Received a tax demand notice? Learn how to respond to Section 156 & 143(1) intimations, file online rectifications under 154, and manage appeals.",
   keywords: "income tax demand notice, section 156 notice, 143(1) intimation, how to respond to income tax notice, income tax outstanding demand, tax demand resolution, income tax legal help",
 };
 

@@ -142,7 +142,7 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: "Trademark Infringement Without Registration India | 8250+ Word Guide",
+  title: "Trademark Infringement Without Registration | Legal Guide",
   description: "Comprehensive 2025 guide on protecting unregistered brands in India. Learn about Passing Off, Section 27, Prior Use, and advanced IP litigation strategies.",
   alternates: { canonical: 'https://www.amalegalsolutions.com/trademark-infringement-without-registration' },
 };

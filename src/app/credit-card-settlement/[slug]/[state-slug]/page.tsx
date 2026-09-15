@@ -8,13 +8,20 @@ import { statesData, StateData } from "@/data/statesData";
 import { notFound } from "next/navigation";
 import { getBankStateSettlementSEO } from "@/lib/seo";
 
+// ISR: Cache pages for 24 hours
+export const revalidate = 86400;
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
+  const topBanks = creditCardBanks.slice(0, 15);
+  const topStates = statesData.slice(0, 10);
   const params: { slug: string; "state-slug": string }[] = [];
-  creditCardBanks.forEach((bank) => {
-    statesData.forEach((state) => {
+  
+  for (const bank of topBanks) {
+    for (const state of topStates) {
       params.push({ slug: bank.slug, "state-slug": state.slug });
-    });
-  });
+    }
+  }
   return params;
 }
 
@@ -45,11 +52,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     keywords: [
       `${bank.name} credit card settlement in ${state.name}`,
-      `stop ${bank.name} recovery agents ${state.name}`,
-      `legal action against ${bank.name} in ${state.name}`,
+      `stop ${bank.name} credit card recovery harassment ${state.name}`,
+      `minimum amount due trap ${bank.name}`,
       `${state.name} credit card debt settlement`,
-      `${state.policeAuthority} complaint against bank`,
-      `${state.highCourt} guidelines for recovery agents`
+      `${state.policeAuthority} credit card harassment complaint`,
+      `RBI master directions credit card settlement`
     ],
     alternates: {
       canonical: `https://www.amalegalsolutions.com/credit-card-settlement/${bank.slug}/${state.slug}`,
@@ -57,7 +64,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default async function BankStateSettlementPage({ params }: { params: Promise<{ slug: string; "state-slug": string }> }) {
+export default async function CreditCardBankStateSettlementPage({ params }: { params: Promise<{ slug: string; "state-slug": string }> }) {
   const { slug, "state-slug": stateSlug } = await params;
   const bank = creditCardBanks.find((b) => b.slug === slug);
   const state = statesData.find((s) => s.slug === stateSlug);
@@ -85,7 +92,7 @@ export default async function BankStateSettlementPage({ params }: { params: Prom
       {
         "@type": "ListItem",
         "position": 3,
-        "name": `${bank.name} Settlement`,
+        "name": `${bank.name} Card Settlement`,
         "item": `https://www.amalegalsolutions.com/credit-card-settlement/${bank.slug}`
       },
       {
@@ -100,8 +107,8 @@ export default async function BankStateSettlementPage({ params }: { params: Prom
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": `${bank.name} Credit Card Settlement in ${state.name}`,
-    "description": `Comprehensive legal guide for settling ${bank.name} credit card debt within ${state.name}'s jurisdiction.`,
+    "headline": `${bank.name} Credit Card Settlement in ${state.name} | RBI Guidelines & Legal Guide`,
+    "description": `Comprehensive legal guide for resolving unmanageable ${bank.name} credit card debt in ${state.name}. Escape compounding finance charges under RBI Master Directions.`,
     "image": "https://www.amalegalsolutions.com/services/3.png",
     "author": {
       "@type": "Person",
@@ -118,7 +125,7 @@ export default async function BankStateSettlementPage({ params }: { params: Prom
       }
     },
     "datePublished": "2026-07-04",
-    "dateModified": "2026-07-04"
+    "dateModified": "2026-09-15"
   };
 
   const faqSchema = {
@@ -127,82 +134,50 @@ export default async function BankStateSettlementPage({ params }: { params: Prom
     "mainEntity": [
       {
         "@type": "Question",
-        "name": `How do I stop ${bank.name} harassment in ${state.name}?`,
+        "name": `Can ${bank.name} freeze my savings account if I default on my credit card in ${state.name}?`,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": `To stop harassment from ${bank.name} agents in ${state.name}, immediately file a complaint with the ${state.policeAuthority} and seek legal counsel to enforce your rights under the RBI Fair Practices Code.`
+          "text": `Yes. Under the common-law Right of Set-Off (Banker's Lien), ${bank.name} can legally attach funds from any savings or current account you maintain with their institution in ${state.name}. To safeguard your emergency finances, you must shift your salary or operational banking to an independent financial institution before initiating credit card settlement discussions.`
         }
       },
       {
         "@type": "Question",
-        "name": `Can ${bank.name} file a criminal case against me in ${state.name}?`,
+        "name": `How does the Minimum Amount Due (MAD) trap work on ${bank.name} credit cards?`,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": `No, a credit card default is a civil breach of contract, not a criminal offense. While ${bank.name} can initiate civil arbitration, they cannot file a criminal FIR for non-payment. Proceedings must adhere to the civil legal framework overseen by the ${state.highCourt}.`
+          "text": `Paying only the Minimum Amount Due covers primarily accrued interest, taxes, and late fees without reducing the principal balance. Finance charges of 3.5% to 4.2% per month (42% to 52% APR) continue to compound on the entire outstanding amount, resulting in a snowballing debt balance that becomes mathematically impossible to clear through minimum payments alone.`
         }
       },
       {
         "@type": "Question",
-        "name": `Where are the DRTs located for ${state.name} defaults?`,
+        "name": `What legal protection does the RBI Master Direction 2022 provide to cardholders in ${state.name}?`,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": `For high-value debt recovery cases in ${state.name}, matters are typically handled by Debt Recovery Tribunals (DRT) with jurisdiction encompassing ${state.drtLocations}. However, unsecured credit card debts rarely meet the ₹20 Lakh threshold required for DRT action.`
+          "text": `The RBI Master Directions (2022) on Credit Cards explicitly prohibit card issuers and their recovery agents from engaging in verbal harassment, intimidation, calling before 7:00 AM or after 7:00 PM, or contacting relatives and employers. Any violation can be reported directly to the RBI Ombudsman and the ${state.policeAuthority}.`
         }
       },
       {
         "@type": "Question",
-        "name": `What percentage discount can I get from a ${bank.name} settlement?`,
+        "name": `Can ${bank.name} file a Section 25 PSSA case for a bounced credit card auto-debit?`,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": `Settlement discounts depend heavily on your documented financial hardship. Legally represented borrowers often secure massive waivers ranging from 50% to 75% on the inflated balance, focusing primarily on resolving the principal amount.`
+          "text": `If you had set up an electronic NACH mandate that failed due to insufficient balance, ${bank.name} may issue a notice under Section 25 of the Payment and Settlement Systems Act. However, this is a procedural notification that can be answered and defended by an advocate, and it is routinely settled through the One-Time Settlement (OTS) agreement.`
         }
       },
       {
         "@type": "Question",
-        "name": `Does a ${bank.name} settlement destroy my CIBIL score?`,
+        "name": `How much waiver can I expect on a ${bank.name} credit card settlement?`,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": `A settlement will reflect as 'Settled' on your CIBIL report, causing a temporary dip and restricting immediate new credit access. However, it permanently stops the devastating algorithmic penalties of an active default and allows you to rebuild your score over time.`
+          "text": `Because credit card balances consist heavily of inflated finance charges, late fees, and compounding penalties, settlements often achieve waivers of 50% to 75% off the total balance, allowing borrowers to settle close to the actual original principal expenditure.`
         }
       },
       {
         "@type": "Question",
-        "name": `Is it legal for ${bank.name} recovery agents to visit my home in ${state.name}?`,
+        "name": `What is a No Dues Certificate (NDC) and when does ${bank.name} issue it?`,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": `While bank representatives can visit your home for legitimate recovery purposes, they must do so within RBI stipulated hours (7 AM to 7 PM) and maintain absolute decorum. Forced entry, intimidation, or social shaming are strictly illegal and punishable under local laws enforced by the ${state.policeAuthority}.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `Can I settle my ${bank.name} debt if the account has already been declared NPA?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `Yes, in fact, an account being classified as a Non-Performing Asset (NPA) usually triggers the bank's willingness to negotiate. Once an account becomes an NPA, ${bank.name} is more likely to accept a One-Time Settlement (OTS) rather than pursue lengthy civil litigation.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `What is a No Objection Certificate (NOC) and why is it important for ${bank.name} settlements?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `An NOC is an official document from ${bank.name} stating that your credit card account has been fully closed and there are no further dues pending. Securing a physical NOC on bank letterhead is the most critical step to ensure you are permanently protected from future legal claims.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `How long does the ${bank.name} settlement process take in ${state.name}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `The timeframe varies depending on the aging of your debt. Typically, it takes 3 to 6 months to force the account into NPA status and successfully negotiate a principal-only closure, assuming aggressive legal shielding is maintained throughout the process.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `Can ${bank.name} deduct money from my salary account for my credit card dues?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `If your salary account is with the same institution (${bank.name}), they hold a 'Banker's Lien' (Right of Set-Off) and may automatically deduct funds to cover the credit card default. It is highly advised to move your primary banking to a different institution before initiating a settlement.`
+          "text": `An NDC (or NOC) is the official closure certificate issued on bank letterhead confirming that the credit card account has been fully closed and the bank has no surviving legal claims. It is typically issued within 30 to 45 days following the clearance of the agreed settlement payment.`
         }
       }
     ]
@@ -211,7 +186,7 @@ export default async function BankStateSettlementPage({ params }: { params: Prom
   const reviewSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": `${bank.name} Debt Settlement Legal Services in ${state.name}`,
+    "name": `${bank.name} Credit Card Settlement Legal Services in ${state.name}`,
     "brand": {
       "@type": "Brand",
       "name": "AMA Legal Solutions"
@@ -219,33 +194,18 @@ export default async function BankStateSettlementPage({ params }: { params: Prom
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
-      "reviewCount": "1840"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Anonymous Client"
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "reviewBody": `${state.economicContext} The local agents were unbearable, but AMA Legal Solutions utilized the ${state.policeAuthority} guidelines to stop the harassment and secured a fantastic settlement.`
-      }
-    ]
+      "reviewCount": "1920"
+    }
   };
 
   const tocSections = [
-    { id: "local-landscape", title: `Debt Landscape in ${state.name}` },
-    { id: "legal-framework", title: `Local Legal Framework` },
-    { id: "harassment-tactics", title: `${bank.name} Harassment Tactics` },
-    { id: "police-complaints", title: `Filing Complaints in ${state.name}` },
-    { id: "settlement-strategy", title: "The Settlement Strategy" },
-    { id: "client-reviews", title: "Local Success Stories" },
-    { id: "faqs", title: "Frequently Asked Questions" },
+    { id: "mad-trap", title: `The Minimum Amount Due Trap` },
+    { id: "card-vs-loan", title: `Credit Card vs Loan Differences` },
+    { id: "rbi-card-directions", title: `RBI Master Directions on Cards` },
+    { id: "bankers-lien", title: `Banker's Lien & Account Shielding` },
+    { id: "nach-bounce-defence", title: `Section 25 PSSA Defence` },
+    { id: "settlement-framework", title: `The 4-Step Settlement Strategy` },
+    { id: "faqs", title: `Frequently Asked Questions` },
   ];
 
   const breadcrumbItems = [
@@ -270,16 +230,16 @@ export default async function BankStateSettlementPage({ params }: { params: Prom
               {bank.name} Credit Card Settlement in <span className="text-[#D2A02A]">{state.name}</span>
             </h1>
             <p className="text-sm md:text-xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
-              Stop harassment from {bank.name} recovery agents locally. Secure your data, file the right complaints via the {state.policeAuthority}, and get the legal protection you deserve.
+              Break free from the compounding revolving debt trap of {bank.name}. Invoke the RBI Master Directions (2022) to halt collection agent harassment in {state.name} and settle your credit card dues on principal-only terms.
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
               <Link href="/contact">
                 <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
-                  Get Immediate Legal Help
+                  Resolve Credit Card Debt
                 </button>
               </Link>
               <a href="https://wa.me/918700343611" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
-                Chat on WhatsApp
+                Consult on WhatsApp
               </a>
             </div>
           </div>
@@ -288,193 +248,227 @@ export default async function BankStateSettlementPage({ params }: { params: Prom
         <div className="container mx-auto px-4 max-w-[1600px] py-8">
           <Breadcrumbs items={breadcrumbItems} />
           
-          <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_280px] gap-8 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr_280px] gap-8 items-start">
             <nav className="hidden lg:block sticky top-24">
               <TableOfContents sections={tocSections} orientation="vertical" />
             </nav>
 
-            <article className="min-w-0 bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
+            <article className="min-w-0 bg-white p-4 md:p-12 rounded-2xl shadow-sm space-y-8 md:space-y-12">
               <nav className="lg:hidden mb-6 sticky top-20 z-10">
                 <TableOfContents sections={tocSections} />
               </nav>
 
-              <section id="local-landscape" className="scroll-mt-32">
-                <div className="bg-[#fcf8f2] border-l-4 border-[#D2A02A] p-6 rounded-r-xl my-8">
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">TL;DR: Immediate Steps to Stop {bank.name} Harassment in {state.name}</h4>
-                  <ul className="list-disc pl-5 space-y-2 text-gray-700">
-                    <li><strong>Do not pay</strong> any more money to {bank.name} under duress or threats from local agents.</li>
-                    <li><strong>Document everything:</strong> Keep logs of all WhatsApp messages, abusive calls, and unauthorized visits to your residence or workplace.</li>
-                    <li><strong>File a cyber complaint</strong> with the {state.policeAuthority} to legally protect yourself from criminal intimidation.</li>
-                    <li><strong>Invoke RBI Guidelines:</strong> Demand that all further communication be restricted to official channels as mandated by the Reserve Bank of India.</li>
-                  </ul>
+              {/* SECTION 1: MAD TRAP */}
+              <section id="mad-trap" className="scroll-mt-32">
+                <div className="bg-[#fcf8f2] border-l-4 border-[#D2A02A] p-6 rounded-r-xl my-6">
+                  <h4 className="text-lg font-bold text-gray-900 mb-2">Key Reality: The Minimum Amount Due Illusion</h4>
+                  <p className="text-sm md:text-base text-gray-700">
+                    Paying only the 5% Minimum Amount Due on a {bank.name} credit card keeps the account active on paper, but nearly 80% of your payment is consumed by finance charges (up to 54% APR) and 18% GST. The principal remains virtually untouched, keeping cardholders in {state.name} trapped indefinitely.
+                  </p>
                 </div>
 
-                <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">The {bank.name} Debt Landscape in {state.name}</h2>
+                <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4">The Mechanics of {bank.name} Credit Card Debt in {state.name}</h2>
                 <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                  {state.economicContext} Over the past few years, the accessibility of credit cards provided by {bank.name} has surged across {state.name}. While this financial inclusion benefits many, the aggressive algorithmic penalties imposed by top-tier banking institutions quickly trap borrowers who encounter sudden financial hardships. When a borrower in {state.name} misses a payment, the compounding interest - often exceeding 40% annualized - along with exorbitant late payment fees, rapidly inflates the outstanding balance far beyond the original principal.
+                  {state.economicContext} Revolving credit instruments like {bank.name} credit cards function on fundamentally different financial mechanics than standard fixed-term loans. The moment a payment deadline is missed in {state.name}, the bank terminates the interest-free grace period on all subsequent purchases, applying retrospective finance charges dating back to the exact day of each transaction.
                 </p>
                 <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                  If you reside in {state.name} and are struggling to manage a maxed-out {bank.name} credit line, it is critical to understand that you possess the unequivocal legal right to negotiate a One-Time Settlement (OTS). You are not alone in this struggle. Thousands of consumers in this region face identical algorithmic debt traps. The socio-economic fabric of {state.name} means that a single medical emergency, job loss, or business downturn can easily derail financial stability, leading to an inevitable default on unsecured credit. 
-                </p>
-                <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                  Unfortunately, instead of offering restructuring programs, {bank.name} frequently resorts to aggressive recovery tactics through local empaneled collection agencies operating within {state.name}. These agencies rely on the lack of legal awareness among consumers to exert maximum psychological pressure.
+                  With annualized interest rates ranging from 42% to 54% compounded monthly, combined with over-limit charges and late payment fees, a modest ₹1,00,000 credit line can balloon to over ₹2,50,000 within 18 months. If you are struggling with unpaid card dues in {state.name}, continuing to make partial or minimum payments merely burns capital without ever reducing your principal liability.
                 </p>
               </section>
 
-              <section id="legal-framework" className="scroll-mt-32 mt-10">
-                <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Understanding the Local Legal Framework</h2>
-                
-                <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-6">Jurisdictional Analysis for {state.name}</h3>
-                {state.uniqueJurisdictionAnalysis ? (
-                  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700 whitespace-pre-wrap">
-                    {state.uniqueJurisdictionAnalysis}
-                  </p>
-                ) : (
-                  <>
-                    <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                      Initiating a {bank.name} credit card settlement in {state.name} is a formal, legally structured procedure heavily guarded by the directives of the Reserve Bank of India (RBI) and scrutinized by the judiciary, particularly the {state.highCourt}. Local lenders and their third-party agents are legally bound to follow strict fair practice codes. Any deviation from these codes - such as calling outside the permitted hours of 7:00 AM to 7:00 PM, using abusive language, or contacting your employer - constitutes a severe violation of your fundamental rights.
-                    </p>
-                    <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                      The {state.highCourt} has repeatedly upheld the dignity of borrowers, establishing legal precedents that clearly separate civil liability from criminal intent. Defaulting on a {bank.name} credit card is strictly a civil breach of contract. It is not a criminal offense, and you cannot be jailed for failing to pay an unsecured debt in {state.name}.
-                    </p>
-    
-                    <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-6">The Role of Debt Recovery Tribunals (DRT)</h3>
-                    <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                      A common intimidation tactic used by {bank.name} agents is threatening high-level arbitration, Lok Adalat summons, or immediate action through the Debt Recovery Tribunal. It is essential to know that for high-value secured loan defaults, civil recovery procedures would eventually fall under the jurisdiction of DRTs located in {state.drtLocations}. 
-                    </p>
-                    <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                      However, credit card debts, being entirely unsecured and typically falling below the ₹20 Lakh threshold required for DRT initiation, rarely reach these high tribunals. Instead, {bank.name} relies on civil courts or private arbitration, both of which are highly favorable environments for negotiating a heavily discounted settlement. By engaging a legal expert to represent you in {state.name}, you effectively strip the bank of its power to intimidate you with empty legal threats.
-                    </p>
-                  </>
-                )}
+              {/* SECTION 2: COMPARISON TABLE */}
+              <section id="card-vs-loan" className="scroll-mt-32">
+                <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4">Revolving Credit Cards vs Fixed Personal Loans</h2>
+                <p className="text-sm md:text-base text-gray-600 mb-6">
+                  Understanding why credit card debt requires a specialized legal settlement approach compared to installment loans:
+                </p>
+
+                <div className="overflow-x-auto my-6">
+                  <table className="w-full text-left border-collapse border border-gray-200 text-sm md:text-base">
+                    <thead>
+                      <tr className="bg-gray-100 text-gray-900">
+                        <th className="p-3 border border-gray-200">Parameter</th>
+                        <th className="p-3 border border-gray-200">{bank.name} Credit Card</th>
+                        <th className="p-3 border border-gray-200">Standard Personal Loan</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b">
+                        <td className="p-3 font-semibold text-gray-800">Effective Annual APR</td>
+                        <td className="p-3 text-red-600 font-bold">42% to 54% p.a.</td>
+                        <td className="p-3 text-gray-700">11% to 18% p.a.</td>
+                      </tr>
+                      <tr className="border-b bg-gray-50">
+                        <td className="p-3 font-semibold text-gray-800">Interest Calculation</td>
+                        <td className="p-3 text-gray-700">Daily compounding on total balance</td>
+                        <td className="p-3 text-gray-700">Reducing balance monthly EMI</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="p-3 font-semibold text-gray-800">Minimum Payment Traps</td>
+                        <td className="p-3 text-gray-700">Yes (MAD covers only interest + GST)</td>
+                        <td className="p-3 text-gray-700">No (Full EMI covers principal)</td>
+                      </tr>
+                      <tr className="border-b bg-gray-50">
+                        <td className="p-3 font-semibold text-gray-800">Governing RBI Regulation</td>
+                        <td className="p-3 text-gray-700">Master Direction 2022 (Credit Cards)</td>
+                        <td className="p-3 text-gray-700">RBI Fair Practices Code (Loans)</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 font-semibold text-gray-800">Average Settlement Waiver</td>
+                        <td className="p-3 text-green-700 font-bold">50% to 75% on total claim</td>
+                        <td className="p-3 text-gray-700">40% to 60% on total claim</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </section>
 
-              <section id="harassment-tactics" className="scroll-mt-32 mt-10">
-                <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">How {bank.name} Recovery Agents Operate in {state.name}</h2>
+              {/* SECTION 3: RBI MASTER DIRECTIONS */}
+              <section id="rbi-card-directions" className="scroll-mt-32">
+                <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4">RBI Master Directions (2022) on Credit Card Conduct</h2>
                 <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                  When a borrower defaults, {bank.name} often outsources the recovery process to localized, third-party collection agencies operating across {state.name}. These agents are highly incentivized by commissions, meaning they earn a percentage of whatever amount they can extract from you. Consequently, they often resort to psychological pressure, relentless digital communication, and social shaming tactics.
+                  The Reserve Bank of India enacted strict regulatory boundaries in its <em>Master Direction – Credit Card and Debit Card – Issuance and Conduct Directions, 2022</em> (updated 2024). Under Chapter VI of these directions, cardholders residing in {state.name} enjoy decisive protections:
                 </p>
-                <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                  A very specific tactic observed in {state.name} is the weaponization of social standing. Agents may threaten to visit your office, contact your HR department, or send fake legal notices formatted to look like official documents from the {state.highCourt} or local police stations. These "legal notices" are typically drafted by the agency's in-house lawyers and hold no judicial weight.
-                </p>
-                <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                  If you are receiving continuous abusive calls from {bank.name} agents, remember that these individuals possess incredibly limited actual legal authority. They cannot issue binding warrants, they cannot seize your personal property without a specific court decree, and they certainly cannot authorize an arrest for an unsecured civil debt.
-                </p>
-                <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                  To understand more about avoiding debt traps across multiple accounts, refer to our comprehensive guide on <Link href="/multiple-credit-card-loan-settlement" className="text-[#D2A02A] hover:underline font-semibold">multiple credit card loan settlement</Link>.
-                </p>
-              </section>
-
-              <section id="police-complaints" className="scroll-mt-32 mt-10">
-                <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Filing Formal Complaints with the {state.policeAuthority}</h2>
-                <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                  If recovery agents cross the line by contacting your workplace, relatives, or deploying abusive language, you must take immediate, aggressive legal action within {state.name}. The most effective counter-measure is escalating the grievance directly to the {state.policeAuthority}. 
-                </p>
-                <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                  Filing a formal First Information Report (FIR) or a cyber grievance via the {state.policeAuthority} elevates a simple civil dispute into an active criminal investigation against the recovery agents for crimes such as criminal intimidation (Section 503 IPC), extortion (Section 383 IPC), and defamation (Section 499 IPC). Furthermore, unauthorized access to your contact list violates the Information Technology Act.
-                </p>
-                <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                  This aggressive legal stance provides absolute protection. Once {bank.name} is notified that their empaneled agents are under investigation by the {state.policeAuthority}, they are legally obligated to immediately recall the offending agency and transition to a professional, documented settlement negotiation.
-                </p>
-                <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                  For deeper context on how various banks handle this escalation, see our ranking of the <Link href="/top-credit-card-banks-offering-settlement-india" className="text-[#D2A02A] hover:underline font-semibold">top credit card banks offering settlement India</Link>.
+                <ul className="list-disc pl-5 space-y-3 text-gray-700 text-sm md:text-base mb-6">
+                  <li><strong>Prohibition of Third-Party Disclosure:</strong> Lenders cannot disclose card balances, default status, or payment histories to unauthorized third parties, including family members, colleagues, or neighbors in {state.name}.</li>
+                  <li><strong>Time Restrictions on Recovery Calls:</strong> Recovery agents cannot contact you before 7:00 AM or after 7:00 PM. Calls at odd hours constitute illegal harassment under RBI guidelines.</li>
+                  <li><strong>No Humiliation or Verbal Abuse:</strong> Collection personnel are forbidden from employing intimidation, threats of immediate police detention, or offensive language.</li>
+                  <li><strong>Grievance Redressal Mechanism:</strong> Lenders must maintain a dedicated Nodal Grievance Redressal desk. If an unaddressed complaint persists beyond 30 days, cardholders have the right to escalate directly to the RBI Integrated Ombudsman.</li>
+                </ul>
+                <p className="text-sm md:text-base text-gray-700">
+                  If recovery agents empanelled by {bank.name} violate these codes in {state.name}, an immediate complaint can be lodged with the <strong>{state.policeAuthority}</strong>, converting an aggressive debt collection attempt into an actionable legal investigation.
                 </p>
               </section>
 
-              <section id="settlement-strategy" className="scroll-mt-32 mt-10">
-                <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">The Optimal Settlement Strategy for {bank.name}</h2>
-                {bank.uniqueBankStrategy ? (
-                  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700 whitespace-pre-wrap">
-                    {bank.uniqueBankStrategy}
-                  </p>
-                ) : (
-                  <>
-                    <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                      Successfully executing a permanent settlement requires a legally robust approach, especially against a major institution like {bank.name}. The objective is to anchor all human discussions strictly to the principal amount originally borrowed, entirely discarding accrued late fees, over-limit charges, and compounding penal interest that artificially inflate the <Link href="/minimum-amount-due-in-credit-card-meaning" className="text-[#D2A02A] hover:underline font-semibold">minimum amount due</Link>.
-                    </p>
-                    <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                      The strategy begins with ceasing all unsecured payments to force the account into a Non-Performing Asset (NPA) status, usually occurring after 90 days of non-payment. During this period, our legal team shields you from harassment using {state.name}'s legal infrastructure. Once {bank.name} classifies the account as an NPA, their internal recovery metrics shift from "full recovery" to "loss mitigation."
-                    </p>
-                    <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                      At this stage, {bank.name} acknowledges your severe financial hardship and realizes that pursuing full civil recovery in {state.name} is a waste of their judicial resources. They will present a formal settlement offer, often ranging from a 50% to 75% waiver on the outstanding balance. Ensure you never execute a settlement payment without a formal letter on official bank letterhead explicitly stating that the agreed sum constitutes the "full and final settlement," and guaranteeing the issuance of a No Objection Certificate (NOC).
-                    </p>
-                  </>
-                )}
+              {/* SECTION 4: BANKER'S LIEN */}
+              <section id="bankers-lien" className="scroll-mt-32">
+                <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4">Protecting Your Accounts from Banker&apos;s Lien in {state.name}</h2>
+                <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
+                  A common risk faced by credit card holders is the banker&apos;s right of set-off. If your salary, savings, or fixed deposit account is held with the same institution that issued your credit card ({bank.name}), the bank&apos;s core agreements grant them the legal authority to debit funds from your deposit accounts to offset delinquent credit card balances without advance notice.
+                </p>
+                <div className="bg-amber-50 border-l-4 border-amber-500 p-5 rounded-r-xl my-4 text-sm md:text-base text-gray-800">
+                  <strong>Crucial Defensive Step:</strong> Before stopping card payments or submitting a settlement hardship letter, immediately transfer your salary credit, emergency savings, and family deposits to an independent bank where you have zero loan or credit card exposure.
+                </div>
               </section>
 
-              <section id="client-reviews" className="scroll-mt-32 mt-12">
-                <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-2">Client Success Stories in {state.name}</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 relative shadow-sm hover:shadow-md transition-shadow">
-                    <div className="text-4xl text-[#D2A02A] absolute top-4 left-4 opacity-20">"</div>
-                    <div className="flex text-[#D2A02A] mb-3 relative z-10">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                      ))}
-                    </div>
-                    <p className="text-gray-700 italic mb-4 relative z-10">
-                      "I was completely overwhelmed by the daily harassment from {bank.name}. When the agents threatened my family, AMA Legal Solutions swiftly utilized the {state.policeAuthority} network to stop the calls. They negotiated an incredible settlement on my principal."
+              {/* SECTION 5: NACH BOUNCE DEFENCE */}
+              <section id="nach-bounce-defence" className="scroll-mt-32">
+                <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4">Handling Auto-Debit Bounces & Section 25 PSSA in {state.name}</h2>
+                <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
+                  When cardholders revoke auto-debit authorizations or maintain zero balance on auto-pay dates, {bank.name} often issues legal notices under Section 25 of the Payment and Settlement Systems Act (PSSA), 2007. 
+                </p>
+                <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
+                  Recovery agents frequently misrepresent Section 25 notices as &ldquo;imminent arrest warrants.&rdquo; In judicial practice within {state.name} overseen by the {state.highCourt}, Section 25 proceedings are quasi-criminal payment mechanism issues. Once legal counsel enters an appearance and establishes ongoing hardship negotiations, courts encourage amicable resolution through Lok Adalats or One-Time Settlement agreements.
+                </p>
+              </section>
+
+              {/* SECTION 6: THE 4-STEP FRAMEWORK */}
+              <section id="settlement-framework" className="scroll-mt-32">
+                <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4">The 4-Step {bank.name} Credit Card Settlement Strategy</h2>
+                <div className="space-y-4">
+                  <div className="p-4 border border-gray-200 rounded-xl bg-white">
+                    <h3 className="font-bold text-lg text-gray-900 mb-1">Step 1: Account Audit & Financial Hardship Documentation</h3>
+                    <p className="text-sm md:text-base text-gray-600">
+                      Our legal advocates review your {bank.name} credit card statements to isolate legitimate principal expenditure from accumulated finance charges, penal interest, and annual card fees. We build a comprehensive hardship portfolio documenting income changes, medical emergencies, or business disruptions.
                     </p>
-                    <div className="flex items-center">
-                      <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">
-                        A
-                      </div>
-                      <div>
-                        <p className="font-bold text-gray-900">Verified Client</p>
-                        <p className="text-sm text-gray-500">Resident of {state.name}</p>
-                      </div>
-                    </div>
+                  </div>
+                  <div className="p-4 border border-gray-200 rounded-xl bg-white">
+                    <h3 className="font-bold text-lg text-gray-900 mb-1">Step 2: Legal Shielding & Harassment Cessation</h3>
+                    <p className="text-sm md:text-base text-gray-600">
+                      We issue a formal representation to {bank.name}&apos;s compliance desk, redirecting all recovery communications to our legal team and warning them of statutory consequences under {state.name}&apos;s police jurisdiction if third-party intimidation occurs.
+                    </p>
+                  </div>
+                  <div className="p-4 border border-gray-200 rounded-xl bg-white">
+                    <h3 className="font-bold text-lg text-gray-900 mb-1">Step 3: Direct OTS Negotiation with Bank Decision-Makers</h3>
+                    <p className="text-sm md:text-base text-gray-600">
+                      We bypass external tele-calling agencies to negotiate directly with {bank.name}&apos;s centralized debt resolution vertical, seeking a 50% to 75% waiver on the total claimed amount and fixing a feasible one-time or structured installment schedule.
+                    </p>
+                  </div>
+                  <div className="p-4 border border-gray-200 rounded-xl bg-white">
+                    <h3 className="font-bold text-lg text-gray-900 mb-1">Step 4: Verification of Settlement Letter & No Dues Certificate</h3>
+                    <p className="text-sm md:text-base text-gray-600">
+                      We verify that the settlement sanction letter is generated on authentic {bank.name} letterhead with a verified closure clause before any payment is transferred. Once paid, we track the issuance of your official No Dues Certificate (NDC).
+                    </p>
                   </div>
                 </div>
               </section>
 
-              <section id="faqs" className="scroll-mt-32 mt-12">
+              {/* FAQS */}
+              <section id="faqs" className="scroll-mt-32">
                 <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-2">Frequently Asked Questions</h2>
                 <div className="space-y-6">
                   {faqSchema.mainEntity.map((faq, index) => (
                     <div key={index} className="border-b border-gray-200 pb-6 last:border-0 hover:bg-gray-50 p-4 transition-colors rounded-lg">
-                      <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-start">
-                        <span className="text-[#D2A02A] mr-3 mt-1 shadow-sm">Q.</span>
+                      <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 flex items-start">
+                        <span className="text-[#D2A02A] mr-3 mt-1 shadow-sm font-serif font-bold">Q.</span>
                         {faq.name}
                       </h3>
-                      <p className="text-gray-700 leading-relaxed pl-8">
+                      <p className="text-sm md:text-base text-gray-700 leading-relaxed pl-7">
                         {faq.acceptedAnswer.text}
                       </p>
                     </div>
                   ))}
                 </div>
               </section>
+
+              {/* Call to Action */}
+              <div className="bg-[#fcf8f2] border border-[#e8d5b5] rounded-2xl p-6 md:p-10 text-center my-8">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+                  Resolve Your {bank.name} Credit Card Dues with Legal Backing
+                </h3>
+                <p className="text-sm md:text-base text-gray-700 max-w-2xl mx-auto mb-6">
+                  Don&apos;t let compounding finance charges dictate your future in {state.name}. Our seasoned advocates negotiate directly with {bank.name} to close your card accounts legally and stop agent harassment today.
+                </p>
+                <div className="flex flex-col sm:flex-row justify-center gap-4">
+                  <Link href="/contact" className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3.5 px-8 rounded-full transition-all shadow-md">
+                    Request Legal Hardship Evaluation
+                  </Link>
+                  <a href="https://wa.me/918700343611" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3.5 px-8 rounded-full transition-all shadow-md">
+                    Connect on WhatsApp
+                  </a>
+                </div>
+              </div>
             </article>
 
-            <aside className="hidden lg:block space-y-8 sticky top-24">
-              <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                <h3 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100">About the Author</h3>
-                <div className="flex items-center mb-4">
-                  <Image src="/anujbhiya.png" alt="Anuj Anand Malik" width={60} height={60} className="rounded-full mr-4 border-2 border-[#D2A02A]" />
-                  <div>
-                    <h4 className="font-bold text-gray-900">Anuj Anand Malik</h4>
-                    <p className="text-sm text-[#D2A02A] font-semibold">Founder & Legal Strategist</p>
-                  </div>
-                </div>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Anuj Anand Malik is a renowned legal expert specializing in debt settlement and anti-harassment litigation. He has successfully defended thousands of clients across India against aggressive recovery tactics from major financial institutions.
+            {/* Right Column - Legal Support Card */}
+            <aside className="hidden lg:block sticky top-24 space-y-6">
+              <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
+                <h4 className="font-bold text-gray-900 text-lg mb-2">Need Immediate Shielding?</h4>
+                <p className="text-sm text-gray-600 mb-4">
+                  Our legal team intervenes within 24 hours to halt recovery calls and issue formal notices to {bank.name}.
                 </p>
-                <Link href="/author/anuj-anand-malik" className="inline-block mt-4 text-sm text-[#D2A02A] font-bold hover:underline">
-                  Read full bio →
+                <a href="tel:+918700343611" className="block w-full text-center bg-[#1a202c] text-white font-bold py-3 rounded-xl hover:bg-black transition-colors text-sm mb-3">
+                  Call: +91 8700343611
+                </a>
+                <Link href="/contact" className="block w-full text-center border border-[#D2A02A] text-[#D2A02A] font-bold py-3 rounded-xl hover:bg-[#D2A02A] hover:text-white transition-colors text-sm">
+                  Book Confidential Consultation
                 </Link>
               </div>
 
-              <div className="bg-[#1a202c] p-6 rounded-2xl text-white shadow-lg">
-                <h3 className="text-xl font-bold mb-4 text-[#D2A02A]">Need Urgent Help in {state.name}?</h3>
-                <p className="text-sm text-gray-300 mb-6">Our expert panel of lawyers is available 24/7 to stop harassment and initiate your settlement process.</p>
-                <a href="tel:+918700343611" className="block w-full text-center bg-white text-[#1a202c] font-bold py-3 rounded-lg hover:bg-gray-100 transition-colors mb-3">
-                  Call Now: +91 87003 43611
-                </a>
-                <a href="https://wa.me/918700343611" className="block w-full text-center border border-[#D2A02A] text-[#D2A02A] font-bold py-3 rounded-lg hover:bg-[#D2A02A] hover:text-white transition-colors">
-                  WhatsApp Us
-                </a>
+              <div className="bg-gray-50 p-6 rounded-2xl border border-gray-200">
+                <h5 className="font-bold text-gray-800 text-sm mb-3 uppercase tracking-wider">Related Guides</h5>
+                <ul className="space-y-2 text-sm text-[#D2A02A]">
+                  <li>
+                    <Link href="/minimum-amount-due-in-credit-card-meaning" className="hover:underline">
+                      Minimum Amount Due Trap Explained
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/multiple-credit-card-loan-settlement" className="hover:underline">
+                      Settling Multiple Credit Cards
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/top-credit-card-banks-offering-settlement-india" className="hover:underline">
+                      Top Banks Offering Card Settlements
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/how-to-stop-bank-recovery-agents-harassment-legally-in-india" className="hover:underline">
+                      Legal Steps to Stop Recovery Agents
+                    </Link>
+                  </li>
+                </ul>
               </div>
             </aside>
           </div>

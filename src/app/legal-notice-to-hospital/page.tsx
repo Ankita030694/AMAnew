@@ -160,8 +160,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Legal Notice to Hospital for Medical Negligence | Compensation Guide",
-  description: "Struggling with medical negligence? Learn how to send a legal notice to a hospital in India. Expert guide on patient rights, compensation, and legal procedures.",
+  title: "Legal Notice to Hospital for Negligence | Patient Rights",
+  description: "Facing medical negligence? Learn how to send a legal notice to a hospital in India. Expert guide on patient rights, compensation, and legal procedures.",
   keywords: "legal notice to hospital, medical negligence india, sue hospital for negligence, legal notice format medical negligence, compensation for medical negligence, consumer court hospital case, patient rights india",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/legal-notice-to-hospital',

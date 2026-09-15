@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import PuducherryBankingClient from "./PuducherryBankingClient";
 
 export const metadata: Metadata = {
-  title: "Banking and Finance Services in Puducherry | NBFC & DRT Lawyers",
+  title: "Banking and Finance Services in Puducherry | AMA Legal",
   description:
-    "Premier legal consultancy for Banking & Finance in Puducherry. Expert guidance on Chit Fund Registration, Money Lenders Act, PIPDIC subsidies, and DRT Chennai litigation.",
+    "Banking and finance legal services in Puducherry. Expert counsel on chit fund registration, PIPDIC subsidies, and DRT Chennai litigation with AMA Legal.",
   keywords: [
     "Banking and Finance Services Puducherry",
     "NBFC Registration Puducherry",
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     "Pondicherry Pawn Brokers Act",
   ],
   openGraph: {
-    title: "Banking and Finance Legal Services in Puducherry",
+    title: "Banking and Finance Services in Puducherry | AMA Legal",
     description:
-      "Expert legal support for financial institutions in Puducherry. From Chit Funds to DRT litigation and PIPDIC schemes.",
+      "Banking and finance legal services in Puducherry. Expert counsel on chit fund registration, PIPDIC subsidies, and DRT Chennai litigation with AMA Legal.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/puducherry",
     siteName: "AMA Legal Solutions",
     locale: "en_US",
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Banking and Finance Services in Puducherry | AMA Legal Solutions",
+    title: "Banking and Finance Services in Puducherry | AMA Legal",
     description:
-      "Specialized legal services for NBFCs, Chit Funds, and Banks in Puducherry. Expert in DRT Chennai and local financial regulations.",
+      "Banking and finance legal services in Puducherry. Expert counsel on chit fund registration, PIPDIC subsidies, and DRT Chennai litigation with AMA Legal.",
   },
   alternates: {
     canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/puducherry",

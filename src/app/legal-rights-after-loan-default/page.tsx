@@ -151,9 +151,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Legal Rights After Loan Default India | Protection Against Harassment",
+  title: "Legal Rights After Loan Default in India | Legal Guide",
   description:
-    "Know your legal rights after loan default in India. Expert guidance from AMA Legal Solutions, founded by Anuj Anand Malik, on RBI guidelines, SARFAESI Act, and harassment protection.",
+    "Know your legal rights after loan default in India. Expert guidance on RBI recovery rules, SARFAESI Act proceedings, and protection against harassment.",
   keywords: [
     "legal rights after loan default",
     "loan default rights india",
@@ -170,8 +170,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/legal-rights-after-loan-default',
   },
   openGraph: {
-    title: "Legal Rights After Loan Default India | Protection Against Harassment",
-    description: "Know your legal rights after loan default in India. Expert guidance from AMA Legal Solutions on RBI guidelines and harassment protection.",
+    title: "Legal Rights After Loan Default in India | Legal Guide",
+    description: "Know your legal rights after loan default in India. Expert guidance on RBI recovery rules, SARFAESI Act proceedings, and protection against harassment.",
     url: "https://www.amalegalsolutions.com/legal-rights-after-loan-default",
     type: "website",
     images: [

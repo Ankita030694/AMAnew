@@ -9,13 +9,13 @@ import FaqSection from "./FaqSection";
 export const metadata = {
   title: "Loan Settlement in Pune | Expert Debt Relief Lawyers",
   description:
-    "Struggling with debt in Pune? AMA Legal Solutions offers expert loan settlement. We help IT professionals in Hinjewadi, Kharadi & across Pune settle bank loans legally.",
+    "Struggling with debt in Pune? AMA Legal Solutions offers expert loan settlement. We help IT professionals in Hinjewadi, Kharadi & across Pune settle.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/pune',
   },
   openGraph: {
     title: "Loan Settlement in Pune | Expert Debt Relief Lawyers",
-    description: "Struggling with debt in Pune? AMA Legal Solutions offers expert loan settlement. We help IT professionals in Hinjewadi, Kharadi & across Pune settle bank loans legally.",
+    description: "Struggling with debt in Pune? AMA Legal Solutions offers expert loan settlement. We help IT professionals in Hinjewadi, Kharadi & across Pune settle.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/pune",
     type: "website",
     images: [

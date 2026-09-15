@@ -1,15 +1,15 @@
 import ClientPage from "./ClientPage";
 
 export const metadata = {
-  title: "Intellectual Property Rights Services in Himachal Pradesh | Trademark & Patent",
+  title: "Intellectual Property Rights Services in Himachal Pradesh",
   description:
-    "Expert IPR services in Himachal Pradesh. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets today.",
+    "Expert IPR services in Himachal Pradesh. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/himachal-pradesh',
   },
   openGraph: {
-    title: "Intellectual Property Rights Services in Himachal Pradesh | Trademark & Patent",
-    description: "Expert IPR services in Himachal Pradesh. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets today.",
+    title: "Intellectual Property Rights Services in Himachal Pradesh",
+    description: "Expert IPR services in Himachal Pradesh. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/himachal-pradesh",
     type: "website",
     images: [

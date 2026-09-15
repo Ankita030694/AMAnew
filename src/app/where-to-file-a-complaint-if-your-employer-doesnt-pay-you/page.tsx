@@ -125,9 +125,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Where to File a Complaint if Employer Doesn't Pay Salary in India",
+  title: "Where to File Unpaid Salary Complaint in India | AMA Legal",
   description:
-    "Facing salary delay or non-payment? Learn the exact forums where you can file a complaint against your employer, from the SAMADHAN portal to Labour Courts and Civil Suits.",
+    "Facing unpaid salary? Learn where to file a complaint against your employer, from the SAMADHAN portal to Labour Courts and Civil Suits with AMA Legal.",
   keywords: [
     "where to file complaint against employer for salary",
     "how to complain about unpaid wages in india",
@@ -140,6 +140,13 @@ export const metadata = {
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/where-to-file-a-complaint-if-your-employer-doesnt-pay-you',
+  },
+  openGraph: {
+    title: "Where to File Unpaid Salary Complaint in India | AMA Legal",
+    description:
+      "Facing unpaid salary? Learn where to file a complaint against your employer, from the SAMADHAN portal to Labour Courts and Civil Suits with AMA Legal.",
+    url: 'https://www.amalegalsolutions.com/where-to-file-a-complaint-if-your-employer-doesnt-pay-you',
+    type: "article",
   },
 };
 

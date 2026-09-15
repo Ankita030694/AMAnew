@@ -3,16 +3,16 @@ import Script from "next/script";
 import TamilNaduBankingClient from "./TamilNaduBankingClient";
 
 export const metadata = {
-  title: "Banking and Finance Services in Tamil Nadu | Chit Funds & Nidhi Company",
+  title: "Banking and Finance Services in Tamil Nadu | AMA Legal",
   description:
-    "Expert legal consultancy for Banking & Finance in Tamil Nadu. Services include Chit Fund Registration, Nidhi Company setup, Industrial Finance (TIIC) & DRT Litigation in Chennai.",
+    "Expert legal consultancy for Banking & Finance in Tamil Nadu. Services include Chit Fund Registration, Nidhi Company setup, Industrial Finance (TIIC) &.",
   alternates: {
     canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/tamil-nadu",
   },
   openGraph: {
-    title: "Banking and Finance Services in Tamil Nadu | Chit Funds & Nidhi Company",
+    title: "Banking and Finance Services in Tamil Nadu | AMA Legal",
     description:
-      "Expert legal consultancy for Banking & Finance in Tamil Nadu. Services include Chit Fund Registration, Nidhi Company setup, Industrial Finance (TIIC) & DRT Litigation in Chennai.",
+    "Expert legal consultancy for Banking & Finance in Tamil Nadu. Services include Chit Fund Registration, Nidhi Company setup, Industrial Finance (TIIC) &.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/tamil-nadu",
     siteName: "AMA Legal Solutions",
     locale: "en_US",

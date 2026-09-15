@@ -165,7 +165,7 @@ const reviewSchema = {
 export const metadata = {
   title: "Loan Settlement in Hyderabad | Expert Debt Relief Lawyers",
   description:
-    "Struggling with debt in Hyderabad? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok Adalat and DRT.",
+    "Struggling with debt in Hyderabad? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via.",
   keywords: [
     "loan settlement Hyderabad",
     "debt settlement Hyderabad",
@@ -182,8 +182,8 @@ export const metadata = {
   },
   openGraph: {
     title: "Loan Settlement in Hyderabad | Expert Debt Relief Lawyers",
-    description: "Struggling with debt in Hyderabad? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok Adalat and DRT.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Hyderabad",
+    description: "Struggling with debt in Hyderabad? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via.",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/hyderabad",
     type: "website",
     images: [
       {

@@ -156,7 +156,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "12000+ Loan Settlement Enquiries Analyzed (2022-2026) | AMA",
-  description: "Discover the groundbreaking insights as AMA Legal Solutions analyzed 12,000+ loan settlement enquiries received between 2022 and 2026, revealing recovery tactics.",
+  description: "Insights from 12,000+ loan settlement enquiries analyzed by AMA Legal Solutions (2022-2026). Learn key debt data, recovery tactics, and settlement trends.",
   robots: {
     index: true,
     follow: true,

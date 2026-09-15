@@ -9,14 +9,14 @@ import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUnivers
 
 // Metadata
 export const metadata = {
-  title: "Bank of Baroda Loan Settlement | OTS Scheme 2025 | AMA Legal Solutions",
-  description: "Struggling with Bank of Baroda personal loan or credit card debt? Get expert legal help for Bank of Baroda loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
+  title: "Bank of Baroda Loan Settlement | AMA Legal",
+  description: "Struggling with Bank of Baroda personal loan or credit card debt? Get expert legal help for Bank of Baroda loan settlement. Reduce your debt with One.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/bank-of-baroda',
   },
   openGraph: {
-    title: "Bank of Baroda Loan Settlement | OTS Scheme 2025 | AMA Legal Solutions",
-    description: "Struggling with Bank of Baroda personal loan or credit card debt? Get expert legal help for Bank of Baroda loan settlement. Reduce your debt with One Time Settlement (OTS). Stop harassment today.",
+    title: "Bank of Baroda Loan Settlement | AMA Legal",
+    description: "Struggling with Bank of Baroda personal loan or credit card debt? Get expert legal help for Bank of Baroda loan settlement. Reduce your debt with One.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/bank-of-baroda",
     type: "website",
     images: [

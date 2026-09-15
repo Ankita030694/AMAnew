@@ -103,8 +103,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "App Loan Settlement India | Stop Harassment & Negotiate Waivers",
-  description: "End the nightmare of instant loan app debt. We provide expert legal help for app loan settlement across India. stop harassment, reduce your debt, and regain peace of mind.",
+  title: "App Loan Settlement India | Stop Harassment Legally",
+  description: "End loan app debt traps. We provide expert legal help for app loan settlement in India. Stop recovery harassment, reduce debt, and regain peace of mind.",
   keywords: [
     "app loan settlement",
     "instant loan app settlement",

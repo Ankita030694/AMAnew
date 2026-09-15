@@ -139,8 +139,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Understanding 90 Day Loan Default India | RBI Rules & Legal Help",
-  description: "What happens after a 90 day loan default in India? Learn about NPA classification, RBI guidelines, recovery agent rules, and legal solutions with AMA Legal Solutions.",
+  title: "Understanding 90 Day Loan Default in India | AMA Legal",
+  description: "What happens after a 90 day loan default in India? Learn NPA rules, RBI guidelines, recovery limits, and legal debt solutions from AMA Legal Solutions.",
   keywords: [
     "90 day loan default india",
     "npa classification rbi",
@@ -155,6 +155,12 @@ export const metadata = {
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/understanding-90-day-loan-default-india',
+  },
+  openGraph: {
+    title: "Understanding 90 Day Loan Default in India | AMA Legal",
+    description: "What happens after a 90 day loan default in India? Learn NPA rules, RBI guidelines, recovery limits, and legal debt solutions from AMA Legal Solutions.",
+    url: 'https://www.amalegalsolutions.com/understanding-90-day-loan-default-india',
+    type: "article",
   },
 };
 

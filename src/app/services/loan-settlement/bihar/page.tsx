@@ -6,16 +6,16 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement in Bihar | Debt Relief Lawyers Patna, Gaya, Muzaffarpur",
+  title: "Loan Settlement in Bihar | AMA Legal",
   description:
-    "Struggling with debt in Bihar? AMA Legal Solutions offers expert loan settlement for farmers, small businesses, and individuals in Patna, Gaya, Muzaffarpur. Stop harassment & settle legally.",
+    "Struggling with debt in Bihar? AMA Legal Solutions offers expert loan settlement for farmers, small businesses, and individuals in Patna, Gaya.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/bihar',
   },
   openGraph: {
-    title: "Loan Settlement in Bihar | Debt Relief Lawyers Patna, Gaya, Muzaffarpur",
-    description: "Struggling with debt in Bihar? AMA Legal Solutions offers expert loan settlement for farmers, small businesses, and individuals in Patna, Gaya, Muzaffarpur. Stop harassment & settle legally.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Bihar",
+    title: "Loan Settlement in Bihar | AMA Legal",
+    description: "Struggling with debt in Bihar? AMA Legal Solutions offers expert loan settlement for farmers, small businesses, and individuals in Patna, Gaya.",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/bihar",
     type: "website",
     images: [
       {

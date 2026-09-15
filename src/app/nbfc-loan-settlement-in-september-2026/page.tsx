@@ -9,7 +9,7 @@ const OG_IMAGE =
 export const metadata: Metadata = {
   title: "NBFC Loan Settlement in September 2026 | AMA Legal",
   description:
-    "Settle NBFC personal, business, and digital app loans in September 2026 under RBI compromise norms. Secure maximum waivers before Q2 audit closing with expert legal advisory.",
+    "Settle NBFC personal, business, and digital loans in September 2026 under RBI compromise norms. Secure maximum waivers with legal counsel from AMA Legal.",
   keywords: [
     "nbfc loan settlement in september 2026",
     "nbfc debt settlement india 2026",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NBFC Loan Settlement in September 2026 | AMA Legal",
     description:
-      "Settle NBFC personal, business, and digital app loans in September 2026 under RBI compromise norms. Secure maximum waivers before Q2 audit closing with expert legal advisory.",
+      "Settle NBFC personal, business, and digital loans in September 2026 under RBI compromise norms. Secure maximum waivers with legal counsel from AMA Legal.",
     url: PAGE_URL,
     type: "article",
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "NBFC Loan Settlement in September 2026 | AMA Legal",
     description:
-      "Settle NBFC personal, business, and digital app loans in September 2026 under RBI compromise norms. Secure maximum waivers before Q2 audit closing with expert legal advisory.",
+      "Settle NBFC personal, business, and digital loans in September 2026 under RBI compromise norms. Secure maximum waivers with legal counsel from AMA Legal.",
     images: [OG_IMAGE],
     site: "@AMALegalSol",
     creator: "@AnujAnandMalik",

@@ -157,7 +157,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Reliable Loan Settlement Services with Flexible Payment Options (EMI Plans)",
+  title: "Loan Settlement Services with Flexible Payment | AMA Legal",
   description:
     "Looking for reliable loan settlement services with flexible payment options? Compare AMA Legal, FREED, CredSettle. Get EMI plans for debt settlement today.",
   keywords: [
@@ -176,8 +176,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/where-can-i-find-reliable-loan-settlement-services-with-flexible-payment-options',
   },
   openGraph: {
-    title: "Reliable Loan Settlement Services with Flexible Payment Options (EMI Plans)",
-    description: "Settle your debt with flexible EMI options. Find the most reliable services in India.",
+    title: "Loan Settlement Services with Flexible Payment | AMA Legal",
+    description: "Looking for reliable loan settlement services with flexible payment options? Compare AMA Legal, FREED, CredSettle. Get EMI plans for debt settlement today.",
     url: "https://www.amalegalsolutions.com/where-can-i-find-reliable-loan-settlement-services-with-flexible-payment-options",
     type: "article",
     images: [

@@ -3,16 +3,16 @@ import Script from "next/script";
 import ManipurBankingClient from "./ManipurBankingClient";
 
 export const metadata = {
-  title: "Banking and Finance Services in Manipur | NBFC & MFI Registration",
+  title: "Banking and Finance Services in Manipur | AMA Legal",
   description:
-    "Expert legal consultancy for Banking & Finance in Manipur. Services include NBFC Registration, Microfinance setup, Nidhi Company, Money Lenders License & DRT Litigation in Imphal.",
+    "Expert legal consultancy for Banking & Finance in Manipur. Services include NBFC Registration, Microfinance setup, Nidhi Company, Money Lenders License.",
   alternates: {
     canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/manipur",
   },
   openGraph: {
-    title: "Banking and Finance Services in Manipur | NBFC & MFI Registration",
+    title: "Banking and Finance Services in Manipur | AMA Legal",
     description:
-      "Expert legal consultancy for Banking & Finance in Manipur. Services include NBFC Registration, Microfinance setup, Nidhi Company, Money Lenders License & DRT Litigation in Imphal.",
+    "Expert legal consultancy for Banking & Finance in Manipur. Services include NBFC Registration, Microfinance setup, Nidhi Company, Money Lenders License.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/manipur",
     siteName: "AMA Legal Solutions",
     locale: "en_US",

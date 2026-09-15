@@ -6,15 +6,15 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement in Ladakh | Expert Debt Relief Lawyers in Leh & Kargil",
+  title: "Loan Settlement in Ladakh | AMA Legal",
   description:
-    "Struggling with debt in Ladakh? AMA Legal Solutions offers expert loan settlement services in Leh, Kargil & remote areas. Stop harassment & resolve disputes legally.",
+    "Struggling with debt in Ladakh? AMA Legal Solutions offers expert loan settlement services in Leh, Kargil & remote areas. Stop harassment & resolve.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/ladakh',
   },
   openGraph: {
     title: "Loan Settlement in Ladakh | Expert Debt Relief Lawyers",
-    description: "Struggling with debt in Ladakh? AMA Legal Solutions offers expert loan settlement services in Leh, Kargil & remote areas. Stop harassment & resolve disputes legally.",
+    description: "Struggling with debt in Ladakh? AMA Legal Solutions offers expert loan settlement services in Leh, Kargil & remote areas. Stop harassment & resolve.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/ladakh",
     type: "website",
     images: [

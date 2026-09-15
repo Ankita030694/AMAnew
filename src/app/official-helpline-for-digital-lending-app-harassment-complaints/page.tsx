@@ -147,7 +147,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Official Helpline for Digital Lending App Harassment Complaints",
+  title: "Digital Lending App Harassment Helpline | Legal Support",
   description: "Find the official 7 days loan app harassment complaint number. Learn how to report digital lending extortion to the RBI and Cyber Crime Portal effectively.",
   robots: {
     index: true,

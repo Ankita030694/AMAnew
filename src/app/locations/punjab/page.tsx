@@ -209,7 +209,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Lawyers in Punjab | NRI Legal Services | High Court Chandigarh",
+  title: "Lawyers in Punjab | NRI Legal Services | High Court",
   description:
     "Expert lawyers in Punjab. Specialized in NRI Property Disputes, High Court Litigation, RERA Mohali, and Industrial Law in Ludhiana. Trusted Legal Advice.",
   keywords: [
@@ -229,7 +229,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Lawyers in Punjab | NRI & High Court Legal Services",
-    description: "Expert legal representation in Punjab. NRI Services, Civil, Criminal, and RERA services by AMA Legal Solutions.",
+    description: "Expert legal representation in Punjab. NRI Services, Civil, Criminal, and RERA services by AMA Legal Solutions Contact AMA Legal Solutions today.",
     url: "https://www.amalegalsolutions.com/locations/punjab",
     type: "website",
     images: [

@@ -1,15 +1,15 @@
 import TripuraClient from "./TripuraClient";
 
 export const metadata = {
-  title: "Intellectual Property Rights Services in Tripura | Trademark & Patent",
+  title: "Intellectual Property Rights Services in Tripura | AMA Legal",
   description:
-    "Expert IPR services in Tripura. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets today.",
+    "Expert IPR services in Tripura. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/tripura',
   },
   openGraph: {
-    title: "Intellectual Property Rights Services in Tripura | Trademark & Patent",
-    description: "Expert IPR services in Tripura. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets today.",
+    title: "Intellectual Property Rights Services in Tripura | AMA Legal",
+    description: "Expert IPR services in Tripura. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/tripura",
     type: "website",
     images: [

@@ -5,9 +5,9 @@ const PAGE_URL = "https://www.amalegalsolutions.com/will-drafting-services-in-ut
 const OG_IMAGE = "/images/og/will-drafting-services-in-uttar-pradesh.png";
 
 export const metadata: Metadata = {
-  title: "Will Drafting Services in Uttar Pradesh: Top Estate & Succession Lawyers | AMA Legal Solutions",
+  title: "Will Drafting in Uttar Pradesh | AMA Legal Solutions",
   description:
-    "Expert will drafting services in Uttar Pradesh by senior High Court advocates. Secure your family estate, NOIDA, GNIDA, YEIDA, LDA properties, and agricultural Bhumidhari land with court-admissible testamentary drafting.",
+    "Expert will drafting in UP by Allahabad High Court advocates. Protect family estates, YEIDA/LDA properties, and Bhumidhari land with legal precision.",
   keywords: [
     "will drafting services in uttar pradesh",
     "will drafting services uttar pradesh",

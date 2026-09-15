@@ -192,9 +192,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Loan Settlement Application in Hindi | आवेदन पत्र और कानूनी गाइड",
+  title: "Loan Settlement Application in Hindi | आवेदन पत्र प्रारूप",
   description:
-    "लोन सेटलमेंट के लिए हिंदी में आवेदन कैसे लिखें? यहाँ आवेदन पत्र के नमूने, RBI नियम और कानूनी प्रक्रिया की पूरी जानकारी प्राप्त करें। ऋण मुक्त होने का पहला कदम उठाएं।",
+    "लोन सेटलमेंट के लिए हिंदी में आवेदन कैसे लिखें? यहाँ आवेदन पत्र प्रारूप, RBI नियम और कानूनी प्रक्रिया की पूरी जानकारी प्राप्त करें।",
   keywords: [
     "loan settlement application in hindi",
     "loan settlement letter in hindi",

@@ -146,7 +146,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Get Your Trademark in 180 Days India | Fast Track Rule 34 Process",
+  title: "Get Your Trademark in 180 Days India | Rule 34 Process",
   description: "Secure your brand in record time with our 180 day trademark registration service in India. Expert guidance on Rule 34 for Startups & MSMEs. Call now.",
   keywords: [
     "get your trademark in 180 days",

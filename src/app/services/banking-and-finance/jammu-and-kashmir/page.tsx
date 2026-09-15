@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import JammuKashmirBankingClient from "./JammuKashmirBankingClient";
 
 export const metadata: Metadata = {
-  title: "Banking and Finance Services in Jammu & Kashmir | NBFC & DRT Lawyers",
+  title: "Banking & Finance Services in Jammu & Kashmir | AMA Legal",
   description:
-    "Premier legal consultancy for Banking & Finance in J&K. Expert guidance on SARFAESI post-370, Horticulture Loans, Industrial Policy 2021-30, and DRT Chandigarh litigation.",
+    "Banking and finance legal services in Jammu & Kashmir. Expert counsel on SARFAESI, horticulture loans, NBFC registration, and DRT matters with AMA Legal.",
   keywords: [
     "Banking and Finance Services Jammu Kashmir",
     "NBFC Registration Jammu",
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     "PMEGP Loan Consultant J&K",
   ],
   openGraph: {
-    title: "Banking and Finance Legal Services in Jammu & Kashmir",
+    title: "Banking & Finance Services in Jammu & Kashmir | AMA Legal",
     description:
-      "Expert legal support for financial institutions in J&K. From Apple Industry finance to DRT litigation and NBFC setup.",
+      "Banking and finance legal services in Jammu & Kashmir. Expert counsel on SARFAESI, horticulture loans, NBFC registration, and DRT matters with AMA Legal.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/jammu-and-kashmir",
     siteName: "AMA Legal Solutions",
     locale: "en_US",
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Banking and Finance Services in J&K | AMA Legal Solutions",
+    title: "Banking & Finance Services in Jammu & Kashmir | AMA Legal",
     description:
-      "Specialized legal services for NBFCs, Apple Growers, and Banks in J&K. Expert in DRT Chandigarh and local land laws.",
+      "Banking and finance legal services in Jammu & Kashmir. Expert counsel on SARFAESI, horticulture loans, NBFC registration, and DRT matters with AMA Legal.",
   },
   alternates: {
     canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/jammu-and-kashmir",

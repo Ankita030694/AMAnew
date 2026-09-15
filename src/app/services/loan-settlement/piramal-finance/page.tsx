@@ -10,14 +10,14 @@ import { MdRealEstateAgent, MdBusinessCenter, MdMoneyOff, MdTimeline, MdWarning 
 
 // Metadata
 export const metadata = {
-  title: "Piramal Finance Loan Settlement | Housing & Business Loan OTS | AMA Legal Solutions",
-  description: "Struggling with Piramal Finance loan repayment? Expert legal help for settling Housing Loans, Business Loans, and Personal Loans. Stop SARFAESI and harassment.",
+  title: "Piramal Finance Loan Settlement | AMA Legal",
+  description: "Struggling with Piramal Finance loan repayment? Expert legal help for settling Housing Loans, Business Loans, and Personal Loans. Stop SARFAESI and.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/piramal-finance',
   },
   openGraph: {
-    title: "Piramal Finance Loan Settlement | Housing & Business Loan OTS | AMA Legal Solutions",
-    description: "Struggling with Piramal Finance loan repayment? Expert legal help for settling Housing Loans, Business Loans, and Personal Loans. Stop SARFAESI and harassment.",
+    title: "Piramal Finance Loan Settlement | AMA Legal",
+    description: "Struggling with Piramal Finance loan repayment? Expert legal help for settling Housing Loans, Business Loans, and Personal Loans. Stop SARFAESI and.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/piramal-finance",
     type: "website",
     images: [

@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/legal-notice-for-freelance-payment-recovery',
   },
-  title: "Legal Notice for Freelance Payment Recovery | Recover Unpaid Fees in India",
+  title: "Legal Notice for Freelance Payment Recovery | India",
   description:
-    "Struggling with unpaid freelance invoices? Learn how to send a legal notice for freelance payment recovery. Use MSME Samadhaan, Order 37 CPC, and NI Act to recover your fees fast.",
+    "Unpaid freelance invoices? Learn how to send a legal notice for freelance payment recovery in India using MSME Samadhaan and Order 37 CPC to recover dues.",
   keywords: "legal notice for freelance payment recovery, recover unpaid freelance fees india, freelancer payment legal action, msme samadhaan for freelancers, unpaid invoice recovery guide",
 };
 

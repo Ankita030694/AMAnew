@@ -3,16 +3,16 @@ import Script from "next/script";
 import KarnatakaBankingClient from "./KarnatakaBankingClient";
 
 export const metadata = {
-  title: "Banking and Finance Services in Karnataka | NBFC Registration & Fintech Law",
+  title: "Banking and Finance Services in Karnataka | AMA Legal",
   description:
-    "Expert legal consultancy for Banking & Finance in Karnataka. Services include NBFC Registration, Fintech Compliance, Nidhi Company, Money Lenders License & DRT Litigation in Bengaluru.",
+    "Expert legal consultancy for Banking & Finance in Karnataka. Services include NBFC Registration, Fintech Compliance, Nidhi Company, Money Lenders.",
   alternates: {
     canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/karnataka",
   },
   openGraph: {
-    title: "Banking and Finance Services in Karnataka | NBFC Registration & Fintech Law",
+    title: "Banking and Finance Services in Karnataka | AMA Legal",
     description:
-      "Expert legal consultancy for Banking & Finance in Karnataka. Services include NBFC Registration, Fintech Compliance, Nidhi Company, Money Lenders License & DRT Litigation in Bengaluru.",
+    "Expert legal consultancy for Banking & Finance in Karnataka. Services include NBFC Registration, Fintech Compliance, Nidhi Company, Money Lenders.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/karnataka",
     siteName: "AMA Legal Solutions",
     locale: "en_US",

@@ -8,9 +8,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/notice-to-employer-for-non-payment-of-salary-or-benefits',
   },
-  title: "Notice to Employer for Non-Payment of Salary or Benefits | Legal Guide",
+  title: "Notice to Employer for Non-Payment of Salary | Guide",
   description:
-    "Is your employer withholding your salary or benefits? Learn your legal rights under the Payment of Wages Act and Industrial Disputes Act. Draft a legal notice to your employer and recover your dues today.",
+    "Is your employer withholding your salary or benefits? Learn your rights under labor laws, draft a formal legal notice, and recover your dues promptly.",
   keywords: "notice to employer for non payment of salary, legal notice for unpaid salary, employee rights india salary dispute, recover unpaid salary from employer india, payment of wages act salary delay",
 };
 

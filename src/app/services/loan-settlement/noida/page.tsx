@@ -8,13 +8,13 @@ import FaqSection from "./FaqSection";
 export const metadata = {
   title: "Loan Settlement in Noida | Expert Debt Relief Lawyers",
   description:
-    "Struggling with debt in Noida? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok Adalat at Surajpur Court.",
+    "Struggling with debt in Noida? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/noida',
   },
   openGraph: {
     title: "Loan Settlement in Noida | Expert Debt Relief Lawyers",
-    description: "Struggling with debt in Noida? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok Adalat at Surajpur Court.",
+    description: "Struggling with debt in Noida? AMA Legal Solutions offers expert loan settlement services. We handle banks, stop harassment, and settle legally via Lok.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/noida",
     type: "website",
     images: [

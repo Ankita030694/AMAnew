@@ -1,14 +1,14 @@
 import ClientPage from "./ClientPage";
 
 export const metadata = {
-  title: "Intellectual Property Rights Services in Goa | Trademark & Patent",
+  title: "Intellectual Property Rights Services in Goa | AMA Legal",
   description:
     "Expert IPR services in Goa. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets today.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/goa',
   },
   openGraph: {
-    title: "Intellectual Property Rights Services in Goa | Trademark & Patent",
+    title: "Intellectual Property Rights Services in Goa | AMA Legal",
     description: "Expert IPR services in Goa. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets today.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/goa",
     type: "website",

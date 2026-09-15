@@ -3,16 +3,16 @@ import Script from "next/script";
 import GoaBankingClient from "./GoaBankingClient";
 
 export const metadata = {
-  title: "Banking and Finance Services in Goa | NBFC Registration & Casino Finance Law",
+  title: "Banking and Finance Services in Goa | AMA Legal",
   description:
-    "Expert legal consultancy for Banking & Finance in Goa. Services include NBFC Registration, Casino & Tourism Finance, Nidhi Company, Money Lenders License & DRT Litigation in Panaji.",
+    "Expert legal consultancy for Banking & Finance in Goa. Services include NBFC Registration, Casino & Tourism Finance, Nidhi Company, Money Lenders.",
   alternates: {
     canonical: "https://www.amalegalsolutions.com/services/banking-and-finance/goa",
   },
   openGraph: {
-    title: "Banking and Finance Services in Goa | NBFC Registration & Casino Finance Law",
+    title: "Banking and Finance Services in Goa | AMA Legal",
     description:
-      "Expert legal consultancy for Banking & Finance in Goa. Services include NBFC Registration, Casino & Tourism Finance, Nidhi Company, Money Lenders License & DRT Litigation in Panaji.",
+    "Expert legal consultancy for Banking & Finance in Goa. Services include NBFC Registration, Casino & Tourism Finance, Nidhi Company, Money Lenders.",
     url: "https://www.amalegalsolutions.com/services/banking-and-finance/goa",
     siteName: "AMA Legal Solutions",
     locale: "en_US",

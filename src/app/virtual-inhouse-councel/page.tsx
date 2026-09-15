@@ -157,8 +157,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/virtual-inhouse-councel',
   },
-  title: "Virtual Inhouse Councel | AMA Legal Solutions",
-  description: "Get comprehensive legal support with our Virtual Inhouse Councel. We offer drafting, legal notices, trademark registration, startup registration and dispute resolution.",
+  title: "Virtual In-House Counsel | AMA Legal Solutions",
+  description: "Get dedicated legal support with Virtual In-House Counsel by AMA Legal. We handle contract drafting, compliance, IP, legal notices, and dispute resolution.",
+  openGraph: {
+    title: "Virtual In-House Counsel | AMA Legal Solutions",
+    description: "Get dedicated legal support with Virtual In-House Counsel by AMA Legal. We handle contract drafting, compliance, IP, legal notices, and dispute resolution.",
+    url: 'https://www.amalegalsolutions.com/virtual-inhouse-councel',
+    type: "website",
+  },
 };
 
 export default function VirtualInhouseCouncelPage() {

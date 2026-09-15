@@ -5,9 +5,9 @@ const PAGE_URL = "https://www.amalegalsolutions.com/will-drafting-services-in-no
 const OG_IMAGE = "/images/og/will-drafting-services-in-noida.png";
 
 export const metadata: Metadata = {
-  title: "Will Drafting Services in Noida: Top Estate & Succession Lawyers | AMA Legal Solutions",
+  title: "Will Drafting Services in Noida | AMA Legal Solutions",
   description:
-    "Expert will drafting services in Noida by senior High Court advocates. Secure your family estate, NOIDA authority leasehold apartments, commercial plots, and UP Bhumidhari land with court-admissible testamentary drafting.",
+    "Top will drafting in Noida by High Court advocates. Secure family estates, NOIDA authority leaseholds, and commercial plots with valid legal drafting.",
   keywords: [
     "will drafting services in noida",
     "will drafting services noida",

@@ -198,9 +198,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "How to Negotiate a Loan Settlement with Lenders Online | Expert Guide",
+  title: "How to Negotiate Loan Settlement Online | Legal Guide",
   description:
-    "Master the art of online loan settlement negotiation. Learn how to deal with lenders, reduce your debt by up to 50%, and settle loans legally from home. Expert advice inside.",
+    "Learn how to negotiate a loan settlement with lenders online. Proven legal strategies to reduce debt, resolve disputes, and settle loans legally in India.",
   keywords: [
     "how to negotiate a loan settlement with lenders online",
     "online loan settlement process",
@@ -217,8 +217,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/how-to-negotiate-a-loan-settlement-with-lenders-online',
   },
   openGraph: {
-    title: "How to Negotiate a Loan Settlement with Lenders Online | Expert Guide",
-    description: "Struggling with debt? Learn how to negotiate a loan settlement with lenders online effectively. Get expert tips and legal strategies.",
+    title: "How to Negotiate Loan Settlement Online | Legal Guide",
+    description: "Learn how to negotiate a loan settlement with lenders online. Proven legal strategies to reduce debt, resolve disputes, and settle loans legally in India.",
     url: "https://www.amalegalsolutions.com/how-to-negotiate-a-loan-settlement-with-lenders-online",
     type: "website",
     images: [

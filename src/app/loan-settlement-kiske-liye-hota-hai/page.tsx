@@ -147,7 +147,7 @@ const reviewSchema = {
 
 export const metadata = {
   title: "Loan Settlement Kiske Liye Hota Hai? Eligibility Criteria",
-  description: "Find out exactly who is eligible for loan settlement in India. Understand the strict criteria banks use to approve debt settlements and genuine financial hardship.",
+  description: "Find out who is eligible for loan settlement in India. Understand the criteria banks use to approve debt settlements and genuine financial hardship.",
   robots: {
     index: true,
     follow: true,

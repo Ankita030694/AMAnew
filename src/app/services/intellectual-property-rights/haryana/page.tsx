@@ -1,15 +1,15 @@
 import ClientPage from "./ClientPage";
 
 export const metadata = {
-  title: "Intellectual Property Rights Services in Haryana | Trademark & Patent",
+  title: "Intellectual Property Rights Services in Haryana | AMA Legal",
   description:
-    "Expert IPR services in Haryana. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets today.",
+    "Expert IPR services in Haryana. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/intellectual-property-rights/haryana',
   },
   openGraph: {
-    title: "Intellectual Property Rights Services in Haryana | Trademark & Patent",
-    description: "Expert IPR services in Haryana. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets today.",
+    title: "Intellectual Property Rights Services in Haryana | AMA Legal",
+    description: "Expert IPR services in Haryana. We assist with Trademark Registration, Patent Filing, Copyright Protection, and GI Tags. Secure your intellectual assets.",
     url: "https://www.amalegalsolutions.com/services/intellectual-property-rights/haryana",
     type: "website",
     images: [

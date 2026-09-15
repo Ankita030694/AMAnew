@@ -151,9 +151,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Best Legal Services in Ghaziabad | Top Law Firm & Lawyers in Ghaziabad",
+  title: "Best Legal Services in Ghaziabad | Top Law Firm & Lawyers",
   description:
-    "AMA Legal Solutions is a leading law firm in Ghaziabad providing expert legal services in Criminal, Civil, Family, Property, and Corporate Law. Consult top advocates in Ghaziabad today.",
+    "AMA Legal Solutions provides top legal services in Ghaziabad across criminal, civil, family, property, and corporate law. Consult top advocates today.",
   keywords: [
     "legal services in ghaziabad",
     "law firm in ghaziabad",
@@ -170,8 +170,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/legal-services-in-ghaziabad',
   },
   openGraph: {
-    title: "Best Legal Services in Ghaziabad | Top Law Firm & Lawyers in Ghaziabad",
-    description: "AMA Legal Solutions is a leading law firm in Ghaziabad providing expert legal services in Criminal, Civil, Family, Property, and Corporate Law.",
+    title: "Best Legal Services in Ghaziabad | Top Law Firm & Lawyers",
+    description: "AMA Legal Solutions provides top legal services in Ghaziabad across criminal, civil, family, property, and corporate law. Consult top advocates today.",
     url: "https://www.amalegalsolutions.com/legal-services-in-ghaziabad",
     type: "website",
     images: [

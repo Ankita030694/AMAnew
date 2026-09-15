@@ -6,15 +6,15 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Debt Consolidation & Loan Settlement Services | Expert Debt Relief",
+  title: "Debt Consolidation & Loan Settlement Services | AMA Legal",
   description:
-    "Struggling with high-interest loans? Explore debt consolidation, settlement, and credit counseling options. Expert legal help to reduce your debt burden and avoid bankruptcy.",
+    "Struggling with high-interest loans? Explore debt consolidation, settlement, and credit counseling options. Expert legal help to reduce your debt burden.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/debt-consolidation',
   },
   openGraph: {
-    title: "Debt Consolidation & Loan Settlement Services | Expert Debt Relief",
-    description: "Struggling with high-interest loans? Explore debt consolidation, settlement, and credit counseling options. Expert legal help to reduce your debt burden and avoid bankruptcy.",
+    title: "Debt Consolidation & Loan Settlement Services | AMA Legal",
+    description: "Struggling with high-interest loans? Explore debt consolidation, settlement, and credit counseling options. Expert legal help to reduce your debt burden.",
     url: "https://www.amalegalsolutions.com/services/debt-consolidation",
     type: "website",
     images: [

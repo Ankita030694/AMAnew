@@ -169,14 +169,14 @@ const reviewSchema = {
 export const metadata = {
   title: "Loan Settlement in Mizoram | Debt Settlement Lawyers Aizawl",
   description:
-    "Expert loan settlement services in Mizoram. We help you settle personal and business loans in Aizawl, Lunglei, and Champhai. Stop harassment and reduce debt.",
+    "Expert loan settlement services in Mizoram. We help you settle personal and business loans in Aizawl, Lunglei, and Champhai. Stop harassment and reduce.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/mizoram',
   },
   openGraph: {
     title: "Loan Settlement in Mizoram | Debt Settlement Lawyers Aizawl",
     description: "Struggling with debt in Mizoram? We negotiate with banks to reduce your debt and stop harassment. Legal, safe, and effective services in Aizawl.",
-    url: "https://www.amalegalsolutions.com/services/loan-settlement/Mizoram",
+    url: "https://www.amalegalsolutions.com/services/loan-settlement/mizoram",
     type: "website",
     images: [
       {

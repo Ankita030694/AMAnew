@@ -125,7 +125,7 @@ const faqSchema = {
 export const metadata = {
   title: "Loan Settlement in Odisha | Debt Relief Lawyers Bhubaneswar",
   description:
-    "Expert loan settlement in Odisha (Bhubaneswar, Cuttack). Settle personal & business loans legally. Stop police harassment & credit card debt. Free Consultation.",
+    "Expert loan settlement in Odisha (Bhubaneswar, Cuttack). Settle personal & business loans legally. Stop police harassment & credit card debt. Free.",
   keywords: [
     "loan settlement Odisha",
     "debt settlement Bhubaneswar",
