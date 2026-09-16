@@ -11,10 +11,11 @@ export async function generateMetadata({
   const pageNum = typeof resolved?.page === "string" ? parseInt(resolved.page, 10) : 1;
   const page = isNaN(pageNum) || pageNum < 1 ? 1 : pageNum;
   const pageStr = page > 1 ? ` - Page ${page}` : "";
+  const pageTitleStr = page > 1 ? ` (Page ${page})` : "";
 
   return {
-    title: `Complete Loan Settlement Services & Legal Help${pageStr} | AMA Legal Solutions`,
-    description: `Explore our comprehensive range of loan settlement services${pageStr} including DRT lawyers, bank harassment protection, SARFAESI defense, and financial restructuring across India.`,
+    title: `Loan Settlement Legal Services${pageTitleStr} | AMA Legal`,
+    description: `Expert loan settlement services${pageStr}: DRT lawyers, recovery anti-harassment defense, SARFAESI stay, and RBI compromise settlement across India.`,
     alternates: {
       canonical: page > 1 ? `https://www.amalegalsolutions.com/loan-settlement-services?page=${page}` : 'https://www.amalegalsolutions.com/loan-settlement-services',
     },

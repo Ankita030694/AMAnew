@@ -2,16 +2,44 @@ import React from "react";
 import Link from "next/link";
 import { locationData } from "./locationData";
 
-export const metadata = {
-  alternates: {
-    canonical: 'https://www.amalegalsolutions.com/lawyer-by-city',
-  },
-  title: "Loan Settlement Lawyers by City | AMA Legal",
-  description:
-    "Find the best advocates and lawyers for loan settlement across various cities in India. Get expert legal assistance with AMA Legal Solutions.",
-};
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const resolved = await searchParams;
+  const pageNum = typeof resolved?.page === "string" ? parseInt(resolved.page, 10) : 1;
+  const page = isNaN(pageNum) || pageNum < 1 ? 1 : pageNum;
+  const pageTitleSuffix = page > 1 ? ` (Page ${page})` : "";
+  const pageDescSuffix = page > 1 ? ` - Page ${page}` : "";
 
-export default function LawyerByCity() {
+  return {
+    title: `Loan Settlement Lawyers by City${pageTitleSuffix} | AMA Legal`,
+    description: `Find top advocates for loan settlement across Indian cities${pageDescSuffix}. Expert legal help for bank debt resolution with AMA Legal Solutions.`,
+    alternates: {
+      canonical: page > 1 ? `https://www.amalegalsolutions.com/lawyer-by-city?page=${page}` : 'https://www.amalegalsolutions.com/lawyer-by-city',
+    },
+  };
+}
+
+const ITEMS_PER_PAGE = 60;
+
+export default async function LawyerByCity({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const resolved = await searchParams;
+  const pageNum = typeof resolved?.page === "string" ? parseInt(resolved.page, 10) : 1;
+  const currentPage = isNaN(pageNum) || pageNum < 1 ? 1 : pageNum;
+
+  const totalItems = locationData.length;
+  const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, totalItems);
+  const currentLocations = locationData.slice(startIndex, endIndex);
+
   return (
     <div className="min-h-screen bg-[#EBE9E4] text-[#30261C] py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden">
       {/* Background Pattern */}
@@ -40,7 +68,7 @@ export default function LawyerByCity() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {locationData.map((loc, index) => (
+          {currentLocations.map((loc, index) => (
             <Link
               key={index}
               href={`/lawyer-by-city/${loc.slug}`}
@@ -59,6 +87,33 @@ export default function LawyerByCity() {
             </Link>
           ))}
         </div>
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center gap-4 mt-16">
+            {currentPage > 1 && (
+              <Link
+                href={currentPage === 2 ? `/lawyer-by-city` : `/lawyer-by-city?page=${currentPage - 1}`}
+                className="px-4 py-2 border border-[#30261C]/20 rounded-md hover:bg-[#D29E0D] hover:text-white hover:border-[#D29E0D] transition-all"
+              >
+                Previous
+              </Link>
+            )}
+            
+            <div className="px-4 py-2 text-sm text-[#30261C]/60 font-medium">
+              Page {currentPage} of {totalPages}
+            </div>
+
+            {currentPage < totalPages && (
+              <Link
+                href={`/lawyer-by-city?page=${currentPage + 1}`}
+                className="px-4 py-2 border border-[#30261C]/20 rounded-md hover:bg-[#D29E0D] hover:text-white hover:border-[#D29E0D] transition-all"
+              >
+                Next
+              </Link>
+            )}
+          </div>
+        )}
       </div>
 
       {/* SEO Content Section */}

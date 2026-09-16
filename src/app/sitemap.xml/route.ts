@@ -6,6 +6,8 @@ import { successStories } from '@/data/success-stories'
 import { locationData } from '@/app/lawyer-by-city/locationData'
 import { harassmentBanks } from '@/data/harassmentBanks'
 import { harassmentCities } from '@/data/harassmentCities'
+import { creditCardBanks } from '@/data/creditCardBanks'
+import { statesData } from '@/data/statesData'
 import fs from 'fs';
 import path from 'path';
 
@@ -794,7 +796,18 @@ export async function GET(): Promise<Response> {
   // Build lawyer keyword routes
   const lawyerKeywordRoutes = generateLawyerKeywordRoutes(baseUrl)
 
-
+  // Build credit-card-settlement bank/state routes
+  const creditCardSettlementRoutes: { url: string; lastModified: string; changeFrequency: string; priority: number; }[] = [];
+  creditCardBanks.forEach((bank) => {
+    statesData.forEach((state) => {
+      creditCardSettlementRoutes.push({
+        url: `${baseUrl}/credit-card-settlement/${bank.slug}/${state.slug}`,
+        lastModified: new Date().toISOString(),
+        changeFrequency: 'weekly',
+        priority: 0.7
+      });
+    });
+  });
 
   // Combine all routes, including dynamicBankRoutes
   const allRoutes = [
@@ -806,7 +819,8 @@ export async function GET(): Promise<Response> {
     ...blogRoutes,
     ...articleRoutes,
     ...successStoryRoutes,
-    ...lawyerByCityRoutes
+    ...lawyerByCityRoutes,
+    ...creditCardSettlementRoutes
   ]
 
   // Generate XML

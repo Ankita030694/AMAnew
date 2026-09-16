@@ -3,13 +3,25 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import { ChevronRight } from 'lucide-react';
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: 'https://www.amalegalsolutions.com/directory',
-  },
-  title: 'Legal Services Directory | AMA Legal Solutions',
-  description: 'A comprehensive directory of all legal services, drafting notices, loan settlement guides, and arbitration support offered by AMA Legal Solutions.',
-};
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}): Promise<Metadata> {
+  const resolved = await searchParams;
+  const pageNum = typeof resolved?.page === "string" ? parseInt(resolved.page, 10) : 1;
+  const page = isNaN(pageNum) || pageNum < 1 ? 1 : pageNum;
+  const pageTitleSuffix = page > 1 ? ` (Page ${page})` : "";
+  const pageDescSuffix = page > 1 ? ` - Page ${page}` : "";
+
+  return {
+    title: `Legal Services Directory${pageTitleSuffix} | AMA Legal`,
+    description: `Browse our directory of legal services, drafting notices, and loan settlement guides${pageDescSuffix}. Get expert support from AMA Legal Solutions.`,
+    alternates: {
+      canonical: page > 1 ? `https://www.amalegalsolutions.com/directory?page=${page}` : 'https://www.amalegalsolutions.com/directory',
+    },
+  };
+}
 
 const directoryLinks = [
   { name: 'Which is Better: Loan Settlement or Debt Consolidation? Legal Guide', href: '/loan-settlement-vs-debt-consolidation' },
@@ -796,7 +808,24 @@ const directoryLinks = [
   { name: 'About', href: '/about' }
 ];
 
-export default function DirectoryPage() {
+const ITEMS_PER_PAGE = 80;
+
+export default async function DirectoryPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const resolved = await searchParams;
+  const pageNum = typeof resolved?.page === "string" ? parseInt(resolved.page, 10) : 1;
+  const currentPage = isNaN(pageNum) || pageNum < 1 ? 1 : pageNum;
+
+  const totalItems = directoryLinks.length;
+  const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, totalItems);
+  const currentLinks = directoryLinks.slice(startIndex, endIndex);
+
   return (
     <main className="min-h-screen bg-gray-50/50 pb-24 pt-[100px]">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -813,7 +842,7 @@ export default function DirectoryPage() {
 
         {/* Directory Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {directoryLinks.map((link, idx) => (
+          {currentLinks.map((link, idx) => (
             <Link
               key={`${link.href}-${idx}`}
               href={link.href}
@@ -826,6 +855,33 @@ export default function DirectoryPage() {
             </Link>
           ))}
         </div>
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center gap-4 mt-12">
+            {currentPage > 1 && (
+              <Link
+                href={currentPage === 2 ? `/directory` : `/directory?page=${currentPage - 1}`}
+                className="px-4 py-2 border border-[#30261C]/20 rounded-md hover:bg-[#D29E0D] hover:text-white hover:border-[#D29E0D] transition-all text-sm font-medium"
+              >
+                Previous
+              </Link>
+            )}
+            
+            <div className="px-4 py-2 text-sm text-[#30261C]/60 font-medium">
+              Page {currentPage} of {totalPages}
+            </div>
+
+            {currentPage < totalPages && (
+              <Link
+                href={`/directory?page=${currentPage + 1}`}
+                className="px-4 py-2 border border-[#30261C]/20 rounded-md hover:bg-[#D29E0D] hover:text-white hover:border-[#D29E0D] transition-all text-sm font-medium"
+              >
+                Next
+              </Link>
+            )}
+          </div>
+        )}
 
         {/* SEO Content Section */}
         <div className="mt-20 pt-10 border-t border-gray-200">

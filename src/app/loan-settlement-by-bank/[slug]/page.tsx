@@ -4,7 +4,7 @@ import path from "path";
 import Link from "next/link";
 import Script from "next/script";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
@@ -67,6 +67,11 @@ export default async function BankSlugPage({ params }: { params: any }) {
 
   if (!bankData) {
     notFound();
+  }
+
+  const canonicalSlug = slugify(bankData.company);
+  if (resolvedParams.slug !== canonicalSlug) {
+    permanentRedirect(`/loan-settlement-by-bank/${canonicalSlug}`);
   }
 
   const bankName = bankData.company;

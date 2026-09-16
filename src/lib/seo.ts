@@ -40,39 +40,41 @@ export function formatMetaTitle(
 ): string {
   const cleanSubject = subject.replace(/\s+/g, " ").trim();
 
-  // If the subject alone already fits within maxLen and already has brand or delimiter
+  // If the subject alone is already within [minLen, maxLen] and has brand/delimiter
   if (
+    cleanSubject.length >= minLen &&
     cleanSubject.length <= maxLen &&
     (cleanSubject.includes("AMA") || cleanSubject.includes("|") || cleanSubject.includes(" - ") || !preferredSuffix)
   ) {
     return cleanSubject;
   }
 
-  let full = `${cleanSubject}${preferredSuffix}`;
+  // Remove existing partial brand suffix if present to re-expand cleanly
+  const strippedSubject = cleanSubject.replace(/\s*\|\s*AMA(\s*Legal)?.*$/i, "").replace(/\s*-\s*AMA.*$/i, "").trim();
 
-  // If already contains brand or preferred suffix
-  if (cleanSubject.includes("AMA") || !preferredSuffix) {
-    full = cleanSubject;
-  }
+  let full = `${strippedSubject}${preferredSuffix}`;
 
-  // If too short, expand with the full brand suffix if it fits
+  // If too short, expand with the full brand suffix
   if (full.length < minLen) {
     const longerSuffix = " | AMA Legal Solutions";
-    if (`${cleanSubject}${longerSuffix}`.length <= maxLen) {
-      full = `${cleanSubject}${longerSuffix}`;
+    if (`${strippedSubject}${longerSuffix}`.length <= maxLen) {
+      full = `${strippedSubject}${longerSuffix}`;
     } else {
-      full = `${cleanSubject} - Legal Assistance`;
+      full = `${strippedSubject} - Legal Solutions`;
     }
   }
 
-  if (full.length <= maxLen) {
+  if (full.length <= maxLen && full.length >= minLen) {
     return full;
   }
 
-  // Need to trim subject to fit within maxLen
-  const targetLen = (cleanSubject.includes("AMA") || !preferredSuffix) ? maxLen : maxLen - preferredSuffix.length;
-  const trimmed = truncateEntity(cleanSubject, targetLen);
-  return (cleanSubject.includes("AMA") || !preferredSuffix) ? trimmed : `${trimmed}${preferredSuffix}`;
+  if (full.length > maxLen) {
+    const targetLen = maxLen - preferredSuffix.length;
+    const trimmed = truncateEntity(strippedSubject, targetLen);
+    return `${trimmed}${preferredSuffix}`;
+  }
+
+  return full;
 }
 
 /**
@@ -88,7 +90,15 @@ export function formatMetaDescription(text: string, maxLen = 155, minLen = 120):
   }
 
   if (clean.length < minLen) {
-    clean = clean.replace(/\.$/, "") + " Contact AMA Legal Solutions today.";
+    const filler = " Consult seasoned advocates at AMA Legal Solutions for dedicated legal representation and debt resolution across India.";
+    const combined = clean.replace(/\.$/, "") + "." + filler;
+    if (combined.length <= maxLen && combined.length >= minLen) {
+      clean = combined;
+    } else if (combined.length > maxLen) {
+      const sliced = combined.slice(0, maxLen - 1).trim();
+      const lastSpace = sliced.lastIndexOf(" ");
+      clean = (lastSpace >= minLen ? sliced.slice(0, lastSpace) : sliced).replace(/[,;:\s-]+$/, "") + ".";
+    }
   }
 
   return clean;

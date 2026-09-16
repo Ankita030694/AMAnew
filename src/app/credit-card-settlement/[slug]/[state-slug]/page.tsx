@@ -8,20 +8,13 @@ import { statesData, StateData } from "@/data/statesData";
 import { notFound } from "next/navigation";
 import { getBankStateSettlementSEO } from "@/lib/seo";
 
-// ISR: Cache pages for 24 hours
-export const revalidate = 86400;
-export const dynamicParams = true;
-
 export async function generateStaticParams() {
-  const topBanks = creditCardBanks.slice(0, 15);
-  const topStates = statesData.slice(0, 10);
   const params: { slug: string; "state-slug": string }[] = [];
-  
-  for (const bank of topBanks) {
-    for (const state of topStates) {
+  creditCardBanks.forEach((bank) => {
+    statesData.forEach((state) => {
       params.push({ slug: bank.slug, "state-slug": state.slug });
-    }
-  }
+    });
+  });
   return params;
 }
 

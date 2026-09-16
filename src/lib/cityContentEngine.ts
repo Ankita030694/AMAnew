@@ -90,6 +90,75 @@ const COMMERCIAL_HUB_SLUGS = [
   "vadodara", "visakhapatnam", "patna", "ludhiana", "agra", "nashik", "rajkot", "varanasi"
 ];
 
+const TIER2_ECONOMIC_FOCUS = [
+  "salaried professionals, local business owners, and self-employed individuals navigating financial restructuring and debt resolution",
+  "small merchants, independent contractors, and working families dealing with sudden loss of revenue and mounting unsecured obligations",
+  "retail traders, healthcare workers, and regional service sector personnel seeking relief from compounding loan balances",
+  "agricultural traders, local enterprise owners, and private employees managing cash flow bottlenecks and loan delinquency",
+  "manufacturing employees, logistics operators, and local entrepreneurs striving to protect their assets from aggressive recovery",
+  "education sector staff, government-adjacent contractors, and micro-entrepreneurs working to achieve debt freedom through legitimate legal OTS"
+];
+
+const TIER2_DEBT_LANDSCAPE = [
+  "unsecured personal loans, credit card compounding interest, and consumer credit facilities",
+  "multiple instant digital lending app liabilities, revolving credit cards, and overdue private bank personal loans",
+  "inflated overdue penalty interest, multiple card debts, and high-interest NBFC personal facilities",
+  "compounded late fees, unmanageable credit card minimum dues, and personal loan defaults",
+  "unsecured overdraft lines, fintech app micro-borrowings, and cumulative bank debt obligations",
+  "unauthorized collection agency charges, disputed statement figures, and high-interest personal finance loans"
+];
+
+const TIER2_LEGAL_FORUM = [
+  "the local District Courts, jurisdictional Debt Recovery Tribunals (DRT), and District Legal Services Authority (DLSA)",
+  "Chief Judicial Magistrate courts, DLSA mediation panels, and regional consumer dispute redressal commissions",
+  "jurisdictional District Civil Courts, National Lok Adalat benches, and the RBI Banking Ombudsman scheme",
+  "local Judicial Magistrate courts handling Section 138/25 notices, Sub-Divisional courts, and statutory conciliation cells",
+  "District & Sessions Courts, permanent Lok Adalat dispute forums, and consumer forums",
+  "jurisdictional Civil Judges (Senior Division), regional DRT circuit benches, and Lok Adalat compromise cells"
+];
+
+const METRO_ECONOMIC_FOCUS = [
+  "corporate executives, technology professionals, and service industry employees facing sudden income shifts or layoff disruptions",
+  "IT sector specialists, multinational consultants, and high-income salaried professionals managing multi-lender debt obligations",
+  "corporate employees, startup founders, and commercial service professionals seeking structured one-time settlement",
+  "finance managers, software engineers, and urban professionals dealing with high-ticket revolving credit liabilities"
+];
+
+const METRO_DEBT_LANDSCAPE = [
+  "multi-bank revolving credit card balances (averaging 36-45% APR), aggressive fintech app micro-loans, and high-ticket personal debt",
+  "accumulated credit card dues across private banks, personal loan EMIs exceeding monthly take-home, and digital credit lines",
+  "unsecured consumer loans, compounding credit card finance charges, and predatory online loan app harassment",
+  "high-ticket personal loans, multiple credit card facilities, and aggressive automated recovery harassment"
+];
+
+const METRO_LEGAL_FORUM = [
+  "jurisdictional Metropolitan Magistrate courts, High Court writ jurisdiction, and National Lok Adalat mediation forums",
+  "City Civil & Sessions Courts, jurisdictional High Court appellate benches, and the RBI Centralized Ombudsman portal",
+  "Metropolitan Courts handling Section 138 cheque bounce summons, permanent Lok Adalat benches, and DRT tribunals",
+  "Chief Metropolitan Magistrate courts, High Court dispute resolution cells, and legal aid clinics under State Legal Services"
+];
+
+const COMMERCIAL_ECONOMIC_FOCUS = [
+  "traders, MSME entrepreneurs, manufacturing operators, and commercial vendors encountering supply chain liquidity cycles",
+  "wholesale distributors, factory owners, and regional commercial traders dealing with credit crunches and cash flow interruptions",
+  "textile merchants, retail business proprietors, and industrial suppliers seeking legitimate debt restructuring with banks",
+  "logistics providers, export-import operators, and medium enterprise owners needing relief from compounding financial dues"
+];
+
+const COMMERCIAL_DEBT_LANDSCAPE = [
+  "unsecured business lines, working capital overdrafts, merchant cash advances, and post-dated cheque (PDC) liabilities",
+  "commercial credit card defaults, personal guarantees on stressed business facilities, and unserviceable term loans",
+  "disputed interest calculations on unsecured credit, working capital defaults, and supplier payment strain",
+  "high-interest NBFC loans, commercial finance facilities, and multiple bank recovery notices"
+];
+
+const COMMERCIAL_LEGAL_FORUM = [
+  "District Commercial Courts, Chief Judicial Magistrate courts for Section 138/25 matters, and regional Banking Ombudsman desks",
+  "designated Commercial Benches of District Courts, DLSA conciliation meetings, and Lok Adalat compromise sessions",
+  "jurisdictional Judicial Magistrate courts, State Commercial Dispute benches, and the regional Office of the Banking Ombudsman",
+  "District Courts, Commercial Division arbitral tribunals, and National Lok Adalat compromise hearings"
+];
+
 export function getCityProfile(slug: string, name: string): CityProfileData {
   const hash = hashSlug(slug);
   const clean = slug.toLowerCase();
@@ -101,18 +170,18 @@ export function getCityProfile(slug: string, name: string): CityProfileData {
     regionType = "commercial-hub";
   }
 
-  let economicFocus = "salaried professionals, local business owners, and self-employed individuals navigating financial restructuring";
-  let debtLandscape = "unsecured personal loans, credit card compounding interest, and consumer credit facilities";
-  let legalForum = "the local District Courts, jurisdictional Debt Recovery Tribunals (DRT), and District Legal Services Authority (DLSA)";
+  let economicFocus = TIER2_ECONOMIC_FOCUS[hash % TIER2_ECONOMIC_FOCUS.length];
+  let debtLandscape = TIER2_DEBT_LANDSCAPE[(hash >> 2) % TIER2_DEBT_LANDSCAPE.length];
+  let legalForum = TIER2_LEGAL_FORUM[(hash >> 4) % TIER2_LEGAL_FORUM.length];
 
   if (regionType === "metro-ncr") {
-    economicFocus = "corporate executives, technology professionals, and service industry employees facing sudden income shifts or layoff disruptions";
-    debtLandscape = "multi-bank revolving credit card balances (averaging 36-45% APR), aggressive fintech app micro-loans, and high-ticket personal debt";
-    legalForum = "jurisdictional Metropolitan Magistrate courts, High Court writ jurisdiction, and National Lok Adalat mediation forums";
+    economicFocus = METRO_ECONOMIC_FOCUS[hash % METRO_ECONOMIC_FOCUS.length];
+    debtLandscape = METRO_DEBT_LANDSCAPE[(hash >> 2) % METRO_DEBT_LANDSCAPE.length];
+    legalForum = METRO_LEGAL_FORUM[(hash >> 4) % METRO_LEGAL_FORUM.length];
   } else if (regionType === "commercial-hub") {
-    economicFocus = "traders, MSME entrepreneurs, manufacturing operators, and commercial vendors encountering supply chain liquidity cycles";
-    debtLandscape = "unsecured business lines, working capital overdrafts, merchant cash advances, and post-dated cheque (PDC) liabilities";
-    legalForum = "District Commercial Courts, Chief Judicial Magistrate courts for Section 138/25 matters, and regional Banking Ombudsman desks";
+    economicFocus = COMMERCIAL_ECONOMIC_FOCUS[hash % COMMERCIAL_ECONOMIC_FOCUS.length];
+    debtLandscape = COMMERCIAL_DEBT_LANDSCAPE[(hash >> 2) % COMMERCIAL_DEBT_LANDSCAPE.length];
+    legalForum = COMMERCIAL_LEGAL_FORUM[(hash >> 4) % COMMERCIAL_LEGAL_FORUM.length];
   }
 
   // Rotated Testimonials
