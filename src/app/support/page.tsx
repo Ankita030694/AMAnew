@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { Shield, ShieldCheck, Clock, Users, FileText, PhoneCall, AlertTriangle } from 'lucide-react';
+import { Shield, ShieldCheck, Clock, Users, PhoneCall } from 'lucide-react';
 import SupportForm from './SupportForm';
 
 export const metadata: Metadata = {
@@ -13,13 +13,86 @@ export const metadata: Metadata = {
     title: "Support & Legal Escalations | AMA Legal Solutions",
     description: "Connect directly with AMA Legal Solutions legal support desk for priority case escalations, debt recovery grievances, and urgent legal interventions.",
     url: 'https://www.amalegalsolutions.com/support',
+    siteName: 'AMA Legal Solutions',
+    locale: 'en_IN',
     type: 'website',
+    images: [
+      {
+        url: 'https://www.amalegalsolutions.com/future.png',
+        width: 1200,
+        height: 630,
+        alt: 'Support & Legal Escalations - AMA Legal Solutions',
+      },
+    ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Support & Legal Escalations | AMA Legal Solutions',
+    description: 'Connect directly with AMA Legal Solutions legal support desk for priority case escalations, debt recovery grievances, and urgent legal interventions.',
+    images: ['https://www.amalegalsolutions.com/future.png'],
+    site: '@amalegalsolutions',
+    creator: '@amalegalsolutions',
+  },
+};
+
+const supportSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": "https://www.amalegalsolutions.com/support#webpage",
+      "url": "https://www.amalegalsolutions.com/support",
+      "name": "Support & Legal Escalations | AMA Legal Solutions",
+      "description": "Connect directly with AMA Legal Solutions legal support desk for priority case escalations, debt recovery grievances, and urgent legal interventions.",
+      "publisher": {
+        "@type": "Attorney",
+        "name": "AMA Legal Solutions",
+        "url": "https://www.amalegalsolutions.com/",
+        "telephone": "+91-8700343611",
+        "email": "notify@amalegalsolutions.com"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.amalegalsolutions.com/support#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How quickly does legal support intervene after I submit an escalation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every submitted escalation triggers an automated case notification to our senior review team. For standard inquiries, our team responds within 4 business hours. If your escalation involves imminent agent home visits or court deadlines, our on-call advocates initiate immediate protective measures."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What documents should I prepare when reporting recovery agent harassment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To ensure our legal team can take swift legal action against unlawful recovery practices, please have your loan account number, bank name, audio recordings, WhatsApp chat screenshots, and details of any agent visits (time, location, and behavior) ready for sharing with our advocates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can AMA Legal Solutions represent me in DRT or Lok Adalat proceedings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, AMA Legal Solutions is a full-service law firm with advocates empaneled across major High Courts, District Courts, Debt Recovery Tribunals (DRT), and National Lok Adalat forums across India. We provide end-to-end representation from pre-litigation notices through final settlement decrees."
+          }
+        }
+      ]
+    }
+  ]
 };
 
 export default function SupportPage() {
   return (
     <main className="min-h-screen bg-[#FCFBF8] flex flex-col font-[family-name:var(--font-polysans)]">
+      {/* Schema.org Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(supportSchema) }}
+      />
       <div className="flex-grow pt-[120px] px-4 md:px-8 max-w-[1440px] mx-auto w-full mb-[80px]">
         
         {/* Top Header & Form Section */}

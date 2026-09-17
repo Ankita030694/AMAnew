@@ -133,6 +133,17 @@ const processContent = (html: string, fallbackTitle?: string) => {
     }
   );
   
+  // Fix known broken or non-canonical links in article content
+  modifiedContent = modifiedContent
+    .replace(/http:\/\/www\.amalegalsolutions\.com/gi, 'https://www.amalegalsolutions.com')
+    .replace(/http:\/\/amalegalsolutions\.com/gi, 'https://www.amalegalsolutions.com')
+    .replace(/href=["']https:\/\/www\.amalegalsolutions\.com\/blog\/how-to-improve-your-cibil-score-after-loan-settlement["']/gi, 'href="/how-to-improve-cibil-score-after-loan-settlement"')
+    .replace(/href=["']\/blog\/how-to-improve-your-cibil-score-after-loan-settlement["']/gi, 'href="/how-to-improve-cibil-score-after-loan-settlement"')
+    .replace(/href=["']https:\/\/www\.amalegalsolutions\.com\/blog\/legal-process-for-loan-recovery-in-india["']/gi, 'href="/blog/legal-process-for-loan-recovery-in-india-explained-2025"')
+    .replace(/href=["']\/blog\/legal-process-for-loan-recovery-in-india["']/gi, 'href="/blog/legal-process-for-loan-recovery-in-india-explained-2025"')
+    .replace(/href=["']https:\/\/www\.amalegalsolutions\.com\/credit-card-legal-help["']/gi, 'href="/services/banking-and-finance"')
+    .replace(/href=["']\/credit-card-legal-help["']/gi, 'href="/services/banking-and-finance"');
+
   return { content: modifiedContent, sections };
 };
 

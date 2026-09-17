@@ -61,7 +61,7 @@ export default function SupportForm() {
     return !(nameError || emailError || phoneError || concernError);
   };
 
-  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) return;
 
@@ -113,6 +113,7 @@ export default function SupportForm() {
             <h3 className="text-xl font-bold text-[#30261C]">Escalation Received</h3>
             <p className="text-[#30261C]">Thank you for reaching out. We have securely escalated your concern to our senior legal support desk.</p>
             <button 
+              type="button"
               onClick={() => { setSubmitted(false); setFormData({ name: '', phone: '', email: '', concern: '' }); }} 
               className="mt-4 px-6 py-2 bg-[#FDF8E7] rounded-lg text-sm font-semibold border border-[#E9C46A]/40 text-[#E19100]"
             >
@@ -120,74 +121,93 @@ export default function SupportForm() {
             </button>
           </div>
         ) : (
-          <form className="space-y-3 relative z-10">
+          <form onSubmit={handleSubmit} className="space-y-3 relative z-10" noValidate>
             <div className="relative">
+              <label htmlFor="support-name" className="sr-only">Full Name</label>
               <div className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none">
                 <User className="w-4 h-4 text-gray-400" />
               </div>
               <input
+                id="support-name"
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 onBlur={() => setErrors({ ...errors, name: validateName(formData.name) })}
+                autoComplete="name"
+                aria-label="Full Name"
+                aria-required="true"
                 className={`w-full bg-[#FCFBF8] border ${errors.name ? 'border-red-400' : 'border-gray-200'} rounded-xl py-3.5 pl-11 pr-4 text-sm text-black focus:outline-none focus:border-[#E19100] transition-colors`}
                 placeholder="Full Name"
               />
             </div>
 
             <div className="relative">
+              <label htmlFor="support-phone" className="sr-only">10-Digit Mobile Number</label>
               <div className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none">
                 <Phone className="w-4 h-4 text-gray-400" />
               </div>
               <input
+                id="support-phone"
                 type="tel"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
                 onBlur={() => setErrors({ ...errors, phone: validatePhone(formData.phone) })}
                 maxLength={10}
+                autoComplete="tel"
+                aria-label="10-Digit Mobile Number"
+                aria-required="true"
                 className={`w-full bg-[#FCFBF8] border ${errors.phone ? 'border-red-400' : 'border-gray-200'} rounded-xl py-3.5 pl-11 pr-4 text-sm text-black focus:outline-none focus:border-[#E19100] transition-colors`}
                 placeholder="10-Digit Mobile Number"
               />
             </div>
 
             <div className="relative">
+              <label htmlFor="support-email" className="sr-only">Email Address</label>
               <div className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none">
                 <Mail className="w-4 h-4 text-gray-400" />
               </div>
               <input
+                id="support-email"
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 onBlur={() => setErrors({ ...errors, email: validateEmail(formData.email) })}
+                autoComplete="email"
+                aria-label="Email Address"
+                aria-required="true"
                 className={`w-full bg-[#FCFBF8] border ${errors.email ? 'border-red-400' : 'border-gray-200'} rounded-xl py-3.5 pl-11 pr-4 text-sm text-black focus:outline-none focus:border-[#E19100] transition-colors`}
                 placeholder="Email Address"
               />
             </div>
 
             <div className="relative">
+              <label htmlFor="support-concern" className="sr-only">Describe your legal concern</label>
               <div className="absolute left-4 top-4 pointer-events-none">
                 <MessageSquare className="w-4 h-4 text-gray-400" />
               </div>
               <textarea
+                id="support-concern"
                 name="concern"
                 value={formData.concern}
                 onChange={handleChange}
                 onBlur={() => setErrors({ ...errors, concern: validateConcern(formData.concern) })}
                 rows={4}
+                aria-label="Describe your legal concern, loan issue, or harassment details"
+                aria-required="true"
                 className={`w-full bg-[#FCFBF8] border ${errors.concern ? 'border-red-400' : 'border-gray-200'} rounded-xl py-3.5 pl-11 pr-4 text-sm text-black focus:outline-none focus:border-[#E19100] transition-colors resize-none`}
                 placeholder="Describe your legal concern, loan issue, or harassment details..."
               />
             </div>
 
             {(errors.name || errors.email || errors.phone || errors.concern) && (
-              <p className="text-red-500 text-xs text-center">Please fill out all fields correctly.</p>
+              <p className="text-red-500 text-xs text-center" role="alert">Please fill out all fields correctly.</p>
             )}
 
             <button
-              onClick={handleSubmit}
+              type="submit"
               disabled={isSubmitting}
               className="w-full bg-[#dda321] hover:bg-[#c9921b] text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-colors mt-4 shadow-md"
             >

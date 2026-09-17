@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: { params: any }) {
 
   const bankName = bankData.company;
   const canonicalSlug = slugify(bankData.company);
-  const { title, description } = getBankSettlementSEO(bankName, canonicalSlug);
+  const { title, description } = getBankSettlementSEO(bankName, canonicalSlug, "Bank");
 
   return {
     title,

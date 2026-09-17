@@ -3,6 +3,7 @@ import Script from "next/script";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { canonicalSettlementBanks } from "@/data/canonicalSettlementBanks";
 
 // FAQ data for rendering and Schema
 const faqs = [
@@ -653,28 +654,15 @@ export default function HyderabadLoanSettlementPage() {
                 We settle loans from the following banks
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-                {[
-                  "SBI", "HDFC", "ICICI", "Kotak Mahindra", "IDFC", "Yes Bank", "Bajaj Finserv", 
-                  "Axis Bank", "Bank of Baroda", "Hero Fincorp", "Aditya Birla", "Poonawalla Fincorp",
-                  "Tata Capital", "Federal Bank", "PayU Finance", "KrazyBee", "AU Small Finance Bank",
-                  "Northern Arc", "DMI Finance", "Piramal Finance", "DBS Bank", "South Indian Bank",
-                  "Si Creva (Kissht/Ring)", "Stashfin", "L&T Finance", "American Express", "Standard Chartered",
-                  "True Credits (TrueBalance)", "Moneyview", "Vivriti Capital", "Kisetsu Saison Finance", 
-                  "IndusInd Bank", "SMFG India Credit", "Fibe (EarlySalary)"
-                ].map((bank) => {
-                  const slug = bank.toLowerCase()
-                    .replace(/[^a-z0-9]+/g, '-')
-                    .replace(/(^-|-$)/g, '');
-                  return (
-                    <Link 
-                      key={bank}
-                      href={`/services/loan-settlement/${slug}`}
-                      className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
-                    >
-                      <span className="text-gray-800 font-medium text-sm leading-tight block">{bank}</span>
-                    </Link>
-                  );
-                })}
+                {canonicalSettlementBanks.map((bank) => (
+                  <Link 
+                    key={bank.name}
+                    href={bank.href}
+                    className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D2A02A]/30 focus:ring-offset-2"
+                  >
+                    <span className="text-gray-800 font-medium text-sm leading-tight block">{bank.name}</span>
+                  </Link>
+                ))}
               </div>
               <div className="mt-8 text-center">
                 <p className="text-lg text-gray-700">

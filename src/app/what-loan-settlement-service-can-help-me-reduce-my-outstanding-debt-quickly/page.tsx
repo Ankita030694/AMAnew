@@ -758,17 +758,17 @@ export default function DebtReductionPage() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/loan-settlement-by-bank/sbi-bank" className="text-gray-600 hover:text-[#D2A02A] text-sm block transition-colors">
+                      <Link href="/loan-settlement-by-bank/sbi" className="text-gray-600 hover:text-[#D2A02A] text-sm block transition-colors">
                         SBI Loan Settlement
                       </Link>
                     </li>
                     <li>
-                      <Link href="/loan-settlement-by-bank/hdfc-bank" className="text-gray-600 hover:text-[#D2A02A] text-sm block transition-colors">
+                      <Link href="/loan-settlement-by-bank/hdfc" className="text-gray-600 hover:text-[#D2A02A] text-sm block transition-colors">
                         HDFC Loan Settlement
                       </Link>
                     </li>
                     <li>
-                      <Link href="/loan-settlement-by-bank/icici-bank" className="text-gray-600 hover:text-[#D2A02A] text-sm block transition-colors">
+                      <Link href="/loan-settlement-by-bank/icici" className="text-gray-600 hover:text-[#D2A02A] text-sm block transition-colors">
                         ICICI Bank Settlement
                       </Link>
                     </li>

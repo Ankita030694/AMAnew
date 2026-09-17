@@ -3,6 +3,7 @@ import Script from "next/script";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { canonicalSettlementBanks } from "@/data/canonicalSettlementBanks";
 
 // Detailed FAQ data for rendering and Schema
 const faqs = [
@@ -645,16 +646,13 @@ export default function TamilNaduLoanSettlementPage() {
                 From nationalized giants to regional banks in Tamil Nadu, we handle them all.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                {[
-                    "SBI", "HDFC", "ICICI", "Kotak Mahindra", "Axis Bank", 
-                    "IndusInd", "IDFC First", "Yes Bank", "Bajaj Finserv", "City Union Bank"
-                ].map((bank) => (
+                {canonicalSettlementBanks.slice(0, 10).map((bank) => (
                     <Link 
-                      key={bank}
-                      href={`/services/loan-settlement/${bank.toLowerCase().replace(' ', '-')}`}
+                      key={bank.name}
+                      href={bank.href}
                       className="bg-white border border-gray-200 rounded-xl p-4 text-center hover:shadow-lg transition-all duration-300 hover:border-[#D2A02A] hover:-translate-y-1 group"
                     >
-                      <span className="text-gray-800 font-bold group-hover:text-[#D2A02A] transition-colors">{bank}</span>
+                      <span className="text-gray-800 font-bold group-hover:text-[#D2A02A] transition-colors">{bank.name}</span>
                     </Link>
                 ))}
               </div>

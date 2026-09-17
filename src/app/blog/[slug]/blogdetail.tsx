@@ -102,12 +102,20 @@ const processContent = (html: string, fallbackTitle?: string) => {
 
   // Fix known broken links in blog content (from database)
   modifiedContent = modifiedContent
+    .replace(/http:\/\/www\.amalegalsolutions\.com/gi, 'https://www.amalegalsolutions.com')
+    .replace(/http:\/\/amalegalsolutions\.com/gi, 'https://www.amalegalsolutions.com')
     .replace(/href=["']https:\/\/www\.amalegalsolutions\.com\/services\/legal-strategy["']/gi, 'href="/services"')
     .replace(/href=["']\/services\/legal-strategy["']/gi, 'href="/services"')
     .replace(/href=["']https:\/\/www\.amalegalsolutions\.com\/legal-notice-to-bank-format["']/gi, 'href="/how-can-i-send-legal-notice"')
     .replace(/href=["']\/legal-notice-to-bank-format["']/gi, 'href="/how-can-i-send-legal-notice"')
     .replace(/href=["']https:\/\/www\.amalegalsolutions\.com\/resources["']/gi, 'href="/blog"')
     .replace(/href=["']\/resources["']/gi, 'href="/blog"')
+    .replace(/href=["']https:\/\/www\.amalegalsolutions\.com\/blog\/how-to-improve-your-cibil-score-after-loan-settlement["']/gi, 'href="/how-to-improve-cibil-score-after-loan-settlement"')
+    .replace(/href=["']\/blog\/how-to-improve-your-cibil-score-after-loan-settlement["']/gi, 'href="/how-to-improve-cibil-score-after-loan-settlement"')
+    .replace(/href=["']https:\/\/www\.amalegalsolutions\.com\/blog\/legal-process-for-loan-recovery-in-india["']/gi, 'href="/blog/legal-process-for-loan-recovery-in-india-explained-2025"')
+    .replace(/href=["']\/blog\/legal-process-for-loan-recovery-in-india["']/gi, 'href="/blog/legal-process-for-loan-recovery-in-india-explained-2025"')
+    .replace(/href=["']https:\/\/www\.amalegalsolutions\.com\/credit-card-legal-help["']/gi, 'href="/services/banking-and-finance"')
+    .replace(/href=["']\/credit-card-legal-help["']/gi, 'href="/services/banking-and-finance"')
     .replace(/<strong>\s*TL;?DR:?\s*<\/strong>/gi, '<strong>Key Takeaways:</strong> ')
     .replace(/<strong>\s*TL;?DR\s*<\/strong>\s*:/gi, '<strong>Key Takeaways:</strong> ')
     .replace(/<blockquote>\s*<strong>\s*TL;?DR:?\s*<\/strong>/gi, '<blockquote><strong>Key Takeaways:</strong> ');

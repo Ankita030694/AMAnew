@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
-  const { title, description } = getBankSettlementSEO(bank.name, slug);
+  const { title, description } = getBankSettlementSEO(bank.name, slug, "Personal Loan");
 
   return {
     title,

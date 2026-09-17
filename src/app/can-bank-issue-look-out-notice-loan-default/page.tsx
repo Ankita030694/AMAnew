@@ -4,6 +4,7 @@ import Image from "next/image";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { canonicalSettlementBanks } from "@/data/canonicalSettlementBanks";
 
 const faqs = [
   { "question": "Can a bank issue a Look Out Circular (LOC) for a personal loan default?", "answer": "As per the recent Bombay High Court ruling in April 2024, Public Sector Banks (PSBs) do not have the legal authority to issue or request Look Out Circulars against default borrowers simply for financial defaults. Such actions have been declared unconstitutional as they violate the fundamental right to travel abroad." },
@@ -26,8 +27,6 @@ const reviews = [
   { "name": "Amit Shah", "rating": "5", "body": "If you are facing travel restrictions because of a bank loan, don't panic. Consult AMA Legal. They helped me resolve my LOC issue and even assisted in a fair settlement with the bank." },
   { "name": "Prakash Jha", "rating": "5", "body": "Prompt and effective legal representation. They challenged the bank's arbitrary action and protected my right to travel. Highly recommend for any banking related legal issues." }
 ];
-
-const banks = ["SBI", "HDFC", "ICICI", "Kotak Mahindra", "IDFC", "Yes Bank", "Bajaj Finserv", "Axis Bank", "Bank of Baroda", "Paytm", "Hero Fincorp", "Aditya Birla", "Poonawalla Fincorp", "Prefr", "Citibank", "Zype", "Infocredit", "NDX P2P", "Tata Capital", "Federal Bank", "PayU Finance", "KrazyBee", "AU Small Finance Bank", "Northern Arc", "DMI Finance", "Piramal Finance", "DBS Bank", "South Indian Bank", "Stashfin", "American Express", "Standard Chartered", "True Credits (TrueBalance)", "Moneyview", "Vivriti Capital", "Kisetsu Saison Finance", "IndusInd Bank", "MAS Financial", "SMFG India Credit", "Fibe (EarlySalary)"];
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -300,9 +299,9 @@ export default function Page() {
           <div className="mt-16">
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-12 text-center">We settle loans from the following banks</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-              {banks.map((b, i) => (
-                <Link key={i} href={`/services/loan-settlement/${b.toLowerCase().replace(/ /g, '-').replace(/\(/g, '').replace(/\)/g, '')}`} className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none">
-                  <span className="text-gray-800 font-medium text-sm block">{b}</span>
+              {canonicalSettlementBanks.map((b, i) => (
+                <Link key={i} href={b.href} className="bg-white border border-gray-200 rounded-lg p-3 text-center hover:shadow-lg transition-all duration-300 hover:shadow-[#D2A02A]/20 hover:border-[#D2A02A]/30 hover:bg-[#D2A02A]/5 cursor-pointer focus:outline-none">
+                  <span className="text-gray-800 font-medium text-sm block">{b.name}</span>
                 </Link>
               ))}
             </div>

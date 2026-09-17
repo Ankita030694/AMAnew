@@ -307,35 +307,78 @@ export function getBankCityHarassmentSEO(bankName: string, cityName: string, slu
 /**
  * Diversified SEO generator for bank loan settlement
  */
-export function getBankSettlementSEO(bankName: string, slug: string) {
-  const cleanBank = truncateEntity(bankName, 22);
-  const h = hashSlug(slug);
+export function getBankSettlementSEO(
+  bankName: string,
+  slug: string,
+  serviceType = "Personal Loan"
+) {
+  const cleanBank = truncateEntity(bankName, 20);
+  const isCard = serviceType.toLowerCase().includes("credit card");
+  const isBank = serviceType.toLowerCase() === "bank" || serviceType.toLowerCase() === "loan settlement";
+  const itemLabel = isCard ? "Credit Card" : isBank ? "Loan" : "Personal Loan";
+  const h = hashSlug(`${itemLabel.toLowerCase()}-${slug}`);
 
-  const titles = [
+  const titles = isCard ? [
+    `${cleanBank} Credit Card Settlement | AMA Legal`,
+    `Settle ${cleanBank} Credit Card Debt - AMA`,
+    `${cleanBank} Credit Card Relief | Expert Lawyers`,
+    `Best Advocates for ${cleanBank} Card Settlement`,
+    `Resolve ${cleanBank} Card Dues | AMA Legal`,
+    `${cleanBank} Credit Card OTS Scheme | AMA`
+  ] : isBank ? [
     `${cleanBank} Loan Settlement | AMA Legal Solutions`,
     `Settle ${cleanBank} Loans | Top Lawyers in India`,
     `${cleanBank} Debt Settlement - Expert Legal Aid`,
     `Best Advocates for ${cleanBank} Settlement - AMA`,
     `Resolve ${cleanBank} Loan Debt | AMA Legal`,
     `${cleanBank} One Time Settlement (OTS) Lawyers`
+  ] : [
+    `${cleanBank} Personal Loan Settlement | AMA`,
+    `Settle ${cleanBank} Personal Loan Debt - Legal`,
+    `${cleanBank} Personal Loan Relief | AMA Lawyers`,
+    `Top Lawyers for ${cleanBank} Personal Loan OTS`,
+    `Resolve ${cleanBank} Personal Loan | AMA Legal`,
+    `${cleanBank} Personal Loan Default Settlement`
   ];
 
-  const descs = [
+  const descs = isCard ? [
+    `Legal credit card settlement for ${cleanBank}. Resolve outstanding dues, stop harassment, and eliminate late fees with AMA Legal Solutions advocates.`,
+    `Struggling with ${cleanBank} credit card interest traps? Senior banking advocates negotiate One-Time Settlement (OTS) waivers up to 50-70% legally.`,
+    `Facing collection calls for unpaid ${cleanBank} credit cards? Secure legal protection, prevent escalation, and settle directly with AMA Legal.`,
+    `Professional ${cleanBank} credit card debt settlement in India. End agent intimidation, assert RBI borrower guidelines, and obtain official NOC.`,
+    `Resolve ${cleanBank} credit card defaults with full legal backing. Seasoned advocates negotiate lump-sum OTS closures directly with the bank.`,
+    `Legal defense and settlement for ${cleanBank} cards. Challenge compound finance charges and negotiate fair closure with AMA Legal Solutions.`
+  ] : isBank ? [
     `Legal loan settlement for ${cleanBank}. Settle personal loans and credit cards with maximum waivers and RBI compliance through AMA Legal Solutions.`,
     `Struggling with ${cleanBank} loan EMIs? Our experienced advocates negotiate directly with the bank for One-Time Settlement (OTS) debt relief.`,
     `Facing legal notices from ${cleanBank}? Get expert defense against Section 138, arbitration, and DRT summons while settling your loan peacefully.`,
     `Professional ${cleanBank} loan settlement services in India. Stop recovery agent harassment, protect your assets, and secure your No Dues Certificate.`,
     `Resolve your ${cleanBank} outstanding debt with legal backing. We help borrowers secure maximum waivers and formal closure without harassment.`,
-    `Experienced banking advocates for ${cleanBank} settlements. Assert your borrower rights, prevent asset attachment, and rebuild your financial future.`,
-    `Need debt relief for ${cleanBank} loans? AMA Legal Solutions negotiates fair one-time settlements with complete legal transparency and documentation.`,
-    `Comprehensive debt resolution for ${cleanBank} borrowers. End collection calls, challenge irregular interest, and settle loans with AMA Legal.`
+    `Experienced banking advocates for ${cleanBank} settlements. Assert your borrower rights, prevent asset attachment, and rebuild your financial future.`
+  ] : [
+    `Expert legal settlement for ${cleanBank} personal loans. Negotiate substantial OTS principal waivers and stop agent harassment with AMA Legal.`,
+    `Unable to pay ${cleanBank} personal loan EMIs? Our senior advocates negotiate directly with bank nodal officers for legal loan closure.`,
+    `Received legal or arbitration notice from ${cleanBank} for personal loan? Protect your rights with expert counter-notices and debt resolution.`,
+    `Professional ${cleanBank} personal loan settlement services across India. Settle delinquent accounts legally and obtain an official No Dues Certificate.`,
+    `Resolve high-interest ${cleanBank} personal loans through structured OTS. Experienced banking lawyers represent you for maximum waiver.`,
+    `Defend against aggressive recovery for ${cleanBank} personal loans. We enforce RBI guidelines and achieve complete legal debt settlement.`
   ];
 
-  const h1s = [
+  const h1s = isCard ? [
+    `${bankName} Credit Card Settlement Services in India`,
+    `Legal Credit Card Settlement for ${bankName}`,
+    `${bankName} Credit Card Debt Settlement & Legal Relief`,
+    `Professional ${bankName} Credit Card Settlement Advocates`
+  ] : isBank ? [
     `${bankName} Loan Settlement Services in India`,
     `Legal Loan Settlement for ${bankName}`,
     `${bankName} Debt Settlement & Legal Aid`,
     `Professional ${bankName} Loan Settlement Representation`
+  ] : [
+    `${bankName} Personal Loan Settlement Services in India`,
+    `Legal Personal Loan Settlement for ${bankName}`,
+    `${bankName} Personal Loan Debt Relief & Legal Aid`,
+    `Professional ${bankName} Personal Loan Settlement Representation`
   ];
 
   return {
@@ -398,34 +441,34 @@ export function getBankStateSettlementSEO(
 ) {
   const cleanBank = truncateEntity(bankName, 18);
   const cleanState = truncateEntity(stateName, 16);
-  const h = hashSlug(`${slug}-${stateSlug}`);
+  const h = hashSlug(`${isCard ? "card" : "loan"}-${slug}-${stateSlug}`);
   const itemType = isCard ? "Credit Card" : "Personal Loan";
 
   const titles = [
-    `${cleanBank} Settlement in ${cleanState} | AMA Legal`,
-    `Settle ${cleanBank} ${itemType} in ${cleanState}`,
-    `${cleanBank} ${itemType} Relief in ${cleanState} - AMA`,
-    `${cleanBank} Loan Lawyers in ${cleanState} | AMA`,
-    `OTS ${cleanBank} Settlement in ${cleanState} | AMA`,
-    `Close ${cleanBank} Debt in ${cleanState} | AMA Legal`
+    `${cleanBank} ${itemType} Settlement in ${cleanState} | AMA`,
+    `Settle ${cleanBank} ${itemType} in ${cleanState} - Legal`,
+    `${cleanBank} ${itemType} Relief in ${cleanState} | AMA Legal`,
+    `${cleanBank} ${itemType} Lawyers in ${cleanState} | AMA`,
+    `OTS ${cleanBank} ${itemType} in ${cleanState} | AMA Legal`,
+    `Close ${cleanBank} ${itemType} Debt in ${cleanState} | AMA`
   ];
 
   const descs = [
     `Settle ${cleanBank} ${itemType.toLowerCase()}s in ${cleanState}. Stop recovery harassment, resolve default legally, and get an NOC with AMA Legal Solutions.`,
-    `Struggling with ${cleanBank} debt in ${cleanState}? Our senior advocates negotiate maximum OTS waivers directly with the bank for legal loan closure.`,
-    `Facing legal action from ${cleanBank} in ${cleanState}? Get expert defense against Section 138 and arbitration summons while settling loans safely.`,
-    `Professional ${cleanBank} debt settlement across ${cleanState}. Protect your assets, stop unlawful collection calls, and secure your No Dues Certificate.`,
-    `Resolve your ${cleanBank} ${itemType.toLowerCase()} default in ${cleanState}. Seasoned banking lawyers negotiate sustainable settlements with full legal backing.`,
-    `Experienced loan settlement lawyers for ${cleanBank} in ${cleanState}. Assert your borrower rights, prevent legal escalation, and rebuild credit.`,
-    `Need debt relief for ${cleanBank} loans in ${cleanState}? AMA Legal Solutions negotiates fair one-time settlements with complete legal documentation.`,
-    `End collection harassment for ${cleanBank} loans in ${cleanState}. Consult senior banking advocates to achieve full legal settlement and NOC.`
+    `Struggling with ${cleanBank} ${itemType.toLowerCase()} debt in ${cleanState}? Our senior advocates negotiate maximum OTS waivers directly with the bank.`,
+    `Facing legal action from ${cleanBank} for ${itemType.toLowerCase()} in ${cleanState}? Get expert defense against notices while settling debt safely.`,
+    `Professional ${cleanBank} ${itemType.toLowerCase()} settlement across ${cleanState}. Protect your assets, stop unlawful calls, and secure your NOC.`,
+    `Resolve your ${cleanBank} ${itemType.toLowerCase()} default in ${cleanState}. Seasoned banking lawyers negotiate sustainable settlements legally.`,
+    `Experienced ${itemType.toLowerCase()} settlement lawyers for ${cleanBank} in ${cleanState}. Assert your borrower rights and rebuild credit.`,
+    `Need debt relief for ${cleanBank} ${itemType.toLowerCase()} in ${cleanState}? AMA Legal Solutions negotiates fair OTS with complete legal documentation.`,
+    `End collection harassment for ${cleanBank} ${itemType.toLowerCase()} in ${cleanState}. Consult senior banking advocates to achieve full legal closure.`
   ];
 
   const h1s = [
     `${bankName} ${itemType} Settlement in ${stateName}`,
-    `Settle ${bankName} Debt in ${stateName}`,
+    `Settle ${bankName} ${itemType} Debt in ${stateName}`,
     `Legal Relief for ${bankName} ${itemType} in ${stateName}`,
-    `${bankName} Settlement Lawyers in ${stateName}`
+    `${bankName} ${itemType} Settlement Lawyers in ${stateName}`
   ];
 
   return {
