@@ -24,6 +24,18 @@ export async function generateMetadata({
 }
 
 const directoryLinks = [
+  { name: 'Debt Settlement Program in India: Advocate-Led Legal Resolution & RBI OTS Advisory', href: '/debt-settlement-program' },
+  { name: 'Debt Settlement Help in India: Advocate-Led RBI OTS Advisory & Legal Defense', href: '/debt-settlement-help-in-india' },
+  { name: 'Best Debt Settlement Law Firm in India: Advocate-Led RBI Compromise & Legal Defense', href: '/best-debt-settlement-law-firm-in-india' },
+  { name: 'Debt Settlement Letter: Statutory Format, Bank Negotiation & RBI OTS Guide', href: '/debt-settlement-letter' },
+  { name: 'Essentials of a Valid Debt Settlement Letter: How to Check Fake vs Real', href: '/essentials-of-a-valid-debt-settlement-letter' },
+  { name: 'Debt Settlement Kya Hota Hai? Complete Legal Process, RBI OTS Rules & Advocate Advisory', href: '/debt-settlement-kya-hota-hai' },
+  { name: 'Best Debt Settlement Service in India: Advocate-Led RBI Compromise & Legal Resolution', href: '/best-debt-settlement-service-in-india' },
+  { name: 'When to Choose Debt Settlement? Signs, Legal Timing & RBI OTS Guide', href: '/when-to-choose-debt-settlement' },
+  { name: 'What is Debt Settlement? Meaning, Process & Legal RBI OTS Advisory', href: '/what-is-debt-settlement' },
+  { name: 'Best Debt Settlement Waiver: Advocate-Led OTS & RBI Concession Advisory', href: '/debt-settlement-best-waiver' },
+  { name: 'Debt Settlement Services: Legal Resolution, Commercial Negotiation & RBI OTS Advisory', href: '/debt-settlement-services' },
+  { name: 'Debt Settlement India: Complete Legal Guide & RBI Compromise Settlement Advisory', href: '/debt-settlement-india' },
   { name: 'Which is Better: Loan Settlement or Debt Consolidation? Legal Guide', href: '/loan-settlement-vs-debt-consolidation' },
   { name: 'Loan Settlement Kab Krna Chaiye? Right Time & Legal Guide', href: '/loan-settlement-kab-krna-chaiye' },
   { name: 'Loan Settlement Ke Liye Konsi Company Sabse Achi Hai? Legal Guide & Comparison', href: '/loan-settlement-ke-liye-konsi-company-sabse-achi-hai' },
