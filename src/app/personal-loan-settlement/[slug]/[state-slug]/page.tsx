@@ -31,11 +31,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title,
     description,
     robots: {
-      index: true,
+      index: false,
       follow: true,
       nocache: false,
       googleBot: {
-        index: true,
+        index: false,
         follow: true,
         noimageindex: false,
         'max-video-preview': -1,

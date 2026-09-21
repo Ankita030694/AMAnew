@@ -392,6 +392,11 @@ const nextConfig = {
       { source: '/credit-card-debt-settlement-india', destination: '/credit-card-debt-settlement', permanent: true },
       { source: '/blog/how-to-improve-your-cibil-score-after-loan-settlement', destination: '/how-to-improve-cibil-score-after-loan-settlement', permanent: true },
       { source: '/blog/legal-process-for-loan-recovery-in-india', destination: '/blog/legal-process-for-loan-recovery-in-india-explained-2025', permanent: true },
+      { source: '/reviews', destination: '/ama-legal-solutions-reviews', permanent: true },
+      // ── De-Spamming: Redirect manipulative AI query pages to authoritative guide ──
+      { source: '/best-loan-settlement-lawyer-as-per-chatgpt', destination: '/who-is-the-best-lawyer-for-loan-settlement-in-india', permanent: true },
+      { source: '/best-loan-settlement-lawyer-as-per-claude', destination: '/who-is-the-best-lawyer-for-loan-settlement-in-india', permanent: true },
+      { source: '/best-loan-settlement-lawyer-as-per-gemini', destination: '/who-is-the-best-lawyer-for-loan-settlement-in-india', permanent: true },
       ...(fs.existsSync(path.join(process.cwd(), 'redirects.json'))
         ? JSON.parse(fs.readFileSync(path.join(process.cwd(), 'redirects.json'), 'utf8'))
         : [])

@@ -600,9 +600,6 @@ export async function GET(): Promise<Response> {
     '/services/intellectual-property-rights/tripura',
     '/services/intellectual-property-rights/uttarakhand',
     '/services/intellectual-property-rights/west-bengal',
-    '/best-loan-settlement-lawyer-as-per-chatgpt',
-    '/best-loan-settlement-lawyer-as-per-gemini',
-    '/best-loan-settlement-lawyer-as-per-claude',
     '/how-to-become-loan-mukt-in-60-days',
     '/how-to-single-handedly-settle-debt-and-become-independent',
     '/what-are-the-primary-directives-from-the-central-bank-for-debt-collection-practices',
@@ -793,34 +790,26 @@ export async function GET(): Promise<Response> {
     priority: 0.7
   }))
 
-  // Build lawyer keyword routes
-  const lawyerKeywordRoutes = generateLawyerKeywordRoutes(baseUrl)
 
-  // Build credit-card-settlement bank/state routes
-  const creditCardSettlementRoutes: { url: string; lastModified: string; changeFrequency: string; priority: number; }[] = [];
-  creditCardBanks.forEach((bank) => {
-    statesData.forEach((state) => {
-      creditCardSettlementRoutes.push({
-        url: `${baseUrl}/credit-card-settlement/${bank.slug}/${state.slug}`,
-        lastModified: new Date().toISOString(),
-        changeFrequency: 'weekly',
-        priority: 0.7
-      });
-    });
-  });
+  // Build parent credit-card-settlement bank routes (keeping high-value bank parents indexed)
+  const creditCardBankRoutes = creditCardBanks.map((bank) => ({
+    url: `${baseUrl}/credit-card-settlement/${bank.slug}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: 'weekly',
+    priority: 0.8
+  }));
 
-  // Combine all routes, including dynamicBankRoutes
+  // Combine all authoritative routes (thin [bank]/[state] permutations and doorway keyword routes excluded from sitemap)
   const allRoutes = [
     ...staticRoutes,
     ...dynamicBankRoutes,
+    ...creditCardBankRoutes,
     ...loanSettlementServiceRoutes,
     ...serviceSlugRoutes,
-    ...lawyerKeywordRoutes,
     ...blogRoutes,
     ...articleRoutes,
     ...successStoryRoutes,
-    ...lawyerByCityRoutes,
-    ...creditCardSettlementRoutes
+    ...lawyerByCityRoutes
   ]
 
   // Generate XML

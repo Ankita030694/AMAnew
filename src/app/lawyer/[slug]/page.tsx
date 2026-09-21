@@ -247,6 +247,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title,
     description,
+    robots: {
+      index: false,
+      follow: true,
+      googleBot: {
+        index: false,
+        follow: true,
+      },
+    },
     alternates: {
       canonical: `https://www.amalegalsolutions.com/lawyer/${slug}`,
     },
