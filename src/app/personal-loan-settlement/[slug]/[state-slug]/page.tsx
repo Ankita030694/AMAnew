@@ -209,31 +209,12 @@ export default async function BankStateSettlementPage({ params }: { params: Prom
   };
 
   const reviewSchema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": `${bank.name} Debt Settlement Legal Services in ${state.name}`,
-    "brand": {
-      "@type": "Brand",
-      "name": "AMA Legal Solutions"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "1840"
-    },
-    "review": [
+    review: [
       {
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Anonymous Client"
+        reviewRating: {
+          ratingValue: "5"
         },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "reviewBody": `${state.economicContext} The local agents were unbearable, but AMA Legal Solutions utilized the ${state.policeAuthority} guidelines to stop the harassment and secured a fantastic settlement.`
+        reviewBody: `${state.economicContext} The local agents were unbearable, but AMA Legal Solutions utilized the ${state.policeAuthority} guidelines to stop the harassment and secured a fantastic settlement.`
       }
     ]
   };
@@ -260,7 +241,6 @@ export default async function BankStateSettlementPage({ params }: { params: Prom
       <Script id="breadcrumb-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Script id="article-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <Script id="review-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
 
       <main className="bg-gray-50 min-h-screen font-sans text-gray-800">
         <header className="relative bg-[#1a202c] text-white">

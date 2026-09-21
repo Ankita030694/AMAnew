@@ -176,21 +176,6 @@ export default async function CreditCardBankStateSettlementPage({ params }: { pa
     ]
   };
 
-  const reviewSchema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": `${bank.name} Credit Card Settlement Legal Services in ${state.name}`,
-    "brand": {
-      "@type": "Brand",
-      "name": "AMA Legal Solutions"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "1920"
-    }
-  };
-
   const tocSections = [
     { id: "mad-trap", title: `The Minimum Amount Due Trap` },
     { id: "card-vs-loan", title: `Credit Card vs Loan Differences` },
@@ -213,7 +198,6 @@ export default async function CreditCardBankStateSettlementPage({ params }: { pa
       <Script id="breadcrumb-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Script id="article-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <Script id="review-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
 
       <main className="bg-gray-50 min-h-screen font-sans text-gray-800">
         <header className="relative bg-[#1a202c] text-white">

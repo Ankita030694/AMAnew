@@ -298,9 +298,9 @@ ${formattedInternalLinks}
         }
 
         console.log(`[AI Generator Flow] Step 2 complete. Total description length: ${cleanedDescription.split(/\s+/).length} words.`);
-        console.log(`[AI Generator Flow] Step 3: Generating FAQs, reviews, and dual image prompts (featured + infographic)...`);
+        console.log(`[AI Generator Flow] Step 3: Generating FAQs and dual image prompts (featured + infographic)...`);
 
-        // STEP 3: Generate FAQs, Reviews, suggestedImagePrompt, suggestedInfographicPrompt
+        // STEP 3: Generate FAQs, suggestedImagePrompt, suggestedInfographicPrompt
         let faqs: any[] = [];
         let reviews: any[] = [];
         let suggestedImagePrompt = "Professional legal recovery illustration";
@@ -314,12 +314,11 @@ ${coreInstructions}
 --- TECHNICAL REQUIREMENTS FOR STEP 3 ---
 Task: Analyze the following generated article Title, Subtitle, and HTML Description, and generate:
 1. At least 8-10 highly relevant, detailed FAQs (frequently asked questions) that directly relate to the article content.
-2. 5 realistic customer review snippets (with Indian names) expressing high satisfaction with the legal service.
-3. A suggested image prompt describing a highly professional legal illustration that MUST feature real people, an Indian landscape or setting in the background, and prominently feature the exact title of the blog written within the image. The image must exclusively use the colors #D29E0D, white, and black.
-4. A suggested infographic prompt designed specifically for this blog topic. It MUST describe a clean, modern 2D vector/corporate infographic visualizing key statistics, comparative bar charts, process workflows, timelines, and data metrics about this specific topic. The prompt should specify clear numerical callouts, sleek data visualization cards, and a color palette of gold (#D29E0D, #B8860B), dark navy/slate (#1a202c), and clean white background with high legibility.
-5. A list of 3-5 highly authoritative external references (like RBI, NCDRC, India Code, Supreme Court) relevant to the article's topic.
-6. A list of 10-15 highly relevant SEO keyword phrases (unlinked) that users might search to find this content.
-7. A concise "Key Takeaways" paragraph summarizing the most important takeaways from the article.
+2. A suggested image prompt describing a highly professional legal illustration that MUST feature real people, an Indian landscape or setting in the background, and prominently feature the exact title of the blog written within the image. The image must exclusively use the colors #D29E0D, white, and black.
+3. A suggested infographic prompt designed specifically for this blog topic. It MUST describe a clean, modern 2D vector/corporate infographic visualizing key statistics, comparative bar charts, process workflows, timelines, and data metrics about this specific topic. The prompt should specify clear numerical callouts, sleek data visualization cards, and a color palette of gold (#D29E0D, #B8860B), dark navy/slate (#1a202c), and clean white background with high legibility.
+4. A list of 3-5 highly authoritative external references (like RBI, NCDRC, India Code, Supreme Court) relevant to the article's topic.
+5. A list of 10-15 highly relevant SEO keyword phrases (unlinked) that users might search to find this content.
+6. A concise "Key Takeaways" paragraph summarizing the most important takeaways from the article.
 
 Article Title: ${step1Result.title}
 Article Subtitle: ${step1Result.subtitle}
@@ -332,9 +331,7 @@ Return ONLY a JSON object with this exact structure:
   "faqs": [
     { "question": "Detailed question?", "answer": "Detailed helpful answer." }
   ],
-  "reviews": [
-    { "name": "Reviewer Full Name", "rating": 5, "review": "Detailed review text..." }
-  ],
+  "reviews": [],
   "suggestedImagePrompt": "Visual description for the article's featured cover image",
   "suggestedInfographicPrompt": "Visual description for the article's data and charts infographic",
   "references": [
@@ -357,7 +354,7 @@ Return ONLY a JSON object with this exact structure:
             const step3Result = JSON.parse(step3ResultStr);
 
             faqs = step3Result.faqs || [];
-            reviews = step3Result.reviews || [];
+            reviews = [];
             suggestedImagePrompt = step3Result.suggestedImagePrompt || "Professional legal recovery illustration";
             suggestedInfographicPrompt = step3Result.suggestedInfographicPrompt || "Professional legal data and statistical breakdown infographic";
             references = step3Result.references || [];
