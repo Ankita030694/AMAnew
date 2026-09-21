@@ -186,11 +186,7 @@ export default function PayUFinanceLoanSettlementPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <Script
-        id="review-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-      />
+      
 
       <div className="bg-white min-h-screen font-sans text-gray-800">
         {/* Full Width Hero Section */}

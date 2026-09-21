@@ -159,11 +159,7 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <Script
-        id="review-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(legalServiceSchema) }}
-      />
+      
 
       <main className="bg-gray-50 min-h-screen font-sans text-gray-800">
         <header className="relative bg-[#1a202c] text-white py-12 md:py-32 text-center">

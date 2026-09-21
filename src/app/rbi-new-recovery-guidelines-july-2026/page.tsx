@@ -234,11 +234,7 @@ export default function RBIRecoveryGuidelinesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <Script
-        id="review-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-      />
+      
 
       <div className="bg-gray-50 min-h-screen font-sans text-gray-900">
         {/* Hero Section - Matching Loan Settlement Style */}

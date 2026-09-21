@@ -356,26 +356,7 @@ export default function ChallanLokAdalatPage() {
           }))
         }) }}
       />
-      <Script
-        id="review-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Product",
-          "name": "Traffic Challan Settlement Service",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "1250"
-          },
-          "review": testimonials.map(t => ({
-            "@type": "Review",
-            "reviewRating": { "@type": "Rating", "ratingValue": t.rating },
-            "author": { "@type": "Person", "name": t.name },
-            "reviewBody": t.text
-          }))
-        }) }}
-      />
+      
 
       <div className="bg-gray-50 min-h-screen font-sans text-gray-800">
         {/* Premium Hero Section */}

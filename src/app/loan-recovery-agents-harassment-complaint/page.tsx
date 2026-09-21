@@ -207,11 +207,7 @@ export default function AgentsHarassmentPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <Script
-        id="review-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-      />
+      
 
       <div className="bg-white min-h-screen font-light text-gray-900 leading-relaxed">
         {/* Hero Section */}

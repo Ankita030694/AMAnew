@@ -470,54 +470,7 @@ export default function JammuKashmirClient() {
           })
         }}
       />
-      <Script
-        id="review-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Product",
-            "name": "IPR Services Jammu & Kashmir",
-            "image": "https://www.amalegalsolutions.com/services/ipr-jammu-kashmir.jpg",
-            "description": "Expert Intellectual Property Rights registration and protection services in Jammu & Kashmir.",
-            "brand": {
-              "@type": "Brand",
-              "name": "AMA Legal Solutions"
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "145"
-            },
-            "review": [
-              {
-                "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5"
-                },
-                "author": {
-                  "@type": "Person",
-                  "name": "Ghulam Nabi"
-                },
-                "reviewBody": "I am a saffron grower from Pampore. AMA Legal Solutions helped me understand the value of the GI tag and registered me as an authorized user. It has really helped my business."
-              },
-              {
-                "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5"
-                },
-                "author": {
-                  "@type": "Person",
-                  "name": "Rahul Sharma"
-                },
-                "reviewBody": "We run a dry fruit business in Jammu. The team at AMA handled our trademark registration very professionally. They kept us updated at every step."
-              }
-            ]
-          })
-        }}
-      />
+      
     </>
   );
 }

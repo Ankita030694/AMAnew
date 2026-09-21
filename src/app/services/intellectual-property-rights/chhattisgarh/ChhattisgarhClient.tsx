@@ -470,54 +470,7 @@ export default function ChhattisgarhClient() {
           })
         }}
       />
-      <Script
-        id="review-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Product",
-            "name": "IPR Services Chhattisgarh",
-            "image": "https://www.amalegalsolutions.com/services/ipr-chhattisgarh.jpg",
-            "description": "Expert Intellectual Property Rights registration and protection services in Chhattisgarh.",
-            "brand": {
-              "@type": "Brand",
-              "name": "AMA Legal Solutions"
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "135"
-            },
-            "review": [
-              {
-                "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5"
-                },
-                "author": {
-                  "@type": "Person",
-                  "name": "Ramesh Baghel"
-                },
-                "reviewBody": "We are a handicraft cooperative in Bastar. AMA Legal Solutions helped us register our GI authorized user status. Their support was invaluable in protecting our traditional art."
-              },
-              {
-                "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5"
-                },
-                "author": {
-                  "@type": "Person",
-                  "name": "Suresh Agrawal"
-                },
-                "reviewBody": "I needed a trademark for my new food processing unit in Raipur. The team at AMA made the process smooth and hassle-free. Highly recommended."
-              }
-            ]
-          })
-        }}
-      />
+      
     </>
   );
 }

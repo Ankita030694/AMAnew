@@ -470,54 +470,7 @@ export default function TripuraClient() {
           })
         }}
       />
-      <Script
-        id="review-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Product",
-            "name": "IPR Services Tripura",
-            "image": "https://www.amalegalsolutions.com/services/ipr-tripura.jpg",
-            "description": "Expert Intellectual Property Rights registration and protection services in Tripura.",
-            "brand": {
-              "@type": "Brand",
-              "name": "AMA Legal Solutions"
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "130"
-            },
-            "review": [
-              {
-                "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5"
-                },
-                "author": {
-                  "@type": "Person",
-                  "name": "Subrata Deb"
-                },
-                "reviewBody": "We are a bamboo handicraft unit in Agartala. AMA Legal Solutions helped us register our trademark and protect our designs. Their service was excellent and very professional."
-              },
-              {
-                "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5"
-                },
-                "author": {
-                  "@type": "Person",
-                  "name": "Anjali Roy"
-                },
-                "reviewBody": "Registering a patent seemed daunting, but the team at AMA made it easy. They understood our invention and drafted the application perfectly. Highly recommended."
-              }
-            ]
-          })
-        }}
-      />
+      
     </>
   );
 }

@@ -148,11 +148,7 @@ export default function RBLBankLoanSettlementPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      <Script
-        id="review-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-      />
+      
 
       <div className="bg-white min-h-screen font-sans text-gray-800">
         {/* Full Width Hero Section */}

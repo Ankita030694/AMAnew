@@ -120,7 +120,7 @@ export default function TrademarkObjectionReplyPage() {
       <Script id="breadcrumb-schema" type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</Script>
       <Script id="article-schema" type="application/ld+json">{JSON.stringify(articleSchema)}</Script>
       <Script id="faq-schema" type="application/ld+json">{JSON.stringify(faqSchema)}</Script>
-      <Script id="review-schema" type="application/ld+json">{JSON.stringify(reviewSchema)}</Script>
+      
 
       <div className="bg-gray-50 min-h-screen font-sans text-gray-800">
         {/* Hero Section */}

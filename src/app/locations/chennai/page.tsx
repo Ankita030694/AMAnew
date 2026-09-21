@@ -360,11 +360,7 @@ export default function ChennaiLocationPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <Script strategy="beforeInteractive"
-        id="review-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-      />
+      
       {/* Injecting multiple Service schemas */}
       {serviceSchemas.map((schema, index) => (
         <Script strategy="beforeInteractive"

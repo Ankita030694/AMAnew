@@ -201,11 +201,7 @@ export default function VirtualInhouseCouncelPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <Script
-        id="review-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-      />
+      
 
       <div className="bg-[#EAE6DB] min-h-screen font-[family-name:var(--font-polysans)]">
         <Navbar />

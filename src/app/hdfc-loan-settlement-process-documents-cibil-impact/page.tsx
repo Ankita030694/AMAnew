@@ -238,11 +238,7 @@ export default function HDFCLoanSettlementPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <Script
-        id="review-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-      />
+      
 
       <header className="relative bg-[#1a202c] text-white">
         <div className="absolute inset-0 bg-black opacity-50 z-10"></div>

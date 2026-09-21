@@ -1612,13 +1612,6 @@ Details: ${formData.message || "Requesting transparent fixed legal advisory and 
                     </p>
                   </div>
                 </div>
-
-                <Link
-                  href="/reviews"
-                  className="block text-center text-xs font-bold text-[#D2A02A] hover:underline pt-2 border-t border-gray-100"
-                >
-                  Read All Verified Client Reviews &rarr;
-                </Link>
               </div>
 
               {/* Related Topic Guides */}

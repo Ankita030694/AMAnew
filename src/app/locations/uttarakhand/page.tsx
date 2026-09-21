@@ -243,11 +243,7 @@ export default function UttarakhandLocationPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <Script strategy="beforeInteractive"
-        id="review-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-      />
+      
 
       <div className="bg-[#f8f9fa] min-h-screen font-sans text-[#333]">
         {/* Hero Section */}

@@ -195,11 +195,7 @@ export default function SBISettlementWaiverPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <Script
-        id="review-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-      />
+      
 
       <main className="bg-gray-50 min-h-screen font-sans text-gray-800">
         <header className="relative bg-[#1a202c] text-white">

@@ -470,54 +470,7 @@ export default function MizoramClient() {
           })
         }}
       />
-      <Script
-        id="review-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Product",
-            "name": "IPR Services Mizoram",
-            "image": "https://www.amalegalsolutions.com/services/ipr-mizoram.jpg",
-            "description": "Expert Intellectual Property Rights registration and protection services in Mizoram.",
-            "brand": {
-              "@type": "Brand",
-              "name": "AMA Legal Solutions"
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "120"
-            },
-            "review": [
-              {
-                "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5"
-                },
-                "author": {
-                  "@type": "Person",
-                  "name": "Lalremruati"
-                },
-                "reviewBody": "I am a weaver from Aizawl. AMA Legal Solutions helped me understand the importance of the GI tag for my Pawndum designs. They made the registration process very easy."
-              },
-              {
-                "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5"
-                },
-                "author": {
-                  "@type": "Person",
-                  "name": "Zothanpuii"
-                },
-                "reviewBody": "We run a food processing unit in Lunglei. The team at AMA handled our trademark registration efficiently. Their digital service is a blessing for businesses in Mizoram."
-              }
-            ]
-          })
-        }}
-      />
+      
     </>
   );
 }

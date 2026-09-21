@@ -232,11 +232,7 @@ export default function WillDraftUnder3000Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <Script
-        id="review-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-      />
+      
 
       <main className="bg-gray-50 min-h-screen font-sans text-gray-800">
         <header className="relative bg-[#1a202c] text-white">

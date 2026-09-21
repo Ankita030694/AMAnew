@@ -477,54 +477,7 @@ export default function ClientPage() {
           })
         }}
       />
-      <Script
-        id="review-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Product",
-            "name": "IPR Services Puducherry",
-            "image": "https://www.amalegalsolutions.com/services/ipr-puducherry.jpg",
-            "description": "Expert Intellectual Property Rights registration and protection services in Puducherry.",
-            "brand": {
-              "@type": "Brand",
-              "name": "AMA Legal Solutions"
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "150"
-            },
-            "review": [
-              {
-                "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5"
-                },
-                "author": {
-                  "@type": "Person",
-                  "name": "Ramesh Babu"
-                },
-                "reviewBody": "We are a food processing unit in Guntur. AMA Legal Solutions helped us register our trademark and navigate the complex classification issues. Their service was professional and prompt."
-              },
-              {
-                "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5"
-                },
-                "author": {
-                  "@type": "Person",
-                  "name": "Kiran Kumar"
-                },
-                "reviewBody": "As a tech startup in Visakhapatnam, protecting our software code was a priority. The team at AMA guided us through the copyright process and explained everything clearly. Highly recommended."
-              }
-            ]
-          })
-        }}
-      />
+      
     </>
   );
 }

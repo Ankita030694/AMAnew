@@ -469,54 +469,7 @@ export default function ArunachalPradeshClient() {
           })
         }}
       />
-      <Script
-        id="review-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Product",
-            "name": "IPR Services Arunachal Pradesh",
-            "image": "https://www.amalegalsolutions.com/services/ipr-arunachal-pradesh.jpg",
-            "description": "Expert Intellectual Property Rights registration and protection services in Arunachal Pradesh.",
-            "brand": {
-              "@type": "Brand",
-              "name": "AMA Legal Solutions"
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "120"
-            },
-            "review": [
-              {
-                "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5"
-                },
-                "author": {
-                  "@type": "Person",
-                  "name": "Tashi Dorjee"
-                },
-                "reviewBody": "I run a small organic tea business in Pasighat. AMA Legal Solutions helped me register my brand name. The process was so smooth, and I didn't have to leave my town even once."
-              },
-              {
-                "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5"
-                },
-                "author": {
-                  "@type": "Person",
-                  "name": "Pema Khandu"
-                },
-                "reviewBody": "We needed help with patenting a new agricultural tool. The team at AMA was very knowledgeable and guided us through the technical drafting process perfectly."
-              }
-            ]
-          })
-        }}
-      />
+      
     </>
   );
 }
