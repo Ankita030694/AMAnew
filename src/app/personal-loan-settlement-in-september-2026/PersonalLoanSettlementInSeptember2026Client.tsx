@@ -982,7 +982,7 @@ export default function PersonalLoanSettlementInSeptember2026Client() {
                     {[
                       {
                         title: "Personal Loan Settlement Services",
-                        href: "/personal-loan-settlement-services",
+                        href: "/personal-loan-settlement",
                         desc: "Advocate representation for personal loan compromise negotiations.",
                       },
                       {
@@ -1167,7 +1167,7 @@ export default function PersonalLoanSettlementInSeptember2026Client() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 max-w-5xl mx-auto">
                     <Link
-                      href="/personal-loan-settlement-services"
+                      href="/personal-loan-settlement"
                       className="px-3 py-2.5 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded-lg hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-sm flex items-center justify-center"
                     >
                       Personal Loan Settlement
@@ -1320,7 +1320,7 @@ export default function PersonalLoanSettlementInSeptember2026Client() {
                 </h3>
                 <ul className="space-y-2 text-xs">
                   {[
-                    ["/personal-loan-settlement-services", "Personal Loan Settlement Services"],
+                    ["/personal-loan-settlement", "Personal Loan Settlement Services"],
                     ["/one-time-settlement-scheme-for-personal-loan-2026", "One Time Settlement Scheme 2026"],
                     ["/how-to-stop-bank-recovery-agents-harassment-legally-in-india", "Stop Recovery Agents Legally"],
                     ["/section-138-cheque-bounce-notice-for-personal-loan", "Section 138 Notice Defense"],

@@ -749,7 +749,7 @@ export default function BestDebtSettlementCompanyClient() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5 pt-2">
                     <Link
-                      href="/best-personal-loan-settlement-service"
+                      href="/personal-loan-settlement"
                       className="p-4 rounded-xl border border-gray-200 hover:border-[#D2A02A] hover:bg-amber-50/30 transition duration-200 shadow-sm flex flex-col justify-between"
                     >
                       <div>
@@ -761,7 +761,7 @@ export default function BestDebtSettlementCompanyClient() {
                     </Link>
 
                     <Link
-                      href="/best-credit-card-settlement-service"
+                      href="/credit-card-debt-settlement"
                       className="p-4 rounded-xl border border-gray-200 hover:border-[#D2A02A] hover:bg-amber-50/30 transition duration-200 shadow-sm flex flex-col justify-between"
                     >
                       <div>
@@ -797,7 +797,7 @@ export default function BestDebtSettlementCompanyClient() {
                     </Link>
 
                     <Link
-                      href="/personal-loan-debt-settlement"
+                      href="/personal-loan-settlement"
                       className="p-4 rounded-xl border border-gray-200 hover:border-[#D2A02A] hover:bg-amber-50/30 transition duration-200 shadow-sm flex flex-col justify-between"
                     >
                       <div>

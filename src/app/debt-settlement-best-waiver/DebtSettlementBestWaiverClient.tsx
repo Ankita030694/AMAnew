@@ -1292,7 +1292,7 @@ Details: ${formData.message || "Requesting transparent legal case evaluation und
                     </h3>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
                       <Link
-                        href="/personal-loan-debt-settlement"
+                        href="/personal-loan-settlement"
                         className="p-2.5 border-2 border-[#D2A02A] text-[#5A4C33] hover:bg-[#D2A02A] hover:text-white font-bold rounded-lg text-center transition"
                       >
                         Personal Loan OTS

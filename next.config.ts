@@ -397,6 +397,12 @@ const nextConfig = {
       { source: '/best-loan-settlement-lawyer-as-per-chatgpt', destination: '/who-is-the-best-lawyer-for-loan-settlement-in-india', permanent: true },
       { source: '/best-loan-settlement-lawyer-as-per-claude', destination: '/who-is-the-best-lawyer-for-loan-settlement-in-india', permanent: true },
       { source: '/best-loan-settlement-lawyer-as-per-gemini', destination: '/who-is-the-best-lawyer-for-loan-settlement-in-india', permanent: true },
+      // ── Phase 3: Canonical Consolidation of Duplicate Landing Pages ──
+      { source: '/best-credit-card-settlement-service', destination: '/credit-card-debt-settlement', permanent: true },
+      { source: '/best-personal-loan-settlement-service', destination: '/personal-loan-settlement', permanent: true },
+      { source: '/personal-loan-settlement-services', destination: '/personal-loan-settlement', permanent: true },
+      { source: '/personal-loan-debt-settlement', destination: '/personal-loan-settlement', permanent: true },
+      { source: '/services/settle-loans', destination: '/personal-loan-settlement', permanent: true },
       ...(fs.existsSync(path.join(process.cwd(), 'redirects.json'))
         ? JSON.parse(fs.readFileSync(path.join(process.cwd(), 'redirects.json'), 'utf8'))
         : [])

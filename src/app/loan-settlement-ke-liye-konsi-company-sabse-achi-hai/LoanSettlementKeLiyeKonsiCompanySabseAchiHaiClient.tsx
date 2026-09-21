@@ -1353,7 +1353,7 @@ Details: ${formData.message || "Requesting advocate evaluation for bank/NBFC loa
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5">
                     {[
                       { name: "Credit Card Settlement", href: "/credit-card-debt-settlement" },
-                      { name: "Personal Loan Resolution", href: "/personal-loan-debt-settlement" },
+                      { name: "Personal Loan Resolution", href: "/personal-loan-settlement" },
                       { name: "Business Loan OTS", href: "/business-loan-settlement" },
                       { name: "Anti-Harassment Notice", href: "/legal-notice-for-loan-settlement-harassment" },
                       { name: "Sec 138 NI Act Defense", href: "/services/loan-settlement" },

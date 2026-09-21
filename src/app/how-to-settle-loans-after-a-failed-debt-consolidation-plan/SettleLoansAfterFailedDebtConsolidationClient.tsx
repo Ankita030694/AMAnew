@@ -1160,7 +1160,7 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
                       },
                       {
                         title: "Personal Loan Debt Settlement Guide",
-                        href: "/personal-loan-debt-settlement",
+                        href: "/personal-loan-settlement",
                         desc: "Complete walkthrough of negotiating One-Time Settlements for unsecured personal loans.",
                       },
                       {

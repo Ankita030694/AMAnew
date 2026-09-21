@@ -1303,7 +1303,7 @@ export default function SettleLoansRepaymentCapacityClient() {
                       },
                       {
                         title: "Personal Loan Debt Settlement",
-                        href: "/personal-loan-debt-settlement",
+                        href: "/personal-loan-settlement",
                         desc: "Comprehensive guide to settling unsecured personal loans across major private banks.",
                       },
                       {

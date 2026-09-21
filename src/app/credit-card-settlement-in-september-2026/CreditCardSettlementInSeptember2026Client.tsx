@@ -1064,7 +1064,7 @@ Details: ${formData.message || "Requesting advocate evaluation for RBI OTS negot
                       },
                       {
                         title: "Best Credit Card Settlement Service",
-                        href: "/best-credit-card-settlement-service",
+                        href: "/credit-card-debt-settlement",
                         desc: "Evaluating legal representation and RBI-compliant dispute resolution for credit card default.",
                       },
                       {
@@ -1255,7 +1255,7 @@ Details: ${formData.message || "Requesting advocate evaluation for RBI OTS negot
                       Credit Card Settlement
                     </Link>
                     <Link
-                      href="/personal-loan-settlement-services"
+                      href="/personal-loan-settlement"
                       className="px-3 py-2.5 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded-lg hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-sm flex items-center justify-center"
                     >
                       Personal Loan Settlement
@@ -1403,7 +1403,7 @@ Details: ${formData.message || "Requesting advocate evaluation for RBI OTS negot
                 <ul className="space-y-2 text-xs">
                   {[
                     ["/credit-card-debt-settlement", "Credit Card Debt Settlement"],
-                    ["/best-credit-card-settlement-service", "Best Credit Card Settlement Service"],
+                    ["/credit-card-debt-settlement", "Best Credit Card Settlement Service"],
                     ["/personal-loan-settlement-in-september-2026", "Personal Loan Settlement September 2026"],
                     ["/how-to-stop-bank-recovery-agents-harassment-legally-in-india", "Stop Recovery Agents Legally"],
                     ["/credit-card-settlement-process-in-india-after-6-months-default", "Settlement After 6 Months Default"],

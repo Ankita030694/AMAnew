@@ -217,26 +217,29 @@ export default function RootLayout({
           </ConditionalLayout>
         </RecaptchaProvider>
         <Toaster position="top-right" />
-        {process.env.NEXT_PUBLIC_GA_TRACKING_ID && (
-          <>
-            <Script 
-              strategy="lazyOnload" 
-              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
-            />
-            <Script
-              id="gtag-init"
-              strategy="lazyOnload"
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}');
-                `,
-              }}
-            />
-          </>
-        )}
+        {(() => {
+          const gaId = process.env.NEXT_PUBLIC_GA_TRACKING_ID || 'G-3087BV48LQ';
+          return (
+            <>
+              <Script 
+                strategy="lazyOnload" 
+                src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+              />
+              <Script
+                id="gtag-init"
+                strategy="lazyOnload"
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', '${gaId}');
+                  `,
+                }}
+              />
+            </>
+          );
+        })()}
         <Analytics />
       </body>
     </html>

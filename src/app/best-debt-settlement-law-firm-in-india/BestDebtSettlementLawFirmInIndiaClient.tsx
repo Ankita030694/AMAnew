@@ -1436,7 +1436,7 @@ Details: ${formData.message || "Requesting transparent fixed legal advisory unde
                   </div>
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 text-xs">
                     <Link
-                      href="/personal-loan-debt-settlement"
+                      href="/personal-loan-settlement"
                       className="p-2 bg-white border-2 border-[#D2A02A] text-[#5A4C33] hover:bg-[#D2A02A] hover:text-white rounded-lg text-center font-semibold transition"
                     >
                       Personal Loan Settlement

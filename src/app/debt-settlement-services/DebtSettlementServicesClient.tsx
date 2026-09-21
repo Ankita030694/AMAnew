@@ -1037,7 +1037,7 @@ Details: ${formData.message || "Requesting transparent fixed legal advisory unde
                       &bull; Best Debt Settlement Company
                     </Link>
                     <Link
-                      href="/personal-loan-debt-settlement"
+                      href="/personal-loan-settlement"
                       className="p-3 bg-gray-50 rounded-xl border border-gray-200 hover:border-[#D2A02A] font-medium text-gray-800 hover:text-[#D2A02A] transition block"
                     >
                       &bull; Personal Loan Debt Settlement
@@ -1218,7 +1218,7 @@ Details: ${formData.message || "Requesting transparent fixed legal advisory unde
                     </h3>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
                       <Link
-                        href="/personal-loan-debt-settlement"
+                        href="/personal-loan-settlement"
                         className="p-2.5 border-2 border-[#D2A02A] text-[#5A4C33] hover:bg-[#D2A02A] hover:text-white font-bold rounded-lg text-center transition"
                       >
                         Personal Loan OTS
