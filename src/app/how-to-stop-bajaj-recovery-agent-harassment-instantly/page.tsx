@@ -71,7 +71,6 @@ export default function BajajHarassmentGuide() {
         "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
       }
     },
-    "datePublished": "2026-04-22",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://www.amalegalsolutions.com/how-to-stop-bajaj-recovery-agent-harassment-instantly"
