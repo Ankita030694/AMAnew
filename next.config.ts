@@ -327,6 +327,7 @@ const nextConfig = {
 
       // ── SEO Fix: Loan-settlement state slugs (wrong case / spaces) ────────
       // Uppercase/spaced state names → correct folder names
+      { source: '/services/loan-settlement/AndhraPradesh', destination: '/services/loan-settlement/andhra-pradesh', permanent: true },
       { source: '/services/loan-settlement/Himachal%20Pradesh', destination: '/services/loan-settlement/himachal-pradesh', permanent: true },
       { source: '/services/loan-settlement/West%20Bengal', destination: '/services/loan-settlement/west-bengal', permanent: true },
 

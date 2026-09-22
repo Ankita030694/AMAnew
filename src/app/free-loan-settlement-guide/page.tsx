@@ -15,8 +15,8 @@ const faqs = [
     answer: "While you can technically approach a bank for settlement on your own, the process is fraught with legal technicalities and aggressive recovery tactics. A 'free' approach often leads to unfavorable terms if you are not well-versed in banking laws and negotiation tactics. Using a guide like this empowers you with knowledge, but having legal representation from firms like AMA Legal Solutions ensures that your rights are protected, harassment stops immediately, and you get the best possible settlement percentage."
   },
   {
-    question: "What are the latest RBI guidelines for loan settlement in 2024-2025?",
-    answer: "The RBI has introduced several pro-borrower updates in late 2023 and 2024. Key highlights include the mandatory 30-day pre-notice period before legal action, strict codes of conduct for recovery agents (restricted calling hours between 8 AM and 7 PM), and the directive for banks to release all original property documents within 30 days of full settlement. There is also a push for transparent OTS policies across all regulated entities including NBFCs and ARCs."
+    question: "What are the latest RBI guidelines for loan settlement in 2026?",
+    answer: "The RBI circulars on Prudential Framework for Resolution of Stressed Assets allow banks and NBFCs to offer compromise settlements (OTS) to willful and non-willful defaulters under board-approved policies. The June 2023 circular specifically mandates that settlement proposals must follow defined governance frameworks without prejudice to penal actions for fraud."
   },
   {
     question: "How does loan settlement affect my CIBIL score in the long run?",
@@ -72,13 +72,21 @@ const breadcrumbSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Ultimate Free Loan Settlement Guide 2024-2025: Expert Legal Debt Relief",
-  "description": "Comprehensive 5000+ word guide on loan settlement in India. Learn legal strategies to settle personal loans, credit cards, and business debts with RBI updates.",
+  "headline": "Ultimate Free Loan Settlement Guide 2026: Expert Legal Debt Relief",
+  "description": "Comprehensive guide on loan settlement in India. Learn legal strategies to settle personal loans, credit cards, and business debts with 2026 RBI updates.",
   "image": "https://www.amalegalsolutions.com/services/3.png",
+  "datePublished": "2026-02-16",
+  "dateModified": "2026-09-22",
   "author": {
-    "@type": "Organization",
-    "name": "AMA Legal Solutions",
-    "url": "https://www.amalegalsolutions.com"
+    "@type": "Person",
+    "name": "Adv. Anuj Anand Malik",
+    "jobTitle": "Founder & Managing Partner",
+    "url": "https://www.amalegalsolutions.com/author/anuj-anand-malik",
+    "image": "https://www.amalegalsolutions.com/anujbhiya.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/iamanujmalik/",
+      "https://www.instagram.com/amalegalsolutions/?hl=en"
+    ]
   },
   "publisher": {
     "@type": "Organization",
@@ -87,9 +95,7 @@ const articleSchema = {
       "@type": "ImageObject",
       "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
-  },
-  "datePublished": "2026-02-16",
-  "dateModified": "2026-02-16"
+  }
 };
 
 // FAQ Schema
@@ -151,9 +157,9 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Free Loan Settlement Guide | Legal Debt Relief India",
+  title: "Free Loan Settlement Guide 2026: Settle Debt Legally | AMA",
   description:
-    "Master the art of loan settlement with our free expert guide. Clear debt, stop harassment, and improve your CIBIL. Updated for RBI 2024-2025 regulations.",
+    "Complete legal guide to bank loan settlement in India. Understand RBI OTS rules, stop recovery agent harassment, negotiate haircuts, and restore your credit.",
   keywords: [
     "free loan settlement guide",
     "loan settlement india",
@@ -170,7 +176,7 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/free-loan-settlement-guide',
   },
   openGraph: {
-    title: "Free Loan Settlement Guide | Legal Debt Relief India",
+    title: "Free Loan Settlement Guide 2026: Settle Debt Legally | AMA",
     description: "Expert strategies to settle your bank loans legally. Stop harassment and regain financial freedom. Updated for current RBI rules.",
     url: "https://www.amalegalsolutions.com/free-loan-settlement-guide",
     type: "website",
@@ -189,7 +195,7 @@ export default function FreeLoanSettlementGuidePage() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
     { id: "understanding-settlement", title: "What is Loan Settlement?" },
-    { id: "rbi-guidelines", title: "RBI Guidelines 2024-2025" },
+    { id: "rbi-guidelines", title: "RBI Guidelines 2026" },
     { id: "borrower-rights", title: "Your Legal Rights" },
     { id: "settlement-process", title: "The Step-by-Step Process" },
     { id: "negotiation-strategies", title: "Expert Negotiation Tactics" },
@@ -235,7 +241,7 @@ export default function FreeLoanSettlementGuidePage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent z-0"></div>
           <div className="relative z-10 container mx-auto px-4 py-16 md:py-32 text-center">
             <h1 className="text-3xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
-              Ultimate <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D2A02A] to-[#F3D079]">Free Loan Settlement Guide</span> for 2025
+              Ultimate <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D2A02A] to-[#F3D079]">Free Loan Settlement Guide</span> for 2026
             </h1>
             <p className="text-base md:text-2xl mb-10 max-w-4xl mx-auto text-gray-300 font-medium">
               A comprehensive blueprint for Indian borrowers to achieve full debt relief, navigate RBI regulations, and stop creditor harassment legally. Written by India Choice Debt Relief Lawyers.
@@ -302,7 +308,7 @@ export default function FreeLoanSettlementGuidePage() {
                                 </p>
                             </div>
                             <p>
-                                The psychological toll of debt is often more damaging than the financial one. The constant anxiety can affect your health, your work performance, and your relationships. This <strong>free loan settlement guide</strong> is designed to take that burden off your shoulders by providing a clear, legal, and strategic path forward. We will explore how One Time Settlement (OTS) schemes work, the technical nuances of the latest RBI updates for 2024 and 2025, and how you can negotiate with multi national banks on equal footing.
+                                The psychological toll of debt is often more damaging than the financial one. The constant anxiety can affect your health, your work performance, and your relationships. This <strong>free loan settlement guide</strong> is designed to take that burden off your shoulders by providing a clear, legal, and strategic path forward. We will explore how One Time Settlement (OTS) schemes work, the technical nuances of the latest RBI updates for 2026, and how you can negotiate with multi national banks on equal footing.
                             </p>
                             <p>
                                 At AMA Legal Solutions, we have witnessed thousands of success stories where individuals regained their life after settling their debts for a fraction of the outstanding amount. This guide synthesizes years of legal expertise into a blueprint that you can use to start your journey today. We cover everything from the initial calculation of your settlement capability to the final acquisition of your No Dues Certificate. Let us begin by breaking down what settlement actually means in the context of the Indian banking system.
@@ -349,7 +355,7 @@ export default function FreeLoanSettlementGuidePage() {
                         <div className="p-8 md:p-12 rounded-[2rem] bg-[#f8fafc] border border-gray-100">
                             <div className="flex items-center gap-4 mb-8">
                                 <span className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg shadow-blue-200">02</span>
-                                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Latest RBI Guidelines: 2024-2025 Updates</h2>
+                                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Latest RBI Guidelines: 2026 Updates</h2>
                             </div>
                             <div className="space-y-8">
                                 <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm leading-relaxed">
@@ -871,7 +877,7 @@ export default function FreeLoanSettlementGuidePage() {
                         <div className="bg-indigo-900 text-indigo-100 p-10 rounded-[2.5rem] shadow-xl">
                             <h2 className="text-3xl font-bold mb-6">How Banks Use AI: The Automated Recovery Engine</h2>
                             <p className="leading-relaxed mb-6">
-                                In 2025, your debt is not just a file on a desk; it's a data point in an 'Automated Recovery System'. These systems use machine learning to predict which borrowers are likely to settle and for how much. 
+                                In 2026, your debt is not just a file on a desk; it's a data point in an 'Automated Recovery System'. These systems use machine learning to predict which borrowers are likely to settle and for how much. 
                             </p>
                             <p className="leading-relaxed mb-6">
                                 They track your 'Digital Footprint' - your interaction with the bank's app, the tone of your emails, and your response time to automated calls. If the AI detects 'Desperation', it will hold firm on a higher settlement amount. If it detects 'Legal Knowledge' or a 'Bona Fide Hardship', it might automatically trigger a better settlement offer.
@@ -884,7 +890,7 @@ export default function FreeLoanSettlementGuidePage() {
 
                     {/* Final Section 21: The Global Road Map to Freedom */}
                     <section id="global-roadmap" className="scroll-mt-32">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-8 uppercase tracking-widest text-blue-800">The 2025-2030 Roadmap to Total Financial Freedom</h2>
+                        <h2 className="text-3xl font-bold text-gray-900 mb-8 uppercase tracking-widest text-blue-800">The 2026-2030 Roadmap to Total Financial Freedom</h2>
                         <p className="text-gray-700 leading-relaxed mb-6">
                              Financial freedom is a marathon, not a sprint. This guide has equiped you with the 'Sprinting' tools of <strong>loan settlement</strong>. The 'Marathon' part is your fiscal discipline thereafter. 
                         </p>
@@ -1020,6 +1026,48 @@ export default function FreeLoanSettlementGuidePage() {
                                 <p className="text-[#2a2a2a] mb-8 max-w-2xl mx-auto">Our legal experts have helped thousands of borrowers settle their debts legally and ethically. Don't face the banks alone.</p>
                                 <a href="/contact" className="inline-block px-8 py-4 bg-[#1a1a1a] text-white font-bold rounded-xl hover:bg-black transition-all transform hover:scale-105 shadow-xl">Book Your Free Consultation Now</a>
                             </div>
+
+                            {/* Author Bio Box */}
+                            <aside className="bg-[#f9f5e8] p-6 md:p-8 rounded-3xl border border-amber-200 mt-12 flex flex-col md:flex-row gap-6 items-center text-left not-prose">
+                              <div className="relative w-28 h-28 md:w-36 md:h-36 flex-shrink-0 bg-gray-200 rounded-full overflow-hidden border-2 border-[#D2A02A] shadow-md">
+                                <Image
+                                  src="/anujbhiya.png"
+                                  alt="Advocate Anuj Anand Malik - Founder & Managing Partner"
+                                  fill
+                                  className="object-cover object-top"
+                                />
+                              </div>
+                              <div className="space-y-3 flex-1 text-left">
+                                <div className="flex flex-wrap items-center gap-3">
+                                  <h3 className="text-xl md:text-2xl font-bold text-gray-900">Reviewed & Authored by Adv. Anuj Anand Malik</h3>
+                                  <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full border border-emerald-300">
+                                    Verified Bar Council Advocate
+                                  </span>
+                                </div>
+                                <p className="text-xs md:text-sm font-semibold text-gray-700">
+                                  Founder & Managing Partner, AMA Legal Solutions | Enrolled with Bar Council of Delhi & Delhi High Court Bar Association
+                                </p>
+                                <p className="text-gray-700 text-xs md:text-sm leading-relaxed">
+                                  Advocate Anuj Anand Malik is an authority in Indian debt resolution, banking litigation, and consumer protection. He has guided over 10,000 borrowers across India through legal compromise settlements, halting illegal recovery agent harassment, quashing false Section 138/25 notices, and securing lawful No Dues Certificates under RBI guidelines.
+                                </p>
+                                <div className="flex flex-wrap gap-4 pt-1 text-xs font-bold">
+                                  <a 
+                                    href="https://www.linkedin.com/in/iamanujmalik/" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="text-[#D2A02A] hover:text-[#b88a22] flex items-center gap-1"
+                                  >
+                                    LinkedIn Profile →
+                                  </a>
+                                  <Link 
+                                    href="/author/anuj-anand-malik" 
+                                    className="text-gray-800 hover:text-black flex items-center gap-1"
+                                  >
+                                    Author Profile & Credentials →
+                                  </Link>
+                                </div>
+                              </div>
+                            </aside>
                          </div>
                     </section>
                 </div>

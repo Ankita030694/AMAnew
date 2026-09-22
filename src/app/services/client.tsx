@@ -94,6 +94,48 @@ const servicesData = [
 // Guides Data
 const guidesData = [
   {
+    icon: faScaleBalanced,
+    title: "Loan Settlement Amount Calculator",
+    description: "Calculate realistic one-time settlement (OTS) waiver percentages for credit cards and personal loans according to legal standards.",
+    link: "/loan-settlement-amount-calculator"
+  },
+  {
+    icon: faScaleBalanced,
+    title: "Lok Adalat Debt Settlement Guide",
+    description: "Settle pending bank loans, personal loans, and credit cards with up to 75% waiver through judicial NALSA Lok Adalat sessions.",
+    link: "/services/loan-settlement/lok-adalat"
+  },
+  {
+    icon: faFileLines,
+    title: "Free Loan Settlement Comprehensive Guide",
+    description: "Master guide to settling unsecured bank loans, resolving recovery harassment, and obtaining genuine NDC/NOC letters.",
+    link: "/free-loan-settlement-guide"
+  },
+  {
+    icon: faScaleBalanced,
+    title: "High-Value Loan Settlement (Above ₹1 Crore)",
+    description: "Strategic defense for high-net-worth borrowers and businesses facing SARFAESI, DRT, Section 138 NI Act, and consortium defaults.",
+    link: "/how-to-settle-loans-above-1-crore"
+  },
+  {
+    icon: faFileLines,
+    title: "Stop Recovery Agent Harassment Instantly",
+    description: "Legal protection framework under RBI Circular 2022 and Bharatiya Nyaya Sanhita (BNS) 2023 against abusive recovery calls and visits.",
+    link: "/how-to-stop-bajaj-recovery-agent-harassment-instantly"
+  },
+  {
+    icon: faFileLines,
+    title: "Where to File Complaint for Unpaid Salary",
+    description: "Complete guide on recovering unpaid salary from employers via Labour Commissioner, Section 17 Code on Wages, and NCLT.",
+    link: "/where-to-file-a-complaint-if-your-employer-doesnt-pay-you"
+  },
+  {
+    icon: faFileLines,
+    title: "Special Lok Adalat for Traffic Challan 2026",
+    description: "Exhaustive legal guide to settling pending traffic challans, camera notices, and virtual court summons with maximum waivers.",
+    link: "/special-lok-adalat-for-challan"
+  },
+  {
     icon: faFileLines,
     title: "Trademark Registration Services",
     description: "Expert trademark registration, objection reply, and hearing services. Secure your brand name with India's top IP lawyers.",
@@ -105,7 +147,6 @@ const guidesData = [
     description: "Master the Ipindia portal (ipindia.gov.in) for trademark registration. Detailed guide on DSC, Public Search, and Form TM-A.",
     link: "/services/how-to-register-trademark-with-ipindia"
   },
-
   {
     icon: faFileLines,
     title: "Quick Company Registration",

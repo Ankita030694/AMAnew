@@ -61,11 +61,21 @@ const breadcrumbSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Bajaj Finance Agent Visiting Home? Know Your Rights & How to Stop Harassment",
-  "description": "Are Bajaj Finance recovery agents visiting your home or office? Learn the legal way to stop harassment, your rights under RBI guidelines, and how to protect your family's dignity.",
+  "headline": "Bajaj Finance Agent Visiting Home? Know Your Rights & RBI Rules 2026",
+  "description": "Are Bajaj Finance recovery agents visiting your home or office? Learn how to stop illegal field visits under RBI 2022 guidelines, the Bharatiya Nyaya Sanhita (BNS), and Supreme Court rulings.",
+  "image": "https://www.amalegalsolutions.com/services/3.png",
+  "datePublished": "2024-03-24",
+  "dateModified": "2026-09-22",
   "author": {
-    "@type": "Organization",
-    "name": "AMA Legal Solutions"
+    "@type": "Person",
+    "name": "Adv. Anuj Anand Malik",
+    "jobTitle": "Founder & Managing Partner",
+    "url": "https://www.amalegalsolutions.com/author/anuj-anand-malik",
+    "image": "https://www.amalegalsolutions.com/anujbhiya.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/iamanujmalik/",
+      "https://www.instagram.com/amalegalsolutions/?hl=en"
+    ]
   },
   "publisher": {
     "@type": "Organization",
@@ -74,9 +84,7 @@ const articleSchema = {
       "@type": "ImageObject",
       "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
-  },
-  "datePublished": "2024-03-24",
-  "dateModified": "2025-02-24"
+  }
 };
 
 // FAQ Schema
@@ -93,67 +101,47 @@ const faqSchema = {
   }))
 };
 
-// Review Schema
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Legal Protection Against Bajaj Finance Harassment",
-  "image": "https://www.amalegalsolutions.com/services/bajaj-harassment-relief.png",
-  "description": "Expert legal services to stop Bajaj Finance recovery agents from visiting your residence or workplace using RBI and judicial frameworks.",
-  "brand": {
-    "@type": "Brand",
-    "name": "AMA Legal Solutions"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "4200"
-  }
-};
-
 export const metadata = {
-  title: "Bajaj Finance Agent Visiting Home | Legal Protection",
-  description: "Are Bajaj Finance agents visiting your home? Stop illegal visits and harassment legally under RBI guidelines and Supreme Court mandates with AMA Legal.",
-  keywords: [
-    "bajaj finance agent visiting home",
-    "bajaj finance recovery agent harassment",
-    "stop bajaj finance recovery visits",
-    "bajaj finance field agent rules",
-    "how to complaint against bajaj finance recovery agent",
-    "bajaj finance personal loan recovery process",
-    "can bajaj finance agent enter my house",
-    "bajaj finance collection agent timing",
-    "legal notice to bajaj finance to stop visits",
-    "rbi rules for bajaj finance recovery agents",
-    "bajaj finance social shaming complaint",
-    "ama legal solutions bajaj finance help"
-  ],
+  title: "Bajaj Finance Agent Visiting Home? RBI Rules & Legal Rights",
+  description: "Are Bajaj Finance agents visiting your home? Stop illegal visits under the August 2022 RBI circular, Bharatiya Nyaya Sanhita (BNS), and Supreme Court rulings.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/bajaj-finance-agent-visiting-home',
-  }
+  },
+  openGraph: {
+    title: "Bajaj Finance Agent Visiting Home? RBI Rules & Legal Rights",
+    description: "Are Bajaj Finance agents visiting your home? Stop illegal visits under the August 2022 RBI circular, Bharatiya Nyaya Sanhita (BNS), and Supreme Court rulings.",
+    url: 'https://www.amalegalsolutions.com/bajaj-finance-agent-visiting-home',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.amalegalsolutions.com/services/3.png',
+        width: 1200,
+        height: 630,
+        alt: 'Bajaj Finance Agent Visiting Home Legal Defense',
+      },
+    ],
+  },
 };
 
 export default function BajajFinanceAgentPage() {
   const tocSections = [
+    { id: "emergency-action", title: "Emergency Action Plan" },
     { id: "introduction", title: "Introduction" },
     { id: "bajaj-finance-context", title: "Bajaj Finance Policy" },
-    { id: "rbi-guidelines", title: "RBI Collection Rules" },
+    { id: "rbi-guidelines", title: "RBI Collection Rules (2022)" },
     { id: "agent-id-verification", title: "ID Verification" },
     { id: "illegal-tactics", title: "Illegal Tactics" },
-    { id: "ipc-protections", title: "Criminal Law Protection" },
-    { id: "right-to-privacy", title: "Right to Privacy" },
+    { id: "ipc-bns-protections", title: "BNS & IPC Protections" },
+    { id: "right-to-privacy", title: "Right to Privacy (Art 21)" },
     { id: "workplace-harassment", title: "Workplace Visits" },
     { id: "handling-bajaj-agents", title: "How to Handle Agents" },
     { id: "landmark-judgments", title: "Supreme Court Rulings" },
     { id: "the-999-shield", title: "AMA Legal Shield ₹999" },
-    { id: "escalation-matrix", title: "Escalation Matrix" },
+    { id: "escalation-matrix", title: "3-Tier Escalation Matrix" },
+    { id: "cease-desist-template", title: "Legal Notice Template" },
     { id: "state-specific-laws", title: "State Variations" },
-    { id: "settlement-options", title: "Settlement Paths" },
-    { id: "debt-consolidation", title: "Refinancing Debt" },
-    { id: "common-hoaxes", title: "Fake Notice Hoaxes" },
     { id: "case-studies", title: "Bajaj Case Studies" },
     { id: "success-stories", title: "Review Snippets" },
-    { id: "legal-glossary", title: "Legal Glossary" },
     { id: "faqs", title: "FAQs" },
   ];
 
@@ -255,126 +243,190 @@ export default function BajajFinanceAgentPage() {
               <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
                 <article className="prose prose-lg max-w-none text-gray-800 space-y-12">
                   
+                  {/* Emergency Doorstep Action Protocol */}
+                  <section id="emergency-action" className="scroll-mt-32 bg-amber-50 p-6 md:p-10 rounded-2xl border-2 border-[#D2A02A] shadow-md not-prose">
+                    <div className="flex items-center gap-3 mb-6">
+                      <span className="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center font-black text-xl animate-pulse flex-shrink-0">!</span>
+                      <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase tracking-tight m-0">
+                        Emergency Doorstep Action Protocol: 5 Immediate Rules
+                      </h2>
+                    </div>
+                    <p className="text-sm md:text-base text-gray-700 font-medium mb-6 leading-relaxed">
+                      If a Bajaj Finance recovery agent is currently knocking at your door or standing in your building corridor, follow this instant legal self-defense protocol before answering:
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-5 gap-4 text-xs md:text-sm">
+                      <div className="bg-white p-4 rounded-xl border border-amber-200 shadow-sm space-y-2">
+                        <div className="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center font-bold text-xs">1</div>
+                        <h4 className="font-bold text-gray-900 uppercase text-xs tracking-wider">Keep Door Latched</h4>
+                        <p className="text-gray-600 leading-relaxed">Never allow an agent inside your living room or bedrooms. Communicate only through a locked safety grille or door chain.</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-xl border border-amber-200 shadow-sm space-y-2">
+                        <div className="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center font-bold text-xs">2</div>
+                        <h4 className="font-bold text-gray-900 uppercase text-xs tracking-wider">Demand Physical DRA ID</h4>
+                        <p className="text-gray-600 leading-relaxed">Demand their official IIBF/DRA identity card and account-specific Authorization Letter issued by Bajaj Finance Ltd. No ID = unauthorized trespasser.</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-xl border border-amber-200 shadow-sm space-y-2">
+                        <div className="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center font-bold text-xs">3</div>
+                        <h4 className="font-bold text-gray-900 uppercase text-xs tracking-wider">Check The Clock (8am-7pm)</h4>
+                        <p className="text-gray-600 leading-relaxed">RBI mandates zero visits before 8:00 AM or after 7:00 PM. A knock at 7:05 PM is a per se regulatory violation of RBI Master Directions.</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-xl border border-amber-200 shadow-sm space-y-2">
+                        <div className="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center font-bold text-xs">4</div>
+                        <h4 className="font-bold text-gray-900 uppercase text-xs tracking-wider">Turn On Video Recording</h4>
+                        <p className="text-gray-600 leading-relaxed">Hold up your smartphone and state: &quot;I am recording this interaction for the Banking Ombudsman and local police records.&quot; Aggressors back down immediately.</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-xl border border-amber-200 shadow-sm space-y-2">
+                        <div className="w-7 h-7 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs">5</div>
+                        <h4 className="font-bold text-red-700 uppercase text-xs tracking-wider">Dial 112 If Refused</h4>
+                        <p className="text-gray-600 leading-relaxed">If they shout, create a scene, or refuse to vacate your premises after being asked, call Police 112 immediately for Criminal Trespass under Section 329 BNS.</p>
+                      </div>
+                    </div>
+                  </section>
+
                   <section id="introduction" className="scroll-mt-32">
                     <h2 className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 mb-10 border-l-[12px] border-[#D2A02A] pl-8 uppercase">Dealing with Bajaj Finance Agent Home Visits</h2>
                     <div className="space-y-8 text-xl leading-relaxed">
                         <p>
-                            Bajaj Finance is one of India's largest and most successful Non-Banking Financial Companies (NBFCs). With a massive customer base spanning personal loans, consumer durable loans, and business loans, their recovery network is equally vast. However, for many borrowers facing financial hardship, the "Bajaj Finance agent visiting home" experience often transitions from a routine collection visit to a source of immense psychological pressure and social embarrassment.
+                            Bajaj Finance is one of India&apos;s largest Non-Banking Financial Companies (NBFCs). With a massive customer base spanning personal loans, consumer durable loans, and business loans, their recovery network is equally vast. However, for many borrowers facing financial hardship, the &quot;Bajaj Finance agent visiting home&quot; experience often transitions from a routine collection visit to a source of immense psychological pressure and social embarrassment.
                         </p>
                         <p>
-                            If you are being pursued by Bajaj Finance recovery agents, you must know that your financial default does not give them a license to harass you. In the Indian legal landscape of 2025, every borrower is protected by the Reserve Bank of India's (RBI) Fair Practices Code and constitutional rights. Whether it is a small consumer loan or a large personal loan, the recovery process must be civil, documented, and conducted within limited hours.
+                            If you are being pursued by Bajaj Finance recovery agents, you must know that your financial default does not give them a license to harass you. Under Indian law, every borrower is protected by the Reserve Bank of India&apos;s (RBI) Fair Practices Code and constitutional rights. Whether it is an EMI card loan or a high-value personal loan, recovery procedures must remain civil, documented, and conducted strictly within daylight hours.
                         </p>
                         <p>
-                            At AMA Legal Solutions, we specialize in bridging the gap between aggressive institutional collection and the borrower's legal rights. We have seen how Bajaj Finance agents, often working through third-party agencies, use tactics that border on-or explicitly cross into-criminal intimidation. This guide is your comprehensive legal defense, designed to reach over 7000 words of actionable legal wisdom to help you stop the harassment and resolve your debt with dignity.
+                            At AMA Legal Solutions, we bridge the gap between aggressive institutional collection and your statutory rights. We routinely witness recovery agents, often working through outsourced third-party agencies, employing coercive tactics that cross into criminal intimidation and trespass. This guide provides comprehensive, actionable legal defenses to permanently stop harassment and resolve your debts with complete legal safety.
                         </p>
                     </div>
                   </section>
 
                   <section id="bajaj-finance-context" className="scroll-mt-32 bg-gray-50 p-12 rounded-[40px] border border-gray-100">
-                    <h2 className="text-3xl font-black text-gray-900 mb-8 uppercase tracking-widest">Understanding Bajaj Finance's Recovery Infrastructure</h2>
+                    <h2 className="text-3xl font-black text-gray-900 mb-8 uppercase tracking-widest">Understanding Bajaj Finance&apos;s Recovery Infrastructure</h2>
                     <div className="space-y-6 italic text-gray-700 border-l-4 border-gray-200 pl-10">
                         <p>
-                            Bajaj Finance operates on a high-volume model. To manage its millions of defaults, it relies heavily on an automated "Dunning" system and a decentralized network of recovery agencies. When an agent visits your home, they are often not direct employees of Bajaj Finance but contractors working for a localized recovery agency. This 'layering' is often used by institutions to distance themselves from aggressive tactics.
+                            Bajaj Finance operates on an automated &quot;Dunning&quot; system backed by a decentralized network of outsourced third-party recovery agencies. When an agent knocks on your door, they are rarely direct payroll employees of Bajaj Finance Ltd. Instead, they are typically field telecallers and agency executives incentivized by commissions on recoveries.
                         </p>
                         <p>
-                            However, the law of "Vicarious Liability" holds Bajaj Finance directly responsible for every word and action of these agents. If a "Bajaj Finance agent visiting home" behaves like a muscleman or uses threats, it is a liability for the multi-billion dollar corporation. Understanding this hierarchy is the first step in stopping the visits. When we send a legal shield at AMA, we don't just talk to the agent; we talk to the compliance heads who fear regulatory penalties from the RBI.
+                            However, the doctrine of <strong>Vicarious Liability</strong> establishes that Bajaj Finance remains directly and jointly accountable for every illegality, threat, or breach committed by its collection partners. Under RBI regulations, the NBFC cannot disown the unlawful actions of its recovery agents. When AMA Legal Solutions issues a formal legal intervention, we do not waste time arguing with street agents; we hold the Principal Nodal Officer and Compliance Directorate legally liable.
                         </p>
                     </div>
                   </section>
 
                   <section id="rbi-guidelines" className="scroll-mt-32">
-                    <h2 className="text-4xl font-black text-gray-900 mb-10 uppercase tracking-tighter text-center">RBI Collection Rules: The 2025 Standard</h2>
-                    <div className="bg-[#1a202c] text-white p-12 rounded-[50px] shadow-2xl relative overflow-hidden">
+                    <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-6 uppercase tracking-tight text-center">RBI Recovery Norms: Circular DOR.ORG.REC.65/2022-23</h2>
+                    <p className="text-sm md:text-base text-gray-600 text-center max-w-3xl mx-auto mb-10 leading-relaxed">
+                        Under Reserve Bank of India Directive <strong>DOR.ORG.REC.65/21.04.158/2022-23 dated August 12, 2022</strong> (&quot;Outsourcing of Financial Services - Responsibilities of Regulated Entities Employing Recovery Agents&quot;), Bajaj Finance and its agents are bound by non-negotiable statutory mandates:
+                    </p>
+                    <div className="bg-[#1a202c] text-white p-8 md:p-12 rounded-[40px] shadow-2xl relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-[#D2A02A] opacity-20 transform translate-x-10 -translate-y-10 rounded-full"></div>
-                        <p className="text-xl mb-10 font-light leading-relaxed">
-                            As a Regulated Entity (RE), Bajaj Finance is bound by the RBI Master Directions. Any "field activity" must strictly adhere to these four pillars of borrower protection:
-                        </p>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                            <div className="space-y-4 border-l-2 border-[#D2A02A] pl-6">
-                                <h4 className="text-[#D2A02A] font-black uppercase text-sm tracking-widest">Timing Protocol</h4>
-                                <p className="text-sm text-gray-400">Agents can only visit or call between 08:00 AM and 07:00 PM. Visits at night, during family dinner, or early morning are strict violations. If a Bajaj agent knocks at 7:30 PM, they are breaking the law.</p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="space-y-3 border-l-2 border-[#D2A02A] pl-6">
+                                <h4 className="text-[#D2A02A] font-black uppercase text-sm tracking-widest">Strict 8 AM to 7 PM Hours</h4>
+                                <p className="text-xs md:text-sm text-gray-300 leading-relaxed">Field visits and collection telephone calls are strictly permitted only between 08:00 AM and 07:00 PM. Any visit before 8 AM or after 7 PM constitutes a punishable breach of RBI directions.</p>
                             </div>
-                            <div className="space-y-4 border-l-2 border-[#D2A02A] pl-6">
-                                <h4 className="text-[#D2A02A] font-black uppercase text-sm tracking-widest">Place of Convenience</h4>
-                                <p className="text-sm text-gray-400">The RBI mandates that collections should happen at the place and time of the borrower's convenience. If you explicitly ask them not to come home and instead meet at their branch, persistent home visits constitute legal harassment.</p>
+                            <div className="space-y-3 border-l-2 border-[#D2A02A] pl-6">
+                                <h4 className="text-[#D2A02A] font-black uppercase text-sm tracking-widest">Mandatory IIBF DRA Certification</h4>
+                                <p className="text-xs md:text-sm text-gray-300 leading-relaxed">Every recovery representative must hold a valid Debt Recovery Agent (DRA) certificate from the Indian Institute of Banking &amp; Finance (IIBF) and have clean police verification records on file with the NBFC.</p>
                             </div>
-                            <div className="space-y-4 border-l-2 border-[#D2A02A] pl-6">
-                                <h4 className="text-[#D2A02A] font-black uppercase text-sm tracking-widest">Zero Social Shaming</h4>
-                                <p className="text-sm text-gray-400">Agents are prohibited from disclosing your debt to anyone else. Talking to neighbors, calling your relatives, or shouting in the hallway is a violation of the 'Right to Privacy'.</p>
+                            <div className="space-y-3 border-l-2 border-[#D2A02A] pl-6">
+                                <h4 className="text-[#D2A02A] font-black uppercase text-sm tracking-widest">Total Ban on Third-Party Shaming</h4>
+                                <p className="text-xs md:text-sm text-gray-300 leading-relaxed">Agents are prohibited from contacting neighbors, building guards, employers, or relatives whose names are not co-borrowers or guarantors on the loan agreement. Public disclosure violates Section 19(1) of the RBI Master Directions.</p>
                             </div>
-                            <div className="space-y-4 border-l-2 border-[#D2A02A] pl-6">
-                                <h4 className="text-[#D2A02A] font-black uppercase text-sm tracking-widest">No Muscular Recovery</h4>
-                                <p className="text-sm text-gray-400">The Supreme Court has made it clear: banks cannot use musclemen. Recovery must be through the due process of law (Civil Suits, DRT, or Lok Adalats).</p>
+                            <div className="space-y-3 border-l-2 border-[#D2A02A] pl-6">
+                                <h4 className="text-[#D2A02A] font-black uppercase text-sm tracking-widest">Right to Designate Place of Meeting</h4>
+                                <p className="text-xs md:text-sm text-gray-300 leading-relaxed">The borrower has the legal right to request that all recovery discussions occur at a mutually convenient venue (such as the bank branch) rather than an unannounced home doorstep.</p>
                             </div>
                         </div>
                     </div>
                   </section>
 
                   <section id="agent-id-verification" className="scroll-mt-32">
-                    <h2 className="text-3xl font-black text-gray-900 mb-10 uppercase border-b-4 border-gray-900 pb-4 inline-block">Mandatory ID & Authorization Verification</h2>
+                    <h2 className="text-3xl font-black text-gray-900 mb-10 uppercase border-b-4 border-gray-900 pb-4 inline-block">Mandatory ID &amp; Authorization Verification</h2>
                     <div className="space-y-8 text-lg">
                         <p>
-                            Every time a "Bajaj Finance agent visiting home" arrives, they are legally required to carry two primary documents. Without these, you are well within your rights to treat them as unauthorized trespassers and refuse any conversation. 
+                            Every time a recovery agent visits your residence, they are legally required under paragraph 2.1 of the RBI Outsourcing Directions to produce two non-negotiable documents before initiating any conversation:
                         </p>
                         <ul className="list-disc pl-10 space-y-4">
-                            <li><strong>Identity Card:</strong> A physical card showing their name, photo, and the name of the recovery agency.</li>
-                            <li><strong>Authorization Letter:</strong> A letter from Bajaj Finance clearly mentioning the name of the agency and the authority to collect for your specific account.</li>
+                            <li><strong>Physical Identity Card:</strong> Displaying the agent&apos;s full name, photograph, DRA accreditation number, and the registered agency name.</li>
+                            <li><strong>Specific Authorization Letter:</strong> An official document signed by Bajaj Finance Ltd specifying the borrower&apos;s name, loan account number, and explicit authorization for that designated agency to discuss recovery.</li>
                         </ul>
                         <p>
-                            If an agent says, "I am from Bajaj," but refuses to show an ID, do not take them seriously. Many fraudulent collectors also use the name of Bajaj Finance to extort money. Always verify. If they are aggressive, record a video of them refusing to show ID as vital evidence for your complaint to the Nodal Officer.
+                            If an individual arrives claiming to be from Bajaj Finance but refuses to present these two physical documents, they are legally considered an unauthorized impersonator and trespasser. Do not entertain them. Immediately capture video footage of their refusal and request security or police assistance.
                         </p>
                     </div>
                   </section>
 
                   <section id="illegal-tactics" className="scroll-mt-32 bg-red-50 p-12 rounded-[40px] border border-red-100">
-                    <h2 className="text-3xl font-black text-red-900 mb-10 uppercase tracking-widest text-center">Illegal Tactics Used by Modern Agents</h2>
+                    <h2 className="text-3xl font-black text-red-900 mb-10 uppercase tracking-widest text-center">Illegal Tactics Used by Rogue Collection Agents</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <div className="space-y-6">
-                            <h4 className="text-xl font-bold text-gray-900 px-4 py-2 bg-white inline-block shadow-sm underline decoration-[#D2A02A]">The "Police Jeep" Hoax</h4>
+                            <h4 className="text-xl font-bold text-gray-900 px-4 py-2 bg-white inline-block shadow-sm underline decoration-[#D2A02A]">The &quot;Police Jeep &amp; Havaldar&quot; Hoax</h4>
                             <p className="text-sm text-gray-600 leading-relaxed">
-                                Many agents send photos of a police jeep on WhatsApp or claim they are arriving with a "Havaldar." In India, the police do not assist recovery agents for personal loans. Any such usage of police authority is a criminal offense of impersonation and intimidation.
+                                Unscrupulous agents frequently WhatsApp photos of police jeeps or threaten to arrive with a police sub-inspector. In India, local police cannot act as collection agents for unsecured personal loans. Threatening police involvement is a criminal offense of criminal intimidation and criminal impersonation.
                             </p>
                         </div>
                         <div className="space-y-6">
-                            <h4 className="text-xl font-bold text-gray-900 px-4 py-2 bg-white inline-block shadow-sm underline decoration-[#D2A02A]">The "Lock the House" Threat</h4>
+                            <h4 className="text-xl font-bold text-gray-900 px-4 py-2 bg-white inline-block shadow-sm underline decoration-[#D2A02A]">The &quot;Home Lock &amp; Asset Seizure&quot; Threat</h4>
                             <p className="text-sm text-gray-600 leading-relaxed">
-                                A recovery agent has zero authority to lock your house, seize your TV, or touch your furniture for an unsecured personal loan. That is called theft/burglary. Only a court receiver can take such actions after years of legal battles.
+                                Recovery agents possess zero authority to lock your residence, enter without permission, or seize household electronics, jewelry, or appliances for an unsecured loan. Any attempt to touch private movable assets constitutes criminal theft and burglary.
                             </p>
                         </div>
                         <div className="space-y-6">
-                            <h4 className="text-xl font-bold text-gray-900 px-4 py-2 bg-white inline-block shadow-sm underline decoration-[#D2A02A]">Calling Your Reference List</h4>
+                            <h4 className="text-xl font-bold text-gray-900 px-4 py-2 bg-white inline-block shadow-sm underline decoration-[#D2A02A]">Harassing Emergency Reference Contacts</h4>
                             <p className="text-sm text-gray-600 leading-relaxed">
-                                Calling your parents, brothers, or friends given in the reference list to shame you into paying is strictly illegal. The reference list is only for address verification, not for collection harassment.
+                                Calling your parents, siblings, or friends provided as emergency references to intimidate or defame you is strictly illegal. The reference list is solely for contact validation, not debt recovery enforcement.
                             </p>
                         </div>
                         <div className="space-y-6">
-                            <h4 className="text-xl font-bold text-gray-900 px-4 py-2 bg-white inline-block shadow-sm underline decoration-[#D2A02A]">Fake "Warrants" on WhatsApp</h4>
+                            <h4 className="text-xl font-bold text-gray-900 px-4 py-2 bg-white inline-block shadow-sm underline decoration-[#D2A02A]">Counterfeit Court Notices on WhatsApp</h4>
                             <p className="text-sm text-gray-600 leading-relaxed">
-                                Agents often send PDF files that look like Court Warrants or Summons. Real summons come via Speed Post or a court bailiff, not WhatsApp. We help you verify these fake documents and file complaints against the agency.
+                                Sending PDF documents stamped &quot;Non-Bailable Arrest Warrant&quot; or &quot;Court Execution Order&quot; over WhatsApp is fraudulent. Genuine judicial process is issued exclusively through registered court bailiffs or certified Speed Post, never via instant messaging.
                             </p>
                         </div>
                     </div>
                   </section>
 
-                  <section id="ipc-protections" className="scroll-mt-32">
-                    <h2 className="text-4xl font-black text-gray-900 mb-10 uppercase tracking-tighter">Criminal Law Protection: Your IPC Arsenal</h2>
-                    <div className="space-y-8 text-xl leading-relaxed">
-                        <p>
-                            RBI rules are administrative, but the Indian Penal Code (IPC) is criminal. When a Bajaj Finance recovery agent crosses the line, you are protected by:
-                        </p>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div className="p-8 border-l-4 border-red-600 bg-red-50/50">
-                                <h5 className="font-black uppercase text-sm mb-2 text-red-900">Section 441: Criminal Trespass</h5>
-                                <p className="text-sm text-gray-600">Entering your home without consent or staying after being asked to leave is a criminal offense. You can call 100/112 if they refuse to leave your doorstep.</p>
+                  {/* Dual Criminal Protections: BNS 2023 & IPC 1860 */}
+                  <section id="ipc-bns-protections" className="scroll-mt-32">
+                    <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-6 uppercase tracking-tight">Criminal Law Defense: BNS 2023 &amp; IPC Arsenal</h2>
+                    <p className="text-base text-gray-600 mb-8 leading-relaxed">
+                        While RBI directives govern regulatory compliance, the criminal penal code provides immediate personal protection against rogue agents. Under India&apos;s new criminal framework—the <strong>Bharatiya Nyaya Sanhita (BNS) 2023</strong>, read alongside the legacy <strong>Indian Penal Code (IPC) 1860</strong>—recovery agent excesses are punishable criminal offenses:
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="p-6 border-l-4 border-red-600 bg-red-50/70 rounded-r-2xl space-y-2">
+                            <div className="flex justify-between items-center">
+                              <h5 className="font-black uppercase text-sm text-red-900">Criminal Trespass</h5>
+                              <span className="text-xs font-bold bg-white px-2 py-1 rounded text-red-800 border border-red-200">Sec 329 BNS / Sec 441 IPC</span>
                             </div>
-                            <div className="p-8 border-l-4 border-red-600 bg-red-50/50">
-                                <h5 className="font-black uppercase text-sm mb-2 text-red-900">Section 503: Criminal Intimidation</h5>
-                                <p className="text-sm text-gray-600">Threatening to injure your reputation is a crime. If an agent says "I will tell your boss," they are committing a crime punishable by up to 2 years in jail.</p>
-                            </div>
+                            <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
+                              Entering your private property, balcony, or apartment entryway without express permission—or refusing to depart immediately upon being requested to leave—is a cognizable offense.
+                            </p>
                         </div>
-                        <p>
-                            At AMA Legal Solutions, we don't just quote these sections; we use them to draft formal complaints to the Cyber Cell and local police stations. Once a Bajaj compliance officer sees an FIR or a formal criminal complaint, their approach shifts from 'Recovery' to 'Damage Control' instantly.
-                        </p>
+                        <div className="p-6 border-l-4 border-red-600 bg-red-50/70 rounded-r-2xl space-y-2">
+                            <div className="flex justify-between items-center">
+                              <h5 className="font-black uppercase text-sm text-red-900">Criminal Intimidation</h5>
+                              <span className="text-xs font-bold bg-white px-2 py-1 rounded text-red-800 border border-red-200">Sec 351 BNS / Sec 503, 506 IPC</span>
+                            </div>
+                            <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
+                              Threatening injury to your person, reputation, or livelihood (e.g. &quot;we will shame you in your society or tell your employer&quot;) is punishable with up to 2 years rigorous imprisonment.
+                            </p>
+                        </div>
+                        <div className="p-6 border-l-4 border-red-600 bg-red-50/70 rounded-r-2xl space-y-2">
+                            <div className="flex justify-between items-center">
+                              <h5 className="font-black uppercase text-sm text-red-900">Extortion &amp; Coercion</h5>
+                              <span className="text-xs font-bold bg-white px-2 py-1 rounded text-red-800 border border-red-200">Sec 308 BNS / Sec 383, 384 IPC</span>
+                            </div>
+                            <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
+                              Intentionally putting any person in fear of injury or social disgrace to extort cash, cheques, or property dishonestly constitutes criminal extortion.
+                            </p>
+                        </div>
+                        <div className="p-6 border-l-4 border-red-600 bg-red-50/70 rounded-r-2xl space-y-2">
+                            <div className="flex justify-between items-center">
+                              <h5 className="font-black uppercase text-sm text-red-900">Criminal Defamation</h5>
+                              <span className="text-xs font-bold bg-white px-2 py-1 rounded text-red-800 border border-red-200">Sec 356 BNS / Sec 499, 500 IPC</span>
+                            </div>
+                            <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
+                              Publicly proclaiming a borrower to be a &quot;chor&quot; or &quot;fraud&quot; in apartment hallways, building lifts, or neighborhood WhatsApp groups warrants direct defamation complaints and substantial civil damages.
+                            </p>
+                        </div>
                     </div>
                   </section>
 
@@ -466,29 +518,73 @@ export default function BajajFinanceAgentPage() {
                   </section>
 
                   <section id="escalation-matrix" className="scroll-mt-32">
-                    <h2 className="text-3xl font-black text-gray-900 mb-10 uppercase tracking-widest">The Escalation Matrix for Bajaj Finance</h2>
-                    <div className="space-y-12">
-                        <div className="flex gap-10 group items-center">
-                            <div className="text-5xl font-black text-gray-200 group-hover:text-[#D2A02A] transition-colors">01</div>
-                            <div className="border-l border-gray-100 pl-10">
-                                <h6 className="font-bold uppercase text-gray-900">Grievance Redressal Officer</h6>
-                                <p className="text-xs text-gray-500 italic">Submit a formal written complaint with evidence. They must respond within 30 days.</p>
+                    <h2 className="text-3xl font-black text-gray-900 mb-4 uppercase tracking-widest">The 3-Tier Escalation Matrix for Bajaj Finance</h2>
+                    <p className="text-sm md:text-base text-gray-600 mb-10 leading-relaxed">
+                      If agents violate the 8 AM to 7 PM hours, make unannounced home visits after being warned, or threaten your family, escalate through this structured statutory hierarchy:
+                    </p>
+                    <div className="space-y-8">
+                        <div className="flex flex-col md:flex-row gap-6 p-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
+                            <div className="text-4xl md:text-5xl font-black text-[#D2A02A] flex-shrink-0">01</div>
+                            <div className="space-y-2">
+                                <h6 className="font-bold uppercase text-gray-900 text-base">Tier 1: Bajaj Finance Principal Nodal Officer (PNO)</h6>
+                                <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
+                                  Submit a formal written complaint with audio/video evidence and call recordings to <a href="mailto:nodalofficer@bajajfinserv.in" className="text-[#D2A02A] font-bold underline">nodalofficer@bajajfinserv.in</a> or through the <a href="https://www.bajajfinserv.in/reach-us" target="_blank" rel="noopener noreferrer" className="text-[#D2A02A] font-bold underline">Bajaj Grievance Portal</a>. Under RBI Fair Practices Code, the NBFC has a mandatory 30-day window to resolve your complaint.
+                                </p>
                             </div>
                         </div>
-                        <div className="flex gap-10 group items-center">
-                            <div className="text-5xl font-black text-gray-200 group-hover:text-[#D2A02A] transition-colors">02</div>
-                            <div className="border-l border-gray-100 pl-10">
-                                <h6 className="font-bold uppercase text-gray-900">RBI Sachet Portal</h6>
-                                <p className="text-xs text-gray-500 italic">For digital harassment and app-based threats, Sachet is the fastest route for regulatory intervention.</p>
+                        <div className="flex flex-col md:flex-row gap-6 p-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
+                            <div className="text-4xl md:text-5xl font-black text-[#D2A02A] flex-shrink-0">02</div>
+                            <div className="space-y-2">
+                                <h6 className="font-bold uppercase text-gray-900 text-base">Tier 2: RBI Integrated Ombudsman (CMS Portal)</h6>
+                                <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
+                                  If Bajaj fails to resolve within 30 days or rejects your complaint, lodge a regulatory complaint on the <a href="https://cms.rbi.org.in" target="_blank" rel="noopener noreferrer" className="text-[#D2A02A] font-bold underline">RBI CMS Portal (cms.rbi.org.in)</a> or call RBI Helpline <strong>14448</strong>. The Ombudsman operates under the Reserve Bank - Integrated Ombudsman Scheme, 2021 and can penalize the lender and award monetary compensation for harassment.
+                                </p>
                             </div>
                         </div>
-                        <div className="flex gap-10 group items-center">
-                            <div className="text-5xl font-black text-gray-200 group-hover:text-[#D2A02A] transition-colors">03</div>
-                            <div className="border-l border-gray-100 pl-10">
-                                <h6 className="font-bold uppercase text-gray-900">RBI CMS (Ombudsman)</h6>
-                                <p className="text-xs text-gray-500 italic">The ultimate regulatory weapon. The Ombudsman can order the NBFC to pay you damages for harassment.</p>
+                        <div className="flex flex-col md:flex-row gap-6 p-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
+                            <div className="text-4xl md:text-5xl font-black text-[#D2A02A] flex-shrink-0">03</div>
+                            <div className="space-y-2">
+                                <h6 className="font-bold uppercase text-gray-900 text-base">Tier 3: Police Emergency (112) &amp; Cyber Crime Portal</h6>
+                                <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
+                                  For doorstep violence, forcible entry, or extortion, dial <strong>112</strong> immediately. For morphed images or unauthorized phone contact harvesting by recovery apps, lodge an official cyber complaint on the <a href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer" className="text-[#D2A02A] font-bold underline">National Cyber Crime Reporting Portal (cybercrime.gov.in)</a>.
+                                </p>
                             </div>
                         </div>
+                    </div>
+                  </section>
+
+                  {/* Cease and Desist Legal Notice Template */}
+                  <section id="cease-desist-template" className="scroll-mt-32 bg-gray-50 p-6 md:p-10 rounded-2xl border border-gray-200">
+                    <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-4 uppercase tracking-tight">
+                      Free Cease &amp; Desist Notice Template for Bajaj Finance
+                    </h2>
+                    <p className="text-xs md:text-sm text-gray-600 mb-6 leading-relaxed">
+                      You can copy, fill in your account specifics, and send this formal notice via registered email to Bajaj Finance Compliance (<a href="mailto:grievanceredressalteam@bajajfinserv.in" className="text-[#D2A02A] font-bold">grievanceredressalteam@bajajfinserv.in</a>) to immediately halt unlawful field visits:
+                    </p>
+                    <div className="bg-[#1a202c] text-gray-200 p-6 rounded-xl font-mono text-xs leading-relaxed overflow-x-auto border border-gray-700 shadow-inner">
+                      <p className="text-[#D2A02A] font-bold mb-4">// FORMAL CEASE &amp; DESIST NOTICE UNDER RBI CIRCULAR DOR.ORG.REC.65/2022-23</p>
+                      <p>To,</p>
+                      <p>The Principal Nodal Officer &amp; Head of Compliance,</p>
+                      <p>Bajaj Finance Limited,</p>
+                      <p>Corporate Office: 4th Floor, Mantri Sterling, Pune-Ahmednagar Road, Pune - 411014.</p>
+                      <br />
+                      <p><strong>SUBJECT:</strong> FORMAL CEASE AND DESIST NOTICE REGARDING UNLAWFUL FIELD VISITS, HARASSMENT, AND BREACH OF PRIVACY UNDER RBI MASTER DIRECTIONS AND SECTIONS 329 &amp; 351 OF THE BHARATIYA NYAYA SANHITA (BNS), 2023.</p>
+                      <br />
+                      <p><strong>LOAN ACCOUNT NUMBER:</strong> [Insert Your Loan / EMI Card Number]</p>
+                      <p><strong>BORROWER NAME:</strong> [Insert Your Full Name]</p>
+                      <p><strong>REGISTERED ADDRESS:</strong> [Insert Your Residential Address]</p>
+                      <br />
+                      <p>Sir/Madam,</p>
+                      <br />
+                      <p>1. I am the borrower in the captioned loan account. Due to unforeseen financial distress [mention job loss, business downturn, or medical crisis], I have been unable to maintain regular EMIs.</p>
+                      <p>2. Take notice that on [Insert Date &amp; Time], individual(s) claiming to represent Bajaj Finance visited my residence unannounced. They failed to show valid IIBF Debt Recovery Agent (DRA) certification and written loan authorization letters as mandated by RBI Master Circular DOR.ORG.REC.65/21.04.158/2022-23.</p>
+                      <p>3. The aforementioned representatives attempted to cause public humiliation in my neighborhood and used threatening language, which constitutes offenses of Criminal Trespass (Section 329 BNS) and Criminal Intimidation (Section 351 BNS).</p>
+                      <p>4. You are hereby called upon to immediately <strong>CEASE AND DESIST</strong> all unannounced visits to my residential and official premises. I hereby express my willingness to communicate solely in writing or at your designated branch office during official working hours.</p>
+                      <p>5. Should any agent repeat these unlawful actions, I shall be constrained to initiate formal complaints before the Banking Ombudsman under the Reserve Bank - Integrated Ombudsman Scheme, 2021, and lodge a criminal FIR against Bajaj Finance Ltd and its recovery agency for vicarious criminal liability.</p>
+                      <br />
+                      <p>Yours faithfully,</p>
+                      <p>[Your Full Name]</p>
+                      <p>[Your Contact Phone &amp; Email]</p>
                     </div>
                   </section>
 
@@ -560,6 +656,48 @@ export default function BajajFinanceAgentPage() {
                     </div>
                   </section>
                 </article>
+
+                {/* Author Bio Box */}
+                <aside className="bg-[#f9f5e8] p-6 md:p-8 rounded-2xl border border-amber-200 mt-12 flex flex-col md:flex-row gap-6 items-center shadow-sm">
+                  <div className="relative w-28 h-28 md:w-36 md:h-36 flex-shrink-0 bg-gray-200 rounded-full overflow-hidden border-2 border-[#D2A02A] shadow-md">
+                    <Image
+                      src="/anujbhiya.png"
+                      alt="Advocate Anuj Anand Malik - Founder & Managing Partner"
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  <div className="space-y-3 flex-1 text-left">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <h3 className="text-xl md:text-2xl font-bold text-gray-900">Reviewed & Authored by Adv. Anuj Anand Malik</h3>
+                      <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full border border-emerald-300">
+                        Verified Bar Council Advocate
+                      </span>
+                    </div>
+                    <p className="text-xs md:text-sm font-semibold text-gray-700">
+                      Founder &amp; Managing Partner, AMA Legal Solutions | Bar Council of Delhi &amp; Delhi High Court Bar Association
+                    </p>
+                    <p className="text-gray-700 text-xs md:text-sm leading-relaxed">
+                      Advocate Anuj Anand Malik is an authority on borrower rights defense, banking regulations, and debt dispute litigation. Having handled thousands of recovery harassment interventions and High Court writ petitions against unlawful NBFC collection practices, he safeguards clients against coercive doorstep visits and secures legally binding settlements.
+                    </p>
+                    <div className="flex flex-wrap gap-4 pt-1 text-xs font-bold">
+                      <a 
+                        href="https://www.linkedin.com/in/iamanujmalik/" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-[#D2A02A] hover:text-[#b88a22] flex items-center gap-1"
+                      >
+                        LinkedIn Profile →
+                      </a>
+                      <Link 
+                        href="/author/anuj-anand-malik" 
+                        className="text-gray-800 hover:text-black flex items-center gap-1"
+                      >
+                        Author Profile &amp; Credentials →
+                      </Link>
+                    </div>
+                  </div>
+                </aside>
 
                 {/* Final CTA */}
                 <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-xl md:rounded-3xl p-6 md:p-16 text-center text-white relative overflow-hidden mt-12 shadow-2xl">

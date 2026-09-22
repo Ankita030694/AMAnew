@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Script from "next/script";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import TableOfContents from "@/components/TableOfContents";
@@ -6,15 +7,15 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 
 export const metadata = {
-  title: "Loan Settlement in Andhra Pradesh | AMA Legal",
+  title: "Loan Settlement in Andhra Pradesh | Legal Debt Relief | AMA",
   description:
-    "Expert loan settlement services in Andhra Pradesh (Visakhapatnam, Vijayawada, Guntur). Settle debt legally through APSLSA Lok Adalat & DRT Vizag. Stop.",
+    "Expert loan settlement in Andhra Pradesh (Vizag, Vijayawada, Guntur). Resolve debt legally via APSLSA Lok Adalat & DRT Vizag. Stop recovery agent harassment.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/andhra-pradesh',
   },
   openGraph: {
-    title: "Loan Settlement in Andhra Pradesh | AMA Legal",
-    description: "Expert loan settlement services in Andhra Pradesh (Visakhapatnam, Vijayawada, Guntur). Settle debt legally through APSLSA Lok Adalat & DRT Vizag. Stop.",
+    title: "Loan Settlement in Andhra Pradesh | Legal Debt Relief | AMA",
+    description: "Expert loan settlement in Andhra Pradesh (Vizag, Vijayawada, Guntur). Resolve debt legally via APSLSA Lok Adalat & DRT Vizag. Stop recovery agent harassment.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/andhra-pradesh",
     type: "website",
     images: [
@@ -65,10 +66,18 @@ const articleSchema = {
   "headline": "Loan Settlement Services in Andhra Pradesh: Legal Debt Relief",
   "description": "Comprehensive guide to loan settlement in Andhra Pradesh. Learn how to legally settle personal loans and credit card debt in Visakhapatnam, Vijayawada, and Guntur.",
   "image": "https://www.amalegalsolutions.com/services/3.png",
+  "datePublished": "2023-11-21",
+  "dateModified": "2026-09-22",
   "author": {
-    "@type": "Organization",
-    "name": "AMA Legal Solutions",
-    "url": "https://www.amalegalsolutions.com"
+    "@type": "Person",
+    "name": "Adv. Anuj Anand Malik",
+    "jobTitle": "Founder & Managing Partner",
+    "url": "https://www.amalegalsolutions.com/author/anuj-anand-malik",
+    "image": "https://www.amalegalsolutions.com/anujbhiya.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/iamanujmalik/",
+      "https://www.instagram.com/amalegalsolutions/?hl=en"
+    ]
   },
   "publisher": {
     "@type": "Organization",
@@ -77,9 +86,7 @@ const articleSchema = {
       "@type": "ImageObject",
       "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
-  },
-  "datePublished": "2023-11-21",
-  "dateModified": "2023-11-21"
+  }
 };
 
 const reviewSchema = {
@@ -328,16 +335,16 @@ export default function AndhraPradeshLoanSettlementPage() {
 
                 {/* Call Money Section */}
                 <section id="call-money" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Fighting the 'Call Money' Menace</h2>
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Fighting the 'Call Money' Menace & Illegal Recovery</h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    The "Call Money" racket, where private lenders demand immediate repayment at exorbitant rates, is a serious issue in Vijayawada and Guntur.
+                    The "Call Money" racket, where private lenders demand immediate repayment at exorbitant, illegal interest rates (often 10% to 20% per month), remains a critical issue across Vijayawada, Guntur, and coastal Andhra. Additionally, institutional bank recovery agents frequently breach RBI guidelines.
                   </p>
                   <div className="bg-red-50 border-l-4 border-red-500 p-6 mb-6">
-                    <h3 className="font-bold text-red-900 mb-2">How We Protect You:</h3>
+                    <h3 className="font-bold text-red-900 mb-2">Statutory Protections Under Indian Law:</h3>
                     <ul className="list-disc pl-6 space-y-2 text-red-800">
-                      <li><strong>Police Complaints:</strong> We assist in filing FIRs under the AP Money Lenders Act and IPC sections for extortion.</li>
-                      <li><strong>Civil Suits:</strong> We file civil suits to declare the high-interest agreements null and void.</li>
-                      <li><strong>Protection Orders:</strong> We seek court orders to prevent these lenders from approaching your home or place of business.</li>
+                      <li><strong>Criminal FIRs:</strong> We invoke Sections 308 (Extortion) and 351 (Criminal Intimidation) of the <strong>Bharatiya Nyaya Sanhita (BNS) 2023</strong> (corresponding to legacy IPC Sections 384 and 506) along with the Andhra Pradesh Money Lenders Act against illegal financiers.</li>
+                      <li><strong>RBI Circular Enforcement:</strong> Under RBI Circular <em>DOR.ORG.REC.65/2022-23</em>, recovery agents cannot call before 8 AM or after 7 PM, harass family members, or visit workplaces unannounced. We issue formal Cease & Desist notices backed by disciplinary complaints.</li>
+                      <li><strong>Civil Suits & Injunctions:</strong> We file civil proceedings before Andhra Pradesh civil courts to declare exorbitant interest contracts and blank cheque pledges null and void (<em>void ab initio</em>).</li>
                     </ul>
                   </div>
                 </section>
@@ -397,6 +404,40 @@ export default function AndhraPradeshLoanSettlementPage() {
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
                     The <strong>Andhra Pradesh State Legal Services Authority (APSLSA)</strong> has been instrumental in reducing the burden of pending cases. For loan settlement, the Lok Adalat is a "Golden Key."
                   </p>
+
+                  {/* 2026 NALSA / APSLSA Schedule */}
+                  <div className="bg-[#1a202c] text-white p-6 md:p-8 rounded-2xl mb-8 border border-gray-700">
+                    <h3 className="text-2xl font-bold mb-3 text-[#D2A02A]">2026 National Lok Adalat Schedule for Andhra Pradesh</h3>
+                    <p className="text-gray-300 text-sm mb-6">
+                      Coordinated across all 26 District Legal Services Authorities (DLSAs) in AP:
+                    </p>
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                      <div className="p-4 bg-white/10 rounded-xl border border-white/10">
+                        <span className="text-xs text-[#D2A02A] font-bold uppercase block mb-1">1st National Lok Adalat</span>
+                        <div className="text-lg font-black text-white">March 14, 2026</div>
+                        <span className="text-[11px] text-gray-400 block mt-1">APSLSA State Benches</span>
+                      </div>
+                      <div className="p-4 bg-white/10 rounded-xl border border-white/10">
+                        <span className="text-xs text-[#D2A02A] font-bold uppercase block mb-1">2nd National Lok Adalat</span>
+                        <div className="text-lg font-black text-white">May 09, 2026</div>
+                        <span className="text-[11px] text-gray-400 block mt-1">Bank OTS & NI 138 Benches</span>
+                      </div>
+                      <div className="p-4 bg-white/10 rounded-xl border border-white/10">
+                        <span className="text-xs text-[#D2A02A] font-bold uppercase block mb-1">3rd National Lok Adalat</span>
+                        <div className="text-lg font-black text-white">September 12, 2026</div>
+                        <span className="text-[11px] text-gray-400 block mt-1">Mid-Year Pre-Conciliation</span>
+                      </div>
+                      <div className="p-4 bg-white/10 rounded-xl border border-white/10">
+                        <span className="text-xs text-[#D2A02A] font-bold uppercase block mb-1">4th National Lok Adalat</span>
+                        <div className="text-lg font-black text-white">December 12, 2026</div>
+                        <span className="text-[11px] text-gray-400 block mt-1">Annual Judicial Closure</span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-gray-300">
+                      <strong>Legal Advantage:</strong> An award passed under Section 21 of the Legal Services Authorities Act, 1987 is deemed a decree of a Civil Court. It is non-appealable and permanently halts all recovery litigation.
+                    </p>
+                  </div>
+
                   <div className="bg-green-50 p-8 rounded-xl border border-green-100 mb-6">
                     <h3 className="text-xl font-bold text-green-900 mb-4">Why We Prefer Lok Adalat Settlements:</h3>
                     <ul className="list-disc pl-6 space-y-3 text-green-800">
@@ -539,6 +580,48 @@ export default function AndhraPradeshLoanSettlementPage() {
 
                 {/* FAQs */}
                 <FaqSection />
+
+                {/* Author Bio Box */}
+                <aside className="bg-[#f9f5e8] p-6 md:p-8 rounded-2xl border border-amber-200 mt-12 flex flex-col md:flex-row gap-6 items-center">
+                  <div className="relative w-28 h-28 md:w-36 md:h-36 flex-shrink-0 bg-gray-200 rounded-full overflow-hidden border-2 border-[#D2A02A] shadow-md">
+                    <Image
+                      src="/anujbhiya.png"
+                      alt="Advocate Anuj Anand Malik - Founder & Managing Partner"
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  <div className="space-y-3 flex-1 text-left">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <h3 className="text-xl md:text-2xl font-bold text-gray-900">Reviewed & Authored by Adv. Anuj Anand Malik</h3>
+                      <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full border border-emerald-300">
+                        Verified Bar Council Advocate
+                      </span>
+                    </div>
+                    <p className="text-xs md:text-sm font-semibold text-gray-700">
+                      Founder & Managing Partner, AMA Legal Solutions | Enrolled with Bar Council of Delhi & Delhi High Court Bar Association
+                    </p>
+                    <p className="text-gray-700 text-xs md:text-sm leading-relaxed">
+                      Advocate Anuj Anand Malik is an established banking dispute and loan settlement counsel. He regularly represents distressed borrowers before National Lok Adalats, High Courts, and Debt Recovery Tribunals across India (including DRT Visakhapatnam), securing binding settlement decrees under Section 21 of the Legal Services Authorities Act and halting illegal recovery harassment under RBI fair practice codes.
+                    </p>
+                    <div className="flex flex-wrap gap-4 pt-1 text-xs font-bold">
+                      <a 
+                        href="https://www.linkedin.com/in/iamanujmalik/" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-[#D2A02A] hover:text-[#b88a22] flex items-center gap-1"
+                      >
+                        LinkedIn Profile →
+                      </a>
+                      <Link 
+                        href="/author/anuj-anand-malik" 
+                        className="text-gray-800 hover:text-black flex items-center gap-1"
+                      >
+                        Author Profile & Credentials →
+                      </Link>
+                    </div>
+                  </div>
+                </aside>
 
                 {/* Final CTA */}
                 <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">

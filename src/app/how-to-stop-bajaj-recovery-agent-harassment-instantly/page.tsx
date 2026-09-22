@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaEnvelope, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle } from "react-icons/fa";
@@ -48,10 +49,19 @@ export default function BajajHarassmentGuide() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "How to Stop Bajaj Recovery Agent Harassment Instantly",
-    "description": "A comprehensive guide on stopping harassment from Bajaj recovery agents using legal means and RBI guidelines.",
+    "description": "A comprehensive guide on stopping harassment from Bajaj recovery agents using legal means, BNS 2023 provisions, and RBI guidelines.",
+    "datePublished": "2026-04-22",
+    "dateModified": "2026-09-22",
     "author": {
-      "@type": "Organization",
-      "name": "AMA Legal Solutions"
+      "@type": "Person",
+      "name": "Adv. Anuj Anand Malik",
+      "jobTitle": "Founder & Managing Partner",
+      "url": "https://www.amalegalsolutions.com/author/anuj-anand-malik",
+      "image": "https://www.amalegalsolutions.com/anujbhiya.png",
+      "sameAs": [
+        "https://www.linkedin.com/in/iamanujmalik/",
+        "https://www.instagram.com/amalegalsolutions/?hl=en"
+      ]
     },
     "publisher": {
       "@type": "Organization",
@@ -431,29 +441,33 @@ export default function BajajHarassmentGuide() {
             </section>
 
             <section id="legal-action" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold text-[#30261C] mb-6">Legal Action: IPC Sections and Consumer Protection</h2>
+              <h2 className="text-3xl font-bold text-[#30261C] mb-6">Legal Action: BNS 2023 & IPC Sections for Criminal Protection</h2>
               <p>
-                When harassment turns into criminal behavior, the police must be involved. Do not be afraid to approach your local police station. Debt recovery is civil, but harassment is criminal.
+                When recovery harassment turns into threats, extortion, or intimidation, the police must be involved immediately. Debt recovery is strictly a civil matter, but harassment is a cognizable criminal offense under Indian law. With the enforcement of the <strong>Bharatiya Nyaya Sanhita (BNS), 2023</strong> alongside legacy IPC provisions, borrowers have clear statutory protections:
               </p>
 
-              <h3 className="text-2xl font-semibold mb-4 mt-8 text-[#D29E0D]">Key IPC Sections for Your Protection:</h3>
+              <h3 className="text-2xl font-semibold mb-4 mt-8 text-[#D29E0D]">Key Criminal Sections Under BNS 2023 & IPC:</h3>
               <div className="bg-[#30261C] text-white p-8 rounded-2xl mb-8">
                 <ul className="space-y-6">
                   <li>
-                    <h5 className="font-bold text-[#D29E0D]">Section 503 and 506 (Criminal Intimidation)</h5>
-                    <p className="text-sm">If an agent threatens to harm you, your family, or your reputation, they are guilty of criminal intimidation. This is a cognizable offense.</p>
+                    <h5 className="font-bold text-[#D29E0D]">Section 351 BNS / Section 506 IPC (Criminal Intimidation)</h5>
+                    <p className="text-sm">If an agent threatens bodily harm, property damage, or reputational destruction against you or your family members, they are liable for criminal intimidation. This carries rigorous imprisonment up to 2 to 7 years.</p>
                   </li>
                   <li>
-                    <h5 className="font-bold text-[#D29E0D]">Section 441 (Criminal Trespass)</h5>
-                    <p className="text-sm">If an agent enters your home without permission or refuses to leave when asked, they are trespassing. You have the right to use reasonable force to evict a trespasser or call the police.</p>
+                    <h5 className="font-bold text-[#D29E0D]">Section 308 BNS / Section 384 IPC (Extortion)</h5>
+                    <p className="text-sm">When recovery agents put you in fear of any injury to dishonestly induce you or your relatives to deliver money or signed cheques, it constitutes extortion under Indian criminal law.</p>
                   </li>
                   <li>
-                    <h5 className="font-bold text-[#D29E0D]">Section 509 (Insulting the Modesty of a Woman)</h5>
-                    <p className="text-sm">If recovery agents use abusive language toward a female borrower or female family members, this section can be invoked. This is a very serious charge in India.</p>
+                    <h5 className="font-bold text-[#D29E0D]">Section 329 BNS / Section 441 & 447 IPC (Criminal Trespass)</h5>
+                    <p className="text-sm">If an agent enters your home without an official authorization letter, refuses to leave when asked, or behaves aggressively on private premises, they are committing criminal trespass.</p>
                   </li>
                   <li>
-                    <h5 className="font-bold text-[#D29E0D]">Section 499 and 500 (Defamation)</h5>
-                    <p className="text-sm">If an agent calls your neighbors, relatives, or employer to shame you, they are committing defamation. You can sue both the agent and the bank for damages.</p>
+                    <h5 className="font-bold text-[#D29E0D]">Section 79 BNS / Section 509 IPC (Insulting the Modesty of a Woman)</h5>
+                    <p className="text-sm">If recovery agents use vulgar language, menacing gestures, or disrespectful remarks toward a female borrower or family members, an immediate non-bailable complaint can be registered.</p>
+                  </li>
+                  <li>
+                    <h5 className="font-bold text-[#D29E0D]">Section 356 BNS / Section 499 & 500 IPC (Defamation)</h5>
+                    <p className="text-sm">If an agent calls your neighbors, relatives, employer, or contacts to broadcast your loan default, they commit criminal defamation and civil breach of privacy.</p>
                   </li>
                 </ul>
               </div>
@@ -698,9 +712,47 @@ export default function BajajHarassmentGuide() {
             <p>
               The path from harassment to financial freedom starts with a single step: standing up for your rights. You do not have to live in fear of your phone ringing. You do not have to hide from your neighbors. The law is on your side, and regulatory bodies like the RBI are increasingly vigilant about protecting consumers like you.
             </p>
-            <p>
-              Use this guide to take immediate action. Record the calls, demand identification, file formal complaints, and if necessary, involve the police. And remember, you don't have to do this alone. AMA Legal Solutions is here to provide the expert legal backing you need to end the harassment and resolve your debt on your own terms.
-            </p>
+            {/* Author Bio Box */}
+            <aside className="bg-[#f9f5e8] p-6 md:p-8 rounded-2xl border border-amber-200 mt-12 mb-8 flex flex-col md:flex-row gap-6 items-center not-prose">
+              <div className="relative w-28 h-28 md:w-36 md:h-36 flex-shrink-0 bg-gray-200 rounded-full overflow-hidden border-2 border-[#D2A02A] shadow-md">
+                <Image
+                  src="/anujbhiya.png"
+                  alt="Advocate Anuj Anand Malik - Founder & Managing Partner"
+                  fill
+                  className="object-cover object-top"
+                />
+              </div>
+              <div className="space-y-3 flex-1 text-left">
+                <div className="flex flex-wrap items-center gap-3">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900">Reviewed & Authored by Adv. Anuj Anand Malik</h3>
+                  <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full border border-emerald-300">
+                    Verified Bar Council Advocate
+                  </span>
+                </div>
+                <p className="text-xs md:text-sm font-semibold text-gray-700">
+                  Founder & Managing Partner, AMA Legal Solutions | Enrolled with Bar Council of Delhi & Delhi High Court Bar Association
+                </p>
+                <p className="text-gray-700 text-xs md:text-sm leading-relaxed">
+                  Advocate Anuj Anand Malik is an established debt recovery defense counsel who has defended thousands of borrowers against aggressive recovery practices by major NBFCs and banks. He specializes in serving enforceable cease-and-desist notices, escalating violations to the RBI Ombudsman, filing criminal proceedings under BNS 2023, and negotiating dignified One Time Settlements.
+                </p>
+                <div className="flex flex-wrap gap-4 pt-1 text-xs font-bold">
+                  <a 
+                    href="https://www.linkedin.com/in/iamanujmalik/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-[#D2A02A] hover:text-[#b88a22] flex items-center gap-1"
+                  >
+                    LinkedIn Profile →
+                  </a>
+                  <Link 
+                    href="/author/anuj-anand-malik" 
+                    className="text-gray-800 hover:text-black flex items-center gap-1"
+                  >
+                    Author Profile & Credentials →
+                  </Link>
+                </div>
+              </div>
+            </aside>
 
           </article>
         </main>

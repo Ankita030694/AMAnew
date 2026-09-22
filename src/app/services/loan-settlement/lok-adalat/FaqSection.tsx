@@ -42,6 +42,21 @@ const FaqSection = () => {
       answer:
         "You should carry your KYC documents (PAN, Aadhar), loan account statements, notices received from the bank, proof of financial hardship (salary slips, medical reports, termination letters), and any previous correspondence regarding settlement offers.",
     },
+    {
+      question: "Can Lok Adalat issue an arrest warrant or send me to jail if I reject the bank's offer?",
+      answer:
+        "No. Absolutely not. Lok Adalat is purely a conciliatory, voluntary dispute resolution body established under the Legal Services Authorities Act. It has zero criminal punitive jurisdiction. The conciliators cannot issue arrest warrants, police summons, or order imprisonment for civil debt defaults. If you do not agree to the bank's settlement figure, you can simply decline, and no adverse legal inference can be drawn against you.",
+    },
+    {
+      question: "What happens if I fail to pay the agreed Lok Adalat settlement installments?",
+      answer:
+        "Because a Lok Adalat award is deemed to be a decree of a Civil Court under Section 21, failing to pay the agreed settlement amount within the stipulated timeline allows the bank to execute the award as a civil decree under Order XXI of the Code of Civil Procedure (CPC). The bank may also revoke the discount and demand the original outstanding balance. Therefore, you should never commit to an installment schedule you cannot realistically sustain.",
+    },
+    {
+      question: "How do I get a refund of court fees if my pending case is settled in Lok Adalat?",
+      answer:
+        "Under Section 21(1) of the Legal Services Authorities Act read with Section 16 of the Court Fees Act, once the Lok Adalat passes an award disposing of a pending lawsuit, the court issues a Certificate of Refund of Court Fees. The party that paid the court fee (usually the plaintiff bank) can present this certificate to the revenue authority to claim a 100% refund.",
+    },
   ];
 
   const faqSchema = {

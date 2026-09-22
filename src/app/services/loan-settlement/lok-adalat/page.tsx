@@ -7,15 +7,15 @@ import FaqSection from "./FaqSection";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Loan Settlement in Lok Adalat | Legal Process & Benefits",
+  title: "Loan Settlement in Lok Adalat 2026 | NALSA Schedule & Process",
   description:
-    "Guide to Loan Settlement in Lok Adalat. Learn the process, eligibility, and how to legally settle your debt with no court fees and binding results.",
+    "Settle your bank loan or credit card in Lok Adalat. Official 2026 NALSA dates, Section 19-21 Legal Services Act rules, zero court fees, and advocate support.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/lok-adalat',
   },
   openGraph: {
-    title: "Loan Settlement in Lok Adalat | Legal Process & Benefits",
-    description: "Guide to Loan Settlement in Lok Adalat. Learn the process, eligibility, and how to legally settle your debt with no court fees and binding results.",
+    title: "Loan Settlement in Lok Adalat 2026 | NALSA Schedule & Process",
+    description: "Settle your bank loan or credit card in Lok Adalat. Official 2026 NALSA dates, Section 19-21 Legal Services Act rules, zero court fees, and advocate support.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/lok-adalat",
     type: "article",
     images: [
@@ -23,7 +23,7 @@ export const metadata = {
         url: "/services/3.png",
         width: 1200,
         height: 630,
-        alt: "Loan Settlement in Lok Adalat",
+        alt: "Loan Settlement in Lok Adalat 2026",
       },
     ],
   },
@@ -63,13 +63,21 @@ const breadcrumbSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Loan Settlement in Lok Adalat: A Comprehensive Legal Guide",
-  "description": "In-depth guide on how to settle loans through Lok Adalat in India. Covers process, eligibility, benefits, and legal framework.",
+  "headline": "Loan Settlement in Lok Adalat 2026: NALSA Schedule & Legal Process",
+  "description": "In-depth statutory guide on how to settle bank loans and credit cards through National Lok Adalat in India. Covers 2026 dates, Section 19/20/21 Legal Services Authorities Act, and Section 138 compounding.",
   "image": "https://www.amalegalsolutions.com/services/3.png",
+  "datePublished": "2023-12-02",
+  "dateModified": "2026-09-22",
   "author": {
-    "@type": "Organization",
-    "name": "AMA Legal Solutions",
-    "url": "https://www.amalegalsolutions.com"
+    "@type": "Person",
+    "name": "Adv. Anuj Anand Malik",
+    "jobTitle": "Founder & Managing Partner",
+    "url": "https://www.amalegalsolutions.com/author/anuj-anand-malik",
+    "image": "https://www.amalegalsolutions.com/anujbhiya.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/iamanujmalik/",
+      "https://www.instagram.com/amalegalsolutions/?hl=en"
+    ]
   },
   "publisher": {
     "@type": "Organization",
@@ -78,59 +86,17 @@ const articleSchema = {
       "@type": "ImageObject",
       "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
-  },
-  "datePublished": "2023-12-02",
-  "dateModified": "2023-12-02"
-};
-
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Lok Adalat Loan Settlement Services",
-  "image": "https://www.amalegalsolutions.com/services/3.png",
-  "description": "Legal assistance for settling loans through Lok Adalat.",
-  "brand": {
-    "@type": "Brand",
-    "name": "AMA Legal Solutions"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "1250"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Vikram Singh"
-      },
-      "reviewBody": "The Lok Adalat process was explained to me very clearly by AMA Legal Solutions. They helped me settle my 3-year-old personal loan dispute in a single day. Highly professional."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Anjali Mehta"
-      },
-      "reviewBody": "I was worried about court cases, but the team guided me to the Lok Adalat route. It was fast, dignified, and I got a good waiver on the interest. Thank you!"
-    }
-  ]
+  }
 };
 
 export default function LokAdalatLoanSettlementPage() {
   const tocSections = [
     { id: "introduction", title: "Introduction" },
+    { id: "nalsa-schedule", title: "2026 NALSA Schedule" },
     { id: "what-is-lok-adalat", title: "What is Lok Adalat?" },
-    { id: "legal-framework", title: "Legal Framework" },
+    { id: "legal-framework", title: "Legal Framework (Sec 19-21)" },
+    { id: "pre-vs-pending", title: "Pre-Litigation vs Pending" },
+    { id: "cheque-bounce", title: "Cheque Bounce (Sec 138)" },
     { id: "why-choose-lok-adalat", title: "Benefits of Lok Adalat" },
     { id: "eligibility", title: "Eligibility Criteria" },
     { id: "process", title: "Step-by-Step Process" },
@@ -210,6 +176,42 @@ export default function LokAdalatLoanSettlementPage() {
                   </p>
                 </section>
 
+                {/* 2026 NALSA National Lok Adalat Schedule */}
+                <section id="nalsa-schedule" className="scroll-mt-32">
+                  <div className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-3xl p-8 md:p-12 text-white shadow-xl">
+                    <span className="text-[#D2A02A] text-xs font-bold uppercase tracking-widest block mb-2">Statutory ADR Calendar</span>
+                    <h2 className="text-2xl md:text-4xl font-bold mb-4">Official 2026 National Lok Adalat Schedule</h2>
+                    <p className="text-gray-300 text-sm md:text-base mb-8 max-w-3xl leading-relaxed">
+                      Constituted under the directive of the <strong>National Legal Services Authority (NALSA)</strong> and State Legal Services Authorities (SLSAs), National Lok Adalats for the year 2026 are scheduled across all District Courts, High Courts, and DRT benches on the following designated second Saturdays:
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8 text-center">
+                      <div className="p-5 bg-white/10 rounded-2xl border border-white/10">
+                        <span className="text-xs text-[#D2A02A] font-bold uppercase block mb-1">1st National Lok Adalat</span>
+                        <div className="text-xl md:text-2xl font-black text-white">March 14, 2026</div>
+                        <span className="text-[11px] text-gray-400 block mt-2">NPA Recovery & Pre-Litigation</span>
+                      </div>
+                      <div className="p-5 bg-white/10 rounded-2xl border border-white/10">
+                        <span className="text-xs text-[#D2A02A] font-bold uppercase block mb-1">2nd National Lok Adalat</span>
+                        <div className="text-xl md:text-2xl font-black text-white">May 09, 2026</div>
+                        <span className="text-[11px] text-gray-400 block mt-2">Banking & Cheque Bounce Benches</span>
+                      </div>
+                      <div className="p-5 bg-white/10 rounded-2xl border border-white/10">
+                        <span className="text-xs text-[#D2A02A] font-bold uppercase block mb-1">3rd National Lok Adalat</span>
+                        <div className="text-xl md:text-2xl font-black text-white">September 12, 2026</div>
+                        <span className="text-[11px] text-gray-400 block mt-2">Half-Year Bank OTS Quotas</span>
+                      </div>
+                      <div className="p-5 bg-white/10 rounded-2xl border border-white/10">
+                        <span className="text-xs text-[#D2A02A] font-bold uppercase block mb-1">4th National Lok Adalat</span>
+                        <div className="text-xl md:text-2xl font-black text-white">December 12, 2026</div>
+                        <span className="text-[11px] text-gray-400 block mt-2">Annual Debt Resolution Closure</span>
+                      </div>
+                    </div>
+                    <div className="p-4 bg-white/5 rounded-xl border border-white/10 text-xs text-gray-300 leading-relaxed">
+                      <strong className="text-[#D2A02A]">Crucial Practice Insight (Pre-Conciliation Sittings):</strong> Under NALSA guidelines, actual settlement figures are negotiated during <em>Pre-Lok Adalat / Pre-Conciliation sittings</em> conducted 7 to 14 days before the main Saturday bench. Do not wait for the final day; having legal representation during pre-conciliation secures maximum waivers from the bank's Authorized Officer.
+                    </div>
+                  </div>
+                </section>
+
                 {/* What is Lok Adalat */}
                 <section id="what-is-lok-adalat" className="scroll-mt-32">
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">What is Lok Adalat?</h2>
@@ -219,7 +221,7 @@ export default function LokAdalatLoanSettlementPage() {
                     </p>
                   </div>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    The concept of Lok Adalat is deeply rooted in Indian tradition, but its modern statutory status makes it a powerful tool for justice. Unlike a regular court where a judge adjudicates based on strict evidence and legal technicalities, a Lok Adalat is presided over by a panel (usually a sitting or retired judicial officer, a lawyer, and a social worker) who act as conciliators. Their role is not to judge who is right or wrong, but to facilitate a dialogue and help the parties arrive at a mutually acceptable settlement.
+                    The concept of Lok Adalat is deeply rooted in Indian tradition, but its modern statutory status makes it a powerful tool for justice. Unlike a regular court where a judge adjudicates based on strict evidence and legal technicalities, a Lok Adalat is presided over by a panel (usually a sitting or retired judicial officer, an advocate, and a social worker) who act as conciliators. Their role is not to judge who is right or wrong, but to facilitate a dialogue and help the parties arrive at a mutually acceptable settlement.
                   </p>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
                     For loan settlements, this is particularly advantageous. Regular courts are adversarial – one side wins, the other loses. Lok Adalat is collaborative – both sides win. The bank recovers a portion of its dues without further legal expense, and the borrower gets a waiver on interest/penalties and a clean slate.
@@ -240,23 +242,97 @@ export default function LokAdalatLoanSettlementPage() {
 
                 {/* Legal Framework */}
                 <section id="legal-framework" className="scroll-mt-32">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">The Legal Framework</h2>
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">The Statutory Legal Framework (Sections 19, 20 & 21)</h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    The legitimacy and power of Lok Adalats are derived from the <strong>Legal Services Authorities Act, 1987</strong>. This Act gives statutory status to Lok Adalats and outlines their jurisdiction and powers.
+                    The legitimacy, jurisdiction, and binding power of Lok Adalats stem from the <strong>Legal Services Authorities Act, 1987 (Act No. 39 of 1987)</strong>. Three critical provisions define borrower rights in debt disputes:
                   </p>
                   
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Section 21: Finality of Award</h3>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Perhaps the most critical provision for a borrower is Section 21 of the Act. It states that every award of the Lok Adalat shall be deemed to be a decree of a Civil Court. Furthermore, this award is <strong>final and binding</strong> on all the parties to the dispute, and <strong>no appeal shall lie to any court against the award</strong>.
-                  </p>
-                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    This provision provides immense security. Once you settle a loan in Lok Adalat and the award is passed, the bank cannot turn around six months later and claim that the calculation was wrong or demand more interest. The matter is legally closed forever.
-                  </p>
+                  <div className="space-y-6 mb-8">
+                    <div className="p-6 bg-gray-50 rounded-2xl border border-gray-200">
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">Section 19: Organization of Lok Adalats</h3>
+                      <p className="text-gray-700 text-sm leading-relaxed">
+                        Grants authority to SLSAs, DLSAs, and High Court Legal Services Committees to organize Lok Adalat benches. Each bench consists of a judicial officer and an advocate or social worker with jurisdiction to determine and arrive at a compromise between the parties.
+                      </p>
+                    </div>
 
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Refund of Court Fees</h3>
+                    <div className="p-6 bg-gray-50 rounded-2xl border border-gray-200">
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">Section 20: Cognizance of Cases & Voluntary Nature</h3>
+                      <p className="text-gray-700 text-sm leading-relaxed">
+                        A case can be referred to Lok Adalat either on the joint application of parties or when one party applies and the court is satisfied that there are chances of settlement. Crucially, <strong>Lok Adalat proceedings are 100% voluntary</strong>. A borrower cannot be coerced into accepting an unreasonable demand by the bank; if compromise fails, the matter reverts to regular court without prejudice.
+                      </p>
+                    </div>
+
+                    <div className="p-6 bg-amber-50 rounded-2xl border border-amber-200">
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">Section 21: Non-Appealable Civil Court Decree</h3>
+                      <p className="text-gray-700 text-sm leading-relaxed mb-3">
+                        Section 21 explicitly mandates that every award made by a Lok Adalat <strong>shall be deemed to be a decree of a Civil Court</strong>. The award is final and binding on all parties, and <strong>no appeal shall lie to any court</strong> against the award.
+                      </p>
+                      <div className="p-3 bg-white rounded-lg border border-amber-100 text-xs text-gray-600">
+                        <strong>Supreme Court Precedent (*State of Punjab v. Jalour Singh, 2008*):</strong> The Apex Court held that a Lok Adalat award cannot be challenged by filing an appeal or revision petition under CPC or CrPC. It can only be questioned in extraordinarily rare cases of established fraud via a writ petition under Article 226/227 of the Constitution. Once signed, the bank cannot demand residual amounts or reopen the loan account.
+                      </div>
+                    </div>
+                  </div>
+
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Refund of Court Fees Under Section 21(1)</h3>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Under the Court Fees Act, if a pending case is settled in Lok Adalat, the plaintiff (the bank) is entitled to a refund of the court fees paid. This acts as a financial incentive for banks to agree to settlements in this forum, often making them more flexible with their terms.
+                    Under Section 21(1) read with Section 16 of the Court Fees Act, 1870, if a pending civil suit or DRT claim is settled in Lok Adalat, the plaintiff bank is entitled to a <strong>full refund of the court fees paid</strong>. This gives banks a strong financial incentive to compromise on interest rather than risking protracted litigation.
                   </p>
+                </section>
+
+                {/* Pre-Litigation vs Pending Litigation */}
+                <section id="pre-vs-pending" className="scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Pre-Litigation vs. Pending Litigation Lok Adalat</h2>
+                  <p className="text-lg leading-relaxed mb-6 text-gray-700">
+                    Many borrowers receive a "Lok Adalat Notice" and panic, fearing an imminent arrest or court trial. It is essential to distinguish between the two types of matters:
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-6 mb-6">
+                    <div className="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
+                      <span className="text-xs font-bold text-[#D2A02A] uppercase block mb-1">Type 1: Pre-Litigation Notice</span>
+                      <h4 className="text-xl font-bold text-gray-900 mb-3">Before Any Lawsuit is Filed</h4>
+                      <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                        The bank has not filed a court case yet. They approached the District Legal Services Authority (DLSA) to invite you for an amicable discussion. 
+                      </p>
+                      <ul className="text-xs text-gray-500 space-y-1.5 list-disc pl-4">
+                        <li>No court summons or warrant involved.</li>
+                        <li>Non-attendance does not create a criminal record.</li>
+                        <li>Best opportunity to secure 40%–60% waivers before litigation costs accumulate.</li>
+                      </ul>
+                    </div>
+                    <div className="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
+                      <span className="text-xs font-bold text-emerald-600 uppercase block mb-1">Type 2: Pending Litigation Referral</span>
+                      <h4 className="text-xl font-bold text-gray-900 mb-3">Active Civil, DRT or Sec 138 Case</h4>
+                      <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                        A lawsuit (Summary Suit under Order 37 CPC, Section 138 NI Act, or DRT Recovery Application) is already pending. The judge referred the matter to Lok Adalat to explore compromise.
+                      </p>
+                      <ul className="text-xs text-gray-500 space-y-1.5 list-disc pl-4">
+                        <li>If settled, the court case is dismissed permanently.</li>
+                        <li>Court fees are refunded to the lender.</li>
+                        <li>If compromise fails, the trial continues from the same stage.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+
+                {/* Section 138 NI Act Cheque Bounce Compounding */}
+                <section id="cheque-bounce" className="bg-emerald-50/50 p-6 md:p-10 rounded-2xl border border-emerald-200/60 scroll-mt-32">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">Compounding Cheque Bounce (Section 138 NI Act) at Lok Adalat</h2>
+                  <p className="text-sm md:text-base leading-relaxed text-gray-700 mb-6">
+                    A significant percentage of banking matters listed before Lok Adalats involve <strong>Section 138 of the Negotiable Instruments Act, 1881</strong> (cheque bounce) and <strong>Section 25 of the Payment and Settlement Systems Act, 2007</strong> (NACH/e-mandate failure).
+                  </p>
+                  <div className="space-y-4 text-xs md:text-sm text-gray-700">
+                    <div className="p-4 bg-white rounded-xl border border-emerald-100 shadow-sm">
+                      <h4 className="font-bold text-gray-900 mb-1">Compoundable Quasi-Criminal Nature</h4>
+                      <p className="text-gray-600 text-xs leading-relaxed">
+                        Under Section 147 of the NI Act, cheque bounce offenses are compoundable. When settled before a Lok Adalat panel, the criminal complaint is formally compounded, resulting in complete acquittal of the drawer without any criminal record or conviction.
+                      </p>
+                    </div>
+                    <div className="p-4 bg-white rounded-xl border border-emerald-100 shadow-sm">
+                      <h4 className="font-bold text-gray-900 mb-1">Exemption from High Court Compounding Penalties (*Damodar S. Prabhu Case*)</h4>
+                      <p className="text-gray-600 text-xs leading-relaxed">
+                        While the Supreme Court in <em>Damodar S. Prabhu v. Sayed Babalal H. (2010)</em> mandated a graded penalty of 10% to 15% on cheque bounce settlements reached at late stages in regular courts, it specifically exempted settlements achieved through Lok Adalats to encourage early dispute resolution without financial burden.
+                      </p>
+                    </div>
+                  </div>
                 </section>
 
                 {/* Benefits */}
@@ -536,6 +612,48 @@ export default function LokAdalatLoanSettlementPage() {
 
                 {/* FAQs */}
                 <FaqSection />
+
+                {/* Author Bio Box */}
+                <aside className="bg-[#f9f5e8] p-6 md:p-8 rounded-2xl border border-amber-200 mt-12 flex flex-col md:flex-row gap-6 items-center">
+                  <div className="relative w-28 h-28 md:w-36 md:h-36 flex-shrink-0 bg-gray-200 rounded-full overflow-hidden border-2 border-[#D2A02A] shadow-md">
+                    <Image
+                      src="/anujbhiya.png"
+                      alt="Advocate Anuj Anand Malik - Founder & Managing Partner"
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  <div className="space-y-3 flex-1 text-left">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <h3 className="text-xl md:text-2xl font-bold text-gray-900">Reviewed & Authored by Adv. Anuj Anand Malik</h3>
+                      <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full border border-emerald-300">
+                        Verified Bar Council Advocate
+                      </span>
+                    </div>
+                    <p className="text-xs md:text-sm font-semibold text-gray-700">
+                      Founder & Managing Partner, AMA Legal Solutions | Enrolled with Bar Council of Delhi & Delhi High Court Bar Association
+                    </p>
+                    <p className="text-gray-700 text-xs md:text-sm leading-relaxed">
+                      Advocate Anuj Anand Malik is an established banking dispute and loan settlement counsel. He regularly represents distressed borrowers before National Lok Adalats, High Courts, and Debt Recovery Tribunals across India, securing binding settlement decrees under Section 21 of the Legal Services Authorities Act and compounding Section 138 NI Act disputes.
+                    </p>
+                    <div className="flex flex-wrap gap-4 pt-1 text-xs font-bold">
+                      <a 
+                        href="https://www.linkedin.com/in/iamanujmalik/" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-[#D2A02A] hover:text-[#b88a22] flex items-center gap-1"
+                      >
+                        LinkedIn Profile →
+                      </a>
+                      <Link 
+                        href="/author/anuj-anand-malik" 
+                        className="text-gray-800 hover:text-black flex items-center gap-1"
+                      >
+                        Author Profile & Credentials →
+                      </Link>
+                    </div>
+                  </div>
+                </aside>
 
                 {/* Final CTA */}
                 <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">

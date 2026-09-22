@@ -86,12 +86,20 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Paytm Postpaid and Personal Loan Settlement: Professional Legal Help 2026",
-  "description": "Expert legal guidance for settling your Paytm debts. Learn how India's top debt law firm at sector 57, led by anuj anand malik, can help you resolve defaults and win back your financial life at amalegalsolutions.com.",
+  "description": "Expert legal guidance for settling Paytm debts. Settle Postpaid and personal loans legally with partner NBFCs (SMFG India Credit, Hero FinCorp, Aditya Birla Finance).",
   "image": "https://www.amalegalsolutions.com/services/5.png",
+  "datePublished": "2024-03-28",
+  "dateModified": "2026-09-22",
   "author": {
-    "@type": "Organization",
-    "name": "AMA Legal Solutions",
-    "url": "https://www.amalegalsolutions.com"
+    "@type": "Person",
+    "name": "Adv. Anuj Anand Malik",
+    "jobTitle": "Founder & Managing Partner",
+    "url": "https://www.amalegalsolutions.com/author/anuj-anand-malik",
+    "image": "https://www.amalegalsolutions.com/anujbhiya.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/iamanujmalik/",
+      "https://www.instagram.com/amalegalsolutions/?hl=en"
+    ]
   },
   "publisher": {
     "@type": "Organization",
@@ -100,9 +108,7 @@ const articleSchema = {
       "@type": "ImageObject",
       "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
-  },
-  "datePublished": "2024-03-28",
-  "dateModified": "2024-03-28"
+  }
 };
 
 // FAQ Schema
@@ -164,28 +170,35 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Paytm Loan Settlement | AMA Legal",
+  title: "Paytm Loan Settlement: Postpaid & Personal Loans | AMA",
   description:
-    "End your Paytm debt problems with expert legal help. AMA Legal Solutions specializes in Paytm Postpaid and Personal loan settlements. founded by anuj.",
+    "Settle Paytm Postpaid & personal loans legally with partner NBFCs (SMFG, Hero, Aditya Birla). Stop agent harassment and secure valid No Dues Certificates.",
   keywords: [
     "Paytm loan settlement",
     "Paytm postpaid default",
     "Aditya Birla settlement",
     "Hero FinCorp settlement",
+    "SMFG loan settlement",
     "ama legal solutions",
-    "anuj anand malik",
-    "sector 57",
+    "adv anuj anand malik",
     "8700343611"
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/paytm',
   },
   openGraph: {
-    title: "Paytm Debt Settlement Experts | Legal Resolution in India",
-    description: "Resolve your Paytm outstanding dues through a professional legal settlement. our firm in sector 57 will protect your rights and stop all harassment..",
+    title: "Paytm Loan Settlement: Postpaid & Personal Loans | AMA",
+    description: "Settle Paytm Postpaid & personal loans legally with partner NBFCs (SMFG, Hero, Aditya Birla). Stop agent harassment and secure valid No Dues Certificates.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/paytm",
     type: "website",
-    images: [{ url: "/services/5.png", width: 1200, height: 630, alt: "Paytm Loan Settlement Services" }],
+    images: [
+      {
+        url: "/services/5.png",
+        width: 1200,
+        height: 630,
+        alt: "Paytm Loan Settlement",
+      },
+    ],
   },
 };
 
@@ -511,10 +524,52 @@ export default function UniquePaytmSettlementPage() {
                         </div>
                       ))}
                    </div>
-                   <div className="mt-20 p-12 bg-gray-900 text-white rounded-[40px] text-center">
+                         {/* Author Bio Box */}
+                    <aside className="bg-[#f9f5e8] p-6 md:p-8 rounded-2xl border border-amber-200 mt-12 mb-12 flex flex-col md:flex-row gap-6 items-center">
+                      <div className="relative w-28 h-28 md:w-36 md:h-36 flex-shrink-0 bg-gray-200 rounded-full overflow-hidden border-2 border-[#D2A02A] shadow-md">
+                        <Image
+                          src="/anujbhiya.png"
+                          alt="Advocate Anuj Anand Malik - Founder & Managing Partner"
+                          fill
+                          className="object-cover object-top"
+                        />
+                      </div>
+                      <div className="space-y-3 flex-1 text-left">
+                        <div className="flex flex-wrap items-center gap-3">
+                          <h3 className="text-xl md:text-2xl font-bold text-gray-900">Reviewed & Authored by Adv. Anuj Anand Malik</h3>
+                          <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full border border-emerald-300">
+                            Verified Bar Council Advocate
+                          </span>
+                        </div>
+                        <p className="text-xs md:text-sm font-semibold text-gray-700">
+                          Founder & Managing Partner, AMA Legal Solutions | Enrolled with Bar Council of Delhi & Delhi High Court Bar Association
+                        </p>
+                        <p className="text-gray-700 text-xs md:text-sm leading-relaxed">
+                          Advocate Anuj Anand Malik is an expert in digital lending regulation and debt recovery law. He regularly represents borrowers trapped in fintech and app-based debt, enforcing the RBI Digital Lending Guidelines against regulated NBFCs (including Paytm's lending partners like SMFG India Credit, Hero FinCorp, and Aditya Birla Finance) to secure binding One Time Settlements and halt unauthorized contact harassment.
+                        </p>
+                        <div className="flex flex-wrap gap-4 pt-1 text-xs font-bold">
+                          <a 
+                            href="https://www.linkedin.com/in/iamanujmalik/" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="text-[#D2A02A] hover:text-[#b88a22] flex items-center gap-1"
+                          >
+                            LinkedIn Profile →
+                          </a>
+                          <Link 
+                            href="/author/anuj-anand-malik" 
+                            className="text-gray-800 hover:text-black flex items-center gap-1"
+                          >
+                            Author Profile & Credentials →
+                          </Link>
+                        </div>
+                      </div>
+                    </aside>
+
+                    <div className="mt-20 p-12 bg-gray-900 text-white rounded-[40px] text-center">
                      <h4 className="text-3xl font-black mb-6 italic tracking-tighter">Still have questions?</h4>
                      <p className="text-sm opacity-60 mb-10 max-w-xl mx-auto">
-                       Our <strong>sector 57</strong> experts are available for a deep dive into your specific Paytm situation. founded by <strong>anuj anand malik</strong>, we provide clarity in the chaos of debt. call <strong>8700343611</strong> today or visit <strong>amalegalsolutions.com</strong>.
+                       Our <strong>sector 57</strong> experts are available for a deep dive into your specific Paytm situation. founded by <strong>Adv. Anuj Anand Malik</strong>, we provide clarity in the chaos of debt. call <strong>8700343611</strong> today or visit <strong>amalegalsolutions.com</strong>.
                      </p>
                      <a href="tel:8700343611" className="inline-block bg-[#00BAF2] text-white px-12 py-5 rounded-2xl font-black uppercase tracking-widest hover:scale-105 transition-all shadow-xl">Call Expert Now</a>
                    </div>

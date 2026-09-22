@@ -18,12 +18,12 @@ const faqs = [
         answer: "Most traffic challans, including speeding, red-light jumping, wrong-side driving, and parking violations, can be settled. However, serious offences like fatal accidents or certain drunk-driving cases where criminal proceedings are advanced may not be eligible for simple disposal in a Lok Adalat."
     },
     {
-        question: "How do I check my challan status for the 2025 Lok Adalat?",
+        question: "How do I check my challan status for the 2026 Lok Adalat?",
         answer: "You can check your challan status on the official Parivahan website, the Virtual Court portal, or specific state traffic police websites (like Delhi Traffic Police or Bangalore Traffic Police). During Lok Adalat periods, these portals often provide a direct link to 'Settle in Lok Adalat'."
     },
     {
         question: "Is it mandatory to attend the Lok Adalat physically?",
-        answer: "No, in 2025, many states offer E-Lok Adalats where you can settle your challans via video conferencing or direct payment through the Virtual Court portal. Physical attendance is only required if your vehicle is impounded or if the judge requests a physical verification of documents."
+        answer: "No, in 2026, many states offer E-Lok Adalats where you can settle your challans via video conferencing or direct payment through the Virtual Court portal. Physical attendance is only required if your vehicle is impounded or if the judge requests a physical verification of documents."
     },
     {
         question: "What is the maximum discount I can get on a traffic challan?",
@@ -284,11 +284,11 @@ const breadcrumbSchema = {
 };
 
 export const metadata = {
-  title: "Special Lok Adalat for Traffic Challan 2025 | Clear Online",
-  description: "Clear traffic challans with discounts. Learn the 2025 Special Lok Adalat schedule, online disposal procedure, and settle pending court challans legally.",
+  title: "Special Lok Adalat for Traffic Challan 2026 | Clear Online",
+  description: "Clear traffic challans with discounts. Learn the 2026 Special Lok Adalat schedule, online disposal procedure, and settle pending court challans legally.",
   keywords: [
     "special lok adalat for challan",
-    "traffic challan settlement 2025",
+    "traffic challan settlement 2026",
     "national lok adalat challan delhi",
     "dispose traffic challan online",
     "challan discount lok adalat",
@@ -336,9 +336,21 @@ export default function ChallanLokAdalatPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Article",
-          "headline": "Special Lok Adalat for Traffic Challan 2025: Clear Online",
-          "description": "Exhaustive guide to settling traffic challans in Lok Adalat 2025. Learn about waivers, online disposal, and legal rights.",
-          "author": { "@type": "Organization", "name": "AMA Legal Solutions" },
+          "headline": "Special Lok Adalat for Traffic Challan 2026: Clear Online",
+          "description": "Exhaustive guide to settling traffic challans in Lok Adalat 2026. Learn about waivers, online disposal, and legal rights.",
+          "author": {
+            "@type": "Person",
+            "name": "Adv. Anuj Anand Malik",
+            "url": "https://www.amalegalsolutions.com/author/anuj-anand-malik",
+            "sameAs": [
+              "https://www.linkedin.com/in/iamanujmalik/"
+            ],
+            "jobTitle": "Founder & Managing Partner",
+            "worksFor": {
+              "@type": "LegalService",
+              "name": "AMA Legal Solutions"
+            }
+          },
           "publisher": { "@type": "Organization", "name": "AMA Legal Solutions", "logo": { "@type": "ImageObject", "url": "https://www.amalegalsolutions.com/logo.png" } },
           "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.amalegalsolutions.com/special-lok-adalat-for-challan" }
         }) }}
@@ -370,7 +382,7 @@ export default function ChallanLokAdalatPage() {
               Clear Your Traffic <span className="text-[#D2A02A]">Challans</span> Permanently
             </h1>
             <p className="text-base md:text-2xl mb-10 max-w-4xl mx-auto text-gray-200 font-medium leading-relaxed">
-              Join the 2025 Special Lok Adalat movement. Dispose of pending court notices, camera challans, and impounded vehicle cases with legal finality and maximum waivers.
+              Join the 2026 Special Lok Adalat movement. Dispose of pending court notices, camera challans, and impounded vehicle cases with legal finality and maximum waivers.
             </p>
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
                 <Link href="/contact">
@@ -450,9 +462,9 @@ export default function ChallanLokAdalatPage() {
                             </p>
                         </div>
                         <div className="p-10 bg-[#fff9e6] rounded-[2rem] border border-[#D2A02A]/20">
-                            <h3 className="text-2xl font-bold mb-6 text-gray-900">The 2025 Objective</h3>
+                            <h3 className="text-2xl font-bold mb-6 text-gray-900">The 2026 Objective</h3>
                             <p className="text-gray-700 leading-relaxed text-lg">
-                                The 2025 vision for Traffic Lok Adalats is "Digital Disposal." The focus is on clearing the 50-million-plus pending challans across India using E-Lok Adalat platforms, reducing the burden on regular courts and providing instant relief to motorists.
+                                The 2026 vision for Traffic Lok Adalats is "Digital Disposal." The focus is on clearing the 50-million-plus pending challans across India using E-Lok Adalat platforms, reducing the burden on regular courts and providing instant relief to motorists.
                             </p>
                         </div>
                     </div>
@@ -541,11 +553,11 @@ export default function ChallanLokAdalatPage() {
                         <div className="p-10 bg-white rounded-[2rem] border border-gray-100 shadow-xl">
                             <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-4">
                                 <span className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-black">DL</span>
-                                Delhi Traffic Lok Adalat 2025
+                                Delhi Traffic Lok Adalat 2026
                             </h3>
                             <div className="prose prose-xl max-w-none text-gray-600 space-y-6">
                                 <p>
-                                    Delhi remains the benchmark for traffic challan disposal in India. The Delhi State Legal Services Authority (DSLSA) organizes mega Lok Adalats almost every quarter. In 2025, the focus is on "Integrated Disposal."
+                                    Delhi remains the benchmark for traffic challan disposal in India. The Delhi State Legal Services Authority (DSLSA) organizes mega Lok Adalats almost every quarter. In 2026, the focus is on "Integrated Disposal."
                                 </p>
                                 <ul className="list-none p-0 space-y-4">
                                     <li className="flex gap-4"><strong>Online Booking:</strong> You must log in to the DSLSA portal (notice.dslsa.org) exactly at 10:00 AM on the pre-announced date to book your slot.</li>
@@ -591,10 +603,10 @@ export default function ChallanLokAdalatPage() {
 
                 {/* Legal Deep Dive */}
                 <section id="legal-deep-dive" className="scroll-mt-32">
-                    <h2 className="text-2xl md:text-5xl font-black text-gray-900 mb-12">Legal Deep Dive: The Motor Vehicles Act 2025</h2>
+                    <h2 className="text-2xl md:text-5xl font-black text-gray-900 mb-12">Legal Deep Dive: The Motor Vehicles Act 2026</h2>
                     <div className="prose prose-2xl max-w-none text-gray-800 leading-relaxed space-y-12">
                         <p>
-                            To navigate a Lok Adalat successfully, one must understand the statutes governing traffic violations. The 2019 Amendment to the Motor Vehicles Act (implemented fully by 2025) drastically increased the fines, making Lok Adalats even more critical.
+                            To navigate a Lok Adalat successfully, one must understand the statutes governing traffic violations. The 2019 Amendment to the Motor Vehicles Act (implemented fully by 2026) drastically increased the fines, making Lok Adalats even more critical.
                         </p>
                         
                         <div className="grid md:grid-cols-2 gap-10">
@@ -633,7 +645,7 @@ export default function ChallanLokAdalatPage() {
                             One of the most frequently asked questions during a traffic Lok Adalat drive is: "Exactly how much will I save?" Unlike standard court proceedings where the fine is rigid, Lok Adalats operate on the principle of 'Compounding'. This means the authority is willing to accept a smaller portion of the fine to settle the case permanently.
                         </p>
                         <p>
-                            In 2024 and 2025, several state governments and High Courts introduced tiered waiver systems. For instance, the 'One-Time Settlement' (OTS) scheme in Delhi and Haryana allowed for waivers up to 75% on older pending challans.
+                            In 2025 and 2026, several state governments and High Courts introduced tiered waiver systems. For instance, the 'One-Time Settlement' (OTS) scheme in Delhi and Haryana allowed for waivers up to 75% on older pending challans.
                         </p>
                     </div>
                     <div className="grid md:grid-cols-2 gap-8">
@@ -877,6 +889,50 @@ export default function ChallanLokAdalatPage() {
                         ))}
                     </div>
                 </section>
+
+                {/* Author Bio Section */}
+                <aside className="bg-[#f9f5e8] p-6 md:p-8 rounded-2xl md:rounded-3xl border border-amber-200 mt-12 mb-8 flex flex-col md:flex-row gap-6 items-center text-left not-prose">
+                  <div className="relative w-28 h-28 md:w-36 md:h-36 flex-shrink-0 bg-gray-200 rounded-full overflow-hidden border-2 border-[#D2A02A] shadow-md">
+                    <Image
+                      src="/anujbhiya.png"
+                      alt="Advocate Anuj Anand Malik - Founder & Managing Partner"
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  <div className="space-y-3 flex-1 text-left">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <h3 className="text-xl md:text-2xl font-bold text-gray-900">
+                        Reviewed & Authored by Adv. Anuj Anand Malik
+                      </h3>
+                      <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full border border-emerald-300">
+                        Verified Bar Council Advocate
+                      </span>
+                    </div>
+                    <p className="text-xs md:text-sm font-semibold text-gray-700">
+                      Founder & Managing Partner, AMA Legal Solutions | Enrolled with Bar Council of Delhi & Delhi High Court Bar Association
+                    </p>
+                    <p className="text-gray-700 text-xs md:text-sm leading-relaxed">
+                      Advocate Anuj Anand Malik is an experienced litigation and ADR counsel enrolled with the Bar Council of Delhi. He regularly represents individuals, NRIs, and commercial transport fleet operators in Special Lok Adalats, Virtual Courts, and Motor Vehicles Act compounded proceedings, securing maximum statutory fine waivers and prompt release of impounded vehicles.
+                    </p>
+                    <div className="flex flex-wrap gap-4 pt-1 text-xs font-bold">
+                      <a
+                        href="https://www.linkedin.com/in/iamanujmalik/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#D2A02A] hover:text-[#b88a22] flex items-center gap-1"
+                      >
+                        LinkedIn Profile →
+                      </a>
+                      <Link
+                        href="/author/anuj-anand-malik"
+                        className="text-gray-800 hover:text-black flex items-center gap-1"
+                      >
+                        Author Profile & Credentials →
+                      </Link>
+                    </div>
+                  </div>
+                </aside>
 
               </div>
             </div>

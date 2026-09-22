@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Script from "next/script";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import FaqSection from "./FaqSection";
@@ -42,13 +43,21 @@ const breadcrumbSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "ICICI Loan Settlement Process 2025: Legal Guide & Letter Format",
+  "headline": "ICICI Loan Settlement Process 2026: Legal Guide & Letter Format",
   "description": "Complete guide to ICICI Bank loan settlement. Learn how to settle ICICI personal loans and credit cards, understand OTS policies, and get legal help to stop harassment.",
   "image": "https://www.amalegalsolutions.com/services/3.png",
+  "datePublished": "2023-11-21",
+  "dateModified": "2026-09-22",
   "author": {
-    "@type": "Organization",
-    "name": "AMA Legal Solutions",
-    "url": "https://www.amalegalsolutions.com"
+    "@type": "Person",
+    "name": "Adv. Anuj Anand Malik",
+    "jobTitle": "Founder & Managing Partner",
+    "url": "https://www.amalegalsolutions.com/author/anuj-anand-malik",
+    "image": "https://www.amalegalsolutions.com/anujbhiya.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/iamanujmalik/",
+      "https://www.instagram.com/amalegalsolutions/?hl=en"
+    ]
   },
   "publisher": {
     "@type": "Organization",
@@ -57,9 +66,7 @@ const articleSchema = {
       "@type": "ImageObject",
       "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
-  },
-  "datePublished": "2023-11-21",
-  "dateModified": "2023-11-21"
+  }
 };
 
 // Review Schema
@@ -107,15 +114,15 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "ICICI Loan Settlement Process | AMA Legal",
+  title: "ICICI Loan Settlement Process: Credit Card & Loan OTS | AMA",
   description:
-    "Expert guide on ICICI loan settlement. Learn how to settle ICICI personal loans and credit cards. Get legal help to negotiate OTS, stop harassment, and.",
+    "Settle ICICI Bank personal loans & credit cards legally. Negotiate OTS waivers, stop recovery agent harassment, and obtain a formal No Dues Certificate.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/icici-bank',
   },
   openGraph: {
-    title: "ICICI Loan Settlement Process | AMA Legal",
-    description: "Expert guide on ICICI loan settlement. Learn how to settle ICICI personal loans and credit cards. Get legal help to negotiate OTS, stop harassment, and.",
+    title: "ICICI Loan Settlement Process: Credit Card & Loan OTS | AMA",
+    description: "Settle ICICI Bank personal loans & credit cards legally. Negotiate OTS waivers, stop recovery agent harassment, and obtain a formal No Dues Certificate.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/icici-bank",
     type: "website",
     images: [
@@ -624,6 +631,48 @@ export default function ICICILoanSettlementPage() {
         {/* FAQ Section */}
         <div id="faqs" className="container mx-auto px-4 py-20 max-w-4xl scroll-mt-32">
           <FaqSection />
+
+          {/* Author Bio Box */}
+          <aside className="bg-[#f9f5e8] p-6 md:p-8 rounded-2xl border border-amber-200 mt-16 flex flex-col md:flex-row gap-6 items-center text-left">
+            <div className="relative w-28 h-28 md:w-36 md:h-36 flex-shrink-0 bg-gray-200 rounded-full overflow-hidden border-2 border-[#D2A02A] shadow-md">
+              <Image
+                src="/anujbhiya.png"
+                alt="Advocate Anuj Anand Malik - Founder & Managing Partner"
+                fill
+                className="object-cover object-top"
+              />
+            </div>
+            <div className="space-y-3 flex-1">
+              <div className="flex flex-wrap items-center gap-3">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900">Reviewed & Authored by Adv. Anuj Anand Malik</h3>
+                <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full border border-emerald-300">
+                  Verified Bar Council Advocate
+                </span>
+              </div>
+              <p className="text-xs md:text-sm font-semibold text-gray-700">
+                Founder & Managing Partner, AMA Legal Solutions | Enrolled with Bar Council of Delhi & Delhi High Court Bar Association
+              </p>
+              <p className="text-gray-700 text-xs md:text-sm leading-relaxed">
+                Advocate Anuj Anand Malik is an established banking dispute and loan settlement advocate. He handles high-stakes negotiations with ICICI Bank's Regional Collection Managers and Principal Nodal Officers at ICICI BKC headquarters, securing substantial One Time Settlement (OTS) waivers, halting recovery harassment, and ensuring timely issuance of genuine No Dues Certificates.
+              </p>
+              <div className="flex flex-wrap gap-4 pt-1 text-xs font-bold">
+                <a 
+                  href="https://www.linkedin.com/in/iamanujmalik/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-[#D2A02A] hover:text-[#b88a22] flex items-center gap-1"
+                >
+                  LinkedIn Profile →
+                </a>
+                <Link 
+                  href="/author/anuj-anand-malik" 
+                  className="text-gray-800 hover:text-black flex items-center gap-1"
+                >
+                  Author Profile & Credentials →
+                </Link>
+              </div>
+            </div>
+          </aside>
         </div>
 
         {/* Final CTA */}

@@ -76,11 +76,28 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Loan Settlement Amount Calculator India: Estimate Your Debt Relief Range",
-  "description": "Calculate your potential loan settlement amount with our advanced India-specific calculator. Understand OTS ranges for personal loans and credit cards.",
+  "description": "Calculate your potential loan settlement amount with our advanced India-specific calculator. Understand OTS ranges, NPA duration impact, and Section 194R tax guidelines.",
   "image": "https://www.amalegalsolutions.com/services/3.png",
+  "datePublished": "2024-01-15",
+  "dateModified": "2026-09-22",
   "author": {
+    "@type": "Person",
+    "name": "Adv. Anuj Anand Malik",
+    "jobTitle": "Founder & Managing Partner",
+    "url": "https://www.amalegalsolutions.com/author/anuj-anand-malik",
+    "image": "https://www.amalegalsolutions.com/anujbhiya.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/iamanujmalik/",
+      "https://www.instagram.com/amalegalsolutions/?hl=en"
+    ]
+  },
+  "publisher": {
     "@type": "Organization",
-    "name": "AMA Legal Solutions"
+    "name": "AMA Legal Solutions",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
+    }
   }
 };
 
@@ -94,16 +111,16 @@ const faqSchema = {
   }))
 };
 
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Loan Settlement Amount Calculator",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "5840"
-  }
-};
+interface SettlementCalculationResult {
+  min: number;
+  max: number;
+  lumpSumMin: number;
+  lumpSumMax: number;
+  waiverMinPercent: number;
+  waiverMaxPercent: number;
+  stageNote: string;
+  lenderNote: string;
+}
 
 // Main Page Component
 export default function LoanSettlementCalculatorClient() {
@@ -111,29 +128,89 @@ export default function LoanSettlementCalculatorClient() {
   const [interest, setInterest] = useState<number>(0);
   const [penalty, setPenalty] = useState<number>(0);
   const [loanType, setLoanType] = useState<string>("unsecured");
-  const [result, setResult] = useState<{ min: number; max: number } | null>(null);
+  const [defaultStage, setDefaultStage] = useState<string>("substandard");
+  const [lenderType, setLenderType] = useState<string>("private");
+  const [paymentMode, setPaymentMode] = useState<string>("lump-sum");
+  const [result, setResult] = useState<SettlementCalculationResult | null>(null);
 
   const calculateSettlement = () => {
-    const total = principal + interest + penalty;
-    let minRate = 0.3;
-    let maxRate = 0.5;
+    const totalDues = principal + interest + penalty;
+    if (totalDues <= 0) return;
+
+    // Base settlement rates on total dues
+    let minRate = 0.30;
+    let maxRate = 0.50;
 
     if (loanType === "credit-card") {
       minRate = 0.25;
-      maxRate = 0.45;
+      maxRate = 0.42;
     } else if (loanType === "business") {
-      minRate = 0.4;
-      maxRate = 0.6;
+      minRate = 0.38;
+      maxRate = 0.58;
     } else if (loanType === "secured") {
-      minRate = 0.7;
-      maxRate = 0.9;
+      minRate = 0.70;
+      maxRate = 0.88;
     }
 
+    // Default stage modifier (NPA provisioning pressure)
+    let stageModifier = 0;
+    let stageNote = "";
+
+    if (defaultStage === "pre-npa") {
+      // Under 90 days - banks cannot provision, so waivers are difficult
+      stageModifier = +0.20;
+      stageNote = "Account is Pre-NPA (<90 Days DPD). In India, banks rarely sanction deep principal waivers before NPA classification, but interest and late fee waivers can be secured.";
+    } else if (defaultStage === "substandard") {
+      stageModifier = 0;
+      stageNote = "Sub-Standard NPA (90-180 Days DPD). The bank has classified this as an NPA and initiated 15% statutory provisioning, opening the door for standard OTS compromise.";
+    } else if (defaultStage === "doubtful") {
+      stageModifier = -0.05;
+      stageNote = "Doubtful NPA (180-365 Days DPD). Bank provisioning rises to 25%-40%, significantly increasing the credit committee's willingness to accept deeper haircuts.";
+    } else if (defaultStage === "arc") {
+      stageModifier = -0.12;
+      stageNote = "Loss Asset / Sold to ARC (>365 Days DPD). Fully written off or transferred to an Asset Reconstruction Company at deep discounts (20-30 paise/rupee), enabling maximum discount potential.";
+    }
+
+    // Lender Type Modifier
+    let lenderModifier = 0;
+    let lenderNote = "";
+
+    if (lenderType === "psu") {
+      lenderModifier = +0.08;
+      lenderNote = "Public Sector Bank (SBI, PNB, BOB): Settlements follow strict board-approved OTS scheme matrices. Negotiation takes longer but terms are legally rock-solid.";
+    } else if (lenderType === "private") {
+      lenderModifier = 0;
+      lenderNote = "Private Commercial Bank (HDFC, ICICI, Axis, Kotak): Decisions are driven by credit risk algorithms and automated compromise ranges.";
+    } else if (lenderType === "nbfc") {
+      lenderModifier = -0.05;
+      lenderNote = "NBFC / Digital Lending App (Bajaj, Tata Capital, KreditBee): High flexibility in interest and penalty waivers once legal representation intervenes.";
+    }
+
+    // Payment mode: Lump sum gives extra discount
+    let finalMin = Math.max(0.15, minRate + stageModifier + lenderModifier);
+    let finalMax = Math.min(0.95, maxRate + stageModifier + lenderModifier);
+
+    const calculatedMin = Math.round(totalDues * finalMin);
+    const calculatedMax = Math.round(totalDues * finalMax);
+
+    // Lump sum vs installment calculation
+    const lumpSumMin = Math.round(calculatedMin * 0.90);
+    const lumpSumMax = Math.round(calculatedMax * 0.92);
+
+    const waiverMinPercent = Math.max(5, Math.round((1 - calculatedMax / totalDues) * 100));
+    const waiverMaxPercent = Math.min(85, Math.round((1 - calculatedMin / totalDues) * 100));
+
     setResult({
-      min: Math.round(total * minRate),
-      max: Math.round(total * maxRate)
+      min: calculatedMin,
+      max: calculatedMax,
+      lumpSumMin,
+      lumpSumMax,
+      waiverMinPercent,
+      waiverMaxPercent,
+      stageNote,
+      lenderNote
     });
-    
+
     // Smooth scroll to result
     setTimeout(() => {
       document.getElementById('calculator-result')?.scrollIntoView({ behavior: 'smooth' });
@@ -144,14 +221,16 @@ export default function LoanSettlementCalculatorClient() {
     { id: "tool", title: "Calculator Tool" },
     { id: "how-to", title: "How to Use" },
     { id: "understanding", title: "Settlement Math" },
+    { id: "npa-stages", title: "NPA Stages & DPD" },
+    { id: "tax-laws", title: "Tax on Waivers (Sec 194R)" },
+    { id: "cibil-roadmap", title: "CIBIL Score Roadmap" },
     { id: "factors", title: "Critical Factors" },
     { id: "ots-process", title: "OTS Process" },
     { id: "bank-policies", title: "Bank Policies" },
     { id: "legal-framework", title: "Legal Framework" },
-    { id: "mental-health", title: "Mental Health" },
     { id: "case-studies", title: "Case Studies" },
-    { id: "reviews", title: "Client Reviews" },
-    { id: "locations", title: "Cities Served" },
+    { id: "author-counsel", title: "Verified Legal Counsel" },
+    { id: "jurisdiction", title: "Legal Jurisdiction" },
     { id: "faqs", title: "FAQs" }
   ];
 
@@ -275,7 +354,7 @@ export default function LoanSettlementCalculatorClient() {
                                  />
                               </div>
                               <div>
-                                 <label className="block text-xs font-bold text-gray-500 uppercase mb-2">Unpaid Interest Accumulation</label>
+                                 <label className="block text-xs font-bold text-gray-500 uppercase mb-2">Unpaid Interest Accumulation (INR)</label>
                                  <input 
                                     type="number" 
                                     className="w-full px-5 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D2A02A] outline-none transition-all"
@@ -284,7 +363,7 @@ export default function LoanSettlementCalculatorClient() {
                                  />
                               </div>
                               <div>
-                                 <label className="block text-xs font-bold text-gray-500 uppercase mb-2">Penalties & Late Fees</label>
+                                 <label className="block text-xs font-bold text-gray-500 uppercase mb-2">Penalties & Late Charges (INR)</label>
                                  <input 
                                     type="number" 
                                     className="w-full px-5 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D2A02A] outline-none transition-all"
@@ -292,46 +371,110 @@ export default function LoanSettlementCalculatorClient() {
                                     onChange={(e) => setPenalty(Number(e.target.value))}
                                  />
                               </div>
-                           </div>
-                           <div className="space-y-4">
                               <div>
                                  <label className="block text-xs font-bold text-gray-500 uppercase mb-2">Type of Loan Facility</label>
                                  <select 
                                     className="w-full px-5 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D2A02A] outline-none transition-all appearance-none"
                                     onChange={(e) => setLoanType(e.target.value)}
+                                    value={loanType}
                                  >
                                     <option value="unsecured">Unsecured Personal Loan</option>
-                                    <option value="credit-card">Credit Card Facility</option>
-                                    <option value="business">Business Loan (Unsecured)</option>
-                                    <option value="secured">Secured Loan (Home/Car)</option>
+                                    <option value="credit-card">Credit Card Facility (Highest Compounding)</option>
+                                    <option value="business">Business / MSME Loan (Unsecured)</option>
+                                    <option value="secured">Secured Loan (Home / Loan Against Property)</option>
                                  </select>
                               </div>
-                              <div className="pt-6">
+                           </div>
+                           <div className="space-y-4">
+                              <div>
+                                 <label className="block text-xs font-bold text-gray-500 uppercase mb-2">Days Past Due (DPD) / Default Stage</label>
+                                 <select 
+                                    className="w-full px-5 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D2A02A] outline-none transition-all appearance-none"
+                                    onChange={(e) => setDefaultStage(e.target.value)}
+                                    value={defaultStage}
+                                 >
+                                    <option value="pre-npa">Less than 90 Days (Pre-NPA / Regular Default)</option>
+                                    <option value="substandard">90 to 180 Days (Sub-Standard NPA - Recommended)</option>
+                                    <option value="doubtful">180 to 365 Days (Doubtful NPA Stage)</option>
+                                    <option value="arc">Over 365 Days or Sold to ARC (Loss Asset)</option>
+                                 </select>
+                              </div>
+                              <div>
+                                 <label className="block text-xs font-bold text-gray-500 uppercase mb-2">Type of Lending Institution</label>
+                                 <select 
+                                    className="w-full px-5 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D2A02A] outline-none transition-all appearance-none"
+                                    onChange={(e) => setLenderType(e.target.value)}
+                                    value={lenderType}
+                                 >
+                                    <option value="private">Private Commercial Bank (HDFC, ICICI, Axis, Kotak)</option>
+                                    <option value="psu">Public Sector Bank (SBI, PNB, Bank of Baroda)</option>
+                                    <option value="nbfc">NBFC / Fintech App (Bajaj, Tata Capital, Navi, Ring)</option>
+                                 </select>
+                              </div>
+                              <div>
+                                 <label className="block text-xs font-bold text-gray-500 uppercase mb-2">Proposed Settlement Payment Mode</label>
+                                 <select 
+                                    className="w-full px-5 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D2A02A] outline-none transition-all appearance-none"
+                                    onChange={(e) => setPaymentMode(e.target.value)}
+                                    value={paymentMode}
+                                 >
+                                    <option value="lump-sum">Single One-Time Payment (Up to 10% Extra Haircut)</option>
+                                    <option value="installments">3 to 6 Monthly Structured Installments</option>
+                                 </select>
+                              </div>
+                              <div className="pt-2">
                                  <button 
                                     onClick={calculateSettlement}
-                                    className="w-full bg-[#D2A02A] text-white font-bold py-4 rounded-xl shadow-lg hover:bg-[#b88a22] transition-all text-lg"
+                                    className="w-full bg-[#D2A02A] text-white font-bold py-4 rounded-xl shadow-lg hover:bg-[#b88a22] transition-all text-lg tracking-wide uppercase"
                                  >
-                                    Get Settlement Range
+                                    Calculate Target Settlement
                                  </button>
                               </div>
                            </div>
                         </div>
 
                         {result && (
-                           <div id="calculator-result" className="mt-10 p-8 bg-[#1a202c] rounded-2xl text-white text-center">
-                              <h3 className="text-xl font-bold mb-4 text-[#D2A02A]">Estimated Settlement Range</h3>
-                              <div className="text-2xl md:text-4xl font-black mb-4">
-                                ₹{result.min.toLocaleString()} - ₹{result.max.toLocaleString()}
+                           <div id="calculator-result" className="mt-10 p-6 md:p-10 bg-[#1a202c] rounded-3xl text-white">
+                              <div className="text-center mb-8 border-b border-white/10 pb-6">
+                                 <span className="text-[#D2A02A] text-xs font-bold uppercase tracking-widest block mb-2">Target Settlement Output</span>
+                                 <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">Estimated OTS Compromise Range</h3>
+                                 <div className="text-3xl md:text-5xl font-black text-[#D2A02A] mb-3">
+                                   ₹{result.min.toLocaleString()} – ₹{result.max.toLocaleString()}
+                                 </div>
+                                 <p className="text-emerald-400 font-semibold text-sm md:text-base">
+                                   Expected Haircut (Waiver): {result.waiverMinPercent}% to {result.waiverMaxPercent}% on Total Dues
+                                 </p>
                               </div>
-                              <p className="text-gray-400 max-w-2xl mx-auto text-sm">
-                                Based on typical bank negotiations in India, your settlement may fall within this range. This represents a potential waiver of up to {(100 - (result.min / (principal + interest + penalty) * 100)).toFixed(0)}% on your total dues.
-                              </p>
-                              <div className="mt-6 flex flex-col md:flex-row gap-4 justify-center">
-                                 <Link href="/contact" className="bg-[#D2A02A] text-white px-8 py-2 rounded-full font-bold hover:bg-[#b88a22] transition-all">
-                                   Start Negotiation
+
+                              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 text-center">
+                                 <div className="p-4 bg-white/5 rounded-2xl border border-white/10">
+                                    <span className="text-xs text-gray-400 uppercase block mb-1">Total Outstanding Claim</span>
+                                    <span className="text-xl font-bold text-white">₹{(principal + interest + penalty).toLocaleString()}</span>
+                                    <span className="text-[11px] text-gray-400 block mt-1">Principal: ₹{principal.toLocaleString()}</span>
+                                 </div>
+                                 <div className="p-4 bg-white/5 rounded-2xl border border-white/10">
+                                    <span className="text-xs text-[#D2A02A] uppercase block mb-1">One-Shot Lump Sum Target</span>
+                                    <span className="text-xl font-bold text-emerald-400">₹{result.lumpSumMin.toLocaleString()} – ₹{result.lumpSumMax.toLocaleString()}</span>
+                                    <span className="text-[11px] text-gray-400 block mt-1">Single Day OTS Closure</span>
+                                 </div>
+                                 <div className="p-4 bg-white/5 rounded-2xl border border-white/10">
+                                    <span className="text-xs text-gray-400 uppercase block mb-1">Unpaid Interest & Penalty</span>
+                                    <span className="text-xl font-bold text-rose-400">₹{(interest + penalty).toLocaleString()}</span>
+                                    <span className="text-[11px] text-emerald-300 block mt-1">Eligible for 70%-100% Waiver</span>
+                                 </div>
+                              </div>
+
+                              <div className="space-y-3 p-5 bg-black/40 rounded-2xl border border-white/10 text-xs md:text-sm text-gray-300 leading-relaxed">
+                                 <p><strong className="text-[#D2A02A]">Regulatory Insight (DPD Analysis):</strong> {result.stageNote}</p>
+                                 <p><strong className="text-emerald-400">Lender Dynamics:</strong> {result.lenderNote}</p>
+                              </div>
+
+                              <div className="mt-8 flex flex-col md:flex-row gap-4 justify-center">
+                                 <Link href="/contact" className="bg-[#D2A02A] text-white px-8 py-3.5 rounded-full font-bold hover:bg-[#b88a22] transition-all text-center text-sm md:text-base">
+                                   Initiate Legal Negotiation
                                  </Link>
-                                 <Link href="tel:+918700343611" className="bg-white/10 border border-white/20 text-white px-8 py-2 rounded-full font-bold hover:bg-white/20 transition-all">
-                                   Call Expert Helper
+                                 <Link href="tel:+918700343611" className="bg-white/10 border border-white/20 text-white px-8 py-3.5 rounded-full font-bold hover:bg-white/20 transition-all text-center text-sm md:text-base">
+                                   Speak with Advocate (+91-8700343611)
                                  </Link>
                               </div>
                            </div>
@@ -359,6 +502,95 @@ export default function LoanSettlementCalculatorClient() {
                         <p className="font-mono text-gray-600 bg-white p-3 rounded border border-gray-100 italic text-sm md:text-base">
                           Estimated Settlement = (Principal * Market Negotiation Factor) + (Interest/Penalties * Waiver Probability Factor)
                         </p>
+                     </div>
+                  </section>
+
+                  <section id="npa-stages" className="scroll-mt-32">
+                     <h2 className="text-lg md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">NPA Classification, DPD Brackets & Bank Provisioning Pressure</h2>
+                     <p className="text-xs md:text-base leading-relaxed mb-4 text-gray-700">
+                       The single greatest variable in our <strong>loan settlement amount calculator</strong> is your loan's <strong>Days Past Due (DPD)</strong> and its regulatory status under Reserve Bank of India (RBI) Prudential Norms on Income Recognition and Asset Classification (IRAC). Banks operate under rigid statutory rules:
+                     </p>
+                     <div className="grid md:grid-cols-2 gap-4 mb-6 text-sm">
+                        <div className="p-5 bg-white border border-gray-200 rounded-xl shadow-sm">
+                           <span className="text-[#D2A02A] font-bold block mb-1">SMA-0, SMA-1, SMA-2 (1 to 89 Days DPD)</span>
+                           <p className="text-gray-600 text-xs leading-relaxed">
+                             Special Mention Accounts are stressed but technically standard. Banks are barred by internal compliance from writing off principal at this stage because no statutory provisioning loss has been recognized. Settlement negotiations here focus solely on restructuring, EMI extension, or penal fee reversals.
+                           </p>
+                        </div>
+                        <div className="p-5 bg-white border border-gray-200 rounded-xl shadow-sm">
+                           <span className="text-[#D2A02A] font-bold block mb-1">Sub-Standard NPA (90 to 365 Days DPD)</span>
+                           <p className="text-gray-600 text-xs leading-relaxed">
+                             The moment default crosses 90 days, the account is classified as an NPA. The bank must allocate 15% to 25% of its own capital as provisioning. This triggers the bank's internal One-Time Settlement (OTS) committee to consider compromise proposals to release capital reserves.
+                           </p>
+                        </div>
+                        <div className="p-5 bg-white border border-gray-200 rounded-xl shadow-sm">
+                           <span className="text-[#D2A02A] font-bold block mb-1">Doubtful Asset (1 to 3 Years DPD)</span>
+                           <p className="text-gray-600 text-xs leading-relaxed">
+                             Provisioning jumps to 40% (secured) and up to 100% (unsecured). At this juncture, Chief Recovery Officers possess maximum discretion to sanction substantial haircuts ranging between 50% and 75% on accumulated interest and penalties.
+                           </p>
+                        </div>
+                        <div className="p-5 bg-white border border-gray-200 rounded-xl shadow-sm">
+                           <span className="text-[#D2A02A] font-bold block mb-1">Loss Asset & ARC Assignments (&gt;3 Years)</span>
+                           <p className="text-gray-600 text-xs leading-relaxed">
+                             When a loan is written off or assigned to an Asset Reconstruction Company (ARC) under Section 5 of the SARFAESI Act, the ARC typically buys the debt portfolio for 20 to 30 paise on the rupee, creating deep settlement opportunities for the borrower.
+                           </p>
+                        </div>
+                     </div>
+                  </section>
+
+                  <section id="tax-laws" className="bg-amber-50/50 p-6 md:p-10 rounded-2xl border border-amber-200/60 scroll-mt-32">
+                     <h2 className="text-lg md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">Tax Implications of Loan Waivers: Section 194R & Capital Receipt Rules</h2>
+                     <p className="text-xs md:text-base leading-relaxed mb-4 text-gray-700">
+                       A critical question frequently overlooked by borrowers using an online settlement calculator is: <em>"Is the waived loan amount taxable as income in India?"</em>
+                     </p>
+                     <div className="space-y-4 text-xs md:text-base text-gray-700">
+                        <div className="p-4 bg-white rounded-xl border border-amber-100 shadow-sm">
+                           <h4 className="font-bold text-gray-900 mb-1">1. CBDT Circular No. 18 of 2022 on Section 194R</h4>
+                           <p className="text-gray-600 text-xs md:text-sm leading-relaxed">
+                             Under Finance Act 2022, Section 194R mandated a 10% TDS deduction on benefits or perquisites arising from business. However, the <strong>Central Board of Direct Taxes (CBDT) issued Circular No. 18/2022 (Question No. 8)</strong>, explicitly clarifying that banks, financial institutions, and ARCs are <strong>NOT required to deduct TDS under Section 194R</strong> when granting One-Time Settlements (OTS) or loan waivers.
+                           </p>
+                        </div>
+                        <div className="p-4 bg-white rounded-xl border border-amber-100 shadow-sm">
+                           <h4 className="font-bold text-gray-900 mb-1">2. Personal Loans as Capital Receipts (Supreme Court Precedent)</h4>
+                           <p className="text-gray-600 text-xs md:text-sm leading-relaxed">
+                             For individual borrowers settling personal loans, credit cards, or medical debt, the Supreme Court of India in <em>CIT v. Mahindra and Mahindra Ltd. (2018)</em> established that the waiver of a loan taken on capital account is a <strong>capital remission</strong> and does not constitute taxable revenue income under Section 28(iv) of the Income-tax Act.
+                           </p>
+                        </div>
+                        <div className="p-4 bg-white rounded-xl border border-amber-100 shadow-sm">
+                           <h4 className="font-bold text-gray-900 mb-1">3. Business Loans & Section 41(1) Nuance</h4>
+                           <p className="text-gray-600 text-xs md:text-sm leading-relaxed">
+                             If a business entity claims loan interest as a tax-deductible expenditure in earlier financial years, any subsequent waiver of that accrued interest may be treated as a remission of trading liability under <strong>Section 41(1)</strong> and taxed accordingly. Consult a Chartered Accountant alongside our legal counsel for corporate restructuring.
+                           </p>
+                        </div>
+                     </div>
+                  </section>
+
+                  <section id="cibil-roadmap" className="bg-gray-50 p-6 md:p-10 rounded-2xl border border-gray-200 scroll-mt-32">
+                     <h2 className="text-lg md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">CIBIL Score Roadmap: From 'Settled' to 750+ in 24 Months</h2>
+                     <p className="text-xs md:text-base leading-relaxed mb-4 text-gray-700">
+                       Entering into a loan compromise will result in the lender reporting the account as <strong>"Settled"</strong> or <strong>"Post-Write-Off Settled"</strong> to TransUnion CIBIL, Experian, Equifax, and CRIF High Mark. While this prevents recovery litigation, it temporarily impacts creditworthiness. Here is our structured legal roadmap to financial rehabilitation:
+                     </p>
+                     <div className="grid md:grid-cols-4 gap-4 text-center">
+                        <div className="p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
+                           <span className="text-xs font-bold text-gray-400 block mb-1">Months 1 to 3</span>
+                           <h5 className="font-bold text-gray-900 text-sm mb-2">NDC Verification</h5>
+                           <p className="text-xs text-gray-600">Obtain the formal No Dues Certificate (NDC) and ensure the bank updates bureau status within 45 days as mandated by RBI.</p>
+                        </div>
+                        <div className="p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
+                           <span className="text-xs font-bold text-gray-400 block mb-1">Months 4 to 6</span>
+                           <h5 className="font-bold text-gray-900 text-sm mb-2">Secured Credit Card</h5>
+                           <p className="text-xs text-gray-600">Open a Fixed Deposit (₹25,000–₹50,000) and obtain an FD-backed credit card. Utilize under 30% credit limit and pay 100% on time.</p>
+                        </div>
+                        <div className="p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
+                           <span className="text-xs font-bold text-gray-400 block mb-1">Months 7 to 15</span>
+                           <h5 className="font-bold text-gray-900 text-sm mb-2">Credit Mix Build</h5>
+                           <p className="text-xs text-gray-600">Establish a clean repayment track on utility bills, mobile post-paids, and consumer durables to display fresh financial discipline.</p>
+                        </div>
+                        <div className="p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
+                           <span className="text-xs font-bold text-gray-400 block mb-1">Months 16 to 24</span>
+                           <h5 className="font-bold text-gray-900 text-sm mb-2">Status Conversion</h5>
+                           <p className="text-xs text-gray-600">Optionally approach the original lender to pay the waived residual balance to convert the CIBIL tag from "Settled" to "Closed".</p>
+                        </div>
                      </div>
                   </section>
 
@@ -567,39 +799,77 @@ export default function LoanSettlementCalculatorClient() {
                     </div>
                   </section>
 
-                  <section className="space-y-6 md:space-y-10">
-                    <h2 className="text-lg md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">The Psychology of Debt Negotiation in India</h2>
-                    <p className="text-xs md:text-base leading-relaxed text-gray-700">
-                      Negotiation is not just about the numbers on the <strong>loan settlement amount calculator</strong>; it is about the power dynamic between you and the institution. Banks in India are designed to be intimidating. From the high-rise corporate offices to the aggressive recovery agents, every element is designed to make the borrower feel small and powerless. 
-                    </p>
+                  <section id="author-counsel" className="bg-[#f9f5e8] p-6 md:p-8 rounded-2xl border border-amber-200 shadow-sm scroll-mt-32">
+                     <div className="flex flex-col md:flex-row gap-6 items-center md:items-start">
+                        <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-[#D2A02A] flex-shrink-0 bg-gray-200 shadow-md">
+                           <Image
+                              src="/anujbhiya.png"
+                              alt="Advocate Anuj Anand Malik - Founder & Managing Partner"
+                              fill
+                              className="object-cover object-top"
+                           />
+                        </div>
+                        <div className="space-y-3 flex-1">
+                           <div className="flex flex-wrap items-center gap-3">
+                              <h3 className="text-xl md:text-2xl font-bold text-gray-900">Authored & Verified by Adv. Anuj Anand Malik</h3>
+                              <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full border border-emerald-300">
+                                 Verified Bar Council Advocate
+                              </span>
+                           </div>
+                           <p className="text-xs md:text-sm font-semibold text-gray-700">
+                              Founder & Managing Partner, AMA Legal Solutions | Enrolled with the Bar Council of Delhi
+                           </p>
+                           <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
+                              This calculator logic, NPA provisioning matrix, and OTS negotiation frameworks are formulated and audited under the direct supervision of <strong>Adv. Anuj Anand Malik</strong>. With over a decade of active litigation and mediation experience across the Delhi High Court, Debt Recovery Tribunals (DRT), and National Lok Adalat benches, he has represented thousands of borrowers in resolving over ₹100+ Crores in institutional debt.
+                           </p>
+                           <div className="flex flex-wrap gap-4 pt-2 border-t border-amber-200/60 text-xs">
+                              <a 
+                                 href="https://www.linkedin.com/in/iamanujmalik/" 
+                                 target="_blank" 
+                                 rel="noopener noreferrer" 
+                                 className="text-[#D2A02A] hover:text-[#b88a22] font-bold flex items-center gap-1"
+                              >
+                                 LinkedIn Profile →
+                              </a>
+                              <Link 
+                                 href="/author/anuj-anand-malik" 
+                                 className="text-gray-800 hover:text-black font-bold flex items-center gap-1"
+                              >
+                                 Author Profile & Credentials →
+                              </Link>
+                              <span className="text-gray-500">
+                                 <strong>Primary Forums:</strong> High Court of Delhi, DRT-I/II/III, DLSA Lok Adalats
+                              </span>
+                           </div>
+                        </div>
+                     </div>
                   </section>
 
-                  <section id="locations" className="scroll-mt-32">
-                    <h2 className="text-lg md:text-2xl font-bold text-gray-900 mb-8 text-center">We Serve Settlements in Every Corner of India</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs text-gray-700">
-                      {[
-                        "Delhi-NCR: Connaught Place, Noida Sector 15, Gurgaon, Ghaziabad, Faridabad, Rohini, Dwarka",
-                        "Maharashtra: Mumbai (Andheri, Dadar, Borivali), Pune (Kothrud, Hinjewadi), Nagpur, Nashik, Thane",
-                        "Karnataka: Bangalore (Whitefield, Koramangala, Indiranagar), Mysore, Hubli, Belgaum",
-                        "Tamil Nadu: Chennai (T-Nagar, Adyar, Velachery), Coimbatore, Madurai, Trichy, Salem",
-                        "Telangana: Hyderabad (Banjara Hills, Gachibowli, Kukatpally), Secunderabad, Warangal",
-                        "Gujarat: Ahmedabad (Satellite, Vastrapur), Surat, Vadodara, Rajkot, Bhavnagar",
-                        "West Bengal: Kolkata (Salt Lake, Park Street, New Town), Howrah, Siliguri, Durgapur",
-                        "Uttar Pradesh: Lucknow (Gomti Nagar, Hazratganj), Kanpur, Agra, Varanasi, Meerut, Prayagraj",
-                        "Rajasthan: Jaipur (Malviya Nagar), Jodhpur, Kota, Udaipur, Ajmer, Bikaner",
-                        "Punjab: Ludhiana, Amritsar, Jalandhar, Mohali, Patiala, Bathinda",
-                        "Madhya Pradesh: Indore (Vijay Nagar), Bhopal, Gwalior, Jabalpur, Ujjain",
-                        "Bihar: Patna (Boring Road), Gaya, Bhagalpur, Muzaffarpur, Purnia",
-                        "Odisha: Bhubaneswar (Nayapalli), Cuttack, Rourkela, Berhampur",
-                        "Kerala: Kochi (Edappally), Trivandrum, Kozhikode, Thrissur, Kollam",
-                        "Andhra Pradesh: Visakhapatnam, Vijayawada, Guntur, Nellore, Tirupati"
-                      ].map((item, i) => (
-                        <div key={i} className="p-3 bg-gray-50 rounded-lg border border-gray-100 flex items-start gap-2">
-                           <span className="text-[#D2A02A]">📍</span>
-                           <span>{item}</span>
+                  <section id="jurisdiction" className="scroll-mt-32">
+                     <h2 className="text-lg md:text-2xl font-bold text-gray-900 mb-6 text-center">Nationwide Debt Resolution & Legal Representation</h2>
+                     <p className="text-xs md:text-base text-gray-600 text-center max-w-3xl mx-auto mb-8 leading-relaxed">
+                        AMA Legal Solutions provides formal legal representation across all Indian States and Union Territories, representing borrowers before Debt Recovery Tribunals (DRTs), District Consumer Disputes Redressal Commissions, Banking Ombudsmen, and National Lok Adalat benches.
+                     </p>
+                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-gray-700">
+                        <div className="p-5 bg-white rounded-xl border border-gray-200 shadow-sm space-y-2">
+                           <h4 className="font-bold text-[#D2A02A] text-sm uppercase tracking-wide">Northern & Central Region</h4>
+                           <p className="text-gray-600 leading-relaxed">
+                              Active courtroom practice and mediation teams across <strong>Delhi-NCR, Uttar Pradesh (Lucknow, Noida), Punjab, Haryana (Gurugram, Chandigarh), Rajasthan (Jaipur), and Madhya Pradesh</strong>.
+                           </p>
                         </div>
-                      ))}
-                    </div>
+                        <div className="p-5 bg-white rounded-xl border border-gray-200 shadow-sm space-y-2">
+                           <h4 className="font-bold text-[#D2A02A] text-sm uppercase tracking-wide">Western & Southern Region</h4>
+                           <p className="text-gray-600 leading-relaxed">
+                              Specialized legal representation for NBFC and PSU settlements across <strong>Maharashtra (Mumbai, Pune), Gujarat (Ahmedabad), Karnataka (Bengaluru), Telangana (Hyderabad), Tamil Nadu (Chennai), and Kerala</strong>.
+                           </p>
+                        </div>
+                        <div className="p-5 bg-white rounded-xl border border-gray-200 shadow-sm space-y-2">
+                           <h4 className="font-bold text-[#D2A02A] text-sm uppercase tracking-wide">Eastern & North-Eastern Benches</h4>
+                           <p className="text-gray-600 leading-relaxed">
+                              Litigation support, Section 138 NI Act compounding, and Lok Adalat appearances in <strong>West Bengal (Kolkata), Bihar (Patna), Odisha, Jharkhand, and Assam</strong>.
+                           </p>
+                        </div>
+                     </div>
                   </section>
 
                   <section id="faqs" className="scroll-mt-32">

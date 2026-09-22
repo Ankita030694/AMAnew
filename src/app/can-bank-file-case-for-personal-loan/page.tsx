@@ -79,12 +79,20 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Can Bank File Case for Personal Loan? Complete Legal Guide 2026",
-  "description": "Examine the legal implications of personal loan defaults in India. Learn about civil suits, criminal charges for cheque bounce, and your rights against recovery harassment.",
+  "description": "Examine the legal implications of personal loan defaults in India. Learn about civil suits, criminal charges under BNS 2023 / Section 138, and your rights against recovery harassment.",
   "image": "https://www.amalegalsolutions.com/assets/bank-legal-case-personal-loan.png",
+  "datePublished": "2024-03-07",
+  "dateModified": "2026-09-22",
   "author": {
-    "@type": "Organization",
-    "name": "AMA Legal Solutions",
-    "url": "https://www.amalegalsolutions.com"
+    "@type": "Person",
+    "name": "Adv. Anuj Anand Malik",
+    "jobTitle": "Founder & Managing Partner",
+    "url": "https://www.amalegalsolutions.com/author/anuj-anand-malik",
+    "image": "https://www.amalegalsolutions.com/anujbhiya.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/iamanujmalik/",
+      "https://www.instagram.com/amalegalsolutions/?hl=en"
+    ]
   },
   "publisher": {
     "@type": "Organization",
@@ -93,9 +101,7 @@ const articleSchema = {
       "@type": "ImageObject",
       "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
-  },
-  "datePublished": "2024-03-07",
-  "dateModified": "2026-03-07"
+  }
 };
 
 // FAQ Schema
@@ -139,7 +145,7 @@ const reviewSchema = {
         "@type": "Person",
         "name": "Amit Sharma"
       },
-      "reviewBody": "AMA Legal Solutions handled my Section 138 case with extreme professional care. They stopped the recovery calls and helped me get a fair settlement with HDFC bank."
+      "reviewBody": "AMA Legal Solutions saved me from a false cheque bounce threat. Adv. Anuj Anand Malik and his team represented me in court and resolved the entire loan through a clean settlement."
     },
     {
       "@type": "Review",
@@ -157,7 +163,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Can Bank File Case for Personal Loan? - Legal Recovery Guide",
+  title: "Can Bank File Case for Personal Loan? Legal Defense Guide | AMA",
   description: "Can a bank file a case for personal loan default in India? Read our complete legal guide on civil suits, Section 138 notices, and borrower defense rights.",
   keywords: [
     "can bank file case for personal loan",
@@ -166,7 +172,7 @@ export const metadata = {
     "civil suit for personal loan recovery",
     "recovery agent harassment complaint",
     "loan settlement companies india",
-    "ama legal solutions reviews",
+    "adv anuj anand malik",
     "rbi guidelines for personal loan recovery"
   ],
   alternates: {
@@ -369,7 +375,7 @@ export default function PersonalLoanLegalCasePage() {
                         </div>
                     </div>
                     <p>
-                        In extremely rare cases, if a borrower has provided fake salary slips or forged ITR documents to obtain the loan, the bank can file a case under **Section 420 (Cheating and Dishonesty)** and **Section 406 (Criminal Breach of Trust)** of the IPC. These are non-bailable offenses and can lead to immediate arrest. This is why honesty during the application phase is paramount.
+                        In extremely rare cases, if a borrower has provided fake salary slips or forged ITR documents to obtain the loan, the bank can file a case under <strong>Section 318(4) (Cheating) and Section 316 (Criminal Breach of Trust) of the Bharatiya Nyaya Sanhita (BNS) 2023</strong> (corresponding to legacy Sections 420 and 406 of the Indian Penal Code). These are non-bailable offenses and can lead to immediate arrest. However, genuine business losses or job loss default is strictly a civil breach of contract, not a criminal fraud.
                     </p>
                   </div>
                 </section>
@@ -559,6 +565,48 @@ export default function PersonalLoanLegalCasePage() {
                     ))}
                   </div>
                 </section>
+
+                {/* Author Bio Box */}
+                <aside className="bg-[#f9f5e8] p-6 md:p-8 rounded-2xl border border-amber-200 mt-12 mb-8 flex flex-col md:flex-row gap-6 items-center text-left">
+                  <div className="relative w-28 h-28 md:w-36 md:h-36 flex-shrink-0 bg-gray-200 rounded-full overflow-hidden border-2 border-[#D2A02A] shadow-md">
+                    <Image
+                      src="/anujbhiya.png"
+                      alt="Advocate Anuj Anand Malik - Founder & Managing Partner"
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  <div className="space-y-3 flex-1 text-left">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <h3 className="text-xl md:text-2xl font-bold text-gray-900">Reviewed & Authored by Adv. Anuj Anand Malik</h3>
+                      <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full border border-emerald-300">
+                        Verified Bar Council Advocate
+                      </span>
+                    </div>
+                    <p className="text-xs md:text-sm font-semibold text-gray-700">
+                      Founder & Managing Partner, AMA Legal Solutions | Enrolled with Bar Council of Delhi & Delhi High Court Bar Association
+                    </p>
+                    <p className="text-gray-700 text-xs md:text-sm leading-relaxed">
+                      Advocate Anuj Anand Malik is an experienced litigation and banking counsel practicing before Civil Courts, Magistrate Courts, and High Courts across India. He defends borrowers against frivolous Section 138 NI Act prosecutions, Section 25 PSS Act complaints, and Order 37 summary recovery suits, securing legal acquittals, compounding decrees, and structured OTS settlements.
+                    </p>
+                    <div className="flex flex-wrap gap-4 pt-1 text-xs font-bold">
+                      <a 
+                        href="https://www.linkedin.com/in/iamanujmalik/" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-[#D2A02A] hover:text-[#b88a22] flex items-center gap-1"
+                      >
+                        LinkedIn Profile →
+                      </a>
+                      <Link 
+                        href="/author/anuj-anand-malik" 
+                        className="text-gray-800 hover:text-black flex items-center gap-1"
+                      >
+                        Author Profile & Credentials →
+                      </Link>
+                    </div>
+                  </div>
+                </aside>
 
                 {/* Final CTA */}
                 <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-2xl md:rounded-3xl p-6 md:p-16 text-center text-white relative overflow-hidden">
