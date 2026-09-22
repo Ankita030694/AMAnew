@@ -218,7 +218,7 @@ export default function RootLayout({
         </RecaptchaProvider>
         <Toaster position="top-right" />
         {(() => {
-          const gaId = process.env.NEXT_PUBLIC_GA_TRACKING_ID || 'G-3087BV48LQ';
+          const gaId = (process.env.NEXT_PUBLIC_GA_TRACKING_ID || 'G-QZ29XPLJWE').trim();
           return (
             <>
               <Script 
