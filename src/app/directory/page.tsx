@@ -42,6 +42,8 @@ const directoryLinks = [
   { name: 'Loan Settlement Karwana Hai? Complete Legal Process & RBI OTS Guide', href: '/loan-settlement-karwana-hai' },
   { name: 'Pay Day Loan Settlement in September 2026: Legal Process & RBI OTS Framework', href: '/pay-day-loan-settlement-in-september-2026' },
   { name: 'Loan Settlement Lawyer for High Value Debts: Strategic Commercial Debt Resolution & DRT Defense', href: '/loan-settlement-expert-for-high-value-debts' },
+  { name: 'Legal Recovery for NBFCs: Automated 3-Notice Cadence, Police Escalation & Multi-Channel Dispatch', href: '/recovery-for-nbfcs' },
+  { name: 'Legal Recovery for Payday Loans: Automated 3-Notice Cadence, Police Escalation & Multi-Channel Dispatch', href: '/recovery-for-pay-day-loan' },
   { name: 'Will My Salary Account Be Auto Debited If Loan Settlement? Freeze & Lien Legal Guide', href: '/will-my-salary-account-be-auto-debited-if-loan-settlement' },
   { name: 'How to File a Complaint Against a Bank or an NBFC in NCH: Legal Guide & Consumer Helpline Procedure', href: '/how-to-file-a-complaint-against-bank-nbfc-in-NCH' },
   { name: 'How to File a Complaint Against a Bank or an NBFC in RBI: Legal Guide & CMS Procedure', href: '/how-to-file-a-complaint-against-bank-nbfc-in-rbi' },

@@ -138,7 +138,10 @@ const Footer = () => {
     },
     {
       title: "Queries",
-      links: []
+      links: [
+        { name: "Recovery for NBFCs", href: "/recovery-for-nbfcs" },
+        { name: "Recovery for Pay Day Loan", href: "/recovery-for-pay-day-loan" }
+      ]
     }
   ];
 
