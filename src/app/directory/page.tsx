@@ -24,6 +24,11 @@ export async function generateMetadata({
 }
 
 const directoryLinks = [
+  { name: 'Criminal Complaint Against Loan Defaulter: BNS 316 & 318 Legal Guide', href: '/criminal-complaint-against-loan-defaulter-bns-316-318' },
+  { name: 'Section 25 PSSA vs Section 138 NI Act: Loan Recovery Legal Playbook & Comparative Guide', href: '/section-25-pssa-vs-section-138-ni-act-loan-recovery' },
+  { name: 'Automated Bulk Legal Notice for Digital Lenders: Multi-Channel Dispatch & Section 63 BSA Proof', href: '/automated-bulk-legal-notice-for-digital-lenders' },
+  { name: 'Debt Recovery System for Pay Day Loans: Automated 3-Notice Cadence, Police Escalation & Legal Recovery Suite', href: '/debt-recovery-system-for-pay-day-loans' },
+  { name: 'Debt Recovery System for NBFCs: Automated 3-Notice Cadence, Police Escalation & Legal Recovery Suite', href: '/debt-recovery-system-for-nbfcs' },
   { name: 'Debt Settlement Program in India: Advocate-Led Legal Resolution & RBI OTS Advisory', href: '/debt-settlement-program' },
   { name: 'Debt Settlement Help in India: Advocate-Led RBI OTS Advisory & Legal Defense', href: '/debt-settlement-help-in-india' },
   { name: 'Best Debt Settlement Law Firm in India: Advocate-Led RBI Compromise & Legal Defense', href: '/best-debt-settlement-law-firm-in-india' },
