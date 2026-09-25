@@ -484,7 +484,7 @@ const ArticlesDashboard = () => {
       const blogWithMetadata = {
         ...newBlog,
         created: formMode === 'add' ? Date.now() : newBlog.created,
-        date: new Date(newBlog.date).toISOString().split('T')[0]
+        date: parseValidDate(newBlog.date)
       };
       const { faqs, reviews, ...blogData } = blogWithMetadata;
       let blogId = newBlog.id;
@@ -555,7 +555,7 @@ const ArticlesDashboard = () => {
   const resetForm = () => {
     setNewBlog({
       title: '', subtitle: '', description: '',
-      date: new Date().toISOString().split('T')[0],
+      date: getTodayDate(),
       image: '', created: Date.now(),
       metaTitle: '', metaDescription: '', slug: '',
       faqs: [], reviews: [], author: 'Anuj Anand Malik'
