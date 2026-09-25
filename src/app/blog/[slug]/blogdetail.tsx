@@ -120,27 +120,34 @@ const processContent = (html: string, fallbackTitle?: string) => {
     .replace(/<strong>\s*TL;?DR\s*<\/strong>\s*:/gi, '<strong>Key Takeaways:</strong> ')
     .replace(/<blockquote>\s*<strong>\s*TL;?DR:?\s*<\/strong>/gi, '<blockquote><strong>Key Takeaways:</strong> ');
 
-  // Extract and style POPULAR SEARCHES
+  // Extract and style POPULAR SEARCHES into a unified premium box design
   modifiedContent = modifiedContent.replace(
     /<h3[^>]*>Popular Searches<\/h3>\s*<ul[^>]*>([\s\S]*?)<\/ul>/ig,
     (match, ulContent) => {
       // Extract all li text
-      const keywords = [];
+      const keywords: string[] = [];
       const liRegex = /<li[^>]*>(.*?)<\/li>/gi;
       let liMatch;
       while ((liMatch = liRegex.exec(ulContent)) !== null) {
-        // Strip any inner html from the keyword just in case
         keywords.push(liMatch[1].replace(/<[^>]*>/g, '').trim());
       }
       
       const keywordsHtml = keywords.map(k => 
-        `<span class="inline-block px-5 py-2.5 bg-[#F5F2EB] border border-[#D2A02A]/30 rounded-full text-sm font-bold text-[#1a202c] shadow-sm hover:bg-[#D2A02A] hover:text-white transition-colors cursor-default">${k}</span>`
+        `<span class="inline-flex items-center px-4 py-2 bg-white border border-[#D2A02A]/30 rounded-xl text-xs sm:text-sm font-semibold text-[#1a202c] shadow-xs hover:border-[#D2A02A] hover:bg-[#FAF7F0] transition-all cursor-default">${k}</span>`
       ).join('\n');
       
       return `
-        <div class="mt-12 pt-8 border-t border-gray-100">
-          <h3 class="text-sm font-extrabold text-gray-500 uppercase tracking-widest mb-6" style="letter-spacing: 0.1em;">Popular Searches</h3>
-          <div class="flex flex-wrap gap-3">
+        <div class="my-10 p-6 sm:p-8 bg-gradient-to-br from-[#FAF7F0] via-[#FCFBF7] to-[#F7F3E9] border-2 border-[#D2A02A]/25 rounded-2xl shadow-xs">
+          <div class="flex items-center gap-3 mb-5 pb-3 border-b border-[#D2A02A]/15">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-[#D2A02A] text-white font-bold text-sm shadow-sm">
+              🔍
+            </span>
+            <div>
+              <h3 class="text-base sm:text-lg font-extrabold text-[#1a202c] m-0">Popular Searches & Topics</h3>
+              <p class="text-xs text-gray-500 m-0 font-medium">Commonly searched legal queries and keywords related to this article</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2.5">
             ${keywordsHtml}
           </div>
         </div>

@@ -49,6 +49,24 @@ interface Blog {
   author: string;
 }
 
+const getTodayDate = (): string => {
+  const d = new Date();
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+};
+
+const parseValidDate = (dateVal?: string): string => {
+  if (!dateVal) return getTodayDate();
+  const d = new Date(dateVal);
+  if (isNaN(d.getTime())) return getTodayDate();
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+};
+
 const ArticlesDashboard = () => {
   const [activeTab, setActiveTab] = useState('articles');
   const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -58,7 +76,7 @@ const ArticlesDashboard = () => {
     title: '',
     subtitle: '',
     description: '',
-    date: new Date().toISOString().split('T')[0],
+    date: getTodayDate(),
     image: '',
     infographic: '',
     created: Date.now(),
@@ -366,6 +384,7 @@ const ArticlesDashboard = () => {
         slug: generatedData.slug || prevState.slug, // Or generate from title
         faqs: generatedData.faqs || prevState.faqs,
         reviews: generatedData.reviews || prevState.reviews,
+        date: generatedData.date || getTodayDate(),
       }));
 
       // If slug wasn't provided but title was, generate one

@@ -669,7 +669,19 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange, classNam
     .ProseMirror h6 { font-size: 0.67em; font-weight: bold; margin-top: 2.33em; margin-bottom: 2.33em; }
     
     .ProseMirror p { margin: 1em 0; }
-    .ProseMirror blockquote { border-left: 4px solid #ccc; margin-left: 0; padding-left: 1em; }
+    .ProseMirror blockquote { 
+      border-left: 4px solid #D2A02A; 
+      margin: 1.5em 0; 
+      padding: 1rem 1.25rem; 
+      background: #FFFDF8; 
+      border-radius: 0.5rem; 
+      color: #374151; 
+      font-style: italic; 
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03); 
+    }
+    .ProseMirror blockquote p { margin: 0; }
+    .ProseMirror blockquote strong { color: #1a202c; font-style: normal; }
+    .ProseMirror a { color: #B8860B; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
     .ProseMirror pre { background-color: #f5f5f5; padding: 0.5em; border-radius: 0.3em; font-family: monospace; }
     .ProseMirror table { border-collapse: collapse; margin: 0; overflow: hidden; table-layout: fixed; width: 100%; }
     .ProseMirror table td, .ProseMirror table th { border: 2px solid #ced4da; box-sizing: border-box; min-width: 1em; padding: 3px 5px; position: relative; vertical-align: top; }
@@ -709,6 +721,15 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange, classNam
     
     .ProseMirror hr { border: none; border-top: 2px solid #ced4da; margin: 1em 0; }
     .ProseMirror img { max-width: 100%; height: auto; }
+    
+    /* Popular searches container styling inside editor */
+    .ProseMirror .popular-searches-box {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: #FAF7F0;
+      border: 2px solid rgba(210, 160, 42, 0.25);
+      border-radius: 1rem;
+    }
     
     .ProseMirror img.error-image {
       border: 2px solid #EF4444;

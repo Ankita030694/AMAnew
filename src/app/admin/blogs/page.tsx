@@ -49,6 +49,24 @@ interface Review {
   review: string;
 }
 
+const getTodayDate = (): string => {
+  const d = new Date();
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+};
+
+const parseValidDate = (dateVal?: string): string => {
+  if (!dateVal) return getTodayDate();
+  const d = new Date(dateVal);
+  if (isNaN(d.getTime())) return getTodayDate();
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+};
+
 const BlogsDashboard = () => {
   const [activeTab, setActiveTab] = useState('blogs');
   const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -58,7 +76,7 @@ const BlogsDashboard = () => {
     title: '',
     subtitle: '',
     description: '',
-    date: new Date().toISOString().split('T')[0], // Format as YYYY-MM-DD
+    date: getTodayDate(), // Format as YYYY-MM-DD in local time
     image: '',
     infographic: '',
     created: Date.now(),
@@ -456,6 +474,7 @@ const BlogsDashboard = () => {
         slug: generatedData.slug || prevState.slug, // Or generate from title
         faqs: generatedData.faqs || prevState.faqs,
         reviews: generatedData.reviews || prevState.reviews,
+        date: generatedData.date || getTodayDate(), // Automatically update publication date to today
       }));
 
       // If slug wasn't provided but title was, generate one
@@ -746,7 +765,7 @@ const BlogsDashboard = () => {
       const blogWithMetadata = {
         ...newBlog,
         created: formMode === 'add' ? Date.now() : newBlog.created,
-        date: new Date(newBlog.date).toISOString().split('T')[0] // Ensure date is in YYYY-MM-DD format
+        date: parseValidDate(newBlog.date) // Ensure date is always valid YYYY-MM-DD
       };
       
       // Remove faqs and reviews from the main document since we'll store them in subcollections
@@ -972,7 +991,7 @@ const BlogsDashboard = () => {
       title: '',
       subtitle: '',
       description: '',
-      date: new Date().toISOString().split('T')[0],
+      date: getTodayDate(),
       image: '',
       infographic: '',
       created: Date.now(),
