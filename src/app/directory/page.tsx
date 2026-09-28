@@ -24,6 +24,15 @@ export async function generateMetadata({
 }
 
 const directoryLinks = [
+  { name: 'Loan Settlement Agency Fees and Charges in India', href: '/loan-settlement-agency-fees-and-charges-in-india' },
+  { name: 'Loan Settlement Agency in Bangalore: Debt Settlement Lawyers in Bengaluru', href: '/services/loan-settlement/bangalore' },
+  { name: 'Loan Settlement Agency in Kolkata: Debt Relief Advocates & OTS Services', href: '/services/loan-settlement/kolkata' },
+  { name: 'Section 25 Payment & Settlement Systems Act Legal Defense', href: '/section-25-payment-and-settlement-act-legal-defense' },
+  { name: 'Freed Loan Settlement Review: Is It Safe? Legal Comparison & Alternatives', href: '/freed-loan-settlement-review-and-legal-alternatives' },
+  { name: 'Loan Settlement for Bajaj Finserv: Stop Harassment & Settle Overdue EMI Debt', href: '/loan-settlement-for-bajaj-finserv' },
+  { name: 'SBI Loan Settlement: One-Time Settlement (OTS Scheme) & Credit Card Process', href: '/loan-settlement-for-sbi-bank' },
+  { name: 'HDFC Bank Loan Settlement: Credit Card & Personal Loan OTS Process', href: '/loan-settlement-for-hdfc-bank' },
+  { name: 'Bankruptcy Lawyer in India: Personal Insolvency & IBC Debt Relief Advocates', href: '/bankruptcy-lawyer-in-india' },
   { name: 'Criminal Complaint Against Loan Defaulter: BNS 316 & 318 Legal Guide', href: '/criminal-complaint-against-loan-defaulter-bns-316-318' },
   { name: 'Section 25 PSSA vs Section 138 NI Act: Loan Recovery Legal Playbook & Comparative Guide', href: '/section-25-pssa-vs-section-138-ni-act-loan-recovery' },
   { name: 'Automated Bulk Legal Notice for Digital Lenders: Multi-Channel Dispatch & Section 63 BSA Proof', href: '/automated-bulk-legal-notice-for-digital-lenders' },

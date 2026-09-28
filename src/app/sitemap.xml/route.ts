@@ -722,7 +722,16 @@ export async function GET(): Promise<Response> {
     '/expert-debt-settlement-solutions',
     '/cheque-bounce-case-jurisdiction',
     '/loan-against-lic-policy',
-    '/settlement-waiver-percentage-of-axis-bank'
+    '/settlement-waiver-percentage-of-axis-bank',
+    '/bankruptcy-lawyer-in-india',
+    '/loan-settlement-for-hdfc-bank',
+    '/loan-settlement-for-sbi-bank',
+    '/loan-settlement-for-bajaj-finserv',
+    '/freed-loan-settlement-review-and-legal-alternatives',
+    '/section-25-payment-and-settlement-act-legal-defense',
+    '/services/loan-settlement/kolkata',
+    '/services/loan-settlement/bangalore',
+    '/loan-settlement-agency-fees-and-charges-in-india'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
