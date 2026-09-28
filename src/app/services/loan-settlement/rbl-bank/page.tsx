@@ -347,36 +347,39 @@ export default function RBLBankLoanSettlementPage() {
                 ))}
               </div>
               <div className="mt-12 bg-white p-8 rounded-xl shadow-sm border border-gray-200">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Detailed Breakdown of the Process</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Detailed Breakdown of the RBL Credit Card Settlement Process</h3>
+                <p className="text-gray-700 mb-6">
+                  Whether settling an unsecured personal loan or navigating the <strong>rbl credit card settlement process</strong>, following these five structured legal stages ensures maximum waiver savings and valid debt closure:
+                </p>
                 <div className="space-y-6">
                   <div>
-                    <h4 className="text-lg font-bold text-[#003a70] mb-2">Step 1: Documentation & Assessment</h4>
+                    <h4 className="text-lg font-bold text-[#003a70] mb-2">Step 1: Documentation & Hardship Assessment</h4>
                     <p className="text-gray-700">
-                      The process starts with you providing us with your loan details and proof of hardship. We analyze your financial standing to determine the maximum amount you can afford to pay and the minimum amount the bank is likely to accept.
+                      The process starts with analyzing your loan or credit card statement and compiling concrete proof of hardship. In the <strong>rbl bank credit card settlement process</strong>, we separate the genuine principal dues from exorbitant finance charges and late payment levies.
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-[#003a70] mb-2">Step 2: Legal Shielding</h4>
+                    <h4 className="text-lg font-bold text-[#003a70] mb-2">Step 2: Legal Shielding & Harassment Protection</h4>
                     <p className="text-gray-700">
-                      Harassment is the biggest pain point. We issue a formal "Letter of Representation" to RBL Bank. This legal document states that you have appointed us as your legal counsel. Under RBI guidelines, once a lawyer is appointed, recovery agents must direct their communication to the lawyer, not the borrower. This gives you immediate relief.
+                      We issue a formal "Letter of Representation" to RBL Bank. Under RBI directives, once registered advocates represent the borrower, recovery agencies are barred from third-party home visits and continuous calling.
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-[#003a70] mb-2">Step 3: The Settlement Proposal</h4>
+                    <h4 className="text-lg font-bold text-[#003a70] mb-2">Step 3: Formal OTS Compromise Petition</h4>
                     <p className="text-gray-700">
-                      We don't just ask for a settlement; we present a case. We draft a professional proposal highlighting your inability to pay due to specific reasons (job loss, medical issues) and offer a settlement amount. This is done in writing to create a paper trail.
+                      We draft a legal compromise petition directly to RBL Bank's internal credit resolution committee, demonstrating clear inability to pay full dues due to verifiable medical, job, or business hardship.
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-[#003a70] mb-2">Step 4: Hard-Nosed Negotiation</h4>
+                    <h4 className="text-lg font-bold text-[#003a70] mb-2">Step 4: Negotiation for Maximum Haircut Waiver</h4>
                     <p className="text-gray-700">
-                      RBL Bank will likely reject the first offer or counter with a high amount. This is where our experience counts. We engage in multiple rounds of negotiation with the bank's credit managers, citing legal precedents and your financial reality to bring the amount down.
+                      Our advocates conduct multi-round negotiations with RBL recovery managers to secure waivers ranging between 50% to 75% on outstanding unsecured balances.
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-[#003a70] mb-2">Step 5: Final Settlement & NDC</h4>
+                    <h4 className="text-lg font-bold text-[#003a70] mb-2">Step 5: Securing the Official RBL Settlement Letter & NDC</h4>
                     <p className="text-gray-700">
-                      Once a figure is agreed upon, RBL Bank issues a Settlement Letter. We verify this letter to ensure it contains no hidden clauses. You make the payment directly to your loan account (never to an agent). Finally, we follow up to ensure you receive the No Dues Certificate (NDC), officially closing the loan.
+                      Never transfer funds on verbal agent promises. RBL Bank must issue an authentic, written <strong>rbl settlement letter</strong> (or <strong>rbl bank settlement letter</strong>) on official bank letterhead detailing the exact discounted figure and payment deadline. We verify this document with bank compliance officers before you disburse payment, followed by obtaining your No Dues Certificate (NDC).
                     </p>
                   </div>
                 </div>

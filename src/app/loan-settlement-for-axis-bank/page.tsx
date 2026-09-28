@@ -410,7 +410,7 @@ export default function AxisBankLoanSettlement() {
                   The Axis Bank Loan Settlement Process: Step-by-Step
                 </h2>
                 <p>
-                  Successfully navigating the settlement process with Axis Bank requires adhering to a structured legal approach to avoid common pitfalls like paying fake agents or accepting invalid settlement terms.
+                  Successfully navigating the official <strong>axis bank loan settlement process</strong> requires adhering to a structured legal approach to avoid common pitfalls like paying fake agents or accepting invalid settlement terms.
                 </p>
 
                 <h3 className="text-xl font-semibold text-[#D29E0D] mt-6">Step 1: Default and 90-Day NPA Classification Rules</h3>
@@ -428,9 +428,9 @@ export default function AxisBankLoanSettlement() {
                   The proposal is reviewed by the bank's compromise committee. Negotiations follow to determine the haircut. We represent you during these rounds to explain your financial limits, ensuring the bank accepts a realistic and affordable settlement amount.
                 </p>
 
-                <h3 className="text-xl font-semibold text-[#D29E0D]">Step 4: Verification of the One-Time Settlement Letter Axis Bank</h3>
+                <h3 className="text-xl font-semibold text-[#D29E0D]">Step 4: Verification of the Official Axis Bank Settlement Letter</h3>
                 <p>
-                  Once an agreement is reached, Axis Bank must issue an official <strong>one-time settlement letter Axis Bank</strong>. This document is critical. You must never make any payment based on verbal promises or WhatsApp messages from recovery agents. We verify this letter directly with the bank's internal nodal officers to ensure it is authentic, contains authorized signatures, and correctly lists the payment schedule and waiver details.
+                  Once an agreement is reached, securing a genuine, written <strong>axis bank settlement letter</strong> is the most critical milestone of the entire negotiation. Never make any payment based on verbal promises or WhatsApp messages from recovery agents. An official <strong>axis bank settlement letter</strong> (or <strong>axis bank personal loan settlement letter</strong>) must be issued on official bank letterhead, state the exact waived haircut percentage, specify the final compromise amount, and outline the exact payment deadline. We verify this letter directly with Axis Bank's internal nodal officers before you disburse a single rupee.
                 </p>
 
                 <h3 className="text-xl font-semibold text-[#D29E0D]">Step 5: Payment and Securing the No Dues Certificate</h3>

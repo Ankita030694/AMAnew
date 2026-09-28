@@ -8,16 +8,20 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 // FAQ data for rendering and Schema
 const faqs = [
   {
+    question: "Recovery agent ghar aaye to kya kare? (Loan recovery agent ghar aaye to kya kare?)",
+    answer: "Recovery agent ghar aaye to kya kare? 1. Darne ki bilkul zaroorat nahi hai—gate ya darwaze ke peeche se hi baat karein. 2. Sabse pehle agent se uska Employee ID card aur Bank ka Authorization Letter maangein. 3. Turant mobile se audio/video recording on karein aur batayein ki batchit record ho rahi hai. 4. Ghar ke andar ghusne na dein; bina permission aana IPC Section 441 (Criminal Trespass) hai. 5. Gali-galoch ya dhamki dene par 112 par police call karein. 6. AMA Legal Solutions se legal representation notice bhejkar agent home visits ko hamesha ke liye band karwayen."
+  },
+  {
+    question: "How to stop recovery agent home visit permanently?",
+    answer: "To stop recovery agent home visits: 1. Send a formal legal notice to the bank's Nodal Officer notifying them of your legal representation. 2. Under RBI Fair Practices Code, field visits cannot violate borrower privacy or continue if formal disputes are pending. 3. If unauthorized visits continue, escalate to the RBI Banking Ombudsman (CMS Portal) and High Court for interim injunctions. AMA Legal Solutions provides a complete legal shield that halts agent visits within 24–48 hours."
+  },
+  {
+    question: "Loan recovery agent ghar aaye to kya kare agar wo police ya court warrant ki jhooti dhamki de?",
+    answer: "Loan default ek pure civil dispute hai. Kisi bhi bank recovery agent ya third-party collection agency ke paas aapko arrest karwane ya police bulane ka koi adhikar nahi hota. Jhooti police dhamki dena IPC 503/506 aur IT Act ke tahat apradh hai. Evidence record karke turant police complaint aur RBI Ombudsman mein complaint file karein."
+  },
+  {
     question: "Is it legal for recovery agents to come to my home without my permission?",
     answer: "No, under the RBI Fair Practices Code and various High Court rulings, recovery agents cannot enter your home without your explicit permission. They must also follow strict timing guidelines (8:00 AM to 7:00 PM). If they attempt to force their way in, it constitutes criminal trespass under Section 441 of the IPC."
-  },
-  {
-    question: "How do I stop recovery agents from visiting my house?",
-    answer: "You should first file a formal written complaint with the bank's Nodal Officer. If the visits continue, you can escalate the matter to the RBI Banking Ombudsman (CMS Portal). Professionally drafting a legal notice through AMA Legal Solutions for just ₹999 often stops these visits within 24 hours as banks fear regulatory penalties."
-  },
-  {
-    question: "What documents should I ask for when a recovery agent visits?",
-    answer: "You are legally entitled to ask for three things: 1. A valid Employee ID card from the recovery agency. 2. A formal Authorization Letter from the bank naming the agency. 3. A copy of the bank's grievance redressal policy. If they fail to provide these, you can refuse to speak with them and ask them to leave immediately."
   },
   {
     question: "Can recovery agents contact my neighbors or family members?",
@@ -444,22 +448,25 @@ export default function StopRecoveryAgentPage() {
                   </section>
 
                   <section id="handling-agents" className="scroll-mt-32">
-                    <h2 className="text-3xl font-black text-gray-900 mb-10 uppercase tracking-widest text-center border-l-8 border-[#D2A02A] pl-10 text-left">How to Handle Agents at Your Door: A Step-by-Step Script</h2>
+                    <h2 className="text-3xl font-black text-gray-900 mb-6 uppercase tracking-widest border-l-8 border-[#D2A02A] pl-6 text-left">Recovery Agent Ghar Aaye To Kya Kare? How to Handle Agents at Your Door</h2>
+                    <p className="text-gray-700 text-lg mb-8 leading-relaxed">
+                      Agar koi <strong>recovery agent ghar aaye to kya kare</strong>? Sabse zaroori baat: <strong>ghabrana bilkul nahi hai</strong>. Loan chukana aapki financial zimmedari hai, par kisi bhi collection agent ko aapko harass karne, gaali dene, ya bina permission ghar me aane ka adhikar nahi hai. Yahan janein <em>loan recovery agent ghar aaye to kya kare</em> aur unhe legal tarike se kaise rokein:
+                    </p>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                         <div className="p-8 border border-gray-100 rounded-3xl bg-white shadow-xl hover:translate-y-[-10px] transition-all">
                             <div className="text-4xl mb-6">🛑</div>
-                            <h6 className="font-black mb-4 uppercase text-xs tracking-widest">Step 1: The Gate Check</h6>
-                            <p className="text-xs text-gray-500 leading-relaxed">Do not open the door. Ask them to identify themselves from behind the gate or through a window. Ask for their ID card and the Bank's Authorization Letter. No ID means no entry. If they refuse to show ID, tell them: "You are a stranger on my property, please leave immediately."</p>
+                            <h6 className="font-black mb-4 uppercase text-xs tracking-widest">Step 1: The Gate Check (Pahchan Check)</h6>
+                            <p className="text-xs text-gray-500 leading-relaxed">Darwaza seedhe mat kholein. Gate ya safety door ke peeche se agent se uska Employee ID card aur Bank ka Authorization Letter maangein. Bina valid ID ke koi entry nahi hai. Saaf kahein: "Bina verification aap mere property par anjan shakhs hain, turant bahar jayein."</p>
                         </div>
                         <div className="p-8 border border-gray-100 rounded-3xl bg-white shadow-xl hover:translate-y-[-10px] transition-all mt-6 md:mt-12">
                             <div className="text-4xl mb-6">📱</div>
-                            <h6 className="font-black mb-4 uppercase text-xs tracking-widest">Step 2: Start Recording</h6>
-                            <p className="text-xs text-gray-500 leading-relaxed">Explicitly tell them: "This interaction is being recorded for legal purposes." This single sentence usually stops 90% of the abuse instantly because the agent doesn't want to lose their job. Recording is fully legal in India as long as you are a participant in the conversation.</p>
+                            <h6 className="font-black mb-4 uppercase text-xs tracking-widest">Step 2: Start Recording (Video/Audio Record Karein)</h6>
+                            <p className="text-xs text-gray-500 leading-relaxed">Agent ko turant batayein: "Yeh sari batchit legal evidence ke liye record ki ja rahi hai." Bharat me apni baat record karna bilkul legal hai. Yeh line sunte hi 90% badtameezi wahi ruk jati hai kyunki agent job aur legal liability se darta hai.</p>
                         </div>
                         <div className="p-8 border border-gray-100 rounded-3xl bg-white shadow-xl hover:translate-y-[-10px] transition-all mt-6 md:mt-24">
                             <div className="text-4xl mb-6">⚖️</div>
-                            <h6 className="font-black mb-4 uppercase text-xs tracking-widest">Step 3: State Your Rights</h6>
-                            <p className="text-xs text-gray-500 leading-relaxed">Say: "I am aware of my rights under the RBI Fair Practices Code. I request you to leave my premises immediately. Any further communication must be in writing. If you do not leave, I will call the police and report a criminal trespass under Section 441 of the IPC."</p>
+                            <h6 className="font-black mb-4 uppercase text-xs tracking-widest">Step 3: State Your Rights (Kanoon Batayein)</h6>
+                            <p className="text-xs text-gray-500 leading-relaxed">Saaf shabdon me kahein: "RBI Fair Practices Code aur IPC Section 441 (Criminal Trespass) ke tehat aap bina meri marzi yahan nahi ruk sakte. Kisi bhi payment ya dispute ke liye bank written notice bheje. Agar aapne boundary cross ki, to main 112 par police call kar raha hoon."</p>
                         </div>
                     </div>
                   </section>

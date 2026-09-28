@@ -50,3 +50,10 @@ lead_analysis_report.md
 # Large exports & CSV files
 *.csv
 issues/*.csv
+
+# Google Search Console querying & scripts
+search_console*
+*search_console*
+scripts/search_console*
+test_search_console*
+

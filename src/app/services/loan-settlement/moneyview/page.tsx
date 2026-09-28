@@ -278,25 +278,26 @@ export default function MoneyviewSettlementPage() {
 
             {/* Harassment */}
             <section id="harassment" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Stopping Recovery Harassment</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">Money View Recovery Agent Home Visit & Harassment Rules</h2>
               <div className="bg-[#E8F5E9] p-8 rounded-2xl border border-[#C8E6C9]">
                 <div className="flex items-center gap-3 mb-6">
                   <FaUserSecret className="text-3xl text-[#2E7D32]" />
-                  <h3 className="text-2xl font-bold text-[#2E7D32]">Know Your Rights</h3>
+                  <h3 className="text-2xl font-bold text-[#2E7D32]">Does Moneyview Send Recovery Agents? Know Your Legal Rights</h3>
                 </div>
                 <p className="text-gray-800 mb-6">
-                  Moneyview recovery agents must adhere to the RBI's Fair Practices Code and Digital Lending Guidelines.
+                  Many borrowers ask: <em>does Moneyview send recovery agents to your home?</em> If you default on EMIs, a third-party <strong>Money View loan recovery agent</strong> or <strong>Moneyview recovery agent</strong> may be assigned to contact you. However, every <strong>Money View recovery agent home visit</strong> must strictly comply with RBI's Fair Practices Code and Digital Lending Guidelines.
                 </p>
                 <div className="bg-white p-6 rounded-xl shadow-sm mb-6">
                   <h4 className="font-bold text-lg mb-3">Illegal Tactics We Stop:</h4>
                   <ul className="space-y-3 text-gray-700">
-                    <li className="flex items-start gap-2"><FaShieldAlt className="mt-1 text-green-600" /> <strong>Contacting References:</strong> Agents cannot call your friends, family, or colleagues to shame you.</li>
-                    <li className="flex items-start gap-2"><FaShieldAlt className="mt-1 text-green-600" /> <strong>Abusive Language:</strong> Threats, abuse, and intimidation are strictly prohibited.</li>
-                    <li className="flex items-start gap-2"><FaShieldAlt className="mt-1 text-green-600" /> <strong>Odd Hours:</strong> Calls are only allowed between 8 AM and 7 PM.</li>
+                    <li className="flex items-start gap-2"><FaShieldAlt className="mt-1 text-green-600" /> <strong>Contacting References:</strong> Agents cannot access your phonebook or call your friends, family, or employer to shame you.</li>
+                    <li className="flex items-start gap-2"><FaShieldAlt className="mt-1 text-green-600" /> <strong>Unlawful Home Visits:</strong> Agents cannot enter your premises without valid ID cards, authorization letters, or use physical intimidation.</li>
+                    <li className="flex items-start gap-2"><FaShieldAlt className="mt-1 text-green-600" /> <strong>Abusive Language:</strong> Threats, abuse, and intimidation are strictly prohibited under law.</li>
+                    <li className="flex items-start gap-2"><FaShieldAlt className="mt-1 text-green-600" /> <strong>Odd Hours:</strong> Calls and in-person recovery visits are only permitted between 8:00 AM and 7:00 PM.</li>
                   </ul>
                 </div>
                 <p className="text-sm text-gray-600 italic">
-                  We send a legal notice to Moneyview demanding they stop these illegal activities immediately.
+                  We issue a formal legal notice to Whizdm Finance and Moneyview demanding an immediate stop to agent harassment and unauthorized home visits.
                 </p>
               </div>
             </section>
@@ -339,25 +340,28 @@ export default function MoneyviewSettlementPage() {
             {/* OTS Process */}
             <section id="ots-process" className="mb-16 scroll-mt-32">
               <div className="bg-[#1B5E20] text-white rounded-3xl p-10 md:p-14">
-                <h2 className="text-3xl font-bold mb-6 text-[#A5D6A7]">One Time Settlement (OTS) Solution</h2>
+                <h2 className="text-3xl font-bold mb-6 text-[#A5D6A7]">Money View Loan Settlement & OTS Solution</h2>
                 <p className="text-lg text-white/90 mb-8">
-                  OTS is the best way to exit the debt trap. It involves paying a negotiated lump sum amount to close the loan account permanently.
+                  A structured <strong>Money View loan settlement</strong> is the most practical way to exit severe debt. It allows borrowers facing acute financial distress to conclude their account permanently with a single negotiated payout.
                 </p>
                 
                 <div className="grid md:grid-cols-2 gap-10">
                   <div>
-                    <h3 className="text-xl font-bold mb-4 text-white border-b border-white/20 pb-2">Why Choose OTS?</h3>
+                    <h3 className="text-xl font-bold mb-4 text-white border-b border-white/20 pb-2">Why Opt For Money View Settlement?</h3>
                     <ul className="space-y-3 text-white/90">
-                      <li className="flex items-center gap-2"><FaRegCheckCircle className="text-[#A5D6A7]" /> Waiver of accumulated interest and penalties.</li>
-                      <li className="flex items-center gap-2"><FaRegCheckCircle className="text-[#A5D6A7]" /> Immediate stop to legal actions and calls.</li>
-                      <li className="flex items-center gap-2"><FaRegCheckCircle className="text-[#A5D6A7]" /> Complete closure of the loan.</li>
-                      <li className="flex items-center gap-2"><FaRegCheckCircle className="text-[#A5D6A7]" /> Peace of mind.</li>
+                      <li className="flex items-center gap-2"><FaRegCheckCircle className="text-[#A5D6A7]" /> 100% waiver of accumulated late penalties and bounce charges.</li>
+                      <li className="flex items-center gap-2"><FaRegCheckCircle className="text-[#A5D6A7]" /> Immediate cessation of all recovery visits and arbitration proceedings.</li>
+                      <li className="flex items-center gap-2"><FaRegCheckCircle className="text-[#A5D6A7]" /> Complete account closure validated through an official settlement letter.</li>
+                      <li className="flex items-center gap-2"><FaRegCheckCircle className="text-[#A5D6A7]" /> Restores financial independence and legal peace of mind.</li>
                     </ul>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-4 text-white border-b border-white/20 pb-2">Our Success</h3>
-                    <p className="text-white/90 leading-relaxed">
-                      We negotiate aggressively with Moneyview's legal and settlement teams. We typically achieve settlements at <strong>40-60%</strong> of the total outstanding amount, depending on the case.
+                    <h3 className="text-xl font-bold mb-4 text-white border-b border-white/20 pb-2">Money View Loan Settlement Percentage</h3>
+                    <p className="text-white/90 leading-relaxed mb-4">
+                      The typical <strong>Money View loan settlement percentage</strong> negotiated by our advocates ranges between <strong>40% to 60%</strong> of the outstanding loan balance, depending on default duration and genuine hardship documentation.
+                    </p>
+                    <p className="text-white/80 text-sm">
+                      Our legal team directly engages Whizdm Finance settlement committees to secure the maximum possible waiver for you.
                     </p>
                   </div>
                 </div>
@@ -388,32 +392,32 @@ export default function MoneyviewSettlementPage() {
 
             {/* Process */}
             <section id="process-steps" className="mb-16 scroll-mt-32">
-              <h2 className="text-3xl font-bold text-gray-900 mb-12">Our Settlement Roadmap</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-12">Money View Loan Settlement Process: Step-by-Step Roadmap</h2>
               <div className="relative border-l-4 border-[#2E7D32] ml-6 md:ml-12 space-y-12">
                 {[
                   { 
-                    title: "Step 1: Loan Analysis", 
-                    desc: "We analyze your Moneyview loan statement to calculate the actual principal received versus the inflated interest and penalty charges." 
+                    title: "Step 1: Loan Analysis & Forensic Audit", 
+                    desc: "We analyze your Moneyview loan statement to calculate the actual principal disbursed versus inflated interest, processing charges, and recurring penalty charges." 
                   },
                   { 
-                    title: "Step 2: Legal Intervention", 
-                    desc: "We send a formal legal notice to Moneyview/Whizdm Finance, stating that you have legal representation. This stops them from contacting you directly." 
+                    title: "Step 2: Formal Legal Representation Notice", 
+                    desc: "We serve a formal legal notice to Moneyview and Whizdm Finance notifying them of your legal representation. Under RBI guidelines, this bars agents from calling you directly." 
                   },
                   { 
-                    title: "Step 3: Harassment Protection", 
-                    desc: "If agents continue to harass you or call your references, we file a complaint with the RBI Ombudsman for violation of Digital Lending Guidelines." 
+                    title: "Step 3: Stopping Recovery Agent Home Visits", 
+                    desc: "If any Moneyview recovery agent attempts an illegal home visit or harasses family references, we immediately file a statutory complaint with the RBI Ombudsman." 
                   },
                   { 
-                    title: "Step 4: Negotiation", 
-                    desc: "We negotiate with the lender's settlement team. We present your financial hardship and push for a maximum waiver on the outstanding amount." 
+                    title: "Step 4: Hardship Settlement Negotiations", 
+                    desc: "During the Money view settlement process, our advocates present your authentic financial hardship to their authorized settlement desk, negotiating waivers up to 40%–60%." 
                   },
                   { 
-                    title: "Step 5: Settlement Agreement", 
-                    desc: "We obtain a formal Settlement Letter from Moneyview. We verify the amount, the due date, and the closure terms to ensure there are no loopholes." 
+                    title: "Step 5: Verifying Money View Settlement Letter", 
+                    desc: "We inspect the official Money View settlement letter (or Moneyview settlement letter) issued on Whizdm Finance letterhead to verify exact payment terms, waiver clause, and total debt discharge." 
                   },
                   { 
-                    title: "Step 6: Closure & NDC", 
-                    desc: "You make the payment directly to the lender's official account. We then ensure the loan is closed on the app and the 'Settled' status is updated in your CIBIL report." 
+                    title: "Step 6: Payment, Account Closure & NDC", 
+                    desc: "You make the settlement payment directly via official lender channels. We verify that the loan is marked closed on the Moneyview app and track the 'Settled' reporting on CIBIL." 
                   }
                 ].map((item, index) => (
                   <div key={index} className="relative pl-8 md:pl-12">

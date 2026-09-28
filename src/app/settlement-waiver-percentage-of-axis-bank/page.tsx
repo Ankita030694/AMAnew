@@ -310,6 +310,16 @@ export default function AxisBankSettlementPage() {
                   <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
                     <strong>Unsecured Debt (Personal Loans, Credit Cards):</strong> These are the most common candidates for significant waivers. Because the bank has no collateral to seize and sell, their only recourse is legal action, which in India can be protracted, expensive, and uncertain. Therefore, they are more amenable to taking a haircut to recover something rather than nothing. As noted, waivers can range from 25% early on, up to a theoretical 75% in the most severe, long-term default cases.
                   </p>
+
+                  <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-6">Axis Bank Credit Card Settlement Percentage & Haircut Breakdown</h3>
+                  <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
+                    When dealing with revolving card debt, the <strong>axis bank credit card settlement percentage</strong> depends heavily on stripping accumulated finance charges, late fees, and GST before negotiating the principal balance. In standard practice, an <strong>axis credit card settlement percentage</strong> typically achieves:
+                  </p>
+                  <ul className="list-disc pl-6 space-y-2 text-sm md:text-lg text-gray-700 mb-4">
+                    <li><strong>Finance Charges & Penalties:</strong> 100% waiver of accumulated monthly compounding interest (which often accounts for 40-50% of the inflated outstanding balance).</li>
+                    <li><strong>Principal Haircut Range:</strong> Between 40% to 65% reduction on the core principal amount, depending on default duration and verified hardship documentation.</li>
+                    <li><strong>Lump-Sum vs Multi-Tranche:</strong> Offering a single-bullet payment within 15 to 30 days yields the highest <strong>axis bank credit card settlement percentage</strong> compared to 3-installment arrangements.</li>
+                  </ul>
                   <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
                     <strong>Secured Debt (Home Loans, Auto Loans, Loan Against Property):</strong> The dynamics change completely. The bank holds a lien on the asset. If you default, they can initiate proceedings under the SARFAESI Act to repossess and auction the property. Therefore, settlements on secured loans are incredibly rare and typically only involve a waiver of penal interest or late fees, almost never a reduction of the principal amount. The bank will simply sell the asset to recover their dues.
                   </p>

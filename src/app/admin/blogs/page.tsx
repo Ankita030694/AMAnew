@@ -14,7 +14,7 @@ import dynamic from 'next/dynamic';
 const TiptapEditor = dynamic(() => import('./TiptapEditor'), { 
   ssr: false,
   loading: () => <p>Loading Editor...</p>,
-});
+}) as any;
 
 // Define FAQ interface
 interface FAQ {

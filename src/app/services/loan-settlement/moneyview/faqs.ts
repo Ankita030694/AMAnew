@@ -8,12 +8,12 @@ export const faqs = [
         answer: "Moneyview and its lending partners (like Whizdm Finance) often send legal notices for arbitration or Section 138 (cheque bounce) if you default. While many threats are pressure tactics, they do initiate actual legal proceedings in some cases. It is best to have legal representation."
     },
     {
-        question: "Does Moneyview send agents to my home?",
-        answer: "Yes, Moneyview employs third-party recovery agencies who may visit your home or office. However, they must follow RBI guidelines. They cannot harass you, use abusive language, or visit at odd hours. If they violate this, we can take legal action against them."
+        question: "Does Moneyview send recovery agents to my home? What are the home visit rules?",
+        answer: "Yes, Moneyview and its lending partners may assign a third-party Money View loan recovery agent. However, every Money View recovery agent home visit must strictly comply with RBI guidelines. A Moneyview recovery agent cannot harass you, use abusive language, contact your relatives, or visit before 8 AM or after 7 PM. We can issue legal notices to stop unlawful recovery visits."
     },
     {
-        question: "How much discount can I expect in settlement?",
-        answer: "For unsecured personal loans from Moneyview, settlements can typically be negotiated at 40-60% of the outstanding principal plus interest. The exact amount depends on the delinquency stage and your ability to prove financial hardship."
+        question: "What is the typical Money View loan settlement percentage?",
+        answer: "In a Money View loan settlement, the settlement percentage negotiated by our advocates typically ranges between 40% to 60% of the outstanding balance. We ensure a 100% waiver on late fees, penal interest, and bounce charges."
     },
     {
         question: "Will settling affect my CIBIL score?",
@@ -32,8 +32,8 @@ export const faqs = [
         answer: "You need your loan account number (from the app), PAN card, Aadhaar card, and proof of financial distress (e.g., termination letter, salary slip showing reduction, or medical records)."
     },
     {
-        question: "Is it safe to pay the recovery agent directly?",
-        answer: "Never pay cash to a recovery agent. Always make payments directly to the Moneyview or lending partner's official bank account through the app or online link, and only after receiving a valid settlement letter."
+        question: "How do I verify a Money View settlement letter before paying?",
+        answer: "Never pay cash to any agent or transfer money to a personal UPI account. Always demand an authentic Money View settlement letter (Moneyview settlement letter) issued on official letterhead specifying your loan account number, agreed one-time sum, and full debt waiver before making payment."
     },
     {
         question: "What is Whizdm Finance?",

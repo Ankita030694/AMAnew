@@ -7,8 +7,16 @@ import TableOfContents from "@/components/TableOfContents";
 // FAQ data for rendering and Schema
 const faqs = [
   {
-    question: "What is a car loan settlement in India?",
-    answer: "A car loan settlement is a legal agreement between a borrower and a lender where the lender agrees to accept a reduced amount to close the loan account. This is usually done when the borrower is facing extreme financial hardship and cannot continue paying the full EMI installments. Once the agreed-upon lump sum is paid, the lender issues a No Dues Certificate and the loan is considered closed in their records."
+    question: "Kya car loan settlement hota hai? Can we settle a car loan in India?",
+    answer: "Haan, bilkul. Kya car loan settlement hota hai? Yes, car loan settlement is completely legal and feasible in India under banking and contract law. When a car borrower suffers genuine financial hardship (like job loss or medical emergency) and cannot repay the remaining balance or EMIs, banks and NBFCs execute a One-Time Settlement (OTS) to recover an agreed compromise amount and close the loan account permanently."
+  },
+  {
+    question: "Car loan settlement kaise kare? (Gadi ka loan settlement kaise kare step-by-step)",
+    answer: "Car loan settlement kaise kare? Gadi ka loan settlement karne ke liye: 1) Apne car loan account ka audit karwayen aur exact outstanding principal calculate karein. 2) Bank ko formal legal representation notice bhejkar recovery harassment rokein. 3) Genuine financial hardship documents (income loss, medical bills) submit karein. 4) Bank ke legal department se 40%–60% waiver negotiate karein. 5) Official car loan settlement letter hasil karke payment karein aur RTO se Form 35 lekar hypothecation remove karwayen."
+  },
+  {
+    question: "Car loan ka settlement kaise kare agar bank car seize ya repossess karne ki dhamki de?",
+    answer: "Agar bank recovery agent gadi seize karne ki dhamki de rahe hain, to turant legal protection lein. RBI guidelines aur Supreme Court ke niyam anusar koi bhi bank bina 60-day demand notice aur formal pre-sale notice ke gadi forcibly nahi cheen sakta. Hum bank ko legal notice bhejte hain jisse harassment rukti hai aur matter Lok Adalat ya bank settlement desk ke zariye settle hota hai."
   },
   {
     question: "How does car loan settlement affect my credit score?",
@@ -21,10 +29,6 @@ const faqs = [
   {
     question: "What is hypothecation removal in the context of car loan settlement?",
     answer: "When you take a car loan, the vehicle is hypothecated to the bank, meaning they have a legal claim on it. After a settlement is completed and you receive the No Dues Certificate, you must apply to the RTO to remove this hypothecation from your Registration Certificate (RC). This ensures that you have full legal ownership of the vehicle and can sell it or transfer it to someone else in the future."
-  },
-  {
-    question: "Is car loan settlement legally valid in India?",
-    answer: "Yes, car loan settlement is a legally valid process under Indian contract law. It is a mutual agreement between the creditor and the debtor to resolve a debt for a compromise amount. Banks and NBFCs often prefer a one-time settlement (OTS) because it allows them to recover a portion of the money immediately rather than spending years in litigation or recovery efforts."
   },
   {
     question: "What is the typical percentage for car loan settlement?",
@@ -41,10 +45,6 @@ const faqs = [
   {
     question: "What happens if I don't remove hypothecation after settlement?",
     answer: "If you don't remove the hypothecation, the bank's name will continue to appear on your RC. This means you will not be able to sell the car, transfer its ownership, or claim insurance in some cases. It is vital to complete the RTO process immediately after getting the NDC from the bank to ensure your asset is completely free from any encumbrances."
-  },
-  {
-    question: "Do I need to pay a lump sum for a car loan settlement?",
-    answer: "Most car loan settlements are structured as a One Time Settlement (OTS), which requires a lump sum payment. However, in some cases, we can negotiate a short-term payment plan where the settlement amount is paid in two or three installments. This depends on the bank's internal policy and the strength of the negotiation."
   }
 ];
 
@@ -228,19 +228,35 @@ export default function CarLoanSettlementPage() {
 
                 {/* What is Settlement */}
                 <section id="what-is-settlement" className="scroll-mt-32">
-                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Understanding Car Loan Settlement: A Pragmatic Solution</h2>
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Understanding Car Loan Settlement: Kya Car Loan Settlement Hota Hai?</h2>
                   <div className="text-sm md:text-lg leading-relaxed text-gray-700 space-y-4 md:space-y-6">
                     <p>
-                        A car loan settlement, often called a One Time Settlement (OTS), is a process where the borrower and the lender agree to close the loan account for an amount that is less than the total outstanding dues. This includes a waiver of part of the principal, accumulated interest, and heavy penal charges that the bank might have added over the months of default.
+                        A car loan settlement, often called a One Time Settlement (OTS), is a legal process where the borrower and the lender agree to close the vehicle loan account for an amount that is significantly lower than the total outstanding dues. This includes a substantial waiver of principal, accumulated interest, and heavy penal charges that the bank might have added over months of default.
                     </p>
+                    <div className="bg-amber-50 border-l-4 border-[#D2A02A] p-6 rounded-r-xl">
+                      <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">Kya Car Loan Settlement Hota Hai? (Can We Settle Car Loan in India?)</h3>
+                      <p className="text-gray-700">
+                        Bahut se car buyers sochte hain ki auto loan secured hota hai, to kya car loan settlement hota hai? <strong>Haan, car loan settlement bilkul hota hai.</strong> Jab borrower genuine financial crisis (nokri jana, business loss, ya gambhir bimari) ke chalte monthly EMIs nahi bhar pata, to bank car auction karne ke bajay One Time Settlement (OTS) compromise offer karti hai.
+                      </p>
+                    </div>
+                    <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+                      <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">Car Loan Settlement Kaise Kare? (Gadi Ka Loan Settlement Kaise Kare)</h3>
+                      <p className="text-gray-700 mb-3">
+                        Agar aap soch rahe hain ki <strong>car loan settlement kaise kare</strong> ya <strong>gadi ka loan settlement kaise kare</strong>, to yeh niyamit legal steps follow karein:
+                      </p>
+                      <ul className="space-y-2 text-gray-700 list-disc pl-5">
+                        <li><strong>Loan Balance Audit:</strong> Apne statement mein penalty, late fee, aur bounce charges ka audit karwayen.</li>
+                        <li><strong>Legal Shield & Stop Harassment:</strong> Lawyer ke zariye bank ko legal notice bhejkar recovery agent harassment aur unlawful vehicle seizure rokein.</li>
+                        <li><strong>Hardship Dossier Submission:</strong> Bank ke settlement authority ko genuine income loss ya financial distress ke saboot submit karein.</li>
+                        <li><strong>Discount Negotiation:</strong> Bank legal cell se 40% se 60% tak ka waiver negotiate karein.</li>
+                        <li><strong>Settlement Letter & Hypothecation Removal:</strong> Bank se formal OTS letter lene ke baad payment karein aur RTO se Form 35 aur No Objection Certificate (NOC) lekar RC se hypothecation remove karwayen.</li>
+                      </ul>
+                    </div>
                     <p>
                         Lenders, including major commercial banks like SBI, HDFC, and ICICI, as well as NBFCs like Bajaj Finance or Mahindra Finance, are often willing to consider a settlement when they realize that the borrower is in a genuine financial crisis. From the lender's perspective, recovering a smaller lump sum immediately is often more efficient than going through a long legal process of repossession and auctioning a depreciating asset like a car.
                     </p>
                     <p>
                         A car is a depreciating asset. The moment it leaves the showroom, its value starts to drop. By the time a loan is in default for 6 or 9 months, the market value of the car might be significantly less than the total outstanding loan amount. This gap between the car's current value and the debt is a key factor in our negotiation. We highlight this to the bank to convince them that accepting a settlement is their most logical financial choice.
-                    </p>
-                    <p>
-                        Settlement is not a sign of failure; it is a tactical financial decision. It allows you to freeze the interest, stop the harassment, and obtain a legal closure of the debt. While it does leave a mark on your credit report, it is a far better alternative than a long-drawn legal battle or having a vehicle repossessed and sold for a pittance at a bank auction.
                     </p>
                   </div>
                 </section>
