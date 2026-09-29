@@ -7,6 +7,7 @@ import { faqs } from "./faqs";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import { FaMobileAlt, FaFileContract, FaGavel, FaHandHoldingUsd, FaShieldAlt, FaCheckCircle, FaExclamationTriangle, FaChartLine, FaUserShield, FaBalanceScale } from "react-icons/fa";
 import { MdSmartphone, MdOutlinePayments, MdSecurity, MdCreditScore } from "react-icons/md";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // Metadata
 export const metadata = {
@@ -223,6 +224,12 @@ export default function NorthernArcLoanSettlementPage() {
                 </p>
               </div>
             </section>
+
+                  {/* Immediate Lead Funnel Intake */}
+                  <div className="not-prose my-10">
+                    <InteractiveLeadFunnel preset="bank-settlement" />
+                  </div>
+
 
             {/* Fintech Partners */}
             <section id="fintech-partners" className="mb-16 scroll-mt-32">

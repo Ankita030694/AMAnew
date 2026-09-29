@@ -5,6 +5,7 @@ import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import { Metadata } from "next";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 export const metadata: Metadata = {
   title: "Best Apps for Loan Settlement in India | AMA Connect",
@@ -266,6 +267,12 @@ export default function BestAppsForLoanSettlementIndiaPage() {
                     Rather than relying on generic tools, borrowers must ensure they use platforms backed by legitimate legal credentials. Unsecured personal loans and outstanding credit card balances carry complex legal bindings that cannot be resolved with software scripts alone. Fusing state-of-the-art mobile convenience with established courtroom representation is what defines a truly secure resolution process.
                   </p>
                 </section>
+
+                  {/* Immediate Lead Funnel Intake */}
+                  <div className="not-prose my-10">
+                    <InteractiveLeadFunnel preset="best-agencies" />
+                  </div>
+
 
                 {/* What is a Loan Settlement App? */}
                 <section id="what-is-an-app" className="scroll-mt-32">

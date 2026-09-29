@@ -3,6 +3,7 @@ import Script from "next/script";
 import Image from "next/image";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // FAQ data for rendering and Schema
 const faqs = [
@@ -285,7 +286,12 @@ export default function FnfLegalNoticePage() {
                     This guide provides an exhaustive look into the legalities of F&F settlements. We will explore the statutory timelines, the components of your dues, and the specific legal remedies available to you. From drafting a legal notice to approaching the Labour Commissioner, we cover everything you need to know to recover your hard earned money legal way. We have expanded this resource to cover industry-specific scenarios, technical calculation formulas, and judicial precedents that can bolster your case if it ever goes to court.
                   </p>
                 </section>
- 
+
+                {/* Immediate Lead Funnel Intake */}
+                <div className="not-prose my-10">
+                  <InteractiveLeadFunnel preset="employment-salary" />
+                </div>
+
                 {/* What is F&F Settlement */}
                 <section id="what-is-fnf" className="scroll-mt-32">
                   <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-4 md:mb-6 leading-snug">

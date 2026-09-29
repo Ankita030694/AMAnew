@@ -3,6 +3,7 @@ import Script from "next/script";
 import Image from "next/image";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // FAQ data for rendering and Schema
 const faqs = [
@@ -271,6 +272,11 @@ export default function ComplaintFilingPage() {
                     </div>
                   </div>
                 </section>
+
+                {/* Immediate Lead Funnel Intake */}
+                <div className="not-prose my-10">
+                  <InteractiveLeadFunnel preset="employment-salary" />
+                </div>
 
                 {/* Step 1: Evidence Inventory */}
                 <section id="evidence-inventory" className="scroll-mt-32">

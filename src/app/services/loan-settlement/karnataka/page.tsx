@@ -3,6 +3,7 @@ import Script from "next/script";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 import { canonicalSettlementBanks } from "@/data/canonicalSettlementBanks";
 
 // Detailed FAQ data for rendering and Schema
@@ -270,7 +271,7 @@ export default function LoanSettlementKarnatakaPage() {
                 <section id="introduction" className="scroll-mt-32">
                   <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6">Navigating Financial Stress in Karnataka</h2>
                   <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                    Karnataka presents a unique economic paradox. On one hand, <strong>Bangalore (Bengaluru)</strong> stands as the Silicon Valley of Asia, offering high salaries but demanding an equally exorbitant cost of living. On the other, the agricultural heartlands of <strong>North Karnataka</strong> and the coastal belts of <strong>Mangalore</strong> face their own volatility due to crop cycles and market shifts.
+                    Karnataka presents a unique economic paradox. On one hand, <strong>Bangalore (Bengaluru)</strong> stands as the Silicon Valley of Asia, offering high salaries but demanding an equally exorbitant cost of living. For dedicated legal representation in the city, visit our <Link href="/services/loan-settlement/bangalore" className="text-[#D2A02A] font-bold hover:underline">Loan Settlement Agency in Bangalore</Link> portal. On the other hand, the agricultural heartlands of <strong>North Karnataka</strong> and the coastal belts of <strong>Mangalore</strong> face their own volatility due to crop cycles and market shifts.
                   </p>
                   <p className="text-gray-700 text-lg leading-relaxed mb-6">
                     This dual economy has led to a massive surge in personal debt. In Bangalore, young professionals are falling into the <strong>Credit Card and BNPL (Buy Now Pay Later) trap</strong>, while elsewhere, families struggle with education and business loans. The pressure is compounded by aggressive recovery agents who often cross legal lines.
@@ -279,6 +280,11 @@ export default function LoanSettlementKarnatakaPage() {
                     However, Karnataka is also a state with strong legal protections. From the historic <em>Money Lenders Act</em> to the progressive <strong>2025 Ordinance</strong>, the law is on the side of the borrower. <strong>AMA Legal Solutions</strong> is here to help you use these laws to settle your debts and restart your life.
                   </p>
                 </section>
+
+                {/* Immediate Lead Funnel Intake */}
+                <div className="not-prose my-10">
+                  <InteractiveLeadFunnel preset="bank-settlement" />
+                </div>
 
                 {/* What is Loan Settlement */}
                 <section id="what-is-settlement" className="scroll-mt-32">

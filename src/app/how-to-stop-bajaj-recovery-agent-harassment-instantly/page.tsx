@@ -4,6 +4,7 @@ import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaEnvelope, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamationTriangle } from "react-icons/fa";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 export const metadata = {
   alternates: {
@@ -251,6 +252,12 @@ export default function BajajHarassmentGuide() {
           </div>
         </div>
       </section>
+
+                  {/* Immediate Lead Funnel Intake */}
+                  <div className="not-prose my-10">
+                    <InteractiveLeadFunnel preset="recovery-harassment" />
+                  </div>
+
 
       {/* Breadcrumbs Wrapper */}
       <div className="max-w-7xl mx-auto px-6 mt-8">

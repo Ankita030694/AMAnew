@@ -4,6 +4,7 @@ import Script from "next/script";
 import Image from "next/image";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // FAQ data for rendering and Schema
 const faqs = [
@@ -282,6 +283,11 @@ export default function BajajFinanceAgentPage() {
                       </div>
                     </div>
                   </section>
+
+                  {/* Immediate Lead Funnel Intake */}
+                  <div className="not-prose my-10">
+                    <InteractiveLeadFunnel preset="recovery-harassment" />
+                  </div>
 
                   <section id="introduction" className="scroll-mt-32">
                     <h2 className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 mb-10 border-l-[12px] border-[#D2A02A] pl-8 uppercase">Dealing with Bajaj Finance Agent Home Visits</h2>

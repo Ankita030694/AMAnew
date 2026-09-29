@@ -4,6 +4,7 @@ import Image from "next/image";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // FAQ data for rendering and Schema
 const faqs = [
@@ -306,6 +307,12 @@ export default function LoanSettlementHindiPage() {
                     इस विस्तृत मार्गदर्शिका में, हम न केवल आवेदन के प्रारूप प्रदान करेंगे, बल्कि आपको बैंक के साथ बातचीत करने की रणनीतियों के बारे में भी बताएंगे। हम जानते हैं कि कर्ज का बोझ मानसिक स्वास्थ्य पर क्या असर डालता है। इसलिए, हम यहाँ आपको न केवल कानूनी सलाह बल्कि मानसिक शांति की ओर ले जाने का रास्ता भी दिखा रहे हैं।
                   </p>
                 </section>
+
+                  {/* Immediate Lead Funnel Intake */}
+                  <div className="not-prose my-10">
+                    <InteractiveLeadFunnel preset="bank-settlement" />
+                  </div>
+
 
                 {/* What is Loan Settlement */}
                 <section id="what-is-settlement" className="scroll-mt-32">

@@ -5,6 +5,7 @@ import FaqSection from "./FaqSection";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUniversity, FaGavel, FaBalanceScale, FaUserTie, FaPhoneSlash } from "react-icons/fa";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // Breadcrumb Schema
 const breadcrumbSchema = {
@@ -219,6 +220,12 @@ export default function SBILoanSettlementPage() {
             At AMA Legal Solutions, we specialize in negotiating with public sector banks like SBI. We understand their specific protocols, hierarchy, and settlement schemes. We step in as your legal shield, stopping the harassment and negotiating a dignified exit from your debt trap, often saving you significant amounts in the process.
           </p>
         </div>
+
+        {/* Immediate Lead Funnel Intake */}
+        <div className="container mx-auto px-4 max-w-4xl my-10">
+          <InteractiveLeadFunnel preset="bank-settlement" />
+        </div>
+
 
         {/* What is OTS - Card Layout */}
         <div id="what-is-ots" className="bg-gray-50 py-20 scroll-mt-32">

@@ -4,6 +4,7 @@ import GenericStatesGrid from "@/components/GenericStatesGrid";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 export const metadata = {
   title: "Loan Settlement in Surat | Expert Debt Relief Lawyers",
@@ -209,6 +210,12 @@ export default function SuratLoanSettlementPage() {
                     At AMA Legal Solutions, we bring specialized expertise to Surat. From the District Courts in Athwalines to the DRT procedures, we understand the local business environment and are here to help you negotiate a dignified exit from debt.
                   </p>
                 </section>
+
+                  {/* Immediate Lead Funnel Intake */}
+                  <div className="not-prose my-10">
+                    <InteractiveLeadFunnel preset="bank-settlement" />
+                  </div>
+
 
                 {/* What is Loan Settlement */}
                 <section id="what-is-settlement" className="scroll-mt-32">

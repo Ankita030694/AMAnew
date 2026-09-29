@@ -5,6 +5,7 @@ import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 import Image from "next/image";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 export const metadata = {
   title: "Loan Settlement in Lok Adalat 2026 | NALSA Schedule & Process",
@@ -655,30 +656,8 @@ export default function LokAdalatLoanSettlementPage() {
                   </div>
                 </aside>
 
-                {/* Final CTA */}
-                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">
-                  <div className="relative z-10">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Settle Your Debt?</h2>
-                    <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
-                      Take the first step towards financial freedom. Our experts are ready to represent you in the next Lok Adalat.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <Link href="/contact">
-                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-lg w-full sm:w-auto">
-                          Book Free Consultation
-                        </button>
-                      </Link>
-                      <a href="tel:+918700343611">
-                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-4 px-12 rounded-full transition-all text-lg w-full sm:w-auto">
-                          Call: +91-8700343611
-                        </button>
-                      </a>
-                    </div>
-                    <p className="mt-8 text-sm opacity-70">
-                      100% Confidential • Expert Legal Guidance
-                    </p>
-                  </div>
-                </section>
+                {/* Interactive Lok Adalat Representation Intake Funnel */}
+                <InteractiveLeadFunnel preset="lok-adalat" className="my-10" />
 
               </div>
             </div>

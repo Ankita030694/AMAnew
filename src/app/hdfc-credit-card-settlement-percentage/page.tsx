@@ -3,6 +3,7 @@ import Script from "next/script";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { FaShieldAlt } from "react-icons/fa";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // FAQ data for rendering and Schema
 const faqs = [
@@ -247,6 +248,12 @@ export default function HDFCCreditCardSettlementPercentagePage() {
                     If you are facing aggressive tactics or harassment, you can pursue legal actions. Documenting interactions and sending a formal notice helps protect your rights. For a step-by-step approach to drafting these notices, you can refer to our detailed guide on sending a <Link href="/legal-notice-for-credit-card-recovery-harassment-dues" className="text-[#D2A02A] font-semibold hover:underline">legal notice for credit card recovery harassment</Link>.
                   </p>
                 </section>
+
+                  {/* Immediate Lead Funnel Intake */}
+                  <div className="not-prose my-10">
+                    <InteractiveLeadFunnel preset="bank-settlement" />
+                  </div>
+
 
                 {/* Typical Percentage */}
                 <section id="typical-percentage" className="scroll-mt-32">

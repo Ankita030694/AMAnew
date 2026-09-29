@@ -3,6 +3,7 @@ import Script from "next/script";
 import Image from "next/image";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 const faqs = [
   {
@@ -291,6 +292,12 @@ export default function ExpertPanelLoanSettlementReviewsPage() {
                     </p>
                   </div>
                 </section>
+
+                  {/* Immediate Lead Funnel Intake */}
+                  <div className="not-prose my-10">
+                    <InteractiveLeadFunnel preset="best-agencies" />
+                  </div>
+
 
                 <section id="historical-context" className="scroll-mt-32">
                   <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-5 md:mb-8 border-b-4 border-[#D2A02A] pb-3 inline-block">The Evolution of Debt Relief in India</h2>

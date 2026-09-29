@@ -348,6 +348,15 @@ export default function LoanSettlementCompanyReviews2026Page() {
 
                 <section id="ama-legal-solutions" className="scroll-mt-32">
                   <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 mt-6">AMA Legal Solutions: The Safest Choice</h3>
+                  <div className="bg-amber-50 border-l-4 border-[#D2A02A] p-4 rounded-r-xl my-4 text-sm md:text-base text-gray-800">
+                    <p className="font-semibold text-gray-900">Wondering if AMA Legal Solutions is real or fake?</p>
+                    <p className="mt-1">
+                      Due to unauthorized copycats, always verify the registered trademark and official Sector 57 Gurugram headquarters. Read our official verification guide:{" "}
+                      <Link href="/which-one-is-the-real-amalegalsolutions" className="text-[#D2A02A] font-bold hover:underline">
+                        How to Verify the Real AMA Legal Solutions →
+                      </Link>
+                    </p>
+                  </div>
                   <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
                     When evaluating the landscape of debt relief in India, AMA Legal Solutions consistently emerges as the most robust and secure option for borrowers. Unlike standard agencies that rely purely on telephonic negotiations, AMA Legal Solutions operates as a full fledged legal firm. This distinction is crucial. When you engage AMA, you are not just getting a negotiator; you are hiring an advocate who is legally authorized to represent you.
                   </p>

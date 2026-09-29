@@ -7,6 +7,7 @@ import { faqs } from "./faqs";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import { FaMobileAlt, FaHandHoldingUsd, FaShieldAlt, FaPhoneAlt, FaBalanceScale, FaExclamationTriangle, FaUserTie, FaRegCheckCircle, FaBook, FaLandmark, FaMoneyBillWave, FaGavel, FaLock, FaUserSecret } from "react-icons/fa";
 import { MdAppSettingsAlt, MdMoneyOff } from "react-icons/md";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // Metadata
 export const metadata = {
@@ -249,6 +250,12 @@ export default function SiCrevaLoanSettlementPage() {
                 If you are being pressured by collection representatives from the <strong>si creva capital loan app</strong>, Kissht, or Ring, know that you have enforceable legal protections under RBI's Digital Lending Directions. <strong>AMA Legal Solutions</strong> intervenes directly to halt recovery intimidation and negotiate an official One-Time Settlement (OTS) letter.
               </p>
             </section>
+
+                  {/* Immediate Lead Funnel Intake */}
+                  <div className="not-prose my-10">
+                    <InteractiveLeadFunnel preset="bank-settlement" />
+                  </div>
+
 
             {/* App Loans */}
             <section id="app-loans" className="mb-16 scroll-mt-32">

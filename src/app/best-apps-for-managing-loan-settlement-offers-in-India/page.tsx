@@ -4,6 +4,7 @@ import Image from "next/image";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { Metadata } from "next";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 export const metadata: Metadata = {
   title: "Best Loan Settlement App in India | Top Debt Apps & Legal Review",
@@ -287,6 +288,12 @@ export default function BestAppsForLoanSettlementPage() {
                       Whether you are dealing with aggressive recovery agent home visits or arbitration notices from digital lenders, choosing the right <strong>loan settlement app india</strong> ecosystem gives you the legal shield and financial clarity needed to permanently exit debt.
                     </p>
                   </section>
+
+                  {/* Immediate Lead Funnel Intake */}
+                  <div className="not-prose my-10">
+                    <InteractiveLeadFunnel preset="best-agencies" />
+                  </div>
+
 
                   {/* RBI 2025 Guidelines */}
                   <section id="rbi-guidelines-2025" className="scroll-mt-32">

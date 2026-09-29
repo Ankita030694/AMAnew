@@ -4,6 +4,7 @@ import GenericStatesGrid from "@/components/GenericStatesGrid";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 export const metadata = {
   title: "Loan Settlement in West Bengal | AMA Legal",
@@ -205,9 +206,14 @@ export default function WestBengalLoanSettlementPage() {
                     Unlike marketing middlemen, our dedicated <strong>loan settlement lawyers in kolkata</strong> step in to directly handle creditor communications, protect your family against aggressive recovery harassment, and negotiate formal One-Time Settlement (OTS) terms with major banks and NBFCs.
                   </p>
                   <p className="text-lg leading-relaxed text-gray-700">
-                    Recognized as the <strong>best loan settlement agency in kolkata</strong>, our advocates represent borrowers across Alipore Court, the Calcutta High Court, Bankshall Court, and Debt Recovery Tribunals (DRT Kolkata). Whether you need structured settlement support in North 24 Parganas, South 24 Parganas, or anywhere across the state, we help you legally close your outstanding debts with substantial waiver discounts.
+                    Recognized as the <strong>best loan settlement agency in kolkata</strong>, our advocates represent borrowers across Alipore Court, the Calcutta High Court, Bankshall Court, and Debt Recovery Tribunals (DRT Kolkata). For dedicated local legal defense in the city, visit our <Link href="/services/loan-settlement/kolkata" className="text-[#D2A02A] font-bold hover:underline">Loan Settlement Agency in Kolkata</Link> portal. Whether you need structured settlement support in North 24 Parganas, South 24 Parganas, or anywhere across the state, we help you legally close your outstanding debts with substantial waiver discounts.
                   </p>
                 </section>
+
+                {/* Immediate Lead Funnel Intake */}
+                <div className="not-prose my-10">
+                  <InteractiveLeadFunnel preset="bank-settlement" />
+                </div>
 
                 {/* What is Loan Settlement */}
                 <section id="what-is-settlement" className="scroll-mt-32">

@@ -4,6 +4,7 @@ import Image from "next/image";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // FAQ data for rendering and Schema
 const faqs = [
@@ -304,6 +305,12 @@ export default function LoanSettlementAppPage() {
                     The digital revolution has also forced banks and NBFCs to modernize their own internal processes. Many institutions now have dedicated digital portals for settlement discussions, recognizing that a professional, transparent negotiation is more efficient than a prolonged, antagonistic collection cycle. Our app integrates with these institutional frameworks, ensuring that every proposal we send is received by the right credit committee and evaluated on its merits. This institutional alignment is what allows us to achieve such significant waivers for our clients, often reaching up to 50% or even 70% of the total outstanding amount in cases of extreme hardship.
                   </p>
                 </section>
+
+                  {/* Immediate Lead Funnel Intake */}
+                  <div className="not-prose my-10">
+                    <InteractiveLeadFunnel preset="best-agencies" />
+                  </div>
+
 
                 {/* Detailed Section: Understanding the Technical Architecture of a Debt App */}
                 <section id="technical-architecture" className="scroll-mt-32">

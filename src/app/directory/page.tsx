@@ -24,6 +24,7 @@ export async function generateMetadata({
 }
 
 const directoryLinks = [
+  { name: 'Loan Settlement for Axis Bank: Credit Card & Personal Loan Debt Relief', href: '/loan-settlement-for-axis-bank' },
   { name: 'Loan Settlement Agency Fees and Charges in India', href: '/loan-settlement-agency-fees-and-charges-in-india' },
   { name: 'Loan Settlement Agency in Bangalore: Debt Settlement Lawyers in Bengaluru', href: '/services/loan-settlement/bangalore' },
   { name: 'Loan Settlement Agency in Kolkata: Debt Relief Advocates & OTS Services', href: '/services/loan-settlement/kolkata' },

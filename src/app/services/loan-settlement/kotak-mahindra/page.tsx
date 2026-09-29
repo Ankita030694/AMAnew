@@ -5,6 +5,7 @@ import FaqSection from "./FaqSection";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUniversity, FaGavel, FaBalanceScale, FaUserTie, FaPhoneSlash } from "react-icons/fa";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // Breadcrumb Schema
 const breadcrumbSchema = {
@@ -219,6 +220,12 @@ export default function KotakLoanSettlementPage() {
             <strong>Kotak Loan Settlement</strong> is a legitimate process that allows you to negotiate with the bank to close your loan account by paying a reduced amount. At AMA Legal Solutions, we provide expert legal representation to help you navigate this process, stop the harassment, and settle your debt for a fraction of the outstanding amount.
           </p>
         </div>
+
+        {/* Immediate Lead Funnel Intake */}
+        <div className="container mx-auto px-4 max-w-4xl my-10">
+          <InteractiveLeadFunnel preset="bank-settlement" />
+        </div>
+
 
         {/* What is OTS - Card Layout */}
         <div id="what-is-ots" className="bg-gray-50 py-20 scroll-mt-32">

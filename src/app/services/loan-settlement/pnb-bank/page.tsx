@@ -5,6 +5,7 @@ import FaqSection from "./FaqSection";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUniversity, FaGavel, FaBalanceScale, FaUserTie, FaPhoneSlash, FaTractor, FaIndustry } from "react-icons/fa";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // Breadcrumb Schema
 const breadcrumbSchema = {
@@ -217,6 +218,12 @@ export default function PNBLoanSettlementPage() {
               However, dealing with PNB officials can be daunting. The fear of SARFAESI action (for secured loans) or Section 138 cases (for cheque bounce) is real. At AMA Legal Solutions, we bridge the gap. We understand the internal hierarchy of PNB-from the Branch Manager to the Circle Office-and use this knowledge to negotiate the best settlement for you.
             </p>
           </div>
+
+        {/* Immediate Lead Funnel Intake */}
+        <div className="container mx-auto px-4 max-w-4xl my-10">
+          <InteractiveLeadFunnel preset="bank-settlement" />
+        </div>
+
 
           {/* OTS Schemes Section */}
           <div id="ots-schemes" className="bg-gray-50 py-20 scroll-mt-32">

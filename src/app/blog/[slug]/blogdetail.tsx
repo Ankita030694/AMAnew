@@ -7,6 +7,9 @@ import Breadcrumbs from '../../../components/Breadcrumbs';
 import TableOfContents from '../../../components/TableOfContents';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faUser, faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
+import { Scale, ShieldCheck, ArrowRight } from 'lucide-react';
+import { openLeadModal } from '@/components/InteractiveLeadModal';
+import { FunnelPreset } from '@/components/InteractiveLeadFunnel';
 
 // Lazy load heavy components
 const LazyImage = dynamic(() => import('next/image'), { 
@@ -155,6 +158,14 @@ const processContent = (html: string, fallbackTitle?: string) => {
     }
   );
 
+  // Wrap all tables in an overflow-x-auto responsive container so they never push past the mobile screen width
+  modifiedContent = modifiedContent.replace(
+    /<table([^>]*)>([\s\S]*?)<\/table>/gi,
+    (match, attrs, tableInner) => {
+      return `<div class="blog-table-responsive my-6 w-full max-w-full overflow-x-auto rounded-xl border border-gray-200 shadow-xs"><table${attrs}>${tableInner}</table></div>`;
+    }
+  );
+
   // Strip nofollow from internal links (links to our own domain or relative paths)
   // This prevents SEO tools from flagging our own pages as "blocked by nofollow"
   modifiedContent = modifiedContent.replace(
@@ -257,11 +268,86 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
     return processContent(blog.description, blog.title);
   }, [blog.description, blog.title]);
 
-  // Split content for middle infographic placement if infographic exists
+  // Split content for middle placement (infographic & case assessment callout)
   const { firstPart, secondPart } = useMemo(() => {
-    if (!blog.infographic) return { firstPart: processedContent, secondPart: '' };
     return splitContentForInfographic(processedContent);
-  }, [processedContent, blog.infographic]);
+  }, [processedContent]);
+
+  // Contextual legal funnel preset based on blog topic
+  const blogPreset: FunnelPreset = useMemo(() => {
+    const text = `${blog.slug} ${blog.title} ${blog.description || ''}`.toLowerCase();
+    if (
+      text.includes("recovery") || 
+      text.includes("agent") || 
+      text.includes("harass") || 
+      text.includes("threat") || 
+      text.includes("police") ||
+      text.includes("visit")
+    ) {
+      return "recovery-harassment";
+    }
+    if (
+      text.includes("payday") || 
+      text.includes("7-day") || 
+      text.includes("instant loan") || 
+      text.includes("loan app") || 
+      text.includes("chinese")
+    ) {
+      return "payday-loans";
+    }
+    if (
+      text.includes("salary") || 
+      text.includes("resignation") || 
+      text.includes("fnf") || 
+      text.includes("employer") || 
+      text.includes("unpaid") ||
+      text.includes("wages")
+    ) {
+      return "employment-salary";
+    }
+    if (
+      text.includes("lok adalat") || 
+      text.includes("challan") ||
+      text.includes("traffic")
+    ) {
+      return "lok-adalat";
+    }
+    if (
+      text.includes("settle") || 
+      text.includes("ots") || 
+      text.includes("bank") || 
+      text.includes("loan") || 
+      text.includes("credit card") || 
+      text.includes("cibil") || 
+      text.includes("npa") || 
+      text.includes("notice") || 
+      text.includes("drt") ||
+      text.includes("debt")
+    ) {
+      return "bank-settlement";
+    }
+    return "homepage";
+  }, [blog.slug, blog.title, blog.description]);
+
+  // Contextual headline for the callout banner
+  const calloutHeadline = useMemo(() => {
+    if (blogPreset === "recovery-harassment") return "Facing Harassment from Recovery Agents?";
+    if (blogPreset === "payday-loans") return "Trapped by Instant Loan Apps & Blackmail Threats?";
+    if (blogPreset === "employment-salary") return "Is Your Employer Withholding Your Salary or FnF Dues?";
+    if (blogPreset === "lok-adalat") return "Need Advocate Representation in Lok Adalat?";
+    if (blogPreset === "bank-settlement") return "Struggling With High Debt or Bank NPA Notices?";
+    return "Need Confidential Legal Guidance for This Matter?";
+  }, [blogPreset]);
+
+  // Contextual CTA button text
+  const calloutCtaText = useMemo(() => {
+    if (blogPreset === "recovery-harassment") return "Evaluate Harassment Defense →";
+    if (blogPreset === "payday-loans") return "Evaluate Cyber Defense →";
+    if (blogPreset === "employment-salary") return "Evaluate Salary Recovery →";
+    if (blogPreset === "lok-adalat") return "Evaluate Lok Adalat Relief →";
+    if (blogPreset === "bank-settlement") return "Evaluate Debt Settlement →";
+    return "Evaluate Your Case (30 Sec) →";
+  }, [blogPreset]);
 
     useEffect(() => {
     setCurrentUrl(window.location.href);
@@ -376,7 +462,7 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
           )}
 
           {/* Main Content Area */}
-          <div className="min-w-0">
+          <div className="min-w-0 max-w-full overflow-hidden">
             {/* TOC (Mobile) */}
             {tocSections.length > 0 && (
               <div className="lg:hidden mb-8">
@@ -384,7 +470,7 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
               </div>
             )}
 
-            <div className="bg-white p-6 md:p-12 rounded-2xl shadow-sm space-y-12">
+            <div className="bg-white p-4 sm:p-6 md:p-12 rounded-2xl shadow-sm space-y-8 sm:space-y-12 max-w-full overflow-hidden">
               {/* Meta details & Share */}
               <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center border-b border-gray-100 pb-6 mb-6 gap-4">
                 <div className="text-xs md:text-sm text-gray-500 font-medium">
@@ -406,7 +492,7 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
 
               {/* First Part of Article Content */}
               <div 
-                className="prose prose-lg max-w-none text-gray-700 tiptap-content"
+                className="prose prose-lg max-w-none text-gray-700 tiptap-content w-full max-w-full overflow-hidden"
                 dangerouslySetInnerHTML={{ __html: firstPart }}
               />
 
@@ -441,16 +527,91 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
                 </div>
               )}
 
+              {/* Mid-Article Advocate Case Assessment Callout (Mobile-First) */}
+              <div className="my-8 sm:my-10 p-4 sm:p-7 rounded-2xl bg-gradient-to-br from-[#FAF7F0] via-[#FCFBF8] to-[#F5EFE0] border-2 border-[#D2A02A]/35 shadow-sm relative overflow-hidden">
+                {/* Subtle legal emblem watermark */}
+                <div className="absolute -right-4 -bottom-4 opacity-5 pointer-events-none text-[#5A4C33]">
+                  <Scale className="w-32 h-32 sm:w-40 sm:h-40" />
+                </div>
+
+                <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-6">
+                  <div className="space-y-2 max-w-xl">
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#D2A02A]/15 border border-[#D2A02A]/30 text-[#855B14] text-[11px] sm:text-xs font-bold tracking-wide uppercase">
+                      <Scale className="w-3.5 h-3.5 text-[#D2A02A]" />
+                      <span>Statutory Case Assessment</span>
+                    </div>
+                    
+                    <h3 className="text-base sm:text-xl font-extrabold text-[#1a202c] leading-snug">
+                      {calloutHeadline}
+                    </h3>
+                    
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                      Consult directly with experienced High Court advocates to analyze your bank liability, illegal recovery defense, or statutory settlement options under Section 126 Advocate-Client Privilege.
+                    </p>
+
+                    <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-1 text-[11px] sm:text-xs text-gray-500 font-medium">
+                      <span className="flex items-center gap-1 text-emerald-700 font-semibold">
+                        <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> 100% Confidential
+                      </span>
+                      <span>•</span>
+                      <span>No Bank or Employer Disclosure</span>
+                    </div>
+                  </div>
+
+                  <div className="shrink-0 w-full md:w-auto pt-1 sm:pt-0">
+                    <button
+                      type="button"
+                      onClick={() => openLeadModal({ preset: blogPreset })}
+                      className="w-full md:w-auto px-5 sm:px-6 py-3.5 bg-gradient-to-r from-[#30261C] to-[#1C160F] text-[#FAF7F0] hover:text-white font-bold rounded-xl shadow-md active:scale-[0.98] transition-all flex items-center justify-center gap-2 text-xs sm:text-sm border border-[#D2A02A]/40 group"
+                    >
+                      <span>{calloutCtaText}</span>
+                      <ArrowRight className="w-4 h-4 text-[#D2A02A] group-hover:translate-x-1 transition-transform" />
+                    </button>
+                    <p className="text-[10px] sm:text-[11px] text-gray-400 text-center md:text-right mt-1.5 font-medium">
+                      Takes ~30 seconds • Directly reviewed by advocates
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               {/* Second Part of Article Content (if present) */}
               {secondPart && (
                 <div 
-                  className="prose prose-lg max-w-none text-gray-700 tiptap-content"
+                  className="prose prose-lg max-w-none text-gray-700 tiptap-content w-full max-w-full overflow-hidden"
                   dangerouslySetInnerHTML={{ __html: secondPart }}
                 />
               )}
 
+              {/* End of Article Legal Action Card */}
+              <div className="mt-8 sm:mt-10 p-4 sm:p-6 rounded-2xl bg-[#30261C] text-white border border-[#D2A02A]/40 shadow-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="space-y-1">
+                  <div className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#D2A02A]">
+                    Senior Advocate Review & Strategy
+                  </div>
+                  <h4 className="text-sm sm:text-base font-bold text-[#FAF7F0]">
+                    Need Strategic Legal Defense for Your Situation?
+                  </h4>
+                  <p className="text-xs text-gray-300 max-w-lg leading-relaxed">
+                    Our banking & litigation advocates review your notices, debt liability, and recovery issues under complete advocate-client secrecy.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => openLeadModal({ preset: blogPreset })}
+                  className="w-full sm:w-auto px-5 py-3 bg-[#D2A02A] hover:bg-[#b88a22] text-[#1C160F] font-bold rounded-xl text-xs sm:text-sm transition-all shadow-md active:scale-[0.98] text-center shrink-0 flex items-center justify-center gap-1.5"
+                >
+                  <span>Start Free Evaluation →</span>
+                </button>
+              </div>
+
               {/* Tiptap Styles */}
               <style jsx global>{`
+                .tiptap-content {
+                  overflow-wrap: break-word;
+                  word-wrap: break-word;
+                  word-break: break-word;
+                  max-width: 100%;
+                }
                 .tiptap-content h1 { font-size: 2em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.8em; color: #1a202c; }
                 .tiptap-content h2 { font-size: 1.75em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.8em; color: #1a202c; scroll-margin-top: 100px; }
                 .tiptap-content h3 { font-size: 1.5em; font-weight: bold; margin-top: 1.2em; margin-bottom: 0.6em; color: #2d3748; scroll-margin-top: 100px; }
@@ -462,13 +623,43 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
                 .tiptap-content img { border-radius: 0.5rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 2rem 0; }
                 .tiptap-content a { color: #B8860B; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; transition: color 0.15s ease; }
                 .tiptap-content a:hover { color: #8A6508; text-decoration-color: #8A6508; }
-                .tiptap-content table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 2.5rem 0; border: 1px solid #e2e8f0; border-radius: 0.75rem; overflow: hidden; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05); }
-                .tiptap-content th { background: #FAF7F0; color: #1a202c; padding: 0.9rem 1.1rem; text-align: left; font-weight: 700; font-size: 0.95rem; border-bottom: 2px solid #D2A02A; border-right: 1px solid #e2e8f0; }
+                .blog-table-responsive {
+                  width: 100%;
+                  max-width: 100%;
+                  overflow-x: auto;
+                  -webkit-overflow-scrolling: touch;
+                  margin: 1.75rem 0;
+                  border-radius: 0.75rem;
+                  border: 1px solid #e2e8f0;
+                  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+                }
+                .tiptap-content table { 
+                  width: 100%; 
+                  min-width: 500px; 
+                  border-collapse: separate; 
+                  border-spacing: 0; 
+                  margin: 0; 
+                  border: none;
+                }
+                @media (max-width: 768px) {
+                  .tiptap-content table {
+                    display: block;
+                    width: 100%;
+                    max-width: 100%;
+                    overflow-x: auto;
+                    -webkit-overflow-scrolling: touch;
+                    font-size: 0.85rem;
+                  }
+                }
+                .tiptap-content th { background: #FAF7F0; color: #1a202c; padding: 0.8rem 1rem; text-align: left; font-weight: 700; font-size: 0.9rem; border-bottom: 2px solid #D2A02A; border-right: 1px solid #e2e8f0; white-space: nowrap; }
                 .tiptap-content th:last-child { border-right: none; }
-                .tiptap-content td { padding: 0.85rem 1.1rem; border-bottom: 1px solid #edf2f7; border-right: 1px solid #edf2f7; font-size: 0.925rem; vertical-align: top; }
+                .tiptap-content td { padding: 0.75rem 1rem; border-bottom: 1px solid #edf2f7; border-right: 1px solid #edf2f7; font-size: 0.875rem; vertical-align: top; white-space: normal; word-break: break-word; }
                 .tiptap-content td:last-child { border-right: none; }
                 .tiptap-content tr:last-child td { border-bottom: none; }
                 .tiptap-content tr:nth-child(even) { background-color: #fdfbf7; }
+                .blog-table-responsive::-webkit-scrollbar { height: 5px; }
+                .blog-table-responsive::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+                .blog-table-responsive::-webkit-scrollbar-thumb { background: #D2A02A; border-radius: 4px; }
               `}</style>
               
               {/* References Section */}
@@ -756,24 +947,29 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
                 </div>
               )}
 
-              {/* Contact Card */}
-              <div className="bg-[#5A4C33] p-6 rounded-xl shadow-sm text-white">
-                <h3 className="text-xl font-bold mb-4">Need Legal Help?</h3>
-                <p className="text-gray-200 mb-6 text-sm">
-                  Get expert advice on loan settlement and debt relief.
+              {/* Case Assessment & Contact Card */}
+              <div className="bg-[#30261C] p-6 rounded-xl shadow-md text-white border border-[#D2A02A]/30">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#D2A02A]/20 text-[#D2A02A] text-[11px] font-bold uppercase tracking-wider mb-3">
+                  <Scale className="w-3.5 h-3.5" />
+                  <span>Advocate Defense</span>
+                </div>
+                <h3 className="text-lg font-bold mb-2 text-[#FAF7F0]">Need Legal Representation?</h3>
+                <p className="text-gray-300 mb-5 text-xs sm:text-sm leading-relaxed">
+                  Evaluate your defense against recovery agents, notices, or structure your loan settlement directly with Senior Advocates.
                 </p>
+                <button
+                  type="button"
+                  onClick={() => openLeadModal({ preset: blogPreset })}
+                  className="block w-full bg-[#D2A02A] text-[#1C160F] text-center py-3 rounded-lg font-bold hover:bg-[#b88a22] hover:text-white transition-colors mb-3 shadow-md text-sm active:scale-[0.98]"
+                >
+                  Start Case Assessment →
+                </button>
                 <a 
                   href="tel:+918700343611" 
-                  className="block w-full bg-[#D2A02A] text-white text-center py-3 rounded-lg font-semibold hover:bg-[#b88a22] transition-colors mb-4"
+                  className="block w-full border border-white/40 text-white text-center py-2.5 rounded-lg text-xs font-semibold hover:bg-white hover:text-[#30261C] transition-colors"
                 >
                   Call +91-8700343611
                 </a>
-                <Link 
-                  href="/contact" 
-                  className="block w-full border border-white text-white text-center py-3 rounded-lg font-semibold hover:bg-white hover:text-[#5A4C33] transition-colors"
-                >
-                  Request Callback
-                </Link>
               </div>
             </div>
         </div>

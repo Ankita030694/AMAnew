@@ -3,6 +3,7 @@ import Script from "next/script";
 import Image from "next/image";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // FAQ data for rendering and Schema
 const faqs = [
@@ -277,6 +278,12 @@ export default function CharitiesDebtReliefPage() {
                     </p>
                   </div>
                 </section>
+
+                  {/* Immediate Lead Funnel Intake */}
+                  <div className="not-prose my-10">
+                    <InteractiveLeadFunnel preset="bank-settlement" />
+                  </div>
+
 
                 <section id="charities-list" className="scroll-mt-32 bg-gray-50 p-10 md:p-16 rounded-[40px] border border-gray-100 shadow-inner">
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900">A Detailed Portfolio of Debt Support Organizations in India</h2>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaCheckCircle } from "react-icons/fa";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 export const metadata = {
   title: "RBI Guidelines for Recovery Agents PDF 2026: Rules & Rights",
@@ -176,6 +177,12 @@ export default function RBIRecoveryAgents2026Guide() {
           </div>
         </div>
       </section>
+
+                  {/* Immediate Lead Funnel Intake */}
+                  <div className="not-prose my-10">
+                    <InteractiveLeadFunnel preset="recovery-harassment" />
+                  </div>
+
 
       {/* Breadcrumbs */}
       <div className="max-w-7xl mx-auto px-6 mt-8">

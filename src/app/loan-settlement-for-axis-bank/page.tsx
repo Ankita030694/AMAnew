@@ -4,6 +4,7 @@ import Image from "next/image";
 import Script from "next/script";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 import { 
   FaPhone, 
   FaWhatsapp, 
@@ -636,24 +637,8 @@ export default function AxisBankLoanSettlement() {
 
             </article>
 
-            {/* Quick Contact Form Banner */}
-            <div className="mt-16 p-8 rounded-3xl bg-[#EBE9E4] border border-[#30261C]/5 relative overflow-hidden">
-              <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-                <div>
-                  <h3 className="text-xl font-bold mb-2">Need Expert Help with Your Axis Bank Settlement?</h3>
-                  <p className="text-sm text-[#30261C]/70 max-w-xl">
-                    Schedule a confidential legal consultation with our advocates to evaluate your financial hardship and design a safe compromise settlement strategy.
-                  </p>
-                </div>
-                <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
-                  <Link href="/contact" className="w-full sm:w-auto">
-                    <button className="w-full bg-[#D29E0D] hover:bg-[#b88a22] text-white font-bold py-3.5 px-6 rounded-full transition-all text-center">
-                      Get Legal Assistance
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </div>
+            {/* Interactive Legal Intake Funnel */}
+            <InteractiveLeadFunnel preset="axis-bank" className="mt-12" />
 
           </main>
 

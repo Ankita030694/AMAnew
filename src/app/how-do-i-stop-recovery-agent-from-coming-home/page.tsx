@@ -4,6 +4,7 @@ import Script from "next/script";
 import Image from "next/image";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // FAQ data for rendering and Schema
 const faqs = [
@@ -327,6 +328,11 @@ export default function StopRecoveryAgentPage() {
                         </p>
                     </div>
                   </section>
+
+                  {/* Immediate Lead Funnel Intake */}
+                  <div className="not-prose my-10">
+                    <InteractiveLeadFunnel preset="recovery-harassment" />
+                  </div>
 
                   <section id="legal-reality" className="scroll-mt-32 bg-gray-50 p-12 rounded-[40px] border border-gray-100">
                     <h2 className="text-3xl font-black text-gray-900 mb-8 uppercase tracking-widest">The Harsh Legal Reality of Debt Collection</h2>

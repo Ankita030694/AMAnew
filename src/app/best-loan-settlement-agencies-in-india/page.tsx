@@ -4,6 +4,7 @@ import Image from "next/image";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 const faqs = [
   {
@@ -303,7 +304,7 @@ export default function BestLoanSettlementAgenciesPage() {
                   </p>
                   <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">FREED (Freed.care)</h3>
                   <p className="text-sm md:text-lg leading-relaxed mb-6 text-gray-700">
-                    FREED is a technology-enabled debt relief platform in India. They utilize a &quot;Special Purpose Account&quot; (SPA) system where clients make monthly contributions to a dedicated savings account. Once the account accumulates a sufficient balance, FREED approaches creditors to negotiate a settlement using the saved funds. While this structured savings approach works well for unsecured credit card debt, it is primarily a financial mediation model. If lenders initiate formal legal proceedings under Section 138 or the SARFAESI Act, borrowers may require separate legal representation.
+                    FREED is a technology-enabled debt relief platform in India. They utilize a &quot;Special Purpose Account&quot; (SPA) system where clients make monthly contributions to a dedicated savings account. Once the account accumulates a sufficient balance, FREED approaches creditors to negotiate a settlement using the saved funds. While this structured savings approach works well for unsecured credit card debt, it is primarily a financial mediation model. If lenders initiate formal legal proceedings under Section 138 or the SARFAESI Act, borrowers may require separate legal representation. For a detailed comparison, explore our comprehensive <Link href="/freed-loan-settlement-review-and-legal-alternatives" className="text-[#D2A02A] font-semibold hover:underline">Freed Loan Settlement Review and Legal Alternatives</Link>.
                   </p>
                   <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">SettleMyLoan (SML)</h3>
                   <p className="text-sm md:text-lg leading-relaxed mb-6 text-gray-700">
@@ -415,29 +416,8 @@ export default function BestLoanSettlementAgenciesPage() {
                   </div>
                 </section>
 
-                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-xl md:rounded-3xl p-6 md:p-16 text-center text-white relative overflow-hidden">
-                  <div className="relative z-10">
-                    <h2 className="text-xl md:text-5xl font-bold mb-4 md:mb-6">Reclaim Your Financial Freedom Today</h2>
-                    <p className="text-sm md:text-xl opacity-90 mb-6 md:mb-10 max-w-2xl mx-auto">
-                      Do not let bank notices and recovery harassment take over your life. Secure structured legal protection and resolve your outstanding debts with confidence.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-                      <Link href="/contact">
-                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
-                          Book a Free Legal Consultation
-                        </button>
-                      </Link>
-                      <a href="tel:+918700343611">
-                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all text-sm md:text-lg w-full sm:w-auto">
-                          Call: +91-8700343611
-                        </button>
-                      </a>
-                    </div>
-                    <p className="mt-4 md:mt-8 text-xs md:text-sm opacity-70">
-                      100% Confidential & Secure Legal Support
-                    </p>
-                  </div>
-                </section>
+                {/* Interactive Advocate Representation Lead Funnel */}
+                <InteractiveLeadFunnel preset="best-agencies" className="my-12" />
 
               </div>
             </div>
@@ -468,6 +448,31 @@ export default function BestLoanSettlementAgenciesPage() {
                   <li>
                     <Link href="/services/loan-settlement" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
                       <span className="mr-2">›</span> Loan Settlement Services
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/when-to-choose-debt-settlement" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                      <span className="mr-2">›</span> When to Choose Debt Settlement
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/bankruptcy-lawyer-in-india" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                      <span className="mr-2">›</span> Bankruptcy & Insolvency Lawyers
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/loan-settlement-agency-fees-and-charges-in-india" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                      <span className="mr-2">›</span> Agency Fees & Charges Guide
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/services/loan-settlement/kolkata" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                      <span className="mr-2">›</span> Kolkata Debt Settlement Advocates
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/services/loan-settlement/bangalore" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                      <span className="mr-2">›</span> Bangalore Debt Settlement Lawyers
                     </Link>
                   </li>
                   <li>

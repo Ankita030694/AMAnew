@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // FAQ data
 const faqs = [
@@ -239,14 +240,14 @@ export default function LoanSettlementCalculatorClient() {
   ];
 
   const banks = [
-    { name: "SBI", href: "/services/loan-settlement/sbi-bank" },
-    { name: "HDFC", href: "/services/loan-settlement/hdfc-bank" },
+    { name: "SBI", href: "/loan-settlement-for-sbi-bank" },
+    { name: "HDFC", href: "/loan-settlement-for-hdfc-bank" },
     { name: "ICICI", href: "/services/loan-settlement/icici-bank" },
     { name: "Kotak Mahindra", href: "/services/loan-settlement/kotak-mahindra" },
     { name: "IDFC", href: "/services/loan-settlement/idfc-bank" },
     { name: "Yes Bank", href: "/services/loan-settlement/yes-bank" },
     { name: "Bajaj Finserv", href: "/services/loan-settlement/bajaj-finserv" },
-    { name: "Axis Bank", href: "/services/loan-settlement/axis-bank" },
+    { name: "Axis Bank", href: "/loan-settlement-for-axis-bank" },
     { name: "Bank of Baroda", href: "/services/loan-settlement/bank-of-baroda" },
     { name: "Hero Fincorp", href: "/services/loan-settlement/hero-fincorp" },
     { name: "Aditya Birla", href: "/services/loan-settlement/aditya-birla" },
@@ -469,10 +470,21 @@ export default function LoanSettlementCalculatorClient() {
                                  <p><strong className="text-emerald-400">Lender Dynamics:</strong> {result.lenderNote}</p>
                               </div>
 
-                              <div className="mt-8 flex flex-col md:flex-row gap-4 justify-center">
-                                 <Link href="/contact" className="bg-[#D2A02A] text-white px-8 py-3.5 rounded-full font-bold hover:bg-[#b88a22] transition-all text-center text-sm md:text-base">
-                                   Initiate Legal Negotiation
-                                 </Link>
+                              <div className="mt-8">
+                                 <InteractiveLeadFunnel
+                                    preset="calculator"
+                                    theme="dark"
+                                    calculatorData={{
+                                       loanAmount: principal + interest + penalty,
+                                       estimatedMin: result.min,
+                                       estimatedMax: result.max,
+                                       waiverPercent: `${result.waiverMinPercent}% to ${result.waiverMaxPercent}%`,
+                                       lenderType
+                                    }}
+                                 />
+                              </div>
+
+                              <div className="mt-6 flex flex-col md:flex-row gap-4 justify-center">
                                  <Link href="tel:+918700343611" className="bg-white/10 border border-white/20 text-white px-8 py-3.5 rounded-full font-bold hover:bg-white/20 transition-all text-center text-sm md:text-base">
                                    Speak with Advocate (+91-8700343611)
                                  </Link>
@@ -929,6 +941,10 @@ export default function LoanSettlementCalculatorClient() {
                   <ul className="space-y-3 text-sm">
                     <li><Link href="/services/loan-settlement" className="text-gray-600 hover:text-[#D2A02A] flex items-center"><span className="mr-2">›</span> Personal Loan Help</Link></li>
                     <li><Link href="/services/debt-consolidation" className="text-gray-600 hover:text-[#D2A02A] flex items-center"><span className="mr-2">›</span> Debt Consolidation</Link></li>
+                    <li><Link href="/when-to-choose-debt-settlement" className="text-gray-600 hover:text-[#D2A02A] flex items-center"><span className="mr-2">›</span> When to Choose Debt Settlement</Link></li>
+                    <li><Link href="/bankruptcy-lawyer-in-india" className="text-gray-600 hover:text-[#D2A02A] flex items-center"><span className="mr-2">›</span> Bankruptcy & Insolvency Lawyers</Link></li>
+                    <li><Link href="/freed-loan-settlement-review-and-legal-alternatives" className="text-gray-600 hover:text-[#D2A02A] flex items-center"><span className="mr-2">›</span> Freed vs Legal Debt Settlement</Link></li>
+                    <li><Link href="/loan-settlement-agency-fees-and-charges-in-india" className="text-gray-600 hover:text-[#D2A02A] flex items-center"><span className="mr-2">›</span> Settlement Agency Fee Rules</Link></li>
                     <li><Link href="/services/banking-and-finance" className="text-gray-600 hover:text-[#D2A02A] flex items-center"><span className="mr-2">›</span> Banking & Finance</Link></li>
                     <li><Link href="/services/civil" className="text-gray-600 hover:text-[#D2A02A] flex items-center"><span className="mr-2">›</span> Civil Litigation</Link></li>
                   </ul>

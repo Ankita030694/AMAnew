@@ -4,6 +4,7 @@ import Image from "next/image";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // FAQ data for rendering and Schema
 const faqs = [
@@ -319,6 +320,12 @@ export default function BankComplaintRBIPage() {
                     At AMA Legal Solutions, we have helped thousands of clients navigate the complexities of banking laws. We understand that a <strong>bank complaint in RBI</strong> is not just a form; it is a legal document that requires precision, evidence, and a clear understanding of the RBI guidelines. In the following sections, we will walk you through every step of this journey, ensuring that you have the tools to reclaim your rights.
                   </p>
                 </section>
+
+                  {/* Immediate Lead Funnel Intake */}
+                  <div className="not-prose my-10">
+                    <InteractiveLeadFunnel preset="bank-settlement" />
+                  </div>
+
 
                 {/* What is RBI Complaint */}
                 <section id="what-is-rbi-complaint" className="scroll-mt-32">

@@ -4,6 +4,7 @@ import Script from "next/script";
 import Image from "next/image";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // FAQ data for rendering and Schema
 const faqs = [
@@ -331,6 +332,12 @@ export default function HarassmentComplaintPage() {
                     </p>
                   </div>
                 </section>
+
+                  {/* Immediate Lead Funnel Intake */}
+                  <div className="not-prose my-10">
+                    <InteractiveLeadFunnel preset="recovery-harassment" />
+                  </div>
+
 
                 <section id="legal-rights" className="scroll-mt-32">
                   <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-6 border-b-4 border-[#D2A02A] pb-2 inline-block">Your Legal Shield: The Fundamental Rights & IPC Protections</h2>

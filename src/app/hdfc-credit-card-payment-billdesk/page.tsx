@@ -3,6 +3,7 @@ import Script from "next/script";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { FaShieldAlt } from "react-icons/fa";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // FAQ data for rendering and Schema
 const faqs = [
@@ -251,6 +252,12 @@ export default function HDFCCreditCardPaymentBillDeskPage() {
                     For cardholders who do not have access to <strong>HDFC Credit Card NetBanking</strong>-which is reserved exclusively for retail banking clients of HDFC Bank-the BillDesk portal is an essential resource. It removes the requirement to download mobile applications, create new usernames, or undergo complex registration processes. Users simply need their active credit card number and their primary bank&apos;s <Link href="/hdfc-credit-card-payment-online" className="text-[#D2A02A] font-semibold hover:underline">internet banking credentials</Link> to clear outstanding balances. This convenience has made the BillDesk channel one of the most widely used systems for external card payments in the country.
                   </p>
                 </section>
+
+                  {/* Immediate Lead Funnel Intake */}
+                  <div className="not-prose my-10">
+                    <InteractiveLeadFunnel preset="bank-settlement" />
+                  </div>
+
 
                 {/* Step-by-Step Payment */}
                 <section id="step-by-step" className="scroll-mt-32">

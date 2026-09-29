@@ -15,6 +15,7 @@ const Testimonials = dynamic(() => import("@/newcomp/Testimonials"));
 const VideoTestimonials = dynamic(() => import("@/newcomp/VideoTestimonials"));
 const FAQ = dynamic(() => import("@/newcomp/FAQ"));
 const CTA = dynamic(() => import("@/newcomp/CTA"));
+const InteractiveLeadFunnel = dynamic(() => import("@/components/InteractiveLeadFunnel"));
 
 export const metadata = {
   title: 'AMA Legal Solutions | Top Full-Service Law Firm in India',
@@ -153,6 +154,11 @@ export default function Home() {
 
       <Counter />
       <Services />
+
+      {/* Interactive Quick Legal Assessment Funnel */}
+      <section className="max-w-6xl mx-auto px-4 lg:px-8 py-8 relative z-20">
+        <InteractiveLeadFunnel preset="homepage" />
+      </section>
       
       <div className="max-w-8xl mx-auto px-4 lg:px-20 py-8 grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-8 items-center bg-[#EBE9E4]">
         <Testimonials2 />

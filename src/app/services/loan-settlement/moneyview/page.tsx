@@ -7,6 +7,7 @@ import { faqs } from "./faqs";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import { FaMobileAlt, FaHandHoldingUsd, FaShieldAlt, FaPhoneAlt, FaBalanceScale, FaExclamationTriangle, FaUserTie, FaRegCheckCircle, FaBook, FaLandmark, FaMoneyBillWave, FaGavel, FaUserSecret } from "react-icons/fa";
 import { MdAppShortcut, MdMoneyOff } from "react-icons/md";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // Metadata
 export const metadata = {
@@ -246,6 +247,12 @@ export default function MoneyviewSettlementPage() {
                 </p>
               </div>
             </section>
+
+                  {/* Immediate Lead Funnel Intake */}
+                  <div className="not-prose my-10">
+                    <InteractiveLeadFunnel preset="bank-settlement" />
+                  </div>
+
 
             {/* App Loans */}
             <section id="app-loans" className="mb-16 scroll-mt-32">

@@ -3,6 +3,7 @@ import Script from "next/script";
 import Image from "next/image";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -291,6 +292,12 @@ export default function PayDayLoanSettlementPage() {
                   A crucial aspect of this journey is mental fortitude. Recovery agents rely heavily on psychological warfare. They use threats of public humiliation, legal action, and relentless phone calls to break your resolve. They want you to believe that you have no options and that the law is exclusively on their side. This is entirely false. The regulatory authorities have established strict boundaries that lenders must respect. When those boundaries are crossed, your leverage in negotiations increases dramatically. Knowing how to document these transgressions is the foundation of a successful resolution. We will walk you through the precise methodology to document harassment, build your case, and utilize official channels to bring the lender to the negotiating table. Do not let fear dictate your financial decisions. With the right strategy, you can settle your dues fairly and reclaim your peace of mind.
                 </p>
               </section>
+
+                  {/* Immediate Lead Funnel Intake */}
+                  <div className="not-prose my-10">
+                    <InteractiveLeadFunnel preset="payday-loans" />
+                  </div>
+
 
               <section id="mechanics-of-debt-traps" className="scroll-mt-32">
                 <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">The Mechanics of Payday Loan Debt Traps in India</h2>

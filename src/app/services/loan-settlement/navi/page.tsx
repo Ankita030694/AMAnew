@@ -5,6 +5,7 @@ import GenericStatesGrid from "@/components/GenericStatesGrid";
 import FaqSection from "./FaqSection";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUniversity, FaGavel, FaBalanceScale, FaUserTie, FaPhoneSlash, FaMobileAlt, FaLock, FaUserSecret } from "react-icons/fa";
 
 // Breadcrumb Schema
@@ -227,6 +228,11 @@ export default function NaviLoanSettlementPage() {
                 <strong>Critical Warning:</strong> Ignoring a digital loan is dangerous. Navi is a registered NBFC and has the legal power to initiate arbitration and report defaults to CIBIL, severely damaging your financial future.
               </p>
             </div>
+          </div>
+
+          {/* Immediate Lead Funnel Intake */}
+          <div className="container mx-auto px-4 max-w-4xl my-10">
+            <InteractiveLeadFunnel preset="bank-settlement" />
           </div>
 
           {/* 2. Navi's Recovery Methods */}

@@ -6,6 +6,7 @@ import FaqSection from "./FaqSection";
 import { faqs } from "./faqs";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUniversity, FaGavel, FaBalanceScale, FaUserTie, FaChartLine, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // Metadata
 export const metadata = {
@@ -224,6 +225,12 @@ export default function BankOfBarodaLoanSettlementPage() {
               At AMA Legal Solutions, we specialize in negotiating with public sector banks like Bank of Baroda. We understand their internal hierarchy, their settlement policies, and the legal framework they operate within. We stand between you and the bank, ensuring you are treated with dignity and that your rights are protected while we negotiate a settlement that you can afford.
             </p>
           </div>
+
+        {/* Immediate Lead Funnel Intake */}
+        <div className="container mx-auto px-4 max-w-4xl my-10">
+          <InteractiveLeadFunnel preset="bank-settlement" />
+        </div>
+
 
           {/* What is OTS - Card Layout */}
           <div id="understanding-settlement" className="bg-gray-50 py-20 scroll-mt-32">

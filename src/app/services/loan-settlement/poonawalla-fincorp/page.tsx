@@ -5,6 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 import { faqs } from "./faqs";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 import { 
   FaCheckCircle, 
   FaShieldAlt, 
@@ -256,6 +257,12 @@ export default function PoonawallaFincorpLoanSettlementPage() {
                   <p className="font-bold text-[#E31E24] mb-2">The AMA Promise:</p>
                   <p>We don't just negotiate numbers; we protect your dignity. We handle the legal complexities, stop the harassment, and ensure you get a clean exit from your debt.</p>
                 </div>
+
+        {/* Immediate Lead Funnel Intake */}
+        <div className="container mx-auto px-4 max-w-4xl my-10">
+          <InteractiveLeadFunnel preset="bank-settlement" />
+        </div>
+
               </div>
             </div>
 

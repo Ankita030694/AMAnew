@@ -4,6 +4,7 @@ import Image from "next/image";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // FAQ data for rendering and Schema
 const faqs = [
@@ -287,6 +288,12 @@ export default function UniquePaytmSettlementPage() {
                       </p>
                    </div>
                 </section>
+
+                  {/* Immediate Lead Funnel Intake */}
+                  <div className="not-prose my-10">
+                    <InteractiveLeadFunnel preset="bank-settlement" />
+                  </div>
+
 
                 {/* Tactical Mechanism: The Paytm Model */}
                 <section id="paytm-lending-model" className="p-8 md:p-14 bg-[#f0f9ff] rounded-[40px] border border-gray-100 relative overflow-hidden group">

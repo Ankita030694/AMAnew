@@ -3,6 +3,7 @@ import Script from "next/script";
 import Image from "next/image";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // FAQ data for rendering and Schema
 const faqs = [
@@ -513,28 +514,8 @@ export default function PaydayLoanSettlementPage() {
                   </div>
                 </section>
 
-                {/* CTA section */}
-                <section className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] rounded-xl md:rounded-[40px] p-6 md:p-16 text-center text-white relative overflow-hidden">
-                  <div className="relative z-10">
-                    <h2 className="text-xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight">Take Control of Your Financial Future</h2>
-                    <p className="text-sm md:text-xl opacity-90 mb-6 md:mb-10 max-w-2xl mx-auto">
-                      Do not let digital lenders harass you. Our expert legal team is ready to stand by you and secure your financial freedom.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-                      <Link href="/contact" className="w-full sm:w-auto">
-                        <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full">
-                          Book Consultation
-                        </button>
-                      </Link>
-                      <a href="tel:+918700343611" className="w-full sm:w-auto">
-                        <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-6 md:py-4 md:px-12 rounded-full transition-all text-sm md:text-lg w-full">
-                          Call: 8700343611
-                        </button>
-                      </a>
-                    </div>
-                    <p className="mt-8 text-sm opacity-60 italic whitespace-nowrap overflow-hidden text-ellipsis">Confidential • Legal • Effective Support from amalegalsolutions.com</p>
-                  </div>
-                </section>
+                {/* Interactive Emergency Legal Protection Funnel */}
+                <InteractiveLeadFunnel preset="payday-loans" className="my-12" />
 
                 {/* Platforms Grid */}
                 <section id="platforms" className="scroll-mt-32">

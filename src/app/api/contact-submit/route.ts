@@ -30,6 +30,7 @@ export async function POST(request: Request) {
             source: source || 'Contact Form',
             submissionUrl: submissionUrl || '',
             timestamp: admin.firestore.FieldValue.serverTimestamp(),
+            verified: body.verified !== undefined ? body.verified : true,
         };
 
         const docRef = await adminDb.collection('form').add(formData);

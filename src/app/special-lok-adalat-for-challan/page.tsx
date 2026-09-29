@@ -5,6 +5,7 @@ import Image from "next/image";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 import { FaStar, FaQuoteLeft, FaCheckCircle, FaBalanceScale, FaUserShield, FaHandshake, FaCar, FaMotorcycle, FaGavel, FaMoneyBillWave, FaShieldAlt, FaStarOfLife, FaInfoCircle, FaRegFileAlt, FaGlobe, FaCreditCard } from "react-icons/fa";
 
 // FAQ data for rendering and Schema - Initial seed for expansion
@@ -448,6 +449,11 @@ export default function ChallanLokAdalatPage() {
                     </div>
                   </div>
                 </section>
+
+                {/* Immediate Lead Funnel Intake */}
+                <div className="not-prose my-10">
+                  <InteractiveLeadFunnel preset="lok-adalat" />
+                </div>
 
                 {/* What is it? */}
                 <section id="what-is-challan-adalat" className="scroll-mt-32">

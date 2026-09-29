@@ -3,6 +3,7 @@ import Script from "next/script";
 import Image from "next/image";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // SEO Metadata
 export const metadata = {
@@ -204,6 +205,12 @@ export default function CompareLoanSettlementPage() {
                     Another vital area of comparison is the methodology of negotiation. Some companies use "pressure tactics" by withholding communications, which can sometimes backfire and lead to more aggressive recovery actions from banks. In contrast, an ethical, law-based approach focuses on "hardship evidence." This involves a meticulous preparation of the borrower's financial narrative - documenting everything from job loss to medical expenses. This evidence-based strategy aligns with the RBI's Fair Practice Code and is more likely to result in a sustainable One-Time Settlement (OTS) that the bank's internal credit committee will actually approve.
                   </p>
                 </section>
+
+                  {/* Immediate Lead Funnel Intake */}
+                  <div className="not-prose my-10">
+                    <InteractiveLeadFunnel preset="best-agencies" />
+                  </div>
+
 
                 <section id="local-expertise" className="scroll-mt-32 mb-16">
                   <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">The Importance of Local Expertise in Personal Loan Settlements</h3>

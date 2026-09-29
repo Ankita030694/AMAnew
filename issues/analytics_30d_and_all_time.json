@@ -1,0 +1,1541 @@
+{
+  "generatedAt": "2026-09-29T06:45:40.462Z",
+  "vercel": {
+    "past30Days": {
+      "summary": {
+        "visitors": 18464,
+        "pageviews": 29165
+      },
+      "topPaths": [
+        {
+          "requestPath": "Others",
+          "visitors": 10824,
+          "pageviews": 14414
+        },
+        {
+          "requestPath": "/",
+          "visitors": 1729,
+          "pageviews": 2376
+        },
+        {
+          "requestPath": "/contact",
+          "visitors": 1673,
+          "pageviews": 2091
+        },
+        {
+          "requestPath": "/careers",
+          "visitors": 452,
+          "pageviews": 1075
+        },
+        {
+          "requestPath": "/loan-settlement-amount-calculator",
+          "visitors": 405,
+          "pageviews": 497
+        },
+        {
+          "requestPath": "/best-loan-settlement-agencies-in-india",
+          "visitors": 379,
+          "pageviews": 479
+        },
+        {
+          "requestPath": "/services/loan-settlement/lok-adalat",
+          "visitors": 359,
+          "pageviews": 439
+        },
+        {
+          "requestPath": "/special-lok-adalat-for-challan",
+          "visitors": 343,
+          "pageviews": 441
+        },
+        {
+          "requestPath": "/services",
+          "visitors": 330,
+          "pageviews": 434
+        },
+        {
+          "requestPath": "/services/loan-settlement/navi",
+          "visitors": 265,
+          "pageviews": 315
+        },
+        {
+          "requestPath": "/careers/legal-associate",
+          "visitors": 260,
+          "pageviews": 396
+        },
+        {
+          "requestPath": "/loan-settlement-for-payday-loans",
+          "visitors": 257,
+          "pageviews": 329
+        },
+        {
+          "requestPath": "/how-to-report-harassment-from-instant-loan-apps-in-india",
+          "visitors": 220,
+          "pageviews": 261
+        },
+        {
+          "requestPath": "/about",
+          "visitors": 210,
+          "pageviews": 259
+        },
+        {
+          "requestPath": "/settlement-thank-you",
+          "visitors": 196,
+          "pageviews": 279
+        },
+        {
+          "requestPath": "/services/loan-settlement",
+          "visitors": 185,
+          "pageviews": 220
+        },
+        {
+          "requestPath": "/where-to-file-a-complaint-if-your-employer-doesnt-pay-you",
+          "visitors": 151,
+          "pageviews": 178
+        },
+        {
+          "requestPath": "/rbi-guidelines-for-recovery-agents-pdf-2026",
+          "visitors": 148,
+          "pageviews": 180
+        },
+        {
+          "requestPath": "/loan-settlement-services",
+          "visitors": 144,
+          "pageviews": 148
+        },
+        {
+          "requestPath": "/loan-settlement-application-in-hindi",
+          "visitors": 143,
+          "pageviews": 173
+        },
+        {
+          "requestPath": "/payment-success",
+          "visitors": 129,
+          "pageviews": 176
+        },
+        {
+          "requestPath": "/blog/hdfc-credit-card-settlement-complete-guide-to-managing-debt-with-expert-legal-help",
+          "visitors": 126,
+          "pageviews": 135
+        },
+        {
+          "requestPath": "/bank-complaint-in-rbi",
+          "visitors": 122,
+          "pageviews": 143
+        },
+        {
+          "requestPath": "/how-to-settle-7-days-loan-apps",
+          "visitors": 120,
+          "pageviews": 146
+        },
+        {
+          "requestPath": "/careers/legal-intern",
+          "visitors": 115,
+          "pageviews": 180
+        },
+        {
+          "requestPath": "/loan-settlement-app",
+          "visitors": 109,
+          "pageviews": 132
+        },
+        {
+          "requestPath": "/how-to-do-call-forwarding",
+          "visitors": 100,
+          "pageviews": 106
+        },
+        {
+          "requestPath": "/can-company-hold-my-salary-after-resignation",
+          "visitors": 98,
+          "pageviews": 112
+        },
+        {
+          "requestPath": "/what-happens-after-bank-issues-recall-notice",
+          "visitors": 97,
+          "pageviews": 105
+        },
+        {
+          "requestPath": "/services/loan-settlement/si-creva",
+          "visitors": 94,
+          "pageviews": 117
+        },
+        {
+          "requestPath": "/pay-day-loan-settlement",
+          "visitors": 90,
+          "pageviews": 98
+        },
+        {
+          "requestPath": "/app-loan-settlement",
+          "visitors": 89,
+          "pageviews": 109
+        },
+        {
+          "requestPath": "/how-do-i-stop-recovery-agent-from-coming-home",
+          "visitors": 89,
+          "pageviews": 98
+        },
+        {
+          "requestPath": "/loan-settlement-kitne-din-me-hota-hai",
+          "visitors": 89,
+          "pageviews": 101
+        },
+        {
+          "requestPath": "/services/loan-settlement/bank-of-baroda",
+          "visitors": 88,
+          "pageviews": 111
+        },
+        {
+          "requestPath": "/services/loan-settlement/northern-arc",
+          "visitors": 86,
+          "pageviews": 106
+        },
+        {
+          "requestPath": "/loan-settlement-by-bank/ram-fincorp",
+          "visitors": 84,
+          "pageviews": 97
+        },
+        {
+          "requestPath": "/loan-settlement-by-bank/mpokket",
+          "visitors": 82,
+          "pageviews": 96
+        },
+        {
+          "requestPath": "/not-being-paid-fnf-want-to-send-legal-notice",
+          "visitors": 81,
+          "pageviews": 96
+        },
+        {
+          "requestPath": "/loan-settlement-kitne-percent-hota-hai",
+          "visitors": 79,
+          "pageviews": 84
+        },
+        {
+          "requestPath": "/services/loan-settlement/pnb-bank",
+          "visitors": 79,
+          "pageviews": 116
+        },
+        {
+          "requestPath": "/settlement-waiver-percentage-of-axis-bank",
+          "visitors": 78,
+          "pageviews": 93
+        },
+        {
+          "requestPath": "/charities-that-pay-off-debt",
+          "visitors": 76,
+          "pageviews": 87
+        },
+        {
+          "requestPath": "/section-25-payment-and-settlement-act-bailable-or-not",
+          "visitors": 73,
+          "pageviews": 79
+        },
+        {
+          "requestPath": "/best-apps-for-managing-loan-settlement-offers-in-India",
+          "visitors": 72,
+          "pageviews": 83
+        },
+        {
+          "requestPath": "/hdfc-credit-card-payment-billdesk",
+          "visitors": 70,
+          "pageviews": 88
+        },
+        {
+          "requestPath": "/blog/understanding-freed-loan-settlement-in-india",
+          "visitors": 68,
+          "pageviews": 73
+        },
+        {
+          "requestPath": "/blog/legal-case-impact-on-background-verification",
+          "visitors": 67,
+          "pageviews": 75
+        },
+        {
+          "requestPath": "/blog/criminal-lawyers-in-bangalore",
+          "visitors": 66,
+          "pageviews": 75
+        },
+        {
+          "requestPath": "/loan-settlement-by-bank/rupee-112",
+          "visitors": 66,
+          "pageviews": 76
+        },
+        {
+          "requestPath": "/services/how-to-register-trademark-with-ipindia",
+          "visitors": 65,
+          "pageviews": 73
+        },
+        {
+          "requestPath": "/services/loan-settlement/poonawalla-fincorp",
+          "visitors": 65,
+          "pageviews": 77
+        },
+        {
+          "requestPath": "/services/loan-settlement/kotak-mahindra",
+          "visitors": 64,
+          "pageviews": 84
+        },
+        {
+          "requestPath": "/services/loan-settlement/moneyview",
+          "visitors": 64,
+          "pageviews": 68
+        },
+        {
+          "requestPath": "/special-lok-adalat-for-loan-settlement",
+          "visitors": 63,
+          "pageviews": 71
+        },
+        {
+          "requestPath": "/services/loan-settlement/paytm",
+          "visitors": 60,
+          "pageviews": 81
+        },
+        {
+          "requestPath": "/what-is-dpd-in-cibil-report-india",
+          "visitors": 60,
+          "pageviews": 61
+        },
+        {
+          "requestPath": "/hdfc-credit-card-payment-online",
+          "visitors": 59,
+          "pageviews": 70
+        },
+        {
+          "requestPath": "/loan-settlement-by-bank/bharat-loan",
+          "visitors": 59,
+          "pageviews": 64
+        },
+        {
+          "requestPath": "/admin/pending-leads",
+          "visitors": 58,
+          "pageviews": 313
+        },
+        {
+          "requestPath": "/services/loan-settlement/hyderabad",
+          "visitors": 56,
+          "pageviews": 83
+        }
+      ]
+    },
+    "allTime": {
+      "summary": {
+        "visitors": 147266,
+        "pageviews": 263431
+      },
+      "topPaths": [
+        {
+          "requestPath": "Others",
+          "visitors": 98648,
+          "pageviews": 157742
+        },
+        {
+          "requestPath": "/contact",
+          "visitors": 12092,
+          "pageviews": 15479
+        },
+        {
+          "requestPath": "/",
+          "visitors": 10207,
+          "pageviews": 14171
+        },
+        {
+          "requestPath": "/loan-settlement-amount-calculator",
+          "visitors": 2787,
+          "pageviews": 3356
+        },
+        {
+          "requestPath": "/services",
+          "visitors": 2356,
+          "pageviews": 3218
+        },
+        {
+          "requestPath": "/services/loan-settlement/lok-adalat",
+          "visitors": 2093,
+          "pageviews": 2444
+        },
+        {
+          "requestPath": "/where-to-file-a-complaint-if-your-employer-doesnt-pay-you",
+          "visitors": 2063,
+          "pageviews": 2413
+        },
+        {
+          "requestPath": "/careers",
+          "visitors": 2023,
+          "pageviews": 4083
+        },
+        {
+          "requestPath": "/special-lok-adalat-for-challan",
+          "visitors": 1686,
+          "pageviews": 2173
+        },
+        {
+          "requestPath": "/services/loan-settlement",
+          "visitors": 1662,
+          "pageviews": 2160
+        },
+        {
+          "requestPath": "/can-company-hold-my-salary-after-resignation",
+          "visitors": 1504,
+          "pageviews": 1649
+        },
+        {
+          "requestPath": "/bajaj-finance-agent-visiting-home",
+          "visitors": 1484,
+          "pageviews": 1665
+        },
+        {
+          "requestPath": "/about",
+          "visitors": 1481,
+          "pageviews": 1873
+        },
+        {
+          "requestPath": "/how-do-i-stop-recovery-agent-from-coming-home",
+          "visitors": 1425,
+          "pageviews": 1618
+        },
+        {
+          "requestPath": "/not-being-paid-fnf-want-to-send-legal-notice",
+          "visitors": 1377,
+          "pageviews": 1631
+        },
+        {
+          "requestPath": "/services/loan-settlement/navi",
+          "visitors": 1344,
+          "pageviews": 1575
+        },
+        {
+          "requestPath": "/blog/hdfc-credit-card-settlement-complete-guide-to-managing-debt-with-expert-legal-help",
+          "visitors": 1327,
+          "pageviews": 1485
+        },
+        {
+          "requestPath": "/best-apps-for-managing-loan-settlement-offers-in-India",
+          "visitors": 1304,
+          "pageviews": 1550
+        },
+        {
+          "requestPath": "/how-to-stop-bajaj-recovery-agent-harassment-instantly",
+          "visitors": 1271,
+          "pageviews": 1439
+        },
+        {
+          "requestPath": "/can-bank-file-case-for-personal-loan",
+          "visitors": 1261,
+          "pageviews": 1395
+        },
+        {
+          "requestPath": "/rbi-new-recovery-guidelines-july-2026",
+          "visitors": 1200,
+          "pageviews": 1344
+        },
+        {
+          "requestPath": "/section-25-payment-and-settlement-act-bailable-or-not",
+          "visitors": 1190,
+          "pageviews": 1304
+        },
+        {
+          "requestPath": "/blog/stilt-4-floors-policy-haryana-legal-action-begins",
+          "visitors": 1166,
+          "pageviews": 1272
+        },
+        {
+          "requestPath": "/services/loan-settlement/AndhraPradesh",
+          "visitors": 1092,
+          "pageviews": 1220
+        },
+        {
+          "requestPath": "/loan-recovery-agent-harassment-complaint-online",
+          "visitors": 1069,
+          "pageviews": 1375
+        },
+        {
+          "requestPath": "/charities-that-pay-off-debt",
+          "visitors": 1038,
+          "pageviews": 1235
+        },
+        {
+          "requestPath": "/blog/Lockdown-2026-PM-Modi",
+          "visitors": 1008,
+          "pageviews": 1071
+        },
+        {
+          "requestPath": "/how-to-settle-loans-above-1-crore",
+          "visitors": 987,
+          "pageviews": 1417
+        },
+        {
+          "requestPath": "/services/loan-settlement/icici-bank",
+          "visitors": 985,
+          "pageviews": 1066
+        },
+        {
+          "requestPath": "/which-companies-offer-the-best-loan-settlement-plans-for-personal-loans",
+          "visitors": 981,
+          "pageviews": 1240
+        },
+        {
+          "requestPath": "/blog/will-police-come-for-loan-default-india-truth",
+          "visitors": 965,
+          "pageviews": 1038
+        },
+        {
+          "requestPath": "/app-loan-settlement",
+          "visitors": 954,
+          "pageviews": 1096
+        },
+        {
+          "requestPath": "/articles/cheated-in-a-property-deal-heres-how-to-file-a-property-fraud-case-in-india",
+          "visitors": 939,
+          "pageviews": 1039
+        },
+        {
+          "requestPath": "/careers/legal-associate",
+          "visitors": 928,
+          "pageviews": 1363
+        },
+        {
+          "requestPath": "/services/loan-settlement/paytm",
+          "visitors": 909,
+          "pageviews": 1055
+        },
+        {
+          "requestPath": "/free-loan-settlement-guide",
+          "visitors": 897,
+          "pageviews": 1050
+        },
+        {
+          "requestPath": "/loan-settlement-by-bank/slice",
+          "visitors": 837,
+          "pageviews": 928
+        },
+        {
+          "requestPath": "/rbi-guidelines-for-recovery-agents-pdf-2026",
+          "visitors": 835,
+          "pageviews": 953
+        },
+        {
+          "requestPath": "/expert-panel-loan-settlement-reviews",
+          "visitors": 800,
+          "pageviews": 876
+        },
+        {
+          "requestPath": "/services/loan-settlement/sbi-bank",
+          "visitors": 769,
+          "pageviews": 926
+        },
+        {
+          "requestPath": "/blog/can-bank-freeze-salary-account-without-notice-india",
+          "visitors": 761,
+          "pageviews": 837
+        },
+        {
+          "requestPath": "/loan-settlement-application-in-hindi",
+          "visitors": 757,
+          "pageviews": 882
+        },
+        {
+          "requestPath": "/services/loan-settlement/si-creva",
+          "visitors": 751,
+          "pageviews": 943
+        },
+        {
+          "requestPath": "/p2p-crypto-scam-unfreeze-bank-account",
+          "visitors": 749,
+          "pageviews": 834
+        },
+        {
+          "requestPath": "/payment-success",
+          "visitors": 747,
+          "pageviews": 1022
+        },
+        {
+          "requestPath": "/loan-settlement-by-bank/lazy-pay",
+          "visitors": 737,
+          "pageviews": 857
+        },
+        {
+          "requestPath": "/loan-settlement-by-bank/mpokket",
+          "visitors": 736,
+          "pageviews": 873
+        },
+        {
+          "requestPath": "/bank-complaint-in-rbi",
+          "visitors": 728,
+          "pageviews": 842
+        },
+        {
+          "requestPath": "/loan-settlement-by-bank/ram-fincorp",
+          "visitors": 727,
+          "pageviews": 811
+        },
+        {
+          "requestPath": "/blog/legal-case-impact-on-background-verification",
+          "visitors": 710,
+          "pageviews": 761
+        },
+        {
+          "requestPath": "/blog/can-nbfcs-take-legal-action-for-loan-default-in-india",
+          "visitors": 699,
+          "pageviews": 779
+        },
+        {
+          "requestPath": "/blog/can-i-get-loan-after-settlement",
+          "visitors": 692,
+          "pageviews": 837
+        },
+        {
+          "requestPath": "/loan-settlement-for-payday-loans",
+          "visitors": 689,
+          "pageviews": 869
+        },
+        {
+          "requestPath": "/loan-settlement-process-in-hindi",
+          "visitors": 687,
+          "pageviews": 814
+        },
+        {
+          "requestPath": "/40L-unsecured-debt-in-india-what-to-do-self-vs-debt-settlement-program",
+          "visitors": 682,
+          "pageviews": 734
+        },
+        {
+          "requestPath": "/employer-not-paying-salary-after-resignation",
+          "visitors": 674,
+          "pageviews": 724
+        },
+        {
+          "requestPath": "/blog/how-to-get-out-of-debt-trap",
+          "visitors": 663,
+          "pageviews": 768
+        },
+        {
+          "requestPath": "/loan-settlement-by-bank/rupee-112",
+          "visitors": 662,
+          "pageviews": 772
+        },
+        {
+          "requestPath": "/services/loan-settlement/pnb-bank",
+          "visitors": 655,
+          "pageviews": 966
+        },
+        {
+          "requestPath": "/what-happens-after-bank-issues-recall-notice",
+          "visitors": 653,
+          "pageviews": 702
+        },
+        {
+          "requestPath": "/best-loan-settlement-agencies-in-india",
+          "visitors": 652,
+          "pageviews": 811
+        }
+      ]
+    }
+  },
+  "gsc": {
+    "past30Days": {
+      "topPages": [
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/"
+          ],
+          "clicks": 498,
+          "impressions": 7134,
+          "ctr": 0.06980656013456686,
+          "position": 12.465937762825904
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/loan-settlement-amount-calculator"
+          ],
+          "clicks": 323,
+          "impressions": 5636,
+          "ctr": 0.05731014904187367,
+          "position": 5.07416607523066
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/lok-adalat"
+          ],
+          "clicks": 292,
+          "impressions": 18108,
+          "ctr": 0.016125469405787497,
+          "position": 4.970952065385465
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/best-loan-settlement-agencies-in-india"
+          ],
+          "clicks": 269,
+          "impressions": 5684,
+          "ctr": 0.04732582688247713,
+          "position": 6.978888106966925
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/special-lok-adalat-for-challan"
+          ],
+          "clicks": 232,
+          "impressions": 17341,
+          "ctr": 0.013378697883628395,
+          "position": 7.111931261172943
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/loan-settlement-for-payday-loans"
+          ],
+          "clicks": 179,
+          "impressions": 1700,
+          "ctr": 0.10529411764705883,
+          "position": 5.694705882352941
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/how-to-report-harassment-from-instant-loan-apps-in-india"
+          ],
+          "clicks": 176,
+          "impressions": 4673,
+          "ctr": 0.03766317141022898,
+          "position": 5.597046864968971
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/navi"
+          ],
+          "clicks": 144,
+          "impressions": 3658,
+          "ctr": 0.03936577364680153,
+          "position": 5.705303444505194
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/loan-settlement-application-in-hindi"
+          ],
+          "clicks": 117,
+          "impressions": 3910,
+          "ctr": 0.029923273657289,
+          "position": 5.463938618925831
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/blog/hdfc-credit-card-settlement-complete-guide-to-managing-debt-with-expert-legal-help"
+          ],
+          "clicks": 106,
+          "impressions": 2448,
+          "ctr": 0.04330065359477124,
+          "position": 4.595996732026144
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/rbi-guidelines-for-recovery-agents-pdf-2026"
+          ],
+          "clicks": 95,
+          "impressions": 2164,
+          "ctr": 0.04390018484288355,
+          "position": 8.22920517560074
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/how-to-settle-7-days-loan-apps"
+          ],
+          "clicks": 84,
+          "impressions": 2686,
+          "ctr": 0.03127326880119136,
+          "position": 6.590096798212956
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/loan-settlement-app"
+          ],
+          "clicks": 84,
+          "impressions": 1932,
+          "ctr": 0.043478260869565216,
+          "position": 5.058488612836439
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/si-creva"
+          ],
+          "clicks": 72,
+          "impressions": 3272,
+          "ctr": 0.022004889975550123,
+          "position": 6.058679706601467
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/charities-that-pay-off-debt"
+          ],
+          "clicks": 66,
+          "impressions": 919,
+          "ctr": 0.07181719260065289,
+          "position": 18.560391730141458
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/pay-day-loan-settlement"
+          ],
+          "clicks": 64,
+          "impressions": 1311,
+          "ctr": 0.04881769641495042,
+          "position": 7.749809305873379
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/bank-of-baroda"
+          ],
+          "clicks": 64,
+          "impressions": 2066,
+          "ctr": 0.030977734753146177,
+          "position": 4.62052274927396
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/bank-complaint-in-rbi"
+          ],
+          "clicks": 63,
+          "impressions": 7696,
+          "ctr": 0.008186070686070687,
+          "position": 8.72804054054054
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/northern-arc"
+          ],
+          "clicks": 63,
+          "impressions": 3945,
+          "ctr": 0.01596958174904943,
+          "position": 6.581749049429658
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/pnb-bank"
+          ],
+          "clicks": 60,
+          "impressions": 2044,
+          "ctr": 0.029354207436399216,
+          "position": 4.619373776908024
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/loan-settlement-by-bank/ram-fincorp"
+          ],
+          "clicks": 58,
+          "impressions": 6598,
+          "ctr": 0.008790542588663231,
+          "position": 6.352227947862989
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/settlement-waiver-percentage-of-axis-bank"
+          ],
+          "clicks": 57,
+          "impressions": 1544,
+          "ctr": 0.036917098445595854,
+          "position": 5.330310880829016
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/blog/understanding-freed-loan-settlement-in-india"
+          ],
+          "clicks": 54,
+          "impressions": 6072,
+          "ctr": 0.008893280632411068,
+          "position": 7.278491436100132
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/can-company-hold-my-salary-after-resignation"
+          ],
+          "clicks": 52,
+          "impressions": 4484,
+          "ctr": 0.01159678858162355,
+          "position": 5.710080285459411
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/blog/criminal-lawyers-in-bangalore"
+          ],
+          "clicks": 51,
+          "impressions": 1932,
+          "ctr": 0.026397515527950312,
+          "position": 13.871118012422361
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/section-25-payment-and-settlement-act-bailable-or-not"
+          ],
+          "clicks": 49,
+          "impressions": 4957,
+          "ctr": 0.009885011095420617,
+          "position": 6.226951785354045
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/how-to-register-trademark-with-ipindia"
+          ],
+          "clicks": 49,
+          "impressions": 27447,
+          "ctr": 0.0017852588625350675,
+          "position": 5.940867854410318
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/loan-settlement-by-bank/mpokket"
+          ],
+          "clicks": 48,
+          "impressions": 7671,
+          "ctr": 0.006257332811888932,
+          "position": 5.7723895189675405
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/what-happens-after-bank-issues-recall-notice"
+          ],
+          "clicks": 47,
+          "impressions": 4024,
+          "ctr": 0.011679920477137177,
+          "position": 5.4972664015904575
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/best-apps-for-managing-loan-settlement-offers-in-India"
+          ],
+          "clicks": 44,
+          "impressions": 1669,
+          "ctr": 0.026363091671659677,
+          "position": 8.018573996405033
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/poonawalla-fincorp"
+          ],
+          "clicks": 44,
+          "impressions": 2445,
+          "ctr": 0.0179959100204499,
+          "position": 5.626993865030675
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/loan-settlement-by-bank/bharat-loan"
+          ],
+          "clicks": 42,
+          "impressions": 1992,
+          "ctr": 0.02108433734939759,
+          "position": 6.204317269076305
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/loan-settlement-by-bank/rupee-112"
+          ],
+          "clicks": 42,
+          "impressions": 2517,
+          "ctr": 0.0166865315852205,
+          "position": 6.091378625347636
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/kotak-mahindra"
+          ],
+          "clicks": 42,
+          "impressions": 1593,
+          "ctr": 0.026365348399246705,
+          "position": 5.988700564971752
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/hdfc-credit-card-payment-online"
+          ],
+          "clicks": 41,
+          "impressions": 3602,
+          "ctr": 0.011382565241532482,
+          "position": 14.307606885063853
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/loan-settlement-kitne-percent-hota-hai"
+          ],
+          "clicks": 41,
+          "impressions": 3475,
+          "ctr": 0.011798561151079136,
+          "position": 4.926906474820144
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/hyderabad"
+          ],
+          "clicks": 41,
+          "impressions": 787,
+          "ctr": 0.052096569250317665,
+          "position": 8.978398983481576
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/blog/rbi-guidelines-one-time-loan-settlement-2026"
+          ],
+          "clicks": 40,
+          "impressions": 793,
+          "ctr": 0.05044136191677175,
+          "position": 6.290037831021437
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/loan-settlement-services/kcc-loan-settlement-in-lok-adalat"
+          ],
+          "clicks": 40,
+          "impressions": 2096,
+          "ctr": 0.019083969465648856,
+          "position": 4.686068702290076
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/special-lok-adalat-for-loan-settlement"
+          ],
+          "clicks": 40,
+          "impressions": 4701,
+          "ctr": 0.008508827908955541,
+          "position": 6.053818336524143
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/loan-settlement-kitne-din-me-hota-hai"
+          ],
+          "clicks": 39,
+          "impressions": 4136,
+          "ctr": 0.009429400386847196,
+          "position": 4.774177949709864
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/loan-settlement-services/loan-112-repayment"
+          ],
+          "clicks": 39,
+          "impressions": 1341,
+          "ctr": 0.029082774049217,
+          "position": 6.622669649515287
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/loan-settlement-services/payrupik-loan-settlement-kaise-kare"
+          ],
+          "clicks": 37,
+          "impressions": 1781,
+          "ctr": 0.020774845592363842,
+          "position": 6.04491858506457
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/moneyview"
+          ],
+          "clicks": 37,
+          "impressions": 4379,
+          "ctr": 0.008449417675268326,
+          "position": 6.8762274491893125
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/blog/legal-case-impact-on-background-verification"
+          ],
+          "clicks": 36,
+          "impressions": 1432,
+          "ctr": 0.025139664804469275,
+          "position": 4.331005586592179
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement"
+          ],
+          "clicks": 36,
+          "impressions": 2201,
+          "ctr": 0.01635620172648796,
+          "position": 20.088141753748296
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/west-bengal"
+          ],
+          "clicks": 35,
+          "impressions": 1254,
+          "ctr": 0.027910685805422646,
+          "position": 7.422647527910685
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/hdfc-credit-card-settlement-percentage"
+          ],
+          "clicks": 34,
+          "impressions": 1274,
+          "ctr": 0.026687598116169546,
+          "position": 6.528257456828886
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/how-to-do-call-forwarding"
+          ],
+          "clicks": 34,
+          "impressions": 9848,
+          "ctr": 0.0034524776604386675,
+          "position": 9.130584890333063
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/loan-settlement-by-bank/snapmint"
+          ],
+          "clicks": 34,
+          "impressions": 3891,
+          "ctr": 0.008738113595476741,
+          "position": 5.281161655101516
+        }
+      ]
+    },
+    "allTime": {
+      "topPages": [
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/"
+          ],
+          "clicks": 8108,
+          "impressions": 111096,
+          "ctr": 0.0729819255418737,
+          "position": 7.745958450349248
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/lok-adalat"
+          ],
+          "clicks": 3273,
+          "impressions": 226388,
+          "ctr": 0.014457480078449388,
+          "position": 3.2444520027563297
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/blog/hdfc-credit-card-settlement-complete-guide-to-managing-debt-with-expert-legal-help"
+          ],
+          "clicks": 1999,
+          "impressions": 43146,
+          "ctr": 0.04633106197561767,
+          "position": 3.918741018866175
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/loan-settlement-amount-calculator"
+          ],
+          "clicks": 1961,
+          "impressions": 59267,
+          "ctr": 0.03308755293839742,
+          "position": 4.215718696745238
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/special-lok-adalat-for-challan"
+          ],
+          "clicks": 1861,
+          "impressions": 163845,
+          "ctr": 0.011358295950440966,
+          "position": 5.046965119472672
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/blog/Lockdown-2026-PM-Modi"
+          ],
+          "clicks": 1690,
+          "impressions": 665262,
+          "ctr": 0.002540352522765467,
+          "position": 7.015578824583398
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement"
+          ],
+          "clicks": 1679,
+          "impressions": 129023,
+          "ctr": 0.013013183695930183,
+          "position": 7.780674763414275
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/navi"
+          ],
+          "clicks": 1519,
+          "impressions": 54520,
+          "ctr": 0.02786133528980191,
+          "position": 4.453283198826119
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/sbi-bank"
+          ],
+          "clicks": 1392,
+          "impressions": 84651,
+          "ctr": 0.01644398766700925,
+          "position": 3.8413958488381708
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/si-creva"
+          ],
+          "clicks": 1386,
+          "impressions": 123303,
+          "ctr": 0.011240602418432642,
+          "position": 3.4122040826257267
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/pnb-bank"
+          ],
+          "clicks": 1354,
+          "impressions": 46528,
+          "ctr": 0.029100756533700138,
+          "position": 3.488050206327373
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/where-to-file-a-complaint-if-your-employer-doesnt-pay-you"
+          ],
+          "clicks": 1291,
+          "impressions": 173521,
+          "ctr": 0.007440021668846998,
+          "position": 5.290800537110782
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/loan-recovery-agent-harassment-complaint-online"
+          ],
+          "clicks": 1167,
+          "impressions": 99193,
+          "ctr": 0.01176494309074229,
+          "position": 4.908552014759106
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/not-being-paid-fnf-want-to-send-legal-notice"
+          ],
+          "clicks": 1153,
+          "impressions": 103047,
+          "ctr": 0.011189069065572021,
+          "position": 5.300542470911331
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/best-apps-for-managing-loan-settlement-offers-in-India"
+          ],
+          "clicks": 1081,
+          "impressions": 46495,
+          "ctr": 0.02324981180772126,
+          "position": 5.204559630067749
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/blog/criminal-lawyers-in-mumbai"
+          ],
+          "clicks": 1030,
+          "impressions": 46119,
+          "ctr": 0.022333528480669572,
+          "position": 11.42808820659598
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/can-company-hold-my-salary-after-resignation"
+          ],
+          "clicks": 984,
+          "impressions": 139368,
+          "ctr": 0.007060444291372482,
+          "position": 5.29671086619597
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/which-companies-offer-the-best-loan-settlement-plans-for-personal-loans"
+          ],
+          "clicks": 959,
+          "impressions": 39924,
+          "ctr": 0.024020639214507564,
+          "position": 7.893197074441439
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/blog/will-police-come-for-loan-default-india-truth"
+          ],
+          "clicks": 951,
+          "impressions": 72149,
+          "ctr": 0.013181055870490236,
+          "position": 2.995786497387351
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/blog/criminal-lawyers-in-bangalore"
+          ],
+          "clicks": 846,
+          "impressions": 92400,
+          "ctr": 0.009155844155844155,
+          "position": 9.451147186147185
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/simple-will-format-download-free-legal-document-sample"
+          ],
+          "clicks": 824,
+          "impressions": 26728,
+          "ctr": 0.030829093085902426,
+          "position": 7.103374738102365
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/how-do-i-stop-recovery-agent-from-coming-home"
+          ],
+          "clicks": 819,
+          "impressions": 73522,
+          "ctr": 0.011139522863904681,
+          "position": 4.82769783194146
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/charities-that-pay-off-debt"
+          ],
+          "clicks": 777,
+          "impressions": 22725,
+          "ctr": 0.03419141914191419,
+          "position": 8.318283828382839
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/bank-of-baroda"
+          ],
+          "clicks": 759,
+          "impressions": 26020,
+          "ctr": 0.029169869331283627,
+          "position": 4.071214450422752
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/axis-bank"
+          ],
+          "clicks": 755,
+          "impressions": 41193,
+          "ctr": 0.01832835675964363,
+          "position": 5.389192338504115
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/west-bengal"
+          ],
+          "clicks": 755,
+          "impressions": 17183,
+          "ctr": 0.043938776697899085,
+          "position": 6.701856486061805
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/kotak-mahindra"
+          ],
+          "clicks": 753,
+          "impressions": 27967,
+          "ctr": 0.026924589694997676,
+          "position": 5.352165051668037
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/krazybee"
+          ],
+          "clicks": 740,
+          "impressions": 78730,
+          "ctr": 0.009399212498412295,
+          "position": 4.290791312079258
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/moneyview"
+          ],
+          "clicks": 715,
+          "impressions": 79646,
+          "ctr": 0.008977224217160937,
+          "position": 4.889649197699821
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/loan-settlement-process-in-hindi"
+          ],
+          "clicks": 713,
+          "impressions": 94029,
+          "ctr": 0.007582767018685725,
+          "position": 5.6199576726329115
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/hdfc-bank"
+          ],
+          "clicks": 639,
+          "impressions": 43044,
+          "ctr": 0.014845274602732089,
+          "position": 4.47878914599015
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/loan-settlement-application-in-hindi"
+          ],
+          "clicks": 637,
+          "impressions": 37720,
+          "ctr": 0.016887592788971367,
+          "position": 3.9965005302226935
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/rbi-new-recovery-guidelines-july-2026"
+          ],
+          "clicks": 604,
+          "impressions": 80252,
+          "ctr": 0.007526292179634153,
+          "position": 4.328789313661964
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/blog/understanding-freed-loan-settlement-in-india"
+          ],
+          "clicks": 546,
+          "impressions": 59135,
+          "ctr": 0.009233110678954933,
+          "position": 6.213291620867507
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/loan-settlement-by-bank/rupee-112"
+          ],
+          "clicks": 542,
+          "impressions": 17364,
+          "ctr": 0.031214005989403364,
+          "position": 5.560181985717577
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/section-25-payment-and-settlement-act-bailable-or-not"
+          ],
+          "clicks": 538,
+          "impressions": 52675,
+          "ctr": 0.010213573801613668,
+          "position": 6.716070242050309
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/loan-settlement-for-payday-loans"
+          ],
+          "clicks": 523,
+          "impressions": 6227,
+          "ctr": 0.08398907981371447,
+          "position": 5.815641560944275
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/how-to-report-harassment-from-instant-loan-apps-in-india"
+          ],
+          "clicks": 500,
+          "impressions": 16400,
+          "ctr": 0.03048780487804878,
+          "position": 5.31390243902439
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/best-loan-settlement-agencies-in-india"
+          ],
+          "clicks": 495,
+          "impressions": 11693,
+          "ctr": 0.04233301975540922,
+          "position": 8.396562045668349
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/which-bank-provide-personal-loan-for-cibil-defaulters"
+          ],
+          "clicks": 484,
+          "impressions": 42804,
+          "ctr": 0.011307354452854874,
+          "position": 4.870012148397346
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/special-lok-adalat-for-loan-settlement"
+          ],
+          "clicks": 476,
+          "impressions": 73656,
+          "ctr": 0.006462474204409688,
+          "position": 4.35751330509395
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/expert-panel-loan-settlement-reviews"
+          ],
+          "clicks": 474,
+          "impressions": 48872,
+          "ctr": 0.009698805041741693,
+          "position": 6.162874447536422
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/idfc-bank"
+          ],
+          "clicks": 467,
+          "impressions": 31260,
+          "ctr": 0.014939219449776072,
+          "position": 5.27108125399872
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/l-and-t-finance"
+          ],
+          "clicks": 440,
+          "impressions": 25713,
+          "ctr": 0.017111966709446584,
+          "position": 6.241317621436627
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/blog/loan-settlement-hdfc-bank-legal-guide-for-borrowers-in-india"
+          ],
+          "clicks": 439,
+          "impressions": 27324,
+          "ctr": 0.01606646171863563,
+          "position": 5.3050431854779685
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/poonawalla-fincorp"
+          ],
+          "clicks": 432,
+          "impressions": 27802,
+          "ctr": 0.015538450471189123,
+          "position": 6.036867851233724
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/services/loan-settlement/paytm"
+          ],
+          "clicks": 429,
+          "impressions": 40197,
+          "ctr": 0.010672438241659825,
+          "position": 4.143692315346916
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/blog/how-to-file-a-complaint-against-recovery-agents-in-india"
+          ],
+          "clicks": 424,
+          "impressions": 39072,
+          "ctr": 0.010851760851760851,
+          "position": 5.6613687551187555
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/app-loan-settlement"
+          ],
+          "clicks": 422,
+          "impressions": 34567,
+          "ctr": 0.012208175427430787,
+          "position": 7.087655856741979
+        },
+        {
+          "keys": [
+            "https://www.amalegalsolutions.com/loan-settlement-by-bank/ram-fincorp"
+          ],
+          "clicks": 416,
+          "impressions": 36412,
+          "ctr": 0.01142480500933758,
+          "position": 6.082115786004614
+        }
+      ]
+    }
+  }
+}
