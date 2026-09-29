@@ -365,11 +365,21 @@ export default function InteractiveLeadFunnel({
   };
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const raw = e.target.value.replace(/\D/g, "");
-    if (raw.length <= 10) {
-      setPhone(raw);
-      saveDraft({ phone: raw });
+    let digits = e.target.value.replace(/\D/g, "");
+    
+    // Auto-detect and strip country code +91 or 91 (common in iOS/Android AutoFill)
+    if (digits.length === 12 && digits.startsWith("91")) {
+      digits = digits.slice(2);
+    } else if (digits.length === 11 && digits.startsWith("0")) {
+      // Auto-detect and strip leading trunk 0
+      digits = digits.slice(1);
+    } else if (digits.length > 10) {
+      // If autofilled with international prefix like 0091 or longer, keep last 10 digits
+      digits = digits.slice(-10);
     }
+
+    setPhone(digits);
+    saveDraft({ phone: digits });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -564,7 +574,7 @@ export default function InteractiveLeadFunnel({
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+          <form id="lead-funnel-form" name="lead-funnel-form" onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             {/* Step 1 View */}
             {currentStep === 1 && (
               <div className="space-y-2.5 sm:space-y-3 animate-fadeIn">
@@ -671,13 +681,17 @@ export default function InteractiveLeadFunnel({
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5 sm:gap-3">
                   {/* Legal Name */}
                   <div className="relative">
+                    <label htmlFor="lead-funnel-name" className="sr-only">Full Legal Name</label>
                     <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
                       <User className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D29E0D]" />
                     </div>
                     <input
                       type="text"
+                      id="lead-funnel-name"
                       name="name"
                       autoComplete="name"
+                      autoCapitalize="words"
+                      spellCheck="false"
                       required
                       placeholder="Full Legal Name *"
                       value={name}
@@ -695,14 +709,16 @@ export default function InteractiveLeadFunnel({
 
                   {/* Mobile Phone */}
                   <div className="relative">
+                    <label htmlFor="lead-funnel-phone" className="sr-only">10-Digit Mobile Number</label>
                     <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none flex items-center gap-1">
                       <span className="text-xs font-semibold text-[#D29E0D]">+91</span>
                     </div>
                     <input
                       type="tel"
+                      id="lead-funnel-phone"
                       name="phone"
                       autoComplete="tel"
-                      inputMode="numeric"
+                      inputMode="tel"
                       required
                       placeholder="10-Digit Mobile Number *"
                       value={phone}
@@ -717,13 +733,18 @@ export default function InteractiveLeadFunnel({
 
                   {/* Email Address */}
                   <div className="relative">
+                    <label htmlFor="lead-funnel-email" className="sr-only">Email Address</label>
                     <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
                       <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D29E0D]" />
                     </div>
                     <input
                       type="email"
+                      id="lead-funnel-email"
                       name="email"
                       autoComplete="email"
+                      inputMode="email"
+                      autoCapitalize="none"
+                      spellCheck="false"
                       placeholder="Email Address (Optional)"
                       value={email}
                       onChange={(e) => {
