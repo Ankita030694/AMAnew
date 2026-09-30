@@ -47,6 +47,18 @@ const faqs = [
   {
     question: "Can AMA Legal Solutions help if the bank refuses to issue an NOC?",
     answer: "Yes, if you have fulfilled your payment obligations as per the settlement agreement and the bank is delaying or refusing the NOC, we can serve a formal legal notice. We leverage the Banking Ombudsman and Consumer Protection laws to ensure banks comply with their regulatory duties and provide you with the necessary closure documents."
+  },
+  {
+    question: "How to remove hypothecation from RC after vehicle loan settlement (Form 35 Guide)?",
+    answer: "To remove hypothecation from your vehicle's Registration Certificate (RC) after a car or bike loan settlement: 1) Collect the stamped original No Objection Certificate (NOC) and two signed copies of Form 35 from the lender; 2) Visit the Parivahan Sewa portal (parivahan.gov.in) and select 'Application for Hypothecation Termination'; 3) Enter your vehicle registration number and chassis details; 4) Upload self-attested copies of your Form 35, bank NOC, valid insurance policy, and PUC certificate; 5) Pay the RTO hypothecation removal fees and submit the physical documents with your original RC smart card to your local RTO for endorsement deletion."
+  },
+  {
+    question: "What are the RTO hypothecation removal charges across Indian states?",
+    answer: "RTO hypothecation removal (HPA cancellation) government fees typically range between ₹100 and ₹500 depending on the vehicle class and state transport authority. For two-wheelers, the fee is generally ₹100 to ₹200. For light motor vehicles (cars) and commercial transport vehicles, the fee is typically ₹300 to ₹500, plus nominal smart card fee (around ₹200) if a new smart card RC is dispatched."
+  },
+  {
+    question: "Can I download my car loan NOC from SBI or HDFC Bank online?",
+    answer: "Yes, for regular closures or settled accounts where the closure is updated in the banking core system, lenders like SBI (via SBI YONO / OnlineSBI Loan Portal) and HDFC Bank (via NetBanking or Loan Services tab) provide downloadable digital NOCs. However, for vehicle loan hypothecation removal, most RTOs still mandate physically stamped copies of Form 35 bearing the bank branch's official seal and authorized signature."
   }
 ];
 
@@ -164,6 +176,11 @@ export const metadata = {
   keywords: [
     "documents needed for loan settlement noc",
     "loan settlement documentation checklist india",
+    "hypothecation removal after settlement",
+    "how to remove hypothecation from rc",
+    "hypothecation removal charges rto",
+    "car loan noc sbi online",
+    "form 35 rto vehicle clearance",
     "hardship letter for loan settlement",
     "no objection certificate for loan closure",
     "kyc for loan settlement",
@@ -188,6 +205,7 @@ export default function LoanSettlementDocsPage() {
     { id: "loan-account-records", title: "4. Loan Records" },
     { id: "the-settlement-letter", title: "5. Settlement Letter" },
     { id: "post-settlement-noc", title: "6. Obtaining NOC" },
+    { id: "hypothecation-removal-guide", title: "7. Vehicle Form 35 & Hypothecation" },
     { id: "review-snippets", title: "Client Reviews" },
     { id: "all-india-coverage", title: "Pan-India Support" },
     { id: "legal-audit-checklist", title: "AMA Audit Checklist" },
@@ -471,6 +489,45 @@ export default function LoanSettlementDocsPage() {
                          <p className="text-gray-300 leading-relaxed text-xs md:text-sm">
                            While many banks (ICICI, HDFC, Kotak) now provide digital NOCs, always demand a physical copy for your records. If the bank's servers go down or your email is hacked, that physical, stamped paper is your absolute legal shield against future recovery attempts.
                          </p>
+                      </div>
+                   </div>
+                </section>
+
+                <section id="hypothecation-removal-guide" className="scroll-mt-32">
+                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6 border-b-4 border-gray-100 pb-3">7. Vehicle Form 35 & Hypothecation Removal from RC</h2>
+                   <div className="prose prose-sm text-gray-700 max-w-none space-y-5">
+                      <p>
+                        For auto loans, bike loans, and commercial vehicles, settling the loan is only half the battle. Your vehicle's Registration Certificate (RC) remains legally encumbered under hypothecation (HPA) until you complete the termination process at the Regional Transport Office (RTO).
+                      </p>
+                      
+                      <div className="grid md:grid-cols-2 gap-6 my-6">
+                        <div className="p-6 bg-gray-50 rounded-2xl border border-gray-200">
+                          <h4 className="text-base font-bold text-gray-900 mb-3 uppercase">Essential Documents for RTO Hypothecation Cancellation:</h4>
+                          <ul className="space-y-2 text-xs text-gray-700 list-disc pl-5">
+                            <li><strong>Form 35 (in Duplicate):</strong> Notice of termination of hypothecation signed and officially stamped by the bank.</li>
+                            <li><strong>Original Bank NOC / NDC:</strong> Confirming full and final settlement with zero outstanding dues.</li>
+                            <li><strong>Original RC Smart Card / Book:</strong> For physical or digital endorsement cancellation.</li>
+                            <li><strong>Valid Motor Insurance Certificate & PUC:</strong> Active insurance policy copy.</li>
+                            <li><strong>Identity & Address Proof:</strong> Self-attested Aadhaar Card and PAN Card copies.</li>
+                          </ul>
+                        </div>
+
+                        <div className="p-6 bg-amber-50 rounded-2xl border border-amber-200">
+                          <h4 className="text-base font-bold text-gray-900 mb-3 uppercase">RTO Fees & Online Process (Parivahan Portal):</h4>
+                          <ul className="space-y-2 text-xs text-gray-700 list-disc pl-5">
+                            <li><strong>Step 1:</strong> Visit <em>parivahan.gov.in</em> and select <em>Vehicle Related Services</em>.</li>
+                            <li><strong>Step 2:</strong> Choose <em>Application for Hypothecation Termination</em>.</li>
+                            <li><strong>Step 3:</strong> Pay the standard RTO fee (typically ₹100–₹200 for two-wheelers, ₹300–₹500 for cars and commercial vehicles).</li>
+                            <li><strong>Step 4:</strong> Submit documents online or hand over the physical dossier at your local RTO counter.</li>
+                            <li><strong>Step 5:</strong> Receive your clean, updated RC smart card without the bank lien endorsement.</li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div className="bg-yellow-50 border-l-4 border-[#D2A02A] p-4 rounded-r-xl">
+                        <p className="text-xs text-yellow-900">
+                          <strong>Bank Delaying or Refusing Form 35?</strong> If a lender delays issuing your NOC or Form 35 past 30 days of settlement payment, AMA Legal Solutions serves a statutory notice citing RBI Master Directions, compelling immediate release under penalty of Banking Ombudsman compensation.
+                        </p>
                       </div>
                    </div>
                 </section>

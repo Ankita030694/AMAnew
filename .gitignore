@@ -56,4 +56,7 @@ search_console*
 *search_console*
 scripts/search_console*
 test_search_console*
+scripts/all_gsc_queries.json
+scripts/test_fetch_all.js
+scripts/vehicle_auto_car_movable_assets_queries.json
 
