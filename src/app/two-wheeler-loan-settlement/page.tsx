@@ -2,6 +2,8 @@ import Link from "next/link";
 import Script from "next/script";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import InteractiveLeadModal from "@/components/InteractiveLeadModal";
+import InteractiveLeadModalTrigger from "@/components/InteractiveLeadModalTrigger";
 
 // FAQ data for rendering and JSON-LD Schema
 const faqs = [
@@ -170,11 +172,9 @@ export default function TwoWheelerLoanSettlementPage() {
               Stop aggressive recovery agent visits and unlawful bike repossession. Negotiate a legally protected One-Time Settlement (OTS) with major banks and NBFCs, saving up to 60% of total dues.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/contact" className="w-full sm:w-auto">
-                <button className="w-full sm:w-auto bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3.5 px-8 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-xl text-base md:text-lg">
-                  Free Legal Assessment
-                </button>
-              </Link>
+              <InteractiveLeadModalTrigger className="w-full sm:w-auto bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3.5 px-8 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-xl text-base md:text-lg">
+                Free Legal Assessment
+              </InteractiveLeadModalTrigger>
               <a href="tel:+918700343611" className="w-full sm:w-auto">
                 <button className="w-full sm:w-auto bg-transparent border-2 border-gray-400 hover:border-white hover:bg-white/10 text-white font-semibold py-3.5 px-8 md:py-4 md:px-10 rounded-full transition-all text-base md:text-lg">
                   Call: +91-8700343611
@@ -569,11 +569,9 @@ export default function TwoWheelerLoanSettlementPage() {
                       Don't live in fear of recovery agents pulling your bike away. Speak with an experienced banking advocate at AMA Legal Solutions and resolve your debt legally.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <Link href="/contact" className="w-full sm:w-auto">
-                        <button className="w-full sm:w-auto bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3.5 px-8 md:py-4 md:px-12 rounded-full transition-all transform hover:scale-105 shadow-xl text-base md:text-lg">
-                          Request Free Case Evaluation
-                        </button>
-                      </Link>
+                      <InteractiveLeadModalTrigger className="w-full sm:w-auto bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3.5 px-8 md:py-4 md:px-12 rounded-full transition-all transform hover:scale-105 shadow-xl text-base md:text-lg">
+                        Request Free Case Evaluation
+                      </InteractiveLeadModalTrigger>
                       <a href="tel:+918700343611" className="w-full sm:w-auto">
                         <button className="w-full sm:w-auto bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3.5 px-8 md:py-4 md:px-12 rounded-full transition-all text-base md:text-lg">
                           Direct Line: +91-8700343611
@@ -606,9 +604,9 @@ export default function TwoWheelerLoanSettlementPage() {
                 >
                   Call +91-8700343611
                 </a>
-                <Link href="/contact" className="block w-full bg-gray-100 text-gray-800 text-center py-3 rounded-xl font-semibold hover:bg-gray-200 transition-colors text-sm">
+                <InteractiveLeadModalTrigger className="block w-full bg-gray-100 text-gray-800 text-center py-3 rounded-xl font-semibold hover:bg-gray-200 transition-colors text-sm">
                   Schedule Free Case Review
-                </Link>
+                </InteractiveLeadModalTrigger>
               </div>
 
               {/* Related Vehicle Services */}
@@ -659,6 +657,7 @@ export default function TwoWheelerLoanSettlementPage() {
           </div>
         </div>
       </div>
+      <InteractiveLeadModal />
     </>
   );
 }

@@ -2,6 +2,8 @@ import Link from "next/link";
 import Script from "next/script";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import InteractiveLeadModal from "@/components/InteractiveLeadModal";
+import InteractiveLeadModalTrigger from "@/components/InteractiveLeadModalTrigger";
 
 // FAQ data for rendering and JSON-LD Schema
 const faqs = [
@@ -168,11 +170,9 @@ export default function CommercialVehicleLoanSettlementPage() {
               Facing default on commercial trucks, tractors, tippers, buses, or taxi fleets? Halt illegal highway repossession, freeze yard auction proceedings, and negotiate formal One-Time Settlement (OTS) with senior banking advocates.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/contact" className="w-full sm:w-auto">
-                <button className="w-full sm:w-auto bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3.5 px-8 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-xl text-base md:text-lg">
-                  Free Commercial Case Review
-                </button>
-              </Link>
+              <InteractiveLeadModalTrigger className="w-full sm:w-auto bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3.5 px-8 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-xl text-base md:text-lg">
+                Free Commercial Case Review
+              </InteractiveLeadModalTrigger>
               <a href="tel:+918700343611" className="w-full sm:w-auto">
                 <button className="w-full sm:w-auto bg-transparent border-2 border-gray-400 hover:border-white hover:bg-white/10 text-white font-semibold py-3.5 px-8 md:py-4 md:px-10 rounded-full transition-all text-base md:text-lg">
                   Direct Line: +91-8700343611
@@ -578,11 +578,9 @@ export default function CommercialVehicleLoanSettlementPage() {
                       Do not let defaulting commercial vehicle loans paralyze your transport business or livelihood. Speak confidentially with our senior banking and transport advocates today.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <Link href="/contact" className="w-full sm:w-auto">
-                        <button className="w-full sm:w-auto bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3.5 px-8 md:py-4 md:px-12 rounded-full transition-all transform hover:scale-105 shadow-xl text-base md:text-lg">
-                          Schedule Commercial Case Review
-                        </button>
-                      </Link>
+                      <InteractiveLeadModalTrigger className="w-full sm:w-auto bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3.5 px-8 md:py-4 md:px-12 rounded-full transition-all transform hover:scale-105 shadow-xl text-base md:text-lg text-center">
+                        Schedule Commercial Case Review
+                      </InteractiveLeadModalTrigger>
                       <a href="tel:+918700343611" className="w-full sm:w-auto">
                         <button className="w-full sm:w-auto bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3.5 px-8 md:py-4 md:px-12 rounded-full transition-all text-base md:text-lg">
                           Direct Hotline: +91-8700343611
@@ -615,9 +613,9 @@ export default function CommercialVehicleLoanSettlementPage() {
                 >
                   Call +91-8700343611
                 </a>
-                <Link href="/contact" className="block w-full bg-gray-100 text-gray-800 text-center py-3 rounded-xl font-semibold hover:bg-gray-200 transition-colors text-sm">
+                <InteractiveLeadModalTrigger className="block w-full bg-gray-100 text-gray-800 text-center py-3 rounded-xl font-semibold hover:bg-gray-200 transition-colors text-sm">
                   Request Transporter Consultation
-                </Link>
+                </InteractiveLeadModalTrigger>
               </div>
 
               {/* Related Vehicle Services */}
@@ -668,6 +666,7 @@ export default function CommercialVehicleLoanSettlementPage() {
           </div>
         </div>
       </div>
+      <InteractiveLeadModal />
     </>
   );
 }

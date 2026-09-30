@@ -80,12 +80,17 @@ export function getPresetForPath(pathname: string | null): FunnelPreset | null {
     path.includes("visiting-home") || 
     path.includes("harassment") || 
     path.includes("rbi-guidelines") ||
+    path.includes("repossession") ||
+    path.includes("seizure") ||
     path.includes("hdfc-credit-card-settlement")
   ) {
     return "recovery-harassment";
   }
   if (
     path.includes("loan-settlement") || 
+    path.includes("two-wheeler") || 
+    path.includes("commercial-vehicle") || 
+    path.includes("car-loan") || 
     path.includes("navi") || 
     path.includes("sbi") || 
     path.includes("pnb") || 
