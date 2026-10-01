@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faUser, faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 import { Scale, ShieldCheck, ArrowRight } from 'lucide-react';
 import { openLeadModal } from '@/components/InteractiveLeadModal';
-import { FunnelPreset } from '@/components/InteractiveLeadFunnel';
+import InteractiveLeadFunnel, { FunnelPreset } from '@/components/InteractiveLeadFunnel';
 
 // Lazy load heavy components
 const LazyImage = dynamic(() => import('next/image'), { 
@@ -527,51 +527,9 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
                 </div>
               )}
 
-              {/* Mid-Article Advocate Case Assessment Callout (Mobile-First) */}
-              <div className="my-8 sm:my-10 p-4 sm:p-7 rounded-2xl bg-gradient-to-br from-[#FAF7F0] via-[#FCFBF8] to-[#F5EFE0] border-2 border-[#D2A02A]/35 shadow-sm relative overflow-hidden">
-                {/* Subtle legal emblem watermark */}
-                <div className="absolute -right-4 -bottom-4 opacity-5 pointer-events-none text-[#5A4C33]">
-                  <Scale className="w-32 h-32 sm:w-40 sm:h-40" />
-                </div>
-
-                <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-6">
-                  <div className="space-y-2 max-w-xl">
-                    <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#D2A02A]/15 border border-[#D2A02A]/30 text-[#855B14] text-[11px] sm:text-xs font-bold tracking-wide uppercase">
-                      <Scale className="w-3.5 h-3.5 text-[#D2A02A]" />
-                      <span>Statutory Case Assessment</span>
-                    </div>
-                    
-                    <h3 className="text-base sm:text-xl font-extrabold text-[#1a202c] leading-snug">
-                      {calloutHeadline}
-                    </h3>
-                    
-                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                      Consult directly with experienced High Court advocates to analyze your bank liability, illegal recovery defense, or statutory settlement options under Section 126 Advocate-Client Privilege.
-                    </p>
-
-                    <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-1 text-[11px] sm:text-xs text-gray-500 font-medium">
-                      <span className="flex items-center gap-1 text-emerald-700 font-semibold">
-                        <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> 100% Confidential
-                      </span>
-                      <span>•</span>
-                      <span>No Bank or Employer Disclosure</span>
-                    </div>
-                  </div>
-
-                  <div className="shrink-0 w-full md:w-auto pt-1 sm:pt-0">
-                    <button
-                      type="button"
-                      onClick={() => openLeadModal({ preset: blogPreset })}
-                      className="w-full md:w-auto px-5 sm:px-6 py-3.5 bg-gradient-to-r from-[#30261C] to-[#1C160F] text-[#FAF7F0] hover:text-white font-bold rounded-xl shadow-md active:scale-[0.98] transition-all flex items-center justify-center gap-2 text-xs sm:text-sm border border-[#D2A02A]/40 group"
-                    >
-                      <span>{calloutCtaText}</span>
-                      <ArrowRight className="w-4 h-4 text-[#D2A02A] group-hover:translate-x-1 transition-transform" />
-                    </button>
-                    <p className="text-[10px] sm:text-[11px] text-gray-400 text-center md:text-right mt-1.5 font-medium">
-                      Takes ~30 seconds • Directly reviewed by advocates
-                    </p>
-                  </div>
-                </div>
+              {/* Mid-Article Advocate Case Assessment Funnel */}
+              <div className="not-prose my-8 sm:my-10">
+                <InteractiveLeadFunnel preset={blogPreset} theme="light" />
               </div>
 
               {/* Second Part of Article Content (if present) */}
