@@ -190,6 +190,68 @@ export function getPresetForPath(pathname: string | null): FunnelPreset | null {
   return "homepage";
 }
 
+const MANUAL_INLINE_ROUTES = new Set([
+  "/",
+  "/bajaj-finance-agent-visiting-home",
+  "/bank-complaint-in-rbi",
+  "/best-apps-for-loan-settlement-in-india",
+  "/best-apps-for-managing-loan-settlement-offers-in-india",
+  "/best-loan-settlement-agencies-in-india",
+  "/can-bank-file-case-for-personal-loan",
+  "/can-company-hold-my-salary-after-resignation",
+  "/charities-that-pay-off-debt",
+  "/compare-loan-settlement-companies-that-work-with-personal-loans",
+  "/employer-not-paying-salary-after-resignation",
+  "/expert-panel-loan-settlement-reviews",
+  "/hdfc-credit-card-payment-billdesk",
+  "/hdfc-credit-card-settlement-department-contact-number",
+  "/hdfc-credit-card-settlement-percentage",
+  "/how-do-i-stop-recovery-agent-from-coming-home",
+  "/how-to-report-harassment-from-instant-loan-apps-in-india",
+  "/how-to-settle-7-days-loan-apps",
+  "/how-to-stop-bajaj-recovery-agent-harassment-instantly",
+  "/loan-recovery-agent-harassment-complaint-online",
+  "/loan-settlement-amount-calculator",
+  "/loan-settlement-app",
+  "/loan-settlement-application-in-hindi",
+  "/loan-settlement-for-axis-bank",
+  "/loan-settlement-for-payday-loans",
+  "/not-being-paid-fnf-want-to-send-legal-notice",
+  "/pay-day-loan-settlement",
+  "/rbi-guidelines-for-recovery-agents-pdf-2026",
+  "/section-25-payment-and-settlement-act-bailable-or-not",
+  "/services/loan-settlement/bank-of-baroda",
+  "/services/loan-settlement/icici-bank",
+  "/services/loan-settlement/karnataka",
+  "/services/loan-settlement/kotak-mahindra",
+  "/services/loan-settlement/lok-adalat",
+  "/services/loan-settlement/moneyview",
+  "/services/loan-settlement/navi",
+  "/services/loan-settlement/northern-arc",
+  "/services/loan-settlement",
+  "/services/loan-settlement/paytm",
+  "/services/loan-settlement/pnb-bank",
+  "/services/loan-settlement/poonawalla-fincorp",
+  "/services/loan-settlement/sbi-bank",
+  "/services/loan-settlement/si-creva",
+  "/services/loan-settlement/surat",
+  "/services/loan-settlement/west-bengal",
+  "/settlement-waiver-percentage-of-axis-bank",
+  "/special-lok-adalat-for-challan",
+  "/what-happens-after-bank-issues-recall-notice",
+  "/where-to-file-a-complaint-if-your-employer-doesnt-pay-you"
+]);
+
+/**
+ * Returns true if the page already has a manually embedded <InteractiveLeadFunnel /> in its JSX.
+ */
+export function hasManualInlineFunnel(pathname: string | null): boolean {
+  if (!pathname) return false;
+  const path = pathname.toLowerCase();
+  const cleanPath = path.endsWith("/") && path !== "/" ? path.slice(0, -1) : path;
+  return MANUAL_INLINE_ROUTES.has(cleanPath);
+}
+
 export default function InteractiveLeadModal() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
@@ -204,7 +266,7 @@ export default function InteractiveLeadModal() {
     }
   }, [pathname]);
 
-  // Handle explicit modal triggers from UI buttons
+  // Handle explicit modal triggers from UI buttons (zero automatic popups)
   useEffect(() => {
     const handleOpen = (e: Event) => {
       const customEvent = e as CustomEvent<ModalEventDetail>;
@@ -222,54 +284,6 @@ export default function InteractiveLeadModal() {
       window.removeEventListener("openInteractiveLeadModal", handleOpen);
     };
   }, []);
-
-  // Automatic trigger on top pages after optimal engagement
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const routePreset = getPresetForPath(pathname);
-    if (!routePreset) return;
-
-    // Check if user already submitted or dismissed in this session
-    const hasSubmitted = 
-      localStorage.getItem("form_submitted") || 
-      localStorage.getItem("global_popup_submitted");
-    const hasDismissed = sessionStorage.getItem("interactive_lead_modal_dismissed");
-
-    if (hasSubmitted || hasDismissed) return;
-
-    let timer: NodeJS.Timeout;
-    let didTrigger = false;
-
-    const triggerOpen = () => {
-      if (didTrigger) return;
-      didTrigger = true;
-      setPreset(routePreset);
-      setIsOpen(true);
-    };
-
-    // Auto-open timer: 7.5 seconds for in-depth blogs, 4.5 seconds for landing/service pages
-    const isBlog = pathname?.toLowerCase().startsWith("/blog");
-    const delayMs = isBlog ? 7500 : 4500;
-    timer = setTimeout(triggerOpen, delayMs);
-
-    // Or auto-open when user scrolls down into the legal guide (35% for blogs, 30% for service pages)
-    const scrollThreshold = isBlog ? 0.35 : 0.30;
-    const handleScroll = () => {
-      const scrollPos = window.scrollY;
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (totalHeight > 0 && (scrollPos / totalHeight) >= scrollThreshold) {
-        triggerOpen();
-        window.removeEventListener("scroll", handleScroll);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      clearTimeout(timer);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [pathname]);
 
   const handleClose = () => {
     try {
