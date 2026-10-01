@@ -2,7 +2,6 @@ import Link from "next/link";
 import Script from "next/script";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
-import InteractiveLeadModal from "@/components/InteractiveLeadModal";
 import InteractiveLeadModalTrigger from "@/components/InteractiveLeadModalTrigger";
 
 // FAQ data for rendering and JSON-LD Schema
@@ -639,7 +638,6 @@ export default function VehicleRepossessionLawsPage() {
           </div>
         </div>
       </div>
-      <InteractiveLeadModal />
     </>
   );
 }

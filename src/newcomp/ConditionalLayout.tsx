@@ -4,7 +4,7 @@ import React from 'react';
 import { usePathname } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import Navbar from "./Navbar";
-import { getPresetForPath } from '@/components/InteractiveLeadModal';
+import { getPresetForPath, isUtilityPath } from '@/components/InteractiveLeadModal';
 
 const GlobalPopupForm = dynamic(() => import("./GlobalPopupForm"), { ssr: false });
 const Footer = dynamic(() => import("./Footer"), { ssr: false });
@@ -22,16 +22,16 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
     return () => clearTimeout(timer);
   }, []);
   
-  // Exclude common components for admin and login routes
+  // Exclude common components for admin, login, and contact routes
   const isExcluded = pathname?.startsWith('/admin') || pathname?.startsWith('/login') || pathname === '/contact';
 
   if (isExcluded) {
     return <>{children}</>;
   }
 
-  const hidePopup = pathname === '/support';
+  const isUtility = isUtilityPath(pathname);
   const isInteractivePage = Boolean(getPresetForPath(pathname));
-  const showOldGlobalPopup = showPopup && !hidePopup && !isInteractivePage;
+  const showOldGlobalPopup = showPopup && !isUtility && !isInteractivePage;
 
   return (
     <>

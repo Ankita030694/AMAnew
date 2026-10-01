@@ -24,149 +24,170 @@ export function openLeadModal(detail?: ModalEventDetail) {
 }
 
 /**
- * Maps high-traffic and all-time top performing pages to their tailored legal funnel preset.
+ * Checks whether a path is a utility, operational, checkout, or administrative route.
  */
-export function getPresetForPath(pathname: string | null): FunnelPreset | null {
-  if (!pathname) return null;
+export function isUtilityPath(pathname: string | null): boolean {
+  if (!pathname) return true;
   const path = pathname.toLowerCase();
   
-  // Specific exclusions
-  if (
-    path.startsWith("/admin") || 
-    path.startsWith("/login") || 
-    path.startsWith("/payment") || 
-    path.startsWith("/thank-you") ||
-    path.startsWith("/contact") ||
-    path.startsWith("/careers")
-  ) {
-    return null;
-  }
+  return (
+    path.startsWith("/admin") ||
+    path.startsWith("/login") ||
+    path.startsWith("/careers") ||
+    path.startsWith("/api") ||
+    path === "/contact" ||
+    path === "/support" ||
+    path === "/privacy-policy" ||
+    path === "/terms-and-conditions" ||
+    path === "/failure" ||
+    path === "/payment-success" ||
+    path.startsWith("/payment-success/") ||
+    path === "/payment" ||
+    path.startsWith("/payment/") ||
+    path === "/thank-you" ||
+    path.startsWith("/thank-you/") ||
+    path === "/settlement-thank-you" ||
+    path.startsWith("/settlement-thank-you/") ||
+    path === "/sales-job-vacancies-in-gurgaon" ||
+    path === "/telecaller-vacancies-in-gurgaon"
+  );
+}
 
-  // Exact & Prefix matches for top pages
+/**
+ * Maps all SEO, pSEO, blog, and service pages to their tailored legal funnel preset.
+ * Utility and administrative routes strictly return null.
+ */
+export function getPresetForPath(pathname: string | null): FunnelPreset | null {
+  if (!pathname || isUtilityPath(pathname)) return null;
+  const path = pathname.toLowerCase();
+
+  // 1. Exact & High-Priority Specific Matches
   if (path === "/" || path === "") return "homepage";
   if (path.includes("calculator")) return "calculator";
   if (path.includes("axis-bank") || path.includes("axis")) return "axis-bank";
+
+  // 2. Payday & Instant Lending App Harassment
   if (
     path.includes("payday") || 
+    path.includes("pay-day") || 
     path.includes("7-day") || 
+    path.includes("7-days") ||
+    path.includes("7days") ||
+    path.includes("instant-loan") || 
+    path.includes("instant-loans") || 
     path.includes("harassment-from-instant-loan") || 
     path.includes("bharat-loan") || 
-    path.includes("mpokket")
+    path.includes("mpokket") ||
+    path.includes("app-loan") ||
+    path.includes("lending-app") ||
+    path.includes("chinese-loan") ||
+    path.includes("ring-app")
   ) {
     return "payday-loans";
   }
+
+  // 3. Comparison & Unregulated Agency Warnings
   if (
     path.includes("best-loan-settlement") || 
     path.includes("loan-settlement-app") || 
     path.includes("best-apps-for-managing") ||
     path.includes("expert-panel") ||
-    path.includes("compare-loan-settlement")
+    path.includes("compare-loan-settlement") ||
+    path.includes("best-debt-settlement") ||
+    path.includes("best-debt-relief") ||
+    path.includes("top-loan-settlement")
   ) {
     return "best-agencies";
   }
+
+  // 4. Lok Adalat & Traffic Challans
   if (path.includes("lok-adalat") || path.includes("challan")) {
     return "lok-adalat";
   }
+
+  // 5. Employment Law, Unpaid Salary & FnF Recovery
   if (
     path.includes("salary") || 
     path.includes("employer") || 
     path.includes("fnf") || 
-    path.includes("resignation")
+    path.includes("resignation") ||
+    path.includes("unpaid") ||
+    path.includes("workplace-harassment") ||
+    path.includes("termination")
   ) {
     return "employment-salary";
   }
+
+  // 6. Recovery Harassment, Agent Threats & Police Complaints
   if (
-    path.includes("recovery-agent") || 
+    path.includes("recovery") || 
     path.includes("visiting-home") || 
-    path.includes("harassment") || 
-    path.includes("rbi-guidelines") ||
-    path.includes("repossession") ||
-    path.includes("seizure") ||
+    path.includes("harass") || 
+    path.includes("threat") || 
+    path.includes("agent") || 
+    path.includes("abusing") || 
+    path.includes("calling") || 
+    path.includes("rbi-guidelines") || 
+    path.includes("repossession") || 
+    path.includes("seizure") || 
+    path.includes("police") || 
+    path.includes("hacked") ||
+    path.includes("morphed") ||
     path.includes("hdfc-credit-card-settlement")
   ) {
     return "recovery-harassment";
   }
+
+  // 7. Bank Settlement, NPA, OTS, Sec 138, Arbitration & Demand Notices
   if (
-    path.includes("loan-settlement") || 
+    path.includes("settle") || 
+    path.includes("loan") || 
+    path.includes("bank") || 
+    path.includes("credit-card") || 
+    path.includes("cibil") || 
+    path.includes("npa") || 
+    path.includes("ots") || 
+    path.includes("drt") || 
+    path.includes("debt") || 
+    path.includes("arbitration") || 
+    path.includes("notice") || 
+    path.includes("cheque") || 
+    path.includes("138") || 
+    path.includes("defaulter") || 
+    path.includes("emi") || 
+    path.includes("bounce") || 
+    path.includes("recall") || 
+    path.includes("section-25") || 
+    path.includes("moratorium") || 
+    path.includes("foreclosure") || 
     path.includes("two-wheeler") || 
     path.includes("commercial-vehicle") || 
     path.includes("car-loan") || 
     path.includes("navi") || 
     path.includes("sbi") || 
     path.includes("pnb") || 
+    path.includes("kotak") || 
+    path.includes("icici") || 
+    path.includes("hdfc") || 
+    path.includes("paytm") || 
+    path.includes("moneyview") || 
+    path.includes("poonawalla") || 
+    path.includes("cred") || 
+    path.includes("bajaj") || 
+    path.includes("indusind") || 
+    path.includes("idfc") || 
+    path.includes("rbl") || 
+    path.includes("yes-bank") || 
+    path.includes("billdesk") || 
     path.includes("si-creva") || 
-    path.includes("northern-arc") ||
-    path.includes("freed-loan-settlement") ||
-    path.includes("bank-complaint-in-rbi") ||
-    path.includes("bank-of-baroda") ||
-    path.includes("kotak") ||
-    path.includes("paytm") ||
-    path.includes("icici") ||
-    path.includes("moneyview") ||
-    path.includes("poonawalla") ||
-    path.includes("charities") ||
-    path.includes("recall-notice") ||
-    path.includes("section-25") ||
-    path.includes("billdesk") ||
-    path.includes("personal-loan") ||
-    path.includes("credit-card") ||
-    path.includes("settlement") ||
-    path.includes("npa") ||
-    path.includes("ots") ||
-    path.includes("drt")
+    path.includes("northern-arc") || 
+    path.includes("charities")
   ) {
     return "bank-settlement";
   }
 
-  // Blog general & contextual handling
-  if (path.startsWith("/blog")) {
-    if (
-      path.includes("recovery") || 
-      path.includes("agent") || 
-      path.includes("harass") || 
-      path.includes("threat") || 
-      path.includes("police")
-    ) {
-      return "recovery-harassment";
-    }
-    if (
-      path.includes("payday") || 
-      path.includes("7-day") || 
-      path.includes("instant") || 
-      path.includes("chinese") || 
-      path.includes("app")
-    ) {
-      return "payday-loans";
-    }
-    if (
-      path.includes("salary") || 
-      path.includes("employer") || 
-      path.includes("resignation") || 
-      path.includes("fnf") ||
-      path.includes("unpaid")
-    ) {
-      return "employment-salary";
-    }
-    if (path.includes("lok-adalat") || path.includes("challan")) {
-      return "lok-adalat";
-    }
-    if (
-      path.includes("settle") || 
-      path.includes("bank") || 
-      path.includes("loan") || 
-      path.includes("credit-card") || 
-      path.includes("cibil") || 
-      path.includes("npa") || 
-      path.includes("ots") ||
-      path.includes("notice") || 
-      path.includes("drt")
-    ) {
-      return "bank-settlement";
-    }
-    return "homepage";
-  }
-
-  return null;
+  // 8. Universal Catch-All for all other SEO / pSEO / IPR / Litigation / Location / Guide pages
+  return "homepage";
 }
 
 export default function InteractiveLeadModal() {
