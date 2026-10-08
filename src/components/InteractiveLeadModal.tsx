@@ -249,6 +249,7 @@ export function hasManualInlineFunnel(pathname: string | null): boolean {
   if (!pathname) return false;
   const path = pathname.toLowerCase();
   const cleanPath = path.endsWith("/") && path !== "/" ? path.slice(0, -1) : path;
+  if (cleanPath.startsWith("/blog/") || cleanPath === "/blog") return true;
   return MANUAL_INLINE_ROUTES.has(cleanPath);
 }
 

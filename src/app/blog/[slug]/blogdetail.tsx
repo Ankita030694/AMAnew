@@ -389,7 +389,7 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
   return (
     <div className="min-h-screen bg-[#F5F2EB] text-gray-800 pt-20 md:pt-28">
       <div className="container mx-auto px-4 max-w-[1600px]">
-        <Breadcrumbs items={breadcrumbItems} />
+        <Breadcrumbs items={breadcrumbItems} hideFunnel={true} />
         
         {/* New Asymmetric 12-Column Hero */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mt-8 mb-12 items-center">
