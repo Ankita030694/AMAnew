@@ -731,7 +731,11 @@ export async function GET(): Promise<Response> {
     '/section-25-payment-and-settlement-act-legal-defense',
     '/services/loan-settlement/kolkata',
     '/services/loan-settlement/bangalore',
-    '/loan-settlement-agency-fees-and-charges-in-india'
+    '/loan-settlement-agency-fees-and-charges-in-india',
+    '/two-wheeler-loan-settlement',
+    '/commercial-vehicle-loan-settlement',
+    '/vehicle-repossession-laws-india',
+    '/criminal-complaint-against-loan-defaulter-bns-316-318'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),

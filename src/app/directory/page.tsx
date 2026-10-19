@@ -24,6 +24,9 @@ export async function generateMetadata({
 }
 
 const directoryLinks = [
+  { name: 'Two-Wheeler & Bike Loan Settlement India: Stop Seizure & Recovery Harassment', href: '/two-wheeler-loan-settlement' },
+  { name: 'Commercial Vehicle Loan Settlement India: Truck, Tractor & Fleet Debt Relief', href: '/commercial-vehicle-loan-settlement' },
+  { name: 'Vehicle Repossession Laws in India: Supreme Court & RBI Guidelines Defense', href: '/vehicle-repossession-laws-india' },
   { name: 'Loan Settlement for Axis Bank: Credit Card & Personal Loan Debt Relief', href: '/loan-settlement-for-axis-bank' },
   { name: 'Loan Settlement Agency Fees and Charges in India', href: '/loan-settlement-agency-fees-and-charges-in-india' },
   { name: 'Loan Settlement Agency in Bangalore: Debt Settlement Lawyers in Bengaluru', href: '/services/loan-settlement/bangalore' },

@@ -463,6 +463,9 @@ export default function CarLoanSettlementPage() {
                     <p>
                         If a lender repossesses your car without following these steps, they are liable for legal action. Furthermore, after repossession, the bank must send you a 'Pre-Sale' notice, giving you one last chance to pay the dues and redeem the vehicle. They are obligated to sell the vehicle at a fair market price through a transparent process. If they sell it for a very low price to a preferred buyer, you can challenge the sale in court.
                     </p>
+                    <p>
+                        For the full legal procedure, borrower rights and what to do if your vehicle has already been seized, read our detailed guide on <Link href="/vehicle-repossession-laws-india" className="text-[#D2A02A] font-semibold hover:underline">vehicle repossession laws in India</Link>.
+                    </p>
                     <div className="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-600">
                         <h4 className="font-bold text-blue-900 mb-2">Did You Know?</h4>
                         <p className="text-blue-800">You have the right to inspect the vehicle after repossession to ensure that your personal belongings are safe and that no damage has been done to the vehicle during transport.</p>
@@ -760,6 +763,26 @@ export default function CarLoanSettlementPage() {
                         <Link href="/does-foreclosure-of-loan-affect-cibil" className="text-gray-600 hover:text-[#D2A02A] text-sm flex items-center gap-2">
                             <span className="text-[#D2A02A]">›</span> Foreclosure vs CIBIL
                         </Link>
+                    </li>
+                    <li>
+                      <Link href="/two-wheeler-loan-settlement" className="text-gray-600 hover:text-[#D2A02A] text-sm flex items-center gap-2">
+                        <span className="text-[#D2A02A]">›</span> Two-Wheeler Loan Settlement
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/commercial-vehicle-loan-settlement" className="text-gray-600 hover:text-[#D2A02A] text-sm flex items-center gap-2">
+                        <span className="text-[#D2A02A]">›</span> Commercial Vehicle Loan Settlement
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/vehicle-repossession-laws-india" className="text-gray-600 hover:text-[#D2A02A] text-sm flex items-center gap-2">
+                        <span className="text-[#D2A02A]">›</span> Vehicle Repossession Laws in India
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/criminal-complaint-against-loan-defaulter-bns-316-318" className="text-gray-600 hover:text-[#D2A02A] text-sm flex items-center gap-2">
+                        <span className="text-[#D2A02A]">›</span> Criminal Complaint for Loan Default (BNS 316/318)
+                      </Link>
                     </li>
                   </ul>
                 </div>
