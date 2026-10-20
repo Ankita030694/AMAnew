@@ -356,7 +356,8 @@ const ArticlesDashboard = () => {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to generate article');
+        const errData = await response.json().catch(() => null);
+        throw new Error(errData?.error || 'Failed to generate article');
       }
 
       // Handle streaming response

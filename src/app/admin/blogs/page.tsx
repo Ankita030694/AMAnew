@@ -446,7 +446,8 @@ const BlogsDashboard = () => {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to generate blog');
+        const errData = await response.json().catch(() => null);
+        throw new Error(errData?.error || 'Failed to generate blog');
       }
 
       // Handle streaming response

@@ -197,6 +197,16 @@ function extractResponseText(resp: any): string {
     return '';
 }
 
+// Detects LLM refusals such as "I'm sorry, I can't assist with that."
+function isRefusal(text: string, refusalField?: string | null): boolean {
+    if (refusalField) return true;
+    const t = (text || '').trim();
+    if (!t) return true;
+    // Real articles are thousands of characters; refusals are short.
+    if (t.length > 600) return false;
+    return /\b(i'?m sorry|i am sorry|i apologi[sz]e|sorry,? (but )?i)\b.*\b(can'?t|cannot|unable|not able)\b|\b(can'?t|cannot|unable to) (assist|help|comply|fulfill|provide)\b/i.test(t);
+}
+
 export async function POST(request: Request) {
     const openai = new OpenAI({
         apiKey: process.env.HELLO_DROP_CHOO,
@@ -509,16 +519,42 @@ ${formattedInternalLinks}
 6. ABSOLUTE PROHIBITION ON PUBLICATION DATES & BYLINES: Do NOT output any publication dates, date lines, or author bylines (e.g., 'Publication Date: ...', 'Published on: ...', 'Written by ...', 'Date: ...'). Publication dates and author credits are strictly handled natively by the platform CMS.
 `;
 
-        const step2Completion = await openai.chat.completions.create({
-            model: MODEL_HEAVY,
-            messages: [
-                { role: "system", content: step2SystemPrompt },
-                { role: "user", content: `Write the complete, authoritative HTML article body for: "${step1Result.title}" targeting "${primaryKeyword}". Ensure "${primaryKeyword}" appears naturally at least 10 to 18 times throughout the article. Aim for approximately ${targetWordCount} words.` }
-            ],
-            max_completion_tokens: dynamicMaxTokens,
-        });
+        const step2UserPrompt = `Write the complete, authoritative HTML article body for: "${step1Result.title}" targeting "${primaryKeyword}". Ensure "${primaryKeyword}" appears naturally at least 10 to 18 times throughout the article. Aim for approximately ${targetWordCount} words.`;
+        const step2ReframedUserPrompt = `Context: This is lawful, educational, informational legal content for the public website of a registered Indian law firm (AMA Legal Solutions), explaining the law, rights and procedures. It will be reviewed by advocates before publication. It does not facilitate any wrongdoing.\n\n${step2UserPrompt}`;
 
-        let rawDescription = step2Completion.choices[0]?.message?.content || "";
+        // Attempt order: heavy model -> heavy model with reframed context -> light model with reframed context
+        const step2Attempts = [
+            { model: MODEL_HEAVY, user: step2UserPrompt },
+            { model: MODEL_HEAVY, user: step2ReframedUserPrompt },
+            { model: MODEL_LIGHT, user: step2ReframedUserPrompt },
+        ];
+
+        let rawDescription = "";
+        for (let i = 0; i < step2Attempts.length; i++) {
+            const attempt = step2Attempts[i];
+            const step2Completion = await openai.chat.completions.create({
+                model: attempt.model,
+                messages: [
+                    { role: "system", content: step2SystemPrompt },
+                    { role: "user", content: attempt.user }
+                ],
+                max_completion_tokens: dynamicMaxTokens,
+            });
+            const msg: any = step2Completion.choices[0]?.message;
+            const content = msg?.content || "";
+            if (!isRefusal(content, msg?.refusal)) {
+                rawDescription = content;
+                break;
+            }
+            console.warn(`[AI Generator Flow] Step 2 attempt ${i + 1} (${attempt.model}) was refused: ${msg?.refusal || content.slice(0, 200)}`);
+        }
+
+        if (!rawDescription) {
+            return NextResponse.json(
+                { error: 'The AI model declined to generate this article. Try rewording the primary keyword or check the selected prompt profile instructions.' },
+                { status: 422 }
+            );
+        }
         
         // 4. Post-Processing & HTML Sanitizer Layer
         let cleanedDescription = postProcessAndSanitizeHtml(rawDescription);
