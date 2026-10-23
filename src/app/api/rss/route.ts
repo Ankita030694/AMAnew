@@ -1,6 +1,9 @@
 import { adminDb } from '../../../lib/firebase-admin';
 import { NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 // Add a Blog interface
 interface Blog {
   id: string;

@@ -1,7 +1,6 @@
 // src/app/sitemap.xml/route.ts
 // import { MetadataRoute } from 'next'
-import { db } from '@/lib/firebase'
-import { collection, getDocs } from 'firebase/firestore'
+import { adminDb } from '@/lib/firebase-admin'
 import { successStories } from '@/data/success-stories'
 import { locationData } from '@/app/lawyer-by-city/locationData'
 import { harassmentBanks } from '@/data/harassmentBanks'
@@ -11,6 +10,9 @@ import { statesData } from '@/data/statesData'
 import fs from 'fs';
 import path from 'path';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 // Reusable slugify function to perfectly match the dynamic route URLs
 const slugify = (text: string) => {
   return text
@@ -18,6 +20,36 @@ const slugify = (text: string) => {
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/(^-|-$)+/g, '');
 };
+
+function toSafeIsoString(created: any): string {
+  try {
+    if (!created) return new Date().toISOString();
+    if (typeof created === 'number') {
+      const d = new Date(created);
+      if (!isNaN(d.getTime())) return d.toISOString();
+    }
+    if (typeof created?.toMillis === 'function') {
+      const d = new Date(created.toMillis());
+      if (!isNaN(d.getTime())) return d.toISOString();
+    }
+    if (typeof created === 'string') {
+      const d = new Date(created);
+      if (!isNaN(d.getTime())) return d.toISOString();
+    }
+  } catch {
+    // Fallback to current timestamp
+  }
+  return new Date().toISOString();
+}
+
+function escapeXml(unsafe: string): string {
+  return unsafe
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
 
 
 
@@ -770,16 +802,16 @@ export async function GET(): Promise<Response> {
 
   // Build dynamic blog routes
   const blogRoutes = blogs.map(blog => ({
-    url: `${baseUrl}/blog/${blog.slug}`,
-    lastModified: new Date(blog.created || Date.now()).toISOString(),
-    changeFrequency: 'monthly',
-    priority: 0.7
+    url: `${baseUrl}/blog/${encodeURIComponent(blog.slug)}`,
+    lastModified: toSafeIsoString(blog.created),
+    changeFrequency: 'weekly',
+    priority: 0.8
   }))
 
   // Build dynamic article routes
   const articleRoutes = articles.map(article => ({
-    url: `${baseUrl}/articles/${article.slug}`,
-    lastModified: new Date(article.created || Date.now()).toISOString(),
+    url: `${baseUrl}/articles/${encodeURIComponent(article.slug)}`,
+    lastModified: toSafeIsoString(article.created),
     changeFrequency: 'monthly',
     priority: 0.7
   }))
@@ -827,7 +859,7 @@ export async function GET(): Promise<Response> {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${allRoutes.map(route => `
     <url>
-      <loc>${route.url}</loc>
+      <loc>${escapeXml(route.url)}</loc>
       <lastmod>${route.lastModified}</lastmod>
       <changefreq>${route.changeFrequency}</changefreq>
       <priority>${route.priority}</priority>
@@ -849,22 +881,24 @@ export async function GET(): Promise<Response> {
   return new Response(xml, {
     headers: {
       'Content-Type': 'application/xml',
-      'Cache-Control': 'public, max-age=3600, s-maxage=3600'
+      'Cache-Control': 'public, max-age=0, s-maxage=60, stale-while-revalidate=300'
     }
   })
 }
 
-// Helper functions to fetch data
+// Helper functions to fetch data via Firebase Admin SDK (server-safe & fast projection)
 async function fetchAllBlogs() {
   try {
-    const querySnapshot = await getDocs(collection(db, 'blogs'))
-    return querySnapshot.docs.map(doc => {
-      const data = doc.data()
-      return {
-        slug: data.slug,
-        created: data.created || Date.now()
-      }
-    })
+    const querySnapshot = await adminDb.collection('blogs').select('slug', 'created', 'date').get()
+    return querySnapshot.docs
+      .map(doc => {
+        const data = doc.data()
+        return {
+          slug: typeof data.slug === 'string' ? data.slug.trim() : '',
+          created: data.created || data.date || Date.now()
+        }
+      })
+      .filter(blog => blog.slug.length > 0)
   } catch (error) {
     console.error('Error fetching blogs:', error)
     return []
@@ -873,14 +907,16 @@ async function fetchAllBlogs() {
 
 async function fetchAllArticles() {
   try {
-    const querySnapshot = await getDocs(collection(db, 'articles'))
-    return querySnapshot.docs.map(doc => {
-      const data = doc.data()
-      return {
-        slug: data.slug,
-        created: data.created || Date.now()
-      }
-    })
+    const querySnapshot = await adminDb.collection('articles').select('slug', 'created', 'date').get()
+    return querySnapshot.docs
+      .map(doc => {
+        const data = doc.data()
+        return {
+          slug: typeof data.slug === 'string' ? data.slug.trim() : '',
+          created: data.created || data.date || Date.now()
+        }
+      })
+      .filter(article => article.slug.length > 0)
   } catch (error) {
     console.error('Error fetching articles:', error)
     return []

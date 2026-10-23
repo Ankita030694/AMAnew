@@ -507,6 +507,11 @@ const ArticlesDashboard = () => {
           for (const review of reviews) await addDoc(collection(db, 'articles', blogId, 'reviews'), review);
         }
       }
+      // Automatically revalidate live sitemap, RSS, articles listing, and submit sitemaps to Google Search Console
+      fetch(`/api/revalidate-sitemap?type=article&slug=${encodeURIComponent(blogData.slug || '')}`, {
+        method: 'POST',
+      }).catch(err => console.warn('Sitemap revalidation warning:', err));
+
       resetForm();
       fetchBlogs();
     } catch (error) {
@@ -549,6 +554,9 @@ const ArticlesDashboard = () => {
         } catch (e) {}
       }
       await deleteDoc(blogRef);
+      fetch(`/api/revalidate-sitemap?type=article&slug=${encodeURIComponent(blogDoc.data()?.slug || '')}`, {
+        method: 'POST',
+      }).catch(err => console.warn('Sitemap revalidation warning:', err));
       fetchBlogs();
     } catch (error) { console.error(error); }
   };

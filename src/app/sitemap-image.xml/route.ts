@@ -1,5 +1,7 @@
-import { db } from '@/lib/firebase'
-import { collection, getDocs } from 'firebase/firestore'
+import { adminDb } from '@/lib/firebase-admin'
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 interface ImageItem {
   url: string;
@@ -44,16 +46,28 @@ export async function GET(): Promise<Response> {
     }
   ]
   
-  // Build blog images with enhanced metadata
-  const blogImages: ImageItem[] = blogs
-    .filter(blog => blog.image)
-    .map(blog => ({
-      url: blog.image,
-      caption: `${blog.title} - AMA Legal Solutions Blog | Legal Insights India`,
-      title: `${blog.title} | AMA Legal Solutions`,
-      pageUrl: `${baseUrl}/blog/${blog.slug}`,
-      license: 'https://www.amalegalsolutions.com/terms'
-    }))
+  // Build blog images (hero + infographic) with enhanced metadata
+  const blogImages: ImageItem[] = []
+  for (const blog of blogs) {
+    if (blog.image) {
+      blogImages.push({
+        url: blog.image,
+        caption: `${blog.title} - AMA Legal Solutions Blog | Legal Insights India`,
+        title: `${blog.title} | AMA Legal Solutions`,
+        pageUrl: `${baseUrl}/blog/${encodeURIComponent(blog.slug)}`,
+        license: 'https://www.amalegalsolutions.com/terms'
+      })
+    }
+    if (blog.infographic) {
+      blogImages.push({
+        url: blog.infographic,
+        caption: `${blog.title} - Legal Process Flowchart Infographic | AMA Legal Solutions`,
+        title: `${blog.title} - Infographic | AMA Legal Solutions`,
+        pageUrl: `${baseUrl}/blog/${encodeURIComponent(blog.slug)}`,
+        license: 'https://www.amalegalsolutions.com/terms'
+      })
+    }
+  }
   
   // Build article images with enhanced metadata
   const articleImages: ImageItem[] = articles
@@ -62,7 +76,7 @@ export async function GET(): Promise<Response> {
       url: article.image,
       caption: `${article.title} - AMA Legal Solutions Article | Legal Expertise India`,
       title: `${article.title} | AMA Legal Solutions`,
-      pageUrl: `${baseUrl}/articles/${article.slug}`,
+      pageUrl: `${baseUrl}/articles/${encodeURIComponent(article.slug)}`,
       license: 'https://www.amalegalsolutions.com/terms'
     }))
   
@@ -93,24 +107,27 @@ export async function GET(): Promise<Response> {
   return new Response(xml, {
     headers: {
       'Content-Type': 'application/xml',
-      'Cache-Control': 'public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400'
+      'Cache-Control': 'public, max-age=0, s-maxage=60, stale-while-revalidate=300'
     }
   })
 }
 
-// Helper functions to fetch data
+// Helper functions to fetch data via Firebase Admin SDK
 async function fetchAllBlogs() {
   try {
-    const querySnapshot = await getDocs(collection(db, 'blogs'))
-    return querySnapshot.docs.map(doc => {
-      const data = doc.data()
-      return {
-        slug: data.slug,
-        title: data.title,
-        image: data.image,
-        created: data.created || Date.now()
-      }
-    })
+    const querySnapshot = await adminDb.collection('blogs').select('slug', 'title', 'image', 'infographic', 'created').get()
+    return querySnapshot.docs
+      .map(doc => {
+        const data = doc.data()
+        return {
+          slug: typeof data.slug === 'string' ? data.slug.trim() : '',
+          title: data.title || 'AMA Legal Solutions Blog',
+          image: data.image || '',
+          infographic: data.infographic || '',
+          created: data.created || Date.now()
+        }
+      })
+      .filter(blog => blog.slug.length > 0)
   } catch (error) {
     console.error('Error fetching blogs:', error)
     return []
@@ -119,16 +136,18 @@ async function fetchAllBlogs() {
 
 async function fetchAllArticles() {
   try {
-    const querySnapshot = await getDocs(collection(db, 'articles'))
-    return querySnapshot.docs.map(doc => {
-      const data = doc.data()
-      return {
-        slug: data.slug,
-        title: data.title,
-        image: data.image,
-        created: data.created || Date.now()
-      }
-    })
+    const querySnapshot = await adminDb.collection('articles').select('slug', 'title', 'image', 'created').get()
+    return querySnapshot.docs
+      .map(doc => {
+        const data = doc.data()
+        return {
+          slug: typeof data.slug === 'string' ? data.slug.trim() : '',
+          title: data.title || 'AMA Legal Solutions Article',
+          image: data.image || '',
+          created: data.created || Date.now()
+        }
+      })
+      .filter(article => article.slug.length > 0)
   } catch (error) {
     console.error('Error fetching articles:', error)
     return []

@@ -45,6 +45,8 @@ async function submitSitemaps() {
 
     const sitemapsToSubmit = [
       'https://www.amalegalsolutions.com/sitemap.xml',
+      'https://www.amalegalsolutions.com/sitemap-image.xml',
+      'https://www.amalegalsolutions.com/api/rss',
       'https://amalegalsolutions.com/sitemap.xml',
     ];
 

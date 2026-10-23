@@ -825,6 +825,11 @@ const BlogsDashboard = () => {
         }
       }
       
+      // Automatically revalidate live sitemap, RSS, blog listing, and submit sitemaps to Google Search Console
+      fetch(`/api/revalidate-sitemap?type=blog&slug=${encodeURIComponent(blogData.slug || '')}`, {
+        method: 'POST',
+      }).catch(err => console.warn('Sitemap revalidation warning:', err));
+
       // Reset form and show table
       resetForm();
       
@@ -970,6 +975,11 @@ const BlogsDashboard = () => {
         
         // Delete document from Firestore
         await deleteDoc(doc(db, 'blogs', id));
+
+        // Automatically revalidate live sitemap, RSS, and blog listing
+        fetch(`/api/revalidate-sitemap?type=blog&slug=${encodeURIComponent(blogData?.slug || '')}`, {
+          method: 'POST',
+        }).catch(err => console.warn('Sitemap revalidation warning:', err));
         
         // Update local state
         setBlogs(prevBlogs => prevBlogs.filter(blog => blog.id !== id));
