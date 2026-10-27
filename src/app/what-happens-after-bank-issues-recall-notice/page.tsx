@@ -175,16 +175,17 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Bank Loan Recall Notice: What Happens Next & Legal Steps",
+  title: "Loan Recall Notice Meaning: What Happens Next, Reply Format & OTS Settlement (2026)",
   description:
-    "Received a loan recall notice from your bank? Learn what happens next, legal borrower options, and how to protect your assets with AMA Legal Solutions.",
+    "What is a loan recall notice (recall notice kya hota hai)? Know what happens after a bank recalls your loan, the 7–15 day reply window, SARFAESI rules & how to settle via OTS.",
   keywords: [
+    "loan recall notice meaning",
+    "what is loan recall notice",
+    "recall notice kya hota hai",
     "what happens after bank issues recall notice",
+    "loan recall notice meaning in hindi",
     "loan recall notice india",
     "bank recall notice response",
-    "anuj anand malik",
-    "ama legal solutions",
-    "sector 57",
     "loan settlement lawyer",
     "sarfaesi act recall notice",
     "repay full loan amount",
@@ -708,6 +709,30 @@ export default function RecallNoticePage() {
                     <Link href="/personal-loan-settlement" className="text-gray-600 hover:text-[#D2A02A] flex items-center group">
                       <span className="w-1.5 h-1.5 bg-[#D2A02A] rounded-full mr-2 group-hover:w-3 transition-all"></span>
                       Personal Loan Help
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/bankruptcy-lawyer-in-india" className="text-gray-600 hover:text-[#D2A02A] flex items-center group">
+                      <span className="w-1.5 h-1.5 bg-[#D2A02A] rounded-full mr-2 group-hover:w-3 transition-all"></span>
+                      Bankruptcy & Insolvency Lawyer
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/loan-settlement-for-sbi-bank" className="text-gray-600 hover:text-[#D2A02A] flex items-center group">
+                      <span className="w-1.5 h-1.5 bg-[#D2A02A] rounded-full mr-2 group-hover:w-3 transition-all"></span>
+                      SBI Loan Settlement (OTS)
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/loan-settlement-for-hdfc-bank" className="text-gray-600 hover:text-[#D2A02A] flex items-center group">
+                      <span className="w-1.5 h-1.5 bg-[#D2A02A] rounded-full mr-2 group-hover:w-3 transition-all"></span>
+                      HDFC Bank Loan Settlement
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/loan-settlement-for-bajaj-finserv" className="text-gray-600 hover:text-[#D2A02A] flex items-center group">
+                      <span className="w-1.5 h-1.5 bg-[#D2A02A] rounded-full mr-2 group-hover:w-3 transition-all"></span>
+                      Bajaj Finserv Loan Settlement
                     </Link>
                   </li>
                 </ul>

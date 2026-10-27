@@ -114,17 +114,18 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Can Company Hold My Salary After Resignation? Legal Guide | AMA",
+  title: "Can Company Hold Salary After Resignation? F&F Rules, Legal Notice & Recovery (2026)",
   description:
-    "Is your company withholding salary after resignation? Learn your rights under Indian labor laws, legal timelines, and steps to recover unpaid dues.",
+    "No, an employer cannot illegally hold your salary or Full & Final (F&F) settlement after resignation. Know the 30–45 day payout law, Labour Court complaint & legal notice process.",
   keywords: [
+    "can company hold my salary after resignation",
     "can company hold salary after resignation",
+    "after resignation how many days to get salary",
     "legal validity of salary withholding",
     "employer holding fnf settlement",
     "labor law for unpaid salary",
     "salary hold for asset recovery",
     "how to recover held salary",
-    "ama legal solutions salary recovery",
     "legal action for salary hold"
   ],
   alternates: {

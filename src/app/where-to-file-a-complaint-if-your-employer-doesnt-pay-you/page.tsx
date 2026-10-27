@@ -132,26 +132,27 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Where to File Unpaid Salary Complaint in India | AMA Legal",
+  title: "Online Complaint for Non-Payment of Salary in India (SAMADHAN Portal & Labour Court)",
   description:
-    "Facing unpaid salary? Learn where to file a complaint against your employer, from the SAMADHAN portal to Labour Courts and Civil Suits with AMA Legal.",
+    "Salary na milne par online complaint kaise kare? File an unpaid salary or pending F&F complaint on the Ministry of Labour SAMADHAN Portal, Labour Commissioner, or send a legal notice.",
   keywords: [
+    "salary na milne par online complaint kaise kare",
+    "online complaint for non payment of salary",
+    "salary na milne par kaha complaint kare",
     "where to file complaint against employer for salary",
     "how to complain about unpaid wages in india",
     "samadhan portal salary complaint",
     "labour court complaint for salary",
     "legal action against employer for non payment",
-    "ama legal solutions salary recovery guide",
-    "director liability for unpaid salary",
     "filing complaint in labour department delhi"
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/where-to-file-a-complaint-if-your-employer-doesnt-pay-you',
   },
   openGraph: {
-    title: "Where to File Unpaid Salary Complaint in India | AMA Legal",
+    title: "Online Complaint for Non-Payment of Salary in India (SAMADHAN Portal & Labour Court)",
     description:
-      "Facing unpaid salary? Learn where to file a complaint against your employer, from the SAMADHAN portal to Labour Courts and Civil Suits with AMA Legal.",
+      "Salary na milne par online complaint kaise kare? File an unpaid salary or pending F&F complaint on the Ministry of Labour SAMADHAN Portal, Labour Commissioner, or send a legal notice.",
     url: 'https://www.amalegalsolutions.com/where-to-file-a-complaint-if-your-employer-doesnt-pay-you',
     type: "article",
   },
