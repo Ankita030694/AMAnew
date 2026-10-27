@@ -285,19 +285,21 @@ const breadcrumbSchema = {
 };
 
 export const metadata = {
-  title: "Special Lok Adalat for Traffic Challan 2026 | Clear Online",
-  description: "Clear traffic challans with discounts. Learn the 2026 Special Lok Adalat schedule, online disposal procedure, and settle pending court challans legally.",
+  title: "Digital Traffic Lok Adalat 2026: Clear Traffic Challan Online (Mumbai, MH, UP, Delhi)",
+  description: "Settle pending e-challans in Digital Traffic Lok Adalat 2026 with 50%–80% fine waivers. Check state-wise schedule, online token booking & disposal process for Mumbai, Maharashtra, Delhi & UP.",
   keywords: [
+    "digital traffic lok adalat",
+    "digital traffic lok adalat mumbai",
     "special lok adalat for challan",
+    "lok adalat 2026 for traffic challan mumbai",
+    "digital traffic lok adalat maharashtra",
     "traffic challan settlement 2026",
     "national lok adalat challan delhi",
     "dispose traffic challan online",
     "challan discount lok adalat",
     "virtual court challan settlement",
-    "check pending challan status",
-    "how to attend lok adalat for challan",
-    "motor vehicle act lok adalat",
-    "traffic police challan waiver"
+    "digital traffic lok adalat up",
+    "digital traffic lok adalat odisha"
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/special-lok-adalat-for-challan',
@@ -310,6 +312,7 @@ export default function ChallanLokAdalatPage() {
     { id: "what-is-challan-adalat", title: "What is Traffic Lok Adalat?" },
     { id: "types-of-challans", title: "Types of Eligible Challans" },
     { id: "online-procedure", title: "Online Disposal Guide" },
+    { id: "state-specific-guides", title: "Digital Traffic Lok Adalat (States)" },
     { id: "discounts-and-waivers", title: "Discount & Waiver Slabs" },
     { id: "virtual-vs-physical", title: "Virtual vs Physical" },
     { id: "legal-framework", title: "Legal Framework (MV Act)" },
@@ -593,15 +596,32 @@ export default function ChallanLokAdalatPage() {
                         <div className="p-10 bg-white rounded-[2rem] border border-gray-100 shadow-xl">
                             <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-4">
                                 <span className="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-black">MH</span>
-                                Mumbai & Maharashtra E-Challans
+                                Digital Traffic Lok Adalat Mumbai & Maharashtra 2026
                             </h3>
                             <div className="prose prose-xl max-w-none text-gray-600 space-y-6">
                                 <p>
-                                    The Mumbai traffic police use the 'MTP App' extensively. During Lok Adalats, the 'Mahatraffic' portal opens up specialized links for 'Pre-Litigation' settlements. This is specifically for challans that have not yet reached the court but are older than 90 days.
+                                    For motorists searching for the <strong>Digital Traffic Lok Adalat Mumbai</strong> or <strong>Lok Adalat 2026 for Traffic Challan Maharashtra</strong>, the Maharashtra State Legal Services Authority (MSLSA) and Mumbai Traffic Police (MTP App / Mahatraffic E-Challan portal) run dedicated online pre-litigation conciliation drives. During Digital Traffic Lok Adalat windows, vehicle owners receive SMS links and WhatsApp notifications to compound pending e-challans online without visiting a physical court.
                                 </p>
                                 <p>
-                                    <strong>The 'One-State-One-Challan' Logic:</strong> Maharashtra has integrated its highway and city traffic data. A violation on the Mumbai-Pune Expressway can be settled in a Lok Adalat held in Nagpur, provided it's under the same state jurisdiction.
+                                    <strong>The 'One-State-One-Challan' Logic:</strong> Maharashtra has integrated its highway and city traffic data. A violation on the Mumbai-Pune Expressway, Thane, or Navi Mumbai can be settled digitally through the MSLSA E-Lok Adalat portal or any district court bench across Maharashtra.
                                 </p>
+                            </div>
+                        </div>
+
+                        {/* UP, Odisha, Rajasthan & Guwahati */}
+                        <div className="p-10 bg-white rounded-[2rem] border border-gray-100 shadow-xl">
+                            <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-4">
+                                <span className="w-12 h-12 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center font-black">IN</span>
+                                Digital Traffic Lok Adalat in UP, Odisha, Rajasthan & Guwahati (2026)
+                            </h3>
+                            <div className="prose prose-xl max-w-none text-gray-600 space-y-6">
+                                <p>
+                                    State Legal Services Authorities across <strong>Uttar Pradesh (UPSLSA)</strong>, <strong>Odisha (OSLSA)</strong>, <strong>Rajasthan (RSLSA)</strong>, and <strong>Assam (Guwahati Traffic Police)</strong> now process compoundable e-challans through the Parivahan E-Challan portal and Virtual Courts (vcourts.gov.in) during quarterly National and Special Digital Traffic Lok Adalats.
+                                </p>
+                                <ul className="list-none p-0 space-y-3">
+                                    <li><strong>Uttar Pradesh (Noida, Lucknow, Ghaziabad):</strong> Challans forwarded to the Virtual Court (Uttar Pradesh Traffic Department) can be settled online during National Lok Adalat dates with reduced compounding fines.</li>
+                                    <li><strong>Odisha, Rajasthan & Guwahati:</strong> Pre-litigation traffic notices for helmet, PUC, and camera-based speed violations qualify for direct settlement via state SLSA Lok Adalat benches.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
