@@ -47,7 +47,6 @@ async function submitSitemaps() {
       'https://www.amalegalsolutions.com/sitemap.xml',
       'https://www.amalegalsolutions.com/sitemap-image.xml',
       'https://www.amalegalsolutions.com/api/rss',
-      'https://amalegalsolutions.com/sitemap.xml',
     ];
 
     console.log(`📡 Submitting sitemaps to Google Search Console for property: "${siteUrl}"...`);

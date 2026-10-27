@@ -11,14 +11,14 @@ import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 // Metadata
 export const metadata = {
-  title: "Moneyview Loan Settlement | AMA Legal",
-  description: "Struggling with Moneyview personal loan repayment? Expert legal help for settling app loans. Stop harassment, arbitration, and legal notices.",
+  title: "Moneyview Loan Settlement (2026): OTS Letter, Stop Recovery Harassment & Legal Help",
+  description: "Unable to pay your Moneyview personal loan? Get advocate-led Moneyview loan settlement (OTS letter), stop recovery agent calls, and handle Whizdm Finance / NBFC arbitration notices legally.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/moneyview',
   },
   openGraph: {
-    title: "Moneyview Loan Settlement | AMA Legal",
-    description: "Struggling with Moneyview personal loan repayment? Expert legal help for settling app loans. Stop harassment, arbitration, and legal notices.",
+    title: "Moneyview Loan Settlement (2026): OTS Letter, Stop Recovery Harassment & Legal Help",
+    description: "Unable to pay your Moneyview personal loan? Get advocate-led Moneyview loan settlement (OTS letter), stop recovery agent calls, and handle Whizdm Finance / NBFC arbitration notices legally.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/moneyview",
     type: "website",
     images: [
