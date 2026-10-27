@@ -189,9 +189,12 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Bank Complaint in RBI | Step-by-Step Online Guide",
-  description: "Learn how to file a bank complaint with the RBI online via CMS portal. Expert legal guidance for Ombudsman complaints, lender harassment, and unfair fees.",
+  title: "RBI Complaint Against Bank Online (2026): CMS Portal, Ombudsman & 14448 Helpline",
+  description: "File an RBI complaint against any bank or NBFC online via cms.rbi.org.in (RBI Integrated Ombudsman) or call 14448. Step-by-step guide for recovery harassment & unfair charges.",
   keywords: [
+    "rbi complaint",
+    "rbi complaint against bank",
+    "rbi me complaint kaise kare online",
     "bank complaint in rbi",
     "rbi complaint online",
     "rbi ombudsman complaint",
@@ -200,15 +203,14 @@ export const metadata = {
     "banking ombudsman scheme",
     "bank harassment complaint rbi",
     "rbi toll free number for bank complaint",
-    "file complaint against bank in rbi",
-    "rbi guidelines for bank complaints"
+    "file complaint against bank in rbi"
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/bank-complaint-in-rbi',
   },
   openGraph: {
-    title: "Bank Complaint in RBI | Step-by-Step Online Guide",
-    description: "Learn how to file a bank complaint with the RBI online via CMS portal. Expert legal guidance for Ombudsman complaints, lender harassment, and unfair fees.",
+    title: "RBI Complaint Against Bank Online (2026): CMS Portal, Ombudsman & 14448 Helpline",
+    description: "File an RBI complaint against any bank or NBFC online via cms.rbi.org.in (RBI Integrated Ombudsman) or call 14448. Step-by-step guide for recovery harassment & unfair charges.",
     url: "https://www.amalegalsolutions.com/bank-complaint-in-rbi",
     type: "website",
     images: [
@@ -699,6 +701,38 @@ export default function BankComplaintRBIPage() {
                   >
                     Free Consultation
                   </Link>
+                </div>
+
+                {/* Related Banking & Debt Guides */}
+                <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                  <h4 className="text-lg font-bold text-gray-900 mb-4 border-b pb-2">Bank-Specific Legal Guides</h4>
+                  <ul className="space-y-3 text-sm">
+                    <li>
+                      <Link href="/loan-settlement-for-sbi-bank" className="text-gray-600 hover:text-[#D2A02A] flex items-center gap-2">
+                        <span className="text-[#D2A02A]">›</span> SBI Loan & Credit Card Settlement
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/loan-settlement-for-hdfc-bank" className="text-gray-600 hover:text-[#D2A02A] flex items-center gap-2">
+                        <span className="text-[#D2A02A]">›</span> HDFC Bank Loan Settlement Process
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/loan-settlement-for-bajaj-finserv" className="text-gray-600 hover:text-[#D2A02A] flex items-center gap-2">
+                        <span className="text-[#D2A02A]">›</span> Bajaj Finserv Harassment & Settlement
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/section-25-payment-and-settlement-act-legal-defense" className="text-gray-600 hover:text-[#D2A02A] flex items-center gap-2">
+                        <span className="text-[#D2A02A]">›</span> Section 25 ECS/NACH Bounce Defense
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/bankruptcy-lawyer-in-india" className="text-gray-600 hover:text-[#D2A02A] flex items-center gap-2">
+                        <span className="text-[#D2A02A]">›</span> Bankruptcy & Insolvency Lawyer in India
+                      </Link>
+                    </li>
+                  </ul>
                 </div>
 
                 {/* App Store Links */}
