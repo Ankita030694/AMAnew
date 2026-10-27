@@ -179,9 +179,13 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Section 25 Payment & Settlement Act: Bailable? | AMA Legal",
-  description: "Find out if Section 25 of the Payment and Settlement Systems Act is bailable. Expert legal advice on NACH dishonour, defense, and bail with AMA Legal.",
+  title: "Section 25 Payment and Settlement Systems Act, 2007: Bailable, Notice, Punishment & Bail Defense",
+  description: "Yes, Section 25 of the Payment and Settlement Systems Act, 2007 (ECS/NACH bounce) is a bailable offence. Know the punishment, 15-day notice rules, court bail process & legal defense.",
   keywords: [
+    "section 25 payment and settlement act",
+    "payment and settlement systems act 2007 section 25",
+    "sec 25 of payment and settlement act",
+    "section 25 notice",
     "section 25 payment and settlement act bailable or not",
     "is section 25 pssa bailable",
     "section 25 payment and settlement act punishment",
@@ -189,16 +193,14 @@ export const metadata = {
     "pssa section 25 legal notice",
     "difference between section 138 ni act and section 25 pssa",
     "electronic payment bounce case lawyer",
-    "section 25 pssa trial procedure",
-    "can i be arrested for ecs bounce",
-    "payment and settlement systems act 2007 section 25"
+    "can i be arrested for ecs bounce"
   ],
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/section-25-payment-and-settlement-act-bailable-or-not',
   },
   openGraph: {
-    title: "Section 25 Payment & Settlement Act: Bailable? | AMA Legal",
-    description: "Find out if Section 25 of the Payment and Settlement Systems Act is bailable. Expert legal advice on NACH dishonour, defense, and bail with AMA Legal.",
+    title: "Section 25 Payment and Settlement Systems Act, 2007: Bailable, Notice, Punishment & Bail Defense",
+    description: "Yes, Section 25 of the Payment and Settlement Systems Act, 2007 (ECS/NACH bounce) is a bailable offence. Know the punishment, 15-day notice rules, court bail process & legal defense.",
     url: 'https://www.amalegalsolutions.com/section-25-payment-and-settlement-act-bailable-or-not',
     type: "article",
   },
@@ -612,10 +614,20 @@ export default function PSSAPage() {
                       <h4 className="font-bold text-[#1a202c] mb-2">Loan Settlement Legality</h4>
                       <p className="text-sm text-gray-600">Debunking myths about the legality of debt settlement in the Indian banking system.</p>
                     </Link>
+                    <Link href="/section-25-payment-and-settlement-act-legal-defense" className="bg-white p-6 rounded-2xl border border-gray-200 hover:border-[#D2A02A] hover:shadow-md transition-all">
+                      <h4 className="font-bold text-[#1a202c] mb-2">Section 25 PSSA Legal Defense</h4>
+                      <p className="text-sm text-gray-600">Complete courtroom defense strategy, notice reply format, and bail procedure for ECS/NACH bounce cases.</p>
+                    </Link>
+                    <Link href="/section-25-pssa-vs-section-138-ni-act-loan-recovery" className="bg-white p-6 rounded-2xl border border-gray-200 hover:border-[#D2A02A] hover:shadow-md transition-all">
+                      <h4 className="font-bold text-[#1a202c] mb-2">Section 25 PSSA vs Section 138 NI Act</h4>
+                      <p className="text-sm text-gray-600">Detailed legal comparison between electronic NACH dishonour under PSSA and cheque bounce under NI Act.</p>
+                    </Link>
+                    <Link href="/bankruptcy-lawyer-in-india" className="bg-white p-6 rounded-2xl border border-gray-200 hover:border-[#D2A02A] hover:shadow-md transition-all">
+                      <h4 className="font-bold text-[#1a202c] mb-2">Bankruptcy & Insolvency Lawyer</h4>
+                      <p className="text-sm text-gray-600">Personal insolvency, IBC defense, and debt settlement representation across India.</p>
+                    </Link>
                   </div>
                 </section>
-
-                {/* Author Bio Box */}
                 <aside className="bg-[#f9f5e8] p-6 md:p-8 rounded-3xl border border-amber-200 mt-12 mb-12 flex flex-col md:flex-row gap-6 items-center text-left">
                   <div className="relative w-28 h-28 md:w-36 md:h-36 flex-shrink-0 bg-gray-200 rounded-full overflow-hidden border-2 border-[#D2A02A] shadow-md">
                     <Image

@@ -476,6 +476,31 @@ export default function BestLoanSettlementAgenciesPage() {
                     </Link>
                   </li>
                   <li>
+                    <Link href="/freed-loan-settlement-review-and-legal-alternatives" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                      <span className="mr-2">›</span> FREED Loan Settlement Review & Legal Alternatives
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/loan-settlement-for-sbi-bank" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                      <span className="mr-2">›</span> SBI Bank OTS & Loan Settlement
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/loan-settlement-for-hdfc-bank" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                      <span className="mr-2">›</span> HDFC Bank Loan & Credit Card Settlement
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/loan-settlement-for-bajaj-finserv" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                      <span className="mr-2">›</span> Bajaj Finserv Loan Settlement
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/section-25-payment-and-settlement-act-legal-defense" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
+                      <span className="mr-2">›</span> Section 25 PSSA Legal Defense
+                    </Link>
+                  </li>
+                  <li>
                     <Link href="/one-time-settlement-ots-legal-assistance" className="text-gray-600 hover:text-[#D2A02A] flex items-center">
                       <span className="mr-2">›</span> OTS Legal Assistance
                     </Link>
