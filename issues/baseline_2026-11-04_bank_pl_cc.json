@@ -896,5 +896,241 @@
     "bankPlCcLeads": 109,
     "bankPlCcConverted": 5,
     "method": "CRM ama_leads source=AMA; query/notes mention a bank/credit card/personal loan and not payday/app terms"
+  },
+  "firestorePages": {
+    "/blog/sbi-credit-card-settlement-process": {
+      "collection": "blogs",
+      "docId": "7nv1iXL7qbHEw1Xb7YYu",
+      "clicks": 14,
+      "impressions": 1544,
+      "ctrPct": 0.91,
+      "position": 7.6,
+      "topQueries": [
+        {
+          "q": "sbi card settlement process",
+          "c": 1,
+          "i": 20,
+          "pos": 8.1
+        },
+        {
+          "q": "sbi credit card settlement",
+          "c": 1,
+          "i": 64,
+          "pos": 9.3
+        },
+        {
+          "q": "sbi credit card settlement calculator",
+          "c": 1,
+          "i": 4,
+          "pos": 8.3
+        },
+        {
+          "q": "sbi credit card settlement letter pdf",
+          "c": 1,
+          "i": 1,
+          "pos": 30
+        },
+        {
+          "q": "sbi credit card settlement number online",
+          "c": 1,
+          "i": 6,
+          "pos": 10.8
+        },
+        {
+          "q": "sbi credit card settlement percentage",
+          "c": 1,
+          "i": 31,
+          "pos": 1.5
+        },
+        {
+          "q": "2 lakhs",
+          "c": 0,
+          "i": 1,
+          "pos": 1
+        },
+        {
+          "q": "280000",
+          "c": 0,
+          "i": 1,
+          "pos": 3
+        },
+        {
+          "q": "how to settle sbi credit card",
+          "c": 0,
+          "i": 3,
+          "pos": 10.7
+        },
+        {
+          "q": "sbi",
+          "c": 0,
+          "i": 1,
+          "pos": 3
+        }
+      ],
+      "previousMeta": {
+        "metaTitle": "SBI Credit Card Settlement Process: Reduce Debt & Regain Financial Stability",
+        "metaDescription": "Learn the SBI credit card settlement process to reduce debt and avoid legal issues. Take control of your finances—Schedule a demo today!"
+      },
+      "newMeta": {
+        "metaTitle": "SBI Credit Card Settlement Process & Percentage 2026 | AMA",
+        "metaDescription": "Step-by-step SBI Card settlement process: how to request an OTS, the settlement percentage SBI usually accepts, the settlement letter, and CIBIL impact."
+      }
+    },
+    "/blog/loan-settlement-hdfc-bank-legal-guide-for-borrowers-in-india": {
+      "collection": "blogs",
+      "docId": "rwKUtIPfvzjntNc9cgno",
+      "clicks": 29,
+      "impressions": 2070,
+      "ctrPct": 1.4,
+      "position": 7.3,
+      "topQueries": [
+        {
+          "q": "hdfc personal loan settlement",
+          "c": 2,
+          "i": 41,
+          "pos": 5.8
+        },
+        {
+          "q": "hdfc bank loan settlement",
+          "c": 1,
+          "i": 26,
+          "pos": 7.5
+        },
+        {
+          "q": "hdfc bank loan settlement process",
+          "c": 1,
+          "i": 13,
+          "pos": 6
+        },
+        {
+          "q": "hdfc loan recovery",
+          "c": 1,
+          "i": 9,
+          "pos": 11.2
+        },
+        {
+          "q": "hdfc two wheeler loan settlement",
+          "c": 1,
+          "i": 12,
+          "pos": 9.3
+        },
+        {
+          "q": "loan settlement hdfc bank",
+          "c": 1,
+          "i": 14,
+          "pos": 7.9
+        },
+        {
+          "q": "personal loan settlement hdfc bank",
+          "c": 1,
+          "i": 4,
+          "pos": 5.5
+        },
+        {
+          "q": "300000",
+          "c": 0,
+          "i": 1,
+          "pos": 11
+        },
+        {
+          "q": "bike",
+          "c": 0,
+          "i": 1,
+          "pos": 2
+        },
+        {
+          "q": "hdfc bank",
+          "c": 0,
+          "i": 1,
+          "pos": 9
+        }
+      ],
+      "previousMeta": {
+        "metaTitle": "Loan Settlement HDFC Bank – Legal Guide & Expert Help | AMA Legal Solutions",
+        "metaDescription": "Learn how loan settlement HDFC Bank works, legal process, risks, CIBIL impact & expert solutions. Get professional help from AMA Legal Solutions."
+      },
+      "newMeta": {
+        "metaTitle": "HDFC Bank Settlement: Personal Loan Legal Guide 2026 | AMA",
+        "metaDescription": "Legal guide to settling an HDFC Bank personal loan: your rights, how settlement works, risks to avoid, CIBIL impact, and when to involve an advocate."
+      }
+    },
+    "/articles/credit-card-icici-bank-guide-with-legal-insights-by-ama-legal-solutions": {
+      "collection": "articles",
+      "docId": "K4MBnzmxiBU8ZlAZoXA2",
+      "clicks": 4,
+      "impressions": 327,
+      "ctrPct": 1.22,
+      "position": 8.4,
+      "topQueries": [
+        {
+          "q": "566 days",
+          "c": 1,
+          "i": 1,
+          "pos": 5
+        },
+        {
+          "q": "icici credit card settlement",
+          "c": 1,
+          "i": 31,
+          "pos": 9.6
+        },
+        {
+          "q": "how to settle icici credit card",
+          "c": 0,
+          "i": 3,
+          "pos": 11
+        },
+        {
+          "q": "icici bank",
+          "c": 0,
+          "i": 1,
+          "pos": 6
+        },
+        {
+          "q": "icici bank credit card settlement",
+          "c": 0,
+          "i": 24,
+          "pos": 9.8
+        },
+        {
+          "q": "icici bank credit card settlement letter",
+          "c": 0,
+          "i": 1,
+          "pos": 17
+        },
+        {
+          "q": "icici bank credit card settlement percentage",
+          "c": 0,
+          "i": 3,
+          "pos": 11.3
+        },
+        {
+          "q": "icici bank credit card settlement process",
+          "c": 0,
+          "i": 2,
+          "pos": 11
+        },
+        {
+          "q": "icici bank hai",
+          "c": 0,
+          "i": 1,
+          "pos": 2
+        },
+        {
+          "q": "icici credit card rules and regulations",
+          "c": 0,
+          "i": 1,
+          "pos": 10
+        }
+      ],
+      "previousMeta": {
+        "metaTitle": "ICICI Bank Credit Card Legal Guide – Expert Tips | AMA Legal Solutions",
+        "metaDescription": "Learn everything about ICICI Bank credit cards, legal implications, debt management, and how to protect your rights. Get expert legal help at AMA Legal Solutions."
+      },
+      "newMeta": {
+        "metaTitle": "ICICI Credit Card Settlement: Legal Guide & Process | AMA",
+        "metaDescription": "ICICI Bank credit card settlement explained: when settlement is possible, how to negotiate dues, your legal rights, and the CIBIL impact afterwards."
+      }
+    }
   }
 }
