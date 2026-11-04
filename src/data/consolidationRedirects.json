@@ -250,5 +250,47 @@
     "destination": "/services/loan-settlement/hdfc-bank",
     "permanent": true,
     "group": "hdfc"
+  },
+  {
+    "source": "/credit-card-settlement/sbi",
+    "destination": "/blog/sbi-credit-card-settlement-process",
+    "permanent": true,
+    "group": "sbi"
+  },
+  {
+    "source": "/loan-settlement-services/sbi-credit-card-loan-settlement",
+    "destination": "/blog/sbi-credit-card-settlement-process",
+    "permanent": true,
+    "group": "sbi"
+  },
+  {
+    "source": "/loan-settlement-by-bank/sbi",
+    "destination": "/blog/sbi-credit-card-settlement-process",
+    "permanent": true,
+    "group": "sbi"
+  },
+  {
+    "source": "/loan-settlement-services/loan-settlement-in-sbi",
+    "destination": "/loan-settlement-for-sbi-bank",
+    "permanent": true,
+    "group": "sbi"
+  },
+  {
+    "source": "/personal-loan-settlement/sbi",
+    "destination": "/services/loan-settlement/sbi-bank",
+    "permanent": true,
+    "group": "sbi"
+  },
+  {
+    "source": "/loan-settlement-services/sbi-personal-loan-settlement",
+    "destination": "/services/loan-settlement/sbi-bank",
+    "permanent": true,
+    "group": "sbi"
+  },
+  {
+    "source": "/loan-settlement-services/loan-settlement-sbi",
+    "destination": "/services/loan-settlement/sbi-bank",
+    "permanent": true,
+    "group": "sbi"
   }
 ]
