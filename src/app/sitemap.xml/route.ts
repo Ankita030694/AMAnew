@@ -7,6 +7,7 @@ import { harassmentBanks } from '@/data/harassmentBanks'
 import { harassmentCities } from '@/data/harassmentCities'
 import { creditCardBanks } from '@/data/creditCardBanks'
 import { statesData } from '@/data/statesData'
+import consolidationRedirects from '@/data/consolidationRedirects.json'
 import fs from 'fs';
 import path from 'path';
 
@@ -842,6 +843,9 @@ export async function GET(): Promise<Response> {
   }));
 
   // Combine all authoritative routes (thin [bank]/[state] permutations and doorway keyword routes excluded from sitemap)
+  // Redirected (consolidated) URLs and duplicates are dropped so the sitemap only lists final URLs
+  const redirectedPaths = new Set(consolidationRedirects.map(r => r.source.toLowerCase()))
+  const seenUrls = new Set<string>()
   const allRoutes = [
     ...staticRoutes,
     ...dynamicBankRoutes,
@@ -852,7 +856,12 @@ export async function GET(): Promise<Response> {
     ...articleRoutes,
     ...successStoryRoutes,
     ...lawyerByCityRoutes
-  ]
+  ].filter(route => {
+    const pathname = route.url.replace(baseUrl, '').toLowerCase() || '/'
+    if (redirectedPaths.has(pathname) || seenUrls.has(route.url)) return false
+    seenUrls.add(route.url)
+    return true
+  })
 
   // Generate XML
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

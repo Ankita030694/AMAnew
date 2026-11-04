@@ -390,7 +390,7 @@ const nextConfig = {
       { source: '/settle-your-challan-in-delhi-at-50%25-off', destination: '/settle-your-challan-in-delhi-at-50-percent-off', permanent: true },
       { source: '/services/success-stories', destination: '/success-stories', permanent: true },
       // ── SEO Fix: 404 errors from latest audit (Sep 2026) ──────────────
-      { source: '/credit-card-debt-settlement-india', destination: '/credit-card-debt-settlement', permanent: true },
+      { source: '/credit-card-debt-settlement-india', destination: '/credit-card-settlement', permanent: true },
       { source: '/blog/how-to-improve-your-cibil-score-after-loan-settlement', destination: '/how-to-improve-cibil-score-after-loan-settlement', permanent: true },
       { source: '/blog/legal-process-for-loan-recovery-in-india', destination: '/blog/legal-process-for-loan-recovery-in-india-explained-2025', permanent: true },
       { source: '/reviews', destination: '/ama-legal-solutions-reviews', permanent: true },
@@ -399,11 +399,14 @@ const nextConfig = {
       { source: '/best-loan-settlement-lawyer-as-per-claude', destination: '/who-is-the-best-lawyer-for-loan-settlement-in-india', permanent: true },
       { source: '/best-loan-settlement-lawyer-as-per-gemini', destination: '/who-is-the-best-lawyer-for-loan-settlement-in-india', permanent: true },
       // ── Phase 3: Canonical Consolidation of Duplicate Landing Pages ──
-      { source: '/best-credit-card-settlement-service', destination: '/credit-card-debt-settlement', permanent: true },
+      { source: '/best-credit-card-settlement-service', destination: '/credit-card-settlement', permanent: true },
       { source: '/best-personal-loan-settlement-service', destination: '/personal-loan-settlement', permanent: true },
       { source: '/personal-loan-settlement-services', destination: '/personal-loan-settlement', permanent: true },
       { source: '/personal-loan-debt-settlement', destination: '/personal-loan-settlement', permanent: true },
       { source: '/services/settle-loans', destination: '/personal-loan-settlement', permanent: true },
+      // ── Bank PL/CC consolidation (2026-11-04): src/data/consolidationRedirects.json ──
+      ...JSON.parse(fs.readFileSync(path.join(process.cwd(), 'src/data/consolidationRedirects.json'), 'utf8'))
+        .map(({ source, destination, permanent }: { source: string; destination: string; permanent: boolean }) => ({ source, destination, permanent })),
       ...(fs.existsSync(path.join(process.cwd(), 'redirects.json'))
         ? JSON.parse(fs.readFileSync(path.join(process.cwd(), 'redirects.json'), 'utf8'))
         : [])
