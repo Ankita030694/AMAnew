@@ -19,7 +19,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 2,
       "name": "Personal Loan Settlement June 2026",
-      "item": "https://www.amalegalsolutions.com/personal-loan-settlement-in-june-2026"
+      "item": "https://www.amalegalsolutions.com/personal-loan-settlement"
     }
   ]
 };
@@ -164,7 +164,7 @@ export const metadata = {
     "one time settlement OTS"
   ],
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/personal-loan-settlement-in-june-2026',
+    canonical: 'https://www.amalegalsolutions.com/personal-loan-settlement',
   },
 };
 
@@ -184,7 +184,7 @@ export default function PersonalLoanSettlement2026Page() {
 
   const breadcrumbItems = [
     { label: "Home", href: "/" },
-    { label: "Personal Loan Settlement June 2026", href: "/personal-loan-settlement-in-june-2026" },
+    { label: "Personal Loan Settlement June 2026", href: "/personal-loan-settlement" },
   ];
 
   return (

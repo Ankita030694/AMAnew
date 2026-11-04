@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     'hdfc bank settlement letter',
   ],
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/loan-settlement-for-hdfc-bank',
+    canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/hdfc-bank',
   },
   openGraph: {
     title: 'HDFC Bank Loan Settlement: Credit Card & Personal Loan OTS Process',
     description:
       'Struggling with HDFC credit card debt or jumbo personal loans? Learn the official HDFC loan settlement process, waiver percentages, and legal rights with advocates.',
-    url: 'https://www.amalegalsolutions.com/loan-settlement-for-hdfc-bank',
+    url: 'https://www.amalegalsolutions.com/services/loan-settlement/hdfc-bank',
     type: 'article',
     siteName: 'AMA Legal Solutions',
     locale: 'en_IN',

@@ -32,7 +32,7 @@ const sections = [
 const relatedPages = [
   { title: "Loan Settlement Process in India", href: "/services/loan-settlement" },
   { title: "Legal Rights Against Recovery Agents", href: "/bajaj-recovery-agent-abusing" },
-  { title: "Personal Loan Settlement Guide", href: "/how-can-I-negotiate-a-personal-loan-settlement-with-lenders" },
+  { title: "Personal Loan Settlement Guide", href: "/personal-loan-settlement" },
   { title: "Debt Settlement Companies India", href: "/which-companies-offer-professional-debt-settlement-services-for-personal-loans" },
 ];
 

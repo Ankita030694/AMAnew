@@ -6,7 +6,7 @@ import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamation
 
 export const metadata = {
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/how-can-I-negotiate-a-personal-loan-settlement-with-lenders',
+    canonical: 'https://www.amalegalsolutions.com/personal-loan-settlement',
   },
   title: "How Can I Negotiate a Personal Loan Settlement with Lenders?",
   description:
@@ -43,7 +43,7 @@ export default function LoanSettlementGuide() {
   const breadcrumbItems = [
     { label: "Home", href: "/" },
     { label: "Loan Settlement", href: "/services/loan-settlement" },
-    { label: "Negotiate Personal Loan", href: "/how-can-I-negotiate-a-personal-loan-settlement-with-lenders" },
+    { label: "Negotiate Personal Loan", href: "/personal-loan-settlement" },
   ];
 
   const articleSchema = {
@@ -58,7 +58,7 @@ export default function LoanSettlementGuide() {
       "logo": { "@type": "ImageObject", "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png" }
     },
     "datePublished": "2026-04-24",
-    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.amalegalsolutions.com/how-can-I-negotiate-a-personal-loan-settlement-with-lenders" }
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.amalegalsolutions.com/personal-loan-settlement" }
   };
 
   const faqSchema = {
@@ -154,7 +154,7 @@ export default function LoanSettlementGuide() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.amalegalsolutions.com/" },
       { "@type": "ListItem", "position": 2, "name": "Loan Settlement", "item": "https://www.amalegalsolutions.com/services/loan-settlement" },
-      { "@type": "ListItem", "position": 3, "name": "Negotiate Personal Loan", "item": "https://www.amalegalsolutions.com/how-can-I-negotiate-a-personal-loan-settlement-with-lenders" }
+      { "@type": "ListItem", "position": 3, "name": "Negotiate Personal Loan", "item": "https://www.amalegalsolutions.com/personal-loan-settlement" }
     ]
   };
 

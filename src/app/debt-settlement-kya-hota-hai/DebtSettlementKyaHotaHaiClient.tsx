@@ -1469,7 +1469,7 @@ Details: ${formData.message || "Requesting transparent fixed legal advisory unde
                       Personal Loan Settlement
                     </Link>
                     <Link
-                      href="/credit-card-debt-settlement"
+                      href="/credit-card-settlement"
                       className="px-3 py-1.5 rounded-lg border-2 border-[#D2A02A] text-[#5A4C33] font-semibold hover:bg-[#D2A02A] hover:text-white transition"
                     >
                       Credit Card Settlement

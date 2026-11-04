@@ -1107,7 +1107,7 @@ Details: ${formData.message || "Requesting transparent legal case evaluation und
                       },
                       {
                         title: "HDFC Bank Loan Settlement Waiver",
-                        href: "/settlement-waiver-percentage-of-hdfc-bank",
+                        href: "/hdfc-credit-card-settlement-percentage",
                         desc: "Navigating private bank credit committees and securing optimal waivers.",
                       },
                       {
@@ -1298,7 +1298,7 @@ Details: ${formData.message || "Requesting transparent legal case evaluation und
                         Personal Loan OTS
                       </Link>
                       <Link
-                        href="/credit-card-debt-settlement"
+                        href="/credit-card-settlement"
                         className="p-2.5 border-2 border-[#D2A02A] text-[#5A4C33] hover:bg-[#D2A02A] hover:text-white font-bold rounded-lg text-center transition"
                       >
                         Credit Card Settlement

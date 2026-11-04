@@ -1540,7 +1540,7 @@ Details: ${formData.message || "Consultation requested."}`;
                   </Link>
 
                   <Link
-                    href="/loan-settlement-for-hdfc-bank"
+                    href="/services/loan-settlement/hdfc-bank"
                     className="p-4 rounded-xl border border-gray-200 bg-gray-50/50 hover:border-[#D2A02A] hover:bg-white transition group shadow-xs"
                   >
                     <span className="text-xs font-bold text-[#D2A02A] uppercase tracking-wider block mb-1">
@@ -1873,7 +1873,7 @@ Details: ${formData.message || "Consultation requested."}`;
                     &bull; Bankruptcy Lawyer in India
                   </Link>
                   <Link
-                    href="/loan-settlement-for-hdfc-bank"
+                    href="/services/loan-settlement/hdfc-bank"
                     className="block font-medium text-gray-700 hover:text-[#D2A02A] transition"
                   >
                     &bull; Loan Settlement for HDFC Bank

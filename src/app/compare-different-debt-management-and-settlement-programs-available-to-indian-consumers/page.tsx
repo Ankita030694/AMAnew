@@ -36,7 +36,7 @@ const relatedPages = [
   { title: "Understanding Your CIBIL Score", href: "/what-is-cibil-score" },
   { title: "Stop Recovery Agent Harassment", href: "/how-to-stop-bank-recovery-agents-harassment-legally-in-india" },
   { title: "Personal Loan Settlement Process", href: "/personal-loan-settlement" },
-  { title: "Credit Card Debt Relief", href: "/credit-card-debt-settlement" },
+  { title: "Credit Card Debt Relief", href: "/credit-card-settlement" },
 ];
 
 export default function DebtComparisonGuide() {

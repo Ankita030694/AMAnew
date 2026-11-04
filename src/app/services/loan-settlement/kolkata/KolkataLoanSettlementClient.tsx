@@ -1236,7 +1236,7 @@ Details: ${formData.message || "Requesting transparent fixed legal advisory for 
                     &rarr; SBI Loan Settlement &amp; OTS Scheme
                   </Link>
                   <Link
-                    href="/loan-settlement-for-hdfc-bank"
+                    href="/services/loan-settlement/hdfc-bank"
                     className="p-3.5 bg-gray-50 border border-gray-200 rounded-xl hover:border-[#D2A02A] hover:bg-white transition text-xs font-semibold text-gray-800 block"
                   >
                     &rarr; HDFC Bank Loan Settlement
@@ -1547,7 +1547,7 @@ Details: ${formData.message || "Requesting transparent fixed legal advisory for 
                     &bull; SBI Loan Settlement &amp; OTS Rules
                   </Link>
                   <Link
-                    href="/loan-settlement-for-hdfc-bank"
+                    href="/services/loan-settlement/hdfc-bank"
                     className="block font-medium text-gray-700 hover:text-[#D2A02A] transition"
                   >
                     &bull; HDFC Personal Loan &amp; Credit Cards

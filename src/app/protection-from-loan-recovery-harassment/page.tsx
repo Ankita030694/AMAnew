@@ -336,7 +336,7 @@ export default function ProtectionFromHarassmentPage() {
                     </h3>
                     
                     <p className="text-lg leading-relaxed mb-6">
-                      There is a distinct, non negotiable legal boundary between lawful debt collection processes and blatant criminal extortion. Lawful collection involves sending formal written notices through registered post or official email, negotiating a potential <Link href="/how-to-settle-credit-card-debt" className="text-[#D2A02A] hover:underline font-semibold transition-colors">credit card debt settlement</Link> agreement in a professional setting, or initiating civil legal proceedings through the established court system.
+                      There is a distinct, non negotiable legal boundary between lawful debt collection processes and blatant criminal extortion. Lawful collection involves sending formal written notices through registered post or official email, negotiating a potential <Link href="/credit-card-settlement" className="text-[#D2A02A] hover:underline font-semibold transition-colors">credit card debt settlement</Link> agreement in a professional setting, or initiating civil legal proceedings through the established court system.
                     </p>
                     
                     <p className="text-lg leading-relaxed mb-6">

@@ -15,7 +15,7 @@ import {
 
 /* ─────────────────────────── CONSTANTS ─────────────────────────── */
 const SITE = "https://www.amalegalsolutions.com";
-const PAGE_SLUG = "/loan-settlement-for-hdfc-bank";
+const PAGE_SLUG = "/services/loan-settlement/hdfc-bank";
 const PAGE_URL = `${SITE}${PAGE_SLUG}`;
 const OG_IMAGE_URL = `${SITE}/images/og/loan-settlement-for-hdfc-bank.png`;
 const LOGO_URL = `${SITE}/ama3.svg`;
@@ -1186,7 +1186,7 @@ Details: ${formData.message || "Requesting transparent fixed legal advisory for 
                   </Link>
 
                   <Link
-                    href="/settlement-waiver-percentage-of-hdfc-bank"
+                    href="/hdfc-credit-card-settlement-percentage"
                     className="p-4 rounded-xl border border-gray-200 bg-white hover:border-[#D2A02A] hover:shadow-md transition flex flex-col justify-between group"
                   >
                     <div>
@@ -1585,7 +1585,7 @@ Details: ${formData.message || "Requesting transparent fixed legal advisory for 
                     &bull; Axis Bank Loan Settlement
                   </Link>
                   <Link
-                    href="/settlement-waiver-percentage-of-hdfc-bank"
+                    href="/hdfc-credit-card-settlement-percentage"
                     className="block font-medium text-gray-700 hover:text-[#D2A02A] transition"
                   >
                     &bull; HDFC Settlement Waiver %

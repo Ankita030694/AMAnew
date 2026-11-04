@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CreditCardSettlementInSeptember2026Client from "./CreditCardSettlementInSeptember2026Client";
 
 const PAGE_URL =
-  "https://www.amalegalsolutions.com/credit-card-settlement-in-september-2026";
+  "https://www.amalegalsolutions.com/credit-card-settlement";
 const OG_IMAGE =
   "/images/og/credit-card-settlement-in-september-2026.png";
 

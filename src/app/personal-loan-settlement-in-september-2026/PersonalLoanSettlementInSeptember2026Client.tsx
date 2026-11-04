@@ -8,7 +8,7 @@ import TableOfContents from "@/components/TableOfContents";
 
 /* ─────────────────────────── CONSTANTS ─────────────────────────── */
 const SITE = "https://www.amalegalsolutions.com";
-const PAGE_SLUG = "/personal-loan-settlement-in-september-2026";
+const PAGE_SLUG = "/personal-loan-settlement";
 const PAGE_URL = `${SITE}${PAGE_SLUG}`;
 const OG_IMAGE_URL = `${SITE}/images/og/personal-loan-settlement-in-september-2026.png`;
 const LOGO_URL = `${SITE}/ama3.svg`;
@@ -1173,7 +1173,7 @@ export default function PersonalLoanSettlementInSeptember2026Client() {
                       Personal Loan Settlement
                     </Link>
                     <Link
-                      href="/credit-card-debt-settlement"
+                      href="/credit-card-settlement"
                       className="px-3 py-2.5 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded-lg hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-sm flex items-center justify-center"
                     >
                       Credit Card Settlement

@@ -1267,7 +1267,7 @@ Details: ${formData.message || "Requesting advocate evaluation for payday loan O
                     </Link>
 
                     <Link
-                      href="/personal-loan-settlement-in-september-2026"
+                      href="/personal-loan-settlement"
                       className="p-4 rounded-xl border border-gray-200 hover:border-[#D2A02A] hover:bg-[#D2A02A]/5 transition group"
                     >
                       <h3 className="font-bold text-gray-900 text-sm group-hover:text-[#D2A02A] transition">
@@ -1647,7 +1647,7 @@ Details: ${formData.message || "Requesting advocate evaluation for payday loan O
                     &bull; How to Stop Recovery Agents Harassment Legally
                   </Link>
                   <Link
-                    href="/personal-loan-settlement-in-september-2026"
+                    href="/personal-loan-settlement"
                     className="block font-semibold text-gray-700 hover:text-[#D2A02A] transition"
                   >
                     &bull; Personal Loan Settlement in September 2026

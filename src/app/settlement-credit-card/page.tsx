@@ -18,7 +18,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 2,
       "name": "Credit Card Settlement",
-      "item": "https://www.amalegalsolutions.com/settlement-credit-card"
+      "item": "https://www.amalegalsolutions.com/credit-card-settlement"
     }
   ]
 };
@@ -191,12 +191,12 @@ export const metadata = {
     "bank settlement credit card"
   ],
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/settlement-credit-card',
+    canonical: 'https://www.amalegalsolutions.com/credit-card-settlement',
   },
   openGraph: {
     title: "Credit Card Settlement in India: Legal Guide | AMA Legal",
     description: "Master credit card settlement in India. Discover how to negotiate with banks, stop recovery agent harassment, and settle your credit card debt legally today.",
-    url: 'https://www.amalegalsolutions.com/settlement-credit-card',
+    url: 'https://www.amalegalsolutions.com/credit-card-settlement',
     type: "article",
   },
 };
@@ -214,7 +214,7 @@ export default function SettlementCreditCardPage() {
 
   const breadcrumbItems = [
     { label: "Home", href: "/" },
-    { label: "Credit Card Settlement", href: "/settlement-credit-card" },
+    { label: "Credit Card Settlement", href: "/credit-card-settlement" },
   ];
 
   return (
@@ -288,7 +288,7 @@ export default function SettlementCreditCardPage() {
                     </p>
 
                     <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">
-                      When your balance balloons, attempting to pay merely the minimum amount due becomes a mathematical trap. The minimum payment is carefully calculated by the bank to cover only the interest and the penalties, leaving the actual principal completely untouched. This guarantees that you remain in debt in perpetuity. Acknowledging this reality is the vital first step. When the mathematical structure of the debt makes repayment impossible, continuing to make erratic partial payments is essentially throwing money into a void. At this precise juncture, pursuing a formal <Link href="/how-to-settle-credit-card-debt" className="text-[#D2A02A] hover:underline font-semibold">credit card settlement</Link> is not an admission of defeat; it is the most logical, legally sound financial decision you can make to protect your future.
+                      When your balance balloons, attempting to pay merely the minimum amount due becomes a mathematical trap. The minimum payment is carefully calculated by the bank to cover only the interest and the penalties, leaving the actual principal completely untouched. This guarantees that you remain in debt in perpetuity. Acknowledging this reality is the vital first step. When the mathematical structure of the debt makes repayment impossible, continuing to make erratic partial payments is essentially throwing money into a void. At this precise juncture, pursuing a formal <Link href="/credit-card-settlement" className="text-[#D2A02A] hover:underline font-semibold">credit card settlement</Link> is not an admission of defeat; it is the most logical, legally sound financial decision you can make to protect your future.
                     </p>
                     
                     <p className="text-sm md:text-lg leading-relaxed mb-4 text-gray-700">

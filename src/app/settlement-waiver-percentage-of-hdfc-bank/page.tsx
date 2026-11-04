@@ -19,7 +19,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 2,
       "name": "HDFC Bank Settlement Waiver Percentage",
-      "item": "https://www.amalegalsolutions.com/settlement-waiver-percentage-of-hdfc-bank"
+      "item": "https://www.amalegalsolutions.com/hdfc-credit-card-settlement-percentage"
     }
   ]
 };
@@ -180,7 +180,7 @@ export const metadata = {
     "HDFC no dues certificate"
   ],
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/settlement-waiver-percentage-of-hdfc-bank',
+    canonical: 'https://www.amalegalsolutions.com/hdfc-credit-card-settlement-percentage',
   },
 };
 
@@ -195,7 +195,7 @@ export default function HDFCSettlementWaiverPage() {
 
   const breadcrumbItems = [
     { label: "Home", href: "/" },
-    { label: "HDFC Bank Settlement Waiver Percentage", href: "/settlement-waiver-percentage-of-hdfc-bank" },
+    { label: "HDFC Bank Settlement Waiver Percentage", href: "/hdfc-credit-card-settlement-percentage" },
   ];
 
   return (

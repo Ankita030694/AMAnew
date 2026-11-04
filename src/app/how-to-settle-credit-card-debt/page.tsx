@@ -62,7 +62,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 2,
       "name": "How to Settle Credit Card Debt",
-      "item": "https://www.amalegalsolutions.com/how-to-settle-credit-card-debt"
+      "item": "https://www.amalegalsolutions.com/credit-card-settlement"
     }
   ]
 };
@@ -167,7 +167,7 @@ export const metadata = {
     "rebuild credit score after settlement"
   ],
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/how-to-settle-credit-card-debt',
+    canonical: 'https://www.amalegalsolutions.com/credit-card-settlement',
   }
 };
 
@@ -189,7 +189,7 @@ export default function CreditCardSettlementPage() {
   ];
 
   const breadcrumbItems = [
-    { label: "How to Settle Credit Card Debt", href: "/how-to-settle-credit-card-debt" },
+    { label: "How to Settle Credit Card Debt", href: "/credit-card-settlement" },
   ];
 
   return (

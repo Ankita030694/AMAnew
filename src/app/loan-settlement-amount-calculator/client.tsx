@@ -241,7 +241,7 @@ export default function LoanSettlementCalculatorClient() {
 
   const banks = [
     { name: "SBI", href: "/loan-settlement-for-sbi-bank" },
-    { name: "HDFC", href: "/loan-settlement-for-hdfc-bank" },
+    { name: "HDFC", href: "/services/loan-settlement/hdfc-bank" },
     { name: "ICICI", href: "/services/loan-settlement/icici-bank" },
     { name: "Kotak Mahindra", href: "/services/loan-settlement/kotak-mahindra" },
     { name: "IDFC", href: "/services/loan-settlement/idfc-bank" },

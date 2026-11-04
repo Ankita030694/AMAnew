@@ -12,7 +12,7 @@ const CORE_SITE_LINKS = [
     { url: '/services/loan-settlement', title: 'Loan Settlement Services', keywords: ['loan settlement services', 'loan settlement', 'settle loans', 'debt settlement'] },
     { url: '/services/banking-and-finance', title: 'Banking and Finance Law', keywords: ['banking and finance', 'banking lawyer', 'banking law firm', 'banking disputes'] },
     { url: '/services/debt-consolidation', title: 'Debt Consolidation & Restructuring', keywords: ['debt consolidation', 'debt restructuring', 'debt relief'] },
-    { url: '/credit-card-debt-settlement', title: 'Credit Card Debt Settlement', keywords: ['credit card debt settlement', 'credit card settlement', 'credit card default'] },
+    { url: '/credit-card-settlement', title: 'Credit Card Debt Settlement', keywords: ['credit card debt settlement', 'credit card settlement', 'credit card default'] },
     { url: '/how-to-reply-to-bank-legal-notice-for-personal-loan-default', title: 'Reply to Bank Legal Notice for Loan Default', keywords: ['reply to bank legal notice', 'bank legal notice', 'loan default notice'] },
     { url: '/what-are-my-legal-rights-when-dealing-with-recovery-agents', title: 'Legal Rights Against Recovery Agent Harassment', keywords: ['recovery agent harassment', 'rights against recovery agents', 'rbi recovery guidelines'] },
     { url: '/cheque-bounce-legal-notice', title: 'Cheque Bounce Section 138 Notice', keywords: ['cheque bounce notice', 'section 138 notice', 'dishonour of cheque', '138 ni act'] },

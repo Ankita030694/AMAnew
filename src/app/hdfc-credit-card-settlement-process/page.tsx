@@ -43,7 +43,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 2,
       "name": "HDFC Credit Card Settlement Process",
-      "item": "https://www.amalegalsolutions.com/hdfc-credit-card-settlement-process"
+      "item": "https://www.amalegalsolutions.com/blog/hdfc-credit-card-settlement-complete-guide-to-managing-debt-with-expert-legal-help"
     }
   ]
 };
@@ -147,7 +147,7 @@ export const metadata = {
     "unsecured debt resolution"
   ],
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/hdfc-credit-card-settlement-process',
+    canonical: 'https://www.amalegalsolutions.com/blog/hdfc-credit-card-settlement-complete-guide-to-managing-debt-with-expert-legal-help',
   },
 };
 
@@ -165,7 +165,7 @@ export default function HDFCCreditCardSettlementProcessPage() {
   ];
 
   const breadcrumbItems = [
-    { label: "HDFC Credit Card Settlement Process", href: "/hdfc-credit-card-settlement-process" },
+    { label: "HDFC Credit Card Settlement Process", href: "/blog/hdfc-credit-card-settlement-complete-guide-to-managing-debt-with-expert-legal-help" },
   ];
 
   return (

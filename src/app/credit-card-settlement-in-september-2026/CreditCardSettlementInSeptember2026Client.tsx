@@ -8,7 +8,7 @@ import TableOfContents from "@/components/TableOfContents";
 
 /* ─────────────────────────── CONSTANTS ─────────────────────────── */
 const SITE = "https://www.amalegalsolutions.com";
-const PAGE_SLUG = "/credit-card-settlement-in-september-2026";
+const PAGE_SLUG = "/credit-card-settlement";
 const PAGE_URL = `${SITE}${PAGE_SLUG}`;
 const OG_IMAGE_URL = `${SITE}/images/og/credit-card-settlement-in-september-2026.png`;
 const LOGO_URL = `${SITE}/ama3.svg`;
@@ -1059,17 +1059,17 @@ Details: ${formData.message || "Requesting advocate evaluation for RBI OTS negot
                     {[
                       {
                         title: "Credit Card Debt Settlement",
-                        href: "/credit-card-debt-settlement",
+                        href: "/credit-card-settlement",
                         desc: "Complete procedural guide to resolving unsecured credit card arrears under Indian banking laws.",
                       },
                       {
                         title: "Best Credit Card Settlement Service",
-                        href: "/credit-card-debt-settlement",
+                        href: "/credit-card-settlement",
                         desc: "Evaluating legal representation and RBI-compliant dispute resolution for credit card default.",
                       },
                       {
                         title: "Personal Loan Settlement in September 2026",
-                        href: "/personal-loan-settlement-in-september-2026",
+                        href: "/personal-loan-settlement",
                         desc: "Strategic guide to settling personal loan liabilities during the Q2 banking balance sheet audit.",
                       },
                       {
@@ -1079,7 +1079,7 @@ Details: ${formData.message || "Requesting advocate evaluation for RBI OTS negot
                       },
                       {
                         title: "Credit Card Settlement After 6 Months",
-                        href: "/credit-card-settlement-process-in-india-after-6-months-default",
+                        href: "/credit-card-settlement-process-india",
                         desc: "Navigating post-NPA classification, technical write-off pools, and compromise negotiation.",
                       },
                       {
@@ -1249,7 +1249,7 @@ Details: ${formData.message || "Requesting advocate evaluation for RBI OTS negot
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 max-w-5xl mx-auto">
                     <Link
-                      href="/credit-card-debt-settlement"
+                      href="/credit-card-settlement"
                       className="px-3 py-2.5 border-2 border-[#D2A02A] text-[#5A4C33] font-bold rounded-lg hover:bg-[#D2A02A] hover:text-white transition-all text-center text-xs md:text-sm flex items-center justify-center"
                     >
                       Credit Card Settlement
@@ -1402,11 +1402,11 @@ Details: ${formData.message || "Requesting advocate evaluation for RBI OTS negot
                 </h3>
                 <ul className="space-y-2 text-xs">
                   {[
-                    ["/credit-card-debt-settlement", "Credit Card Debt Settlement"],
-                    ["/credit-card-debt-settlement", "Best Credit Card Settlement Service"],
-                    ["/personal-loan-settlement-in-september-2026", "Personal Loan Settlement September 2026"],
+                    ["/credit-card-settlement", "Credit Card Debt Settlement"],
+                    ["/credit-card-settlement", "Best Credit Card Settlement Service"],
+                    ["/personal-loan-settlement", "Personal Loan Settlement September 2026"],
                     ["/how-to-stop-bank-recovery-agents-harassment-legally-in-india", "Stop Recovery Agents Legally"],
-                    ["/credit-card-settlement-process-in-india-after-6-months-default", "Settlement After 6 Months Default"],
+                    ["/credit-card-settlement-process-india", "Settlement After 6 Months Default"],
                     ["/how-to-settle-loans-after-a-failed-debt-consolidation-plan", "Failed Debt Consolidation Settlement"],
                     ["/settle-loans-when-your-monthly-debt-payments-cross-your-repayment-capacity", "Debt Payments Exceed Capacity"],
                     ["/how-to-remove-a-written-off-status-from-a-credit-report", "Remove Written-Off CIBIL Tag"],

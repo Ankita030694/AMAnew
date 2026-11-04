@@ -142,7 +142,7 @@ const Footer = () => {
         { name: "Recovery for NBFCs", href: "/recovery-for-nbfcs" },
         { name: "Recovery for Pay Day Loan", href: "/recovery-for-pay-day-loan" },
         { name: "Bankruptcy Lawyer in India", href: "/bankruptcy-lawyer-in-india" },
-        { name: "Loan Settlement for HDFC Bank", href: "/loan-settlement-for-hdfc-bank" },
+        { name: "Loan Settlement for HDFC Bank", href: "/services/loan-settlement/hdfc-bank" },
         { name: "Loan Settlement for SBI Bank", href: "/loan-settlement-for-sbi-bank" },
         { name: "Loan Settlement for Bajaj Finserv", href: "/loan-settlement-for-bajaj-finserv" },
         { name: "Freed Loan Settlement Review", href: "/freed-loan-settlement-review-and-legal-alternatives" },

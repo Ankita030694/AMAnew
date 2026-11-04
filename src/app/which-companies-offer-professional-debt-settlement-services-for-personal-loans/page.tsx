@@ -45,7 +45,7 @@ const sections = [
 
 const relatedPages = [
   { title: "What are the Best Loan Settlement Services Near Me", href: "/what-are-the-best-loan-settlement-services-near-me" },
-  { title: "How Can I Negotiate a Personal Loan Settlement", href: "/how-can-I-negotiate-a-personal-loan-settlement-with-lenders" },
+  { title: "How Can I Negotiate a Personal Loan Settlement", href: "/personal-loan-settlement" },
   { title: "Stop Recovery Agent Home Visits", href: "/how-do-i-stop-recovery-agent-from-coming-home" },
   { title: "RBI New Recovery Guidelines 2026", href: "/rbi-new-recovery-guidelines-july-2026" },
   { title: "Personal Loan Settlement Guide", href: "/personal-loan-settlement" },

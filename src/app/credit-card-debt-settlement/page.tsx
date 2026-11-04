@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: "Credit Card Debt Settlement India | Legal Relief & OTS",
   description: "Legal credit card debt settlement by AMA Legal Solutions. Stop harassment, negotiate 40%–75% waivers under RBI guidelines, and get No Dues Certificates.",
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/credit-card-debt-settlement',
+    canonical: 'https://www.amalegalsolutions.com/credit-card-settlement',
   },
   openGraph: {
     title: 'Credit Card Debt Settlement in India | AMA Legal Solutions',
     description: 'Protect your statutory rights and eliminate unmanageable credit card debt. Advocate-led negotiations, RBI compliance enforcement, and legal representation across India.',
-    url: 'https://www.amalegalsolutions.com/credit-card-debt-settlement',
+    url: 'https://www.amalegalsolutions.com/credit-card-settlement',
     type: 'article',
     siteName: 'AMA Legal Solutions',
     locale: 'en_IN',

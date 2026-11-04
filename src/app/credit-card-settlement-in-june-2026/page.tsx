@@ -19,7 +19,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 2,
       "name": "Credit Card Settlement in June 2026",
-      "item": "https://www.amalegalsolutions.com/credit-card-settlement-in-june-2026"
+      "item": "https://www.amalegalsolutions.com/credit-card-settlement"
     }
   ]
 };
@@ -163,7 +163,7 @@ export const metadata = {
     "stop recovery agents harassment"
   ],
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/credit-card-settlement-in-june-2026',
+    canonical: 'https://www.amalegalsolutions.com/credit-card-settlement',
   },
 };
 
@@ -181,7 +181,7 @@ export default function CreditCardSettlementPage() {
 
   const breadcrumbItems = [
     { label: "Home", href: "/" },
-    { label: "Credit Card Settlement June 2026", href: "/credit-card-settlement-in-june-2026" },
+    { label: "Credit Card Settlement June 2026", href: "/credit-card-settlement" },
   ];
 
   return (

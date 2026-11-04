@@ -724,7 +724,7 @@ export default function RecallNoticePage() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/loan-settlement-for-hdfc-bank" className="text-gray-600 hover:text-[#D2A02A] flex items-center group">
+                    <Link href="/services/loan-settlement/hdfc-bank" className="text-gray-600 hover:text-[#D2A02A] flex items-center group">
                       <span className="w-1.5 h-1.5 bg-[#D2A02A] rounded-full mr-2 group-hover:w-3 transition-all"></span>
                       HDFC Bank Loan Settlement
                     </Link>

@@ -78,7 +78,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 3,
       "name": "Can I Settle My Personal Loan",
-      "item": "https://www.amalegalsolutions.com/can-i-settle-my-personal-loan"
+      "item": "https://www.amalegalsolutions.com/personal-loan-settlement"
     }
   ]
 };
@@ -171,7 +171,7 @@ export const metadata = {
     "financial hardship"
   ],
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/can-i-settle-my-personal-loan',
+    canonical: 'https://www.amalegalsolutions.com/personal-loan-settlement',
   },
 };
 
@@ -192,7 +192,7 @@ export default function CanISettleMyPersonalLoanPage() {
 
   const breadcrumbItems = [
     { label: "Services", href: "/services" },
-    { label: "Can I Settle My Personal Loan", href: "/can-i-settle-my-personal-loan" },
+    { label: "Can I Settle My Personal Loan", href: "/personal-loan-settlement" },
   ];
 
   return (

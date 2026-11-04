@@ -623,7 +623,7 @@ export default function BestDebtSettlementCompanyClient() {
                       <div className="font-bold text-gray-900 text-base mb-1">HDFC Bank</div>
                       <div className="text-xs text-[#D2A02A] font-extrabold uppercase tracking-wider mb-2">45% to 70% Average Waiver</div>
                       <p className="text-xs text-gray-600 mb-2">High willingness for compromise on credit cards and jumbo personal loans post-180 days default.</p>
-                      <Link href="/settlement-waiver-percentage-of-hdfc-bank" className="text-xs text-[#5A4C33] font-bold hover:underline">Read HDFC Settlement Rules →</Link>
+                      <Link href="/hdfc-credit-card-settlement-percentage" className="text-xs text-[#5A4C33] font-bold hover:underline">Read HDFC Settlement Rules →</Link>
                     </div>
 
                     <div className="p-4 rounded-xl border border-gray-200 bg-white hover:border-[#D2A02A] transition shadow-sm">
@@ -761,7 +761,7 @@ export default function BestDebtSettlementCompanyClient() {
                     </Link>
 
                     <Link
-                      href="/credit-card-debt-settlement"
+                      href="/credit-card-settlement"
                       className="p-4 rounded-xl border border-gray-200 hover:border-[#D2A02A] hover:bg-amber-50/30 transition duration-200 shadow-sm flex flex-col justify-between"
                     >
                       <div>
@@ -785,7 +785,7 @@ export default function BestDebtSettlementCompanyClient() {
                     </Link>
 
                     <Link
-                      href="/credit-card-debt-settlement"
+                      href="/credit-card-settlement"
                       className="p-4 rounded-xl border border-gray-200 hover:border-[#D2A02A] hover:bg-amber-50/30 transition duration-200 shadow-sm flex flex-col justify-between"
                     >
                       <div>

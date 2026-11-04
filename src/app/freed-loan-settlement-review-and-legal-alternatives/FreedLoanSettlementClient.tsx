@@ -1383,7 +1383,7 @@ Details: ${formData.message || "Requesting transparent fixed legal advisory for 
                       Bajaj Finserv Settlement
                     </Link>
                     <Link
-                      href="/loan-settlement-for-hdfc-bank"
+                      href="/services/loan-settlement/hdfc-bank"
                       className="px-4 py-2 rounded-xl border-2 border-[#D2A02A] text-[#5A4C33] font-bold text-xs hover:bg-[#D2A02A] hover:text-white transition shadow-xs"
                     >
                       HDFC Bank Loan Settlement
@@ -1553,7 +1553,7 @@ Details: ${formData.message || "Requesting transparent fixed legal advisory for 
                     &bull; Bajaj Finserv Loan Settlement
                   </Link>
                   <Link
-                    href="/loan-settlement-for-hdfc-bank"
+                    href="/services/loan-settlement/hdfc-bank"
                     className="block font-medium text-gray-700 hover:text-[#D2A02A] transition"
                   >
                     &bull; HDFC Bank Loan Settlement

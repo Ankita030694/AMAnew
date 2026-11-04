@@ -1011,7 +1011,7 @@ Details: ${formData.message || "Requesting transparent legal case evaluation und
                       },
                       {
                         title: "Credit Card Debt Settlement",
-                        href: "/credit-card-debt-settlement",
+                        href: "/credit-card-settlement",
                         desc: "Halting compounding revolving interest and settling cards legally.",
                       },
                       {
@@ -1192,7 +1192,7 @@ Details: ${formData.message || "Requesting transparent legal case evaluation und
                         Personal Loan OTS
                       </Link>
                       <Link
-                        href="/credit-card-debt-settlement"
+                        href="/credit-card-settlement"
                         className="p-2.5 border-2 border-[#D2A02A] text-[#5A4C33] hover:bg-[#D2A02A] hover:text-white font-bold rounded-lg text-center transition"
                       >
                         Credit Card Settlement

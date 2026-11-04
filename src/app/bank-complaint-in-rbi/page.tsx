@@ -713,7 +713,7 @@ export default function BankComplaintRBIPage() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/loan-settlement-for-hdfc-bank" className="text-gray-600 hover:text-[#D2A02A] flex items-center gap-2">
+                      <Link href="/services/loan-settlement/hdfc-bank" className="text-gray-600 hover:text-[#D2A02A] flex items-center gap-2">
                         <span className="text-[#D2A02A]">›</span> HDFC Bank Loan Settlement Process
                       </Link>
                     </li>

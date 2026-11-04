@@ -90,7 +90,7 @@ export default function CreditCardDebtSettlementClient() {
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://www.amalegalsolutions.com/credit-card-debt-settlement#article",
+        "@id": "https://www.amalegalsolutions.com/credit-card-settlement#article",
         "headline": "Credit Card Debt Settlement in India: Legal Protection, RBI Regulations, and OTS Negotiation Guide",
         "description": "Comprehensive legal guide on credit card debt settlement in India. Learn how to stop recovery agent harassment, eliminate compounding finance charges, negotiate 40% to 75% OTS waivers under RBI guidelines, and secure official No Dues Certificates.",
         "image": [
@@ -125,13 +125,13 @@ export default function CreditCardDebtSettlementClient() {
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://www.amalegalsolutions.com/credit-card-debt-settlement"
+          "@id": "https://www.amalegalsolutions.com/credit-card-settlement"
         }
       },
       {
         "@type": "WebPage",
-        "@id": "https://www.amalegalsolutions.com/credit-card-debt-settlement",
-        "url": "https://www.amalegalsolutions.com/credit-card-debt-settlement",
+        "@id": "https://www.amalegalsolutions.com/credit-card-settlement",
+        "url": "https://www.amalegalsolutions.com/credit-card-settlement",
         "name": "Credit Card Debt Settlement in India | AMA Legal Solutions",
         "description": "Expert advocate-led credit card debt settlement to halt recovery harassment, negotiate up to 75% debt waivers under RBI frameworks, and obtain valid No Dues Certificates.",
         "speakable": {
@@ -141,7 +141,7 @@ export default function CreditCardDebtSettlementClient() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://www.amalegalsolutions.com/credit-card-debt-settlement#faq",
+        "@id": "https://www.amalegalsolutions.com/credit-card-settlement#faq",
         "mainEntity": faqs.map((faq) => ({
           "@type": "Question",
           "name": faq.question,
@@ -153,7 +153,7 @@ export default function CreditCardDebtSettlementClient() {
       },
       {
         "@type": "Product",
-        "@id": "https://www.amalegalsolutions.com/credit-card-debt-settlement#product",
+        "@id": "https://www.amalegalsolutions.com/credit-card-settlement#product",
         "name": "Credit Card Debt Settlement Legal Services",
         "image": "https://www.amalegalsolutions.com/images/og/credit-card-debt-settlement.png",
         "description": "Premier advocate-led credit card debt settlement and commercial debt resolution advisory across India. Stop recovery agent harassment, negotiate One Time Settlements (OTS), and obtain valid No Dues Certificates.",
@@ -195,7 +195,7 @@ export default function CreditCardDebtSettlementClient() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://www.amalegalsolutions.com/credit-card-debt-settlement#breadcrumbs",
+        "@id": "https://www.amalegalsolutions.com/credit-card-settlement#breadcrumbs",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -213,13 +213,13 @@ export default function CreditCardDebtSettlementClient() {
             "@type": "ListItem",
             "position": 3,
             "name": "Credit Card Debt Settlement",
-            "item": "https://www.amalegalsolutions.com/credit-card-debt-settlement"
+            "item": "https://www.amalegalsolutions.com/credit-card-settlement"
           }
         ]
       },
       {
         "@type": "ItemList",
-        "@id": "https://www.amalegalsolutions.com/credit-card-debt-settlement#process",
+        "@id": "https://www.amalegalsolutions.com/credit-card-settlement#process",
         "name": "The 5-Step Legal Settlement Protocol for Credit Card Debt",
         "itemListElement": stepListItems.map((item, index) => ({
           "@type": "ListItem",
@@ -752,7 +752,7 @@ export default function CreditCardDebtSettlementClient() {
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                     <Link
-                      href="/how-to-settle-credit-card-debt"
+                      href="/credit-card-settlement"
                       className="p-3.5 rounded-xl border border-gray-200 hover:border-[#D2A02A] hover:bg-amber-50/40 transition-all text-xs md:text-sm font-semibold text-gray-800 flex items-center justify-between"
                     >
                       <span>How to Settle Credit Card Debt</span>
@@ -766,7 +766,7 @@ export default function CreditCardDebtSettlementClient() {
                       <span className="text-[#D2A02A]">→</span>
                     </Link>
                     <Link
-                      href="/best-company-to-settle-credit-card-debt"
+                      href="/recommendations-for-loan-settlement-negotiation-services-that-handle-overdue-credit-card-debts-in-india"
                       className="p-3.5 rounded-xl border border-gray-200 hover:border-[#D2A02A] hover:bg-amber-50/40 transition-all text-xs md:text-sm font-semibold text-gray-800 flex items-center justify-between"
                     >
                       <span>Best Company to Settle Credit Card Debt</span>
@@ -780,7 +780,7 @@ export default function CreditCardDebtSettlementClient() {
                       <span className="text-[#D2A02A]">→</span>
                     </Link>
                     <Link
-                      href="/hdfc-credit-card-settlement-process"
+                      href="/blog/hdfc-credit-card-settlement-complete-guide-to-managing-debt-with-expert-legal-help"
                       className="p-3.5 rounded-xl border border-gray-200 hover:border-[#D2A02A] hover:bg-amber-50/40 transition-all text-xs md:text-sm font-semibold text-gray-800 flex items-center justify-between"
                     >
                       <span>HDFC Credit Card Settlement Process</span>

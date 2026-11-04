@@ -1279,7 +1279,7 @@ Details: ${formData.message || "Requesting advocate representation for court app
                     &rarr; Bajaj Finserv Loan Settlement: Stop Harassment &amp; Settle Debt
                   </Link>
                   <Link
-                    href="/loan-settlement-for-hdfc-bank"
+                    href="/services/loan-settlement/hdfc-bank"
                     className="p-3.5 rounded-xl border border-gray-200 hover:border-[#D2A02A] hover:bg-amber-50/30 transition block font-semibold text-gray-800"
                   >
                     &rarr; HDFC Bank Loan Settlement: Credit Card &amp; Personal Loan OTS
@@ -1583,7 +1583,7 @@ Details: ${formData.message || "Requesting advocate representation for court app
                     &bull; Bajaj Finserv Loan Settlement
                   </Link>
                   <Link
-                    href="/loan-settlement-for-hdfc-bank"
+                    href="/services/loan-settlement/hdfc-bank"
                     className="block font-medium text-gray-700 hover:text-[#D2A02A] transition"
                   >
                     &bull; HDFC Bank Loan Settlement

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PersonalLoanSettlementInSeptember2026Client from "./PersonalLoanSettlementInSeptember2026Client";
 
 const PAGE_URL =
-  "https://www.amalegalsolutions.com/personal-loan-settlement-in-september-2026";
+  "https://www.amalegalsolutions.com/personal-loan-settlement";
 const OG_IMAGE =
   "/images/og/personal-loan-settlement-in-september-2026.png";
 

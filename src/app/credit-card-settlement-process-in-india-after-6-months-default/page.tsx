@@ -22,7 +22,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 2,
       "name": "Credit Card Settlement After 6 Months",
-      "item": "https://www.amalegalsolutions.com/credit-card-settlement-process-in-india-after-6-months-default"
+      "item": "https://www.amalegalsolutions.com/credit-card-settlement-process-india"
     }
   ]
 };
@@ -133,7 +133,7 @@ export const metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://www.amalegalsolutions.com/credit-card-settlement-process-in-india-after-6-months-default",
+    canonical: "https://www.amalegalsolutions.com/credit-card-settlement-process-india",
   },
 };
 
@@ -150,7 +150,7 @@ export default function CreditCardSettlementPage() {
 
   const breadcrumbItems = [
     { label: "Home", href: "/" },
-    { label: "Credit Card Settlement After 6 Months", href: "/credit-card-settlement-process-in-india-after-6-months-default" }
+    { label: "Credit Card Settlement After 6 Months", href: "/credit-card-settlement-process-india" }
   ];
 
   return (

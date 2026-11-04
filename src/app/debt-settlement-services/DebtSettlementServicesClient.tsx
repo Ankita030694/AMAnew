@@ -1043,7 +1043,7 @@ Details: ${formData.message || "Requesting transparent fixed legal advisory unde
                       &bull; Personal Loan Debt Settlement
                     </Link>
                     <Link
-                      href="/credit-card-debt-settlement"
+                      href="/credit-card-settlement"
                       className="p-3 bg-gray-50 rounded-xl border border-gray-200 hover:border-[#D2A02A] font-medium text-gray-800 hover:text-[#D2A02A] transition block"
                     >
                       &bull; Credit Card Debt Settlement
@@ -1224,7 +1224,7 @@ Details: ${formData.message || "Requesting transparent fixed legal advisory unde
                         Personal Loan OTS
                       </Link>
                       <Link
-                        href="/credit-card-debt-settlement"
+                        href="/credit-card-settlement"
                         className="p-2.5 border-2 border-[#D2A02A] text-[#5A4C33] hover:bg-[#D2A02A] hover:text-white font-bold rounded-lg text-center transition"
                       >
                         Credit Card Settlement

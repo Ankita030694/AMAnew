@@ -1104,9 +1104,9 @@ Details: ${formData.message || "Requesting advocate evaluation for NBFC loan com
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
                     {[
-                      ["/personal-loan-settlement-in-september-2026", "Personal Loan Settlement September 2026"],
+                      ["/personal-loan-settlement", "Personal Loan Settlement September 2026"],
                       ["/business-loan-settlement-in-september-2026", "Business Loan Settlement September 2026"],
-                      ["/credit-card-settlement-in-september-2026", "Credit Card Settlement September 2026"],
+                      ["/credit-card-settlement", "Credit Card Settlement September 2026"],
                       ["/trading-loan-settlement-in-september-2026", "Trading Loan Settlement September 2026"],
                       ["/loan-settlement-for-everyone", "Loan Settlement Guide for Everyone"],
                       ["/how-to-check-if-a-loan-settlement-offer-is-genuine-on-digital-platforms", "Check Genuine Digital Settlement Offers"],
@@ -1416,9 +1416,9 @@ Details: ${formData.message || "Requesting advocate evaluation for NBFC loan com
                 </h3>
                 <ul className="space-y-2 text-xs">
                   {[
-                    ["/personal-loan-settlement-in-september-2026", "Personal Loan Settlement 2026"],
+                    ["/personal-loan-settlement", "Personal Loan Settlement 2026"],
                     ["/business-loan-settlement-in-september-2026", "Business Loan Settlement 2026"],
-                    ["/credit-card-settlement-in-september-2026", "Credit Card Settlement 2026"],
+                    ["/credit-card-settlement", "Credit Card Settlement 2026"],
                     ["/trading-loan-settlement-in-september-2026", "Trading Loan Settlement 2026"],
                     ["/how-to-stop-bank-recovery-agents-harassment-legally-in-india", "Stop Recovery Harassment"],
                     ["/how-to-file-complaint-rbi-ombudsman-online", "File Online RBI Ombudsman"],

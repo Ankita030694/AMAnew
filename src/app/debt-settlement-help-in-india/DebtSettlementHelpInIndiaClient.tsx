@@ -1390,7 +1390,7 @@ Details: ${formData.message || "Requesting transparent fixed legal advisory unde
                         Personal Loan OTS
                       </Link>
                       <Link
-                        href="/credit-card-debt-settlement"
+                        href="/credit-card-settlement"
                         className="p-2.5 rounded-lg border-2 border-[#D2A02A] text-[#5A4C33] font-bold text-xs hover:bg-[#D2A02A] hover:text-white transition block"
                       >
                         Credit Card Relief

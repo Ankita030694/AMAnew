@@ -919,7 +919,7 @@ export default function SettleLoansRepaymentCapacityClient() {
                         waiver: "45% – 70% Waiver",
                         type: "Personal Loans & Jumbo Credit Cards",
                         detail: "Requires comprehensive hardship proof; standard OTS processed in 30–45 days.",
-                        link: "/settlement-waiver-percentage-of-hdfc-bank",
+                        link: "/hdfc-credit-card-settlement-percentage",
                       },
                       {
                         bank: "ICICI Bank",
@@ -1308,7 +1308,7 @@ export default function SettleLoansRepaymentCapacityClient() {
                       },
                       {
                         title: "Credit Card Debt Settlement",
-                        href: "/credit-card-debt-settlement",
+                        href: "/credit-card-settlement",
                         desc: "How to eliminate revolving credit card finance charges and negotiate 50%–75% waivers.",
                       },
                       {

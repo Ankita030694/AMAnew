@@ -6,7 +6,7 @@ import { FaPhone, FaWhatsapp, FaShieldAlt, FaGavel, FaCheckCircle, FaExclamation
 
 export const metadata = {
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/what-is-the-typical-process-for-settling-a-personal-loan-in-india',
+    canonical: 'https://www.amalegalsolutions.com/personal-loan-settlement',
   },
   title: "Personal Loan Settlement Process in India | AMA Legal",
   description:
@@ -16,7 +16,7 @@ export const metadata = {
     title: "Personal Loan Settlement Process in India | AMA Legal",
     description:
       "Guide to personal loan settlement in India. Learn about NPA rules, OTS negotiations, CIBIL score impact, and legal debt waivers with AMA Legal Solutions.",
-    url: 'https://www.amalegalsolutions.com/what-is-the-typical-process-for-settling-a-personal-loan-in-india',
+    url: 'https://www.amalegalsolutions.com/personal-loan-settlement',
     type: "article",
   },
 };

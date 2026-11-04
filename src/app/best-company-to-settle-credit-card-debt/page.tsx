@@ -18,7 +18,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 2,
       "name": "Best Company to Settle Credit Card Debt",
-      "item": "https://www.amalegalsolutions.com/best-company-to-settle-credit-card-debt"
+      "item": "https://www.amalegalsolutions.com/recommendations-for-loan-settlement-negotiation-services-that-handle-overdue-credit-card-debts-in-india"
     }
   ]
 };
@@ -190,7 +190,7 @@ export const metadata = {
     "stop credit card harassment"
   ],
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/best-company-to-settle-credit-card-debt',
+    canonical: 'https://www.amalegalsolutions.com/recommendations-for-loan-settlement-negotiation-services-that-handle-overdue-credit-card-debts-in-india',
   },
 };
 
@@ -209,7 +209,7 @@ export default function BestCompanyToSettleCreditCardDebt() {
 
   const breadcrumbItems = [
     { label: "Home", href: "/" },
-    { label: "Best Company to Settle Credit Card Debt", href: "/best-company-to-settle-credit-card-debt" },
+    { label: "Best Company to Settle Credit Card Debt", href: "/recommendations-for-loan-settlement-negotiation-services-that-handle-overdue-credit-card-debts-in-india" },
   ];
 
   return (

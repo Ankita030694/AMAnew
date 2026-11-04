@@ -309,7 +309,7 @@ export default function DebtSettlementMythsPage() {
                             <p className="text-gray-600 leading-relaxed">Once your CIBIL account shows a 'Settled' status, no financial institution will ever approve you for any type of credit again.</p>
                           </td>
                           <td className="p-5 md:p-8 align-top bg-[#fcf8f2]/30 group-hover:bg-[#fcf8f2] transition-colors">
-                            <p className="text-gray-800 leading-relaxed font-medium">The CIBIL impact is temporary. Understanding <Link href="/how-to-settle-credit-card-debt" className="text-[#D2A02A] hover:underline font-bold">how to settle credit card debt</Link> involves acknowledging this dip in exchange for immediate financial survival. Millions of Indians have successfully rebuilt credit over three to five years post settlement.</p>
+                            <p className="text-gray-800 leading-relaxed font-medium">The CIBIL impact is temporary. Understanding <Link href="/credit-card-settlement" className="text-[#D2A02A] hover:underline font-bold">how to settle credit card debt</Link> involves acknowledging this dip in exchange for immediate financial survival. Millions of Indians have successfully rebuilt credit over three to five years post settlement.</p>
                           </td>
                         </tr>
 

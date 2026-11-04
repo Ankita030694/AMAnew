@@ -64,7 +64,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 2,
       "name": "PL Loan Settlement",
-      "item": "https://www.amalegalsolutions.com/pl-loan-settlement"
+      "item": "https://www.amalegalsolutions.com/personal-loan-settlement"
     }
   ]
 };
@@ -195,12 +195,12 @@ export const metadata = {
     "advocate anuj anand malik"
   ],
   alternates: {
-    canonical: 'https://www.amalegalsolutions.com/pl-loan-settlement',
+    canonical: 'https://www.amalegalsolutions.com/personal-loan-settlement',
   },
   openGraph: {
     title: "PL Loan Settlement in India: Legal Rules & CIBIL Impact",
     description: "PL Loan Settlement: Learn RBI guidelines, settlement formulas, CIBIL score recovery, and legal rights. Get a free consultation to settle your personal loan!",
-    url: 'https://www.amalegalsolutions.com/pl-loan-settlement',
+    url: 'https://www.amalegalsolutions.com/personal-loan-settlement',
     siteName: 'AMA Legal Solutions',
     images: [
       {
@@ -231,7 +231,7 @@ export default function PLLoanSettlementPage() {
 
   const breadcrumbItems = [
     { label: "Home", href: "/" },
-    { label: "PL Loan Settlement", href: "/pl-loan-settlement" }
+    { label: "PL Loan Settlement", href: "/personal-loan-settlement" }
   ];
 
   return (
@@ -433,7 +433,7 @@ export default function PLLoanSettlementPage() {
                     Negotiating directly with regional recovery heads in Delhi NCR requires detailed legal drafting. Our office in Sector 57, Gurugram, helps clients draft hardship representations, manage communication with recovery cells, and secure formal settlement letters under structured legal terms.
                   </p>
                   <p className="mb-4">
-                    If you are dealing with credit card debt, see our guide on <Link href="/how-to-settle-credit-card-debt" className="text-[#D2A02A] hover:underline font-semibold">how to settle credit card debt</Link> for local negotiation tips.
+                    If you are dealing with credit card debt, see our guide on <Link href="/credit-card-settlement" className="text-[#D2A02A] hover:underline font-semibold">how to settle credit card debt</Link> for local negotiation tips.
                   </p>
                 </section>
 

@@ -1166,7 +1166,7 @@ export default function MinimumAmountDuePage() {
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <Link
-                      href="/how-to-settle-credit-card-debt"
+                      href="/credit-card-settlement"
                       className="text-[#D2A02A] hover:underline flex items-center gap-2"
                     >
                       <span>→</span> How to Settle Credit Card Debt

@@ -1155,7 +1155,7 @@ export default function SettleLoansAfterFailedDebtConsolidationClient() {
                       },
                       {
                         title: "Credit Card Debt Settlement Process",
-                        href: "/credit-card-debt-settlement",
+                        href: "/credit-card-settlement",
                         desc: "Legal strategies to settle revolving credit card debts with maximum interest waivers.",
                       },
                       {
