@@ -4,6 +4,7 @@ import Image from "next/image";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
+import MajorBankSettlementLinks from "@/components/MajorBankSettlementLinks";
 
 // FAQ data for rendering and Schema
 const faqs = [
@@ -495,6 +496,8 @@ export default function PaydayLoanSettlementPage() {
                 </section>
 
                 {/* FAQs */}
+                <MajorBankSettlementLinks variant="cross-sell" />
+
                 <section id="faqs" className="scroll-mt-32">
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-8">
                     Frequently Asked Questions

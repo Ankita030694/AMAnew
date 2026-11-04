@@ -4,6 +4,7 @@ import Image from "next/image";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
+import MajorBankSettlementLinks from "@/components/MajorBankSettlementLinks";
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -525,6 +526,8 @@ export default function PayDayLoanSettlementPage() {
               </section>
 
               {/* FAQs */}
+              <MajorBankSettlementLinks variant="cross-sell" />
+
               <section id="faq" className="scroll-mt-32 my-12 pt-8 border-t border-gray-200">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
                 <div className="space-y-4">

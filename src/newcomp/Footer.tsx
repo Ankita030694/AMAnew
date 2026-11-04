@@ -85,6 +85,7 @@ const Footer = () => {
         { name: "Bank Arbitration Settlement Guide", href: "/bank-arbitration-settlement", hiddenLink: true },
         { name: 'Loan Settlement Guide', href: '/loan-settlement' },
         { name: 'Personal Loan Settlement', href: '/personal-loan-settlement' },
+        { name: 'Credit Card Settlement', href: '/credit-card-settlement' },
         { name: 'Business Loan Settlement', href: '/business-loan-settlement' },
         { name: 'Car Loan Settlement', href: '/car-loan-settlement' },
         { name: 'App Loan Settlement', href: '/app-loan-settlement' },

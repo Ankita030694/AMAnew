@@ -4,6 +4,8 @@ import Image from "next/image";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { creditCardBanks } from "@/data/creditCardBanks";
+import MajorBankSettlementLinks from "@/components/MajorBankSettlementLinks";
+import { resolveConsolidatedPath } from "@/lib/consolidation";
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -441,6 +443,8 @@ export default function CreditCardSettlementPage() {
 
                 </section>
 
+                <MajorBankSettlementLinks variant="credit-card" />
+
                 <section id="bank-specific-guides" className="scroll-mt-32 mt-12">
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-2">Bank-Specific Settlement Guides</h2>
                   <p className="text-sm md:text-lg leading-relaxed mb-6 text-gray-700">Select your credit card issuing bank below to read our detailed, bank-specific settlement strategy and negotiation guide.</p>
@@ -448,7 +452,7 @@ export default function CreditCardSettlementPage() {
                     {creditCardBanks.map((bank) => (
                       <Link 
                         key={bank.slug} 
-                        href={`/credit-card-settlement/${bank.slug}`}
+                        href={resolveConsolidatedPath(`/credit-card-settlement/${bank.slug}`)}
                         className="bg-white border border-gray-200 hover:border-[#D2A02A] p-4 rounded-xl text-center shadow-sm hover:shadow-md transition-all group"
                       >
                         <h3 className="font-semibold text-gray-800 group-hover:text-[#D2A02A] transition-colors">{bank.name}</h3>

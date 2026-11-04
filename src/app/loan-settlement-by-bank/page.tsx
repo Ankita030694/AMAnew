@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import banksData from "./banks.json";
+import { resolveConsolidatedPath } from "@/lib/consolidation";
 
 export const metadata = {
   alternates: {
@@ -49,7 +50,7 @@ export default function LoanSettlementByBank() {
           {banksData.map((bank, index) => (
             <Link
               key={index}
-              href={`/loan-settlement-by-bank/${generateSlug(bank.company)}`}
+              href={resolveConsolidatedPath(`/loan-settlement-by-bank/${generateSlug(bank.company)}`)}
               className="bg-white/70 backdrop-blur-sm border border-black/5 hover:border-[#D29E0D]/30 p-6 rounded-2xl transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] group hover:-translate-y-1 block relative overflow-hidden"
             >
               <div className="absolute top-0 left-0 w-1.5 h-full bg-[#D29E0D] opacity-0 group-hover:opacity-100 transition-opacity"></div>

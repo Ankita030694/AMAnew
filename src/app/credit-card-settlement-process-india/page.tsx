@@ -3,6 +3,7 @@ import Script from "next/script";
 import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import MajorBankSettlementLinks from "@/components/MajorBankSettlementLinks";
 
 // FAQ data for rendering and Schema
 const faqs = [
@@ -510,6 +511,8 @@ export default function CreditCardSettlementPage() {
                 </section>
 
                 {/* FAQs */}
+                <MajorBankSettlementLinks variant="credit-card" />
+
                 <section id="faqs" className="scroll-mt-32">
                   <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-10">Credit Card Settlement: Frequently Asked Questions</h2>
                   <div className="space-y-10">

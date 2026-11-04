@@ -4,6 +4,8 @@ import Image from "next/image";
 import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { personalLoanBanks } from "@/data/personalLoanBanks";
+import MajorBankSettlementLinks from "@/components/MajorBankSettlementLinks";
+import { resolveConsolidatedPath } from "@/lib/consolidation";
 
 // FAQ data for rendering and Schema
 const faqs = [
@@ -668,6 +670,8 @@ export default function PersonalLoanSettlementPage() {
                 </section>
 
                 {/* Section: Bank Specific Guides */}
+                <MajorBankSettlementLinks variant="personal-loan" />
+
                 <section id="bank-specific-guides" className="scroll-mt-32">
                   <h2 className="text-3xl font-bold text-gray-900 mb-8">Bank-Specific Settlement Guides</h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">Select your personal loan issuing bank below to read our detailed, bank-specific settlement strategy and negotiation guide.</p>
@@ -675,7 +679,7 @@ export default function PersonalLoanSettlementPage() {
                     {personalLoanBanks.map((bank) => (
                       <Link 
                         key={bank.slug} 
-                        href={`/personal-loan-settlement/${bank.slug}`}
+                        href={resolveConsolidatedPath(`/personal-loan-settlement/${bank.slug}`)}
                         className="bg-white border border-gray-200 hover:border-[#D2A02A] p-4 rounded-xl text-center shadow-sm hover:shadow-md transition-all group"
                       >
                         <h3 className="font-semibold text-gray-800 group-hover:text-[#D2A02A] transition-colors">{bank.name}</h3>
