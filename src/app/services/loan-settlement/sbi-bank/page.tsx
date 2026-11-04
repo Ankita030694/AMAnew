@@ -108,15 +108,15 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "SBI Loan Settlement Process 2025 | AMA Legal",
+  title: "SBI Personal Loan Settlement Process & Rinn Samadhan 2026",
   description:
-    "Expert guide on SBI loan settlement. Learn about Rinn Samadhan scheme, OTS policies for personal loans. Get legal help to negotiate, stop harassment.",
+    "How to settle an SBI personal loan or credit card: the SBI settlement process, Rinn Samadhan scheme eligibility, documents, and advocate-led OTS negotiation.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/sbi-bank',
   },
   openGraph: {
-    title: "SBI Loan Settlement Process 2025 | AMA Legal",
-    description: "Expert guide on SBI loan settlement. Learn about Rinn Samadhan scheme, OTS policies for personal loans. Get legal help to negotiate, stop harassment.",
+    title: "SBI Personal Loan Settlement Process & Rinn Samadhan 2026",
+    description: "How to settle an SBI personal loan or credit card: the SBI settlement process, Rinn Samadhan scheme eligibility, documents, and advocate-led OTS negotiation.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/sbi-bank",
     type: "website",
     images: [

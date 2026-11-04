@@ -150,8 +150,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Personal Loan Settlement India | Stop Debt Harassment",
-  description: "Struggling with personal loan EMIs? Our legal experts help you negotiate the best OTS across India and stop harassment from bank recovery agents.",
+  title: "Personal Loan Settlement: Process & How to Negotiate (2026)",
+  description: "How to settle a personal loan in India: the step-by-step settlement process with banks, how to negotiate a lower OTS amount, CIBIL impact, and advocate help.",
   keywords: [
     "personal loan settlement",
     "personal loan settlement India",

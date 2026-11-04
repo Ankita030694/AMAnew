@@ -14,15 +14,15 @@ import {
 } from "react-icons/fa";
 
 export const metadata = {
-  title: "Axis Bank Loan Settlement: Process, Waivers & CIBIL Rules",
-  description: "Struggling with Axis Bank loan defaults? Learn the personal loan and credit card settlement process, haircut percentages, CIBIL impact, and legal rights.",
+  title: "Axis Bank Settlement Letter & Loan Settlement Process 2026",
+  description: "How to get and verify an Axis Bank settlement letter for a personal loan or credit card, typical waiver ranges, the settlement process, and CIBIL impact.",
   keywords: "loan settlement for axis bank, axis bank credit card settlement, one-time settlement letter axis bank, axis bank personal loan settlement process, npa classification rules, cibil score drop, debt collection agents, haircut percentage, compromise settlement policy, no dues certificate, ama legal solutions",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/loan-settlement-for-axis-bank',
   },
   openGraph: {
-    title: "Axis Bank Loan Settlement: Process, Waivers & CIBIL Rules",
-    description: "Struggling with Axis Bank loan defaults? Learn the personal loan and credit card settlement process, haircut percentages, CIBIL impact, and legal rights.",
+    title: "Axis Bank Settlement Letter & Loan Settlement Process 2026",
+    description: "How to get and verify an Axis Bank settlement letter for a personal loan or credit card, typical waiver ranges, the settlement process, and CIBIL impact.",
     url: "https://www.amalegalsolutions.com/loan-settlement-for-axis-bank",
     siteName: "AMA Legal Solutions",
     images: [
@@ -39,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Axis Bank Loan Settlement: Process, Waivers & CIBIL Rules",
-    description: "Struggling with Axis Bank loan defaults? Learn the personal loan and credit card settlement process, haircut percentages, CIBIL impact, and legal rights.",
+    title: "Axis Bank Settlement Letter & Loan Settlement Process 2026",
+    description: "How to get and verify an Axis Bank settlement letter for a personal loan or credit card, typical waiver ranges, the settlement process, and CIBIL impact.",
     images: ["https://www.amalegalsolutions.com/newAssets/it_loan_settlement.png"],
     creator: "@amalegalsolutions",
     site: "@amalegalsolutions",

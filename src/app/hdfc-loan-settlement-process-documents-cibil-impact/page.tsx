@@ -175,8 +175,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "HDFC Loan Settlement: Process, Documents, and CIBIL Impact",
-  description: "Discover the exact HDFC loan settlement process, required documents, and CIBIL score impact. Learn how to negotiate and stop recovery agents effectively.",
+  title: "HDFC Loan Settlement Process 2026: Steps, Documents, CIBIL",
+  description: "Step-by-step HDFC Bank loan settlement process: documents you need, how the bank decides on your OTS, how to negotiate, and the CIBIL impact afterwards.",
   robots: {
     index: true,
     follow: true,

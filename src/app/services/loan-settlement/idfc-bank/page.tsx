@@ -107,15 +107,15 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "IDFC Loan Settlement Process | AMA Legal",
+  title: "IDFC FIRST Bank Loan Settlement: Personal Loan & Credit Card",
   description:
-    "Complete guide to IDFC FIRST Bank loan settlement. Negotiate OTS, stop recovery harassment, and settle your personal loan or credit card debt legally.",
+    "Advocate-led IDFC FIRST Bank settlement for personal loans and credit cards: the settlement process, waiver negotiation, settlement letter, and CIBIL impact.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/idfc-bank',
   },
   openGraph: {
-    title: "IDFC Loan Settlement Process | AMA Legal",
-    description: "Complete guide to IDFC FIRST Bank loan settlement. Negotiate OTS, stop recovery harassment, and settle your personal loan or credit card debt legally.",
+    title: "IDFC FIRST Bank Loan Settlement: Personal Loan & Credit Card",
+    description: "Advocate-led IDFC FIRST Bank settlement for personal loans and credit cards: the settlement process, waiver negotiation, settlement letter, and CIBIL impact.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/idfc-bank",
     type: "website",
     images: [

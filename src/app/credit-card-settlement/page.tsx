@@ -163,8 +163,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Credit Card Settlement in India | Stop Debt Harassment",
-  description: "Learn how to legally force credit card companies to settle your debt for less. Stop recovery agents and rebuild your financial life with expert guidance.",
+  title: "Credit Card Settlement in India: Process, % & Legal Help",
+  description: "How credit card settlement works in India: the step-by-step process with banks, typical settlement percentage (40–70%), CIBIL impact, and advocate-led help.",
   robots: {
     index: true,
     follow: true,

@@ -115,15 +115,15 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "ICICI Loan Settlement Process: Credit Card & Loan OTS | AMA",
+  title: "ICICI Bank Loan & Credit Card Settlement Process, Letter 2026",
   description:
-    "Settle ICICI Bank personal loans & credit cards legally. Negotiate OTS waivers, stop recovery agent harassment, and obtain a formal No Dues Certificate.",
+    "Settle ICICI Bank personal loans and credit cards legally: step-by-step settlement process, settlement letter and No Dues Certificate, and CIBIL impact.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/icici-bank',
   },
   openGraph: {
-    title: "ICICI Loan Settlement Process: Credit Card & Loan OTS | AMA",
-    description: "Settle ICICI Bank personal loans & credit cards legally. Negotiate OTS waivers, stop recovery agent harassment, and obtain a formal No Dues Certificate.",
+    title: "ICICI Bank Loan & Credit Card Settlement Process, Letter 2026",
+    description: "Settle ICICI Bank personal loans and credit cards legally: step-by-step settlement process, settlement letter and No Dues Certificate, and CIBIL impact.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/icici-bank",
     type: "website",
     images: [

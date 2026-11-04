@@ -8,14 +8,14 @@ import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUnivers
 
 // Metadata
 export const metadata = {
-  title: "RBL Bank Loan Settlement | AMA Legal",
-  description: "Struggling with RBL Bank loan repayment? Expert legal help for RBL Bank loan settlement. Reduce your debt with One Time Settlement (OTS). Stop.",
+  title: "RBL Credit Card Settlement Process & Settlement Letter 2026",
+  description: "Step-by-step RBL Bank credit card and loan settlement process: how to negotiate the waiver, get a valid RBL settlement letter, and protect your CIBIL score.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/rbl-bank',
   },
   openGraph: {
-    title: "RBL Bank Loan Settlement | AMA Legal",
-    description: "Struggling with RBL Bank loan repayment? Expert legal help for RBL Bank loan settlement. Reduce your debt with One Time Settlement (OTS). Stop.",
+    title: "RBL Credit Card Settlement Process & Settlement Letter 2026",
+    description: "Step-by-step RBL Bank credit card and loan settlement process: how to negotiate the waiver, get a valid RBL settlement letter, and protect your CIBIL score.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/rbl-bank",
     type: "website",
     images: [

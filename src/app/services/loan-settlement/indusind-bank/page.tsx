@@ -9,14 +9,14 @@ import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUnivers
 
 // Metadata
 export const metadata = {
-  title: "IndusInd Bank Loan Settlement | AMA Legal",
-  description: "Struggling with IndusInd Bank personal loan or credit card repayment? Expert legal help for IndusInd Bank loan settlement. Reduce your debt with One.",
+  title: "IndusInd Bank Loan & Credit Card Settlement Process | AMA",
+  description: "Settle IndusInd Bank personal loan or credit card dues legally: the settlement process, how to negotiate an OTS waiver, documents, and stopping recovery calls.",
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/indusind-bank',
   },
   openGraph: {
-    title: "IndusInd Bank Loan Settlement | AMA Legal",
-    description: "Struggling with IndusInd Bank personal loan or credit card repayment? Expert legal help for IndusInd Bank loan settlement. Reduce your debt with One.",
+    title: "IndusInd Bank Loan & Credit Card Settlement Process | AMA",
+    description: "Settle IndusInd Bank personal loan or credit card dues legally: the settlement process, how to negotiate an OTS waiver, documents, and stopping recovery calls.",
     url: "https://www.amalegalsolutions.com/services/loan-settlement/indusind-bank",
     type: "website",
     images: [

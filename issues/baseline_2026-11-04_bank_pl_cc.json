@@ -1,0 +1,900 @@
+{
+  "note": "Baseline before batch-1 bank PL/CC title/meta rewrites. GSC 28d window 2026-10-05 to 2026-11-01.",
+  "window": {
+    "start": "2026-10-05",
+    "end": "2026-11-01"
+  },
+  "pages": {
+    "/services/loan-settlement/hdfc-bank": {
+      "clicks": 8,
+      "impressions": 643,
+      "ctrPct": 1.24,
+      "position": 9.6,
+      "topQueries": [
+        {
+          "q": "hdfc loan settlement",
+          "c": 1,
+          "i": 10,
+          "pos": 4
+        },
+        {
+          "q": "hdfc personal loan settlement",
+          "c": 1,
+          "i": 10,
+          "pos": 9.3
+        },
+        {
+          "q": "880000",
+          "c": 0,
+          "i": 1,
+          "pos": 4
+        },
+        {
+          "q": "hdfc",
+          "c": 0,
+          "i": 1,
+          "pos": 6
+        },
+        {
+          "q": "hdfc bank",
+          "c": 0,
+          "i": 3,
+          "pos": 4
+        },
+        {
+          "q": "hdfc bank credit card legal notice format",
+          "c": 0,
+          "i": 1,
+          "pos": 9
+        },
+        {
+          "q": "hdfc bank credit card settlement",
+          "c": 0,
+          "i": 3,
+          "pos": 90.3
+        },
+        {
+          "q": "hdfc bank credit card settlement letter",
+          "c": 0,
+          "i": 1,
+          "pos": 67
+        },
+        {
+          "q": "hdfc bank loan settlement",
+          "c": 0,
+          "i": 4,
+          "pos": 3
+        },
+        {
+          "q": "hdfc bank personal loan settlement percentage",
+          "c": 0,
+          "i": 5,
+          "pos": 1
+        }
+      ]
+    },
+    "/hdfc-loan-settlement-process-documents-cibil-impact": {
+      "clicks": 1,
+      "impressions": 661,
+      "ctrPct": 0.15,
+      "position": 8.4,
+      "topQueries": [
+        {
+          "q": "38000",
+          "c": 0,
+          "i": 1,
+          "pos": 3
+        },
+        {
+          "q": "880000",
+          "c": 0,
+          "i": 1,
+          "pos": 5
+        },
+        {
+          "q": "hdfc",
+          "c": 0,
+          "i": 1,
+          "pos": 3
+        },
+        {
+          "q": "hdfc bank loan settlement",
+          "c": 0,
+          "i": 6,
+          "pos": 5.8
+        },
+        {
+          "q": "hdfc bank retail assets loan settlement",
+          "c": 0,
+          "i": 2,
+          "pos": 23
+        },
+        {
+          "q": "hdfc bank settlement",
+          "c": 0,
+          "i": 1,
+          "pos": 10
+        },
+        {
+          "q": "hdfc car loan settlement process",
+          "c": 0,
+          "i": 2,
+          "pos": 14
+        },
+        {
+          "q": "hdfc credit card recovery process",
+          "c": 0,
+          "i": 2,
+          "pos": 75.5
+        },
+        {
+          "q": "hdfc credit card settlement letter",
+          "c": 0,
+          "i": 2,
+          "pos": 63
+        },
+        {
+          "q": "hdfc credit card settlement letter format",
+          "c": 0,
+          "i": 1,
+          "pos": 66
+        }
+      ]
+    },
+    "/hdfc-credit-card-settlement-percentage": {
+      "clicks": 27,
+      "impressions": 1077,
+      "ctrPct": 2.51,
+      "position": 5.6,
+      "topQueries": [
+        {
+          "q": "hdfc credit card settlement percentage",
+          "c": 2,
+          "i": 47,
+          "pos": 12.8
+        },
+        {
+          "q": "hdfc bank credit card settlement percentage",
+          "c": 1,
+          "i": 15,
+          "pos": 2.4
+        },
+        {
+          "q": "hdfc bank settlement percentage",
+          "c": 1,
+          "i": 20,
+          "pos": 1.4
+        },
+        {
+          "q": "hdfc credit card settlement waive off",
+          "c": 1,
+          "i": 1,
+          "pos": 1
+        },
+        {
+          "q": "10 years",
+          "c": 0,
+          "i": 1,
+          "pos": 1
+        },
+        {
+          "q": "109432",
+          "c": 0,
+          "i": 1,
+          "pos": 2
+        },
+        {
+          "q": "15",
+          "c": 0,
+          "i": 1,
+          "pos": 5
+        },
+        {
+          "q": "175000",
+          "c": 0,
+          "i": 1,
+          "pos": 2
+        },
+        {
+          "q": "2 lakh",
+          "c": 0,
+          "i": 1,
+          "pos": 5
+        },
+        {
+          "q": "2 साल",
+          "c": 0,
+          "i": 1,
+          "pos": 4
+        }
+      ]
+    },
+    "/loan-settlement-for-axis-bank": {
+      "clicks": 13,
+      "impressions": 1248,
+      "ctrPct": 1.04,
+      "position": 7.7,
+      "topQueries": [
+        {
+          "q": "axis bank credit card settlement process",
+          "c": 1,
+          "i": 2,
+          "pos": 1
+        },
+        {
+          "q": "axis",
+          "c": 0,
+          "i": 1,
+          "pos": 6
+        },
+        {
+          "q": "axis bank",
+          "c": 0,
+          "i": 1,
+          "pos": 17
+        },
+        {
+          "q": "axis bank credit card loan settlement",
+          "c": 0,
+          "i": 2,
+          "pos": 22.5
+        },
+        {
+          "q": "axis bank credit card settlement",
+          "c": 0,
+          "i": 5,
+          "pos": 26.4
+        },
+        {
+          "q": "axis bank credit card settlement email id",
+          "c": 0,
+          "i": 2,
+          "pos": 3
+        },
+        {
+          "q": "axis bank credit card settlement letter",
+          "c": 0,
+          "i": 14,
+          "pos": 12.7
+        },
+        {
+          "q": "axis bank credit card settlement letter format",
+          "c": 0,
+          "i": 20,
+          "pos": 11.9
+        },
+        {
+          "q": "axis bank credit card settlement percentage",
+          "c": 0,
+          "i": 7,
+          "pos": 24.7
+        },
+        {
+          "q": "axis bank digital loan settlement",
+          "c": 0,
+          "i": 1,
+          "pos": 3
+        }
+      ]
+    },
+    "/services/loan-settlement/axis-bank": {
+      "clicks": 12,
+      "impressions": 723,
+      "ctrPct": 1.66,
+      "position": 8.1,
+      "topQueries": [
+        {
+          "q": "axis bank credit card settlement department",
+          "c": 1,
+          "i": 1,
+          "pos": 1
+        },
+        {
+          "q": "axis bank loan settlement",
+          "c": 1,
+          "i": 2,
+          "pos": 1
+        },
+        {
+          "q": "axis bank personal loan settlement letter",
+          "c": 1,
+          "i": 6,
+          "pos": 8.7
+        },
+        {
+          "q": "axis credit card settlement process",
+          "c": 1,
+          "i": 8,
+          "pos": 12.4
+        },
+        {
+          "q": "1lakh",
+          "c": 0,
+          "i": 1,
+          "pos": 2
+        },
+        {
+          "q": "axis",
+          "c": 0,
+          "i": 1,
+          "pos": 7
+        },
+        {
+          "q": "axis bank",
+          "c": 0,
+          "i": 2,
+          "pos": 8.5
+        },
+        {
+          "q": "axis bank car loan settlement process",
+          "c": 0,
+          "i": 3,
+          "pos": 1
+        },
+        {
+          "q": "axis bank credit card debt settlement",
+          "c": 0,
+          "i": 1,
+          "pos": 27
+        },
+        {
+          "q": "axis bank credit card loan settlement",
+          "c": 0,
+          "i": 13,
+          "pos": 9
+        }
+      ]
+    },
+    "/services/loan-settlement/sbi-bank": {
+      "clicks": 14,
+      "impressions": 1268,
+      "ctrPct": 1.1,
+      "position": 7.2,
+      "topQueries": [
+        {
+          "q": "sbi personal loan settlement",
+          "c": 1,
+          "i": 24,
+          "pos": 3.8
+        },
+        {
+          "q": "sbi personal loan settlement process",
+          "c": 1,
+          "i": 20,
+          "pos": 2.4
+        },
+        {
+          "q": "auca recovery sbi",
+          "c": 0,
+          "i": 2,
+          "pos": 78
+        },
+        {
+          "q": "can i repay personal loan early in sbi",
+          "c": 0,
+          "i": 2,
+          "pos": 3
+        },
+        {
+          "q": "education loan hai",
+          "c": 0,
+          "i": 1,
+          "pos": 8
+        },
+        {
+          "q": "how to pay sbi loan amount online",
+          "c": 0,
+          "i": 1,
+          "pos": 3
+        },
+        {
+          "q": "how to settle unpaid home loan emi in guwahati",
+          "c": 0,
+          "i": 1,
+          "pos": 4
+        },
+        {
+          "q": "how to settle unpaid home loan emi in kumbakonam",
+          "c": 0,
+          "i": 1,
+          "pos": 7
+        },
+        {
+          "q": "how to settle unpaid home loan emi in nagercoil",
+          "c": 0,
+          "i": 1,
+          "pos": 1
+        },
+        {
+          "q": "how to settle unpaid home loan emi in vadodara",
+          "c": 0,
+          "i": 1,
+          "pos": 2
+        }
+      ]
+    },
+    "/services/loan-settlement/icici-bank": {
+      "clicks": 5,
+      "impressions": 914,
+      "ctrPct": 0.55,
+      "position": 7.9,
+      "topQueries": [
+        {
+          "q": "icici bank personal loan settlement letter format",
+          "c": 1,
+          "i": 5,
+          "pos": 9
+        },
+        {
+          "q": "how to settle icici credit card",
+          "c": 0,
+          "i": 3,
+          "pos": 10.7
+        },
+        {
+          "q": "icici",
+          "c": 0,
+          "i": 1,
+          "pos": 3
+        },
+        {
+          "q": "icici bank",
+          "c": 0,
+          "i": 1,
+          "pos": 3
+        },
+        {
+          "q": "icici bank credit card settlement",
+          "c": 0,
+          "i": 2,
+          "pos": 14
+        },
+        {
+          "q": "icici bank credit card settlement letter",
+          "c": 0,
+          "i": 5,
+          "pos": 10.2
+        },
+        {
+          "q": "icici bank credit card settlement percentage",
+          "c": 0,
+          "i": 1,
+          "pos": 27
+        },
+        {
+          "q": "icici bank credit card settlement process",
+          "c": 0,
+          "i": 12,
+          "pos": 10.5
+        },
+        {
+          "q": "icici bank hai",
+          "c": 0,
+          "i": 1,
+          "pos": 13
+        },
+        {
+          "q": "icici bank loan settlement",
+          "c": 0,
+          "i": 10,
+          "pos": 15.2
+        }
+      ]
+    },
+    "/services/loan-settlement/idfc-bank": {
+      "clicks": 20,
+      "impressions": 1511,
+      "ctrPct": 1.32,
+      "position": 6.9,
+      "topQueries": [
+        {
+          "q": "idfc settlement percentage",
+          "c": 3,
+          "i": 26,
+          "pos": 1.5
+        },
+        {
+          "q": "idfc personal loan settlement percentage",
+          "c": 2,
+          "i": 26,
+          "pos": 2.8
+        },
+        {
+          "q": "idfc credit card settlement",
+          "c": 1,
+          "i": 16,
+          "pos": 8
+        },
+        {
+          "q": "idfc first bank loan settlement",
+          "c": 1,
+          "i": 4,
+          "pos": 1
+        },
+        {
+          "q": "idfc settlement offer",
+          "c": 1,
+          "i": 4,
+          "pos": 5.5
+        },
+        {
+          "q": "2025 ರಲ್ಲಿ",
+          "c": 0,
+          "i": 1,
+          "pos": 1
+        },
+        {
+          "q": "for idfc bank",
+          "c": 0,
+          "i": 1,
+          "pos": 2
+        },
+        {
+          "q": "idf finance loan settlement",
+          "c": 0,
+          "i": 1,
+          "pos": 35
+        },
+        {
+          "q": "idfc",
+          "c": 0,
+          "i": 4,
+          "pos": 5
+        },
+        {
+          "q": "idfc bank loan settlement",
+          "c": 0,
+          "i": 6,
+          "pos": 8.8
+        }
+      ]
+    },
+    "/services/loan-settlement/indusind-bank": {
+      "clicks": 12,
+      "impressions": 821,
+      "ctrPct": 1.46,
+      "position": 6.5,
+      "topQueries": [
+        {
+          "q": "indusind bank credit card settlement process",
+          "c": 2,
+          "i": 16,
+          "pos": 6.6
+        },
+        {
+          "q": "cosmos settlement indusind bank",
+          "c": 0,
+          "i": 13,
+          "pos": 8.2
+        },
+        {
+          "q": "cosmossettlementrequest@indusind.com",
+          "c": 0,
+          "i": 31,
+          "pos": 5.6
+        },
+        {
+          "q": "indisind bank",
+          "c": 0,
+          "i": 1,
+          "pos": 3
+        },
+        {
+          "q": "indusind",
+          "c": 0,
+          "i": 1,
+          "pos": 2
+        },
+        {
+          "q": "indusind bank",
+          "c": 0,
+          "i": 1,
+          "pos": 4
+        },
+        {
+          "q": "indusind bank credit card settlement",
+          "c": 0,
+          "i": 14,
+          "pos": 6.6
+        },
+        {
+          "q": "indusind bank credit card settlement email id",
+          "c": 0,
+          "i": 1,
+          "pos": 2
+        },
+        {
+          "q": "indusind bank loan settlement",
+          "c": 0,
+          "i": 20,
+          "pos": 6.2
+        },
+        {
+          "q": "indusind bank personal loan",
+          "c": 0,
+          "i": 1,
+          "pos": 6
+        }
+      ]
+    },
+    "/services/loan-settlement/rbl-bank": {
+      "clicks": 10,
+      "impressions": 922,
+      "ctrPct": 1.08,
+      "position": 7,
+      "topQueries": [
+        {
+          "q": "rbl credit card settlement process",
+          "c": 2,
+          "i": 68,
+          "pos": 6.8
+        },
+        {
+          "q": "rbl",
+          "c": 1,
+          "i": 5,
+          "pos": 2.8
+        },
+        {
+          "q": "rbl credit card settlement letter",
+          "c": 1,
+          "i": 11,
+          "pos": 7.4
+        },
+        {
+          "q": "can i settle",
+          "c": 0,
+          "i": 1,
+          "pos": 2
+        },
+        {
+          "q": "can we settle dowwn the amount of rbl credit card",
+          "c": 0,
+          "i": 1,
+          "pos": 8
+        },
+        {
+          "q": "one time settlement",
+          "c": 0,
+          "i": 1,
+          "pos": 1
+        },
+        {
+          "q": "ots",
+          "c": 0,
+          "i": 1,
+          "pos": 1
+        },
+        {
+          "q": "rbl bank",
+          "c": 0,
+          "i": 3,
+          "pos": 4
+        },
+        {
+          "q": "rbl bank credit card",
+          "c": 0,
+          "i": 1,
+          "pos": 3
+        },
+        {
+          "q": "rbl bank credit card settlement",
+          "c": 0,
+          "i": 12,
+          "pos": 8.2
+        }
+      ]
+    },
+    "/credit-card-settlement": {
+      "clicks": 0,
+      "impressions": 443,
+      "ctrPct": 0,
+      "position": 31.4,
+      "topQueries": [
+        {
+          "q": "can you negotiate credit card debt",
+          "c": 0,
+          "i": 3,
+          "pos": 46
+        },
+        {
+          "q": "card settlement",
+          "c": 0,
+          "i": 2,
+          "pos": 65
+        },
+        {
+          "q": "credit card bill settlement",
+          "c": 0,
+          "i": 10,
+          "pos": 47.7
+        },
+        {
+          "q": "credit card debt resolution",
+          "c": 0,
+          "i": 1,
+          "pos": 96
+        },
+        {
+          "q": "credit card debt settlement",
+          "c": 0,
+          "i": 13,
+          "pos": 63.1
+        },
+        {
+          "q": "credit card debt settlement process",
+          "c": 0,
+          "i": 7,
+          "pos": 67.3
+        },
+        {
+          "q": "credit card loan settlement",
+          "c": 0,
+          "i": 11,
+          "pos": 44.1
+        },
+        {
+          "q": "credit card non payment legal action in india",
+          "c": 0,
+          "i": 1,
+          "pos": 54
+        },
+        {
+          "q": "credit card overdue settlement",
+          "c": 0,
+          "i": 1,
+          "pos": 4
+        },
+        {
+          "q": "credit card payment settlement process",
+          "c": 0,
+          "i": 2,
+          "pos": 73.5
+        }
+      ]
+    },
+    "/personal-loan-settlement": {
+      "clicks": 2,
+      "impressions": 573,
+      "ctrPct": 0.35,
+      "position": 26,
+      "topQueries": [
+        {
+          "q": "amritversha nidhi limited loan settlement",
+          "c": 0,
+          "i": 1,
+          "pos": 76
+        },
+        {
+          "q": "ayan finserv india private ltd loan settlement",
+          "c": 0,
+          "i": 1,
+          "pos": 72
+        },
+        {
+          "q": "bank loan settlement rules",
+          "c": 0,
+          "i": 2,
+          "pos": 79.5
+        },
+        {
+          "q": "benefits of personal loan settlement",
+          "c": 0,
+          "i": 5,
+          "pos": 45.6
+        },
+        {
+          "q": "boundparivar loan settlement",
+          "c": 0,
+          "i": 1,
+          "pos": 19
+        },
+        {
+          "q": "can i settle my personal loan",
+          "c": 0,
+          "i": 1,
+          "pos": 27
+        },
+        {
+          "q": "can we do settlement on personal loan",
+          "c": 0,
+          "i": 1,
+          "pos": 32
+        },
+        {
+          "q": "can we settle personal loan",
+          "c": 0,
+          "i": 8,
+          "pos": 30.1
+        },
+        {
+          "q": "full settlement personal loan",
+          "c": 0,
+          "i": 4,
+          "pos": 53
+        },
+        {
+          "q": "how to do settlement on personal loan",
+          "c": 0,
+          "i": 1,
+          "pos": 1
+        }
+      ]
+    },
+    "/credit-card-settlement-process-india": {
+      "clicks": 4,
+      "impressions": 644,
+      "ctrPct": 0.62,
+      "position": 23.2,
+      "topQueries": [
+        {
+          "q": "rbi guidelines for credit card settlement",
+          "c": 1,
+          "i": 25,
+          "pos": 9.7
+        },
+        {
+          "q": "630 days",
+          "c": 0,
+          "i": 1,
+          "pos": 9
+        },
+        {
+          "q": "after credit card settlement",
+          "c": 0,
+          "i": 2,
+          "pos": 55
+        },
+        {
+          "q": "ama credit card",
+          "c": 0,
+          "i": 1,
+          "pos": 6
+        },
+        {
+          "q": "best way to settle credit card debt",
+          "c": 0,
+          "i": 1,
+          "pos": 33
+        },
+        {
+          "q": "card settlement",
+          "c": 0,
+          "i": 2,
+          "pos": 6
+        },
+        {
+          "q": "credit card bill settlement",
+          "c": 0,
+          "i": 6,
+          "pos": 31.5
+        },
+        {
+          "q": "credit card debt settlement",
+          "c": 0,
+          "i": 11,
+          "pos": 39.4
+        },
+        {
+          "q": "credit card debt settlement consultation",
+          "c": 0,
+          "i": 1,
+          "pos": 9
+        },
+        {
+          "q": "credit card debt settlement in india",
+          "c": 0,
+          "i": 6,
+          "pos": 87
+        }
+      ]
+    }
+  },
+  "crm": {
+    "window": "same 28d",
+    "amaLeads": 829,
+    "bankPlCcLeads": 109,
+    "bankPlCcConverted": 5,
+    "method": "CRM ama_leads source=AMA; query/notes mention a bank/credit card/personal loan and not payday/app terms"
+  }
+}

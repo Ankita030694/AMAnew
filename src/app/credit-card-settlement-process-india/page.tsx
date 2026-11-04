@@ -104,8 +104,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Credit Card Settlement Process India | Expert Legal Help",
-  description: "Learn the legal credit card settlement process in India. Understand RBI rules, negotiate waivers with banks, stop harassment, and resolve your debt.",
+  title: "Credit Card Settlement Process & RBI Guidelines (India 2026)",
+  description: "RBI guidelines for credit card settlement, the step-by-step process with banks, the typical settlement percentage, and how settlement affects your CIBIL score.",
   keywords: [
     "credit card settlement process india",
     "credit card settlement rbi guidelines 2025",

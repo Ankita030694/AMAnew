@@ -132,7 +132,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "HDFC Credit Card Settlement Percentage & Negotiation Guide",
+  title: "HDFC Credit Card Settlement Percentage 2026 (30–60%)",
   description: "Learn the typical HDFC credit card settlement percentage (30% to 60%), negotiation steps, CIBIL impacts, and how to verify official settlement letters.",
   keywords: [
     "hdfc credit card settlement percentage",
