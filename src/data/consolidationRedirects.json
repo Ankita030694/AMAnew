@@ -178,5 +178,77 @@
     "destination": "/personal-loan-settlement",
     "permanent": true,
     "group": "generic"
+  },
+  {
+    "source": "/hdfc-credit-card-settlement-process",
+    "destination": "/blog/hdfc-credit-card-settlement-complete-guide-to-managing-debt-with-expert-legal-help",
+    "permanent": true,
+    "group": "hdfc"
+  },
+  {
+    "source": "/credit-card-settlement/hdfc",
+    "destination": "/blog/hdfc-credit-card-settlement-complete-guide-to-managing-debt-with-expert-legal-help",
+    "permanent": true,
+    "group": "hdfc"
+  },
+  {
+    "source": "/settlement-waiver-percentage-of-hdfc-bank",
+    "destination": "/hdfc-credit-card-settlement-percentage",
+    "permanent": true,
+    "group": "hdfc"
+  },
+  {
+    "source": "/loan-settlement-for-hdfc-bank",
+    "destination": "/services/loan-settlement/hdfc-bank",
+    "permanent": true,
+    "group": "hdfc"
+  },
+  {
+    "source": "/personal-loan-settlement/hdfc",
+    "destination": "/services/loan-settlement/hdfc-bank",
+    "permanent": true,
+    "group": "hdfc"
+  },
+  {
+    "source": "/loan-settlement-by-bank/hdfc",
+    "destination": "/services/loan-settlement/hdfc-bank",
+    "permanent": true,
+    "group": "hdfc"
+  },
+  {
+    "source": "/loan-settlement-services/how-to-settle-personal-loan-in-hdfc-bank",
+    "destination": "/services/loan-settlement/hdfc-bank",
+    "permanent": true,
+    "group": "hdfc"
+  },
+  {
+    "source": "/loan-settlement-services/hdfc-loan-settlement",
+    "destination": "/services/loan-settlement/hdfc-bank",
+    "permanent": true,
+    "group": "hdfc"
+  },
+  {
+    "source": "/loan-settlement-services/how-to-settle-loan-amount-in-hdfc-bank",
+    "destination": "/services/loan-settlement/hdfc-bank",
+    "permanent": true,
+    "group": "hdfc"
+  },
+  {
+    "source": "/loan-settlement-services/loan-settlement-hdfc",
+    "destination": "/services/loan-settlement/hdfc-bank",
+    "permanent": true,
+    "group": "hdfc"
+  },
+  {
+    "source": "/loan-settlement-services/loan-settlement-hdfc-bank",
+    "destination": "/services/loan-settlement/hdfc-bank",
+    "permanent": true,
+    "group": "hdfc"
+  },
+  {
+    "source": "/blog/hdfc-bank-loan-settlement-guide",
+    "destination": "/services/loan-settlement/hdfc-bank",
+    "permanent": true,
+    "group": "hdfc"
   }
 ]
