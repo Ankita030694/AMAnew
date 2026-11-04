@@ -340,5 +340,47 @@
     "destination": "/services/loan-settlement/icici-bank",
     "permanent": true,
     "group": "icici"
+  },
+  {
+    "source": "/credit-card-settlement/axis",
+    "destination": "/settlement-waiver-percentage-of-axis-bank",
+    "permanent": true,
+    "group": "axis"
+  },
+  {
+    "source": "/loan-settlement-by-bank/axis-bank",
+    "destination": "/services/loan-settlement/axis-bank",
+    "permanent": true,
+    "group": "axis"
+  },
+  {
+    "source": "/personal-loan-settlement/axis",
+    "destination": "/services/loan-settlement/axis-bank",
+    "permanent": true,
+    "group": "axis"
+  },
+  {
+    "source": "/loan-settlement-services/axis-bank-loan-settlement",
+    "destination": "/services/loan-settlement/axis-bank",
+    "permanent": true,
+    "group": "axis"
+  },
+  {
+    "source": "/loan-settlement-services/how-to-settle-axis-bank-personal-loan",
+    "destination": "/services/loan-settlement/axis-bank",
+    "permanent": true,
+    "group": "axis"
+  },
+  {
+    "source": "/loan-settlement-services/axis-bank-loan-settlement-process",
+    "destination": "/services/loan-settlement/axis-bank",
+    "permanent": true,
+    "group": "axis"
+  },
+  {
+    "source": "/loan-settlement-services/axis-bank-personal-loan-settlement",
+    "destination": "/services/loan-settlement/axis-bank",
+    "permanent": true,
+    "group": "axis"
   }
 ]
