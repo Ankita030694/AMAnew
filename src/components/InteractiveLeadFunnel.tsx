@@ -277,7 +277,8 @@ const CONFIGS: Record<FunnelPreset, FunnelConfig> = {
     title: "Credit Card & Personal Loan Settlement With Your Bank",
     subtitle: "Banks follow a structured settlement process. Our advocates negotiate your OTS amount, get a valid settlement letter and NOC, and stop recovery harassment while it happens.",
     source: "Bank PL/CC Intake",
-    serviceRequired: "Loan Settlement - Bank PL/CC",
+    // Must stay exactly "Loan Settlement": the CRM lead scorer penalises any other AMA service value
+    serviceRequired: "Loan Settlement",
     step1Label: "01. Debt Type",
     step1Title: "What do you want to settle?",
     step1Options: [
