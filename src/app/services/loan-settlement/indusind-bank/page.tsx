@@ -6,6 +6,7 @@ import FaqSection from "./FaqSection";
 import { faqs } from "./faqs";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUniversity, FaGavel, FaBalanceScale, FaUserTie } from "react-icons/fa";
+import SettlementLetterGuide from "@/components/SettlementLetterGuide";
 
 // Metadata
 export const metadata = {
@@ -141,6 +142,7 @@ export default function IndusIndBankLoanSettlementPage() {
     { id: "cibil-impact", title: "CIBIL Score Impact" },
     { id: "why-choose-us", title: "Why Choose AMA?" },
     { id: "testimonials", title: "Success Stories" },
+    { id: "settlement-letter", title: "Settlement Letter" },
     { id: "faqs", title: "FAQs" },
   ];
 
@@ -625,6 +627,9 @@ export default function IndusIndBankLoanSettlementPage() {
               </div>
             </div>
           </div>
+
+          <SettlementLetterGuide bank="IndusInd Bank" domains={["indusind.com"]} />
+
 
           {/* FAQ Section */}
           <div id="faqs" className="container mx-auto px-4 py-20 max-w-4xl scroll-mt-32">

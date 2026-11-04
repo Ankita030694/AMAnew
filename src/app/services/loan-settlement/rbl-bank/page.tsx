@@ -5,6 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUniversity, FaGavel, FaBalanceScale, FaUserTie, FaPhoneSlash } from "react-icons/fa";
+import SettlementLetterGuide from "@/components/SettlementLetterGuide";
 
 // Metadata
 export const metadata = {
@@ -127,6 +128,7 @@ export default function RBLBankLoanSettlementPage() {
     { id: "cibil-impact", title: "CIBIL Score Impact" },
     { id: "why-choose-us", title: "Why Choose AMA?" },
     { id: "testimonials", title: "Success Stories" },
+    { id: "settlement-letter", title: "Settlement Letter" },
     { id: "faqs", title: "FAQs" },
   ];
 
@@ -609,6 +611,9 @@ export default function RBLBankLoanSettlementPage() {
               </div>
             </div>
           </div>
+
+          <SettlementLetterGuide bank="RBL Bank" domains={["rblbank.com"]} />
+
 
           {/* FAQ Section */}
           <div id="faqs" className="container mx-auto px-4 py-20 max-w-4xl scroll-mt-32">

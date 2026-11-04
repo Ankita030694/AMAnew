@@ -7,6 +7,7 @@ import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { FaCheckCircle, FaShieldAlt, FaHandHoldingUsd, FaFileContract, FaUniversity, FaGavel, FaBalanceScale, FaUserTie, FaPhoneSlash } from "react-icons/fa";
 import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
+import SettlementLetterGuide from "@/components/SettlementLetterGuide";
 
 // Breadcrumb Schema
 const breadcrumbSchema = {
@@ -149,6 +150,7 @@ export default function ICICILoanSettlementPage() {
     { id: "cibil-impact", title: "CIBIL Score Impact" },
     { id: "why-choose-ama", title: "Why Choose AMA?" },
     { id: "testimonials", title: "Success Stories" },
+    { id: "settlement-letter", title: "Settlement Letter" },
     { id: "faqs", title: "FAQs" },
   ];
 
@@ -634,6 +636,9 @@ export default function ICICILoanSettlementPage() {
             </div>
           </div>
         </div>
+
+        <SettlementLetterGuide bank="ICICI Bank" domains={["icicibank.com"]} />
+
 
         {/* FAQ Section */}
         <div id="faqs" className="container mx-auto px-4 py-20 max-w-4xl scroll-mt-32">
