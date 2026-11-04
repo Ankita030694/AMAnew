@@ -292,5 +292,53 @@
     "destination": "/services/loan-settlement/sbi-bank",
     "permanent": true,
     "group": "sbi"
+  },
+  {
+    "source": "/credit-card-settlement/icici",
+    "destination": "/articles/credit-card-icici-bank-guide-with-legal-insights-by-ama-legal-solutions",
+    "permanent": true,
+    "group": "icici"
+  },
+  {
+    "source": "/loan-settlement-by-bank/icici",
+    "destination": "/services/loan-settlement/icici-bank",
+    "permanent": true,
+    "group": "icici"
+  },
+  {
+    "source": "/loan-settlement-services/icici-bank-personal-loan-settlement",
+    "destination": "/services/loan-settlement/icici-bank",
+    "permanent": true,
+    "group": "icici"
+  },
+  {
+    "source": "/personal-loan-settlement/icici",
+    "destination": "/services/loan-settlement/icici-bank",
+    "permanent": true,
+    "group": "icici"
+  },
+  {
+    "source": "/loan-settlement-services/loan-settlement-icici",
+    "destination": "/services/loan-settlement/icici-bank",
+    "permanent": true,
+    "group": "icici"
+  },
+  {
+    "source": "/loan-settlement-services/icici-bank-loan-settlement",
+    "destination": "/services/loan-settlement/icici-bank",
+    "permanent": true,
+    "group": "icici"
+  },
+  {
+    "source": "/loan-settlement-services/icici-personal-loan-settlement",
+    "destination": "/services/loan-settlement/icici-bank",
+    "permanent": true,
+    "group": "icici"
+  },
+  {
+    "source": "/loan-settlement-services/icici-loan-settlement",
+    "destination": "/services/loan-settlement/icici-bank",
+    "permanent": true,
+    "group": "icici"
   }
 ]
