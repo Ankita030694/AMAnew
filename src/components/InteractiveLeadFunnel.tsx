@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { 
   ShieldCheck, 
   ArrowRight, 
@@ -26,7 +27,41 @@ export type FunnelPreset =
   | "lok-adalat"
   | "bank-settlement"
   | "employment-salary"
-  | "recovery-harassment";
+  | "recovery-harassment"
+  | "bank-pl-cc";
+
+// Big banks / card issuers whose structured settlement process we want leads for
+const BANK_LENDERS: [RegExp, string][] = [
+  [/hdfc/, "HDFC Bank"],
+  [/(^|[-/])sbi([-/]|$)|state-bank/, "SBI"],
+  [/icici/, "ICICI Bank"],
+  [/axis/, "Axis Bank"],
+  [/idfc/, "IDFC FIRST Bank"],
+  [/kotak/, "Kotak Mahindra Bank"],
+  [/indusind/, "IndusInd Bank"],
+  [/(^|[-/])rbl([-/]|$)/, "RBL Bank"],
+  [/yes-bank/, "Yes Bank"],
+  [/au-small|au-bank/, "AU Small Finance Bank"],
+  [/bank-of-baroda|(^|[-/])bob([-/]|$)/, "Bank of Baroda"],
+  [/(^|[-/])pnb([-/]|$)|punjab-national/, "PNB"],
+  [/citi/, "Citibank"],
+  [/hsbc/, "HSBC"],
+  [/standard-chartered/, "Standard Chartered"],
+  [/federal-bank/, "Federal Bank"],
+  [/canara/, "Canara Bank"],
+  [/union-bank/, "Union Bank"],
+  [/american-express|amex/, "American Express"],
+  [/onecard|one-card/, "OneCard"],
+];
+
+export function getLenderFromPath(pathname: string | null): string | null {
+  if (!pathname) return null;
+  const path = pathname.toLowerCase();
+  for (const [pattern, name] of BANK_LENDERS) {
+    if (pattern.test(path)) return name;
+  }
+  return null;
+}
 
 interface InteractiveLeadFunnelProps {
   preset: FunnelPreset;
@@ -237,6 +272,31 @@ const CONFIGS: Record<FunnelPreset, FunnelConfig> = {
     step3Label: "03. Privileged Contact",
     ctaText: "Negotiate Bank Loan Settlement"
   },
+  "bank-pl-cc": {
+    badge: "Advocate-Led Bank Settlement • Credit Cards & Personal Loans",
+    title: "Credit Card & Personal Loan Settlement With Your Bank",
+    subtitle: "Banks follow a structured settlement process. Our advocates negotiate your OTS amount, get a valid settlement letter and NOC, and stop recovery harassment while it happens.",
+    source: "Bank PL/CC Intake",
+    serviceRequired: "Loan Settlement - Bank PL/CC",
+    step1Label: "01. Debt Type",
+    step1Title: "What do you want to settle?",
+    step1Options: [
+      "Credit Card Dues",
+      "Personal Loan",
+      "Both Credit Card & Personal Loan",
+      "Other Bank Loan"
+    ],
+    step2Label: "02. Outstanding Amount",
+    step2Title: "Total outstanding with banks:",
+    step2Options: [
+      "Under ₹2 Lakhs",
+      "₹2 Lakhs to ₹5 Lakhs",
+      "₹5 Lakhs to ₹15 Lakhs",
+      "Above ₹15 Lakhs"
+    ],
+    step3Label: "03. Privileged Contact",
+    ctaText: "Get My Settlement Assessment"
+  },
   "employment-salary": {
     badge: "Employment & Labor Law Practice",
     title: "Recover Withheld Salary & FnF Dues",
@@ -297,7 +357,17 @@ export default function InteractiveLeadFunnel({
   onClose,
   calculatorData
 }: InteractiveLeadFunnelProps) {
-  const config = CONFIGS[preset] || CONFIGS.homepage;
+  const pathname = usePathname();
+  const lender = preset === "bank-pl-cc" ? getLenderFromPath(pathname) : null;
+  const baseConfig = CONFIGS[preset] || CONFIGS.homepage;
+  const config: FunnelConfig = lender
+    ? {
+        ...baseConfig,
+        badge: `${lender} • Advocate-Led Settlement`,
+        title: `${lender} Credit Card & Personal Loan Settlement`,
+        source: `Bank PL/CC Intake - ${lender}`,
+      }
+    : baseConfig;
   const storageKey = `ama_lead_draft_${preset}`;
 
   // Progressive Step State: 1 | 2 | 3
@@ -404,6 +474,10 @@ export default function InteractiveLeadFunnel({
         `• ${config.step1Label} -> ${step1Value || "Not specified"}`,
         `• ${config.step2Label} -> ${step2Value || "Not specified"}`
       ];
+
+      if (lender) {
+        dossierParts.push(`• Lender -> ${lender}`);
+      }
 
       if (calculatorData) {
         if (calculatorData.loanAmount) {

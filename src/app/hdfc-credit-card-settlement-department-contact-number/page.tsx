@@ -251,7 +251,7 @@ export default function HDFCCreditCardSettlementPage() {
 
                   {/* Immediate Lead Funnel Intake */}
                   <div className="not-prose my-10">
-                    <InteractiveLeadFunnel preset="bank-settlement" />
+                    <InteractiveLeadFunnel preset="bank-pl-cc" />
                   </div>
 
 

@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faUser, faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 import { Scale, ShieldCheck, ArrowRight } from 'lucide-react';
 import { openLeadModal } from '@/components/InteractiveLeadModal';
-import InteractiveLeadFunnel, { FunnelPreset } from '@/components/InteractiveLeadFunnel';
+import InteractiveLeadFunnel, { FunnelPreset, getLenderFromPath } from '@/components/InteractiveLeadFunnel';
 
 // Lazy load heavy components
 const LazyImage = dynamic(() => import('next/image'), { 
@@ -276,6 +276,15 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
   // Contextual legal funnel preset based on blog topic
   const blogPreset: FunnelPreset = useMemo(() => {
     const text = `${blog.slug} ${blog.title} ${blog.description || ''}`.toLowerCase();
+    // Big-bank credit card / personal loan settlement topics get the bank PL/CC intake
+    if (
+      text.includes("settle") &&
+      (getLenderFromPath(blog.slug) || text.includes("credit card") || text.includes("personal loan")) &&
+      !text.includes("payday") &&
+      !text.includes("loan app")
+    ) {
+      return "bank-pl-cc";
+    }
     if (
       text.includes("recovery") || 
       text.includes("agent") || 
@@ -336,6 +345,7 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
     if (blogPreset === "employment-salary") return "Is Your Employer Withholding Your Salary or FnF Dues?";
     if (blogPreset === "lok-adalat") return "Need Advocate Representation in Lok Adalat?";
     if (blogPreset === "bank-settlement") return "Struggling With High Debt or Bank NPA Notices?";
+    if (blogPreset === "bank-pl-cc") return "Want to Settle Your Credit Card or Personal Loan With the Bank?";
     return "Need Confidential Legal Guidance for This Matter?";
   }, [blogPreset]);
 
@@ -346,6 +356,7 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
     if (blogPreset === "employment-salary") return "Evaluate Salary Recovery →";
     if (blogPreset === "lok-adalat") return "Evaluate Lok Adalat Relief →";
     if (blogPreset === "bank-settlement") return "Evaluate Debt Settlement →";
+    if (blogPreset === "bank-pl-cc") return "Get My Settlement Assessment →";
     return "Evaluate Your Case (30 Sec) →";
   }, [blogPreset]);
 

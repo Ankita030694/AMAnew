@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import InteractiveLeadFunnel, { FunnelPreset } from "./InteractiveLeadFunnel";
+import InteractiveLeadFunnel, { FunnelPreset, getLenderFromPath } from "./InteractiveLeadFunnel";
 
 interface ModalEventDetail {
   preset?: FunnelPreset;
@@ -65,6 +65,14 @@ export function getPresetForPath(pathname: string | null): FunnelPreset | null {
   if (path === "/" || path === "") return "homepage";
   if (path.includes("calculator")) return "calculator";
   if (path.includes("axis-bank") || path.includes("axis")) return "axis-bank";
+
+  // 1b. Big-bank credit card & personal loan settlement (structured bank OTS process)
+  if (
+    (getLenderFromPath(path) && !/arbitration|harass|recovery|agent|payment|billdesk|ifsc/.test(path)) ||
+    /credit-card-settlement|personal-loan-settlement|credit-card-debt|settlement-waiver-percentage/.test(path)
+  ) {
+    return "bank-pl-cc";
+  }
 
   // 2. Payday & Instant Lending App Harassment
   if (
@@ -132,8 +140,7 @@ export function getPresetForPath(pathname: string | null): FunnelPreset | null {
     path.includes("seizure") || 
     path.includes("police") || 
     path.includes("hacked") ||
-    path.includes("morphed") ||
-    path.includes("hdfc-credit-card-settlement")
+    path.includes("morphed")
   ) {
     return "recovery-harassment";
   }

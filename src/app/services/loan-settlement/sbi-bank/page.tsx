@@ -223,7 +223,7 @@ export default function SBILoanSettlementPage() {
 
         {/* Immediate Lead Funnel Intake */}
         <div className="container mx-auto px-4 max-w-4xl my-10">
-          <InteractiveLeadFunnel preset="bank-settlement" />
+          <InteractiveLeadFunnel preset="bank-pl-cc" />
         </div>
 
 
