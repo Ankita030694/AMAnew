@@ -10,8 +10,8 @@ export async function generateMetadata(
 
   return {
     ...baseMetadata,
-    title: "SBI Credit Card Settlement: Reduce Debt & Regain Financial Stability",
-    description: "Learn about the SBI credit card settlement process to reduce debt and avoid legal issues. Take control of your finances.",
+    title: "SBI Credit Card Settlement Process & Percentage 2026 | AMA",
+    description: "Step-by-step SBI Card settlement process: how to request an OTS, the settlement percentage SBI usually accepts, the settlement letter, and CIBIL impact.",
     alternates: {
       canonical: "https://www.amalegalsolutions.com/blog/sbi-credit-card-settlement-process",
     },
