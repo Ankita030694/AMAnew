@@ -77,6 +77,8 @@ interface InteractiveLeadFunnelProps {
     estimatedMax?: number;
     waiverPercent?: string;
     lenderType?: string;
+    defaultStageLabel?: string;
+    loanTypeLabel?: string;
   };
 }
 
@@ -371,10 +373,11 @@ export default function InteractiveLeadFunnel({
     : baseConfig;
   const storageKey = `ama_lead_draft_${preset}`;
 
-  // Progressive Step State: 1 | 2 | 3
-  const [currentStep, setCurrentStep] = useState<number>(1);
-  const [step1Value, setStep1Value] = useState<string>("");
-  const [step2Value, setStep2Value] = useState<string>("");
+  // Progressive Step State: 1 | 2 | 3 (Start directly on Step 3 when calculator result data is already provided)
+  const hasCalculatorContext = Boolean(calculatorData?.loanAmount);
+  const [currentStep, setCurrentStep] = useState<number>(hasCalculatorContext ? 3 : 1);
+  const [step1Value, setStep1Value] = useState<string>(calculatorData?.defaultStageLabel || "");
+  const [step2Value, setStep2Value] = useState<string>(calculatorData?.loanTypeLabel || "");
   const [name, setName] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -384,14 +387,27 @@ export default function InteractiveLeadFunnel({
 
   const isDark = theme === "dark";
 
+  // Sync calculator context into step1/step2 and jump to Step 3 whenever calculatorData updates
+  useEffect(() => {
+    if (calculatorData?.loanAmount) {
+      if (calculatorData.defaultStageLabel) {
+        setStep1Value(calculatorData.defaultStageLabel);
+      }
+      if (calculatorData.loanTypeLabel) {
+        setStep2Value(calculatorData.loanTypeLabel);
+      }
+      setCurrentStep(3);
+    }
+  }, [calculatorData?.loanAmount, calculatorData?.defaultStageLabel, calculatorData?.loanTypeLabel]);
+
   // Load drafts from localStorage on mount
   useEffect(() => {
     try {
       const saved = localStorage.getItem(storageKey);
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (parsed.step1) setStep1Value(parsed.step1);
-        if (parsed.step2) setStep2Value(parsed.step2);
+        if (parsed.step1 && !calculatorData?.defaultStageLabel) setStep1Value(parsed.step1);
+        if (parsed.step2 && !calculatorData?.loanTypeLabel) setStep2Value(parsed.step2);
         if (parsed.name) setName(parsed.name);
         if (parsed.phone) setPhone(parsed.phone);
         if (parsed.email) setEmail(parsed.email);
@@ -399,7 +415,7 @@ export default function InteractiveLeadFunnel({
     } catch {
       // Ignore
     }
-  }, [storageKey]);
+  }, [storageKey, calculatorData?.defaultStageLabel, calculatorData?.loanTypeLabel]);
 
   // Persist selections to localStorage
   const saveDraft = (updates: Partial<{ step1: string; step2: string; name: string; phone: string; email: string }>) => {

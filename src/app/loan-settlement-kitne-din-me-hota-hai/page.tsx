@@ -91,8 +91,8 @@ const breadcrumbSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Loan Settlement Kitne Din Me Hota Hai: Timeline & Rules",
-  "description": "Loan settlement kitne din me hota hai? Know the exact timeline, RBI rules, and process. Claim your free consultation now to stop recovery agent harassment!",
+  "headline": "Loan Settlement Kitne Din Me Hota Hai? (30–90 Days Process 2026)",
+  "description": "Loan settlement kitne din me hota hai? जानें NPA के बाद 30 से 90 दिन में बैंक OTS सेटलमेंट लेटर और NOC मिलने का पूरा समय, RBI नियम और फास्ट-ट्रैक कानूनी प्रक्रिया।",
   "image": "https://www.amalegalsolutions.com/newAssets/bhiya.png",
   "author": {
     "@type": "Person",
@@ -113,7 +113,7 @@ const articleSchema = {
     }
   },
   "datePublished": "2026-06-12",
-  "dateModified": "2026-06-12"
+  "dateModified": "2026-11-09"
 };
 
 const faqSchema = {
@@ -196,8 +196,8 @@ const personSchema = {
 };
 
 export const metadata = {
-  title: "Loan Settlement Kitne Din Me Hota Hai: Timeline & Rules",
-  description: "Loan settlement kitne din me hota hai? Know the exact timeline, RBI rules, and process. Claim your free consultation now to stop recovery agent harassment!",
+  title: "Loan Settlement Kitne Din Me Hota Hai? (30–90 Days Process 2026)",
+  description: "Loan settlement kitne din me hota hai? जानें NPA के बाद 30 से 90 दिन में बैंक OTS सेटलमेंट लेटर और NOC मिलने का पूरा समय, RBI नियम और फास्ट-ट्रैक कानूनी प्रक्रिया।",
   keywords: [
     "loan settlement kitne din me hota hai",
     "loan settlement timeline",
@@ -212,8 +212,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/loan-settlement-kitne-din-me-hota-hai',
   },
   openGraph: {
-    title: "Loan Settlement Kitne Din Me Hota Hai: Timeline & Rules",
-    description: "Loan settlement kitne din me hota hai? Know the exact timeline, RBI rules, and process. Claim your free consultation now to stop recovery agent harassment!",
+    title: "Loan Settlement Kitne Din Me Hota Hai? (30–90 Days Process 2026)",
+    description: "Loan settlement kitne din me hota hai? जानें NPA के बाद 30 से 90 दिन में बैंक OTS सेटलमेंट लेटर और NOC मिलने का पूरा समय, RBI नियम और फास्ट-ट्रैक कानूनी प्रक्रिया।",
     url: 'https://www.amalegalsolutions.com/loan-settlement-kitne-din-me-hota-hai',
     siteName: 'AMA Legal Solutions',
     images: [

@@ -236,6 +236,19 @@ export default async function LawyerBySlugPage({ params }: { params: Promise<{ s
                   <p className="text-sm md:text-lg leading-relaxed text-gray-700">
                     AMA Legal Solutions is not an unregulated settlement agency. We are an established law firm with extensive experience representing borrowers before banking institutions and tribunals. We insulate our clients in {locationName} from unlawful collection intimidation while securing sustainable, legally verified One-Time Settlements (OTS).
                   </p>
+                  {["bangalore", "hyderabad", "kolkata", "mumbai", "pune", "gurugram", "noida", "ghaziabad", "jaipur", "kanpur", "surat", "delhi"].includes(location.slug) && (
+                    <div className="mt-4 p-4 bg-[#FAF8F5] border border-[#D2A02A]/40 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                      <p className="text-sm text-gray-800 m-0">
+                        Looking for bank-specific OTS waiver brackets, DRT benches, and anti-harassment procedures in <strong>{locationName}</strong>?
+                      </p>
+                      <Link
+                        href={`/services/loan-settlement/${location.slug}`}
+                        className="shrink-0 inline-flex items-center justify-center px-4 py-2 rounded-lg bg-[#D2A02A] text-white font-semibold text-xs md:text-sm hover:bg-[#b88a22] transition-colors"
+                      >
+                        {locationName} Loan Settlement Hub →
+                      </Link>
+                    </div>
+                  )}
                 </section>
 
                 {/* Regional Landscape */}

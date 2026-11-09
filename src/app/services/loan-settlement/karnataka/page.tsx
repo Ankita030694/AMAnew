@@ -544,19 +544,19 @@ export default function LoanSettlementKarnatakaPage() {
                   </p>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {[
-                      { city: "Bangalore", desc: "IT Hub & Startups" },
-                      { city: "Mysore", desc: "Heritage City" },
-                      { city: "Hubli-Dharwad", desc: "North KA Hub" },
-                      { city: "Mangalore", desc: "Coastal Region" },
-                      { city: "Belgaum", desc: "Border District" },
-                      { city: "Davangere", desc: "Textile City" },
-                      { city: "Bellary", desc: "Mining & Steel" },
-                      { city: "Shimoga", desc: "Malnad Region" }
+                      { city: "Bangalore", desc: "IT Hub & Startups", href: "/services/loan-settlement/bangalore" },
+                      { city: "Mysore", desc: "Heritage City", href: "/lawyer-by-city/mysore" },
+                      { city: "Hubli-Dharwad", desc: "North KA Hub", href: "/lawyer-by-city/hubli-dharwad" },
+                      { city: "Mangalore", desc: "Coastal Region", href: "/lawyer-by-city/mangalore" },
+                      { city: "Belgaum", desc: "Border District", href: "/lawyer-by-city/belgaum" },
+                      { city: "Davangere", desc: "Textile City", href: "/lawyer-by-city/davangere" },
+                      { city: "Bellary", desc: "Mining & Steel", href: "/lawyer-by-city/bellary" },
+                      { city: "Shimoga", desc: "Malnad Region", href: "/lawyer-by-city/shimoga" }
                     ].map((item, idx) => (
-                      <div key={idx} className="p-4 border border-gray-100 rounded-lg hover:border-[#D2A02A] hover:bg-yellow-50 transition-all text-center group">
+                      <Link key={idx} href={item.href} className="p-4 border border-gray-100 rounded-lg hover:border-[#D2A02A] hover:bg-yellow-50 transition-all text-center group block">
                         <h4 className="font-bold text-gray-900 group-hover:text-[#D2A02A]">{item.city}</h4>
                         <p className="text-xs text-gray-500">{item.desc}</p>
-                      </div>
+                      </Link>
                     ))}
                   </div>
                 </section>

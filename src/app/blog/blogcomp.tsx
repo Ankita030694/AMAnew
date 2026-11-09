@@ -457,9 +457,9 @@ export default function Page({ initialBlogs = [], currentPage, totalBlogs }: Blo
                         
                         <div className="p-6 flex flex-col flex-grow">
                           <div className="flex items-center gap-2 mb-3">
-                            <span className="text-[11px] font-normal text-[#D2A02A] uppercase tracking-wider">{article.subtitle || "Legal Insight"}</span>
-                            <span className="w-1 h-1 rounded-full bg-gray-300"></span>
-                            <span className="text-[11px] font-light text-gray-400 uppercase tracking-wider">{article.date}</span>
+                            <span className="text-[11px] font-normal text-[#D2A02A] uppercase tracking-wider line-clamp-2">{article.subtitle || "Legal Insight"}</span>
+                            <span className="w-1 h-1 rounded-full bg-gray-300 shrink-0"></span>
+                            <span className="text-[11px] font-light text-gray-400 uppercase tracking-wider shrink-0">{article.date}</span>
                           </div>
                           
                           <h3 className="text-[22px] leading-snug font-normal mb-3 text-[#30261C] group-hover:text-[#D2A02A] transition-colors" style={{ fontFamily: "var(--font-polysans)" }}>

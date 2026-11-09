@@ -479,7 +479,21 @@ export default function LoanSettlementCalculatorClient() {
                                        estimatedMin: result.min,
                                        estimatedMax: result.max,
                                        waiverPercent: `${result.waiverMinPercent}% to ${result.waiverMaxPercent}%`,
-                                       lenderType
+                                       lenderType,
+                                       defaultStageLabel:
+                                          defaultStage === "pre-npa"
+                                             ? "Early Default (Missed 1-2 EMIs)"
+                                             : defaultStage === "arc"
+                                             ? "Debt Sold to Asset Reconstruction (ARC)"
+                                             : "NPA Classification (Over 90 Days DPD)",
+                                       loanTypeLabel:
+                                          loanType === "credit-card"
+                                             ? "Credit Card Facility"
+                                             : loanType === "business"
+                                             ? "Business / MSME Loan"
+                                             : loanType === "secured"
+                                             ? "Secured Loan"
+                                             : "Unsecured Personal Loan"
                                     }}
                                  />
                               </div>
@@ -492,6 +506,12 @@ export default function LoanSettlementCalculatorClient() {
                            </div>
                         )}
                      </div>
+
+                     {!result && (
+                        <div className="mt-8">
+                           <InteractiveLeadFunnel preset="calculator" theme="light" />
+                        </div>
+                     )}
                   </section>
 
                   <section id="how-to" className="scroll-mt-32">

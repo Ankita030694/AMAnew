@@ -91,8 +91,8 @@ const breadcrumbSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Loan Settlement Kitne Percent Hota Hai? Rates & Process",
-  "description": "Loan settlement kitne percent hota hai? Learn typical bank settlement rates, discount calculators, and secure a legal waiver with our expert advice!",
+  "headline": "Loan Settlement Kitne Percent Hota Hai? (25%–50% में सेटलमेंट 2026)",
+  "description": "Loan settlement kitne percent hota hai? Personal loan aur credit card 25% se 50% me settle karein (50%–75% tak chhoot). SBI, HDFC, ICICI bank OTS rate chart 2026.",
   "image": "https://www.amalegalsolutions.com/newAssets/bhiya.png",
   "author": {
     "@type": "Person",
@@ -113,7 +113,7 @@ const articleSchema = {
     }
   },
   "datePublished": "2026-06-12",
-  "dateModified": "2026-06-12"
+  "dateModified": "2026-11-09"
 };
 
 const faqSchema = {
@@ -196,8 +196,8 @@ const personSchema = {
 };
 
 export const metadata = {
-  title: "Loan Settlement Kitne Percent Hota Hai? Rates & Process",
-  description: "Loan settlement kitne percent hota hai? Learn typical bank settlement rates, discount calculators, and secure a legal waiver with our expert advice!",
+  title: "Loan Settlement Kitne Percent Hota Hai? (25%–50% में सेटलमेंट 2026)",
+  description: "Loan settlement kitne percent hota hai? Personal loan aur credit card 25% se 50% me settle karein (50%–75% tak chhoot). SBI, HDFC, ICICI bank OTS rate chart 2026.",
   keywords: [
     "loan settlement kitne percent hota hai",
     "loan settlement percentage",
@@ -212,8 +212,8 @@ export const metadata = {
     canonical: 'https://www.amalegalsolutions.com/loan-settlement-kitne-percent-hota-hai',
   },
   openGraph: {
-    title: "Loan Settlement Kitne Percent Hota Hai? Rates & Process",
-    description: "Loan settlement kitne percent hota hai? Learn typical bank settlement rates, discount calculators, and secure a legal waiver with our expert advice!",
+    title: "Loan Settlement Kitne Percent Hota Hai? (25%–50% में सेटलमेंट 2026)",
+    description: "Loan settlement kitne percent hota hai? Personal loan aur credit card 25% se 50% me settle karein (50%–75% tak chhoot). SBI, HDFC, ICICI bank OTS rate chart 2026.",
     url: 'https://www.amalegalsolutions.com/loan-settlement-kitne-percent-hota-hai',
     siteName: 'AMA Legal Solutions',
     images: [
@@ -368,7 +368,7 @@ export default function LoanSettlementKitnePercentHotaHaiPage() {
 
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Private Lender & NBFC Compromise Flexibilities</h3>
                   <p className="mb-4">
-                    Private lenders evaluate cases dynamically. If their recovery teams realize that a customer has lost their source of income, they are often willing to settle the account quickly for thirty-five percent of the total outstanding dues to clear their balance sheets of bad debts.
+                    Private lenders evaluate cases dynamically. If their recovery teams realize that a customer has lost their source of income, they are often willing to settle the account quickly for thirty-five percent of the total outstanding dues to clear their balance sheets of bad debts. You can estimate your exact bank waiver using our <Link href="/loan-settlement-amount-calculator" className="text-[#D2A02A] hover:underline font-semibold">Loan Settlement Amount Calculator</Link>, or check specific bank waiver guides for <Link href="/hdfc-credit-card-settlement-percentage" className="text-[#D2A02A] hover:underline font-semibold">HDFC Bank</Link>, <Link href="/settlement-waiver-percentage-of-icici-bank" className="text-[#D2A02A] hover:underline font-semibold">ICICI Bank</Link>, and <Link href="/settlement-waiver-percentage-of-axis-bank" className="text-[#D2A02A] hover:underline font-semibold">Axis Bank</Link>.
                   </p>
                 </section>
 

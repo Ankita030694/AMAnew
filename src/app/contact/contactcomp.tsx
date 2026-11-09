@@ -102,6 +102,28 @@ const ContactComp = () => {
 
   useEffect(() => {
     setRenderTime(Date.now());
+    try {
+      const savedUrl = sessionStorage.getItem("ama_seo_landing_url") || "";
+      const refUrl =
+        document.referrer &&
+        document.referrer.includes(window.location.host) &&
+        !document.referrer.endsWith("/contact")
+          ? document.referrer
+          : "";
+      const originSeoUrl = (savedUrl || refUrl).toLowerCase();
+      if (
+        originSeoUrl &&
+        /settle|loan|credit-card|bank|npa|ots|cibil|recovery|harass|lok-adalat|challan|defaulter|emi|bounce|138|section-25|repossession|freed|navi|moneyview|fibe|bajaj/.test(
+          originSeoUrl
+        )
+      ) {
+        setFormState((prev) =>
+          prev.serviceRequired ? prev : { ...prev, serviceRequired: "Loan Settlement" }
+        );
+      }
+    } catch {
+      // Ignore storage errors
+    }
   }, []);
 
   const handleChange = (
@@ -156,13 +178,31 @@ const ContactComp = () => {
           recaptchaToken = await executeRecaptcha("contact_form");
         }
 
+        let trackedSubmissionUrl = window.location.href;
+        try {
+          const savedSeoUrl = sessionStorage.getItem("ama_seo_landing_url");
+          const validReferrer =
+            document.referrer &&
+            document.referrer.includes(window.location.host) &&
+            !document.referrer.endsWith("/contact")
+              ? document.referrer
+              : "";
+          if (savedSeoUrl) {
+            trackedSubmissionUrl = savedSeoUrl;
+          } else if (validReferrer) {
+            trackedSubmissionUrl = validReferrer;
+          }
+        } catch {
+          // Fallback to window.location.href
+        }
+
         const response = await fetch("/api/otp/send", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             ...formState,
             source: "Contact Page",
-            submissionUrl: window.location.href,
+            submissionUrl: trackedSubmissionUrl,
             recaptchaToken,
             renderTime
           }),
