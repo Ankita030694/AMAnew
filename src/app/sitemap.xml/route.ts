@@ -490,6 +490,7 @@ export async function GET(): Promise<Response> {
     '/how-to-settle-loans-above-5-crore',
     '/loan-settlement-near-me',
     '/loan-settlement-amount-calculator',
+    '/loan-settlement-percentage',
     '/how-to-settle-loan-with-bank',
     '/how-long-does-a-settled-tag-stay-on-my-report',
     '/documents-needed-for-loan-settlement-noc',
