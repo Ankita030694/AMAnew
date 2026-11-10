@@ -225,6 +225,9 @@ export default function AxisBankLoanSettlementPage() {
             <p className="text-lg text-gray-600 leading-relaxed">
               At AMA Legal Solutions, we specialize in negotiating with banks like Axis Bank to secure favorable settlement terms for our clients. We stand between you and the lender, ensuring you are treated with respect and that your rights are protected throughout the process.
             </p>
+            <p className="text-lg text-gray-600 leading-relaxed mt-8">
+              Dealing with card dues? Read our <Link href="/settlement-waiver-percentage-of-axis-bank" className="text-[#D2A02A] font-semibold underline">Axis Bank credit card settlement</Link> guide.
+            </p>
           </div>
 
           {/* What is OTS - Card Layout */}

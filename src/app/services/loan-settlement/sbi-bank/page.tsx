@@ -221,6 +221,9 @@ export default function SBILoanSettlementPage() {
           <p className="text-lg text-gray-600 leading-relaxed">
             At AMA Legal Solutions, we specialize in negotiating with public sector banks like SBI. We understand their specific protocols, hierarchy, and settlement schemes. We step in as your legal shield, stopping the harassment and negotiating a dignified exit from your debt trap, often saving you significant amounts in the process.
           </p>
+          <p className="text-lg text-gray-600 leading-relaxed mt-8">
+            Dealing with card dues? Read our <Link href="/blog/sbi-credit-card-settlement-process" className="text-[#D2A02A] font-semibold underline">SBI credit card settlement process</Link> guide.
+          </p>
         </div>
 
         {/* Immediate Lead Funnel Intake */}

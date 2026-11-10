@@ -228,6 +228,9 @@ export default function ICICILoanSettlementPage() {
           <p className="text-lg text-gray-600 leading-relaxed">
             At AMA Legal Solutions, we specialize in handling ICICI Bank cases. We understand their specific "I-Process" recovery mechanisms and how to effectively counter them to secure a favorable settlement for you.
           </p>
+          <p className="text-lg text-gray-600 leading-relaxed mt-8">
+            Dealing with card dues? Read our <Link href="/articles/credit-card-icici-bank-guide-with-legal-insights-by-ama-legal-solutions" className="text-[#D2A02A] font-semibold underline">ICICI credit card settlement</Link> guide.
+          </p>
         </div>
 
         {/* Immediate Lead Funnel Intake */}
