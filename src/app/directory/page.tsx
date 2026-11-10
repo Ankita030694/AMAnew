@@ -598,6 +598,7 @@ const directoryLinks = [
   { name: "Trademark Registration Office Delhi", href: "/trademark-registration-office-delhi" },
   { name: "Special Lok Adalat for Challan", href: "/special-lok-adalat-for-challan" },
   { name: "Special Lok Adalat for Loan Settlement", href: "/special-lok-adalat-for-loan-settlement" },
+  { name: "Lok Adalat Notice from Bank", href: "/lok-adalat-notice-from-bank" },
   { name: "Legal Notice for Unpaid F&F", href: "/not-being-paid-fnf-want-to-send-legal-notice" },
   { name: "Is Trademark Internationally Valid", href: "/is-trademark-internationally-valid" },
   { name: "Name vs Logo Trademark", href: "/is-registering-a-name-instead-of-the-logo-enough" },

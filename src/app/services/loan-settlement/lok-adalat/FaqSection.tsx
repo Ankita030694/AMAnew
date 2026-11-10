@@ -1,7 +1,18 @@
 import React from "react";
+import { nextNationalLokAdalat } from "@/data/nationalLokAdalat";
 
 const FaqSection = () => {
   const faqData = [
+    {
+      question: "When is the next National Lok Adalat for bank loans?",
+      answer:
+        `The next National Lok Adalat is on ${nextNationalLokAdalat.long}. Confirm the bench, venue and any listing cut-off with your District Legal Services Authority or the court where your case is pending, because these differ by district.`,
+    },
+    {
+      question: "What should I do if I receive a Lok Adalat notice from my bank?",
+      answer:
+        "Check which authority issued it, the case number, the date and the amount claimed. Get your latest statement of account, work out what you can genuinely pay, and verify the notice with the authority named on it. A Lok Adalat can record a settlement only if you agree, so do not sign terms you cannot meet.",
+    },
     {
       question: "What is the limit for loan settlement in Lok Adalat?",
       answer:
@@ -61,6 +72,7 @@ const FaqSection = () => {
 
   const faqSchema = {
     "@context": "https://schema.org",
+    "@type": "FAQPage",
     mainEntity: faqData.map((faq) => ({
       "@type": "Question",
       name: faq.question,

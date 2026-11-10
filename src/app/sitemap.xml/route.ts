@@ -485,6 +485,7 @@ export async function GET(): Promise<Response> {
     '/how-do-i-stop-recovery-agent-from-coming-home',
     '/bajaj-finance-agent-visiting-home',
     '/special-lok-adalat-for-loan-settlement',
+    '/lok-adalat-notice-from-bank',
     '/virtual-inhouse-councel',
     '/how-to-settle-loans-above-1-crore',
     '/how-to-settle-loans-above-5-crore',

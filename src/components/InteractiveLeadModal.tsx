@@ -232,6 +232,7 @@ const MANUAL_INLINE_ROUTES = new Set([
   "/services/loan-settlement/karnataka",
   "/services/loan-settlement/kotak-mahindra",
   "/services/loan-settlement/lok-adalat",
+  "/lok-adalat-notice-from-bank",
   "/services/loan-settlement/moneyview",
   "/services/loan-settlement/navi",
   "/services/loan-settlement/northern-arc",

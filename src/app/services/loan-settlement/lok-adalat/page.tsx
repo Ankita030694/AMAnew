@@ -6,17 +6,20 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FaqSection from "./FaqSection";
 import Image from "next/image";
 import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
+import { nextNationalLokAdalat } from "@/data/nationalLokAdalat";
+
+const pageTitle = `Loan Settlement in Lok Adalat: Next Date ${nextNationalLokAdalat.short}`;
+const pageDescription = `Settle a bank loan or credit card in Lok Adalat. Next National Lok Adalat: ${nextNationalLokAdalat.short}. Process, documents, notices, zero court fees and advocate support.`;
 
 export const metadata = {
-  title: "Loan Settlement in Lok Adalat 2026 | NALSA Schedule & Process",
-  description:
-    "Settle your bank loan or credit card in Lok Adalat. Official 2026 NALSA dates, Section 19-21 Legal Services Act rules, zero court fees, and advocate support.",
+  title: pageTitle,
+  description: pageDescription,
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/services/loan-settlement/lok-adalat',
   },
   openGraph: {
-    title: "Loan Settlement in Lok Adalat 2026 | NALSA Schedule & Process",
-    description: "Settle your bank loan or credit card in Lok Adalat. Official 2026 NALSA dates, Section 19-21 Legal Services Act rules, zero court fees, and advocate support.",
+    title: pageTitle,
+    description: pageDescription,
     url: "https://www.amalegalsolutions.com/services/loan-settlement/lok-adalat",
     type: "article",
     images: [
@@ -68,7 +71,7 @@ const articleSchema = {
   "description": "In-depth statutory guide on how to settle bank loans and credit cards through National Lok Adalat in India. Covers 2026 dates, Section 19/20/21 Legal Services Authorities Act, and Section 138 compounding.",
   "image": "https://www.amalegalsolutions.com/services/3.png",
   "datePublished": "2023-12-02",
-  "dateModified": "2026-09-22",
+  "dateModified": "2026-11-10",
   "author": {
     "@type": "Person",
     "name": "Adv. Anuj Anand Malik",
@@ -92,6 +95,7 @@ const articleSchema = {
 
 export default function LokAdalatLoanSettlementPage() {
   const tocSections = [
+    { id: "next-lok-adalat", title: "Next National Lok Adalat" },
     { id: "introduction", title: "Introduction" },
     { id: "nalsa-schedule", title: "2026 NALSA Schedule" },
     { id: "what-is-lok-adalat", title: "What is Lok Adalat?" },
@@ -139,8 +143,11 @@ export default function LokAdalatLoanSettlementPage() {
           ></div>
           <div className="relative z-20 container mx-auto px-4 py-24 md:py-32 text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight mt-10">
-              Legal Debt Resolution via <span className="text-[#D2A02A]">Lok Adalat</span>
+              Loan Settlement in <span className="text-[#D2A02A]">Lok Adalat</span>
             </h1>
+            <p className="inline-block bg-white/10 border border-[#D2A02A] rounded-full px-5 py-2 mb-6 text-sm md:text-base font-semibold text-white">
+              Next National Lok Adalat: {nextNationalLokAdalat.long}
+            </p>
             <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-gray-200">
               A fast, cost-effective, and legally binding way to settle your loan disputes. Stop harassment and clear your debts with dignity through the People's Court.
             </p>
@@ -163,6 +170,23 @@ export default function LokAdalatLoanSettlementPage() {
 
               <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm mt-8 space-y-12">
                 
+                {/* Next National Lok Adalat */}
+                <section id="next-lok-adalat" className="scroll-mt-32 bg-amber-50 border border-amber-200 rounded-2xl p-6 md:p-8">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#b88a22] block mb-2">Next sitting</span>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">National Lok Adalat: {nextNationalLokAdalat.long}</h2>
+                  <p className="text-gray-700 leading-relaxed mb-5">
+                    Listing is handled by your District Legal Services Authority or the court where your case is pending, and cut-off dates differ by district. If you want a bank loan or credit card matter considered at this sitting, start now and confirm the bench and date with that authority.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Link href="/lok-adalat-notice-from-bank" className="text-center bg-[#1a202c] hover:bg-black text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+                      I received a Lok Adalat notice
+                    </Link>
+                    <a href="#lok-adalat-intake" className="text-center border border-[#D2A02A] text-[#b88a22] hover:bg-[#D2A02A] hover:text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+                      I want to settle my loan here
+                    </a>
+                  </div>
+                </section>
+
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-32">
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">Introduction to Loan Settlement in Lok Adalat</h2>
@@ -201,12 +225,15 @@ export default function LokAdalatLoanSettlementPage() {
                         <div className="text-xl md:text-2xl font-black text-white">September 12, 2026</div>
                         <span className="text-[11px] text-gray-400 block mt-2">Half-Year Bank OTS Quotas</span>
                       </div>
-                      <div className="p-5 bg-white/10 rounded-2xl border border-white/10">
-                        <span className="text-xs text-[#D2A02A] font-bold uppercase block mb-1">4th National Lok Adalat</span>
+                      <div className="p-5 bg-white/20 rounded-2xl border-2 border-[#D2A02A]">
+                        <span className="text-xs text-[#D2A02A] font-bold uppercase block mb-1">4th National Lok Adalat · Next</span>
                         <div className="text-xl md:text-2xl font-black text-white">December 12, 2026</div>
                         <span className="text-[11px] text-gray-400 block mt-2">Annual Debt Resolution Closure</span>
                       </div>
                     </div>
+                    <p className="text-sm text-gray-300 mb-4">
+                      NALSA had not published the 2027 National Lok Adalat dates when this page was last updated. We will add them here once they are announced.
+                    </p>
                     <div className="p-4 bg-white/5 rounded-xl border border-white/10 text-xs text-gray-300 leading-relaxed">
                       <strong className="text-[#D2A02A]">Crucial Practice Insight (Pre-Conciliation Sittings):</strong> Under NALSA guidelines, actual settlement figures are negotiated during <em>Pre-Lok Adalat / Pre-Conciliation sittings</em> conducted 7 to 14 days before the main Saturday bench. Do not wait for the final day; having legal representation during pre-conciliation secures maximum waivers from the bank's Authorized Officer.
                     </div>
@@ -284,7 +311,7 @@ export default function LokAdalatLoanSettlementPage() {
                 <section id="pre-vs-pending" className="scroll-mt-32">
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">Pre-Litigation vs. Pending Litigation Lok Adalat</h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    Many borrowers receive a "Lok Adalat Notice" and panic, fearing an imminent arrest or court trial. It is essential to distinguish between the two types of matters:
+                    Many borrowers receive a "Lok Adalat Notice" and panic, fearing an imminent arrest or court trial. It is essential to distinguish between the two types of matters. For a full walkthrough, read <Link href="/lok-adalat-notice-from-bank" className="text-[#b88a22] font-semibold underline">what to do after a Lok Adalat notice from your bank</Link>.
                   </p>
                   <div className="grid md:grid-cols-2 gap-6 mb-6">
                     <div className="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
@@ -657,7 +684,9 @@ export default function LokAdalatLoanSettlementPage() {
                 </aside>
 
                 {/* Interactive Lok Adalat Representation Intake Funnel */}
-                <InteractiveLeadFunnel preset="lok-adalat" className="my-10" />
+                <div id="lok-adalat-intake" className="scroll-mt-32">
+                  <InteractiveLeadFunnel preset="lok-adalat" className="my-10" />
+                </div>
 
               </div>
             </div>
