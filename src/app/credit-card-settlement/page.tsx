@@ -47,7 +47,7 @@ const articleSchema = {
     }
   },
   "datePublished": "2026-06-29",
-  "dateModified": "2026-06-29"
+  "dateModified": "2026-11-10"
 };
 
 const faqSchema = {
@@ -165,7 +165,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Credit Card Settlement in India: Process, % & Legal Help",
+  title: "Credit Card Settlement in India (2027): Process, % & Legal Help",
   description: "How credit card settlement works in India: the step-by-step process with banks, typical settlement percentage (40–70%), CIBIL impact, and advocate-led help.",
   robots: {
     index: true,
@@ -225,6 +225,9 @@ export default function CreditCardSettlementPage() {
             </h1>
             <p className="text-sm md:text-xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
               Force banks to waive illegal penalties and settle your unsecured debt. Stop recovery agent harassment instantly with specialized legal representation.
+            </p>
+            <p className="text-xs md:text-base mb-6 md:mb-10 text-gray-300">
+              Updated for 2027. Settling before the financial year ends? See the <Link href="/benefits-of-settling-your-loan-in-march" className="text-[#D2A02A] underline">March 2027 timeline</Link>.
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
               <Link href="/contact">
