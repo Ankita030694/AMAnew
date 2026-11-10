@@ -8,6 +8,7 @@ import { harassmentCities } from '@/data/harassmentCities'
 import { creditCardBanks } from '@/data/creditCardBanks'
 import { statesData } from '@/data/statesData'
 import consolidationRedirects from '@/data/consolidationRedirects.json'
+import { noindexBlogSlugs } from '@/data/noindexBlogSlugs'
 import fs from 'fs';
 import path from 'path';
 
@@ -201,8 +202,6 @@ export async function GET(): Promise<Response> {
     '/home-loan-eligibility-after-settlement',
     '/legal-notice-for-loan-settlement-harassment',
     '/p2p-crypto-scam-unfreeze-bank-account',
-    '/2026-lockdown-due-to-scarcity-of-resources',
-    '/lpg-cylinder-crisis-india-2026-iran-war',
     '/loan-settlement-for-borrowers-facing-economic-downturn',
     '/loan-settlement-for-borrowers-planning-financial-reset',
     '/amalegalsolutions-plan-for-building-debt-free-future-after-settlement',
@@ -749,7 +748,7 @@ export async function GET(): Promise<Response> {
   const loanSettlementServiceRoutes = generateLoanSettlementServiceRoutes(baseUrl)
 
   // Build dynamic blog routes
-  const blogRoutes = blogs.map(blog => ({
+  const blogRoutes = blogs.filter(blog => !noindexBlogSlugs.has(blog.slug)).map(blog => ({
     url: `${baseUrl}/blog/${encodeURIComponent(blog.slug)}`,
     lastModified: toSafeIsoString(blog.created),
     changeFrequency: 'weekly',

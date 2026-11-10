@@ -484,8 +484,6 @@ const directoryLinks = [
   { name: "Financial Reset Settlement", href: "/loan-settlement-for-borrowers-planning-financial-reset" },
   { name: "Debt Free Future Plan", href: "/amalegalsolutions-plan-for-building-debt-free-future-after-settlement" },
   { name: "Economic Downturn Settlement", href: "/loan-settlement-for-borrowers-facing-economic-downturn" },
-  { name: "LPG Crisis India 2026", href: "/lpg-cylinder-crisis-india-2026-iran-war" },
-  { name: "2026 Resource Lockdown", href: "/2026-lockdown-due-to-scarcity-of-resources" },
   { name: "P2P Crypto Scam Unfreeze", href: "/p2p-crypto-scam-unfreeze-bank-account" },
   { name: "Harassment Protection", href: "/legal-notice-for-loan-settlement-harassment" },
   { name: "Legal Notice for Harassment", href: "/legal-notice-for-loan-settlement-harassment" },

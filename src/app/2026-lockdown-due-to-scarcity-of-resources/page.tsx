@@ -171,6 +171,7 @@ export const metadata = {
     "8700343611",
     "amalegalsolutions.com"
   ],
+  robots: { index: false, follow: true },
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/2026-lockdown-due-to-scarcity-of-resources',
   },

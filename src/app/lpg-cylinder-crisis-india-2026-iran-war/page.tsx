@@ -172,6 +172,7 @@ export const metadata = {
     "amalegalsolutions.com 8700343611",
     "legal help for lpg issues"
   ],
+  robots: { index: false, follow: true },
   alternates: {
     canonical: 'https://www.amalegalsolutions.com/lpg-cylinder-crisis-india-2026-iran-war',
   },

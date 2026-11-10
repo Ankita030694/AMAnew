@@ -5,6 +5,7 @@ import ArticleDetail, { Blog, FAQ, Review } from "./blogdetail";
 import PerformanceMonitor from '../../../components/PerformanceMonitor';
 import Navbar from "@/newcomp/Navbar";
 import { formatMetaTitle, formatMetaDescription } from "@/lib/seo";
+import { noindexBlogSlugs } from "@/data/noindexBlogSlugs";
 export const revalidate = 3600; // Cache the page at the Edge for 1 hour
 
 export async function generateStaticParams() {
@@ -152,6 +153,7 @@ export async function generateMetadata(
   return {
     title,
     description,
+    ...(noindexBlogSlugs.has(slug) ? { robots: { index: false, follow: true } } : {}),
     alternates: {
       canonical: blogUrl,
     },
