@@ -597,6 +597,7 @@ const directoryLinks = [
   { name: "Special Lok Adalat for Loan Settlement", href: "/special-lok-adalat-for-loan-settlement" },
   { name: "Lok Adalat Notice from Bank", href: "/lok-adalat-notice-from-bank" },
   { name: "Loan Settlement Percentage", href: "/loan-settlement-percentage" },
+  { name: "Loan Settlement in 2027", href: "/loan-settlement-2027" },
   { name: "Legal Notice for Unpaid F&F", href: "/not-being-paid-fnf-want-to-send-legal-notice" },
   { name: "Is Trademark Internationally Valid", href: "/is-trademark-internationally-valid" },
   { name: "Name vs Logo Trademark", href: "/is-registering-a-name-instead-of-the-logo-enough" },
