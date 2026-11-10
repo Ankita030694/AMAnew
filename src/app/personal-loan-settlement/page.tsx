@@ -90,7 +90,8 @@ const articleSchema = {
       "url": "https://www.amalegalsolutions.com/ama-legal-solutions-logo.png"
     }
   },
-  "datePublished": "2026-03-11"
+  "datePublished": "2026-03-11",
+  "dateModified": "2026-11-10"
 };
 
 // FAQ Schema
@@ -152,7 +153,7 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Personal Loan Settlement: Process & How to Negotiate (2026)",
+  title: "Personal Loan Settlement: Process & How to Negotiate (2027)",
   description: "How to settle a personal loan in India: the step-by-step settlement process with banks, how to negotiate a lower OTS amount, CIBIL impact, and advocate help.",
   keywords: [
     "personal loan settlement",
@@ -219,6 +220,9 @@ export default function PersonalLoanSettlementPage() {
             </h1>
             <p className="text-sm md:text-2xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
               Stop endless recovery calls, negotiate massive waivers on your pending dues, and rebuild your financial future legally and securely.
+            </p>
+            <p className="text-xs md:text-base mb-6 md:mb-10 text-gray-300">
+              Updated for 2027. Settling before the financial year ends? See the <Link href="/benefits-of-settling-your-loan-in-march" className="text-[#D2A02A] underline">March 2027 timeline</Link>.
             </p>
             <Link href="/contact">
               <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg">
