@@ -175,13 +175,13 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Best Time for Loan Settlement in India | Maximize Savings",
+  title: "Best Time for Loan Settlement in India (2027 Guide)",
   description: "When is the best time for loan settlement? Learn how default age, NPA status and the March 2027 year-end affect talks with your bank, and when to start.",
   alternates: {
     canonical: "https://www.amalegalsolutions.com/best-time-for-loan-settlement",
   },
   openGraph: {
-    title: "Best Time for Loan Settlement in India | Strategic Guide",
+    title: "Best Time for Loan Settlement in India (2027 Guide)",
     description: "Discover the best time to settle your bank loans. Expert tips from AMA Legal Solutions, India's #1 debt settlement law firm.",
     url: "https://www.amalegalsolutions.com/best-time-for-loan-settlement",
     type: "website",
@@ -227,10 +227,10 @@ export default function BestTimeForLoanSettlement() {
           ></div>
           <div className="relative z-20 container mx-auto px-4 py-16 md:py-32 text-center">
             <h1 className="text-3xl md:text-6xl font-extrabold mb-6 leading-tight">
-              Best Time for <span className="text-[#D2A02A]">Loan Settlement</span>: A Strategic Guide to Debt Relief
+              Best Time for <span className="text-[#D2A02A]">Loan Settlement</span> in 2027: A Strategic Guide to Debt Relief
             </h1>
             <h2 className="text-lg md:text-2xl mb-10 max-w-4xl mx-auto text-gray-200">
-              Discover the psychological and seasonal triggers that can help you save up to 70% on your outstanding bank debt. Learn why timing is your biggest weapon.
+              See how the age of your default and the banking calendar shape settlement talks, and when to start.
             </h2>
             <Link href="/contact">
               <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-xl text-lg animate-pulse">
