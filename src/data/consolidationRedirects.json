@@ -1,5 +1,11 @@
 [
   {
+    "source": "/blog/rbi-new-loan-recovery-guidelines-july-2026",
+    "destination": "/rbi-new-recovery-guidelines-july-2026",
+    "permanent": true,
+    "group": "generic"
+  },
+  {
     "source": "/blog/guide-for-loan-settlement-in-2027-important-points-to-remember",
     "destination": "/loan-settlement-2027",
     "permanent": true,

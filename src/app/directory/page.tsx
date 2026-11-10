@@ -540,7 +540,7 @@ const directoryLinks = [
   { name: "Will Drafting for NRI", href: "/will-drafting-for-nri" },
   { name: "Simple Will Format - Download", href: "/simple-will-format-download-free-legal-document-sample" },
   { name: "Drafting of Will", href: "/drafting-of-will" },
-  { name: "RBI Recovery Guidelines July 2026", href: "/rbi-new-recovery-guidelines-july-2026" },
+  { name: "RBI Recovery Guidelines 2026", href: "/rbi-new-recovery-guidelines-july-2026" },
   { name: "Telecaller Vacancies in Gurgaon", href: "/telecaller-vacancies-in-gurgaon" },
   { name: "Sales Job Vacancies in Gurgaon", href: "/sales-job-vacancies-in-gurgaon" },
   { name: 'How To Register Fssai Licence', href: '/how-to-register-fssai-licence' },
