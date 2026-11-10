@@ -140,6 +140,11 @@ const productGuides = [
   { href: "/personal-loan-settlement", title: "Personal loan settlement", text: "Process, negotiation and your options." },
   { href: "/credit-card-settlement", title: "Credit card settlement", text: "How settling card dues works." },
   { href: "/loan-settlement-percentage", title: "Settlement percentage", text: "What decides how much you pay." },
+  { href: "/personal-loan-settlement-2027-maximum-waiver", title: "Personal loan waiver", text: "Building your strongest offer in 2027." },
+  { href: "/credit-card-settlement-2027-maximum-waiver", title: "Credit card waiver", text: "Breaking up your card balance." },
+  { href: "/payday-loan-settlement-2027-maximum-waiver", title: "Payday loan waiver", text: "Checking who your lender really is." },
+  { href: "/why-start-of-2027-is-best-time-to-settle-loans", title: "Settling in early 2027", text: "When it helps, and when it does not." },
+  { href: "/best-loan-settlement-agencies-2027", title: "Choosing an agency", text: "Checks to make before you pay anyone." },
 ];
 
 const sources = [
