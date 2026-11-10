@@ -761,7 +761,7 @@ export default function PersonalLoanSettlementPage() {
                   <h3 className="text-xl font-bold text-gray-900 mb-4">Explore Related Services</h3>
                   <ul className="space-y-3">
                     <li>
-                      <Link href="/what-is-a-reasonable-settlement-offer" className="text-gray-600 hover:text-[#D2A02A] flex items-center transition-colors">
+                      <Link href="/loan-settlement-percentage" className="text-gray-600 hover:text-[#D2A02A] flex items-center transition-colors">
                         <span className="mr-2 text-[#D2A02A]">›</span> What is a Reasonable Offer?
                       </Link>
                     </li>

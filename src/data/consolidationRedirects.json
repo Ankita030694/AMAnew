@@ -1,5 +1,17 @@
 [
   {
+    "source": "/what-is-a-reasonable-settlement-offer",
+    "destination": "/loan-settlement-percentage",
+    "permanent": true,
+    "group": "generic"
+  },
+  {
+    "source": "/blog/settle-your-loan-in-march-2026-financial-year-ending",
+    "destination": "/benefits-of-settling-your-loan-in-march",
+    "permanent": true,
+    "group": "generic"
+  },
+  {
     "source": "/how-to-settle-credit-card-debt",
     "destination": "/credit-card-settlement",
     "permanent": true,

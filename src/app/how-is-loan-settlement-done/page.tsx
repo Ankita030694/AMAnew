@@ -304,7 +304,7 @@ export default function HowIsLoanSettlementDonePage() {
                       <div>
                         <h4 className="font-bold text-gray-900 text-lg">Negotiating the Settlement Offer</h4>
                         <p className="text-gray-600 text-base leading-relaxed">
-                          Once the lender accepts your plea, the negotiation phase begins. The bank will calculate the outstanding balance, which often includes accumulated penalties and interest. They will initially propose a settlement figure that is close to the principal amount. Borrowers should aim to negotiate a discount, often striving to determine <Link href="/what-is-a-reasonable-settlement-offer" className="text-[#D2A02A] hover:underline font-semibold">what is a reasonable settlement offer</Link> depending on their unique debt profile.
+                          Once the lender accepts your plea, the negotiation phase begins. The bank will calculate the outstanding balance, which often includes accumulated penalties and interest. They will initially propose a settlement figure that is close to the principal amount. Borrowers should aim to negotiate a discount, often striving to determine <Link href="/loan-settlement-percentage" className="text-[#D2A02A] hover:underline font-semibold">what is a reasonable settlement offer</Link> depending on their unique debt profile.
                         </p>
                       </div>
                     </div>

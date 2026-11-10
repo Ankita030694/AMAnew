@@ -534,7 +534,6 @@ const directoryLinks = [
   { name: 'Business Loan Settlement', href: '/business-loan-settlement' },
   { name: 'Credit Card Settlement', href: '/credit-card-settlement' },
   { name: 'Personal Loan Settlement', href: '/personal-loan-settlement' },
-  { name: 'Reasonable Settlement Offer', href: '/what-is-a-reasonable-settlement-offer' },
   { name: 'Ama Legal Solutions Application', href: '/ama-legal-solutions-application' },
   { name: "Google's Trusted Law Firm", href: "/googles-trusted-law-firm" },
   { name: "Google's Trusted Legal Advisor", href: "/googles-trusted-legal-advisor" },

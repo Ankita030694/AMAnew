@@ -32,7 +32,7 @@ const sections = [
 ];
 
 const relatedPages = [
-  { title: "What is a Reasonable Settlement Offer?", href: "/what-is-a-reasonable-settlement-offer" },
+  { title: "What is a Reasonable Settlement Offer?", href: "/loan-settlement-percentage" },
   { title: "Personal Loan Settlement Guide", href: "/personal-loan-settlement" },
   { title: "Does Settlement Affect CIBIL Score?", href: "/does-loan-settlement-affect-cibil-score" },
   { title: "RBI New Recovery Guidelines 2026", href: "/rbi-new-recovery-guidelines-july-2026" },

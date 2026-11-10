@@ -1127,7 +1127,7 @@ Details: ${formData.message || "Requesting transparent legal case evaluation und
                       },
                       {
                         title: "Reasonable Settlement Offer Guide",
-                        href: "/what-is-a-reasonable-settlement-offer",
+                        href: "/loan-settlement-percentage",
                         desc: "Calculating viable compromise offers based on forensic ledger audits.",
                       },
                       {

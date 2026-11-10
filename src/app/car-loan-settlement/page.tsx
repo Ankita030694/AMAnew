@@ -750,7 +750,7 @@ export default function CarLoanSettlementPage() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/what-is-a-reasonable-settlement-offer" className="text-gray-600 hover:text-[#D2A02A] text-sm flex items-center gap-2">
+                      <Link href="/loan-settlement-percentage" className="text-gray-600 hover:text-[#D2A02A] text-sm flex items-center gap-2">
                         <span className="text-[#D2A02A]">›</span> Reasonable Settlement Offer
                       </Link>
                     </li>
