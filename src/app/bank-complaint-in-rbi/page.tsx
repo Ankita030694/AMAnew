@@ -513,7 +513,7 @@ export default function BankComplaintRBIPage() {
                 <section id="harassment-protection" className="scroll-mt-32">
                   <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6">Stopping Harassment: The RBI's Zero Tolerance Policy</h2>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                    One of the most frequent reasons people approach AMA Legal Solutions is for help with recovery agent harassment. It is important to know that the RBI has issued strict guidelines (dated July 2026 and earlier) that explicitly prohibit banks and NBFCs from harassing borrowers. 
+                    One of the most frequent reasons people approach AMA Legal Solutions is for help with recovery agent harassment. It is important to know that the RBI has issued strict instructions that prohibit banks and NBFCs from harassing borrowers. 
                   </p>
                   <p className="text-lg leading-relaxed mb-6 text-gray-700">
                     If you are facing threats, a <strong>bank complaint in RBI</strong> can lead to severe penalties for the bank. In some cases, the RBI has even banned certain NBFCs from using recovery agents entirely for a period of time. When you file a complaint about harassment, ensure you include the date and time of calls, recordings if possible, and names of the agents.

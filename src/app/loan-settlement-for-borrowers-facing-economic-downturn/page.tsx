@@ -11,8 +11,8 @@ const faqs = [
     answer: "In an economic downturn, many people lose income. Banks and NBFCs realize that borrowers are struggling. Professional firms like AMA Legal Solutions, founded by anuj anand malik, help by proving your financial hardship. When you are hit by a crisis, you can negotiation for a reduction in the total outstanding amount. Contact 8700343611 to know if you qualify based on your current financial status in Sector 57 or anywhere in India."
   },
   {
-    question: "What are the new RBI guidelines for recovery agents effective from July 2026?",
-    answer: "The RBI has issued strict rules effective July 1, 2026. Recovery agents can only call between 8:00 AM and 7:00 PM. They cannot harass you through social media or contact your relatives. If they do, AMA Legal Solutions can send a legal notice to stop it. Anuj Anand Malik and his team specialize in protecting your name and dignity during the loan settlement process."
+    question: "What are the new RBI guidelines for recovery agents, and when do they start?",
+    answer: "RBI notified strict recovery rules on 6 August 2026, effective 1 January 2027. Recovery agents can only call between 8:00 AM and 7:00 PM. They cannot harass you through social media or contact your relatives. If they do, AMA Legal Solutions can send a legal notice to stop it. Anuj Anand Malik and his team specialize in protecting your name and dignity during the loan settlement process."
   },
   {
     question: "Can I settle my loan if the bank has already sent a legal notice?",
@@ -274,10 +274,10 @@ export default function EconomicDownturnPage() {
                   <section id="legal-rights" className="scroll-mt-32">
                     <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6">Your Legal Rights & The New RBI 2026 Guidelines</h2>
                     <p className="mb-6">
-                      Many borrowers feel helpless because they do not know their rights. Under the law, even if you are a defaulter, you have fundamental human rights. The Reserve Bank of India has introduced strict guidelines to protect people like you. Specifically, the new rules effective July 1, 2026, have changed the game for recovery agents and banks.
+                      Many borrowers feel helpless because they do not know their rights. Under the law, even if you are a defaulter, you have fundamental human rights. The Reserve Bank of India has introduced strict guidelines to protect people like you. Specifically, new rules take effect on 1 January 2027 and tighten what recovery agents and banks can do.
                     </p>
                     <div className="bg-blue-50 p-6 rounded-2xl border-l-8 border-blue-500 mb-8">
-                       <h3 className="text-xl font-bold mb-4 text-blue-900 underline">Top Protections Under New RBI Guidelines (July 2026):</h3>
+                       <h3 className="text-xl font-bold mb-4 text-blue-900 underline">Top Protections Under New RBI Guidelines (From 1 January 2027):</h3>
                        <ul className="list-disc pl-6 space-y-3">
                           <li><strong>Time Restrictions:</strong> No bank or agent can call you before 8 AM or after 7 PM. This is to ensure you can have a peaceful evening with your family.</li>
                           <li><strong>Zero Tolerance for Abuse:</strong> Any form of verbal abuse, threats, or intimidation is illegal. If an agent shouts at you, it is a violation of RBI norms.</li>
