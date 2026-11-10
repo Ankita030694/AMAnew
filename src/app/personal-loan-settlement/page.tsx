@@ -222,7 +222,7 @@ export default function PersonalLoanSettlementPage() {
               Stop endless recovery calls, negotiate massive waivers on your pending dues, and rebuild your financial future legally and securely.
             </p>
             <p className="text-xs md:text-base mb-6 md:mb-10 text-gray-300">
-              Updated for 2027. Settling before the financial year ends? See the <Link href="/benefits-of-settling-your-loan-in-march" className="text-[#D2A02A] underline">March 2027 timeline</Link>.
+              Updated for <Link href="/loan-settlement-2027" className="text-[#D2A02A] underline">what changes in 2027</Link>. Settling before the financial year ends? See the <Link href="/benefits-of-settling-your-loan-in-march" className="text-[#D2A02A] underline">March 2027 timeline</Link>.
             </p>
             <Link href="/contact">
               <button className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg">

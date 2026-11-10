@@ -227,7 +227,7 @@ export default function CreditCardSettlementPage() {
               Force banks to waive illegal penalties and settle your unsecured debt. Stop recovery agent harassment instantly with specialized legal representation.
             </p>
             <p className="text-xs md:text-base mb-6 md:mb-10 text-gray-300">
-              Updated for 2027. Settling before the financial year ends? See the <Link href="/benefits-of-settling-your-loan-in-march" className="text-[#D2A02A] underline">March 2027 timeline</Link>.
+              Updated for <Link href="/loan-settlement-2027" className="text-[#D2A02A] underline">what changes in 2027</Link>. Settling before the financial year ends? See the <Link href="/benefits-of-settling-your-loan-in-march" className="text-[#D2A02A] underline">March 2027 timeline</Link>.
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
               <Link href="/contact">
