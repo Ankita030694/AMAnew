@@ -1,5 +1,17 @@
 [
   {
+    "source": "/blog/guide-for-loan-settlement-in-2027-important-points-to-remember",
+    "destination": "/loan-settlement-2027",
+    "permanent": true,
+    "group": "generic"
+  },
+  {
+    "source": "/blog/loan-settlement-criteria-for-year-2027",
+    "destination": "/loan-settlement-2027",
+    "permanent": true,
+    "group": "generic"
+  },
+  {
     "source": "/what-is-a-reasonable-settlement-offer",
     "destination": "/loan-settlement-percentage",
     "permanent": true,
