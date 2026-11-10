@@ -28,8 +28,8 @@ const breadcrumbSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Axis Bank Settlement Waiver Percentage 2026 Guide",
-  "description": "Discover the Axis Bank settlement waiver percentage for 2026. Learn how to negotiate up to 75% waiver on personal loans and credit cards legally.",
+  "headline": "Axis Bank Credit Card Settlement: Process and Waiver Percentage",
+  "description": "The Axis Bank credit card settlement process, the documents and letter you need, and what affects the waiver percentage.",
   "image": "https://www.amalegalsolutions.com/services/3.png",
   "author": {
     "@type": "Person",
@@ -45,7 +45,7 @@ const articleSchema = {
     }
   },
   "datePublished": "2026-07-16",
-  "dateModified": "2026-07-16"
+  "dateModified": "2026-11-10"
 };
 
 const faqSchema = {
@@ -168,8 +168,8 @@ const reviewSchema = {
 };
 
 export const metadata = {
-  title: "Axis Bank Settlement Waiver Percentage Guide 2026 | AMA",
-  description: "Discover the Axis Bank settlement waiver percentage for 2026. Learn how to negotiate up to 75% waiver on personal loans and credit cards legally.",
+  title: "Axis Bank Credit Card Settlement: Process & Waiver Percentage",
+  description: "Axis Bank credit card settlement explained: the process, the documents and letter you need, and what affects your waiver percentage on card and loan dues.",
   robots: {
     index: true,
     follow: true,
@@ -199,6 +199,7 @@ export const metadata = {
 
 export default function AxisBankSettlementPage() {
   const tocSections = [
+    { id: "credit-card-process", title: "Axis Credit Card Settlement Process" },
     { id: "reality", title: "The Reality of Axis Bank Settlement Waivers" },
     { id: "key-factors", title: "Key Factors Influencing Your Waiver Percentage" },
     { id: "step-by-step", title: "Step-by-Step Guide to Negotiating with Axis Bank" },
@@ -237,7 +238,7 @@ export default function AxisBankSettlementPage() {
           <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
           <div className="relative z-20 container mx-auto px-4 py-12 md:py-32 text-center">
             <h1 className="text-2xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight mt-10">
-              Axis Bank Settlement Waiver Percentage 2026 Guide
+              Axis Bank Credit Card Settlement: Process and Waiver Percentage
             </h1>
             <p className="text-sm md:text-xl mb-6 md:mb-10 max-w-3xl mx-auto text-gray-200">
               Discover the exact waiver percentages you can negotiate, understand NPA timelines, and protect yourself from recovery harassment.
@@ -274,6 +275,22 @@ export default function AxisBankSettlementPage() {
 
               <div className="bg-white p-3 md:p-12 rounded-2xl shadow-sm space-y-6 md:space-y-12">
                 
+                {/* Credit Card Process */}
+                <section id="credit-card-process" className="scroll-mt-32">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Axis Bank Credit Card Settlement Process</h2>
+                  <ol className="list-decimal pl-6 space-y-3 text-sm md:text-lg text-gray-700 mb-4">
+                    <li><strong>Get a breakup of the dues.</strong> Ask for the principal, finance charges, late fees and GST to be shown separately.</li>
+                    <li><strong>Prepare your hardship evidence.</strong> Keep termination letters, medical bills or bank statements ready.</li>
+                    <li><strong>Make a written request.</strong> Use Axis Bank's official channels and keep a copy of what you send.</li>
+                    <li><strong>Negotiate in rupees.</strong> Offer an amount you can truly arrange, and compare it using our <Link href="/loan-settlement-percentage" className="text-[#D2A02A] hover:underline font-semibold">settlement percentage guide</Link>.</li>
+                    <li><strong>Get the settlement letter first.</strong> It should show your card number, the agreed amount and the payment date.</li>
+                    <li><strong>Pay only through an official channel.</strong> Then collect the closure letter or no-dues certificate and check your credit report.</li>
+                  </ol>
+                  <p className="text-sm md:text-lg leading-relaxed text-gray-700">
+                    For personal loans, see our <Link href="/services/loan-settlement/axis-bank" className="text-[#D2A02A] hover:underline font-semibold">Axis Bank loan settlement</Link> page.
+                  </p>
+                </section>
+
                 {/* 1. The Reality */}
                 <section id="reality" className="scroll-mt-32">
                   <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">The Reality of Axis Bank Settlement Waivers</h2>
