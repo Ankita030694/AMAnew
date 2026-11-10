@@ -69,7 +69,7 @@ export function getPresetForPath(pathname: string | null): FunnelPreset | null {
   // 1b. Big-bank credit card & personal loan settlement (structured bank OTS process)
   if (
     (getLenderFromPath(path) && !/arbitration|harass|recovery|agent|payment|billdesk|ifsc/.test(path)) ||
-    /credit-card-settlement|personal-loan-settlement|credit-card-debt|settlement-waiver-percentage/.test(path)
+    /credit-card-settlement|personal-loan-settlement|credit-card-debt|settlement-waiver-percentage|loan-settlement-percentage/.test(path)
   ) {
     return "bank-pl-cc";
   }
