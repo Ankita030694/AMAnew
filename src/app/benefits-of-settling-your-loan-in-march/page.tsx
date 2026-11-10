@@ -172,7 +172,7 @@ const breadcrumbSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Benefits of Settling Your Loan in March: The Golden Window for Debt Relief",
+  "headline": "Benefits of Settling Your Loan in March 2027",
   "description": "Learn why March is the best month for loan settlement in India. Explore the benefits of financial year-end targets and how to get maximum waivers from banks.",
   "image": "https://www.amalegalsolutions.com/services/loan-settlement.png",
   "author": {
@@ -289,7 +289,7 @@ export default function BenefitsOfSettlingInMarch() {
           ></div>
           <div className="relative z-20 container mx-auto px-4 py-20 md:py-40 text-center">
             <h1 className="text-4xl md:text-7xl font-extrabold mb-8 leading-tight">
-              Benefits of Settling Your <span className="text-[#D2A02A]">Loan in March</span>
+              Benefits of Settling Your <span className="text-[#D2A02A]">Loan in March 2027</span>
             </h1>
             <h2 className="text-xl md:text-3xl mb-12 max-w-5xl mx-auto text-gray-100 font-light italic">
               Use the Financial Year-End Period to Negotiate From a Prepared Position.
