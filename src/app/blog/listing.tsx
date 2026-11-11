@@ -60,7 +60,8 @@ const getBlogs = async (page: number, limit: number) => {
         });
     } catch (error) {
         console.error("Error fetching blogs:", error);
-        return [];
+        // Throw rather than return nothing: a failed refresh then keeps serving the last good cached page.
+        throw error;
     }
 };
 
@@ -70,7 +71,7 @@ const getTotalBlogs = async () => {
         return countSnapshot.data().count;
     } catch (error) {
         console.error("Error fetching total blogs count:", error);
-        return 0;
+        throw error;
     }
 };
 

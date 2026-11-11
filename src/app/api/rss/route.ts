@@ -88,10 +88,8 @@ export async function GET() {
     if (error instanceof Error) {
       console.error('Error details:', error.message);
     }
-    return NextResponse.json(
-      { error: 'Failed to generate RSS feed' },
-      { status: 500 }
-    );
+    // Throw rather than return nothing: a failed refresh then keeps serving the last good cached page.
+    throw error;
   }
 }
 

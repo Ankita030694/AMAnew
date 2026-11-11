@@ -57,7 +57,8 @@ export const fetchAttorneys = async (): Promise<Attorney[]> => {
         return sortedUsers;
     } catch (error) {
         console.error('Error fetching users:', error);
-        return [];
+        // Throw rather than return nothing: a failed refresh then keeps serving the last good cached page.
+        throw error;
     }
 };
 

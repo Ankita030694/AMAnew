@@ -860,7 +860,8 @@ async function fetchAllBlogs() {
       .filter(blog => blog.slug.length > 0)
   } catch (error) {
     console.error('Error fetching blogs:', error)
-    return []
+    // Throw rather than return nothing: a failed refresh then keeps serving the last good cached page.
+    throw error
   }
 }
 
@@ -878,7 +879,7 @@ async function fetchAllArticles() {
       .filter(article => article.slug.length > 0)
   } catch (error) {
     console.error('Error fetching articles:', error)
-    return []
+    throw error
   }
 }
 
