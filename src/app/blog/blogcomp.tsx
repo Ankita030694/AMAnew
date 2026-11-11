@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { motion, Variants, AnimatePresence } from 'framer-motion';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import Script from 'next/script';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
@@ -116,7 +116,6 @@ export default function Page({ initialBlogs = [], currentPage, totalBlogs }: Blo
   const [searchQuery, setSearchQuery] = useState('');
   
   // URL state management
-  const searchParams = useSearchParams();
   const router = useRouter();
   
   const blogsPerPage = 7;
@@ -209,7 +208,8 @@ export default function Page({ initialBlogs = [], currentPage, totalBlogs }: Blo
     }
   }, [loading]);
   const updateURL = (page: number) => {
-    const params = new URLSearchParams(searchParams.toString());
+    // Read the query at click time; useSearchParams() would stop this list from rendering on the server.
+    const params = new URLSearchParams(window.location.search);
     if (page === 1) {
       params.delete('page');
     } else {

@@ -8,7 +8,7 @@ import GenericStatesGrid from "@/components/GenericStatesGrid";
 import { getMatchedExpertise } from "../expertiseData";
 import { getExpertiseSEO } from "@/lib/seo";
 
-export const revalidate = 86400;
+// Content comes only from data files in the repo, so pages stay cached until the next deploy.
 
 export async function generateStaticParams() {
   return [];

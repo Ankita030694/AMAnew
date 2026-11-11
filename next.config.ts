@@ -181,6 +181,18 @@ const nextConfig = {
     ];
   },
 
+  async rewrites() {
+    // Serve /<listing>?page=N from a cacheable route; the public URL stays the same.
+    const pagedListings = ['blog', 'loan-settlement-services', 'directory', 'lawyer-by-city', 'lawyer-by-expertise'];
+    return {
+      beforeFiles: pagedListings.map((listing) => ({
+        source: `/${listing}`,
+        has: [{ type: 'query' as const, key: 'page', value: '(?<page>\\d+)' }],
+        destination: `/paged/${listing}/:page`,
+      })),
+    };
+  },
+
   async redirects() {
     return [
       // ── SEO Fix: Enforce www. subdomain ───

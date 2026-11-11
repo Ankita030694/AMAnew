@@ -217,8 +217,8 @@ const keywordsList = [
 ];
 import { getKeywordClusterData } from "@/lib/keywordClusterEngine";
 
+// Content comes only from data files in the repo, so pages stay cached until the next deploy.
 export const dynamicParams = true;
-export const revalidate = 86400;
 
 const slugify = (text: string) => {
   return text

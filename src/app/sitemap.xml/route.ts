@@ -12,8 +12,7 @@ import { noindexBlogSlugs } from '@/data/noindexBlogSlugs'
 import fs from 'fs';
 import path from 'path';
 
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
+export const revalidate = 300; // Firestore-backed: served from cache, refreshed at most every 5 minutes
 
 // Reusable slugify function to perfectly match the dynamic route URLs
 const slugify = (text: string) => {

@@ -46,6 +46,7 @@ export async function GET(request: NextRequest) {
     revalidatePath('/sitemap-image.xml');
     revalidatePath('/api/rss');
     revalidatePath('/blog');
+    revalidatePath('/paged/blog/[page]', 'page');
     revalidatePath('/articles');
 
     if (slug) {

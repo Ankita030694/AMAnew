@@ -5,8 +5,7 @@ import BankCityHarassmentTemplate from "./BankCityHarassmentTemplate";
 import { Metadata } from "next";
 import { getBankCityHarassmentSEO } from "@/lib/seo";
 
-// ISR: Revalidate cached pages every 24 hours
-export const revalidate = 86400;
+// Content comes only from data files in the repo, so pages stay cached until the next deploy.
 
 // Allow on-demand generation for bank+city combos not pre-built
 export const dynamicParams = true;

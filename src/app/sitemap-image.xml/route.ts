@@ -1,7 +1,6 @@
 import { adminDb } from '@/lib/firebase-admin'
 
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
+export const revalidate = 300; // Firestore-backed: served from cache, refreshed at most every 5 minutes
 
 interface ImageItem {
   url: string;

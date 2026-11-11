@@ -74,7 +74,7 @@ const getArticleBySlug = unstable_cache(async (slug: string) => {
     return null;
   }
 }, ['article-by-slug'], { 
-  revalidate: 60,
+  revalidate: 3600,
   tags: ['articles']
 });
 
@@ -100,7 +100,7 @@ const getArticleFAQs = unstable_cache(async (articleId: string) => {
     return [];
   }
 }, ['article-faqs'], {
-  revalidate: 300,
+  revalidate: 3600,
   tags: ['faqs']
 });
 
@@ -127,7 +127,7 @@ const getArticleReviews = unstable_cache(async (articleId: string) => {
     return [];
   }
 }, ['article-reviews'], {
-  revalidate: 300,
+  revalidate: 3600,
   tags: ['reviews']
 });
 

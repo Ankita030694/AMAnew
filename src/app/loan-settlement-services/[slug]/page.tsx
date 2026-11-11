@@ -29,8 +29,8 @@ const relatedPages = [
   { title: "Loan Recovery Agents Harassment Complaint", href: "/loan-recovery-agents-harassment-complaint" },
 ];
 
+// Content comes only from data files in the repo, so pages stay cached until the next deploy.
 export const dynamicParams = true;
-export const revalidate = 86400;
 
 export async function generateStaticParams() {
   return Object.keys(serviceMap).slice(0, 150).map((slug) => ({

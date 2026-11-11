@@ -9,8 +9,8 @@ import { locationData, getLocationBySlug } from "../locationData";
 import { getCitySEO } from "@/lib/seo";
 import { getCityProfile } from "@/lib/cityContentEngine";
 
+// Content comes only from data files in the repo, so pages stay cached until the next deploy.
 export const dynamicParams = true;
-export const revalidate = 86400; // 24 hours ISR cache
 
 // Generate top static params at build time for fast builds, remaining generated on-demand
 export async function generateStaticParams() {
