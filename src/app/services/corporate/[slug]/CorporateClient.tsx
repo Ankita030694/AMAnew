@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import TableOfContents from "@/components/TableOfContents";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 interface Content {
   title: string;
@@ -61,6 +62,11 @@ export default function CorporateClient({ content, faqs }: CorporateClientProps)
             Starting a business or need corporate legal assistance in {content.city}? Get professional legal help for company registration, incorporation, and corporate compliance with our experienced corporate lawyers in {content.state}.
           </p>
         </div>
+
+        {/* Interactive Quick Legal Assessment Funnel */}
+        <section className="mb-20">
+          <InteractiveLeadFunnel preset="homepage" />
+        </section>
 
         {/* State-Specific Information */}
         <section id="state-info" className="mb-20">

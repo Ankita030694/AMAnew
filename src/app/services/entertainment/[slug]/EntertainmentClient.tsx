@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import TableOfContents from "@/components/TableOfContents";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 interface Content {
   title: string;
@@ -61,6 +62,11 @@ export default function EntertainmentClient({ content, faqs }: EntertainmentClie
             Need entertainment law assistance in {content.city}? Get professional legal help for entertainment contracts, media law, and entertainment industry legal support with our experienced entertainment law lawyers in {content.state}.
           </p>
         </div>
+
+        {/* Interactive Quick Legal Assessment Funnel */}
+        <section className="mb-20">
+          <InteractiveLeadFunnel preset="homepage" />
+        </section>
 
         {/* State-Specific Information */}
         <section id="state-info" className="mb-20">

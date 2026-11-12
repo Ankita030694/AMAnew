@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import TableOfContents from "@/components/TableOfContents";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 interface Content {
   title: string;
@@ -61,6 +62,11 @@ export default function CriminalClient({ content, faqs }: CriminalClientProps) {
             Need criminal defense in {content.city}? Get professional legal help for criminal cases, bail applications, and criminal litigation with our experienced criminal lawyers in {content.state}.
           </p>
         </div>
+
+        {/* Interactive Quick Legal Assessment Funnel */}
+        <section className="mb-20">
+          <InteractiveLeadFunnel preset="homepage" />
+        </section>
 
         {/* State-Specific Information */}
         <section id="state-info" className="mb-20">

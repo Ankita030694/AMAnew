@@ -8,6 +8,7 @@
 // import Image from "next/image";
 
 import AboutUsRevamp from "@/newcomp/AboutUsRevamp";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 import { fetchAttorneys } from "@/lib/attorneys";
 import Script from "next/script";
 
@@ -52,14 +53,21 @@ export default async function About() {
     const attorneys = await fetchAttorneys();
     
     return (
-      <div className="text-justify">
-        <Script
-          id="about-page-schema"
-          type="application/ld+json"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
-        />
-        <AboutUsRevamp attorneys={attorneys} />
-      </div>
+      <>
+        <div className="text-justify">
+          <Script
+            id="about-page-schema"
+            type="application/ld+json"
+            strategy="beforeInteractive"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+          />
+          <AboutUsRevamp attorneys={attorneys} />
+        </div>
+
+        {/* Interactive Quick Legal Assessment Funnel */}
+        <section className="max-w-6xl mx-auto px-4 lg:px-8 py-8 relative z-20">
+          <InteractiveLeadFunnel preset="homepage" />
+        </section>
+      </>
     );
 }

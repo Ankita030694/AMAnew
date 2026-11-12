@@ -7,6 +7,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import payu from "../../public/payu.png";
+import PriorityCallbackOffer from "@/components/PriorityCallbackOffer";
 import Image from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
@@ -188,7 +189,6 @@ const GlobalPopupForm = () => {
 
         setSubmitted(true);
         localStorage.setItem("form_submitted", "true");
-        window.location.href = data.redirectUrl || "https://pmny.in/DIMRKGkGQz6L";
       } catch (error) {
         console.error("Error verifying OTP:", error);
         setErrors({ ...errors, message: error instanceof Error ? error.message : "Invalid OTP" });
@@ -218,31 +218,7 @@ const GlobalPopupForm = () => {
 
             <div className="p-5 md:p-8 overflow-y-auto custom-scrollbar">
               {submitted ? (
-                <div className="flex flex-col items-center justify-center py-8 md:py-12 text-center">
-                  <div className="w-16 h-16 md:w-20 md:h-20 bg-[#D2A02A]/20 rounded-full flex items-center justify-center mb-4 md:mb-6">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-8 w-8 md:h-10 md:w-10 text-[#D2A02A]"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
-      
-                  <a
-                    href="https://pmny.in/DIMRKGkGQz6L"
-                    className="w-full bg-[#E19100] text-[#30261C] text-center font-bold py-2.5 md:py-3 px-6 rounded-lg hover:bg-[#d08600] transition-colors duration-300 text-sm md:text-base"
-                  >
-                    Proceed to Payment
-                  </a>
-                </div>
+                <PriorityCallbackOffer phone={formState.phone} source="Global Popup" />
               ) : isDuplicate ? (
                 <div className="flex flex-col items-center justify-center py-8 md:py-12 text-center">
                   <div className="w-16 h-16 md:w-20 md:h-20 bg-blue-500/10 rounded-full flex items-center justify-center mb-4 md:mb-6">

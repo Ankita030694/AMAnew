@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import TableOfContents from "@/components/TableOfContents";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 
 interface Content {
   title: string;
@@ -61,6 +62,11 @@ export default function CivilClient({ content, faqs }: CivilClientProps) {
             Facing civil disputes or legal conflicts in {content.city}? Get professional legal help for civil litigation, contract disputes, and civil rights matters with our experienced civil lawyers in {content.state}.
           </p>
         </div>
+
+        {/* Interactive Quick Legal Assessment Funnel */}
+        <section className="mb-20">
+          <InteractiveLeadFunnel preset="homepage" />
+        </section>
 
         {/* State-Specific Information */}
         <section id="state-info" className="mb-20">

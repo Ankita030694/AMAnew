@@ -1,4 +1,5 @@
 import Locations from "@/components/locations";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -23,6 +24,10 @@ export default function LocationsPage() {
     <div className="min-h-screen bg-[#F8F5EC]" style={{ fontFamily: "var(--font-polysans)" }}>
       <div className="container mx-auto px-4 py-12">
         <Locations isH1={true} />
+        {/* Interactive Quick Legal Assessment Funnel */}
+        <section className="max-w-6xl mx-auto px-4 lg:px-8 py-8 relative z-20">
+          <InteractiveLeadFunnel preset="homepage" />
+        </section>
 
         {/* SEO Content: About Our Pan-India Presence */}
         <section className="mt-20 max-w-5xl mx-auto">

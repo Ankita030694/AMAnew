@@ -1,4 +1,5 @@
 import ServicesClient from "./client";
+import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
 import Script from "next/script";
 
 export const metadata = {
@@ -101,6 +102,11 @@ export default function Services() {
       <div className="text-justify">
         <ServicesClient />
       </div>
+
+      {/* Interactive Quick Legal Assessment Funnel */}
+      <section className="max-w-6xl mx-auto px-4 lg:px-8 py-8 relative z-20">
+        <InteractiveLeadFunnel preset="homepage" />
+      </section>
     </>
   );
 }

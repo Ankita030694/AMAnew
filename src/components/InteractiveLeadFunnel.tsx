@@ -4,19 +4,17 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { 
-  ShieldCheck, 
   ArrowRight, 
   ArrowLeft,
-  CheckCircle2, 
   Phone, 
   Mail, 
   User, 
   AlertTriangle, 
   Scale, 
-  PhoneCall,
   Check,
   X
 } from "lucide-react";
+import PriorityCallbackOffer from "./PriorityCallbackOffer";
 
 export type FunnelPreset = 
   | "homepage" 
@@ -581,56 +579,8 @@ export default function InteractiveLeadFunnel({
       </div>
 
       {submitted ? (
-        <div className="relative z-10 text-center py-4 sm:py-8 space-y-4 max-w-lg mx-auto">
-          <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#D29E0D]/15 border border-[#D29E0D] text-[#D29E0D]">
-            <CheckCircle2 className="w-6 h-6 sm:w-7 sm:h-7" />
-          </div>
-          <div className="space-y-1.5">
-            <span className="text-[#D29E0D] text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase">
-              Assessment Registered
-            </span>
-            <h3 className="text-lg sm:text-2xl md:text-3xl font-medium sm:font-normal text-current">
-              Your Case Has Been Assigned to Counsel
-            </h3>
-            <p className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-gray-300" : "text-[#554E45]"}`}>
-              A Senior Advocate at <strong>AMA Legal Solutions</strong> will review your details under statutory attorney-client privilege and reach out to you at <strong>+91 {phone}</strong>.
-            </p>
-          </div>
-
-          <div className={`p-3 sm:p-4 rounded-[14px] sm:rounded-[16px] text-left text-xs space-y-1 border ${
-            isDark 
-              ? "bg-white/5 border-white/10 text-gray-300" 
-              : "bg-[#F1ECE1] border-[#30261C]/10 text-[#554E45]"
-          }`}>
-            <div className="flex items-center gap-1.5 font-medium text-[#D29E0D]">
-              <ShieldCheck className="w-4 h-4 shrink-0" />
-              <span>Section 126 Evidence Act Confidentiality</span>
-            </div>
-            <p className="leading-relaxed text-[11px] sm:text-xs">
-              All communications are strictly privileged under Indian law. AMA Legal Solutions never shares case information with employers, banks, or third parties.
-            </p>
-          </div>
-
-          <div className="pt-2 flex flex-col sm:flex-row gap-2.5 sm:gap-3 justify-center items-center">
-            <a
-              href="tel:+918700343611"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#D29E0D] bg-[#30261C] hover:bg-[#231F1B] text-[#EAE6DB] px-5 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm font-medium transition-all shadow-md"
-            >
-              <PhoneCall className="w-3.5 h-3.5 text-[#D29E0D]" />
-              Call Registry (+91-8700343611)
-            </a>
-            <button
-              onClick={() => {
-                setSubmitted(false);
-                setCurrentStep(1);
-                setStep1Value("");
-                setStep2Value("");
-              }}
-              className="text-xs text-[#D29E0D] hover:underline"
-            >
-              Submit an additional inquiry
-            </button>
-          </div>
+        <div className="relative z-10 max-w-lg mx-auto">
+          <PriorityCallbackOffer phone={phone} source={config.source} theme={isDark ? "dark" : "light"} />
         </div>
       ) : (
         <div className="relative z-10 space-y-4 sm:space-y-6">
