@@ -12,9 +12,12 @@ import {
   AlertTriangle, 
   Scale, 
   Check,
+  Clock,
+  Lock,
   X
 } from "lucide-react";
-import PriorityCallbackOffer from "./PriorityCallbackOffer";
+import { track } from "@vercel/analytics";
+import PriorityCallbackOffer, { getCallbackPromise, PRIORITY_CALLBACK_PAYMENT_URL } from "./PriorityCallbackOffer";
 
 export type FunnelPreset = 
   | "homepage" 
@@ -95,6 +98,61 @@ interface FunnelConfig {
   step3Label: string;
   ctaText: string;
 }
+
+// A/B test of where the ₹99 priority ask appears:
+// "upfront" = ₹99 and free buttons side by side on the contact step
+// "after"   = free submit first (lead saved), then the ₹99 offer in the same card
+type PayAskVariant = "upfront" | "after";
+const PAY_ASK_VARIANT_KEY = "ama_pay_ask_variant";
+
+function getPayAskVariant(): PayAskVariant {
+  try {
+    const saved = localStorage.getItem(PAY_ASK_VARIANT_KEY);
+    if (saved === "upfront" || saved === "after") return saved;
+    const assigned: PayAskVariant = Math.random() < 0.5 ? "upfront" : "after";
+    localStorage.setItem(PAY_ASK_VARIANT_KEY, assigned);
+    return assigned;
+  } catch {
+    return "after";
+  }
+}
+
+// What waiting costs the person, shown on the contact step
+const LOAN_DELAY_URGENCY = {
+  headline: "Overdue accounts escalate on the lender's timeline, not yours",
+  body: "Penal charges keep adding to the outstanding, and once an account crosses 90 days it moves to recovery and legal teams. The earlier an advocate steps in, the more room there is to negotiate.",
+};
+
+const URGENCY: Record<FunnelPreset, { headline: string; body: string }> = {
+  homepage: {
+    headline: "Legal problems get costlier the longer they wait",
+    body: "Penal interest, missed reply deadlines and recovery calls all keep running while a case sits unanswered.",
+  },
+  calculator: {
+    headline: "This estimate assumes you act now",
+    body: "Penal charges keep adding to the outstanding every month, and the lender can move to arbitration, a recall notice or a Section 138 case while you wait.",
+  },
+  "axis-bank": LOAN_DELAY_URGENCY,
+  "bank-settlement": LOAN_DELAY_URGENCY,
+  "bank-pl-cc": LOAN_DELAY_URGENCY,
+  "best-agencies": LOAN_DELAY_URGENCY,
+  "payday-loans": {
+    headline: "Calls to your contacts don't stop by themselves",
+    body: "Loan apps usually keep calling you, your family and your contacts until someone formally responds on your behalf. An advocate's notice is what changes that.",
+  },
+  "recovery-harassment": {
+    headline: "Harassment usually continues until it is formally challenged",
+    body: "Recovery agents tend to escalate calls and visits until an advocate puts the lender on written notice under RBI's recovery rules.",
+  },
+  "lok-adalat": {
+    headline: "Your Lok Adalat date is already fixed",
+    body: "Your settlement position needs to be prepared before the hearing, not on the day you walk in.",
+  },
+  "employment-salary": {
+    headline: "Salary claims are strongest when made early",
+    body: "A legal notice for unpaid salary or full-and-final dues carries the most weight while emails, payslips and records are fresh.",
+  },
+};
 
 const CONFIGS: Record<FunnelPreset, FunnelConfig> = {
   homepage: {
@@ -382,8 +440,21 @@ export default function InteractiveLeadFunnel({
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [errorMsg, setErrorMsg] = useState<string>("");
+  const [callbackTier, setCallbackTier] = useState<"priority" | "standard">("standard");
+  const [isRedirecting, setIsRedirecting] = useState<boolean>(false);
+  const [callbackPromise, setCallbackPromise] = useState<string>("within 1 hour");
+  const [payAskVariant, setPayAskVariant] = useState<PayAskVariant>("after");
+  const urgency = URGENCY[preset] || URGENCY.homepage;
 
   const isDark = theme === "dark";
+
+  useEffect(() => {
+    setCallbackPromise(getCallbackPromise());
+  }, [currentStep]);
+
+  useEffect(() => {
+    setPayAskVariant(getPayAskVariant());
+  }, []);
 
   // Sync calculator context into step1/step2 and jump to Step 3 whenever calculatorData updates
   useEffect(() => {
@@ -467,9 +538,15 @@ export default function InteractiveLeadFunnel({
     saveDraft({ phone: digits });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  // Pressing Enter in a field submits the free callback; paying is always an explicit click
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    submitLead("standard");
+  };
+
+  const submitLead = async (tier: "priority" | "standard") => {
     setErrorMsg("");
+    setCallbackTier(tier);
 
     if (!name.trim()) {
       setErrorMsg("Please enter your legal name");
@@ -519,7 +596,9 @@ export default function InteractiveLeadFunnel({
         source: config.source,
         submissionUrl,
         message: dossierParts.join("\n"),
-        verified: true
+        verified: true,
+        payAskVariant,
+        ...(payAskVariant === "upfront" ? { callbackTier: tier } : {})
       };
 
       const res = await fetch("/api/contact-submit", {
@@ -536,6 +615,21 @@ export default function InteractiveLeadFunnel({
       try {
         localStorage.removeItem(storageKey);
       } catch {}
+
+      // In the "after" version the free submit is just the lead; the offer screen tracks pay / skip itself
+      if (payAskVariant === "upfront") {
+        track(tier === "priority" ? "priority_callback_pay_click" : "priority_callback_skip", {
+          source: config.source,
+          variant: payAskVariant,
+        });
+      }
+
+      if (tier === "priority") {
+        // Lead is already saved; send them straight to PayU
+        setIsRedirecting(true);
+        window.location.href = PRIORITY_CALLBACK_PAYMENT_URL;
+        return;
+      }
 
       setSubmitted(true);
     } catch (err: unknown) {
@@ -580,7 +674,13 @@ export default function InteractiveLeadFunnel({
 
       {submitted ? (
         <div className="relative z-10 max-w-lg mx-auto">
-          <PriorityCallbackOffer phone={phone} source={config.source} theme={isDark ? "dark" : "light"} />
+          <PriorityCallbackOffer
+            phone={phone}
+            source={config.source}
+            variant={payAskVariant}
+            theme={isDark ? "dark" : "light"}
+            queued={payAskVariant === "upfront" && callbackTier === "standard"}
+          />
         </div>
       ) : (
         <div className="relative z-10 space-y-4 sm:space-y-6">
@@ -808,21 +908,81 @@ export default function InteractiveLeadFunnel({
                   </div>
                 )}
 
-                {/* Submit CTA */}
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full rounded-full border-2 border-[#D29E0D] bg-[#30261C] hover:bg-[#231F1B] text-[#EAE6DB] font-medium py-3 sm:py-4 px-5 transition-all shadow-md hover:scale-[1.01] flex items-center justify-center gap-2 text-xs sm:text-sm tracking-wide cursor-pointer disabled:opacity-50"
-                >
-                  {isSubmitting ? (
-                    <span>Submitting Case Intake...</span>
-                  ) : (
-                    <>
-                      <span>{config.ctaText}</span>
-                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D29E0D]" />
-                    </>
+                {/* Cost of waiting + priority / free callback choice */}
+                <div className={`rounded-[14px] sm:rounded-[16px] border-l-4 border-[#D29E0D] p-3 sm:p-4 space-y-1 ${
+                  isDark ? "bg-[#D29E0D]/10 text-gray-200" : "bg-[#FFF7E6] text-[#30261C]"
+                }`}>
+                  <p className="flex items-start gap-2 text-xs sm:text-sm font-semibold">
+                    <Clock className="w-4 h-4 mt-0.5 shrink-0 text-[#D29E0D]" />
+                    <span>{urgency.headline}</span>
+                  </p>
+                  <p className={`pl-6 text-[11px] sm:text-xs leading-relaxed ${isDark ? "text-gray-300" : "text-[#554E45]"}`}>
+                    {urgency.body}
+                  </p>
+                  {payAskVariant === "upfront" && (
+                    <p className={`pl-6 text-[11px] sm:text-xs leading-relaxed ${isDark ? "text-gray-300" : "text-[#554E45]"}`}>
+                      Priority clients are called first, <strong>{callbackPromise}</strong>. Free requests are called back in the order they come in.
+                    </p>
                   )}
-                </button>
+                </div>
+
+                {payAskVariant === "after" ? (
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full rounded-full border-2 border-[#D29E0D] bg-[#30261C] hover:bg-[#231F1B] text-[#EAE6DB] font-medium py-3 sm:py-4 px-5 transition-all shadow-md hover:scale-[1.01] flex items-center justify-center gap-2 text-xs sm:text-sm tracking-wide cursor-pointer disabled:opacity-50"
+                  >
+                    {isSubmitting ? (
+                      <span>Submitting Case Intake...</span>
+                    ) : (
+                      <>
+                        <span>{config.ctaText}</span>
+                        <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D29E0D]" />
+                      </>
+                    )}
+                  </button>
+                ) : (
+                <div className="space-y-2">
+                  <button
+                    type="button"
+                    onClick={() => submitLead("priority")}
+                    disabled={isSubmitting || isRedirecting}
+                    className="w-full rounded-[18px] bg-[#E19100] hover:bg-[#d08600] text-[#30261C] font-semibold py-3 sm:py-4 px-5 transition-all shadow-md hover:scale-[1.01] flex flex-col items-center justify-center text-xs sm:text-sm tracking-wide cursor-pointer disabled:opacity-60"
+                  >
+                    {isRedirecting ? (
+                      <span>Opening secure payment...</span>
+                    ) : isSubmitting && callbackTier === "priority" ? (
+                      <span>Saving your details...</span>
+                    ) : (
+                      <>
+                        <span className="flex items-center gap-2">
+                          <Lock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                          Speak to an advocate {callbackPromise} · ₹99
+                        </span>
+                        <span className="text-[10px] sm:text-[11px] font-normal opacity-80">
+                          ₹99 is adjusted against your fees if you engage us
+                        </span>
+                      </>
+                    )}
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting || isRedirecting}
+                    className={`w-full rounded-full border py-2.5 sm:py-3 px-5 text-[11px] sm:text-xs transition-colors cursor-pointer disabled:opacity-50 flex items-center justify-center gap-1.5 ${
+                      isDark ? "border-white/20 text-gray-300 hover:bg-white/5" : "border-[#30261C]/20 text-[#554E45] hover:bg-[#30261C]/5"
+                    }`}
+                  >
+                    {isSubmitting && callbackTier === "standard" ? (
+                      <span>Submitting...</span>
+                    ) : (
+                      <>
+                        <span>{config.ctaText}: free callback in queue order</span>
+                        <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                      </>
+                    )}
+                  </button>
+                </div>
+                )}
 
                 {/* Statutory Privilege Guarantee */}
                 <div className={`p-2.5 sm:p-3 rounded-[12px] text-[10px] sm:text-[11px] leading-tight sm:leading-relaxed flex items-start gap-2 border ${

@@ -31,6 +31,12 @@ export async function POST(request: Request) {
             submissionUrl: submissionUrl || '',
             timestamp: admin.firestore.FieldValue.serverTimestamp(),
             verified: body.verified !== undefined ? body.verified : true,
+            ...(body.callbackTier === 'priority' || body.callbackTier === 'standard'
+                ? { callbackTier: body.callbackTier }
+                : {}),
+            ...(body.payAskVariant === 'upfront' || body.payAskVariant === 'after'
+                ? { payAskVariant: body.payAskVariant }
+                : {}),
         };
 
         const docRef = await adminDb.collection('form').add(formData);

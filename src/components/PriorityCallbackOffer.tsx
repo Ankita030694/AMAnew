@@ -14,7 +14,7 @@ const DESK_DAYS = [1, 2, 3, 4, 5, 6];
 const DESK_OPEN_HOUR = 10;
 const DESK_CLOSE_HOUR = 19;
 
-function getCallbackPromise(): string {
+export function getCallbackPromise(): string {
   const parts = new Intl.DateTimeFormat("en-US", {
     timeZone: "Asia/Kolkata",
     weekday: "short",
@@ -39,10 +39,14 @@ interface PriorityCallbackOfferProps {
   phone?: string;
   source: string;
   theme?: "light" | "dark";
+  // Start on the "in the queue" confirmation (lead already chose the free callback)
+  queued?: boolean;
+  // Pay-ask A/B version, passed through to analytics events
+  variant?: string;
 }
 
-export default function PriorityCallbackOffer({ phone, source, theme = "light" }: PriorityCallbackOfferProps) {
-  const [skipped, setSkipped] = useState(false);
+export default function PriorityCallbackOffer({ phone, source, theme = "light", queued = false, variant = "none" }: PriorityCallbackOfferProps) {
+  const [skipped, setSkipped] = useState(queued);
   const [callbackPromise, setCallbackPromise] = useState("within 1 hour");
   const isDark = theme === "dark";
   const muted = isDark ? "text-gray-300" : "text-[#554E45]";
@@ -50,8 +54,8 @@ export default function PriorityCallbackOffer({ phone, source, theme = "light" }
 
   useEffect(() => {
     setCallbackPromise(getCallbackPromise());
-    track("priority_callback_shown", { source });
-  }, [source]);
+    if (!queued) track("priority_callback_shown", { source, variant });
+  }, [source, queued, variant]);
 
   if (skipped) {
     return (
@@ -80,12 +84,14 @@ export default function PriorityCallbackOffer({ phone, source, theme = "light" }
           <CheckCircle2 className="w-6 h-6" />
         </div>
         <span className="block text-[#D29E0D] text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase">
-          Request received
+          Request received · You&apos;re in the queue
         </span>
-        <h3 className="text-lg sm:text-2xl font-medium text-current">Your details are with our legal team</h3>
+        <h3 className="text-lg sm:text-2xl font-medium text-current">
+          Skip the queue: speak to an advocate {callbackPromise}
+        </h3>
         <p className={`text-xs sm:text-sm leading-relaxed ${muted}`}>
-          We handle a high number of settlement enquiries every day, and every request gets a call back. Clients who book a
-          one-time <strong>₹{PRIORITY_FEE} consultation</strong> are called first.
+          We receive a high volume of requests every day, and free callbacks are made in the order they come in. A one-time{" "}
+          <strong>₹{PRIORITY_FEE} priority booking</strong> puts your case at the front.
         </p>
       </div>
 
@@ -96,9 +102,7 @@ export default function PriorityCallbackOffer({ phone, source, theme = "light" }
       >
         <li className="flex items-start gap-2">
           <Clock className="w-4 h-4 mt-0.5 shrink-0 text-[#D29E0D]" />
-          <span>
-            Advocate callback <strong>{callbackPromise}</strong>
-          </span>
+          <span>Your case moves to the front of the callback queue</span>
         </li>
         <li className="flex items-start gap-2">
           <ShieldCheck className="w-4 h-4 mt-0.5 shrink-0 text-[#D29E0D]" />
@@ -113,11 +117,11 @@ export default function PriorityCallbackOffer({ phone, source, theme = "light" }
       <div className="space-y-2.5">
         <a
           href={PRIORITY_CALLBACK_PAYMENT_URL}
-          onClick={() => track("priority_callback_pay_click", { source })}
-          className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#E19100] hover:bg-[#d08600] text-[#30261C] font-semibold px-6 py-3 text-sm sm:text-base transition-colors shadow-md"
+          onClick={() => track("priority_callback_pay_click", { source, variant })}
+          className="w-full inline-flex items-center justify-center gap-2 rounded-[18px] bg-[#E19100] hover:bg-[#d08600] text-[#30261C] font-semibold px-6 py-3 text-sm sm:text-base transition-colors shadow-md"
         >
-          <Lock className="w-4 h-4" />
-          Book priority callback · ₹{PRIORITY_FEE}
+          <Lock className="w-4 h-4 shrink-0" />
+          Speak to an advocate {callbackPromise} · ₹{PRIORITY_FEE}
         </a>
         {cleanPhone && (
           <p className={`text-[11px] ${muted}`}>
@@ -126,12 +130,12 @@ export default function PriorityCallbackOffer({ phone, source, theme = "light" }
         )}
         <button
           onClick={() => {
-            track("priority_callback_skip", { source });
+            track("priority_callback_skip", { source, variant });
             setSkipped(true);
           }}
           className={`text-xs underline-offset-2 hover:underline ${muted}`}
         >
-          No thanks, I&apos;ll wait for the regular callback
+          No thanks, I&apos;ll wait my turn in the queue
         </button>
       </div>
 
