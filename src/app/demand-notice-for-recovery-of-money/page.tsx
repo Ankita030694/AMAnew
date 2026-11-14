@@ -30,6 +30,7 @@ const sections = [
 ];
 
 const relatedPages = [
+  { title: "Patient or TPA Not Paying Hospital Bill?", href: "/services/hospital-unpaid-patient-bill-and-insurance-tpa-recovery" },
   { title: "Company Not Paying Your Bill? Legal Action", href: "/services/company-not-paying-pending-bill-legal-action-india" },
   { title: "Client Not Paying Your Invoice? Recovery Guide", href: "/services/client-not-paying-invoice-after-delivery-legal-recovery" },
   { title: "Legal Notice for Breach of Contract", href: "/breach-of-contract-notice" },

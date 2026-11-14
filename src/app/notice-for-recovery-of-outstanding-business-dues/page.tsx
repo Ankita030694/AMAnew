@@ -78,6 +78,7 @@ const reviews = [
 ];
 
 const relatedPages = [
+  { title: "Patient or TPA Not Paying Hospital Bill?", href: "/services/hospital-unpaid-patient-bill-and-insurance-tpa-recovery" },
   { title: "Builder Not Paying Contractor Bill or Retention", href: "/services/builder-not-paying-contractor-bill-retention-money-recovery" },
   { title: "Foreign Buyer Not Paying? Export Recovery Guide", href: "/services/foreign-buyer-not-paying-indian-exporter-legal-recovery" },
   { title: "Company Not Paying Your Bill? Legal Action", href: "/services/company-not-paying-pending-bill-legal-action-india" },
