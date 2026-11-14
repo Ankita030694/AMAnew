@@ -572,6 +572,7 @@ export async function GET(): Promise<Response> {
     '/services/debt-consolidation',
     '/services/loan-and-debt-consolidation',
     '/services/best-lawyer-for-bank-harassment',
+    '/services/client-not-paying-invoice-after-delivery-legal-recovery',
     '/how-to-get-800-credit-score-in-india',
     '/loan-settlement-vs-foreclosure',
     '/top-credit-card-banks-offering-settlement-india',

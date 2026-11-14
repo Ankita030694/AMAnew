@@ -36,6 +36,7 @@ const sections = [
 ];
 
 const relatedPages = [
+  { title: "Client Not Paying Your Invoice? Recovery Guide", href: "/services/client-not-paying-invoice-after-delivery-legal-recovery" },
   { title: "Cheque Bounce Notice Guide", href: "/cheque-bounce-notice" },
   { title: "Breach of Contract Notice", href: "/breach-of-contract-notice" },
   { title: "How to Send a Legal Notice", href: "/how-can-i-send-legal-notice" },

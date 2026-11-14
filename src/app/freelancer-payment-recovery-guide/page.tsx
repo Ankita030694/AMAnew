@@ -23,6 +23,7 @@ const sections = [
 ];
 
 const relatedPages = [
+  { title: "Client Not Paying Your Invoice? Recovery Guide", href: "/services/client-not-paying-invoice-after-delivery-legal-recovery" },
   { title: "Legal Notice for Freelance Payment Recovery", href: "/legal-notice-for-freelance-payment-recovery" },
   { title: "Notice for Recovery of Professional Fees", href: "/notice-for-recovery-of-professional-fees" },
   { title: "Breach of Contract Legal Notice", href: "/breach-of-contract-notice" },
