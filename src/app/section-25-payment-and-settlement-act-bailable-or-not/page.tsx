@@ -455,7 +455,7 @@ export default function PSSAPage() {
                     </table>
                   </div>
                   <p className="mt-6 text-gray-600 italic">
-                    Note: If a bank uses an ECS mandate for your loan EMI and it bounces, they will file a case under Section 25. If you had given a post-dated cheque and it bounces, they will file under Section 138. The impact on your record and the legal battle is virtually the same.
+                    Note: If a bank uses an ECS mandate for your loan EMI and it bounces, they will file a case under Section 25. If you had given a post-dated cheque and it bounces, they will file under Section 138. For the full sequence from the first bounce to NPA, see <Link href="/services/ecs-nach-emi-bounce-legal-notice-loan-recovery" className="text-[#D2A02A] hover:underline font-semibold">what happens after an EMI or NACH bounce</Link>. The impact on your record and the legal battle is virtually the same.
                   </p>
                 </section>
 

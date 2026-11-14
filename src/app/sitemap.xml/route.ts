@@ -580,6 +580,8 @@ export async function GET(): Promise<Response> {
     '/services/foreign-buyer-not-paying-indian-exporter-legal-recovery',
     '/services/builder-not-paying-contractor-bill-retention-money-recovery',
     '/services/hospital-unpaid-patient-bill-and-insurance-tpa-recovery',
+    '/services/ecs-nach-emi-bounce-legal-notice-loan-recovery',
+    '/services/how-banks-recover-unpaid-loans-below-20-lakhs-india',
     '/how-to-get-800-credit-score-in-india',
     '/loan-settlement-vs-foreclosure',
     '/top-credit-card-banks-offering-settlement-india',

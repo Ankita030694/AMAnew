@@ -143,6 +143,8 @@ const documents = [
 ];
 
 const relatedLinks = [
+  { href: "/services/how-banks-recover-unpaid-loans-below-20-lakhs-india", label: "How banks recover loans under ₹20 lakh" },
+  { href: "/services/ecs-nach-emi-bounce-legal-notice-loan-recovery", label: "EMI or NACH bounced? What happens next" },
   { href: "/services/loan-settlement/lok-adalat", label: "Loan settlement in Lok Adalat" },
   { href: "/what-is-ots", label: "What is a one-time settlement?" },
   { href: "/what-happens-after-bank-issues-recall-notice", label: "Loan recall notice" },
