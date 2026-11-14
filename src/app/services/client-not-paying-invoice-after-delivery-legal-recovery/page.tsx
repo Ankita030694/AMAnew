@@ -36,6 +36,7 @@ const sections = [
 ];
 
 const relatedPages = [
+  { title: "Dealer Not Paying? Using Security Cheques Legally", href: "/blog/dealer-not-paying-money-security-cheque-bounce-recovery" },
   { title: "Demand Notice for Recovery of Money", href: "/demand-notice-for-recovery-of-money" },
   { title: "Freelancer Payment Recovery Guide", href: "/freelancer-payment-recovery-guide" },
   { title: "Cheque Bounce Legal Notice", href: "/cheque-bounce-legal-notice" },

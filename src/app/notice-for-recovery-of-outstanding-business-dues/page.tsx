@@ -78,6 +78,7 @@ const reviews = [
 ];
 
 const relatedPages = [
+  { title: "Dealer Not Paying? Using Security Cheques Legally", href: "/blog/dealer-not-paying-money-security-cheque-bounce-recovery" },
   { title: "Client Not Paying Your Invoice? Recovery Guide", href: "/services/client-not-paying-invoice-after-delivery-legal-recovery" },
   { title: "Demand Notice for Recovery of Money", href: "/demand-notice-for-recovery-of-money" },
   { title: "Demand Notice for Loan Repayment", href: "/demand-notice-for-loan-repayment" },

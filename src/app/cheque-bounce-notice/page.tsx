@@ -30,6 +30,7 @@ const sections = [
 ];
 
 const relatedPages = [
+  { title: "Dealer Not Paying? Using Security Cheques Legally", href: "/blog/dealer-not-paying-money-security-cheque-bounce-recovery" },
   { title: "Loan Settlement Process in India", href: "/services/loan-settlement" },
   { title: "Legal Rights Against Recovery Agents", href: "/bajaj-recovery-agent-abusing" },
   { title: "Personal Loan Settlement Guide", href: "/personal-loan-settlement" },
