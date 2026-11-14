@@ -36,6 +36,7 @@ const sections = [
 ];
 
 const relatedPages = [
+  { title: "Foreign Buyer Not Paying? Export Recovery Guide", href: "/services/foreign-buyer-not-paying-indian-exporter-legal-recovery" },
   { title: "IT or Agency Client Not Paying After Delivery", href: "/blog/software-it-agency-client-not-paying-after-project-delivery" },
   { title: "Company Not Paying Your Bill? Legal Action", href: "/services/company-not-paying-pending-bill-legal-action-india" },
   { title: "Buyer Not Paying After 45 Days? MSME Recovery", href: "/blog/buyer-not-paying-msme-payment-after-45-days-recovery" },

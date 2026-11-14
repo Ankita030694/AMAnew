@@ -35,6 +35,7 @@ const sections = [
 ];
 
 const relatedPages = [
+  { title: "Foreign Buyer Not Paying? Export Recovery Guide", href: "/services/foreign-buyer-not-paying-indian-exporter-legal-recovery" },
   { title: "Client Not Paying Invoice After Delivery", href: "/services/client-not-paying-invoice-after-delivery-legal-recovery" },
   { title: "Company Not Paying Your Bill? Legal Action", href: "/services/company-not-paying-pending-bill-legal-action-india" },
   { title: "Buyer Not Paying After 45 Days? MSME Recovery", href: "/blog/buyer-not-paying-msme-payment-after-45-days-recovery" },
@@ -275,7 +276,7 @@ export default function ItAgencyClientNotPayingPage() {
                 <li><strong>Mediation and a fast-track suit.</strong> For commercial claims of ₹3 lakh or more, pre-institution mediation is compulsory before a Commercial Court suit, and a summary suit under Order 37 CPC may be possible. Our guide on <Link href="/services/client-not-paying-invoice-after-delivery-legal-recovery" className={linkCls}>recovering an unpaid invoice after delivery</Link> walks through the steps.</li>
                 <li><strong>Large dues from a company.</strong> If a company owes you ₹1 crore or more without a genuine dispute, an insolvency demand notice may apply. See <Link href="/services/company-not-paying-pending-bill-legal-action-india" className={linkCls}>legal action when a company is not paying your bill</Link>.</li>
                 <li><strong>Copyright suit.</strong> Where you still own the IP, a suit for injunction and damages can run with your money claim.</li>
-                <li><strong>Overseas client.</strong> For US, UK, Middle East or other foreign clients, the route depends on your contract&apos;s governing law and the client&apos;s country. You can <a href="https://www.legalrecovery.in/legal-notice-to-international-client-unpaid-invoice-recovery" target="_blank" rel="noopener" className={linkCls}>send a legal notice to an international client for an unpaid invoice</a> as the first step.</li>
+                <li><strong>Overseas client.</strong> For US, UK, Middle East or other foreign clients, the route depends on your contract&apos;s governing law and the client&apos;s country. You can <a href="https://www.legalrecovery.in/legal-notice-to-international-client-unpaid-invoice-recovery" target="_blank" rel="noopener" className={linkCls}>send a legal notice to an international client for an unpaid invoice</a> as the first step. Our <Link href="/services/foreign-buyer-not-paying-indian-exporter-legal-recovery" className={linkCls}>foreign buyer and export recovery guide</Link> covers where you can sue and the bank and GST rules.</li>
               </ul>
               <p>
                 You generally have three years from the due date to file a recovery suit. A written acknowledgement of the dues by the client, or a part-payment, restarts that period.
