@@ -36,6 +36,7 @@ const sections = [
 ];
 
 const relatedPages = [
+  { title: "Company Not Paying Your Bill? Legal Action", href: "/services/company-not-paying-pending-bill-legal-action-india" },
   { title: "Buyer Not Paying After 45 Days? MSME Recovery", href: "/blog/buyer-not-paying-msme-payment-after-45-days-recovery" },
   { title: "Dealer Not Paying? Using Security Cheques Legally", href: "/blog/dealer-not-paying-money-security-cheque-bounce-recovery" },
   { title: "Demand Notice for Recovery of Money", href: "/demand-notice-for-recovery-of-money" },
@@ -276,7 +277,7 @@ export default function ClientNotPayingInvoicePage() {
                 If a company owes you ₹1 crore or more, you may be able to send a demand notice under Section 8 of the Insolvency and Bankruptcy Code, 2016 as an &ldquo;operational creditor.&rdquo; The company has 10 days to pay or point out an existing dispute. If it does neither, you can apply to the NCLT to start insolvency proceedings, which puts the company&apos;s management at risk, so solvent companies tend to take this notice seriously.
               </p>
               <p>
-                Use this route carefully. The Supreme Court held in <em>Mobilox Innovations v. Kirusa Software</em> (2017) that if a genuine dispute about the debt existed <em>before</em> the notice, such as written quality complaints, the application will be rejected. It suits clear, undisputed dues, not quarrels about the work.
+                Use this route carefully. The Supreme Court held in <em>Mobilox Innovations v. Kirusa Software</em> (2017) that if a genuine dispute about the debt existed <em>before</em> the notice, such as written quality complaints, the application will be rejected. It suits clear, undisputed dues, not quarrels about the work. Our guide on <Link href="/services/company-not-paying-pending-bill-legal-action-india" className={linkCls}>legal action when a company is not paying your bill</Link> explains this route step by step.
               </p>
             </section>
 

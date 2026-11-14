@@ -36,6 +36,7 @@ const sections = [
 ];
 
 const relatedPages = [
+  { title: "Company Not Paying Your Bill? Legal Action", href: "/services/company-not-paying-pending-bill-legal-action-india" },
   { title: "Buyer Not Paying After 45 Days? MSME Recovery", href: "/blog/buyer-not-paying-msme-payment-after-45-days-recovery" },
   { title: "Cheque Bounce Notice: Full Procedure", href: "/cheque-bounce-notice" },
   { title: "Cheque Bounce Case Jurisdiction", href: "/cheque-bounce-case-jurisdiction" },
