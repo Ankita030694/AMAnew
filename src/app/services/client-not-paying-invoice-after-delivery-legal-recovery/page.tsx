@@ -36,6 +36,7 @@ const sections = [
 ];
 
 const relatedPages = [
+  { title: "Buyer Not Paying After 45 Days? MSME Recovery", href: "/blog/buyer-not-paying-msme-payment-after-45-days-recovery" },
   { title: "Dealer Not Paying? Using Security Cheques Legally", href: "/blog/dealer-not-paying-money-security-cheque-bounce-recovery" },
   { title: "Demand Notice for Recovery of Money", href: "/demand-notice-for-recovery-of-money" },
   { title: "Freelancer Payment Recovery Guide", href: "/freelancer-payment-recovery-guide" },
@@ -234,7 +235,7 @@ export default function ClientNotPayingInvoicePage() {
 
               <h3 className="text-2xl font-semibold text-[#30261C] mt-8 mb-4">MSME interest, if you are Udyam-registered</h3>
               <p>
-                If you were registered as a <strong>micro or small</strong> enterprise when you supplied, the MSMED Act, 2006 requires the buyer to pay within the agreed date, which cannot exceed 45 days (or within 15 days if no date was agreed in writing). After that, the buyer owes compound interest with monthly rests at three times the RBI bank rate. You can also file a claim before the MSME Facilitation Council through the Samadhaan portal. For buyers who are businesses, Section 43B(h) of the Income Tax Act stops them from deducting unpaid dues to micro and small enterprises as an expense in that year, so they pay more tax. This tax rule covers manufacturers and service providers registered as micro or small, not traders.
+                If you were registered as a <strong>micro or small</strong> enterprise when you supplied, the MSMED Act, 2006 requires the buyer to pay within the agreed date, which cannot exceed 45 days (or within 15 days if no date was agreed in writing). After that, the buyer owes compound interest with monthly rests at three times the RBI bank rate. You can also file a claim before the MSME Facilitation Council through the Samadhaan portal (see our <Link href="/blog/buyer-not-paying-msme-payment-after-45-days-recovery" className={linkCls}>MSME 45-day payment recovery guide</Link>). For buyers who are businesses, Section 43B(h) of the Income Tax Act stops them from deducting unpaid dues to micro and small enterprises as an expense in that year, so they pay more tax. This tax rule covers manufacturers and service providers registered as micro or small, not traders.
               </p>
 
               <h3 className="text-2xl font-semibold text-[#30261C] mt-8 mb-4">A cheque that bounced</h3>

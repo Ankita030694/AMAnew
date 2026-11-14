@@ -23,6 +23,7 @@ const sections = [
 ];
 
 const relatedPages = [
+  { title: "Buyer Not Paying After 45 Days? MSME Recovery", href: "/blog/buyer-not-paying-msme-payment-after-45-days-recovery" },
   { title: "Client Not Paying Your Invoice? Recovery Guide", href: "/services/client-not-paying-invoice-after-delivery-legal-recovery" },
   { title: "Legal Notice for Freelance Payment Recovery", href: "/legal-notice-for-freelance-payment-recovery" },
   { title: "Notice for Recovery of Professional Fees", href: "/notice-for-recovery-of-professional-fees" },

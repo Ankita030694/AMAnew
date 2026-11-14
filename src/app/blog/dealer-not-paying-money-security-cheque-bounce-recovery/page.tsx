@@ -36,6 +36,7 @@ const sections = [
 ];
 
 const relatedPages = [
+  { title: "Buyer Not Paying After 45 Days? MSME Recovery", href: "/blog/buyer-not-paying-msme-payment-after-45-days-recovery" },
   { title: "Cheque Bounce Notice: Full Procedure", href: "/cheque-bounce-notice" },
   { title: "Cheque Bounce Case Jurisdiction", href: "/cheque-bounce-case-jurisdiction" },
   { title: "Client Not Paying Your Invoice? Recovery Guide", href: "/services/client-not-paying-invoice-after-delivery-legal-recovery" },
