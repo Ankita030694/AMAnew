@@ -36,6 +36,7 @@ const sections = [
 ];
 
 const relatedPages = [
+  { title: "Builder Not Paying Contractor Bill or Retention", href: "/services/builder-not-paying-contractor-bill-retention-money-recovery" },
   { title: "Foreign Buyer Not Paying? Export Recovery Guide", href: "/services/foreign-buyer-not-paying-indian-exporter-legal-recovery" },
   { title: "IT or Agency Client Not Paying After Delivery", href: "/blog/software-it-agency-client-not-paying-after-project-delivery" },
   { title: "Client Not Paying Invoice After Delivery", href: "/services/client-not-paying-invoice-after-delivery-legal-recovery" },

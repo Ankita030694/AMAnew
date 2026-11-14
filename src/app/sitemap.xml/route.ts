@@ -578,6 +578,7 @@ export async function GET(): Promise<Response> {
     '/services/company-not-paying-pending-bill-legal-action-india',
     '/blog/software-it-agency-client-not-paying-after-project-delivery',
     '/services/foreign-buyer-not-paying-indian-exporter-legal-recovery',
+    '/services/builder-not-paying-contractor-bill-retention-money-recovery',
     '/how-to-get-800-credit-score-in-india',
     '/loan-settlement-vs-foreclosure',
     '/top-credit-card-banks-offering-settlement-india',
