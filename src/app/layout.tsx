@@ -73,7 +73,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "AMA Legal Solutions | Top Law Firm in India",
-    description: "Top-rated Indian law firm for corporate, real estate, and entertainment law. Contact us for expert legal consultation.",
+    description: "Top-rated Indian law firm for loan settlement, intellectual property rights, and corporate law. Contact us for expert legal consultation.",
     images: ["https://www.amalegalsolutions.com/future.png"],
     creator: "@amalegalsolutions",
     site: "@amalegalsolutions",
@@ -94,6 +94,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="msvalidate.01" content="0004DED517B23001AE2C05EF8BA3EAD6" />
         {/* Favicon and Touch Icons */}
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -108,14 +109,6 @@ export default function RootLayout({
         {/* Critical performance optimization hints */}
         <link rel="dns-prefetch" href="//www.youtube.com" />
         <link rel="dns-prefetch" href="//firebasestorage.googleapis.com" />
-
-        
-        {/* Favicons and PWA */}
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#1a365d" />
 
         <link
           rel="alternate" 

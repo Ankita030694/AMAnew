@@ -1,8 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
 import { google } from 'googleapis';
+import { submitUrlsToIndexNow } from '@/lib/indexnow';
 
 export const dynamic = 'force-dynamic';
+
+const SITE_ORIGIN = 'https://www.amalegalsolutions.com';
 
 async function submitSitemapsToGsc() {
   const clientEmail = process.env.FIREBASE_ADMIN_CLIENT_EMAIL || process.env.SEARCH_CONSOLE_CLIENT_EMAIL;
@@ -57,14 +60,49 @@ export async function GET(request: NextRequest) {
       }
     }
 
-    // 2. Submit updated sitemaps to Google Search Console
-    const gscResult = await submitSitemapsToGsc();
+    // 2. Build URLs to push immediately via IndexNow
+    const urlsToPing: string[] = [`${SITE_ORIGIN}/`];
+    if (type === 'article') {
+      urlsToPing.push(`${SITE_ORIGIN}/articles`);
+      if (slug) {
+        urlsToPing.push(`${SITE_ORIGIN}/articles/${encodeURIComponent(slug)}`);
+      }
+    } else {
+      urlsToPing.push(`${SITE_ORIGIN}/blog`);
+      if (slug) {
+        urlsToPing.push(`${SITE_ORIGIN}/blog/${encodeURIComponent(slug)}`);
+      }
+    }
+
+    if (request.method === 'POST') {
+      const rawBody = await request.text().catch(() => '');
+      if (rawBody.trim().length > 0) {
+        try {
+          const parsed = JSON.parse(rawBody);
+          if (Array.isArray(parsed?.urls)) {
+            const extraUrls = parsed.urls
+              .filter((u: unknown): u is string => typeof u === 'string')
+              .slice(0, 500);
+            urlsToPing.push(...extraUrls);
+          }
+        } catch {
+          // Ignore invalid JSON body
+        }
+      }
+    }
+
+    // 3. Submit updated sitemaps to Google Search Console and ping IndexNow in parallel
+    const [gscResult, indexNowResult] = await Promise.all([
+      submitSitemapsToGsc(),
+      submitUrlsToIndexNow(urlsToPing),
+    ]);
 
     return NextResponse.json({
       revalidated: true,
       slug: slug || null,
       type,
       gsc: gscResult,
+      indexNow: indexNowResult,
       timestamp: new Date().toISOString(),
     });
   } catch (error: any) {

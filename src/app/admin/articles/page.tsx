@@ -482,9 +482,11 @@ const ArticlesDashboard = () => {
   const handleSubmitBlog = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+      const now = Date.now();
       const blogWithMetadata = {
         ...newBlog,
-        created: formMode === 'add' ? Date.now() : newBlog.created,
+        created: formMode === 'add' ? now : newBlog.created,
+        updatedAt: now,
         date: parseValidDate(newBlog.date)
       };
       const { faqs, reviews, ...blogData } = blogWithMetadata;

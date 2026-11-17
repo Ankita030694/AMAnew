@@ -1,14 +1,40 @@
 import { adminDb } from '@/lib/firebase-admin'
+import { noindexBlogSlugs } from '@/data/noindexBlogSlugs'
 
 export const revalidate = 300; // Firestore-backed: served from cache, refreshed at most every 5 minutes
+
+const STATIC_IMAGE_LASTMOD = '2026-11-17';
+const DEFAULT_IMAGE_LASTMOD = '2026-11-14';
 
 interface ImageItem {
   url: string;
   caption: string;
   title: string;
+  lastModified: string;
   pageUrl?: string;
   license?: string;
   geoLocation?: string;
+}
+
+function toSafeIsoString(value: any, fallback: string = DEFAULT_IMAGE_LASTMOD): string {
+  try {
+    if (!value) return fallback;
+    if (typeof value === 'number') {
+      const d = new Date(value);
+      if (!isNaN(d.getTime())) return d.toISOString();
+    }
+    if (typeof value?.toMillis === 'function') {
+      const d = new Date(value.toMillis());
+      if (!isNaN(d.getTime())) return d.toISOString();
+    }
+    if (typeof value === 'string') {
+      const d = new Date(value);
+      if (!isNaN(d.getTime())) return d.toISOString();
+    }
+  } catch {
+    // Fallback to deterministic timestamp
+  }
+  return fallback;
 }
 
 // Helper function to escape XML special characters
@@ -33,6 +59,7 @@ export async function GET(): Promise<Response> {
       url: `${baseUrl}/future.png`,
       caption: 'AMA Legal Solutions - Top Law Firm in India | Legal Services',
       title: 'AMA Legal Solutions Logo - Premier Legal Services Provider',
+      lastModified: STATIC_IMAGE_LASTMOD,
       pageUrl: baseUrl,
       license: 'https://www.amalegalsolutions.com/terms'
     },
@@ -40,6 +67,7 @@ export async function GET(): Promise<Response> {
       url: `${baseUrl}/bannerbg.png`,
       caption: 'AMA Legal Solutions - Professional Legal Services in India',
       title: 'AMA Legal Solutions Background - Legal Excellence',
+      lastModified: STATIC_IMAGE_LASTMOD,
       pageUrl: baseUrl,
       license: 'https://www.amalegalsolutions.com/terms'
     }
@@ -48,11 +76,14 @@ export async function GET(): Promise<Response> {
   // Build blog images (hero + infographic) with enhanced metadata
   const blogImages: ImageItem[] = []
   for (const blog of blogs) {
+    if (noindexBlogSlugs.has(blog.slug)) continue
+    const lastModified = toSafeIsoString(blog.lastModifiedSource, DEFAULT_IMAGE_LASTMOD)
     if (blog.image) {
       blogImages.push({
         url: blog.image,
         caption: `${blog.title} - AMA Legal Solutions Blog | Legal Insights India`,
         title: `${blog.title} | AMA Legal Solutions`,
+        lastModified,
         pageUrl: `${baseUrl}/blog/${encodeURIComponent(blog.slug)}`,
         license: 'https://www.amalegalsolutions.com/terms'
       })
@@ -62,6 +93,7 @@ export async function GET(): Promise<Response> {
         url: blog.infographic,
         caption: `${blog.title} - Legal Process Flowchart Infographic | AMA Legal Solutions`,
         title: `${blog.title} - Infographic | AMA Legal Solutions`,
+        lastModified,
         pageUrl: `${baseUrl}/blog/${encodeURIComponent(blog.slug)}`,
         license: 'https://www.amalegalsolutions.com/terms'
       })
@@ -75,6 +107,7 @@ export async function GET(): Promise<Response> {
       url: article.image,
       caption: `${article.title} - AMA Legal Solutions Article | Legal Expertise India`,
       title: `${article.title} | AMA Legal Solutions`,
+      lastModified: toSafeIsoString(article.lastModifiedSource, DEFAULT_IMAGE_LASTMOD),
       pageUrl: `${baseUrl}/articles/${encodeURIComponent(article.slug)}`,
       license: 'https://www.amalegalsolutions.com/terms'
     }))
@@ -89,9 +122,7 @@ export async function GET(): Promise<Response> {
   ${allImages.map(image => `
     <url>
       <loc>${escapeXml(image.pageUrl || baseUrl)}</loc>
-      <lastmod>${new Date().toISOString()}</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.8</priority>
+      <lastmod>${image.lastModified}</lastmod>
       <image:image>
         <image:loc>${escapeXml(image.url)}</image:loc>
         <image:caption>${escapeXml(image.caption)}</image:caption>
@@ -114,7 +145,7 @@ export async function GET(): Promise<Response> {
 // Helper functions to fetch data via Firebase Admin SDK
 async function fetchAllBlogs() {
   try {
-    const querySnapshot = await adminDb.collection('blogs').select('slug', 'title', 'image', 'infographic', 'created').get()
+    const querySnapshot = await adminDb.collection('blogs').select('slug', 'title', 'image', 'infographic', 'created', 'updatedAt', 'date').get()
     return querySnapshot.docs
       .map(doc => {
         const data = doc.data()
@@ -123,7 +154,7 @@ async function fetchAllBlogs() {
           title: data.title || 'AMA Legal Solutions Blog',
           image: data.image || '',
           infographic: data.infographic || '',
-          created: data.created || Date.now()
+          lastModifiedSource: data.updatedAt || data.created || data.date || null
         }
       })
       .filter(blog => blog.slug.length > 0)
@@ -136,7 +167,7 @@ async function fetchAllBlogs() {
 
 async function fetchAllArticles() {
   try {
-    const querySnapshot = await adminDb.collection('articles').select('slug', 'title', 'image', 'created').get()
+    const querySnapshot = await adminDb.collection('articles').select('slug', 'title', 'image', 'created', 'updatedAt', 'date').get()
     return querySnapshot.docs
       .map(doc => {
         const data = doc.data()
@@ -144,7 +175,7 @@ async function fetchAllArticles() {
           slug: typeof data.slug === 'string' ? data.slug.trim() : '',
           title: data.title || 'AMA Legal Solutions Article',
           image: data.image || '',
-          created: data.created || Date.now()
+          lastModifiedSource: data.updatedAt || data.created || data.date || null
         }
       })
       .filter(article => article.slug.length > 0)

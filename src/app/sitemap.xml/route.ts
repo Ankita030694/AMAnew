@@ -14,6 +14,15 @@ import path from 'path';
 
 export const revalidate = 300; // Firestore-backed: served from cache, refreshed at most every 5 minutes
 
+const STATIC_ROUTES_LASTMOD = '2026-11-17';
+const LOAN_SERVICES_LASTMOD = '2026-11-11';
+const ARBITRATION_NOTICE_LASTMOD = '2026-09-21';
+const BANK_ROUTES_LASTMOD = '2026-08-17';
+const LOK_ADALAT_LASTMOD = '2026-07-14';
+const CREDIT_CARD_BANKS_LASTMOD = '2026-07-04';
+const SUCCESS_STORIES_LASTMOD = '2026-06-17';
+const LAWYER_BY_CITY_LASTMOD = '2026-04-24';
+
 // Reusable slugify function to perfectly match the dynamic route URLs
 const slugify = (text: string) => {
   return text
@@ -22,9 +31,9 @@ const slugify = (text: string) => {
     .replace(/(^-|-$)+/g, '');
 };
 
-function toSafeIsoString(created: any): string {
+function toSafeIsoString(created: any, fallback: string = STATIC_ROUTES_LASTMOD): string {
   try {
-    if (!created) return new Date().toISOString();
+    if (!created) return fallback;
     if (typeof created === 'number') {
       const d = new Date(created);
       if (!isNaN(d.getTime())) return d.toISOString();
@@ -38,9 +47,22 @@ function toSafeIsoString(created: any): string {
       if (!isNaN(d.getTime())) return d.toISOString();
     }
   } catch {
-    // Fallback to current timestamp
+    // Fallback to deterministic timestamp
   }
-  return new Date().toISOString();
+  return fallback;
+}
+
+function getLatestLastMod(dates: string[], fallback: string): string {
+  let latest = fallback;
+  let latestMs = Date.parse(fallback);
+  for (const dateStr of dates) {
+    const ms = Date.parse(dateStr);
+    if (!isNaN(ms) && (isNaN(latestMs) || ms > latestMs)) {
+      latestMs = ms;
+      latest = dateStr;
+    }
+  }
+  return latest;
 }
 
 function escapeXml(unsafe: string): string {
@@ -59,6 +81,19 @@ export async function GET(): Promise<Response> {
   const articles = await fetchAllArticles()
 
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.amalegalsolutions.com'
+
+  const blogLastMods = blogs
+    .filter(blog => !noindexBlogSlugs.has(blog.slug))
+    .map(blog => toSafeIsoString(blog.lastModifiedSource, STATIC_ROUTES_LASTMOD))
+  const articleLastMods = articles.map(article =>
+    toSafeIsoString(article.lastModifiedSource, STATIC_ROUTES_LASTMOD)
+  )
+  const latestBlogLastMod = getLatestLastMod(blogLastMods, STATIC_ROUTES_LASTMOD)
+  const latestArticleLastMod = getLatestLastMod(articleLastMods, STATIC_ROUTES_LASTMOD)
+  const latestOverallLastMod = getLatestLastMod(
+    [STATIC_ROUTES_LASTMOD, latestBlogLastMod, latestArticleLastMod],
+    STATIC_ROUTES_LASTMOD
+  )
 
   // Build static routes
   const staticRoutes = [
@@ -731,15 +766,25 @@ export async function GET(): Promise<Response> {
     '/when-to-choose-debt-settlement',
     '/loan-settlement-vs-debt-consolidation',
     '/services/loan-settlement/nagaland'
-  ].map(route => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: 'weekly',
-    priority: route === '' ? 1.0 : 0.8
-  }))
+  ].map(route => {
+    let lastModified = STATIC_ROUTES_LASTMOD
+    if (route === '') {
+      lastModified = latestOverallLastMod
+    } else if (route === '/blog') {
+      lastModified = latestBlogLastMod
+    } else if (route === '/articles') {
+      lastModified = latestArticleLastMod
+    } else if (route === '/success-stories') {
+      lastModified = SUCCESS_STORIES_LASTMOD
+    }
+    return {
+      url: `${baseUrl}${route}`,
+      lastModified,
+    }
+  })
 
   // Parse Banks JSON for Dynamic Bank Pages
-  let dynamicBankRoutes: { url: string; lastModified: string; changeFrequency: string; priority: number; }[] = [];
+  let dynamicBankRoutes: { url: string; lastModified: string; }[] = [];
   try {
     const dataPath = path.join(process.cwd(), "src/app/loan-settlement-by-bank/banks.json");
     if (fs.existsSync(dataPath)) {
@@ -748,9 +793,7 @@ export async function GET(): Promise<Response> {
 
       dynamicBankRoutes = banksData.map((bank: any) => ({
         url: `${baseUrl}/loan-settlement-by-bank/${slugify(bank.company)}`,
-        lastModified: new Date().toISOString(),
-        changeFrequency: 'weekly',
-        priority: 0.7
+        lastModified: BANK_ROUTES_LASTMOD,
       }));
     } else {
       console.warn(`banks.json not found at ${dataPath}`);
@@ -765,42 +808,32 @@ export async function GET(): Promise<Response> {
   // Build dynamic blog routes
   const blogRoutes = blogs.filter(blog => !noindexBlogSlugs.has(blog.slug)).map(blog => ({
     url: `${baseUrl}/blog/${encodeURIComponent(blog.slug)}`,
-    lastModified: toSafeIsoString(blog.created),
-    changeFrequency: 'weekly',
-    priority: 0.8
+    lastModified: toSafeIsoString(blog.lastModifiedSource, STATIC_ROUTES_LASTMOD),
   }))
 
   // Build dynamic article routes
   const articleRoutes = articles.map(article => ({
     url: `${baseUrl}/articles/${encodeURIComponent(article.slug)}`,
-    lastModified: toSafeIsoString(article.created),
-    changeFrequency: 'monthly',
-    priority: 0.7
+    lastModified: toSafeIsoString(article.lastModifiedSource, STATIC_ROUTES_LASTMOD),
   }))
 
   // Build dynamic success story routes
   const successStoryRoutes = successStories.map(story => ({
     url: `${baseUrl}/success-stories/${story.slug}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: 'monthly',
-    priority: 0.8
+    lastModified: SUCCESS_STORIES_LASTMOD,
   }))
 
   // Build lawyer-by-city routes
   const lawyerByCityRoutes = locationData.map(loc => ({
     url: `${baseUrl}/lawyer-by-city/${loc.slug}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: 'weekly',
-    priority: 0.7
+    lastModified: LAWYER_BY_CITY_LASTMOD,
   }))
 
 
   // Build parent credit-card-settlement bank routes (keeping high-value bank parents indexed)
   const creditCardBankRoutes = creditCardBanks.map((bank) => ({
     url: `${baseUrl}/credit-card-settlement/${bank.slug}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: 'weekly',
-    priority: 0.8
+    lastModified: CREDIT_CARD_BANKS_LASTMOD,
   }));
 
   // Combine all authoritative routes (thin [bank]/[state] permutations and doorway keyword routes excluded from sitemap)
@@ -830,20 +863,15 @@ export async function GET(): Promise<Response> {
     <url>
       <loc>${escapeXml(route.url)}</loc>
       <lastmod>${route.lastModified}</lastmod>
-      <changefreq>${route.changeFrequency}</changefreq>
-      <priority>${route.priority}</priority>
     </url>
   `).join('')}
   <url>
     <loc>https://www.amalegalsolutions.com/lok-adalat-recovery-of-money</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>${LOK_ADALAT_LASTMOD}</lastmod>
   </url>
   <url>
     <loc>https://www.amalegalsolutions.com/can-you-ignore-bank-arbitration-notice-in-india</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <priority>0.8</priority>
+    <lastmod>${ARBITRATION_NOTICE_LASTMOD}</lastmod>
   </url>
 </urlset>`
 
@@ -858,13 +886,13 @@ export async function GET(): Promise<Response> {
 // Helper functions to fetch data via Firebase Admin SDK (server-safe & fast projection)
 async function fetchAllBlogs() {
   try {
-    const querySnapshot = await adminDb.collection('blogs').select('slug', 'created', 'date').get()
+    const querySnapshot = await adminDb.collection('blogs').select('slug', 'created', 'updatedAt', 'date').get()
     return querySnapshot.docs
       .map(doc => {
         const data = doc.data()
         return {
           slug: typeof data.slug === 'string' ? data.slug.trim() : '',
-          created: data.created || data.date || Date.now()
+          lastModifiedSource: data.updatedAt || data.created || data.date || null
         }
       })
       .filter(blog => blog.slug.length > 0)
@@ -877,13 +905,13 @@ async function fetchAllBlogs() {
 
 async function fetchAllArticles() {
   try {
-    const querySnapshot = await adminDb.collection('articles').select('slug', 'created', 'date').get()
+    const querySnapshot = await adminDb.collection('articles').select('slug', 'created', 'updatedAt', 'date').get()
     return querySnapshot.docs
       .map(doc => {
         const data = doc.data()
         return {
           slug: typeof data.slug === 'string' ? data.slug.trim() : '',
-          created: data.created || data.date || Date.now()
+          lastModifiedSource: data.updatedAt || data.created || data.date || null
         }
       })
       .filter(article => article.slug.length > 0)
@@ -957,9 +985,7 @@ function generateServiceSlugRoutes(baseUrl: string) {
     for (const slug of allSlugs) {
       serviceSlugRoutes.push({
         url: `${baseUrl}/services/${service}/${slug}`,
-        lastModified: new Date().toISOString(),
-        changeFrequency: 'monthly',
-        priority: 0.8
+        lastModified: STATIC_ROUTES_LASTMOD,
       })
     }
   }
@@ -1119,9 +1145,7 @@ function generateLoanSettlementServiceRoutes(baseUrl: string) {
 
     return {
       url: `${baseUrl}/loan-settlement-services/${slug}`,
-      lastModified: new Date().toISOString(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.8
+      lastModified: LOAN_SERVICES_LASTMOD,
     };
   });
 }

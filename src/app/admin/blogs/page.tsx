@@ -763,9 +763,11 @@ const BlogsDashboard = () => {
     setIsSubmitting(true);
     try {
       // Add timestamp and format the date
+      const now = Date.now();
       const blogWithMetadata = {
         ...newBlog,
-        created: formMode === 'add' ? Date.now() : newBlog.created,
+        created: formMode === 'add' ? now : newBlog.created,
+        updatedAt: now,
         date: parseValidDate(newBlog.date) // Ensure date is always valid YYYY-MM-DD
       };
       
