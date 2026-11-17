@@ -26,6 +26,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { SiTrustpilot } from "react-icons/si";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { markLeadSubmitted } from "@/lib/leadCapturePolicy";
 
 import Navbar from "@/newcomp/Navbar";
 import Footer from "@/newcomp/Footer";
@@ -212,7 +213,7 @@ const ContactComp = () => {
         const data = await response.json();
         if (response.status === 409 && data.error === "DUPLICATE_LEAD") {
           setIsDuplicate(true);
-          localStorage.setItem("form_submitted", "true");
+          markLeadSubmitted(formState.phone);
           return;
         }
         if (!response.ok) throw new Error(data.error || "Failed to send OTP");
@@ -242,7 +243,7 @@ const ContactComp = () => {
         if (!response.ok) throw new Error(data.error || "Invalid OTP");
 
         setSubmitted(true);
-        localStorage.setItem("form_submitted", "true");
+        markLeadSubmitted(formState.phone);
       } catch (error) {
         console.error("Error verifying OTP:", error);
         setErrors({ ...errors, message: error instanceof Error ? error.message : "Invalid OTP" });

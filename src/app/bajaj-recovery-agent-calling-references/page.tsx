@@ -3,7 +3,6 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
 import { FaPhone, FaWhatsapp, FaShieldAlt, FaCheckCircle, FaExclamationTriangle, FaBalanceScale, FaUserShield, FaHandshake } from "react-icons/fa";
-import GlobalPopupForm from "@/newcomp/GlobalPopupForm";
 
 export const metadata = {
   alternates: {
@@ -707,7 +706,6 @@ export default function BajajReferenceCallingGuide() {
           </div>
         </aside>
       </div>
-      <GlobalPopupForm />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { openLeadModal } from "@/components/InteractiveLeadModal";
 
 interface DownloadTriggerProps {
   className?: string;
@@ -9,9 +10,8 @@ interface DownloadTriggerProps {
 
 const DownloadTrigger: React.FC<DownloadTriggerProps> = ({ className, children }) => {
   const handleClick = () => {
-    // Dispatch custom event to open global popup
-    const event = new CustomEvent("openGlobalPopup");
-    window.dispatchEvent(event);
+    // The old GlobalPopupForm is retired; open the interactive lead modal instead
+    openLeadModal();
   };
 
   return (

@@ -1,8 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { track } from "@vercel/analytics";
 import { usePathname } from "next/navigation";
 import InteractiveLeadFunnel, { FunnelPreset, getLenderFromPath } from "./InteractiveLeadFunnel";
+import { canAutoPrompt, markAutoPromptDismissed, markAutoPromptShown, markLeadFormEngaged } from "@/lib/leadCapturePolicy";
 
 interface ModalEventDetail {
   preset?: FunnelPreset;
@@ -261,11 +263,29 @@ export function hasManualInlineFunnel(pathname: string | null): boolean {
   return MANUAL_INLINE_ROUTES.has(cleanPath);
 }
 
+// Automatic prompt timing (edit here)
+const ENGAGED_MIN_SECONDS = 25; // time on page before an engagement prompt
+const ENGAGED_MIN_SCROLL = 0.5; // share of the page scrolled
+const EXIT_INTENT_MIN_SECONDS = 10; // desktop: cursor leaves the window towards the tab bar
+
+function inlineFunnelInView(): boolean {
+  return Array.from(document.querySelectorAll('form[data-lead-funnel="inline"]')).some((el) => {
+    const r = el.getBoundingClientRect();
+    return r.bottom > 0 && r.top < window.innerHeight;
+  });
+}
+
 export default function InteractiveLeadModal() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [autoOpened, setAutoOpened] = useState(false);
   const [preset, setPreset] = useState<FunnelPreset>("homepage");
   const [calculatorData, setCalculatorData] = useState<ModalEventDetail["calculatorData"]>();
+  const isOpenRef = useRef(false);
+
+  useEffect(() => {
+    isOpenRef.current = isOpen;
+  }, [isOpen]);
 
   // Sync preset with route
   useEffect(() => {
@@ -275,7 +295,7 @@ export default function InteractiveLeadModal() {
     }
   }, [pathname]);
 
-  // Handle explicit modal triggers from UI buttons (zero automatic popups)
+  // Explicit modal triggers from UI buttons
   useEffect(() => {
     const handleOpen = (e: Event) => {
       const customEvent = e as CustomEvent<ModalEventDetail>;
@@ -285,6 +305,7 @@ export default function InteractiveLeadModal() {
       if (customEvent.detail?.calculatorData) {
         setCalculatorData(customEvent.detail.calculatorData);
       }
+      setAutoOpened(false);
       setIsOpen(true);
     };
 
@@ -294,10 +315,75 @@ export default function InteractiveLeadModal() {
     };
   }, []);
 
+  // One automatic prompt, only once the visitor is engaged, and never while an inline form is on screen.
+  // - Blog/article pages and pages without an inline funnel: after 25s AND 50% scroll, or desktop exit intent.
+  // - Commercial pages that already embed an inline funnel: desktop exit intent only.
+  // Frequency caps (submitted, dismissed, per session, per 30 days) live in leadCapturePolicy.
+  useEffect(() => {
+    const routePreset = getPresetForPath(pathname);
+    if (!pathname || !routePreset || isUtilityPath(pathname) || !canAutoPrompt()) return;
+
+    const path = pathname.toLowerCase();
+    const isContentPath = /^\/(blog|articles)(\/|$)/.test(path);
+    const startedAt = Date.now();
+    let maxScroll = 0;
+    let engagementTrigger = isContentPath;
+    let done = false;
+
+    const decideTimer = window.setTimeout(() => {
+      engagementTrigger = isContentPath || !document.querySelector('form[data-lead-funnel="inline"]');
+    }, 1500);
+
+    const cleanup = () => {
+      done = true;
+      window.clearTimeout(decideTimer);
+      window.clearInterval(tick);
+      window.removeEventListener("scroll", onScroll);
+      document.removeEventListener("mouseout", onMouseOut);
+    };
+
+    const fire = (trigger: "engaged" | "exit_intent") => {
+      if (done || isOpenRef.current) return;
+      if (!canAutoPrompt()) return cleanup();
+      if (inlineFunnelInView()) return; // try again later
+      cleanup();
+      markAutoPromptShown();
+      setPreset(routePreset);
+      setAutoOpened(true);
+      setIsOpen(true);
+      track("lead_prompt_auto_open", { trigger, preset: routePreset });
+    };
+
+    const check = () => {
+      if (!engagementTrigger) return;
+      if (maxScroll >= ENGAGED_MIN_SCROLL && Date.now() - startedAt >= ENGAGED_MIN_SECONDS * 1000) fire("engaged");
+    };
+
+    const onScroll = () => {
+      const doc = document.documentElement;
+      const depth = (window.scrollY + window.innerHeight) / Math.max(doc.scrollHeight, 1);
+      if (depth > maxScroll) maxScroll = depth;
+      check();
+    };
+
+    const onMouseOut = (e: MouseEvent) => {
+      if (!e.relatedTarget && e.clientY <= 0 && Date.now() - startedAt >= EXIT_INTENT_MIN_SECONDS * 1000) {
+        fire("exit_intent");
+      }
+    };
+
+    const tick = window.setInterval(check, 5000);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    document.addEventListener("mouseout", onMouseOut);
+    return cleanup;
+  }, [pathname]);
+
   const handleClose = () => {
-    try {
-      sessionStorage.setItem("interactive_lead_modal_dismissed", "true");
-    } catch {}
+    if (autoOpened) {
+      markAutoPromptDismissed(); // quiet for 7 days
+    } else {
+      markLeadFormEngaged(); // no automatic prompt for the rest of this visit
+    }
     setIsOpen(false);
   };
 

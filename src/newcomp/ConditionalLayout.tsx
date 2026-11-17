@@ -35,7 +35,7 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
     <>
       <Navbar />
       {children}
-      {/* Modal available only for explicit user button triggers, zero auto-popups */}
+      {/* Single lead modal: opened by CTA buttons, plus at most one engagement-based auto prompt (see leadCapturePolicy) */}
       <InteractiveLeadModal />
       <Footer />
       <WhatsAppWidget />
