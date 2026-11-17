@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
 import { google } from 'googleapis';
 import { submitUrlsToIndexNow } from '@/lib/indexnow';
+import { submitSitemapsAndUrlsToBing } from '@/lib/bing-webmaster';
 
 export const dynamic = 'force-dynamic';
 
@@ -91,10 +92,11 @@ export async function GET(request: NextRequest) {
       }
     }
 
-    // 3. Submit updated sitemaps to Google Search Console and ping IndexNow in parallel
-    const [gscResult, indexNowResult] = await Promise.all([
+    // 3. Submit updated sitemaps to GSC, ping IndexNow, and push to Bing Webmaster API in parallel
+    const [gscResult, indexNowResult, bingResult] = await Promise.all([
       submitSitemapsToGsc(),
       submitUrlsToIndexNow(urlsToPing),
+      submitSitemapsAndUrlsToBing(urlsToPing),
     ]);
 
     return NextResponse.json({
@@ -103,6 +105,7 @@ export async function GET(request: NextRequest) {
       type,
       gsc: gscResult,
       indexNow: indexNowResult,
+      bing: bingResult,
       timestamp: new Date().toISOString(),
     });
   } catch (error: any) {
