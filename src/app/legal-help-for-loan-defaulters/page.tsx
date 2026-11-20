@@ -753,7 +753,7 @@ export default function LoanDefaulterLegalHelp() {
                     Get Free Legal Consultation
                   </button>
                 </Link>
-                <a href="https://wa.me/918700343611" target="_blank" className="flex items-center gap-2">
+                <a href="https://wa.me/919289622596" target="_blank" className="flex items-center gap-2">
                   <button className="bg-[#25D366] text-white px-12 py-5 rounded-full font-bold hover:bg-[#128C7E] transition-all transform hover:scale-105 shadow-xl flex items-center gap-2">
                     <FaWhatsapp size={24} /> WhatsApp Legal Team
                   </button>

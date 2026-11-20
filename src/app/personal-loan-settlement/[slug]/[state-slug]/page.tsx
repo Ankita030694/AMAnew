@@ -258,7 +258,7 @@ export default async function BankStateSettlementPage({ params }: { params: Prom
                   Get Immediate Legal Help
                 </button>
               </Link>
-              <a href="https://wa.me/918700343611" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
+              <a href="https://wa.me/919289622596" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
                 Chat on WhatsApp
               </a>
             </div>
@@ -446,7 +446,7 @@ export default async function BankStateSettlementPage({ params }: { params: Prom
                 <a href="tel:+918700343611" className="block w-full text-center bg-white text-[#1a202c] font-bold py-3 rounded-lg hover:bg-gray-100 transition-colors mb-3">
                   Call Now: +91 87003 43611
                 </a>
-                <a href="https://wa.me/918700343611" className="block w-full text-center border border-[#D2A02A] text-[#D2A02A] font-bold py-3 rounded-lg hover:bg-[#D2A02A] hover:text-white transition-colors">
+                <a href="https://wa.me/919289622596" className="block w-full text-center border border-[#D2A02A] text-[#D2A02A] font-bold py-3 rounded-lg hover:bg-[#D2A02A] hover:text-white transition-colors">
                   WhatsApp Us
                 </a>
               </div>

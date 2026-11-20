@@ -358,9 +358,7 @@ Email: ${formData.email || "N/A"}
 Location: ${formData.cityState || "N/A"}
 Primary Concern: ${formData.assetType}
 Details: ${formData.message || "Seeking advocate advisory to revoke NACH mandates, prevent or challenge banker's lien on salary, and structure a binding one-time loan settlement."}`;
-    const waUrl = `https://api.whatsapp.com/send?phone=918700343611&text=${encodeURIComponent(
-      textMsg
-    )}`;
+    const waUrl = `https://api.whatsapp.com/send?phone=919289622596&text=${encodeURIComponent(`${textMsg}\n(Ref: amalegalsolutions.com${window.location.pathname})`)}`;
     window.open(waUrl, "_blank");
   };
 
@@ -1647,7 +1645,7 @@ Details: ${formData.message || "Seeking advocate advisory to revoke NACH mandate
                     Advocate Anuj Anand Malik&apos;s team has recorded your details. If your WhatsApp did not open automatically, click the direct chat button below:
                   </p>
                   <a
-                    href={`https://api.whatsapp.com/send?phone=918700343611&text=${encodeURIComponent(
+                    href={`https://api.whatsapp.com/send?phone=919289622596&text=${encodeURIComponent(
                       `Hello Advocate Anuj Anand Malik, I submitted a consultation request regarding salary account protection and loan settlement for ${formData.fullName} (${formData.phone}).`
                     )}`}
                     target="_blank"

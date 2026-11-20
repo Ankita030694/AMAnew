@@ -351,7 +351,7 @@ Email: ${formData.email || "N/A"}
 Location: ${formData.cityState || "N/A"}
 Credit Facility: ${formData.assetType}
 Details: ${formData.message || "Requesting advocate evaluation for commercial RBI OTS negotiation and DRT/SARFAESI defense."}`;
-    const waUrl = `https://api.whatsapp.com/send?phone=918700343611&text=${encodeURIComponent(textMsg)}`;
+    const waUrl = `https://api.whatsapp.com/send?phone=919289622596&text=${encodeURIComponent(`${textMsg}\n(Ref: amalegalsolutions.com${window.location.pathname})`)}`;
     window.open(waUrl, "_blank");
   };
 

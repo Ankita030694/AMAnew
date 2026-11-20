@@ -668,7 +668,7 @@ export default function RecallNoticePage() {
                     <a href="tel:+918700343611" className="flex items-center justify-center w-full bg-[#D2A02A] hover:bg-[#b88a22] text-white py-4 rounded-xl font-bold transition-colors">
                         Call 8700343611
                     </a>
-                    <Link href="https://wa.me/918700343611" className="flex items-center justify-center w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-xl font-bold transition-colors">
+                    <Link href="https://wa.me/919289622596" className="flex items-center justify-center w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-xl font-bold transition-colors">
                         WhatsApp Us
                     </Link>
                 </div>

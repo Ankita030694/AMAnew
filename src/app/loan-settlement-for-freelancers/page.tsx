@@ -347,7 +347,7 @@ export default function FreelancerLoanSettlement() {
                     <FaShieldAlt className="shrink-0" /> Settle Loans
                   </button>
                 </Link>
-                <a href="https://wa.me/918700343611" target="_blank" rel="noopener noreferrer" className="w-1/2">
+                <a href="https://wa.me/919289622596" target="_blank" rel="noopener noreferrer" className="w-1/2">
                   <button className="w-full bg-white border-2 border-[#D29E0D] text-[#D29E0D] hover:bg-[#D29E0D] hover:text-white font-bold py-3.5 md:py-4 px-2 md:px-8 rounded-full transition-all transform hover:scale-105 shadow-md flex items-center justify-center gap-1.5 md:gap-2 text-[12px] sm:text-sm md:text-base whitespace-nowrap">
                     <FaWhatsapp className="shrink-0 text-green-500" /> WhatsApp Us
                   </button>

@@ -464,7 +464,7 @@ export default function DifferenceBetweenSettlementAndClosurePage() {
               <div className="bg-gradient-to-br from-[#1a202c] to-[#2d3748] p-6 rounded-xl shadow-lg text-white text-center">
                 <h3 className="text-xl font-bold mb-2">Need Expert Help?</h3>
                 <p className="text-sm text-gray-300 mb-4">Determine whether settlement or closure is right for your exact financial situation.</p>
-                <a href="https://wa.me/918700343611" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-4 rounded-lg transition-colors w-full">
+                <a href="https://wa.me/919289622596" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-4 rounded-lg transition-colors w-full">
                   WhatsApp Us Now
                 </a>
               </div>

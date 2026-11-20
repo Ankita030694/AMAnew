@@ -476,7 +476,7 @@ export default function LegalRightsRecoveryAgentsPage() {
                   +91-8700343611
                 </a>
                 <a 
-                  href="https://wa.me/918700343611" 
+                  href="https://wa.me/919289622596" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-4 rounded-lg transition-colors"

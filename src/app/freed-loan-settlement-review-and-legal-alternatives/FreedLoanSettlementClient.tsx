@@ -347,7 +347,7 @@ Email: ${formData.email || "N/A"}
 Location: ${formData.cityState || "N/A"}
 Matter Type: ${formData.assetType}
 Details: ${formData.message || "Requesting transparent fixed legal advisory for bank compromise, court defense, and advocate-led debt resolution."}`;
-    const waUrl = `https://api.whatsapp.com/send?phone=918700343611&text=${encodeURIComponent(textMsg)}`;
+    const waUrl = `https://api.whatsapp.com/send?phone=919289622596&text=${encodeURIComponent(`${textMsg}\n(Ref: amalegalsolutions.com${window.location.pathname})`)}`;
     window.open(waUrl, "_blank");
   };
 

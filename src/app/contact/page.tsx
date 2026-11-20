@@ -1,5 +1,6 @@
 import Script from 'next/script';
 import ContactPage from './contactcomp';
+import RecaptchaProvider from '@/components/RecaptchaProvider';
 
 export const metadata = {
   title: 'Contact AMA Legal Solutions | Legal Support in Gurugram',
@@ -28,7 +29,9 @@ export default function Page() {
         strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
       />
-      <ContactPage />
+      <RecaptchaProvider>
+        <ContactPage />
+      </RecaptchaProvider>
     </div>
   );
 } 

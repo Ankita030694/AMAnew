@@ -356,14 +356,14 @@ export default function DebtRecoverySystemForNbfcsClient() {
   };
 
   const openWhatsAppDirect = () => {
-    const textMsg = `Hello AMA Legal Solutions, we are interested in your Debt Recovery System for NBFCs.
+    const textMsg = `Hello AMA Legal Solutions, we would like to know more about your Debt Recovery System for NBFCs.
 Full Name / Organization: ${formData.fullName}
 Phone / WhatsApp: ${formData.phone}
 Email: ${formData.email || "N/A"}
 City & State: ${formData.cityState || "N/A"}
 Loan Asset Category: ${formData.category}
 Specific Requirements: ${formData.message || "Requesting demonstration of Excel data upload, custom advocate legal notice templates, and automated 3-notice cadence."}`;
-    const waUrl = `https://api.whatsapp.com/send?phone=918700343611&text=${encodeURIComponent(textMsg)}`;
+    const waUrl = `https://api.whatsapp.com/send?phone=919289622596&text=${encodeURIComponent(`${textMsg}\n(Ref: amalegalsolutions.com${window.location.pathname})`)}`;
     window.open(waUrl, "_blank");
   };
 

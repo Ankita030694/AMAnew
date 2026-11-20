@@ -259,7 +259,7 @@ Phone / WhatsApp: ${formData.phone}
 Work Email: ${formData.workEmail || "N/A"}
 Delinquent Portfolio Size: ${formData.portfolioSize}
 Notes: ${formData.message || "Requesting demonstration of Excel bulk ingestion, custom salary loan notices, and ₹999/case escalation suite."}`;
-    const waUrl = `https://api.whatsapp.com/send?phone=918700343611&text=${encodeURIComponent(textMsg)}`;
+    const waUrl = `https://api.whatsapp.com/send?phone=919289622596&text=${encodeURIComponent(`${textMsg}\n(Ref: amalegalsolutions.com${window.location.pathname})`)}`;
     window.open(waUrl, "_blank");
   };
 

@@ -8,6 +8,8 @@ import TableOfContents from "@/components/TableOfContents";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import GenericStatesGrid from "@/components/GenericStatesGrid";
 import InteractiveLeadFunnel from "@/components/InteractiveLeadFunnel";
+import CalculatorLeadCard from "@/components/CalculatorLeadCard";
+import { track } from "@vercel/analytics";
 
 // FAQ data
 const faqs = [
@@ -124,6 +126,24 @@ interface SettlementCalculationResult {
 }
 
 // Main Page Component
+const LOAN_TYPE_LABELS: Record<string, string> = {
+  unsecured: "Unsecured Personal Loan",
+  "credit-card": "Credit Card",
+  business: "Business / MSME Loan",
+  secured: "Secured Loan (Home / LAP)",
+};
+const DEFAULT_STAGE_LABELS: Record<string, string> = {
+  "pre-npa": "Under 90 days overdue",
+  substandard: "90–180 days overdue (NPA)",
+  doubtful: "180–365 days overdue",
+  arc: "Over 365 days / sold to ARC",
+};
+const LENDER_TYPE_LABELS: Record<string, string> = {
+  private: "Private bank",
+  psu: "Public sector bank",
+  nbfc: "NBFC / loan app",
+};
+
 export default function LoanSettlementCalculatorClient() {
   const [principal, setPrincipal] = useState<number>(0);
   const [interest, setInterest] = useState<number>(0);
@@ -211,6 +231,8 @@ export default function LoanSettlementCalculatorClient() {
       stageNote,
       lenderNote
     });
+
+    track("calculator_calculated", { loanType, defaultStage, lenderType });
 
     // Smooth scroll to result
     setTimeout(() => {
@@ -348,7 +370,7 @@ export default function LoanSettlementCalculatorClient() {
                               <div>
                                  <label className="block text-xs font-bold text-gray-500 uppercase mb-2">Original Principal Amount (INR)</label>
                                  <input 
-                                    type="number" 
+                                    type="number" inputMode="numeric"
                                     className="w-full px-5 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D2A02A] outline-none transition-all"
                                     placeholder="e.g. 500000"
                                     onChange={(e) => setPrincipal(Number(e.target.value))}
@@ -357,7 +379,7 @@ export default function LoanSettlementCalculatorClient() {
                               <div>
                                  <label className="block text-xs font-bold text-gray-500 uppercase mb-2">Unpaid Interest Accumulation (INR)</label>
                                  <input 
-                                    type="number" 
+                                    type="number" inputMode="numeric"
                                     className="w-full px-5 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D2A02A] outline-none transition-all"
                                     placeholder="e.g. 80000"
                                     onChange={(e) => setInterest(Number(e.target.value))}
@@ -366,7 +388,7 @@ export default function LoanSettlementCalculatorClient() {
                               <div>
                                  <label className="block text-xs font-bold text-gray-500 uppercase mb-2">Penalties & Late Charges (INR)</label>
                                  <input 
-                                    type="number" 
+                                    type="number" inputMode="numeric"
                                     className="w-full px-5 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D2A02A] outline-none transition-all"
                                     placeholder="e.g. 20000"
                                     onChange={(e) => setPenalty(Number(e.target.value))}
@@ -447,6 +469,18 @@ export default function LoanSettlementCalculatorClient() {
                                  </p>
                               </div>
 
+                              <div className="mb-8">
+                                 <CalculatorLeadCard
+                                    totalDues={principal + interest + penalty}
+                                    estimatedMin={result.min}
+                                    estimatedMax={result.max}
+                                    waiverPercent={`${result.waiverMinPercent}% to ${result.waiverMaxPercent}%`}
+                                    loanTypeLabel={LOAN_TYPE_LABELS[loanType] || loanType}
+                                    defaultStageLabel={DEFAULT_STAGE_LABELS[defaultStage] || defaultStage}
+                                    lenderTypeLabel={LENDER_TYPE_LABELS[lenderType] || lenderType}
+                                 />
+                              </div>
+
                               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 text-center">
                                  <div className="p-4 bg-white/5 rounded-2xl border border-white/10">
                                     <span className="text-xs text-gray-400 uppercase block mb-1">Total Outstanding Claim</span>
@@ -468,34 +502,6 @@ export default function LoanSettlementCalculatorClient() {
                               <div className="space-y-3 p-5 bg-black/40 rounded-2xl border border-white/10 text-xs md:text-sm text-gray-300 leading-relaxed">
                                  <p><strong className="text-[#D2A02A]">Regulatory Insight (DPD Analysis):</strong> {result.stageNote}</p>
                                  <p><strong className="text-emerald-400">Lender Dynamics:</strong> {result.lenderNote}</p>
-                              </div>
-
-                              <div className="mt-8">
-                                 <InteractiveLeadFunnel
-                                    preset="calculator"
-                                    theme="dark"
-                                    calculatorData={{
-                                       loanAmount: principal + interest + penalty,
-                                       estimatedMin: result.min,
-                                       estimatedMax: result.max,
-                                       waiverPercent: `${result.waiverMinPercent}% to ${result.waiverMaxPercent}%`,
-                                       lenderType,
-                                       defaultStageLabel:
-                                          defaultStage === "pre-npa"
-                                             ? "Early Default (Missed 1-2 EMIs)"
-                                             : defaultStage === "arc"
-                                             ? "Debt Sold to Asset Reconstruction (ARC)"
-                                             : "NPA Classification (Over 90 Days DPD)",
-                                       loanTypeLabel:
-                                          loanType === "credit-card"
-                                             ? "Credit Card Facility"
-                                             : loanType === "business"
-                                             ? "Business / MSME Loan"
-                                             : loanType === "secured"
-                                             ? "Secured Loan"
-                                             : "Unsecured Personal Loan"
-                                    }}
-                                 />
                               </div>
 
                               <div className="mt-6 flex flex-col md:flex-row gap-4 justify-center">

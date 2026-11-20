@@ -356,7 +356,7 @@ Email: ${formData.email || "N/A"}
 Location: ${formData.cityState || "Bengaluru, Karnataka"}
 Matter Type: ${formData.assetType}
 Details: ${formData.message || "Requesting transparent fixed legal advisory for fintech NBFC compromise, bank negotiations, Lok Adalat referral, court defense, and protection against recovery agent harassment."}`;
-    const waUrl = `https://api.whatsapp.com/send?phone=918700343611&text=${encodeURIComponent(textMsg)}`;
+    const waUrl = `https://api.whatsapp.com/send?phone=919289622596&text=${encodeURIComponent(`${textMsg}\n(Ref: amalegalsolutions.com${window.location.pathname})`)}`;
     window.open(waUrl, "_blank");
   };
 

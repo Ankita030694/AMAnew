@@ -357,14 +357,14 @@ export default function AutomatedBulkLegalNoticeForDigitalLendersClient() {
   };
 
   const openWhatsAppDirect = () => {
-    const textMsg = `Hello AMA Legal Solutions, we are interested in your Automated Bulk Legal Notice Solution for Digital Lenders.
+    const textMsg = `Hello AMA Legal Solutions, we would like to know more about your Automated Bulk Legal Notice Solution for Digital Lenders.
 Full Name / Organization: ${formData.fullName}
 Phone / WhatsApp: ${formData.phone}
 Corporate Email: ${formData.email || "N/A"}
 City & State: ${formData.cityState || "N/A"}
 Loan Asset Category: ${formData.category}
 Specific Requirements: ${formData.message || "Requesting demonstration of Excel/LMS bulk data ingestion, custom advocate legal notice generation, Speed Post barcode integration, and Section 63 BSA certificate workflow."}`;
-    const waUrl = `https://api.whatsapp.com/send?phone=918700343611&text=${encodeURIComponent(textMsg)}`;
+    const waUrl = `https://api.whatsapp.com/send?phone=919289622596&text=${encodeURIComponent(`${textMsg}\n(Ref: amalegalsolutions.com${window.location.pathname})`)}`;
     window.open(waUrl, "_blank");
   };
 

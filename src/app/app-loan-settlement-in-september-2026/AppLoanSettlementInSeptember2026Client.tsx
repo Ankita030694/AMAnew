@@ -350,7 +350,7 @@ Email: ${formData.email || "N/A"}
 Location: ${formData.cityState || "N/A"}
 Lending App Category: ${formData.assetType}
 Details: ${formData.message || "Requesting advocate evaluation for digital app loan OTS negotiation, recovery agent harassment defense, and Section 25 NACH protection."}`;
-    const waUrl = `https://api.whatsapp.com/send?phone=918700343611&text=${encodeURIComponent(textMsg)}`;
+    const waUrl = `https://api.whatsapp.com/send?phone=919289622596&text=${encodeURIComponent(`${textMsg}\n(Ref: amalegalsolutions.com${window.location.pathname})`)}`;
     window.open(waUrl, "_blank");
   };
 

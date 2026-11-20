@@ -251,7 +251,7 @@ export default function RecoveryForNbfcsClient() {
   };
 
   const openWhatsAppDirect = () => {
-    const textMsg = `Hello AMA Legal Solutions, we are interested in your Legal Recovery Product for NBFCs.
+    const textMsg = `Hello AMA Legal Solutions, we would like to know more about your Legal Recovery Product for NBFCs.
 Institution: ${formData.nbfcName}
 Contact Person: ${formData.contactPerson || "N/A"}
 Designation: ${formData.designation}
@@ -259,7 +259,7 @@ Phone / WhatsApp: ${formData.phone}
 Work Email: ${formData.workEmail || "N/A"}
 Portfolio Size: ${formData.portfolioSize}
 Notes: ${formData.message || "Requesting demonstration of Excel data upload, custom legal notice templates, and bulk ₹999/case workflow."}`;
-    const waUrl = `https://api.whatsapp.com/send?phone=918700343611&text=${encodeURIComponent(textMsg)}`;
+    const waUrl = `https://api.whatsapp.com/send?phone=919289622596&text=${encodeURIComponent(`${textMsg}\n(Ref: amalegalsolutions.com${window.location.pathname})`)}`;
     window.open(waUrl, "_blank");
   };
 

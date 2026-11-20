@@ -351,7 +351,7 @@ Email: ${formData.email || "N/A"}
 Location: ${formData.cityState || "N/A"}
 Trading Debt Facility: ${formData.assetType}
 Details: ${formData.message || "Requesting advocate evaluation for commercial trading loan OTS negotiation, margin shortfall defense, and DRT/SARFAESI protection."}`;
-    const waUrl = `https://api.whatsapp.com/send?phone=918700343611&text=${encodeURIComponent(textMsg)}`;
+    const waUrl = `https://api.whatsapp.com/send?phone=919289622596&text=${encodeURIComponent(`${textMsg}\n(Ref: amalegalsolutions.com${window.location.pathname})`)}`;
     window.open(waUrl, "_blank");
   };
 

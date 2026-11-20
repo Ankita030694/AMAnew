@@ -364,7 +364,7 @@ export default async function LawyerByExpertiseSlugPage({ params }: { params: Pr
                     Call +91 81788 73087
                   </button>
                 </Link>
-                <a href="https://wa.me/918700343611" target="_blank" rel="noopener noreferrer" className="block w-full mt-2">
+                <a href="https://wa.me/919289622596" target="_blank" rel="noopener noreferrer" className="block w-full mt-2">
                   <button className="w-full bg-white border border-[#D2A02A] text-[#D2A02A] hover:bg-[#D2A02A] hover:text-white font-bold py-3 px-4 rounded-xl transition-all text-sm">
                     WhatsApp Us
                   </button>

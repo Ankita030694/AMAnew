@@ -350,8 +350,8 @@ Email: ${formData.email || "N/A"}
 Location: ${formData.cityState || "N/A"}
 Matter Type: ${formData.assetType}
 Details: ${formData.message || "Consultation requested."}`;
-    const encoded = encodeURIComponent(textMsg);
-    window.open(`https://wa.me/918700343611?text=${encoded}`, "_blank");
+    const encoded = encodeURIComponent(`${textMsg}\n(Ref: amalegalsolutions.com${window.location.pathname})`);
+    window.open(`https://wa.me/919289622596?text=${encoded}`, "_blank");
   };
 
   const resetModal = () => {

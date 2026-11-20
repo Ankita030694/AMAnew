@@ -215,7 +215,7 @@ export default async function CreditCardBankStateSettlementPage({ params }: { pa
                   Resolve Credit Card Debt
                 </button>
               </Link>
-              <a href="https://wa.me/918700343611" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
+              <a href="https://wa.me/919289622596" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full transition-all transform hover:scale-105 shadow-lg text-sm md:text-lg w-full sm:w-auto">
                 Consult on WhatsApp
               </a>
             </div>
@@ -400,7 +400,7 @@ export default async function CreditCardBankStateSettlementPage({ params }: { pa
                   <Link href="/contact" className="bg-[#D2A02A] hover:bg-[#b88a22] text-white font-bold py-3.5 px-8 rounded-full transition-all shadow-md">
                     Request Legal Hardship Evaluation
                   </Link>
-                  <a href="https://wa.me/918700343611" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3.5 px-8 rounded-full transition-all shadow-md">
+                  <a href="https://wa.me/919289622596" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3.5 px-8 rounded-full transition-all shadow-md">
                     Connect on WhatsApp
                   </a>
                 </div>

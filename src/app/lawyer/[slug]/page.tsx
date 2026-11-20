@@ -530,7 +530,7 @@ export default async function LawyerSlugPage({ params }: { params: Promise<{ slu
                 Call +91 87003 43611
               </button>
             </Link>
-            <a href="https://wa.me/918700343611" target="_blank" rel="noopener noreferrer" className="block w-full mt-2">
+            <a href="https://wa.me/919289622596" target="_blank" rel="noopener noreferrer" className="block w-full mt-2">
               <button className="w-full bg-white border border-[#D29E0D] text-[#D29E0D] hover:bg-[#D29E0D] hover:text-white font-bold py-3 px-4 rounded-xl transition-all text-sm">
                 WhatsApp Us
               </button>

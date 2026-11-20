@@ -587,7 +587,7 @@ export default function RBIViolationGuide() {
                     Get Free Legal Advice
                   </button>
                 </Link>
-                <a href="https://wa.me/918700343611" target="_blank" className="flex items-center gap-2">
+                <a href="https://wa.me/919289622596" target="_blank" className="flex items-center gap-2">
                   <button className="bg-[#25D366] text-white px-8 py-4 rounded-full font-bold hover:bg-[#128C7E] transition-all shadow-lg flex items-center gap-2">
                     <FaWhatsapp size={20} /> WhatsApp Us
                   </button>

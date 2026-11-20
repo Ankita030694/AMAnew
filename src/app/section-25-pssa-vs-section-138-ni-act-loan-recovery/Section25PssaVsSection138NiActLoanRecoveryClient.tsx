@@ -364,7 +364,7 @@ Corporate Email: ${formData.email || "N/A"}
 City & State: ${formData.cityState || "N/A"}
 Dispute / Instrument Type: ${formData.category}
 Case Details: ${formData.message || "Requesting strategic legal consultation on statutory notice drafting, territorial jurisdiction, and Section 143A interim compensation."}`;
-    const waUrl = `https://api.whatsapp.com/send?phone=918700343611&text=${encodeURIComponent(textMsg)}`;
+    const waUrl = `https://api.whatsapp.com/send?phone=919289622596&text=${encodeURIComponent(`${textMsg}\n(Ref: amalegalsolutions.com${window.location.pathname})`)}`;
     window.open(waUrl, "_blank");
   };
 

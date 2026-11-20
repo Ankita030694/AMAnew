@@ -351,7 +351,7 @@ Email: ${formData.email || "N/A"}
 Location: ${formData.cityState || "N/A"}
 Grievance Category: ${formData.assetType}
 Details: ${formData.message || "Requesting advocate evaluation for drafting statutory legal notice, escalating complaint via RBI CMS portal, and securing Ombudsman relief."}`;
-    const waUrl = `https://api.whatsapp.com/send?phone=918700343611&text=${encodeURIComponent(textMsg)}`;
+    const waUrl = `https://api.whatsapp.com/send?phone=919289622596&text=${encodeURIComponent(`${textMsg}\n(Ref: amalegalsolutions.com${window.location.pathname})`)}`;
     window.open(waUrl, "_blank");
   };
 

@@ -365,9 +365,7 @@ Email: ${formData.email || "N/A"}
 Location: ${formData.cityState || "N/A"}
 Grievance Category: ${formData.assetType}
 Details: ${formData.message || "Requesting advocate evaluation for drafting statutory legal notice, escalating complaint via National Consumer Helpline (NCH / INGRAM), and securing consumer court remedies."}`;
-    const waUrl = `https://api.whatsapp.com/send?phone=918700343611&text=${encodeURIComponent(
-      textMsg
-    )}`;
+    const waUrl = `https://api.whatsapp.com/send?phone=919289622596&text=${encodeURIComponent(`${textMsg}\n(Ref: amalegalsolutions.com${window.location.pathname})`)}`;
     window.open(waUrl, "_blank");
   };
 
@@ -1768,7 +1766,7 @@ Details: ${formData.message || "Requesting advocate evaluation for drafting stat
                   </p>
                   <div className="pt-2">
                     <a
-                      href={`https://api.whatsapp.com/send?phone=918700343611&text=${encodeURIComponent(
+                      href={`https://api.whatsapp.com/send?phone=919289622596&text=${encodeURIComponent(
                         `Hello Advocate Anuj Anand Malik, I submitted my grievance details regarding an NCH complaint against my lender (${formData.fullName}, ${formData.phone}). Please evaluate my case.`
                       )}`}
                       target="_blank"
