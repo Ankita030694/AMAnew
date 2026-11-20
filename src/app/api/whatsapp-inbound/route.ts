@@ -99,7 +99,8 @@ async function handleMessage(msg: WatiInbound): Promise<string> {
     phone,
     serviceRequired: isLoanPage(page) ? 'Loan Settlement' : 'WhatsApp Enquiry',
     message: text.slice(0, 2000),
-    source: isCalculator ? 'WhatsApp - Calculator' : 'WhatsApp',
+    // Brand-prefixed so it can't be confused with CredSettle / SettleLoans WhatsApp leads later
+    source: isCalculator ? 'AMA WhatsApp - Calculator' : 'AMA WhatsApp',
     submissionUrl: `${SITE}${page}`,
     verified: true, // the number comes from WhatsApp itself
     timestamp: admin.firestore.FieldValue.serverTimestamp(),
