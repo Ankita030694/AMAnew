@@ -3,6 +3,10 @@ Disallow: /admin/
 Disallow: /login/
 Disallow: /settlement-thank-you
 Disallow: /paged/
+# Next.js link-prefetch payloads and the Vercel Analytics beacon: not pages, no need to crawl
+Disallow: /*?_rsc=
+Disallow: /*&_rsc=
+Disallow: /_vercel/insights/
 Allow: /
 Allow: /blog/
 Allow: /articles/
